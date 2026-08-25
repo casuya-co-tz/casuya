@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casuya Blackboard — Industrial Grade</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-color: #f1f5f9;
+      --text-color: #1e293b;
+      --subtext-color: #64748b;
+      --feature-bg: white;
+      --feature-text: #475569;
+      --feature-shadow: rgba(0,0,0,0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #11111b;
+        --text-color: #cdd6f4;
+        --subtext-color: #a6adc8;
+        --feature-bg: #1e1e2e;
+        --feature-text: #bac2de;
+        --feature-shadow: rgba(0,0,0,0.3);
+      }
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      color: var(--text-color);
+      transition: background 0.2s, color 0.2s;
+    }
+    h1 { font-size: 20px; color: var(--text-color); margin-bottom: 4px; }
+    .subtitle { font-size: 13px; color: var(--subtext-color); margin-bottom: 20px; }
+    .shortcuts {
+      font-size: 12px; color: var(--subtext-color); margin-top: 16px; margin-bottom: 8px;
+      text-align: center; line-height: 1.8;
+    }
+    .shortcuts kbd {
+      display: inline-block; padding: 1px 5px; font-size: 11px; font-family: inherit;
+      background: var(--feature-bg); border: 1px solid var(--subtext-color);
+      border-radius: 3px; box-shadow: 0 1px 0 var(--subtext-color);
+    }
+    #app { width: 100%; max-width: 900px; height: 70vh; min-height: 400px; }
+    @media (max-width: 640px) {
+      #app { height: 60vh; min-height: 300px; }
+      body { padding: 8px; }
+    }
+    .features {
+      display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; justify-content: center;
+    }
+    .feature {
+      background: var(--feature-bg); padding: 8px 14px; border-radius: 8px;
+      font-size: 12px; color: var(--feature-text);
+      box-shadow: 0 1px 3px var(--feature-shadow); transition: background 0.2s, color 0.2s;
+    }
+    .feature strong { color: var(--text-color); }
+  </style>
+</head>
+<body>
+  <h1>Casuya Blackboard</h1>
+  <p class="subtitle">Industrial-grade drawing for education — powered by perfect-freehand</p>
+  <div id="app"></div>
+  <div class="shortcuts">
+    <kbd>V</kbd> Select · <kbd>H</kbd> Hand · <kbd>P</kbd> Pen · <kbd>T</kbd> Text · <kbd>L</kbd> Line · <kbd>R</kbd> Rect · <kbd>O</kbd> Circle · <kbd>A</kbd> Arrow · <kbd>E</kbd> Eraser<br>
+    <kbd>Space</kbd>+drag Pan · <kbd>Shift</kbd> Constrain · <kbd>Ctrl+Z</kbd> Undo · <kbd>Ctrl+Shift+Z</kbd> Redo · <kbd>Ctrl+0</kbd> Reset Zoom · <kbd>Del</kbd> Delete<br>
+    <kbd>Ctrl+A</kbd> Select All · <kbd>Ctrl+G</kbd> Group · <kbd>Ctrl+Shift+G</kbd> Ungroup · <kbd>Shift+R</kbd> Rotate 15° · <kbd>Ctrl+Shift+S</kbd> Export SVG<br>
+    <kbd>Ctrl+C</kbd> Copy · <kbd>Ctrl+V</kbd> Paste · <kbd>Ctrl+D</kbd> Duplicate · Right-click / long-press context menu · Scroll to zoom · Pinch on mobile
+  </div>
+  <div class="features">
+    <div class="feature" title="Draw freehand strokes with velocity-sensitive pressure simulation"><strong>Pen</strong> — Velocity-based pressure</div>
+    <div class="feature" title="Draw lines, rectangles, circles, and arrows"><strong>Shapes</strong> — Line, Rect, Circle, Arrow</div>
+    <div class="feature" title="Add text labels with word-wrap and font size control"><strong>Text</strong> — Word-wrap, 8-72px</div>
+    <div class="feature" title="Select, move, resize via 8 handles, and rotate elements"><strong>Select</strong> — Move, resize, rotate</div>
+    <div class="feature" title="Pan (Space+drag / Hand tool) and zoom (scroll wheel / pinch)"><strong>Infinite Canvas</strong> — Pan & zoom</div>
+    <div class="feature" title="Eraser removes whole elements on contact via point-proximity"><strong>Eraser</strong> — Stroke-level removal</div>
+    <div class="feature" title="Paste or drag-drop images onto the canvas"><strong>Images</strong> — Paste & drag-drop</div>
+    <div class="feature" title="Group elements together, select groups with one click"><strong>Grouping</strong> — Ctrl+G / Ctrl+Shift+G</div>
+    <div class="feature" title="Export your drawing as SVG vector graphics"><strong>SVG Export</strong> — Ctrl+Shift+S</div>
+    <div class="feature" title="Rotate any element by 15° with Shift+R"><strong>Rotation</strong> — Shift+R</div>
+    <div class="feature" title="8 resize handles: 4 corners + 4 edge midpoints"><strong>Edge Handles</strong> — Precise resize</div>
+    <div class="feature" title="Hand-drawn sketch style with 4 levels of roughness"><strong>Roughness</strong> — Clean to Heavy</div>
+    <div class="feature" title="Arrows snap to nearby element edges automatically"><strong>Connect</strong> — Arrow snapping</div>
+    <div class="feature" title="Snap to grid when graph paper is enabled"><strong>Snap</strong> — Grid alignment</div>
+    <div class="feature" title="Dark chalkboard theme for low-light environments"><strong>Theme</strong> — Light & Dark</div>
+    <div class="feature" title="Snapshot-based undo/redo with 50-level stack"><strong>Undo</strong> — 50 levels</div>
+    <div class="feature" title="Your drawings are automatically saved in your browser"><strong>Save</strong> — localStorage</div>
+    <div class="feature" title="~28KB gzipped — fast even on 2G networks"><strong>~28KB</strong> — Fast on 2G</div>
+  </div>
+  <script type="module">
+    import { Blackboard } from './dist/index.js';
+    const board = new Blackboard({
+      container: document.getElementById('app'),
+      theme: 'light',
+    });
+  </script>
+</body>
+</html>

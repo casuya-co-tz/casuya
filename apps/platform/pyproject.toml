@@ -1,0 +1,20 @@
+[project]
+name = "casuya-platform"
+version = "1.0.0"
+description = "Student/admin/teacher platform for Casuya (casuya.co.tz)"
+requires-python = ">=3.12"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "SIM", "ARG", "RUF"]
+ignore = ["E402", "F401", "B008", "B904", "ARG001", "F841", "E501", "E741", "UP017", "SIM105", "RUF100"]
+
+[tool.ruff.lint.per-file-ignores]
+"backend/models/*" = ["F401"]
+"backend/config/database.py" = ["F401"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

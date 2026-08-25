@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Casuya Lesson Metadata",
+  "type": "object",
+  "properties": {
+    "topic": { "type": "string" },
+    "subtopic": { "type": "string" },
+    "difficulty": { "type": "string" },
+    "duration_minutes": { "type": "integer" }
+  }
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Casuya Platform</title>
+  <link rel="stylesheet" href="/assets/css/main.min.css">
+  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="/assets/js/env.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/brand.js"></script>
+</head>
+<body class="bg-[#faf7f2] text-slate-800 antialiased overflow-x-hidden" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
+
+  <nav class="sticky top-0 z-50 bg-[#faf7f2]/80 backdrop-blur-md border-b border-[#e2e8f0]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div data-brand-logo data-brand-logo-class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-blue-200" class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-blue-200">C</div>
+        <a href="/index.html" class="text-xl font-extrabold tracking-tight text-slate-900">Casuya</a>
+      </div>
+      <div class="flex items-center gap-2 sm:gap-4" id="auth-buttons">
+        <a href="/login.html" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors min-h-[44px] flex items-center">Login</a>
+        <a href="/register.html" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-3 rounded-xl shadow-lg shadow-blue-100 transition-all hover:-translate-y-0.5 min-h-[44px] flex items-center">Get Started</a>
+      </div>
+      <script type="module">
+        import { applyAuthChrome } from "/assets/js/auth-ui.js";
+        applyAuthChrome(document.getElementById("auth-buttons"));
+      </script>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-16" style="background:linear-gradient(180deg,rgba(249,243,233,0) 0%,rgba(239,246,255,0.3) 100%);min-height:calc(100vh - 200px);">
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3" style="letter-spacing:-0.03em;">Contact Us</h1>
+    <p class="mb-10" style="color:#64748b;">We're happy to help schools, teachers, and students get the most out of Casuya.</p>
+
+    <!-- Contact Form -->
+    <div class="premium-card p-6 sm:p-8 mb-10">
+      <h2 class="text-lg font-bold text-slate-900 mb-5">Send us a message</h2>
+      <form id="contact-form" class="space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="space-y-1.5">
+            <label for="contact-name" class="text-sm font-semibold text-slate-700">Full Name</label>
+            <input type="text" id="contact-name" name="name" required
+              class="input-premium"
+              placeholder="Your name">
+          </div>
+          <div class="space-y-1.5">
+            <label for="contact-email" class="text-sm font-semibold text-slate-700">Email Address</label>
+            <input type="email" id="contact-email" name="email" required
+              class="input-premium"
+              placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="space-y-1.5">
+          <label for="contact-subject" class="text-sm font-semibold text-slate-700">Subject</label>
+          <select id="contact-subject" name="subject" required
+            class="input-premium bg-white">
+            <option value="">Select a topic...</option>
+            <option value="general">General Inquiry</option>
+            <option value="support">Technical Support</option>
+            <option value="billing">Billing / Payments</option>
+            <option value="school">School Partnership</option>
+            <option value="bug">Report a Bug</option>
+            <option value="feature">Feature Request</option>
+          </select>
+        </div>
+        <div class="space-y-1.5">
+          <label for="contact-message" class="text-sm font-semibold text-slate-700">Message</label>
+          <textarea id="contact-message" name="message" rows="5" required
+            class="input-premium resize-none"
+            placeholder="How can we help you?"></textarea>
+        </div>
+        <div class="flex items-center gap-3">
+          <button type="submit" id="contact-submit"
+            class="btn-premium px-6">
+            Send Message
+          </button>
+          <span id="contact-status" class="text-sm font-medium"></span>
+        </div>
+      </form>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="premium-card p-6">
+        <h3 class="font-bold text-slate-900 mb-2">GitHub Organization</h3>
+        <p class="text-sm mb-3" style="color:#64748b;">Source code, issues, and feature requests live on GitHub.</p>
+        <div class="min-h-[44px] flex items-center"><a href="https://github.com/casuya-co-tz" class="text-blue-600 font-semibold hover:underline" target="_blank" rel="noopener">github.com/casuya-co-tz</a></div>
+      </div>
+      <div class="premium-card p-6">
+        <h3 class="font-bold text-slate-900 mb-2">Help Center</h3>
+        <p class="text-sm mb-3" style="color:#64748b;">Answers to common questions about accounts, login, and offline learning.</p>
+        <div class="min-h-[44px] flex items-center"><a href="/help.html" class="text-blue-600 font-semibold hover:underline">Visit Help Center</a></div>
+      </div>
+      <div class="premium-card p-6">
+        <h3 class="font-bold text-slate-900 mb-2">School Administrators</h3>
+        <p class="text-sm" style="color:#64748b;">Admin accounts are provisioned by your school. Contact your administrator to request access.</p>
+      </div>
+      <div class="premium-card p-6">
+        <h3 class="font-bold text-slate-900 mb-2">WhatsApp</h3>
+        <p class="text-sm mb-3" style="color:#64748b;">Need quick help? Chat with us directly on WhatsApp.</p>
+        <div class="min-h-[44px] flex items-center"><a href="https://wa.me/255748386745" class="text-blue-600 font-semibold hover:underline" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-xs py-10 sm:py-14" style="background:linear-gradient(180deg,#0f172a 0%,#020617 100%);color:#94a3b8;">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;">Platform</div>
+          <div><a href="/index.html#features" class="transition-colors hover:text-blue-400">Features</a></div>
+          <div><a href="https://github.com/casuya-co-tz" class="transition-colors hover:text-blue-400" target="_blank" rel="noopener">Documentation</a></div>
+          <div><a href="/index.html#subjects" class="transition-colors hover:text-blue-400">Subjects</a></div>
+        </div>
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;">Support</div>
+          <div><a href="/help.html" class="transition-colors hover:text-blue-400">Help Center</a></div>
+          <div><a href="/contact.html" class="transition-colors hover:text-blue-400">Contact Us</a></div>
+        </div>
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;">Legal</div>
+          <div><a href="/privacy.html" class="transition-colors hover:text-blue-400">Privacy Policy</a></div>
+          <div><a href="/terms.html" class="transition-colors hover:text-blue-400">Terms of Service</a></div>
+        </div>
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;">Links</div>
+          <div><a href="https://github.com/casuya-co-tz" class="transition-colors hover:text-blue-400" target="_blank" rel="noopener">GitHub Organization</a></div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(148,163,184,0.12);"></div>
+      <div class="pt-4 text-[11px]" style="color:#475569;">© 2026 Casuya Platform.</div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById("contact-form");
+      var submitBtn = document.getElementById("contact-submit");
+      var statusEl = document.getElementById("contact-status");
+
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = document.getElementById("contact-name").value.trim();
+        var email = document.getElementById("contact-email").value.trim();
+        var subject = document.getElementById("contact-subject").value;
+        var message = document.getElementById("contact-message").value.trim();
+
+        if (!name || !email || !subject || !message) {
+          statusEl.textContent = "Please fill in all fields.";
+          statusEl.style.color = "#dc2626";
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+        statusEl.textContent = "";
+
+        // Store submission locally (no backend endpoint yet)
+        try {
+          var submissions = JSON.parse(localStorage.getItem("casuya_contact_submissions") || "[]");
+          submissions.push({
+            name: name,
+            email: email,
+            subject: subject,
+            message: message,
+            timestamp: new Date().toISOString(),
+          });
+          localStorage.setItem("casuya_contact_submissions", JSON.stringify(submissions));
+        } catch (e) {}
+
+        setTimeout(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send Message";
+          statusEl.textContent = "Message received! We'll get back to you soon.";
+          statusEl.style.color = "#16a34a";
+          form.reset();
+          setTimeout(function () { statusEl.textContent = ""; }, 5000);
+        }, 1200);
+      });
+    })();
+  </script>
+
+</body>
+</html>

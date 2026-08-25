@@ -1,0 +1,15 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "libs/*"
+
+catalog:
+  typescript: ^5.3.3
+  vitest: ^1.2.0
+  eslint: ^8.56.0
+  "@typescript-eslint/eslint-plugin": ^6.18.0
+  "@typescript-eslint/parser": ^6.18.0
+
+onlyBuiltDependencies:
+  - esbuild
+  - core-js

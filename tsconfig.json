@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@casuya/core": ["libs/core/casuya_core"],
+      "@casuya/runtime": ["packages/runtime/src"],
+      "@casuya/bridge": ["packages/bridge/src"],
+      "@casuya/editor": ["packages/editor/src"],
+      "@casuya/blackboard": ["packages/blackboard/src"],
+      "@casuya/design-system/*": ["packages/design-system/packages/*/src"],
+      "@casuya/ai": ["packages/ai/src"]
+    }
+  },
+  "exclude": ["node_modules", "**/dist", "**/build", "**/.next", "**/.turbo"]
+}

@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+*.js.map
+
+# Coverage
+coverage/
+.clover.xml
+*.lcov
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/settings.json
+.vscode/workspace.code-workspace
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime temp
+.tmp
+.cache
+temp/
+
+# Package lock (keep one)
+package-lock.json
+yarn.lock
+
+# Test artifacts
+junit.xml
+test-results/
+.vercel

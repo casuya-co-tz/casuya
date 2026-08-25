@@ -1,0 +1,34 @@
+{
+  "name": "@casuya/docs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Casuya Design System Documentation (Storybook)",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "lint": "echo ok",
+    "typecheck": "echo ok",
+    "clean": "rm -rf storybook-static node_modules"
+  },
+  "dependencies": {
+    "@casuya/react": "workspace:*",
+    "@casuya/icons": "workspace:*",
+    "@casuya/tokens": "workspace:*",
+    "@casuya/theme": "workspace:*",
+    "@casuya/a11y": "workspace:*",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.0.0",
+    "@storybook/addon-actions": "^8.0.0",
+    "@storybook/addon-controls": "^8.0.0",
+    "@storybook/addon-docs": "^8.0.0",
+    "@storybook/addon-viewport": "^8.0.0",
+    "@storybook/react": "^8.0.0",
+    "@storybook/react-vite": "^8.0.0",
+    "storybook": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vite": "^5.0.0"
+  }
+}

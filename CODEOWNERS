@@ -1,0 +1,21 @@
+# CODEOWNERS
+# Defines who reviews changes in each layer (trunk-based, mandatory review).
+# Layer structure: libs/ (lowest) < packages/ < apps/ (highest)
+
+# Core engine (Python)
+/libs/core/           @casuya/core-team
+
+# Reusable frontend/TS libraries
+/packages/            @casuya/platform-team
+
+# The deployable application
+/apps/platform/       @casuya/platform-team
+
+# Infrastructure & deployment
+/infra/               @casuya/devops
+
+# Monorepo tooling & governance
+/package.json         @casuya/devops
+/pnpm-workspace.yaml  @casuya/devops
+/turbo.json           @casuya/devops
+/tools/               @casuya/devops

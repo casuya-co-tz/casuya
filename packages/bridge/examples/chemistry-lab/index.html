@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>casuya-bridge: Chemistry Lab Demo</title>
+</head>
+<body>
+  <h1>Chemistry Lab Demo</h1>
+  <p>Demonstrates progress tracking through a multi-section lesson with a quiz.</p>
+  <pre id="output"></pre>
+  <script type="module">
+    import { CasuyaBridge } from '../../dist/casuya-bridge.esm.js';
+
+    const bridge = new CasuyaBridge({ apiBaseUrl: 'https://api.casuya.co.tz' });
+    const session = bridge.startSession({
+      lessonSlug: 'balancing-chemical-equations',
+      studentId: 'demo-student',
+      totalSections: 3,
+    });
+
+    bridge.visitSection(session.id, 0);
+    bridge.visitSection(session.id, 1);
+    bridge.visitSection(session.id, 2);
+    bridge.recordAnswer(session.id, { questionId: 'q1', isCorrect: true });
+    bridge.recordAnswer(session.id, { questionId: 'q2', isCorrect: false });
+
+    const record = await bridge.endSession(session.id);
+    document.getElementById('output').textContent = JSON.stringify(record, null, 2);
+  </script>
+</body>
+</html>

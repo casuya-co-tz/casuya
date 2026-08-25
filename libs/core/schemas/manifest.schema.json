@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Casuya Lesson Manifest",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "subject": { "type": "string" },
+    "version": { "type": "string" },
+    "language": { "type": "string" }
+  },
+  "required": ["id", "title", "subject", "version"]
+}

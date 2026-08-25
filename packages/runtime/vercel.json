@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build && cp index.html dist/index.html",
+  "outputDirectory": "dist",
+  "devCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": null
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>casuya-bridge: Offline Demo</title>
+</head>
+<body>
+  <h1>Offline Demo</h1>
+  <p>Status: <span id="status">unknown</span></p>
+  <button id="toggle">Simulate offline/online</button>
+  <script type="module">
+    import { CasuyaBridge, EVENTS } from '../../dist/casuya-bridge.esm.js';
+
+    const bridge = new CasuyaBridge({ apiBaseUrl: 'https://api.casuya.co.tz' });
+    bridge.start();
+
+    const statusEl = document.getElementById('status');
+    const render = () => (statusEl.textContent = bridge.isOnline ? 'online' : 'offline');
+    render();
+
+    bridge.on(EVENTS.CONNECTIVITY_ONLINE, render);
+    bridge.on(EVENTS.CONNECTIVITY_OFFLINE, render);
+
+    document.getElementById('toggle').addEventListener('click', () => {
+      bridge.runtime.connectivity.simulate(!bridge.isOnline);
+    });
+  </script>
+</body>
+</html>

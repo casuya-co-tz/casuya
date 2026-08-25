@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+casuya_core.egg-info/
+packages/
+examples/sample.html
+dist/
+build/
+*.egg-info/
+.env

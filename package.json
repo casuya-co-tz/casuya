@@ -1,0 +1,25 @@
+{
+  "name": "casuya-hybrid",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Casuya — single layered monorepo (apps / packages / libs) for the interactive-learning platform.",
+  "scripts": {
+    "dev:backend": "cd apps/platform && uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000",
+    "dev:frontend": "npx serve apps/platform/frontend -l 5173",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "install:py": "pip install -r requirements.txt",
+    "check:layers": "node tools/check-layers.mjs",
+    "validate": "pnpm check:layers && pnpm lint && pnpm typecheck"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.3.3",
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.19",
+    "tailwindcss": "3"
+  }
+}

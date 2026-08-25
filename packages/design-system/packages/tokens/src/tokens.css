@@ -1,0 +1,152 @@
+:root {
+  /* White & Black */
+  --casuya-white: #ffffff;
+  --casuya-black: #000000;
+
+  /* Primary */
+  --casuya-primary-50: #eff6ff;
+  --casuya-primary-100: #dbeafe;
+  --casuya-primary-200: #bfdbfe;
+  --casuya-primary-300: #93c5fd;
+  --casuya-primary-400: #60a5fa;
+  --casuya-primary-500: #3b82f6;
+  --casuya-primary-600: #2563eb;
+  --casuya-primary-700: #1d4ed8;
+  --casuya-primary-800: #1e40af;
+  --casuya-primary-900: #1e3a8a;
+  --casuya-primary-950: #172554;
+
+  /* Semantic Colors */
+  --casuya-success-500: #22c55e;
+  --casuya-warning-500: #f59e0b;
+  --casuya-danger-500: #ef4444;
+  --casuya-info-500: #06b6d4;
+
+  /* Neutral */
+  --casuya-neutral-50: #fafafa;
+  --casuya-neutral-100: #f5f5f5;
+  --casuya-neutral-200: #e5e5e5;
+  --casuya-neutral-300: #d4d4d4;
+  --casuya-neutral-400: #a3a3a3;
+  --casuya-neutral-500: #737373;
+  --casuya-neutral-600: #525252;
+  --casuya-neutral-700: #404040;
+  --casuya-neutral-800: #262626;
+  --casuya-neutral-900: #171717;
+  --casuya-neutral-950: #0a0a0a;
+
+  /* Background */
+  --casuya-bg-primary: #ffffff;
+  --casuya-bg-secondary: #f9fafb;
+  --casuya-bg-tertiary: #f3f4f6;
+  --casuya-bg-inverse: #111827;
+
+  /* Text */
+  --casuya-text-primary: #111827;
+  --casuya-text-secondary: #4b5563;
+  --casuya-text-tertiary: #9ca3af;
+  --casuya-text-inverse: #ffffff;
+  --casuya-text-disabled: #d1d5db;
+  --casuya-text-link: #2563eb;
+  --casuya-text-link-hover: #1d4ed8;
+  --casuya-text-error: #dc2626;
+  --casuya-text-success: #16a34a;
+  --casuya-text-warning: #d97706;
+  --casuya-text-info: #0891b2;
+
+  /* Border */
+  --casuya-border-default: #e5e7eb;
+  --casuya-border-hover: #d1d5db;
+  --casuya-border-focus: #3b82f6;
+  --casuya-border-disabled: #f3f4f6;
+  --casuya-border-error: #fca5a5;
+  --casuya-border-success: #86efac;
+
+  /* Surface */
+  --casuya-surface-elevated: #ffffff;
+  --casuya-surface-card: #ffffff;
+  --casuya-surface-modal: #ffffff;
+  --casuya-surface-tooltip: #111827;
+  --casuya-surface-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Typography */
+  --casuya-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --casuya-font-serif: 'Merriweather', Georgia, 'Times New Roman', serif;
+  --casuya-font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --casuya-font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --casuya-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --casuya-font-size-xs: 0.75rem;
+  --casuya-font-size-sm: 0.875rem;
+  --casuya-font-size-base: 1rem;
+  --casuya-font-size-lg: 1.125rem;
+  --casuya-font-size-xl: 1.25rem;
+  --casuya-font-size-2xl: 1.5rem;
+  --casuya-font-size-3xl: 1.875rem;
+  --casuya-font-size-4xl: 2.25rem;
+  --casuya-font-size-5xl: 3rem;
+  --casuya-font-size-6xl: 3.75rem;
+
+  --casuya-font-weight-normal: 400;
+  --casuya-font-weight-medium: 500;
+  --casuya-font-weight-semibold: 600;
+  --casuya-font-weight-bold: 700;
+
+  --casuya-line-height-none: 1;
+  --casuya-line-height-tight: 1.25;
+  --casuya-line-height-normal: 1.5;
+  --casuya-line-height-relaxed: 1.625;
+
+  --casuya-letter-spacing-tight: -0.025em;
+  --casuya-letter-spacing-normal: 0em;
+  --casuya-letter-spacing-wide: 0.025em;
+
+  /* Spacing */
+  --casuya-spacing-0: 0;
+  --casuya-spacing-px: 1px;
+  --casuya-spacing-1: 0.25rem;
+  --casuya-spacing-2: 0.5rem;
+  --casuya-spacing-3: 0.75rem;
+  --casuya-spacing-4: 1rem;
+  --casuya-spacing-5: 1.25rem;
+  --casuya-spacing-6: 1.5rem;
+  --casuya-spacing-8: 2rem;
+  --casuya-spacing-10: 2.5rem;
+  --casuya-spacing-12: 3rem;
+  --casuya-spacing-16: 4rem;
+  --casuya-spacing-20: 5rem;
+  --casuya-spacing-24: 6rem;
+
+  /* Shadows */
+  --casuya-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --casuya-shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --casuya-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --casuya-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --casuya-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Radii */
+  --casuya-radius-none: 0;
+  --casuya-radius-sm: 0.125rem;
+  --casuya-radius-base: 0.25rem;
+  --casuya-radius-md: 0.375rem;
+  --casuya-radius-lg: 0.5rem;
+  --casuya-radius-xl: 0.75rem;
+  --casuya-radius-2xl: 1rem;
+  --casuya-radius-3xl: 1.5rem;
+  --casuya-radius-full: 9999px;
+
+  /* Z-Index */
+  --casuya-z-dropdown: 100;
+  --casuya-z-sticky: 200;
+  --casuya-z-fixed: 300;
+  --casuya-z-modal: 400;
+  --casuya-z-popover: 500;
+  --casuya-z-tooltip: 600;
+  --casuya-z-toast: 700;
+
+  /* Transitions */
+  --casuya-duration-instant: 0ms;
+  --casuya-duration-fast: 100ms;
+  --casuya-duration-normal: 200ms;
+  --casuya-duration-slow: 300ms;
+}

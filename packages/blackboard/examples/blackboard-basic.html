@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casuya Blackboard - Basic Drawing Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .tool-btn.active { background: #2563eb; color: white; }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+  <nav class="bg-white border-b border-slate-100 px-6 py-4">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-sm">C</div>
+        <span class="text-lg font-extrabold text-slate-900">Casuya Blackboard</span>
+      </div>
+      <a href="/index.html" class="text-sm font-semibold text-slate-600 hover:text-blue-600">Back to Platform</a>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <div class="mb-8">
+      <h1 class="text-3xl font-extrabold text-slate-900 mb-2">Basic Drawing Demo</h1>
+      <p class="text-slate-500">Draw on the blackboard using your mouse, finger, or stylus. Supports pressure sensitivity on compatible devices.</p>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="flex flex-wrap items-center gap-3 mb-6 bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+      <div class="flex items-center gap-2">
+        <button class="tool-btn active px-4 py-2 rounded-xl text-sm font-semibold border border-slate-200 hover:border-blue-300 transition-colors" data-tool="pen">Pen</button>
+        <button class="tool-btn px-4 py-2 rounded-xl text-sm font-semibold border border-slate-200 hover:border-blue-300 transition-colors" data-tool="eraser">Eraser</button>
+        <button class="tool-btn px-4 py-2 rounded-xl text-sm font-semibold border border-slate-200 hover:border-blue-300 transition-colors" data-tool="highlighter">Highlighter</button>
+        <button class="tool-btn px-4 py-2 rounded-xl text-sm font-semibold border border-slate-200 hover:border-blue-300 transition-colors" data-tool="straightedge">Line</button>
+      </div>
+      <div class="h-6 w-px bg-slate-200"></div>
+      <div class="flex items-center gap-2">
+        <label class="text-xs font-semibold text-slate-500">Color</label>
+        <input type="color" id="color-picker" value="#1e293b" class="w-8 h-8 rounded-lg border border-slate-200 cursor-pointer">
+      </div>
+      <div class="flex items-center gap-2">
+        <label class="text-xs font-semibold text-slate-500">Size</label>
+        <input type="range" id="size-slider" min="1" max="20" value="2" class="w-24">
+        <span id="size-label" class="text-xs text-slate-400 w-6">2</span>
+      </div>
+      <div class="h-6 w-px bg-slate-200"></div>
+      <button id="undo-btn" class="px-3 py-2 rounded-xl text-sm font-semibold border border-slate-200 hover:border-blue-300 transition-colors disabled:opacity-40" disabled>Undo</button>
+      <button id="redo-btn" class="px-3 py-2 rounded-xl text-sm font-semibold border border-slate-200 hover:border-blue-300 transition-colors disabled:opacity-40" disabled>Redo</button>
+      <button id="clear-btn" class="px-3 py-2 rounded-xl text-sm font-semibold text-red-600 border border-red-200 hover:bg-red-50 transition-colors">Clear</button>
+      <div class="flex-1"></div>
+      <button id="export-btn" class="px-4 py-2 rounded-xl text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors">Export PNG</button>
+    </div>
+
+    <!-- Blackboard Container -->
+    <div id="blackboard-container" class="bg-white border border-slate-100 rounded-2xl shadow-lg overflow-hidden"></div>
+
+    <!-- Info Panel -->
+    <div class="mt-6 grid grid-cols-3 gap-4">
+      <div class="bg-white border border-slate-100 rounded-xl p-4 text-center">
+        <div class="text-2xl font-extrabold text-blue-600" id="stroke-count">0</div>
+        <div class="text-xs text-slate-400 font-medium">Strokes</div>
+      </div>
+      <div class="bg-white border border-slate-100 rounded-xl p-4 text-center">
+        <div class="text-2xl font-extrabold text-green-600" id="step-count">1</div>
+        <div class="text-xs text-slate-400 font-medium">Steps</div>
+      </div>
+      <div class="bg-white border border-slate-100 rounded-xl p-4 text-center">
+        <div class="text-2xl font-extrabold text-purple-600" id="page-count">1</div>
+        <div class="text-xs text-slate-400 font-medium">Pages</div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { Blackboard, createToolbar } from '../dist/index.js';
+
+    const container = document.getElementById('blackboard-container');
+    const engine = new Blackboard({ container, width: 800, height: 500 });
+    createToolbar(engine);
+
+    const refresh = () => {
+      const len = engine.getElements().length;
+      document.getElementById('stroke-count').textContent = len;
+      document.getElementById('undo-btn').disabled = len === 0;
+      document.getElementById('redo-btn').disabled = true;
+    };
+    engine.on('change', refresh);
+    refresh();
+
+    document.querySelectorAll('.tool-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tool-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        engine.setTool(btn.dataset.tool === 'highlighter' ? 'pen' : btn.dataset.tool === 'straightedge' ? 'line' : btn.dataset.tool);
+      });
+    });
+
+    document.getElementById('color-picker').addEventListener('input', (e) => {
+      engine.setColor(e.target.value);
+    });
+
+    document.getElementById('size-slider').addEventListener('input', (e) => {
+      const size = parseInt(e.target.value);
+      document.getElementById('size-label').textContent = size;
+      engine.setWidth(size);
+    });
+
+    document.getElementById('undo-btn').addEventListener('click', () => engine.undo());
+    document.getElementById('redo-btn').addEventListener('click', () => engine.redo());
+    document.getElementById('clear-btn').addEventListener('click', () => {
+      engine.clear();
+      document.getElementById('stroke-count').textContent = '0';
+    });
+
+    document.getElementById('export-btn').addEventListener('click', () => {
+      const url = engine.toDataURL();
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'blackboard.png';
+      a.click();
+    });
+  </script>
+</body>
+</html>

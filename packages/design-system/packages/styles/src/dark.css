@@ -1,0 +1,74 @@
+[data-theme='dark'] {
+  --casuya-bg-primary: #111827;
+  --casuya-bg-secondary: #1f2937;
+  --casuya-bg-tertiary: #374151;
+  --casuya-bg-inverse: #ffffff;
+
+  --casuya-text-primary: #f9fafb;
+  --casuya-text-secondary: #d1d5db;
+  --casuya-text-tertiary: #6b7280;
+  --casuya-text-inverse: #111827;
+  --casuya-text-disabled: #4b5563;
+  --casuya-text-link: #60a5fa;
+  --casuya-text-link-hover: #93c5fd;
+
+  --casuya-border-default: #374151;
+  --casuya-border-hover: #4b5563;
+  --casuya-border-disabled: #1f2937;
+
+  --casuya-surface-elevated: #1f2937;
+  --casuya-surface-card: #1f2937;
+  --casuya-surface-modal: #1f2937;
+  --casuya-surface-tooltip: #f9fafb;
+  --casuya-surface-overlay: rgba(0, 0, 0, 0.7);
+  --casuya-surface-pressed: #374151;
+}
+
+[data-theme='dark'] img,
+[data-theme='dark'] video {
+  opacity: 0.8;
+  transition: opacity var(--casuya-duration-normal);
+}
+
+[data-theme='dark'] img:hover,
+[data-theme='dark'] video:hover {
+  opacity: 1;
+}
+
+[data-theme='high-contrast'] {
+  --casuya-primary-500: #0000ff;
+  --casuya-primary-600: #0000cc;
+
+  --casuya-bg-primary: #000000;
+  --casuya-bg-secondary: #000000;
+  --casuya-bg-tertiary: #1a1a1a;
+  --casuya-bg-inverse: #ffffff;
+
+  --casuya-text-primary: #ffffff;
+  --casuya-text-secondary: #ffffff;
+  --casuya-text-tertiary: #cccccc;
+  --casuya-text-inverse: #000000;
+  --casuya-text-link: #ffff00;
+  --casuya-text-link-hover: #ffdd00;
+
+  --casuya-border-default: #ffffff;
+  --casuya-border-hover: #ffff00;
+  --casuya-border-focus: #ffff00;
+
+  --casuya-surface-elevated: #000000;
+  --casuya-surface-card: #000000;
+  --casuya-surface-modal: #000000;
+  --casuya-surface-tooltip: #ffffff;
+  --casuya-surface-overlay: rgba(0, 0, 0, 0.85);
+  --casuya-surface-pressed: #1a1a1a;
+
+  --casuya-shadow-sm: none;
+  --casuya-shadow-base: none;
+  --casuya-shadow-md: none;
+  --casuya-shadow-lg: none;
+  --casuya-shadow-xl: none;
+}
+
+[data-theme='high-contrast'] * {
+  text-decoration-color: currentColor !important;
+}

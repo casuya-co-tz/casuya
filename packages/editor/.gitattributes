@@ -1,0 +1,22 @@
+# Normalise line endings
+* text=auto eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+*.webp binary
+*.mp4 binary
+*.webm binary
+*.ogg binary
+*.wav binary
+*.mp3 binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+*.ttf binary
+*.zip binary
+*.tar.gz binary

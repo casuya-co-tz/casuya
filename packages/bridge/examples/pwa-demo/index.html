@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>casuya-bridge: PWA Demo</title>
+</head>
+<body>
+  <h1>PWA Demo</h1>
+  <p>
+    In a full deployment, register a service worker for the app shell and
+    pass its registration into <code>registerBackgroundSync</code> so
+    queued progress syncs even after the tab is closed:
+  </p>
+  <pre>
+navigator.serviceWorker.register('/sw.js').then((reg) => {
+  const bridge = new CasuyaBridge({ apiBaseUrl: 'https://api.casuya.co.tz' });
+  bridge.runtime.syncEngine; // wired automatically by bridge.start()
+  registerBackgroundSync(bridge.runtime.bus, bridge.runtime.syncEngine, {
+    swRegistration: reg,
+  });
+});
+  </pre>
+</body>
+</html>

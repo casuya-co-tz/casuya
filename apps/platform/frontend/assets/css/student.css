@@ -1,0 +1,5 @@
+@import "main.css";
+
+@media (max-width: 640px) {
+  .lesson-viewer { padding: 1rem; font-size: 0.9rem; }
+}

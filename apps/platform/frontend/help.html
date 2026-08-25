@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Center — Casuya Platform</title>
+  <link rel="stylesheet" href="/assets/css/main.min.css">
+  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="/assets/js/env.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/brand.js"></script>
+</head>
+<body class="bg-[#faf7f2] text-slate-800 antialiased overflow-x-hidden" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
+
+  <nav class="sticky top-0 z-50 bg-[#faf7f2]/80 backdrop-blur-md border-b border-[#e2e8f0]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div data-brand-logo data-brand-logo-class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-blue-200" class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-blue-200">C</div>
+        <a href="/index.html" class="text-xl font-extrabold tracking-tight text-slate-900">Casuya</a>
+      </div>
+      <div class="flex items-center gap-2 sm:gap-4" id="auth-buttons">
+        <a href="/login.html" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors min-h-[44px] flex items-center">Login</a>
+        <a href="/register.html" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-3 rounded-xl shadow-lg shadow-blue-100 transition-all hover:-translate-y-0.5 min-h-[44px] flex items-center">Get Started</a>
+      </div>
+      <script type="module">
+        import { applyAuthChrome } from "/assets/js/auth-ui.js";
+        applyAuthChrome(document.getElementById("auth-buttons"));
+      </script>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-16" style="background:linear-gradient(180deg,rgba(249,243,233,0) 0%,rgba(239,246,255,0.3) 100%);min-height:calc(100vh - 200px);">
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3" style="letter-spacing:-0.03em;">Help Center</h1>
+    <p class="mb-10" style="color:#64748b;">Answers to the most common questions about using Casuya.</p>
+
+    <div class="space-y-4">
+      <details class="premium-card p-5 open">
+        <summary class="font-semibold text-slate-900 cursor-pointer">I can't log in — what should I check?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">Confirm your email and password (minimum 6 characters). If your account was deactivated, contact your school administrator. You can also use the "Log out" button on your dashboard and sign in again to refresh your session.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">Which account types can I register?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">Sign-up is available as <strong>Student</strong> or <strong>Teacher</strong>. Admin accounts are provisioned by your school and are not self-service. Parents and schools access the platform through the student and teacher experience.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">Why am I redirected after clicking a portal link?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">Each portal (Admin, Teacher, Student) is role-protected. If you land on a portal that doesn't match your account role, you are automatically sent to the portal for your role, or to login if you aren't signed in. This is expected behaviour.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">Can I study offline?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">Yes. Casuya is offline-first: published lessons, quizzes, and progress sync locally and continue working without a connection, then sync when you're back online.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">How do I reset my password?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">On the <span class="inline-flex min-h-[44px] items-center"><a href="/login.html" class="text-blue-600 hover:underline">Login page</a></span>, click <strong>"Forgot password?"</strong> and enter your registered email address. You'll receive a reset link (or a token in dev mode). Follow the link to create a new password. If you don't receive an email, check your spam folder or <span class="inline-flex min-h-[44px] items-center"><a href="/contact.html" class="text-blue-600 hover:underline">contact support</a></span>.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">How do I change my profile information?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">After logging in, click the profile icon (👤) in the sidebar footer and select <strong>"Edit Profile"</strong>. You can update your full name, phone number, and form level. Changes are saved immediately.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">What are bookmarks and how do I use them?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">Bookmarks let you save lessons for quick access later. While viewing any lesson, click the star icon (☆) in the top bar to bookmark it. Access all your bookmarks from the <strong>Bookmarks</strong> section in the student sidebar.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">How do quizzes work?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">Quizzes appear at the bottom of lesson content. Select your answers and click <strong>"Submit Quiz"</strong> to see your score. Quiz results are automatically synced to your progress. Some lessons also include interactive games and activities.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">Can I take notes on lessons?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">Yes. While viewing a lesson, expand the <strong>"My Notes"</strong> section below the content. Your notes auto-save as you type and are synced to your account. You can access them again the next time you open the same lesson.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">How do I contact support or report a bug?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">Use the <span class="inline-flex min-h-[44px] items-center"><a href="/contact.html" class="text-blue-600 hover:underline">Contact Us</a></span> page to send us a message directly. You can also open an issue on our <span class="inline-flex min-h-[44px] items-center"><a href="https://github.com/casuya-co-tz" class="text-blue-600 hover:underline" target="_blank" rel="noopener">GitHub organization</a></span> or chat with us on WhatsApp.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">What is the AI Teacher Assistant?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">The AI Teacher Assistant helps educators generate grading frameworks, lesson descriptions, and interactive content outlines. It's available within the teacher portal to speed up lesson planning and content creation.</p>
+      </details>
+
+      <details class="premium-card p-5">
+        <summary class="font-semibold text-slate-900 cursor-pointer">Is my data secure?</summary>
+        <p class="text-sm mt-3 leading-relaxed" style="color:#64748b;">Yes. Passwords are hashed, access tokens are short-lived and signed, and all API communication uses HTTPS in production. Offline-cached data is stored locally on your device. See our <span class="inline-flex min-h-[44px] items-center"><a href="/privacy.html" class="text-blue-600 hover:underline">Privacy Policy</a></span> for details.</p>
+      </details>
+    </div>
+  </main>
+
+  <footer class="text-xs py-10 sm:py-14" style="background:linear-gradient(180deg,#0f172a 0%,#020617 100%);color:#94a3b8;">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;">Platform</div>
+          <div><a href="/index.html#features" class="transition-colors hover:text-blue-400">Features</a></div>
+          <div><a href="https://github.com/casuya-co-tz" class="transition-colors hover:text-blue-400" target="_blank" rel="noopener">Documentation</a></div>
+          <div><a href="/index.html#subjects" class="transition-colors hover:text-blue-400">Subjects</a></div>
+        </div>
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;">Support</div>
+          <div><a href="/help.html" class="transition-colors hover:text-blue-400">Help Center</a></div>
+          <div><a href="/contact.html" class="transition-colors hover:text-blue-400">Contact Us</a></div>
+        </div>
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;">Legal</div>
+          <div><a href="/privacy.html" class="transition-colors hover:text-blue-400">Privacy Policy</a></div>
+          <div><a href="/terms.html" class="transition-colors hover:text-blue-400">Terms of Service</a></div>
+        </div>
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;">Links</div>
+          <div><a href="https://github.com/casuya-co-tz" class="transition-colors hover:text-blue-400" target="_blank" rel="noopener">GitHub Organization</a></div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(148,163,184,0.12);"></div>
+      <div class="pt-4 text-[11px]" style="color:#475569;">© 2026 Casuya Platform.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

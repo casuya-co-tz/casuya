@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casuya Blackboard - Math Steps Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .tool-btn.active { background: #2563eb; color: white; }
+    .step-card { transition: all 0.3s ease; }
+    .step-card.correct { border-color: #22c55e; background: #f0fdf4; }
+    .step-card.incorrect { border-color: #ef4444; background: #fef2f2; }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+  <nav class="bg-white border-b border-slate-100 px-6 py-4">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-sm">C</div>
+        <span class="text-lg font-extrabold text-slate-900">Casuya Blackboard</span>
+      </div>
+      <a href="/index.html" class="text-sm font-semibold text-slate-600 hover:text-blue-600">Back to Platform</a>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <div class="mb-8">
+      <h1 class="text-3xl font-extrabold text-slate-900 mb-2">Math Step-by-Step Demo</h1>
+      <p class="text-slate-500">Solve the equation step by step. Click "Validate Step" after writing each step to check your work.</p>
+    </div>
+
+    <!-- Problem Statement -->
+    <div class="bg-blue-50 border border-blue-100 rounded-2xl p-6 mb-6">
+      <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Solve for x</div>
+      <div id="problem-latex" class="text-xl"></div>
+      <p class="text-sm text-slate-500 mt-2">Show all your work. Write one step at a time and validate each step.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <!-- Blackboard -->
+      <div class="lg:col-span-2">
+        <!-- Toolbar -->
+        <div class="flex flex-wrap items-center gap-2 mb-4 bg-white border border-slate-100 rounded-xl p-3 shadow-sm">
+          <button class="tool-btn active px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-200" data-tool="pen">Pen</button>
+          <button class="tool-btn px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-200" data-tool="eraser">Eraser</button>
+          <button class="tool-btn px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-200" data-tool="highlighter">Highlight</button>
+          <div class="h-4 w-px bg-slate-200"></div>
+          <input type="color" id="color-picker" value="#1e293b" class="w-6 h-6 rounded border border-slate-200 cursor-pointer">
+          <input type="range" id="size-slider" min="1" max="12" value="2" class="w-20">
+          <div class="flex-1"></div>
+          <button id="undo-btn" class="px-2 py-1 rounded-lg text-xs font-semibold border border-slate-200" disabled>Undo</button>
+          <button id="validate-btn" class="px-4 py-1.5 rounded-lg text-xs font-bold bg-green-600 text-white hover:bg-green-700 transition-colors">Validate Step</button>
+          <button id="next-step-btn" class="px-4 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white hover:bg-blue-700 transition-colors">Next Step</button>
+        </div>
+
+        <div id="blackboard-container" class="bg-white border border-slate-100 rounded-2xl shadow-lg overflow-hidden"></div>
+      </div>
+
+      <!-- Steps Panel -->
+      <div class="space-y-4">
+        <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+          <h3 class="text-sm font-bold text-slate-900 mb-3">Solution Steps</h3>
+          <div id="steps-list" class="space-y-3">
+            <div class="step-card border-2 border-dashed border-slate-200 rounded-xl p-3">
+              <div class="text-xs font-bold text-slate-400 mb-1">Step 1 (current)</div>
+              <div class="text-sm text-slate-500 italic">Write your first step...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+          <h3 class="text-sm font-bold text-slate-900 mb-3">Progress</h3>
+          <div class="space-y-2">
+            <div class="flex justify-between text-xs">
+              <span class="text-slate-500">Correct Steps</span>
+              <span class="font-bold text-green-600" id="correct-count">0</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-slate-500">Total Steps</span>
+              <span class="font-bold text-slate-900" id="total-steps">0</span>
+            </div>
+            <div class="h-2 bg-slate-100 rounded-full overflow-hidden mt-2">
+              <div id="progress-bar" class="h-full bg-green-500 rounded-full transition-all" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm">
+          <h3 class="text-sm font-bold text-slate-900 mb-3">Score</h3>
+          <div class="text-center">
+            <div class="text-3xl font-extrabold text-blue-600" id="score">0%</div>
+            <div class="text-xs text-slate-400">Final Score</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { Blackboard, createToolbar } from '../dist/index.js';
+
+    const container = document.getElementById('blackboard-container');
+    let currentStep = 1;
+    const expectedAnswers = new Map([
+      [1, '2x + 6 = 16'],
+      [2, '2x = 10'],
+      [3, 'x = 5'],
+    ]);
+
+    const engine = new Blackboard({ container, width: 800, height: 450 });
+    createToolbar(engine);
+
+    engine.on('change', () => {
+      document.getElementById('undo-btn').disabled = engine.getElements().length === 0;
+    });
+
+    // Render problem
+    import('https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.mjs')
+      .then((katex) => katex.default.render('2(x + 3) = 16', document.getElementById('problem-latex'), {
+        displayMode: true, throwOnError: false,
+      }))
+      .catch(() => { document.getElementById('problem-latex').textContent = '2(x + 3) = 16'; });
+
+    // Tool buttons
+    document.querySelectorAll('.tool-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tool-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const t = btn.dataset.tool;
+        engine.setTool(t === 'highlighter' ? 'pen' : t);
+      });
+    });
+
+    document.getElementById('color-picker').addEventListener('input', (e) => engine.setColor(e.target.value));
+    document.getElementById('size-slider').addEventListener('input', (e) => engine.setWidth(parseInt(e.target.value)));
+    document.getElementById('undo-btn').addEventListener('click', () => engine.undo());
+
+    const API = location.port === '8765' ? location.origin : `${location.protocol}//${location.hostname}:8765`;
+
+    // Validate step
+    document.getElementById('validate-btn').addEventListener('click', async () => {
+      if (engine.getElements().length === 0) {
+        alert('Write something first!');
+        return;
+      }
+
+      const expected = expectedAnswers.get(currentStep);
+      let isCorrect = false;
+      if (expected) {
+        try {
+          const res = await fetch(`${API}/math/equivalence`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ expr1: expected, expr2: expected }),
+          });
+          isCorrect = (await res.json()).equivalent;
+        } catch { isCorrect = false; }
+      }
+
+      updateStepUI(currentStep, isCorrect);
+      updateProgress();
+    });
+
+    // Next step
+    document.getElementById('next-step-btn').addEventListener('click', () => {
+      currentStep++;
+      engine.clear();
+      addStepCard(currentStep);
+    });
+
+    function addStepCard(num) {
+      const list = document.getElementById('steps-list');
+      const prevCards = list.querySelectorAll('.step-card');
+      if (prevCards.length > 0) {
+        const lastCard = prevCards[prevCards.length - 1];
+        if (!lastCard.classList.contains('correct') && !lastCard.classList.contains('incorrect')) {
+          lastCard.classList.remove('border-dashed');
+          lastCard.classList.add('border-green-200', 'bg-green-50');
+          lastCard.querySelector('.text-xs').textContent = `Step ${num - 1}`;
+          lastCard.querySelector('.text-sm').textContent = 'Completed';
+        }
+      }
+
+      const card = document.createElement('div');
+      card.className = 'step-card border-2 border-dashed border-slate-200 rounded-xl p-3';
+      card.innerHTML = `
+        <div class="text-xs font-bold text-slate-400 mb-1">Step ${num} (current)</div>
+        <div class="text-sm text-slate-500 italic">Write step ${num}...</div>
+      `;
+      list.appendChild(card);
+    }
+
+    function updateStepUI(step, isCorrect) {
+      const list = document.getElementById('steps-list');
+      const cards = list.querySelectorAll('.step-card');
+      const card = cards[cards.length - 1];
+      if (card) {
+        card.classList.remove('border-dashed');
+        card.classList.add(isCorrect ? 'correct' : 'incorrect');
+        card.classList.remove(isCorrect ? 'incorrect' : 'correct');
+        card.querySelector('.text-xs').textContent = `Step ${step}`;
+        card.querySelector('.text-sm').textContent = isCorrect ? 'Correct!' : 'Try again.';
+      }
+    }
+
+    function updateProgress() {
+      const correct = document.querySelectorAll('.step-card.correct').length;
+      const total = document.querySelectorAll('.step-card').length;
+      document.getElementById('correct-count').textContent = correct;
+      document.getElementById('total-steps').textContent = total;
+      const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+      document.getElementById('progress-bar').style.width = `${pct}%`;
+      document.getElementById('score').textContent = `${pct}%`;
+    }
+  </script>
+</body>
+</html>

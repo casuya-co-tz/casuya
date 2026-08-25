@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>casuya-bridge: Quiz Game Demo</title>
+</head>
+<body>
+  <h1>Quiz Game Demo</h1>
+  <p>Demonstrates scoring + letter grades via the progress module.</p>
+  <pre id="output"></pre>
+  <script type="module">
+    import { computeScore, letterGrade } from '../../dist/casuya-bridge.esm.js';
+
+    const answers = [
+      { isCorrect: true }, { isCorrect: true }, { isCorrect: false },
+      { isCorrect: true }, { isCorrect: true },
+    ];
+    const score = computeScore(answers);
+    document.getElementById('output').textContent =
+      JSON.stringify({ ...score, grade: letterGrade(score.percentage) }, null, 2);
+  </script>
+</body>
+</html>

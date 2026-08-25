@@ -1,0 +1,44 @@
+# Exported from Render on 2026-08-20T12:13:28Z
+version: "1"
+projects:
+- name: My project
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: casuya-backend
+      runtime: docker
+      repo: https://github.com/casuya-co-tz/casuya-platform
+      plan: free
+      envVars:
+      - key: CORS_ORIGINS
+        sync: false
+      - key: CASUYA_ADMIN_PASSWORD
+        sync: false
+      - key: CASUYA_ADMIN_NAME
+        sync: false
+      - key: CASUYA_ADMIN_EMAIL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: DEBUG
+        sync: false
+      - key: APP_ENV
+        sync: false
+      - key: ENVIRONMENT
+        sync: false
+      - key: PORT
+        sync: false
+      region: frankfurt
+      dockerContext: .
+      dockerfilePath: ./docker/Dockerfile
+      autoDeployTrigger: commit
+      rootDir: .

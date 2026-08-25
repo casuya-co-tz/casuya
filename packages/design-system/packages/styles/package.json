@@ -1,0 +1,25 @@
+{
+  "name": "@casuya/styles",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Casuya CSS — reset, themes, and utility classes",
+  "main": "./dist/index.css",
+  "exports": {
+    ".": "./dist/index.css",
+    "./reset": "./dist/reset.css",
+    "./tokens": "./dist/tokens.css",
+    "./dark": "./dist/dark.css",
+    "./high-contrast": "./dist/high-contrast.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js",
+    "lint": "echo ok",
+    "typecheck": "echo ok",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {}
+}

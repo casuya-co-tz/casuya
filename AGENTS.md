@@ -1,0 +1,1 @@
+This project uses a layered monorepo structure. The two commands you'll need most are: pnpm run typecheck, cd apps/platform/frontend && npm run minify:js

@@ -1,0 +1,27 @@
+# Auto-detect text files
+* text=auto
+
+# Source code
+*.ts text diff=typescript
+*.tsx text diff=typescript
+*.js text
+*.jsx text
+*.css text
+*.json text
+*.md text
+*.yml text
+*.yaml text
+*.html text
+*.sh text eol=lf
+
+# Git files
+.gitattributes text
+.gitignore text
+
+# Binaries
+*.png binary
+*.jpg binary
+*.svg text
+*.ico binary
+*.woff binary
+*.woff2 binary

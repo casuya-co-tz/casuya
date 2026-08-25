@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casuya Platform - Create Account</title>
+  <meta name="description" content="Create your free Casuya account. Join as a student, teacher, or special needs learner.">
+  <link rel="stylesheet" href="/assets/css/main.min.css">
+  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/opendyslexic">
+  <script src="/assets/js/env.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/brand.js"></script>
+  <style>
+    body.dyslexia-mode, body.dyslexia-mode * { font-family: 'OpenDyslexic', cursive !important; letter-spacing: 0.05em; word-spacing: 0.15em; }
+    body.high-contrast { background: #000 !important; color: #fff !important; }
+    body.high-contrast * { border-color: #fff !important; color: #fff !important; background: transparent !important; }
+    body.high-contrast nav { background: #000 !important; }
+    body.high-contrast a { color: #60a5fa !important; }
+    body.high-contrast .bg-white { background: #000 !important; border: 2px solid #fff !important; }
+    body.high-contrast .bg-\[#faf7f2\] { background: #000 !important; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+    .skip-link { position: absolute; top: -100%; left: 16px; z-index: 9999; background: #2563eb; color: #fff; padding: 12px 24px; border-radius: 0 0 12px 12px; font-weight: 700; font-size: 14px; transition: top 0.2s ease; }
+    .skip-link:focus { top: 0; }
+    .a11y-mini { position: fixed; bottom: max(16px, env(safe-area-inset-bottom, 16px)); left: max(16px, env(safe-area-inset-left, 16px)); z-index: 9998; display: flex; gap: 6px; flex-wrap: wrap; max-width: calc(100vw - 32px); }
+    .a11y-mini button { width: 36px; height: 36px; min-width: 36px; min-height: 36px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.15s; flex-shrink: 0; }
+    .a11y-mini button:hover { background: #eff6ff; border-color: #2563eb; }
+    .a11y-mini button.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+    @media (max-width: 640px) { .a11y-mini { bottom: max(12px, env(safe-area-inset-bottom, 12px)); left: max(12px, env(safe-area-inset-left, 12px)); gap: 6px; } .a11y-mini button { width: 40px; height: 40px; min-width: 40px; min-height: 40px; font-size: 15px; } }
+    @media (max-width: 360px) { .a11y-mini button { width: 36px; height: 36px; min-width: 36px; min-height: 36px; font-size: 14px; } }
+    .field-error { border-color: #dc2626 !important; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    [role="alert"] { animation: slideDown 0.3s ease; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+    /* Password strength meter */
+    .pw-strength-bar { height: 4px; border-radius: 2px; background: #e2e8f0; overflow: hidden; margin-top: 6px; }
+    .pw-strength-fill { height: 100%; border-radius: 2px; transition: width 0.3s ease, background 0.3s ease; }
+    .pw-requirements { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 8px; }
+    .pw-req { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #94a3b8; }
+    .pw-req.met { color: #16a34a; }
+    .pw-req .pw-check { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid #cbd5e1; display: flex; align-items: center; justify-content: center; font-size: 8px; transition: all 0.2s; }
+    .pw-req.met .pw-check { background: #16a34a; border-color: #16a34a; color: #fff; }
+    .terms-plain { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; margin-top: 8px; font-size: 12px; line-height: 1.6; color: #475569; }
+    .terms-plain summary { cursor: pointer; font-weight: 600; color: #2563eb; font-size: 13px; }
+    .terms-plain summary:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; border-radius: 4px; }
+  </style>
+</head>
+<body class="bg-[#faf7f2] text-slate-800 antialiased overflow-x-hidden" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
+
+  <!-- Skip Link -->
+  <a href="#register-form" class="skip-link">Skip to registration form</a>
+
+  <!-- Mini Accessibility Toolbar -->
+  <div class="a11y-mini" role="region" aria-label="Quick accessibility toggles">
+    <button id="a11y-dyslexia" aria-label="Toggle dyslexia-friendly font" title="Dyslexia Font">📖</button>
+    <button id="a11y-contrast" aria-label="Toggle high contrast mode" title="High Contrast">🌗</button>
+    <button id="a11y-tts" aria-label="Toggle text-to-speech" title="Text-to-Speech">🔊</button>
+  </div>
+
+  <!-- Screen-reader live region -->
+  <div id="sr-announcer" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
+
+  <nav class="sticky top-0 z-50 bg-[#faf7f2]/80 backdrop-blur-md border-b border-[#e2e8f0]" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div data-brand-logo data-brand-logo-class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-blue-200" class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-blue-200" aria-hidden="true">C</div>
+        <a href="/index.html" class="text-xl font-extrabold tracking-tight text-slate-900">Casuya</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600" role="menubar">
+        <a href="/index.html#features" role="menuitem" class="hover:text-blue-600 transition-colors" data-i18n="nav.features">Features</a>
+        <a href="/index.html#subjects" role="menuitem" class="hover:text-blue-600 transition-colors" data-i18n="nav.subjects">Subjects</a>
+        <a href="/index.html#audiences" role="menuitem" class="hover:text-blue-600 transition-colors" data-i18n="nav.users">Users</a>
+        <a href="/index.html#about" role="menuitem" class="hover:text-blue-600 transition-colors" data-i18n="nav.about">About</a>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-4" id="auth-buttons">
+        <a href="/login.html" class="min-h-[44px] flex items-center text-sm font-semibold text-slate-800 hover:text-blue-600 transition-colors" data-i18n="nav.login">Login</a>
+        <a href="/register.html" class="min-h-[44px] flex items-center text-sm font-semibold text-blue-600" data-i18n="nav.create_account">Create Account</a>
+        <button data-lang-toggle class="px-3 py-1.5 text-sm font-semibold rounded-full border border-blue-200 text-blue-700 hover:bg-blue-50 transition" aria-label="Switch language">SW</button>
+      </div>
+      <script type="module">
+        import { applyAuthChrome } from "/assets/js/auth-ui.js";
+        applyAuthChrome(document.getElementById("auth-buttons"));
+      </script>
+    </div>
+  </nav>
+
+  <section class="auth-section-frame py-12 sm:py-16" aria-labelledby="register-heading">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl mx-auto">
+      <div class="auth-card-premium">
+        <div class="text-center mb-8">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:linear-gradient(135deg,rgba(37,99,235,0.1),rgba(124,58,237,0.08));border:1px solid rgba(37,99,235,0.15);box-shadow:0 4px 16px rgba(37,99,235,0.08);">
+            <svg class="w-8 h-8" style="color:#2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+          </div>
+          <h1 id="register-heading" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2" style="letter-spacing:-0.03em;" data-i18n="register.title">Create your account</h1>
+          <p class="text-sm" style="color:#64748b;" data-i18n="register.desc">Join Casuya and continue with your student or teacher portal.</p>
+        </div>
+
+        <form class="space-y-6" id="register-form" novalidate aria-label="Registration form">
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Full Name -->
+            <div class="space-y-2 md:col-span-2">
+              <label for="full_name" class="text-sm font-semibold text-slate-800" data-i18n="register.fullname_label">Full Name <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+              <input
+                type="text"
+                id="full_name"
+                name="full_name"
+                required
+                autocomplete="name"
+                aria-describedby="full_name-error"
+                aria-invalid="false"
+                class="input-premium"
+                placeholder="Enter your full name"
+                data-i18n-ph="register.fullname_placeholder"
+              >
+              <div id="full_name-error" class="text-red-600 text-xs font-medium hidden" role="alert" aria-live="polite"><span aria-hidden="true">⚠ </span><span class="error-msg"></span></div>
+            </div>
+
+            <!-- Email -->
+            <div class="space-y-2">
+              <label for="email" class="text-sm font-semibold text-slate-800" data-i18n="register.email_label">Email Address <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                autocomplete="email"
+                aria-describedby="email-error"
+                aria-invalid="false"
+                class="input-premium"
+                placeholder="you@example.com"
+                data-i18n-ph="register.email_placeholder"
+              >
+              <div id="email-error" class="text-red-600 text-xs font-medium hidden" role="alert" aria-live="polite"><span aria-hidden="true">⚠ </span><span class="error-msg"></span></div>
+            </div>
+
+            <!-- Phone -->
+            <div class="space-y-2">
+              <label for="phone" class="text-sm font-semibold text-slate-800" data-i18n="register.phone_label">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[\+]?[0-9]{10,15}"
+                autocomplete="tel"
+                aria-describedby="phone-error"
+                aria-invalid="false"
+                class="input-premium"
+                placeholder="+255..."
+                data-i18n-ph="register.phone_placeholder"
+              >
+              <div id="phone-error" class="text-red-600 text-xs font-medium hidden" role="alert" aria-live="polite"><span aria-hidden="true">⚠ </span><span class="error-msg"></span></div>
+            </div>
+
+            <!-- Role Selection -->
+            <div class="space-y-2">
+              <label for="role" class="text-sm font-semibold text-slate-800" data-i18n="register.account_type">Account Type <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+              <select
+                id="role"
+                name="role"
+                required
+                aria-describedby="role-help"
+                class="input-premium bg-white"
+              >
+                <option value="student" data-i18n="register.student">Student</option>
+                <option value="teacher" data-i18n="register.teacher">Teacher</option>
+                <option value="special_needs" data-i18n="register.special_needs">Special Needs / Neurodivergent Learner</option>
+              </select>
+              <div id="role-help" class="text-xs text-slate-400" data-i18n="register.account_type_desc">Select the account type that best describes you.</div>
+            </div>
+
+            <!-- Accessibility preferences (shown for special needs) -->
+            <div class="space-y-2 md:col-span-2 hidden" id="accessibility-prefs" role="group" aria-label="Accessibility preferences">
+              <fieldset>
+                <legend class="text-sm font-semibold text-slate-800 mb-2" data-i18n="register.accessibility">Accessibility Preferences</legend>
+                <p class="text-xs text-slate-500 mb-3" data-i18n="register.accessibility_desc">Select what helps you learn best. You can change these anytime in Settings.</p>
+                <!-- Step 1: Reading -->
+                <div class="mb-3">
+                  <p class="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2" data-i18n="register.reading_support">Reading Support</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <label class="flex items-center gap-2 p-3 border border-[#e2e8f0] rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
+                      <input type="checkbox" name="pref_dyslexia" class="w-4 h-4 text-blue-600 rounded">
+                      <span class="text-sm text-slate-700" data-i18n="register.dyslexia_font">Dyslexia-friendly font</span>
+                    </label>
+                    <label class="flex items-center gap-2 p-3 border border-[#e2e8f0] rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
+                      <input type="checkbox" name="pref_large_text" class="w-4 h-4 text-blue-600 rounded">
+                      <span class="text-sm text-slate-700" data-i18n="register.larger_text">Larger text size</span>
+                    </label>
+                  </div>
+                </div>
+                <!-- Step 2: Listening -->
+                <div class="mb-3">
+                  <p class="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2" data-i18n="register.listening_support">Listening Support</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <label class="flex items-center gap-2 p-3 border border-[#e2e8f0] rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
+                      <input type="checkbox" name="pref_tts" class="w-4 h-4 text-blue-600 rounded">
+                      <span class="text-sm text-slate-700" data-i18n="register.tts_enabled">Text-to-speech enabled</span>
+                    </label>
+                  </div>
+                </div>
+                <!-- Step 3: Visual -->
+                <div>
+                  <p class="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2" data-i18n="register.visual_support">Visual Support</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <label class="flex items-center gap-2 p-3 border border-[#e2e8f0] rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
+                      <input type="checkbox" name="pref_contrast" class="w-4 h-4 text-blue-600 rounded">
+                      <span class="text-sm text-slate-700" data-i18n="register.high_contrast">High contrast mode</span>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- Password -->
+            <div class="space-y-2">
+              <label for="password" class="text-sm font-semibold text-slate-800" data-i18n="register.password_label">Password <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+              <div class="relative">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  required
+                  autocomplete="new-password"
+                  aria-describedby="password-error password-strength-label pw-requirements-desc"
+                  aria-invalid="false"
+                  class="input-premium pr-12"
+                  placeholder="At least 8 characters"
+                  data-i18n-ph="register.password_placeholder"
+                >
+                <button type="button" id="toggle-reg-password" class="absolute right-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors" aria-label="Show password" aria-pressed="false">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                </button>
+              </div>
+              <!-- Strength meter -->
+              <div class="pw-strength-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="4" aria-label="Password strength">
+                <div class="pw-strength-fill" id="pw-strength-fill" style="width:0%;background:#e2e8f0"></div>
+              </div>
+              <div class="text-xs font-medium" id="password-strength-label" aria-live="polite" data-i18n="register.strength"></div>
+              <!-- Requirements checklist -->
+              <div class="pw-requirements" id="pw-requirements-desc" role="list" aria-label="Password requirements">
+                <div class="pw-req" id="pw-req-length" role="listitem" aria-checked="false" aria-label="At least 8 characters: not met"><span class="pw-check" aria-hidden="true">✓</span> <span data-i18n="register.req_8char">8+ characters</span></div>
+                <div class="pw-req" id="pw-req-upper" role="listitem" aria-checked="false" aria-label="Uppercase letter: not met"><span class="pw-check" aria-hidden="true">✓</span> <span data-i18n="register.req_upper">Uppercase</span></div>
+                <div class="pw-req" id="pw-req-lower" role="listitem" aria-checked="false" aria-label="Lowercase letter: not met"><span class="pw-check" aria-hidden="true">✓</span> <span data-i18n="register.req_lower">Lowercase</span></div>
+                <div class="pw-req" id="pw-req-number" role="listitem" aria-checked="false" aria-label="Number: not met"><span class="pw-check" aria-hidden="true">✓</span> <span data-i18n="register.req_number">Number</span></div>
+                <div class="pw-req" id="pw-req-special" role="listitem" aria-checked="false" aria-label="Special character: not met"><span class="pw-check" aria-hidden="true">✓</span> <span data-i18n="register.req_special">Special char</span></div>
+              </div>
+              <div id="password-error" class="text-red-600 text-xs font-medium hidden" role="alert" aria-live="polite"><span aria-hidden="true">⚠ </span><span class="error-msg"></span></div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="space-y-2 md:col-span-2">
+              <label for="confirm_password" class="text-sm font-semibold text-slate-800" data-i18n="register.confirm_label">Confirm Password <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+              <input
+                type="password"
+                id="confirm_password"
+                name="confirm_password"
+                required
+                autocomplete="new-password"
+                aria-describedby="confirm_password-error"
+                aria-invalid="false"
+                class="input-premium"
+                placeholder="Re-enter your password"
+                data-i18n-ph="register.confirm_placeholder"
+              >
+              <div id="confirm_password-error" class="text-red-600 text-xs font-medium hidden" role="alert" aria-live="polite"><span aria-hidden="true">⚠ </span><span class="error-msg"></span></div>
+            </div>
+          </div>
+
+          <!-- Terms & Privacy -->
+          <div class="space-y-2">
+            <div class="flex items-start gap-3 min-h-[44px] py-1">
+              <input id="terms" type="checkbox" required class="w-4 h-4 mt-0.5 text-blue-600 border-slate-300 rounded focus:ring-blue-500" aria-describedby="terms-error">
+              <label for="terms" class="text-sm text-slate-600" data-i18n="register.terms">
+                I agree to the <a href="/terms.html" class="font-semibold text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener">Terms of Service</a>
+                and <a href="/privacy.html" class="font-semibold text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener">Privacy Policy</a>
+                <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span>
+              </label>
+            </div>
+            <details class="terms-plain">
+              <summary data-i18n="register.plain_language">Read in plain language</summary>
+              <ul class="mt-2 space-y-1 list-disc list-inside">
+                <li data-i18n="register.plain_collect"><strong>What we collect:</strong> Your name, email, phone (optional), and learning progress.</li>
+                <li data-i18n="register.plain_use"><strong>How we use it:</strong> To track your lessons, quizzes, and provide personalised learning.</li>
+                <li data-i18n="register.plain_data"><strong>Your data:</strong> You can ask us to delete your account and data at any time.</li>
+                <li data-i18n="register.plain_payments"><strong>Payments:</strong> We never store your credit card. Payments are handled by trusted providers.</li>
+                <li data-i18n="register.plain_safety"><strong>Safety:</strong> We follow Tanzanian data protection laws and keep your data secure.</li>
+              </ul>
+            </details>
+          </div>
+          <div id="terms-error" class="text-red-600 text-xs font-medium hidden -mt-4" role="alert" aria-live="polite"><span aria-hidden="true">⚠ </span><span class="error-msg"></span></div>
+
+          <!-- Global Error -->
+          <div id="form-error" class="hidden" role="alert" aria-live="assertive">
+            <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm font-medium flex items-start gap-2">
+              <span aria-hidden="true" class="text-red-500 flex-shrink-0 mt-0.5">⚠</span>
+              <span id="form-error-text"></span>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            id="submit-btn"
+            class="btn-premium w-full"
+            aria-describedby="submit-status"
+            data-i18n="register.submit"
+          >
+            Create your Casuya account
+          </button>
+          <div id="submit-status" class="sr-only" aria-live="polite"></div>
+        </form>
+
+        <div class="mt-8 text-center border-t border-[#e2e8f0] pt-6">
+          <p class="text-sm text-slate-600 min-h-[44px] flex items-center justify-center" data-i18n="register.has_account">
+            Already have an account?
+            <a href="/login.html" class="font-semibold text-blue-600 hover:text-blue-700 transition-colors ml-1" data-i18n="register.signin_link">Sign in to your account</a>
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-xs py-10 sm:py-14 mt-16" role="contentinfo" style="background:linear-gradient(180deg,#0f172a 0%,#020617 100%);color:#94a3b8;">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;" data-i18n="footer.platform">Platform</div>
+          <div><a href="/index.html#features" class="transition-colors hover:text-blue-400" data-i18n="footer.features">Features</a></div>
+          <div><a href="https://github.com/casuya-co-tz" class="transition-colors hover:text-blue-400" target="_blank" rel="noopener" data-i18n="footer.docs">Documentation</a></div>
+          <div><a href="/index.html#subjects" class="transition-colors hover:text-blue-400" data-i18n="footer.subjects">Subjects</a></div>
+        </div>
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;" data-i18n="footer.support">Support</div>
+          <div><a href="/help.html" class="transition-colors hover:text-blue-400" data-i18n="footer.help">Help Center</a></div>
+          <div><a href="/contact.html" class="transition-colors hover:text-blue-400" data-i18n="footer.contact">Contact Us</a></div>
+        </div>
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;" data-i18n="footer.legal">Legal</div>
+          <div><a href="/privacy.html" class="transition-colors hover:text-blue-400" data-i18n="footer.privacy">Privacy Policy</a></div>
+          <div><a href="/terms.html" class="transition-colors hover:text-blue-400" data-i18n="footer.terms">Terms of Service</a></div>
+        </div>
+        <div class="space-y-3">
+          <div class="font-bold text-sm" style="color:#f1f5f9;" data-i18n="footer.links">Links</div>
+          <div><a href="https://github.com/casuya-co-tz" class="transition-colors hover:text-blue-400" target="_blank" rel="noopener" data-i18n="footer.github">GitHub Organization</a></div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(148,163,184,0.12);"></div>
+      <div class="pt-4 text-[11px]" style="color:#475569;">&copy; 2026 Casuya Platform.</div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { persistAuth, apiRequest, getPortalPath } from '/assets/js/auth-client.js';
+    import { redirectIfAuthed } from '/assets/js/auth-ui.js';
+
+    // ── Accessibility Toolbar ──────────────────────────────────
+    (function() {
+      var state = { dyslexia: false, highContrast: false, tts: false };
+      try { var s = JSON.parse(localStorage.getItem('casuya_a11y')); if (s) Object.assign(state, s); } catch(e) {}
+      function apply() {
+        document.body.classList.toggle('dyslexia-mode', state.dyslexia);
+        document.body.classList.toggle('high-contrast', state.highContrast);
+        document.querySelectorAll('.a11y-mini button').forEach(function(b, i) {
+          b.classList.toggle('active', [state.dyslexia, state.highContrast, state.tts][i]);
+        });
+        try { localStorage.setItem('casuya_a11y', JSON.stringify(state)); } catch(e) {}
+      }
+      apply();
+      document.getElementById('a11y-dyslexia').addEventListener('click', function() { state.dyslexia = !state.dyslexia; apply(); });
+      document.getElementById('a11y-contrast').addEventListener('click', function() { state.highContrast = !state.highContrast; apply(); });
+      document.getElementById('a11y-tts').addEventListener('click', function() {
+        state.tts = !state.tts; apply();
+        if (!state.tts) window.speechSynthesis.cancel();
+        else {
+          var desc = document.querySelector('h1').nextElementSibling;
+          var text = document.querySelector('h1').textContent + (desc ? '. ' + desc.textContent : '');
+          var u = new SpeechSynthesisUtterance(text);
+          var voices = window.speechSynthesis.getVoices();
+          var preferred = ['en-TZ', 'en-KE', 'en-UG', 'en-GH', 'en-ZA', 'en-GB', 'en-US'];
+          var voice = null;
+          for (var i = 0; i < preferred.length && !voice; i++) {
+            var m = voices.filter(function (v) { return v.lang === preferred[i]; });
+            if (m.length) voice = m[0];
+          }
+          if (voice) { u.voice = voice; u.lang = voice.lang; } else { u.lang = 'en-TZ'; }
+          u.rate = 0.9; u.pitch = 1.0; u.volume = 1.0;
+          window.speechSynthesis.speak(u);
+        }
+      });
+    })();
+
+    // Preload speech synthesis voices
+    if (window.speechSynthesis) {
+      window.speechSynthesis.onvoiceschanged = function () {};
+      window.speechSynthesis.getVoices();
+    }
+
+    // Already signed in? Go straight to the portal
+    if (!redirectIfAuthed()) {
+
+    const announcer = document.getElementById('sr-announcer');
+    function announce(text) { announcer.textContent = ''; requestAnimationFrame(() => { announcer.textContent = text; }); }
+
+    function showFormError(message) {
+      const el = document.getElementById('form-error');
+      document.getElementById('form-error-text').textContent = message;
+      el.classList.remove('hidden');
+      announce('Error: ' + message);
+    }
+    function hideFormError() { document.getElementById('form-error').classList.add('hidden'); }
+
+    function showFieldError(fieldId, message) {
+      const err = document.getElementById(fieldId + '-error');
+      const input = document.getElementById(fieldId);
+      if (err) {
+        const msgSpan = err.querySelector('.error-msg');
+        if (msgSpan) msgSpan.textContent = message;
+        else err.textContent = message;
+        err.classList.remove('hidden');
+      }
+      if (input) { input.classList.add('field-error'); input.setAttribute('aria-invalid', 'true'); }
+    }
+    function clearFieldError(fieldId) {
+      const err = document.getElementById(fieldId + '-error');
+      const input = document.getElementById(fieldId);
+      if (err) {
+        const msgSpan = err.querySelector('.error-msg');
+        if (msgSpan) msgSpan.textContent = '';
+        else err.textContent = '';
+        err.classList.add('hidden');
+      }
+      if (input) { input.classList.remove('field-error'); input.setAttribute('aria-invalid', 'false'); }
+    }
+
+    function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+
+    // ── Password toggle ─────────────────────────────────────────
+    document.getElementById('toggle-reg-password').addEventListener('click', function() {
+      const pw = document.getElementById('password');
+      if (pw.type === 'password') {
+        pw.type = 'text'; this.setAttribute('aria-label', 'Hide password'); this.setAttribute('aria-pressed', 'true');
+        announce('Password visible');
+      } else {
+        pw.type = 'password'; this.setAttribute('aria-label', 'Show password'); this.setAttribute('aria-pressed', 'false');
+        announce('Password hidden');
+      }
+    });
+
+    // ── Password strength meter ─────────────────────────────────
+    const pwInput = document.getElementById('password');
+    const strengthFill = document.getElementById('pw-strength-fill');
+    const strengthLabel = document.getElementById('password-strength-label');
+
+    function checkPasswordStrength(pw) {
+      const checks = {
+        length: pw.length >= 8,
+        upper: /[A-Z]/.test(pw),
+        lower: /[a-z]/.test(pw),
+        number: /[0-9]/.test(pw),
+        special: /[^A-Za-z0-9]/.test(pw),
+      };
+      const labels = {
+        length: 'At least 8 characters',
+        upper: 'Uppercase letter',
+        lower: 'Lowercase letter',
+        number: 'Number',
+        special: 'Special character',
+      };
+      Object.keys(checks).forEach(function(k) {
+        const el = document.getElementById('pw-req-' + k);
+        el.classList.toggle('met', checks[k]);
+        el.setAttribute('aria-checked', checks[k] ? 'true' : 'false');
+        el.setAttribute('aria-label', labels[k] + ': ' + (checks[k] ? 'met' : 'not met'));
+      });
+      const score = Object.values(checks).filter(Boolean).length;
+      const colors = ['#e2e8f0', '#dc2626', '#f59e0b', '#3b82f6', '#16a34a', '#16a34a'];
+      const strengthLabels = ['', 'Weak', 'Fair', 'Good', 'Strong', 'Very Strong'];
+      strengthFill.style.width = (score / 5 * 100) + '%';
+      strengthFill.style.background = colors[score];
+      strengthLabel.textContent = pw ? strengthLabels[score] : '';
+      strengthLabel.style.color = colors[score];
+      return score;
+    }
+
+    pwInput.addEventListener('input', function() { checkPasswordStrength(this.value); });
+
+    // ── Show accessibility prefs for special needs role ──────────
+    document.getElementById('role').addEventListener('change', function() {
+      document.getElementById('accessibility-prefs').classList.toggle('hidden', this.value !== 'special_needs');
+    });
+
+    // ── Register handler ────────────────────────────────────────
+    document.getElementById('register-form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      hideFormError();
+      ['full_name', 'email', 'phone', 'password', 'confirm_password', 'terms'].forEach(clearFieldError);
+
+      const formData = new FormData(event.target);
+      const fullName = String(formData.get('full_name') || '').trim();
+      const email = String(formData.get('email') || '').trim();
+      const phone = String(formData.get('phone') || '').trim();
+      const role = String(formData.get('role') || 'student');
+      const password = String(formData.get('password') || '');
+      const confirmPassword = String(formData.get('confirm_password') || '');
+      const terms = document.getElementById('terms').checked;
+
+      let hasError = false;
+      if (!fullName) { showFieldError('full_name', 'Full name is required.'); hasError = true; }
+      if (!email) { showFieldError('email', 'Email is required.'); hasError = true; }
+      else if (!isValidEmail(email)) { showFieldError('email', 'Please enter a valid email address.'); hasError = true; }
+      if (phone && !/^[\+]?[0-9]{10,15}$/.test(phone)) { showFieldError('phone', 'Please enter a valid phone number.'); hasError = true; }
+      if (!password) { showFieldError('password', 'Password is required.'); hasError = true; }
+      else if (password.length < 8) { showFieldError('password', 'Password must be at least 8 characters.'); hasError = true; }
+      else if (checkPasswordStrength(password) < 3) { showFieldError('password', 'Please choose a stronger password.'); hasError = true; }
+      if (password !== confirmPassword) { showFieldError('confirm_password', 'Passwords do not match.'); hasError = true; }
+      if (!terms) { showFieldError('terms', 'You must agree to the Terms of Service and Privacy Policy.'); hasError = true; }
+
+      if (hasError) { announce('Please fix the errors in the form.'); return; }
+
+      const submitButton = document.getElementById('submit-btn');
+      const submitStatus = document.getElementById('submit-status');
+      const originalText = submitButton.textContent;
+      submitButton.textContent = 'Creating account...';
+      submitButton.disabled = true;
+      submitStatus.textContent = 'Creating your account, please wait...';
+
+      try {
+        const prefs = {};
+        if (role === 'special_needs') {
+          document.querySelectorAll('#accessibility-prefs input[type="checkbox"]').forEach(function(cb) {
+            prefs[cb.name] = cb.checked;
+          });
+        }
+        const data = await apiRequest('/auth/register', {
+          method: 'POST',
+          body: JSON.stringify({
+            email, password, full_name: fullName, role, phone: phone || null,
+            accessibility_prefs: role === 'special_needs' ? prefs : null,
+          }),
+        });
+
+        persistAuth(data);
+        submitStatus.textContent = 'Account created successfully. Redirecting...';
+        announce('Account created successfully. Redirecting to your dashboard.');
+        setTimeout(() => { window.location.href = getPortalPath(data.role); }, 1500);
+      } catch (error) {
+        console.error('Registration error:', error);
+        showFormError(error?.message || 'Unable to reach the server. Please try again later.');
+        submitStatus.textContent = '';
+      } finally {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      }
+    });
+
+    // ── Inline validation ───────────────────────────────────────
+    document.getElementById('email').addEventListener('input', function() {
+      if (this.value && !isValidEmail(this.value)) showFieldError('email', 'Please enter a valid email address.');
+      else clearFieldError('email');
+    });
+    document.getElementById('password').addEventListener('input', function() {
+      if (this.value && this.value.length < 8) showFieldError('password', 'Password must be at least 8 characters.');
+      else clearFieldError('password');
+    });
+    document.getElementById('confirm_password').addEventListener('input', function() {
+      const pw = document.getElementById('password').value;
+      if (this.value && this.value !== pw) showFieldError('confirm_password', 'Passwords do not match.');
+      else clearFieldError('confirm_password');
+    });
+    document.getElementById('phone').addEventListener('input', function() {
+      if (this.value && !/^[\+]?[0-9]{10,15}$/.test(this.value)) showFieldError('phone', 'Please enter a valid phone number.');
+      else clearFieldError('phone');
+    });
+    document.getElementById('terms').addEventListener('change', function() {
+      if (!this.checked) showFieldError('terms', 'You must agree to the Terms of Service.');
+      else clearFieldError('terms');
+    });
+
+    } // end if (!redirectIfAuthed())
+  </script>
+  <script src="/assets/js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#134e4a"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#115e59"/>
+      <stop offset="100%" stop-color="#134e4a"/>
+    </linearGradient>
+    <linearGradient id="belly" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  <!-- body -->
+  <ellipse cx="260" cy="290" rx="120" ry="140" fill="url(#body)"/>
+  <!-- belly patch -->
+  <ellipse cx="270" cy="320" rx="70" ry="90" fill="url(#belly)" opacity="0.7"/>
+  <!-- head -->
+  <circle cx="260" cy="170" r="70" fill="#134e4a"/>
+  <!-- beak -->
+  <polygon points="330,165 380,155 330,145" fill="#2dd4bf"/>
+  <!-- eye -->
+  <circle cx="285" cy="155" r="10" fill="white"/>
+  <circle cx="288" cy="153" r="5" fill="#0f172a"/>
+  <!-- wing upper -->
+  <path d="M180,220 Q100,150 80,80 Q140,140 200,180 Z" fill="url(#wing)"/>
+  <!-- wing middle -->
+  <path d="M170,250 Q80,200 50,130 Q120,190 190,220 Z" fill="#0f766e"/>
+  <!-- wing lower -->
+  <path d="M165,280 Q70,250 40,180 Q110,230 185,260 Z" fill="#115e59"/>
+  <!-- tail -->
+  <path d="M200,420 Q160,480 120,510 Q180,470 220,430 Z" fill="#134e4a"/>
+  <path d="M220,425 Q190,490 160,520 Q200,480 235,435 Z" fill="#0f766e"/>
+</svg>

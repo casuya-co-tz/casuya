@@ -1,0 +1,17 @@
+[project]
+
+name = "casuya-core"
+version = "0.1.0"
+description = "Core library for compiling and packaging HTML-based interactive lessons"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "jsonschema>=4.17.0",
+    "htmlmin>=0.1.12",
+]
+
+[project.scripts]
+casuya = "casuya_core.cli:main"  # placeholder
+
+[tool.setuptools.packages.find]
+where = ["."]

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casuya Runtime - Basic Example</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; }
+    #app { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .header { margin-bottom: 2rem; }
+    .header h1 { font-size: 1.8rem; color: #1a1a2e; }
+    .header p { color: #6c757d; margin-top: 0.5rem; }
+    .controls { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .controls button { padding: 0.5rem 1rem; border: none; border-radius: 0.25rem; cursor: pointer; font-size: 0.875rem; transition: opacity 0.2s; }
+    .controls button:hover { opacity: 0.85; }
+    .btn-primary { background: #4361ee; color: white; }
+    .btn-success { background: #2ec4b6; color: white; }
+    .btn-warning { background: #ff9f1c; color: white; }
+    .btn-danger { background: #e63946; color: white; }
+    .btn-secondary { background: #6c757d; color: white; }
+    #lesson-container { background: white; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-height: 500px; overflow: hidden; }
+    .status-bar { margin-top: 1rem; padding: 0.75rem; background: white; border-radius: 0.25rem; font-size: 0.875rem; color: #6c757d; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .status-bar .state { font-weight: 600; }
+    .status-bar .state.running { color: #2ec4b6; }
+    .status-bar .state.paused { color: #ff9f1c; }
+    .status-bar .state.error { color: #e63946; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="header">
+      <h1>Casuya Runtime Demo</h1>
+      <p>Lesson Player — Low-end device optimized, offline-first educational runtime</p>
+    </div>
+    <div class="controls">
+      <button class="btn-primary" id="btnLoad">Load Lesson</button>
+      <button class="btn-success" id="btnStart">Start</button>
+      <button class="btn-warning" id="btnPause">Pause</button>
+      <button class="btn-success" id="btnResume">Resume</button>
+      <button class="btn-danger" id="btnStop">Stop</button>
+    </div>
+    <div id="lesson-container"></div>
+    <div class="status-bar">
+      <span>State: <span class="state" id="stateDisplay">created</span></span>
+      <span id="infoDisplay"></span>
+    </div>
+  </div>
+  <script type="importmap">
+  {
+    "imports": {
+      "casuya-runtime": "../src/index.js"
+    }
+  }
+  </script>
+  <script type="module">
+    import { Runtime } from 'casuya-runtime';
+
+    const container = document.getElementById('lesson-container');
+    const stateDisplay = document.getElementById('stateDisplay');
+    const infoDisplay = document.getElementById('infoDisplay');
+
+    const runtime = new Runtime({
+      container,
+      permissions: ['storage', 'media', 'quiz', 'game', 'timer', 'analytics'],
+      sandbox: {
+        allowCanvas: true,
+        allowAudio: true,
+        allowVideo: true
+      }
+    });
+
+    runtime.eventBus.on('runtime:stateChanged', ({ newState }) => {
+      stateDisplay.textContent = newState;
+      stateDisplay.className = 'state ' + newState;
+    });
+
+    const samplePackage = {
+      manifest: {
+        id: 'demo-lesson',
+        version: '1.0.0',
+        title: 'Demo Lesson',
+        description: 'A sample lesson package',
+        type: 'lesson',
+        language: 'en',
+        permissions: ['storage', 'quiz', 'timer'],
+        entry: 'lesson.html',
+        slides: [
+          { id: 'intro', title: 'Introduction', content: '<h1>Welcome!</h1><p>This lesson demonstrates Casuya Runtime.</p>' },
+          { id: 'content', title: 'Main Content', content: '<h2>Interactive Learning</h2><p>This content runs inside a sandboxed environment.</p>' }
+        ],
+        assets: [
+          { src: 'style.css', type: 'css' }
+        ],
+        theme: {
+          styles: ['body { font-family: sans-serif; padding: 2rem; color: #333; }']
+        }
+      },
+      resources: {
+        'lesson.html': new TextEncoder().encode(`
+          <!DOCTYPE html>
+          <html>
+          <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+          <body>
+            <h1>Casuya Runtime Active</h1>
+            <p>Lesson content rendered inside sandboxed iframe.</p>
+            <script>
+              window.__CASUYA_RUNTIME__ = true;
+              console.log('Lesson runtime initialized');
+            <\/script>
+          </body>
+          </html>
+        `)
+      }
+    };
+
+    document.getElementById('btnLoad').addEventListener('click', async () => {
+      try {
+        await runtime.load(samplePackage);
+        infoDisplay.textContent = 'Lesson loaded!';
+      } catch (err) {
+        infoDisplay.textContent = 'Error: ' + err.message;
+      }
+    });
+
+    document.getElementById('btnStart').addEventListener('click', async () => {
+      try {
+        await runtime.start();
+        infoDisplay.textContent = 'Lesson started';
+      } catch (err) {
+        infoDisplay.textContent = 'Error: ' + err.message;
+      }
+    });
+
+    document.getElementById('btnPause').addEventListener('click', () => {
+      runtime.pause();
+      infoDisplay.textContent = 'Lesson paused';
+    });
+
+    document.getElementById('btnResume').addEventListener('click', () => {
+      runtime.resume();
+      infoDisplay.textContent = 'Lesson resumed';
+    });
+
+    document.getElementById('btnStop').addEventListener('click', async () => {
+      await runtime.stop();
+      infoDisplay.textContent = 'Lesson stopped';
+    });
+  </script>
+</body>
+</html>

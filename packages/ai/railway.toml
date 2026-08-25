@@ -1,0 +1,17 @@
+# Casuya AI — Railway Config
+# Deploys as a web service from the casuya-ai repo
+
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 100
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[env]
+NODE_ENV = "production"
+CASUYA_AI_PORT = "3000"
+PORT = "3000"

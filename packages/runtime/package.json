@@ -1,0 +1,83 @@
+{
+  "name": "casuya-runtime",
+  "version": "1.0.0",
+  "description": "The Lesson Player — Safely execute educational lesson packages on low-end devices",
+  "type": "module",
+  "main": "dist/casuya-runtime.js",
+  "module": "dist/casuya-runtime.esm.js",
+  "browser": "dist/casuya-runtime.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/casuya-runtime.esm.js",
+      "browser": "./dist/casuya-runtime.min.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "build:prod": "rollup -c rollup.config.js --environment PRODUCTION",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --forceExit",
+    "test:unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js --forceExit --testPathPattern=tests/unit",
+    "test:integration": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testPathPattern=tests/integration",
+    "test:performance": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testPathPattern=tests/performance",
+    "test:security": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testPathPattern=tests/security",
+    "test:offline": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testPathPattern=tests/offline",
+    "test:all": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "lint:fix": "eslint src/ tests/ --fix",
+    "format": "prettier --write 'src/**/*.js' 'tests/**/*.js'",
+    "prepublishOnly": "npm run build:prod && npm run test:all",
+    "benchmark": "node tests/performance/benchmark.js"
+  },
+  "keywords": [
+    "education",
+    "lesson-player",
+    "sandbox",
+    "e-learning",
+    "offline-first",
+    "low-end-devices",
+    "casuya"
+  ],
+  "author": "Casuya Project",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/casuya/casuya-runtime.git"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "browsers": ">= 1%"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not op_mini all"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "eslint": "^8.40.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "prettier": "^2.8.0",
+    "rollup": "^3.20.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {},
+    "extensionsToTreatAsEsm": [],
+    "moduleNameMapper": {},
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
+      }
+    }
+  }
+}

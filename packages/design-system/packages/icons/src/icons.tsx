@@ -1,0 +1,47 @@
+export const icons = {
+  search: <path d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />,
+  'x-circle': <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM15 9l-6 6M9 9l6 6" />,
+  'check-circle': (
+    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14l-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z" />
+  ),
+  'alert-circle': (
+    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+  ),
+  'alert-triangle': <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4m0 4h.01" />,
+  'info-circle': <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />,
+  x: <path d="M18 6L6 18M6 6l12 12" />,
+  'chevron-down': <path d="M6 9l6 6 6-6" />,
+  'chevron-up': <path d="M18 15l-6-6-6 6" />,
+  'chevron-left': <path d="M15 18l-6-6 6-6" />,
+  'chevron-right': <path d="M9 18l6-6-6-6" />,
+  plus: <path d="M12 5v14M5 12h14" />,
+  minus: <path d="M5 12h14" />,
+  edit: <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />,
+  trash: <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2" />,
+  settings: (
+    <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+  ),
+  user: <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />,
+  menu: <path d="M3 12h18M3 6h18M3 18h18" />,
+  close: <path d="M18 6L6 18M6 6l12 12" />,
+  eye: <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />,
+  'eye-off': <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94" />,
+  download: <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />,
+  upload: <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" />,
+  external: <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />,
+  lock: <path d="M12 15v2" />,
+  unlock: <path d="M12 15v2" />,
+  book: <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />,
+  'book-open': <path d="M2 3h6a4 4 0 014 4v14" />,
+  file: <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />,
+  image: <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />,
+  video: <path d="M22 8l-6 4 6 4V8z" />,
+  headphone: <path d="M3 18v-6a9 9 0 0118 0v6" />,
+  grid: <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z" />,
+  'maximize-2': <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />,
+  'minimize-2': <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" />,
+  sun: <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />,
+  moon: <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />,
+  'more-vertical': <path d="M12 5v.01M12 12v.01M12 19v.01" />,
+  'more-horizontal': <path d="M5 12h.01M12 12h.01M19 12h.01" />,
+};

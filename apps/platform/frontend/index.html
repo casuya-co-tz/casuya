@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Casuya Platform - Transforming Education Through Technology</title>
+  <meta name="description" content="Casuya is an offline-ready educational platform connecting teachers, students, and schools across Tanzania with interactive lessons, quizzes, and progress tracking — built for any infrastructure.">
+  <meta property="og:title" content="Casuya — Learn Smarter. Teach Better. Build the Future.">
+  <meta property="og:description" content="An intelligent educational ecosystem for Tanzanian schools, students, and teachers. Works great even with limited connectivity.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_TZ">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/main.min.css">
+  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* ── Dyslexia Font Mode ─────────────────────────────────── */
+    body.dyslexia-mode, body.dyslexia-mode * {
+      font-family: 'OpenDyslexic', 'Comic Sans MS', cursive !important;
+      letter-spacing: 0.05em;
+      word-spacing: 0.15em;
+    }
+    /* ── High Contrast Mode ──────────────────────────────────── */
+    body.high-contrast { background: #000 !important; color: #fff !important; }
+    body.high-contrast * { border-color: #fff !important; color: #fff !important; background: transparent !important; }
+    body.high-contrast nav, body.high-contrast footer { background: #000 !important; }
+    body.high-contrast a { color: #60a5fa !important; }
+    body.high-contrast .bg-white { background: #000 !important; border: 2px solid #fff !important; }
+    body.high-contrast .bg-\[#faf7f2\] { background: #000 !important; }
+    body.high-contrast .text-slate-900 { color: #fff !important; }
+    body.high-contrast .text-slate-600 { color: #e2e8f0 !important; }
+    body.high-contrast .text-slate-500 { color: #cbd5e1 !important; }
+    body.high-contrast .text-slate-400 { color: #94a3b8 !important; }
+    body.high-contrast .bg-blue-50 { background: #1e3a5f !important; }
+    body.high-contrast .bg-blue-600 { background: #3b82f6 !important; color: #000 !important; }
+    body.high-contrast .border-\[#e2e8f0\] { border-color: #334155 !important; }
+    body.high-contrast .border-\[#e2e8f0\] { border-color: #334155 !important; }
+    body.high-contrast .shadow-2xl { box-shadow: 0 0 0 2px #fff !important; }
+    body.high-contrast .shadow-sm { box-shadow: 0 0 0 1px #fff !important; }
+    body.high-contrast .bg-slate-900 { background: #0f172a !important; }
+    body.high-contrast .bg-slate-800 { background: #1e293b !important; }
+    /* ── Large Text Mode ──────────────────────────────────────── */
+    body.large-text { font-size: 125%; line-height: 1.7; }
+    body.large-text h1 { font-size: 135% !important; }
+    body.large-text h2 { font-size: 125% !important; }
+    body.large-text p, body.large-text li, body.large-text span { font-size: 115% !important; }
+    body.extra-large-text { font-size: 150%; line-height: 1.9; letter-spacing: 0.03em; }
+    body.extra-large-text h1 { font-size: 160% !important; }
+    body.extra-large-text h2 { font-size: 140% !important; }
+    body.extra-large-text p, body.extra-large-text li, body.extra-large-text span { font-size: 130% !important; }
+    body.max-text { font-size: 200%; line-height: 2; letter-spacing: 0.05em; }
+    body.max-text h1 { font-size: 180% !important; }
+    body.max-text h2 { font-size: 160% !important; }
+    body.max-text p, body.max-text li, body.max-text span { font-size: 150% !important; }
+    /* ── Wide Spacing Mode ────────────────────────────────────── */
+    body.wide-spacing { line-height: 2.2 !important; letter-spacing: 0.12em !important; word-spacing: 0.2em !important; }
+    body.wide-spacing * { line-height: 2.2 !important; letter-spacing: 0.12em !important; word-spacing: 0.2em !important; }
+    /* ── Accessibility Toolbar ───────────────────────────────── */
+    .a11y-toolbar { position: fixed; bottom: 20px; left: 20px; z-index: 9998; }
+    .a11y-toggle {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: #2563eb; color: #fff; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+      transition: all 0.3s ease;
+    }
+    .a11y-toggle:hover { transform: scale(1.1); background: #1d4ed8; }
+    .a11y-panel {
+      position: absolute; bottom: 64px; left: 0;
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      padding: 16px; width: 280px; max-width: calc(100vw - 32px);
+      max-height: min(72vh, 520px); overflow-y: auto; overflow-x: hidden;
+      -webkit-overflow-scrolling: touch; scrollbar-width: thin;
+      overscroll-behavior: contain;
+      opacity: 0; pointer-events: none; transform: translateY(10px) scale(0.98);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      will-change: opacity, transform;
+    }
+    .a11y-panel.open { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
+    .a11y-panel h3 { font-size: 13px; font-weight: 800; color: #0f172a; margin-bottom: 12px; letter-spacing: -0.01em; }
+    .a11y-option {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; min-height: 44px; padding: 8px 10px; border-radius: 10px; margin-bottom: 4px;
+      cursor: pointer; transition: background 0.15s; flex-shrink: 0;
+    }
+    .a11y-option:hover { background: #f1f5f9; }
+    .a11y-option span { font-size: 13px; font-weight: 600; color: #334155; line-height: 1.3; }
+    .a11y-option .a11y-icon { font-size: 18px; flex-shrink: 0; }
+    .a11y-toggle-btn {
+      width: 40px; height: 22px; min-width: 40px; min-height: 22px; border-radius: 11px; border: none;
+      background: #cbd5e1; cursor: pointer; position: relative; flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .a11y-toggle-btn.active { background: #2563eb; }
+    .a11y-toggle-btn::after {
+      content: ''; position: absolute; top: 2px; left: 2px;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: #fff; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .a11y-toggle-btn.active::after { transform: translateX(18px); }
+    .a11y-slider-row { display: flex; align-items: center; gap: 8px; padding: 8px 10px; min-height: 36px; flex-shrink: 0; }
+    .a11y-slider-row span { font-size: 11px; font-weight: 600; color: #64748b; min-width: 28px; white-space: nowrap; flex-shrink: 0; }
+    .a11y-slider { flex: 1; min-width: 0; accent-color: #2563eb; cursor: pointer; height: 20px; }
+    .speech-controls {
+      display: flex; align-items: center; gap: 6px; flex-wrap: nowrap;
+      padding: 8px 10px; margin-top: 4px; min-height: 44px; flex-shrink: 0;
+      background: #f8fafc; border-radius: 10px; border: 1px solid #f1f5f9;
+    }
+    .speech-btn {
+      width: 32px; height: 32px; min-width: 32px; min-height: 32px; border-radius: 8px; border: 1px solid #e2e8f0;
+      background: #fff; cursor: pointer; display: flex; align-items: center; flex-shrink: 0;
+      justify-content: center; transition: all 0.15s;
+    }
+    .speech-btn:hover { background: #eff6ff; border-color: #2563eb; }
+    .speech-btn.speaking { background: #2563eb; color: #fff; border-color: #2563eb; }
+    /* ── Skip Link ───────────────────────────────────────────── */
+    .skip-link {
+      position: absolute; top: -100%; left: 16px; z-index: 9999;
+      background: #2563eb; color: #fff; padding: 12px 24px;
+      border-radius: 0 0 12px 12px; font-weight: 700; font-size: 14px;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0; }
+    /* Accessible keyboard focus states */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid #2563eb;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    /* Respect users who've asked for reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ── Accessibility Panel Responsive ──────────────────────── */
+    @media (max-width: 640px) {
+      .a11y-toolbar { bottom: max(12px, env(safe-area-inset-bottom, 12px)); left: max(12px, env(safe-area-inset-left, 12px)); right: auto; }
+      .a11y-toggle { width: 48px; height: 48px; }
+      .a11y-panel {
+        position: fixed; bottom: 68px; left: 12px; right: 12px; width: auto; max-width: none;
+        max-height: min(68vh, 480px); padding: 14px; border-radius: 16px;
+        transform: translateY(12px) scale(0.97);
+        /* prevent horizontal overflow on tiny screens */
+        box-sizing: border-box;
+      }
+      .a11y-panel.open { transform: translateY(0) scale(1); }
+      .a11y-option { padding: 10px 10px; min-height: 44px; }
+      .a11y-option span { font-size: 13px; }
+      .a11y-slider-row { padding: 6px 10px; }
+      .speech-controls { gap: 6px; padding: 8px 10px; }
+    }
+    @media (max-width: 360px) {
+      .a11y-panel { left: 8px; right: 8px; bottom: 64px; padding: 12px; max-height: 62vh; }
+      .a11y-option span { font-size: 12px; }
+    }
+    /* collapse sections animate without jumping */
+    #a11y-fontsize-row, #a11y-speed-row, #speech-controls {
+      transition: opacity 0.2s ease;
+    }
+
+    /* ── Global Responsive Safeguards ────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    img, video, svg { max-width: 100%; height: auto; }
+    body { overflow-wrap: break-word; word-break: break-word; }
+    /* Prevent any section from causing horizontal scroll */
+    section, nav, footer, main { max-width: 100vw; overflow-x: clip; }
+
+    /* Mobile refinements */
+    @media (max-width: 639px) {
+      .hero-title { font-size: clamp(1.9rem, 8vw, 2.4rem); line-height: 1.12; word-break: break-word; }
+      .mock-ui-sidebar { display: none !important; }
+      .glass-card { aspect-ratio: auto; min-height: 260px; }
+    }
+    @media (max-width: 380px) {
+      .hero-title { font-size: clamp(1.65rem, 7.5vw, 2rem); }
+      .section-label { font-size: 10px; padding: 4px 10px; }
+    }
+    @media (max-width: 320px) {
+      .a11y-toggle { width: 44px; height: 44px; }
+      .hero-title { font-size: 1.6rem; }
+    }
+
+    /* Ensure minimum tap target size for accessibility */
+    a, button { min-height: 0; }
+    @media (pointer: coarse) {
+      a, button { min-height: 44px; min-width: 44px; }
+      a[href], button:not(.demo-close):not(#demo-play-btn):not(#demo-next-btn) { min-height: 44px; }
+    }
+
+    /* ── Demo Modal ─────────────────────────────────────────────────── */
+    #demo-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    #demo-overlay.open { opacity: 1; pointer-events: auto; }
+
+    #demo-modal {
+      position: relative;
+      width: 94vw; max-width: 480px;
+      background: #fff; border-radius: 24px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+      transform: scale(0.9) translateY(30px);
+      transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    #demo-overlay.open #demo-modal { transform: scale(1) translateY(0); }
+
+    .demo-close {
+      position: absolute; top: 12px; right: 12px; z-index: 10;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(0,0,0,0.06); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .demo-close:hover { background: rgba(0,0,0,0.12); }
+
+    /* Phone frame */
+    .demo-phone {
+      width: 100%; aspect-ratio: 9/16; max-height: 72vh;
+      background: linear-gradient(135deg, #faf7f2 0%, #eff6ff 50%, #f0fdf4 100%); position: relative; overflow: hidden;
+    }
+
+    /* Screen slides */
+    .demo-screen {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease;
+    }
+    .demo-screen.active { transform: translateX(0); opacity: 1; }
+    .demo-screen.left  { transform: translateX(-100%); opacity: 0; }
+    .demo-screen.right { transform: translateX(100%); opacity: 0; }
+
+    /* Mock input typing cursor */
+    .demo-cursor {
+      display: inline-block; width: 2px; height: 1em;
+      background: #2563eb; margin-left: 2px; vertical-align: text-bottom;
+      animation: blink 0.6s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* Button press effect */
+    .demo-press {
+      animation: press 0.3s ease;
+    }
+    @keyframes press {
+      0% { transform: scale(1); }
+      50% { transform: scale(0.95); filter: brightness(0.9); }
+      100% { transform: scale(1); }
+    }
+
+    /* Step indicator dots */
+    .demo-step-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #c8bdb0; transition: all 0.3s ease;
+    }
+    .demo-step-dot.active { background: #2563eb; width: 24px; border-radius: 4px; }
+
+    /* Progress bar */
+    .demo-progress-bar {
+      height: 3px; background: #e0d8cc; border-radius: 2px; overflow: hidden;
+    }
+    .demo-progress-fill {
+      height: 100%; background: linear-gradient(90deg, #2563eb, #7c3aed);
+      border-radius: 2px; transition: width 0.6s ease;
+    }
+
+    /* Label badge */
+    .demo-label {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background: rgba(37, 99, 235, 0.9); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
+      padding: 6px 16px; border-radius: 20px;
+      opacity: 0; transition: opacity 0.3s ease;
+      pointer-events: none; white-space: nowrap; z-index: 5;
+    }
+    .demo-label.show { opacity: 1; }
+
+    /* Success checkmark */
+    .demo-check {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: #dcfce7; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto;
+      animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Dashboard card slide-up */
+    .demo-card-up {
+      animation: cardUp 0.5s cubic-bezier(0.4,0,0.2,1) both;
+    }
+    @keyframes cardUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Nav bar inside demo screens */
+    .demo-nav {
+      height: 44px; background: #fff; border-bottom: 1px solid #e0d8cc;
+      display: flex; align-items: center; padding: 0 16px; gap: 8px;
+    }
+    .demo-nav-logo {
+      width: 24px; height: 24px; background: #2563eb; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 11px; font-weight: 800;
+    }
+
+    /* Scrollbar hide for phone */
+    .demo-phone::-webkit-scrollbar { display: none; }
+    .demo-phone { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+  <script src="/assets/js/env.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/brand.js"></script>
+</head>
+<body class="bg-[#faf7f2] text-slate-800 antialiased overflow-x-hidden" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
+
+  <!-- Skip Link for keyboard / screen-reader users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- GLOBAL ACCESSIBILITY TOOLBAR -->
+  <div class="a11y-toolbar" role="region" aria-label="Accessibility options">
+    <button class="a11y-toggle" id="a11y-toggle-btn" aria-label="Open accessibility settings" aria-expanded="false" aria-controls="a11y-panel">
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="4" r="2"/><path d="M12 8v8m-4-6l4 6 4-6M4 20h16"/>
+      </svg>
+    </button>
+    <div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Accessibility settings panel">
+      <h3>Accessibility Settings</h3>
+      <div class="a11y-option" role="button" tabindex="0" id="a11y-dyslexia" aria-pressed="false">
+        <span><span class="a11y-icon" aria-hidden="true">📖</span> Dyslexia Font</span>
+        <button class="a11y-toggle-btn" aria-label="Toggle dyslexia-friendly font"></button>
+      </div>
+      <div class="a11y-option" role="button" tabindex="0" id="a11y-contrast" aria-pressed="false">
+        <span><span class="a11y-icon" aria-hidden="true">🌗</span> High Contrast</span>
+        <button class="a11y-toggle-btn" aria-label="Toggle high contrast mode"></button>
+      </div>
+      <div class="a11y-option" role="button" tabindex="0" id="a11y-large-text" aria-pressed="false">
+        <span><span class="a11y-icon" aria-hidden="true">🔤</span> Large Text</span>
+        <button class="a11y-toggle-btn" aria-label="Toggle large text mode"></button>
+      </div>
+      <div class="a11y-option" role="button" tabindex="0" id="a11y-wide-spacing" aria-pressed="false">
+        <span><span class="a11y-icon" aria-hidden="true">↔️</span> Wide Spacing</span>
+        <button class="a11y-toggle-btn" aria-label="Toggle wide line and letter spacing"></button>
+      </div>
+      <div class="a11y-slider-row" id="a11y-fontsize-row">
+        <span style="font-size:11px;color:#64748b;white-space:nowrap">Size</span>
+        <input type="range" class="a11y-slider" id="a11y-fontsize" min="100" max="200" step="10" value="100" aria-label="Font size percentage">
+        <span id="a11y-fontsize-label" style="font-size:11px;color:#64748b;min-width:32px;text-align:right">100%</span>
+      </div>
+      <div class="a11y-option" role="button" tabindex="0" id="a11y-tts" aria-pressed="false">
+        <span><span class="a11y-icon" aria-hidden="true">🔊</span> Text-to-Speech</span>
+        <button class="a11y-toggle-btn" aria-label="Toggle text-to-speech"></button>
+      </div>
+      <div class="a11y-slider-row" id="a11y-speed-row" style="display:none">
+        <span id="a11y-speed-label">1x</span>
+        <input type="range" class="a11y-slider" id="a11y-speed" min="0.5" max="2" step="0.1" value="1" aria-label="Speech rate">
+      </div>
+      <div class="speech-controls" id="speech-controls" style="display:none">
+        <button class="speech-btn" id="speech-play" aria-label="Play speech">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        </button>
+        <button class="speech-btn" id="speech-pause" aria-label="Pause speech">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </button>
+        <button class="speech-btn" id="speech-stop" aria-label="Stop speech">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+        </button>
+        <span style="font-size:11px;color:#64748b;margin-left:auto" id="speech-status">Ready</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="sticky top-0 z-50 bg-[#faf7f2]/80 backdrop-blur-md border-b border-[#e2e8f0]" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <div data-brand-logo data-brand-logo-class="w-8 h-8 sm:w-9 sm:h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-base sm:text-lg shadow-md shadow-blue-200" class="w-8 h-8 sm:w-9 sm:h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-base sm:text-lg shadow-md shadow-blue-200" aria-hidden="true">C</div>
+        <span class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900">Casuya</span>
+      </div>
+
+      <!-- Right-hand group: nav links, language toggle, auth, mobile menu button -->
+      <div class="flex items-center gap-1.5 sm:gap-5 min-w-0">
+        <!-- Nav Links (desktop) -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+          <a href="#features" data-i18n="nav.features" class="hover:text-blue-600 transition-colors">Features</a>
+          <a href="#subjects" data-i18n="nav.subjects" class="hover:text-blue-600 transition-colors">Subjects</a>
+          <a href="#about" data-i18n="nav.about" class="hover:text-blue-600 transition-colors">About</a>
+        </div>
+
+        <!-- Language toggle (EN / SW) -->
+        <button data-lang-toggle class="px-3 py-1.5 text-sm font-semibold rounded-full border border-blue-200 text-blue-700 hover:bg-blue-50 transition" aria-label="Switch language">SW</button>
+
+        <!-- Auth Buttons (auth-aware: replaced with Dashboard/Log out when signed in) -->
+        <div class="hidden md:flex items-center gap-2 sm:gap-4" id="auth-buttons">
+          <a href="/login.html" data-i18n="nav.login" class="hidden sm:inline text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Login</a>
+          <a href="/register.html" class="bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-lg shadow-blue-100 transition-all hover:-translate-y-0.5 min-h-[44px] flex items-center justify-center"><span class="sm:hidden" data-i18n="nav.start">Start</span><span class="hidden sm:inline" data-i18n="nav.get_started">Get Started</span></a>
+        </div>
+        <script type="module">
+          import { applyAuthChrome } from "/assets/js/auth-ui.js";
+          applyAuthChrome(document.getElementById("auth-buttons"));
+        </script>
+
+        <!-- Mobile menu toggle -->
+        <button id="mobile-menu-btn" type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg text-slate-700 hover:bg-[#ede5d8] transition-colors" aria-label="Fungua menyu / Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="menu-icon-open" class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="menu-icon-close" class="w-5 h-5 sm:w-6 sm:h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-[#e2e8f0] bg-white">
+      <div class="px-4 sm:px-6 py-4 flex flex-col gap-3 sm:gap-4 text-sm font-semibold text-slate-600">
+        <a href="#features" data-i18n="nav.features" class="hover:text-blue-600 transition-colors">Features</a>
+        <a href="#subjects" data-i18n="nav.subjects" class="hover:text-blue-600 transition-colors">Subjects</a>
+        <a href="#about" data-i18n="nav.about" class="hover:text-blue-600 transition-colors">About</a>
+        <a href="/login.html" data-i18n="nav.login" class="pt-2 border-t border-[#e2e8f0] hover:text-blue-600 transition-colors">Login</a>
+        <a href="/register.html" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-100 transition-all hover:-translate-y-0.5 text-center"><span data-i18n="nav.start">Start</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- HERO SECTION -->
+  <section class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-10 sm:pt-16 pb-16 sm:pb-24 grid lg:grid-cols-12 gap-8 sm:gap-12 items-center overflow-hidden" style="background:linear-gradient(135deg,#faf7f2 0%,#eff6ff 40%,#f0fdf4 80%,#faf7f2 100%);">
+    <!-- Glow orbs -->
+    <div class="glow-orb glow-orb-1" aria-hidden="true"></div>
+    <div class="glow-orb glow-orb-2" aria-hidden="true"></div>
+    <div class="glow-orb glow-orb-3" aria-hidden="true"></div>
+    <!-- Grid overlay -->
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <!-- Noise texture -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="lg:col-span-6 space-y-5 sm:space-y-6">
+      <div><span class="section-label" data-i18n="hero.badge">Education Reimagined</span></div>
+      <h1 data-i18n-html="hero.title1" class="hero-title hero-title-premium text-3xl sm:text-4xl lg:text-[3.5rem] text-slate-900 break-words" style="letter-spacing:-0.035em;line-height:1.08;">
+        Learn Smarter.<br>Teach Better.<br><span class="gradient-text" data-i18n="hero.title3">Build the Future.</span>
+      </h1>
+      <p data-i18n="hero.desc" class="text-base sm:text-lg text-slate-500 max-w-lg leading-relaxed" style="font-weight:500;">
+        An intelligent educational ecosystem connecting teachers, students, and schools with modern digital tools built for any infrastructure.
+      </p>
+
+      <!-- Value Checkmarks (rendered from enabled features) -->
+      <div id="hero-features" class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-sm font-medium text-slate-700 pt-2"></div>
+
+      <!-- Hero CTA -->
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+        <a href="/register.html" data-i18n="hero.start" class="btn-premium text-center min-h-[52px] px-8 w-full sm:w-auto">Start Learning</a>
+        <a href="#demo" data-i18n="hero.demo" class="btn-premium-outline flex items-center justify-center gap-2 min-h-[52px] w-full sm:w-auto">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Watch Demo
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Illustration Placeholder -->
+    <div class="lg:col-span-6 relative">
+      <div class="absolute inset-0 rounded-3xl opacity-15 blur-3xl -z-10" style="background:linear-gradient(135deg,#2563eb,#7c3aed,#3b82f6);" aria-hidden="true"></div>
+      <div class="glass-card sm:rounded-3xl p-4 sm:p-6 aspect-[4/3] flex flex-col justify-between overflow-hidden" style="border:1px solid rgba(224,216,204,0.4);box-shadow:0 20px 60px rgba(0,0,0,0.08),0 0 40px rgba(37,99,235,0.06);">
+        <div class="flex items-center border-b border-[#e2e8f0]/60 pb-3 sm:pb-4">
+          <div class="flex gap-1.5" aria-hidden="true">
+            <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style="background:#ff5f57;"></div>
+            <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style="background:#febc2e;"></div>
+            <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style="background:#28c840;"></div>
+          </div>
+        </div>
+        <!-- Mock UI Elements simulating the ecosystem -->
+        <div class="flex-1 grid grid-cols-12 gap-3 sm:gap-4 pt-4 sm:pt-6">
+          <div class="col-span-12 sm:col-span-4 mock-ui-sidebar rounded-xl p-2.5 sm:p-3 space-y-2 sm:space-y-3" style="background:rgba(37,99,235,0.04);border:1px solid rgba(37,99,235,0.08);">
+            <div class="h-5 sm:h-6 rounded-lg w-3/4" style="background:linear-gradient(90deg,rgba(37,99,235,0.15),rgba(124,58,237,0.1));"></div>
+            <div class="h-2.5 sm:h-3 rounded w-full" style="background:rgba(37,99,235,0.08);"></div>
+            <div class="h-2.5 sm:h-3 rounded w-5/6" style="background:rgba(37,99,235,0.06);"></div>
+            <div class="pt-3 sm:pt-4 space-y-2">
+              <div class="h-7 sm:h-8 rounded-lg shadow-sm flex items-center gap-1.5 px-2 text-[9px] sm:text-[10px] font-bold" style="background:#fff;border:1px solid rgba(37,99,235,0.1);color:#475569;">
+                <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" style="color:#2563eb;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c0-9 6-15 15-15 0 9-6 15-15 15Z"/><path d="M6 18 17 7"/></svg>
+                Biology
+              </div>
+              <div class="h-7 sm:h-8 rounded-lg shadow-sm flex items-center gap-1.5 px-2 text-[9px] sm:text-[10px] font-bold" style="background:#fff;border:1px solid rgba(37,99,235,0.1);color:#475569;">
+                <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" style="color:#2563eb;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7 6 15M12 7l6 8M7 16h10"/><circle cx="12" cy="5" r="1.6"/><circle cx="5" cy="17" r="1.6"/><circle cx="19" cy="17" r="1.6"/></svg>
+                Chemistry
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-8 space-y-3 sm:space-y-4">
+            <div class="rounded-xl p-3 sm:p-4 text-white space-y-1.5 sm:space-y-2" style="background:linear-gradient(135deg,#2563eb,#7c3aed);box-shadow:0 8px 30px rgba(37,99,235,0.25);">
+              <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider opacity-75" data-i18n="hero.today_lesson">Today's Lesson</div>
+              <div class="text-xs sm:text-sm font-semibold" data-i18n="hero.dive_into">"Dive into interactive exercises with built-in quizzes and real-time progress tracking."</div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 sm:gap-3">
+              <div class="rounded-xl p-2.5 sm:p-3 text-center" style="background:rgba(37,99,235,0.04);border:1px solid rgba(37,99,235,0.08);">
+                <div class="text-[10px] sm:text-xs font-medium" style="color:#94a3b8;" data-i18n="hero.class_sync">Class Sync</div>
+                <div class="text-xs sm:text-sm font-bold" style="color:#1e293b;" data-i18n="hero.offline_ready">100% Offline ready</div>
+              </div>
+              <div class="rounded-xl p-2.5 sm:p-3 text-center" style="background:rgba(34,197,94,0.04);border:1px solid rgba(34,197,94,0.08);">
+                <div class="text-[10px] sm:text-xs font-medium" style="color:#94a3b8;" data-i18n="hero.avg_score">Avg Score</div>
+                <div class="text-xs sm:text-sm font-bold" style="color:#16a34a;" data-i18n="hero.progress">+18% Progress</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUSTED BY SECTION (rendered from enabled features) -->
+  <section class="border-y border-[#e2e8f0]/60 py-8 sm:py-10 text-center" style="background:rgba(255,255,255,0.5);backdrop-filter:blur(10px);">
+    <p class="text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4 px-4" style="color:#475569;" data-i18n="trusted.title">Empowering Modern Educational Workflows</p>
+    <div id="trusted-features" class="flex flex-wrap justify-center items-center gap-6 sm:gap-12 font-bold text-sm sm:text-lg px-4" style="color:#334155;"></div>
+  </section>
+
+  <!-- FEATURES GRID -->
+  <section id="features" class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4 px-2">
+      <span class="section-label mx-auto" data-i18n="features.badge">Platform Capabilities</span>
+      <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight" style="letter-spacing:-0.03em;" data-i18n="features.title">Why Schools Choose Casuya</p>
+      <p class="text-sm sm:text-base" style="color:#64748b;" data-i18n="features.desc">Every single module is optimized for lightning-fast speeds and reliable performance on low-end operational hardware.</p>
+    </div>
+
+    <div id="features-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"></div>
+  </section>
+
+  <!-- SUBJECTS SECTION -->
+  <section id="subjects" class="text-white py-16 sm:py-24" style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#0f172a 100%);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl mb-8 sm:mb-12">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4" style="background:rgba(96,165,250,0.15);color:#60a5fa;border:1px solid rgba(96,165,250,0.2);" data-i18n="subjects.badge">Curriculum Framework</span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight" style="letter-spacing:-0.03em;" data-i18n="subjects.title">Explore Subjects Across the Ecosystem</h3>
+      </div>
+      <div class="flex flex-wrap gap-2.5 sm:gap-4">
+        <a href="/register.html" class="subject-tag" data-i18n="subjects.physics">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" style="color:#60a5fa;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12c2-5 4-5 6 0s4 5 6 0 4-5 6 0"/></svg>
+          Physics
+        </a>
+        <a href="/register.html" class="subject-tag" data-i18n="subjects.chemistry">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" style="color:#60a5fa;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7 6 15M12 7l6 8M7 16h10"/><circle cx="12" cy="5" r="2"/><circle cx="5" cy="17" r="2"/><circle cx="19" cy="17" r="2"/></svg>
+          Chemistry
+        </a>
+        <a href="/register.html" class="subject-tag" data-i18n="subjects.biology">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" style="color:#60a5fa;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c0-9 6-15 15-15 0 9-6 15-15 15Z"/><path d="M6 18 17 7"/></svg>
+          Biology
+        </a>
+        <a href="/register.html" class="subject-tag" data-i18n="subjects.mathematics">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" style="color:#60a5fa;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20 12 4l8 16"/><path d="M8 14h8"/></svg>
+          Mathematics
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCES SECTION -->
+  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4 px-2">
+        <span class="section-label mx-auto" data-i18n="audiences.badge">Tailored Experiences</span>
+        <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight" style="letter-spacing:-0.03em;" data-i18n="audiences.title">Built for Everyone in the School</p>
+        <p class="text-xs sm:text-sm" style="color:#64748b;" data-i18n="audiences.desc">Sign-up accounts are available as <strong class="text-slate-700">Student</strong> or <strong class="text-slate-700">Teacher</strong>. Parents and schools benefit through the student and teacher experience.</p>
+      </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div class="premium-card p-5 sm:p-6 group glow-hover">
+        <div class="feature-icon-premium mb-3 sm:mb-4" aria-hidden="true">
+          <svg class="w-5 h-5" style="color:#2563eb;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/><path d="M7 10l3-2 2 1.5 4-3"/></svg>
+        </div>
+        <h4 class="font-bold text-slate-900 mb-2 sm:mb-3 text-lg sm:text-xl" data-i18n="audiences.teachers">Teachers</h4>
+        <ul class="text-sm sm:text-base space-y-1.5 sm:space-y-2" style="color:#475569;">
+          <li class="flex items-start gap-1.5"><span class="mt-0.5 shrink-0" style="color:#2563eb;">•</span><span data-i18n="audiences.teachers_content">Create rich digital content</span></li>
+          <li class="flex items-start gap-1.5"><span class="mt-0.5 shrink-0" style="color:#2563eb;">•</span><span data-i18n="audiences.teachers_cohorts">Coordinate modular cohorts</span></li>
+          <li class="flex items-start gap-1.5"><span class="mt-0.5 shrink-0" style="color:#2563eb;">•</span><span data-i18n="audiences.teachers_metrics">Evaluate metrics streams</span></li>
+        </ul>
+      </div>
+      <div class="premium-card p-5 sm:p-6 group glow-hover">
+        <div class="feature-icon-premium mb-3 sm:mb-4" aria-hidden="true">
+          <svg class="w-5 h-5" style="color:#2563eb;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5Z"/><path d="M12 6v13"/></svg>
+        </div>
+        <h4 class="font-bold text-slate-900 mb-2 sm:mb-3 text-lg sm:text-xl" data-i18n="audiences.students">Students</h4>
+        <ul class="text-sm sm:text-base space-y-1.5 sm:space-y-2" style="color:#475569;">
+          <li class="flex items-start gap-1.5"><span class="mt-0.5 shrink-0" style="color:#2563eb;">•</span><span data-i18n="audiences.students_location">Study from any location</span></li>
+          <li class="flex items-start gap-1.5"><span class="mt-0.5 shrink-0" style="color:#2563eb;">•</span><span data-i18n="audiences.students_offline">Interact with tests offline</span></li>
+          <li class="flex items-start gap-1.5"><span class="mt-0.5 shrink-0" style="color:#2563eb;">•</span><span data-i18n="audiences.students_records">Monitor learning records</span></li>
+        </ul>
+      </div>
+      <div class="premium-card p-5 sm:p-6 group glow-hover">
+        <div class="feature-icon-premium mb-3 sm:mb-4" aria-hidden="true">
+          <svg class="w-5 h-5" style="color:#2563eb;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"/><path d="M6 10v10h12V10"/><path d="M12 14c-1.2-1.5-3.5-1-3.5 1 0 1.6 2 2.8 3.5 4 1.5-1.2 3.5-2.4 3.5-4 0-2-2.3-2.5-3.5-1Z"/></svg>
+        </div>
+        <h4 class="font-bold text-slate-900 mb-2 sm:mb-3 text-lg sm:text-xl" data-i18n="audiences.parents">Parents</h4>
+        <ul class="text-sm sm:text-base space-y-1.5 sm:space-y-2" style="color:#475569;">
+          <li class="flex items-start gap-1.5"><span class="mt-0.5 shrink-0" style="color:#2563eb;">•</span><span data-i18n="audiences.parents_progress">Observe progress trackers</span></li>
+          <li class="flex items-start gap-1.5"><span class="mt-0.5 shrink-0" style="color:#2563eb;">•</span><span data-i18n="audiences.parents_updates">View localized updates</span></li>
+        </ul>
+      </div>
+      <div class="premium-card p-5 sm:p-6 group glow-hover">
+        <div class="feature-icon-premium mb-3 sm:mb-4" aria-hidden="true">
+          <svg class="w-5 h-5" style="color:#2563eb;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M12 4V2M12 2h3l-3 2"/></svg>
+        </div>
+        <h4 class="font-bold text-slate-900 mb-2 sm:mb-3 text-lg sm:text-xl" data-i18n="audiences.schools">Schools</h4>
+        <ul class="text-sm sm:text-base space-y-1.5 sm:space-y-2" style="color:#475569;">
+          <li class="flex items-start gap-1.5"><span class="mt-0.5 shrink-0" style="color:#2563eb;">•</span><span data-i18n="audiences.schools_delegation">Optimize staff delegation</span></li>
+          <li class="flex items-start gap-1.5"><span class="mt-0.5 shrink-0" style="color:#2563eb;">•</span><span data-i18n="audiences.schools_analytics">Export complex analytical datasets</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 mb-16 sm:mb-24">
+    <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl px-6 py-12 sm:px-16 sm:py-20 text-center text-white" style="background:linear-gradient(135deg,#2563eb 0%,#7c3aed 50%,#4f46e5 100%);box-shadow:0 20px 60px rgba(37,99,235,0.3);">
+      <!-- Decorative accents -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/15 to-transparent pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -top-16 -left-16 w-64 h-64 rounded-full blur-3xl pointer-events-none" aria-hidden="true" style="background:rgba(96,165,250,0.2);"></div>
+      <div class="absolute -bottom-20 -right-10 w-72 h-72 rounded-full blur-3xl pointer-events-none" aria-hidden="true" style="background:rgba(124,58,237,0.15);"></div>
+
+      <div class="relative max-w-2xl mx-auto space-y-5 sm:space-y-6">
+        <h3 class="text-2xl sm:text-3xl lg:text-5xl font-extrabold tracking-tight leading-tight" style="letter-spacing:-0.03em;" data-i18n="cta.title">Ready to Transform Education?</h3>
+        <p class="max-w-xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed" style="color:rgba(255,255,255,0.8);" data-i18n="cta.desc">Join thousands of modern instructors, students, and system administrators configuring smarter school networks today.</p>
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 pt-4">
+          <a href="/register.html" class="inline-flex items-center justify-center gap-2 bg-white font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl transition-all hover:bg-blue-50 hover:-translate-y-0.5 min-h-[48px] w-full sm:w-auto" style="color:#2563eb;box-shadow:0 4px 20px rgba(0,0,0,0.15);" data-i18n="nav.create_account">
+            Create Account
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="/login.html" class="inline-flex items-center justify-center gap-2 text-white font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl transition-all hover:-translate-y-0.5 backdrop-blur-sm min-h-[48px] w-full sm:w-auto" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);" data-i18n="nav.login">
+            Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ DEMO MODAL ═══════════════════ -->
+  <div id="demo-overlay" role="dialog" aria-modal="true" aria-label="Platform demo">
+    <div id="demo-modal">
+      <!-- Close button -->
+      <button class="demo-close" onclick="closeDemo()" aria-label="Close demo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Step label badge -->
+      <div id="demo-label" class="demo-label"></div>
+
+      <!-- Phone frame -->
+      <div class="demo-phone" id="demo-phone">
+
+        <!-- ═══ SCREEN 1: LOGIN ═══ -->
+        <div class="demo-screen active" id="ds-login">
+          <div class="demo-nav">
+            <div class="demo-nav-logo">C</div>
+            <span style="font-size:13px;font-weight:700;color:#0f172a">Casuya</span>
+          </div>
+          <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:20px">
+            <div style="width:100%;max-width:300px">
+              <div style="text-align:center;margin-bottom:24px">
+                <div style="font-size:22px;font-weight:800;color:#0f172a;margin-bottom:4px" data-i18n="demo.welcome_back">Welcome Back</div>
+                <div style="font-size:12px;color:#94a3b8" data-i18n="demo.sign_in_desc">Sign in to continue your learning journey</div>
+              </div>
+              <div style="margin-bottom:14px">
+                <label style="font-size:11px;font-weight:600;color:#334155;display:block;margin-bottom:4px" data-i18n="demo.email">Email Address</label>
+                <div style="position:relative">
+                  <div style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V14a2 2 0 10-5 0v1.5"/></svg>
+                  </div>
+                  <div id="demo-email-input" style="width:100%;padding:10px 12px 10px 34px;border:1px solid #e0d8cc;border-radius:10px;font-size:12px;color:#334155;background:#fff;min-height:40px;display:flex;align-items:center">
+                    <span id="demo-email-text"></span><span class="demo-cursor" id="demo-email-cursor" style="display:none"></span>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-bottom:14px">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                  <label style="font-size:11px;font-weight:600;color:#334155" data-i18n="demo.password">Password</label>
+                  <a id="demo-forgot-link" style="font-size:11px;color:#2563eb;cursor:pointer;font-weight:500" data-i18n="demo.forgot_password">Forgot password?</a>
+                </div>
+                <div style="position:relative">
+                  <div style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-7a2 2 0 00-2-2H6a2 2 0 00-2 2v7a2 2 0 002 2zm10-10V7a4 4 0 10-8 0v4h8z"/></svg>
+                  </div>
+                  <div id="demo-pass-input" style="width:100%;padding:10px 12px 10px 34px;border:1px solid #e0d8cc;border-radius:10px;font-size:12px;color:#334155;background:#fff;min-height:40px;display:flex;align-items:center">
+                    <span id="demo-pass-text"></span><span class="demo-cursor" id="demo-pass-cursor" style="display:none"></span>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:18px">
+                <div id="demo-remember-box" style="width:14px;height:14px;border:1.5px solid #c8bdb0;border-radius:3px;display:flex;align-items:center;justify-content:center;transition:all 0.2s"></div>
+                <span style="font-size:11px;color:#64748b" data-i18n="demo.remember_me">Remember me</span>
+              </div>
+              <div id="demo-signin-btn" style="width:100%;padding:12px;background:#2563eb;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;text-align:center;cursor:pointer;transition:all 0.2s" data-i18n="demo.sign_in">
+                Sign In
+              </div>
+              <div style="text-align:center;margin-top:16px">
+                <span style="font-size:11px;color:#64748b" data-i18n="demo.no_account">Don't have an account? </span>
+                <a id="demo-register-link" style="font-size:11px;color:#2563eb;font-weight:600;cursor:pointer" data-i18n="demo.sign_up_free">Sign up for free</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 2: FORGOT PASSWORD ═══ -->
+        <div class="demo-screen right" id="ds-forgot">
+          <div class="demo-nav">
+            <div class="demo-nav-logo">C</div>
+            <span style="font-size:13px;font-weight:700;color:#0f172a">Casuya</span>
+          </div>
+          <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:20px">
+            <div style="width:100%;max-width:300px">
+              <div style="text-align:center;margin-bottom:24px">
+                <div style="width:48px;height:48px;background:#eff6ff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                </div>
+                <div style="font-size:22px;font-weight:800;color:#0f172a;margin-bottom:4px" data-i18n="demo.forgot_title">Forgot Password?</div>
+                <div style="font-size:12px;color:#94a3b8" data-i18n="demo.forgot_desc">Enter your email and we'll send you a reset link.</div>
+              </div>
+              <div style="margin-bottom:14px">
+                <label style="font-size:11px;font-weight:600;color:#334155;display:block;margin-bottom:4px" data-i18n="demo.email">Email Address</label>
+                <div style="position:relative">
+                  <div style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/></svg>
+                  </div>
+                  <div id="demo-forgot-email-input" style="width:100%;padding:10px 12px 10px 34px;border:1px solid #e0d8cc;border-radius:10px;font-size:12px;color:#334155;background:#fff;min-height:40px;display:flex;align-items:center">
+                    <span id="demo-forgot-email-text"></span><span class="demo-cursor" id="demo-forgot-email-cursor" style="display:none"></span>
+                  </div>
+                </div>
+              </div>
+              <div id="demo-send-btn" style="width:100%;padding:12px;background:#2563eb;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;text-align:center;cursor:pointer" data-i18n="demo.send_reset">
+                Send Reset Link
+              </div>
+              <!-- Success state (hidden initially) -->
+              <div id="demo-forgot-success" style="display:none;text-align:center;margin-top:20px">
+                <div class="demo-check">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div style="font-size:14px;font-weight:700;color:#0f172a;margin-top:12px" data-i18n="demo.link_sent">Link Sent!</div>
+                <div style="font-size:11px;color:#94a3b8;margin-top:4px" data-i18n="demo.check_email">Check your email for the reset link.</div>
+              </div>
+              <div style="text-align:center;margin-top:16px">
+                <span style="font-size:11px;color:#64748b" data-i18n="demo.remember_password">Remember your password? </span>
+                <a id="demo-back-to-login" style="font-size:11px;color:#2563eb;font-weight:600;cursor:pointer" data-i18n="demo.sign_in">Sign in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 3: REGISTER ═══ -->
+        <div class="demo-screen right" id="ds-register">
+          <div class="demo-nav">
+            <div class="demo-nav-logo">C</div>
+            <span style="font-size:13px;font-weight:700;color:#0f172a">Casuya</span>
+          </div>
+          <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto">
+            <div style="width:100%;max-width:300px">
+              <div style="text-align:center;margin-bottom:18px">
+                <div style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:4px" data-i18n="demo.create_account_title">Create your account</div>
+                <div style="font-size:11px;color:#94a3b8" data-i18n="demo.create_account_desc">Join Casuya and start learning today.</div>
+              </div>
+              <div style="margin-bottom:12px">
+                <label style="font-size:11px;font-weight:600;color:#334155;display:block;margin-bottom:4px" data-i18n="demo.full_name">Full Name</label>
+                <div id="demo-reg-name" style="width:100%;padding:10px 12px;border:1px solid #e0d8cc;border-radius:10px;font-size:12px;color:#334155;background:#fff;min-height:38px;display:flex;align-items:center">
+                  <span id="demo-reg-name-text"></span><span class="demo-cursor" id="demo-reg-name-cursor" style="display:none"></span>
+                </div>
+              </div>
+              <div style="margin-bottom:12px">
+                <label style="font-size:11px;font-weight:600;color:#334155;display:block;margin-bottom:4px" data-i18n="demo.email">Email Address</label>
+                <div id="demo-reg-email" style="width:100%;padding:10px 12px;border:1px solid #e0d8cc;border-radius:10px;font-size:12px;color:#334155;background:#fff;min-height:38px;display:flex;align-items:center">
+                  <span id="demo-reg-email-text"></span><span class="demo-cursor" id="demo-reg-email-cursor" style="display:none"></span>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+                <div>
+                  <label style="font-size:11px;font-weight:600;color:#334155;display:block;margin-bottom:4px" data-i18n="demo.role">Role</label>
+                  <div style="padding:10px 12px;border:1px solid #e0d8cc;border-radius:10px;font-size:12px;color:#334155;background:#fff;display:flex;align-items:center">
+                    <span id="demo-reg-role">Student</span>
+                  </div>
+                </div>
+                <div>
+                  <label style="font-size:11px;font-weight:600;color:#334155;display:block;margin-bottom:4px" data-i18n="demo.phone">Phone</label>
+                  <div style="padding:10px 12px;border:1px solid #e0d8cc;border-radius:10px;font-size:12px;color:#94a3b8;background:#fff;display:flex;align-items:center">
+                    +255...
+                  </div>
+                </div>
+              </div>
+              <div style="margin-bottom:12px">
+                <label style="font-size:11px;font-weight:600;color:#334155;display:block;margin-bottom:4px" data-i18n="demo.password">Password</label>
+                <div id="demo-reg-pass" style="width:100%;padding:10px 12px;border:1px solid #e0d8cc;border-radius:10px;font-size:12px;color:#334155;background:#fff;min-height:38px;display:flex;align-items:center">
+                  <span id="demo-reg-pass-text"></span><span class="demo-cursor" id="demo-reg-pass-cursor" style="display:none"></span>
+                </div>
+              </div>
+              <div style="margin-bottom:16px">
+                <label style="font-size:11px;font-weight:600;color:#334155;display:block;margin-bottom:4px" data-i18n="demo.confirm_password">Confirm Password</label>
+                <div id="demo-reg-confirm" style="width:100%;padding:10px 12px;border:1px solid #e0d8cc;border-radius:10px;font-size:12px;color:#334155;background:#fff;min-height:38px;display:flex;align-items:center">
+                  <span id="demo-reg-confirm-text"></span><span class="demo-cursor" id="demo-reg-confirm-cursor" style="display:none"></span>
+                </div>
+              </div>
+              <div id="demo-register-btn" style="width:100%;padding:12px;background:#2563eb;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;text-align:center;cursor:pointer" data-i18n="demo.create_account">
+                Create Account
+              </div>
+              <div style="text-align:center;margin-top:14px">
+                <span style="font-size:11px;color:#64748b" data-i18n="demo.has_account">Already have an account? </span>
+                <a id="demo-back-login2" style="font-size:11px;color:#2563eb;font-weight:600;cursor:pointer" data-i18n="demo.sign_in">Sign in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ SCREEN 4: DASHBOARD (POST-LOGIN) ═══ -->
+        <div class="demo-screen right" id="ds-dashboard">
+          <div class="demo-nav" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px">
+              <div class="demo-nav-logo">C</div>
+              <span style="font-size:13px;font-weight:700;color:#0f172a">Casuya</span>
+            </div>
+            <div style="width:28px;height:28px;background:#2563eb;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700">A</div>
+          </div>
+          <div style="flex:1;padding:16px;overflow-y:auto;background:#faf7f2">
+            <!-- Welcome banner -->
+            <div class="demo-card-up" style="background:linear-gradient(135deg,#2563eb,#7c3aed);border-radius:14px;padding:16px;color:#fff;margin-bottom:14px">
+              <div style="font-size:10px;font-weight:600;opacity:0.7;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px" data-i18n="demo.welcome_back">Welcome back</div>
+              <div style="font-size:16px;font-weight:800;margin-bottom:2px">Amina Husen</div>
+              <div style="font-size:11px;opacity:0.85">Ready to continue your learning journey?</div>
+            </div>
+            <!-- Stats row -->
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px">
+              <div class="demo-card-up" style="background:#fff;border:1px solid #e0d8cc;border-radius:12px;padding:12px;text-align:center;animation-delay:0.1s">
+                <div style="font-size:18px;font-weight:800;color:#2563eb">12</div>
+                <div style="font-size:9px;color:#94a3b8;font-weight:600" data-i18n="demo.lessons">Lessons</div>
+              </div>
+              <div class="demo-card-up" style="background:#fff;border:1px solid #e0d8cc;border-radius:12px;padding:12px;text-align:center;animation-delay:0.2s">
+                <div style="font-size:18px;font-weight:800;color:#16a34a">87%</div>
+                <div style="font-size:9px;color:#94a3b8;font-weight:600" data-i18n="demo.avg_score">Avg Score</div>
+              </div>
+              <div class="demo-card-up" style="background:#fff;border:1px solid #e0d8cc;border-radius:12px;padding:12px;text-align:center;animation-delay:0.3s">
+                <div style="font-size:18px;font-weight:800;color:#ea580c">5</div>
+                <div style="font-size:9px;color:#94a3b8;font-weight:600" data-i18n="demo.streak">Streak</div>
+              </div>
+            </div>
+            <!-- Today's lesson -->
+            <div class="demo-card-up" style="background:#fff;border:1px solid #e0d8cc;border-radius:14px;padding:14px;margin-bottom:10px;animation-delay:0.4s">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                <div style="width:36px;height:36px;background:#eff6ff;border-radius:10px;display:flex;align-items:center;justify-content:center">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M12 7 6 15M12 7l6 8M7 16h10"/><circle cx="12" cy="5" r="2"/><circle cx="5" cy="17" r="2"/><circle cx="19" cy="17" r="2"/></svg>
+                </div>
+                <div>
+                  <div style="font-size:12px;font-weight:700;color:#0f172a" data-i18n="demo.chem_organic">Chemistry - Organic Compounds</div>
+                  <div style="font-size:10px;color:#94a3b8">Chapter 3 • 45 min</div>
+                </div>
+              </div>
+              <div style="height:4px;background:#e0d8cc;border-radius:4px;overflow:hidden">
+                <div style="height:100%;width:65%;background:linear-gradient(90deg,#2563eb,#7c3aed);border-radius:4px"></div>
+              </div>
+              <div style="font-size:9px;color:#94a3b8;margin-top:4px;font-weight:600" data-i18n="demo.progress">65% Complete</div>
+            </div>
+            <!-- Subject cards -->
+            <div class="demo-card-up" style="background:#fff;border:1px solid #e0d8cc;border-radius:14px;padding:14px;animation-delay:0.5s">
+              <div style="font-size:12px;font-weight:700;color:#0f172a;margin-bottom:10px" data-i18n="demo.my_subjects">My Subjects</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <div style="flex:1;min-width:80px;background:#eff6ff;border-radius:10px;padding:10px;text-align:center">
+                  <div style="font-size:16px">🧪</div>
+                  <div style="font-size:10px;font-weight:600;color:#2563eb;margin-top:4px">Chemistry</div>
+                </div>
+                <div style="flex:1;min-width:80px;background:#f0fdf4;border-radius:10px;padding:10px;text-align:center">
+                  <div style="font-size:16px">🧬</div>
+                  <div style="font-size:10px;font-weight:600;color:#16a34a;margin-top:4px">Biology</div>
+                </div>
+                <div style="flex:1;min-width:80px;background:#fef3c7;border-radius:10px;padding:10px;text-align:center">
+                  <div style="font-size:16px">📐</div>
+                  <div style="font-size:10px;font-weight:600;color:#d97706;margin-top:4px">Math</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /demo-phone -->
+
+      <!-- Controls -->
+      <div style="padding:14px 20px;background:#fff;border-top:1px solid #e0d8cc;display:flex;align-items:center;justify-content:space-between">
+        <!-- Step dots -->
+        <div id="demo-steps" style="display:flex;gap:6px;align-items:center">
+          <div class="demo-step-dot active" data-step="0"></div>
+          <div class="demo-step-dot" data-step="1"></div>
+          <div class="demo-step-dot" data-step="2"></div>
+          <div class="demo-step-dot" data-step="3"></div>
+        </div>
+        <!-- Play/Pause + Next -->
+        <div style="display:flex;align-items:center;gap:10px">
+          <button id="demo-play-btn" onclick="toggleDemoPlay()" style="width:44px;height:44px;border-radius:50%;background:#2563eb;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s" aria-label="Play/Pause">
+            <svg id="demo-play-icon" width="16" height="16" viewBox="0 0 24 24" fill="#fff"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg id="demo-pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="#fff" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <button id="demo-next-btn" onclick="demoNextStep()" style="width:44px;height:44px;border-radius:50%;background:#e0d8cc;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s" aria-label="Next step">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-xs py-10 sm:py-14" role="contentinfo" style="background:linear-gradient(180deg,#0f172a 0%,#020617 100%);color:#94a3b8;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10">
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-8 h-8 rounded-xl flex items-center justify-center text-white font-extrabold text-sm" style="background:linear-gradient(135deg,#2563eb,#7c3aed);">C</div>
+            <span class="font-extrabold text-sm" style="color:#f1f5f9;letter-spacing:-0.02em;">Casuya</span>
+          </div>
+          <div><a href="#features" class="transition-colors hover:text-blue-400" data-i18n="footer.features">Features</a></div>
+          <div><a href="https://github.com/casuya-co-tz" class="transition-colors hover:text-blue-400" target="_blank" rel="noopener" data-i18n="footer.docs">Documentation</a></div>
+          <div><a href="#subjects" class="transition-colors hover:text-blue-400" data-i18n="footer.subjects">Subjects</a></div>
+        </div>
+        <div class="space-y-4">
+          <div class="font-bold text-sm mb-2" style="color:#f1f5f9;" data-i18n="footer.support">Support</div>
+          <div><a href="/help.html" class="transition-colors hover:text-blue-400" data-i18n="footer.help">Help Center</a></div>
+          <div><a href="/contact.html" class="transition-colors hover:text-blue-400" data-i18n="footer.contact">Contact Us</a></div>
+          <div><a href="https://wa.me/255748386745" target="_blank" rel="noopener" class="transition-colors hover:text-blue-400" data-i18n="footer.whatsapp">WhatsApp</a></div>
+        </div>
+        <div class="space-y-4">
+          <div class="font-bold text-sm mb-2" style="color:#f1f5f9;" data-i18n="footer.legal">Legal</div>
+          <div><a href="/privacy.html" class="transition-colors hover:text-blue-400" data-i18n="footer.privacy">Privacy Policy</a></div>
+          <div><a href="/terms.html" class="transition-colors hover:text-blue-400" data-i18n="footer.terms">Terms of Service</a></div>
+        </div>
+        <div class="space-y-4">
+          <div class="font-bold text-sm mb-2" style="color:#f1f5f9;" data-i18n="footer.links">Links</div>
+          <div><a href="https://github.com/casuya-co-tz" class="transition-colors hover:text-blue-400" target="_blank" rel="noopener" data-i18n="footer.github">GitHub Organization</a></div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(148,163,184,0.12);"></div>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="text-[11px]" style="color:#475569;" data-i18n="footer.copyright">&copy; 2026 Casuya Platform. All rights reserved.</div>
+        <div class="flex items-center gap-4 text-[11px]" style="color:#475569;">
+          <span data-i18n="footer.built">Built with care for Tanzanian schools</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating contact button — replace the number below with your real one -->
+  <a href="https://wa.me/255748386745" target="_blank" rel="noopener" class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 bg-green-500 hover:bg-green-600 rounded-full shadow-xl shadow-green-200/60 flex items-center justify-center transition-all hover:-translate-y-0.5" aria-label="Chat with us on WhatsApp">
+    <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8-1.5 0-2.91-.32-4.15-.9L3 20l1.05-3.65C3.39 15.14 3 13.62 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+    </svg>
+  </a>
+
+  <script type="module">
+    import { FEATURES } from "/assets/js/site-features.js";
+
+    // ── Hero value checkmarks ──────────────────────────────────────────
+    const heroEl = document.getElementById("hero-features");
+    if (heroEl) {
+      const heroItems = Object.values(FEATURES).filter((f) => f.enabled && f.hero);
+      heroEl.innerHTML = heroItems
+        .map(
+          (f) =>
+            `<div class="flex items-center gap-2 text-xs sm:text-sm"><span class="w-4 h-4 shrink-0 text-blue-600" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>${f.title}</div>`
+        )
+        .join("");
+      if (!heroItems.length) heroEl.remove();
+    }
+
+    // ── Trusted-by strip ───────────────────────────────────────────────
+    const trustedEl = document.getElementById("trusted-features");
+    if (trustedEl) {
+      const trusted = Object.values(FEATURES).filter((f) => f.enabled && f.trusted);
+      trustedEl.innerHTML = trusted
+        .map(
+          (f, i) =>
+            `<span class="cursor-default text-xs sm:text-sm lg:text-lg" style="color:#334155;">${f.title}</span>${
+              i < trusted.length - 1
+                ? '<span style="color:#2563eb;">•</span>'
+                : ""
+            }`
+        )
+        .join("");
+      if (!trusted.length) trustedEl.closest("section")?.remove();
+    }
+
+    // ── Features grid ──────────────────────────────────────────────────
+    const gridEl = document.getElementById("features-grid");
+    if (gridEl) {
+      const cards = Object.values(FEATURES).filter((f) => f.enabled);
+      gridEl.innerHTML = cards
+        .map(
+          (f) =>
+            `<div class="premium-card p-5 sm:p-6 lg:p-8 group glow-hover">
+              <div class="feature-icon-premium mb-4 sm:mb-5 lg:mb-6">${f.icon}</div>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1.5 sm:mb-2">${f.title}</h3>
+              <p class="text-xs sm:text-sm leading-relaxed" style="color:#64748b;">${f.blurb}</p>
+            </div>`
+        )
+        .join("");
+    }
+  </script>
+
+  <!-- Mobile menu + language toggle (no external dependencies) -->
+  <script>
+    (function () {
+      // Mobile menu
+      var menuBtn = document.getElementById('mobile-menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      var iconOpen = document.getElementById('menu-icon-open');
+      var iconClose = document.getElementById('menu-icon-close');
+
+      function closeMenu() {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function () {
+          var isOpen = !mobileMenu.classList.contains('hidden');
+          if (isOpen) {
+            closeMenu();
+          } else {
+            mobileMenu.classList.remove('hidden');
+            iconOpen.classList.add('hidden');
+            iconClose.classList.remove('hidden');
+            menuBtn.setAttribute('aria-expanded', 'true');
+          }
+        });
+        mobileMenu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      // Lightweight EN / SW toggle for top-of-page copy.
+      // NOTE: this covers nav + hero + primary CTAs only. Wiring the rest of
+      // the page (feature cards, subjects, personas) should go through
+      // site-features.js so copy stays in one place.
+      var translations = {
+        en: {
+          navFeatures: 'Features', navSubjects: 'Subjects', navUsers: 'Users', navAbout: 'About',
+          heroTitle: 'Learn Smarter.<br>Teach Better.<br><span class="text-blue-600">Build the Future.</span>',
+          heroSubtitle: 'An intelligent educational ecosystem connecting teachers, students, and schools with modern digital tools built for any infrastructure.',
+          ctaStart: 'Start Learning',
+          ctaDemo: 'Watch Demo',
+          login: 'Login',
+          getStarted: 'Get Started'
+        },
+        sw: {
+          navFeatures: 'Vipengele', navSubjects: 'Masomo', navUsers: 'Watumiaji', navAbout: 'Kuhusu',
+          heroTitle: 'Jifunze kwa Akili.<br>Fundisha kwa Ubora.<br><span class="text-blue-600">Jenga Mustakabali.</span>',
+          heroSubtitle: 'Mfumo wa kielimu wenye akili unaounganisha walimu, wanafunzi na shule kupitia zana za kisasa za kidijitali zinazofanya kazi popote.',
+          ctaStart: 'Anza Kujifunza',
+          ctaDemo: 'Tazama Onyesho',
+          login: 'Ingia',
+          getStarted: 'Anza Sasa'
+        }
+      };
+
+      var langToggle = document.getElementById('lang-toggle');
+      var langLabel = document.getElementById('lang-toggle-label');
+
+      function applyLang(lang) {
+        var dict = translations[lang];
+        if (!dict) return;
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          var key = el.getAttribute('data-i18n');
+          if (dict[key]) el.textContent = dict[key];
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+          var key = el.getAttribute('data-i18n-html');
+          if (dict[key]) el.innerHTML = dict[key];
+        });
+        if (langLabel) langLabel.textContent = lang === 'en' ? 'SW' : 'EN';
+        document.documentElement.setAttribute('lang', lang);
+        try { localStorage.setItem('casuya-lang', lang); } catch (e) {}
+      }
+
+      var savedLang = 'en';
+      try { savedLang = localStorage.getItem('casuya-lang') || 'en'; } catch (e) {}
+      applyLang(savedLang);
+
+      if (langToggle) {
+        langToggle.addEventListener('click', function () {
+          var current = document.documentElement.getAttribute('lang') === 'sw' ? 'sw' : 'en';
+          applyLang(current === 'en' ? 'sw' : 'en');
+        });
+      }
+    })();
+  </script>
+
+  <!-- ═══════════════════ DEMO SCRIPT ═══════════════════ -->
+  <script>
+  (function () {
+    var playing = false;
+    var currentStep = 0;
+    var totalSteps = 4;
+    var timer = null;
+    var typingTimer = null;
+    var pendingTimeouts = [];
+    var screens = ['ds-login', 'ds-forgot', 'ds-register', 'ds-dashboard'];
+    var overlay = document.getElementById('demo-overlay');
+    var dots = document.querySelectorAll('#demo-steps .demo-step-dot');
+    var playIcon = document.getElementById('demo-play-icon');
+    var pauseIcon = document.getElementById('demo-pause-icon');
+    var labelEl = document.getElementById('demo-label');
+    var labelTimer = null;
+
+    function safeSetTimeout(fn, ms) {
+      var id = setTimeout(fn, ms);
+      pendingTimeouts.push(id);
+      return id;
+    }
+
+    function clearPendingTimeouts() {
+      pendingTimeouts.forEach(clearTimeout);
+      pendingTimeouts = [];
+    }
+
+    // ── Show / hide label badge ────────────────────────────────
+    function showLabel(text) {
+      if (!labelEl) return;
+      clearTimeout(labelTimer);
+      labelEl.textContent = text;
+      labelEl.classList.add('show');
+      labelTimer = setTimeout(function () { labelEl.classList.remove('show'); }, 1800);
+    }
+
+    // ── Navigate to a screen ──────────────────────────────────
+    function goToScreen(index) {
+      screens.forEach(function (id, i) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.classList.remove('active', 'left', 'right');
+        if (i < index) el.classList.add('left');
+        else if (i > index) el.classList.add('right');
+        else el.classList.add('active');
+      });
+      dots.forEach(function (d, i) {
+        d.classList.toggle('active', i === index);
+      });
+    }
+
+    // ── Typing animation helper ───────────────────────────────
+    function typeText(elId, cursorId, text, speed, cb) {
+      var el = document.getElementById(elId);
+      var cursor = document.getElementById(cursorId);
+      if (!el || !cursor) { if (cb) cb(); return; }
+      el.textContent = '';
+      cursor.style.display = 'inline-block';
+      var i = 0;
+      clearInterval(typingTimer);
+      typingTimer = setInterval(function () {
+        if (i < text.length) {
+          el.textContent += text[i];
+          i++;
+        } else {
+          clearInterval(typingTimer);
+          safeSetTimeout(function () { cursor.style.display = 'none'; }, 600);
+          if (cb) cb();
+        }
+      }, speed);
+    }
+
+    // ── Step animations ───────────────────────────────────────
+    function runStep0(cb) {
+      showLabel('Step 1 — Sign In');
+      goToScreen(0);
+      safeSetTimeout(function () {
+        typeText('demo-email-text', 'demo-email-cursor', 'amina@school.tz', 60, function () {
+          safeSetTimeout(function () {
+            typeText('demo-pass-text', 'demo-pass-cursor', '••••••••', 50, function () {
+              safeSetTimeout(function () {
+                var box = document.getElementById('demo-remember-box');
+                if (box) {
+                  box.style.background = '#2563eb';
+                  box.style.borderColor = '#2563eb';
+                  box.innerHTML = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>';
+                }
+                safeSetTimeout(function () {
+                  var btn = document.getElementById('demo-signin-btn');
+                  if (btn) {
+                    btn.classList.add('demo-press');
+                    btn.style.background = '#1d4ed8';
+                    safeSetTimeout(function () { btn.classList.remove('demo-press'); btn.style.background = '#2563eb'; }, 400);
+                  }
+                  if (cb) safeSetTimeout(cb, 500);
+                }, 500);
+              }, 400);
+            });
+          }, 300);
+        });
+      }, 600);
+    }
+
+    function runStep1(cb) {
+      showLabel('Step 2 — Forgot Password');
+      goToScreen(1);
+      safeSetTimeout(function () {
+        typeText('demo-forgot-email-text', 'demo-forgot-email-cursor', 'amina@school.tz', 60, function () {
+          safeSetTimeout(function () {
+            var btn = document.getElementById('demo-send-btn');
+            if (btn) {
+              btn.classList.add('demo-press');
+              btn.style.background = '#1d4ed8';
+              safeSetTimeout(function () {
+                btn.classList.remove('demo-press');
+                btn.style.background = '#2563eb';
+                btn.textContent = 'Sending...';
+                safeSetTimeout(function () {
+                  btn.style.display = 'none';
+                  var success = document.getElementById('demo-forgot-success');
+                  if (success) success.style.display = 'block';
+                  if (cb) safeSetTimeout(cb, 1200);
+                }, 800);
+              }, 400);
+            }
+          }, 400);
+        });
+      }, 600);
+    }
+
+    function runStep2(cb) {
+      showLabel('Step 3 — Register');
+      goToScreen(2);
+      safeSetTimeout(function () {
+        typeText('demo-reg-name-text', 'demo-reg-name-cursor', 'Amina Husen', 60, function () {
+          safeSetTimeout(function () {
+            typeText('demo-reg-email-text', 'demo-reg-email-cursor', 'amina@school.tz', 50, function () {
+              safeSetTimeout(function () {
+                typeText('demo-reg-pass-text', 'demo-reg-pass-cursor', '••••••••', 50, function () {
+                  safeSetTimeout(function () {
+                    typeText('demo-reg-confirm-text', 'demo-reg-confirm-cursor', '••••••••', 50, function () {
+                      safeSetTimeout(function () {
+                        var btn = document.getElementById('demo-register-btn');
+                        if (btn) {
+                          btn.classList.add('demo-press');
+                          btn.style.background = '#1d4ed8';
+                          safeSetTimeout(function () { btn.classList.remove('demo-press'); btn.style.background = '#2563eb'; }, 400);
+                        }
+                        if (cb) safeSetTimeout(cb, 600);
+                      }, 400);
+                    });
+                  }, 200);
+                });
+              }, 200);
+            });
+          }, 200);
+        });
+      }, 600);
+    }
+
+    function runStep3(cb) {
+      showLabel('Step 4 — Dashboard');
+      goToScreen(3);
+      if (cb) safeSetTimeout(cb, 1500);
+    }
+
+    var stepRunners = [runStep0, runStep1, runStep2, runStep3];
+
+    function runCurrentStep() {
+      stepRunners[currentStep](function () {
+        if (playing && currentStep < totalSteps - 1) {
+          timer = safeSetTimeout(function () {
+            currentStep++;
+            runCurrentStep();
+          }, 1800);
+        } else if (playing && currentStep === totalSteps - 1) {
+          timer = safeSetTimeout(function () {
+            currentStep = 0;
+            resetScreens();
+            runCurrentStep();
+          }, 2500);
+        }
+      });
+    }
+
+    function resetScreens() {
+      var fb = document.getElementById('demo-send-btn');
+      if (fb) { fb.style.display = ''; fb.textContent = 'Send Reset Link'; fb.style.background = '#2563eb'; }
+      var fs = document.getElementById('demo-forgot-success');
+      if (fs) fs.style.display = 'none';
+      var fe = document.getElementById('demo-forgot-email-text');
+      if (fe) fe.textContent = '';
+      var et = document.getElementById('demo-email-text');
+      if (et) et.textContent = '';
+      var pt = document.getElementById('demo-pass-text');
+      if (pt) pt.textContent = '';
+      var rbox = document.getElementById('demo-remember-box');
+      if (rbox) { rbox.style.background = ''; rbox.style.borderColor = ''; rbox.innerHTML = ''; }
+      var rn = document.getElementById('demo-reg-name-text');
+      if (rn) rn.textContent = '';
+      var re = document.getElementById('demo-reg-email-text');
+      if (re) re.textContent = '';
+      var rp = document.getElementById('demo-reg-pass-text');
+      if (rp) rp.textContent = '';
+      var rc = document.getElementById('demo-reg-confirm-text');
+      if (rc) rc.textContent = '';
+      document.querySelectorAll('.demo-cursor').forEach(function (c) { c.style.display = 'none'; });
+    }
+
+    // ── Public API ────────────────────────────────────────────
+    window.openDemo = function () {
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      currentStep = 0;
+      clearPendingTimeouts();
+      resetScreens();
+      goToScreen(0);
+      safeSetTimeout(function () {
+        playing = true;
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = '';
+        runCurrentStep();
+      }, 800);
+    };
+
+    window.closeDemo = function () {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      playing = false;
+      clearPendingTimeouts();
+      clearTimeout(timer);
+      clearInterval(typingTimer);
+      playIcon.style.display = '';
+      pauseIcon.style.display = 'none';
+    };
+
+    window.toggleDemoPlay = function () {
+      playing = !playing;
+      if (playing) {
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = '';
+        runCurrentStep();
+      } else {
+        playIcon.style.display = '';
+        pauseIcon.style.display = 'none';
+        clearPendingTimeouts();
+        clearTimeout(timer);
+        clearInterval(typingTimer);
+      }
+    };
+
+    window.demoNextStep = function () {
+      clearPendingTimeouts();
+      clearTimeout(timer);
+      clearInterval(typingTimer);
+      playing = false;
+      playIcon.style.display = '';
+      pauseIcon.style.display = 'none';
+      currentStep = (currentStep + 1) % totalSteps;
+      if (currentStep === 0) resetScreens();
+      goToScreen(currentStep);
+      stepRunners[currentStep](null);
+    };
+
+    // ── Wire up "Watch Demo" button ──────────────────────────
+    document.querySelectorAll('a[href="#demo"]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.openDemo();
+      });
+    });
+
+    // ── Close on overlay click (outside modal) ────────────────
+    if (overlay) {
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) window.closeDemo();
+      });
+    }
+
+    // ── Close on Escape key ───────────────────────────────────
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay && overlay.classList.contains('open')) {
+        window.closeDemo();
+      }
+    });
+
+    // ── Focus trap for demo modal ─────────────────────────────
+    if (overlay) {
+      overlay.addEventListener('keydown', function (e) {
+        if (e.key !== 'Tab' || !overlay.classList.contains('open')) return;
+        var modal = document.getElementById('demo-modal');
+        var focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (!focusable.length) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+          if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+    }
+  })();
+  </script>
+
+  <!-- ═══════════════════ ACCESSIBILITY TOOLBAR SCRIPT ═══════════════════ -->
+  <script>
+  (function () {
+    var state = {
+      dyslexia: false,
+      highContrast: false,
+      largeText: false,
+      wideSpacing: false,
+      tts: false,
+      speechRate: 1,
+      fontSize: 100
+    };
+
+    try {
+      var saved = JSON.parse(localStorage.getItem('casuya_a11y'));
+      if (saved) Object.assign(state, saved);
+    } catch (e) {}
+
+    function saveState() {
+      try { localStorage.setItem('casuya_a11y', JSON.stringify(state)); } catch (e) {}
+    }
+
+    function applyState() {
+      document.body.classList.toggle('dyslexia-mode', state.dyslexia);
+      document.body.classList.toggle('high-contrast', state.highContrast);
+      document.body.classList.toggle('large-text', state.largeText);
+      document.body.classList.toggle('extra-large-text', state.fontSize >= 150 && state.fontSize < 200);
+      document.body.classList.toggle('max-text', state.fontSize >= 200);
+      document.body.classList.toggle('wide-spacing', state.wideSpacing);
+
+      document.querySelectorAll('.a11y-toggle-btn').forEach(function (btn, i) {
+        var vals = [state.dyslexia, state.highContrast, state.largeText, state.wideSpacing, state.tts];
+        btn.classList.toggle('active', vals[i]);
+      });
+
+      var ariaIds = ['a11y-dyslexia', 'a11y-contrast', 'a11y-large-text', 'a11y-wide-spacing', 'a11y-tts'];
+      var ariaKeys = ['dyslexia', 'highContrast', 'largeText', 'wideSpacing', 'tts'];
+      ariaIds.forEach(function (id, i) {
+        var el = document.getElementById(id);
+        if (el) el.setAttribute('aria-pressed', state[ariaKeys[i]]);
+      });
+
+      var speedRow = document.getElementById('a11y-speed-row');
+      var speechCtrl = document.getElementById('speech-controls');
+      if (speedRow) speedRow.style.display = state.tts ? 'flex' : 'none';
+      if (speechCtrl) speechCtrl.style.display = state.tts ? 'flex' : 'none';
+
+      var fontSlider = document.getElementById('a11y-fontsize');
+      var fontLabel = document.getElementById('a11y-fontsize-label');
+      if (fontSlider && fontLabel) {
+        fontSlider.value = state.fontSize;
+        fontLabel.textContent = state.fontSize + '%';
+      }
+
+      saveState();
+    }
+
+    applyState();
+
+    var toggleBtn = document.getElementById('a11y-toggle-btn');
+    var panel = document.getElementById('a11y-panel');
+
+    toggleBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = panel.classList.toggle('open');
+      toggleBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!panel.contains(e.target) && !toggleBtn.contains(e.target)) {
+        panel.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) {
+        panel.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.focus();
+      }
+    });
+
+    document.getElementById('a11y-dyslexia').addEventListener('click', function () {
+      state.dyslexia = !state.dyslexia;
+      applyState();
+    });
+    document.getElementById('a11y-contrast').addEventListener('click', function () {
+      state.highContrast = !state.highContrast;
+      applyState();
+    });
+    document.getElementById('a11y-large-text').addEventListener('click', function () {
+      state.largeText = !state.largeText;
+      applyState();
+    });
+    document.getElementById('a11y-tts').addEventListener('click', function () {
+      state.tts = !state.tts;
+      applyState();
+      if (!state.tts) window.speechSynthesis.cancel();
+    });
+    document.getElementById('a11y-wide-spacing').addEventListener('click', function () {
+      state.wideSpacing = !state.wideSpacing;
+      applyState();
+    });
+
+    var fontSlider = document.getElementById('a11y-fontsize');
+    var fontLabel = document.getElementById('a11y-fontsize-label');
+    if (fontSlider) {
+      fontSlider.addEventListener('input', function () {
+        state.fontSize = parseInt(this.value);
+        applyState();
+      });
+    }
+
+    document.querySelectorAll('.a11y-option').forEach(function (el) {
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          el.click();
+        }
+      });
+    });
+
+    var speedSlider = document.getElementById('a11y-speed');
+    var speedLabel = document.getElementById('a11y-speed-label');
+    if (speedSlider) {
+      speedSlider.addEventListener('input', function () {
+        state.speechRate = parseFloat(this.value);
+        speedLabel.textContent = state.speechRate.toFixed(1) + 'x';
+        saveState();
+      });
+    }
+
+    var speechStatus = document.getElementById('speech-status');
+    var speechUtterance = null;
+
+    function getSelectedText() {
+      var sel = window.getSelection();
+      if (sel && sel.toString().trim()) return sel.toString().trim();
+      return document.body.textContent.substring(0, 2000);
+    }
+
+    function findVoice() {
+      var voices = window.speechSynthesis.getVoices();
+      var preferred = ['en-TZ', 'en-KE', 'en-UG', 'en-GH', 'en-ZA', 'en-GB', 'en-US'];
+      for (var i = 0; i < preferred.length; i++) {
+        var match = voices.filter(function (v) { return v.lang === preferred[i]; });
+        if (match.length) return match[0];
+      }
+      for (var j = 0; j < voices.length; j++) {
+        if (voices[j].lang.indexOf('en') === 0) return voices[j];
+      }
+      return null;
+    }
+
+    function speak(text) {
+      window.speechSynthesis.cancel();
+      speechUtterance = new SpeechSynthesisUtterance(text);
+      var voice = findVoice('en-TZ');
+      if (voice) {
+        speechUtterance.voice = voice;
+        speechUtterance.lang = voice.lang;
+      } else {
+        speechUtterance.lang = 'en-TZ';
+      }
+      speechUtterance.rate = state.speechRate || 0.9;
+      speechUtterance.pitch = 1.0;
+      speechUtterance.volume = 1.0;
+      speechUtterance.onstart = function () { speechStatus.textContent = 'Speaking...'; };
+      speechUtterance.onend = function () { speechStatus.textContent = 'Done'; };
+      speechUtterance.onerror = function () { speechStatus.textContent = 'Error'; };
+      window.speechSynthesis.speak(speechUtterance);
+    }
+
+    if (window.speechSynthesis) {
+      window.speechSynthesis.onvoiceschanged = function () {};
+      window.speechSynthesis.getVoices();
+    }
+
+    document.getElementById('speech-play').addEventListener('click', function () {
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        speechStatus.textContent = 'Speaking...';
+      } else {
+        speak(getSelectedText());
+      }
+    });
+
+    document.getElementById('speech-pause').addEventListener('click', function () {
+      window.speechSynthesis.pause();
+      speechStatus.textContent = 'Paused';
+    });
+
+    document.getElementById('speech-stop').addEventListener('click', function () {
+      window.speechSynthesis.cancel();
+      speechStatus.textContent = 'Stopped';
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.ctrlKey && e.key === 'u') {
+        e.preventDefault();
+        toggleBtn.click();
+      }
+    });
+  })();
+  </script>
+
+  <script src="/assets/js/i18n.js"></script>
+
+</body>
+</html>

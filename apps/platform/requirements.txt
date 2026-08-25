@@ -1,0 +1,20 @@
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+gunicorn>=26.1.0
+sqlalchemy==2.0.52
+pydantic==2.13.4
+pydantic-settings==2.15.0
+pyjwt==2.13.0
+bcrypt==5.0.0
+python-multipart==0.0.32
+httpx==0.28.1
+pytest>=9.1.1,<10
+pytest-asyncio==1.4.0
+pytest-cov==7.1.0
+redis==8.1.0
+rq>=2.11.0
+sentry-sdk>=2.68.0
+psycopg2-binary>=2.9.12
+alembic==1.19.1
+
+# Local workspace dependency — install with: pip install -e ../casuya-core
