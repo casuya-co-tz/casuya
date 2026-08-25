@@ -15,13 +15,20 @@ describe('Blackboard event API', () => {
 
   beforeEach(() => {
     (globalThis as any).Path2D = class { constructor(_d?: string) {} };
+    (globalThis as any).localStorage = {
+      _store: {} as Record<string, string>,
+      getItem(key: string) { return this._store[key] ?? null; },
+      setItem(key: string, val: string) { this._store[key] = val; },
+      removeItem(key: string) { delete this._store[key]; },
+      clear() { this._store = {}; },
+    };
     const proto = HTMLCanvasElement.prototype as any;
     proto.getContext = () => {
       const ctx: any = {
         scale() {}, clearRect() {}, fillRect() {}, beginPath() {}, moveTo() {},
         lineTo() {}, stroke() {}, fill() {}, arc() {}, save() {}, restore() {},
         setTransform() {}, drawImage() {}, fillText() {}, translate() {}, rotate() {},
-        closePath() {},
+        closePath() {}, quadraticCurveTo() {},
       };
       ctx.fillStyle = ''; ctx.strokeStyle = ''; ctx.lineWidth = 1; ctx.globalAlpha = 1;
       return ctx;

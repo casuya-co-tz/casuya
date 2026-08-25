@@ -770,7 +770,8 @@ onPointerUp = (e: PointerEvent): void => {
       } else {
         (this.currentElement as Stroke).points = this.downsampleStroke((this.currentElement as Stroke).points, 2);
       }
-      this.elements.push(this.currentElement);
+    this.pushUndo();
+    this.elements.push(this.currentElement);
       this.currentElement = null;
       this.flushLive();
       this.renderStatic();
@@ -817,6 +818,7 @@ onPointerUp = (e: PointerEvent): void => {
     }
     }
 
+    this.pushUndo();
     this.elements.push(this.currentElement);
     if (this.currentElement.tool === 'arrow' || this.currentElement.tool === 'line') {
       this.autoBindArrow(this.currentElement as Shape);
