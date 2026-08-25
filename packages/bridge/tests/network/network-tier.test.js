@@ -62,6 +62,7 @@ test('NetworkTierDetector emits NETWORK_TIER_CHANGED on tier change', () => {
   detector.simulate(NETWORK_TIERS.G2, { effectiveType: '2g', downlink: 0.1, rtt: 800 });
   assert.equal(eventPayload.tier, NETWORK_TIERS.G2);
   assert.equal(eventPayload.previousTier, NETWORK_TIERS.G4);
+  detector.stop();
 });
 
 test('NetworkTierDetector toJSON returns snapshot', () => {
