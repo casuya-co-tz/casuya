@@ -222,12 +222,12 @@ async def translate_content(text: str, target_language: str) -> str:
     result = await _call_ai_service(
         "/api/content/translate",
         {
-            "content": text,
+            "text": text,
             "target_language": target_language,
         },
     )
-    if result and "translated" in result:
-        return result["translated"]
+    if result:
+        return result.get("translated") or result.get("translatedText") or text
 
     return text  # Return original if service unavailable
 

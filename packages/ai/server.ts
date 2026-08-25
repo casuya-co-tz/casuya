@@ -229,15 +229,16 @@ async function start() {
         }
 
         case '/api/content/translate': {
-          const { content, target_language } = body;
+          const { text: translateText, content: translateContent, target_language } = body;
+          const inputText = translateText || translateContent || '';
           return safeAsync(
             () =>
               ai.translator.translate({
-                text: content,
+                text: inputText,
                 sourceLanguage: Language.ENGLISH,
                 targetLanguage: (target_language as Language) || Language.SWAHILI,
               }),
-            { translated: content, targetLanguage: target_language || 'sw' },
+            { translated: inputText, targetLanguage: target_language || 'sw' },
           );
         }
 

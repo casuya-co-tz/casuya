@@ -948,7 +948,7 @@ async function renderTeacherDashboard() {
           method: "POST",
           body: JSON.stringify({ text: fd.get("text"), target_language: fd.get("target_language") }),
         });
-        const raw = result?.translated || result?.text || JSON.stringify(result);
+        const raw = result?.translated || result?.translatedText || result?.text || JSON.stringify(result);
         textDiv.innerHTML = renderTutorMarkdown(raw);
       } catch(err) { textDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
     });
