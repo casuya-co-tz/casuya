@@ -72,7 +72,7 @@ A separate `backend` job validates that the Python app boots correctly.
 pnpm install
 pip install -r requirements.txt
 cp .env.example .env
-pnpm dev:backend      # apps/platform on :8000
+pnpm dev:backend      # apps/platform on :8765
 pnpm dev:frontend     # static UI on :5173
 ```
 

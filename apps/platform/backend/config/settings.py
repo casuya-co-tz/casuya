@@ -49,7 +49,7 @@ class Settings(BaseSettings):
 
     allowed_origins: Annotated[list[str], BeforeValidator(_parse_allowed_origins)] = [
         "http://localhost:5173",
-        "http://localhost:8000",
+        "http://localhost:8765",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:8000",
         "https://casuya-backend.onrender.com",

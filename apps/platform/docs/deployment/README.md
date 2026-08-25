@@ -6,7 +6,7 @@ Deployment configuration and infrastructure notes for the Casuya platform.
 
 | Environment | Domain | Database | AzamPay Mode |
 |-------------|--------|----------|--------------|
-| Development | localhost:8000 | SQLite / local Postgres | Sandbox |
+| Development | localhost:8765 | SQLite / local Postgres | Sandbox |
 | Staging | staging.casuya.co.tz | Postgres | Sandbox |
 | Production | casuya.co.tz | Postgres | Live |
 

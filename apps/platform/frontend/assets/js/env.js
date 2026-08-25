@@ -2,7 +2,7 @@
 //
 // In production (Vercel / custom domain) we point the frontend at the Render
 // backend. On localhost we intentionally leave CASUYA_API_URL UNSET so that
-// config.js falls back to the local API (http://localhost:8000), keeping
+// config.js falls back to the local API (http://localhost:8765), keeping
 // local development fully local and free of production coupling.
 (function () {
   var host = window.location.hostname || "";

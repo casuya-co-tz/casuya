@@ -318,7 +318,7 @@ pnpm dev:frontend     # static UI on :5173
 Health endpoint:
 
 ```text
-http://localhost:8000/health
+http://localhost:8765/health
 ```
 
 ## Testing
