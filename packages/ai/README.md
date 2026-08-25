@@ -35,7 +35,7 @@ casuya-ai/
 ## Quick Start
 
 ```bash
-npm install casuya-ai
+pnpm install casuya-ai
 ```
 
 ```typescript
@@ -119,10 +119,10 @@ const ai = new CasuyaAI({
 ## Testing
 
 ```bash
-npm test                # All tests
-npm run test:unit       # Unit tests only
-npm run test:integration # Integration tests only
-npm run test:coverage   # With coverage report
+pnpm test                # All tests
+pnpm run test:unit       # Unit tests only
+pnpm run test:integration # Integration tests only
+pnpm run test:coverage   # With coverage report
 ```
 
 ## License

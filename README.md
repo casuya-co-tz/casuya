@@ -14,16 +14,19 @@ casuya-hybrid/
 │   ├── ai/          AI tutoring engine
 │   ├── blackboard/  interactive math/handwriting blackboard
 │   ├── bridge/      offline-first sync + cache engine
-│   ├── design-system/  React UI kit
+│   ├── design-system/   React UI kit (nested workspace with sub-packages)
+│   │   ├── packages/    tokens, react, icons, theme, a11y, utils, hooks, styles
+│   │   └── apps/        playground, docs
 │   ├── editor/      visual lesson builder
 │   └── runtime/     lesson player
 ├── libs/            rank 0 — reusable low-level code
 │   └── core/        Python lesson compiler / packager / signer engine
 ├── infra/           deployment: docker-compose, Dockerfile, nginx, render.yaml
 ├── tools/           repo scripts (e.g. layer-boundary enforcement)
-├── pnpm-workspace.yaml   workspace definition (apps/*, packages/*, libs/*)
+├── pnpm-workspace.yaml   workspace definition (includes nested design-system)
 ├── turbo.json            task runner (build/typecheck/lint/test w/ caching)
 ├── tsconfig.json         root TS config + path aliases
+├── packageManager        pnpm@9.15.9 (pinned for CI consistency)
 ├── CODEOWNERS            mandatory review routing
 ├── CONTRIBUTING.md       trunk-based workflow & layer rules
 └── .github/workflows/ci.yml  build + typecheck + lint + test + layer check
@@ -32,18 +35,6 @@ casuya-hybrid/
 **Rule:** `libs/` may depend on nothing above; `packages/` may depend on
 `libs/` only; `apps/` may depend on both. Enforced by `tools/check-layers.mjs`
 and in CI.
-
-## Why this matches the "giants"
-
-- **One repo, one trunk** — no per-service repositories; atomic cross-cutting
-  changes, single source of truth.
-- **Layered, dependency-enforced layout** — downward-only deps enforced by
-  a lightweight boundary checker + Turborepo.
-- **Hermetic, cached builds** — `turbo` builds/tests only what changed.
-- **Scale-oriented runtime** — `apps/platform` is stateless behind nginx, uses
-  Postgres + Redis (cache/queue via RQ), and serves the static frontend from a
-  CDN/Vercel, so it scales horizontally like a standard web tier.
-- **Process discipline** — `CODEOWNERS`, `CONTRIBUTING.md`, CI gate on every PR.
 
 ## Getting started
 
@@ -59,13 +50,39 @@ pnpm dev:frontend     # static UI on :5173
 docker compose -f infra/docker-compose.yml up -d
 ```
 
+### Prerequisites
+
+- **Node.js** >= 20
+- **pnpm** 9.15.9 (pinned via `packageManager` in root `package.json`)
+- **Python** >= 3.12 with `pip`
+
 ## Repo commands
 
 ```bash
-pnpm build / typecheck / lint / test   # via turbo, across affected packages
-pnpm check:layers                      # enforce downward-only dependencies
-pnpm validate                          # layers + lint + typecheck
+pnpm build            # via turbo, across affected packages
+pnpm typecheck        # TypeScript type checking
+pnpm lint             # ESLint across JS/TS packages
+pnpm test             # vitest (TS) + pytest (Python) + jest (AI)
+pnpm clean            # remove build artifacts
+
+pnpm check:layers     # enforce downward-only dependencies
+pnpm validate         # layers + lint + typecheck
+pnpm install:py       # pip install -r requirements.txt
 ```
+
+## Testing
+
+Tests run across multiple frameworks:
+
+| Package | Framework | Command |
+|---------|-----------|---------|
+| TypeScript packages | vitest | `pnpm test` (via turbo) |
+| `@casuya/ai` | jest | `pnpm test` (via turbo) |
+| `casuya-platform` | pytest | `pnpm test` (via turbo) |
+| `casuya-bridge` | node:test | `pnpm test` (via turbo) |
+
+CI installs Python + pytest before running `pnpm test` so the platform's
+Python test suite can execute alongside the TypeScript tests.
 
 ## Deployment (production-preserving)
 

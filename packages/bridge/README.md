@@ -130,17 +130,17 @@ page's DOM by default.
 ## Development
 
 ```bash
-npm install
-npm test              # Node's built-in test runner
-npm run test:coverage # with coverage
-npm run build          # esbuild -> dist/casuya-bridge.{js,esm.js,min.js}
+pnpm install
+pnpm test              # Node's built-in test runner
+pnpm run test:coverage # with coverage
+pnpm build          # esbuild -> dist/casuya-bridge.{js,esm.js,min.js}
 ```
 
 ## Publishing
 
 ```bash
-npm run build
-npm publish
+pnpm build
+pnpm publish
 ```
 
 The included `.github/workflows/publish.yml` publishes automatically on a

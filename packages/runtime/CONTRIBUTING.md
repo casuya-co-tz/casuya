@@ -29,11 +29,11 @@ casuya-runtime must NEVER:
 
 ## Development Workflow
 
-1. Branch from `develop`
+1. Branch from `main`
 2. Implement with tests
-3. Run `npm run test:all`
-4. Run `npm run lint`
-5. Create PR to `develop`
+3. Run `pnpm test`
+4. Run `pnpm lint`
+5. Create PR to `main`
 
 ## Branch Strategy
 

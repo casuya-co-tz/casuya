@@ -4,13 +4,23 @@
 
 ## Packages
 
-| Package          | Description                                            | Status |
-| ---------------- | ------------------------------------------------------ | ------ |
-| `@casuya/tokens` | Design tokens — colors, typography, spacing, shadows   | Alpha  |
-| `@casuya/react`  | React component library — buttons, inputs, cards, etc. | Alpha  |
-| `@casuya/icons`  | SVG icon library — 40+ educational icons               | Alpha  |
-| `@casuya/theme`  | Theme system — light, dark, and high-contrast modes    | Alpha  |
-| `@casuya/a11y`   | Accessibility utilities — focus trap, screen readers   | Alpha  |
+| Package | Description | Status |
+|---------|-------------|--------|
+| `@casuya/tokens` | Design tokens — colors, typography, spacing, shadows | Alpha |
+| `@casuya/react` | React component library — buttons, inputs, cards, etc. | Alpha |
+| `@casuya/icons` | SVG icon library — 40+ educational icons | Alpha |
+| `@casuya/theme` | Theme system — light, dark, and high-contrast modes | Alpha |
+| `@casuya/a11y` | Accessibility utilities — focus trap, screen readers | Alpha |
+| `@casuya/utils` | Utility functions — cn, formatBytes, truncate, pluralize | Alpha |
+| `@casuya/hooks` | React hooks — useDebounce, useMediaQuery, useBreakpoint | Alpha |
+| `@casuya/styles` | Global CSS — reset, tokens, dark mode | Alpha |
+
+### Apps
+
+| App | Description |
+|-----|-------------|
+| `playground` | Component test harness / visual playground |
+| `docs` | Storybook documentation (Storybook not yet installed) |
 
 ## Principles
 
@@ -67,28 +77,47 @@ function Toggle() {
 }
 ```
 
-## Git Practices
-
-- **Conventional Commits** — `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:`
-- **Branching** — `main` (stable), `develop` (integration), `feat/*` (features)
-- **Versioning** — Semantic versioning via Changesets
-- **Hooks** — Pre-commit linting, commit message validation
-
 ## Architecture
 
 ```
-casuya-design-system/
+packages/design-system/
 ├── packages/
 │   ├── tokens/      # Design tokens (zero-dependency)
-│   ├── react/       # React components
+│   ├── react/       # React components (Button, Input, Card, etc.)
 │   ├── icons/       # SVG icon library
 │   ├── theme/       # Theme provider (light/dark/hc)
-│   └── a11y/        # Accessibility utilities
+│   ├── a11y/        # Accessibility utilities
+│   ├── utils/       # Utility functions
+│   ├── hooks/       # React hooks
+│   └── styles/      # Global CSS (reset, tokens, dark mode)
 ├── apps/
-│   ├── docs/        # Storybook documentation
-│   └── playground/  # Component test harness
-└── .github/         # CI/CD workflows
+│   ├── playground/  # Component test harness
+│   └── docs/        # Storybook documentation
+└── tsconfig.base.json
 ```
+
+This is a **nested pnpm workspace** — the root `pnpm-workspace.yaml` includes
+`packages/design-system/packages/*` and `packages/design-system/apps/*`.
+
+## Build
+
+All sub-packages use `tsup` for building (ESM + CJS + type declarations).
+The `exports` field in each `package.json` must list `types` first for
+TypeScript bundler resolution.
+
+```bash
+pnpm build           # build all packages via Turborepo
+pnpm typecheck       # type-check all packages
+pnpm lint            # lint all packages
+pnpm test            # run all tests
+```
+
+## Git Practices
+
+- **Conventional Commits** — `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:`
+- **Branching** — `main` (stable), short-lived feature branches
+- **Versioning** — Semantic versioning via Changesets
+- **Hooks** — Pre-commit linting, commit message validation
 
 ## License
 

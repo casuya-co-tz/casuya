@@ -306,15 +306,13 @@ Never from routers.
 # Local Development
 
 ```bash
-cp .env.example .env
+# From the monorepo root
+pnpm install
 pip install -r requirements.txt
-uvicorn backend.main:app --reload
-```
+cp .env.example .env
 
-Run commands from the project root:
-
-```bash
-cd casuya-platform
+pnpm dev:backend      # uvicorn on :8000
+pnpm dev:frontend     # static UI on :5173
 ```
 
 Health endpoint:
@@ -322,6 +320,19 @@ Health endpoint:
 ```text
 http://localhost:8000/health
 ```
+
+## Testing
+
+```bash
+# From the monorepo root
+pnpm test             # runs pytest for casuya-platform + all TS tests
+
+# Or run platform tests directly
+pytest tests/ -v
+```
+
+The CI pipeline (`.github/workflows/ci.yml`) installs Python 3.12, pytest,
+and platform requirements before running `pnpm test` across the entire monorepo.
 
 ---
 
@@ -636,10 +647,11 @@ JavaScript synchronization engine responsible for:
 
 ## CI/CD Pipeline
 
-The `.github/workflows/tests.yml` workflow runs on every push and PR:
+The `.github/workflows/ci.yml` workflow runs on every push and PR:
 
-1. **secret-scan** — `detect-secrets` scans all files for credentials
-2. **lint** — `ruff check` + `ruff format --check`
-3. **backend-tests** — pytest with Postgres + Redis service containers, includes migration test via Alembic
-
-Dependabot is configured for pip, Docker, GitHub Actions, and npm weekly updates.
+1. **verify** — Full monorepo validation:
+   - Python 3.12 + pytest + platform requirements
+   - Node 20 + pnpm 9.15.9
+   - `pnpm check:layers` (downward-only dependency enforcement)
+   - `pnpm build`, `pnpm typecheck`, `pnpm lint`, `pnpm test`
+2. **backend** — Validates the Python app boots (`python -c "import backend.main"`)

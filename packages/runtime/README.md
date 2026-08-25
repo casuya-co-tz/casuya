@@ -69,16 +69,16 @@ casuya-core → Lesson Package → casuya-runtime → Student Interactions → c
 
 ```bash
 # Install
-npm install
+pnpm install
 
 # Test
-npm run test:all
+pnpm test
 
 # Build
-npm run build:prod
+pnpm build
 
 # Lint
-npm run lint
+pnpm lint
 ```
 
 ## License

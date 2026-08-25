@@ -40,14 +40,20 @@ casuya-editor
 ## Getting Started
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Build
 
 ```bash
-npm run build
+pnpm build
+```
+
+## Testing
+
+```bash
+pnpm test
 ```
 
 ## License
