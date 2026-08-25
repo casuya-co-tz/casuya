@@ -3,19 +3,19 @@
 # Layer structure: libs/ (lowest) < packages/ < apps/ (highest)
 
 # Core engine (Python)
-/libs/core/           @casuya/core-team
+/libs/core/           @yakoboI
 
 # Reusable frontend/TS libraries
-/packages/            @casuya/platform-team
+/packages/            @yakoboI
 
 # The deployable application
-/apps/platform/       @casuya/platform-team
+/apps/platform/       @yakoboI
 
 # Infrastructure & deployment
-/infra/               @casuya/devops
+/infra/               @yakoboI
 
 # Monorepo tooling & governance
-/package.json         @casuya/devops
-/pnpm-workspace.yaml  @casuya/devops
-/turbo.json           @casuya/devops
-/tools/               @casuya/devops
+/package.json         @yakoboI
+/pnpm-workspace.yaml  @yakoboI
+/turbo.json           @yakoboI
+/tools/               @yakoboI
