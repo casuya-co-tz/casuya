@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { SlideManager } from '../src/core/slide-manager.js';
+import type { ComponentData, Slide } from '../src/types.js';
 
 describe('SlideManager', () => {
   let manager: SlideManager;
@@ -131,14 +132,14 @@ describe('SlideManager', () => {
 
   it('should add component to slide', () => {
     const slide = manager.add('With Component');
-    const result = manager.addComponent(slide.id, { id: 'comp-1', type: 'text' } as any);
+    const result = manager.addComponent(slide.id, { id: 'comp-1', type: 'text' } as unknown as ComponentData);
     expect(result).toBe(true);
     expect(manager.getComponents(slide.id)).toHaveLength(1);
   });
 
   it('should remove component from slide', () => {
     const slide = manager.add('With Component');
-    manager.addComponent(slide.id, { id: 'comp-1', type: 'text' } as any);
+    manager.addComponent(slide.id, { id: 'comp-1', type: 'text' } as unknown as ComponentData);
     const result = manager.removeComponent(slide.id, 'comp-1');
     expect(result).toBe(true);
     expect(manager.getComponents(slide.id)).toHaveLength(0);
@@ -176,8 +177,8 @@ describe('SlideManager', () => {
 
   it('should set slides from array', () => {
     const slides = [
-      { id: 's1', title: 'S1', components: [] } as any,
-      { id: 's2', title: 'S2', components: [] } as any,
+      { id: 's1', title: 'S1', components: [] } as unknown as Slide,
+      { id: 's2', title: 'S2', components: [] } as unknown as Slide,
     ];
     manager.setSlides(slides);
     expect(manager.count).toBe(2);

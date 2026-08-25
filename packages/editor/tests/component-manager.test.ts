@@ -34,7 +34,7 @@ describe('ComponentManager', () => {
   });
 
   it('should throw for unknown component type', () => {
-    expect(() => manager.create('unknown' as any)).toThrow('Unknown component type');
+    expect(() => manager.create('unknown' as unknown as ComponentType)).toThrow('Unknown component type');
   });
 
   it('should find a component by id across slides', () => {
