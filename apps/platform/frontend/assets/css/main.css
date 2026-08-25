@@ -2252,12 +2252,39 @@ select.input-premium {
 .quiz-score .quiz-score-num { font-size: 1.5rem; font-weight: 800; }
 .quiz-score .quiz-score-label { font-size: 0.75rem; opacity: 0.9; margin-top: 0.15rem; }
 
-/* Submit button at bottom */
-.quiz-submit-all {
-  width: 100%;
+/* Submit + Download buttons row */
+.quiz-btn-row {
+  display: flex;
+  gap: 0.5rem;
   margin-top: 0.5rem;
+}
+.quiz-btn-row .quiz-submit-all {
+  flex: 1;
   padding: 0.5rem;
   font-size: 0.85rem;
+}
+.quiz-download-btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s, background 0.15s;
+}
+.quiz-download-btn:hover {
+  border-color: var(--color-primary);
+  background: rgba(37,99,235,0.04);
+}
+[data-theme="dark"] .quiz-download-btn:hover {
+  background: rgba(59,130,246,0.08);
+}
+@media (max-width: 480px) {
+  .quiz-btn-row { flex-direction: column; }
+  .quiz-btn-row .quiz-submit-all,
+  .quiz-download-btn { width: 100%; text-align: center; }
 }
 
 /* Dark mode */

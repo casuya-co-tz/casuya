@@ -334,8 +334,12 @@ function renderQuizQuestions(questions, meta = {}) {
     html += '</div>';
   });
 
-  // Submit button
-  html += `<button class="btn btn-primary quiz-submit-all" onclick="window._quizSubmit('${quizId}', ${questions.length})">Submit Answers</button>`;
+  // Submit + Download buttons
+  html += `<div class="quiz-btn-row">
+    <button class="btn btn-primary quiz-submit-all" onclick="window._quizSubmit('${quizId}', ${questions.length})">Submit Answers</button>
+    <button class="btn quiz-download-btn" onclick="window._quizDownloadWord('${quizId}')">📄 Word</button>
+    <button class="btn quiz-download-btn" onclick="window._quizDownloadPdf('${quizId}')">📋 PDF</button>
+  </div>`;
 
   // Score banner
   html += `<div class="quiz-score" id="${quizId}-score">
@@ -392,6 +396,110 @@ window._quizSubmit = function(quizId, total) {
   btn = document.querySelector("#" + quizId + " .quiz-submit-all");
   if (btn) btn.style.display = "none";
 };
+
+function _quizExtractData(quizId) {
+  var container = document.getElementById(quizId);
+  if (!container) return null;
+  var badge = container.querySelector(".quiz-badge");
+  var topic = container.querySelector(".quiz-topic");
+  var meta = badge ? badge.textContent.trim() : "";
+  var topicText = topic ? topic.textContent.replace("Topic:", "").trim() : "";
+  var questions = [];
+  var qEls = container.querySelectorAll(".quiz-question");
+  var i, qEl, qText, opts, j, optEl, letter, optText;
+  for (i = 0; i < qEls.length; i++) {
+    qEl = qEls[i];
+    qText = qEl.querySelector(".quiz-question-text");
+    opts = qEl.querySelectorAll(".quiz-option");
+    var options = [];
+    for (j = 0; j < opts.length; j++) {
+      optEl = opts[j];
+      letter = optEl.getAttribute("data-letter");
+      optText = optEl.querySelector("span:last-child");
+      options.push({ letter: letter, text: optText ? optText.textContent.trim() : "" });
+    }
+    var expEl = qEl.querySelector(".quiz-explanation");
+    var expText = expEl ? expEl.textContent.replace("Explanation:", "").trim() : "";
+    questions.push({
+      num: i + 1,
+      text: qText ? qText.textContent.trim() : "",
+      options: options,
+      correct: qEl.getAttribute("data-correct") || "",
+      explanation: expText
+    });
+  }
+  return { meta: meta, topic: topicText, questions: questions };
+}
+
+window._quizDownloadWord = function(quizId) {
+  var data = _quizExtractData(quizId);
+  if (!data || !data.questions.length) return;
+  var html = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>";
+  html += "<head><meta charset='utf-8'><title>Quiz</title>";
+  html += "<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.6}h1{color:#1e3a8a;font-size:20px}h2{color:#333;font-size:15px;margin-top:24px}.q{margin-bottom:16px}.q-text{font-weight:bold;font-size:13px}.opt{margin:4px 0 4px 20px;font-size:12px}.correct{color:#16a34a;font-weight:bold}.exp{color:#555;font-size:11px;margin-left:20px;border-left:3px solid #16a34a;padding-left:8px;margin-top:4px}.meta{color:#666;font-size:12px;margin-bottom:16px}</style></head><body>";
+  html += "<h1>Quiz Questions</h1>";
+  html += "<div class='meta'>" + data.meta;
+  if (data.topic) html += " &bull; Topic: " + data.topic;
+  html += "</div>";
+  var i, q, j, opt;
+  for (i = 0; i < data.questions.length; i++) {
+    q = data.questions[i];
+    html += "<div class='q'>";
+    html += "<div class='q-text'>" + q.num + ". " + q.text + "</div>";
+    for (j = 0; j < q.options.length; j++) {
+      opt = q.options[j];
+      html += "<div class='opt'>" + opt.letter + ". " + opt.text + "</div>";
+    }
+    html += "<div class='exp'><strong>Answer:</strong> " + q.correct + "</div>";
+    if (q.explanation) html += "<div class='exp'>" + q.explanation + "</div>";
+    html += "</div>";
+  }
+  html += "</body></html>";
+  var blob = new Blob(["\ufeff" + html], { type: "application/msword" });
+  _quizTriggerDownload(blob, "quiz-questions.doc");
+};
+
+window._quizDownloadPdf = function(quizId) {
+  var data = _quizExtractData(quizId);
+  if (!data || !data.questions.length) return;
+  var html = "<!DOCTYPE html><html><head><meta charset='utf-8'><title>Quiz</title>";
+  html += "<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.5;color:#111}h1{color:#1e3a8a;font-size:22px;border-bottom:2px solid #1e3a8a;padding-bottom:8px}h2{color:#333;font-size:14px;margin-top:20px}.meta{color:#555;font-size:12px;margin-bottom:16px;padding:8px;background:#f3f4f6;border-radius:6px}.q{margin-bottom:20px;page-break-inside:avoid}.q-text{font-weight:bold;font-size:13px;margin-bottom:4px}.opt{margin:3px 0 3px 24px;font-size:12px}.correct{color:#16a34a;font-weight:bold}.exp{color:#444;font-size:11px;margin-left:24px;border-left:3px solid #16a34a;padding-left:8px;margin-top:4px}@media print{body{margin:20px}.q{page-break-inside:avoid}}</style></head><body>";
+  html += "<h1>Quiz Questions</h1>";
+  html += "<div class='meta'>" + data.meta;
+  if (data.topic) html += " &bull; Topic: " + data.topic;
+  html += "</div>";
+  var i, q, j, opt;
+  for (i = 0; i < data.questions.length; i++) {
+    q = data.questions[i];
+    html += "<div class='q'>";
+    html += "<div class='q-text'>" + q.num + ". " + q.text + "</div>";
+    for (j = 0; j < q.options.length; j++) {
+      opt = q.options[j];
+      html += "<div class='opt'>" + opt.letter + ". " + opt.text + "</div>";
+    }
+    html += "<div class='exp'><strong>Answer:</strong> " + q.correct + "</div>";
+    if (q.explanation) html += "<div class='exp'>" + q.explanation + "</div>";
+    html += "</div>";
+  }
+  html += "</body></html>";
+  var win = window.open("", "_blank");
+  if (win) {
+    win.document.write(html);
+    win.document.close();
+    setTimeout(function() { win.print(); }, 400);
+  }
+};
+
+function _quizTriggerDownload(blob, filename) {
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+}
 
 // ===== modules/appearance.js =====
 // modules/appearance.js — extracted from main.js (classic script, shared global scope)
