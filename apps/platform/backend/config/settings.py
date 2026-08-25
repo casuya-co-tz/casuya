@@ -39,7 +39,7 @@ class Settings(BaseSettings):
     environment: str = "development"  # development | staging | production
     debug: bool = True
 
-    database_url: str = "postgresql://postgres:postgres@localhost:5432/casuya_platform"
+    database_url: str = "postgresql://postgres:Mkalanga1994!@localhost:5432/casuya_platform"
     redis_url: str = "redis://localhost:6379"
 
     jwt_secret: str = "insecure-development-secret-change-me"
