@@ -191,10 +191,17 @@ export class OpenAIProvider extends BaseProvider {
   }
 
   private getHeaders(): Record<string, string> {
-    return {
+    const headers: Record<string, string> = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${this.config.apiKey ?? ''}`,
     };
+    const extra = (this.config.options as Record<string, unknown>)?.defaultHeaders;
+    if (extra && typeof extra === 'object') {
+      for (const [k, v] of Object.entries(extra as Record<string, string>)) {
+        headers[k] = v;
+      }
+    }
+    return headers;
   }
 
   private async handleError(response: Response): Promise<never> {

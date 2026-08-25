@@ -798,14 +798,33 @@ async function renderTeacherDashboard() {
             <h3 style="margin-bottom:0.75rem">Tutoring Explanation</h3>
             <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Get an AI explanation for a student question.</p>
             <form id="ai-tutor-form" style="display:flex;flex-direction:column;gap:0.5rem">
+              <div style="display:flex;gap:0.5rem">
+                <select class="input" name="subject_slug" style="flex:1">
+                  <option value="mathematics">Mathematics</option>
+                  <option value="biology" selected>Biology</option>
+                  <option value="chemistry">Chemistry</option>
+                  <option value="physics">Physics</option>
+                  <option value="english">English</option>
+                  <option value="kiswahili">Kiswahili</option>
+                  <option value="geography">Geography</option>
+                  <option value="history">History</option>
+                  <option value="civics">Civics</option>
+                  <option value="computing">Computing</option>
+                </select>
+                <select class="input" name="form_level" style="flex:0.5">
+                  <option value="1">Form I</option>
+                  <option value="2" selected>Form II</option>
+                  <option value="3">Form III</option>
+                  <option value="4">Form IV</option>
+                </select>
+              </div>
               <textarea class="input" name="question" rows="3" placeholder="Enter the student's question..." required></textarea>
               <input class="input" name="context" placeholder="Optional lesson context...">
               <button class="btn btn-primary" type="submit">Get Explanation</button>
             </form>
             <div id="ai-tutor-result" style="margin-top:1rem;display:none">
-              <div class="card" style="background:var(--color-bg);padding:1rem">
-                <h4 style="margin:0 0 0.5rem">AI Response</h4>
-                <div id="ai-tutor-text" style="font-size:0.9rem;line-height:1.6;white-space:pre-wrap"></div>
+              <div class="card" style="background:var(--color-bg);padding:1.25rem;border-radius:12px;border:1px solid var(--color-border)">
+                <div id="ai-tutor-text" class="tutor-response"></div>
               </div>
             </div>
           </div>
@@ -813,7 +832,27 @@ async function renderTeacherDashboard() {
             <h3 style="margin-bottom:0.75rem">Generate Quiz Questions</h3>
             <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Auto-generate quiz questions from lesson content.</p>
             <form id="ai-questions-form" style="display:flex;flex-direction:column;gap:0.5rem">
-              <textarea class="input" name="lesson_html" rows="5" placeholder="Paste lesson HTML content..." required></textarea>
+              <div style="display:flex;gap:0.5rem">
+                <select class="input" name="subject_slug" style="flex:1">
+                  <option value="mathematics">Mathematics</option>
+                  <option value="biology">Biology</option>
+                  <option value="chemistry" selected>Chemistry</option>
+                  <option value="physics">Physics</option>
+                  <option value="english">English</option>
+                  <option value="kiswahili">Kiswahili</option>
+                  <option value="geography">Geography</option>
+                  <option value="history">History</option>
+                  <option value="civics">Civics</option>
+                  <option value="computing">Computing</option>
+                </select>
+                <select class="input" name="form_level" style="flex:0.5">
+                  <option value="1">Form I</option>
+                  <option value="2" selected>Form II</option>
+                  <option value="3">Form III</option>
+                  <option value="4">Form IV</option>
+                </select>
+              </div>
+              <textarea class="input" name="lesson_html" rows="5" placeholder="Paste lesson content..." required></textarea>
               <div style="display:flex;gap:0.5rem;align-items:center">
                 <label style="font-size:0.85rem;color:var(--color-text-muted)">Number of questions:</label>
                 <input class="input" type="number" name="count" value="5" min="1" max="20" style="width:80px">
@@ -821,10 +860,7 @@ async function renderTeacherDashboard() {
               <button class="btn btn-primary" type="submit">Generate Questions</button>
             </form>
             <div id="ai-questions-result" style="margin-top:1rem;display:none">
-              <div class="card" style="background:var(--color-bg);padding:1rem">
-                <h4 style="margin:0 0 0.5rem">Generated Questions</h4>
-                <div id="ai-questions-text" style="font-size:0.9rem;line-height:1.6;white-space:pre-wrap"></div>
-              </div>
+                <div id="ai-questions-text"></div>
             </div>
           </div>
           <div class="card" style="padding:1.5rem">
@@ -842,9 +878,8 @@ async function renderTeacherDashboard() {
               <button class="btn btn-primary" type="submit">Translate</button>
             </form>
             <div id="ai-translate-result" style="margin-top:1rem;display:none">
-              <div class="card" style="background:var(--color-bg);padding:1rem">
-                <h4 style="margin:0 0 0.5rem">Translation</h4>
-                <div id="ai-translate-text" style="font-size:0.9rem;line-height:1.6;white-space:pre-wrap"></div>
+              <div class="card" style="background:var(--color-bg);padding:1.25rem;border-radius:12px;border:1px solid var(--color-border)">
+                <div id="ai-translate-text" class="tutor-response"></div>
               </div>
             </div>
           </div>
@@ -857,14 +892,20 @@ async function renderTeacherDashboard() {
       const resultDiv = document.getElementById("ai-tutor-result");
       const textDiv = document.getElementById("ai-tutor-text");
       resultDiv.style.display = "block";
-      textDiv.textContent = "Thinking...";
+      textDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Thinking...</div>';
       try {
         const result = await request("/ai/tutoring/explain", {
           method: "POST",
-          body: JSON.stringify({ question: fd.get("question"), lesson_context: fd.get("context") || undefined }),
+          body: JSON.stringify({
+            question: fd.get("question"),
+            subject_slug: fd.get("subject_slug"),
+            form_level: parseInt(fd.get("form_level")) || 2,
+            lesson_context: fd.get("context") || undefined,
+          }),
         });
-        textDiv.textContent = result?.explanation || result?.answer || JSON.stringify(result);
-      } catch(err) { textDiv.textContent = "Error: " + err.message; }
+        const raw = result?.explanation || result?.answer || result?.response || JSON.stringify(result);
+        textDiv.innerHTML = renderTutorMarkdown(raw);
+      } catch(err) { textDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
     });
     document.getElementById("ai-questions-form")?.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -872,15 +913,28 @@ async function renderTeacherDashboard() {
       const resultDiv = document.getElementById("ai-questions-result");
       const textDiv = document.getElementById("ai-questions-text");
       resultDiv.style.display = "block";
-      textDiv.textContent = "Generating...";
+      textDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating...</div>';
       try {
         const result = await request("/ai/questions/generate", {
           method: "POST",
-          body: JSON.stringify({ lesson_html: fd.get("lesson_html"), count: parseInt(fd.get("count")) || 5 }),
+          body: JSON.stringify({
+            lesson_html: fd.get("lesson_html"),
+            count: parseInt(fd.get("count")) || 5,
+            subject_slug: fd.get("subject_slug"),
+            form_level: parseInt(fd.get("form_level")) || 2,
+          }),
         });
         const questions = result?.questions || result;
-        textDiv.textContent = typeof questions === "string" ? questions : JSON.stringify(questions, null, 2);
-      } catch(err) { textDiv.textContent = "Error: " + err.message; }
+        if (Array.isArray(questions) && questions.length) {
+          textDiv.innerHTML = renderQuizQuestions(questions, {
+            subject: fd.get("subject_slug"),
+            formLevel: fd.get("form_level"),
+            topic: questions[0]?.topic || "",
+          });
+        } else {
+          textDiv.innerHTML = '<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>';
+        }
+      } catch(err) { textDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
     });
     document.getElementById("ai-translate-form")?.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -888,14 +942,15 @@ async function renderTeacherDashboard() {
       const resultDiv = document.getElementById("ai-translate-result");
       const textDiv = document.getElementById("ai-translate-text");
       resultDiv.style.display = "block";
-      textDiv.textContent = "Translating...";
+      textDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Translating...</div>';
       try {
         const result = await request("/ai/content/translate", {
           method: "POST",
           body: JSON.stringify({ text: fd.get("text"), target_language: fd.get("target_language") }),
         });
-        textDiv.textContent = result?.translated || result?.text || JSON.stringify(result);
-      } catch(err) { textDiv.textContent = "Error: " + err.message; }
+        const raw = result?.translated || result?.text || JSON.stringify(result);
+        textDiv.innerHTML = renderTutorMarkdown(raw);
+      } catch(err) { textDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
     });
   }
 

@@ -189,3 +189,205 @@ function initDeleteButtons() {
     });
   });
 }
+
+/* ── Tutoring Markdown Renderer ─────────────────────────────────────── */
+function renderTutorMarkdown(raw) {
+  if (!raw) return "";
+  let text = raw;
+
+  // Strip <think>...</think> tags (some models leak these)
+  text = text.replace(/<think>[\s\S]*?<\/think>/gi, "").trim();
+
+  // Fences ``` ... ``` → scrollable code block
+  text = text.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
+    return `<div class="tutor-code-block"><pre><code>${escapeHtml(code.trimEnd())}</code></pre></div>`;
+  });
+
+  // Tables: detect markdown tables and convert
+  text = text.replace(/^(\|.+\|)\n(\|[\s:|-]+\|)\n((?:\|.+\|\n?)*)/gm, (_, headerRow, _sep, bodyRows) => {
+    const headers = headerRow.split("|").filter(c => c.trim());
+    const rows = bodyRows.trim().split("\n").map(r => r.split("|").filter(c => c.trim()));
+    let html = "<table>";
+    html += "<thead><tr>" + headers.map(h => `<th>${h.trim()}</th>`).join("") + "</tr></thead>";
+    html += "<tbody>" + rows.map(r =>
+      "<tr>" + r.map((c, i) => `<td data-label="${escapeHtml(headers[i] || "")}">${c.trim()}</td>`).join("") + "</tr>"
+    ).join("") + "</tbody></table>";
+    return html;
+  });
+
+  // NECTA Exam Tip blocks (💡 line followed by content until *** or blank line)
+  text = text.replace(/^(.*💡\s*(?:NECTA\s+(?:Examination\s+)?Tip|Mtihani).*)\n((?:(?!\*\*\*).+\n?)*)/gim, (_, tipLine, body) => {
+    const cleanBody = body.trim().replace(/\n/g, "<br>");
+    return `<div class="tutor-necta-tip"><div class="tutor-necta-tip-label">💡 NECTA Examination Tip</div><p>${cleanBody}</p></div>`;
+  });
+
+  // Blockquotes > ... → context blockquote
+  text = text.replace(/^>\s*(.+)$/gm, (_, content) => {
+    // Check if it looks like a Tanzania/local context
+    const isLocal = /tanzan|serengeti|kilimanjaro|lake victoria|dodoma|dar|kenya|uganda|east africa|africa|mwanza|arusha|mbeya|ruaha|rufiji/i.test(content);
+    const badge = isLocal ? "🌍 Tanzania Context" : "📖 Context";
+    return `<div class="tutor-context-blockquote"><div class="tutor-context-badge">${badge}</div><p>${content}</p></div>`;
+  });
+  // Remove duplicate blockquote wrappers (if multiple > lines were wrapped individually)
+  text = text.replace(/(<div class="tutor-context-blockquote">[\s\S]*?<\/div>\n?)+/g, (match) => {
+    // Keep as-is, each > line is its own block
+    return match;
+  });
+
+  // Horizontal rules ***
+  text = text.replace(/^\*\*\*\s*$/gm, "<hr>");
+
+  // Headers
+  text = text.replace(/^#### (.+)$/gm, "<h4>$1</h4>");
+  text = text.replace(/^### (.+)$/gm, "<h3>$1</h3>");
+  text = text.replace(/^## (.+)$/gm, "<h2>$1</h2>");
+  text = text.replace(/^# (.+)$/gm, "<h1>$1</h1>");
+
+  // Bold + italic
+  text = text.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
+  text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  text = text.replace(/\*(.+?)\*/g, "<em>$1</em>");
+
+  // Inline code (but not inside code blocks)
+  text = text.replace(/`([^`]+)`/g, "<code>$1</code>");
+
+  // Unordered lists
+  text = text.replace(/^(?:- (.+)\n?)+/gm, (match) => {
+    const items = match.trim().split("\n").map(l => `<li>${l.replace(/^- /, "")}</li>`).join("");
+    return `<ul>${items}</ul>`;
+  });
+
+  // Ordered lists
+  text = text.replace(/^(?:\d+\. (.+)\n?)+/gm, (match) => {
+    const items = match.trim().split("\n").map(l => `<li>${l.replace(/^\d+\. /, "")}</li>`).join("");
+    return `<ol>${items}</ol>`;
+  });
+
+  // Paragraphs: double newline → paragraph break
+  text = text.replace(/\n{2,}/g, "\n\n");
+  const paragraphs = text.split("\n\n");
+  text = paragraphs.map(p => {
+    p = p.trim();
+    if (!p) return "";
+    // Don't wrap if it's already an HTML block
+    if (/^<(div|table|ul|ol|h[1-6]|hr|pre)/.test(p)) return p;
+    // Wrap plain text in paragraphs, converting single newlines to <br>
+    return `<p>${p.replace(/\n/g, "<br>")}</p>`;
+  }).join("\n");
+
+  return text;
+}
+
+/* ── Quiz Questions Renderer ───────────────────────────────────────── */
+function renderQuizQuestions(questions, meta = {}) {
+  if (!Array.isArray(questions) || !questions.length) {
+    return '<p style="color:var(--color-text-muted)">No questions generated.</p>';
+  }
+  const subject = meta.subject || "General";
+  const formLevel = meta.formLevel || "";
+  const topic = meta.topic || "";
+  const subjectLabels = { mathematics:"Mathematics", biology:"Biology", chemistry:"Chemistry", physics:"Physics", english:"English", kiswahili:"Kiswahili", geography:"Geography", history:"History", civics:"Civics", computing:"Computing" };
+  const subjectLabel = subjectLabels[subject] || subject;
+  const formLabel = formLevel ? `Form ${["I","II","III","IV"][Number(formLevel)-1] || formLevel}` : "";
+  const badgeParts = [subjectLabel, formLabel].filter(Boolean).join(" \u2022 ");
+  const quizId = "quiz-" + Date.now();
+
+  let html = `<div class="quiz-container" id="${quizId}">`;
+
+  // Header
+  html += `<div class="quiz-header">
+    <span class="quiz-badge">${escapeHtml(badgeParts)}</span>
+    <span class="quiz-counter">Question 1 of ${questions.length}</span>
+    ${topic ? `<div class="quiz-topic">Topic: ${escapeHtml(topic)}</div>` : ""}
+  </div>`;
+
+  // Question cards
+  html += '<div class="quiz-card">';
+  questions.forEach((q, i) => {
+    const letters = ["A","B","C","D"];
+    const options = q.options || [];
+    const correctAnswer = (q.correctAnswer || "").trim().toUpperCase();
+    const explanation = q.explanation || "";
+
+    html += `<div class="quiz-question" data-index="${i}" data-correct="${escapeHtml(correctAnswer)}">`;
+    html += `<div class="quiz-question-num">Question ${i+1}</div>`;
+    html += `<div class="quiz-question-text">${escapeHtml(q.text || "")}</div>`;
+    html += '<div class="quiz-options">';
+    options.forEach((opt, j) => {
+      const letter = letters[j] || String.fromCharCode(65+j);
+      const optText = typeof opt === "string" ? opt : (opt.text || String(opt));
+      html += `<label class="quiz-option" data-letter="${letter}">
+        <input type="radio" name="${quizId}-q${i}" value="${letter}">
+        <span class="quiz-option-label">${letter}.</span>
+        <span>${escapeHtml(optText)}</span>
+      </label>`;
+    });
+    html += '</div>';
+
+    // Explanation (hidden until submit)
+    if (explanation) {
+      html += `<div class="quiz-explanation" id="${quizId}-exp-${i}">
+        <strong>Explanation:</strong> ${escapeHtml(explanation)}
+      </div>`;
+    }
+    html += '</div>';
+  });
+
+  // Submit button
+  html += `<button class="btn btn-primary quiz-submit-all" onclick="window._quizSubmit('${quizId}', ${questions.length})">Submit Answers</button>`;
+
+  // Score banner
+  html += `<div class="quiz-score" id="${quizId}-score">
+    <div class="quiz-score-num" id="${quizId}-score-num"></div>
+    <div class="quiz-score-label" id="${quizId}-score-label"></div>
+  </div>`;
+
+  html += '</div></div>';
+  return html;
+}
+
+window._quizSubmit = function(quizId, total) {
+  var correct = 0;
+  var i, container, correctAnswer, selected, selectedVal, exp;
+  var scoreEl, scoreNum, scoreLabel, pct, msg, btn;
+
+  for (i = 0; i < total; i++) {
+    container = document.querySelector("#" + quizId + " .quiz-question[data-index=\"" + i + "\"]");
+    if (!container) continue;
+    correctAnswer = container.getAttribute("data-correct");
+    selected = document.querySelector("input[name=\"" + quizId + "-q" + i + "\"]:checked");
+    selectedVal = selected ? selected.value : null;
+
+    var options = container.querySelectorAll(".quiz-option");
+    var j, opt, letter;
+    for (j = 0; j < options.length; j++) {
+      opt = options[j];
+      letter = opt.getAttribute("data-letter");
+      opt.style.pointerEvents = "none";
+      if (letter === correctAnswer) {
+        opt.classList.add("correct");
+      } else if (letter === selectedVal && letter !== correctAnswer) {
+        opt.classList.add("incorrect");
+      }
+    }
+
+    if (selectedVal === correctAnswer) correct++;
+
+    exp = document.getElementById(quizId + "-exp-" + i);
+    if (exp) exp.classList.add("visible");
+  }
+
+  scoreEl = document.getElementById(quizId + "-score");
+  scoreNum = document.getElementById(quizId + "-score-num");
+  scoreLabel = document.getElementById(quizId + "-score-label");
+  if (scoreEl && scoreNum && scoreLabel) {
+    scoreNum.textContent = correct + " / " + total;
+    pct = Math.round((correct / total) * 100);
+    msg = pct >= 80 ? "Excellent! Keep it up!" : pct >= 50 ? "Good effort! Review the explanations." : "Keep practicing. Review the explanations below.";
+    scoreLabel.textContent = pct + "% \u2014 " + msg;
+    scoreEl.classList.add("visible");
+  }
+
+  btn = document.querySelector("#" + quizId + " .quiz-submit-all");
+  if (btn) btn.style.display = "none";
+};

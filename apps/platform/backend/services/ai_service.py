@@ -30,27 +30,60 @@ async def _call_ai_service(endpoint: str, payload: dict) -> dict | None:
         return None
 
 
+# ---------- HTML Stripping ----------
+
+
+def _strip_html(html: str) -> str:
+    """Strip HTML tags, scripts, styles, and decode entities to plain text."""
+    text = re.sub(r"<script[\s\S]*?</script>", " ", html, flags=re.IGNORECASE)
+    text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.IGNORECASE)
+    text = re.sub(r"<!\-\-[\s\S]*?\-\->", " ", text)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\\(?:text|mathrm|frac|sqrt|left|right|rightarrow|Rightarrow)\{[^}]*\}", " ", text)
+    text = re.sub(r"[\$\\][\s\S]{0,10}?\{[^}]*\}", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def _extract_topic_from_text(text: str) -> str:
+    """Pull a short topic phrase from plain text (usually the first sentence or heading)."""
+    first_line = text.split(".")[0].split(":")[-1].strip()
+    words = first_line.split()[:12]
+    return " ".join(words) if words else "lesson content"
+
+
 # ---------- Question Generation ----------
 
 
-async def generate_quiz_questions(lesson_html: str, count: int = 5) -> list[dict]:
-    """Generate quiz questions from lesson HTML.
+async def generate_quiz_questions(
+    lesson_html: str,
+    count: int = 5,
+    subject_slug: str | None = None,
+    form_level: int | None = None,
+) -> list[dict]:
+    """Generate NECTA-style quiz questions from lesson HTML.
 
-    Tries the casuya-ai service first; falls back to local regex extraction.
+    Strips HTML tags before sending to the AI service so the model
+    sees plain educational text, not markup/CSS code.
     """
-    result = await _call_ai_service(
-        "/api/questions/generate",
-        {
-            "content": lesson_html,
-            "count": count,
-            "type": "fill-in-blank",
-        },
-    )
+    plain_text = _strip_html(lesson_html)
+    topic = _extract_topic_from_text(plain_text)
+
+    payload: dict = {
+        "content": plain_text,
+        "count": count,
+        "topic": topic,
+    }
+    if subject_slug:
+        payload["subject_slug"] = subject_slug
+    if form_level:
+        payload["form_level"] = form_level
+
+    result = await _call_ai_service("/api/questions/generate", payload)
     if result and "questions" in result:
         return result["questions"]
 
-    # Fallback: local regex-based generation
-    return _generate_questions_locally(lesson_html, count)
+    return _generate_questions_locally(plain_text, count)
 
 
 def _generate_questions_locally(lesson_html: str, count: int = 5) -> list[dict]:
@@ -115,7 +148,15 @@ async def get_tutoring_response(
 
     result = await _call_ai_service("/api/tutoring/explain", payload)
     if result and "response" in result:
-        return result["response"]
+        response = result["response"]
+        # Strip <think>...</think> blocks from models that use chain-of-thought
+        # Some models (e.g. Qwen) emit <think> without a closing tag
+        response = re.sub(r"<think>[\s\S]*?<\/think>", "", response).strip()
+        if "<think>" in response:
+            # No closing tag — take everything after the last <think> block
+            parts = response.split("<think>")
+            response = parts[-1].strip()
+        return response
 
     return "I'm sorry, the AI tutor is currently unavailable. Please try again later or ask your teacher for help."
 

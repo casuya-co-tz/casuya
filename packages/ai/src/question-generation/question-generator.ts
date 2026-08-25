@@ -132,8 +132,15 @@ export class QuestionGenerator {
   }
 
   private parseQuestions(response: string, request: QuestionGenerationRequest): GeneratedQuestion[] {
+    // Strip markdown code fences (```json ... ```) that models wrap around JSON
+    let cleaned = response.trim();
+    const fenceMatch = cleaned.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (fenceMatch) {
+      cleaned = fenceMatch[1].trim();
+    }
+
     try {
-      const parsed = JSON.parse(response);
+      const parsed = JSON.parse(cleaned);
       if (Array.isArray(parsed)) {
         return parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
       }
@@ -145,6 +152,17 @@ export class QuestionGenerator {
   }
 
   private normalizeQuestion(raw: Record<string, unknown>, index: number, request: QuestionGenerationRequest): GeneratedQuestion {
+    // Handle options as either array of strings or {A: ..., B: ...} object
+    let options: string[] | undefined;
+    const rawOptions = raw.options as Record<string, string> | string[] | undefined;
+    if (rawOptions) {
+      if (Array.isArray(rawOptions)) {
+        options = rawOptions;
+      } else if (typeof rawOptions === 'object') {
+        options = Object.values(rawOptions).map(String);
+      }
+    }
+
     return {
       id: `q-${Date.now()}-${index}`,
       type: request.questionType,
@@ -153,8 +171,8 @@ export class QuestionGenerator {
       subject: request.subject,
       topic: request.topic,
       text: String(raw.text ?? raw.question ?? ''),
-      options: raw.options as string[] | undefined,
-      correctAnswer: String(raw.correctAnswer ?? raw.answer ?? ''),
+      options,
+      correctAnswer: String(raw.correctAnswer ?? raw.correct_answer ?? raw.answer ?? ''),
       explanation: String(raw.explanation ?? ''),
       hints: raw.hints as string[] | undefined,
       metadata: {

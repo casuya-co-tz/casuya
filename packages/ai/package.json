@@ -41,9 +41,9 @@
   },
   "homepage": "https://github.com/casuya/casuya-ai#readme",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "tslib": "^2.6.2"
   },
-
   "devDependencies": {
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.0",

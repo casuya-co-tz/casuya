@@ -19,11 +19,15 @@ router = APIRouter(prefix="/ai", tags=["AI"])
 class QuestionRequest(BaseModel):
     lesson_html: str
     count: int = 5
+    subject_slug: str | None = None
+    form_level: int | None = None
 
 
 class TutoringRequest(BaseModel):
     question: str
     lesson_context: str = ""
+    subject_slug: str | None = None
+    form_level: int | None = None
 
 
 class AnalyzeRequest(BaseModel):
@@ -41,13 +45,23 @@ class TranslateRequest(BaseModel):
 
 @router.post("/questions/generate")
 async def api_generate_questions(req: QuestionRequest):
-    questions = await generate_quiz_questions(req.lesson_html, req.count)
+    questions = await generate_quiz_questions(
+        req.lesson_html,
+        req.count,
+        subject_slug=req.subject_slug,
+        form_level=req.form_level,
+    )
     return {"questions": questions, "count": len(questions)}
 
 
 @router.post("/tutoring/explain")
 async def api_tutoring(req: TutoringRequest):
-    response = await get_tutoring_response(req.question, req.lesson_context)
+    response = await get_tutoring_response(
+        req.question,
+        req.lesson_context,
+        subject_slug=req.subject_slug,
+        form_level=req.form_level,
+    )
     return {"response": response}
 
 

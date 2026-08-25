@@ -67,23 +67,29 @@ export class GeminiProvider extends BaseProvider {
 
     return withRetry(async () => {
       const { result, latency } = await this.measureLatency(async () => {
-        const model = request.model ?? this.config.model ?? 'gemini-1.5-pro';
+        const model = request.model ?? this.config.model ?? 'gemini-1.5-flash';
         const url = `${this.baseUrl}/models/${model}:generateContent?key=${this.config.apiKey}`;
 
-        const contents = this.convertMessages(request.messages);
+        const { systemInstruction, contents } = this.convertMessages(request.messages);
+
+        const body: Record<string, unknown> = {
+          contents,
+          generationConfig: {
+            temperature: request.temperature ?? 0.7,
+            maxOutputTokens: request.maxTokens,
+            topP: request.topP,
+            stopSequences: request.stop,
+          },
+        };
+
+        if (systemInstruction) {
+          body.systemInstruction = { parts: [{ text: systemInstruction }] };
+        }
 
         const response = await fetch(url, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents,
-            generationConfig: {
-              temperature: request.temperature ?? 0.7,
-              maxOutputTokens: request.maxTokens,
-              topP: request.topP,
-              stopSequences: request.stop,
-            },
-          }),
+          body: JSON.stringify(body),
         });
 
         if (!response.ok) {
@@ -114,21 +120,27 @@ export class GeminiProvider extends BaseProvider {
   }
 
   async *chatCompletionStream(request: ChatCompletionRequest): AsyncIterable<StreamChunk> {
-    const model = request.model ?? this.config.model ?? 'gemini-1.5-pro';
+    const model = request.model ?? this.config.model ?? 'gemini-1.5-flash';
     const url = `${this.baseUrl}/models/${model}:streamGenerateContent?key=${this.config.apiKey}`;
 
-    const contents = this.convertMessages(request.messages);
+    const { systemInstruction, contents } = this.convertMessages(request.messages);
+
+    const body: Record<string, unknown> = {
+      contents,
+      generationConfig: {
+        temperature: request.temperature ?? 0.7,
+        maxOutputTokens: request.maxTokens,
+      },
+    };
+
+    if (systemInstruction) {
+      body.systemInstruction = { parts: [{ text: systemInstruction }] };
+    }
 
     const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents,
-        generationConfig: {
-          temperature: request.temperature ?? 0.7,
-          maxOutputTokens: request.maxTokens,
-        },
-      }),
+      body: JSON.stringify(body),
     });
 
     if (!response.ok) {
@@ -205,19 +217,30 @@ export class GeminiProvider extends BaseProvider {
     });
   }
 
-  private convertMessages(messages: { role: string; content: string }[]): GeminiContent[] {
+  private convertMessages(messages: { role: string; content: string }[]): {
+    systemInstruction: string;
+    contents: GeminiContent[];
+  } {
+    let systemInstruction = '';
     const contents: GeminiContent[] = [];
+
     for (const msg of messages) {
-      const role = msg.role === 'system' ? 'user' : msg.role;
-      const existing = contents[contents.length - 1];
-      if (existing && (existing as { role?: string }).role === role) {
-        existing.parts.push({ text: msg.content });
+      if (msg.role === 'system') {
+        systemInstruction += (systemInstruction ? '\n' : '') + msg.content;
+        continue;
+      }
+      const role = msg.role === 'assistant' ? 'model' : 'user';
+      const last = contents[contents.length - 1] as (GeminiContent & { role?: string }) | undefined;
+      if (last && last.role === role) {
+        last.parts.push({ text: msg.content });
       } else {
-        contents.push({ parts: [{ text: msg.content }] } as GeminiContent & { role?: string });
-        (contents[contents.length - 1] as { role?: string }).role = role;
+        const entry = { parts: [{ text: msg.content }] } as GeminiContent & { role?: string };
+        entry.role = role;
+        contents.push(entry);
       }
     }
-    return contents;
+
+    return { systemInstruction, contents };
   }
 
   private async handleError(response: Response): Promise<never> {
