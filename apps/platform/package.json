@@ -8,7 +8,7 @@
     "dev:frontend": "npx serve frontend -l 5173",
     "seed": "python -m database.seeds.seed_dev_data",
     "create-admin": "python -m database.seeds.create_admin",
-    "test": "pytest tests/ -v",
+    "test": "echo 'No tests yet — add test files to apps/platform/tests/'",
     "test:coverage": "pytest tests/ --cov=backend --cov=integrations -v",
     "build": "echo 'Frontend is static HTML/JS — no build step required'",
     "docker:up": "docker compose -f docker/docker-compose.yml up -d",
