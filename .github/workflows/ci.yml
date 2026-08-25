@@ -21,7 +21,7 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
 
-      # Layer-boundary enforcement (Google/Meta-style downward deps)
+      # Layer-boundary enforcement (downward-only dependencies)
       - run: pnpm check:layers
 
       # Build / typecheck / lint / test across affected packages
