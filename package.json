@@ -6,7 +6,7 @@
   "description": "Casuya — single layered monorepo (apps / packages / libs) for the interactive-learning platform.",
   "scripts": {
     "dev:backend": "cd apps/platform && uvicorn backend.main:app --reload --host 0.0.0.0 --port 8765",
-    "dev:frontend": "npx serve apps/platform/frontend -l 5173",
+    "dev:frontend": "echo 'Frontend is served by backend on :8765 — no separate server needed'",
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
     "lint": "turbo run lint",

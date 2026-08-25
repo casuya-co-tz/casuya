@@ -43,8 +43,7 @@ pnpm install
 pip install -r requirements.txt
 cp .env.example .env
 
-pnpm dev:backend      # apps/platform on :8765
-pnpm dev:frontend     # static UI on :5173
+pnpm dev:backend      # apps/platform on :8765 (serves API + frontend)
 
 # Full local stack (postgres + redis + backend + nginx) — production build
 docker compose -f infra/docker-compose.yml up -d

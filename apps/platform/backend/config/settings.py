@@ -48,7 +48,7 @@ class Settings(BaseSettings):
     refresh_token_expire_days: int = 7
 
     allowed_origins: Annotated[list[str], BeforeValidator(_parse_allowed_origins)] = [
-        "http://localhost:5173",
+        "http://localhost:8765",
         "http://localhost:8765",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:8000",
@@ -94,7 +94,7 @@ class Settings(BaseSettings):
     facebook_client_id: str | None = None
     facebook_client_secret: str | None = None
     oauth_redirect_base: str = "https://casuya.co.tz"
-    frontend_base: str = "http://localhost:5173"
+    frontend_base: str = "http://localhost:8765"
 
     storage_root: str = "./storage"
     rate_limit_per_minute: int = 120

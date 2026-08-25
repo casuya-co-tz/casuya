@@ -38,4 +38,4 @@ frontend = subprocess.Popen(
 )
 print(f"Frontend PID: {frontend.pid}")
 print(f"\n Backend:  http://localhost:8765")
-print(f" Frontend: http://localhost:5173")
+print(f" Frontend: http://localhost:8765")
