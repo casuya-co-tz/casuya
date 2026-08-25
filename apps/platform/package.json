@@ -8,8 +8,8 @@
     "dev:frontend": "npx serve frontend -l 5173",
     "seed": "python -m database.seeds.seed_dev_data",
     "create-admin": "python -m database.seeds.create_admin",
-    "test": "C:\\Python314\\python.exe -m pytest tests/ -v",
-    "test:coverage": "C:\\Python314\\python.exe -m pytest tests/ --cov=backend --cov=integrations -v",
+    "test": "pytest tests/ -v",
+    "test:coverage": "pytest tests/ --cov=backend --cov=integrations -v",
     "build": "echo 'Frontend is static HTML/JS — no build step required'",
     "docker:up": "docker compose -f docker/docker-compose.yml up -d",
     "docker:down": "docker compose -f docker/docker-compose.yml down"
