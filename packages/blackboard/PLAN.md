@@ -45,7 +45,7 @@ casuya-blackboard/
 | Language | TypeScript 5 | Strict mode, clean types |
 | Build | tsup | Fast bundling, ESM + CJS + IIFE output |
 | Testing | Vitest + happy-dom | Fast, modern test runner |
-| Stroke Engine | **perfect-freehand** | Industry standard (5.6k stars, used by tldraw, Excalidraw) |
+| Stroke Engine | **perfect-freehand** | Lightweight, well-tested freehand drawing library |
 | Rendering | Canvas 2D API | Direct pixel control, no framework overhead |
 | Math | **katex** + mathjs (fallback) | LaTeX rendering + local solve |
 | OCR | **tesseract.js** / Mathpix | Handwriting recognition (lazy-loaded) |
@@ -66,7 +66,7 @@ casuya-blackboard/
 | **Eraser** | Remove strokes |
 | **Select** | Click to select elements for move/delete |
 
-### Element Model (v0.2.0 — Excalidraw-inspired)
+### Element Model (v0.2.0 — element-based architecture)
 
 Every element on the blackboard has:
 - **ID** (`crypto.randomUUID()`) — unique identity for selection, undo/redo, serialization
@@ -87,7 +87,6 @@ This replaces the raw stroke/shape arrays of v0.1.0 with a proper element-based 
 
 ### Viewport: Zoom & Pan (NEW in v0.2.0)
 
-Inspired by Excalidraw's viewport model:
 - **Zoom**: Ctrl+scroll wheel to zoom in/out (50%–300%)
 - **Pan**: Space+drag or middle-mouse to pan the canvas
 - **Coordinate translation**: All pointer events pass through viewport transform
@@ -323,7 +322,7 @@ Give students a working blackboard in every learning surface: work out lesson pr
 
 ### v0.2.0 (2026-07-19)
 
-Inspired by [Excalidraw](https://github.com/excalidraw/excalidraw)'s architecture. Adopted patterns (not code) from their element-based model, text tool, and viewport system.
+Adopted an element-based model with a text tool and viewport system.
 
 **New features:**
 - **Element model**: Every stroke/shape has a unique ID and bounding box, enabling selection and manipulation

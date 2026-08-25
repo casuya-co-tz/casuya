@@ -1,6 +1,6 @@
 # casuya-editor
 
-> Canva + PowerPoint for Educational Lessons.
+> Visual lesson builder for educational content.
 
 ## Identity
 

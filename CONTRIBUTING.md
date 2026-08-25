@@ -1,7 +1,6 @@
 # Contributing to Casuya Hybrid
 
-This repository follows a **single-trunk, layered monorepo** convention inspired
-by large-scale engineering orgs (Google Piper, Meta Sapling):
+This repository follows a **single-trunk, layered monorepo** convention:
 
 ## Repository layers
 

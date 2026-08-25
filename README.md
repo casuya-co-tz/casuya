@@ -1,8 +1,7 @@
 # Casuya Hybrid — layered monorepo
 
 A **single-trunk, layered monorepo** for the Casuya interactive-learning
-platform, organized the way large engineering orgs (Google Piper, Meta Sapling)
-structure code: one repository, one main branch, and **downward-only**
+platform: one repository, one main branch, and **downward-only**
 dependencies between clearly separated layers.
 
 ## Layers (dependencies point downward only)
@@ -38,8 +37,8 @@ and in CI.
 
 - **One repo, one trunk** — no per-service repositories; atomic cross-cutting
   changes, single source of truth.
-- **Layered, dependency-enforced layout** — Bazel/Buck-style downward deps,
-  approximated here with a lightweight boundary checker + Turborepo.
+- **Layered, dependency-enforced layout** — downward-only deps enforced by
+  a lightweight boundary checker + Turborepo.
 - **Hermetic, cached builds** — `turbo` builds/tests only what changed.
 - **Scale-oriented runtime** — `apps/platform` is stateless behind nginx, uses
   Postgres + Redis (cache/queue via RQ), and serves the static frontend from a
