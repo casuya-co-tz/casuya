@@ -2,8 +2,6 @@ packages:
   - "apps/*"
   - "packages/*"
   - "libs/*"
-  - "packages/design-system/packages/*"
-  - "packages/design-system/apps/*"
 
 catalog:
   typescript: ^5.3.3

@@ -8,7 +8,14 @@
       "@casuya/bridge": ["packages/bridge/src"],
       "@casuya/editor": ["packages/editor/src"],
       "@casuya/blackboard": ["packages/blackboard/src"],
-      "@casuya/design-system/*": ["packages/design-system/packages/*/src"],
+      "@casuya/ds-tokens": ["packages/ds-tokens/src"],
+      "@casuya/ds-react": ["packages/ds-react/src"],
+      "@casuya/ds-a11y": ["packages/ds-a11y/src"],
+      "@casuya/ds-hooks": ["packages/ds-hooks/src"],
+      "@casuya/ds-icons": ["packages/ds-icons/src"],
+      "@casuya/ds-styles": ["packages/ds-styles/src"],
+      "@casuya/ds-utils": ["packages/ds-utils/src"],
+      "@casuya/ds-theme": ["packages/ds-theme/src"],
       "@casuya/ai": ["packages/ai/src"]
     }
   },

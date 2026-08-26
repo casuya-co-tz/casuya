@@ -1,0 +1,36 @@
+[project]
+name = "casuya-hybrid"
+version = "1.0.0"
+description = "Casuya single layered monorepo (apps / packages / libs) for the interactive-learning platform."
+requires-python = ">=3.12"
+dependencies = [
+    # casuya-core engine dependencies (libs/core)
+    "jsonschema>=4.17.0",
+    "htmlmin>=0.1.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.0",
+    "pytest>=9.1.1,<10",
+    "pytest-asyncio==1.4.0",
+    "pytest-cov==7.1.0",
+]
+
+# Application runtime dependencies live in apps/platform/requirements.txt
+# (fastapi, uvicorn, sqlalchemy, etc.). Install the platform with:
+#   pip install -r apps/platform/requirements.txt
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["libs", "apps"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["libs/core/tests", "apps/platform/tests"]
+asyncio_mode = "auto"
+addopts = "-q"

@@ -1,7 +1,0 @@
-{
-  "buildCommand": "pnpm --filter @casuya/docs build-storybook",
-  "outputDirectory": "apps/docs/storybook-static",
-  "devCommand": "pnpm --filter @casuya/docs dev",
-  "installCommand": "pnpm install",
-  "framework": null
-}

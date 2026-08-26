@@ -14,11 +14,11 @@ libs/      (rank 0)  reusable Python/low-level code — may depend on nothing ab
 
 - `apps/platform` is the only deployable application (FastAPI + static frontend).
 - `packages/*` are framework/libraries (runtime, bridge, editor, blackboard,
-  design-system, ai).
-- `packages/design-system/` is a nested workspace containing sub-packages:
-  `tokens`, `react`, `icons`, `theme`, `a11y`, `utils`, `hooks`, `styles`
-  and apps: `playground`, `docs`.
+  ai, and the flattened design system: `ds-tokens`, `ds-react`, `ds-a11y`,
+  `ds-hooks`, `ds-icons`, `ds-styles`, `ds-utils`, `ds-theme`).
 - `libs/core` is the Python lesson engine.
+- The design system's dev `playground` and `docs` apps live under `apps/ds-playground`
+  and `apps/ds-docs`.
 - `infra/` holds deployment (Docker, nginx, render). `tools/` holds repo scripts.
 
 Run `pnpm check:layers` to verify no upward (illegal) imports exist. CI enforces it.

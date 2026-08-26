@@ -14,16 +14,21 @@ casuya-hybrid/
 │   ├── ai/          AI tutoring engine
 │   ├── blackboard/  interactive math/handwriting blackboard
 │   ├── bridge/      offline-first sync + cache engine
-│   ├── design-system/   React UI kit (nested workspace with sub-packages)
-│   │   ├── packages/    tokens, react, icons, theme, a11y, utils, hooks, styles
-│   │   └── apps/        playground, docs
+│   ├── ds-tokens/   design tokens + theme (flattened from design-system)
+│   ├── ds-react/    React UI kit (flattened from design-system)
+│   ├── ds-a11y/     accessibility primitives (flattened from design-system)
+│   ├── ds-hooks/    React hooks (flattened from design-system)
+│   ├── ds-icons/    icon set (flattened from design-system)
+│   ├── ds-styles/   style primitives (flattened from design-system)
+│   ├── ds-utils/    UI utilities (flattened from design-system)
+│   ├── ds-theme/    theme definitions (flattened from design-system)
 │   ├── editor/      visual lesson builder
 │   └── runtime/     lesson player
 ├── libs/            rank 0 — reusable low-level code
 │   └── core/        Python lesson compiler / packager / signer engine
 ├── infra/           deployment: docker-compose, Dockerfile, nginx, render.yaml
 ├── tools/           repo scripts (e.g. layer-boundary enforcement)
-├── pnpm-workspace.yaml   workspace definition (includes nested design-system)
+├── pnpm-workspace.yaml   workspace definition (flat packages/* + apps/* + libs/*)
 ├── turbo.json            task runner (build/typecheck/lint/test w/ caching)
 ├── tsconfig.json         root TS config + path aliases
 ├── packageManager        pnpm@9.15.9 (pinned for CI consistency)
