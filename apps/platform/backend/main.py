@@ -34,6 +34,7 @@ from backend.api import (
     quizzes,
     search,
     services_bridge,
+    settings as settings_api,
     students,
     subjects,
     subtopics,
@@ -137,6 +138,7 @@ for router_module in (
     ai,
     math,
     assignments,
+    settings_api,
     # casuya_api_proxy MUST be last — catch-all /{path:path}
     casuya_api_proxy,
 ):

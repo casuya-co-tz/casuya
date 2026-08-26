@@ -1,4 +1,4 @@
-﻿  async function loadAdminBranding() {
+  async function loadAdminBranding() {
     const API = window.casuyaApiBase ? window.casuyaApiBase() : ((window.location.port === "8765" || window.location.port === "" || window.location.port === "443" || window.location.port === "80") ? window.location.origin : `${window.location.protocol}//${window.location.hostname}:8765`);
     const token = localStorage.getItem("casuya_token");
     const headers = token ? { "Authorization": `Bearer ${token}` } : {};
@@ -16,25 +16,25 @@
 
     showAdminView(`
       <div class="content">
-        <h2>ðŸŽ¨ Site Branding</h2>
+        <h2>🎨 Site Branding</h2>
         <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:1.5rem">Upload your logo and favicon. These appear across the entire platform.</p>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
           <!-- Logo -->
           <div class="card" style="padding:1.5rem">
-            <h3 style="margin-bottom:0.75rem">ðŸ–¼ï¸ Logo</h3>
+            <h3 style="margin-bottom:0.75rem">🖼️ Logo</h3>
             <div style="text-align:center;margin-bottom:1rem">
               ${logoExists
                 ? `<img src="${API}/branding/logo?t=${Date.now()}" alt="Current logo" style="max-width:120px;max-height:120px;border-radius:12px;border:1px solid var(--color-border)">`
                 : `<div style="width:120px;height:120px;margin:0 auto;background:linear-gradient(135deg,var(--color-primary),#7c3aed);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem;font-weight:800">C</div>`
               }
-              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${logoExists ? "âœ… Custom logo active" : "Using default"}</p>
+              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${logoExists ? "✅ Custom logo active" : "Using default"}</p>
             </div>
             <form id="logo-upload-form" style="display:flex;flex-direction:column;gap:0.5rem">
               <input class="input" type="file" id="logo-file" accept="image/*" required />
               <div style="display:flex;gap:0.5rem">
-                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${logoExists ? "ðŸ”„ Replace" : "ðŸ“¤ Upload"}</button>
-                ${logoExists ? '<button class="btn btn-outline-danger btn-sm" type="button" id="logo-delete">ðŸ—‘ï¸ Delete</button>' : ''}
+                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${logoExists ? "🔄 Replace" : "📤 Upload"}</button>
+                ${logoExists ? '<button class="btn btn-outline-danger btn-sm" type="button" id="logo-delete">🗑️ Delete</button>' : ''}
               </div>
             </form>
             <div id="logo-result" style="margin-top:0.5rem;font-size:0.8rem"></div>
@@ -42,19 +42,19 @@
 
           <!-- Favicon -->
           <div class="card" style="padding:1.5rem">
-            <h3 style="margin-bottom:0.75rem">ðŸ·ï¸ Favicon</h3>
+            <h3 style="margin-bottom:0.75rem">🏷️ Favicon</h3>
             <div style="text-align:center;margin-bottom:1rem">
               ${faviconExists
                 ? `<img src="${API}/branding/favicon?t=${Date.now()}" alt="Current favicon" style="width:64px;height:64px;border-radius:8px;border:1px solid var(--color-border)">`
                 : `<div style="width:64px;height:64px;margin:0 auto;background:linear-gradient(135deg,var(--color-primary),#7c3aed);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;font-weight:800">C</div>`
               }
-              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${faviconExists ? "âœ… Custom favicon active" : "Using default"}</p>
+              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${faviconExists ? "✅ Custom favicon active" : "Using default"}</p>
             </div>
             <form id="favicon-upload-form" style="display:flex;flex-direction:column;gap:0.5rem">
               <input class="input" type="file" id="favicon-file" accept="image/*" required />
               <div style="display:flex;gap:0.5rem">
-                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${faviconExists ? "ðŸ”„ Replace" : "ðŸ“¤ Upload"}</button>
-                ${faviconExists ? '<button class="btn btn-outline-danger btn-sm" type="button" id="favicon-delete">ðŸ—‘ï¸ Delete</button>' : ''}
+                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${faviconExists ? "🔄 Replace" : "📤 Upload"}</button>
+                ${faviconExists ? '<button class="btn btn-outline-danger btn-sm" type="button" id="favicon-delete">🗑️ Delete</button>' : ''}
               </div>
             </form>
             <div id="favicon-result" style="margin-top:0.5rem;font-size:0.8rem"></div>
@@ -208,7 +208,7 @@
                   <input class="input" name="phone" value="${escapeHtml(profile.phone || "")}" placeholder="Phone number">
                 </div>
                 <div style="display:flex;gap:0.5rem;align-items:center">
-                  <button class="btn btn-primary" type="submit">ðŸ’¾ Save Profile</button>
+                  <button class="btn btn-primary" type="submit">💾 Save Profile</button>
                   <span id="admin-profile-msg" style="font-size:0.85rem;display:none"></span>
                 </div>
               </form>
@@ -220,9 +220,9 @@
             const msg = document.getElementById("admin-profile-msg");
             try {
               await request("/users/me", { method: "PATCH", body: JSON.stringify({ full_name: fd.get("full_name"), phone: fd.get("phone") }) });
-              msg.textContent = "âœ… Profile updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "inline";
+              msg.textContent = "✅ Profile updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "inline";
               setTimeout(() => msg.style.display = "none", 3000);
-            } catch(err) { msg.textContent = "âŒ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
+            } catch(err) { msg.textContent = "❌ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
           });
         } else if (tab === "security") {
           panel.innerHTML = `
@@ -242,7 +242,7 @@
                   <input class="input" name="confirm_password" type="password" required>
                 </div>
                 <div style="display:flex;gap:0.5rem;align-items:center">
-                  <button class="btn btn-primary btn-pattern" type="submit">ðŸ” Update Password</button>
+                  <button class="btn btn-primary btn-pattern" type="submit">🔐 Update Password</button>
                   <span id="admin-pw-msg" style="font-size:0.85rem;display:none"></span>
                 </div>
               </form>
@@ -253,9 +253,9 @@
               <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">
                 <div>
                   <p style="font-weight:500;margin:0;font-size:0.9rem">Current Session</p>
-                  <p style="font-size:0.75rem;color:var(--color-text-muted);margin:0.15rem 0 0">Now Â· ${navigator.userAgent.slice(0, 60)}...</p>
+                  <p style="font-size:0.75rem;color:var(--color-text-muted);margin:0.15rem 0 0">Now · ${navigator.userAgent.slice(0, 60)}...</p>
                 </div>
-                <span style="color:var(--color-success);font-size:0.8rem;font-weight:600">ðŸŸ¢ Active</span>
+                <span style="color:var(--color-success);font-size:0.8rem;font-weight:600">🟢 Active</span>
               </div>
             </div>
           `;
@@ -264,15 +264,15 @@
             const fd = new FormData(e.target);
             const msg = document.getElementById("admin-pw-msg");
             if (fd.get("new_password") !== fd.get("confirm_password")) {
-              msg.textContent = "âŒ Passwords do not match"; msg.style.color = "var(--color-danger)"; msg.style.display = "inline";
+              msg.textContent = "❌ Passwords do not match"; msg.style.color = "var(--color-danger)"; msg.style.display = "inline";
               return;
             }
             try {
               await request("/auth/change-password", { method: "POST", body: JSON.stringify({ current_password: fd.get("current_password"), new_password: fd.get("new_password") }) });
-              msg.textContent = "âœ… Password updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "inline";
+              msg.textContent = "✅ Password updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "inline";
               e.target.reset();
               setTimeout(() => msg.style.display = "none", 3000);
-            } catch(err) { msg.textContent = "âŒ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
+            } catch(err) { msg.textContent = "❌ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
           });
         } else if (tab === "notifications") {
           panel.innerHTML = `
@@ -288,7 +288,7 @@
                 <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;cursor:pointer">
                   <input type="checkbox" name="system_notifs" checked> System alerts and errors
                 </label>
-                <button class="btn btn-primary btn-pattern" type="submit" style="align-self:flex-start">ðŸ’¾ Save Preferences</button>
+                <button class="btn btn-primary btn-pattern" type="submit" style="align-self:flex-start">💾 Save Preferences</button>
               </form>
             </div>
             <div class="card" style="padding:1.5rem;margin-top:1rem">
@@ -300,7 +300,7 @@
                   <option value="teachers">All Teachers</option>
                 </select>
                 <textarea class="input" name="message" rows="3" placeholder="Notification message..." required></textarea>
-                <button class="btn btn-primary btn-pattern" type="submit">ðŸ“¤ Send</button>
+                <button class="btn btn-primary btn-pattern" type="submit">📤 Send</button>
               </form>
               <div id="settings-notify-result" style="margin-top:0.5rem;font-size:0.85rem"></div>
             </div>
@@ -346,16 +346,21 @@
                 </div>
                 <div style="display:flex;justify-content:space-between;padding:0.6rem 0">
                   <span style="color:var(--color-text-muted);font-size:0.9rem">Status</span>
-                  <span style="font-size:0.9rem;color:var(--color-success);font-weight:600">â— Online</span>
+                  <span style="font-size:0.9rem;color:var(--color-success);font-weight:600">● Online</span>
                 </div>
               </div>
             </div>
+            <div class="card" style="padding:1.5rem;margin-top:1rem" id="module-visibility-card">
+              <h3 style="margin-bottom:0.25rem">Module Visibility</h3>
+              <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:1rem">Toggle which sidebar modules are visible to students and teachers. Hidden modules can be re-enabled anytime.</p>
+              <div id="module-vis-loading" style="text-align:center;padding:1rem;color:var(--color-text-muted);font-size:0.85rem">Loading...</div>
+            </div>
             <div class="card" style="padding:1.5rem;margin-top:1rem">
-              <h3 style="margin-bottom:0.75rem">âš ï¸ Danger Zone</h3>
+              <h3 style="margin-bottom:0.75rem">⚠️ Danger Zone</h3>
               <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Irreversible actions</p>
               <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
-                <button class="btn btn-danger btn-sm btn-pattern" id="clear-cache-btn">ðŸ—‘ï¸ Clear Cache</button>
-                <button class="btn btn-outline-danger btn-sm" id="export-data-btn">ðŸ“¦ Export All Data</button>
+                <button class="btn btn-danger btn-sm btn-pattern" id="clear-cache-btn">🗑️ Clear Cache</button>
+                <button class="btn btn-outline-danger btn-sm" id="export-data-btn">📦 Export All Data</button>
               </div>
               <div id="danger-msg" style="font-size:0.85rem;margin-top:0.5rem"></div>
             </div>
@@ -379,6 +384,54 @@
               msg.textContent = "Data exported"; msg.style.color = "var(--color-success)";
             } catch(err) { msg.textContent = err.message; msg.style.color = "var(--color-danger)"; }
           });
+          (async function() {
+            var loading = document.getElementById("module-vis-loading");
+            if (!loading) return;
+            try {
+              var vis = await request("/settings/modules");
+              var studentMods = vis.student || {};
+              var teacherMods = vis.teacher || {};
+              var studentLabels = {dashboard:"Dashboard",subjects:"Subjects",progress:"Progress",bookmarks:"Bookmarks",assignments:"Assignments",games:"Games",downloads:"Downloads",exams:"Exams",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"};
+              var teacherLabels = {overview:"Overview",students:"Students",lessons:"Lessons",assignments:"Assignments",reports:"Reports","ai-assistant":"AI Assistant",bookmarks:"Bookmarks",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"};
+              function buildSection(title, mods, labels) {
+                var html = '<div style="margin-bottom:1rem"><div style="font-weight:600;font-size:0.9rem;margin-bottom:0.5rem">' + title + '</div>';
+                var keys = Object.keys(labels);
+                for (var k = 0; k < keys.length; k++) {
+                  var key = keys[k];
+                  var enabled = mods[key] !== false;
+                  html += '<label style="display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0;border-bottom:1px solid var(--color-border);cursor:pointer;font-size:0.85rem">';
+                  html += '<input type="checkbox" data-role="' + title.toLowerCase() + '" data-mod="' + key + '"' + (enabled ? ' checked' : '') + ' style="accent-color:var(--color-primary);width:16px;height:16px">';
+                  html += '<span>' + labels[key] + '</span>';
+                  html += '</label>';
+                }
+                html += '</div>';
+                return html;
+              }
+              loading.outerHTML = buildSection("Student", studentMods, studentLabels) + buildSection("Teacher", teacherMods, teacherLabels) + '<p id="module-vis-msg" style="font-size:0.8rem;color:var(--color-text-muted);margin-top:0.5rem"></p>';
+              document.querySelectorAll("#module-visibility-card input[type=checkbox]").forEach(function(cb) {
+                cb.addEventListener("change", async function() {
+                  var msg = document.getElementById("module-vis-msg");
+                  var studentData = {};
+                  var teacherData = {};
+                  document.querySelectorAll("#module-visibility-card input[type=checkbox]").forEach(function(c) {
+                    var role = c.getAttribute("data-role");
+                    var mod = c.getAttribute("data-mod");
+                    if (role === "student") studentData[mod] = c.checked;
+                    else teacherData[mod] = c.checked;
+                  });
+                  try {
+                    await request("/settings/modules", { method: "PUT", body: JSON.stringify({ student: studentData, teacher: teacherData }) });
+                    msg.textContent = "Saved"; msg.style.color = "var(--color-success)";
+                    setTimeout(function() { msg.textContent = ""; }, 2000);
+                  } catch(e) {
+                    msg.textContent = "Error: " + e.message; msg.style.color = "var(--color-danger)";
+                  }
+                });
+              });
+            } catch(e) {
+              loading.outerHTML = '<p style="color:var(--color-danger);font-size:0.85rem">Failed to load module settings</p>';
+            }
+          })();
         } else if (tab === "appearance") {
           panel.innerHTML = appearancePanelHTML();
           setupAppearanceControls();
@@ -389,11 +442,11 @@
         <div class="content">
           <h2>Settings</h2>
           <div class="tab-bar">
-            <button class="tab-btn settings-tab-btn${activeTab === "profile" ? " active" : ""}" data-tab="profile">ðŸ‘¤ Profile</button>
-            <button class="tab-btn settings-tab-btn${activeTab === "security" ? " active" : ""}" data-tab="security">ðŸ”’ Security</button>
-            <button class="tab-btn settings-tab-btn${activeTab === "notifications" ? " active" : ""}" data-tab="notifications">ðŸ”” Notifications</button>
-            <button class="tab-btn settings-tab-btn${activeTab === "platform" ? " active" : ""}" data-tab="platform">âš™ï¸ Platform</button>
-            <button class="tab-btn settings-tab-btn${activeTab === "appearance" ? " active" : ""}" data-tab="appearance">ðŸŽ¨ Appearance</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "profile" ? " active" : ""}" data-tab="profile">👤 Profile</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "security" ? " active" : ""}" data-tab="security">🔒 Security</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "notifications" ? " active" : ""}" data-tab="notifications">🔔 Notifications</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "platform" ? " active" : ""}" data-tab="platform">⚙️ Platform</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "appearance" ? " active" : ""}" data-tab="appearance">🎨 Appearance</button>
           </div>
           <div id="settings-panel"></div>
         </div>

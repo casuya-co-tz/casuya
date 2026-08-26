@@ -239,6 +239,27 @@ async function renderStudentDashboard() {
     });
   });
 
+  (async function applyModuleVisibility() {
+    try {
+      var vis = await request("/settings/modules/my");
+      if (!vis || typeof vis !== "object") return;
+      var items = document.querySelectorAll("#student-nav .sidebar-nav-item");
+      var firstEnabled = null;
+      items.forEach(function(el) {
+        var view = el.getAttribute("data-view");
+        if (vis[view] === false) {
+          el.style.display = "none";
+        } else if (!firstEnabled) {
+          firstEnabled = view;
+        }
+      });
+      var currentHash = location.hash.slice(1) || "dashboard";
+      if (vis[currentHash] === false && firstEnabled) {
+        navigateTo(firstEnabled);
+      }
+    } catch(e) {}
+  })();
+
   window.addEventListener("hashchange", () => {
     const view = location.hash.slice(1) || "dashboard";
     if (navHandlers[view]) navHandlers[view]();
