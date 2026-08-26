@@ -1298,6 +1298,27 @@ async function renderStudentDashboard() {
     });
   });
 
+  (async function applyModuleVisibility() {
+    try {
+      var vis = await request("/settings/modules/my");
+      if (!vis || typeof vis !== "object") return;
+      var items = document.querySelectorAll("#student-nav .sidebar-nav-item");
+      var firstEnabled = null;
+      items.forEach(function(el) {
+        var view = el.getAttribute("data-view");
+        if (vis[view] === false) {
+          el.style.display = "none";
+        } else if (!firstEnabled) {
+          firstEnabled = view;
+        }
+      });
+      var currentHash = location.hash.slice(1) || "dashboard";
+      if (vis[currentHash] === false && firstEnabled) {
+        navigateTo(firstEnabled);
+      }
+    } catch(e) {}
+  })();
+
   window.addEventListener("hashchange", () => {
     const view = location.hash.slice(1) || "dashboard";
     if (navHandlers[view]) navHandlers[view]();
@@ -2955,7 +2976,7 @@ async function renderStudentDashboard() {
 }
 
 // ===== modules/admin-dashboard/00-shell.js =====
-﻿// modules/admin-dashboard.js â€” extracted from main.js (classic script, shared global scope)
+// modules/admin-dashboard.js — extracted from main.js (classic script, shared global scope)
 async function renderAdminDashboard() {
   const token = localStorage.getItem("casuya_token");
   const payload = decodeToken(token);
@@ -2968,21 +2989,21 @@ async function renderAdminDashboard() {
           <p>${escapeHtml(payload.full_name || payload.email || "Admin")}</p>
         </div>
         <nav class="sidebar-nav" id="admin-nav">
-          <div class="sidebar-nav-item active" data-view="dashboard">ðŸ“Š Dashboard</div>
-          <div class="sidebar-nav-item" data-view="subjects">ðŸ“š Subjects</div>
-          <div class="sidebar-nav-item" data-view="topics">ðŸ“ Topics</div>
-          <div class="sidebar-nav-item" data-view="subtopics">ðŸ“‚ Subtopics</div>
-          <div class="sidebar-nav-item" data-view="lessons">ðŸ“ Lessons</div>
-          <div class="sidebar-nav-item" data-view="quizzes">â“ Quizzes</div>
-          <div class="sidebar-nav-item" data-view="games">ðŸŽ® Games</div>
-          <div class="sidebar-nav-item" data-view="users">ðŸ‘¥ Users</div>
-          <div class="sidebar-nav-item" data-view="progress">ðŸ“ˆ Progress</div>
-          <div class="sidebar-nav-item" data-view="analytics">ðŸ“‰ Analytics</div>
-          <div class="sidebar-nav-item" data-view="payments">ðŸ’³ Payments</div>
-          <div class="sidebar-nav-item" data-view="notifications">ðŸ”” Notifications</div>
-          <div class="sidebar-nav-item" data-view="uploads">ðŸ“¤ Uploads</div>
-          <div class="sidebar-nav-item" data-view="branding">ðŸŽ¨ Branding</div>
-          <div class="sidebar-nav-item" data-view="settings">âš™ï¸ Settings</div>
+          <div class="sidebar-nav-item active" data-view="dashboard">📊 Dashboard</div>
+          <div class="sidebar-nav-item" data-view="subjects">📚 Subjects</div>
+          <div class="sidebar-nav-item" data-view="topics">📁 Topics</div>
+          <div class="sidebar-nav-item" data-view="subtopics">📂 Subtopics</div>
+          <div class="sidebar-nav-item" data-view="lessons">📝 Lessons</div>
+          <div class="sidebar-nav-item" data-view="quizzes">❓ Quizzes</div>
+          <div class="sidebar-nav-item" data-view="games">🎮 Games</div>
+          <div class="sidebar-nav-item" data-view="users">👥 Users</div>
+          <div class="sidebar-nav-item" data-view="progress">📈 Progress</div>
+          <div class="sidebar-nav-item" data-view="analytics">📉 Analytics</div>
+          <div class="sidebar-nav-item" data-view="payments">💳 Payments</div>
+          <div class="sidebar-nav-item" data-view="notifications">🔔 Notifications</div>
+          <div class="sidebar-nav-item" data-view="uploads">📤 Uploads</div>
+          <div class="sidebar-nav-item" data-view="branding">🎨 Branding</div>
+          <div class="sidebar-nav-item" data-view="settings">⚙️ Settings</div>
         </nav>
         <div class="sidebar-footer">
           <button id="admin-logout" class="btn btn-danger" style="width:100%;font-size:0.85rem">Sign Out</button>
@@ -3105,7 +3126,7 @@ async function renderAdminDashboard() {
 
 
 // ===== modules/admin-dashboard/01-overview.js =====
-﻿  async function loadAdminOverview() {
+  async function loadAdminOverview() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
     try {
       const overview = await request("/analytics/overview");
@@ -3129,22 +3150,22 @@ async function renderAdminDashboard() {
           <!-- Stats -->
           <div class="stat-grid">
             <div class="stat-card">
-              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">ðŸ‘¥</div>
+              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">👥</div>
               <div class="stat-value">${overview?.total_students ?? 0}</div>
               <div class="stat-label">Students</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">ðŸ‘©â€ðŸ«</div>
+              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">👩‍🏫</div>
               <div class="stat-value">${overview?.total_teachers ?? 0}</div>
               <div class="stat-label">Teachers</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="background:#fef3c7;color:#d97706">ðŸ“</div>
+              <div class="stat-icon" style="background:#fef3c7;color:#d97706">📝</div>
               <div class="stat-value">${overview?.total_lessons ?? 0}</div>
               <div class="stat-label">Lessons</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="background:#fce7f3;color:#db2777">â“</div>
+              <div class="stat-icon" style="background:#fce7f3;color:#db2777">❓</div>
               <div class="stat-value">${overview?.total_quizzes ?? 0}</div>
               <div class="stat-label">Quizzes</div>
             </div>
@@ -3156,19 +3177,19 @@ async function renderAdminDashboard() {
           </div>
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.75rem">
             <div class="recent-lesson-card" data-nav="subjects" style="text-align:center">
-              <div style="font-size:1.5rem;margin-bottom:0.25rem">ðŸ“š</div>
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">📚</div>
               <h4 style="margin:0">Manage Subjects</h4>
             </div>
             <div class="recent-lesson-card" data-nav="lessons" style="text-align:center">
-              <div style="font-size:1.5rem;margin-bottom:0.25rem">ðŸ“</div>
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">📝</div>
               <h4 style="margin:0">Manage Lessons</h4>
             </div>
             <div class="recent-lesson-card" data-nav="users" style="text-align:center">
-              <div style="font-size:1.5rem;margin-bottom:0.25rem">ðŸ‘¥</div>
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">👥</div>
               <h4 style="margin:0">Manage Users</h4>
             </div>
             <div class="recent-lesson-card" data-nav="progress" style="text-align:center">
-              <div style="font-size:1.5rem;margin-bottom:0.25rem">ðŸ“ˆ</div>
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">📈</div>
               <h4 style="margin:0">View Progress</h4>
             </div>
           </div>
@@ -3260,7 +3281,7 @@ async function renderAdminDashboard() {
         <div class="content">
           ${subjectId ? '<button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>' : ""}
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-            <h2>${subjectId ? escapeHtml(subjectName) + " â€” " : ""}Topics</h2>
+            <h2>${subjectId ? escapeHtml(subjectName) + " — " : ""}Topics</h2>
             <button class="btn btn-primary" id="add-topic-btn">+ Add Topic</button>
           </div>
           <div id="form-area"></div>
@@ -3339,7 +3360,7 @@ async function renderAdminDashboard() {
         <div class="content">
           ${topicId ? '<button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>' : ""}
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-            <h2>${topicId ? escapeHtml(topicTitle) + " â€” " : ""}Subtopics</h2>
+            <h2>${topicId ? escapeHtml(topicTitle) + " — " : ""}Subtopics</h2>
             <button class="btn btn-primary" id="add-subtopic-btn">+ Add Subtopic</button>
           </div>
           <div id="form-area"></div>
@@ -3411,7 +3432,7 @@ async function renderAdminDashboard() {
         <div class="content">
           <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-            <h2>${escapeHtml(subtopicTitle)} â€” Lessons</h2>
+            <h2>${escapeHtml(subtopicTitle)} — Lessons</h2>
             <button class="btn btn-primary" id="add-lesson-btn">+ Add Lesson</button>
           </div>
           <div id="form-area"></div>
@@ -3463,7 +3484,7 @@ async function renderAdminDashboard() {
 
 
 // ===== modules/admin-dashboard/02-lessons-quizzes-games.js =====
-﻿  async function loadAdminProgress() {
+  async function loadAdminProgress() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
     try {
       const [students, teachers, subjects, distribution] = await Promise.all([
@@ -3518,7 +3539,7 @@ async function renderAdminDashboard() {
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
             <h2>Lessons</h2>
             <div style="display:flex;gap:0.5rem">
-              <button class="btn btn-primary" id="ai-generate-questions-btn">ðŸ¤– AI Generate Questions</button>
+              <button class="btn btn-primary" id="ai-generate-questions-btn">🤖 AI Generate Questions</button>
               <button class="btn btn-primary" id="add-lesson-btn">+ Add Lesson</button>
             </div>
           </div>
@@ -3872,7 +3893,7 @@ async function renderAdminDashboard() {
           questionsHtml = fullQuiz.questions.map((q, i) => `
             <div class="card" style="padding:0.75rem;margin-bottom:0.5rem">
               <p style="font-weight:600;margin-bottom:0.5rem">${i + 1}. ${escapeHtml(q.prompt)}</p>
-              ${q.options.map(o => `<p style="font-size:0.85rem;margin:0.15rem 0;padding-left:1rem">â€¢ ${escapeHtml(o.text)}</p>`).join("")}
+              ${q.options.map(o => `<p style="font-size:0.85rem;margin:0.15rem 0;padding-left:1rem">• ${escapeHtml(o.text)}</p>`).join("")}
             </div>
           `).join("");
         }
@@ -3945,7 +3966,7 @@ async function renderAdminDashboard() {
 
 
 // ===== modules/admin-dashboard/03-users.js =====
-﻿  async function loadAdminGames() {
+  async function loadAdminGames() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading games...</p></div>');
     try {
       const games = await request("/games/");
@@ -4212,7 +4233,7 @@ async function renderAdminDashboard() {
                     <div style="width:36px;height:36px;border-radius:50%;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">${escapeHtml((s.full_name || "S").charAt(0).toUpperCase())}</div>
                     <div style="flex:1;min-width:0">
                       <h4 style="margin:0;font-size:0.9rem">${escapeHtml(s.full_name || "Unnamed")}</h4>
-                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(s.email || "")} ${s.form_level ? "Â· " + escapeHtml(s.form_level) : ""}</p>
+                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(s.email || "")} ${s.form_level ? "· " + escapeHtml(s.form_level) : ""}</p>
                     </div>
                   </div>
                 </div>
@@ -4230,7 +4251,7 @@ async function renderAdminDashboard() {
                     <div style="width:36px;height:36px;border-radius:50%;background:#f0fdf4;color:#16a34a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">${escapeHtml((t.full_name || "T").charAt(0).toUpperCase())}</div>
                     <div style="flex:1;min-width:0">
                       <h4 style="margin:0;font-size:0.9rem">${escapeHtml(t.full_name || "Unnamed")}</h4>
-                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(t.email || "")} ${t.subjects ? "Â· " + escapeHtml(t.subjects) : ""}</p>
+                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(t.email || "")} ${t.subjects ? "· " + escapeHtml(t.subjects) : ""}</p>
                     </div>
                   </div>
                 </div>
@@ -4337,7 +4358,7 @@ async function renderAdminDashboard() {
       showAdminView(`
         <div class="content" style="max-width:960px">
           <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">
-            <button class="btn" id="back-btn">â† Back</button>
+            <button class="btn" id="back-btn">← Back</button>
             <h2>${escapeHtml(userName)}</h2>
             <span style="font-size:0.75rem;padding:0.2rem 0.6rem;background:${userType === "student" ? "#eff6ff" : "#f0fdf4"};color:${userType === "student" ? "#2563eb" : "#16a34a"};border-radius:var(--radius);font-weight:600">${userType === "student" ? "Student" : "Teacher"}</span>
           </div>
@@ -4370,17 +4391,17 @@ async function renderAdminDashboard() {
           ${userType === "student" && progressList.length > 0 ? `
             <div class="stat-grid">
               <div class="stat-card">
-                <div class="stat-icon" style="background:#eff6ff;color:#2563eb">ðŸ“š</div>
+                <div class="stat-icon" style="background:#eff6ff;color:#2563eb">📚</div>
                 <div class="stat-value">${progressList.length}</div>
                 <div class="stat-label">Lessons Attempted</div>
               </div>
               <div class="stat-card">
-                <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">âœ…</div>
+                <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">✅</div>
                 <div class="stat-value">${totalCompleted}</div>
                 <div class="stat-label">Completed</div>
               </div>
               <div class="stat-card">
-                <div class="stat-icon" style="background:#fef3c7;color:#d97706">ðŸ“ˆ</div>
+                <div class="stat-icon" style="background:#fef3c7;color:#d97706">📈</div>
                 <div class="stat-value">${avgScore != null ? avgScore + "%" : "0%"}</div>
                 <div class="stat-label">Avg Score</div>
               </div>
@@ -4403,7 +4424,7 @@ async function renderAdminDashboard() {
                   <div class="card" style="margin-bottom:0.75rem">
                     <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem">
                       <strong>${escapeHtml(name)}</strong>
-                      <span style="font-size:0.85rem;color:var(--color-text-muted)">${data.completed}/${data.total} Â· ${pct}%</span>
+                      <span style="font-size:0.85rem;color:var(--color-text-muted)">${data.completed}/${data.total} · ${pct}%</span>
                     </div>
                     <div class="progress-bar">
                       <div class="progress-bar-fill" style="width:${pct}%"></div>
@@ -4429,14 +4450,14 @@ async function renderAdminDashboard() {
 
       document.getElementById("back-btn")?.addEventListener("click", loadAdminUsers);
     } catch (err) {
-      showAdminView(`<div class="empty-state"><p>Error loading user details</p><button class="btn" id="back-btn">â† Back</button></div>`);
+      showAdminView(`<div class="empty-state"><p>Error loading user details</p><button class="btn" id="back-btn">← Back</button></div>`);
       document.getElementById("back-btn")?.addEventListener("click", loadAdminUsers);
     }
   }
 
 
 // ===== modules/admin-dashboard/04-payments-notif-uploads.js =====
-﻿  async function loadAdminPayments() {
+  async function loadAdminPayments() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading payments...</p></div>');
     try {
       const transactions = await request("/payments/transactions").catch(() => []);
@@ -4452,17 +4473,17 @@ async function renderAdminDashboard() {
 
           <div class="stat-grid" style="margin-top:1rem">
             <div class="stat-card">
-              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">ðŸ’°</div>
+              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">💰</div>
               <div class="stat-value">${totalRevenue.toLocaleString()}</div>
               <div class="stat-label">Total Revenue (TZS)</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">âœ…</div>
+              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">✅</div>
               <div class="stat-value">${completedCount}</div>
               <div class="stat-label">Completed</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="background:#fef3c7;color:#d97706">â³</div>
+              <div class="stat-icon" style="background:#fef3c7;color:#d97706">⏳</div>
               <div class="stat-value">${pendingCount}</div>
               <div class="stat-label">Pending</div>
             </div>
@@ -4638,10 +4659,10 @@ async function renderAdminDashboard() {
               <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
                 <div style="flex:1;min-width:0">
                   <p style="margin:0;font-size:0.875rem;${n.is_read ? "" : "font-weight:600"}">${escapeHtml(n.message)}</p>
-                  <p style="margin:0.25rem 0 0;font-size:0.75rem;color:var(--color-text-muted)">${n.created_at ? new Date(n.created_at).toLocaleString() : ""} Â· ${n.is_read ? "Read" : "Unread"}</p>
+                  <p style="margin:0.25rem 0 0;font-size:0.75rem;color:var(--color-text-muted)">${n.created_at ? new Date(n.created_at).toLocaleString() : ""} · ${n.is_read ? "Read" : "Unread"}</p>
                 </div>
                 <div style="display:flex;gap:0.25rem;flex-shrink:0">
-                  ${!n.is_read ? `<button class="btn btn-primary btn-xs notif-mark-read" data-id="${n.id}">âœ“ Read</button>` : ""}
+                  ${!n.is_read ? `<button class="btn btn-primary btn-xs notif-mark-read" data-id="${n.id}">✓ Read</button>` : ""}
                 </div>
               </div>
             </div>
@@ -4652,9 +4673,9 @@ async function renderAdminDashboard() {
         if (totalPages <= 1) { pag.innerHTML = ""; return; }
         pag.innerHTML = `
           <div style="display:flex;align-items:center;gap:0.5rem;justify-content:center;margin-top:1rem">
-            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${currentPage - 1}" ${currentPage <= 1 ? "disabled" : ""}>â† Prev</button>
+            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${currentPage - 1}" ${currentPage <= 1 ? "disabled" : ""}>← Prev</button>
             <span style="font-size:0.85rem;color:var(--color-text-muted)">Page ${currentPage} of ${totalPages}</span>
-            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${currentPage + 1}" ${currentPage >= totalPages ? "disabled" : ""}>Next â†’</button>
+            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${currentPage + 1}" ${currentPage >= totalPages ? "disabled" : ""}>Next →</button>
           </div>
         `;
         document.querySelectorAll(".notif-page-btn").forEach(btn => {
@@ -4673,8 +4694,8 @@ async function renderAdminDashboard() {
       showAdminView(`
         <div class="content">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem">
-            <h2>ðŸ”” Notifications</h2>
-            <button class="btn btn-primary btn-pattern" id="notif-send-btn">âœ‰ï¸ Send Notification</button>
+            <h2>🔔 Notifications</h2>
+            <button class="btn btn-primary btn-pattern" id="notif-send-btn">✉️ Send Notification</button>
           </div>
           <div class="card" style="margin-top:1rem;display:none" id="notif-send-form-area">
             <h3 style="margin-bottom:0.75rem">Send Notification</h3>
@@ -4694,7 +4715,7 @@ async function renderAdminDashboard() {
               <label style="font-size:0.85rem;font-weight:500">Message</label>
               <textarea class="input" name="message" rows="3" placeholder="Write your notification message..." required></textarea>
               <div style="display:flex;gap:0.5rem;align-items:center">
-                <button class="btn btn-success btn-pattern" type="submit">ðŸ“¤ Send Notification</button>
+                <button class="btn btn-success btn-pattern" type="submit">📤 Send Notification</button>
                 <button class="btn btn-ghost" type="button" id="notif-cancel-send">Cancel</button>
                 <p id="notif-send-status" style="font-size:0.85rem;display:none;margin:0"></p>
               </div>
@@ -4702,10 +4723,10 @@ async function renderAdminDashboard() {
           </div>
           <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
             <button class="btn-filter notif-filter-btn active" data-filter="all">All</button>
-            <button class="btn-filter notif-filter-btn" data-filter="unread">ðŸ”´ Unread</button>
-            <button class="btn-filter notif-filter-btn" data-filter="read">âœ… Read</button>
+            <button class="btn-filter notif-filter-btn" data-filter="unread">🔴 Unread</button>
+            <button class="btn-filter notif-filter-btn" data-filter="read">✅ Read</button>
             <input type="search" class="input" id="notif-search" placeholder="Search notifications..." style="max-width:240px;padding:0.35rem 0.6rem;font-size:0.85rem">
-            <button class="btn btn-ghost btn-sm" id="notif-mark-all" style="margin-left:auto">âœ“ Mark All Read</button>
+            <button class="btn btn-ghost btn-sm" id="notif-mark-all" style="margin-left:auto">✓ Mark All Read</button>
           </div>
           <div id="notif-stats" style="margin-top:0.75rem"></div>
           <div style="margin-top:0.5rem" id="notif-list"></div>
@@ -4800,20 +4821,20 @@ async function renderAdminDashboard() {
           const isImage = /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(name);
           const isVideo = /\.(mp4|webm)$/i.test(name);
           const isAudio = /\.(mp3|wav|ogg)$/i.test(name);
-          const icon = isImage ? "ðŸ–¼ï¸" : isVideo ? "ðŸŽ¬" : isAudio ? "ðŸŽµ" : "ðŸ“„";
+          const icon = isImage ? "🖼️" : isVideo ? "🎬" : isAudio ? "🎵" : "📄";
           return `
             <div class="card upload-card" style="padding:0.75rem;cursor:pointer" data-filename="${escapeHtml(name)}">
               <div style="display:flex;align-items:center;gap:0.75rem">
                 <div style="font-size:1.5rem;flex-shrink:0">${icon}</div>
                 <div style="flex:1;min-width:0">
                   <p style="margin:0;font-size:0.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" class="upload-display-name">${escapeHtml(displayName)}</p>
-                  <p style="margin:0.15rem 0 0;font-size:0.7rem;color:var(--color-text-muted)">${f.size ? (f.size / 1024).toFixed(1) + " KB" : ""} Â· ${f.uploaded_at ? new Date(f.uploaded_at).toLocaleDateString() : ""}</p>
+                  <p style="margin:0.15rem 0 0;font-size:0.7rem;color:var(--color-text-muted)">${f.size ? (f.size / 1024).toFixed(1) + " KB" : ""} · ${f.uploaded_at ? new Date(f.uploaded_at).toLocaleDateString() : ""}</p>
                   ${!isVisible ? '<span style="display:inline-block;margin-top:0.25rem;font-size:0.65rem;padding:0.1rem 0.4rem;background:#fee2e2;color:#dc2626;border-radius:4px">Hidden</span>' : ""}
                 </div>
                 <div style="display:flex;flex-direction:column;gap:0.25rem;flex-shrink:0">
-                   <button class="btn btn-xs upload-rename-btn" data-filename="${escapeHtml(name)}" data-display="${escapeHtml(displayName)}" title="Rename">âœï¸</button>
-                   <button class="btn btn-xs upload-vis-btn" data-filename="${escapeHtml(name)}" data-visible="${isVisible}" title="${isVisible ? 'Hide from students & teachers' : 'Show to students & teachers'}">${isVisible ? "ðŸ‘ï¸" : "ðŸš«"}</button>
-                   <button class="btn btn-outline-danger btn-xs upload-delete-btn" data-filename="${escapeHtml(name)}" title="Delete file">âœ•</button>
+                   <button class="btn btn-xs upload-rename-btn" data-filename="${escapeHtml(name)}" data-display="${escapeHtml(displayName)}" title="Rename">✏️</button>
+                   <button class="btn btn-xs upload-vis-btn" data-filename="${escapeHtml(name)}" data-visible="${isVisible}" title="${isVisible ? 'Hide from students & teachers' : 'Show to students & teachers'}">${isVisible ? "👁️" : "🚫"}</button>
+                   <button class="btn btn-outline-danger btn-xs upload-delete-btn" data-filename="${escapeHtml(name)}" title="Delete file">✕</button>
                 </div>
               </div>
             </div>
@@ -4876,16 +4897,16 @@ async function renderAdminDashboard() {
 
       showAdminView(`
         <div class="content">
-          <h2>ðŸ“ Uploads</h2>
+          <h2>📁 Uploads</h2>
           <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Manage uploaded files. Control visibility for students and teachers.</p>
 
           <div class="card" style="margin-top:1rem;padding:1.5rem">
-            <h3 style="margin-bottom:0.75rem">ðŸ“¤ Upload New File</h3>
+            <h3 style="margin-bottom:0.75rem">📤 Upload New File</h3>
             <form id="upload-form" style="display:flex;flex-direction:column;gap:0.5rem">
               <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0">Supports images (png, jpg, gif, svg, webp), documents (pdf, doc), videos (mp4, webm), audio (mp3, wav, ogg)</p>
               <input class="input" type="file" id="upload-file" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" required>
               <div style="display:flex;gap:0.5rem;align-items:center">
-                <button class="btn btn-success btn-pattern" type="submit" id="upload-submit-btn" style="width:100%">ðŸ“¤ Upload File</button>
+                <button class="btn btn-success btn-pattern" type="submit" id="upload-submit-btn" style="width:100%">📤 Upload File</button>
               </div>
             </form>
             <div id="upload-result" style="margin-top:0.5rem"></div>
@@ -4893,9 +4914,9 @@ async function renderAdminDashboard() {
 
           <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
             <button class="btn-filter upload-filter-btn active" data-filter="all">All <span class="filter-count">${fileList.length}</span></button>
-            <button class="btn-filter upload-filter-btn" data-filter="images">ðŸ–¼ï¸ Images <span class="filter-count">${imageFiles.length}</span></button>
-            <button class="btn-filter upload-filter-btn" data-filter="documents">ðŸ“„ Documents <span class="filter-count">${docFiles.length}</span></button>
-            <button class="btn-filter upload-filter-btn" data-filter="media">ðŸŽ¬ Media <span class="filter-count">${mediaFiles.length}</span></button>
+            <button class="btn-filter upload-filter-btn" data-filter="images">🖼️ Images <span class="filter-count">${imageFiles.length}</span></button>
+            <button class="btn-filter upload-filter-btn" data-filter="documents">📄 Documents <span class="filter-count">${docFiles.length}</span></button>
+            <button class="btn-filter upload-filter-btn" data-filter="media">🎬 Media <span class="filter-count">${mediaFiles.length}</span></button>
           </div>
           <div id="uploads-grid" style="margin-top:0.75rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.5rem"></div>
         </div>
@@ -4947,7 +4968,7 @@ async function renderAdminDashboard() {
 
 
 // ===== modules/admin-dashboard/05-branding-analytics-settings.js =====
-﻿  async function loadAdminBranding() {
+  async function loadAdminBranding() {
     const API = window.casuyaApiBase ? window.casuyaApiBase() : ((window.location.port === "8765" || window.location.port === "" || window.location.port === "443" || window.location.port === "80") ? window.location.origin : `${window.location.protocol}//${window.location.hostname}:8765`);
     const token = localStorage.getItem("casuya_token");
     const headers = token ? { "Authorization": `Bearer ${token}` } : {};
@@ -4965,25 +4986,25 @@ async function renderAdminDashboard() {
 
     showAdminView(`
       <div class="content">
-        <h2>ðŸŽ¨ Site Branding</h2>
+        <h2>🎨 Site Branding</h2>
         <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:1.5rem">Upload your logo and favicon. These appear across the entire platform.</p>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
           <!-- Logo -->
           <div class="card" style="padding:1.5rem">
-            <h3 style="margin-bottom:0.75rem">ðŸ–¼ï¸ Logo</h3>
+            <h3 style="margin-bottom:0.75rem">🖼️ Logo</h3>
             <div style="text-align:center;margin-bottom:1rem">
               ${logoExists
                 ? `<img src="${API}/branding/logo?t=${Date.now()}" alt="Current logo" style="max-width:120px;max-height:120px;border-radius:12px;border:1px solid var(--color-border)">`
                 : `<div style="width:120px;height:120px;margin:0 auto;background:linear-gradient(135deg,var(--color-primary),#7c3aed);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem;font-weight:800">C</div>`
               }
-              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${logoExists ? "âœ… Custom logo active" : "Using default"}</p>
+              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${logoExists ? "✅ Custom logo active" : "Using default"}</p>
             </div>
             <form id="logo-upload-form" style="display:flex;flex-direction:column;gap:0.5rem">
               <input class="input" type="file" id="logo-file" accept="image/*" required />
               <div style="display:flex;gap:0.5rem">
-                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${logoExists ? "ðŸ”„ Replace" : "ðŸ“¤ Upload"}</button>
-                ${logoExists ? '<button class="btn btn-outline-danger btn-sm" type="button" id="logo-delete">ðŸ—‘ï¸ Delete</button>' : ''}
+                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${logoExists ? "🔄 Replace" : "📤 Upload"}</button>
+                ${logoExists ? '<button class="btn btn-outline-danger btn-sm" type="button" id="logo-delete">🗑️ Delete</button>' : ''}
               </div>
             </form>
             <div id="logo-result" style="margin-top:0.5rem;font-size:0.8rem"></div>
@@ -4991,19 +5012,19 @@ async function renderAdminDashboard() {
 
           <!-- Favicon -->
           <div class="card" style="padding:1.5rem">
-            <h3 style="margin-bottom:0.75rem">ðŸ·ï¸ Favicon</h3>
+            <h3 style="margin-bottom:0.75rem">🏷️ Favicon</h3>
             <div style="text-align:center;margin-bottom:1rem">
               ${faviconExists
                 ? `<img src="${API}/branding/favicon?t=${Date.now()}" alt="Current favicon" style="width:64px;height:64px;border-radius:8px;border:1px solid var(--color-border)">`
                 : `<div style="width:64px;height:64px;margin:0 auto;background:linear-gradient(135deg,var(--color-primary),#7c3aed);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;font-weight:800">C</div>`
               }
-              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${faviconExists ? "âœ… Custom favicon active" : "Using default"}</p>
+              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${faviconExists ? "✅ Custom favicon active" : "Using default"}</p>
             </div>
             <form id="favicon-upload-form" style="display:flex;flex-direction:column;gap:0.5rem">
               <input class="input" type="file" id="favicon-file" accept="image/*" required />
               <div style="display:flex;gap:0.5rem">
-                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${faviconExists ? "ðŸ”„ Replace" : "ðŸ“¤ Upload"}</button>
-                ${faviconExists ? '<button class="btn btn-outline-danger btn-sm" type="button" id="favicon-delete">ðŸ—‘ï¸ Delete</button>' : ''}
+                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${faviconExists ? "🔄 Replace" : "📤 Upload"}</button>
+                ${faviconExists ? '<button class="btn btn-outline-danger btn-sm" type="button" id="favicon-delete">🗑️ Delete</button>' : ''}
               </div>
             </form>
             <div id="favicon-result" style="margin-top:0.5rem;font-size:0.8rem"></div>
@@ -5157,7 +5178,7 @@ async function renderAdminDashboard() {
                   <input class="input" name="phone" value="${escapeHtml(profile.phone || "")}" placeholder="Phone number">
                 </div>
                 <div style="display:flex;gap:0.5rem;align-items:center">
-                  <button class="btn btn-primary" type="submit">ðŸ’¾ Save Profile</button>
+                  <button class="btn btn-primary" type="submit">💾 Save Profile</button>
                   <span id="admin-profile-msg" style="font-size:0.85rem;display:none"></span>
                 </div>
               </form>
@@ -5169,9 +5190,9 @@ async function renderAdminDashboard() {
             const msg = document.getElementById("admin-profile-msg");
             try {
               await request("/users/me", { method: "PATCH", body: JSON.stringify({ full_name: fd.get("full_name"), phone: fd.get("phone") }) });
-              msg.textContent = "âœ… Profile updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "inline";
+              msg.textContent = "✅ Profile updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "inline";
               setTimeout(() => msg.style.display = "none", 3000);
-            } catch(err) { msg.textContent = "âŒ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
+            } catch(err) { msg.textContent = "❌ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
           });
         } else if (tab === "security") {
           panel.innerHTML = `
@@ -5191,7 +5212,7 @@ async function renderAdminDashboard() {
                   <input class="input" name="confirm_password" type="password" required>
                 </div>
                 <div style="display:flex;gap:0.5rem;align-items:center">
-                  <button class="btn btn-primary btn-pattern" type="submit">ðŸ” Update Password</button>
+                  <button class="btn btn-primary btn-pattern" type="submit">🔐 Update Password</button>
                   <span id="admin-pw-msg" style="font-size:0.85rem;display:none"></span>
                 </div>
               </form>
@@ -5202,9 +5223,9 @@ async function renderAdminDashboard() {
               <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">
                 <div>
                   <p style="font-weight:500;margin:0;font-size:0.9rem">Current Session</p>
-                  <p style="font-size:0.75rem;color:var(--color-text-muted);margin:0.15rem 0 0">Now Â· ${navigator.userAgent.slice(0, 60)}...</p>
+                  <p style="font-size:0.75rem;color:var(--color-text-muted);margin:0.15rem 0 0">Now · ${navigator.userAgent.slice(0, 60)}...</p>
                 </div>
-                <span style="color:var(--color-success);font-size:0.8rem;font-weight:600">ðŸŸ¢ Active</span>
+                <span style="color:var(--color-success);font-size:0.8rem;font-weight:600">🟢 Active</span>
               </div>
             </div>
           `;
@@ -5213,15 +5234,15 @@ async function renderAdminDashboard() {
             const fd = new FormData(e.target);
             const msg = document.getElementById("admin-pw-msg");
             if (fd.get("new_password") !== fd.get("confirm_password")) {
-              msg.textContent = "âŒ Passwords do not match"; msg.style.color = "var(--color-danger)"; msg.style.display = "inline";
+              msg.textContent = "❌ Passwords do not match"; msg.style.color = "var(--color-danger)"; msg.style.display = "inline";
               return;
             }
             try {
               await request("/auth/change-password", { method: "POST", body: JSON.stringify({ current_password: fd.get("current_password"), new_password: fd.get("new_password") }) });
-              msg.textContent = "âœ… Password updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "inline";
+              msg.textContent = "✅ Password updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "inline";
               e.target.reset();
               setTimeout(() => msg.style.display = "none", 3000);
-            } catch(err) { msg.textContent = "âŒ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
+            } catch(err) { msg.textContent = "❌ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
           });
         } else if (tab === "notifications") {
           panel.innerHTML = `
@@ -5237,7 +5258,7 @@ async function renderAdminDashboard() {
                 <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;cursor:pointer">
                   <input type="checkbox" name="system_notifs" checked> System alerts and errors
                 </label>
-                <button class="btn btn-primary btn-pattern" type="submit" style="align-self:flex-start">ðŸ’¾ Save Preferences</button>
+                <button class="btn btn-primary btn-pattern" type="submit" style="align-self:flex-start">💾 Save Preferences</button>
               </form>
             </div>
             <div class="card" style="padding:1.5rem;margin-top:1rem">
@@ -5249,7 +5270,7 @@ async function renderAdminDashboard() {
                   <option value="teachers">All Teachers</option>
                 </select>
                 <textarea class="input" name="message" rows="3" placeholder="Notification message..." required></textarea>
-                <button class="btn btn-primary btn-pattern" type="submit">ðŸ“¤ Send</button>
+                <button class="btn btn-primary btn-pattern" type="submit">📤 Send</button>
               </form>
               <div id="settings-notify-result" style="margin-top:0.5rem;font-size:0.85rem"></div>
             </div>
@@ -5295,16 +5316,21 @@ async function renderAdminDashboard() {
                 </div>
                 <div style="display:flex;justify-content:space-between;padding:0.6rem 0">
                   <span style="color:var(--color-text-muted);font-size:0.9rem">Status</span>
-                  <span style="font-size:0.9rem;color:var(--color-success);font-weight:600">â— Online</span>
+                  <span style="font-size:0.9rem;color:var(--color-success);font-weight:600">● Online</span>
                 </div>
               </div>
             </div>
+            <div class="card" style="padding:1.5rem;margin-top:1rem" id="module-visibility-card">
+              <h3 style="margin-bottom:0.25rem">Module Visibility</h3>
+              <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:1rem">Toggle which sidebar modules are visible to students and teachers. Hidden modules can be re-enabled anytime.</p>
+              <div id="module-vis-loading" style="text-align:center;padding:1rem;color:var(--color-text-muted);font-size:0.85rem">Loading...</div>
+            </div>
             <div class="card" style="padding:1.5rem;margin-top:1rem">
-              <h3 style="margin-bottom:0.75rem">âš ï¸ Danger Zone</h3>
+              <h3 style="margin-bottom:0.75rem">⚠️ Danger Zone</h3>
               <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Irreversible actions</p>
               <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
-                <button class="btn btn-danger btn-sm btn-pattern" id="clear-cache-btn">ðŸ—‘ï¸ Clear Cache</button>
-                <button class="btn btn-outline-danger btn-sm" id="export-data-btn">ðŸ“¦ Export All Data</button>
+                <button class="btn btn-danger btn-sm btn-pattern" id="clear-cache-btn">🗑️ Clear Cache</button>
+                <button class="btn btn-outline-danger btn-sm" id="export-data-btn">📦 Export All Data</button>
               </div>
               <div id="danger-msg" style="font-size:0.85rem;margin-top:0.5rem"></div>
             </div>
@@ -5328,6 +5354,54 @@ async function renderAdminDashboard() {
               msg.textContent = "Data exported"; msg.style.color = "var(--color-success)";
             } catch(err) { msg.textContent = err.message; msg.style.color = "var(--color-danger)"; }
           });
+          (async function() {
+            var loading = document.getElementById("module-vis-loading");
+            if (!loading) return;
+            try {
+              var vis = await request("/settings/modules");
+              var studentMods = vis.student || {};
+              var teacherMods = vis.teacher || {};
+              var studentLabels = {dashboard:"Dashboard",subjects:"Subjects",progress:"Progress",bookmarks:"Bookmarks",assignments:"Assignments",games:"Games",downloads:"Downloads",exams:"Exams",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"};
+              var teacherLabels = {overview:"Overview",students:"Students",lessons:"Lessons",assignments:"Assignments",reports:"Reports","ai-assistant":"AI Assistant",bookmarks:"Bookmarks",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"};
+              function buildSection(title, mods, labels) {
+                var html = '<div style="margin-bottom:1rem"><div style="font-weight:600;font-size:0.9rem;margin-bottom:0.5rem">' + title + '</div>';
+                var keys = Object.keys(labels);
+                for (var k = 0; k < keys.length; k++) {
+                  var key = keys[k];
+                  var enabled = mods[key] !== false;
+                  html += '<label style="display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0;border-bottom:1px solid var(--color-border);cursor:pointer;font-size:0.85rem">';
+                  html += '<input type="checkbox" data-role="' + title.toLowerCase() + '" data-mod="' + key + '"' + (enabled ? ' checked' : '') + ' style="accent-color:var(--color-primary);width:16px;height:16px">';
+                  html += '<span>' + labels[key] + '</span>';
+                  html += '</label>';
+                }
+                html += '</div>';
+                return html;
+              }
+              loading.outerHTML = buildSection("Student", studentMods, studentLabels) + buildSection("Teacher", teacherMods, teacherLabels) + '<p id="module-vis-msg" style="font-size:0.8rem;color:var(--color-text-muted);margin-top:0.5rem"></p>';
+              document.querySelectorAll("#module-visibility-card input[type=checkbox]").forEach(function(cb) {
+                cb.addEventListener("change", async function() {
+                  var msg = document.getElementById("module-vis-msg");
+                  var studentData = {};
+                  var teacherData = {};
+                  document.querySelectorAll("#module-visibility-card input[type=checkbox]").forEach(function(c) {
+                    var role = c.getAttribute("data-role");
+                    var mod = c.getAttribute("data-mod");
+                    if (role === "student") studentData[mod] = c.checked;
+                    else teacherData[mod] = c.checked;
+                  });
+                  try {
+                    await request("/settings/modules", { method: "PUT", body: JSON.stringify({ student: studentData, teacher: teacherData }) });
+                    msg.textContent = "Saved"; msg.style.color = "var(--color-success)";
+                    setTimeout(function() { msg.textContent = ""; }, 2000);
+                  } catch(e) {
+                    msg.textContent = "Error: " + e.message; msg.style.color = "var(--color-danger)";
+                  }
+                });
+              });
+            } catch(e) {
+              loading.outerHTML = '<p style="color:var(--color-danger);font-size:0.85rem">Failed to load module settings</p>';
+            }
+          })();
         } else if (tab === "appearance") {
           panel.innerHTML = appearancePanelHTML();
           setupAppearanceControls();
@@ -5338,11 +5412,11 @@ async function renderAdminDashboard() {
         <div class="content">
           <h2>Settings</h2>
           <div class="tab-bar">
-            <button class="tab-btn settings-tab-btn${activeTab === "profile" ? " active" : ""}" data-tab="profile">ðŸ‘¤ Profile</button>
-            <button class="tab-btn settings-tab-btn${activeTab === "security" ? " active" : ""}" data-tab="security">ðŸ”’ Security</button>
-            <button class="tab-btn settings-tab-btn${activeTab === "notifications" ? " active" : ""}" data-tab="notifications">ðŸ”” Notifications</button>
-            <button class="tab-btn settings-tab-btn${activeTab === "platform" ? " active" : ""}" data-tab="platform">âš™ï¸ Platform</button>
-            <button class="tab-btn settings-tab-btn${activeTab === "appearance" ? " active" : ""}" data-tab="appearance">ðŸŽ¨ Appearance</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "profile" ? " active" : ""}" data-tab="profile">👤 Profile</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "security" ? " active" : ""}" data-tab="security">🔒 Security</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "notifications" ? " active" : ""}" data-tab="notifications">🔔 Notifications</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "platform" ? " active" : ""}" data-tab="platform">⚙️ Platform</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "appearance" ? " active" : ""}" data-tab="appearance">🎨 Appearance</button>
           </div>
           <div id="settings-panel"></div>
         </div>
@@ -5569,6 +5643,27 @@ async function renderTeacherDashboard() {
       navigateTo(el.dataset.view);
     });
   });
+
+  (async function applyModuleVisibility() {
+    try {
+      var vis = await request("/settings/modules/my");
+      if (!vis || typeof vis !== "object") return;
+      var items = document.querySelectorAll("#teacher-nav .sidebar-nav-item");
+      var firstEnabled = null;
+      items.forEach(function(el) {
+        var view = el.getAttribute("data-view");
+        if (vis[view] === false) {
+          el.style.display = "none";
+        } else if (!firstEnabled) {
+          firstEnabled = view;
+        }
+      });
+      var currentHash = location.hash.slice(1) || "overview";
+      if (vis[currentHash] === false && firstEnabled) {
+        navigateTo(firstEnabled);
+      }
+    } catch(e) {}
+  })();
 
   window.addEventListener("hashchange", () => {
     const view = location.hash.slice(1) || "overview";

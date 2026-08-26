@@ -1,4 +1,4 @@
-﻿  async function loadAdminGames() {
+  async function loadAdminGames() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading games...</p></div>');
     try {
       const games = await request("/games/");
@@ -265,7 +265,7 @@
                     <div style="width:36px;height:36px;border-radius:50%;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">${escapeHtml((s.full_name || "S").charAt(0).toUpperCase())}</div>
                     <div style="flex:1;min-width:0">
                       <h4 style="margin:0;font-size:0.9rem">${escapeHtml(s.full_name || "Unnamed")}</h4>
-                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(s.email || "")} ${s.form_level ? "Â· " + escapeHtml(s.form_level) : ""}</p>
+                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(s.email || "")} ${s.form_level ? "· " + escapeHtml(s.form_level) : ""}</p>
                     </div>
                   </div>
                 </div>
@@ -283,7 +283,7 @@
                     <div style="width:36px;height:36px;border-radius:50%;background:#f0fdf4;color:#16a34a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">${escapeHtml((t.full_name || "T").charAt(0).toUpperCase())}</div>
                     <div style="flex:1;min-width:0">
                       <h4 style="margin:0;font-size:0.9rem">${escapeHtml(t.full_name || "Unnamed")}</h4>
-                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(t.email || "")} ${t.subjects ? "Â· " + escapeHtml(t.subjects) : ""}</p>
+                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(t.email || "")} ${t.subjects ? "· " + escapeHtml(t.subjects) : ""}</p>
                     </div>
                   </div>
                 </div>
@@ -390,7 +390,7 @@
       showAdminView(`
         <div class="content" style="max-width:960px">
           <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">
-            <button class="btn" id="back-btn">â† Back</button>
+            <button class="btn" id="back-btn">← Back</button>
             <h2>${escapeHtml(userName)}</h2>
             <span style="font-size:0.75rem;padding:0.2rem 0.6rem;background:${userType === "student" ? "#eff6ff" : "#f0fdf4"};color:${userType === "student" ? "#2563eb" : "#16a34a"};border-radius:var(--radius);font-weight:600">${userType === "student" ? "Student" : "Teacher"}</span>
           </div>
@@ -423,17 +423,17 @@
           ${userType === "student" && progressList.length > 0 ? `
             <div class="stat-grid">
               <div class="stat-card">
-                <div class="stat-icon" style="background:#eff6ff;color:#2563eb">ðŸ“š</div>
+                <div class="stat-icon" style="background:#eff6ff;color:#2563eb">📚</div>
                 <div class="stat-value">${progressList.length}</div>
                 <div class="stat-label">Lessons Attempted</div>
               </div>
               <div class="stat-card">
-                <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">âœ…</div>
+                <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">✅</div>
                 <div class="stat-value">${totalCompleted}</div>
                 <div class="stat-label">Completed</div>
               </div>
               <div class="stat-card">
-                <div class="stat-icon" style="background:#fef3c7;color:#d97706">ðŸ“ˆ</div>
+                <div class="stat-icon" style="background:#fef3c7;color:#d97706">📈</div>
                 <div class="stat-value">${avgScore != null ? avgScore + "%" : "0%"}</div>
                 <div class="stat-label">Avg Score</div>
               </div>
@@ -456,7 +456,7 @@
                   <div class="card" style="margin-bottom:0.75rem">
                     <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem">
                       <strong>${escapeHtml(name)}</strong>
-                      <span style="font-size:0.85rem;color:var(--color-text-muted)">${data.completed}/${data.total} Â· ${pct}%</span>
+                      <span style="font-size:0.85rem;color:var(--color-text-muted)">${data.completed}/${data.total} · ${pct}%</span>
                     </div>
                     <div class="progress-bar">
                       <div class="progress-bar-fill" style="width:${pct}%"></div>
@@ -482,7 +482,7 @@
 
       document.getElementById("back-btn")?.addEventListener("click", loadAdminUsers);
     } catch (err) {
-      showAdminView(`<div class="empty-state"><p>Error loading user details</p><button class="btn" id="back-btn">â† Back</button></div>`);
+      showAdminView(`<div class="empty-state"><p>Error loading user details</p><button class="btn" id="back-btn">← Back</button></div>`);
       document.getElementById("back-btn")?.addEventListener("click", loadAdminUsers);
     }
   }

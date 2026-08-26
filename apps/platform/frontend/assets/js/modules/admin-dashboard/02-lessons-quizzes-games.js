@@ -1,4 +1,4 @@
-﻿  async function loadAdminProgress() {
+  async function loadAdminProgress() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
     try {
       const [students, teachers, subjects, distribution] = await Promise.all([
@@ -53,7 +53,7 @@
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
             <h2>Lessons</h2>
             <div style="display:flex;gap:0.5rem">
-              <button class="btn btn-primary" id="ai-generate-questions-btn">ðŸ¤– AI Generate Questions</button>
+              <button class="btn btn-primary" id="ai-generate-questions-btn">🤖 AI Generate Questions</button>
               <button class="btn btn-primary" id="add-lesson-btn">+ Add Lesson</button>
             </div>
           </div>
@@ -407,7 +407,7 @@
           questionsHtml = fullQuiz.questions.map((q, i) => `
             <div class="card" style="padding:0.75rem;margin-bottom:0.5rem">
               <p style="font-weight:600;margin-bottom:0.5rem">${i + 1}. ${escapeHtml(q.prompt)}</p>
-              ${q.options.map(o => `<p style="font-size:0.85rem;margin:0.15rem 0;padding-left:1rem">â€¢ ${escapeHtml(o.text)}</p>`).join("")}
+              ${q.options.map(o => `<p style="font-size:0.85rem;margin:0.15rem 0;padding-left:1rem">• ${escapeHtml(o.text)}</p>`).join("")}
             </div>
           `).join("");
         }

@@ -1,4 +1,4 @@
-﻿  async function loadAdminPayments() {
+  async function loadAdminPayments() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading payments...</p></div>');
     try {
       const transactions = await request("/payments/transactions").catch(() => []);
@@ -14,17 +14,17 @@
 
           <div class="stat-grid" style="margin-top:1rem">
             <div class="stat-card">
-              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">ðŸ’°</div>
+              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">💰</div>
               <div class="stat-value">${totalRevenue.toLocaleString()}</div>
               <div class="stat-label">Total Revenue (TZS)</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">âœ…</div>
+              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">✅</div>
               <div class="stat-value">${completedCount}</div>
               <div class="stat-label">Completed</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="background:#fef3c7;color:#d97706">â³</div>
+              <div class="stat-icon" style="background:#fef3c7;color:#d97706">⏳</div>
               <div class="stat-value">${pendingCount}</div>
               <div class="stat-label">Pending</div>
             </div>
@@ -200,10 +200,10 @@
               <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
                 <div style="flex:1;min-width:0">
                   <p style="margin:0;font-size:0.875rem;${n.is_read ? "" : "font-weight:600"}">${escapeHtml(n.message)}</p>
-                  <p style="margin:0.25rem 0 0;font-size:0.75rem;color:var(--color-text-muted)">${n.created_at ? new Date(n.created_at).toLocaleString() : ""} Â· ${n.is_read ? "Read" : "Unread"}</p>
+                  <p style="margin:0.25rem 0 0;font-size:0.75rem;color:var(--color-text-muted)">${n.created_at ? new Date(n.created_at).toLocaleString() : ""} · ${n.is_read ? "Read" : "Unread"}</p>
                 </div>
                 <div style="display:flex;gap:0.25rem;flex-shrink:0">
-                  ${!n.is_read ? `<button class="btn btn-primary btn-xs notif-mark-read" data-id="${n.id}">âœ“ Read</button>` : ""}
+                  ${!n.is_read ? `<button class="btn btn-primary btn-xs notif-mark-read" data-id="${n.id}">✓ Read</button>` : ""}
                 </div>
               </div>
             </div>
@@ -214,9 +214,9 @@
         if (totalPages <= 1) { pag.innerHTML = ""; return; }
         pag.innerHTML = `
           <div style="display:flex;align-items:center;gap:0.5rem;justify-content:center;margin-top:1rem">
-            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${currentPage - 1}" ${currentPage <= 1 ? "disabled" : ""}>â† Prev</button>
+            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${currentPage - 1}" ${currentPage <= 1 ? "disabled" : ""}>← Prev</button>
             <span style="font-size:0.85rem;color:var(--color-text-muted)">Page ${currentPage} of ${totalPages}</span>
-            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${currentPage + 1}" ${currentPage >= totalPages ? "disabled" : ""}>Next â†’</button>
+            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${currentPage + 1}" ${currentPage >= totalPages ? "disabled" : ""}>Next →</button>
           </div>
         `;
         document.querySelectorAll(".notif-page-btn").forEach(btn => {
@@ -235,8 +235,8 @@
       showAdminView(`
         <div class="content">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem">
-            <h2>ðŸ”” Notifications</h2>
-            <button class="btn btn-primary btn-pattern" id="notif-send-btn">âœ‰ï¸ Send Notification</button>
+            <h2>🔔 Notifications</h2>
+            <button class="btn btn-primary btn-pattern" id="notif-send-btn">✉️ Send Notification</button>
           </div>
           <div class="card" style="margin-top:1rem;display:none" id="notif-send-form-area">
             <h3 style="margin-bottom:0.75rem">Send Notification</h3>
@@ -256,7 +256,7 @@
               <label style="font-size:0.85rem;font-weight:500">Message</label>
               <textarea class="input" name="message" rows="3" placeholder="Write your notification message..." required></textarea>
               <div style="display:flex;gap:0.5rem;align-items:center">
-                <button class="btn btn-success btn-pattern" type="submit">ðŸ“¤ Send Notification</button>
+                <button class="btn btn-success btn-pattern" type="submit">📤 Send Notification</button>
                 <button class="btn btn-ghost" type="button" id="notif-cancel-send">Cancel</button>
                 <p id="notif-send-status" style="font-size:0.85rem;display:none;margin:0"></p>
               </div>
@@ -264,10 +264,10 @@
           </div>
           <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
             <button class="btn-filter notif-filter-btn active" data-filter="all">All</button>
-            <button class="btn-filter notif-filter-btn" data-filter="unread">ðŸ”´ Unread</button>
-            <button class="btn-filter notif-filter-btn" data-filter="read">âœ… Read</button>
+            <button class="btn-filter notif-filter-btn" data-filter="unread">🔴 Unread</button>
+            <button class="btn-filter notif-filter-btn" data-filter="read">✅ Read</button>
             <input type="search" class="input" id="notif-search" placeholder="Search notifications..." style="max-width:240px;padding:0.35rem 0.6rem;font-size:0.85rem">
-            <button class="btn btn-ghost btn-sm" id="notif-mark-all" style="margin-left:auto">âœ“ Mark All Read</button>
+            <button class="btn btn-ghost btn-sm" id="notif-mark-all" style="margin-left:auto">✓ Mark All Read</button>
           </div>
           <div id="notif-stats" style="margin-top:0.75rem"></div>
           <div style="margin-top:0.5rem" id="notif-list"></div>
@@ -362,20 +362,20 @@
           const isImage = /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(name);
           const isVideo = /\.(mp4|webm)$/i.test(name);
           const isAudio = /\.(mp3|wav|ogg)$/i.test(name);
-          const icon = isImage ? "ðŸ–¼ï¸" : isVideo ? "ðŸŽ¬" : isAudio ? "ðŸŽµ" : "ðŸ“„";
+          const icon = isImage ? "🖼️" : isVideo ? "🎬" : isAudio ? "🎵" : "📄";
           return `
             <div class="card upload-card" style="padding:0.75rem;cursor:pointer" data-filename="${escapeHtml(name)}">
               <div style="display:flex;align-items:center;gap:0.75rem">
                 <div style="font-size:1.5rem;flex-shrink:0">${icon}</div>
                 <div style="flex:1;min-width:0">
                   <p style="margin:0;font-size:0.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" class="upload-display-name">${escapeHtml(displayName)}</p>
-                  <p style="margin:0.15rem 0 0;font-size:0.7rem;color:var(--color-text-muted)">${f.size ? (f.size / 1024).toFixed(1) + " KB" : ""} Â· ${f.uploaded_at ? new Date(f.uploaded_at).toLocaleDateString() : ""}</p>
+                  <p style="margin:0.15rem 0 0;font-size:0.7rem;color:var(--color-text-muted)">${f.size ? (f.size / 1024).toFixed(1) + " KB" : ""} · ${f.uploaded_at ? new Date(f.uploaded_at).toLocaleDateString() : ""}</p>
                   ${!isVisible ? '<span style="display:inline-block;margin-top:0.25rem;font-size:0.65rem;padding:0.1rem 0.4rem;background:#fee2e2;color:#dc2626;border-radius:4px">Hidden</span>' : ""}
                 </div>
                 <div style="display:flex;flex-direction:column;gap:0.25rem;flex-shrink:0">
-                   <button class="btn btn-xs upload-rename-btn" data-filename="${escapeHtml(name)}" data-display="${escapeHtml(displayName)}" title="Rename">âœï¸</button>
-                   <button class="btn btn-xs upload-vis-btn" data-filename="${escapeHtml(name)}" data-visible="${isVisible}" title="${isVisible ? 'Hide from students & teachers' : 'Show to students & teachers'}">${isVisible ? "ðŸ‘ï¸" : "ðŸš«"}</button>
-                   <button class="btn btn-outline-danger btn-xs upload-delete-btn" data-filename="${escapeHtml(name)}" title="Delete file">âœ•</button>
+                   <button class="btn btn-xs upload-rename-btn" data-filename="${escapeHtml(name)}" data-display="${escapeHtml(displayName)}" title="Rename">✏️</button>
+                   <button class="btn btn-xs upload-vis-btn" data-filename="${escapeHtml(name)}" data-visible="${isVisible}" title="${isVisible ? 'Hide from students & teachers' : 'Show to students & teachers'}">${isVisible ? "👁️" : "🚫"}</button>
+                   <button class="btn btn-outline-danger btn-xs upload-delete-btn" data-filename="${escapeHtml(name)}" title="Delete file">✕</button>
                 </div>
               </div>
             </div>
@@ -438,16 +438,16 @@
 
       showAdminView(`
         <div class="content">
-          <h2>ðŸ“ Uploads</h2>
+          <h2>📁 Uploads</h2>
           <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Manage uploaded files. Control visibility for students and teachers.</p>
 
           <div class="card" style="margin-top:1rem;padding:1.5rem">
-            <h3 style="margin-bottom:0.75rem">ðŸ“¤ Upload New File</h3>
+            <h3 style="margin-bottom:0.75rem">📤 Upload New File</h3>
             <form id="upload-form" style="display:flex;flex-direction:column;gap:0.5rem">
               <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0">Supports images (png, jpg, gif, svg, webp), documents (pdf, doc), videos (mp4, webm), audio (mp3, wav, ogg)</p>
               <input class="input" type="file" id="upload-file" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" required>
               <div style="display:flex;gap:0.5rem;align-items:center">
-                <button class="btn btn-success btn-pattern" type="submit" id="upload-submit-btn" style="width:100%">ðŸ“¤ Upload File</button>
+                <button class="btn btn-success btn-pattern" type="submit" id="upload-submit-btn" style="width:100%">📤 Upload File</button>
               </div>
             </form>
             <div id="upload-result" style="margin-top:0.5rem"></div>
@@ -455,9 +455,9 @@
 
           <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
             <button class="btn-filter upload-filter-btn active" data-filter="all">All <span class="filter-count">${fileList.length}</span></button>
-            <button class="btn-filter upload-filter-btn" data-filter="images">ðŸ–¼ï¸ Images <span class="filter-count">${imageFiles.length}</span></button>
-            <button class="btn-filter upload-filter-btn" data-filter="documents">ðŸ“„ Documents <span class="filter-count">${docFiles.length}</span></button>
-            <button class="btn-filter upload-filter-btn" data-filter="media">ðŸŽ¬ Media <span class="filter-count">${mediaFiles.length}</span></button>
+            <button class="btn-filter upload-filter-btn" data-filter="images">🖼️ Images <span class="filter-count">${imageFiles.length}</span></button>
+            <button class="btn-filter upload-filter-btn" data-filter="documents">📄 Documents <span class="filter-count">${docFiles.length}</span></button>
+            <button class="btn-filter upload-filter-btn" data-filter="media">🎬 Media <span class="filter-count">${mediaFiles.length}</span></button>
           </div>
           <div id="uploads-grid" style="margin-top:0.75rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.5rem"></div>
         </div>

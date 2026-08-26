@@ -1,4 +1,4 @@
-﻿  async function loadAdminOverview() {
+  async function loadAdminOverview() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
     try {
       const overview = await request("/analytics/overview");
@@ -22,22 +22,22 @@
           <!-- Stats -->
           <div class="stat-grid">
             <div class="stat-card">
-              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">ðŸ‘¥</div>
+              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">👥</div>
               <div class="stat-value">${overview?.total_students ?? 0}</div>
               <div class="stat-label">Students</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">ðŸ‘©â€ðŸ«</div>
+              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">👩‍🏫</div>
               <div class="stat-value">${overview?.total_teachers ?? 0}</div>
               <div class="stat-label">Teachers</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="background:#fef3c7;color:#d97706">ðŸ“</div>
+              <div class="stat-icon" style="background:#fef3c7;color:#d97706">📝</div>
               <div class="stat-value">${overview?.total_lessons ?? 0}</div>
               <div class="stat-label">Lessons</div>
             </div>
             <div class="stat-card">
-              <div class="stat-icon" style="background:#fce7f3;color:#db2777">â“</div>
+              <div class="stat-icon" style="background:#fce7f3;color:#db2777">❓</div>
               <div class="stat-value">${overview?.total_quizzes ?? 0}</div>
               <div class="stat-label">Quizzes</div>
             </div>
@@ -49,19 +49,19 @@
           </div>
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.75rem">
             <div class="recent-lesson-card" data-nav="subjects" style="text-align:center">
-              <div style="font-size:1.5rem;margin-bottom:0.25rem">ðŸ“š</div>
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">📚</div>
               <h4 style="margin:0">Manage Subjects</h4>
             </div>
             <div class="recent-lesson-card" data-nav="lessons" style="text-align:center">
-              <div style="font-size:1.5rem;margin-bottom:0.25rem">ðŸ“</div>
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">📝</div>
               <h4 style="margin:0">Manage Lessons</h4>
             </div>
             <div class="recent-lesson-card" data-nav="users" style="text-align:center">
-              <div style="font-size:1.5rem;margin-bottom:0.25rem">ðŸ‘¥</div>
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">👥</div>
               <h4 style="margin:0">Manage Users</h4>
             </div>
             <div class="recent-lesson-card" data-nav="progress" style="text-align:center">
-              <div style="font-size:1.5rem;margin-bottom:0.25rem">ðŸ“ˆ</div>
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">📈</div>
               <h4 style="margin:0">View Progress</h4>
             </div>
           </div>
@@ -153,7 +153,7 @@
         <div class="content">
           ${subjectId ? '<button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>' : ""}
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-            <h2>${subjectId ? escapeHtml(subjectName) + " â€” " : ""}Topics</h2>
+            <h2>${subjectId ? escapeHtml(subjectName) + " — " : ""}Topics</h2>
             <button class="btn btn-primary" id="add-topic-btn">+ Add Topic</button>
           </div>
           <div id="form-area"></div>
@@ -232,7 +232,7 @@
         <div class="content">
           ${topicId ? '<button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>' : ""}
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-            <h2>${topicId ? escapeHtml(topicTitle) + " â€” " : ""}Subtopics</h2>
+            <h2>${topicId ? escapeHtml(topicTitle) + " — " : ""}Subtopics</h2>
             <button class="btn btn-primary" id="add-subtopic-btn">+ Add Subtopic</button>
           </div>
           <div id="form-area"></div>
@@ -304,7 +304,7 @@
         <div class="content">
           <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
-            <h2>${escapeHtml(subtopicTitle)} â€” Lessons</h2>
+            <h2>${escapeHtml(subtopicTitle)} — Lessons</h2>
             <button class="btn btn-primary" id="add-lesson-btn">+ Add Lesson</button>
           </div>
           <div id="form-area"></div>

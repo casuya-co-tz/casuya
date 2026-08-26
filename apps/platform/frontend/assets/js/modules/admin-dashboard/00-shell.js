@@ -1,4 +1,4 @@
-﻿// modules/admin-dashboard.js â€” extracted from main.js (classic script, shared global scope)
+// modules/admin-dashboard.js — extracted from main.js (classic script, shared global scope)
 async function renderAdminDashboard() {
   const token = localStorage.getItem("casuya_token");
   const payload = decodeToken(token);
@@ -11,21 +11,21 @@ async function renderAdminDashboard() {
           <p>${escapeHtml(payload.full_name || payload.email || "Admin")}</p>
         </div>
         <nav class="sidebar-nav" id="admin-nav">
-          <div class="sidebar-nav-item active" data-view="dashboard">ðŸ“Š Dashboard</div>
-          <div class="sidebar-nav-item" data-view="subjects">ðŸ“š Subjects</div>
-          <div class="sidebar-nav-item" data-view="topics">ðŸ“ Topics</div>
-          <div class="sidebar-nav-item" data-view="subtopics">ðŸ“‚ Subtopics</div>
-          <div class="sidebar-nav-item" data-view="lessons">ðŸ“ Lessons</div>
-          <div class="sidebar-nav-item" data-view="quizzes">â“ Quizzes</div>
-          <div class="sidebar-nav-item" data-view="games">ðŸŽ® Games</div>
-          <div class="sidebar-nav-item" data-view="users">ðŸ‘¥ Users</div>
-          <div class="sidebar-nav-item" data-view="progress">ðŸ“ˆ Progress</div>
-          <div class="sidebar-nav-item" data-view="analytics">ðŸ“‰ Analytics</div>
-          <div class="sidebar-nav-item" data-view="payments">ðŸ’³ Payments</div>
-          <div class="sidebar-nav-item" data-view="notifications">ðŸ”” Notifications</div>
-          <div class="sidebar-nav-item" data-view="uploads">ðŸ“¤ Uploads</div>
-          <div class="sidebar-nav-item" data-view="branding">ðŸŽ¨ Branding</div>
-          <div class="sidebar-nav-item" data-view="settings">âš™ï¸ Settings</div>
+          <div class="sidebar-nav-item active" data-view="dashboard">📊 Dashboard</div>
+          <div class="sidebar-nav-item" data-view="subjects">📚 Subjects</div>
+          <div class="sidebar-nav-item" data-view="topics">📁 Topics</div>
+          <div class="sidebar-nav-item" data-view="subtopics">📂 Subtopics</div>
+          <div class="sidebar-nav-item" data-view="lessons">📝 Lessons</div>
+          <div class="sidebar-nav-item" data-view="quizzes">❓ Quizzes</div>
+          <div class="sidebar-nav-item" data-view="games">🎮 Games</div>
+          <div class="sidebar-nav-item" data-view="users">👥 Users</div>
+          <div class="sidebar-nav-item" data-view="progress">📈 Progress</div>
+          <div class="sidebar-nav-item" data-view="analytics">📉 Analytics</div>
+          <div class="sidebar-nav-item" data-view="payments">💳 Payments</div>
+          <div class="sidebar-nav-item" data-view="notifications">🔔 Notifications</div>
+          <div class="sidebar-nav-item" data-view="uploads">📤 Uploads</div>
+          <div class="sidebar-nav-item" data-view="branding">🎨 Branding</div>
+          <div class="sidebar-nav-item" data-view="settings">⚙️ Settings</div>
         </nav>
         <div class="sidebar-footer">
           <button id="admin-logout" class="btn btn-danger" style="width:100%;font-size:0.85rem">Sign Out</button>
