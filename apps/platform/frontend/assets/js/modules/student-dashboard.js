@@ -4,6 +4,17 @@
   let _subtopicLessonList = [];
 
   async function renderStudentDashboard() {
+  // Apply stored accessibility preferences (special needs / neurodivergent).
+  try {
+    var _a11yPrefs = JSON.parse(localStorage.getItem("casuya_accessibility_prefs") || "null");
+    if (_a11yPrefs) {
+      if (_a11yPrefs.pref_dyslexia) document.body.classList.add("dyslexia-mode");
+      if (_a11yPrefs.pref_high_contrast) document.body.classList.add("high-contrast");
+      if (_a11yPrefs.pref_larger_text) document.body.style.fontSize = "1.15em";
+      if (_a11yPrefs.pref_tts) { document.body.setAttribute("data-tts-enabled", "true"); }
+    }
+  } catch (e) {}
+
   const token = localStorage.getItem("casuya_token");
   const payload = decodeToken(token);
   const _navStack = [];

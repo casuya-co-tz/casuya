@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 
 
 class RegisterRequest(BaseModel):
@@ -7,6 +7,7 @@ class RegisterRequest(BaseModel):
     full_name: str
     role: str = "student"
     phone: str | None = None
+    accessibility_prefs: dict | None = None
 
 
 class LoginRequest(BaseModel):
@@ -33,3 +34,4 @@ class AuthResponse(BaseModel):
     token_type: str = "bearer"
     user_id: str
     role: str
+    accessibility_prefs: dict | None = None

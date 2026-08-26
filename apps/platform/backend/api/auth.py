@@ -29,6 +29,7 @@ def register(body: RegisterRequest):
             full_name=body.full_name,
             role=body.role,
             phone=body.phone,
+            accessibility_prefs=body.accessibility_prefs,
         )
     except ValueError as e:
         raise HTTPException(status_code=409, detail=str(e))

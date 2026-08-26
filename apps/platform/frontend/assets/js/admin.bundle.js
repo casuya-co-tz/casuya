@@ -1796,6 +1796,9 @@ function persistAuth(data) {
   if (data.role) {
     localStorage.setItem(STORAGE_KEYS.role, data.role);
   }
+  if (data.accessibility_prefs) {
+    localStorage.setItem("casuya_accessibility_prefs", JSON.stringify(data.accessibility_prefs));
+  }
 }
 
 function clearAuth() {

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import secrets
 
 from sqlalchemy.orm import Session
@@ -19,6 +20,9 @@ from backend.models.teacher import Teacher
 from backend.models.user import User
 
 settings = get_settings()
+
+# Roles that are treated as "student" in the system but may carry extra metadata.
+_SPECIAL_ROLES = {"special_needs"}
 
 
 def _dev_token_response(email: str, role: str | None = None) -> dict:
@@ -42,7 +46,18 @@ def _dev_token_response(email: str, role: str | None = None) -> dict:
     }
 
 
-def register_user(email: str, password: str, full_name: str, role: str = "student", phone: str | None = None) -> dict:
+def register_user(
+    email: str,
+    password: str,
+    full_name: str,
+    role: str = "student",
+    phone: str | None = None,
+    accessibility_prefs: dict | None = None,
+) -> dict:
+    # Map special-needs roles to the canonical "student" role so portal guards,
+    # JWT claims, and dashboard routing all work without extra cases.
+    db_role = "student" if role in _SPECIAL_ROLES else role
+
     _gen = get_db()
     db: Session = next(_gen)
     try:
@@ -54,31 +69,37 @@ def register_user(email: str, password: str, full_name: str, role: str = "studen
             email=email,
             phone=phone,
             hashed_password=hash_password(password),
-            role=role,
+            role=db_role,
         )
         db.add(user)
         db.flush()
-        if role == "student":
-            profile = Student(user_id=user.id, full_name=full_name)
+        if db_role == "student":
+            prefs_json = json.dumps(accessibility_prefs) if accessibility_prefs else None
+            profile = Student(
+                user_id=user.id,
+                full_name=full_name,
+                accessibility_prefs=prefs_json,
+            )
             db.add(profile)
-        elif role == "teacher":
+        elif db_role == "teacher":
             profile = Teacher(user_id=user.id, full_name=full_name)
             db.add(profile)
         db.commit()
-        access_token = create_access_token(user.id, extra_claims={"role": role})
-        refresh_token = create_refresh_token(user.id, role=role)
+        access_token = create_access_token(user.id, extra_claims={"role": db_role})
+        refresh_token = create_refresh_token(user.id, role=db_role)
         return {
             "access_token": access_token,
             "refresh_token": refresh_token,
             "token_type": "bearer",
             "user_id": user.id,
-            "role": role,
+            "role": db_role,
+            "accessibility_prefs": accessibility_prefs if db_role == "student" else None,
         }
     except ValueError:
         raise
     except Exception:
         if settings.environment == "development":
-            return _dev_token_response(email, role)
+            return _dev_token_response(email, db_role)
         raise
     finally:
         _gen.close()
@@ -95,13 +116,25 @@ def authenticate_user(email: str, password: str) -> dict:
             raise ValueError("Account is deactivated")
         access_token = create_access_token(user.id, extra_claims={"role": user.role})
         refresh_token = create_refresh_token(user.id, role=user.role)
-        return {
+
+        result: dict = {
             "access_token": access_token,
             "refresh_token": refresh_token,
             "token_type": "bearer",
             "user_id": user.id,
             "role": user.role,
         }
+
+        # Include stored accessibility prefs for student accounts.
+        if user.role == "student":
+            student = db.query(Student).filter(Student.user_id == user.id).first()
+            if student and student.accessibility_prefs:
+                try:
+                    result["accessibility_prefs"] = json.loads(student.accessibility_prefs)
+                except (json.JSONDecodeError, TypeError):
+                    pass
+
+        return result
     except ValueError:
         raise
     except Exception:

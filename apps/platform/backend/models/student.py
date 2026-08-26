@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from sqlalchemy import ForeignKey, String
+from sqlalchemy import ForeignKey, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 from backend.config.database import Base
@@ -17,3 +17,4 @@ class Student(Base):
     full_name: Mapped[str] = mapped_column(String, nullable=False)
     form_level: Mapped[str | None] = mapped_column(String, nullable=True)  # I-VI
     school_code: Mapped[str | None] = mapped_column(String, nullable=True)
+    accessibility_prefs: Mapped[str | None] = mapped_column(Text, nullable=True)  # JSON string

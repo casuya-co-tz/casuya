@@ -158,6 +158,9 @@ def init_db() -> None:
                 "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_html TEXT",
                 "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_filename VARCHAR",
                 "ALTER TABLE file_records ADD COLUMN IF NOT EXISTS data BYTEA",
+                # PostgreSQL does not support IF NOT EXISTS for ADD COLUMN.
+                # Use a DO block so the migration is idempotent.
+                "DO $$ BEGIN ALTER TABLE students ADD COLUMN accessibility_prefs TEXT; EXCEPTION WHEN duplicate_column THEN NULL; END $$",
             ]:
                 try:
                     conn.execute(text(stmt))
