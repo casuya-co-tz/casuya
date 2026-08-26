@@ -1555,7 +1555,7 @@ async function viewLessonContent(containerId, lessonId, backFn) {
 // `enabled: true` means a corresponding backend router/endpoint exists.
 // `aiAssistant` is enabled — the AI service is available and mounted.
 
-export const FEATURES = {
+const FEATURES = {
   interactiveLessons: {
     enabled: true,
     icon: "📚",
@@ -1624,14 +1624,14 @@ export const FEATURES = {
 
 // Personas shown in the "Tailored Experiences" section. Parents/Schools are
 // served through the student/teacher experience, not separate account roles.
-export const PERSONAS = [
+const PERSONAS = [
   { icon: "👨‍🏫", title: "Teachers", points: ["Create rich digital content", "Coordinate modular cohorts", "Evaluate metrics streams"] },
   { icon: "👩‍🎓", title: "Students", points: ["Study from any location", "Interact with tests offline", "Monitor learning records"] },
   { icon: "👨‍👩‍👧", title: "Parents", points: ["Observe progress trackers", "View localized updates"] },
   { icon: "🏫", title: "Schools", points: ["Optimize staff delegation", "Export complex analytical datasets"] },
 ];
 
-export function enabledFeatures() {
+function enabledFeatures() {
   return Object.values(FEATURES).filter((f) => f.enabled);
 }
 
@@ -1641,22 +1641,20 @@ export function enabledFeatures() {
 // the role-based portals (which live under /admin, /teacher, /student and
 // enforce their own guards).
 
-import { getStoredAuth, getPortalPath, clearAuth } from "./auth-client.js";
-
 const PORTAL_LABELS = {
   admin: "Admin Dashboard",
   teacher: "Teacher Portal",
   student: "Student Portal",
 };
 
-export function isAuthenticated() {
+function isAuthenticated() {
   const auth = getStoredAuth();
   return Boolean(auth.accessToken && auth.role);
 }
 
 // If the visitor is already signed in, send them straight to their portal.
 // Used by login/register so an authenticated user never sees the auth form.
-export function redirectIfAuthed() {
+function redirectIfAuthed() {
   const auth = getStoredAuth();
   if (auth.accessToken && auth.role) {
     window.location.replace(getPortalPath(auth.role));
@@ -1668,7 +1666,7 @@ export function redirectIfAuthed() {
 // Render auth-aware navigation buttons into the given container element.
 // When signed in: a "Dashboard" button (role-specific) + "Log out".
 // When signed out: "Login" + "Get Started".
-export function applyAuthChrome(container) {
+function applyAuthChrome(container) {
   if (!container) return;
   const auth = getStoredAuth();
   if (auth.accessToken && auth.role) {
@@ -1690,13 +1688,8 @@ export function applyAuthChrome(container) {
 }
 
 ;
-const API_HOST = window.location.hostname || "localhost";
-const API_PROTOCOL = window.location.protocol === "http:" || window.location.protocol === "https:"
-  ? window.location.protocol
-  : "http:";
-const API_BASE = (window.casuyaApiBase
-  ? window.casuyaApiBase()
-  : `${API_PROTOCOL}//${API_HOST || "localhost"}:8765`);
+// API_HOST / API_PROTOCOL / API_BASE are declared once in modules/api.js and
+// shared as globals (this file is concatenated into a classic-script bundle).
 
 const STORAGE_KEYS = {
   accessToken: "casuya_token",
@@ -1735,17 +1728,17 @@ function getAuthHeaders(headers = {}, includeJson = true) {
   return nextHeaders;
 }
 
-export function getApiBase() {
+function getApiBase() {
   return API_BASE;
 }
 
-export function getPortalPath(role) {
+function getPortalPath(role) {
   if (role === "admin") return "/admin/";
   if (role === "teacher") return "/teacher/";
   return "/student/";
 }
 
-export function getStoredAuth() {
+function getStoredAuth() {
   return {
     accessToken: localStorage.getItem(STORAGE_KEYS.accessToken),
     refreshToken: localStorage.getItem(STORAGE_KEYS.refreshToken),
@@ -1754,15 +1747,15 @@ export function getStoredAuth() {
   };
 }
 
-export function getAccessToken() {
+function getAccessToken() {
   return localStorage.getItem(STORAGE_KEYS.accessToken);
 }
 
-export function getRefreshToken() {
+function getRefreshToken() {
   return localStorage.getItem(STORAGE_KEYS.refreshToken);
 }
 
-export function persistAuth(data) {
+function persistAuth(data) {
   if (data.access_token) {
     localStorage.setItem(STORAGE_KEYS.accessToken, data.access_token);
   }
@@ -1777,19 +1770,19 @@ export function persistAuth(data) {
   }
 }
 
-export function clearAuth() {
+function clearAuth() {
   Object.values(STORAGE_KEYS).forEach((key) => localStorage.removeItem(key));
 }
 
-export function redirectToPortal(role) {
+function redirectToPortal(role) {
   window.location.replace(getPortalPath(role));
 }
 
-export function redirectToLogin() {
+function redirectToLogin() {
   window.location.replace("/login.html");
 }
 
-export async function refreshAccessToken() {
+async function refreshAccessToken() {
   const refreshToken = getRefreshToken();
   if (!refreshToken) {
     throw new Error("No refresh token available");
@@ -1812,7 +1805,7 @@ export async function refreshAccessToken() {
   return data.access_token;
 }
 
-export async function apiRequest(path, options = {}) {
+async function apiRequest(path, options = {}) {
   const method = (options.method || "GET").toUpperCase();
   const isFormData = typeof FormData !== "undefined" && options.body instanceof FormData;
   const headers = getAuthHeaders(options.headers, !isFormData);
@@ -1847,7 +1840,7 @@ export async function apiRequest(path, options = {}) {
   return data ?? text;
 }
 
-export async function login({ email, password }) {
+async function login({ email, password }) {
   const data = await apiRequest("/auth/login", {
     method: "POST",
     body: JSON.stringify({ email, password }),
@@ -1858,7 +1851,7 @@ export async function login({ email, password }) {
   return data;
 }
 
-export function requireRole(expectedRole) {
+function requireRole(expectedRole) {
   const auth = getStoredAuth();
 
   if (!auth.accessToken || !auth.role) {
@@ -1895,7 +1888,7 @@ function decodeTokenRole(token) {
   }
 }
 
-export function guardPortal(expectedRole) {
+function guardPortal(expectedRole) {
   const token = localStorage.getItem("casuya_token");
   if (!token) {
     window.location.replace("/login.html");

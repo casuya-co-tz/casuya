@@ -1,10 +1,5 @@
-const API_HOST = window.location.hostname || "localhost";
-const API_PROTOCOL = window.location.protocol === "http:" || window.location.protocol === "https:"
-  ? window.location.protocol
-  : "http:";
-const API_BASE = (window.casuyaApiBase
-  ? window.casuyaApiBase()
-  : `${API_PROTOCOL}//${API_HOST || "localhost"}:8765`);
+// API_HOST / API_PROTOCOL / API_BASE are declared once in modules/api.js and
+// shared as globals (this file is concatenated into a classic-script bundle).
 
 const STORAGE_KEYS = {
   accessToken: "casuya_token",
