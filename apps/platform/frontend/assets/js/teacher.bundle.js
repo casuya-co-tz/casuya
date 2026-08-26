@@ -1653,9 +1653,19 @@ const PORTAL_LABELS = {
   student: "Student Portal",
 };
 
+function decodeTokenRole(token) {
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    return payload.role || null;
+  } catch {
+    return null;
+  }
+}
+
 function isAuthenticated() {
   const auth = getStoredAuth();
-  return Boolean(auth.accessToken && auth.role);
+  if (!auth.accessToken || !auth.role) return false;
+  return decodeTokenRole(auth.accessToken) !== null;
 }
 
 // If the visitor is already signed in, send them straight to their portal.
@@ -1663,8 +1673,12 @@ function isAuthenticated() {
 function redirectIfAuthed() {
   const auth = getStoredAuth();
   if (auth.accessToken && auth.role) {
-    window.location.replace(getPortalPath(auth.role));
-    return true;
+    const decodedRole = decodeTokenRole(auth.accessToken);
+    if (decodedRole) {
+      window.location.replace(getPortalPath(decodedRole));
+      return true;
+    }
+    clearAuth();
   }
   return false;
 }
@@ -1893,6 +1907,13 @@ const ROLE_PORTALS = {
   student: "/student/",
 };
 
+const AUTH_STORAGE_KEYS = [
+  "casuya_token",
+  "casuya_refresh_token",
+  "casuya_user_id",
+  "casuya_role",
+];
+
 function decodeTokenRole(token) {
   try {
     const payload = JSON.parse(atob(token.split(".")[1]));
@@ -1902,18 +1923,25 @@ function decodeTokenRole(token) {
   }
 }
 
+function clearAuthData() {
+  AUTH_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
+}
+
 function guardPortal(expectedRole) {
   const token = localStorage.getItem("casuya_token");
   if (!token) {
+    clearAuthData();
     window.location.replace("/login.html");
     return false;
   }
   const role = decodeTokenRole(token);
   if (!role) {
+    clearAuthData();
     window.location.replace("/login.html");
     return false;
   }
   if (role !== expectedRole) {
+    clearAuthData();
     const target = ROLE_PORTALS[role] || "/login.html";
     window.location.replace(target);
     return false;

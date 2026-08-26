@@ -10,7 +10,7 @@
 //
 // Cache is versioned; bump CACHE_VERSION when you change cached assets.
 
-const CACHE_VERSION = "casuya-static-v1";
+const CACHE_VERSION = "casuya-static-v2";
 const PRECACHE = [
   "/",
   "/assets/css/main.min.css",
@@ -60,6 +60,10 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(staleWhileRevalidate(req));
     return;
   }
+
+  // Auth-critical files: always network (never stale).
+  var AUTH_RE = /\/(?:auth-guard|auth-ui|auth-client)\.js$/;
+  if (AUTH_RE.test(url.pathname)) return;
 
   // Navigation + other API: always network (keep auth/dynamic data fresh).
   if (req.mode === "navigate" || url.pathname.startsWith("/api/")) return;

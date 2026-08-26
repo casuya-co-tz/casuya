@@ -11,9 +11,19 @@ const PORTAL_LABELS = {
   student: "Student Portal",
 };
 
+function decodeTokenRole(token) {
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    return payload.role || null;
+  } catch {
+    return null;
+  }
+}
+
 export function isAuthenticated() {
   const auth = getStoredAuth();
-  return Boolean(auth.accessToken && auth.role);
+  if (!auth.accessToken || !auth.role) return false;
+  return decodeTokenRole(auth.accessToken) !== null;
 }
 
 // If the visitor is already signed in, send them straight to their portal.
@@ -21,8 +31,12 @@ export function isAuthenticated() {
 export function redirectIfAuthed() {
   const auth = getStoredAuth();
   if (auth.accessToken && auth.role) {
-    window.location.replace(getPortalPath(auth.role));
-    return true;
+    const decodedRole = decodeTokenRole(auth.accessToken);
+    if (decodedRole) {
+      window.location.replace(getPortalPath(decodedRole));
+      return true;
+    }
+    clearAuth();
   }
   return false;
 }
