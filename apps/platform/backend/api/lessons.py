@@ -85,7 +85,9 @@ def create_lesson_route(body: LessonCreate):
 @router.post("/{lesson_id}/publish/", response_model=dict, dependencies=[Depends(require_role("admin"))])
 def publish_lesson_route(lesson_id: str):
     try:
-        return publish_lesson(lesson_id)
+        result = publish_lesson(lesson_id)
+        cache_invalidate("lessons:")
+        return result
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
 

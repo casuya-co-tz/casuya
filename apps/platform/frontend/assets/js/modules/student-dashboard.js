@@ -500,7 +500,11 @@ async function renderStudentDashboard() {
       const formFilter = localStorage.getItem("casuya_form_filter") || "";
       let filtered = Array.isArray(topics) ? topics.filter(t => t.subject_id === subjectId) : [];
       if (formFilter) {
-        filtered = filtered.filter(t => !t.form_level || t.form_level === formFilter || t.form_level === formFilter.replace(/^Form /, ""));
+        const ff = formFilter.replace(/^Form /, "");
+        // Only FILTER when a form is explicitly chosen, and never hide topics that
+        // have no form_level set (they apply to everyone). This prevents published
+        // lessons from disappearing just because a topic's form_level doesn't match.
+        filtered = filtered.filter(t => !t.form_level || t.form_level === formFilter || t.form_level.replace(/^Form /, "") === ff);
       }
       if (filtered.length === 0) {
         showStudentView('<div class="empty-state"><p>No topics found</p><button class="btn" id="back-btn">← Back</button></div>');
