@@ -19,7 +19,11 @@ from backend.models.lesson_version import LessonVersion
 settings = get_settings()
 
 # ── Content cache (Redis-backed, survives restarts & shared across workers) ──
-CONTENT_CACHE_TTL = 300  # 5 minutes
+# Long TTL: the KaTeX-injected HTML is expensive to rebuild, but it only changes
+# when the lesson is edited — and edit/publish/delete already invalidate this cache
+# (see _cache_invalidate_content / cache_invalidate("lessons:")). So we cache for a
+# day, which means the per-request injection runs at most once per content change.
+CONTENT_CACHE_TTL = 86400  # 24 hours
 
 
 def _cache_get(key: str) -> str | None:

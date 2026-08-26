@@ -63,7 +63,15 @@ def get_lesson_content_route(lesson_id: str, request: Request, current_user=Depe
     html = read_lesson_content(slug)
     if html is None:
         raise HTTPException(status_code=404, detail="Lesson content not found")
-    return HTMLResponse(content=html, headers={"X-Content-Hash": lesson.get("content_hash", "")})
+    # Lessons change rarely. Cache at the browser/CDN edge for an hour, and serve
+    # a stale copy instantly while revalidating for up to a day (so a student on
+    # 3G gets the lesson immediately even after an edit). The content hash lets
+    # clients detect changes; the backend also invalidates its Redis copy on edit.
+    headers = {
+        "X-Content-Hash": lesson.get("content_hash", ""),
+        "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+    }
+    return HTMLResponse(content=html, headers=headers)
 
 
 @router.post("", response_model=dict, dependencies=[Depends(require_role("admin"))])

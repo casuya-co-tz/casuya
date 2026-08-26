@@ -28,4 +28,12 @@
   window.casuyaOAuthUrl = function (provider) {
     return resolveBase() + "/auth/oauth/" + encodeURIComponent(provider);
   };
+
+  // Register the offline/performance service worker (same-origin only; safe no-op
+  // on browsers without support or on insecure origins).
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("/sw.js").catch(function () {});
+    });
+  }
 })();
