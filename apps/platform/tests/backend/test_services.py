@@ -116,3 +116,41 @@ def test_lesson_distribution_grouped_by_lesson():
     assert entry is not None, "published lesson should appear in the distribution"
     assert entry["session_count"] >= 0
     assert "avg_completion_percentage" in entry
+
+
+def test_payment_plans_crud_and_list_by_role():
+    from backend.schemas.payments import PaymentPlanCreate
+    from backend.services.payment_service import (
+        create_plan,
+        list_plans,
+        update_plan,
+        delete_plan,
+    )
+
+    plan = create_plan(PaymentPlanCreate(
+        name="Form IV Access",
+        description="Full access for Form IV",
+        amount_tzs=10000,
+        audience="student",
+        is_active=True,
+    ))
+    assert plan["id"]
+    assert plan["amount_tzs"] == 10000
+
+    # Student role sees the student-scoped plan; teacher role does not.
+    student_plans = list_plans(role="student")
+    assert any(p["id"] == plan["id"] for p in student_plans)
+    teacher_plans = list_plans(role="teacher")
+    assert all(p["id"] != plan["id"] for p in teacher_plans)
+
+    # Admin (include_inactive, no role filter) sees everything.
+    all_plans = list_plans(include_inactive=True)
+    assert any(p["id"] == plan["id"] for p in all_plans)
+
+    updated = update_plan(plan["id"], PaymentPlanCreate(
+        name="Form IV Access", amount_tzs=12000, audience="student", is_active=True
+    ))
+    assert updated["amount_tzs"] == 12000
+
+    assert delete_plan(plan["id"]) is True
+    assert delete_plan(plan["id"]) is False

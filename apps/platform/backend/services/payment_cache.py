@@ -30,39 +30,96 @@ _error_count: int = 0
 
 
 def _sync_from_microservice() -> None:
-    """Pull all data from microservice into memory."""
+    """Pull all data from microservice into memory.
+
+    Raises ConnectionError when the microservice is unreachable so the caller
+    can fall back to the local database.
+    """
     global _stats, _last_sync, _sync_count, _error_count
+    client = get_payments_client()
+    with _lock:
+        payments = client.list_payments()
+        _payments.clear()
+        _payments.extend(payments[-MAX_CACHE_SIZE:])
+
+        subscriptions = client.list_subscriptions()
+        _subscriptions.clear()
+        _subscriptions_extend = subscriptions[-MAX_CACHE_SIZE:]
+        _subscriptions.extend(_subscriptions_extend)
+
+        invoices = client.list_invoices()
+        _invoices.clear()
+        _invoices.extend(invoices[-MAX_CACHE_SIZE:])
+
+        refunds = client.list_refunds()
+        _refunds.clear()
+        _refunds.extend(refunds[-MAX_CACHE_SIZE:])
+
+        _stats = client.get_stats()
+        _last_sync = time.monotonic()
+        _sync_count += 1
+
+
+def _sync_from_db() -> None:
+    """Populate the cache from the local database when the microservice is down.
+
+    Only payments have a local table; subscriptions/invoices/refunds live in the
+    microservice, so they stay empty here (the UI shows empty states for them).
+    """
+    global _stats, _last_sync, _sync_count, _error_count
+    from backend.config.database import get_db
+    from backend.models.payment import Payment
+
+    _gen = get_db()
+    db = next(_gen)
     try:
-        client = get_payments_client()
+        rows = (
+            db.query(Payment)
+            .order_by(Payment.created_at.desc())
+            .limit(MAX_CACHE_SIZE)
+            .all()
+        )
+        payments = [
+            {
+                "id": p.id,
+                "user_id": p.user_id,
+                "amount_tzs": p.amount_tzs,
+                "amount": p.amount_tzs,
+                "provider": p.provider,
+                "provider_reference": p.provider_reference,
+                "plan_id": p.plan_id,
+                "plan_name": p.plan_name,
+                "status": p.status,
+                "created_at": p.created_at.isoformat() if p.created_at else None,
+                "idempotency_key": p.idempotency_key,
+            }
+            for p in rows
+        ]
         with _lock:
-            payments = client.list_payments()
             _payments.clear()
-            _payments.extend(payments[-MAX_CACHE_SIZE:])
-
-            subscriptions = client.list_subscriptions()
-            _subscriptions.clear()
-            _subscriptions.extend(subscriptions[-MAX_CACHE_SIZE:])
-
-            invoices = client.list_invoices()
-            _invoices.clear()
-            _invoices.extend(invoices[-MAX_CACHE_SIZE:])
-
-            refunds = client.list_refunds()
-            _refunds.clear()
-            _refunds.extend(refunds[-MAX_CACHE_SIZE:])
-
-            _stats = client.get_stats()
+            _payments.extend(payments)
+            _stats = {}
             _last_sync = time.monotonic()
             _sync_count += 1
-    except ConnectionError:
+    except Exception:
         _error_count += 1
+    finally:
+        _gen.close()
+
+
+def _sync() -> None:
+    """Sync from microservice, falling back to the local DB if unreachable."""
+    try:
+        _sync_from_microservice()
+    except ConnectionError:
+        _sync_from_db()
 
 
 def _background_sync() -> None:
     """Background thread that syncs every _sync_interval seconds."""
     global _running
     while _running:
-        _sync_from_microservice()
+        _sync()
         time.sleep(_sync_interval)
 
 
@@ -82,8 +139,8 @@ def stop_cache_sync() -> None:
 
 
 def invalidate() -> None:
-    """Force immediate resync from microservice (call after writes)."""
-    _sync_from_microservice()
+    """Force immediate resync (microservice, or local DB if it's unreachable)."""
+    _sync()
 
 
 # ── Read functions (served from memory) ────────────────────────────────────
@@ -136,6 +193,9 @@ def get_stats(user_id: str | None = None) -> dict:
                 "total_payments": len(user_payments),
                 "completed_payments": sum(1 for p in user_payments if p.get("status") == "success"),
                 "total_revenue": sum(p.get("amount", 0) for p in user_payments if p.get("status") == "success"),
+                "total_paid": sum(p.get("amount", 0) for p in user_payments if p.get("status") == "success"),
+                "pending_amount": sum(p.get("amount", 0) for p in user_payments if p.get("status") == "pending"),
+                "total_transactions": len(user_payments),
                 "active_subscriptions": sum(1 for s in user_subs if s.get("status") == "active"),
                 "pending_invoices": sum(1 for i in user_inv if i.get("status") == "pending"),
                 "total_refunds": sum(r.get("amount", 0) for r in user_ref),

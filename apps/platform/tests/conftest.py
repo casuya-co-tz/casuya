@@ -14,6 +14,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from backend.config.database import Base
+import backend.models.payment_plan  # noqa: F401  (register table with Base.metadata)
 
 
 @pytest.fixture(autouse=True)

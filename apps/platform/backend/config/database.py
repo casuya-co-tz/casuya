@@ -114,6 +114,7 @@ def init_db() -> None:
         notification,
         password_reset_token,
         payment,
+        payment_plan,
         progress,
         quiz,
         role,
@@ -130,42 +131,58 @@ def init_db() -> None:
         with engine.connect() as conn:
             from sqlalchemy import text
 
+            is_postgres = engine.dialect.name == "postgresql"
+            plan_id_alter = (
+                "DO $$ BEGIN ALTER TABLE payments ADD COLUMN plan_id VARCHAR; "
+                "EXCEPTION WHEN duplicate_column THEN NULL; END $$"
+                if is_postgres
+                else "ALTER TABLE payments ADD COLUMN IF NOT EXISTS plan_id VARCHAR"
+            )
+            plan_name_alter = (
+                "DO $$ BEGIN ALTER TABLE payments ADD COLUMN plan_name VARCHAR; "
+                "EXCEPTION WHEN duplicate_column THEN NULL; END $$"
+                if is_postgres
+                else "ALTER TABLE payments ADD COLUMN IF NOT EXISTS plan_name VARCHAR"
+            )
+
             for stmt in [
                 "CREATE INDEX IF NOT EXISTS ix_topic_subject_id ON topics(subject_id)",
-                "CREATE INDEX IF NOT EXISTS ix_subtopic_topic_id ON subtopics(topic_id)",
-                "CREATE INDEX IF NOT EXISTS ix_lesson_subtopic_id ON lessons(subtopic_id)",
-                "CREATE INDEX IF NOT EXISTS ix_lesson_status ON lessons(status)",
-                "CREATE INDEX IF NOT EXISTS ix_progress_student_id ON progress_records(student_id)",
-                "CREATE INDEX IF NOT EXISTS ix_progress_lesson_id ON progress_records(lesson_id)",
-                "CREATE INDEX IF NOT EXISTS ix_progress_synced_at ON progress_records(synced_at)",
-                "CREATE UNIQUE INDEX IF NOT EXISTS uq_progress_student_lesson ON progress_records(student_id, lesson_id)",
-                "CREATE INDEX IF NOT EXISTS ix_quiz_lesson_id ON quizzes(lesson_id)",
-                "CREATE INDEX IF NOT EXISTS ix_bookmark_user_id ON bookmarks(user_id)",
-                "CREATE INDEX IF NOT EXISTS ix_bookmark_lesson_id ON bookmarks(lesson_id)",
-                "CREATE INDEX IF NOT EXISTS ix_notes_student_id ON notes(student_id)",
-                "CREATE INDEX IF NOT EXISTS ix_notes_lesson_id ON notes(lesson_id)",
-                "CREATE INDEX IF NOT EXISTS ix_notification_user_id ON notifications(user_id)",
-                "CREATE INDEX IF NOT EXISTS ix_notification_created_at ON notifications(created_at)",
-                "CREATE INDEX IF NOT EXISTS ix_notification_user_created ON notifications(user_id, created_at)",
-                "CREATE INDEX IF NOT EXISTS ix_quiz_question_quiz_id ON quiz_questions(quiz_id)",
-                "CREATE INDEX IF NOT EXISTS ix_quiz_option_question_id ON quiz_options(question_id)",
-                "CREATE INDEX IF NOT EXISTS ix_activity_student_viewed ON recent_activity(student_id, viewed_at)",
-                "CREATE INDEX IF NOT EXISTS ix_game_lesson_id ON games(lesson_id)",
-                "CREATE INDEX IF NOT EXISTS ix_payment_user_id ON payments(user_id)",
-                "CREATE INDEX IF NOT EXISTS ix_assignment_lesson_id ON assignments(lesson_id)",
-                "ALTER TABLE games ADD COLUMN IF NOT EXISTS package_html TEXT",
-                "ALTER TABLE quizzes ADD COLUMN IF NOT EXISTS package_html TEXT",
-                "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_html TEXT",
-                "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_filename VARCHAR",
-                "ALTER TABLE file_records ADD COLUMN IF NOT EXISTS data BYTEA",
-                # PostgreSQL does not support IF NOT EXISTS for ADD COLUMN.
-                # Use a DO block so the migration is idempotent.
-                "DO $$ BEGIN ALTER TABLE students ADD COLUMN accessibility_prefs TEXT; EXCEPTION WHEN duplicate_column THEN NULL; END $$",
-            ]:
+            "CREATE INDEX IF NOT EXISTS ix_subtopic_topic_id ON subtopics(topic_id)",
+            "CREATE INDEX IF NOT EXISTS ix_lesson_subtopic_id ON lessons(subtopic_id)",
+            "CREATE INDEX IF NOT EXISTS ix_lesson_status ON lessons(status)",
+            "CREATE INDEX IF NOT EXISTS ix_progress_student_id ON progress_records(student_id)",
+            "CREATE INDEX IF NOT EXISTS ix_progress_lesson_id ON progress_records(lesson_id)",
+            "CREATE INDEX IF NOT EXISTS ix_progress_synced_at ON progress_records(synced_at)",
+            "CREATE UNIQUE INDEX IF NOT EXISTS uq_progress_student_lesson ON progress_records(student_id, lesson_id)",
+            "CREATE INDEX IF NOT EXISTS ix_quiz_lesson_id ON quizzes(lesson_id)",
+            "CREATE INDEX IF NOT EXISTS ix_bookmark_user_id ON bookmarks(user_id)",
+            "CREATE INDEX IF NOT EXISTS ix_bookmark_lesson_id ON bookmarks(lesson_id)",
+            "CREATE INDEX IF NOT EXISTS ix_notes_student_id ON notes(student_id)",
+            "CREATE INDEX IF NOT EXISTS ix_notes_lesson_id ON notes(lesson_id)",
+            "CREATE INDEX IF NOT EXISTS ix_notification_user_id ON notifications(user_id)",
+            "CREATE INDEX IF NOT EXISTS ix_notification_created_at ON notifications(created_at)",
+            "CREATE INDEX IF NOT EXISTS ix_notification_user_created ON notifications(user_id, created_at)",
+            "CREATE INDEX IF NOT EXISTS ix_quiz_question_quiz_id ON quiz_questions(quiz_id)",
+            "CREATE INDEX IF NOT EXISTS ix_quiz_option_question_id ON quiz_options(question_id)",
+            "CREATE INDEX IF NOT EXISTS ix_activity_student_viewed ON recent_activity(student_id, viewed_at)",
+            "CREATE INDEX IF NOT EXISTS ix_game_lesson_id ON games(lesson_id)",
+            "CREATE INDEX IF NOT EXISTS ix_payment_user_id ON payments(user_id)",
+            "CREATE INDEX IF NOT EXISTS ix_assignment_lesson_id ON assignments(lesson_id)",
+            "ALTER TABLE games ADD COLUMN IF NOT EXISTS package_html TEXT",
+            "ALTER TABLE quizzes ADD COLUMN IF NOT EXISTS package_html TEXT",
+            "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_html TEXT",
+            "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_filename VARCHAR",
+            "ALTER TABLE file_records ADD COLUMN IF NOT EXISTS data BYTEA",
+                plan_id_alter,
+                plan_name_alter,
+            # PostgreSQL does not support IF NOT EXISTS for ADD COLUMN.
+            # Use a DO block so the migration is idempotent.
+            "DO $$ BEGIN ALTER TABLE students ADD COLUMN accessibility_prefs TEXT; EXCEPTION WHEN duplicate_column THEN NULL; END $$",
+        ]:
                 try:
                     conn.execute(text(stmt))
                 except Exception:
                     pass
-            conn.commit()
+        conn.commit()
     except SQLAlchemyError as exc:
         print(f"WARNING: init_db failed, continuing without DB: {exc}")

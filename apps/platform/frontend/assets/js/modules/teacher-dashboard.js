@@ -1058,6 +1058,11 @@ async function renderTeacherDashboard() {
       function renderTeacherTab(tabId) {
         if (tabId === "payments") {
           return `
+            <div class="card" style="padding:1.5rem;margin-top:1rem">
+              <h3>Available Plans</h3>
+              <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Pay a plan fee to Casuya (Admin) via mobile money.</p>
+              <div id="teacher-plans-list"><div class="loading-state"><div class="spinner"></div></div></div>
+            </div>
             <div class="card" style="padding:0;max-width:560px;margin-top:1rem;overflow:hidden">
               <div class="checkout-header">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
@@ -1141,6 +1146,7 @@ async function renderTeacherDashboard() {
           btn.classList.add("active");
           document.getElementById("teacher-payment-tab-content").innerHTML = renderTeacherTab(btn.dataset.ttab);
           bindTeacherPaymentForm();
+          loadTeacherPlans();
         });
       });
 
@@ -1176,8 +1182,83 @@ async function renderTeacherDashboard() {
         });
       }
       bindTeacherPaymentForm();
+      loadTeacherPlans();
       document.getElementById("teacher-refresh-tx-btn")?.addEventListener("click", loadTeacherPayments);
     } catch(e) { showTeacherView('<div class="empty-state"><p>Error loading payments: ' + escapeHtml(e.message) + '</p></div>'); }
+  }
+
+  async function loadTeacherPlans() {
+    const el = document.getElementById("teacher-plans-list");
+    if (!el) return;
+    try {
+      const plans = await request("/payments/plans").catch(() => []);
+      if (!Array.isArray(plans) || plans.length === 0) {
+        el.innerHTML = '<div class="empty-state" style="padding:1.5rem"><p>No payment plans available right now.</p></div>';
+        return;
+      }
+      el.innerHTML = plans.map(p => `
+        <div class="plan-card" style="border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem;margin-top:0.75rem">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem">
+            <div>
+              <div style="font-weight:600;font-size:1rem">${escapeHtml(p.name)}</div>
+              <div style="font-size:0.8rem;color:var(--color-text-muted);margin-top:0.25rem">${escapeHtml(p.description || "")}</div>
+              <div style="font-weight:700;font-size:1.1rem;margin-top:0.5rem">${Number(p.amount_tzs).toLocaleString()} ${escapeHtml(p.currency || "TZS")}</div>
+            </div>
+            <span class="badge badge-completed" style="text-transform:capitalize">${escapeHtml(p.audience)}</span>
+          </div>
+          <form class="teacher-plan-form" data-plan-id="${p.id}" style="margin-top:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:end">
+            <div style="flex:1;min-width:140px">
+              <label class="field-label">Mobile Number</label>
+              <input class="input" name="mobile_number" placeholder="0712345678" required>
+            </div>
+            <div style="min-width:130px">
+              <label class="field-label">Provider</label>
+              <select class="input" name="provider" required>
+                <option value="m-pesa">M-Pesa</option>
+                <option value="tigo-pesa">Tigo Pesa</option>
+                <option value="halopesa">HaloPesa</option>
+                <option value="azampay">AzamPay</option>
+              </select>
+            </div>
+            <button class="btn btn-success" type="submit">Pay ${Number(p.amount_tzs).toLocaleString()} ${escapeHtml(p.currency || "TZS")}</button>
+          </form>
+          <div class="teacher-plan-result" data-plan-id="${p.id}" style="margin-top:0.5rem"></div>
+        </div>
+      `).join("");
+      bindTeacherPlanForms();
+    } catch (e) {
+      el.innerHTML = '<div class="empty-state" style="padding:1.5rem"><p>Could not load plans.</p></div>';
+    }
+  }
+
+  function bindTeacherPlanForms() {
+    document.querySelectorAll(".teacher-plan-form").forEach(form => {
+      form.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const planId = form.getAttribute("data-plan-id");
+        const btn = form.querySelector("button[type=submit]");
+        const resultEl = document.querySelector(`.teacher-plan-result[data-plan-id="${planId}"]`);
+        const fd = new FormData(ev.target);
+        btn.disabled = true; btn.innerHTML = '<span class="btn-spinner">Processing...</span>';
+        try {
+          const result = await request(`/payments/plans/${planId}/checkout`, {
+            method: "POST",
+            body: JSON.stringify({
+              mobile_number: fd.get("mobile_number"),
+              provider: fd.get("provider"),
+              idempotency_key: crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(),
+            }),
+          });
+          if (result === null) return;
+          resultEl.innerHTML = `<div class="payment-result success"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><strong>Payment initiated!</strong><br><span style="opacity:0.8;font-size:0.8rem">${escapeHtml(result.id || "")}</span></div></div>`;
+          loadTeacherPayments();
+        } catch (err) {
+          resultEl.innerHTML = `<div class="payment-result error"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div>${escapeHtml(err.message)}</div></div>`;
+        } finally {
+          btn.disabled = false; btn.textContent = "Pay";
+        }
+      });
+    });
   }
 
   async function loadTeacherNotifications() {

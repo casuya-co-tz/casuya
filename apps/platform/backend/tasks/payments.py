@@ -3,7 +3,7 @@ from contextlib import suppress
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
-from backend.integrations.azampay import mobile_checkout
+from integrations.azampay import mobile_checkout
 from backend.models.payment import Payment
 
 

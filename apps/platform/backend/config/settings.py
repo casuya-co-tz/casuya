@@ -71,6 +71,10 @@ class Settings(BaseSettings):
     cloudflare_api_token: str | None = None
     azampay_client_id: str | None = None
     azampay_client_secret: str | None = None
+    azampay_app_name: str | None = None
+    azampay_x_api_key: str | None = None
+    azampay_sandbox: bool = True
+    azampay_mock: bool = False  # dev only: simulate successful AzamPay responses
     africastalking_username: str | None = None
     africastalking_api_key: str | None = None
 

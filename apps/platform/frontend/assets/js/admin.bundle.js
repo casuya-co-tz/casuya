@@ -3707,6 +3707,32 @@ async function renderAdminDashboard() {
             </div>
           </div>
 
+          <div class="card" style="padding:1.5rem;margin-top:1rem">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
+              <h3>Payment Plans</h3>
+              <button class="btn btn-sm btn-primary" id="admin-add-plan-btn">+ New Plan</button>
+            </div>
+            <div id="admin-plan-form-wrap" style="display:none;margin-bottom:1rem">
+              <form id="admin-plan-form" class="checkout-body">
+                <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+                  <div style="flex:1;min-width:160px"><label class="field-label">Name</label><input class="input" name="name" required></div>
+                  <div style="flex:1;min-width:160px"><label class="field-label">Description</label><input class="input" name="description"></div>
+                </div>
+                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem">
+                  <div style="min-width:130px"><label class="field-label">Amount (TZS)</label><input class="input" name="amount_tzs" type="number" min="100" required></div>
+                  <div style="min-width:130px"><label class="field-label">Audience</label><select class="input" name="audience"><option value="both">Both</option><option value="student">Student</option><option value="teacher">Teacher</option></select></div>
+                  <div style="min-width:130px"><label class="field-label">Active</label><select class="input" name="is_active"><option value="true">Yes</option><option value="false">No</option></select></div>
+                </div>
+                <div style="margin-top:0.75rem">
+                  <button class="btn btn-success" type="submit" id="admin-plan-submit">Save Plan</button>
+                  <button class="btn btn-ghost" type="button" id="admin-plan-cancel">Cancel</button>
+                </div>
+              </form>
+              <div id="admin-plan-result" style="margin-top:0.5rem"></div>
+            </div>
+            <div id="admin-plans-list"><div class="loading-state"><div class="spinner"></div></div></div>
+          </div>
+
           <div class="card" style="padding:0;max-width:560px;margin-top:1rem;overflow:hidden">
               <div class="checkout-header">
                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
@@ -3769,9 +3795,10 @@ async function renderAdminDashboard() {
                     <thead>
                       <tr style="border-bottom:2px solid var(--color-border)">
                         <th style="padding:0.6rem;text-align:left;font-weight:600">Date</th>
-                        <th style="padding:0.6rem;text-align:left;font-weight:600">Phone</th>
-                        <th style="padding:0.6rem;text-align:left;font-weight:600">Provider</th>
-                        <th style="padding:0.6rem;text-align:right;font-weight:600">Amount</th>
+                         <th style="padding:0.6rem;text-align:left;font-weight:600">Phone</th>
+                         <th style="padding:0.6rem;text-align:left;font-weight:600">Provider</th>
+                         <th style="padding:0.6rem;text-align:left;font-weight:600">Plan</th>
+                         <th style="padding:0.6rem;text-align:right;font-weight:600">Amount</th>
                         <th style="padding:0.6rem;text-align:center;font-weight:600">Status</th>
                       </tr>
                     </thead>
@@ -3779,9 +3806,10 @@ async function renderAdminDashboard() {
                       ${txList.map(t => `
                         <tr style="border-bottom:1px solid var(--color-border)">
                           <td style="padding:0.6rem;color:var(--color-text-muted)">${t.created_at ? new Date(t.created_at).toLocaleDateString() : "\u2014"}</td>
-                          <td style="padding:0.6rem;font-weight:500">${escapeHtml(t.mobile_number || "\u2014")}</td>
-                          <td style="padding:0.6rem">${escapeHtml(t.provider || "\u2014")}</td>
-                          <td style="padding:0.6rem;text-align:right;font-weight:600">${(t.amount_tzs || 0).toLocaleString()} TZS</td>
+                           <td style="padding:0.6rem;font-weight:500">${escapeHtml(t.mobile_number || "\u2014")}</td>
+                           <td style="padding:0.6rem">${escapeHtml(t.provider || "\u2014")}</td>
+                           <td style="padding:0.6rem">${escapeHtml(t.plan_name || "\u2014")}</td>
+                           <td style="padding:0.6rem;text-align:right;font-weight:600">${(t.amount_tzs || 0).toLocaleString()} TZS</td>
                           <td style="padding:0.6rem;text-align:center"><span class="badge badge-${t.status || 'pending'}">${escapeHtml(t.status || "unknown")}</span></td>
                         </tr>
                       `).join("")}
@@ -3824,6 +3852,103 @@ async function renderAdminDashboard() {
       });
 
       document.getElementById("refresh-tx-btn")?.addEventListener("click", loadAdminPayments);
+
+      // ── Payment Plans management ───────────────────────────────────────
+      let _adminEditingPlanId = null;
+      const planFormWrap = document.getElementById("admin-plan-form-wrap");
+      const planForm = document.getElementById("admin-plan-form");
+
+      document.getElementById("admin-add-plan-btn")?.addEventListener("click", () => {
+        _adminEditingPlanId = null;
+        planForm.reset();
+        planFormWrap.style.display = planFormWrap.style.display === "none" ? "block" : "block";
+        document.getElementById("admin-plan-result").innerHTML = "";
+      });
+      document.getElementById("admin-plan-cancel")?.addEventListener("click", () => {
+        planFormWrap.style.display = "none";
+        _adminEditingPlanId = null;
+      });
+
+      planForm?.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const btn = document.getElementById("admin-plan-submit");
+        const resultEl = document.getElementById("admin-plan-result");
+        const fd = new FormData(ev.target);
+        const payload = {
+          name: fd.get("name"),
+          description: fd.get("description") || null,
+          amount_tzs: parseFloat(fd.get("amount_tzs")),
+          audience: fd.get("audience"),
+          is_active: fd.get("is_active") === "true",
+        };
+        btn.disabled = true; btn.textContent = "Saving...";
+        try {
+          if (_adminEditingPlanId) {
+            await request(`/payments/plans/${_adminEditingPlanId}`, { method: "PUT", body: JSON.stringify(payload) });
+          } else {
+            await request("/payments/plans", { method: "POST", body: JSON.stringify(payload) });
+          }
+          resultEl.innerHTML = '<div class="payment-result success">Plan saved.</div>';
+          planFormWrap.style.display = "none";
+          _adminEditingPlanId = null;
+          loadAdminPlans();
+        } catch (err) {
+          resultEl.innerHTML = `<div class="payment-result error">${escapeHtml(err.message)}</div>`;
+        } finally {
+          btn.disabled = false; btn.textContent = "Save Plan";
+        }
+      });
+
+      async function loadAdminPlans() {
+        const el = document.getElementById("admin-plans-list");
+        if (!el) return;
+        try {
+          const plans = await request("/payments/plans/all").catch(() => []);
+          if (!Array.isArray(plans) || plans.length === 0) {
+            el.innerHTML = '<div class="empty-state" style="padding:1.5rem"><p>No plans created yet.</p></div>';
+            return;
+          }
+          el.innerHTML = plans.map(p => `
+            <div class="plan-card" style="border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem;margin-top:0.75rem;display:flex;justify-content:space-between;align-items:center;gap:0.5rem">
+              <div>
+                <div style="font-weight:600">${escapeHtml(p.name)} ${p.is_active ? '' : '<span class="badge badge-pending">inactive</span>'}</div>
+                <div style="font-size:0.8rem;color:var(--color-text-muted)">${escapeHtml(p.description || "")}</div>
+                <div style="font-weight:700;margin-top:0.25rem">${Number(p.amount_tzs).toLocaleString()} ${escapeHtml(p.currency || "TZS")} · <span style="text-transform:capitalize">${escapeHtml(p.audience)}</span></div>
+              </div>
+              <div style="display:flex;gap:0.4rem">
+                <button class="btn btn-sm admin-edit-plan" data-id="${p.id}">Edit</button>
+                <button class="btn btn-sm btn-danger admin-delete-plan" data-id="${p.id}">Delete</button>
+              </div>
+            </div>
+          `).join("");
+          document.querySelectorAll(".admin-edit-plan").forEach(b => b.addEventListener("click", () => {
+            const id = b.getAttribute("data-id");
+            const plan = plans.find(x => x.id === id);
+            if (!plan) return;
+            _adminEditingPlanId = id;
+            planForm.name.value = plan.name;
+            planForm.description.value = plan.description || "";
+            planForm.amount_tzs.value = plan.amount_tzs;
+            planForm.audience.value = plan.audience;
+            planForm.is_active.value = String(plan.is_active);
+            planFormWrap.style.display = "block";
+            document.getElementById("admin-plan-result").innerHTML = "";
+            planForm.scrollIntoView({ behavior: "smooth" });
+          }));
+          document.querySelectorAll(".admin-delete-plan").forEach(b => b.addEventListener("click", async () => {
+            if (!confirm("Delete this plan?")) return;
+            try {
+              await request(`/payments/plans/${b.getAttribute("data-id")}`, { method: "DELETE" });
+              loadAdminPlans();
+            } catch (err) {
+              alert(escapeHtml(err.message));
+            }
+          }));
+        } catch (e) {
+          el.innerHTML = '<div class="empty-state" style="padding:1.5rem"><p>Could not load plans.</p></div>';
+        }
+      }
+      loadAdminPlans();
     } catch(e) { showAdminView('<div class="empty-state"><p>Error loading payments: ' + escapeHtml(e.message) + '</p></div>'); }
   }
 
