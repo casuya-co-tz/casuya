@@ -87,7 +87,12 @@ async def generate_quiz_questions(
 
 
 def _generate_questions_locally(lesson_html: str, count: int = 5) -> list[dict]:
-    """Fallback: extract fill-in-the-blank questions using regex."""
+    """Offline fallback: build multiple-choice questions from sentence text.
+
+    Emits the SAME canonical schema as the AI path so the shared renderer
+    (renderQuizQuestions) works whether or not the casuya-ai service is
+    reachable — critical for the platform's offline-first / 2G target.
+    """
     text = re.sub(r"<[^>]+>", " ", lesson_html)
     sentences = [s.strip() for s in re.split(r"[.!?]+", text) if len(s.strip()) > 20]
     questions = []
@@ -99,15 +104,31 @@ def _generate_questions_locally(lesson_html: str, count: int = 5) -> list[dict]:
         answer = words[blank_idx]
         words[blank_idx] = "______"
         prompt = " ".join(words)
+        distractors = [
+            answer.upper(),
+            answer.lower(),
+            answer[::-1],
+        ]
+        # De-duplicate distractors against the answer and each other.
+        seen = {answer.lower()}
+        opts = [answer]
+        for d in distractors:
+            if d.lower() not in seen:
+                seen.add(d.lower())
+                opts.append(d)
+        # Pad to exactly 4 unique-ish options if the sentence was too short.
+        filler = 1
+        while len(opts) < 4:
+            candidate = f"option {filler}"
+            if candidate not in seen:
+                opts.append(candidate)
+            filler += 1
         questions.append(
             {
-                "prompt": prompt,
-                "options": [
-                    {"text": answer, "is_correct": True},
-                    {"text": answer.upper(), "is_correct": False},
-                    {"text": answer.lower(), "is_correct": False},
-                    {"text": answer[::-1], "is_correct": False},
-                ],
+                "text": prompt,
+                "options": opts,
+                "correctAnswer": "A",
+                "explanation": f"The missing word is “{answer}”.",
             }
         )
     return questions

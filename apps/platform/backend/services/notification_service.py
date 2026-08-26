@@ -69,16 +69,10 @@ def list_notifications(
         .limit(limit)
         .all()
     )
-    return {
-        "items": [
-            {"id": n.id, "user_id": n.user_id, "channel": n.channel, "message": n.message, "is_read": n.is_read}
-            for n in notifications
-        ],
-        "total": total,
-        "offset": offset,
-        "limit": limit,
-        "has_more": offset + limit < total,
-    }
+    return [
+        {"id": n.id, "user_id": n.user_id, "channel": n.channel, "message": n.message, "is_read": n.is_read}
+        for n in notifications
+    ]
 
 
 def mark_notification_read(db: Session, notification_id: str) -> dict:

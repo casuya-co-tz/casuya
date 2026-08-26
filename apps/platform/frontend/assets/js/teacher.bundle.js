@@ -1695,7 +1695,15 @@ function applyAuthChrome(container) {
 
 ;
 // API_HOST / API_PROTOCOL / API_BASE are declared once in modules/api.js and
-// shared as globals (this file is concatenated into a classic-script bundle).
+// shared as globals when this file is concatenated into a classic-script bundle.
+// When loaded directly as an ES module (login.html, register.html, …) those
+// globals are not present, so resolve the base from the central config resolver.
+
+function resolveApiBase() {
+  if (typeof window !== "undefined" && window.API_BASE) return window.API_BASE;
+  if (typeof window !== "undefined" && window.casuyaApiBase) return window.casuyaApiBase();
+  return window.location.origin;
+}
 
 const STORAGE_KEYS = {
   accessToken: "casuya_token",
@@ -1716,7 +1724,7 @@ function safeJsonParse(text) {
 function buildApiUrl(path, method = "GET") {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   const [pathname, search = ""] = normalizedPath.split("?");
-  return `${API_BASE}${pathname}${search ? `?${search}` : ""}`;
+  return `${resolveApiBase()}${pathname}${search ? `?${search}` : ""}`;
 }
 
 function getAuthHeaders(headers = {}, includeJson = true) {
@@ -1735,7 +1743,7 @@ function getAuthHeaders(headers = {}, includeJson = true) {
 }
 
 function getApiBase() {
-  return API_BASE;
+  return resolveApiBase();
 }
 
 function getPortalPath(role) {

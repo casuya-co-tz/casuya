@@ -95,7 +95,7 @@ def test_analytics():
     assert "total_lessons" in overview
 
 
-def test_lesson_distribution_grouped_by_subject():
+def test_lesson_distribution_grouped_by_lesson():
     db: Session = next(get_db())
     subj = Subject(name="Biology", slug="biology-test")
     db.add(subj)
@@ -112,7 +112,7 @@ def test_lesson_distribution_grouped_by_subject():
 
     dist = get_lesson_distribution()
     assert isinstance(dist, list)
-    bio = next((d for d in dist if d["subject"] == "Biology"), None)
-    assert bio is not None, "published lesson should appear under its subject"
-    assert bio["count"] >= 1
-    assert "avg_completion_percentage" in bio
+    entry = next((d for d in dist if d["lesson_title"] == "Cells Intro"), None)
+    assert entry is not None, "published lesson should appear in the distribution"
+    assert entry["session_count"] >= 0
+    assert "avg_completion_percentage" in entry

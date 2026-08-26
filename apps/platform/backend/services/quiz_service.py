@@ -57,24 +57,18 @@ def list_quizzes(
     total = db.query(func.count(Quiz.id)).scalar()
     quizzes = db.query(Quiz).offset(offset).limit(limit).all()
     counts = dict(db.query(QuizQuestion.quiz_id, func.count(QuizQuestion.id)).group_by(QuizQuestion.quiz_id).all())
-    return {
-        "items": [
-            {
-                "id": q.id,
-                "lesson_id": q.lesson_id,
-                "title": q.title,
-                "slug": q.slug,
-                "status": q.status,
-                "content_hash": q.content_hash,
-                "question_count": counts.get(q.id, 0),
-            }
-            for q in quizzes
-        ],
-        "total": total,
-        "offset": offset,
-        "limit": limit,
-        "has_more": offset + limit < total,
-    }
+    return [
+        {
+            "id": q.id,
+            "lesson_id": q.lesson_id,
+            "title": q.title,
+            "slug": q.slug,
+            "status": q.status,
+            "content_hash": q.content_hash,
+            "question_count": counts.get(q.id, 0),
+        }
+        for q in quizzes
+    ]
 
 
 def get_quiz(db: Session, quiz_id: str) -> dict | None:

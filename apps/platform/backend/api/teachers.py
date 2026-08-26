@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from backend.config.database import get_db
 from backend.middleware.auth import get_current_user
 from backend.models.teacher import Teacher
+from backend.models.user import User
 
 router = APIRouter(prefix="/teachers", tags=["teachers"])
 
@@ -35,16 +36,21 @@ def list_teachers(current_user=Depends(get_current_user)):
     _gen = get_db()
     db: Session = next(_gen)
     try:
-        teachers = db.query(Teacher).all()
+        teachers = (
+            db.query(Teacher, User.email)
+            .outerjoin(User, Teacher.user_id == User.id)
+            .all()
+        )
         return [
             {
                 "id": t.id,
                 "user_id": t.user_id,
+                "email": email,
                 "full_name": t.full_name,
                 "subjects": t.subjects,
                 "school_code": t.school_code,
             }
-            for t in teachers
+            for t, email in teachers
         ]
     finally:
         _gen.close()
@@ -57,9 +63,11 @@ def get_my_profile(current_user=Depends(get_current_user)):
     db: Session = next(_gen)
     try:
         teacher = _get_current_teacher(current_user, db)
+        email = db.query(User.email).filter(User.id == teacher.user_id).scalar()
         return {
             "id": teacher.id,
             "user_id": teacher.user_id,
+            "email": email,
             "full_name": teacher.full_name,
             "subjects": teacher.subjects,
             "school_code": teacher.school_code,
@@ -82,9 +90,11 @@ def update_my_profile(body: TeacherUpdateRequest, current_user=Depends(get_curre
         if body.school_code is not None:
             teacher.school_code = body.school_code
         db.commit()
+        email = db.query(User.email).filter(User.id == teacher.user_id).scalar()
         return {
             "id": teacher.id,
             "user_id": teacher.user_id,
+            "email": email,
             "full_name": teacher.full_name,
             "subjects": teacher.subjects,
             "school_code": teacher.school_code,
@@ -102,9 +112,11 @@ def get_teacher(teacher_id: str, current_user=Depends(get_current_user)):
         teacher = db.query(Teacher).filter(Teacher.id == teacher_id).first()
         if not teacher:
             return {"error": "not_found"}
+        email = db.query(User.email).filter(User.id == teacher.user_id).scalar()
         return {
             "id": teacher.id,
             "user_id": teacher.user_id,
+            "email": email,
             "full_name": teacher.full_name,
             "subjects": teacher.subjects,
             "school_code": teacher.school_code,

@@ -71,6 +71,7 @@ def get_lesson_analytics(lesson_id: str) -> dict | None:
 
 def get_platform_overview() -> dict:
     from backend.models.lesson import Lesson, Subject
+    from backend.models.quiz import Quiz
     from backend.models.student import Student
     from backend.models.teacher import Teacher
 
@@ -81,6 +82,7 @@ def get_platform_overview() -> dict:
         total_teachers = db.query(Teacher).count()
         total_lessons = db.query(Lesson).filter(Lesson.status == "published").count()
         total_subjects = db.query(Subject).count()
+        total_quizzes = db.query(Quiz).count()
         total_sessions = db.query(ProgressRecord).count()
         avg_completion = db.query(func.avg(ProgressRecord.completion_percentage)).scalar() or 0.0
         return {
@@ -88,6 +90,7 @@ def get_platform_overview() -> dict:
             "total_teachers": total_teachers,
             "total_lessons": total_lessons,
             "total_subjects": total_subjects,
+            "total_quizzes": total_quizzes,
             "total_sessions": total_sessions,
             "avg_completion_rate": round(float(avg_completion), 2),
         }
@@ -96,35 +99,30 @@ def get_platform_overview() -> dict:
 
 
 def get_lesson_distribution() -> list[dict]:
-    from backend.models.lesson import Lesson, Subject, Subtopic, Topic
+    from backend.models.lesson import Lesson
 
     gen = get_db()
     db: Session = next(gen)
     try:
         rows = (
             db.query(
-                Subject.id,
-                Subject.name,
-                func.count(Lesson.id).label("lesson_count"),
+                Lesson.id,
+                Lesson.title,
+                func.count(ProgressRecord.id).label("session_count"),
                 func.avg(ProgressRecord.completion_percentage).label("avg_completion"),
             )
-            .select_from(Subject)
-            .join(Topic, Topic.subject_id == Subject.id)
-            .join(Subtopic, Subtopic.topic_id == Topic.id)
-            .join(Lesson, Lesson.subtopic_id == Subtopic.id)
+            .select_from(Lesson)
             .outerjoin(ProgressRecord, Lesson.id == ProgressRecord.lesson_id)
-            .filter(Lesson.status == "published")
-            .group_by(Subject.id, Subject.name)
-            .order_by(func.count(Lesson.id).desc())
+            .group_by(Lesson.id, Lesson.title)
+            .order_by(func.count(ProgressRecord.id).desc())
             .all()
         )
         if not rows:
             return []
         return [
             {
-                "subject": r.name,
-                "subject_id": r.id,
-                "count": int(r.lesson_count or 0),
+                "lesson_title": r.title,
+                "session_count": int(r.session_count or 0),
                 "avg_completion_percentage": round(float(r.avg_completion or 0.0), 1),
             }
             for r in rows

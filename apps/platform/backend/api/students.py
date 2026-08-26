@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from backend.config.database import get_db
 from backend.middleware.auth import get_current_user
 from backend.models.student import Student
+from backend.models.user import User
 
 VALID_FORM_LEVELS = ["Form I", "Form II", "Form III", "Form IV", "Form V", "Form VI"]
 
@@ -47,16 +48,21 @@ def list_students(current_user=Depends(get_current_user)):
     _gen = get_db()
     db: Session = next(_gen)
     try:
-        students = db.query(Student).all()
+        students = (
+            db.query(Student, User.email)
+            .outerjoin(User, Student.user_id == User.id)
+            .all()
+        )
         return [
             {
                 "id": s.id,
                 "user_id": s.user_id,
+                "email": email,
                 "full_name": s.full_name,
                 "form_level": s.form_level,
                 "school_code": s.school_code,
             }
-            for s in students
+            for s, email in students
         ]
     finally:
         _gen.close()
@@ -69,9 +75,11 @@ def get_my_profile(current_user=Depends(get_current_user)):
     db: Session = next(_gen)
     try:
         student = _get_current_student(current_user, db)
+        email = db.query(User.email).filter(User.id == student.user_id).scalar()
         return {
             "id": student.id,
             "user_id": student.user_id,
+            "email": email,
             "full_name": student.full_name,
             "form_level": student.form_level,
             "school_code": student.school_code,
@@ -94,9 +102,11 @@ def update_my_profile(body: StudentUpdateRequest, current_user=Depends(get_curre
         if body.school_code is not None:
             student.school_code = body.school_code
         db.commit()
+        email = db.query(User.email).filter(User.id == student.user_id).scalar()
         return {
             "id": student.id,
             "user_id": student.user_id,
+            "email": email,
             "full_name": student.full_name,
             "form_level": student.form_level,
             "school_code": student.school_code,
@@ -114,9 +124,11 @@ def get_student(student_id: str, current_user=Depends(get_current_user)):
         student = db.query(Student).filter(Student.id == student_id).first()
         if not student:
             return {"error": "not_found"}
+        email = db.query(User.email).filter(User.id == student.user_id).scalar()
         return {
             "id": student.id,
             "user_id": student.user_id,
+            "email": email,
             "full_name": student.full_name,
             "form_level": student.form_level,
             "school_code": student.school_code,

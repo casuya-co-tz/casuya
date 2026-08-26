@@ -23,21 +23,15 @@ def list_bookmarks(
         .limit(limit)
         .all()
     )
-    return {
-        "items": [
-            {
-                "id": b.Bookmark.id,
-                "lesson_id": b.Bookmark.lesson_id,
-                "lesson_title": b.title,
-                "created_at": b.Bookmark.created_at.isoformat() if b.Bookmark.created_at else None,
-            }
-            for b in rows
-        ],
-        "total": total,
-        "offset": offset,
-        "limit": limit,
-        "has_more": offset + limit < total,
-    }
+    return [
+        {
+            "id": b.Bookmark.id,
+            "lesson_id": b.Bookmark.lesson_id,
+            "lesson_title": b.title,
+            "created_at": b.Bookmark.created_at.isoformat() if b.Bookmark.created_at else None,
+        }
+        for b in rows
+    ]
 
 
 def add_bookmark(db: Session, user_id: str, lesson_id: str) -> dict:

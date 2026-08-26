@@ -115,24 +115,42 @@
       });
       document.getElementById("ai-generate-questions-btn")?.addEventListener("click", () => {
         document.getElementById("ai-form-area").innerHTML = `
-          <div class="card" style="margin-bottom:1rem;padding:1.5rem">
-            <h3 style="margin-bottom:0.75rem">AI Generate Quiz Questions</h3>
-            <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Paste lesson content to auto-generate quiz questions.</p>
+          <div class="card" style="padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem">Generate Quiz Questions</h3>
+            <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Auto-generate quiz questions from lesson content.</p>
             <form id="ai-gen-form" style="display:flex;flex-direction:column;gap:0.5rem">
-              <textarea class="input" name="lesson_html" rows="8" placeholder="Paste lesson HTML content here..." required style="font-family:monospace;font-size:0.85rem"></textarea>
+              <div style="display:flex;gap:0.5rem">
+                <select class="input" name="subject_slug" style="flex:1">
+                  <option value="mathematics">Mathematics</option>
+                  <option value="biology">Biology</option>
+                  <option value="chemistry">Chemistry</option>
+                  <option value="physics">Physics</option>
+                  <option value="english">English</option>
+                  <option value="kiswahili">Kiswahili</option>
+                  <option value="geography">Geography</option>
+                  <option value="history">History</option>
+                  <option value="civics">Civics</option>
+                  <option value="computing">Computing</option>
+                </select>
+                <select class="input" name="form_level" style="flex:0.5">
+                  <option value="1">Form I</option>
+                  <option value="2">Form II</option>
+                  <option value="3">Form III</option>
+                  <option value="4">Form IV</option>
+                </select>
+              </div>
+              <textarea class="input" name="lesson_html" rows="5" placeholder="Paste lesson content..." required></textarea>
               <div style="display:flex;gap:0.5rem;align-items:center">
-                <label style="font-size:0.85rem;color:var(--color-text-muted)">Questions:</label>
+                <label style="font-size:0.85rem;color:var(--color-text-muted)">Number of questions:</label>
                 <input class="input" type="number" name="count" value="5" min="1" max="20" style="width:80px">
-                <button class="btn btn-primary" type="submit">Generate</button>
+              </div>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-primary" type="submit">Generate Questions</button>
                 <button class="btn" type="button" id="cancel-ai-gen">Cancel</button>
               </div>
             </form>
             <div id="ai-gen-result" style="margin-top:1rem;display:none">
-              <div class="card" style="background:var(--color-bg);padding:1rem">
-                <h4 style="margin:0 0 0.5rem">Generated Questions</h4>
-                <pre id="ai-gen-text" style="font-size:0.85rem;line-height:1.5;white-space:pre-wrap;overflow-x:auto"></pre>
-                <button class="btn btn-sm btn-primary" id="copy-ai-gen" style="margin-top:0.5rem">Copy to Clipboard</button>
-              </div>
+              <div id="ai-gen-text"></div>
             </div>
           </div>
         `;
@@ -143,19 +161,28 @@
           const resultDiv = document.getElementById("ai-gen-result");
           const textDiv = document.getElementById("ai-gen-text");
           resultDiv.style.display = "block";
-          textDiv.textContent = "Generating...";
+          textDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating...</div>';
           try {
             const result = await request("/ai/questions/generate", {
               method: "POST",
-              body: JSON.stringify({ lesson_html: fd.get("lesson_html"), count: parseInt(fd.get("count")) || 5 }),
+              body: JSON.stringify({
+                lesson_html: fd.get("lesson_html"),
+                count: parseInt(fd.get("count")) || 5,
+                subject_slug: fd.get("subject_slug"),
+                form_level: parseInt(fd.get("form_level")) || 2,
+              }),
             });
             const questions = result?.questions || result;
-            textDiv.textContent = typeof questions === "string" ? questions : JSON.stringify(questions, null, 2);
-          } catch(err) { textDiv.textContent = "Error: " + err.message; }
-        });
-        document.getElementById("copy-ai-gen")?.addEventListener("click", () => {
-          const text = document.getElementById("ai-gen-text").textContent;
-          navigator.clipboard?.writeText(text).then(() => showToast("Copied!")).catch(() => {});
+            if (Array.isArray(questions) && questions.length) {
+              textDiv.innerHTML = renderQuizQuestions(questions, {
+                subject: fd.get("subject_slug"),
+                formLevel: fd.get("form_level"),
+                topic: questions[0]?.topic || "",
+              });
+            } else {
+              textDiv.innerHTML = '<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>';
+            }
+          } catch(err) { textDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
         });
       });
     } catch(e) { showAdminView('<div class="empty-state"><p>Error loading lessons</p></div>'); }
