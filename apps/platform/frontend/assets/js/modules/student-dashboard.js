@@ -912,9 +912,15 @@
   async function viewStudentLesson(lessonId) {
     showStudentView('<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>');
     try {
-      let lesson;
+      let lesson, isBookmarked, noteData, quizData, gamesData, lessonContent;
       try {
-        lesson = await request(`/lessons/${lessonId}`);
+        // P2-3 — one call for the mutable metadata instead of ~5 round-trips.
+        const pkg = await request(`/lessons/${lessonId}/package`);
+        lesson = pkg.lesson;
+        isBookmarked = pkg.bookmark_status?.bookmarked || false;
+        noteData = pkg.note || { content: "" };
+        quizData = pkg.quiz;
+        gamesData = pkg.games || [];
       } catch(e) {
         const recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
         const filtered = recent.filter(r => r.id !== lessonId);
@@ -923,17 +929,14 @@
         document.getElementById("back-to-overview")?.addEventListener("click", loadStudentOverview);
         return;
       }
-      const [bookmarkStatus, noteData, contentResp, quizData, gamesData] = await Promise.all([
-        request(`/bookmarks/${lessonId}/status`).catch(() => ({ bookmarked: false })),
-        request(`/notes/${lessonId}`).catch(() => ({ content: "" })),
-        fetch(`${API_BASE}/lessons/${lessonId}/content`, {
+      // Content stays on its own cached/prefetched endpoint (P2-3 / P1-6).
+      let contentResp = "";
+      try {
+        contentResp = await fetch(`${API_BASE}/lessons/${lessonId}/content`, {
           headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
-        }).then(r => r.ok ? r.text() : ""),
-        request(`/quizzes/by-lesson/${lessonId}`).catch(() => null),
-        request(`/games/by-lesson/${lessonId}`).catch(() => []),
-      ]);
-      const isBookmarked = bookmarkStatus?.bookmarked || false;
-      const lessonContent = contentResp || "<p>No content</p>";
+        }).then(r => r.ok ? r.text() : "");
+      } catch (_) {}
+      lessonContent = contentResp || "<p>No content</p>";
 
       // Track recently viewed (localStorage + server-side)
       const recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");

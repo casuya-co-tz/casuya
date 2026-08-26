@@ -1,12 +1,15 @@
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.orm import Session
 
+from backend.config.database import get_db
 from backend.middleware.auth import get_current_user
 from backend.middleware.cache import cache_get, cache_invalidate, cache_set, etag_for
 from backend.middleware.permissions import require_role
-from integrations.cloudflare import purge_cache_tags
 from backend.schemas.lessons import LessonCreate, LessonResponse, LessonUpdate
+from backend.services.bookmark_service import is_bookmarked
+from backend.services.game_service import get_games_for_lesson
 from backend.services.lesson_service import (
     create_lesson_from_html,
     delete_lesson,
@@ -17,6 +20,9 @@ from backend.services.lesson_service import (
     read_lesson_content,
     update_lesson,
 )
+from backend.services.note_service import get_note
+from backend.services.quiz_service import get_quiz_for_lesson
+from integrations.cloudflare import purge_cache_tags
 
 router = APIRouter(prefix="/lessons", tags=["lessons"])
 
@@ -74,6 +80,32 @@ def get_lesson_content_route(lesson_id: str, request: Request, current_user=Depe
         "Cache-Tag": "lesson-content",
     }
     return HTMLResponse(content=html, headers=headers)
+
+
+@router.get("/{lesson_id}/package")
+@router.get("/{lesson_id}/package/")
+def get_lesson_package_route(
+    lesson_id: str, db: Session = Depends(get_db), current_user=Depends(get_current_user)
+):
+    """Aggregate the per-lesson metadata a student screen needs into ONE call.
+
+    Opening a lesson used to fire ~5 requests (detail, bookmark, note, quiz,
+    games) plus the separately-cached content fetch. This collapses the mutable
+    metadata into a single round-trip (P2-3). The heavy HTML *content* is
+    deliberately kept on its own cached/prefetched endpoint so it stays
+    edge-cacheable and is not duplicated inside this JSON.
+    """
+    lesson = get_lesson(lesson_id)
+    if not lesson:
+        raise HTTPException(status_code=404, detail="Lesson not found")
+    user_sub = current_user["sub"]
+    return {
+        "lesson": lesson,
+        "bookmark_status": {"bookmarked": is_bookmarked(db, user_sub, lesson_id)},
+        "note": get_note(user_sub, lesson_id),
+        "quiz": get_quiz_for_lesson(db, lesson_id),
+        "games": get_games_for_lesson(db, lesson_id),
+    }
 
 
 @router.post("", response_model=dict, dependencies=[Depends(require_role("admin"))])
