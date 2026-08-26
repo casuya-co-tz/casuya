@@ -496,9 +496,10 @@ async function renderStudentDashboard() {
     _navStack.push(() => loadStudentSubjects());
     showStudentView('<div class="loading-state"><div class="spinner"></div><p>Loading topics...</p></div>');
     try {
-      const topics = await request("/topics");
+      // Server-side filter by subject (don't pull the whole topic catalog on 2G/3G).
+      const topics = await request("/topics?subject_id=" + encodeURIComponent(subjectId));
       const formFilter = localStorage.getItem("casuya_form_filter") || "";
-      let filtered = Array.isArray(topics) ? topics.filter(t => t.subject_id === subjectId) : [];
+      let filtered = Array.isArray(topics) ? topics : [];
       if (formFilter) {
         const ff = formFilter.replace(/^Form /, "");
         // Only FILTER when a form is explicitly chosen, and never hide topics that
@@ -535,8 +536,9 @@ async function renderStudentDashboard() {
     _navStack.push(() => loadSubjectTopics(subjectId));
     showStudentView('<div class="loading-state"><div class="spinner"></div><p>Loading subtopics...</p></div>');
     try {
-      const subtopics = await request("/subtopics");
-      const filtered = Array.isArray(subtopics) ? subtopics.filter(s => s.topic_id === topicId) : [];
+      // Server-side filter by topic (don't pull the whole subtopic catalog on 2G/3G).
+      const subtopics = await request("/subtopics?topic_id=" + encodeURIComponent(topicId));
+      const filtered = Array.isArray(subtopics) ? subtopics : [];
       if (filtered.length === 0) {
         showStudentView('<div class="empty-state"><p>No subtopics found</p><button class="btn" id="back-btn">← Back</button></div>');
         document.getElementById("back-btn")?.addEventListener("click", goBack);
@@ -566,8 +568,9 @@ async function renderStudentDashboard() {
     _navStack.push(() => loadTopicSubtopics(topicId, subjectId));
     showStudentView('<div class="loading-state"><div class="spinner"></div><p>Loading lessons...</p></div>');
     try {
-      const lessons = await request("/lessons/?status=published");
-      const filtered = Array.isArray(lessons) ? lessons.filter(l => l.subtopic_id === subtopicId) : [];
+      // Server-side filter by subtopic + published status (only this branch is fetched).
+      const lessons = await request("/lessons/?subtopic_id=" + encodeURIComponent(subtopicId) + "&status=published");
+      const filtered = Array.isArray(lessons) ? lessons : [];
       if (filtered.length === 0) {
         showStudentView('<div class="empty-state"><p>No lessons found</p><button class="btn" id="back-btn">← Back</button></div>');
         document.getElementById("back-btn")?.addEventListener("click", goBack);
