@@ -394,8 +394,8 @@ apps/platform/database/seeds/__pycache__/seed_necta_syllabus.cpython-314.pyc
 apps/platform/database/seeds/create_admin.py
 apps/platform/database/seeds/seed_dev_data.py
 apps/platform/database/seeds/seed_necta_syllabus.py
-apps/platform/docker/docker-compose.yml
-apps/platform/docker/Dockerfile
+infra/docker-compose.yml
+infra/Dockerfile
 apps/platform/docker/koyeb.Dockerfile
 apps/platform/docker/koyeb-entrypoint.sh
 apps/platform/docker/nginx/default.conf
@@ -487,7 +487,6 @@ apps/platform/packages/lesson-xyz.pkg
 apps/platform/PERFORMANCE.md
 apps/platform/pyproject.toml
 apps/platform/README.md
-apps/platform/render.yaml
 apps/platform/requirements.txt
 apps/platform/reseed.bat
 apps/platform/run.ps1

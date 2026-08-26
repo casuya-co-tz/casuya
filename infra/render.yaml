@@ -1,6 +1,6 @@
-# Casuya Hybrid — production deploy (mirrors casuya-platform/render.yaml).
-# The web service builds casuya-platform exactly as production did:
-#   dockerContext -> casuya-platform, dockerfilePath -> casuya-platform/docker/Dockerfile
+# Casuya Hybrid — production deploy.
+# The web service builds from the repo root using the canonical multi-stage
+# Dockerfile at infra/Dockerfile.
 version: "1"
 projects:
   - name: casuya-hybrid
@@ -10,7 +10,7 @@ projects:
           - type: web
             name: casuya-backend
             runtime: docker
-            repo: https://github.com/casuya-co-tz/casuya-platform
+            repo: https://github.com/casuya-co-tz/casuya
             plan: free
             envVars:
               - key: CORS_ORIGINS
@@ -40,7 +40,7 @@ projects:
               - key: PORT
                 sync: false
             region: frankfurt
-            dockerContext: apps/platform
-            dockerfilePath: apps/platform/docker/Dockerfile
+            dockerContext: .
+            dockerfilePath: infra/Dockerfile
             autoDeployTrigger: commit
-            rootDir: apps/platform
+            rootDir: .

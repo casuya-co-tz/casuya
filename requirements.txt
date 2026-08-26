@@ -1,7 +1,0 @@
-# Root Python requirements for the whole monorepo.
-# The application dependencies live with the app; core engine deps are added here.
--r apps/platform/requirements.txt
-
-# casuya-core engine dependencies (libs/core)
-jsonschema>=4.17.0
-htmlmin>=0.1.12

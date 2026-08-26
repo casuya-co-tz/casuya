@@ -19,7 +19,7 @@ Deployment configuration and infrastructure notes for the Casuya platform.
 
 ## Deployment Files
 
-- `apps/platform/docker/Dockerfile` — Production container (gunicorn)
+- `infra/Dockerfile` — Production container (gunicorn)
 - `apps/platform/vercel.json` — Static frontend on Vercel
 - `infra/docker-compose.yml` — Full local stack (postgres + redis + backend + nginx)
 - `infra/render.yaml` — Render deployment config

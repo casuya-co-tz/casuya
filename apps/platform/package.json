@@ -11,8 +11,8 @@
     "test": "echo 'No tests yet — add test files to apps/platform/tests/'",
     "test:coverage": "pytest tests/ --cov=backend --cov=integrations -v",
     "build": "echo 'Frontend is static HTML/JS — no build step required'",
-    "docker:up": "docker compose -f docker/docker-compose.yml up -d",
-    "docker:down": "docker compose -f docker/docker-compose.yml down"
+    "docker:up": "docker compose -f ../infra/docker-compose.yml up -d",
+    "docker:down": "docker compose -f ../infra/docker-compose.yml down"
   },
   "devDependencies": {
     "serve": "^14.2.0"
