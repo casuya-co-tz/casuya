@@ -10,6 +10,12 @@ const API_BASE = window.casuyaApiBase ? window.casuyaApiBase()
     ? window.location.origin
     : `${API_PROTOCOL}//${API_HOST}:8765`;
 
+// Expose on window so ES modules (auth-guard.js loaded via <script type="module">)
+// can also reach these when they import functions from auth-client.js.
+window.API_HOST = API_HOST;
+window.API_PROTOCOL = API_PROTOCOL;
+window.API_BASE = API_BASE;
+
 function decodeToken(token) {
   try {
     return JSON.parse(atob(token.split(".")[1]));
