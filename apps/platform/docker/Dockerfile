@@ -2,6 +2,8 @@
 FROM node:26-alpine AS frontend
 WORKDIR /app
 COPY frontend/ frontend/
+# Regenerate per-role JS bundles from source (dependency-free; see frontend/build-js.mjs).
+RUN cd frontend && node build-js.mjs
 RUN mkdir -p /app/build && cp -r frontend/* /app/build/
 
 FROM python:3.14-slim

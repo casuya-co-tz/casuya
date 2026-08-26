@@ -1,0 +1,34 @@
+{
+  "description": "Casuya edge cache rules for Cloudflare. Import via dashboard (Caching > Cache Rules) or push through the Cloudflare API. The backend already emits correct Cache-Control headers (see backend/api/lessons.py and docker/nginx/default.conf); these rules harden edge caching and guarantee auth/api paths are never cached.",
+  "rules": [
+    {
+      "description": "Cache vendored static libs (KaTeX, etc.) for 1 year",
+      "expression": "starts_with(http.request.uri.path, \"/static/lib/\")",
+      "action": { "type": "cache", "edge_ttl": 31536000, "browser_ttl": 31536000, "cache": true }
+    },
+    {
+      "description": "Cache user-uploaded media (images/video) for 1 year",
+      "expression": "starts_with(http.request.uri.path, \"/storage/\")",
+      "action": { "type": "cache", "edge_ttl": 31536000, "browser_ttl": 31536000, "cache": true }
+    },
+    {
+      "description": "Cache immutable lesson content served via the API (backend sets stale-while-revalidate)",
+      "expression": "starts_with(http.request.uri.path, \"/api/v1/lessons/\") && ends_with(http.request.uri.path, \"/content\")",
+      "action": { "type": "cache", "edge_ttl": 86400, "browser_ttl": 3600, "cache": true }
+    },
+    {
+      "description": "Never cache auth, dynamic API, or health checks",
+      "expression": "starts_with(http.request.uri.path, \"/api/\") && not (starts_with(http.request.uri.path, \"/api/v1/lessons/\") && ends_with(http.request.uri.path, \"/content\"))",
+      "action": { "type": "bypass_cache" }
+    },
+    {
+      "description": "Never cache HTML pages (auth + role dispatch must stay dynamic)",
+      "expression": "ends_with(http.request.uri.path, \".html\") || http.request.uri.path in {\"/\" \"/login.html\"}",
+      "action": { "type": "bypass_cache" }
+    }
+  ],
+  "notes": [
+    "Follow-up (not done here): migrate /storage/ uploads to Cloudflare R2 and serve them from a r2.dev / custom domain so they are cached at the edge without hitting the origin.",
+    "Brotli compression is handled by Cloudflare's edge; nginx only sends gzip. No nginx brotli module is enabled to avoid breaking the container image."
+  ]
+}
