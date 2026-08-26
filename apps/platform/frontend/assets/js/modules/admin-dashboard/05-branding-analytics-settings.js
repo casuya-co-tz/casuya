@@ -75,6 +75,7 @@
         const d = await r.json();
         if (r.ok) {
           document.getElementById("logo-result").innerHTML = '<span style="color:var(--color-success)">Logo uploaded!</span>';
+          localStorage.removeItem("casuya_brand_logo");
           loadAdminBranding();
         } else {
           document.getElementById("logo-result").innerHTML = `<span style="color:var(--color-danger)">${escapeHtml(d.detail || "Failed")}</span>`;
@@ -88,6 +89,7 @@
     document.getElementById("logo-delete")?.addEventListener("click", async () => {
       try {
         await fetch(`${API}/branding/logo`, { method: "DELETE", headers });
+        localStorage.removeItem("casuya_brand_logo");
         loadAdminBranding();
       } catch {}
     });
@@ -104,6 +106,7 @@
         const d = await r.json();
         if (r.ok) {
           document.getElementById("favicon-result").innerHTML = '<span style="color:var(--color-success)">Favicon uploaded!</span>';
+          localStorage.removeItem("casuya_brand_favicon");
           loadAdminBranding();
         } else {
           document.getElementById("favicon-result").innerHTML = `<span style="color:var(--color-danger)">${escapeHtml(d.detail || "Failed")}</span>`;
@@ -117,6 +120,7 @@
     document.getElementById("favicon-delete")?.addEventListener("click", async () => {
       try {
         await fetch(`${API}/branding/favicon`, { method: "DELETE", headers });
+        localStorage.removeItem("casuya_brand_favicon");
         loadAdminBranding();
       } catch {}
     });
