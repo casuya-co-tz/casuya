@@ -5,6 +5,7 @@ from sqlalchemy.exc import IntegrityError
 from backend.middleware.auth import get_current_user
 from backend.middleware.cache import cache_get, cache_invalidate, cache_set, etag_for
 from backend.middleware.permissions import require_role
+from integrations.cloudflare import purge_cache_tags
 from backend.schemas.lessons import LessonCreate, LessonResponse, LessonUpdate
 from backend.services.lesson_service import (
     create_lesson_from_html,
@@ -70,6 +71,7 @@ def get_lesson_content_route(lesson_id: str, request: Request, current_user=Depe
     headers = {
         "X-Content-Hash": lesson.get("content_hash", ""),
         "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+        "Cache-Tag": "lesson-content",
     }
     return HTMLResponse(content=html, headers=headers)
 
@@ -84,6 +86,7 @@ def create_lesson_route(body: LessonCreate):
             html=body.html_content,
         )
         cache_invalidate("lessons:")
+        purge_cache_tags(["lesson-content"])
         return result
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
@@ -95,6 +98,7 @@ def publish_lesson_route(lesson_id: str):
     try:
         result = publish_lesson(lesson_id)
         cache_invalidate("lessons:")
+        purge_cache_tags(["lesson-content"])
         return result
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
@@ -106,6 +110,7 @@ def delete_lesson_route(lesson_id: str):
     try:
         result = delete_lesson(lesson_id)
         cache_invalidate("lessons:")
+        purge_cache_tags(["lesson-content"])
         return result
     except IntegrityError:
         raise HTTPException(status_code=409, detail="Lesson cannot be deleted due to database constraints")
@@ -123,6 +128,7 @@ def update_lesson_route(lesson_id: str, body: LessonUpdate):
             html=body.html_content,
         )
         cache_invalidate("lessons:")
+        purge_cache_tags(["lesson-content"])
         return result
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))

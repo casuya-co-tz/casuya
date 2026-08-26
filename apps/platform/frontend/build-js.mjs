@@ -8,6 +8,7 @@
 // handles transfer size. Run from the frontend/ directory: `node build-js.mjs`.
 
 import { readFileSync, writeFileSync } from "node:fs";
+import { gzipSync } from "node:zlib";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -49,6 +50,12 @@ const roles = {
 
 for (const [role, files] of Object.entries(roles)) {
   const parts = [...core, ...files].map((f) => readFileSync(join(jsDir, f), "utf8"));
-  writeFileSync(join(jsDir, `${role}.bundle.js`), parts.join("\n;\n"));
-  console.log(`wrote assets/js/${role}.bundle.js (${parts.length} source files)`);
+  const out = parts.join("\n;\n");
+  const outPath = join(jsDir, `${role}.bundle.js`);
+  writeFileSync(outPath, out);
+  // Pre-compressed copy so nginx `gzip_static on;` can serve it without
+  // spending CPU compressing on every request (P0-4). Cloudflare still applies
+  // Brotli at the edge; this only helps the origin hop / direct visitors.
+  writeFileSync(`${outPath}.gz`, gzipSync(Buffer.from(out), { level: 9 }));
+  console.log(`wrote assets/js/${role}.bundle.js (${parts.length} source files) + .gz`);
 }

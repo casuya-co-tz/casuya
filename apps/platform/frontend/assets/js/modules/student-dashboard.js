@@ -1,5 +1,9 @@
 // modules/student-dashboard.js — extracted from main.js (classic script, shared global scope)
-async function renderStudentDashboard() {
+  // Holds the lessons currently shown in a subtopic so we can prefetch the
+  // next one's content while the student reads the current lesson (P1-6).
+  let _subtopicLessonList = [];
+
+  async function renderStudentDashboard() {
   const token = localStorage.getItem("casuya_token");
   const payload = decodeToken(token);
   const _navStack = [];
@@ -571,6 +575,7 @@ async function renderStudentDashboard() {
       // Server-side filter by subtopic + published status (only this branch is fetched).
       const lessons = await request("/lessons/?subtopic_id=" + encodeURIComponent(subtopicId) + "&status=published");
       const filtered = Array.isArray(lessons) ? lessons : [];
+      _subtopicLessonList = filtered;
       if (filtered.length === 0) {
         showStudentView('<div class="empty-state"><p>No lessons found</p><button class="btn" id="back-btn">← Back</button></div>');
         document.getElementById("back-btn")?.addEventListener("click", goBack);
@@ -893,6 +898,17 @@ async function renderStudentDashboard() {
   }
 
   // View lesson content
+  // P1-6 — warm the service worker / CDN cache with the next lesson's content
+  // while the student is reading the current one, so "next" opens instantly.
+  function _prefetchNextLesson(lessonId) {
+    const idx = _subtopicLessonList.findIndex((l) => l.id === lessonId);
+    if (idx < 0 || idx + 1 >= _subtopicLessonList.length) return;
+    const next = _subtopicLessonList[idx + 1];
+    fetch(`${API_BASE}/lessons/${next.id}/content`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("casuya_token")}` },
+    }).catch(() => {});
+  }
+
   async function viewStudentLesson(lessonId) {
     showStudentView('<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>');
     try {
@@ -932,6 +948,7 @@ async function renderStudentDashboard() {
         body: JSON.stringify({ student_id: payload.id || payload.sub, lesson_id: lessonId, lesson_title: lesson.title }),
         headers: { "Content-Type": "application/json" },
       }).catch(() => {});
+      _prefetchNextLesson(lessonId);
 
       const renderStudentQuiz = () => {
         if (!quizData || !quizData.questions || quizData.questions.length === 0) return "";
