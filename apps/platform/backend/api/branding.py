@@ -5,7 +5,7 @@ from __future__ import annotations
 import shutil
 from pathlib import Path
 
-from fastapi import APIRouter, Depends, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse
 
 from backend.config.settings import get_settings
@@ -30,29 +30,45 @@ def _branding_path(kind: str) -> Path:
 
 
 @router.get("/favicon.ico")
-def serve_favicon_ico():
+def serve_favicon_ico(request: Request):
     """Serve the favicon when the browser requests /favicon.ico."""
     path = _branding_path("favicon")
     if path.exists():
-        return FileResponse(path, media_type="image/png")
+        etag = f'"{int(path.stat().st_mtime)}"'
+        if request.headers.get("if-none-match") == etag:
+            from fastapi.responses import Response
+            return Response(status_code=304, headers={"ETag": etag})
+        return FileResponse(path, media_type="image/png", headers={"ETag": etag})
     if DEFAULT_FAVICON.exists():
-        return FileResponse(DEFAULT_FAVICON, media_type="image/svg+xml")
+        etag = f'"{int(DEFAULT_FAVICON.stat().st_mtime)}"'
+        if request.headers.get("if-none-match") == etag:
+            from fastapi.responses import Response
+            return Response(status_code=304, headers={"ETag": etag})
+        return FileResponse(DEFAULT_FAVICON, media_type="image/svg+xml", headers={"ETag": etag})
     raise HTTPException(status_code=404, detail="No favicon")
 
 
 @router.get("/{kind}")
-def serve_branding(kind: str):
+def serve_branding(kind: str, request: Request):
     """Serve the current logo or favicon. Returns 404 if not uploaded."""
     if kind not in ("logo", "favicon"):
         raise HTTPException(status_code=400, detail="Kind must be 'logo' or 'favicon'")
     path = _branding_path(kind)
     if not path.exists():
         raise HTTPException(status_code=404, detail="Not uploaded")
+    etag = f'"{int(path.stat().st_mtime)}"'
+    if request.headers.get("if-none-match") == etag:
+        from fastapi.responses import Response
+        return Response(status_code=304, headers={"ETag": etag})
     mediatypes = {
         "logo": "image/png",
         "favicon": "image/png",
     }
-    return FileResponse(path, media_type=mediatypes.get(kind, "application/octet-stream"))
+    return FileResponse(
+        path,
+        media_type=mediatypes.get(kind, "application/octet-stream"),
+        headers={"ETag": etag},
+    )
 
 
 @router.post("/{kind}")

@@ -25,7 +25,7 @@ async function loadFavicon() {
   try {
     var res = await fetch(API_BASE + "/branding/favicon");
     if (res.ok) {
-      _applyFavicon(API_BASE + "/branding/favicon?t=" + Date.now());
+      _applyFavicon(API_BASE + "/branding/favicon");
       return;
     }
   } catch(e) {}
@@ -50,7 +50,7 @@ async function loadLogo() {
   try {
     var res = await fetch(API_BASE + "/branding/logo");
     if (res.ok) {
-      _applyLogo(API_BASE + "/branding/logo?t=" + Date.now());
+      _applyLogo(API_BASE + "/branding/logo");
       return;
     }
   } catch(e) {}
