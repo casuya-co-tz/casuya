@@ -92,7 +92,7 @@ Python test suite can execute alongside the TypeScript tests.
 
 The runtime image and deploy config mirror production exactly:
 `infra/docker-compose.yml` and `infra/render.yaml` build
-`apps/platform/docker/Dockerfile` (gunicorn `backend.main:app` on `PORT`).
+`infra/Dockerfile` (gunicorn `backend.main:app` on `PORT`).
 `apps/platform/vercel.json` serves the static frontend on Vercel. The
 `Dockerfile` and `vercel.json` are the production sources of truth and were left
 untouched — only their paths moved under `apps/platform`.
