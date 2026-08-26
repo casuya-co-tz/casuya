@@ -132,6 +132,24 @@ class SafeRedis:
         except RedisError:
             return None
 
+    def lpush(self, *args: Any, **kwargs: Any) -> Any:
+        client = self._get()
+        if client is None:
+            return None
+        try:
+            return client.lpush(*args, **kwargs)
+        except RedisError:
+            return None
+
+    def ltrim(self, *args: Any, **kwargs: Any) -> Any:
+        client = self._get()
+        if client is None:
+            return None
+        try:
+            return client.ltrim(*args, **kwargs)
+        except RedisError:
+            return None
+
     def hget(self, *args: Any, **kwargs: Any) -> Any:
         client = self._get()
         if client is None:

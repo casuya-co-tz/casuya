@@ -40,6 +40,7 @@ class Settings(BaseSettings):
     debug: bool = True
 
     database_url: str = "postgresql://postgres:Mkalanga1994!@localhost:5432/casuya_platform"
+    database_replica_url: str | None = None
     redis_url: str = "redis://localhost:6379"
 
     jwt_secret: str = "insecure-development-secret-change-me"

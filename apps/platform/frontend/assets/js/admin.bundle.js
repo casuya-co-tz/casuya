@@ -830,6 +830,33 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       }
     }
   }
+  function upgradeAdaptiveVideos(root) {
+    var videos = root.querySelectorAll('video');
+    for (var i = 0; i < videos.length; i++) {
+      (function (v) {
+        var src = v.getAttribute('src') || '';
+        // Only act on HLS manifests; plain mp4/webm stay as-is (P1-5).
+        if (!/\.m3u8(\?|$)/.test(src)) return;
+        if (v.dataset.casuyaHls) return;
+        v.dataset.casuyaHls = '1';
+        v.setAttribute('preload', v.getAttribute('preload') || 'none');
+        // Native HLS (Safari / iOS) needs no library.
+        if (v.canPlayType('application/vnd.apple.mpegurl')) return;
+        function attach(Hls) {
+          if (!Hls || !Hls.isSupported()) return;
+          var hls = new Hls({ maxBufferLength: 10, capLevelToPlayerSize: true, startLevel: -1 });
+          hls.loadSource(src);
+          hls.attachMedia(v);
+        }
+        if (window.Hls) { attach(window.Hls); return; }
+        // Lazy-load the vendored hls.js only when actually needed (no-op if absent).
+        var s = document.createElement('script');
+        s.src = '/static/lib/hls.min.js';
+        s.onload = function () { attach(window.Hls); };
+        document.head.appendChild(s);
+      })(videos[i]);
+    }
+  }
   function trackVideos(root) {
     var videos = root.querySelectorAll('video');
     for (var i = 0; i < videos.length; i++) {
@@ -847,9 +874,10 @@ async function viewLessonContent(containerId, lessonId, backFn) {
   }
   function initBridge() {
     if (!document.body) { setTimeout(initBridge, 100); return; }
+    upgradeAdaptiveVideos(document.body);
     trackVideos(document.body);
     detectScore();
-    var obs = new MutationObserver(function() { detectScore(); trackVideos(document.body); });
+    var obs = new MutationObserver(function() { detectScore(); upgradeAdaptiveVideos(document.body); trackVideos(document.body); });
     obs.observe(document.body, {childList:true, subtree:true});
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initBridge);
@@ -863,19 +891,18 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       html = html.replace("</html>", bridgeScript + "</html>");
     }
 
-    // Fetch bookmark, quiz, games, notes in parallel
+    // Fetch bookmark, quiz, games, notes in ONE call (P2-3 aggregated endpoint).
     let bookmarked = false;
     let quizData = null;
     let gamesData = [];
     let noteData = { content: "" };
     if (canBookmark) {
       try {
-        [bookmarked, quizData, gamesData, noteData] = await Promise.all([
-          request(`/bookmarks/${lessonId}/status`).then(r => r.bookmarked).catch(() => false),
-          isStudent ? request(`/quizzes/by-lesson/${lessonId}`).catch(() => null) : null,
-          isStudent ? request(`/games/by-lesson/${lessonId}`).catch(() => []) : [],
-          isStudent ? request(`/notes/${lessonId}`).catch(() => ({ content: "" })) : { content: "" },
-        ]);
+        const pkg = await request(`/lessons/${lessonId}/package`);
+        bookmarked = pkg.bookmark_status?.bookmarked || false;
+        quizData = isStudent ? pkg.quiz : null;
+        gamesData = isStudent ? (pkg.games || []) : [];
+        noteData = isStudent ? (pkg.note || { content: "" }) : { content: "" };
       } catch(e) {}
     }
 

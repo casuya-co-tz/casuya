@@ -58,6 +58,47 @@ def get_db() -> Generator[Session, None, None]:
         db.close()
 
 
+# Read replica (P3-2). When DATABASE_REPLICA_URL is set, read-only endpoints use
+# it to scale reads off the primary. Falls back to the primary when unset, so
+# single-instance deployments need no config.
+_replica_engine = None
+ReplicaSessionLocal = None
+
+
+def _connect_args_for(url: str) -> dict:
+    return {"check_same_thread": False, "timeout": 30} if url.startswith("sqlite") else {}
+
+
+def get_replica_engine():
+    global _replica_engine, ReplicaSessionLocal
+    if _replica_engine is None and settings.database_replica_url:
+        _replica_engine = create_engine(
+            settings.database_replica_url,
+            connect_args=_connect_args_for(settings.database_replica_url),
+            pool_size=10,
+            max_overflow=20,
+            pool_pre_ping=True,
+            pool_recycle=3600,
+            pool_timeout=30,
+        )
+        ReplicaSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=_replica_engine)
+    return _replica_engine
+
+
+def get_read_db() -> Generator[Session, None, None]:
+    """Yield a read-replica session if configured, else the primary."""
+    if ReplicaSessionLocal is None:
+        get_replica_engine()
+    if ReplicaSessionLocal is not None:
+        db = ReplicaSessionLocal()
+        try:
+            yield db
+        finally:
+            db.close()
+        return
+    yield from get_db()
+
+
 def init_db() -> None:
     from backend.models import (  # noqa: F401
         activity,

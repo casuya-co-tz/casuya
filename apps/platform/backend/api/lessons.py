@@ -3,7 +3,7 @@ from fastapi.responses import FileResponse, HTMLResponse
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
-from backend.config.database import get_db
+from backend.config.database import get_db, get_read_db
 from backend.middleware.auth import get_current_user
 from backend.middleware.cache import cache_get, cache_invalidate, cache_set, etag_for
 from backend.middleware.permissions import require_role
@@ -85,7 +85,7 @@ def get_lesson_content_route(lesson_id: str, request: Request, current_user=Depe
 @router.get("/{lesson_id}/package")
 @router.get("/{lesson_id}/package/")
 def get_lesson_package_route(
-    lesson_id: str, db: Session = Depends(get_db), current_user=Depends(get_current_user)
+    lesson_id: str, db: Session = Depends(get_read_db), current_user=Depends(get_current_user)
 ):
     """Aggregate the per-lesson metadata a student screen needs into ONE call.
 
