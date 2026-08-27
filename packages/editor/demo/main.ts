@@ -1,4 +1,4 @@
-import { LessonBuilder, ComponentType, SlideLayout } from '../src/index.js';
+import { LessonBuilder, ComponentType, SlideLayout, ComponentData } from '../src/index.js';
 
 const builder = new LessonBuilder();
 
@@ -81,7 +81,7 @@ function render() {
     const h = document.createElement('h3');
     h.textContent = slide.title;
     slideEl.appendChild(h);
-    slide.components.forEach((c: any) => {
+    slide.components.forEach((c: ComponentData) => {
       const comp = document.createElement('div');
       comp.className = 'comp';
       if (c.type === ComponentType.Text) comp.textContent = c.content;
