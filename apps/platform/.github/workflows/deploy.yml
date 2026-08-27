@@ -8,7 +8,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
@@ -17,10 +17,10 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel
 
-      - name: Deploy to Vercel
+      - name: Deploy static frontend to Vercel
         id: deploy
+        working-directory: apps/platform/frontend
         run: |
-          # --scope removed: infer team from VERCEL_TOKEN; avoids scope-not-accessible when token belongs to different team
           url=$(vercel deploy --prod --yes --scope=casuya-codes --project=platform --token=${{ secrets.VERCEL_TOKEN }})
           echo "url=$url" >> $GITHUB_OUTPUT
 
