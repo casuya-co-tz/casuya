@@ -1,6 +1,5 @@
 {
   "buildCommand": null,
-  "outputDirectory": ".",
-  "installCommand": "echo 'pre-built locally'",
+  "outputDirectory": "dist",
   "framework": null
 }

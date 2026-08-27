@@ -27,11 +27,13 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel
 
+      - name: Vercel build
+        run: vercel build --yes --cwd packages/editor --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Deploy to Vercel
         id: deploy
-        working-directory: packages/editor/dist-demo
         run: |
-          url=$(vercel deploy --prod --yes --scope=casuya-codes --project=editor --token=${{ secrets.VERCEL_TOKEN }})
+          url=$(vercel deploy --prebuilt --cwd packages/editor --prod --yes --scope=casuya-codes --project=editor --token=${{ secrets.VERCEL_TOKEN }})
           echo "url=$url" >> $GITHUB_OUTPUT
 
       - name: Summary
