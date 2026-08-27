@@ -15,6 +15,9 @@ COPY integrations/ integrations/
 COPY database/ database/
 COPY storage/ storage/
 
+# Ensure storage mount points exist (lesson-packages etc. are .gitignored locally)
+RUN mkdir -p storage/lesson-packages storage/quiz-packages storage/game-packages storage/backups
+
 # Static frontend is served by FastAPI on the same origin
 COPY frontend/ frontend/
 
