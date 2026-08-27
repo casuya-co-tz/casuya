@@ -30,20 +30,20 @@ jobs:
 
       - name: Deploy ds-playground
         run: |
-          vercel build --yes --cwd apps/ds-playground --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
+          vercel build --yes --prod --cwd apps/ds-playground --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --cwd apps/ds-playground --prod --scope=casuya-codes --project=ds-playground --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy editor
         run: |
-          vercel build --yes --cwd packages/editor --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
+          vercel build --yes --prod --cwd packages/editor --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --cwd packages/editor --prod --scope=casuya-codes --project=editor --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy runtime
         run: |
-          vercel build --yes --cwd packages/runtime --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
+          vercel build --yes --prod --cwd packages/runtime --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --cwd packages/runtime --prod --scope=casuya-codes --project=runtime --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy platform (static)
         run: |
-          vercel build --yes --cwd apps/platform/frontend --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
+          vercel build --yes --prod --cwd apps/platform/frontend --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --cwd apps/platform/frontend --prod --scope=casuya-codes --project=platform --token=${{ secrets.VERCEL_TOKEN }}
