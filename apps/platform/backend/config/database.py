@@ -129,7 +129,34 @@ def init_db() -> None:
         engine = get_engine()
         Base.metadata.create_all(bind=engine)
         with engine.connect() as conn:
-            from sqlalchemy import text
+            from sqlalchemy import inspect, text
+
+            # create_all never adds columns to an existing table. Reconcile
+            # every column the models define (idempotent), so an evolved model
+            # always matches the live schema regardless of when the table was
+            # first created.
+            try:
+                insp = inspect(engine)
+                db_cols = {t: {c["name"] for c in insp.get_columns(t)} for t in insp.get_table_names()}
+                for table in Base.metadata.sorted_tables:
+                    if table.name not in db_cols:
+                        continue
+                    for col in table.columns:
+                        if col.name in db_cols[table.name]:
+                            continue
+                        try:
+                            with conn.begin_nested():
+                                conn.execute(
+                                    text(
+                                        f"ALTER TABLE {table.name} "
+                                        f"ADD COLUMN IF NOT EXISTS {col.name} "
+                                        f"{col.type.compile(engine.dialect)}"
+                                    )
+                                )
+                        except Exception:
+                            pass
+            except Exception:
+                pass
 
             is_postgres = engine.dialect.name == "postgresql"
             plan_id_alter = (
