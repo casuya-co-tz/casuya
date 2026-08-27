@@ -14,13 +14,23 @@ jobs:
         with:
           node-version: 22
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build playground
+        run: pnpm --filter @casuya/playground build
+
       - name: Install Vercel CLI
         run: npm install -g vercel
 
       - name: Deploy to Vercel
         id: deploy
         run: |
-          url=$(vercel deploy --prod --yes --scope=casuya-codes --project=runtime --token=${{ secrets.VERCEL_TOKEN }})
+          url=$(vercel deploy --prod --yes --scope=casuya-codes --project=ds-playground --cwd apps/ds-playground/dist --token=${{ secrets.VERCEL_TOKEN }})
           echo "url=$url" >> $GITHUB_OUTPUT
 
       - name: Summary

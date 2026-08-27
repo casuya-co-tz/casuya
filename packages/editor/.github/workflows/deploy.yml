@@ -20,7 +20,7 @@ jobs:
       - name: Deploy to Vercel
         id: deploy
         run: |
-          url=$(vercel deploy --prod --yes --scope=casuya-codes --project=casuya-editor --token=${{ secrets.VERCEL_TOKEN }})
+          url=$(vercel deploy --prod --yes --scope=casuya-codes --project=editor --token=${{ secrets.VERCEL_TOKEN }})
           echo "url=$url" >> $GITHUB_OUTPUT
 
       - name: Summary
