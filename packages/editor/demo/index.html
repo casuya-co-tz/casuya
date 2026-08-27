@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casuya Editor</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #1e293b;
+        --border: #334155;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #3b82f6;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 20px;
+        background: var(--panel);
+        border-bottom: 1px solid var(--border);
+      }
+      header h1 { font-size: 16px; margin: 0; }
+      header input {
+        flex: 1;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 6px 10px;
+        border-radius: 6px;
+      }
+      header button {
+        background: var(--accent);
+        border: 0;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .layout { display: flex; height: calc(100vh - 53px); }
+      aside {
+        width: 240px;
+        background: var(--panel);
+        border-right: 1px solid var(--border);
+        padding: 12px;
+        overflow-y: auto;
+      }
+      aside h2 { font-size: 12px; text-transform: uppercase; color: var(--muted); }
+      aside button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 6px;
+        background: var(--bg);
+        color: var(--text);
+        border: 1px solid var(--border);
+        padding: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      aside button:hover { border-color: var(--accent); }
+      main { flex: 1; overflow-y: auto; padding: 20px; }
+      .slide {
+        background: #fff;
+        color: #111;
+        border-radius: 8px;
+        padding: 24px;
+        margin-bottom: 16px;
+        min-height: 120px;
+      }
+      .slide h3 { margin-top: 0; }
+      .comp {
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        padding: 10px;
+        margin: 8px 0;
+      }
+      pre {
+        background: var(--bg);
+        color: #a5f3fc;
+        padding: 16px;
+        border-radius: 8px;
+        overflow-x: auto;
+      }
+      .status { color: var(--muted); font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Casuya Editor</h1>
+      <input id="title" placeholder="Lesson title" />
+      <button id="addSlide">+ Slide</button>
+      <button id="addText">+ Text</button>
+      <button id="addImage">+ Image</button>
+      <button id="undo">Undo</button>
+      <button id="redo">Redo</button>
+      <button id="export">Export JSON</button>
+    </header>
+    <div class="layout">
+      <aside>
+        <h2>Slides</h2>
+        <div id="slides"></div>
+        <h2>Lesson JSON</h2>
+        <p class="status" id="status">Ready</p>
+      </aside>
+      <main>
+        <div id="preview"></div>
+        <h2>Live Lesson Data</h2>
+        <pre id="json"></pre>
+      </main>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

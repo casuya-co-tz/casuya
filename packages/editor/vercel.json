@@ -1,7 +1,7 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "devCommand": "npm run dev",
+  "buildCommand": "npm run build:demo",
+  "outputDirectory": "dist-demo",
+  "devCommand": "vite --config vite.demo.config.ts",
   "installCommand": "npm install",
   "framework": "vite"
 }
