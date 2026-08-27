@@ -22,21 +22,24 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel
 
-      - name: Build & deploy ds-playground
+      - name: Build all packages (in dependency order)
+        run: pnpm build
+
+      - name: Build editor demo
+        run: pnpm --filter @casuya/editor run build:demo
+
+      - name: Deploy ds-playground
         run: |
-          pnpm --filter @casuya/playground build
           vercel build --yes --cwd apps/ds-playground --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --cwd apps/ds-playground --prod --scope=casuya-codes --project=ds-playground --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build & deploy editor
+      - name: Deploy editor
         run: |
-          pnpm --filter @casuya/editor run build:demo
           vercel build --yes --cwd packages/editor --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --cwd packages/editor --prod --scope=casuya-codes --project=editor --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build & deploy runtime
+      - name: Deploy runtime
         run: |
-          pnpm --filter casuya-runtime run build
           vercel build --yes --cwd packages/runtime --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --cwd packages/runtime --prod --scope=casuya-codes --project=runtime --token=${{ secrets.VERCEL_TOKEN }}
 
