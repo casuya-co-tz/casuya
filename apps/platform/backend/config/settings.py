@@ -50,16 +50,15 @@ class Settings(BaseSettings):
 
     allowed_origins: Annotated[list[str], BeforeValidator(_parse_allowed_origins)] = [
         "http://localhost:8765",
-        "http://localhost:8765",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:8000",
-        "https://casuya-backend.onrender.com",
+        "https://casuya-platform-production.up.railway.app",
         "https://casuya.co.tz",
         "https://www.casuya.co.tz",
     ]
 
     cors_origin_regex: str | None = (
-        r"https://([a-z0-9-]+\.)*casuya\.co\.tz|https://.*\.vercel\.app|http://(localhost|127\.0\.0\.1):[0-9]+"
+        r"https://([a-z0-9-]+\.)*casuya\.co\.tz|https://.*\.vercel\.app|https://.*\.up\.railway\.app|http://(localhost|127\.0\.0\.1):[0-9]+"
     )
 
     casuya_core_signing_key: str | None = None
