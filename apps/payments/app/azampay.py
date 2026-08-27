@@ -19,7 +19,7 @@ def _get_token(client: Client, client_id: str, client_secret: str) -> str:
         json={"clientId": client_id, "clientSecret": client_secret},
     )
     if resp.status_code == 401:
-        env = "SANDBOX" if client.base_url.endswith("authenticator-sandbox.azampay.co.tz") else "PRODUCTION"
+        env = "SANDBOX" if "authenticator-sandbox.azampay.co.tz" in str(client.base_url) else "PRODUCTION"
         raise RuntimeError(
             f"AzamPay {env} authentication failed (401). The provided "
             "AZAMPAY_CLIENT_ID / AZAMPAY_CLIENT_SECRET were rejected. "
