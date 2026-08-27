@@ -157,7 +157,7 @@ def init_db() -> None:
             "CREATE INDEX IF NOT EXISTS ix_quiz_lesson_id ON quizzes(lesson_id)",
             "CREATE INDEX IF NOT EXISTS ix_bookmark_user_id ON bookmarks(user_id)",
             "CREATE INDEX IF NOT EXISTS ix_bookmark_lesson_id ON bookmarks(lesson_id)",
-            "CREATE INDEX IF NOT EXISTS ix_notes_student_id ON notes(student_id)",
+            "CREATE INDEX IF NOT EXISTS ix_notes_user_id ON notes(user_id)",
             "CREATE INDEX IF NOT EXISTS ix_notes_lesson_id ON notes(lesson_id)",
             "CREATE INDEX IF NOT EXISTS ix_notification_user_id ON notifications(user_id)",
             "CREATE INDEX IF NOT EXISTS ix_notification_created_at ON notifications(created_at)",
@@ -179,8 +179,12 @@ def init_db() -> None:
             # Use a DO block so the migration is idempotent.
             "DO $$ BEGIN ALTER TABLE students ADD COLUMN accessibility_prefs TEXT; EXCEPTION WHEN duplicate_column THEN NULL; END $$",
         ]:
+                # Run each statement in its own savepoint so a single failure
+                # (e.g. a missing column on an older schema) cannot abort the
+                # transaction and prevent the remaining ALTERs from applying.
                 try:
-                    conn.execute(text(stmt))
+                    with conn.begin_nested():
+                        conn.execute(text(stmt))
                 except Exception:
                     pass
         conn.commit()
