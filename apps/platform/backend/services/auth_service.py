@@ -18,6 +18,7 @@ from backend.models.password_reset_token import PasswordResetToken
 from backend.models.student import Student
 from backend.models.teacher import Teacher
 from backend.models.user import User
+from backend.services.email_service import send_password_reset_email
 
 settings = get_settings()
 
@@ -173,8 +174,8 @@ def forgot_password(email: str) -> dict:
     """Generate a password-reset token for the given email.
 
     Always returns a success response to prevent email enumeration.
-    In development the token is included in the response; in production
-    it would be sent via email.
+    In development the token is also included in the response; in
+    production it is delivered by email.
     """
     _gen = get_db()
     db: Session = next(_gen)
@@ -185,6 +186,7 @@ def forgot_password(email: str) -> dict:
             db.add(reset_token)
             db.commit()
             result: dict = {"message": "If that email is registered, a reset link has been sent."}
+            send_password_reset_email(email, reset_token.id)
             if settings.environment == "development":
                 result["reset_token"] = reset_token.id
             return result

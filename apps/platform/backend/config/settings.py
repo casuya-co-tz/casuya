@@ -103,6 +103,15 @@ class Settings(BaseSettings):
     storage_root: str = "./storage"
     rate_limit_per_minute: int = 120
 
+    # Brevo SMTP (transactional email)
+    smtp_host: str = "smtp-relay.brevo.com"
+    smtp_port: int = 587
+    smtp_user: str = ""
+    smtp_password: str = ""
+    email_from: str = "no-reply@casuya.co.tz"
+    email_from_name: str = "Casuya"
+    frontend_reset_url: str = "https://casuya.co.tz/reset-password.html"
+
 
 @lru_cache
 def get_settings() -> Settings:
