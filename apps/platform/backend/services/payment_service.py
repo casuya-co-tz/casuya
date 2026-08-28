@@ -11,8 +11,6 @@ still work.
 
 from __future__ import annotations
 
-import uuid
-
 from backend.config.database import get_db
 from backend.models.payment import Payment
 from backend.services import payment_cache
@@ -55,27 +53,12 @@ def _direct_azampay_checkout(
     plan_id: str | None = None,
     plan_name: str | None = None,
 ) -> dict:
-    """Process an AzamPay mobile checkout directly, storing a Payment record."""
-    from integrations.azampay import mobile_checkout
+    """Process an AzamPay mobile checkout directly, storing a Payment record.
 
-    external_id = idempotency_key or str(uuid.uuid4())
-    result = mobile_checkout(
-        amount_tzs=amount_tzs,
-        mobile_number=mobile_number,
-        provider=provider,
-        external_id=external_id,
-    )
-
-    data = result.get("data", result)
-    reference = (
-        data.get("reference")
-        or data.get("transactionId")
-        or data.get("transactionReference")
-        or result.get("reference")
-    )
-    success = result.get("success", True) in (True, "true", "Success", "success")
-    status = "success" if success else "pending"
-
+    The record is created first so its id can be sent as AzamPay's
+    ``externalId`` — that lets the async callback/webhook match the record
+    even when AzamPay returns an empty body at checkout time.
+    """
     _gen = get_db()
     db = next(_gen)
     try:
@@ -83,13 +66,59 @@ def _direct_azampay_checkout(
             user_id=user_id,
             amount_tzs=amount_tzs,
             provider="azampay",
-            provider_reference=reference,
             plan_id=plan_id,
             plan_name=plan_name,
             idempotency_key=idempotency_key,
-            status=status,
+            status="pending",
         )
         db.add(payment)
+        db.commit()
+        db.refresh(payment)
+
+        from integrations.azampay import mobile_checkout
+
+        try:
+            result = mobile_checkout(
+                amount_tzs=amount_tzs,
+                mobile_number=mobile_number,
+                provider=provider,
+                external_id=payment.id,
+            )
+        except Exception as exc:  # noqa: BLE001
+            # Network/transport errors (e.g. sandbox connection resets) or a
+            # rejected request: keep the record pending so it can be retried
+            # or confirmed via the async callback rather than failing hard.
+            payment.provider_reference = None
+            db.commit()
+            db.refresh(payment)
+            return {
+                "id": payment.id,
+                "amount_tzs": payment.amount_tzs,
+                "provider": payment.provider,
+                "provider_reference": payment.provider_reference,
+                "status": payment.status,
+                "plan_id": payment.plan_id,
+                "plan_name": payment.plan_name,
+            }
+
+        data = result.get("data", result)
+        reference = (
+            data.get("reference")
+            or data.get("transactionId")
+            or data.get("transactionReference")
+            or result.get("reference")
+        )
+        pending = bool(result.get("pending"))
+        success = (
+            result.get("success", True) in (True, "true", "Success", "success")
+            or str(data.get("status", "")).lower() == "completed"
+        )
+        payment.provider_reference = reference
+        if pending or not success:
+            # Await the async callback; do not mark as paid yet.
+            payment.status = "pending"
+        elif success:
+            payment.status = "success"
         db.commit()
         db.refresh(payment)
         return {
@@ -106,10 +135,78 @@ def _direct_azampay_checkout(
 
 
 def handle_webhook_payload(payload: dict) -> dict:
-    client = get_payments_client()
-    result = client.webhook(payload)
-    payment_cache.invalidate()
-    return result
+    try:
+        client = get_payments_client()
+        result = client.webhook(payload)
+        payment_cache.invalidate()
+        return result
+    except ConnectionError:
+        # Microservice unreachable (the same condition that routed checkout to
+        # the direct AzamPay integration) — apply the callback locally so the
+        # platform's own Payment records stay in sync.
+        result = _apply_local_webhook(payload)
+        payment_cache.invalidate()
+        return result
+
+
+def _apply_local_webhook(payload: dict) -> dict:
+    """Update the platform's Payment records from an AzamPay callback.
+
+    Used when the casuya-payments microservice is unavailable. The checkout
+    flow passes the Payment id as AzamPay's ``externalId``, so callbacks can
+    be matched back to the record.
+    """
+    from sqlalchemy import or_
+
+    data = payload.get("data") if isinstance(payload.get("data"), dict) else {}
+    candidates = [
+        payload.get("transactionId"),
+        payload.get("transaction_id"),
+        payload.get("reference"),
+        payload.get("externalId"),
+        payload.get("external_id"),
+        data.get("transactionId"),
+        data.get("reference"),
+        data.get("externalId"),
+        data.get("external_id"),
+    ]
+    candidates = [c for c in candidates if c]
+
+    _gen = get_db()
+    db = next(_gen)
+    try:
+        match = None
+        for cand in candidates:
+            match = (
+                db.query(Payment)
+                .filter(
+                    or_(
+                        Payment.provider_reference == cand,
+                        Payment.id == cand,
+                        Payment.idempotency_key == cand,
+                    )
+                )
+                .first()
+            )
+            if match:
+                break
+        if not match:
+            return {"received": True, "matched": False, "payment_id": None}
+
+        verified = payload.get("status") or data.get("status")
+        status_lower = str(verified).lower()
+        completed = status_lower in ("completed", "success", "successful", "paid", "confirmed")
+        failed = status_lower in ("failed", "cancelled", "canceled", "rejected", "declined")
+        if completed:
+            match.status = "success"
+        elif failed:
+            match.status = "failed"
+        if payload.get("reference") or data.get("reference"):
+            match.provider_reference = payload.get("reference") or data.get("reference")
+        db.commit()
+        return {"received": True, "matched": True, "payment_id": match.id, "status": match.status}
+    finally:
+        _gen.close()
 
 
 def list_user_payments(user_id: str) -> list[dict]:

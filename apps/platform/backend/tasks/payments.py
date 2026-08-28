@@ -22,8 +22,24 @@ def process_checkout(payment_id: str, mobile_number: str):
                 provider=payment.provider,
                 external_id=payment.id,
             )
-            payment.provider_reference = result.get("reference")
-            payment.status = "success"
+            data = result.get("data", result)
+            reference = (
+                data.get("reference")
+                or data.get("transactionId")
+                or result.get("reference")
+            )
+            if reference:
+                payment.provider_reference = reference
+            pending = bool(result.get("pending"))
+            success = result.get("success", True) in (True, "true", "Success", "success") or str(
+                data.get("status", "")
+            ).lower() == "completed"
+            # AzamPay may return an empty body and report via callback; keep the
+            # payment pending in that case rather than marking it successful.
+            if pending or not success:
+                payment.status = "pending"
+            else:
+                payment.status = "success"
         except Exception:
             payment.status = "failed"
         db.commit()

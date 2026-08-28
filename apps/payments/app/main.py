@@ -347,6 +347,7 @@ def checkout(body: CheckoutBody, db: Session = Depends(_get_db)):
             mobile_number=body.mobile_number,
             provider=body.provider,
             external_id=row.id,
+            callback_url=settings.azampay_callback_url,
         )
         data = result.get("data") or {}
         reference = (
@@ -355,13 +356,21 @@ def checkout(body: CheckoutBody, db: Session = Depends(_get_db)):
             or data.get("transactionReference")
             or result.get("reference")
         )
+        pending = bool(result.get("pending"))
         success = (
             result.get("success", True)
             in (True, "true", "Success", "success")
             or str(data.get("status", "")).lower() == "completed"
         )
         row.provider_reference = reference
-        row.status = "success" if success else "pending"
+        if pending:
+            # AzamPay accepted the request but will confirm via callback.
+            row.status = "pending"
+        elif success:
+            row.status = "success"
+            row.processed_at = _now()
+        else:
+            row.status = "pending"
         row.note = result.get("message") or None
         _audit(db, "checkout.initiate", "payment", row.id, row.user_id, {"provider": body.provider, "status": row.status})
         db.commit()
@@ -414,13 +423,17 @@ async def webhook(request: Request, db: Session = Depends(_get_db)):
     if not match:
         return {"received": True, "matched": False, "payment_id": None}
 
-    verified = payload.get("status")
-    completed = str(verified).lower() in ("completed", "success", "successful", "paid", "confirmed")
+    verified = payload.get("status") or data.get("status")
+    status_lower = str(verified).lower()
+    completed = status_lower in ("completed", "success", "successful", "paid", "confirmed")
+    failed = status_lower in ("failed", "cancelled", "canceled", "rejected", "declined")
     if completed:
         match.status = "success"
         match.processed_at = _now()
-        if payload.get("reference") or data.get("reference"):
-            match.provider_reference = payload.get("reference") or data.get("reference")
+    elif failed:
+        match.status = "failed"
+    if payload.get("reference") or data.get("reference"):
+        match.provider_reference = payload.get("reference") or data.get("reference")
     _audit(db, "webhook.received", "payment", match.id, match.user_id, {"status": match.status})
     db.commit()
     return {"received": True, "matched": True, "payment_id": match.id, "status": match.status}

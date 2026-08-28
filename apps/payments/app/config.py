@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     azampay_x_api_key: str | None = None
     azampay_sandbox: bool = True
     azampay_mock: bool = False
+    azampay_callback_url: str | None = None
 
 
 @lru_cache

@@ -11,5 +11,7 @@ __pycache__/
 *.log
 .DS_Store/
 .turbo/
+tunnel*.err
+*.db
 
 .vercel

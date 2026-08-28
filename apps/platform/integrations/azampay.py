@@ -16,11 +16,11 @@ _CHECKOUT_PROD = "https://api.azampay.co.tz"
 def _get_token(client: Client, client_id: str, client_secret: str) -> str:
     """Exchange client credentials for an OAuth token."""
     resp = client.post(
-        "/api/v1/Auth/GetToken",
-        json={"clientId": client_id, "clientSecret": client_secret},
+        "/AppRegistration/GenerateToken",
+        json={"appName": "Casuya", "clientId": client_id, "clientSecret": client_secret},
     )
     if resp.status_code == 401:
-        env = "SANDBOX" if client.base_url.endswith("authenticator-sandbox.azampay.co.tz") else "PRODUCTION"
+        env = "SANDBOX" if str(client.base_url).endswith("authenticator-sandbox.azampay.co.tz") else "PRODUCTION"
         raise RuntimeError(
             f"AzamPay {env} authentication failed (401). The provided "
             "AZAMPAY_CLIENT_ID / AZAMPAY_CLIENT_SECRET were rejected. "
@@ -28,7 +28,12 @@ def _get_token(client: Client, client_id: str, client_secret: str) -> str:
         )
     resp.raise_for_status()
     data = resp.json()
-    token = data.get("accessToken") or data.get("token") or data.get("Token")
+    token = (
+        (data.get("data") or {}).get("accessToken")
+        or data.get("accessToken")
+        or data.get("token")
+        or data.get("Token")
+    )
     if not token:
         raise RuntimeError(f"AzamPay token response missing token: {data}")
     return token
@@ -117,4 +122,14 @@ def mobile_checkout(amount_tzs: float, mobile_number: str, provider: str, extern
         headers=headers,
     )
     resp.raise_for_status()
+    # AzamPay's sandbox accepts the request and returns an empty 200, then
+    # reports the outcome asynchronously via the callback/webhook. Treat an
+    # empty body as an accepted-but-pending payment awaiting that callback.
+    if not resp.text.strip():
+        return {
+            "success": False,
+            "pending": True,
+            "message": "AzamPay accepted the request; status will be delivered via callback.",
+            "data": {},
+        }
     return resp.json()

@@ -10,13 +10,17 @@ from app.config import get_settings
 _AUTH_SANDBOX = "https://authenticator-sandbox.azampay.co.tz"
 _AUTH_PROD = "https://authenticator.azampay.co.tz"
 _CHECKOUT_SANDBOX = "https://sandbox.azampay.co.tz"
-_CHECKOUT_PROD = "https://api.azampay.co.tz"
+_CHECKOUT_PROD = "https://checkout.azampay.co.tz"
 
 
-def _get_token(client: Client, client_id: str, client_secret: str) -> str:
+def _get_token(client: Client, app_name: str, client_id: str, client_secret: str) -> str:
     resp = client.post(
-        "/api/v1/Auth/GetToken",
-        json={"clientId": client_id, "clientSecret": client_secret},
+        "/AppRegistration/GenerateToken",
+        json={
+            "appName": app_name,
+            "clientId": client_id,
+            "clientSecret": client_secret,
+        },
     )
     if resp.status_code == 401:
         env = "SANDBOX" if "authenticator-sandbox.azampay.co.tz" in str(client.base_url) else "PRODUCTION"
@@ -27,9 +31,9 @@ def _get_token(client: Client, client_id: str, client_secret: str) -> str:
         )
     resp.raise_for_status()
     data = resp.json()
-    token = data.get("accessToken") or data.get("token") or data.get("Token")
+    token = (data.get("data") or {}).get("accessToken") or data.get("accessToken")
     if not token:
-        raise RuntimeError(f"AzamPay token response missing token: {data}")
+        raise RuntimeError(f"AzamPay token response missing accessToken: {data}")
     return token
 
 
@@ -42,6 +46,23 @@ def _normalize_msisdn(mobile_number: str) -> str:
     return digits
 
 
+def _normalize_provider(provider: str) -> str:
+    p = re.sub(r"[\s_-]+", "", provider or "").lower()
+    if "mpesa" in p or p in ("m", "vodacom"):
+        return "Mpesa"
+    if "tigo" in p:
+        return "Tigo"
+    if "airtel" in p:
+        return "Airtel"
+    if "halo" in p or "halotel" in p:
+        return "Halopesa"
+    if "azam" in p:
+        return "Azampesa"
+    if "ezy" in p or "eyezz" in p:
+        return "Ezy Pesa"
+    return "Mpesa"
+
+
 def _derive_network_provider(mobile_number: str) -> str:
     digits = _normalize_msisdn(mobile_number)
     national = digits[3:] if digits.startswith("255") else digits
@@ -49,18 +70,18 @@ def _derive_network_provider(mobile_number: str) -> str:
     mapping = {
         "71": "Airtel",
         "65": "Airtel",
-        "74": "M-Pesa",
-        "75": "M-Pesa",
-        "67": "Tigo Pesa",
-        "68": "Tigo Pesa",
-        "76": "Halotel",
-        "73": "Azam Pesa",
+        "74": "Mpesa",
+        "75": "Mpesa",
+        "67": "Tigo",
+        "68": "Tigo",
+        "76": "Halopesa",
+        "73": "Azampesa",
         "69": "Ezy Pesa",
     }
     return mapping.get(prefix, "Airtel")
 
 
-def mobile_checkout(amount_tzs: float, mobile_number: str, provider: str, external_id: str) -> dict:
+def mobile_checkout(amount_tzs: float, mobile_number: str, provider: str, external_id: str, callback_url: str | None = None) -> dict:
     settings = get_settings()
 
     if getattr(settings, "azampay_mock", False):
@@ -86,11 +107,19 @@ def mobile_checkout(amount_tzs: float, mobile_number: str, provider: str, extern
     auth_base = _AUTH_SANDBOX if sandbox else _AUTH_PROD
     checkout_base = _CHECKOUT_SANDBOX if sandbox else _CHECKOUT_PROD
 
-    network = provider if provider.lower() != "azampay" else _derive_network_provider(mobile_number)
+    if str(provider).lower() == "azampay":
+        network = _derive_network_provider(mobile_number)
+    else:
+        network = _normalize_provider(provider)
     msisdn = _normalize_msisdn(mobile_number)
 
     auth_client = Client(base_url=auth_base)
-    token = _get_token(auth_client, settings.azampay_client_id, settings.azampay_client_secret)
+    token = _get_token(
+        auth_client,
+        app_name=settings.azampay_app_name or "casuya",
+        client_id=settings.azampay_client_id,
+        client_secret=settings.azampay_client_secret,
+    )
     auth_client.close()
 
     headers = {"Authorization": f"Bearer {token}"}
@@ -99,14 +128,27 @@ def mobile_checkout(amount_tzs: float, mobile_number: str, provider: str, extern
 
     client = Client(base_url=checkout_base)
     resp = client.post(
-        "/api/v1/Mobile/Checkout",
+        "/azampay/mno/checkout",
         json={
+            "accountNumber": msisdn,
             "amount": amount_tzs,
-            "mobileNumber": msisdn,
-            "provider": network,
+            "currency": "TZS",
             "externalId": external_id,
+            "provider": network,
+            "callbackUrl": callback_url,
+            "additionalProperties": {"appName": settings.azampay_app_name or "casuya"},
         },
         headers=headers,
     )
     resp.raise_for_status()
+    # AzamPay's sandbox accepts the request and returns an empty 200, then
+    # reports the outcome asynchronously via the callback/webhook. Treat an
+    # empty body as an accepted-but-pending payment awaiting that callback.
+    if not resp.text.strip():
+        return {
+            "success": False,
+            "pending": True,
+            "message": "AzamPay accepted the request; status will be delivered via callback.",
+            "data": {},
+        }
     return resp.json()
