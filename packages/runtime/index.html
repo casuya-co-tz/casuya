@@ -35,11 +35,11 @@
     <p>Loaded <code>casuya-runtime.min.js</code> (<span id="size"></span> bytes)</p>
     <p id="status">Checking availability…</p>
   </main>
-  <script src="./casuya-runtime.min.js"></script>
+  <script src="./dist/casuya-runtime.min.js"></script>
   <script>
     const status = document.getElementById('status');
     const size = document.getElementById('size');
-    const byteLength = fetch('./casuya-runtime.min.js')
+    const byteLength = fetch('./dist/casuya-runtime.min.js')
       .then((r) => r.arrayBuffer())
       .then((b) => { size.textContent = b.byteLength.toLocaleString(); })
       .catch(() => { size.textContent = 'unknown'; });
