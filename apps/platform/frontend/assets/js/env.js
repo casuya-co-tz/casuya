@@ -12,6 +12,6 @@
     host === "[::1]" ||
     host === "::1";
   if (!isLocal) {
-    window.CASUYA_API_URL = "https://casuya-backend.onrender.com";
+    window.CASUYA_API_URL = "https://casuya-platform-production.up.railway.app";
   }
 })();

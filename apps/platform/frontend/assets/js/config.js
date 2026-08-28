@@ -2,7 +2,7 @@
   // casuya-config.js — central API base resolution for the static frontend.
   //
   // In production, point the frontend at your Render backend by setting the
-  // global CASUYA_API_URL (e.g. https://casuya-backend.onrender.com) in a small
+  // global CASUYA_API_URL (e.g. https://casuya-platform-production.up.railway.app) in a small
   // inline <script> that runs BEFORE this file, or via Vercel env substitution.
   //
   // In development it targets the local API on port 8765 (same-origin when the

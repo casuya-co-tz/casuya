@@ -74,7 +74,7 @@ Your landing page is lean (vanilla HTML + Tailwind). Keep it this way.
 
 ### Immediate wins
 - Add `fetchpriority="high"` to above-the-fold hero section
-- Add `<link rel="preconnect" href="https://casuya-backend.onrender.com">` in `<head>`
+- Add `<link rel="preconnect" href="https://casuya-platform-production.up.railway.app">` in `<head>`
 - Lazy load below-fold images with `loading="lazy"`
 
 ### Service worker (`sw.js`)
