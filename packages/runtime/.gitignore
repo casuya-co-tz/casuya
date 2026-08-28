@@ -47,3 +47,6 @@ yarn.lock
 junit.xml
 test-results/
 .vercel
+
+.vercel
+.env*

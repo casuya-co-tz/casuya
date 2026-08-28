@@ -58,3 +58,6 @@ temp/
 *.tsbuildinfo
 
 .vercel
+
+.vercel
+.env*

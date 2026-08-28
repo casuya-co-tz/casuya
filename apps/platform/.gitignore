@@ -22,3 +22,6 @@ build/
 htmlcov/
 serve_static.py.bak
 .vercel
+
+.vercel
+.env*
