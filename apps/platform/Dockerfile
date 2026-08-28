@@ -25,4 +25,4 @@ EXPOSE 8000
 
 # Railway injects $PORT; default to 8000 locally.
 # Single worker so init_db (create_all + idempotent ALTERs) never races.
-CMD ["sh", "-c", "gunicorn backend.main:app -w 1 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:${PORT:-8000}"]
+CMD ["sh", "-c", "gunicorn backend.main:app -w 1 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:${PORT:-8000} --forwarded-allow-ips='*' --proxy-headers"]

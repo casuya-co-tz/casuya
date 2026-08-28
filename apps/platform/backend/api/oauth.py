@@ -100,6 +100,11 @@ def _callback_url(provider: str, request: Request | None = None) -> str:
         host = request.url.hostname
         if host and host in _trusted_hosts():
             base = str(request.base_url).rstrip("/")
+            # Force HTTPS for remote hosts (behind a TLS-terminating proxy like
+            # Railway) so the redirect URI matches the OAuth provider's registered
+            # https:// URI even if the forwarded scheme is misconfigured.
+            if host not in ("localhost", "127.0.0.1", "testserver"):
+                base = base.replace("http://", "https://", 1)
             return f"{base}/auth/callback/{provider}"
     return f"{settings.oauth_redirect_base}/auth/callback/{provider}"
 
