@@ -1,5 +1,4 @@
 node_modules/
-packages/
 libs/
 infra/
 tools/
@@ -18,12 +17,9 @@ apps/platform/scripts/
 apps/platform/packages/
 *.log
 *.md
-pnpm-lock.yaml
-pnpm-workspace.yaml
 tsconfig*.json
 .eslintrc*
 .prettierrc*
-turbo.json
 build.ps1
 run.ps1
 start.ps1

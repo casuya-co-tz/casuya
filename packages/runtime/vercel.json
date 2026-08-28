@@ -1,5 +1,5 @@
 {
-  "buildCommand": null,
-  "outputDirectory": "dist",
+  "buildCommand": "pnpm --filter casuya-runtime build",
+  "outputDirectory": "packages/runtime/dist",
   "framework": null
 }
