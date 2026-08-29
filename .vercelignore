@@ -17,7 +17,6 @@ apps/platform/scripts/
 apps/platform/packages/
 *.log
 *.md
-tsconfig*.json
 .eslintrc*
 .prettierrc*
 build.ps1
