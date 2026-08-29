@@ -62,6 +62,9 @@ init_sentry()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    from backend.services.email_service import smtp_configured
+
+    print(f"SMTP {'configured' if smtp_configured() else 'NOT configured (email resets disabled)'}")
     try:
         await asyncio.to_thread(init_db)
 

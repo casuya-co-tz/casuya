@@ -17,6 +17,11 @@ def _configured() -> bool:
     return bool(settings.smtp_user and settings.smtp_password)
 
 
+def smtp_configured() -> bool:
+    """Public probe used by startup logging / health checks."""
+    return _configured()
+
+
 def send_email(to: str, subject: str, body_html: str, body_text: str) -> bool:
     """Send a transactional email. Returns True on success, False on any failure.
 
