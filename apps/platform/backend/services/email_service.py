@@ -1,4 +1,4 @@
-"""Transactional email via Brevo SMTP relay."""
+"""Transactional email via Brevo (REST API preferred, SMTP relay fallback)."""
 
 from __future__ import annotations
 
@@ -8,6 +8,8 @@ import time
 from email.message import EmailMessage
 from email.utils import formataddr
 
+import httpx
+
 from backend.config.settings import get_settings
 
 logger = logging.getLogger(__name__)
@@ -15,11 +17,12 @@ logger = logging.getLogger(__name__)
 _SMTP_TIMEOUT = 60
 _SMTP_ATTEMPTS = 2
 _SMTP_RETRY_DELAY = 2.0
+_API_TIMEOUT = 30.0
 
 
 def _configured() -> bool:
     settings = get_settings()
-    return bool(settings.smtp_user and settings.smtp_password)
+    return bool(settings.brevo_api_key or (settings.smtp_user and settings.smtp_password))
 
 
 def smtp_configured() -> bool:
@@ -27,15 +30,36 @@ def smtp_configured() -> bool:
     return _configured()
 
 
-def send_email(to: str, subject: str, body_html: str, body_text: str) -> bool:
-    """Send a transactional email. Returns True on success, False on any failure.
-
-    Fails open (logs + returns False) so auth flows never break when mail is down.
-    """
-    if not _configured():
-        logger.warning("SMTP not configured; skipping email to %s", to)
+def _send_via_api(to: str, subject: str, body_html: str, body_text: str) -> bool:
+    settings = get_settings()
+    payload = {
+        "sender": {"name": settings.email_from_name, "email": settings.email_from},
+        "to": [{"email": to}],
+        "subject": subject,
+        "htmlContent": body_html,
+        "textContent": body_text,
+    }
+    try:
+        resp = httpx.post(
+            "https://api.brevo.com/v3/smtp/email",
+            headers={
+                "api-key": settings.brevo_api_key or "",
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            json=payload,
+            timeout=_API_TIMEOUT,
+        )
+        if resp.status_code in (200, 201, 202):
+            return True
+        logger.error("Brevo API send failed (HTTP %s): %s", resp.status_code, resp.text[:300])
+        return False
+    except Exception as e:  # noqa: BLE001 — mail must never break auth
+        logger.error("Brevo API send error to %s: %s", to, e)
         return False
 
+
+def _send_via_smtp(to: str, subject: str, body_html: str, body_text: str) -> bool:
     settings = get_settings()
     msg = EmailMessage()
     msg["Subject"] = subject
@@ -61,6 +85,23 @@ def send_email(to: str, subject: str, body_html: str, body_text: str) -> bool:
                 time.sleep(_SMTP_RETRY_DELAY)
     logger.error("Failed to send email to %s: %s", to, last_error)
     return False
+
+
+def send_email(to: str, subject: str, body_html: str, body_text: str) -> bool:
+    """Send a transactional email. Returns True on success, False on any failure.
+
+    Prefers the Brevo REST API (reliable from any cloud region) and falls back
+    to the SMTP relay. Fails open (logs + returns False) so auth flows never
+    break when mail is down.
+    """
+    if not _configured():
+        logger.warning("Mail not configured; skipping email to %s", to)
+        return False
+
+    settings = get_settings()
+    if settings.brevo_api_key:
+        return _send_via_api(to, subject, body_html, body_text)
+    return _send_via_smtp(to, subject, body_html, body_text)
 
 
 def send_password_reset_email(to: str, reset_token: str) -> bool:

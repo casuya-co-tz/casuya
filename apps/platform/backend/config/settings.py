@@ -108,6 +108,7 @@ class Settings(BaseSettings):
     smtp_port: int = 587
     smtp_user: str = ""
     smtp_password: str = ""
+    brevo_api_key: str | None = None  # preferred over SMTP when set
     email_from: str = "no-reply@casuya.co.tz"
     email_from_name: str = "Casuya"
     frontend_reset_url: str = "https://casuya.co.tz/reset-password.html"
