@@ -4,12 +4,17 @@ from __future__ import annotations
 
 import logging
 import smtplib
+import time
 from email.message import EmailMessage
 from email.utils import formataddr
 
 from backend.config.settings import get_settings
 
 logger = logging.getLogger(__name__)
+
+_SMTP_TIMEOUT = 60
+_SMTP_ATTEMPTS = 2
+_SMTP_RETRY_DELAY = 2.0
 
 
 def _configured() -> bool:
@@ -39,17 +44,23 @@ def send_email(to: str, subject: str, body_html: str, body_text: str) -> bool:
     msg.set_content(body_text)
     msg.add_alternative(body_html, subtype="html")
 
-    try:
-        with smtplib.SMTP(settings.smtp_host, settings.smtp_port, timeout=15) as server:
-            server.ehlo()
-            server.starttls()
-            server.ehlo()
-            server.login(settings.smtp_user, settings.smtp_password)
-            server.send_message(msg)
-        return True
-    except Exception as e:  # noqa: BLE001 — mail must never break auth
-        logger.error("Failed to send email to %s: %s", to, e)
-        return False
+    last_error: Exception | None = None
+    for attempt in range(1, _SMTP_ATTEMPTS + 1):
+        try:
+            with smtplib.SMTP(settings.smtp_host, settings.smtp_port, timeout=_SMTP_TIMEOUT) as server:
+                server.ehlo()
+                server.starttls()
+                server.ehlo()
+                server.login(settings.smtp_user, settings.smtp_password)
+                server.send_message(msg)
+            return True
+        except Exception as e:  # noqa: BLE001 — mail must never break auth
+            last_error = e
+            logger.warning("Email send attempt %d/%d to %s failed: %s", attempt, _SMTP_ATTEMPTS, to, e)
+            if attempt < _SMTP_ATTEMPTS:
+                time.sleep(_SMTP_RETRY_DELAY)
+    logger.error("Failed to send email to %s: %s", to, last_error)
+    return False
 
 
 def send_password_reset_email(to: str, reset_token: str) -> bool:
