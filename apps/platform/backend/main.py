@@ -194,7 +194,13 @@ if _ds_root.is_dir():
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "environment": settings.environment}
+    from backend.services.email_service import smtp_configured
+
+    return {
+        "status": "ok",
+        "environment": settings.environment,
+        "smtp_configured": smtp_configured(),
+    }
 
 
 @app.get("/readyz")
