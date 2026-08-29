@@ -46,4 +46,4 @@ jobs:
       - name: Deploy platform (static)
         run: |
           vercel build --yes --prod --cwd apps/platform/frontend --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
-          vercel deploy --prebuilt --yes --cwd apps/platform/frontend --prod --scope=casuya-codes --project=platform --token=${{ secrets.VERCEL_TOKEN }}
+          vercel deploy --prebuilt --yes --cwd apps/platform/frontend --prod --scope=casuya-codes --project=frontend --token=${{ secrets.VERCEL_TOKEN }}
