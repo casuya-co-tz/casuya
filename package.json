@@ -14,7 +14,8 @@
     "clean": "turbo run clean",
     "install:py": "pip install -e .",
     "check:layers": "node tools/check-layers.mjs",
-    "validate": "pnpm check:layers && pnpm lint && pnpm typecheck"
+    "check:deploy": "node tools/check-vercel-deploy.mjs",
+    "validate": "pnpm check:layers && pnpm check:deploy && pnpm lint && pnpm typecheck"
   },
   "devDependencies": {
     "turbo": "^2.0.0",

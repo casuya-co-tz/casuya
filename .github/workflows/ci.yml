@@ -28,6 +28,9 @@ jobs:
       # Layer-boundary enforcement (downward-only dependencies)
       - run: pnpm check:layers
 
+      # Vercel deploy-contract guardrail (deploy.yml + project vercel.json)
+      - run: pnpm check:deploy
+
       # Build / typecheck / lint / test across affected packages
       - run: pnpm build
       - run: pnpm typecheck
