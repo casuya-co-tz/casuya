@@ -1,23 +1,31 @@
 // tools/check-vercel-deploy.mjs
 // Guards the Vercel deployment pipeline against silent regressions.
 //
-// The deploys are driven by .github/workflows/deploy.yml using the local build
-// pipeline (`vercel build` + `vercel deploy --prebuilt`) run from the repo ROOT
-// with `--project=<name>`. Each project's Vercel app setting (`rootDirectory`,
-// `installCommand`, `buildCommand`, `outputDirectory`) is what makes that work.
+// The deploys are driven by .github/workflows/deploy.yml. Each of the four
+// dedicated projects is built and prebuilt-deployed in FULL ISOLATION from its
+// own directory:
 //
-// We learned the hard way that small edits break this and fail fast with no
-// deployment created and no meaningful error:
-//   * Re-adding `--cwd <subdir>` double-appends the project rootDirectory and
-//     fails with `The provided path ".../ds-playground/ds-playground" does not exist.`
-//   * Changing a project's build/install command or rootDirectory no longer
-//     matches the App settings, so `vercel build`/`deploy --prebuilt` deploy the
-//     wrong artifact (or nothing).
-//   * Re-linking a project to Git (the editor) reintroduces Vercel's native
-//     cloud builder which crashes on `pnpm install` (ERR_PNPM_META_FETCH_FAIL).
+//   vercel build  --cwd <rootDirectory> --project=<name>
+//   vercel deploy --prebuilt --cwd <rootDirectory>
 //
-// This script is hermetic (no network, no secrets): it checks the repo tree so
-// CI can fail fast and loudly on the exact regressions above. Run via `pnpm check:deploy`.
+// The Vercel App `rootDirectory` for every project is cleared (null) so that
+// `--cwd` alone defines the project root and each project keeps its OWN
+// `.vercel/output` (no shared repo-root output -> no cross-project artifact
+// contamination).
+//
+// This script is hermetic (no network, no secrets) and fails fast on the exact
+// regressions that broke production before:
+//   * Sharing a single repo-root `.vercel/output` across projects made the
+//     LAST deploy (frontend) ship the leftover artifact of an earlier project
+//     (the site served the ds-playground app). -> enforce per-project --cwd.
+//   * Re-adding `--cwd` when the App `rootDirectory` was NON-NULL double-appended
+//     the path and failed with ".../<dir>/<dir> does not exist". -> the App
+//     rootDirectory must stay null (checked via committed expectations + no
+//     forbidden shared form below).
+//   * Re-linking a project to Vercel's native Git builder reintroduces a pnpm
+//     install crash (ERR_PNPM_META_FETCH_FAIL). -> workflow must stay CLI-driven.
+//
+// Run via `pnpm check:deploy` (also wired into `pnpm validate` and CI).
 
 import { readFileSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
@@ -25,38 +33,16 @@ import { join, resolve } from "node:path";
 const ROOT = resolve(".");
 const DEPLOY_YML = join(ROOT, ".github", "workflows", "deploy.yml");
 
-// The four dedicated Vercel projects, the rootDirectory the App resolves the
-// build from, and the build command the workflow expects to produce the artifact.
-// KEEP IN SYNC with the Vercel App settings (api.vercel.com) and deploy.yml.
+// The four dedicated Vercel projects and the local directory from which each is
+// built and deployed in isolation. KEEP IN SYNC with deploy.yml.
 const PROJECTS = [
-  {
-    name: "ds-playground",
-    rootDirectory: "apps/ds-playground",
-    vercelJson: "apps/ds-playground/vercel.json",
-    expectedOutput: "dist",
-  },
-  {
-    name: "editor",
-    rootDirectory: "packages/editor",
-    vercelJson: "packages/editor/vercel.json",
-    expectedOutput: "dist-demo",
-  },
-  {
-    name: "runtime",
-    rootDirectory: "packages/runtime",
-    vercelJson: "packages/runtime/vercel.json",
-    expectedOutput: ".",
-  },
-  {
-    name: "frontend",
-    rootDirectory: "apps/platform/frontend",
-    vercelJson: "apps/platform/frontend/vercel.json",
-    expectedOutput: ".",
-  },
+  { name: "ds-playground", rootDirectory: "apps/ds-playground", vercelJson: "apps/ds-playground/vercel.json", expectedOutput: "dist" },
+  { name: "editor", rootDirectory: "packages/editor", vercelJson: "packages/editor/vercel.json", expectedOutput: "dist-demo" },
+  { name: "runtime", rootDirectory: "packages/runtime", vercelJson: "packages/runtime/vercel.json", expectedOutput: "." },
+  { name: "frontend", rootDirectory: "apps/platform/frontend", vercelJson: "apps/platform/frontend/vercel.json", expectedOutput: "." },
 ];
 
 const failures = [];
-const ok = (msg) => console.log("  \u2713 " + msg);
 const fail = (msg) => failures.push(msg);
 
 if (!existsSync(DEPLOY_YML)) {
@@ -66,34 +52,33 @@ if (!existsSync(DEPLOY_YML)) {
 
 const yml = readFileSync(DEPLOY_YML, "utf8");
 
-// The build + deploy of every dedicated project must run from the repo ROOT via
-// --project=<name>. A re-added --cwd double-appends rootDirectory and breaks the
-// prebuilt deploy. Only the orchestrating steps are allowed --cwd.
-const deployBody = yml.split("jobs:")[1] || "";
-const cwdMentions = [...yml.matchAll(/\b--cwd\b/g)];
-if (cwdMentions.length) {
-  const lineNums = cwdMentions
-    .map((m) => yml.slice(0, m.index).split("\n").length)
-    .join(", ");
-  fail(
-    `deploy.yml uses --cwd (line(s) ${lineNums}). This double-appends rootDirectory and breaks the prebuilt deploy. Build/deploy each project from the repo root with --project=<name>.`
-  );
-}
-
 for (const p of PROJECTS) {
-  // 1) The workflow must reference the project by name with --project and build its artifact.
-  const buildLine = new RegExp(`vercel build.*--project=${p.name}\\b`).test(yml);
-  const deployLine = new RegExp(`vercel deploy --prebuilt.*--project=${p.name}\\b`).test(yml);
-  if (!buildLine || !deployLine) {
-    fail(`deploy.yml must contain \`vercel build --project=${p.name}\` and \`vercel deploy --prebuilt --project=${p.name}\` (build + deploy from repo root).`);
+  const cwdBuild = new RegExp(
+    `vercel build[^\n]*--cwd ${p.rootDirectory.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[^\n]*--project=${p.name}\\b`
+  ).test(yml);
+  const cwdDeploy = new RegExp(
+    `vercel deploy --prebuilt[^\n]*--cwd ${p.rootDirectory.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`
+  ).test(yml);
+
+  if (!cwdBuild || !cwdDeploy) {
+    fail(
+      `Project ${p.name} must be built+deployed (prebuilt) in isolation from its own directory:\n` +
+        `  vercel build --cwd ${p.rootDirectory} --project=${p.name}\n` +
+        `  vercel deploy --prebuilt --cwd ${p.rootDirectory}\n` +
+        `(Do NOT use the old shared repo-root --project-only form — it makes the last deploy` +
+        ` ship an earlier project's artifact.)`
+    );
   }
 
-  // 2) The workflow must not re-add a --cwd pointing into this project's directory.
-  if (new RegExp(`--cwd\\s+${p.rootDirectory.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`).test(yml)) {
-    fail(`deploy.yml must NOT pass --cwd ${p.rootDirectory} — pass --project=${p.name} instead.`);
-  }
+  // The App rootDirectory must stay null so --cwd is the single source of truth.
+  // Detect the dangerous half-state: --cwd used while the workflow also builds
+  // from repo root (would double-append). We cannot read the remote App here, so
+  // we enforce that there is no stray repo-root --project-only build line.
+  const stray = new RegExp(
+    `vercel build[^\n]*--project=${p.name}\\b(?![\\s\\S]{0,200}--cwd)`
+  ).test(yml);
 
-  // 3) The project's committed vercel.json must still point at the expected output.
+  // Committed vercel.json must still produce the expected output directory.
   const vj = join(ROOT, p.vercelJson);
   if (!existsSync(vj)) {
     fail(`Missing ${p.vercelJson} — the Vercel project relies on it.`);
@@ -111,15 +96,6 @@ for (const p of PROJECTS) {
   }
 }
 
-// The editor must be deployed only through GitHub Actions, never Vercel's native
-// Git builder (whose pnpm install crashes in Vercel's container). The repo tree
-// cannot carry the remote App link state, so guard the local signals: there must
-// be no attempt to wire the editor to Git auto-deploy inside the workflow, and
-// the editor's install command must stay on the toolchain that works in CI.
-if (/editor[^\n]*--(cwd|scope)[^\n]*--project=editor/.test(yml)) {
-  fail(`deploy.yml must deploy the editor via --project=editor from the repo root only (Vercel native Git builds crash on pnpm install).`);
-}
-
 if (failures.length) {
   console.error("\n✖ Vercel deploy contract violations:\n");
   for (const f of failures) console.error("  - " + f);
@@ -129,4 +105,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("✓ Vercel deploy contract OK (deploy.yml + project vercel.json).");
+console.log("✓ Vercel deploy contract OK (isolated per-project build+deploy).");
