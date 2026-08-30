@@ -1170,14 +1170,53 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     "nav.create_account": "Fungua Akaunti",
     "nav.users": "Watumiaji",
 
+    // Accessibility toolbar
+    "a11y.skip": "Ruka hadi kwenye maudhui makuu",
+    "a11y.region": "Chaguzi za ufikiaji",
+    "a11y.open": "Fungua mipangilio ya ufikiaji",
+    "a11y.panel": "Jopo la mipangilio ya ufikiaji",
+    "a11y.settings": "Mipangilio ya Ufikiaji",
+    "a11y.dyslexia": "Maandishi ya Wenye Changamoto ya Kusoma (Dyslexia)",
+    "a11y.toggle_dyslexia": "Washa/zima font ya wenye changamoto ya kusoma",
+    "a11y.high_contrast": "Ung'avu wa Juu",
+    "a11y.toggle_contrast": "Washa/zima hali ya ung'avu wa juu",
+    "a11y.large_text": "Maandishi Makubwa",
+    "a11y.toggle_large_text": "Washa/zima hali ya maandishi makubwa",
+    "a11y.wide_spacing": "Nafasi Kubwa Kati ya Maandishi",
+    "a11y.toggle_wide_spacing": "Washa/zima nafasi kubwa kati ya mistari na maandishi",
+    "a11y.size": "Ukubwa",
+    "a11y.fontsize_pct": "Asilimia ya ukubwa wa fonti",
+    "a11y.tts": "Kusoma kwa Sauti",
+    "a11y.toggle_tts": "Washa/zima usomaji kwa sauti",
+    "a11y.speech_rate": "Kasi ya usomaji",
+    "a11y.play": "Cheza usomaji",
+    "a11y.pause": "Simamisha usomaji",
+    "a11y.stop": "Acha usomaji",
+    "a11y.ready": "Tayari",
+
     // Hero
-    "hero.badge": "Elimu Ilivyobadilishwa",
-    "hero.title1": "Jifunze kwa Akili.",
+    "hero.badge": "Kwa wanafunzi na walimu wa Tanzania",
+    "hero.title1": "Shule unayotamani kuwa nayo —<br>kwenye simu inayoshirikiwa.",
     "hero.title2": "Fundisha Bora.",
     "hero.title3": "Jenga Mustakabali.",
-    "hero.desc": "Mfumo wa elimu wenye akili unaounganisha walimu, wanafunzi, na shule kwa zana za kidijitali za kisasa zilizojengwa kwa miundombinu yoyote.",
-    "hero.start": "Anza Kujifunza",
-    "hero.demo": "Angalia Onyesho",
+    "hero.clarity": "Masomo, majaribio na matokeo — yaliyojengwa kwa mtaala wa kidato cha kwanza hadi cha sita.",
+    "hero.desc": "Casuya hukuletea kujifunza nyumbani: nje ya mtandao, kwa Kiswahili na Kiingereza, kwenye simu ambazo Watanzania wanatumia.",
+    "hero.off_excuse": "Jifunze ulipo — hata mtandao usipokuwapo.",
+    "hero.start": "Karibu — ingia kufungulia wiki yako",
+    "hero.demo": "Twende — angalia jinsi inavyofanya kazi",
+
+    // Hero "your week" card
+    "hero_week_sub": "wiki yako ya kujifunza",
+    "hero_week_greet": "Habari za asubuhi 👋",
+    "hero_week_streak": "Mfuatano wa kujifunza",
+    "hero_week_day0": "Siku 0",
+    "hero_week_streakline": "Anza mfuatano wako — somo moja kwa siku, hata mtandao usipokuwepo.",
+    "hero_week_lesson": "Somo la leo",
+    "hero_week_continue": "Endelea →",
+    "hero_week_offline": "Imehifadhiwa nje ya mtandao",
+    "hero_week_offlineline": "Jiunge kupakua masomo na kujifunza mahali ambapo mtandao haufiki.",
+    "hero_week_unlock": "Ingia kufungulia wiki yako",
+    "hero_week_honest": "Bure kuanza · Inafanya kazi kwenye simu ya RAM ya GB 2 · Inahifadhi kazi yako hata mtandao usipokuwepo.",
 
     // Hero mock UI
     "hero.today_lesson": "Masomo ya Leo",
@@ -1188,45 +1227,82 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     "hero.progress": "+18% Maendeleo",
 
     // Trusted
-    "trusted.title": "Kuwezesha Mifumo ya Elimu ya Kisasa",
+    "trusted.title": "Imejengwa hapa, kwa hapa",
+    "trust.t2gb": "Inafanya kazi kwenye simu ya RAM ya GB 2",
+    "trust.offline": "Inafanya kazi nje ya mtandao",
+    "trust.curriculum": "Imetengenezwa kwa mtaala wa Tanzania · Kidato cha 1 hadi 6",
+    "trust.free": "Bure kuanza — hakuna kadi inayohitajika",
+    "trust.lang": "Jifunze kwa Kiingereza na Kiswahili",
+    "trust.data": "Alama na data zako zinabaki kuwa zako salama",
 
     // Features
-    "features.badge": "Uwezo wa Jukwaa",
-    "features.title": "Kwa Nini Shule Zinachagua Casuya",
-    "features.desc": "Kila moduli imeboreshwa kwa kasi ya umeme na utendaji wa kuaminika kwa vifaa vya chini.",
+    "features.badge": "Casuya hufanya nini siku ya kawaida",
+    "features.title": "Zana ndogo, siku za kweli",
+    "features.desc": "Hakuna mambo ya sifa tu — ni vitu vinavyorahisisha maisha ya shule, hata kama simu ni ya zamani na mtandao ni dhaifu.",
+    "feature.interactiveLessons.title": "Masomo Shirikishi",
+    "feature.interactiveLessons.blurb": "Masomo yenye mvuto kama mchezo — chemsha bongo na mazoezi yanayojisahihisha yenyewe unapofanya. Unaweza kurudia mada mpaka uelewe vizuri.",
+    "feature.offlineLearning.title": "Kujifunza Nje ya Mtandao",
+    "feature.offlineLearning.blurb": "Umeme umekatika? Safari ndefu ya daladala? Pakua mada mara moja kukiwa na mtandao mzuri, kisha soma popote — hata mahali ambapo hakuna mawimbi kabisa.",
+    "feature.aiAssistant.title": "Msaidizi wa Walimu wa AI",
+    "feature.aiAssistant.blurb": "Unaandaa chemsha bongo usiku wa manane? Mwombe Casuya aiandae kwa dakika chache — kwa Kiingereza au Kiswahili. Msaidizi wa ziada kwa walimu wenye majukumu mengi.",
+    "feature.analytics.title": "Maendeleo Yanayoonekana",
+    "feature.analytics.blurb": "Kwa mtazamo mmoja tu, ona mada inayowatatiza wanafunzi darasani — hakuna haja ya kupekua rundo la karatasi zilizosahihishwa mwisho wa muhula.",
+    "feature.assessments.title": "Tathmini na Mitihani",
+    "feature.assessments.blurb": "Andaa chemsha bongo, hojaji na kazi za masomo kwa dakika chache — zilizoundwa kuendana na jinsi masomo yanavyofundishwa darasani.",
+    "feature.cloudSync.title": "Uhifadhi wa Kidijitali (Cloud)",
+    "feature.cloudSync.blurb": "Alama na maendeleo yako yanahifadhiwa salama, na yanasawazishwa mara tu mtandao unapopatikana. Hakuna kinachopotea simu ikizima.",
+    "feature.digitalExaminations.title": "Mitihani ya Kidijitali",
+    "feature.digitalExaminations.blurb": "Endesha mitihani salama kwenye kivinjari inayojisahihisha na kutunza matokeo salama — kukiwa na usahihishaji wa papo hapo na matokeo ya uaminifu.",
+    "feature.aiLessonCreation.title": "Maandalizi ya Masomo kwa AI",
+    "feature.aiLessonCreation.blurb": "Tengeneza muhtasari wa masomo, chemsha bongo na vifaa vya kujifunzia kwa dakika chache — msaidizi imara pale siku ya shule inapokuwa ndefu.",
 
     // Subjects
-    "subjects.badge": "Muundo wa Mtaala",
-    "subjects.title": "Chunguza Masomo Kote Kwenye Mfumo",
+    "subjects.badge": "Kidato cha 1–6 · Mtalaa wa Tanzania",
+    "subjects.title": "Masomo unayofanya — yote mahali pamoja",
+    "subjects.desc": "Kuanzia Kiswahili na Civics hadi Hisabati na Sayansi — masomo yale yale unayofanya darasani, tayari kwa kidato cha kwanza hadi cha sita.",
+    "subjects.kiswahili": "Kiswahili",
+    "subjects.english": "English / Kiingereza",
+    "subjects.maths": "Hisabati",
+    "subjects.civics": "Uraia na Maadili",
+    "subjects.history": "Historia",
+    "subjects.geography": "Jiografia",
     "subjects.physics": "Fizikia",
-    "subjects.chemistry": "Kemikali",
+    "subjects.chemistry": "Kemia",
     "subjects.biology": "Biolojia",
-    "subjects.math": "Hisabati",
+    "subjects.mathematics": "Hisabati za Msingi",
+    "subjects.more": "... na zaidi kwenye mtaala. Jifunze kidogo kila siku, uweke darasa zima live, na uikabili Mitihani ya Taifa kwa imani — si kwa hofu.",
 
     // Audiences
-    "audiences.badge": "Uzoefu Maalum",
-    "audiences.title": "Imejengwa kwa Kila Mtu Shuleni",
-    "audiences.desc": "Akaunti za usajili zinapatikana kama Mwanafunzi au Mwalimu. Wazazi na shule wanafaidika kupitia uzoefu wa mwanafunzi na mwalimu.",
+    "audiences.badge": "Watu halisi, siku halisi",
+    "audiences.title": "Imetengenezwa kwa madarasa kama yako",
+    "audiences.desc": "Mwalimu, wanafunzi na baba — watu wa kawaida ambao Casuya imewajengewa. Kama inafanya kazi kwa simu ya kushirikiwa kijijini, inafanya kazi kwako.",
 
-    // Audience cards
-    "audiences.teachers": "Walimu",
-    "audiences.teachers.f1": "Unda maudhui tajiri ya kidijitali",
-    "audiences.teachers.f2": "Simamia vikundi vya masomo",
-    "audiences.teachers.f3": "Tathmini miongozo ya data",
-    "audiences.students": "Wanafunzi",
-    "audiences.students.f1": "Soma popote pale",
-    "audiences.students.f2": "Fanya mitihani nje ya mtandao",
-    "audiences.students.f3": "Fuatilia rekodi za kujifunza",
-    "audiences.parents": "Wazazi",
-    "audiences.parents.f1": "Angalia viashiria vya maendeleo",
-    "audiences.parents.f2": "Tazama sasisha za eneo",
-    "audiences.schools": "Shule",
-    "audiences.schools.f1": "Boresha ugavi wa kazi kwa wafanyakazi",
-    "audiences.schools.f2": "Hamisha data ngumu za uchambuzi",
+    // People (users of Casuya, not builders)
+    "people.cosmas": "Cosmas Dismas",
+    "people.cosmas_role": "Mwalimu · Geita",
+    "people.cosmas_story": "Cosmas husahihisha karatasi hamsini au sitini za Kidato cha Tatu baada ya shule, mara nyingi kwa taa ya mafuta umeme unapokatika. Kwa Casuya anaanzisha majaribio mara moja na yanajisahihisha yenyewe — ili aokoe muda jioni wa kuwasaidia wanafunzi wanaomhitaji.",
+    "people.bahati": "Bahati Abeld Chusi",
+    "people.bahati_role": "Mwanafunzi · Iringa",
+    "people.bahati_story": "Bahati anashiriki simu. Anapakua maelezo yake ya Civics Kidato cha Pili kwenye mtandao mzuri wa shule, kisha anasoma akirudi nyumbani kwa daladala — bila mtandao, bila shida.",
+    "people.nickson": "Nickson Kasmir Tlanka",
+    "people.nickson_role": "Mwanafunzi · Karatu",
+    "people.nickson_story": "Nickson anaona masomo mengine ni magumu kufuata darasani kukiwa na wanafunzi wengi. Masomo shirikishi ya Casuya yanamruhusu kurudi nyuma na kujifunza kwa kasi yake, mara kwa mara, mpaka aelewe.",
+    "people.shedrack": "Shedrack Peam Laurent",
+    "people.shedrack_role": "Mwanafunzi · Arusha",
+    "people.shedrack_story": "Shedrack anataka kufuatilia maendeleo yake, somo kwa somo, bila kusubiri mwisho wa muhula. Casuya inamuonyesha anapokua kila wiki.",
+    "people.eliya": "Eliya Kikoti",
+    "people.eliya_role": "Baba · Iringa",
+    "people.eliya_story": "Eliya anataka kujua kama mtoto wake anajifunza kweli, si tu 'kupita.' Kwa Casuya anaweza kuona maendeleo halisi — jaribio kwa jaribio, somo kwa somo — hata kwenye simu ya kushirikiwa ya mtoto wake.",
+
+    // Mid-page re-ask
+    "reask.title": "Anza mfuatano wako leo — siku ya kwanza ni bure",
+    "reask.desc": "Somo moja kwa siku linatosha kuanza. Maendeleo yako yanahifadhiwa papo hapo unapojiunga.",
+    "reask.cta": "Anza bure →",
 
     // CTA
-    "cta.title": "Tayari Kubadilisha Elimu?",
-    "cta.desc": "Junge na maelfu ya walimu, wanafunzi, na wasimamizi wa mfumo wanaosanidi mitandao ya shule ya akili leo.",
+    "cta.letterlabel": "Neno kutoka Casuya",
+    "cta.letter": "\"Casuya ilijengwa kwa watu halisi kama <strong>Cosmas</strong>, mwalimu; <strong>Bahati</strong>, <strong>Nickson</strong> na <strong>Shedrack</strong>, wanafunzi; na <strong>Eliya</strong>, baba — watu wanaoshiriki simu, wanaosoma wakati umeme ukipita, na ambao daima waliweza zaidi ya hali zao zilivyoruhusu.<br><br>Shule hii ni yako. Ni nyepesi kwa simu uliyo nayo, na inafanya kazi hata mahali mtandao usipofika — ili kizuizi pekee cha mafanikio yako kiondoke. Karibu — sasa wewe ni sehemu ya Casuya.\"",
+    "cta.how": "Karibu — angalia jinsi inavyofanya kazi",
 
     // Demo modal
     "demo.step1": "Hatua ya 1 — Ingia",
@@ -1256,6 +1332,16 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     "demo.phone": "Simu",
     "demo.confirm_password": "Thibitisha Nenosiri",
     "demo.create_btn": "Fungua Akaunti",
+    "demo.create_account": "Fungua Akaunti",
+    "demo.create_account_desc": "Jiunge na Casuya na uanze kujifunza leo.",
+    "demo.has_account": "Tayari una akaunti? ",
+    "demo.sign_in_desc": "Ingia kuendelea na safari yako ya kujifunza",
+    "demo.progress": "65% Imekamilika",
+    "demo.chem_organic": "Kemia - Misombo ya Kikaboni",
+    "demo.chapter_time": "Sura ya 3 • Dakika 45",
+    "demo.subject_chem": "Kemia",
+    "demo.subject_bio": "Biolojia",
+    "demo.subject_math": "Hisabati",
     "demo.already_account": "Tayari una akaunti?",
     "demo.sign_in_link": "Ingia",
     "demo.welcome": "Karibu tena",
@@ -1278,9 +1364,9 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     "footer.privacy": "Sera ya Faragha",
     "footer.terms": "Masharti ya Huduma",
     "footer.links": "Viungo",
-    "footer.github": "Shirika la GitHub",
+    "footer.github": "Mitandao ya GitHub",
     "footer.copyright": "© 2026 Jukwaa la Casuya. Haki zote zimehifadhiwa.",
-    "footer.built": "Imeundwa kwa utunzaji kwa shule za Tanzania",
+    "footer.built": "Imetengenezwa kwa upendo kwa ajili ya shule za Tanzania",
     "footer.chat": "Ongea nasi kupitia WhatsApp",
 
     // Login
@@ -1466,6 +1552,22 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       }
     }
 
+    // HTML content (data-i18n-html)
+    var htmlEls = document.querySelectorAll("[data-i18n-html]");
+    for (var ih = 0; ih < htmlEls.length; ih++) {
+      var htmlEl = htmlEls[ih];
+      var htmlKey = htmlEl.getAttribute("data-i18n-html");
+      if (!htmlEl.getAttribute("data-i18n-html-en")) {
+        htmlEl.setAttribute("data-i18n-html-en", htmlEl.innerHTML);
+      }
+      if (lang === "sw" && SW[htmlKey]) {
+        htmlEl.innerHTML = SW[htmlKey];
+      } else {
+        var htmlEn = htmlEl.getAttribute("data-i18n-html-en");
+        if (htmlEn) htmlEl.innerHTML = htmlEn;
+      }
+    }
+
     // Placeholders
     var phEls = document.querySelectorAll("[data-i18n-ph]");
     for (var j = 0; j < phEls.length; j++) {
@@ -1528,6 +1630,10 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     getLang: getLang,
     setLang: setLang,
     toggle: toggleLang,
+    apply: function () {
+      applyTranslations(getLang());
+      updateToggleButtons(getLang());
+    },
   };
 
   // ── Init ──────────────────────────────────────────────────────────────
@@ -1566,7 +1672,7 @@ const FEATURES = {
     enabled: true,
     icon: "📚",
     title: "Interactive Lessons",
-    blurb: "Create rich operational HTML lessons bundled with videos, interactive quizzes, and modern rich animations.",
+    blurb: "Lessons that feel more like a game — quizzes and activities that mark themselves as you go. You can re-read a topic until it truly sticks.",
     hero: true,
     trusted: false,
   },
@@ -1574,7 +1680,7 @@ const FEATURES = {
     enabled: true,
     icon: "📶",
     title: "Offline Learning",
-    blurb: "Seamlessly download full structured courses locally and continue learning dynamically even without Internet infrastructure.",
+    blurb: "Power cut? Long daladala ride? Download a topic once when the network is good, then study it anywhere — even where the signal never reaches.",
     hero: true,
     trusted: true,
   },
@@ -1582,15 +1688,15 @@ const FEATURES = {
     enabled: true,
     icon: "🤖",
     title: "AI Teacher Assistant",
-    blurb: "Instantly generate balanced grading frameworks, structural lesson descriptions, and sample interactive workflows.",
+    blurb: "Preparing a quiz late at night? Ask Casuya to draft it in minutes — in English or Kiswahili. A second pair of hands for busy teachers.",
     hero: true,
     trusted: false,
   },
   analytics: {
     enabled: true,
     icon: "📊",
-    title: "Analytics",
-    blurb: "Track comprehensive student performance curves utilizing direct, visual metrics panels.",
+    title: "Progress You Can See",
+    blurb: "At a glance, see which topic the class is struggling with — no digging through stacks of marked papers at the end of term.",
     hero: true,
     trusted: false,
   },
@@ -1598,7 +1704,7 @@ const FEATURES = {
     enabled: true,
     icon: "📝",
     title: "Assessments",
-    blurb: "Design specialized dynamic questionnaires, modular assignments, and enterprise testing criteria on the fly.",
+    blurb: "Set quizzes, questionnaires and modular assignments in a couple of minutes — built to fit how lessons actually run in class.",
     hero: false,
     trusted: false,
   },
@@ -1606,7 +1712,7 @@ const FEATURES = {
     enabled: true,
     icon: "☁️",
     title: "Cloud Sync",
-    blurb: "Securely back up all grades, configurations, and core parameters instantly whenever a connection activates.",
+    blurb: "Your marks and progress are kept safe, and sync the moment a connection appears. Nothing is lost when the phone restarts.",
     hero: false,
     trusted: true,
   },
@@ -1614,7 +1720,7 @@ const FEATURES = {
     enabled: true,
     icon: "🧪",
     title: "Digital Examinations",
-    blurb: "Conduct secure, browser-based examinations with automatic grading, anti-cheat measures, and instant result analytics.",
+    blurb: "Run secure, browser-based exams that grade themselves and keep results safe — with automatic marking and instant, honest results.",
     hero: false,
     trusted: true,
   },
@@ -1622,7 +1728,7 @@ const FEATURES = {
     enabled: true,
     icon: "✨",
     title: "AI Lesson Creation",
-    blurb: "Generate lesson outlines, quizzes, and study materials using AI-powered content creation tools.",
+    blurb: "Generate lesson outlines, quizzes and study materials in minutes — a steady helper when the school day has already been long.",
     hero: false,
     trusted: true,
   },

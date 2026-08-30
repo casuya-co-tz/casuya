@@ -156,8 +156,8 @@
             <div class="card-grid">
               ${distribution.map(d => `
                 <div class="card" style="padding:1rem">
-                  <h4 style="margin:0 0 0.25rem">${escapeHtml(d.subject || d.topic || "Unknown")}</h4>
-                  <p style="color:var(--color-text-muted);font-size:0.85rem">${d.count ?? 0} lessons</p>
+                  <h4 style="margin:0 0 0.25rem">${escapeHtml(d.lesson_title || "Untitled Lesson")}</h4>
+                  <p style="color:var(--color-text-muted);font-size:0.85rem">${d.session_count ?? 0} sessions · ${d.avg_completion_percentage ?? 0}% completion</p>
                 </div>
               `).join("")}
             </div>
