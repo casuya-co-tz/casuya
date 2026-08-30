@@ -3019,23 +3019,25 @@ async function renderTeacherDashboard() {
       const lessonList = Array.isArray(lessons) ? lessons : [];
 
       const studentProgress = [];
-      for (const s of studentList.slice(0, 20)) {
+      const rows = await Promise.all(studentList.slice(0, 20).map(async (s) => {
         try {
           const progress = await request(`/progress/${s.id || s.user_id}`);
           if (Array.isArray(progress)) {
             const completed = progress.filter(p => p.completion_percentage >= 100).length;
             const scores = progress.filter(p => p.score_percentage != null && p.score_percentage > 0);
             const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b.score_percentage, 0) / scores.length) : 0;
-            studentProgress.push({
+            return {
               name: s.full_name || "Unknown",
               id: s.id || s.user_id,
               total: progress.length,
               completed,
               avgScore,
-            });
+            };
           }
         } catch(e) {}
-      }
+        return null;
+      }));
+      for (const r of rows) if (r) studentProgress.push(r);
 
       const topStudents = [...studentProgress].sort((a, b) => b.avgScore - a.avgScore).slice(0, 5);
       const mostActive = [...studentProgress].sort((a, b) => b.completed - a.completed).slice(0, 5);

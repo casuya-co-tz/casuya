@@ -6,9 +6,18 @@ from backend.config.database import get_db
 from backend.models.note import Note
 
 
-def get_note(user_id: str, lesson_id: str) -> dict | None:
-    gen = get_db()
-    db: Session = next(gen)
+def get_note(user_id: str, lesson_id: str, db: Session | None = None) -> dict | None:
+    """Return a user's note for a lesson.
+
+    If a caller already holds an active ``db`` session (e.g. the aggregated
+    ``/lessons/{id}/package`` endpoint), it is passed in and reused so the
+    request only opens one database connection. Otherwise a temporary session
+    is opened and closed as before.
+    """
+    own = db is None
+    if own:
+        gen = get_db()
+        db: Session = next(gen)
     try:
         note = db.query(Note).filter(Note.user_id == user_id, Note.lesson_id == lesson_id).first()
         if not note:
@@ -22,7 +31,8 @@ def get_note(user_id: str, lesson_id: str) -> dict | None:
             "created_at": note.created_at.isoformat() if note.created_at else None,
         }
     finally:
-        gen.close()
+        if own:
+            gen.close()
 
 
 def save_note(user_id: str, lesson_id: str, content: str) -> dict:

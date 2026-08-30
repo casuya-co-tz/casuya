@@ -102,7 +102,7 @@ def get_lesson_package_route(
     return {
         "lesson": lesson,
         "bookmark_status": {"bookmarked": is_bookmarked(db, user_sub, lesson_id)},
-        "note": get_note(user_sub, lesson_id),
+        "note": get_note(user_sub, lesson_id, db),
         "quiz": get_quiz_for_lesson(db, lesson_id),
         "games": get_games_for_lesson(db, lesson_id),
     }
