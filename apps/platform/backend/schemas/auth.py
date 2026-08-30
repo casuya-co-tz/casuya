@@ -20,7 +20,8 @@ class RefreshTokenRequest(BaseModel):
 
 
 class ForgotPasswordRequest(BaseModel):
-    email: str
+    email: str | None = None
+    phone: str | None = None
 
 
 class ResetPasswordRequest(BaseModel):

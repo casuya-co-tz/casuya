@@ -108,10 +108,13 @@ class Settings(BaseSettings):
     smtp_port: int = 587
     smtp_user: str = ""
     smtp_password: str = ""
-    brevo_api_key: str | None = None  # preferred over SMTP when set
+    brevo_api_key: str | None = None  # preferred over SMTP when set; also used for Brevo transactional SMS
     email_from: str = "no-reply@casuya.co.tz"
     email_from_name: str = "Casuya"
     frontend_reset_url: str = "https://casuya.co.tz/reset-password.html"
+    # Brevo transactional SMS (used to deliver password reset codes/links by phone)
+    brevo_sms_sender: str = "CASUYA"  # Brevo sender name, max 11 chars (alphanumeric) or E.164 number
+    frontend_reset_sms_url: str = "https://casuya.co.tz/reset-password.html"
 
 
 @lru_cache

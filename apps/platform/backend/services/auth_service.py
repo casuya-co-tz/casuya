@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import secrets
 
 from sqlalchemy.orm import Session
@@ -18,7 +19,7 @@ from backend.models.password_reset_token import PasswordResetToken
 from backend.models.student import Student
 from backend.models.teacher import Teacher
 from backend.models.user import User
-from backend.services.email_service import send_password_reset_email
+from backend.services.email_service import send_password_reset_email, send_password_reset_sms
 
 settings = get_settings()
 
@@ -170,33 +171,66 @@ def refresh_access_token(refresh_token: str) -> dict:
         _gen.close()
 
 
-def forgot_password(email: str) -> dict:
-    """Generate a password-reset token for the given email.
+def forgot_password(email: str | None = None, phone: str | None = None) -> dict:
+    """Generate a password-reset token for the given email or phone number.
 
-    Always returns a success response to prevent email enumeration.
-    In development the token is also included in the response; in
-    production it is delivered by email.
+    Always returns a success response to prevent account enumeration.
+    In development the token is also included in the response; in production it
+    is delivered by email (Brevo SMTP/API) or SMS (Brevo transactional SMS)
+    depending on which identifier was provided.
     """
     _gen = get_db()
     db: Session = next(_gen)
     try:
-        user = db.query(User).filter(User.email == email).first()
+        user: User | None = None
+        if email:
+            user = db.query(User).filter(User.email == email).first()
+        elif phone:
+            user = _find_user_by_phone(db, phone)
+
         if user and user.is_active:
             reset_token = PasswordResetToken.create_for_user(user.id)
             db.add(reset_token)
             db.commit()
-            result: dict = {"message": "If that email is registered, a reset link has been sent."}
-            send_password_reset_email(email, reset_token.id)
+            result: dict = {"message": "If that account is registered, a reset link has been sent."}
+            if email:
+                send_password_reset_email(email, reset_token.id)
+            elif phone:
+                send_password_reset_sms(user.phone or phone, reset_token.id)
             if settings.environment == "development":
                 result["reset_token"] = reset_token.id
             return result
-        # Always return the same message to avoid leaking which emails exist.
-        return {"message": "If that email is registered, a reset link has been sent."}
+        # Always return the same message to avoid leaking which accounts exist.
+        return {"message": "If that account is registered, a reset link has been sent."}
     except Exception:
-        # Fail open — never reveal whether the email exists.
-        return {"message": "If that email is registered, a reset link has been sent."}
+        # Fail open — never reveal whether the account exists.
+        return {"message": "If that account is registered, a reset link has been sent."}
     finally:
         _gen.close()
+
+
+def _find_user_by_phone(db: Session, phone: str) -> User | None:
+    """Find a user by phone, tolerant of common formatting differences.
+
+    Phones stored as '+2557...'/'2557...'/'07...' all resolve to the same account.
+    """
+    clean = re.sub(r"\D", "", phone or "")
+    if not clean:
+        return None
+    # Canonical E.164 national form (2557..., no leading sign)
+    e164 = clean
+    if e164.startswith("0"):
+        e164 = "255" + e164[1:]
+    elif len(e164) == 9:
+        e164 = "255" + e164
+    elif not e164.startswith("255"):
+        e164 = "255" + e164
+    candidates = [clean, e164, "+" + e164, "+" + clean]
+    for cand in dict.fromkeys(candidates):
+        user = db.query(User).filter(User.phone == cand).first()
+        if user:
+            return user
+    return None
 
 
 def reset_password(token: str, new_password: str) -> dict:

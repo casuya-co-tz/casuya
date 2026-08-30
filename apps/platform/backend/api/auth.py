@@ -63,7 +63,7 @@ def refresh(body: RefreshTokenRequest):
 @router.post("/forgot-password/")
 def forgot_password_endpoint(body: ForgotPasswordRequest):
     try:
-        return forgot_password(email=body.email)
+        return forgot_password(email=body.email, phone=body.phone)
     except Exception as e:
         raise HTTPException(status_code=503, detail=f"Service unavailable: {e}")
 

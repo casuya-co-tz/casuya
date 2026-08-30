@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import re
 import smtplib
 import time
 from email.message import EmailMessage
@@ -134,3 +135,71 @@ def send_password_reset_email(to: str, reset_token: str) -> bool:
         "If you did not request this, you can ignore this email."
     )
     return send_email(to, subject, body_html, body_text)
+
+
+# ---------- Brevo Transactional SMS ----------
+
+
+def _normalize_sms_phone(phone: str) -> str:
+    """Normalize a phone number to E.164 for Brevo SMS (Tanzanian default +255).
+
+    Accepts '+2557XXXXXXXX', '2557XXXXXXXX', '07XXXXXXXX' and bare '7XXXXXXXX',
+    and returns the canonical E.164 form with a leading '+'.
+    """
+    digits = re.sub(r"\D", "", phone or "")
+    if digits.startswith("0"):
+        digits = "255" + digits[1:]
+    elif len(digits) == 9:
+        digits = "255" + digits
+    if not digits.startswith("255"):
+        digits = "255" + digits
+    return "+" + digits
+
+
+def _sms_configured() -> bool:
+    return bool(get_settings().brevo_api_key)
+
+
+def _send_sms_via_brevo(phone: str, content: str) -> bool:
+    """Send a transactional SMS through the Brevo API using the shared API key."""
+    settings = get_settings()
+    if not settings.brevo_api_key:
+        logger.warning("Brevo SMS not configured (no brevo_api_key); skipping SMS to %s", phone)
+        return False
+    payload = {
+        "type": "transactional",
+        "sender": settings.brevo_sms_sender or "CASUYA",
+        "recipient": _normalize_sms_phone(phone),
+        "content": content,
+        "unicodeEnabled": True,
+    }
+    try:
+        resp = httpx.post(
+            "https://api.brevo.com/v3/transactionalSMS/sms",
+            headers={
+                "api-key": settings.brevo_api_key,
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            json=payload,
+            timeout=_API_TIMEOUT,
+        )
+        if resp.status_code in (200, 201):
+            return True
+        logger.error("Brevo SMS send failed (HTTP %s): %s", resp.status_code, resp.text[:300])
+        return False
+    except Exception as e:  # noqa: BLE001 — SMS must never break auth
+        logger.error("Brevo SMS send error to %s: %s", phone, e)
+        return False
+
+
+def send_password_reset_sms(phone: str, reset_token: str) -> bool:
+    """Deliver a password reset link/code to the user's phone via Brevo SMS."""
+    settings = get_settings()
+    reset_url = f"{settings.frontend_reset_sms_url.rstrip('/')}?token={reset_token}"
+    content = (
+        "Casuya: To reset your password, open this link:\n"
+        f"{reset_url}\n\n"
+        "If you did not request this, ignore this message."
+    )
+    return _send_sms_via_brevo(phone, content)
