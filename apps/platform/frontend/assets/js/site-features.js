@@ -18,7 +18,7 @@ export const FEATURES = {
     enabled: true,
     icon: "📶",
     title: "Offline Learning",
-    blurb: "Power cut? Long matatu ride? Download a topic once when the network is good, then study it anywhere — even where the signal never reaches.",
+    blurb: "Power cut? Long daladala ride? Download a topic once when the network is good, then study it anywhere — even where the signal never reaches.",
     hero: true,
     trusted: true,
   },

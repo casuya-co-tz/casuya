@@ -19,6 +19,30 @@
     "nav.create_account": "Fungua Akaunti",
     "nav.users": "Watumiaji",
 
+    // Accessibility toolbar
+    "a11y.skip": "Ruka hadi kwenye maudhui makuu",
+    "a11y.region": "Chaguzi za ufikiaji",
+    "a11y.open": "Fungua mipangilio ya ufikiaji",
+    "a11y.panel": "Jopo la mipangilio ya ufikiaji",
+    "a11y.settings": "Mipangilio ya Ufikiaji",
+    "a11y.dyslexia": "Maandishi ya Wenye Changamoto ya Kusoma (Dyslexia)",
+    "a11y.toggle_dyslexia": "Washa/zima font ya wenye changamoto ya kusoma",
+    "a11y.high_contrast": "Ung'avu wa Juu",
+    "a11y.toggle_contrast": "Washa/zima hali ya ung'avu wa juu",
+    "a11y.large_text": "Maandishi Makubwa",
+    "a11y.toggle_large_text": "Washa/zima hali ya maandishi makubwa",
+    "a11y.wide_spacing": "Nafasi Kubwa Kati ya Maandishi",
+    "a11y.toggle_wide_spacing": "Washa/zima nafasi kubwa kati ya mistari na maandishi",
+    "a11y.size": "Ukubwa",
+    "a11y.fontsize_pct": "Asilimia ya ukubwa wa fonti",
+    "a11y.tts": "Kusoma kwa Sauti",
+    "a11y.toggle_tts": "Washa/zima usomaji kwa sauti",
+    "a11y.speech_rate": "Kasi ya usomaji",
+    "a11y.play": "Cheza usomaji",
+    "a11y.pause": "Simamisha usomaji",
+    "a11y.stop": "Acha usomaji",
+    "a11y.ready": "Tayari",
+
     // Hero
     "hero.badge": "Kwa wanafunzi na walimu wa Tanzania",
     "hero.title1": "Shule unayotamani kuwa nayo —<br>kwenye simu inayoshirikiwa.",
@@ -64,6 +88,22 @@
     "features.badge": "Casuya hufanya nini siku ya kawaida",
     "features.title": "Zana ndogo, siku za kweli",
     "features.desc": "Hakuna mambo ya sifa tu — ni vitu vinavyorahisisha maisha ya shule, hata kama simu ni ya zamani na mtandao ni dhaifu.",
+    "feature.interactiveLessons.title": "Masomo Shirikishi",
+    "feature.interactiveLessons.blurb": "Masomo yenye mvuto kama mchezo — chemsha bongo na mazoezi yanayojisahihisha yenyewe unapofanya. Unaweza kurudia mada mpaka uelewe vizuri.",
+    "feature.offlineLearning.title": "Kujifunza Nje ya Mtandao",
+    "feature.offlineLearning.blurb": "Umeme umekatika? Safari ndefu ya daladala? Pakua mada mara moja kukiwa na mtandao mzuri, kisha soma popote — hata mahali ambapo hakuna mawimbi kabisa.",
+    "feature.aiAssistant.title": "Msaidizi wa Walimu wa AI",
+    "feature.aiAssistant.blurb": "Unaandaa chemsha bongo usiku wa manane? Mwombe Casuya aiandae kwa dakika chache — kwa Kiingereza au Kiswahili. Msaidizi wa ziada kwa walimu wenye majukumu mengi.",
+    "feature.analytics.title": "Maendeleo Yanayoonekana",
+    "feature.analytics.blurb": "Kwa mtazamo mmoja tu, ona mada inayowatatiza wanafunzi darasani — hakuna haja ya kupekua rundo la karatasi zilizosahihishwa mwisho wa muhula.",
+    "feature.assessments.title": "Tathmini na Mitihani",
+    "feature.assessments.blurb": "Andaa chemsha bongo, hojaji na kazi za masomo kwa dakika chache — zilizoundwa kuendana na jinsi masomo yanavyofundishwa darasani.",
+    "feature.cloudSync.title": "Uhifadhi wa Kidijitali (Cloud)",
+    "feature.cloudSync.blurb": "Alama na maendeleo yako yanahifadhiwa salama, na yanasawazishwa mara tu mtandao unapopatikana. Hakuna kinachopotea simu ikizima.",
+    "feature.digitalExaminations.title": "Mitihani ya Kidijitali",
+    "feature.digitalExaminations.blurb": "Endesha mitihani salama kwenye kivinjari inayojisahihisha na kutunza matokeo salama — kukiwa na usahihishaji wa papo hapo na matokeo ya uaminifu.",
+    "feature.aiLessonCreation.title": "Maandalizi ya Masomo kwa AI",
+    "feature.aiLessonCreation.blurb": "Tengeneza muhtasari wa masomo, chemsha bongo na vifaa vya kujifunzia kwa dakika chache — msaidizi imara pale siku ya shule inapokuwa ndefu.",
 
     // Subjects
     "subjects.badge": "Kidato cha 1–6 · Mtalaa wa Tanzania",
@@ -147,6 +187,10 @@
     "demo.sign_in_desc": "Ingia kuendelea na safari yako ya kujifunza",
     "demo.progress": "65% Imekamilika",
     "demo.chem_organic": "Kemia - Misombo ya Kikaboni",
+    "demo.chapter_time": "Sura ya 3 • Dakika 45",
+    "demo.subject_chem": "Kemia",
+    "demo.subject_bio": "Biolojia",
+    "demo.subject_math": "Hisabati",
     "demo.already_account": "Tayari una akaunti?",
     "demo.sign_in_link": "Ingia",
     "demo.welcome": "Karibu tena",
@@ -169,9 +213,9 @@
     "footer.privacy": "Sera ya Faragha",
     "footer.terms": "Masharti ya Huduma",
     "footer.links": "Viungo",
-    "footer.github": "Shirika la GitHub",
+    "footer.github": "Mitandao ya GitHub",
     "footer.copyright": "© 2026 Jukwaa la Casuya. Haki zote zimehifadhiwa.",
-    "footer.built": "Imeundwa kwa utunzaji kwa shule za Tanzania",
+    "footer.built": "Imetengenezwa kwa upendo kwa ajili ya shule za Tanzania",
     "footer.chat": "Ongea nasi kupitia WhatsApp",
 
     // Login
@@ -435,6 +479,10 @@
     getLang: getLang,
     setLang: setLang,
     toggle: toggleLang,
+    apply: function () {
+      applyTranslations(getLang());
+      updateToggleButtons(getLang());
+    },
   };
 
   // ── Init ──────────────────────────────────────────────────────────────

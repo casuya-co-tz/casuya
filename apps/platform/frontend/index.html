@@ -334,57 +334,57 @@
 <body class="bg-[#faf7f2] text-slate-800 antialiased overflow-x-hidden" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
 
   <!-- Skip Link for keyboard / screen-reader users -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="a11y.skip">Skip to main content</a>
 
   <!-- GLOBAL ACCESSIBILITY TOOLBAR -->
-  <div class="a11y-toolbar" role="region" aria-label="Accessibility options">
-    <button class="a11y-toggle" id="a11y-toggle-btn" aria-label="Open accessibility settings" aria-expanded="false" aria-controls="a11y-panel">
+  <div class="a11y-toolbar" role="region" aria-label="Accessibility options" data-i18n-aria="a11y.region">
+    <button class="a11y-toggle" id="a11y-toggle-btn" aria-label="Open accessibility settings" data-i18n-aria="a11y.open" aria-expanded="false" aria-controls="a11y-panel">
       <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <circle cx="12" cy="4" r="2"/><path d="M12 8v8m-4-6l4 6 4-6M4 20h16"/>
       </svg>
     </button>
-    <div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Accessibility settings panel">
-      <h3>Accessibility Settings</h3>
+    <div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="Accessibility settings panel" data-i18n-aria="a11y.panel">
+      <h3 data-i18n="a11y.settings">Accessibility Settings</h3>
       <div class="a11y-option" role="button" tabindex="0" id="a11y-dyslexia" aria-pressed="false">
-        <span><span class="a11y-icon" aria-hidden="true">📖</span> Dyslexia Font</span>
-        <button class="a11y-toggle-btn" aria-label="Toggle dyslexia-friendly font"></button>
+        <span><span class="a11y-icon" aria-hidden="true">📖</span> <span data-i18n="a11y.dyslexia">Dyslexia Font</span></span>
+        <button class="a11y-toggle-btn" aria-label="Toggle dyslexia-friendly font" data-i18n-aria="a11y.toggle_dyslexia"></button>
       </div>
       <div class="a11y-option" role="button" tabindex="0" id="a11y-contrast" aria-pressed="false">
-        <span><span class="a11y-icon" aria-hidden="true">🌗</span> High Contrast</span>
-        <button class="a11y-toggle-btn" aria-label="Toggle high contrast mode"></button>
+        <span><span class="a11y-icon" aria-hidden="true">🌗</span> <span data-i18n="a11y.high_contrast">High Contrast</span></span>
+        <button class="a11y-toggle-btn" aria-label="Toggle high contrast mode" data-i18n-aria="a11y.toggle_contrast"></button>
       </div>
       <div class="a11y-option" role="button" tabindex="0" id="a11y-large-text" aria-pressed="false">
-        <span><span class="a11y-icon" aria-hidden="true">🔤</span> Large Text</span>
-        <button class="a11y-toggle-btn" aria-label="Toggle large text mode"></button>
+        <span><span class="a11y-icon" aria-hidden="true">🔤</span> <span data-i18n="a11y.large_text">Large Text</span></span>
+        <button class="a11y-toggle-btn" aria-label="Toggle large text mode" data-i18n-aria="a11y.toggle_large_text"></button>
       </div>
       <div class="a11y-option" role="button" tabindex="0" id="a11y-wide-spacing" aria-pressed="false">
-        <span><span class="a11y-icon" aria-hidden="true">↔️</span> Wide Spacing</span>
-        <button class="a11y-toggle-btn" aria-label="Toggle wide line and letter spacing"></button>
+        <span><span class="a11y-icon" aria-hidden="true">↔️</span> <span data-i18n="a11y.wide_spacing">Wide Spacing</span></span>
+        <button class="a11y-toggle-btn" aria-label="Toggle wide line and letter spacing" data-i18n-aria="a11y.toggle_wide_spacing"></button>
       </div>
       <div class="a11y-slider-row" id="a11y-fontsize-row">
-        <span style="font-size:11px;color:#64748b;white-space:nowrap">Size</span>
-        <input type="range" class="a11y-slider" id="a11y-fontsize" min="100" max="200" step="10" value="100" aria-label="Font size percentage">
+        <span style="font-size:11px;color:#64748b;white-space:nowrap" data-i18n="a11y.size">Size</span>
+        <input type="range" class="a11y-slider" id="a11y-fontsize" min="100" max="200" step="10" value="100" aria-label="Font size percentage" data-i18n-aria="a11y.fontsize_pct">
         <span id="a11y-fontsize-label" style="font-size:11px;color:#64748b;min-width:32px;text-align:right">100%</span>
       </div>
       <div class="a11y-option" role="button" tabindex="0" id="a11y-tts" aria-pressed="false">
-        <span><span class="a11y-icon" aria-hidden="true">🔊</span> Text-to-Speech</span>
-        <button class="a11y-toggle-btn" aria-label="Toggle text-to-speech"></button>
+        <span><span class="a11y-icon" aria-hidden="true">🔊</span> <span data-i18n="a11y.tts">Text-to-Speech</span></span>
+        <button class="a11y-toggle-btn" aria-label="Toggle text-to-speech" data-i18n-aria="a11y.toggle_tts"></button>
       </div>
       <div class="a11y-slider-row" id="a11y-speed-row" style="display:none">
         <span id="a11y-speed-label">1x</span>
-        <input type="range" class="a11y-slider" id="a11y-speed" min="0.5" max="2" step="0.1" value="1" aria-label="Speech rate">
+        <input type="range" class="a11y-slider" id="a11y-speed" min="0.5" max="2" step="0.1" value="1" aria-label="Speech rate" data-i18n-aria="a11y.speech_rate">
       </div>
       <div class="speech-controls" id="speech-controls" style="display:none">
-        <button class="speech-btn" id="speech-play" aria-label="Play speech">
+        <button class="speech-btn" id="speech-play" aria-label="Play speech" data-i18n-aria="a11y.play">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
         </button>
-        <button class="speech-btn" id="speech-pause" aria-label="Pause speech">
+        <button class="speech-btn" id="speech-pause" aria-label="Pause speech" data-i18n-aria="a11y.pause">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
         </button>
-        <button class="speech-btn" id="speech-stop" aria-label="Stop speech">
+        <button class="speech-btn" id="speech-stop" aria-label="Stop speech" data-i18n-aria="a11y.stop">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
         </button>
-        <span style="font-size:11px;color:#64748b;margin-left:auto" id="speech-status">Ready</span>
+        <span style="font-size:11px;color:#64748b;margin-left:auto" id="speech-status" data-i18n="a11y.ready">Ready</span>
       </div>
     </div>
   </div>
@@ -894,7 +894,7 @@
             <div class="demo-card-up" style="background:linear-gradient(135deg,#2563eb,#7c3aed);border-radius:14px;padding:16px;color:#fff;margin-bottom:14px">
               <div style="font-size:10px;font-weight:600;opacity:0.7;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px" data-i18n="demo.welcome_back">Welcome back</div>
               <div style="font-size:16px;font-weight:800;margin-bottom:2px">Amina Husen</div>
-              <div style="font-size:11px;opacity:0.85">Ready to continue your learning journey?</div>
+              <div style="font-size:11px;opacity:0.85" data-i18n="demo.ready_continue">Ready to continue your learning journey?</div>
             </div>
             <!-- Stats row -->
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px">
@@ -919,7 +919,7 @@
                 </div>
                 <div>
                   <div style="font-size:12px;font-weight:700;color:#0f172a" data-i18n="demo.chem_organic">Chemistry - Organic Compounds</div>
-                  <div style="font-size:10px;color:#94a3b8">Chapter 3 • 45 min</div>
+                  <div style="font-size:10px;color:#94a3b8" data-i18n="demo.chapter_time">Chapter 3 • 45 min</div>
                 </div>
               </div>
               <div style="height:4px;background:#e0d8cc;border-radius:4px;overflow:hidden">
@@ -933,15 +933,15 @@
               <div style="display:flex;gap:8px;flex-wrap:wrap">
                 <div style="flex:1;min-width:80px;background:#eff6ff;border-radius:10px;padding:10px;text-align:center">
                   <div style="font-size:16px">🧪</div>
-                  <div style="font-size:10px;font-weight:600;color:#2563eb;margin-top:4px">Chemistry</div>
+                  <div style="font-size:10px;font-weight:600;color:#2563eb;margin-top:4px" data-i18n="demo.subject_chem">Chemistry</div>
                 </div>
                 <div style="flex:1;min-width:80px;background:#f0fdf4;border-radius:10px;padding:10px;text-align:center">
                   <div style="font-size:16px">🧬</div>
-                  <div style="font-size:10px;font-weight:600;color:#16a34a;margin-top:4px">Biology</div>
+                  <div style="font-size:10px;font-weight:600;color:#16a34a;margin-top:4px" data-i18n="demo.subject_bio">Biology</div>
                 </div>
                 <div style="flex:1;min-width:80px;background:#fef3c7;border-radius:10px;padding:10px;text-align:center">
                   <div style="font-size:16px">📐</div>
-                  <div style="font-size:10px;font-weight:600;color:#d97706;margin-top:4px">Math</div>
+                  <div style="font-size:10px;font-weight:600;color:#d97706;margin-top:4px" data-i18n="demo.subject_math">Math</div>
                 </div>
               </div>
             </div>
@@ -1027,11 +1027,11 @@
     // ── Hero value checkmarks ──────────────────────────────────────────
     const heroEl = document.getElementById("hero-features");
     if (heroEl) {
-      const heroItems = Object.values(FEATURES).filter((f) => f.enabled && f.hero);
+      const heroItems = Object.entries(FEATURES).filter(([, f]) => f.enabled && f.hero);
       heroEl.innerHTML = heroItems
         .map(
-          (f) =>
-            `<div class="flex items-center gap-2 text-xs sm:text-sm"><span class="w-4 h-4 shrink-0 text-blue-600" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>${f.title}</div>`
+          ([k, f]) =>
+            `<div class="flex items-center gap-2 text-xs sm:text-sm"><span class="w-4 h-4 shrink-0 text-blue-600" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span data-i18n="feature.${k}.title">${f.title}</span></div>`
         )
         .join("");
       if (!heroItems.length) heroEl.remove();
@@ -1040,11 +1040,11 @@
     // ── Trusted-by strip ───────────────────────────────────────────────
     const trustedEl = document.getElementById("trusted-features");
     if (trustedEl) {
-      const trusted = Object.values(FEATURES).filter((f) => f.enabled && f.trusted);
+      const trusted = Object.entries(FEATURES).filter(([, f]) => f.enabled && f.trusted);
       trustedEl.innerHTML = trusted
         .map(
-          (f, i) =>
-            `<span class="cursor-default text-xs sm:text-sm lg:text-lg" style="color:#334155;">${f.title}</span>${
+          ([k, f], i) =>
+            `<span class="cursor-default text-xs sm:text-sm lg:text-lg" style="color:#334155;" data-i18n="feature.${k}.title">${f.title}</span>${
               i < trusted.length - 1
                 ? '<span style="color:#2563eb;">•</span>'
                 : ""
@@ -1057,17 +1057,22 @@
     // ── Features grid ──────────────────────────────────────────────────
     const gridEl = document.getElementById("features-grid");
     if (gridEl) {
-      const cards = Object.values(FEATURES).filter((f) => f.enabled);
+      const cards = Object.entries(FEATURES).filter(([, f]) => f.enabled);
       gridEl.innerHTML = cards
         .map(
-          (f) =>
+          ([k, f]) =>
             `<div class="premium-card p-5 sm:p-6 lg:p-8 group glow-hover">
               <div class="feature-icon-premium mb-4 sm:mb-5 lg:mb-6">${f.icon}</div>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1.5 sm:mb-2">${f.title}</h3>
-              <p class="text-xs sm:text-sm leading-relaxed" style="color:#64748b;">${f.blurb}</p>
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1.5 sm:mb-2" data-i18n="feature.${k}.title">${f.title}</h3>
+              <p class="text-xs sm:text-sm leading-relaxed" style="color:#64748b;" data-i18n="feature.${k}.blurb">${f.blurb}</p>
             </div>`
         )
         .join("");
+    }
+
+    // Re-apply language after rendering dynamic content
+    if (window.CasuyaI18n && window.CasuyaI18n.apply) {
+      window.CasuyaI18n.apply();
     }
   </script>
 
