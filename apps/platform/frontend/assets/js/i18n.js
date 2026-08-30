@@ -21,13 +21,13 @@
 
     // Hero
     "hero.badge": "Kwa wanafunzi na walimu wa Tanzania",
-    "hero.title1": "Shule unayotamani kuwa nayo —<br>ukiwa kwenye simu ambayo tayari wanashiriki.",
+    "hero.title1": "Shule unayotamani kuwa nayo —<br>kwenye simu inayoshirikiwa.",
     "hero.title2": "Fundisha Bora.",
     "hero.title3": "Jenga Mustakabali.",
     "hero.clarity": "Masomo, majaribio na matokeo — yaliyojengwa kwa mtaala wa kidato cha kwanza hadi cha sita.",
     "hero.desc": "Casuya hukuletea kujifunza nyumbani: nje ya mtandao, kwa Kiswahili na Kiingereza, kwenye simu ambazo Watanzania wanatumia.",
     "hero.off_excuse": "Jifunze ulipo — hata mtandao usipokuwapo.",
-    "hero.start": "Karibu — ingia kufulia wiki yako",
+    "hero.start": "Karibu — ingia kufungulia wiki yako",
     "hero.demo": "Twende — angalia jinsi inavyofanya kazi",
 
     // Hero "your week" card
@@ -35,13 +35,13 @@
     "hero_week_greet": "Habari za asubuhi 👋",
     "hero_week_streak": "Mfuatano wa kujifunza",
     "hero_week_day0": "Siku 0",
-    "hero_week_streakline": "Anza mfuatano wako — somo moja kwa siku, hata mtandao usipokuwapo.",
+    "hero_week_streakline": "Anza mfuatano wako — somo moja kwa siku, hata mtandao usipokuwepo.",
     "hero_week_lesson": "Somo la leo",
     "hero_week_continue": "Endelea →",
-    "hero_week_offline": "Imehifadhiwa kwa njia ya nje ya mtandao",
-    "hero_week_offlineline": "Jiunge kupakua masomo na kujifunza mahali mtandao usipofika.",
-    "hero_week_unlock": "Ingia kufulia wiki yako",
-    "hero_week_honest": "Bure kuanza · Inafanya kazi kwenye simu ya 2GB · Inahifadhi kazi yako hata mtandao usipokuwa.",
+    "hero_week_offline": "Imehifadhiwa nje ya mtandao",
+    "hero_week_offlineline": "Jiunge kupakua masomo na kujifunza mahali ambapo mtandao haufiki.",
+    "hero_week_unlock": "Ingia kufungulia wiki yako",
+    "hero_week_honest": "Bure kuanza · Inafanya kazi kwenye simu ya RAM ya GB 2 · Inahifadhi kazi yako hata mtandao usipokuwepo.",
 
     // Hero mock UI
     "hero.today_lesson": "Masomo ya Leo",
@@ -53,17 +53,17 @@
 
     // Trusted
     "trusted.title": "Imejengwa hapa, kwa hapa",
-    "trust.t2gb": "Inafanya kazi kwenye simu ya 2GB",
+    "trust.t2gb": "Inafanya kazi kwenye simu ya RAM ya GB 2",
     "trust.offline": "Inafanya kazi nje ya mtandao",
     "trust.curriculum": "Imetengenezwa kwa mtaala wa Tanzania · Kidato cha 1 hadi 6",
-    "trust.free": "Bure kuanza — hakuna kadi",
+    "trust.free": "Bure kuanza — hakuna kadi inayohitajika",
     "trust.lang": "Jifunze kwa Kiingereza na Kiswahili",
-    "trust.data": "Alama na data zako zinabaki zako",
+    "trust.data": "Alama na data zako zinabaki kuwa zako salama",
 
     // Features
     "features.badge": "Casuya hufanya nini siku ya kawaida",
     "features.title": "Zana ndogo, siku za kweli",
-    "features.desc": "Hakuna jambo la kujivunia tu — vitu vinavyorahisisha maisha ya shule kidogo, hata kama simu ni ya zamani na mtandao ni dhaifu.",
+    "features.desc": "Hakuna mambo ya sifa tu — ni vitu vinavyorahisisha maisha ya shule, hata kama simu ni ya zamani na mtandao ni dhaifu.",
 
     // Subjects
     "subjects.badge": "Kidato cha 1–6 · Mtalaa wa Tanzania",
@@ -72,7 +72,7 @@
     "subjects.kiswahili": "Kiswahili",
     "subjects.english": "English / Kiingereza",
     "subjects.maths": "Hisabati",
-    "subjects.civics": "Civics / Maadili",
+    "subjects.civics": "Uraia na Maadili",
     "subjects.history": "Historia",
     "subjects.geography": "Jiografia",
     "subjects.physics": "Fizikia",
@@ -89,13 +89,13 @@
     // People (users of Casuya, not builders)
     "people.cosmas": "Cosmas Dismas",
     "people.cosmas_role": "Mwalimu · Geita",
-    "people.cosmas_story": "Cosmas husahihisha karatasi hamsini au sitini za Kidato cha Tatu baada ya shule, mara nyingi kwa taa ya mafuta umeme unapokatika. Kwa Casuya anaanzisha majaribio mara moja na yanajisahihisha yenyewe — ili ajisaiwe na jioni kuwasaidia wanafunzi wanaomhitaji.",
+    "people.cosmas_story": "Cosmas husahihisha karatasi hamsini au sitini za Kidato cha Tatu baada ya shule, mara nyingi kwa taa ya mafuta umeme unapokatika. Kwa Casuya anaanzisha majaribio mara moja na yanajisahihisha yenyewe — ili aokoe muda jioni wa kuwasaidia wanafunzi wanaomhitaji.",
     "people.bahati": "Bahati Abeld Chusi",
     "people.bahati_role": "Mwanafunzi · Iringa",
     "people.bahati_story": "Bahati anashiriki simu. Anapakua maelezo yake ya Civics Kidato cha Pili kwenye mtandao mzuri wa shule, kisha anasoma akirudi nyumbani kwa daladala — bila mtandao, bila shida.",
     "people.nickson": "Nickson Kasmir Tlanka",
     "people.nickson_role": "Mwanafunzi · Karatu",
-    "people.nickson_story": "Nickson anaona masomo mengine ni magumu kufuata darasani ambapo kuna watu wengi. Masomo ya Casuya yanayohusisha yanamruhusu kurudi na kujifunza kwa kasi yake, mara kwa mara, mpaka aelewe.",
+    "people.nickson_story": "Nickson anaona masomo mengine ni magumu kufuata darasani kukiwa na wanafunzi wengi. Masomo shirikishi ya Casuya yanamruhusu kurudi nyuma na kujifunza kwa kasi yake, mara kwa mara, mpaka aelewe.",
     "people.shedrack": "Shedrack Peam Laurent",
     "people.shedrack_role": "Mwanafunzi · Arusha",
     "people.shedrack_story": "Shedrack anataka kufuatilia maendeleo yake, somo kwa somo, bila kusubiri mwisho wa muhula. Casuya inamuonyesha anapokua kila wiki.",
@@ -105,12 +105,12 @@
 
     // Mid-page re-ask
     "reask.title": "Anza mfuatano wako leo — siku ya kwanza ni bure",
-    "reask.desc": "Somo moja kwa siku linatosha kuanza. Maendeleo yako yanahifadhiwa papo hapo unapojunga.",
+    "reask.desc": "Somo moja kwa siku linatosha kuanza. Maendeleo yako yanahifadhiwa papo hapo unapojiunga.",
     "reask.cta": "Anza bure →",
 
     // CTA
     "cta.letterlabel": "Neno kutoka Casuya",
-    "cta.letter": "\"Casuya ilijengwa kwa watu halisi kama <strong>Cosmas</strong>, mwalimu; <strong>Bahati</strong>, <strong>Nickson</strong> na <strong>Shedrack</strong>, wanafunzi; na <strong>Eliya</strong>, baba — watu wanaoshiriki simu, wanaosoma wakati umeme ukipita, na ambao daima waliweza zaidi ya hali zao zilivyoruhusu.<br><br>Shule hii ni yako. Ni nyepesi kwa simu uliyo nayo, na inafanya kazi hata mahali mtandao usipofika — ili kitu pekee kinachokusimamia kupita kiishe. Karibu — sasa wewe ni sehemu ya Casuya.\"",
+    "cta.letter": "\"Casuya ilijengwa kwa watu halisi kama <strong>Cosmas</strong>, mwalimu; <strong>Bahati</strong>, <strong>Nickson</strong> na <strong>Shedrack</strong>, wanafunzi; na <strong>Eliya</strong>, baba — watu wanaoshiriki simu, wanaosoma wakati umeme ukipita, na ambao daima waliweza zaidi ya hali zao zilivyoruhusu.<br><br>Shule hii ni yako. Ni nyepesi kwa simu uliyo nayo, na inafanya kazi hata mahali mtandao usipofika — ili kizuizi pekee cha mafanikio yako kiondoke. Karibu — sasa wewe ni sehemu ya Casuya.\"",
     "cta.how": "Karibu — angalia jinsi inavyofanya kazi",
 
     // Demo modal
