@@ -45,8 +45,28 @@ def list_assignments() -> list[dict]:
     _gen = get_db()
     db: Session = next(_gen)
     try:
-        rows = db.query(Assignment).order_by(Assignment.created_at.desc()).all()
-        return [_to_dict(a, db) for a in rows]
+        # Single join to Lesson so the per-row title lookup never becomes an
+        # N+1 (one extra query per assignment). Bounded to the reportable list.
+        rows = (
+            db.query(Assignment, Lesson.title)
+            .outerjoin(Lesson, Assignment.lesson_id == Lesson.id)
+            .order_by(Assignment.created_at.desc())
+            .limit(200)
+            .all()
+        )
+        return [
+            {
+                "id": a.id,
+                "lesson_id": a.lesson_id,
+                "lesson_title": title,
+                "title": a.title,
+                "notes": a.notes,
+                "due_date": a.due_date,
+                "status": a.status,
+                "created_at": a.created_at.isoformat() if a.created_at else None,
+            }
+            for a, title in rows
+        ]
     finally:
         _gen.close()
 

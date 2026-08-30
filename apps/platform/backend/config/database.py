@@ -13,6 +13,19 @@ settings = get_settings()
 
 connect_args = {"check_same_thread": False, "timeout": 30} if settings.database_url.startswith("sqlite") else {}
 
+# Neon/Postgres connection budget. Neon enforces a hard per-instance
+# connection allowance (often ~10-30) and aggressively recycles idle
+# backends. A large fixed pool (e.g. 10+20 per process) can exceed that
+# budget when several workers run, so we keep the pool small. When using
+# Neon's *pooled* (PgBouncer-multiplexed) connection string this simply
+# marks how many simultaneous DB calls each process may make and stays well
+# inside Neon's allowance. pool_pre_ping validates stale pooled connections
+# and a short pool_recycle matches Neon's idle-recycling of backends.
+POOL_SIZE = 3
+POOL_MAX_OVERFLOW = 5
+POOL_RECYCLE = 300  # seconds (Neon recycles idle connections ~5 min)
+POOL_TIMEOUT = 5  # seconds; fail fast rather than stacking stalled requests
+
 # The engine is created lazily on first use so importing this module never
 # fails when the database is unreachable. This lets the API start and serve
 # health/static routes even with no database available.
@@ -27,11 +40,11 @@ def get_engine():
         _engine = create_engine(
             settings.database_url,
             connect_args=connect_args,
-            pool_size=10,
-            max_overflow=20,
+            pool_size=POOL_SIZE,
+            max_overflow=POOL_MAX_OVERFLOW,
             pool_pre_ping=True,
-            pool_recycle=3600,
-            pool_timeout=30,
+            pool_recycle=POOL_RECYCLE,
+            pool_timeout=POOL_TIMEOUT,
         )
         SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=_engine)
     return _engine
@@ -75,11 +88,11 @@ def get_replica_engine():
         _replica_engine = create_engine(
             settings.database_replica_url,
             connect_args=_connect_args_for(settings.database_replica_url),
-            pool_size=10,
-            max_overflow=20,
+            pool_size=POOL_SIZE,
+            max_overflow=POOL_MAX_OVERFLOW,
             pool_pre_ping=True,
-            pool_recycle=3600,
-            pool_timeout=30,
+            pool_recycle=POOL_RECYCLE,
+            pool_timeout=POOL_TIMEOUT,
         )
         ReplicaSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=_replica_engine)
     return _replica_engine
@@ -181,6 +194,14 @@ def init_db() -> None:
             "CREATE INDEX IF NOT EXISTS ix_progress_lesson_id ON progress_records(lesson_id)",
             "CREATE INDEX IF NOT EXISTS ix_progress_synced_at ON progress_records(synced_at)",
             "CREATE UNIQUE INDEX IF NOT EXISTS uq_progress_student_lesson ON progress_records(student_id, lesson_id)",
+            "CREATE INDEX IF NOT EXISTS ix_progress_student_completion ON progress_records(student_id, completion_percentage)",
+            "CREATE INDEX IF NOT EXISTS ix_progress_student_score ON progress_records(student_id, score_percentage)",
+            "CREATE INDEX IF NOT EXISTS ix_user_role_active ON users(role, is_active)",
+            "CREATE INDEX IF NOT EXISTS ix_student_school_code ON students(school_code)",
+            "CREATE INDEX IF NOT EXISTS ix_lesson_version_lesson ON lesson_versions(lesson_id)",
+            "CREATE INDEX IF NOT EXISTS ix_lesson_analytics_lesson ON lesson_analytics_snapshots(lesson_id, generated_at)",
+            "CREATE INDEX IF NOT EXISTS ix_assignment_submission_assignment ON assignment_submissions(assignment_id)",
+            "CREATE INDEX IF NOT EXISTS ix_assignment_created_by ON assignments(created_by)",
             "CREATE INDEX IF NOT EXISTS ix_quiz_lesson_id ON quizzes(lesson_id)",
             "CREATE INDEX IF NOT EXISTS ix_bookmark_user_id ON bookmarks(user_id)",
             "CREATE INDEX IF NOT EXISTS ix_bookmark_lesson_id ON bookmarks(lesson_id)",

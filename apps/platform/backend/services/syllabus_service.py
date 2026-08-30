@@ -12,7 +12,7 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from sqlalchemy.orm import Session, joinedload
+from sqlalchemy.orm import Session, joinedload, selectinload
 
 from backend.config.database import get_db
 from backend.models.syllabus import (
@@ -41,7 +41,7 @@ def list_subjects(form_level: int | None = None, core_only: bool = False) -> lis
                 SyllabusSubject.form_start <= form_level,
                 SyllabusSubject.form_end >= form_level,
             )
-        subjects = query.all()
+        subjects = query.options(selectinload(SyllabusSubject.topics)).all()
         return [
             {
                 "id": s.id,
@@ -237,6 +237,11 @@ def search_outcomes(query: str, subject_slug: str | None = None, form_level: int
             .join(SyllabusSubtopic)
             .join(SyllabusTopic)
             .join(SyllabusSubject)
+            .options(
+                joinedload(LearningOutcome.subtopic)
+                .joinedload(SyllabusSubtopic.topic)
+                .joinedload(SyllabusTopic.subject)
+            )
             .filter(LearningOutcome.description.ilike(f"%{query}%"))
         )
 

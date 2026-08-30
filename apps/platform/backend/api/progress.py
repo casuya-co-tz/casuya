@@ -117,26 +117,22 @@ def get_student_stats(student_id: str, _current_user=Depends(get_current_user)):
                 else:
                     break
 
-        # --- Average score from progress records ---
-        avg_score = (
-            db.query(func.avg(ProgressRecord.score_percentage))
-            .filter(
-                ProgressRecord.student_id == student_id,
-                ProgressRecord.score_percentage.isnot(None),
-                ProgressRecord.score_percentage > 0,
+        # --- Average score + subjects completed from a single aggregate scan ---
+        avg_score, subjects_completed = (
+            db.query(
+                func.avg(ProgressRecord.score_percentage).filter(
+                    ProgressRecord.score_percentage.isnot(None),
+                    ProgressRecord.score_percentage > 0,
+                ),
+                func.count(func.distinct(ProgressRecord.lesson_id)).filter(
+                    ProgressRecord.completion_percentage >= 100,
+                ),
             )
-            .scalar()
+            .filter(ProgressRecord.student_id == student_id)
+            .first()
         )
-
-        # --- Subjects completed count ---
-        subjects_completed = (
-            db.query(func.count(func.distinct(ProgressRecord.lesson_id)))
-            .filter(
-                ProgressRecord.student_id == student_id,
-                ProgressRecord.completion_percentage >= 100,
-            )
-            .scalar()
-        ) or 0
+        avg_score = round(avg_score) if avg_score is not None else None
+        subjects_completed = subjects_completed or 0
 
         return {
             "streak": streak,

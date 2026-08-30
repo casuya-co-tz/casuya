@@ -49,15 +49,17 @@ def _merge_with_db_meta(files: list[dict]) -> list[dict]:
     gen = get_db()
     db = next(gen)
     try:
-        records = db.query(FileRecord).all()
-        meta_map = {r.filename: r for r in records}
+        # Only the metadata columns are needed here; selecting with_entities
+        # avoids pulling the large `data` (BYTEA) blobs on every uploads list.
+        records = db.query(FileRecord.id, FileRecord.filename, FileRecord.display_name, FileRecord.is_visible).all()
+        meta_map = {r.filename: {"id": r.id, "display_name": r.display_name, "is_visible": r.is_visible} for r in records}
         result = []
         for f in files:
             rec = meta_map.get(f["filename"])
-            f["display_name"] = rec.display_name if rec else f["filename"]
-            f["is_visible"] = rec.is_visible if rec else True
+            f["display_name"] = rec["display_name"] if rec else f["filename"]
+            f["is_visible"] = rec["is_visible"] if rec else True
             if rec:
-                f["id"] = rec.id
+                f["id"] = rec["id"]
             result.append(f)
         return result
     except Exception:
