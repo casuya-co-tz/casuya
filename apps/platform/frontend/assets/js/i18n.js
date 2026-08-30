@@ -20,13 +20,28 @@
     "nav.users": "Watumiaji",
 
     // Hero
-    "hero.badge": "Elimu Ilivyobadilishwa",
-    "hero.title1": "Jifunze kwa Akili.",
+    "hero.badge": "Kwa wanafunzi na walimu wa Tanzania",
+    "hero.title1": "Shule unayotamani kuwa nayo —<br>ukiwa kwenye simu ambayo tayari wanashiriki.",
     "hero.title2": "Fundisha Bora.",
     "hero.title3": "Jenga Mustakabali.",
-    "hero.desc": "Mfumo wa elimu wenye akili unaounganisha walimu, wanafunzi, na shule kwa zana za kidijitali za kisasa zilizojengwa kwa miundombinu yoyote.",
-    "hero.start": "Anza Kujifunza",
-    "hero.demo": "Angalia Onyesho",
+    "hero.clarity": "Masomo, majaribio na matokeo — yaliyojengwa kwa mtaala wa kidato cha kwanza hadi cha sita.",
+    "hero.desc": "Casuya hukuletea kujifunza nyumbani: nje ya mtandao, kwa Kiswahili na Kiingereza, kwenye simu ambazo Watanzania wanatumia.",
+    "hero.off_excuse": "Jifunze ulipo — hata mtandao usipokuwapo.",
+    "hero.start": "Karibu — ingia kufulia wiki yako",
+    "hero.demo": "Twende — angalia jinsi inavyofanya kazi",
+
+    // Hero "your week" card
+    "hero_week_sub": "wiki yako ya kujifunza",
+    "hero_week_greet": "Habari za asubuhi 👋",
+    "hero_week_streak": "Mfuatano wa kujifunza",
+    "hero_week_day0": "Siku 0",
+    "hero_week_streakline": "Anza mfuatano wako — somo moja kwa siku, hata mtandao usipokuwapo.",
+    "hero_week_lesson": "Somo la leo",
+    "hero_week_continue": "Endelea →",
+    "hero_week_offline": "Imehifadhiwa kwa njia ya nje ya mtandao",
+    "hero_week_offlineline": "Jiunge kupakua masomo na kujifunza mahali mtandao usipofika.",
+    "hero_week_unlock": "Ingia kufulia wiki yako",
+    "hero_week_honest": "Bure kuanza · Inafanya kazi kwenye simu ya 2GB · Inahifadhi kazi yako hata mtandao usipokuwa.",
 
     // Hero mock UI
     "hero.today_lesson": "Masomo ya Leo",
@@ -37,45 +52,66 @@
     "hero.progress": "+18% Maendeleo",
 
     // Trusted
-    "trusted.title": "Kuwezesha Mifumo ya Elimu ya Kisasa",
+    "trusted.title": "Imejengwa hapa, kwa hapa",
+    "trust.t2gb": "Inafanya kazi kwenye simu ya 2GB",
+    "trust.offline": "Inafanya kazi nje ya mtandao",
+    "trust.curriculum": "Imetengenezwa kwa mtaala wa Tanzania · Kidato cha 1 hadi 6",
+    "trust.free": "Bure kuanza — hakuna kadi",
+    "trust.lang": "Jifunze kwa Kiingereza na Kiswahili",
+    "trust.data": "Alama na data zako zinabaki zako",
 
     // Features
-    "features.badge": "Uwezo wa Jukwaa",
-    "features.title": "Kwa Nini Shule Zinachagua Casuya",
-    "features.desc": "Kila moduli imeboreshwa kwa kasi ya umeme na utendaji wa kuaminika kwa vifaa vya chini.",
+    "features.badge": "Casuya hufanya nini siku ya kawaida",
+    "features.title": "Zana ndogo, siku za kweli",
+    "features.desc": "Hakuna jambo la kujivunia tu — vitu vinavyorahisisha maisha ya shule kidogo, hata kama simu ni ya zamani na mtandao ni dhaifu.",
 
     // Subjects
-    "subjects.badge": "Muundo wa Mtaala",
-    "subjects.title": "Chunguza Masomo Kote Kwenye Mfumo",
+    "subjects.badge": "Kidato cha 1–6 · Mtalaa wa Tanzania",
+    "subjects.title": "Masomo unayofanya — yote mahali pamoja",
+    "subjects.desc": "Kuanzia Kiswahili na Civics hadi Hisabati na Sayansi — masomo yale yale unayofanya darasani, tayari kwa kidato cha kwanza hadi cha sita.",
+    "subjects.kiswahili": "Kiswahili",
+    "subjects.english": "English / Kiingereza",
+    "subjects.maths": "Hisabati",
+    "subjects.civics": "Civics / Maadili",
+    "subjects.history": "Historia",
+    "subjects.geography": "Jiografia",
     "subjects.physics": "Fizikia",
-    "subjects.chemistry": "Kemikali",
+    "subjects.chemistry": "Kemia",
     "subjects.biology": "Biolojia",
-    "subjects.math": "Hisabati",
+    "subjects.mathematics": "Hisabati za Msingi",
+    "subjects.more": "... na zaidi kwenye mtaala. Jifunze kidogo kila siku, uweke darasa zima live, na uikabili Mitihani ya Taifa kwa imani — si kwa hofu.",
 
     // Audiences
-    "audiences.badge": "Uzoefu Maalum",
-    "audiences.title": "Imejengwa kwa Kila Mtu Shuleni",
-    "audiences.desc": "Akaunti za usajili zinapatikana kama Mwanafunzi au Mwalimu. Wazazi na shule wanafaidika kupitia uzoefu wa mwanafunzi na mwalimu.",
+    "audiences.badge": "Watu halisi, siku halisi",
+    "audiences.title": "Imetengenezwa kwa madarasa kama yako",
+    "audiences.desc": "Mwalimu, wanafunzi na baba — watu wa kawaida ambao Casuya imewajengewa. Kama inafanya kazi kwa simu ya kushirikiwa kijijini, inafanya kazi kwako.",
 
-    // Audience cards
-    "audiences.teachers": "Walimu",
-    "audiences.teachers.f1": "Unda maudhui tajiri ya kidijitali",
-    "audiences.teachers.f2": "Simamia vikundi vya masomo",
-    "audiences.teachers.f3": "Tathmini miongozo ya data",
-    "audiences.students": "Wanafunzi",
-    "audiences.students.f1": "Soma popote pale",
-    "audiences.students.f2": "Fanya mitihani nje ya mtandao",
-    "audiences.students.f3": "Fuatilia rekodi za kujifunza",
-    "audiences.parents": "Wazazi",
-    "audiences.parents.f1": "Angalia viashiria vya maendeleo",
-    "audiences.parents.f2": "Tazama sasisha za eneo",
-    "audiences.schools": "Shule",
-    "audiences.schools.f1": "Boresha ugavi wa kazi kwa wafanyakazi",
-    "audiences.schools.f2": "Hamisha data ngumu za uchambuzi",
+    // People (users of Casuya, not builders)
+    "people.cosmas": "Cosmas Dismas",
+    "people.cosmas_role": "Mwalimu · Geita",
+    "people.cosmas_story": "Cosmas husahihisha karatasi hamsini au sitini za Kidato cha Tatu baada ya shule, mara nyingi kwa taa ya mafuta umeme unapokatika. Kwa Casuya anaanzisha majaribio mara moja na yanajisahihisha yenyewe — ili ajisaiwe na jioni kuwasaidia wanafunzi wanaomhitaji.",
+    "people.bahati": "Bahati Abeld Chusi",
+    "people.bahati_role": "Mwanafunzi · Iringa",
+    "people.bahati_story": "Bahati anashiriki simu. Anapakua maelezo yake ya Civics Kidato cha Pili kwenye mtandao mzuri wa shule, kisha anasoma akirudi nyumbani kwa daladala — bila mtandao, bila shida.",
+    "people.nickson": "Nickson Kasmir Tlanka",
+    "people.nickson_role": "Mwanafunzi · Karatu",
+    "people.nickson_story": "Nickson anaona masomo mengine ni magumu kufuata darasani ambapo kuna watu wengi. Masomo ya Casuya yanayohusisha yanamruhusu kurudi na kujifunza kwa kasi yake, mara kwa mara, mpaka aelewe.",
+    "people.shedrack": "Shedrack Peam Laurent",
+    "people.shedrack_role": "Mwanafunzi · Arusha",
+    "people.shedrack_story": "Shedrack anataka kufuatilia maendeleo yake, somo kwa somo, bila kusubiri mwisho wa muhula. Casuya inamuonyesha anapokua kila wiki.",
+    "people.eliya": "Eliya Kikoti",
+    "people.eliya_role": "Baba · Iringa",
+    "people.eliya_story": "Eliya anataka kujua kama mtoto wake anajifunza kweli, si tu 'kupita.' Kwa Casuya anaweza kuona maendeleo halisi — jaribio kwa jaribio, somo kwa somo — hata kwenye simu ya kushirikiwa ya mtoto wake.",
+
+    // Mid-page re-ask
+    "reask.title": "Anza mfuatano wako leo — siku ya kwanza ni bure",
+    "reask.desc": "Somo moja kwa siku linatosha kuanza. Maendeleo yako yanahifadhiwa papo hapo unapojunga.",
+    "reask.cta": "Anza bure →",
 
     // CTA
-    "cta.title": "Tayari Kubadilisha Elimu?",
-    "cta.desc": "Junge na maelfu ya walimu, wanafunzi, na wasimamizi wa mfumo wanaosanidi mitandao ya shule ya akili leo.",
+    "cta.letterlabel": "Neno kutoka Casuya",
+    "cta.letter": "\"Casuya ilijengwa kwa watu halisi kama <strong>Cosmas</strong>, mwalimu; <strong>Bahati</strong>, <strong>Nickson</strong> na <strong>Shedrack</strong>, wanafunzi; na <strong>Eliya</strong>, baba — watu wanaoshiriki simu, wanaosoma wakati umeme ukipita, na ambao daima waliweza zaidi ya hali zao zilivyoruhusu.<br><br>Shule hii ni yako. Ni nyepesi kwa simu uliyo nayo, na inafanya kazi hata mahali mtandao usipofika — ili kitu pekee kinachokusimamia kupita kiishe. Karibu — sasa wewe ni sehemu ya Casuya.\"",
+    "cta.how": "Karibu — angalia jinsi inavyofanya kazi",
 
     // Demo modal
     "demo.step1": "Hatua ya 1 — Ingia",
@@ -105,6 +141,12 @@
     "demo.phone": "Simu",
     "demo.confirm_password": "Thibitisha Nenosiri",
     "demo.create_btn": "Fungua Akaunti",
+    "demo.create_account": "Fungua Akaunti",
+    "demo.create_account_desc": "Jiunge na Casuya na uanze kujifunza leo.",
+    "demo.has_account": "Tayari una akaunti? ",
+    "demo.sign_in_desc": "Ingia kuendelea na safari yako ya kujifunza",
+    "demo.progress": "65% Imekamilika",
+    "demo.chem_organic": "Kemia - Misombo ya Kikaboni",
     "demo.already_account": "Tayari una akaunti?",
     "demo.sign_in_link": "Ingia",
     "demo.welcome": "Karibu tena",
@@ -312,6 +354,22 @@
         // Restore English
         var en = el.getAttribute("data-i18n-en");
         if (en) el.textContent = en;
+      }
+    }
+
+    // HTML content (data-i18n-html)
+    var htmlEls = document.querySelectorAll("[data-i18n-html]");
+    for (var ih = 0; ih < htmlEls.length; ih++) {
+      var htmlEl = htmlEls[ih];
+      var htmlKey = htmlEl.getAttribute("data-i18n-html");
+      if (!htmlEl.getAttribute("data-i18n-html-en")) {
+        htmlEl.setAttribute("data-i18n-html-en", htmlEl.innerHTML);
+      }
+      if (lang === "sw" && SW[htmlKey]) {
+        htmlEl.innerHTML = SW[htmlKey];
+      } else {
+        var htmlEn = htmlEl.getAttribute("data-i18n-html-en");
+        if (htmlEn) htmlEl.innerHTML = htmlEn;
       }
     }
 

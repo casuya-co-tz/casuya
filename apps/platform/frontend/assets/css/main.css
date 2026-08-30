@@ -2301,3 +2301,73 @@ select.input-premium {
   .quiz-card { padding: 0.5rem 0.6rem; }
   .quiz-option { padding: 0.6rem 0.75rem; font-size: 0.85rem; min-height: 44px; }
 }
+
+/* ══ The People's Page — warm, human, homespun ═══════════════════════════ */
+
+/* Hand-drawn paper edge under headlines (light & warm, no images) */
+.hand-wave { display: inline-block; }
+
+/* The locked "your week" card — drawn like a real learner's dashboard */
+.mini-card {
+  background: #fff;
+  border: 1px solid rgba(224,216,204,0.6);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04);
+}
+
+.lock-chip {
+  width: 30px; height: 30px; border-radius: 9px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #fef3c7; color: #b45309; flex-shrink: 0;
+}
+
+/* Blurred placeholder that begs to be unlocked */
+.lock-blur {
+  display: inline-block;
+  border-radius: 6px;
+  color: transparent;
+  background: linear-gradient(90deg, #e7e2d6, #efe9dc, #e7e2d6);
+  background-size: 200% 100%;
+  animation: lockShimmer 1.6s linear infinite;
+  user-select: none;
+  pointer-events: none;
+}
+@keyframes lockShimmer {
+  0% { background-position: 0% 0%; }
+  100% { background-position: -200% 0%; }
+}
+
+/* Story cards for the real people behind the page */
+.story-card {
+  background: #fff;
+  border: 1px solid rgba(224,216,204,0.6);
+  border-radius: 18px;
+  padding: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.story-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15,23,42,0.07);
+}
+.story-avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1.05rem; color: #fff; flex-shrink: 0;
+}
+
+/* First-person letter block */
+.letter-block {
+  background: linear-gradient(180deg, rgba(37,99,235,0.05), rgba(124,58,237,0.05));
+  border: 1px solid rgba(124,58,237,0.15);
+  border-radius: 20px;
+}
+
+/* Warm accent for the primary CTA link */
+.cta-warm {
+  background: linear-gradient(135deg, #0d9488, #059669);
+  box-shadow: 0 10px 25px -8px rgba(5,150,105,0.5);
+}
+.cta-warm:hover {
+  background: linear-gradient(135deg, #0f766e, #047857);
+}
