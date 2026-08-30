@@ -132,12 +132,39 @@ def _clean_mathjax_broken_katex(html: str) -> str:
     return html
 
 
+def _strip_mathjax(html: str) -> str:
+    """Remove MathJax CDN <script> tags and inline MathJax config/startup blocks.
+
+    The platform self-hosts KaTeX (served from /static/lib/katex) and keeps a
+    strict CSP (script-src 'self'), so the external MathJax CDN is both blocked
+    and contrary to the offline-first goal. This strips MathJax references so the
+    self-hosted KaTeX bundle can be injected instead without a dead MathJax
+    leftover throwing ReferenceError: MathJax is not defined.
+    """
+    # External CDN script tags (e.g. https://cdn.jsdelivr.net/npm/mathjax@3/...)
+    html = re.sub(
+        r"<script\b[^>]*\bsrc\s*=\s*[\"'][^\"']*cdn\.jsdelivr\.net[^\"']*mathjax[^\"']*[\"'][^>]*>\s*</script>",
+        "",
+        html,
+        flags=re.IGNORECASE,
+    )
+    # Inline (no src) scripts that (re)define window.MathJax or drive its startup.
+    html = re.sub(
+        r"<script\b(?![^>]*\bsrc\s*=)[^>]*>[\s\S]*?MathJax[\s\S]*?</script>",
+        "",
+        html,
+        flags=re.IGNORECASE,
+    )
+    return html
+
+
 def _optimize_math_injection(html: str) -> str:
     if not _has_latex(html):
         return html
 
     if _has_mathjax(html):
-        return _clean_mathjax_broken_katex(html)
+        html = _strip_mathjax(html)
+        html = _clean_mathjax_broken_katex(html)
 
     katex_css = '<link rel="stylesheet" href="/static/lib/katex/katex.min.css" crossorigin="anonymous">'
     katex_js = '<script src="/static/lib/katex/katex.min.js" crossorigin="anonymous"></script>'
