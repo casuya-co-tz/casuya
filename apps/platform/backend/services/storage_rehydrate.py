@@ -37,37 +37,38 @@ def rehydrate_storage() -> None:
         settings = get_settings()
         storage = Path(settings.storage_root)
 
-        # Games
-        for game in db.query(Game).filter(Game.package_html.isnot(None)).all():
+        # Games — stream with yield_per to avoid loading all into memory
+        for game in db.query(Game).filter(Game.package_html.isnot(None)).yield_per(50):
             if not game.slug:
                 continue
             path = _get_game_pkg_path(game.slug)
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(game.package_html, encoding="utf-8")
 
-        # Quizzes
-        for quiz in db.query(Quiz).filter(Quiz.package_html.isnot(None)).all():
+        # Quizzes — stream with yield_per
+        for quiz in db.query(Quiz).filter(Quiz.package_html.isnot(None)).yield_per(50):
             if not quiz.slug:
                 continue
             path = _get_quiz_pkg_path(quiz.slug)
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(quiz.package_html, encoding="utf-8")
 
-        # Compiled lessons
+        # Compiled lessons — stream with yield_per
         for lesson in (
             db.query(Lesson)
             .filter(Lesson.package_html.isnot(None), Lesson.package_filename.isnot(None))
-            .all()
+            .yield_per(50)
         ):
             path = storage / "lesson-packages" / lesson.package_filename
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(lesson.package_html, encoding="utf-8")
 
-        # Uploaded files
-        for record in db.query(FileRecord).filter(FileRecord.data.isnot(None)).all():
+        # Uploaded files — stream with yield_per to avoid loading all BYTEA into memory
+        for record in db.query(FileRecord).filter(FileRecord.data.isnot(None)).yield_per(20):
             path = storage / record.kind / record.filename
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(record.data)
+            db.expunge(record)  # free memory after writing
     except Exception as exc:  # noqa: BLE001
         print(f"WARNING: storage rehydration partially failed: {exc}")
     finally:

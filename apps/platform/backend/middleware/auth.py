@@ -1,4 +1,5 @@
 import json
+import logging
 
 from fastapi import Depends, Header, HTTPException, status
 from sqlalchemy.orm import Session
@@ -8,9 +9,11 @@ from backend.config.security import decode_access_token
 from backend.config.settings import get_settings
 from backend.models.user import User
 
+logger = logging.getLogger(__name__)
+
 settings = get_settings()
 
-USER_CACHE_TTL = 60
+USER_CACHE_TTL = 300  # 5 minutes (increased from 60s to reduce DB load)
 
 
 def get_current_user(
@@ -24,8 +27,6 @@ def get_current_user(
         payload = decode_access_token(token)
     except Exception:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired token")
-    if settings.environment == "development" and str(payload.get("sub", "")).startswith("dev-"):
-        return payload
 
     user_id = payload.get("sub")
     cache_key = f"cache:user:{user_id}"
@@ -38,8 +39,8 @@ def get_current_user(
             return payload
     except HTTPException:
         raise
-    except Exception:
-        pass
+    except Exception as exc:
+        logger.warning("Redis cache read failed for user %s: %s", user_id, exc)
 
     try:
         user = db.query(User).filter(User.id == user_id).first()
@@ -48,14 +49,13 @@ def get_current_user(
         try:
             user_data = {"id": user.id, "is_active": user.is_active}
             redis_client.setex(cache_key, USER_CACHE_TTL, json.dumps(user_data).encode("utf-8"))
-        except Exception:
-            pass
+        except Exception as exc:
+            logger.warning("Redis cache write failed for user %s: %s", user_id, exc)
         return payload
     except HTTPException:
         raise
-    except Exception:
-        if settings.environment == "development":
-            return payload
+    except Exception as exc:
+        logger.exception("Unexpected auth error for user %s", user_id)
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired token")
 
 
@@ -74,20 +74,17 @@ def bridge_auth(x_bridge_key: str | None = Header(default=None), authorization: 
 
     Used by casuya-bridge clients that sync progress from student devices.
     """
-    # Prefer JWT if present
+    # If JWT is present, it is the ONLY auth method tried (no shared key fallback).
     if authorization and authorization.startswith("Bearer "):
         try:
             return get_current_user(authorization)
         except HTTPException:
-            pass  # fall through to shared key
+            raise  # re-raise — JWT was present but invalid
 
-    # Fall back to shared key
+    # Fall back to shared key only when no JWT is provided
     if x_bridge_key and settings.casuya_bridge_shared_key:
         if x_bridge_key == settings.casuya_bridge_shared_key:
             return {"sub": "bridge", "role": "bridge"}
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid bridge key")
-
-    if authorization and authorization.startswith("Bearer "):
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired token")
 
     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Authentication required")

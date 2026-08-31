@@ -16,6 +16,8 @@ Requires ffmpeg installed on the host (add to Dockerfile: RUN apt-get install -y
 
 from __future__ import annotations
 
+import asyncio
+import functools
 import logging
 import subprocess
 import uuid
@@ -39,8 +41,9 @@ def _hls_dir(video_id: str) -> Path:
     return Path(settings.storage_root) / "hls" / video_id
 
 
+@functools.lru_cache(maxsize=1)
 def _has_ffmpeg() -> bool:
-    """Check if ffmpeg is available on the system."""
+    """Check if ffmpeg is available on the system (cached — ffmpeg doesn't appear/disappear at runtime)."""
     try:
         result = subprocess.run(
             ["ffmpeg", "-version"],
@@ -56,7 +59,7 @@ def transcode_to_hls(
     input_path: str | Path,
     video_id: str | None = None,
 ) -> dict:
-    """Transcode a video file into HLS adaptive streams.
+    """Transcode a video file into HLS adaptive streams (sync wrapper for background tasks).
 
     Args:
         input_path: Path to the source video file (mp4, webm, etc.)
@@ -152,6 +155,14 @@ def transcode_to_hls(
         "master_playlist": f"/uploads/hls/{video_id}/master.m3u8",
         "renditions": rendition_playlists,
     }
+
+
+async def transcode_to_hls_async(
+    input_path: str | Path,
+    video_id: str | None = None,
+) -> dict:
+    """Async wrapper — runs the sync transcode in a thread to avoid blocking the event loop."""
+    return await asyncio.to_thread(transcode_to_hls, input_path, video_id)
 
 
 def get_hls_manifest(video_id: str) -> dict | None:

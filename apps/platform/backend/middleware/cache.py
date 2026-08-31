@@ -9,26 +9,36 @@ _KEY_PREFIX = "cache:"
 
 
 def cache_get(key: str, ttl_seconds: int = 60):
-    """Return cached value or None if missing / expired."""
+    """Return cached value or None if missing / expired.
+
+    Uses Redis TTL for primary expiry. The embedded timestamp is a secondary
+    guard: if a caller requests a shorter TTL than the Redis TTL, stale
+    entries are still rejected at the app level.
+    """
     try:
         value = redis_client.get(_KEY_PREFIX + key)
         if value is None:
             return None
         data = json.loads(value.decode("utf-8"))
-        timestamp, actual_value = data[0], data[1]
-        if time.time() - timestamp > ttl_seconds:
-            redis_client.delete(_KEY_PREFIX + key)
-            return None
-        return actual_value
+        # Backward-compatible: old format stores [timestamp, value],
+        # new format stores value directly.
+        if isinstance(data, list) and len(data) == 2 and isinstance(data[0], (int, float)):
+            timestamp, actual_value = data
+            if time.time() - timestamp > ttl_seconds:
+                return None
+            return actual_value
+        return data
     except Exception:
         return None
 
 
 def cache_set(key: str, value: object, ttl: int = 300):
-    """Write a value to the cache with a TTL (default 5 min)."""
+    """Write a value to the cache with a TTL (default 5 min).
+
+    Stores value directly (no embedded timestamp) — Redis TTL handles expiry.
+    """
     try:
-        data = [time.time(), value]
-        redis_client.setex(_KEY_PREFIX + key, ttl, json.dumps(data).encode("utf-8"))
+        redis_client.setex(_KEY_PREFIX + key, ttl, json.dumps(value, default=str).encode("utf-8"))
     except Exception:
         pass
 

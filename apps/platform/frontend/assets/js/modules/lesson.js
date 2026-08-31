@@ -11,10 +11,22 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     html = lessonContentCache.get(lessonId);
   }
 
-  try {
-    // Fetch lesson metadata for title
+    const token = localStorage.getItem("casuya_token");
+    const payload = decodeToken(token);
+    const isStudent = payload?.role === "student";
+    const canBookmark = isStudent || payload?.role === "teacher";
+
+    // Fetch lesson metadata + bookmark/quiz/games in ONE call (P2-3 aggregated endpoint)
     let lessonMeta = {};
-    try { lessonMeta = await request(`/lessons/${lessonId}`); } catch(e) {}
+    let pkgData = null;
+    try {
+      if (canBookmark) {
+        pkgData = await request(`/lessons/${lessonId}/package`);
+        lessonMeta = pkgData.lesson || {};
+      } else {
+        lessonMeta = await request(`/lessons/${lessonId}`);
+      }
+    } catch(e) {}
     const lessonTitle = lessonMeta.title || "Lesson";
 
     // Update recently viewed title
@@ -44,10 +56,6 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       }
     }
 
-    const token = localStorage.getItem("casuya_token");
-    const payload = decodeToken(token);
-    const isStudent = payload?.role === "student";
-    const canBookmark = isStudent || payload?.role === "teacher";
     const lessonStart = Date.now();
     let studentId = null;
     let sessionId = Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
@@ -182,19 +190,16 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       html = html.replace("</html>", bridgeScript + "</html>");
     }
 
-    // Fetch bookmark, quiz, games, notes in ONE call (P2-3 aggregated endpoint).
+    // Use pkgData from the earlier aggregated call (P2-3) — no second request needed.
     let bookmarked = false;
     let quizData = null;
     let gamesData = [];
     let noteData = { content: "" };
-    if (canBookmark) {
-      try {
-        const pkg = await request(`/lessons/${lessonId}/package`);
-        bookmarked = pkg.bookmark_status?.bookmarked || false;
-        quizData = isStudent ? pkg.quiz : null;
-        gamesData = isStudent ? (pkg.games || []) : [];
-        noteData = isStudent ? (pkg.note || { content: "" }) : { content: "" };
-      } catch(e) {}
+    if (pkgData) {
+      bookmarked = pkgData.bookmark_status?.bookmarked || false;
+      quizData = isStudent ? pkgData.quiz : null;
+      gamesData = isStudent ? (pkgData.games || []) : [];
+      noteData = isStudent ? (pkgData.note || { content: "" }) : { content: "" };
     }
 
     const renderQuiz = () => {

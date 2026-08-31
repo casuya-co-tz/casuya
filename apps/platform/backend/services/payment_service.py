@@ -11,7 +11,13 @@ still work.
 
 from __future__ import annotations
 
+import logging
+
+from sqlalchemy.orm import Session
+
 from backend.config.database import get_db
+
+logger = logging.getLogger(__name__)
 from backend.models.payment import Payment
 from backend.services import payment_cache
 from backend.services.payments_client import get_payments_client
@@ -52,6 +58,7 @@ def _direct_azampay_checkout(
     idempotency_key: str | None,
     plan_id: str | None = None,
     plan_name: str | None = None,
+    db: Session | None = None,
 ) -> dict:
     """Process an AzamPay mobile checkout directly, storing a Payment record.
 
@@ -59,8 +66,10 @@ def _direct_azampay_checkout(
     ``externalId`` — that lets the async callback/webhook match the record
     even when AzamPay returns an empty body at checkout time.
     """
-    _gen = get_db()
-    db = next(_gen)
+    own = db is None
+    if own:
+        _gen = get_db()
+        db = next(_gen)
     try:
         payment = Payment(
             user_id=user_id,
@@ -88,6 +97,7 @@ def _direct_azampay_checkout(
             # Network/transport errors (e.g. sandbox connection resets) or a
             # rejected request: keep the record pending so it can be retried
             # or confirmed via the async callback rather than failing hard.
+            logger.warning("AzamPay checkout failed for payment %s: %s", payment.id, exc)
             payment.provider_reference = None
             db.commit()
             db.refresh(payment)
@@ -131,7 +141,8 @@ def _direct_azampay_checkout(
             "plan_name": payment.plan_name,
         }
     finally:
-        _gen.close()
+        if own:
+            _gen.close()
 
 
 def handle_webhook_payload(payload: dict) -> dict:
@@ -149,7 +160,7 @@ def handle_webhook_payload(payload: dict) -> dict:
         return result
 
 
-def _apply_local_webhook(payload: dict) -> dict:
+def _apply_local_webhook(payload: dict, db: Session | None = None) -> dict:
     """Update the platform's Payment records from an AzamPay callback.
 
     Used when the casuya-payments microservice is unavailable. The checkout
@@ -172,8 +183,10 @@ def _apply_local_webhook(payload: dict) -> dict:
     ]
     candidates = [c for c in candidates if c]
 
-    _gen = get_db()
-    db = next(_gen)
+    own = db is None
+    if own:
+        _gen = get_db()
+        db = next(_gen)
     try:
         match = None
         for cand in candidates:
@@ -206,7 +219,8 @@ def _apply_local_webhook(payload: dict) -> dict:
         db.commit()
         return {"received": True, "matched": True, "payment_id": match.id, "status": match.status}
     finally:
-        _gen.close()
+        if own:
+            _gen.close()
 
 
 def list_user_payments(user_id: str) -> list[dict]:
@@ -278,11 +292,13 @@ def list_user_refunds(user_id: str) -> list[dict]:
 # ── Payment plans (fees students/teachers pay to the platform) ───────────────
 
 
-def create_plan(data) -> dict:
+def create_plan(data, db: Session | None = None) -> dict:
     from backend.models.payment_plan import PaymentPlan
 
-    _gen = get_db()
-    db = next(_gen)
+    own = db is None
+    if own:
+        _gen = get_db()
+        db = next(_gen)
     try:
         plan = PaymentPlan(
             name=data.name,
@@ -297,14 +313,17 @@ def create_plan(data) -> dict:
         db.refresh(plan)
         return _plan_to_dict(plan)
     finally:
-        _gen.close()
+        if own:
+            _gen.close()
 
 
-def list_plans(role: str | None = None, include_inactive: bool = False) -> list[dict]:
+def list_plans(role: str | None = None, include_inactive: bool = False, db: Session | None = None) -> list[dict]:
     from backend.models.payment_plan import PaymentPlan
 
-    _gen = get_db()
-    db = next(_gen)
+    own = db is None
+    if own:
+        _gen = get_db()
+        db = next(_gen)
     try:
         q = db.query(PaymentPlan)
         if not include_inactive:
@@ -319,26 +338,32 @@ def list_plans(role: str | None = None, include_inactive: bool = False) -> list[
             ]
         return result
     finally:
-        _gen.close()
+        if own:
+            _gen.close()
 
 
-def get_plan(plan_id: str):
+def get_plan(plan_id: str, db: Session | None = None):
     from backend.models.payment_plan import PaymentPlan
 
-    _gen = get_db()
-    db = next(_gen)
+    own = db is None
+    if own:
+        _gen = get_db()
+        db = next(_gen)
     try:
         plan = db.query(PaymentPlan).filter(PaymentPlan.id == plan_id).first()
         return _plan_to_dict(plan) if plan else None
     finally:
-        _gen.close()
+        if own:
+            _gen.close()
 
 
-def update_plan(plan_id: str, data) -> dict | None:
+def update_plan(plan_id: str, data, db: Session | None = None) -> dict | None:
     from backend.models.payment_plan import PaymentPlan
 
-    _gen = get_db()
-    db = next(_gen)
+    own = db is None
+    if own:
+        _gen = get_db()
+        db = next(_gen)
     try:
         plan = db.query(PaymentPlan).filter(PaymentPlan.id == plan_id).first()
         if not plan:
@@ -351,14 +376,17 @@ def update_plan(plan_id: str, data) -> dict | None:
         db.refresh(plan)
         return _plan_to_dict(plan)
     finally:
-        _gen.close()
+        if own:
+            _gen.close()
 
 
-def delete_plan(plan_id: str) -> bool:
+def delete_plan(plan_id: str, db: Session | None = None) -> bool:
     from backend.models.payment_plan import PaymentPlan
 
-    _gen = get_db()
-    db = next(_gen)
+    own = db is None
+    if own:
+        _gen = get_db()
+        db = next(_gen)
     try:
         plan = db.query(PaymentPlan).filter(PaymentPlan.id == plan_id).first()
         if not plan:
@@ -367,7 +395,8 @@ def delete_plan(plan_id: str) -> bool:
         db.commit()
         return True
     finally:
-        _gen.close()
+        if own:
+            _gen.close()
 
 
 def pay_plan(plan_id: str, user_id: str, mobile_number: str, provider: str, idempotency_key: str | None = None) -> dict:

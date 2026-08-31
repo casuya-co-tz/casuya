@@ -33,4 +33,4 @@ EXPOSE 8000
 # reconciliation in init_db from racing across workers (see backend/config/database.py).
 # Tune WEB_CONCURRENCY per instance (2-4 typically; with sync workers each also
 # handles many I/O-bound requests via worker threads).
-CMD ["sh", "-c", "gunicorn backend.main:app -w ${WEB_CONCURRENCY:-2} -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:${PORT:-8000} --forwarded-allow-ips='*'"]
+CMD ["sh", "-c", "gunicorn backend.main:app -w ${WEB_CONCURRENCY:-4} -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:${PORT:-8000} --forwarded-allow-ips='*' --timeout 120"]

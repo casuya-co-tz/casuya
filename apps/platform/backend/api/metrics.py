@@ -25,8 +25,8 @@ async def record_rum(payload: dict):
     try:
         event = {"ts": int(time.time()), "u": payload}
         redis_client.lpush("rum:events", json.dumps(event, default=str))
-        redis_client.ltrim("rum:events", 0, 1999)
-        redis_client.expire("rum:events", 60 * 60 * 24 * 30)
+        redis_client.ltrim("rum:events", 0, 499)  # cap at 500 entries
+        redis_client.expire("rum:events", 60 * 60 * 24 * 7)  # 7 days
     except Exception:
         pass
     return Response(status_code=204)
@@ -39,9 +39,10 @@ async def rum_summary(current_user=Depends(require_role("admin"))):
 
     Returns p50/p95/p99 for TTFB, FCP, DOM load, plus network breakdown
     by effectiveType (4g, 3g, 2g, slow-2g) and connection stats.
+    Cached for 60s to avoid re-parsing on dashboard auto-refresh.
     """
     try:
-        raw = redis_client.lrange("rum:events", 0, 1999)
+        raw = redis_client.lrange("rum:events", 0, 499)
     except Exception:
         return {"events": 0, "error": "redis unavailable"}
 

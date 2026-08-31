@@ -229,9 +229,9 @@ def _inject_katex(html: str) -> str:
 class _MediaOptimizer(HTMLParser):
     """Add bandwidth-friendly attributes to <img>/<video> in lesson HTML.
 
-    - <img>: wrap in <picture> with WebP/AVIF sources, add responsive srcset,
-      lazy-load + async decode + never overflow the viewport. Adds width/height
-      to prevent CLS (Cumulative Layout Shift).
+    - <img>: lazy-load + async decode + never overflow the viewport.
+      WebP/AVIF <picture> variants are generated on upload (see uploads.py)
+      and served by the CDN — no need to wrap here.
     - <video>: do NOT preload (avoids 50 MB auto-downloads on 3G), allow inline
       playback, always show controls. Adaptive HLS/DASH transcoding is a separate
       backend pipeline (see PERFORMANCE_OPTIMIZATION_PLAN.md P1-5); this at least
@@ -239,7 +239,6 @@ class _MediaOptimizer(HTMLParser):
     """
 
     VOID = {"img", "br", "hr", "input", "meta", "link", "source", "area", "base", "col", "embed", "param", "track", "wbr"}
-    RESPONSIVE_WIDTHS = [320, 640, 960]
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -252,46 +251,6 @@ class _MediaOptimizer(HTMLParser):
             parts.append(k if v == "" else f'{k}="{html.escape(v, quote=True)}"')
         rendered = f"<{tag}{(' ' + ' '.join(parts)) if parts else ''}>"
         return rendered
-
-    @staticmethod
-    def _variants_for(src: str) -> str:
-        """Generate <picture> with WebP/AVIF <source> + responsive srcset.
-
-        Given src="https://cdn.example.com/img/photo.jpg", emits:
-          <picture>
-            <source type="image/avif"
-              srcset="photo-320w.avif 320w, photo-640w.avif 640w, photo-960w.avif 960w"
-              sizes="(max-width: 640px) 100vw, 50vw">
-            <source type="image/webp"
-              srcset="photo-320w.webp 320w, photo-640w.webp 640w, photo-960w.webp 960w"
-              sizes="(max-width: 640px) 100vw, 50vw">
-            <img ...>
-          </picture>
-
-        The browser skips <source> URLs that 404, so this is safe even when
-        variants don't exist — it just falls back to the original src.
-        """
-        # Strip query/hash to build variant paths
-        base = src.split("?")[0].split("#")[0]
-        # Find the extension boundary
-        dot_pos = base.rfind(".")
-        if dot_pos < 0 or dot_pos < base.rfind("/"):
-            return ""  # no extension, can't build variants
-        name_part = base[:dot_pos]
-        ext = base[dot_pos:]  # e.g. ".jpg"
-
-        # Build responsive srcset strings
-        avif_srcset = ", ".join(f"{name_part}-{w}w.avif {w}w" for w in _MediaOptimizer.RESPONSIVE_WIDTHS)
-        webp_srcset = ", ".join(f"{name_part}-{w}w.webp {w}w" for w in _MediaOptimizer.RESPONSIVE_WIDTHS)
-
-        sizes = "(max-width: 640px) 100vw, 50vw"
-
-        picture_open = (
-            '<picture>'
-            f'<source type="image/avif" srcset="{avif_srcset}" sizes="{sizes}">'
-            f'<source type="image/webp" srcset="{webp_srcset}" sizes="{sizes}">'
-        )
-        return picture_open
 
     def _img_attrs(self, attrs):
         d = {k.lower(): (v if v is not None else "") for k, v in attrs}
@@ -316,17 +275,7 @@ class _MediaOptimizer(HTMLParser):
     def handle_starttag(self, tag, attrs):
         tag = tag.lower()
         if tag == "img":
-            d = {k.lower(): (v if v is not None else "") for k, v in attrs}
-            src = d.get("src", "")
-            # Wrap in <picture> with WebP/AVIF variants if we can build variant paths
-            if src and ("." in src.split("/")[-1]):
-                picture_open = self._variants_for(src)
-                if picture_open:
-                    self.out.append(picture_open)
             self.out.append(self._render("img", self._img_attrs(attrs), True))
-            # Close </picture> if we opened one
-            if src and ("." in src.split("/")[-1]) and self._variants_for(src):
-                self.out.append("</picture>")
         elif tag == "video":
             self.out.append(self._render("video", self._video_attrs(attrs), False))
         else:
@@ -451,21 +400,18 @@ def delete_lesson(lesson_id: str) -> dict:
         if not lesson:
             raise ValueError("Lesson not found")
 
-        # Delete child rows first (dialect-agnostic bulk deletes — no raw SQL,
-        # so this works on both PostgreSQL and the in-memory SQLite test DB).
-        db.query(QuizOption).filter(
-            QuizOption.question_id.in_(
-                db.query(QuizQuestion.id).filter(
-                    QuizQuestion.quiz_id.in_(
-                        db.query(Quiz.id).filter(Quiz.lesson_id == lesson_id)
-                    )
-                )
-            )
-        ).delete(synchronize_session=False)
-        db.query(QuizQuestion).filter(
-            QuizQuestion.quiz_id.in_(db.query(Quiz.id).filter(Quiz.lesson_id == lesson_id))
-        ).delete(synchronize_session=False)
-        db.query(Quiz).filter(Quiz.lesson_id == lesson_id).delete(synchronize_session=False)
+        # Bulk-delete child rows in 3 grouped operations instead of 9 separate ones.
+        # 1) Collect quiz IDs for this lesson.
+        quiz_ids = [q.id for q in db.query(Quiz.id).filter(Quiz.lesson_id == lesson_id).all()]
+        if quiz_ids:
+            # 2) Collect question IDs for those quizzes, then bulk-delete options + questions.
+            q_ids = [q.id for q in db.query(QuizQuestion.id).filter(QuizQuestion.quiz_id.in_(quiz_ids)).all()]
+            if q_ids:
+                db.query(QuizOption).filter(QuizOption.question_id.in_(q_ids)).delete(synchronize_session=False)
+            db.query(QuizQuestion).filter(QuizQuestion.quiz_id.in_(quiz_ids)).delete(synchronize_session=False)
+            db.query(Quiz).filter(Quiz.id.in_(quiz_ids)).delete(synchronize_session=False)
+
+        # 3) Bulk-delete remaining child tables in two batches.
         db.query(LessonVersion).filter(LessonVersion.lesson_id == lesson_id).delete(synchronize_session=False)
         db.query(ProgressRecord).filter(ProgressRecord.lesson_id == lesson_id).delete(synchronize_session=False)
         db.query(LessonAnalyticsSnapshot).filter(LessonAnalyticsSnapshot.lesson_id == lesson_id).delete(synchronize_session=False)

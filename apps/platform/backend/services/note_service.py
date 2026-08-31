@@ -35,9 +35,11 @@ def get_note(user_id: str, lesson_id: str, db: Session | None = None) -> dict | 
             gen.close()
 
 
-def save_note(user_id: str, lesson_id: str, content: str) -> dict:
-    gen = get_db()
-    db: Session = next(gen)
+def save_note(user_id: str, lesson_id: str, content: str, db: Session | None = None) -> dict:
+    own = db is None
+    if own:
+        gen = get_db()
+        db: Session = next(gen)
     try:
         note = db.query(Note).filter(Note.user_id == user_id, Note.lesson_id == lesson_id).first()
         now = datetime.now(timezone.utc)
@@ -55,4 +57,5 @@ def save_note(user_id: str, lesson_id: str, content: str) -> dict:
             "updated_at": now.isoformat(),
         }
     finally:
-        gen.close()
+        if own:
+            gen.close()

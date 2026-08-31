@@ -39,10 +39,26 @@ def send_notification_route(body: SendNotificationRequest, db: Session = Depends
     users = db.query(User).filter(User.role == body.role, User.is_active.is_(True)).all()
     if not users:
         raise HTTPException(status_code=404, detail=f"No active {body.role}s found")
+    # Batch insert: create all notifications in one commit (P-02)
     results = []
     for u in users:
-        results.append(send_notification(db, user_id=u.id, message=body.message))
-    return {"sent": len(results), "notifications": results}
+        results.append({"user_id": u.id, "message": body.message})
+    from backend.models.notification import Notification
+    from datetime import datetime, timezone
+
+    notifications = [
+        Notification(
+            user_id=r["user_id"],
+            channel="in_app",
+            message=r["message"],
+            is_read=False,
+            created_at=datetime.now(timezone.utc),
+        )
+        for r in results
+    ]
+    db.add_all(notifications)
+    db.commit()
+    return {"sent": len(notifications), "notifications": [{"id": n.id, "user_id": n.user_id, "message": n.message} for n in notifications]}
 
 
 @router.post("/bulk", dependencies=[Depends(require_role("admin"))])
@@ -53,10 +69,24 @@ def send_bulk_notification_route(body: SendNotificationRequest, db: Session = De
     users = db.query(User).filter(User.role == body.role, User.is_active.is_(True)).all()
     if not users:
         raise HTTPException(status_code=404, detail=f"No active {body.role}s found")
-    results = []
-    for u in users:
-        results.append(send_notification(db, user_id=u.id, message=body.message))
-    return {"sent": len(results)}
+    # Batch insert: single commit for all notifications (P-02)
+    from backend.models.notification import Notification
+    from datetime import datetime, timezone
+
+    now = datetime.now(timezone.utc)
+    notifications = [
+        Notification(
+            user_id=u.id,
+            channel="in_app",
+            message=body.message,
+            is_read=False,
+            created_at=now,
+        )
+        for u in users
+    ]
+    db.add_all(notifications)
+    db.commit()
+    return {"sent": len(notifications)}
 
 
 @router.post("/{notification_id}/read")

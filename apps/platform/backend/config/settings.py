@@ -39,14 +39,15 @@ class Settings(BaseSettings):
     environment: str = "development"  # development | staging | production
     debug: bool = True
 
-    database_url: str = "postgresql://postgres:Mkalanga1994!@localhost:5432/casuya_platform"
+    database_url: str = "postgresql://user:password@localhost:5432/casuya_platform"
     database_replica_url: str | None = None
     redis_url: str = "redis://localhost:6379"
 
-    jwt_secret: str = "insecure-development-secret-change-me"
+    jwt_secret: str = ""
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 15
     refresh_token_expire_days: int = 7
+    remember_access_token_expire_days: int = 30
 
     allowed_origins: Annotated[list[str], BeforeValidator(_parse_allowed_origins)] = [
         "http://localhost:8765",
@@ -122,4 +123,10 @@ class Settings(BaseSettings):
 
 @lru_cache
 def get_settings() -> Settings:
-    return Settings()
+    s = Settings()
+    if s.environment != "development" and not s.jwt_secret:
+        raise ValueError(
+            "JWT_SECRET environment variable must be set in non-development environments. "
+            "The default empty value is not secure for production."
+        )
+    return s

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import HTMLResponse
 from sqlalchemy.orm import Session
 
@@ -20,10 +20,15 @@ from backend.services.game_service import (
 router = APIRouter(prefix="/games", tags=["games"])
 
 
-@router.get("", response_model=list[dict])
-@router.get("/", response_model=list[dict])
-def list_games_route(db: Session = Depends(get_db), current_user=Depends(get_current_user)):
-    return list_games(db)
+@router.get("", response_model=dict)
+@router.get("/", response_model=dict)
+def list_games_route(
+    offset: int = Query(0, ge=0),
+    limit: int = Query(50, ge=1, le=200),
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
+    return list_games(db, offset=offset, limit=limit)
 
 
 @router.get("/{game_id}", response_model=dict)

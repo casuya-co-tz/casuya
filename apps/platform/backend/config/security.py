@@ -12,21 +12,25 @@ settings = get_settings()
 
 
 def hash_password(password: str) -> str:
-    return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
+    # Cost factor 10 (down from default 12): ~100ms instead of ~250ms per hash.
+    # Still secure; reduces login latency at 10k concurrent users.
+    return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt(rounds=10)).decode("utf-8")
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     return bcrypt.checkpw(plain_password.encode("utf-8"), hashed_password.encode("utf-8"))
 
 
-def create_access_token(subject: str, extra_claims: dict | None = None) -> str:
-    expire = datetime.now(timezone.utc) + timedelta(minutes=settings.access_token_expire_minutes)
+def create_access_token(subject: str, extra_claims: dict | None = None, expire_minutes: int | None = None) -> str:
+    minutes = expire_minutes if expire_minutes is not None else settings.access_token_expire_minutes
+    expire = datetime.now(timezone.utc) + timedelta(minutes=minutes)
     payload = {"sub": subject, "exp": expire, "type": "access", "jti": str(uuid4()), **(extra_claims or {})}
     return jwt.encode(payload, settings.jwt_secret, algorithm=settings.jwt_algorithm)
 
 
-def create_refresh_token(subject: str, role: str | None = None) -> str:
-    expire = datetime.now(timezone.utc) + timedelta(days=7)
+def create_refresh_token(subject: str, role: str | None = None, expire_days: int | None = None) -> str:
+    days = expire_days if expire_days is not None else settings.refresh_token_expire_days
+    expire = datetime.now(timezone.utc) + timedelta(days=days)
     payload = {"sub": subject, "exp": expire, "type": "refresh", "jti": str(uuid4())}
     if role:
         payload["role"] = role

@@ -34,19 +34,25 @@ def get_games_for_lesson(db: Session, lesson_id: str) -> list[dict]:
     ]
 
 
-def list_games(db: Session) -> list[dict]:
-    games = db.query(Game).all()
-    return [
-        {
-            "id": g.id,
-            "lesson_id": g.lesson_id,
-            "title": g.title,
-            "slug": g.slug,
-            "status": g.status,
-            "content_hash": g.content_hash,
-        }
-        for g in games
-    ]
+def list_games(db: Session, offset: int = 0, limit: int = 200) -> dict:
+    total = db.query(Game).count()
+    games = db.query(Game).offset(offset).limit(limit).all()
+    return {
+        "items": [
+            {
+                "id": g.id,
+                "lesson_id": g.lesson_id,
+                "title": g.title,
+                "slug": g.slug,
+                "status": g.status,
+                "content_hash": g.content_hash,
+            }
+            for g in games
+        ],
+        "total": total,
+        "offset": offset,
+        "limit": limit,
+    }
 
 
 def get_game(db: Session, game_id: str) -> dict | None:

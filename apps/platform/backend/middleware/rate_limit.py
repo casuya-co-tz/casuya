@@ -1,7 +1,11 @@
 import json
+import logging
 import time
+from collections import defaultdict
 
 from starlette.types import ASGIApp, Receive, Scope, Send
+
+logger = logging.getLogger(__name__)
 
 ENDPOINT_LIMITS = {
     "/auth/register": 5,
@@ -12,6 +16,10 @@ ENDPOINT_LIMITS = {
 }
 
 EXEMPT_PATHS = {"/health", "/readyz"}
+
+# In-memory fallback when Redis is unavailable (S-09)
+_memory_store: dict[str, list[float]] = defaultdict(list)
+_MEMORY_STORE_MAX = 10000  # prevent unbounded growth
 
 
 class RateLimitMiddleware:
@@ -71,7 +79,29 @@ class RateLimitMiddleware:
                 )
                 await send({"type": "http.response.body", "body": body})
                 return
-        except Exception:
-            pass
+        except Exception as exc:
+            # In-memory fallback when Redis is unavailable (S-09)
+            logger.warning("Redis rate limit failed, using in-memory fallback: %s", exc)
+            if len(_memory_store) < _MEMORY_STORE_MAX:
+                entries = _memory_store[redis_key]
+                # Purge old entries outside the window
+                _memory_store[redis_key] = [t for t in entries if t > window_start]
+                entries = _memory_store[redis_key]
+                if len(entries) >= limit:
+                    ttl = int(entries[0] + 60 - now)
+                    body = json.dumps({"detail": f"Rate limit exceeded. Try again in {max(ttl, 1)} seconds."}).encode()
+                    await send(
+                        {
+                            "type": "http.response.start",
+                            "status": 429,
+                            "headers": [
+                                [b"content-type", b"application/json"],
+                                [b"content-length", str(len(body)).encode()],
+                            ],
+                        }
+                    )
+                    await send({"type": "http.response.body", "body": body})
+                    return
+                entries.append(now)
 
         await self.app(scope, receive, send)

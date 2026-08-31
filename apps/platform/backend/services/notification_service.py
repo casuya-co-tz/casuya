@@ -9,12 +9,15 @@ from backend.models.notification import Notification
 
 _settings = get_settings()
 
+# Reuse a single httpx client for connection pooling (P-07)
+_http_client = httpx.Client(timeout=5.0)
+
 
 def _send_sms(phone: str, message: str) -> bool:
     if not _settings.africastalking_username or not _settings.africastalking_api_key:
         return False
     try:
-        resp = httpx.post(
+        resp = _http_client.post(
             "https://api.africastalking.com/version1/messaging",
             headers={
                 "Content-Type": "application/x-www-form-urlencoded",
@@ -26,7 +29,6 @@ def _send_sms(phone: str, message: str) -> bool:
                 "to": phone,
                 "message": message,
             },
-            timeout=5.0,
         )
         return resp.status_code == 201 or resp.status_code == 200
     except Exception:
@@ -69,10 +71,15 @@ def list_notifications(
         .limit(limit)
         .all()
     )
-    return [
-        {"id": n.id, "user_id": n.user_id, "channel": n.channel, "message": n.message, "is_read": n.is_read}
-        for n in notifications
-    ]
+    return {
+        "items": [
+            {"id": n.id, "user_id": n.user_id, "channel": n.channel, "message": n.message, "is_read": n.is_read}
+            for n in notifications
+        ],
+        "total": total,
+        "offset": offset,
+        "limit": limit,
+    }
 
 
 def mark_notification_read(db: Session, notification_id: str, user_id: str | None = None) -> dict:

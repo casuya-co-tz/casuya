@@ -21,8 +21,8 @@ connect_args = {"check_same_thread": False, "timeout": 30} if settings.database_
 # marks how many simultaneous DB calls each process may make and stays well
 # inside Neon's allowance. pool_pre_ping validates stale pooled connections
 # and a short pool_recycle matches Neon's idle-recycling of backends.
-POOL_SIZE = 3
-POOL_MAX_OVERFLOW = 5
+POOL_SIZE = 5
+POOL_MAX_OVERFLOW = 10
 POOL_RECYCLE = 300  # seconds (Neon recycles idle connections ~5 min)
 POOL_TIMEOUT = 5  # seconds; fail fast rather than stacking stalled requests
 
@@ -233,6 +233,13 @@ def init_db() -> None:
             "CREATE INDEX IF NOT EXISTS ix_bookmark_lesson_id ON bookmarks(lesson_id)",
             "CREATE INDEX IF NOT EXISTS ix_notes_user_id ON notes(user_id)",
             "CREATE INDEX IF NOT EXISTS ix_notes_lesson_id ON notes(lesson_id)",
+            # Composite indexes for frequent user+lesson lookups (P1)
+            "CREATE INDEX IF NOT EXISTS ix_bookmark_user_lesson ON bookmarks(user_id, lesson_id)",
+            "CREATE INDEX IF NOT EXISTS ix_notes_user_lesson ON notes(user_id, lesson_id)",
+            # FK indexes for student/teacher user lookups (P1)
+            "CREATE INDEX IF NOT EXISTS ix_student_user_id ON students(user_id)",
+            "CREATE INDEX IF NOT EXISTS ix_teacher_user_id ON teachers(user_id)",
+            "CREATE INDEX IF NOT EXISTS ix_teacher_school_code ON teachers(school_code)",
             "CREATE INDEX IF NOT EXISTS ix_notification_user_id ON notifications(user_id)",
             "CREATE INDEX IF NOT EXISTS ix_notification_created_at ON notifications(created_at)",
             "CREATE INDEX IF NOT EXISTS ix_notification_user_created ON notifications(user_id, created_at)",
@@ -242,6 +249,11 @@ def init_db() -> None:
             "CREATE INDEX IF NOT EXISTS ix_game_lesson_id ON games(lesson_id)",
             "CREATE INDEX IF NOT EXISTS ix_payment_user_id ON payments(user_id)",
             "CREATE INDEX IF NOT EXISTS ix_assignment_lesson_id ON assignments(lesson_id)",
+            # P2 #8: Missing indexes on hot query paths
+            "CREATE INDEX IF NOT EXISTS ix_notification_user_unread ON notifications(user_id, is_read)",
+            "CREATE INDEX IF NOT EXISTS ix_assignment_submission_student ON assignment_submissions(student_id)",
+            "CREATE INDEX IF NOT EXISTS ix_payment_status ON payments(status)",
+            "CREATE INDEX IF NOT EXISTS ix_file_record_kind ON file_records(kind)",
             # Full-text search: functional GIN index over to_tsvector(title).
             # Postgres-only (SQLite tests fall back to LIKE in search_service).
             (

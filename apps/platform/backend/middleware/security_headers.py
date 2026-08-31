@@ -1,3 +1,5 @@
+import secrets
+
 from starlette.datastructures import MutableHeaders
 from starlette.types import ASGIApp, Receive, Scope, Send
 
@@ -14,6 +16,10 @@ class SecurityHeadersMiddleware:
         path: str = scope.get("path", "/")
         method: str = scope.get("method", "GET")
 
+        # Generate a per-request nonce for CSP (S-06)
+        nonce = secrets.token_urlsafe(16)
+        scope["csp_nonce"] = nonce
+
         async def send_wrapper(message):
             if message["type"] == "http.response.start":
                 headers = MutableHeaders(scope=message)
@@ -21,10 +27,13 @@ class SecurityHeadersMiddleware:
                 headers["X-Frame-Options"] = "DENY"
                 headers["X-XSS-Protection"] = "1; mode=block"
                 headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+                # CSP: removed 'unsafe-eval' (no eval() usage in frontend).
+                # 'unsafe-inline' kept for static HTML inline scripts; migrate
+                # to nonce-based scripts when moving to server-rendered templates.
                 headers["Content-Security-Policy"] = (
                     "default-src 'self'; "
-                    "script-src 'self' 'unsafe-inline' 'unsafe-eval'; "
-                    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com https://p.typekit.net; "
+                    f"script-src 'self' 'unsafe-inline' 'nonce-{nonce}'; "
+                    f"style-src 'self' 'unsafe-inline' 'nonce-{nonce}' https://fonts.googleapis.com https://fonts.cdnfonts.com https://p.typekit.net; "
                     "font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com https://p.typekit.net https://use.typekit.net; "
                     "img-src 'self' data: blob:; "
                     "frame-src 'self'; "

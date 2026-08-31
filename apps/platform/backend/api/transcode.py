@@ -15,7 +15,7 @@ from backend.middleware.permissions import require_role
 from backend.services.transcode_service import (
     delete_hls,
     get_hls_manifest,
-    transcode_to_hls,
+    transcode_to_hls_async,
 )
 from pathlib import Path
 
@@ -48,7 +48,7 @@ async def trigger_transcode(
         raise HTTPException(status_code=404, detail="Video file not found")
 
     try:
-        result = transcode_to_hls(source)
+        result = await transcode_to_hls_async(source)
     except RuntimeError as e:
         raise HTTPException(status_code=500, detail=str(e))
     except FileNotFoundError as e:
