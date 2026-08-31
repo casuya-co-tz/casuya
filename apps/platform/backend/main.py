@@ -73,35 +73,36 @@ async def lifespan(app: FastAPI):
     # skip it once the lock is held by the leader (enables multi-worker boots).
     acquired = await asyncio.to_thread(acquire_startup_lock)
     try:
-        await asyncio.to_thread(init_db)
+        if acquired:
+            await asyncio.to_thread(init_db)
 
-        # Auto-provision admin if env vars are present (useful for Render Free tier w/o shell)
-        import os
+            # Auto-provision admin if env vars are present (useful for Render Free tier w/o shell)
+            import os
 
-        admin_email = os.environ.get("CASUYA_ADMIN_EMAIL", "").strip()
-        admin_password = os.environ.get("CASUYA_ADMIN_PASSWORD", "").strip()
-        if admin_email and admin_password:
-            from database.seeds.create_admin import create_admin
+            admin_email = os.environ.get("CASUYA_ADMIN_EMAIL", "").strip()
+            admin_password = os.environ.get("CASUYA_ADMIN_PASSWORD", "").strip()
+            if admin_email and admin_password:
+                from database.seeds.create_admin import create_admin
 
-            admin_name = os.environ.get("CASUYA_ADMIN_NAME", "Platform Admin")
-            await asyncio.to_thread(create_admin, admin_email, admin_password, admin_name)
+                admin_name = os.environ.get("CASUYA_ADMIN_NAME", "Platform Admin")
+                await asyncio.to_thread(create_admin, admin_email, admin_password, admin_name)
 
-        # Restore generated HTML/uploads from the database so content survived
-        # any ephemeral filesystem wipe (Render Free, etc.).
-        from backend.services.storage_rehydrate import rehydrate_storage
+            # Restore generated HTML/uploads from the database so content survived
+            # any ephemeral filesystem wipe (Render Free, etc.).
+            from backend.services.storage_rehydrate import rehydrate_storage
 
-        await asyncio.to_thread(rehydrate_storage)
+            await asyncio.to_thread(rehydrate_storage)
 
-        # Deploy Cloudflare cache rules on startup (P3-1)
-        # Safe no-op when Cloudflare credentials are not configured.
-        try:
-            from integrations.cloudflare import deploy_cache_rules
+            # Deploy Cloudflare cache rules on startup (P3-1)
+            # Safe no-op when Cloudflare credentials are not configured.
+            try:
+                from integrations.cloudflare import deploy_cache_rules
 
-            rules_result = await asyncio.to_thread(deploy_cache_rules)
-            if rules_result.get("status") == "success":
-                print(f"Cloudflare cache rules {rules_result.get('action')}: {rules_result.get('rules_count')} rules")
-        except Exception as cf_exc:
-            print(f"Cloudflare rules deployment skipped: {cf_exc}")
+                rules_result = await asyncio.to_thread(deploy_cache_rules)
+                if rules_result.get("status") == "success":
+                    print(f"Cloudflare cache rules {rules_result.get('action')}: {rules_result.get('rules_count')} rules")
+            except Exception as cf_exc:
+                print(f"Cloudflare rules deployment skipped: {cf_exc}")
 
     except Exception as exc:  # noqa: BLE001
         # Tolerate an unreachable/unconfigured database in local dev so the
