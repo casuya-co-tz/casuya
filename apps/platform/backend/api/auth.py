@@ -41,7 +41,9 @@ def register(body: RegisterRequest):
 @router.post("/login/", response_model=AuthResponse)
 def login(body: LoginRequest):
     try:
-        return authenticate_user(email=body.email, password=body.password)
+        return authenticate_user(
+            email=body.email, password=body.password, keep_logged_in=body.keep_logged_in
+        )
     except ValueError as e:
         raise HTTPException(status_code=401, detail=str(e))
     except Exception as e:

@@ -13,6 +13,7 @@ class RegisterRequest(BaseModel):
 class LoginRequest(BaseModel):
     email: str
     password: str
+    keep_logged_in: bool = False
 
 
 class RefreshTokenRequest(BaseModel):

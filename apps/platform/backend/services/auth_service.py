@@ -107,7 +107,7 @@ def register_user(
         _gen.close()
 
 
-def authenticate_user(email: str, password: str) -> dict:
+def authenticate_user(email: str, password: str, keep_logged_in: bool = False) -> dict:
     _gen = get_db()
     db: Session = next(_gen)
     try:
@@ -116,8 +116,16 @@ def authenticate_user(email: str, password: str) -> dict:
             raise ValueError("Invalid email or password")
         if not user.is_active:
             raise ValueError("Account is deactivated")
-        access_token = create_access_token(user.id, extra_claims={"role": user.role})
-        refresh_token = create_refresh_token(user.id, role=user.role)
+        if keep_logged_in:
+            access_minutes = settings.remember_access_token_expire_days * 24 * 60
+            access_days = settings.remember_access_token_expire_days
+        else:
+            access_minutes = None
+            access_days = None
+        access_token = create_access_token(
+            user.id, extra_claims={"role": user.role}, expire_minutes=access_minutes
+        )
+        refresh_token = create_refresh_token(user.id, role=user.role, expire_days=access_days)
 
         result: dict = {
             "access_token": access_token,

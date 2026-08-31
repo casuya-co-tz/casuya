@@ -117,10 +117,15 @@ def _sync() -> None:
 
 def _background_sync() -> None:
     """Background thread that syncs every _sync_interval seconds."""
-    global _running
+    global _running, _error_count
     while _running:
-        _sync()
-        time.sleep(_sync_interval)
+        try:
+            _sync()
+        except Exception:
+            _error_count += 1
+            _sync_from_db()
+        finally:
+            time.sleep(_sync_interval)
 
 
 def start_cache_sync() -> None:

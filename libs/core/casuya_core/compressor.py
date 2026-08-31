@@ -41,30 +41,141 @@ class LessonCompressor:
                     remove_optional_attribute_quotes=True
                 )
             else:
-                # Basic fallback minification
-                html = re.sub(r'\s+', ' ', html_content)
-                html = re.sub(r'<!--.*?-->', '', html, flags=re.DOTALL)
-                return html.strip()
+                # Basic fallback minification that protects content-sensitive regions
+                return self._minify_html_basic(html_content)
         except Exception as e:
             raise CompressionError(f"HTML minification failed: {e}") from e
     
     def minify_css(self, css_content: str) -> str:
-        """Basic CSS minification."""
+        """CSS minification that preserves the contents of string literals."""
         if not self.config.minify_css:
             return css_content
-        # Remove comments and whitespace
-        css = re.sub(r'/\*.*?\*/', '', css_content, flags=re.DOTALL)
-        css = re.sub(r'\s+', ' ', css)
-        return css.strip()
-    
+        return self._minify_css(css_content)
+
     def minify_js(self, js_content: str) -> str:
-        """Basic JS minification (placeholder for full terser later)."""
+        """JS minification that preserves string/regex literal contents."""
         if not self.config.minify_js:
             return js_content
-        # Very basic - remove comments and extra whitespace
-        js = re.sub(r'//.*?$|/\*.*?\*/', '', js_content, flags=re.MULTILINE | re.DOTALL)
-        js = re.sub(r'\s+', ' ', js)
-        return js.strip()
+        return self._minify_js(js_content)
+
+    @staticmethod
+    def _minify_css(css_content: str) -> str:
+        out: list[str] = []
+        i = 0
+        n = len(css_content)
+        while i < n:
+            c = css_content[i]
+            nxt = css_content[i + 1] if i + 1 < n else ""
+            if c == '"' or c == "'":
+                out.append(c)
+                i += 1
+                while i < n:
+                    sc = css_content[i]
+                    out.append(sc)
+                    if sc == "\\" and i + 1 < n:
+                        out.append(css_content[i + 1])
+                        i += 2
+                        continue
+                    if sc == c:
+                        i += 1
+                        break
+                    i += 1
+                continue
+            if c == "/" and nxt == "*":
+                i += 2
+                while i < n and not (css_content[i] == "*" and css_content[i + 1 : i + 2] == "/"):
+                    i += 1
+                i += 2
+                continue
+            if c.isspace():
+                if out and not out[-1].isspace():
+                    out.append(" ")
+            else:
+                out.append(c)
+            i += 1
+        return "".join(out).strip()
+
+    @staticmethod
+    def _is_regex_start(out: list) -> bool:
+        j = len(out) - 1
+        while j >= 0 and out[j].isspace():
+            j -= 1
+        if j < 0:
+            return True
+        return out[j] in "=(:,[!&|?{};+-*%^~<>"
+
+    def _minify_js(self, js_content: str) -> str:
+        out: list[str] = []
+        i = 0
+        n = len(js_content)
+        while i < n:
+            c = js_content[i]
+            nxt = js_content[i + 1] if i + 1 < n else ""
+            if c == '"' or c == "'" or c == "`":
+                out.append(c)
+                i += 1
+                while i < n:
+                    sc = js_content[i]
+                    out.append(sc)
+                    if sc == "\\" and i + 1 < n:
+                        out.append(js_content[i + 1])
+                        i += 2
+                        continue
+                    if sc == c:
+                        i += 1
+                        break
+                    i += 1
+                continue
+            if c == "/" and nxt == "/":
+                i += 2
+                while i < n and js_content[i] != "\n":
+                    i += 1
+                continue
+            if c == "/" and nxt == "*":
+                i += 2
+                while i < n and not (js_content[i] == "*" and js_content[i + 1 : i + 2] == "/"):
+                    i += 1
+                i += 2
+                continue
+            if c == "/" and self._is_regex_start(out):
+                out.append(c)
+                i += 1
+                while i < n:
+                    rc = js_content[i]
+                    out.append(rc)
+                    if rc == "\\" and i + 1 < n:
+                        out.append(js_content[i + 1])
+                        i += 2
+                        continue
+                    if rc == "/":
+                        i += 1
+                        while i < n and js_content[i].isalpha():
+                            out.append(js_content[i])
+                            i += 1
+                        break
+                    i += 1
+                continue
+            if c.isspace():
+                if out and not out[-1].isspace():
+                    out.append(" ")
+            else:
+                out.append(c)
+            i += 1
+        return "".join(out).strip()
+
+    @staticmethod
+    def _minify_html_basic(html_content: str) -> str:
+        parts = re.split(r"(<(?:script|style|pre)\b.*?</(?:script|style|pre)>|<(?:script|style|pre)\b[^>]*>.*?</(?:script|style|pre)>)", html_content, flags=re.IGNORECASE | re.DOTALL)
+        out: list[str] = []
+        for part in parts:
+            if re.match(r"<(?:script|style|pre)\b", part, flags=re.IGNORECASE):
+                out.append(part)
+            else:
+                collapsed = re.sub(r"<!--.*?-->", "", part, flags=re.DOTALL)
+                collapsed = re.sub(r"\s+", " ", collapsed)
+                out.append(collapsed)
+        return "".join(out).strip()
+
     
     def process_lesson(self, build_dir: Path) -> None:
         """Process all files in the build directory."""

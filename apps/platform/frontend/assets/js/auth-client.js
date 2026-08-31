@@ -161,10 +161,10 @@ export async function apiRequest(path, options = {}) {
   return data ?? text;
 }
 
-export async function login({ email, password }) {
+export async function login({ email, password, keep_logged_in = false }) {
   const data = await apiRequest("/auth/login", {
     method: "POST",
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({ email, password, keep_logged_in }),
     retryOnAuthFailure: false,
   });
 

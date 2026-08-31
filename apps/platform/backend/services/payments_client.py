@@ -32,6 +32,8 @@ class PaymentsClient:
             raise ConnectionError(f"casuya-payments service unavailable at {self.base_url}")
         except httpx.TimeoutException:
             raise ConnectionError(f"casuya-payments service timeout at {self.base_url}")
+        except httpx.HTTPStatusError:
+            raise ConnectionError(f"casuya-payments service error at {self.base_url}")
 
     def _post(self, path: str, json: dict | None = None) -> dict:
         try:
@@ -42,6 +44,8 @@ class PaymentsClient:
             raise ConnectionError(f"casuya-payments service unavailable at {self.base_url}")
         except httpx.TimeoutException:
             raise ConnectionError(f"casuya-payments service timeout at {self.base_url}")
+        except httpx.HTTPStatusError:
+            raise ConnectionError(f"casuya-payments service error at {self.base_url}")
 
     # ── Payments ──────────────────────────────────────────────────────────
 
