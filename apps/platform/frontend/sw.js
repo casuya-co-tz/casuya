@@ -10,21 +10,26 @@
 //
 // Cache is versioned; bump CACHE_VERSION when you change cached assets.
 
-const CACHE_VERSION = "casuya-static-v2";
+const CACHE_VERSION = "casuya-static-v3";
 const PRECACHE = [
   "/",
+  "/manifest.webmanifest",
   "/assets/css/main.min.css",
   "/assets/css/tailwind.min.css",
   "/assets/js/env.js",
   "/assets/js/config.js",
   "/assets/js/main.min.js",
   "/assets/js/brand.js",
+  "/assets/images/casuya-logo.svg",
+  "/assets/images/icons/icon-192.png",
+  "/assets/images/icons/icon-512.png",
+  "/assets/images/icons/apple-touch-icon.png",
   "/static/lib/katex/katex.min.css",
   "/static/lib/katex/katex.min.js",
   "/static/lib/katex/contrib/auto-render.min.js",
 ];
 
-const STATIC_RE = /\.(?:js|css|woff2?|ttf|otf|svg|png|jpe?g|gif|webp|mp4|webm|mp3|wav|pdf)(?:[?#]|$)/i;
+const STATIC_RE = /\.(?:js|css|woff2?|ttf|otf|svg|png|jpe?g|gif|webp|mp4|webm|mp3|wav|pdf|webmanifest)(?:[?#]|$)/i;
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
