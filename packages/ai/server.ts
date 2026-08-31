@@ -127,6 +127,97 @@ async function safeAsync(fn: () => Promise<unknown>, fallback: unknown): Promise
   }
 }
 
+const SUBJECT_NAME: Record<string, string> = {
+  mathematics: 'Mathematics',
+  'basic mathematics': 'Mathematics',
+  physics: 'Physics',
+  chemistry: 'Chemistry',
+  biology: 'Biology',
+  'animal husbandry': 'Animal Husbandry',
+  agriculture: 'Agriculture',
+  'english language': 'English Language',
+  english: 'English Language',
+  kiswahili: 'Kiswahili',
+  history: 'History',
+  geography: 'Geography',
+  'book keeping': 'Book Keeping',
+  commerce: 'Commerce',
+  economics: 'Economics',
+  divinity: 'Divinity',
+  'bible knowledge': 'Bible Knowledge',
+  'computer science': 'Computer Science',
+  civics: 'Civics',
+};
+
+/** Resolve a subject slug to a human name plus the closest TutoringSubject enum. */
+function resolveSubject(slug?: string): { name: string; enumValue: TutoringSubject } {
+  const s = (slug || '').toLowerCase();
+  const name = SUBJECT_NAME[s] || (slug ? slug.replace(/[_-]+/g, ' ') : '');
+  let enumValue: TutoringSubject = TutoringSubject.GENERAL;
+  if (/(mathematics|math)/.test(s)) enumValue = TutoringSubject.MATHEMATICS;
+  else if (/(physics|chemistry|biology|science|agriculture|geography)/.test(s))
+    enumValue = TutoringSubject.SCIENCE;
+  else if (/history/.test(s)) enumValue = TutoringSubject.HISTORY;
+  else if (/literature/.test(s)) enumValue = TutoringSubject.LITERATURE;
+  else if (/(english|kiswahili|swahili|language)/.test(s)) enumValue = TutoringSubject.LANGUAGE;
+  else if (/(computer|computing|ict)/.test(s)) enumValue = TutoringSubject.COMPUTING;
+  else if (/(art|music|drama)/.test(s)) enumValue = TutoringSubject.ARTS;
+  return { name, enumValue };
+}
+
+/** Map an integer form (1-6) to the KB's `formN` string, or undefined. */
+function formToKbForm(form?: number | string): string | undefined {
+  const n = typeof form === 'string' ? parseInt(form, 10) : form;
+  if (typeof n !== 'number' || !Number.isFinite(n) || n < 1 || n > 6) return undefined;
+  return `form${n}`;
+}
+
+function formLabel(form?: number | string): string {
+  const n = typeof form === 'string' ? parseInt(form, 10) : form;
+  return typeof n === 'number' && Number.isInteger(n) && n >= 1 && n <= 6 ? `Form ${n}` : '';
+}
+
+/** Build the grounded message given to the tutor (question + full pasted text + RAG). */
+function buildGroundedMessage(opts: {
+  question: string;
+  context?: string;
+  subjectName: string;
+  form?: number | string;
+  ragText: string;
+  maxContextChars?: number;
+}): string {
+  const ctx = (opts.context || '').trim();
+  const form = formLabel(opts.form);
+  const lines: string[] = [];
+  lines.push('Answer the student question below, grounded in the provided lesson text and reference material, and in reality — do not guess or invent when the sources are silent.');
+  if (opts.subjectName) lines.push(`Subject: ${opts.subjectName}`);
+  if (form) lines.push(`Class/Form: ${form}`);
+  if (ctx) {
+    const clip = ctx.length > (opts.maxContextChars || 4000) ? ctx.slice(0, opts.maxContextChars || 4000) + '…' : ctx;
+    lines.push(`\nLESSON TEXT THE STUDENT IS READING (read this carefully and use it as the primary basis of your answer):\n"""\n${clip}\n"""`);
+  }
+  if (opts.ragText) lines.push(opts.ragText);
+  lines.push(`\nSTUDENT QUESTION: ${opts.question}`);
+  return lines.join('\n');
+}
+
+/** Meaningful, KB-grounded fallback when the model provider fails. */
+function buildGroundedFallback(question: string, ragDocs: { title: string; kind: string }[]): string {
+  const cleanQ = question.replace(/^(explain|describe|define|what is|what are|how does|how do|why is|why do|state|list|outline|distinguish|compare)\b[\s:]*/i, '').trim() || question.trim();
+  if (ragDocs.length) {
+    const refs = ragDocs.map((d) => `- ${d.title}`).join('\n');
+    return `I couldn't reach the AI model right now, but here is what the NECTA/TIE knowledge base says is relevant to your question, so you can keep studying:\n\n${refs}\n\n_(Ask again in a moment and I'll give a full explanation — or read the lesson text above and the referenced material to understand "${cleanQ}".)_`;
+  }
+  return `I couldn't reach the AI model right now. Please re-ask your question shortly — I'll then give a full explanation of: ${cleanQ}`;
+}
+
+function cleanThink(text: string): string {
+  let msg = text;
+  const thinkMatch = msg.match(/ thinking[\s\S]*?<\/think>/);
+  if (thinkMatch) msg = msg.replace(thinkMatch[0], '').trim();
+  return msg;
+}
+
 async function start() {
   const { providers, default: defaultProvider } = buildProviders();
   console.log(`[casuya-ai] Active provider: ${defaultProvider}`);
@@ -186,52 +277,108 @@ async function start() {
         }
 
         case '/api/tutoring/explain': {
-          const { question, context, subject_slug, form_level } = body;
-          const subjectKey = (subject_slug || '').toLowerCase() as keyof typeof TutoringSubject;
-          const subjectValue = TutoringSubject[subjectKey] || TutoringSubject.GENERAL;
-          const query = (question || '') + ' ' + (context || '');
+          const { question, context, subject_slug, form_level, max_questions } = body;
+          const subject = resolveSubject(subject_slug);
+          const query = [question, context].filter(Boolean).join(' ').trim();
+          const kbForm = formToKbForm(form_level);
 
+          // RAG retrieval scoped to the user's subject + class, with a graceful
+          // fallback to unscoped retrieval so the answer is never left empty.
           let ragText = '';
           let ragDocs: { title: string; kind: string; subject: string }[] = [];
           if (kb.ready) {
-            const rag = kb.buildRagContext(
+            let rag = kb.buildRagContext(
               query,
-              { subject: subject_slug || undefined, form: undefined, limit: 3 },
-              Number(process.env.KB_RAG_MAX_CHARS) || 5000,
+              { subject: subject_slug || undefined, form: kbForm, limit: 3 },
+              Number(process.env.KB_RAG_MAX_CHARS) || 6000,
             );
+            if (!rag.docs.length && kbForm) {
+              rag = kb.buildRagContext(
+                query,
+                { subject: subject_slug || undefined, limit: 3 },
+                Number(process.env.KB_RAG_MAX_CHARS) || 6000,
+              );
+            }
             ragDocs = rag.docs.map((d) => ({ title: d.title, kind: d.kind, subject: d.subject }));
             if (rag.docs.length && rag.text) {
               ragText = `\n\n# REFERENCE MATERIAL (from NECTA/TIE knowledge base)\nUse only what is relevant here to ground your answer. If the material doesn't answer the question, say so honestly rather than guessing.\n\n${rag.text}\n# END REFERENCE MATERIAL`;
             }
           }
 
+          const nQuestions = Math.min(Math.max(Number(max_questions) || 10, 1), 20);
+
+          const grounded = buildGroundedMessage({
+            question: String(question || '').trim(),
+            context: context,
+            subjectName: subject.name,
+            form: form_level,
+            ragText,
+            maxContextChars: Number(process.env.KB_CONTEXT_MAX_CHARS) || 4000,
+          });
+
+          let response = '';
+          let sourced = false;
           try {
             const result = await ai.tutoring.tutor({
               studentId: 'platform',
-              subject: subjectValue,
-              topic: (context || 'topic').slice(0, 40),
+              subject: subject.enumValue,
+              topic: (context || question || 'topic').slice(0, 80),
               mode: TutoringMode.EXPLAIN,
-              message: question + ragText,
+              message: grounded,
               context: { lessonId: undefined, currentConcept: context },
-              preferences: form_level
-                ? ({ formLevel: form_level } as any)
-                : undefined,
+              preferences: form_level ? ({ formLevel: form_level } as any) : undefined,
             });
-            let msg = result.message;
-            const thinkMatch = msg.match(/ thinking[\s\S]*?<\/think>/);
-            if (thinkMatch) {
-              msg = msg.replace(thinkMatch[0], '').trim();
-            }
-            return { response: msg, sourced: !!ragText, kbHits: ragDocs };
+            response = cleanThink(result.message);
+            sourced = !!ragText;
           } catch (err) {
             console.error('[explain] tutor failed, using KB-grounded fallback:', err);
-            const source = ragDocs[0] && ragDocs[0].title ? ` (based on ${ragDocs[0].title})` : '';
-            return {
-              response: `Explanation: ${question}${source}`,
-              sourced: !!ragText,
-              kbHits: ragDocs,
-            };
+            response = buildGroundedFallback(String(question || 'your question'), ragDocs);
+            sourced = !!ragText;
           }
+
+          // Generate up to 20 practice questions of any type (wrapped so a
+          // generation failure never breaks the explanation above).
+          let questions: unknown[] = [];
+          try {
+            const generated = await ai.questionGenerator.generateQuestions({
+              subject: subject.name || (subject_slug || 'general'),
+              topic: (context || question || 'lesson content').slice(0, 80),
+              questionType: QuestionType.MULTIPLE_CHOICE,
+              difficulty: Difficulty.INTERMEDIATE,
+              category: QuestionCategory.COMPREHENSION,
+              count: nQuestions,
+              context: (context || '').slice(0, 4000),
+              formLevel: form_level,
+            } as any);
+            questions = (generated || []).slice(0, nQuestions);
+          } catch (err) {
+            console.error('[explain] question generation failed:', err);
+          }
+
+          return { response, sourced, kbHits: ragDocs, questions, max_questions: nQuestions };
+        }
+
+        case '/api/tutoring/quiz': {
+          const { question, context, subject_slug, form_level, count } = body;
+          const subject = resolveSubject(subject_slug);
+          const n = Math.min(Math.max(Number(count) || 10, 1), 20);
+          let questions: unknown[] = [];
+          try {
+            const generated = await ai.questionGenerator.generateQuestions({
+              subject: subject.name || (subject_slug || 'general'),
+              topic: (context || question || 'lesson content').slice(0, 80),
+              questionType: QuestionType.MULTIPLE_CHOICE,
+              difficulty: Difficulty.INTERMEDIATE,
+              category: QuestionCategory.COMPREHENSION,
+              count: n,
+              context: (context || '').slice(0, 4000),
+              formLevel: form_level,
+            } as any);
+            questions = (generated || []).slice(0, n);
+          } catch (err) {
+            console.error('[quiz] question generation failed:', err);
+          }
+          return { questions, count: questions.length };
         }
 
         case '/api/content/analyze': {

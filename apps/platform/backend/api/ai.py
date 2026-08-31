@@ -13,7 +13,9 @@ from pydantic import BaseModel
 from backend.middleware.auth import get_current_user
 from backend.services.ai_service import (
     analyze_content,
+    generate_practice_questions,
     generate_quiz_questions,
+    get_tutoring_payload,
     get_tutoring_response,
     moderate_content,
     translate_content,
@@ -34,6 +36,7 @@ class TutoringRequest(BaseModel):
     lesson_context: str = ""
     subject_slug: str | None = None
     form_level: int | None = None
+    max_questions: int | None = None  # up to 20 practice questions of any type
 
 
 class AnalyzeRequest(BaseModel):
@@ -62,13 +65,31 @@ async def api_generate_questions(req: QuestionRequest, _user=Depends(get_current
 
 @router.post("/tutoring/explain")
 async def api_tutoring(req: TutoringRequest, _user=Depends(get_current_user)):
-    response = await get_tutoring_response(
+    payload = await get_tutoring_payload(
         req.question,
         req.lesson_context,
         subject_slug=req.subject_slug,
         form_level=req.form_level,
+        max_questions=req.max_questions,
     )
-    return {"response": response}
+    return {
+        "response": payload["response"],
+        "questions": payload["questions"],
+        "count": len(payload["questions"]),
+    }
+
+
+@router.post("/tutoring/quiz")
+async def api_tutoring_quiz(req: TutoringRequest, _user=Depends(get_current_user)):
+    """Generate up to 20 practice questions of any type for the topic."""
+    questions = await generate_practice_questions(
+        req.question,
+        req.lesson_context,
+        subject_slug=req.subject_slug,
+        form_level=req.form_level,
+        count=req.max_questions or 10,
+    )
+    return {"questions": questions, "count": len(questions)}
 
 
 @router.post("/content/analyze")
