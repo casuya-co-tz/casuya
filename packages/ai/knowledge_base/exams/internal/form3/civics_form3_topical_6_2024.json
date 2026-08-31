@@ -1,0 +1,121 @@
+{
+  "filename": "civics_form3_topical_6_2024.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Civics - Topical Test 6 (FORM3 2024): Explain constitution",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Culture and Tradition",
+          "text": "Outline the procedures involved in 'Culture and Tradition'. - with example",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain constitution",
+          "text": "Discuss the challenges facing 'Explain constitution' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain constitution",
+          "text": "Explain the concept of 'Explain constitution' with examples relevant to Tanzania. - with example",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Culture and Tradition",
+          "text": "Evaluate the role of 'Culture and Tradition' in national development. - with example",
+          "competence": "Culture and Tradition"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain constitution",
+          "text": "Compare and contrast 'Explain constitution' with related concepts. - with diagram",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain constitution",
+          "text": "Compare and contrast 'Explain constitution' with related concepts. - with example",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Culture and Tradition",
+          "text": "Analyse the causes and effects of 'Culture and Tradition'. - with diagram",
+          "competence": "Culture and Tradition"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain constitution",
+          "text": "Examine the advantages and disadvantages of 'Explain constitution'. - with example",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain constitution",
+          "text": "Outline the procedures involved in 'Explain constitution'. - with example",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain constitution",
+          "text": "Explain the concept of 'Explain constitution' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain constitution"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Culture and Tradition",
+    "Explain constitution"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

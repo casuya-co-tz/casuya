@@ -1,0 +1,121 @@
+{
+  "filename": "computer_science_form4_topical_3_2023.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Computer Science - Topical Test 3 (FORM4 2023): Algorithm and Flowchart",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 45,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain document creation",
+          "text": "Compare and contrast 'Explain document creation' with related concepts.",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain document creation",
+          "text": "Describe the main features of 'Explain document creation'. - with example",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Algorithm and Flowchart",
+          "text": "Compare and contrast 'Algorithm and Flowchart' with related concepts.",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain document creation",
+          "text": "Outline the procedures involved in 'Explain document creation'.",
+          "competence": "Explain document creation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain document creation",
+          "text": "Compare and contrast 'Explain document creation' with related concepts.",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Algorithm and Flowchart",
+          "text": "Compare and contrast 'Algorithm and Flowchart' with related concepts. - with diagram",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Algorithm and Flowchart",
+          "text": "Describe the main features of 'Algorithm and Flowchart'. - with diagram",
+          "competence": "Algorithm and Flowchart"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Algorithm and Flowchart",
+          "text": "Describe the main features of 'Algorithm and Flowchart'.",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Algorithm and Flowchart",
+          "text": "Discuss the challenges facing 'Algorithm and Flowchart' in Tanzania and propose solutions. - with example",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Algorithm and Flowchart",
+          "text": "Describe the main features of 'Algorithm and Flowchart'. - with diagram",
+          "competence": "Algorithm and Flowchart"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain document creation",
+    "Algorithm and Flowchart"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

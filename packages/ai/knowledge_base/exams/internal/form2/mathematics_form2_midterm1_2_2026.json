@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form2_midterm1_2_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 1 Exam 2 (FORM2 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 88,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "Outline the procedures involved in 'Demonstrate basic understanding of calculus'. - with diagram",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use mathematical software to solve and draw graphs of simultaneous equations",
+          "text": "Analyse the causes and effects of 'Use mathematical software to solve and draw graphs of simultaneous equations'. - locally",
+          "competence": "Use mathematical software to solve and draw graphs of simult"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Perform operations with sets (union, intersection, and complement of a se",
+          "text": "Assess the impact of 'Perform operations with sets (union, intersection, and complement of a se' on society.",
+          "competence": "Perform operations with sets (union, intersection, and compl"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "How does 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)' relate to sustainable development?",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+          "text": "Propose measures to improve 'Explain the concept of approximations (rounding off, significant figures, and decimal place' in schools.",
+          "competence": "Explain the concept of approximations (rounding off, signifi"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+          "text": "Explain the concept of 'Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)' with examples relevant to Tanzania.",
+          "competence": "Explore basic tenets of logic (connectives, propositions, ar"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+          "text": "With examples, illustrate how 'Determine the probability of an event, expectation, variance, and standard deviation of random variables' is applied in the community.",
+          "competence": "Determine the probability of an event, expectation, variance"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Find the gradient/ slope of a line",
+          "text": "Define 'Find the gradient/ slope of a line' and discuss its importance in everyday life. - with diagram",
+          "competence": "Find the gradient/ slope of a line"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Explain the concept of 'Convert repeating/ recurring decimals into fractions and vice versa' with examples relevant to Tanzania. - with example",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Compare sets (subsets and universal set",
+          "text": "Outline the procedures involved in 'Compare sets (subsets and universal set'.",
+          "competence": "Compare sets (subsets and universal set"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Determine the equation of a straight line and draw its graph",
+          "text": "Compare and contrast 'Determine the equation of a straight line and draw its graph' with related concepts. - with example",
+          "competence": "Determine the equation of a straight line and draw its graph"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Solve linear simultaneous equations graphically",
+          "text": "Evaluate the role of 'Solve linear simultaneous equations graphically' in national development.",
+          "competence": "Solve linear simultaneous equations graphically"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "With examples, illustrate how 'Use geometry, approximations, relations and functions in various contexts' is applied in the community.",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "Analyse the causes and effects of 'Solve simultaneous equations using substitution and elimination methods'.",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+          "text": "With examples, illustrate how 'and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)' is applied in the community.",
+          "competence": "and rational inequalities, 3x3 matrices, partial fractions, "
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "Propose measures to improve 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)' in schools. - locally",
+          "competence": "Use differential equations to solve real life problems relat"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "text": "Discuss the factors influencing 'Demonstrate an advanced understanding of algebra'.",
+          "competence": "Demonstrate an advanced understanding of algebra"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "Explain the concept of 'Perform operations on radicals and rationalize the denominators' with examples relevant to Tanzania. - with example",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore advanced tenets of linear programming (transportation: two sources and two destinations",
+          "text": "How does 'Explore advanced tenets of linear programming (transportation: two sources and two destinations' relate to sustainable development?",
+          "competence": "Explore advanced tenets of linear programming (transportatio"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Apply sine and cosine rules to find distances or angles of elevation",
+          "text": "With examples, illustrate how 'Apply sine and cosine rules to find distances or angles of elevation' is applied in the community.",
+          "competence": "Apply sine and cosine rules to find distances or angles of e"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate basic understanding of calculus",
+    "Use mathematical software to solve and draw graphs of simultaneous equations",
+    "Perform operations with sets (union, intersection, and complement of a se",
+    "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+    "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+    "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+    "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+    "Find the gradient/ slope of a line",
+    "Convert repeating/ recurring decimals into fractions and vice versa",
+    "Compare sets (subsets and universal set"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

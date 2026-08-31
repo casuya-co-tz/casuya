@@ -1,0 +1,289 @@
+{
+  "filename": "biology_form4_annual_2_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2026",
+  "time": "3:00 Hours",
+  "title": "Biology - Annual Exam 2 (FORM4 2026)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 137,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "With examples, illustrate how 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' is applied in the community. - with example",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Design and carry out a project in Biology",
+          "text": "Analyse the causes and effects of 'Design and carry out a project in Biology'. - with diagram",
+          "competence": "Design and carry out a project in Biology"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "Examine the advantages and disadvantages of 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system'. - with example",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+          "text": "Examine the advantages and disadvantages of 'Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces'. - with example",
+          "competence": "Describe the mechanism of gaseous exchange in plants (parts "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+          "text": "Describe the main features of 'Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio'. - with diagram",
+          "competence": "Describe the mechanisms of growth in mammals and flowering p"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+          "text": "Compare and contrast 'Investigate growth in flowering plants (hypogeal and epigeal germinatio' with related concepts. - with example",
+          "competence": "Investigate growth in flowering plants (hypogeal and epigeal"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Analyse the causes and effects of 'Develop and carry out a simple research project in Biology'. - with example",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the principles of binomial nomenclature and classification",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of the principles of binomial nomenclature and classification'. - with example",
+          "competence": "Demonstrate an understanding of the principles of binomial n"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4",
+          "text": "Evaluate the role of 'Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4' in national development. - with example",
+          "competence": "Explain the physiology of photosynthesis (mechanism of light"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "Outline the procedures involved in 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)'.",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Investigate tropic responses in plants",
+          "text": "Discuss the challenges facing 'Investigate tropic responses in plants' in Tanzania and propose solutions.",
+          "competence": "Investigate tropic responses in plants"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis",
+          "text": "Analyse the causes and effects of 'Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis'. - with example",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "Examine the advantages and disadvantages of 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement'. - with example",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate mastery of scientific biological terminologies'. - with example",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+          "text": "With examples, illustrate how 'Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt' is applied in the community. - with diagram",
+          "competence": "Describe reproduction in humans (sexual reproduction in huma"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+          "text": "Discuss the challenges facing 'Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)' in Tanzania and propose solutions. - with example",
+          "competence": "Apply knowledge on binomial nomenclature in different fields"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+          "text": "With examples, illustrate how 'Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)' is applied in the community.",
+          "competence": "Describe the physiology of gaseous exchange and respiration "
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "text": "Describe the main features of 'Describe the physiological, anatomical and ecological processes of living organisms'. - with example",
+          "competence": "Describe the physiological, anatomical and ecological proces"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Conduct a project in Biology",
+          "text": "Discuss the challenges facing 'Conduct a project in Biology' in Tanzania and propose solutions.",
+          "competence": "Conduct a project in Biology"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Investigate the process of nervous coordination (reflex arc and knee jer",
+          "text": "Define 'Investigate the process of nervous coordination (reflex arc and knee jer' and discuss its importance in everyday life. - with example",
+          "competence": "Investigate the process of nervous coordination (reflex arc "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "Compare and contrast 'Explain growth process in animals (growth patterns and metamorphosis)' with related concepts.",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Evaluate the role of 'Complete and submit a report for the research project started in Form Three' in national development.",
+          "competence": "Complete and submit a report for the research project starte"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "Compare and contrast 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution' with related concepts. - with diagram",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "and gas exchange in living organisms",
+          "text": "Explain the concept of 'and gas exchange in living organisms' with examples relevant to Tanzania.",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio",
+          "text": "Evaluate the role of 'Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio' in national development. - with diagram",
+          "competence": "Describe the mechanisms of gaseous exchange and respiration "
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+          "text": "Discuss the challenges facing 'Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio' in Tanzania and propose solutions.",
+          "competence": "Describe reproduction in plants (concept of reproduction in "
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "text": "Evaluate the role of 'Demonstrate mastery of basic skills for conducting biological investigations' in national development. - with diagram",
+          "competence": "Demonstrate mastery of basic skills for conducting biologica"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Carry out a biological project work using biological principles",
+          "text": "Compare and contrast 'Carry out a biological project work using biological principles' with related concepts. - with example",
+          "competence": "Carry out a biological project work using biological princip"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+          "text": "Define 'Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the basic skills for conducting biological experime"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Carry out experiments to determine the pulse rate in human",
+          "text": "Define 'Carry out experiments to determine the pulse rate in human' and discuss its importance in everyday life. - with diagram",
+          "competence": "Carry out experiments to determine the pulse rate in human"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+    "Design and carry out a project in Biology",
+    "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+    "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+    "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+    "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+    "Develop and carry out a simple research project in Biology",
+    "Demonstrate an understanding of the principles of binomial nomenclature and classification",
+    "Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4",
+    "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

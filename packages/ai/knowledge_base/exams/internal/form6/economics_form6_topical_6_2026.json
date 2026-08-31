@@ -1,0 +1,121 @@
+{
+  "filename": "economics_form6_topical_6_2026.json",
+  "subject": "Economics",
+  "subject_slug": "economics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Economics - Topical Test 6 (FORM6 2026): Design and carry out a project in E",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Describe the main features of 'Examine the influence of the economic system on resource allocation and distribution'.",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Outline the procedures involved in 'Examine the influence of the economic system on resource allocation and distribution'.",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Design and carry out a project in Economics",
+          "text": "Describe the process of 'Design and carry out a project in Economics' step by step.",
+          "competence": "Design and carry out a project in Economics"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Propose measures to improve 'Examine the influence of the economic system on resource allocation and distribution' in schools.",
+          "competence": "Examine the influence of the economic system on resource all"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Explain the concept of 'Examine the influence of the economic system on resource allocation and distribution' with examples relevant to Tanzania. - with diagram",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Design and carry out a project in Economics",
+          "text": "Explain the relationship between 'Design and carry out a project in Economics' and its environment. - with diagram",
+          "competence": "Design and carry out a project in Economics"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Design and carry out a project in Economics",
+          "text": "Define 'Design and carry out a project in Economics' and discuss its importance in everyday life. - with example",
+          "competence": "Design and carry out a project in Economics"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Describe the main features of 'Examine the influence of the economic system on resource allocation and distribution'. - with diagram",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Explain the relationship between 'Examine the influence of the economic system on resource allocation and distribution' and its environment. - with diagram",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Compare and contrast 'Examine the influence of the economic system on resource allocation and distribution' with related concepts. - locally",
+          "competence": "Examine the influence of the economic system on resource all"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Examine the influence of the economic system on resource allocation and distribution",
+    "Design and carry out a project in Economics"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

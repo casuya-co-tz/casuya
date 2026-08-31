@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form3_midterm1_4_2026.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 1 Exam 4 (FORM3 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 86,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+          "text": "Compare and contrast 'Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides' with related concepts. - with example",
+          "competence": "Examine reactions of aromatic hydrocarbons, phenols, carbony"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an understanding of chemical concepts and principles and their application in different contexts'. - with diagram",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
+          "text": "Analyse the causes and effects of 'Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals'. - with example",
+          "competence": "Perform experiments on the applications of electrolysis in c"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+          "text": "Define 'Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances' and discuss its importance in everyday life. - with example",
+          "competence": "Examine the applications of two component liquid systems in "
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Compare the properties of compounds with those of constituent elements",
+          "text": "Compare and contrast 'Compare the properties of compounds with those of constituent elements' with related concepts. - with example",
+          "competence": "Compare the properties of compounds with those of constituen"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+          "text": "Define 'Describe the concept of gases in terms of the gas laws and the kinetic theory of gases' and discuss its importance in everyday life.",
+          "competence": "Describe the concept of gases in terms of the gas laws and t"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "Explain the concept of 'Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers' with examples relevant to Tanzania.",
+          "competence": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carb"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+          "text": "Analyse the causes and effects of '. Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry'. - with diagram",
+          "competence": ". Demonstrate an advanced understanding of the concepts, the"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Compare and contrast 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)' with related concepts.",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Conduct a project in Chemistry",
+          "text": "Explain the concept of 'Conduct a project in Chemistry' with examples relevant to Tanzania. - with diagram",
+          "competence": "Conduct a project in Chemistry"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain the concept of chemical bonding and the interactions of atoms to form molecules",
+          "text": "With examples, illustrate how 'Explain the concept of chemical bonding and the interactions of atoms to form molecules' is applied in the community.",
+          "competence": "Explain the concept of chemical bonding and the interactions"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Explain the concept of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction' with examples relevant to Tanzania.",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate mastery of the principles of extraction of metals",
+          "text": "With examples, illustrate how 'Demonstrate mastery of the principles of extraction of metals' is applied in the community.",
+          "competence": "Demonstrate mastery of the principles of extraction of metal"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
+          "text": "Examine the advantages and disadvantages of 'Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste'.",
+          "competence": "Explain the concept of chemical formulae and nomenclature (v"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Explain the concept of 'Use the electronic configuration of an element to locate their positions in the periodic table' with examples relevant to Tanzania. - with diagram",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "and their applications in daily life",
+          "text": "Outline the procedures involved in 'and their applications in daily life'.",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+          "text": "With examples, illustrate how 'Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)' is applied in the community.",
+          "competence": "Describe the physical and chemical properties of transition "
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "Examine the advantages and disadvantages of 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi'. - with example",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+          "text": "Explain the concept of 'Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Perform experiments involving chemical equilibria and report"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Determine empirical and molecular formulae of common compounds",
+          "text": "Explain the concept of 'Determine empirical and molecular formulae of common compounds' with examples relevant to Tanzania. - with example",
+          "competence": "Determine empirical and molecular formulae of common compoun"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+    "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+    "Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
+    "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+    "Compare the properties of compounds with those of constituent elements",
+    "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+    "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+    ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+    "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+    "Conduct a project in Chemistry"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

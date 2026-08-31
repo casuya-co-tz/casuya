@@ -1,0 +1,872 @@
+{
+  "subject_code": "011",
+  "subject_name": "Historia ya Tanzania na Maadili",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Kulinda historia ya Tanzania, urithi na maadili ya taifa",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kumudu historia, utambulisho na maadili ya taifa",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U1-L1",
+              "title": "Kueleza dhana na uhusiano wa kinadharia uliopo kati ya historia, utambulisho na maadili ya taifa",
+              "markdown_content": "## a) Kueleza dhana na uhusiano wa kinadharia uliopo kati ya historia, utambulisho na maadili ya taifa",
+              "periods": "24",
+              "page": 16
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L2",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 17
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L3",
+              "title": "Kujadili misingi ya kihistoria iliyounda utambulisho na maadili ya taifa",
+              "markdown_content": "## b) Kujadili misingi ya kihistoria iliyounda utambulisho na maadili ya taifa",
+              "periods": "",
+              "page": 17
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L4",
+              "title": "Kuchambua nafasi ya historia na maadili katika kujenga fahari ya taifa",
+              "markdown_content": "## c) Kuchambua nafasi ya historia na maadili katika kujenga fahari ya taifa",
+              "periods": "",
+              "page": 17
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L5",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 18
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L6",
+              "title": "Kutathmini nafasi ya Tunu za taifa na maadili katika kujenga misingi ya uongozi bora",
+              "markdown_content": "## d) Kutathmini nafasi ya Tunu za taifa na maadili katika kujenga misingi ya uongozi bora",
+              "periods": "",
+              "page": 18
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L7",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 19
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L8",
+              "title": "Kubaini mikakati ya kulinda historia, utambulisho na maadili ya taifa",
+              "markdown_content": "## e) Kubaini mikakati ya kulinda historia, utambulisho na maadili ya taifa",
+              "periods": "",
+              "page": 19
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L9",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutathmini mchango wa historia na urithi katika kuchangia maendeleo ya taifa",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U1-L10",
+              "title": "Kufafanua dhana ya urithi wa taifa",
+              "markdown_content": "## a) Kufafanua dhana ya urithi wa taifa",
+              "periods": "24",
+              "page": 20
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L11",
+              "title": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini",
+              "markdown_content": "## b) Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini",
+              "periods": "",
+              "page": 20
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L12",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 21
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L13",
+              "title": "Kujadili mchango wa historia na urithi katika maendeleo ya taifa",
+              "markdown_content": "## c) Kujadili mchango wa historia na urithi katika maendeleo ya taifa",
+              "periods": "",
+              "page": 21
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L14",
+              "title": "Kuchambua uhusiano uliopo kati ya maadili na urithi katika kuleta maendeleo ya taifa",
+              "markdown_content": "## d) Kuchambua uhusiano uliopo kati ya maadili na urithi katika kuleta maendeleo ya taifa",
+              "periods": "",
+              "page": 21
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L15",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 22
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L16",
+              "title": "Kujadili njia bora za uhifadhi wa urithi ili kuleta maendeleo endelevu kwa taifa",
+              "markdown_content": "## e) Kujadili njia bora za uhifadhi wa urithi ili kuleta maendeleo endelevu kwa taifa",
+              "periods": "",
+              "page": 22
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L17",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 23
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutumia fursa mbalimbali zitokanazo na historia na urithi wa Tanzania kujenga ushirikiano na kukuza biashara ya kimataifa",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U1-L18",
+              "title": "Kubaini fursa za kiuwekezaji zitokanazo na vivutio vya kihistoria na urithi wa Tanzania",
+              "markdown_content": "## a) Kubaini fursa za kiuwekezaji zitokanazo na vivutio vya kihistoria na urithi wa Tanzania",
+              "periods": "13",
+              "page": 23
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L19",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 24
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L20",
+              "title": "Kujadili nafasi ya historia na urithi wa Tanzania katika kujenga ushirikiano na kukuza biashara ya kimataifa",
+              "markdown_content": "## b) Kujadili nafasi ya historia na urithi wa Tanzania katika kujenga ushirikiano na kukuza biashara ya kimataifa",
+              "periods": "",
+              "page": 24
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L21",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 25
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L22",
+              "title": "Kubaini vitendo vya kimaadili na visivyo vya kimaadili vinavyoweza kukuza au kudumaza fursa zitokanazo na historia na urithi",
+              "markdown_content": "## c) Kubaini vitendo vya kimaadili na visivyo vya kimaadili vinavyoweza kukuza au kudumaza fursa zitokanazo na historia na urithi",
+              "periods": "",
+              "page": 25
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L23",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Kumudu historia ya Tanzania na maadili kabla ya ukoloni",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kutathmini vichocheo vya maendeleo ya jamii za Kitanzania na maadili yake kabla ya ukoloni",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U2-L24",
+              "title": "Kueleza vichocheo vya maendeleo ya jamii za Kitanzania kabla ya ukoloni",
+              "markdown_content": "## a) Kueleza vichocheo vya maendeleo ya jamii za Kitanzania kabla ya ukoloni",
+              "periods": "14",
+              "page": 26
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L25",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 27
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L26",
+              "title": "Kutathmini maadili ya jamii za Kitanzania na namna yalivyochochea maendeleo kabla ya ukoloni",
+              "markdown_content": "## b) Kutathmini maadili ya jamii za Kitanzania na namna yalivyochochea maendeleo kabla ya ukoloni",
+              "periods": "",
+              "page": 27
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L27",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 28
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L28",
+              "title": "Kuchambua mifumo ya kusimamia maadili katika jamii za Kitanzania kabla ya ukoloni",
+              "markdown_content": "## c) Kuchambua mifumo ya kusimamia maadili katika jamii za Kitanzania kabla ya ukoloni",
+              "periods": "",
+              "page": 28
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L29",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "topic_name": ". Kuelezea uhusiano wa jamii za Kitanzania na jamii nyingine duniani kabla ya ukoloni",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U2-L30",
+              "title": "Kuchambua uhusiano wa jamii za Kitanzania na jamii nyingine za Kiafrika kabla ya ukoloni",
+              "markdown_content": "## a) Kuchambua uhusiano wa jamii za Kitanzania na jamii nyingine za Kiafrika kabla ya ukoloni",
+              "periods": "17",
+              "page": 29
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L31",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 30
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L32",
+              "title": "Kuchambua uhusiano baina ya jamii za Kitanzania na zile za Ulaya, Mashariki ya Kati na Mashariki ya Mbali",
+              "markdown_content": "## b) Kuchambua uhusiano baina ya jamii za Kitanzania na zile za Ulaya, Mashariki ya Kati na Mashariki ya Mbali",
+              "periods": "",
+              "page": 30
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L33",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 31
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L34",
+              "title": "Kuhusianisha mifumo ya maadili ya jamii nyingine duniani na jamii za Kitanzania kabla ya ukoloni",
+              "markdown_content": "## c) Kuhusianisha mifumo ya maadili ya jamii nyingine duniani na jamii za Kitanzania kabla ya ukoloni",
+              "periods": "",
+              "page": 31
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L35",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 32
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuhusianisha mapokeo ya mifumo ya kihistoria katika kuelezea maadili ya Kitanzania",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U2-L36",
+              "title": "Kujadili mabadiliko katika historia na maadili yaliyotokana na uhusiano wa kihistoria",
+              "markdown_content": "## a) Kujadili mabadiliko katika historia na maadili yaliyotokana na uhusiano wa kihistoria",
+              "periods": "13",
+              "page": 32
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L37",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 33
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L38",
+              "title": "Kuchambua matokeo ya mapokeo ya mifumo ya kihistoria na maadili ya Kitanzania kabla ya ukoloni",
+              "markdown_content": "## b) Kuchambua matokeo ya mapokeo ya mifumo ya kihistoria na maadili ya Kitanzania kabla ya ukoloni",
+              "periods": "",
+              "page": 33
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L39",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 34
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L40",
+              "title": "Kujadili mapokeo ya kidini na namna yalivyochangia katika kujenga maadili ya jamii za Kitanzania kabla ya ukoloni",
+              "markdown_content": "## c) Kujadili mapokeo ya kidini na namna yalivyochangia katika kujenga maadili ya jamii za Kitanzania kabla ya ukoloni",
+              "periods": "",
+              "page": 34
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L41",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Kumudu historia ya Tanzania na maadili wakati wa ukoloni, 1890-1960",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kutathmini ukoloni kama nguvu laini (soft power) ya kujenga mwelekeo mpya wa jamii",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U3-L42",
+              "title": "Kueleza dhana ya ukoloni kama nguvu laini (soft power) na nguvu ngumu (hard power)",
+              "markdown_content": "## a) Kueleza dhana ya ukoloni kama nguvu laini (soft power) na nguvu ngumu (hard power)",
+              "periods": "25",
+              "page": 35
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L43",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 36
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L44",
+              "title": "Kueleza chimbuko la ukoloni na kuenea kwake Tanzania",
+              "markdown_content": "## b) Kueleza chimbuko la ukoloni na kuenea kwake Tanzania",
+              "periods": "",
+              "page": 36
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L45",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 37
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L46",
+              "title": "Kuchambua athari za ukoloni kisiasa, kiuchumi, kijamii, kiutamaduni na maadili",
+              "markdown_content": "## c) Kuchambua athari za ukoloni kisiasa, kiuchumi, kijamii, kiutamaduni na maadili",
+              "periods": "",
+              "page": 37
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L47",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 38
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L48",
+              "title": "Kujadili uzalendo na ujasiri wa Watanzania waliopinga mfumo wa ukoloni na maadili ya utamaduni",
+              "markdown_content": "## d) Kujadili uzalendo na ujasiri wa Watanzania waliopinga mfumo wa ukoloni na maadili ya utamaduni",
+              "periods": "22",
+              "page": 38
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuchambua mchango wa ukoloni katika mfumo wa maadili ya Kitanzania",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U3-L49",
+              "title": "Kueleza maadili na mfumo wa usimamizi uliojengwa wakati wa ukoloni",
+              "markdown_content": "## a) Kueleza maadili na mfumo wa usimamizi uliojengwa wakati wa ukoloni",
+              "periods": "",
+              "page": 38
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L50",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 39
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L51",
+              "title": "Kuhusianisha maadili yaliyojengwa kabla ya ukoloni na yale ya wakati wa ukoloni",
+              "markdown_content": "## b) Kuhusianisha maadili yaliyojengwa kabla ya ukoloni na yale ya wakati wa ukoloni",
+              "periods": "",
+              "page": 39
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L52",
+              "title": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania",
+              "markdown_content": "## c) Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania",
+              "periods": "",
+              "page": 39
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L53",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Kufanya kazi mradi ya historia ya Tanzania na maadili",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kufanya kazi mradi ya historia ya Tanzania na maadili",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U4-L54",
+              "title": "Bainisha changamoto yoyote ya kihistoria iliyopo katika jamii, kisha andaa kazi mradi ili kupata ufumbuzi.",
+              "markdown_content": "## a) Bainisha changamoto yoyote ya kihistoria iliyopo katika jamii, kisha andaa kazi mradi ili kupata ufumbuzi.",
+              "periods": "22",
+              "page": 40
+            },
+            {
+              "lesson_id": "HIS-FV-U4-L55",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 41
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Kumudu historia ya ujenzi wa taifa na maadili yake katika kipindi cha 1961- 1966",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kumudu chimbuko la ukoloni mamboleo",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U1-L56",
+              "title": "Kueleza dhana na chimbuko la ukoloni mamboleo",
+              "markdown_content": "## a) Kueleza dhana na chimbuko la ukoloni mamboleo",
+              "periods": "15",
+              "page": 41
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L57",
+              "title": "Kuchambua athari za ukoloni mamboleo kwa Tanzania kiuchumi, kisiasa",
+              "markdown_content": "## b) Kuchambua athari za ukoloni mamboleo kwa Tanzania kiuchumi, kisiasa",
+              "periods": "",
+              "page": 41
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L58",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 42
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L59",
+              "title": "kijamii kiutamaduni na kimaadili",
+              "markdown_content": "## a) kijamii kiutamaduni na kimaadili",
+              "periods": "",
+              "page": 42
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L60",
+              "title": "Kutathmini mikakati ya kitaifa katika kupambana na ukoloni mamboleo",
+              "markdown_content": "## c) Kutathmini mikakati ya kitaifa katika kupambana na ukoloni mamboleo",
+              "periods": "",
+              "page": 42
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L61",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 43
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutathmini mabadiliko ya mifumo ya ulinzi na usalama wa taifa",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U1-L62",
+              "title": "Kueleza chimbuko la mifumo ya ulinzi na usalama wa taifa",
+              "markdown_content": "## a) Kueleza chimbuko la mifumo ya ulinzi na usalama wa taifa",
+              "periods": "20",
+              "page": 43
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L63",
+              "title": "Kuchambua hatua za mabadiliko ya mifumo ya ulinzi na usalama wa taifa baada ya uhuru",
+              "markdown_content": "## b) Kuchambua hatua za mabadiliko ya mifumo ya ulinzi na usalama wa taifa baada ya uhuru",
+              "periods": "",
+              "page": 43
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L64",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 44
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L65",
+              "title": "Kutathmini nafasi ya maadili katika kujenga mifumo imara ya ulinzi na usalama wa taifa",
+              "markdown_content": "## c) Kutathmini nafasi ya maadili katika kujenga mifumo imara ya ulinzi na usalama wa taifa",
+              "periods": "",
+              "page": 44
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L66",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 45
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L67",
+              "title": "Kujadili umuhimu wa wananchi kushiriki katika shughuli za ulinzi na usalama",
+              "markdown_content": "## d) Kujadili umuhimu wa wananchi kushiriki katika shughuli za ulinzi na usalama",
+              "periods": "",
+              "page": 45
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L68",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 46
+            }
+          ]
+        },
+        {
+          "topic_name": ". Kuchambua visababishi vya mabadiliko ya sera ya mambo ya nje na uhusiano ya kimataifa",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U1-L69",
+              "title": "Kueleza chimbuko na misingi ya Sera ya mambo ya nje ya Jamhuri ya Muungano wa Tanzania",
+              "markdown_content": "## a) Kueleza chimbuko na misingi ya Sera ya mambo ya nje ya Jamhuri ya Muungano wa Tanzania",
+              "periods": "15",
+              "page": 46
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L70",
+              "title": "Kujadili mabadiliko ya Sera ya mambo ya nje na uhusiano wa kimataifa tangu 1964",
+              "markdown_content": "## b) Kujadili mabadiliko ya Sera ya mambo ya nje na uhusiano wa kimataifa tangu 1964",
+              "periods": "",
+              "page": 46
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L71",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 47
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L72",
+              "title": "Kuchambua nafasi ya Sera ya mambo ya nje na uhusiano wa kimataifa katika kudumisha na kulinda maadili ya Kitanzania",
+              "markdown_content": "## c) Kuchambua nafasi ya Sera ya mambo ya nje na uhusiano wa kimataifa katika kudumisha na kulinda maadili ya Kitanzania",
+              "periods": "",
+              "page": 47
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L73",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 48
+            }
+          ]
+        },
+        {
+          "topic_name": ". Kutathmini mchango wa Mapinduzi Matukufu ya Zanzibar katika kudumisha uhuru, umoja, na amani ya kitaifa.",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U1-L74",
+              "title": "Kueleza falsafa ya Mapinduzi Matukufu ya Zanzibar",
+              "markdown_content": "## a) Kueleza falsafa ya Mapinduzi Matukufu ya Zanzibar",
+              "periods": "11",
+              "page": 48
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L75",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 49
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L76",
+              "title": "Kujadili mchango wa Mapinduzi Matukufu ya Zanzibar katika kudumisha uhuru, umoja na amani ya kitaifa",
+              "markdown_content": "## b) Kujadili mchango wa Mapinduzi Matukufu ya Zanzibar katika kudumisha uhuru, umoja na amani ya kitaifa",
+              "periods": "",
+              "page": 49
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L77",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 50
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L78",
+              "title": "Kuchambua matendo ya kimaadili katika kuenzi Mapinduzi Matukufu ya Zanzibar",
+              "markdown_content": "## c) Kuchambua matendo ya kimaadili katika kuenzi Mapinduzi Matukufu ya Zanzibar",
+              "periods": "",
+              "page": 50
+            },
+            {
+              "lesson_id": "HIS-FV-U1-L79",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 51
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Kutathmini ujenzi wa Taifa na maadili yake wakati wa Azimio la Arusha, 1967-1985",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": ". Kuchambua chimbuko la Azimio la Arusha na matokeo yake kiuchumi, kisiasa, kiutamaduni na kimaadili.",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U2-L80",
+              "title": "Kufafanua falsafa ya Azimio la Arusha",
+              "markdown_content": "## a) Kufafanua falsafa ya Azimio la Arusha",
+              "periods": "19",
+              "page": 51
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L81",
+              "title": "Kutathmini mifumo na misingi mipya ya kimaadili iliyoanzishwa na Azimio la Arusha",
+              "markdown_content": "## b) Kutathmini mifumo na misingi mipya ya kimaadili iliyoanzishwa na Azimio la Arusha",
+              "periods": "",
+              "page": 51
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L82",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 52
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L83",
+              "title": "Kuchambua athari za Azimio la Arusha kiuchumi, kisiasa, kijamii, kimaadili, kiutamaduni na katika uhusiano wa kimataifa",
+              "markdown_content": "## c) Kuchambua athari za Azimio la Arusha kiuchumi, kisiasa, kijamii, kimaadili, kiutamaduni na katika uhusiano wa kimataifa",
+              "periods": "",
+              "page": 52
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L84",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 53
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L85",
+              "title": "Kutathmini umuhimu (relevance) wa Azimio la Arusha katika mazingira ya sasa",
+              "markdown_content": "## d) Kutathmini umuhimu (relevance) wa Azimio la Arusha katika mazingira ya sasa",
+              "periods": "",
+              "page": 53
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L86",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 54
+            }
+          ]
+        },
+        {
+          "topic_name": ". Kutathmini nafasi ya Tanzania katika kujenga uhusiano wa kikanda",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U2-L87",
+              "title": "Kueleza mchango wa Tanzania katika kuundwa na kukua (evolution) kwa jumuiya za kikanda",
+              "markdown_content": "## a) Kueleza mchango wa Tanzania katika kuundwa na kukua (evolution) kwa jumuiya za kikanda",
+              "periods": "16",
+              "page": 54
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L88",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 55
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L89",
+              "title": "Kuchambua fursa zitokanazo na ushiriki wa Tanzania katika uhusiano wa kikanda",
+              "markdown_content": "## b) Kuchambua fursa zitokanazo na ushiriki wa Tanzania katika uhusiano wa kikanda",
+              "periods": "",
+              "page": 55
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L90",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 56
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L91",
+              "title": "Kutathmini mchango wa lugha ya Kiswahili katika uhusiano wa kikanda",
+              "markdown_content": "## c) Kutathmini mchango wa lugha ya Kiswahili katika uhusiano wa kikanda",
+              "periods": "",
+              "page": 56
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L92",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 57
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L93",
+              "title": "Kutathmini ushiriki wa Tanzania katika mapambano dhidi ya rushwa na ujenzi wa utawala bora kikanda",
+              "markdown_content": "## d) Kutathmini ushiriki wa Tanzania katika mapambano dhidi ya rushwa na ujenzi wa utawala bora kikanda",
+              "periods": "",
+              "page": 57
+            },
+            {
+              "lesson_id": "HIS-FV-U2-L94",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 58
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Kutathmini historia ya Tanzania na maadili wakati wa uliberali, 1986 hadi sasa",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kutafsiri mabadiliko ya kiuchumi, kisiasa, kiutamaduni na kimaadili katika kipindi cha uliberali na utandawazi kuanzia 1986 hadi sasa",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U3-L95",
+              "title": "Kueleza falsafa ya mabadiliko ya kiuchumi, kisiasa, kiutamaduni, na kimaadili katika kipindi cha uliberali hadi sasa",
+              "markdown_content": "## a) Kueleza falsafa ya mabadiliko ya kiuchumi, kisiasa, kiutamaduni, na kimaadili katika kipindi cha uliberali hadi sasa",
+              "periods": "26",
+              "page": 58
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L96",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 59
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L97",
+              "title": "Kujadili athari za mfumo wa kiliberali kiuchumi, kisiasa, kiutamaduni na kimaadili",
+              "markdown_content": "## b) Kujadili athari za mfumo wa kiliberali kiuchumi, kisiasa, kiutamaduni na kimaadili",
+              "periods": "",
+              "page": 59
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L98",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 60
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L99",
+              "title": "Kuchambua mifumo ya kitaasisi iliyoundwa kuratibu, kulinda na kuzuia vitendo vya ukiukwaji wa maadili ya Taifa katika kipindi cha uliberali hadi sasa",
+              "markdown_content": "## c) Kuchambua mifumo ya kitaasisi iliyoundwa kuratibu, kulinda na kuzuia vitendo vya ukiukwaji wa maadili ya Taifa katika kipindi cha uliberali hadi sasa",
+              "periods": "",
+              "page": 60
+            },
+            {
+              "lesson_id": "HIS-FV-U3-L100",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 61
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Kufanya kazi mradi ya historia ya Tanzania na maadili",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kufanya kazi mradi ya historia ya Tanzania na maadili",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "HIS-FV-U4-L101",
+              "title": "Kukamilisha na kuwasilisha taarifa ya kazi mradi kuhusu historia ya Tanzania na maadili ulioianza kidato cha tano",
+              "markdown_content": "## a) Kukamilisha na kuwasilisha taarifa ya kazi mradi kuhusu historia ya Tanzania na maadili ulioianza kidato cha tano",
+              "periods": "10",
+              "page": 61
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

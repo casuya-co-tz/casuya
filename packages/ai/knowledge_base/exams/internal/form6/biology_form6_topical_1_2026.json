@@ -1,0 +1,121 @@
+{
+  "filename": "biology_form6_topical_1_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Biology - Topical Test 1 (FORM6 2026): Carry out microscopic observation o",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Define 'Carry out microscopic observation of a cell' and discuss its importance in everyday life. - with example",
+          "competence": "Carry out microscopic observation of a cell"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Examine the advantages and disadvantages of 'Describe a cell (meaning,types, structures and function'. - with example",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Define 'Describe a cell (meaning,types, structures and function' and discuss its importance in everyday life. - with example",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Describe the main features of 'Describe a cell (meaning,types, structures and function'. - with diagram",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Compare and contrast 'Carry out microscopic observation of a cell' with related concepts. - with diagram",
+          "competence": "Carry out microscopic observation of a cell"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Outline the procedures involved in 'Carry out microscopic observation of a cell'.",
+          "competence": "Carry out microscopic observation of a cell"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Analyse the causes and effects of 'Describe a cell (meaning,types, structures and function'.",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Examine the advantages and disadvantages of 'Describe a cell (meaning,types, structures and function'.",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Compare and contrast 'Describe a cell (meaning,types, structures and function' with related concepts. - with example",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Evaluate the role of 'Carry out microscopic observation of a cell' in national development. - with example",
+          "competence": "Carry out microscopic observation of a cell"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Carry out microscopic observation of a cell",
+    "Describe a cell (meaning,types, structures and function"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

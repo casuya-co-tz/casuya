@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form4_midterm1_1_2023.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 1 (FORM4 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 99,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain documentation",
+          "text": "With examples, illustrate how 'Explain documentation' is applied in the community. - with diagram",
+          "competence": "Explain documentation"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Companies",
+          "text": "Outline the procedures involved in 'Companies'. - with diagram",
+          "competence": "Companies"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain transport",
+          "text": "Discuss the challenges facing 'Explain transport' in Tanzania and propose solutions. - with example",
+          "competence": "Explain transport"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain stock control",
+          "text": "Evaluate the role of 'Explain stock control' in national development.",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain concept of commerce",
+          "text": "Explain the concept of 'Explain concept of commerce' with examples relevant to Tanzania. - with example",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain sources of business finance",
+          "text": "Evaluate the role of 'Explain sources of business finance' in national development. - with example",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Concept of Commerce",
+          "text": "Examine the advantages and disadvantages of 'Concept of Commerce'.",
+          "competence": "Concept of Commerce"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain taxation",
+          "text": "Analyse the causes and effects of 'Explain taxation'. - with diagram",
+          "competence": "Explain taxation"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Sources of Business Finance",
+          "text": "Examine the advantages and disadvantages of 'Sources of Business Finance'.",
+          "competence": "Sources of Business Finance"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain companies",
+          "text": "Describe the main features of 'Explain companies'. - with example",
+          "competence": "Explain companies"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Documentation",
+          "text": "Examine the advantages and disadvantages of 'Documentation'. - with diagram",
+          "competence": "Documentation"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Taxation",
+          "text": "Describe the main features of 'Taxation'. - with example",
+          "competence": "Taxation"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain warehousing",
+          "text": "Define 'Explain warehousing' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain marketing mix",
+          "text": "With examples, illustrate how 'Explain marketing mix' is applied in the community. - with diagram",
+          "competence": "Explain marketing mix"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain advertisement",
+          "text": "Evaluate the role of 'Explain advertisement' in national development. - with diagram",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Aids to Trade",
+          "text": "Outline the procedures involved in 'Aids to Trade'. - with diagram",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Communication",
+          "text": "Evaluate the role of 'Communication' in national development. - with example",
+          "competence": "Communication"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain aids to trade",
+          "text": "Compare and contrast 'Explain aids to trade' with related concepts. - with diagram",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Sole Proprietorship",
+          "text": "Compare and contrast 'Sole Proprietorship' with related concepts. - with example",
+          "competence": "Sole Proprietorship"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain market and marketing",
+          "text": "Compare and contrast 'Explain market and marketing' with related concepts. - with example",
+          "competence": "Explain market and marketing"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain documentation",
+    "Companies",
+    "Explain transport",
+    "Explain stock control",
+    "Explain concept of commerce",
+    "Explain sources of business finance",
+    "Concept of Commerce",
+    "Explain taxation",
+    "Sources of Business Finance",
+    "Explain companies"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

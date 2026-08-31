@@ -1,0 +1,289 @@
+{
+  "filename": "mathematics_form5_annual_2_2025.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2025",
+  "time": "3:00 Hours",
+  "title": "Mathematics - Annual Exam 2 (FORM5 2025)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 124,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "Evaluate the role of 'Use approximations in computations and measurements of quantities in various contexts' in national development. - with example",
+          "competence": "Use approximations in computations and measurements of quant"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Explain the concept of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' with examples relevant to Tanzania. - locally",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "How does 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life' relate to sustainable development?",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Assess the impact of 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic' on society.",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Derive and use compound angles to solve problems",
+          "text": "Discuss the factors influencing 'Derive and use compound angles to solve problems'. - locally",
+          "competence": "Derive and use compound angles to solve problems"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use logic to analyse arguments and construct circuit diagrams",
+          "text": "How does 'Use logic to analyse arguments and construct circuit diagrams' relate to sustainable development? - with example",
+          "competence": "Use logic to analyse arguments and construct circuit diagram"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+          "text": "Analyse the causes and effects of 'Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs'.",
+          "competence": "Find the general term for AP and GP and use them to derive f"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Draw graphs of relations and functions",
+          "text": "Discuss the factors influencing 'Draw graphs of relations and functions'. - locally",
+          "competence": "Draw graphs of relations and functions"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "text": "How does 'Demonstrate an advanced understanding of statistics' relate to sustainable development? - with example",
+          "competence": "Demonstrate an advanced understanding of statistics"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Calculate arithmetic mean, geometric mean, and compound interest",
+          "text": "Describe the main features of 'Calculate arithmetic mean, geometric mean, and compound interest'. - with example",
+          "competence": "Calculate arithmetic mean, geometric mean, and compound inte"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+          "text": "Compare and contrast 'Determine the probability of an event, expectation, variance, and standard deviation of random variables' with related concepts. - locally",
+          "competence": "Determine the probability of an event, expectation, variance"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+          "text": "How does 'Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)' relate to sustainable development? - locally",
+          "competence": "Explore advanced tenets of statistics (measures of central t"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "Discuss the challenges facing 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)' in Tanzania and propose solutions.",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "Explain the concept of 'Perform operations on radicals and rationalize the denominators' with examples relevant to Tanzania. - locally",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the concepts of relations and functions (linear and quadrati",
+          "text": "Outline the procedures involved in 'Describe the concepts of relations and functions (linear and quadrati'. - with example",
+          "competence": "Describe the concepts of relations and functions (linear and"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use knowledge of sets to organise, create, and categorise objects",
+          "text": "Discuss the factors influencing 'Use knowledge of sets to organise, create, and categorise objects'. - with example",
+          "competence": "Use knowledge of sets to organise, create, and categorise ob"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+          "text": "Explain the concept of 'Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala' with examples relevant to Tanzania. - locally",
+          "competence": "Explore the basic tenets of vectors (displacement and positi"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Find the gradient/ slope of a line",
+          "text": "With examples, illustrate how 'Find the gradient/ slope of a line' is applied in the community.",
+          "competence": "Find the gradient/ slope of a line"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use rates and variations in different contexts",
+          "text": "Assess the impact of 'Use rates and variations in different contexts' on society. - with example",
+          "competence": "Use rates and variations in different contexts"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+          "text": "Evaluate the role of 'Use basic coordinate geometry, trigonometry and vectors skills in daily life' in national development. - with example",
+          "competence": "Use basic coordinate geometry, trigonometry and vectors skil"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Complete the project started in Form Five and submit the report for assessment",
+          "text": "Explain the relationship between 'Complete the project started in Form Five and submit the report for assessment' and its environment. - locally",
+          "competence": "Complete the project started in Form Five and submit the rep"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Round off numbers and estimate values of expressions",
+          "text": "With examples, illustrate how 'Round off numbers and estimate values of expressions' is applied in the community. - with diagram",
+          "competence": "Round off numbers and estimate values of expressions"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
+          "text": "Discuss the factors influencing 'Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set'.",
+          "competence": "Distinguish among different types of sets (universal set, eq"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "What are the characteristics of 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)'?",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+          "text": "Outline the procedures involved in 'Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic'.",
+          "competence": "Explore advanced tenets of algebra (series of squares and cu"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)'.",
+          "competence": "Explore the basic tenets of complex numbers (modulus, argume"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+          "text": "Propose measures to improve 'Explain the concept of approximations (rounding off, significant figures, and decimal place' in schools. - with example",
+          "competence": "Explain the concept of approximations (rounding off, signifi"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 4,
+          "topic": "(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function",
+          "text": "Propose measures to improve '(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function' in schools. - with example",
+          "competence": "(types of relations, domain and range of relations, graphs o"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "Assess the impact of 'Demonstrate basic understanding of calculus' on society. - with example",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+          "text": "Describe the main features of 'Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)'.",
+          "competence": "Explore the basic tenets of probability theory (counting pri"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use approximations in computations and measurements of quantities in various contexts",
+    "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+    "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+    "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+    "Derive and use compound angles to solve problems",
+    "Use logic to analyse arguments and construct circuit diagrams",
+    "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+    "Draw graphs of relations and functions",
+    "Demonstrate an advanced understanding of statistics",
+    "Calculate arithmetic mean, geometric mean, and compound interest"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

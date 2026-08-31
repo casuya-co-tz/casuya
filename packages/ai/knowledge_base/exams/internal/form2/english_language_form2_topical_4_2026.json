@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form2_topical_4_2026.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 4 (FORM2 2026): Present facts logically using appro",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 34,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)",
+          "text": "Compare and contrast 'Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)' with related concepts. - with diagram",
+          "competence": "Present facts logically using appropriate formulaic language"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Synthesise ideas from a variety of oral sources",
+          "text": "Define 'Synthesise ideas from a variety of oral sources' and discuss its importance in everyday life.",
+          "competence": "Synthesise ideas from a variety of oral sources"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)",
+          "text": "Compare and contrast 'Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)' with related concepts.",
+          "competence": "Present facts logically using appropriate formulaic language"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Synthesise ideas from a variety of oral sources",
+          "text": "Assess the impact of 'Synthesise ideas from a variety of oral sources' on society.",
+          "competence": "Synthesise ideas from a variety of oral sources"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)",
+          "text": "What are the characteristics of 'Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)'?",
+          "competence": "Present facts logically using appropriate formulaic language"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)",
+          "text": "Propose measures to improve 'Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)' in schools.",
+          "competence": "Present facts logically using appropriate formulaic language"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Synthesise ideas from a variety of oral sources",
+          "text": "Describe the main features of 'Synthesise ideas from a variety of oral sources'.",
+          "competence": "Synthesise ideas from a variety of oral sources"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)",
+          "text": "Describe the main features of 'Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)'. - with diagram",
+          "competence": "Present facts logically using appropriate formulaic language"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)",
+          "text": "Explain the relationship between 'Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)' and its environment.",
+          "competence": "Present facts logically using appropriate formulaic language"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)",
+          "text": "Evaluate the role of 'Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)' in national development. - with example",
+          "competence": "Present facts logically using appropriate formulaic language"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Present facts logically using appropriate formulaic language (e.g., due to the fact that…, it is true that…, the bottom line is…, the reality is…, in fact…actually… according to…)",
+    "Synthesise ideas from a variety of oral sources"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

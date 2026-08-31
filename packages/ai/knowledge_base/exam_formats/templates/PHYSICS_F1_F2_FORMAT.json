@@ -1,0 +1,71 @@
+{
+  "code": "031",
+  "subject": "Physics",
+  "level": "Form 1-2 (FTNA Pilot)",
+  "template_file": "exam_formats/templates/PHYSICS_F2_NECTA_PILOT_2026.html",
+  "source_html": "C:/Users/Admin/Downloads/gemini-code-1788174599725.html",
+  "duration": "2:30 Hours",
+  "year": "2026",
+  "structure": {
+    "total_questions": 10,
+    "total_marks": 100,
+    "sections": [
+      {
+        "name": "A",
+        "marks": 15,
+        "questions": [
+          1,
+          2
+        ],
+        "description": "Q1 MCQ 10 items (i-x) 10 marks + Q2 Matching 5 marks"
+      },
+      {
+        "name": "B",
+        "marks": 70,
+        "questions": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "description": "Structured questions with subparts (a)(b)(i)(ii) 10 marks each"
+      },
+      {
+        "name": "C",
+        "marks": 15,
+        "questions": [
+          10
+        ],
+        "description": "Structured 3 subparts 5 marks each"
+      }
+    ],
+    "instructions": [
+      "This paper consists of sections A, B and C with a total of ten (10) questions.",
+      "Answer all questions in the spaces provided.",
+      "Section A and C carries fifteen (15) marks each and section B carries seventy (70) marks.",
+      "All writing must be in blue or black ink.",
+      "Communication devices and unauthorised materials are not allowed in the assessment room.",
+      "Calculators and mathematical tables may be used in the assessment room.",
+      "Write your Assessment Number at the top right corner of every page.",
+      "The following information may be useful: (i) Acceleration due to gravity, g = 10 m/s-2. (ii) Pie π = 3.14"
+    ],
+    "layout_features": [
+      "A4 page 210x297mm 15mm padding",
+      "Top header 031 + Assessment Number",
+      "Meta bar Duration/Year",
+      "Assessor table FOR ASSESSOR'S USE ONLY",
+      "MCQ answer box + 2-column grid",
+      "Matching tables List A/B",
+      "Answer spaces with height",
+      "Footer page X of 10"
+    ]
+  },
+  "applied_to": [
+    "form1",
+    "form2"
+  ],
+  "internal_exams_generated": 40
+}

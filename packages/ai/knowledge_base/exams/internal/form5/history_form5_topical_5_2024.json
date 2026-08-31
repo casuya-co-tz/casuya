@@ -1,0 +1,121 @@
+{
+  "filename": "history_form5_topical_5_2024.json",
+  "subject": "History",
+  "subject_slug": "history",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "History - Topical Test 5 (FORM5 2024): (Eastern, Western, Southern and Nor",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 42,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "(Eastern, Western, Southern and Northern Africa)",
+          "text": "Analyse the causes and effects of '(Eastern, Western, Southern and Northern Africa)'. - with example",
+          "competence": "(Eastern, Western, Southern and Northern Africa)"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "(Eastern, Western, Southern and Northern Africa)",
+          "text": "Evaluate the role of '(Eastern, Western, Southern and Northern Africa)' in national development.",
+          "competence": "(Eastern, Western, Southern and Northern Africa)"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century",
+          "text": "Explain the concept of 'Demonstrate an understanding of the history of the great wars of the 17th to 19th Century' with examples relevant to Tanzania.",
+          "competence": "Demonstrate an understanding of the history of the great war"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "(Eastern, Western, Southern and Northern Africa)",
+          "text": "Propose measures to improve '(Eastern, Western, Southern and Northern Africa)' in schools.",
+          "competence": "(Eastern, Western, Southern and Northern Africa)"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "(Eastern, Western, Southern and Northern Africa)",
+          "text": "Propose measures to improve '(Eastern, Western, Southern and Northern Africa)' in schools. - with example",
+          "competence": "(Eastern, Western, Southern and Northern Africa)"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of the history of the great wars of the 17th to 19th Century' in Tanzania and propose solutions. - with example",
+          "competence": "Demonstrate an understanding of the history of the great war"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century",
+          "text": "Explain the concept of 'Demonstrate an understanding of the history of the great wars of the 17th to 19th Century' with examples relevant to Tanzania.",
+          "competence": "Demonstrate an understanding of the history of the great war"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of the history of the great wars of the 17th to 19th Century'. - with example",
+          "competence": "Demonstrate an understanding of the history of the great war"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "(Eastern, Western, Southern and Northern Africa)",
+          "text": "How does '(Eastern, Western, Southern and Northern Africa)' relate to sustainable development? - with diagram",
+          "competence": "(Eastern, Western, Southern and Northern Africa)"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "(Eastern, Western, Southern and Northern Africa)",
+          "text": "Describe the process of '(Eastern, Western, Southern and Northern Africa)' step by step. - with diagram",
+          "competence": "(Eastern, Western, Southern and Northern Africa)"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "(Eastern, Western, Southern and Northern Africa)",
+    "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

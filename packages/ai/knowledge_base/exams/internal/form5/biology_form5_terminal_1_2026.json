@@ -1,0 +1,249 @@
+{
+  "filename": "biology_form5_terminal_1_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2026",
+  "time": "2:30 Hours",
+  "title": "Biology - Terminal Exam 1 (FORM5 2026)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 101,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Discuss the challenges facing 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Carry out a biological project work using biological principles",
+          "text": "Compare and contrast 'Carry out a biological project work using biological principles' with related concepts. - with example",
+          "competence": "Carry out a biological project work using biological princip"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "text": "Analyse the causes and effects of 'Demonstrate an advanced understanding of concepts, theories and principles in Biology'.",
+          "competence": "Demonstrate an advanced understanding of concepts, theories "
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+          "text": "Define 'Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse' and discuss its importance in everyday life.",
+          "competence": "Describe the major groups of organisms: (Monera, Protista, F"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Discribe the application or role of synthetic phytohormones",
+          "text": "Explain the concept of 'Discribe the application or role of synthetic phytohormones' with examples relevant to Tanzania.",
+          "competence": "Discribe the application or role of synthetic phytohormones"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "theory, evidence of evolution, and speciation)",
+          "text": "Analyse the causes and effects of 'theory, evidence of evolution, and speciation)'.",
+          "competence": "theory, evidence of evolution, and speciation)"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "Examine the advantages and disadvantages of 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution'. - with example",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "With examples, illustrate how 'Demonstrate mastery of scientific biological terminologies' is applied in the community. - with example",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+          "text": "Outline the procedures involved in 'Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio'. - with example",
+          "competence": "Describe the mechanisms of growth in mammals and flowering p"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Investigate tropic responses in plants",
+          "text": "Discuss the challenges facing 'Investigate tropic responses in plants' in Tanzania and propose solutions. - with diagram",
+          "competence": "Investigate tropic responses in plants"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Investigate processes of transportation of materials in flowering plants",
+          "text": "Examine the advantages and disadvantages of 'Investigate processes of transportation of materials in flowering plants'.",
+          "competence": "Investigate processes of transportation of materials in flow"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "With examples, illustrate how 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system' is applied in the community. - with example",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+          "text": "Examine the advantages and disadvantages of 'Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)'. - with example",
+          "competence": "Explain the concept of ecology (methods of studying, biodive"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the physiology and theories underlying transportation of materials in plants",
+          "text": "Compare and contrast 'Explain the physiology and theories underlying transportation of materials in plants' with related concepts.",
+          "competence": "Explain the physiology and theories underlying transportatio"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Analyse the causes and effects of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry'. - with diagram",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Discuss the challenges facing 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' in Tanzania and propose solutions. - with example",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Perform investigations on the anatomy and physiology of living organisms",
+          "text": "Explain the concept of 'Perform investigations on the anatomy and physiology of living organisms' with examples relevant to Tanzania. - with example",
+          "competence": "Perform investigations on the anatomy and physiology of livi"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Investigate aerobic and anaerobic respiration in living organisms",
+          "text": "Define 'Investigate aerobic and anaerobic respiration in living organisms' and discuss its importance in everyday life. - with example",
+          "competence": "Investigate aerobic and anaerobic respiration in living orga"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the mechanism of excretion in the human body (systems: organs, product",
+          "text": "Examine the advantages and disadvantages of 'Describe the mechanism of excretion in the human body (systems: organs, product'. - with example",
+          "competence": "Describe the mechanism of excretion in the human body (syste"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Evaluate the role of 'Develop and carry out a simple research project in Biology' in national development.",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concept of the cell (cell theory, organelles and biological molecules)",
+          "text": "With examples, illustrate how 'Describe the concept of the cell (cell theory, organelles and biological molecules)' is applied in the community. - with example",
+          "competence": "Describe the concept of the cell (cell theory, organelles an"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+          "text": "Explain the concept of 'Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain the concept of regulation in mammals (feedback mecha"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain classification systems and taxonomic rank",
+          "text": "Describe the main features of 'Explain classification systems and taxonomic rank'.",
+          "competence": "Explain classification systems and taxonomic rank"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)",
+          "text": "Describe the main features of 'Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)'.",
+          "competence": "Apply skills used in biological investigation (observation, "
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the structure of epithelial tissues in relation to its digestive role",
+          "text": "With examples, illustrate how 'Describe the structure of epithelial tissues in relation to its digestive role' is applied in the community. - with example",
+          "competence": "Describe the structure of epithelial tissues in relation to "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+    "Carry out a biological project work using biological principles",
+    "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+    "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+    "Discribe the application or role of synthetic phytohormones",
+    "theory, evidence of evolution, and speciation)",
+    "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+    "Demonstrate mastery of scientific biological terminologies",
+    "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+    "Investigate tropic responses in plants"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

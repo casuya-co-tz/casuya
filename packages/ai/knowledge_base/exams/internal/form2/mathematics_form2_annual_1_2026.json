@@ -1,0 +1,289 @@
+{
+  "filename": "mathematics_form2_annual_1_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2026",
+  "time": "3:00 Hours",
+  "title": "Mathematics - Annual Exam 1 (FORM2 2026)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 145,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Solve linear simultaneous equations graphically",
+          "text": "Evaluate the role of 'Solve linear simultaneous equations graphically' in national development. - with example",
+          "competence": "Solve linear simultaneous equations graphically"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Evaluate the role of 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)' in national development.",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "Propose measures to improve 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc' in schools. - with diagram",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "text": "Propose measures to improve 'Demonstrate an advanced understanding of algebra' in schools. - with example",
+          "competence": "Demonstrate an advanced understanding of algebra"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use statistics in problem solving",
+          "text": "Discuss the factors influencing 'Use statistics in problem solving'. - with diagram",
+          "competence": "Use statistics in problem solving"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Define 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic' and discuss its importance in everyday life.",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Solve inequalities in one unknown",
+          "text": "Compare and contrast 'Solve inequalities in one unknown' with related concepts. - with diagram",
+          "competence": "Solve inequalities in one unknown"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Discuss the factors influencing 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm'.",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use mathematical software to solve and draw graphs of simultaneous equations",
+          "text": "Discuss the challenges facing 'Use mathematical software to solve and draw graphs of simultaneous equations' in Tanzania and propose solutions.",
+          "competence": "Use mathematical software to solve and draw graphs of simult"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "Describe the process of 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)' step by step. - with diagram",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Compare sets (subsets and universal set",
+          "text": "Examine the advantages and disadvantages of 'Compare sets (subsets and universal set'. - with example",
+          "competence": "Compare sets (subsets and universal set"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use ratios and proportions in daily life",
+          "text": "Discuss the factors influencing 'Use ratios and proportions in daily life'. - locally",
+          "competence": "Use ratios and proportions in daily life"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Find the number of elements in a set",
+          "text": "What are the characteristics of 'Find the number of elements in a set'? - with diagram",
+          "competence": "Find the number of elements in a set"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+          "text": "Assess the impact of 'Explain the concept of approximations (rounding off, significant figures, and decimal place' on society.",
+          "competence": "Explain the concept of approximations (rounding off, signifi"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+          "text": "Examine the advantages and disadvantages of 'Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic'. - with diagram",
+          "competence": "Explore advanced tenets of algebra (series of squares and cu"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+          "text": "Evaluate the role of 'Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line' in national development.",
+          "competence": "Explore the basic tenets of coordinate geometry (midpoint of"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use logic to analyse arguments and construct circuit diagrams",
+          "text": "Discuss the challenges facing 'Use logic to analyse arguments and construct circuit diagrams' in Tanzania and propose solutions.",
+          "competence": "Use logic to analyse arguments and construct circuit diagram"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+          "text": "Explain the concept of 'Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explore advanced tenets of trigonometry (ratios, small angle"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+          "text": "Propose measures to improve 'Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)' in schools. - locally",
+          "competence": "Explore the basic tenets of sequences and series (Arithmetic"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "Assess the impact of 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)' on society. - with diagram",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
+          "text": "Examine the advantages and disadvantages of 'Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set'. - with diagram",
+          "competence": "Distinguish among different types of sets (universal set, eq"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+          "text": "Explain the relationship between 'Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)' and its environment. - with diagram",
+          "competence": "Explore advanced tenets of statistics (measures of central t"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)",
+          "text": "Discuss the factors influencing 'Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)'. - with example",
+          "competence": "Explore advanced tenets of functions (polynomials, rational,"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Represent two sets in a Venn diagram",
+          "text": "Describe the process of 'Represent two sets in a Venn diagram' step by step.",
+          "competence": "Represent two sets in a Venn diagram"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Solve ratio and proportion problems",
+          "text": "Discuss the factors influencing 'Solve ratio and proportion problems'.",
+          "competence": "Solve ratio and proportion problems"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+          "text": "How does 'Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala' relate to sustainable development? - with diagram",
+          "competence": "Explore the basic tenets of vectors (displacement and positi"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "Explain the relationship between 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation' and its environment. - with example",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+          "text": "Compare and contrast 'Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation' with related concepts. - with example",
+          "competence": "Explore the basic tenets of coordinate geometry (gradient an"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+          "text": "Compare and contrast 'Determine the probability of an event, expectation, variance, and standard deviation of random variables' with related concepts.",
+          "competence": "Determine the probability of an event, expectation, variance"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Perform operations with sets (union, intersection, and complement of a se",
+          "text": "With examples, illustrate how 'Perform operations with sets (union, intersection, and complement of a se' is applied in the community. - with diagram",
+          "competence": "Perform operations with sets (union, intersection, and compl"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Solve linear simultaneous equations graphically",
+    "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+    "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+    "Demonstrate an advanced understanding of algebra",
+    "Use statistics in problem solving",
+    "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+    "Solve inequalities in one unknown",
+    "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+    "Use mathematical software to solve and draw graphs of simultaneous equations",
+    "Explore basic tenets of integration (by parts, substitution method, and partial fractions)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

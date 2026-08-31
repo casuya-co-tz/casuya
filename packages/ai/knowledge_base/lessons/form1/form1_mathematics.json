@@ -1,0 +1,364 @@
+{
+  "form": "form1",
+  "subject": "Mathematics",
+  "topic_count": 7,
+  "topics": [
+    {
+      "topic_number": "1",
+      "topic_name": "NUMBERS",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=bWF0aGVtYXRpY3M%3D &tno=1&m_topic=NUMBERS",
+      "plan": {
+        "competence": "Identify place value of a number and read number up to one billion",
+        "general_objectives": "Perform computations on numbers.",
+        "specific_objectives": "By the end of the lesson the student should be able to: (a) Identify the place value in each digit in base ten numeration (b) Read numbers in base ten numeration up to one billion",
+        "main_topic": "NUMBERS",
+        "sub_topic": "Base ten numeration",
+        "teaching_aids": "i) Number cards ii) Number charts iii) Abacus",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "To guide students to identify base ten numeration with the ten digits.",
+            "student_activities": "students to identify base ten numeration with the ten digits.",
+            "assessment": "Quizzes, class assignment, solving on the board, group work"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "Guide students in finding place value of a number and then read numbers to 1 billion",
+            "student_activities": "Students in pairs to write the place value of each digit in any given number",
+            "assessment": "Quizzes, class assignment, solving on the board, group work"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "Correct any misconceptions from the student presentations in class room sessions",
+            "student_activities": "Students in groups to read numbers given in words and numerals",
+            "assessment": "Quizzes, class assignment, solving on the board, group work"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "Correct any misconceptions from the student presentations in class room sessions",
+            "student_activities": "Students individually to attempt solving questions on the board",
+            "assessment": "Quizzes, class assignment, solving on the board, group work"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write questions and answers on the board for students to solve",
+            "student_activities": "Students to copy the questions and work on them",
+            "assessment": "Quizzes, class assignment, solving on the board, group work"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "2",
+      "topic_name": "FRACTIONS",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=bWF0aGVtYXRpY3M%3D &tno=2&m_topic=FRACTIONS",
+      "plan": {
+        "competence": "Write a fraction",
+        "general_objectives": "Use approximations in solving simple problems",
+        "specific_objectives": "By the end of the lesson the student should be able to:(a) Describe a fraction, (b) Distinguish proper, improper fractions and mixed numbers.",
+        "main_topic": "FRACTIONS",
+        "sub_topic": "Proper, Improper and Mixed Numbers",
+        "teaching_aids": "i) Knife ii) Pair of scissors iii) Cuisenaire rods iv) Manila paper v) Razor blade",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "To use familiar examples to demonstrate fractions",
+            "student_activities": "The students to discuss other familiar examples of fractions.",
+            "assessment": "Quizzes, questions and answers, maths challenge, solving questions on the board, group work, take home assignment"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "To guide students to compare and contrast numerator and denominator, different fractions, so as to distinguish between proper and improper fractions.",
+            "student_activities": "Students in pairs to generate mixed numbers from improper fractions.",
+            "assessment": "Quizzes, questions and answers, maths challenge, solving questions on the board, group work, take home assignment"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "Guide students in generating mixed numbers from improper fractions",
+            "student_activities": "Students to individual convert proper fraction into improper fractions",
+            "assessment": "Quizzes, questions and answers, maths challenge, solving questions on the board, group work, take home assignment"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "Guide students in generating mixed numbers from improper fractions",
+            "student_activities": "Individually students to attempt questions writen on the board by the teacher",
+            "assessment": "Quizzes, questions and answers, maths challenge, solving questions on the board, group work, take home assignment"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write assignment on the board for students to copy on their books and solve it",
+            "student_activities": "Students to work on the assignment given by the teachers",
+            "assessment": "Quizzes, questions and answers, maths challenge, solving questions on the board, group work, take ho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "3",
+      "topic_name": "DECIMALS AND PERCENTAGES",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=bWF0aGVtYXRpY3M%3D &tno=3&m_topic=DECIMALS AND PERCENTAGES",
+      "plan": {
+        "competence": "compute decimals",
+        "general_objectives": "Convert and do computations on basic units.",
+        "specific_objectives": "By the end of the lesson, the student should be able to: (a) Explain the concept of decimals. (b) Convert fractions to terminating and repeating decimals and vice versa",
+        "main_topic": "DECIMALS AND PERCENTAGES",
+        "sub_topic": "3.1 Decimals",
+        "teaching_aids": "i) Shillings ii) Cents",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "to guide students to explain the concept of decimals through brainstorming.",
+            "student_activities": "The students individually to relate decimals and fractions with denominator equal to 10",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "to demonstrate the conversion of fractions to terminating and repeating decimals and vice versa",
+            "student_activities": "Students in pairs to demonstrate the conversion of fractions to terminating and repeating decimals and vice versa",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "correct students work and misconceptions",
+            "student_activities": "students to take notes carefully",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "correct students work and misconceptions",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "4",
+      "topic_name": "UNITS",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=bWF0aGVtYXRpY3M%3D &tno=4&m_topic=UNITS",
+      "plan": {
+        "competence": "Compute metric units",
+        "general_objectives": "Convert and do computations on basic units",
+        "specific_objectives": "By the end of the lesson, the student should be able to: (a) Convert one unit of length to another (b) Perform computations on metric units of length.",
+        "main_topic": "UNITS",
+        "sub_topic": "4.1 Units of Length",
+        "teaching_aids": "i) Meter ruler ii) Charts",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "to guide students to discuss the metric system of length and their prefixes",
+            "student_activities": "Students in groups to estimate and measure different lengths in their surroundings.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "to demonstrate the computation and conversion of one unit into the other.",
+            "student_activities": "Students to demonstrate the computation and conversion of one unit into the other.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "Guide Students in groups to do computations on metric units of length using the basic operations.",
+            "student_activities": "Students in groups to do computations on metric units of length using the basic operations.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "Guide Students in groups to do computations on metric units of length using the basic operations.",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "5",
+      "topic_name": "APPROXIMATIONS",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=bWF0aGVtYXRpY3M%3D &tno=5&m_topic=APPROXIMATIONS",
+      "plan": {
+        "competence": "Round off given numbers",
+        "general_objectives": "Use approximations in solving simple problems.",
+        "specific_objectives": "By the end of the lesson, the student should be able to: (a) Round off whole numbers to given place values. (b) Round off decimals to a given number of decimal places",
+        "main_topic": "APPROXIMATIONS",
+        "sub_topic": "5.1 Rounding off Numbers",
+        "teaching_aids": "i) Number patterns ii) Manila paper iii) Market pens",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "to show students how to round off numbers when the digit to the right is less than 5 and when the digit to the right is greater than or equal to 5.",
+            "student_activities": "Students in pairs to round off whole numbers when the digit to the rights is less than 5 and when it is greater than or equal to 5.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "to guide students to round off decimals to the given number of decimal places when the digit to the right are 5.",
+            "student_activities": "students to round off decimals to the given number of decimal places when the digit to the right are 5.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "Guide Students in groups to round off number of decimal places",
+            "student_activities": "Students in groups to round off number of decimal places",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "Guide Students in groups to round off number of decimal places",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "6",
+      "topic_name": "GEOMETRY",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=bWF0aGVtYXRpY3M%3D &tno=6&m_topic=GEOMETRY",
+      "plan": {
+        "competence": "define a point",
+        "general_objectives": "Construct and draw geometrical figures.",
+        "specific_objectives": "By the end of the lesson, the student should be able to;a) Explain the concept of a point.",
+        "main_topic": "GEOMETRY",
+        "sub_topic": "6.1 Points and Lines",
+        "teaching_aids": "Mathematical Set",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Guide students brainstorm on meaning of a point",
+            "student_activities": "Students to explain what a point is",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "to guide students to discuss the concept of a point by using examples",
+            "student_activities": "students to discuss the concept of a point by using examples",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "Guide Students in pairs to list various situations in which the concept of a point is used",
+            "student_activities": "Students in pairs to list various situations in which the concept of a point is used",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "Guide Students in pairs to list various situations in which the concept of a point is used",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "7",
+      "topic_name": "ALGEBRA",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=bWF0aGVtYXRpY3M%3D &tno=7&m_topic=ALGEBRA",
+      "plan": {
+        "competence": "simplify algebraic expressions",
+        "general_objectives": "Solve linear equations in one or two unknowns.",
+        "specific_objectives": "By the end of the lesson the student should be able to;(a) Use symbols to form algebraic expressions.",
+        "main_topic": "ALGEBRA",
+        "sub_topic": "7.1 Algebraic Operations",
+        "teaching_aids": "Manila Cards",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "to use daily life examples to show how letters are used to represent objects.",
+            "student_activities": "to demonstrate to the students how letters can be used to represent numbers",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "to show students how to form algebraic expressions using letters.",
+            "student_activities": "Students in pairs to form different algebraic expressions.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "guide Students in pairs to form different algebraic expressions.",
+            "student_activities": "Students in pairs to form different algebraic expressions.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "guide Students in pairs to form different algebraic expressions.",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form6_midterm1_3_2023.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 1 Exam 3 (FORM6 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 86,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Solve ratio and proportion problems",
+          "text": "Outline the procedures involved in 'Solve ratio and proportion problems'.",
+          "competence": "Solve ratio and proportion problems"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Represent two sets in a Venn diagram",
+          "text": "Describe the process of 'Represent two sets in a Venn diagram' step by step. - locally",
+          "competence": "Represent two sets in a Venn diagram"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+          "text": "Discuss the challenges facing 'Use basic coordinate geometry, trigonometry and vectors skills in daily life' in Tanzania and propose solutions.",
+          "competence": "Use basic coordinate geometry, trigonometry and vectors skil"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+          "text": "Discuss the challenges facing 'Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)' in Tanzania and propose solutions. - locally",
+          "competence": "Explore basic tenets of logic (connectives, propositions, ar"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul",
+          "text": "Compare and contrast 'Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul' with related concepts. - locally",
+          "competence": "Apply matrices to solve simultaneous equations of two unknow"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+          "text": "With examples, illustrate how 'Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line' is applied in the community. - locally",
+          "competence": "Explore the basic tenets of coordinate geometry (midpoint of"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
+          "text": "With examples, illustrate how 'Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set' is applied in the community.",
+          "competence": "Explore the basic tenets of sets (types of sets, subsets, op"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use logic to analyse arguments and construct circuit diagrams",
+          "text": "Describe the process of 'Use logic to analyse arguments and construct circuit diagrams' step by step.",
+          "competence": "Use logic to analyse arguments and construct circuit diagram"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use sets, sequences and series in problem solving",
+          "text": "Assess the impact of 'Use sets, sequences and series in problem solving' on society. - locally",
+          "competence": "Use sets, sequences and series in problem solving"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "What are the characteristics of 'Demonstrate basic understanding of calculus'?",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "text": "Describe the process of 'Demonstrate an advanced understanding of knowledge and skills in Mathematics' step by step. - with diagram",
+          "competence": "Demonstrate an advanced understanding of knowledge and skill"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+          "text": "Explain the relationship between 'Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)' and its environment.",
+          "competence": "Explore the basic tenets of sequences and series (Arithmetic"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+          "text": "Propose measures to improve 'Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation' in schools. - with example",
+          "competence": "Explore the basic tenets of coordinate geometry (gradient an"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+          "text": "Describe the main features of 'Determine the probability of an event, expectation, variance, and standard deviation of random variables'.",
+          "competence": "Determine the probability of an event, expectation, variance"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Apply sine and cosine rules to find distances or angles of elevation",
+          "text": "Evaluate the role of 'Apply sine and cosine rules to find distances or angles of elevation' in national development. - with diagram",
+          "competence": "Apply sine and cosine rules to find distances or angles of e"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "text": "With examples, illustrate how 'Demonstrate an advanced understanding of algebra' is applied in the community. - locally",
+          "competence": "Demonstrate an advanced understanding of algebra"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Describe the process of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' step by step.",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+          "text": "Analyse the causes and effects of 'and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)'.",
+          "competence": "and rational inequalities, 3x3 matrices, partial fractions, "
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Complete the project started in Form Five and submit the report for assessment",
+          "text": "Analyse the causes and effects of 'Complete the project started in Form Five and submit the report for assessment'. - with example",
+          "competence": "Complete the project started in Form Five and submit the rep"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Compare sets (subsets and universal set",
+          "text": "Propose measures to improve 'Compare sets (subsets and universal set' in schools.",
+          "competence": "Compare sets (subsets and universal set"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Solve ratio and proportion problems",
+    "Represent two sets in a Venn diagram",
+    "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+    "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+    "Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul",
+    "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+    "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
+    "Use logic to analyse arguments and construct circuit diagrams",
+    "Use sets, sequences and series in problem solving",
+    "Demonstrate basic understanding of calculus"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

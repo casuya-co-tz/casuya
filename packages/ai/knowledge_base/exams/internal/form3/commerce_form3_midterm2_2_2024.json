@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form3_midterm2_2_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 2 Exam 2 (FORM3 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 97,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Documentation",
+          "text": "Describe the main features of 'Documentation'. - with example",
+          "competence": "Documentation"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Communication",
+          "text": "Explain the concept of 'Communication' with examples relevant to Tanzania. - with diagram",
+          "competence": "Communication"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain advertisement",
+          "text": "Compare and contrast 'Explain advertisement' with related concepts. - with diagram",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain marketing mix",
+          "text": "Discuss the challenges facing 'Explain marketing mix' in Tanzania and propose solutions.",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain documentation",
+          "text": "Describe the main features of 'Explain documentation'. - with example",
+          "competence": "Explain documentation"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain transport",
+          "text": "Explain the concept of 'Explain transport' with examples relevant to Tanzania.",
+          "competence": "Explain transport"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Sources of Business Finance",
+          "text": "Examine the advantages and disadvantages of 'Sources of Business Finance'.",
+          "competence": "Sources of Business Finance"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain partnership",
+          "text": "Discuss the challenges facing 'Explain partnership' in Tanzania and propose solutions. - with example",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Advertisement",
+          "text": "Discuss the challenges facing 'Advertisement' in Tanzania and propose solutions. - with example",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain communication",
+          "text": "Explain the concept of 'Explain communication' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain sources of business finance",
+          "text": "Examine the advantages and disadvantages of 'Explain sources of business finance'. - with diagram",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain trade",
+          "text": "Analyse the causes and effects of 'Explain trade'.",
+          "competence": "Explain trade"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Taxation",
+          "text": "Outline the procedures involved in 'Taxation'.",
+          "competence": "Taxation"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Storekeeping",
+          "text": "Compare and contrast 'Storekeeping' with related concepts. - with example",
+          "competence": "Storekeeping"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain production",
+          "text": "Compare and contrast 'Explain production' with related concepts.",
+          "competence": "Explain production"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Insurance",
+          "text": "Discuss the challenges facing 'Insurance' in Tanzania and propose solutions.",
+          "competence": "Insurance"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Marketing Mix",
+          "text": "With examples, illustrate how 'Marketing Mix' is applied in the community. - with diagram",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Cooperative",
+          "text": "With examples, illustrate how 'Cooperative' is applied in the community. - with example",
+          "competence": "Cooperative"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Concept of Commerce",
+          "text": "Discuss the challenges facing 'Concept of Commerce' in Tanzania and propose solutions. - with diagram",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain aids to trade",
+          "text": "Discuss the challenges facing 'Explain aids to trade' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain aids to trade"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Documentation",
+    "Communication",
+    "Explain advertisement",
+    "Explain marketing mix",
+    "Explain documentation",
+    "Explain transport",
+    "Sources of Business Finance",
+    "Explain partnership",
+    "Advertisement",
+    "Explain communication"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

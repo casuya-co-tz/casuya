@@ -1,0 +1,121 @@
+{
+  "filename": "mathematics_form1_topical_6_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Mathematics - Topical Test 6 (FORM1 2026): Explore the basic tenets of matrice",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Evaluate the role of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' in national development.",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Describe the main features of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm'. - locally",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Explain the concept of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' with examples relevant to Tanzania. - with example",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "Describe the main features of 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation'. - with example",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Describe the process of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' step by step. - locally",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation'.",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Describe the process of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' step by step.",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Define 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' and discuss its importance in everyday life.",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Describe the main features of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm'.",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Define 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+    "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

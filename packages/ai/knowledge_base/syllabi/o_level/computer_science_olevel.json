@@ -1,0 +1,205 @@
+{
+  "subject_code": "036",
+  "subject_name": "Computer Science",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "INTRODUCTION TO COMPUTER",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Computer Basics",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "036-F1-U1-L1",
+              "title": "Explain computer basics",
+              "markdown_content": "## Explain computer basics",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Computer Hardware",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "036-F1-U1-L2",
+              "title": "Explain computer hardware",
+              "markdown_content": "## Explain computer hardware",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Computer Software",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "036-F1-U1-L3",
+              "title": "Explain computer software",
+              "markdown_content": "## Explain computer software",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "WORD PROCESSING",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Word Processing Concepts",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "036-F1-U2-L1",
+              "title": "Explain word processing concepts",
+              "markdown_content": "## Explain word processing concepts",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Document Creation",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "036-F1-U2-L2",
+              "title": "Explain document creation",
+              "markdown_content": "## Explain document creation",
+              "page": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "SPREADSHEET",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Spreadsheet Concepts",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "036-F2-U3-L1",
+              "title": "Explain spreadsheet concepts",
+              "markdown_content": "## Explain spreadsheet concepts",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Data Processing",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "036-F2-U3-L2",
+              "title": "Explain data processing",
+              "markdown_content": "## Explain data processing",
+              "page": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "PROGRAMMING",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Introduction to Programming",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "036-F2-U4-L1",
+              "title": "Explain introduction to programming",
+              "markdown_content": "## Explain introduction to programming",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Algorithm and Flowchart",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "036-F2-U4-L2",
+              "title": "Explain algorithm and flowchart",
+              "markdown_content": "## Explain algorithm and flowchart",
+              "page": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "NETWORKS AND INTERNET",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Computer Networks",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "036-F3-U5-L1",
+              "title": "Explain computer networks",
+              "markdown_content": "## Explain computer networks",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Internet Services",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "036-F3-U5-L2",
+              "title": "Explain internet services",
+              "markdown_content": "## Explain internet services",
+              "page": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "DATABASES AND SECURITY",
+      "form": 4,
+      "topics": [
+        {
+          "topic_name": "Database Concepts",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "036-F4-U6-L1",
+              "title": "Explain database concepts",
+              "markdown_content": "## Explain database concepts",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Computer Security",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "036-F4-U6-L2",
+              "title": "Explain computer security",
+              "markdown_content": "## Explain computer security",
+              "page": 16
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

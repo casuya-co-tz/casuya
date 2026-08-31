@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form1_midterm1_1_2024.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 1 Exam 1 (FORM1 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 82,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the importance of numbers in real-life situations",
+          "text": "Describe the process of 'Describe the importance of numbers in real-life situations' step by step.",
+          "competence": "Describe the importance of numbers in real-life situations"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "What are the characteristics of 'Use geometry, approximations, relations and functions in various contexts'? - locally",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "Define 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc' and discuss its importance in everyday life. - with example",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+          "text": "How does 'and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)' relate to sustainable development?",
+          "competence": "and rational inequalities, 3x3 matrices, partial fractions, "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of rational, irrational, and real numbers",
+          "text": "How does 'Explain the concept of rational, irrational, and real numbers' relate to sustainable development? - locally",
+          "competence": "Explain the concept of rational, irrational, and real number"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+          "text": "How does 'Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala' relate to sustainable development?",
+          "competence": "Explore the basic tenets of vectors (displacement and positi"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+          "text": "Explain the relationship between 'Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line' and its environment. - locally",
+          "competence": "Explore the basic tenets of coordinate geometry (midpoint of"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+          "text": "Discuss the challenges facing 'Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs' in Tanzania and propose solutions.",
+          "competence": "Find the general term for AP and GP and use them to derive f"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
+          "text": "Describe the process of 'Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set' step by step. - locally",
+          "competence": "Distinguish among different types of sets (universal set, eq"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Find the number of elements in a set",
+          "text": "Analyse the causes and effects of 'Find the number of elements in a set'. - with example",
+          "competence": "Find the number of elements in a set"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+          "text": "Examine the advantages and disadvantages of 'Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde'.",
+          "competence": "Identify and use laws of exponents involving positive, negat"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "text": "How does 'Demonstrate an advanced understanding of statistics' relate to sustainable development? - locally",
+          "competence": "Demonstrate an advanced understanding of statistics"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Determine the nature of stationary points, rates of change between quantities, small changes in quantities, and series expansions of different functions",
+          "text": "How does 'Determine the nature of stationary points, rates of change between quantities, small changes in quantities, and series expansions of different functions' relate to sustainable development?",
+          "competence": "Determine the nature of stationary points, rates of change b"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+          "text": "Explain the relationship between 'Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)' and its environment. - locally",
+          "competence": "Explore advanced tenets of vectors (ratio theorems, dot prod"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "Compare and contrast 'Use approximations in computations and measurements of quantities in various contexts' with related concepts. - with diagram",
+          "competence": "Use approximations in computations and measurements of quant"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
+          "text": "Discuss the factors influencing 'Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio'. - with example",
+          "competence": "Explore the basic tenets of trigonometry (trigonometric rati"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Perform operations with sets (union, intersection, and complement of a se",
+          "text": "Assess the impact of 'Perform operations with sets (union, intersection, and complement of a se' on society.",
+          "competence": "Perform operations with sets (union, intersection, and compl"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use algebra and matrices in problem solving",
+          "text": "How does 'Use algebra and matrices in problem solving' relate to sustainable development? - locally",
+          "competence": "Use algebra and matrices in problem solving"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concepts of rates and variations",
+          "text": "How does 'Describe the concepts of rates and variations' relate to sustainable development? - locally",
+          "competence": "Describe the concepts of rates and variations"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use rates and variations in different contexts",
+          "text": "Evaluate the role of 'Use rates and variations in different contexts' in national development.",
+          "competence": "Use rates and variations in different contexts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the importance of numbers in real-life situations",
+    "Use geometry, approximations, relations and functions in various contexts",
+    "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+    "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+    "Explain the concept of rational, irrational, and real numbers",
+    "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+    "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+    "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+    "Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
+    "Find the number of elements in a set"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

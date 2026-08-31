@@ -1,0 +1,249 @@
+{
+  "filename": "commerce_form1_terminal_2_2023.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Commerce - Terminal Exam 2 (FORM1 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 106,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain partnership",
+          "text": "Outline the procedures involved in 'Explain partnership'. - with diagram",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain cooperative",
+          "text": "Discuss the challenges facing 'Explain cooperative' in Tanzania and propose solutions. - with example",
+          "competence": "Explain cooperative"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain insurance",
+          "text": "Explain the concept of 'Explain insurance' with examples relevant to Tanzania. - with example",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain communication",
+          "text": "Describe the main features of 'Explain communication'. - with diagram",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Market and Marketing",
+          "text": "With examples, illustrate how 'Market and Marketing' is applied in the community.",
+          "competence": "Market and Marketing"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain production",
+          "text": "With examples, illustrate how 'Explain production' is applied in the community. - with diagram",
+          "competence": "Explain production"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Sources of Business Finance",
+          "text": "With examples, illustrate how 'Sources of Business Finance' is applied in the community.",
+          "competence": "Sources of Business Finance"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Transport",
+          "text": "With examples, illustrate how 'Transport' is applied in the community. - with example",
+          "competence": "Transport"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Insurance",
+          "text": "Examine the advantages and disadvantages of 'Insurance'.",
+          "competence": "Insurance"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain sources of business finance",
+          "text": "Explain the concept of 'Explain sources of business finance' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain market and marketing",
+          "text": "Compare and contrast 'Explain market and marketing' with related concepts. - with diagram",
+          "competence": "Explain market and marketing"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain advertisement",
+          "text": "Analyse the causes and effects of 'Explain advertisement'. - with example",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Production",
+          "text": "Evaluate the role of 'Production' in national development. - with diagram",
+          "competence": "Production"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain sole proprietorship",
+          "text": "Analyse the causes and effects of 'Explain sole proprietorship'. - with example",
+          "competence": "Explain sole proprietorship"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Companies",
+          "text": "Evaluate the role of 'Companies' in national development. - with example",
+          "competence": "Companies"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Stock Control",
+          "text": "Analyse the causes and effects of 'Stock Control'.",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Trade",
+          "text": "Discuss the challenges facing 'Trade' in Tanzania and propose solutions. - with example",
+          "competence": "Trade"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Marketing Mix",
+          "text": "Describe the main features of 'Marketing Mix'. - with diagram",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain trade",
+          "text": "Describe the main features of 'Explain trade'.",
+          "competence": "Explain trade"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Concept of Commerce",
+          "text": "Discuss the challenges facing 'Concept of Commerce' in Tanzania and propose solutions.",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain concept of commerce",
+          "text": "With examples, illustrate how 'Explain concept of commerce' is applied in the community.",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain marketing mix",
+          "text": "Analyse the causes and effects of 'Explain marketing mix'. - with example",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain storekeeping",
+          "text": "With examples, illustrate how 'Explain storekeeping' is applied in the community.",
+          "competence": "Explain storekeeping"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain companies",
+          "text": "Define 'Explain companies' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain companies"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain aids to trade",
+          "text": "Define 'Explain aids to trade' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain aids to trade"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain partnership",
+    "Explain cooperative",
+    "Explain insurance",
+    "Explain communication",
+    "Market and Marketing",
+    "Explain production",
+    "Sources of Business Finance",
+    "Transport",
+    "Insurance",
+    "Explain sources of business finance"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

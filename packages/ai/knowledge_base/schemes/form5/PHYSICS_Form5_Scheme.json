@@ -1,0 +1,358 @@
+{
+  "file": "PHYSICS_Form5_NECTA_Scheme.json",
+  "subjects": [
+    {
+      "subject_name": "Physics",
+      "subject_code": "031",
+      "form": "Form 5",
+      "year": "2025/2026",
+      "headers": [
+        "Week",
+        "Topic",
+        "Sub Topic",
+        "Competence",
+        "Learning Activities",
+        "Assessment",
+        "Resources"
+      ],
+      "column_count": 7,
+      "entries": [
+        {
+          "week": 1,
+          "period": "Period 1",
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "sub_topic": "Subtopic 1: Demonstrate an advanced understanding of the concepts, theories and principles in Physics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 2,
+          "period": "Period 2",
+          "topic": "Use various instruments to carry out measurements in Physics",
+          "sub_topic": "Subtopic 2: Use various instruments to carry out measurements in Physics - Detailed",
+          "competence": "Demonstrate understanding of Use various instruments to carry out measurements in Physics",
+          "learning_activities": "Discussion, practical, research on Use various instruments to carry out measurements in Physics",
+          "assessment": "Quiz, assignment, presentation on Use various instruments to carry out measurements in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 3,
+          "period": "Period 3",
+          "topic": "Analyse the efficacy of different techniques and instruments in physical measurements",
+          "sub_topic": "Subtopic 3: Analyse the efficacy of different techniques and instruments in physical measurements - Detailed",
+          "competence": "Demonstrate understanding of Analyse the efficacy of different techniques and instruments in physical measurements",
+          "learning_activities": "Discussion, practical, research on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "assessment": "Quiz, assignment, presentation on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 4,
+          "period": "Period 4",
+          "topic": "Carry out experiments in Physics",
+          "sub_topic": "Subtopic 4: Carry out experiments in Physics - Detailed",
+          "competence": "Demonstrate understanding of Carry out experiments in Physics",
+          "learning_activities": "Discussion, practical, research on Carry out experiments in Physics",
+          "assessment": "Quiz, assignment, presentation on Carry out experiments in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 5,
+          "period": "Period 5",
+          "topic": "Conduct a project in Physics",
+          "sub_topic": "Subtopic 5: Conduct a project in Physics - Detailed",
+          "competence": "Demonstrate understanding of Conduct a project in Physics",
+          "learning_activities": "Discussion, practical, research on Conduct a project in Physics",
+          "assessment": "Quiz, assignment, presentation on Conduct a project in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 6,
+          "period": "Period 6",
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "sub_topic": "Subtopic 6: Demonstrate an advanced understanding of the concepts, theories and principles in Physics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 7,
+          "period": "Period 7",
+          "topic": "Use various instruments to carry out measurements in Physics",
+          "sub_topic": "Subtopic 7: Use various instruments to carry out measurements in Physics - Detailed",
+          "competence": "Demonstrate understanding of Use various instruments to carry out measurements in Physics",
+          "learning_activities": "Discussion, practical, research on Use various instruments to carry out measurements in Physics",
+          "assessment": "Quiz, assignment, presentation on Use various instruments to carry out measurements in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 8,
+          "period": "Period 8",
+          "topic": "Analyse the efficacy of different techniques and instruments in physical measurements",
+          "sub_topic": "Subtopic 8: Analyse the efficacy of different techniques and instruments in physical measurements - Detailed",
+          "competence": "Demonstrate understanding of Analyse the efficacy of different techniques and instruments in physical measurements",
+          "learning_activities": "Discussion, practical, research on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "assessment": "Quiz, assignment, presentation on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 9,
+          "period": "Period 9",
+          "topic": "Carry out experiments in Physics",
+          "sub_topic": "Subtopic 9: Carry out experiments in Physics - Detailed",
+          "competence": "Demonstrate understanding of Carry out experiments in Physics",
+          "learning_activities": "Discussion, practical, research on Carry out experiments in Physics",
+          "assessment": "Quiz, assignment, presentation on Carry out experiments in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 10,
+          "period": "Period 10",
+          "topic": "Conduct a project in Physics",
+          "sub_topic": "Subtopic 10: Conduct a project in Physics - Detailed",
+          "competence": "Demonstrate understanding of Conduct a project in Physics",
+          "learning_activities": "Discussion, practical, research on Conduct a project in Physics",
+          "assessment": "Quiz, assignment, presentation on Conduct a project in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 11,
+          "period": "Period 11",
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "sub_topic": "Subtopic 11: Demonstrate an advanced understanding of the concepts, theories and principles in Physics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 12,
+          "period": "Period 12",
+          "topic": "Use various instruments to carry out measurements in Physics",
+          "sub_topic": "Subtopic 12: Use various instruments to carry out measurements in Physics - Detailed",
+          "competence": "Demonstrate understanding of Use various instruments to carry out measurements in Physics",
+          "learning_activities": "Discussion, practical, research on Use various instruments to carry out measurements in Physics",
+          "assessment": "Quiz, assignment, presentation on Use various instruments to carry out measurements in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 13,
+          "period": "Period 13",
+          "topic": "Analyse the efficacy of different techniques and instruments in physical measurements",
+          "sub_topic": "Subtopic 13: Analyse the efficacy of different techniques and instruments in physical measurements - Detailed",
+          "competence": "Demonstrate understanding of Analyse the efficacy of different techniques and instruments in physical measurements",
+          "learning_activities": "Discussion, practical, research on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "assessment": "Quiz, assignment, presentation on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 14,
+          "period": "Period 14",
+          "topic": "Carry out experiments in Physics",
+          "sub_topic": "Subtopic 14: Carry out experiments in Physics - Detailed",
+          "competence": "Demonstrate understanding of Carry out experiments in Physics",
+          "learning_activities": "Discussion, practical, research on Carry out experiments in Physics",
+          "assessment": "Quiz, assignment, presentation on Carry out experiments in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 15,
+          "period": "Period 15",
+          "topic": "Conduct a project in Physics",
+          "sub_topic": "Subtopic 15: Conduct a project in Physics - Detailed",
+          "competence": "Demonstrate understanding of Conduct a project in Physics",
+          "learning_activities": "Discussion, practical, research on Conduct a project in Physics",
+          "assessment": "Quiz, assignment, presentation on Conduct a project in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 16,
+          "period": "Period 16",
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "sub_topic": "Subtopic 16: Demonstrate an advanced understanding of the concepts, theories and principles in Physics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 17,
+          "period": "Period 17",
+          "topic": "Use various instruments to carry out measurements in Physics",
+          "sub_topic": "Subtopic 17: Use various instruments to carry out measurements in Physics - Detailed",
+          "competence": "Demonstrate understanding of Use various instruments to carry out measurements in Physics",
+          "learning_activities": "Discussion, practical, research on Use various instruments to carry out measurements in Physics",
+          "assessment": "Quiz, assignment, presentation on Use various instruments to carry out measurements in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 18,
+          "period": "Period 18",
+          "topic": "Analyse the efficacy of different techniques and instruments in physical measurements",
+          "sub_topic": "Subtopic 18: Analyse the efficacy of different techniques and instruments in physical measurements - Detailed",
+          "competence": "Demonstrate understanding of Analyse the efficacy of different techniques and instruments in physical measurements",
+          "learning_activities": "Discussion, practical, research on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "assessment": "Quiz, assignment, presentation on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 19,
+          "period": "Period 19",
+          "topic": "Carry out experiments in Physics",
+          "sub_topic": "Subtopic 19: Carry out experiments in Physics - Detailed",
+          "competence": "Demonstrate understanding of Carry out experiments in Physics",
+          "learning_activities": "Discussion, practical, research on Carry out experiments in Physics",
+          "assessment": "Quiz, assignment, presentation on Carry out experiments in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 20,
+          "period": "Period 20",
+          "topic": "Conduct a project in Physics",
+          "sub_topic": "Subtopic 20: Conduct a project in Physics - Detailed",
+          "competence": "Demonstrate understanding of Conduct a project in Physics",
+          "learning_activities": "Discussion, practical, research on Conduct a project in Physics",
+          "assessment": "Quiz, assignment, presentation on Conduct a project in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 21,
+          "period": "Period 21",
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "sub_topic": "Subtopic 21: Demonstrate an advanced understanding of the concepts, theories and principles in Physics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 22,
+          "period": "Period 22",
+          "topic": "Use various instruments to carry out measurements in Physics",
+          "sub_topic": "Subtopic 22: Use various instruments to carry out measurements in Physics - Detailed",
+          "competence": "Demonstrate understanding of Use various instruments to carry out measurements in Physics",
+          "learning_activities": "Discussion, practical, research on Use various instruments to carry out measurements in Physics",
+          "assessment": "Quiz, assignment, presentation on Use various instruments to carry out measurements in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 23,
+          "period": "Period 23",
+          "topic": "Analyse the efficacy of different techniques and instruments in physical measurements",
+          "sub_topic": "Subtopic 23: Analyse the efficacy of different techniques and instruments in physical measurements - Detailed",
+          "competence": "Demonstrate understanding of Analyse the efficacy of different techniques and instruments in physical measurements",
+          "learning_activities": "Discussion, practical, research on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "assessment": "Quiz, assignment, presentation on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 24,
+          "period": "Period 24",
+          "topic": "Carry out experiments in Physics",
+          "sub_topic": "Subtopic 24: Carry out experiments in Physics - Detailed",
+          "competence": "Demonstrate understanding of Carry out experiments in Physics",
+          "learning_activities": "Discussion, practical, research on Carry out experiments in Physics",
+          "assessment": "Quiz, assignment, presentation on Carry out experiments in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 25,
+          "period": "Period 25",
+          "topic": "Conduct a project in Physics",
+          "sub_topic": "Subtopic 25: Conduct a project in Physics - Detailed",
+          "competence": "Demonstrate understanding of Conduct a project in Physics",
+          "learning_activities": "Discussion, practical, research on Conduct a project in Physics",
+          "assessment": "Quiz, assignment, presentation on Conduct a project in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 26,
+          "period": "Period 26",
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "sub_topic": "Subtopic 26: Demonstrate an advanced understanding of the concepts, theories and principles in Physics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 27,
+          "period": "Period 27",
+          "topic": "Use various instruments to carry out measurements in Physics",
+          "sub_topic": "Subtopic 27: Use various instruments to carry out measurements in Physics - Detailed",
+          "competence": "Demonstrate understanding of Use various instruments to carry out measurements in Physics",
+          "learning_activities": "Discussion, practical, research on Use various instruments to carry out measurements in Physics",
+          "assessment": "Quiz, assignment, presentation on Use various instruments to carry out measurements in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 28,
+          "period": "Period 28",
+          "topic": "Analyse the efficacy of different techniques and instruments in physical measurements",
+          "sub_topic": "Subtopic 28: Analyse the efficacy of different techniques and instruments in physical measurements - Detailed",
+          "competence": "Demonstrate understanding of Analyse the efficacy of different techniques and instruments in physical measurements",
+          "learning_activities": "Discussion, practical, research on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "assessment": "Quiz, assignment, presentation on Analyse the efficacy of different techniques and instruments in physical measurements",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 29,
+          "period": "Period 29",
+          "topic": "Carry out experiments in Physics",
+          "sub_topic": "Subtopic 29: Carry out experiments in Physics - Detailed",
+          "competence": "Demonstrate understanding of Carry out experiments in Physics",
+          "learning_activities": "Discussion, practical, research on Carry out experiments in Physics",
+          "assessment": "Quiz, assignment, presentation on Carry out experiments in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 30,
+          "period": "Period 30",
+          "topic": "Conduct a project in Physics",
+          "sub_topic": "Subtopic 30: Conduct a project in Physics - Detailed",
+          "competence": "Demonstrate understanding of Conduct a project in Physics",
+          "learning_activities": "Discussion, practical, research on Conduct a project in Physics",
+          "assessment": "Quiz, assignment, presentation on Conduct a project in Physics",
+          "resources": "Textbook 031, lab materials",
+          "remarks": ""
+        }
+      ],
+      "entry_count": 30,
+      "table_index": 0
+    }
+  ],
+  "form": "Form 5",
+  "year": "2025/2026",
+  "source": "generated from syllabus"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form3_midterm1_1_2025.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 1 (FORM3 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 93,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Marketing Mix",
+          "text": "Discuss the challenges facing 'Marketing Mix' in Tanzania and propose solutions. - with example",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain companies",
+          "text": "Define 'Explain companies' and discuss its importance in everyday life.",
+          "competence": "Explain companies"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Insurance",
+          "text": "Discuss the challenges facing 'Insurance' in Tanzania and propose solutions.",
+          "competence": "Insurance"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain sources of business finance",
+          "text": "Discuss the challenges facing 'Explain sources of business finance' in Tanzania and propose solutions.",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Aids to Trade",
+          "text": "With examples, illustrate how 'Aids to Trade' is applied in the community. - with diagram",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Companies",
+          "text": "Outline the procedures involved in 'Companies'.",
+          "competence": "Companies"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Transport",
+          "text": "With examples, illustrate how 'Transport' is applied in the community. - with example",
+          "competence": "Transport"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain communication",
+          "text": "Analyse the causes and effects of 'Explain communication'. - with diagram",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Cooperative",
+          "text": "With examples, illustrate how 'Cooperative' is applied in the community.",
+          "competence": "Cooperative"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Partnership",
+          "text": "Explain the concept of 'Partnership' with examples relevant to Tanzania. - with example",
+          "competence": "Partnership"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Advertisement",
+          "text": "Outline the procedures involved in 'Advertisement'.",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain aids to trade",
+          "text": "Define 'Explain aids to trade' and discuss its importance in everyday life.",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Trade",
+          "text": "Define 'Trade' and discuss its importance in everyday life. - with diagram",
+          "competence": "Trade"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain advertisement",
+          "text": "With examples, illustrate how 'Explain advertisement' is applied in the community. - with example",
+          "competence": "Explain advertisement"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Stock Control",
+          "text": "Outline the procedures involved in 'Stock Control'. - with example",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Documentation",
+          "text": "Evaluate the role of 'Documentation' in national development.",
+          "competence": "Documentation"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain sole proprietorship",
+          "text": "Analyse the causes and effects of 'Explain sole proprietorship'. - with diagram",
+          "competence": "Explain sole proprietorship"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Communication",
+          "text": "Outline the procedures involved in 'Communication'. - with example",
+          "competence": "Communication"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain stock control",
+          "text": "Compare and contrast 'Explain stock control' with related concepts. - with diagram",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain storekeeping",
+          "text": "Outline the procedures involved in 'Explain storekeeping'.",
+          "competence": "Explain storekeeping"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Marketing Mix",
+    "Explain companies",
+    "Insurance",
+    "Explain sources of business finance",
+    "Aids to Trade",
+    "Companies",
+    "Transport",
+    "Explain communication",
+    "Cooperative",
+    "Partnership"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,62 @@
+{
+  "code": "021",
+  "subject": "Chemistry",
+  "level": "Form 3-4 (CSEE Pilot)",
+  "template_file": "exam_formats/templates/CHEMISTRY_CSEE_PILOT_2026.html",
+  "source_html": "C:/Users/Admin/Downloads/gemini-code-1788177644705.html",
+  "duration": "3:00 Hours",
+  "year": "2025/2026",
+  "structure": {
+    "total_questions": 11,
+    "total_marks": 100,
+    "sections": [
+      {
+        "name": "A",
+        "marks": 16,
+        "questions": [
+          1,
+          2
+        ],
+        "description": "Q1 MCQ i-x 10 marks (oxidation Na2S2O3, HCl+CaCO3, Contact catalyst, CnH2n-2 alkynes, 11.2dm3 O2 moles, Zn2+ ppt, cracking, fractional distillation, pH 5.5 lime, electrolysis NaCl) + Q2 Matching endothermic/reducing/catalyst 6 marks"
+      },
+      {
+        "name": "B",
+        "marks": 54,
+        "questions": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "description": "Q3 atomic number/mass 17/35, Q4 empirical formula 40% C, Q5 ammonia preparation diagram NH4Cl+Ca(OH)2, Q6 Faraday 2.5A 32min10s, Q7 hard water, Q8 organic CH3CH2CH2OH CH3CH=CHCH3"
+      },
+      {
+        "name": "C",
+        "marks": 30,
+        "questions": [
+          9,
+          10,
+          11
+        ],
+        "description": "Choose 2x15: Q9 molarity titration 25cm3 0.10M NaOH vs 20cm3 H2SO4, Q10 blast furnace hematite, Q11 soil pH conservation"
+      }
+    ],
+    "instructions": [
+      "This paper consists of sections A, B, and C with a total of eleven (11) questions.",
+      "Answer ALL questions in sections A and B, and TWO (2) questions from section C.",
+      "Cellular phones and any unauthorized materials are NOT allowed in the examination room.",
+      "Non-programmable calculators and mathematical tables may be used.",
+      "Atomic masses: H=1, C=12, N=14, O=16, Na=23, S=32, Cl=35.5, Cu=64. Molar gas volume at s.t.p. =22.4 dm3/mol. 1 Faraday=96500 C/mol."
+    ],
+    "layout_features": [
+      "A4 4 pages, header 021 CHEMISTRY, meta bar Time/Year, instructions block, section heads underlined, SVG diagrams (ammonia prep tower, blast furnace), MathJax, footer 021 Page X of 4"
+    ]
+  },
+  "applied_to": [
+    "form3",
+    "form4"
+  ],
+  "internal_exams_generated": 40
+}

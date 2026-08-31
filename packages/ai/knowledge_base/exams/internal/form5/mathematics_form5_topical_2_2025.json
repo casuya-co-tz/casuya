@@ -1,0 +1,121 @@
+{
+  "filename": "mathematics_form5_topical_2_2025.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Mathematics - Topical Test 2 (FORM5 2025): Use basic coordinate geometry, trig",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 51,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "Propose measures to improve 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life' in schools. - with example",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "Examine the advantages and disadvantages of 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life'. - with example",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "Analyse the causes and effects of 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life'. - locally",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Approximate numbers to the required significant figures and decimal places",
+          "text": "How does 'Approximate numbers to the required significant figures and decimal places' relate to sustainable development?",
+          "competence": "Approximate numbers to the required significant figures and "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "Outline the procedures involved in 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life'.",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "Describe the main features of 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life'. - with example",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Approximate numbers to the required significant figures and decimal places",
+          "text": "Describe the process of 'Approximate numbers to the required significant figures and decimal places' step by step.",
+          "competence": "Approximate numbers to the required significant figures and "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "What are the characteristics of 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life'? - with diagram",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "What are the characteristics of 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life'?",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "Explain the concept of 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life' with examples relevant to Tanzania.",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+    "Approximate numbers to the required significant figures and decimal places"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

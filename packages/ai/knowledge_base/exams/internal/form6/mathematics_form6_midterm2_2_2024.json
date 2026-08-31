@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form6_midterm2_2_2024.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 2 Exam 2 (FORM6 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 88,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+          "text": "Explain the concept of 'Determine the probability of an event, expectation, variance, and standard deviation of random variables' with examples relevant to Tanzania. - with example",
+          "competence": "Determine the probability of an event, expectation, variance"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)'.",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)'. - with diagram",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Explain the relationship between 'Find the inverses of relations and functions' and its environment.",
+          "competence": "Find the inverses of relations and functions"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function",
+          "text": "Compare and contrast '(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function' with related concepts. - with example",
+          "competence": "(types of relations, domain and range of relations, graphs o"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "Explain the concept of 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)' with examples relevant to Tanzania. - with example",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform operations with sets (union, intersection, and complement of a se",
+          "text": "With examples, illustrate how 'Perform operations with sets (union, intersection, and complement of a se' is applied in the community. - with diagram",
+          "competence": "Perform operations with sets (union, intersection, and compl"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+          "text": "What are the characteristics of 'Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)'? - with diagram",
+          "competence": "Explore the basic tenets of complex numbers (modulus, argume"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Outline the procedures involved in 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic'. - locally",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+          "text": "Discuss the factors influencing 'Use algebraic expressions to model situations (word problems into algebraic expressions and equation'. - with example",
+          "competence": "Use algebraic expressions to model situations (word problems"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Compare and contrast 'Convert repeating/ recurring decimals into fractions and vice versa' with related concepts. - locally",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "How does 'Use approximations in computations and measurements of quantities in various contexts' relate to sustainable development? - with diagram",
+          "competence": "Use approximations in computations and measurements of quant"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "With examples, illustrate how 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' is applied in the community. - with diagram",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+          "text": "Describe the main features of 'Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)'. - with diagram",
+          "competence": "Explore the basic tenets of probability theory (counting pri"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use knowledge of sets to organise, create, and categorise objects",
+          "text": "Outline the procedures involved in 'Use knowledge of sets to organise, create, and categorise objects'.",
+          "competence": "Use knowledge of sets to organise, create, and categorise ob"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
+          "text": "Explain the relationship between 'Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set' and its environment. - locally",
+          "competence": "Explore the basic tenets of sets (types of sets, subsets, op"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+          "text": "With examples, illustrate how 'Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)' is applied in the community. - with example",
+          "competence": "Explore basic tenets of logic (connectives, propositions, ar"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+          "text": "Discuss the factors influencing 'Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde'.",
+          "competence": "Identify and use laws of exponents involving positive, negat"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+          "text": "Evaluate the role of 'Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala' in national development. - with example",
+          "competence": "Explore the basic tenets of vectors (displacement and positi"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Round off numbers and estimate values of expressions",
+          "text": "Evaluate the role of 'Round off numbers and estimate values of expressions' in national development.",
+          "competence": "Round off numbers and estimate values of expressions"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+    "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+    "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+    "Find the inverses of relations and functions",
+    "(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function",
+    "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+    "Perform operations with sets (union, intersection, and complement of a se",
+    "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+    "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+    "Use algebraic expressions to model situations (word problems into algebraic expressions and equation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

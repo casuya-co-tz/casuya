@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form4_midterm1_4_2023.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 4 (FORM4 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 89,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Warehousing",
+          "text": "Evaluate the role of 'Warehousing' in national development.",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain storekeeping",
+          "text": "Outline the procedures involved in 'Explain storekeeping'. - with diagram",
+          "competence": "Explain storekeeping"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Sole Proprietorship",
+          "text": "Describe the main features of 'Sole Proprietorship'. - with diagram",
+          "competence": "Sole Proprietorship"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain warehousing",
+          "text": "Compare and contrast 'Explain warehousing' with related concepts.",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain sources of business finance",
+          "text": "Discuss the challenges facing 'Explain sources of business finance' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Market and Marketing",
+          "text": "Examine the advantages and disadvantages of 'Market and Marketing'. - with diagram",
+          "competence": "Market and Marketing"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain taxation",
+          "text": "Explain the concept of 'Explain taxation' with examples relevant to Tanzania. - with example",
+          "competence": "Explain taxation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain partnership",
+          "text": "Describe the main features of 'Explain partnership'. - with example",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Advertisement",
+          "text": "Discuss the challenges facing 'Advertisement' in Tanzania and propose solutions.",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain documentation",
+          "text": "Evaluate the role of 'Explain documentation' in national development. - with example",
+          "competence": "Explain documentation"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain concept of commerce",
+          "text": "Analyse the causes and effects of 'Explain concept of commerce'. - with example",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Communication",
+          "text": "Describe the main features of 'Communication'. - with diagram",
+          "competence": "Communication"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Storekeeping",
+          "text": "Compare and contrast 'Storekeeping' with related concepts. - with diagram",
+          "competence": "Storekeeping"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain companies",
+          "text": "Discuss the challenges facing 'Explain companies' in Tanzania and propose solutions. - with example",
+          "competence": "Explain companies"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Taxation",
+          "text": "Examine the advantages and disadvantages of 'Taxation'. - with example",
+          "competence": "Taxation"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Concept of Commerce",
+          "text": "Examine the advantages and disadvantages of 'Concept of Commerce'. - with example",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Stock Control",
+          "text": "Define 'Stock Control' and discuss its importance in everyday life. - with diagram",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain transport",
+          "text": "With examples, illustrate how 'Explain transport' is applied in the community. - with example",
+          "competence": "Explain transport"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain cooperative",
+          "text": "Examine the advantages and disadvantages of 'Explain cooperative'. - with example",
+          "competence": "Explain cooperative"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain production",
+          "text": "Analyse the causes and effects of 'Explain production'. - with diagram",
+          "competence": "Explain production"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Warehousing",
+    "Explain storekeeping",
+    "Sole Proprietorship",
+    "Explain warehousing",
+    "Explain sources of business finance",
+    "Market and Marketing",
+    "Explain taxation",
+    "Explain partnership",
+    "Advertisement",
+    "Explain documentation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

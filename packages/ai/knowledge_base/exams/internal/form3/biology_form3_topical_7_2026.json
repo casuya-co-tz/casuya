@@ -1,0 +1,121 @@
+{
+  "filename": "biology_form3_topical_7_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Biology - Topical Test 7 (FORM3 2026): Explain the concept and systems of ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 44,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Describe the main features of 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms'. - with diagram",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Evaluate the role of 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' in national development.",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Analyse the causes and effects of 'Investigate food nutrients in various food samples'. - with example",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Define 'Investigate food nutrients in various food samples' and discuss its importance in everyday life. - with example",
+          "competence": "Investigate food nutrients in various food samples"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "With examples, illustrate how 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' is applied in the community. - with diagram",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Define 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Compare and contrast 'Investigate food nutrients in various food samples' with related concepts.",
+          "competence": "Investigate food nutrients in various food samples"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Discuss the challenges facing 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' in Tanzania and propose solutions.",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "With examples, illustrate how 'Investigate food nutrients in various food samples' is applied in the community.",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Discuss the challenges facing 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' in Tanzania and propose solutions.",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+    "Investigate food nutrients in various food samples"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

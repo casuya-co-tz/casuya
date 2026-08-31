@@ -1,0 +1,121 @@
+{
+  "filename": "mathematics_form5_topical_7_2024.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Mathematics - Topical Test 7 (FORM5 2024): Convert repeating/ recurring decima",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 54,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Analyse the causes and effects of 'Convert repeating/ recurring decimals into fractions and vice versa'.",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Describe the process of 'Convert repeating/ recurring decimals into fractions and vice versa' step by step. - with diagram",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "Examine the advantages and disadvantages of 'Use approximations in computations and measurements of quantities in various contexts'. - with diagram",
+          "competence": "Use approximations in computations and measurements of quant"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "How does 'Use approximations in computations and measurements of quantities in various contexts' relate to sustainable development? - with example",
+          "competence": "Use approximations in computations and measurements of quant"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "Propose measures to improve 'Use approximations in computations and measurements of quantities in various contexts' in schools. - locally",
+          "competence": "Use approximations in computations and measurements of quant"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "How does 'Convert repeating/ recurring decimals into fractions and vice versa' relate to sustainable development? - with diagram",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Assess the impact of 'Convert repeating/ recurring decimals into fractions and vice versa' on society. - with diagram",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "What are the characteristics of 'Use approximations in computations and measurements of quantities in various contexts'?",
+          "competence": "Use approximations in computations and measurements of quant"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Compare and contrast 'Convert repeating/ recurring decimals into fractions and vice versa' with related concepts.",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "Propose measures to improve 'Use approximations in computations and measurements of quantities in various contexts' in schools. - with example",
+          "competence": "Use approximations in computations and measurements of quant"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Convert repeating/ recurring decimals into fractions and vice versa",
+    "Use approximations in computations and measurements of quantities in various contexts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

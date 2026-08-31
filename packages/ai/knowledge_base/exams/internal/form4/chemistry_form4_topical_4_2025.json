@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form4_topical_4_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 4 (FORM4 2025): Demonstrate an understanding of che",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 42,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Outline the procedures involved in 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate'. - with example",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Compare and contrast 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate' with related concepts. - with example",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Analyse the causes and effects of 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate'.",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts'.",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Compare and contrast 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate' with related concepts. - with example",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Describe the main features of 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate'.",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Compare and contrast 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts' with related concepts.",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Define 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts' and discuss its importance in everyday life.",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Outline the procedures involved in 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate'. - with diagram",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts'.",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+    "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,249 @@
+{
+  "filename": "mathematics_form1_terminal_1_2025.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2025",
+  "time": "2:30 Hours",
+  "title": "Mathematics - Terminal Exam 1 (FORM1 2025)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 102,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
+          "text": "Outline the procedures involved in 'Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul'. - locally",
+          "competence": "Solve quadratic equations by using different methods (factor"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+          "text": "Describe the process of 'Use basic coordinate geometry, trigonometry and vectors skills in daily life' step by step. - with example",
+          "competence": "Use basic coordinate geometry, trigonometry and vectors skil"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+          "text": "Define 'Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line' and discuss its importance in everyday life.",
+          "competence": "Explore the basic tenets of coordinate geometry (midpoint of"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Assess the impact of 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' on society.",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+          "text": "Analyse the causes and effects of 'Explain the concept of approximations (rounding off, significant figures, and decimal place'. - with diagram",
+          "competence": "Explain the concept of approximations (rounding off, signifi"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Discuss the factors influencing 'Explore advanced tenets of set theory (operations, expressions, and cardinality)'. - locally",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)",
+          "text": "Discuss the challenges facing 'Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)' in Tanzania and propose solutions.",
+          "competence": "Explore advanced tenets of coordinate geometry (angle betwee"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concepts of relations and functions (linear and quadrati",
+          "text": "Discuss the challenges facing 'Describe the concepts of relations and functions (linear and quadrati' in Tanzania and propose solutions. - locally",
+          "competence": "Describe the concepts of relations and functions (linear and"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Find the gradient/ slope of a line",
+          "text": "Examine the advantages and disadvantages of 'Find the gradient/ slope of a line'. - locally",
+          "competence": "Find the gradient/ slope of a line"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Calculate angles of elevation and depression",
+          "text": "Propose measures to improve 'Calculate angles of elevation and depression' in schools. - with example",
+          "competence": "Calculate angles of elevation and depression"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Solve ratio and proportion problems",
+          "text": "Explain the relationship between 'Solve ratio and proportion problems' and its environment. - with example",
+          "competence": "Solve ratio and proportion problems"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Propose measures to improve 'Convert repeating/ recurring decimals into fractions and vice versa' in schools. - with example",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "With examples, illustrate how 'Perform operations on radicals and rationalize the denominators' is applied in the community. - with diagram",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use ratios and proportions in daily life",
+          "text": "Outline the procedures involved in 'Use ratios and proportions in daily life'.",
+          "competence": "Use ratios and proportions in daily life"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio'.",
+          "competence": "Explore the basic tenets of trigonometry (trigonometric rati"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "Describe the main features of 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc'. - with example",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)",
+          "text": "Define 'Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explore advanced tenets of functions (polynomials, rational,"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+          "text": "Examine the advantages and disadvantages of 'Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)'. - with diagram",
+          "competence": "Explore basic tenets of logic (connectives, propositions, ar"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Compare and contrast 'Explain the concept of ratios and proportions' with related concepts. - with example",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set' in Tanzania and propose solutions.",
+          "competence": "Explore the basic tenets of sets (types of sets, subsets, op"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use algebra and matrices in problem solving",
+          "text": "Analyse the causes and effects of 'Use algebra and matrices in problem solving'.",
+          "competence": "Use algebra and matrices in problem solving"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the importance of numbers in real-life situations",
+          "text": "Describe the main features of 'Describe the importance of numbers in real-life situations'. - locally",
+          "competence": "Describe the importance of numbers in real-life situations"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+          "text": "Examine the advantages and disadvantages of 'Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)'.",
+          "competence": "Explore basic tenets of differentiation (first principles, p"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Approximate numbers to the required significant figures and decimal places",
+          "text": "Describe the main features of 'Approximate numbers to the required significant figures and decimal places'.",
+          "competence": "Approximate numbers to the required significant figures and "
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+          "text": "Discuss the factors influencing 'Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)'.",
+          "competence": "Explore the basic tenets of sequences and series (Arithmetic"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
+    "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+    "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+    "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+    "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+    "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+    "Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)",
+    "Describe the concepts of relations and functions (linear and quadrati",
+    "Find the gradient/ slope of a line",
+    "Calculate angles of elevation and depression"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

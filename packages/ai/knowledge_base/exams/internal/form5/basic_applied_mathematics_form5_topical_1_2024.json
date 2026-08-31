@@ -1,0 +1,121 @@
+{
+  "filename": "basic_applied_mathematics_form5_topical_1_2024.json",
+  "subject": "Basic Applied Mathematics",
+  "subject_slug": "basic_applied_mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Basic Applied Mathematics - Topical Test 1 (FORM5 2024): Explore some advanced tenets of tri",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 46,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Discuss the factors influencing 'Use statistics to solve problems in different contexts'. - locally",
+          "competence": "Use statistics to solve problems in different contexts"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Describe the process of 'Use statistics to solve problems in different contexts' step by step. - with diagram",
+          "competence": "Use statistics to solve problems in different contexts"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)",
+          "text": "Evaluate the role of 'Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)' in national development. - with example",
+          "competence": "Explore some advanced tenets of trigonometry (relationship o"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Analyse the causes and effects of 'Use statistics to solve problems in different contexts'.",
+          "competence": "Use statistics to solve problems in different contexts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Analyse the causes and effects of 'Use statistics to solve problems in different contexts'. - locally",
+          "competence": "Use statistics to solve problems in different contexts"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Describe the process of 'Use statistics to solve problems in different contexts' step by step.",
+          "competence": "Use statistics to solve problems in different contexts"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Compare and contrast 'Use statistics to solve problems in different contexts' with related concepts. - with example",
+          "competence": "Use statistics to solve problems in different contexts"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)",
+          "text": "Discuss the factors influencing 'Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)'.",
+          "competence": "Explore some advanced tenets of trigonometry (relationship o"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)",
+          "text": "Assess the impact of 'Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)' on society. - with example",
+          "competence": "Explore some advanced tenets of trigonometry (relationship o"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)",
+          "text": "What are the characteristics of 'Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)'? - with diagram",
+          "competence": "Explore some advanced tenets of trigonometry (relationship o"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use statistics to solve problems in different contexts",
+    "Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form6_midterm1_4_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 1 Exam 4 (FORM6 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 102,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Compare and contrast 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate' with related concepts. - with example",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu",
+          "text": "Compare and contrast 'Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu' with related concepts. - with diagram",
+          "competence": "Describe basic Chemistry laboratory skills (chemistry labora"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe acids, bases and salts (reactions of acids and bases with various substance",
+          "text": "Define 'Describe acids, bases and salts (reactions of acids and bases with various substance' and discuss its importance in everyday life.",
+          "competence": "Describe acids, bases and salts (reactions of acids and base"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+          "text": "With examples, illustrate how 'Investigate the composition of chemical species in substances using systematic qualitative analysis' is applied in the community. - with diagram",
+          "competence": "Investigate the composition of chemical species in substance"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+          "text": "Outline the procedures involved in 'Use the concept of atomic structure to determine the atomic and mass numbers of an element'.",
+          "competence": "Use the concept of atomic structure to determine the atomic "
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Evaluate the role of 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' in national development. - with example",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Compare and contrast 'Use different atomic theories to determine the electronic configuration of elements with different properties' with related concepts. - with example",
+          "competence": "Use different atomic theories to determine the electronic co"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+          "text": "Analyse the causes and effects of 'Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances'.",
+          "competence": "Examine the applications of two component liquid systems in "
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the concept of chemical bonding (covalent and electrovalent bondin",
+          "text": "Define 'Describe the concept of chemical bonding (covalent and electrovalent bondin' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the concept of chemical bonding (covalent and elect"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Explain the concept of 'Design and carry out a project in Chemistry' with examples relevant to Tanzania. - with example",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols'. - with diagram",
+          "competence": "Demonstrate the local and industrial preparations of aliphat"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+          "text": "With examples, illustrate how 'Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture' is applied in the community. - with example",
+          "competence": "Describe the applications of volumetric analysis in real lif"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of chemical concepts and principles and their application in different contexts' in Tanzania and propose solutions.",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "Compare and contrast 'Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers' with related concepts. - with diagram",
+          "competence": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carb"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Explain the concept of '. Demonstrate mastery of concepts, theories and principles in Chemistry' with examples relevant to Tanzania. - with diagram",
+          "competence": ". Demonstrate mastery of concepts, theories and principles i"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+          "text": "Outline the procedures involved in 'Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons'. - with example",
+          "competence": "Appreciate the applications of gas laws in daily life such a"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Design and carry-out a simple research project in Chemistry",
+          "text": "With examples, illustrate how 'Design and carry-out a simple research project in Chemistry' is applied in the community. - with example",
+          "competence": "Design and carry-out a simple research project in Chemistry"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
+          "text": "Define 'Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain the concept of the periodic table (1st 20 elements i"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+          "text": "Describe the main features of 'Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures'.",
+          "competence": "Describe the chemical reactions of aliphatic hydrocarbons an"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Explain the concept of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table' with examples relevant to Tanzania.",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+    "Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu",
+    "Describe acids, bases and salts (reactions of acids and bases with various substance",
+    "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+    "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+    "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+    "Use different atomic theories to determine the electronic configuration of elements with different properties",
+    "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+    "Describe the concept of chemical bonding (covalent and electrovalent bondin",
+    "Design and carry out a project in Chemistry"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

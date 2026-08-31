@@ -1,0 +1,121 @@
+{
+  "filename": "geography_form2_topical_4_2025.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Geography - Topical Test 4 (FORM2 2025): Examine the impacts of population d",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 37,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "What are the characteristics of 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change'? - with diagram",
+          "competence": "Examine the impacts of population distribution on economic a"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Describe the process of 'and their major characteristics (location, size/ thickness, density and gross compositio' step by step.",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Assess the impact of 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change' on society.",
+          "competence": "Examine the impacts of population distribution on economic a"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Explain the concept of 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change' with examples relevant to Tanzania. - locally",
+          "competence": "Examine the impacts of population distribution on economic a"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Describe the main features of 'and their major characteristics (location, size/ thickness, density and gross compositio'. - with example",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Define 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change' and discuss its importance in everyday life. - with example",
+          "competence": "Examine the impacts of population distribution on economic a"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Discuss the factors influencing 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change'.",
+          "competence": "Examine the impacts of population distribution on economic a"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Evaluate the role of 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change' in national development.",
+          "competence": "Examine the impacts of population distribution on economic a"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Propose measures to improve 'and their major characteristics (location, size/ thickness, density and gross compositio' in schools. - with diagram",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Describe the main features of 'and their major characteristics (location, size/ thickness, density and gross compositio'.",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+    "and their major characteristics (location, size/ thickness, density and gross compositio"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

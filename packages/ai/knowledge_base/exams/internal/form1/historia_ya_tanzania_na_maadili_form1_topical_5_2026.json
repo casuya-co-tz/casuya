@@ -1,0 +1,121 @@
+{
+  "filename": "historia_ya_tanzania_na_maadili_form1_topical_5_2026.json",
+  "subject": "Historia ya Tanzania na Maadili",
+  "subject_slug": "historia_ya_tanzania_na_maadili",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Historia ya Tanzania na Maadili - Topical Test 5 (FORM1 2026): Kutathimini Muungano wa Tanganyika ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 37,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania",
+          "text": "Describe the process of 'Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania' step by step.",
+          "competence": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitan"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+          "text": "Outline the procedures involved in 'Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa'. - locally",
+          "competence": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujeng"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+          "text": "Propose measures to improve 'Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa' in schools. - locally",
+          "competence": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujeng"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania",
+          "text": "Propose measures to improve 'Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania' in schools. - with diagram",
+          "competence": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitan"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania",
+          "text": "Analyse the causes and effects of 'Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania'. - with example",
+          "competence": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitan"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania",
+          "text": "Propose measures to improve 'Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania' in schools. - with diagram",
+          "competence": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitan"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+          "text": "Assess the impact of 'Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa' on society.",
+          "competence": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujeng"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+          "text": "How does 'Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa' relate to sustainable development? - with example",
+          "competence": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujeng"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania",
+          "text": "Explain the concept of 'Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania' with examples relevant to Tanzania.",
+          "competence": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitan"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania",
+          "text": "Describe the main features of 'Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania'. - locally",
+          "competence": "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitan"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kuchambua athari za ukoloni katika mfumo wa maadili ya Kitanzania",
+    "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

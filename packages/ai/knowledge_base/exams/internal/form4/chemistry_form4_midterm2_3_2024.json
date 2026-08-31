@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form4_midterm2_3_2024.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 2 Exam 3 (FORM4 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 115,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+          "text": "Describe the main features of 'Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance'. - with diagram",
+          "competence": "Describe the mole concept (comparison of the mole with other"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts'.",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the physical and chemical properties of elements on the basis of their arrangements in the periodic table",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the physical and chemical properties of elements on the basis of their arrangements in the periodic table' is applied in the community. - with diagram",
+          "competence": "Demonstrate an understanding of the physical and chemical pr"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concepts of chemical elements (criteria for assigning chemical symbol",
+          "text": "Describe the main features of 'Describe the concepts of chemical elements (criteria for assigning chemical symbol'.",
+          "competence": "Describe the concepts of chemical elements (criteria for ass"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol'. - with diagram",
+          "competence": "Explore the basic tenets of Organic Chemistry (organic compo"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+          "text": "Compare and contrast 'Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances' with related concepts. - with diagram",
+          "competence": "Examine the applications of two component liquid systems in "
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "With examples, illustrate how 'Demonstrate mastery of concepts, theories and principles in Chemistry' is applied in the community. - with diagram",
+          "competence": "Demonstrate mastery of concepts, theories and principles in "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Evaluate the role of 'Perform experiments on the changes of matter from one state to another' in national development. - with example",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use chemical symbols, formulae and equations to represent chemical reaction",
+          "text": "Compare and contrast 'Use chemical symbols, formulae and equations to represent chemical reaction' with related concepts.",
+          "competence": "Use chemical symbols, formulae and equations to represent ch"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use appropriate software to sketch the set-ups of experiments",
+          "text": "Discuss the challenges facing 'Use appropriate software to sketch the set-ups of experiments' in Tanzania and propose solutions. - with diagram",
+          "competence": "Use appropriate software to sketch the set-ups of experiment"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore reactions of complex compounds",
+          "text": "Define 'Explore reactions of complex compounds' and discuss its importance in everyday life. - with example",
+          "competence": "Explore reactions of complex compounds"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+          "text": "With examples, illustrate how 'Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)' is applied in the community. - with diagram",
+          "competence": "Describe the concept of two component liquid systems (immisc"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Prepare acid- base indicators using locally available materials",
+          "text": "Compare and contrast 'Prepare acid- base indicators using locally available materials' with related concepts. - with example",
+          "competence": "Prepare acid- base indicators using locally available materi"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+          "text": "Analyse the causes and effects of 'Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)'.",
+          "competence": "Investigate the applications of electrochemistry in industri"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+          "text": "Describe the main features of 'Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)'. - with diagram",
+          "competence": "Describe the physical and chemical properties of transition "
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+          "text": "Evaluate the role of 'Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal' in national development. - with example",
+          "competence": "Describe the preparation and properties of various compounds"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Define 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Explain the concept of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+          "text": "With examples, illustrate how 'Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)' is applied in the community. - with example",
+          "competence": "Perform experiments involving chemical equilibria and report"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Discuss the challenges facing 'Use the electronic configuration of an element to locate their positions in the periodic table' in Tanzania and propose solutions. - with example",
+          "competence": "Use the electronic configuration of an element to locate the"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+    "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+    "Demonstrate an understanding of the physical and chemical properties of elements on the basis of their arrangements in the periodic table",
+    "Describe the concepts of chemical elements (criteria for assigning chemical symbol",
+    "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+    "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+    "Demonstrate mastery of concepts, theories and principles in Chemistry",
+    "Perform experiments on the changes of matter from one state to another",
+    "Use chemical symbols, formulae and equations to represent chemical reaction",
+    "Use appropriate software to sketch the set-ups of experiments"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

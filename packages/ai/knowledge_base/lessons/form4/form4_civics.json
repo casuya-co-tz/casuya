@@ -1,0 +1,109 @@
+{
+  "form": "form4",
+  "subject": "civics==",
+  "topic_count": 2,
+  "topics": [
+    {
+      "topic_number": "1",
+      "topic_name": "CULTURE",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTQ%3D&sub=Y2l2aWNz &tno=1&m_topic=CULTURE",
+      "plan": {
+        "competence": "Demonstrate the significance of culture",
+        "general_objectives": "Show an understanding and appreciation of national cultural values.",
+        "specific_objectives": "By the end of the lesson the student should be able: a) explain the meaning and aspects of culture. b) analyse the elements of culture.c) illustrate the importance of each element of culture.",
+        "main_topic": "CULTURE",
+        "sub_topic": "Aspects and Elements of Culture.",
+        "teaching_aids": "� Written texts on elements of on culture.� Written texts on culture in Braille.� VIPP cards.",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "to guide students to: i) Brainstorm on the meaning of culture.ii) Read written texts in groups discuss and identify various aspects of culture. iii) Present its findings for class discussion.",
+            "student_activities": "students to: i) Brainstorm on the meaning of culture.ii) Read written texts in groups discuss and identify various aspects of culture. iii) Present its findings for class discussion.",
+            "assessment": "Is the student able to explain the meaning and aspects of culture?"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "to guide students to: i) Identify the elements of culture.ii) Read written texts in groups and discuss various elements o culture.iii) Present its findings for class discussion.",
+            "student_activities": "students to: i) Identify the elements of culture.ii) Read written texts in groups and discuss various elements o culture.iii) Present its findings for class discussion.",
+            "assessment": "Is the student able to explain the meaning and aspects of culture?"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "to guide students toi) Divide up the in small groups and to issue each group a VIPP card containing one element of culture.",
+            "student_activities": "students toi) Divide up the in small groups and to issue each group a VIPP card containing one element of culture.",
+            "assessment": "Is the student able to identify elements of culture?"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "to guide students toi) Divide up the in small groups and to issue each group a VIPP card containing one element of culture.",
+            "student_activities": "PERIODSii) Hold a group discussion and write down the importance of their assigned element to society.iii) Present its findings for class discussion and clarification.",
+            "assessment": "Is the student able to make presentation in class?"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "Summarize the topic and guide students to write notes",
+            "student_activities": "Students to write and answer questions given",
+            "assessment": "Is the student able answer questions correctly"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "2",
+      "topic_name": "GLOBALIZATION",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTQ%3D&sub=Y2l2aWNz &tno=2&m_topic=GLOBALIZATION",
+      "plan": {
+        "competence": "Identify aspects of globalization",
+        "general_objectives": "Show an understanding of globalisation issues and ability to alleviate their negetive effects at personal level.",
+        "specific_objectives": "By the end of the lesson the student should be able to: .explain the meaning of globalization and identify aspects of globalization.",
+        "main_topic": "GLOBALIZATION",
+        "sub_topic": "The Concept and Aspects of Globalization.Effects of Globalization in Tanzania",
+        "teaching_aids": "� Written texts on globalization and its effects in Tanzania.� Braille texts on globalization and its effects in Tanzania for visually impaired students.",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "to guide students in groups to read and explain the meaning of globalization.",
+            "student_activities": "students in groups to read and explain the meaning of globalization.",
+            "assessment": "Is the studentable to explain the meaning of concept and aspects of globalization?"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "to guide each group to identify and explain various aspects of globalization such as democratization, free market economy and Information Technology.",
+            "student_activities": "each group to identify and explain various aspects of globalization such as democratization, free market economy and Information Technology.",
+            "assessment": "Is the studentable to explain the meaning of concept and aspects of globalization?"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "to guide each group to present their findings to the class for further discussion.",
+            "student_activities": "each group to present their findings to the class for further discussion.",
+            "assessment": "Is the student able to participate in group discussions?"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "to guide each group to present their findings to the class for further discussion.",
+            "student_activities": "Students to listen keenly to the teacher and take important points",
+            "assessment": "Is the student able to identify key ideas from the lesson?"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To guide the students to write summary notes on the topic and write take home assignment",
+            "student_activities": "Students to copy notes and attempt questions",
+            "assessment": "Is the student able to answer questions given?"
+          }
+        ]
+      }
+    }
+  ]
+}

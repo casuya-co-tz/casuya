@@ -1,0 +1,121 @@
+{
+  "filename": "basic_mathematics_form4_topical_2_2024.json",
+  "subject": "Basic Mathematics",
+  "subject_slug": "basic_mathematics",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Basic Mathematics - Topical Test 2 (FORM4 2024): Fractions",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 35,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Fractions",
+          "text": "Examine the advantages and disadvantages of 'Fractions'. - with example",
+          "competence": "Fractions"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain decimals",
+          "text": "Evaluate the role of 'Explain decimals' in national development. - with example",
+          "competence": "Explain decimals"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain decimals",
+          "text": "Evaluate the role of 'Explain decimals' in national development.",
+          "competence": "Explain decimals"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain decimals",
+          "text": "Evaluate the role of 'Explain decimals' in national development. - with diagram",
+          "competence": "Explain decimals"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain decimals",
+          "text": "Examine the advantages and disadvantages of 'Explain decimals'. - with diagram",
+          "competence": "Explain decimals"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Fractions",
+          "text": "Define 'Fractions' and discuss its importance in everyday life. - with diagram",
+          "competence": "Fractions"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Fractions",
+          "text": "Evaluate the role of 'Fractions' in national development. - with diagram",
+          "competence": "Fractions"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Fractions",
+          "text": "Define 'Fractions' and discuss its importance in everyday life. - with diagram",
+          "competence": "Fractions"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Fractions",
+          "text": "Outline the procedures involved in 'Fractions'.",
+          "competence": "Fractions"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Fractions",
+          "text": "Evaluate the role of 'Fractions' in national development.",
+          "competence": "Fractions"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Fractions",
+    "Explain decimals"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

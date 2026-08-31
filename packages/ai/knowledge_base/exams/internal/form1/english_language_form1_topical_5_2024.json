@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form1_topical_5_2024.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 5 (FORM1 2024): Publish the short stories on variou",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Publish the short stories on various platforms (e.g., note boards and online platform",
+          "text": "Discuss the factors influencing 'Publish the short stories on various platforms (e.g., note boards and online platform'. - with diagram",
+          "competence": "Publish the short stories on various platforms (e.g., note b"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Assess the contribution of Tanzanian literature in moulding a civilized society",
+          "text": "What are the characteristics of 'Assess the contribution of Tanzanian literature in moulding a civilized society'? - with example",
+          "competence": "Assess the contribution of Tanzanian literature in moulding "
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Publish the short stories on various platforms (e.g., note boards and online platform",
+          "text": "Discuss the factors influencing 'Publish the short stories on various platforms (e.g., note boards and online platform'.",
+          "competence": "Publish the short stories on various platforms (e.g., note b"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Assess the contribution of Tanzanian literature in moulding a civilized society",
+          "text": "Discuss the challenges facing 'Assess the contribution of Tanzanian literature in moulding a civilized society' in Tanzania and propose solutions. - locally",
+          "competence": "Assess the contribution of Tanzanian literature in moulding "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Publish the short stories on various platforms (e.g., note boards and online platform",
+          "text": "Propose measures to improve 'Publish the short stories on various platforms (e.g., note boards and online platform' in schools. - locally",
+          "competence": "Publish the short stories on various platforms (e.g., note b"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Publish the short stories on various platforms (e.g., note boards and online platform",
+          "text": "Define 'Publish the short stories on various platforms (e.g., note boards and online platform' and discuss its importance in everyday life.",
+          "competence": "Publish the short stories on various platforms (e.g., note b"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Publish the short stories on various platforms (e.g., note boards and online platform",
+          "text": "Discuss the factors influencing 'Publish the short stories on various platforms (e.g., note boards and online platform'.",
+          "competence": "Publish the short stories on various platforms (e.g., note b"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Assess the contribution of Tanzanian literature in moulding a civilized society",
+          "text": "Propose measures to improve 'Assess the contribution of Tanzanian literature in moulding a civilized society' in schools. - with diagram",
+          "competence": "Assess the contribution of Tanzanian literature in moulding "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Publish the short stories on various platforms (e.g., note boards and online platform",
+          "text": "Outline the procedures involved in 'Publish the short stories on various platforms (e.g., note boards and online platform'.",
+          "competence": "Publish the short stories on various platforms (e.g., note b"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Publish the short stories on various platforms (e.g., note boards and online platform",
+          "text": "Evaluate the role of 'Publish the short stories on various platforms (e.g., note boards and online platform' in national development. - locally",
+          "competence": "Publish the short stories on various platforms (e.g., note b"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Publish the short stories on various platforms (e.g., note boards and online platform",
+    "Assess the contribution of Tanzanian literature in moulding a civilized society"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form5_midterm1_1_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 1 Exam 1 (FORM5 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 90,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+          "text": "Define 'Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio' and discuss its importance in everyday life.",
+          "competence": "Describe the basic skills for conducting biological experime"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe coordination in plants (tropic, response",
+          "text": "Outline the procedures involved in 'Describe coordination in plants (tropic, response'. - with example",
+          "competence": "Describe coordination in plants (tropic, response"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+          "text": "Describe the main features of 'Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio'. - with example",
+          "competence": "Describe the mechanism of transportation of materials in the"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Define 'Develop and carry out a simple research project in Biology' and discuss its importance in everyday life.",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+          "text": "Discuss the challenges facing 'and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste' in Tanzania and propose solutions. - with diagram",
+          "competence": "and animals (nervous coordination in human, structure of neu"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+          "text": "Compare and contrast 'Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)' with related concepts.",
+          "competence": "Describe the physiology of gaseous exchange and respiration "
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "Analyse the causes and effects of 'Plan and execute in an independent biological investigation'.",
+          "competence": "Plan and execute in an independent biological investigation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+          "text": "Explain the concept of 'Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)' with examples relevant to Tanzania.",
+          "competence": "Describe the distinctive characteristics of kingdoms, phyla/"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Investigate processes of transportation of materials in flowering plants",
+          "text": "Outline the procedures involved in 'Investigate processes of transportation of materials in flowering plants'.",
+          "competence": "Investigate processes of transportation of materials in flow"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "Compare and contrast 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)' with related concepts. - with diagram",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Analyse the causes and effects of 'Complete and submit a report for the research project started in Form Three'. - with example",
+          "competence": "Complete and submit a report for the research project starte"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "text": "Explain the concept of 'Demonstrate mastery of basic skills for conducting biological investigations' with examples relevant to Tanzania. - with diagram",
+          "competence": "Demonstrate mastery of basic skills for conducting biologica"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Investigate tropic responses in plants",
+          "text": "Discuss the challenges facing 'Investigate tropic responses in plants' in Tanzania and propose solutions.",
+          "competence": "Investigate tropic responses in plants"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Learning activities",
+          "text": "Outline the procedures involved in 'Learning activities'. - with example",
+          "competence": "Learning activities"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Compare and contrast 'Carry out investigation related to reproduction in flowering plants (flower structure and embry' with related concepts. - with example",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "text": "Define 'Describe the physiological, anatomical and ecological processes of living organisms' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the physiological, anatomical and ecological proces"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+          "text": "Outline the procedures involved in 'Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)'. - with diagram",
+          "competence": "Explain the concept of ecology (methods of studying, biodive"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "With examples, illustrate how 'Demonstrate mastery of scientific biological terminologies' is applied in the community.",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Design and carry out a project in Biology",
+          "text": "Compare and contrast 'Design and carry out a project in Biology' with related concepts.",
+          "competence": "Design and carry out a project in Biology"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Compare and contrast 'Prepare and present a report on cell and photosynthesis investigations' with related concepts. - with diagram",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+    "Describe coordination in plants (tropic, response",
+    "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+    "Develop and carry out a simple research project in Biology",
+    "and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+    "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+    "Plan and execute in an independent biological investigation",
+    "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+    "Investigate processes of transportation of materials in flowering plants",
+    "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

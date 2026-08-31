@@ -1,0 +1,249 @@
+{
+  "filename": "biology_form1_terminal_2_2024.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2024",
+  "time": "2:30 Hours",
+  "title": "Biology - Terminal Exam 2 (FORM1 2024)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 97,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "theory, evidence of evolution, and speciation)",
+          "text": "Define 'theory, evidence of evolution, and speciation)' and discuss its importance in everyday life. - with example",
+          "competence": "theory, evidence of evolution, and speciation)"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "Describe the main features of 'Demonstrate mastery of scientific biological terminologies'. - with example",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Evaluate the role of 'Investigate food nutrients in various food samples' in national development. - with diagram",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "Examine the advantages and disadvantages of 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)'. - with example",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the physiology and theories underlying transportation of materials in plants",
+          "text": "Explain the concept of 'Explain the physiology and theories underlying transportation of materials in plants' with examples relevant to Tanzania. - with example",
+          "competence": "Explain the physiology and theories underlying transportatio"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+          "text": "Evaluate the role of 'Describe nutrition in human and ruminants (nutrients, digestive system and processe' in national development. - with diagram",
+          "competence": "Describe nutrition in human and ruminants (nutrients, digest"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "and gas exchange in living organisms",
+          "text": "Describe the main features of 'and gas exchange in living organisms'. - with example",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "Compare and contrast 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution' with related concepts. - with diagram",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Describe the main features of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry'.",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Investigate processes of transportation of materials in flowering plants",
+          "text": "With examples, illustrate how 'Investigate processes of transportation of materials in flowering plants' is applied in the community. - with example",
+          "competence": "Investigate processes of transportation of materials in flow"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Describe the main features of 'Complete and submit a report for the research project started in Form Three'. - with diagram",
+          "competence": "Complete and submit a report for the research project starte"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio",
+          "text": "Describe the main features of 'Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio'.",
+          "competence": "Describe the mechanisms of gaseous exchange and respiration "
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Discribe the application or role of synthetic phytohormones",
+          "text": "Describe the main features of 'Discribe the application or role of synthetic phytohormones'. - with example",
+          "competence": "Discribe the application or role of synthetic phytohormones"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Outline the procedures involved in 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms'.",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "Describe the main features of 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system'. - with diagram",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate mastery of advanced skills for conducting biological investigations",
+          "text": "Explain the concept of 'Demonstrate mastery of advanced skills for conducting biological investigations' with examples relevant to Tanzania. - with diagram",
+          "competence": "Demonstrate mastery of advanced skills for conducting biolog"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+          "text": "Analyse the causes and effects of 'Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)'. - with example",
+          "competence": "Explain the concept of ecology (methods of studying, biodive"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+          "text": "Examine the advantages and disadvantages of 'Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio'. - with example",
+          "competence": "Describe the mechanism of transportation of materials in the"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4",
+          "text": "With examples, illustrate how 'Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4' is applied in the community. - with diagram",
+          "competence": "Explain the physiology of photosynthesis (mechanism of light"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "text": "Describe the main features of 'Demonstrate an advanced understanding of concepts, theories and principles in Biology'.",
+          "competence": "Demonstrate an advanced understanding of concepts, theories "
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Examine the advantages and disadvantages of 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline'. - with example",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Carry out a biological project work using biological principles",
+          "text": "Explain the concept of 'Carry out a biological project work using biological principles' with examples relevant to Tanzania. - with diagram",
+          "competence": "Carry out a biological project work using biological princip"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "With examples, illustrate how 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement' is applied in the community. - with diagram",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)",
+          "text": "Examine the advantages and disadvantages of 'Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)'. - with example",
+          "competence": "Describe the mechanism of blood circulation in vertebrates ("
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+          "text": "Define 'Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)' and discuss its importance in everyday life. - with example",
+          "competence": "Describe principles of inheritance in living organisms (here"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "theory, evidence of evolution, and speciation)",
+    "Demonstrate mastery of scientific biological terminologies",
+    "Investigate food nutrients in various food samples",
+    "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+    "Explain the physiology and theories underlying transportation of materials in plants",
+    "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+    "and gas exchange in living organisms",
+    "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+    "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+    "Investigate processes of transportation of materials in flowering plants"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

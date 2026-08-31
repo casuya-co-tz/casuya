@@ -1,0 +1,305 @@
+{
+  "level": "FTNA",
+  "subject": "Physics",
+  "year": "2003",
+  "source": "learninghubtz.co.tz",
+  "sections": [
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "text": "This paper consists of sections A, B and C."
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "text": "Answer ALL questions in ALL sections."
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "questions": [
+        {
+          "number": "4",
+          "type": "essay",
+          "text": "Whenever necessary use the following constants: Density of water = 1 g/cmAcceleration due to gravity g = 10 m/s 3 or 1000 kg/m2 3 S.T.P. means T = 273 K, P = 760 mmHg. The specific heat capacity of water = 4200 J/kgK"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "text": "Cell phones are not allowed in the examination room. This paper consists of 8 printed pages."
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "questions": [
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "The shortest length which can be measured by a metre rule is: 0.1 mm 1.0 mm 10 mm 100 mm Choose Answer : - -"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Which of the following is a unit of force: Kg m/s Kg ms Kg m/s 2 Kg ms2 Choose Answer : - -"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "The meniscus of mercury in a glass vessel curves upwards because: The cohesion of molecules of mercury is stronger than the adhesion of molecules of glass and mercury The adhesion of molecules of mercury is stronger than the cohesion of molecules of mercury. Mercury experiences a downward force equal to its weight. Mercury is denser than glass. Choose Answer : - -"
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": "The minimum pressure exerted by a rectangular wooden block of 1 kg measuring 4 m x 3 m x 2 m on the bench is: 0.17 Pascals 1.25 Pascals 1.67 Pascals 0.83 Pascals Choose Answer : - -"
+        },
+        {
+          "number": "v",
+          "type": "mcq",
+          "text": "The normal body temperature of human beings is: 13.8&deg;F 66.4&deg;F 98.4&deg;F 38&deg;F Choose Answer : - -"
+        },
+        {
+          "number": "vi",
+          "type": "mcq",
+          "text": "The image formed by a plane mirror is always: Smaller than the object Virtual Larger than the object Real Choose Answer : - -"
+        },
+        {
+          "number": "vii",
+          "type": "mcq",
+          "text": "The process of removing magnetism from a given material is called: Magnetization Induction method Demagnetization Electrification Choose Answer : - -"
+        },
+        {
+          "number": "viii",
+          "type": "mcq",
+          "text": "A body which gains excess electrons becomes: Negatively charged Positively charged Electrified Both A and B are correct Choose Answer : - -"
+        },
+        {
+          "number": "ix",
+          "type": "mcq",
+          "text": "A potential difference of 24 volts is applied across a resistor of resistance 12 ohms. The current flowing in the circuit is: 0.5 A 1.5 A 2.0 A 2.5 A Choose Answer : - -"
+        },
+        {
+          "number": "x",
+          "type": "mcq",
+          "text": "Which of the following is not a form of energy: Light Friction Magnetism Electrons Choose Answer : - - (xi) The efficiency of a machine is defined as: (Work done in load) / (Work done by effort) (Mechanical Advantage) / (Velocity ratio) (Velocity ratio) / (Mechanical Advantage) (Work done by effort) / (Work done by load) Choose Answer : - - (xii) A person in a bus which starts to move forward tends to fall backwards. This is because he/she is obeying: The Principle of moment Newton&rsquo;s third law of motion Newton&rsquo;s second law of motion Newton&rsquo;s first law of motion. Choose Answer : - - (xiii) Steam at 100&deg;C has more burning effect than water at 100&deg;C because: The latent heat of vaporization is higher than the specific heat capacity of water at 100&deg;C Steam is less dense than water. The molecules of water in steam have more kinetic energy than those of water at 100&deg;C. Steam is at a higher temperature than water at 100&deg;C. Choose Answer : - - (xiv) The ratio of the density of the substance to the density of water is: Mass per unit volume Relative density Upthrust Density of a substance. Choose Answer : - - (xv) When a body floats in water: It displaces its own volume of water. The mass of the water displaced by the body is equal to its own mass It weighs the same as in air The downthrust is more than the upthrust. Choose Answer : - - (xvi) The surface tension of liquid is due to: Molecules on its surface. Elastic skin which covers the surface of the liquid. Cohesive forces between its surface molecules. Adhesive force between different molecules. Choose Answer : - - (xvii) Solids expand when heated because: The molecules expand. Increased molecular motion pushes the molecules further apart. Heat takes up space between the molecule. The molecules soften and begin to flow. Choose Answer : - - (xviii) For a rigid body, there is one point at which the resultant force appears to act. This point is known as: Neutral point Balancing point Centre of gravity Central position of a body. Choose Answer : - - (xix) The area under the velocity&shy;-time graph for a uniformly accelerated motion of a body represents: Acceleration of a body Retardation of a body Distance travelled by a body None of the above. Choose Answer : - - (xx) If one cell in a three torch cell is placed in the opposite direction: The torch will not give light The torch will give very bright light The torch will give very dim light The torch will give normal light. Choose Answer : - -"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "questions": [
+        {
+          "number": "2",
+          "type": "essay",
+          "text": "Match the following items by writing the letter of the correct meaning from list B against the number of the item in list A. LIST A LIST B"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Force"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Electrophorus"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Voltmeter"
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": "Alcohol"
+        },
+        {
+          "number": "v",
+          "type": "mcq",
+          "text": "Crushing can experiment"
+        },
+        {
+          "number": "vi",
+          "type": "mcq",
+          "text": "Viscosity"
+        },
+        {
+          "number": "vii",
+          "type": "mcq",
+          "text": "Latent heat"
+        },
+        {
+          "number": "viii",
+          "type": "mcq",
+          "text": "Rate at which energy is consumed Power Easy flow of a liquid Existence of atmospheric pressure Thermometric liquid used to measure very low temperatures Rate of change of momentum Change detector Energy Change of momentum with time Measures electric current Thermometric liquid for measuring high temperatures The force of friction which exists between the layers of a liquid or gas. Heat required to change a substance from one state to another without change in temperature Tumbler experiment Produce electric charges Measures potential difference Heat required to change a unit mass of a substance from one state to another without change in temperature. NUMBER OF LIST A"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": ""
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": ""
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": ""
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": ""
+        },
+        {
+          "number": "v",
+          "type": "mcq",
+          "text": ""
+        },
+        {
+          "number": "vi",
+          "type": "mcq",
+          "text": ""
+        },
+        {
+          "number": "vii",
+          "type": "mcq",
+          "text": ""
+        },
+        {
+          "number": "viii",
+          "type": "mcq",
+          "text": "LIST B View Ans Answer the questions 3 -&shy; 6 by filling in the correct answers in the spaces provided"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "text": "(a) Two applications of a Gold leaf electroscope are: (b) In everyday life capillarity plays a role in the"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp; (c) The three processes of heat transfer are: (d) The number of images formed by mirrors at 90&deg; are View Ans"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "text": "(a) Two types of mechanical energy are: (b) A block and tackle containing 3 fixed and 2 movable pulleys is used to lift a load of 1200 N to a storey 15 m from the ground. if the work done in overcoming friction in the system is 6000 J. Calculate the"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Work done by the effort"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Efficiency of the machine"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Effort applied. View Ans"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "text": "(a) The fundamental law of electrostatic charges states: (b) Substances which allow electricity to flow through them are called &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp; while those which do not allow the flow of electricity are called &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;. (c) The Volt is a practical unit for both &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp; and &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;. View Ans"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "text": "(a) A body covers a distance of 480 m in 6 sec. Its speed is __ &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;. View Ans (b) When a solid is heated the following may occur"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "__ &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp; View Ans (c) A man weighing 800 N takes a minute to run upstairs. In so doing he ascends a vertical height of 3 m. His power is &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp; View Ans"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "questions": [
+        {
+          "number": "7",
+          "type": "essay",
+          "text": "(a) Differentiate between the real weight and apparent weight of an object as applied in Physics. (b) A solid weighs 64 N in air and 48 N when totally immersed in a liquid of denisty 0.8 g/cm 3 . Calculate:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "The upthrust on the solid."
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "The volume of the solid."
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "The density of the solid. View Ans"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "text": "(a) State the 2 nd and 3 rd Newton&rsquo;s laws of motion. (b) A 90 Kg bus starts from rest and accelerates uniformly at 5 m/s 2 for 10 seconds. Calculate"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "The velocity of the bus in the 8 th second."
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "The momentum of the bus in the 5 th second."
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "The force of the bus. View Ans"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "text": "(a) (i) What is the difference between heat and temperature?"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Define specific heat capacity of a body. (b) A piece of metal with a mass of 200 g at a temperature of 100&deg;C is quickly transferred into 50 g of water at 20&deg;C. Find the final temperature of the system. (specific heat capacity of metal = 400 J/kg&deg;C) (c) If the amount of heat required to melt 800 g of ice at 0&deg;C is 267,520 Joules, determine the specific latent heat of fusion of ice. View Ans"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "text": "Diagram 1 below, depicts one of the instruments used in making measurements. (a) What is its name? (b) Name the parts shown (c) The instrument is used to measure &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp; and &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp; of objects. Diagram 1 View Ans"
+        }
+      ]
+    }
+  ],
+  "title": "FORM TWO NECTA PHYSICS YEAR 2003 REVIEW (QNS. & ANS.)",
+  "question_count": 54
+}

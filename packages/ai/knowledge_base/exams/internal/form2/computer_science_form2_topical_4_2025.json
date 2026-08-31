@@ -1,0 +1,121 @@
+{
+  "filename": "computer_science_form2_topical_4_2025.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Computer Science - Topical Test 4 (FORM2 2025): Algorithm and Flowchart",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Algorithm and Flowchart",
+          "text": "Discuss the challenges facing 'Algorithm and Flowchart' in Tanzania and propose solutions. - with diagram",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Algorithm and Flowchart",
+          "text": "With examples, illustrate how 'Algorithm and Flowchart' is applied in the community. - with diagram",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Algorithm and Flowchart",
+          "text": "Define 'Algorithm and Flowchart' and discuss its importance in everyday life.",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Algorithm and Flowchart",
+          "text": "Describe the main features of 'Algorithm and Flowchart'.",
+          "competence": "Algorithm and Flowchart"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Algorithm and Flowchart",
+          "text": "Define 'Algorithm and Flowchart' and discuss its importance in everyday life. - with example",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Algorithm and Flowchart",
+          "text": "Define 'Algorithm and Flowchart' and discuss its importance in everyday life. - with example",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Computer Security",
+          "text": "Evaluate the role of 'Computer Security' in national development. - with diagram",
+          "competence": "Computer Security"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Computer Security",
+          "text": "Examine the advantages and disadvantages of 'Computer Security'.",
+          "competence": "Computer Security"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Computer Security",
+          "text": "With examples, illustrate how 'Computer Security' is applied in the community. - with diagram",
+          "competence": "Computer Security"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Computer Security",
+          "text": "Evaluate the role of 'Computer Security' in national development. - with diagram",
+          "competence": "Computer Security"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Algorithm and Flowchart",
+    "Computer Security"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

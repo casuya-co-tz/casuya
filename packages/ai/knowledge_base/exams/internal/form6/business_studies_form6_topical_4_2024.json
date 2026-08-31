@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form6_topical_4_2024.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 4 (FORM6 2024): Describe the concept and theories o",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 43,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Analyse the causes and effects of 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc'.",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc",
+          "text": "Describe the main features of 'Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc'.",
+          "competence": "Describe procedures for registering small businesses in Tanz"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Describe the main features of 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc'. - with example",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Propose measures to improve 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc' in schools. - with example",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc",
+          "text": "Explain the concept of 'Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc' with examples relevant to Tanzania. - locally",
+          "competence": "Describe procedures for registering small businesses in Tanz"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc",
+          "text": "Analyse the causes and effects of 'Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc'.",
+          "competence": "Describe procedures for registering small businesses in Tanz"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc",
+          "text": "Examine the advantages and disadvantages of 'Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc'. - locally",
+          "competence": "Describe procedures for registering small businesses in Tanz"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc'.",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "How does 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc' relate to sustainable development?",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Evaluate the role of 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc' in national development.",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+    "Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

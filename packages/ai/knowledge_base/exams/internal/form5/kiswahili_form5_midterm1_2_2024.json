@@ -1,0 +1,209 @@
+{
+  "filename": "kiswahili_form5_midterm1_2_2024.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Kiswahili - Midterm 1 Exam 2 (FORM5 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 96,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kufafanua mbinu za kutathmini tafsiri",
+          "text": "Discuss the factors influencing 'Kufafanua mbinu za kutathmini tafsiri'. - with diagram",
+          "competence": "Kufafanua mbinu za kutathmini tafsiri"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kuhakiki fani na maudhui katika riwaya",
+          "text": "Compare and contrast 'Kuhakiki fani na maudhui katika riwaya' with related concepts.",
+          "competence": "Kuhakiki fani na maudhui katika riwaya"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki kabla ya uhuru",
+          "text": "Examine the advantages and disadvantages of 'Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki kabla ya uhuru'.",
+          "competence": "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kutunga nyimbo, ngonjera na maigizo",
+          "text": "Explain the concept of 'Kutunga nyimbo, ngonjera na maigizo' with examples relevant to Tanzania. - with example",
+          "competence": "Kutunga nyimbo, ngonjera na maigizo"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kufafanua dhana ya fasihi na fasihi ya Kiswahili (maana, aina na dhim",
+          "text": "How does 'Kufafanua dhana ya fasihi na fasihi ya Kiswahili (maana, aina na dhim' relate to sustainable development?",
+          "competence": "Kufafanua dhana ya fasihi na fasihi ya Kiswahili (maana, ain"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kujadili kukua na kuenea kwa Kiswahili kutokana na maendeleo ya sayansi na teknolojia",
+          "text": "Outline the procedures involved in 'Kujadili kukua na kuenea kwa Kiswahili kutokana na maendeleo ya sayansi na teknolojia'.",
+          "competence": "Kujadili kukua na kuenea kwa Kiswahili kutokana na maendeleo"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutumia lugha kwa ufasaha katika malumbano ya hoja",
+          "text": "Compare and contrast 'Kutumia lugha kwa ufasaha katika malumbano ya hoja' with related concepts.",
+          "competence": "Kutumia lugha kwa ufasaha katika malumbano ya hoja"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+          "text": "Compare and contrast 'Kutathimini kukua na kuenea kwa Kiswahili duniani' with related concepts.",
+          "competence": "Kutathimini kukua na kuenea kwa Kiswahili duniani"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kubaini mbinu za utungaji wa riwaya na tamthiliya",
+          "text": "With examples, illustrate how 'Kubaini mbinu za utungaji wa riwaya na tamthiliya' is applied in the community. - with example",
+          "competence": "Kubaini mbinu za utungaji wa riwaya na tamthiliya"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kusoma matini ndefu changamani na kutathmini hoja zilizomo",
+          "text": "Describe the main features of 'Kusoma matini ndefu changamani na kutathmini hoja zilizomo'. - with diagram",
+          "competence": "Kusoma matini ndefu changamani na kutathmini hoja zilizomo"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kuhusianisha kazi za fasihi na maisha halisi",
+          "text": "Explain the concept of 'Kuhusianisha kazi za fasihi na maisha halisi' with examples relevant to Tanzania. - with example",
+          "competence": "Kuhusianisha kazi za fasihi na maisha halisi"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kusikiliza mazungumzo changamani na kujibu maswali",
+          "text": "Explain the relationship between 'Kusikiliza mazungumzo changamani na kujibu maswali' and its environment. - locally",
+          "competence": "Kusikiliza mazungumzo changamani na kujibu maswali"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kutumia lugha fasaha katika mazungumzo ya hadhara (mf. mikutano ya hadhara, uwasilishaji mbele ya halaiki na mijadala mbalimbal",
+          "text": "How does 'Kutumia lugha fasaha katika mazungumzo ya hadhara (mf. mikutano ya hadhara, uwasilishaji mbele ya halaiki na mijadala mbalimbal' relate to sustainable development?",
+          "competence": "Kutumia lugha fasaha katika mazungumzo ya hadhara (mf. mikut"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kujadili dhana na mchakato wa usanifishaji wa Kiswahili",
+          "text": "Discuss the challenges facing 'Kujadili dhana na mchakato wa usanifishaji wa Kiswahili' in Tanzania and propose solutions.",
+          "competence": "Kujadili dhana na mchakato wa usanifishaji wa Kiswahili"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kueleza stadi muhimu katika ukalimani",
+          "text": "Discuss the challenges facing 'Kueleza stadi muhimu katika ukalimani' in Tanzania and propose solutions.",
+          "competence": "Kueleza stadi muhimu katika ukalimani"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kutathmini kukua na kuenea kwa Kiswahili",
+          "text": "Explain the concept of 'Kutathmini kukua na kuenea kwa Kiswahili' with examples relevant to Tanzania. - with example",
+          "competence": "Kutathmini kukua na kuenea kwa Kiswahili"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kusoma matini kwa ufasaha na ufahamu",
+          "text": "With examples, illustrate how 'Kusoma matini kwa ufasaha na ufahamu' is applied in the community.",
+          "competence": "Kusoma matini kwa ufasaha na ufahamu"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Shughuli za ujifunzaji",
+          "text": "Describe the main features of 'Shughuli za ujifunzaji'.",
+          "competence": "Shughuli za ujifunzaji"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Kuandika habari kwa kuzingatia maneno yaliyoundwa kwa njia mbalimbali",
+          "text": "Discuss the challenges facing 'Kuandika habari kwa kuzingatia maneno yaliyoundwa kwa njia mbalimbali' in Tanzania and propose solutions. - with example",
+          "competence": "Kuandika habari kwa kuzingatia maneno yaliyoundwa kwa njia m"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sambamba",
+          "text": "Analyse the causes and effects of 'Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sambamba'. - locally",
+          "competence": "Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sa"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kufafanua mbinu za kutathmini tafsiri",
+    "Kuhakiki fani na maudhui katika riwaya",
+    "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki kabla ya uhuru",
+    "Kutunga nyimbo, ngonjera na maigizo",
+    "Kufafanua dhana ya fasihi na fasihi ya Kiswahili (maana, aina na dhim",
+    "Kujadili kukua na kuenea kwa Kiswahili kutokana na maendeleo ya sayansi na teknolojia",
+    "Kutumia lugha kwa ufasaha katika malumbano ya hoja",
+    "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+    "Kubaini mbinu za utungaji wa riwaya na tamthiliya",
+    "Kusoma matini ndefu changamani na kutathmini hoja zilizomo"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

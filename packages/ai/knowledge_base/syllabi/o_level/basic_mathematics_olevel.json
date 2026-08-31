@@ -1,0 +1,203 @@
+{
+  "subject_code": "041",
+  "subject_name": "Basic Mathematics",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "NUMBERS AND OPERATIONS",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Whole Numbers",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "041-F1-U1-L1",
+              "title": "Explain whole numbers",
+              "markdown_content": "## Explain whole numbers",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Fractions",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "041-F1-U1-L2",
+              "title": "Explain fractions",
+              "markdown_content": "## Explain fractions",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Decimals",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "041-F1-U1-L3",
+              "title": "Explain decimals",
+              "markdown_content": "## Explain decimals",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Percentages",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "041-F1-U1-L4",
+              "title": "Explain percentages",
+              "markdown_content": "## Explain percentages",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "ALGEBRA",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Algebraic Expressions",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "041-F2-U2-L1",
+              "title": "Explain algebraic expressions",
+              "markdown_content": "## Explain algebraic expressions",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Equations",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "041-F2-U2-L2",
+              "title": "Explain equations",
+              "markdown_content": "## Explain equations",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Inequations",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "041-F2-U2-L3",
+              "title": "Explain inequations",
+              "markdown_content": "## Explain inequations",
+              "page": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "GEOMETRY",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Angles",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "041-F3-U3-L1",
+              "title": "Explain angles",
+              "markdown_content": "## Explain angles",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Triangles",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "041-F3-U3-L2",
+              "title": "Explain triangles",
+              "markdown_content": "## Explain triangles",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Circles",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "041-F3-U3-L3",
+              "title": "Explain circles",
+              "markdown_content": "## Explain circles",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Mensuration",
+          "competence_code": "3.4",
+          "lessons": [
+            {
+              "lesson_id": "041-F3-U3-L4",
+              "title": "Explain mensuration",
+              "markdown_content": "## Explain mensuration",
+              "page": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "STATISTICS AND PROBABILITY",
+      "form": 4,
+      "topics": [
+        {
+          "topic_name": "Data Collection",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "041-F4-U4-L1",
+              "title": "Explain data collection",
+              "markdown_content": "## Explain data collection",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Probability",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "041-F4-U4-L2",
+              "title": "Explain probability",
+              "markdown_content": "## Explain probability",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Sets",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "041-F4-U4-L3",
+              "title": "Explain sets",
+              "markdown_content": "## Explain sets",
+              "page": 14
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "level": "CSEE",
+  "subject": "Mathematics",
+  "year": "2013",
+  "source": "learninghubtz.co.tz",
+  "sections": [
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "text": "This paper consists of sections A and B."
+        }
+      ]
+    },
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "3",
+          "type": "essay",
+          "text": "All necessary working and answers for each question attempted must be shown clearly."
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "text": "Mathematical tables may be used."
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "text": "The following constants may be used: (a) The radius of the earth R = 6370 km (b) &pi; ="
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "text": "Calculators and cellular phones are not allowed in the examination room."
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "text": "Write your Examination Number on every page of your answer booklet(s)."
+        }
+      ]
+    },
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "text": "(a) A shopkeeper sold 292 t-shirts at the price of sh. 6950. Estimate how much money she got. View Ans (b) Express in the form of a/ b where a and b are integers such that b =/ 0 . View Ans"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "text": "(a) If log y + 2log(3 x + 1) = 1, express y in terms of x . View Ans (b) Simplify by rationalizing the denominator. View Ans"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "text": "(a) If m * n = m + 4 n , find x given that 3 * ( x * 1) = 27. View Ans (b) There are 48 men at a meeting of whom 24 are teachers, 36 are parents and 16 are both teachers and parents. By using a Venn diagram, find the number of men who are neither teachers nor parents. View Ans"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "text": "(a) Find the direction cosines of C = 9 i + 12 j , hence show that the sum of the squares of these direction cosines is one. View Ans (b) Find the equation of the line through the points (4,6) and the midpoint of (2,4) and (10,4). View Ans"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "text": "(a) The length of two sides of a triangle are 16 cm and 20 cm . Find the area of the triangle if the included angle is 30&deg; . View Ans (b) In the figure below, calculate the length BD : View Ans"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "text": "(a) A bus travels 240 km using 16 litres of diesel. How many litres of diesel are needed to drive 90 km ? View Ans (b) If y 2 varies directly to x &minus; 1 and inversely to x + d and if x = 2 , d = 4 for y = 1, then find x when y = 2 and d = 1. View Ans"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "text": "(a) A radio is bought for sh 400,000 and sold for sh 500,000. Find:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "The profit made"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "The percentage profit. View Ans (b) Find the time in which sh 300,000 will earn an interest of sh 60,000 if the interest rate is 10% per annum. View Ans"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "text": "(a) The first term of an arithmetic progression is 12 and the common difference is 10. Find the n th term. View Ans (b) Find the amount of money accumulated at the end of 2 years after investing 500,000 shillings at a compound interest rate of 10% annually. View Ans"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "text": "(a) A ladder leans against a wall. If the ladder reaches 12 m up the wall and its foot is 9 m from the base of the wall, find the length of the ladder. View Ans (b) Given that A and B are complementary angles and sin A = , find tan B (Leave your answer as an improper fraction). View Ans"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "text": "(a) What must be added to x 2 + 8 x to make the expression a perfect square? View Ans (b) Find two consecutive odd numbers whose product is 195. View Ans"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "questions": [
+        {
+          "number": "11",
+          "type": "essay",
+          "text": "(a) Solve by graphical method the following system of simultaneous equations: 4 x + y = 6 5 x + 2 y = 9 (b) A farm is to be planted with sorghum and maize while observing the following constraints: Sorghum Maize Maximum total Days labour per hectare Labour cost per hectare 1400 1200 8400 Cost of fertilizer per hectare (shs) 600 800 4800 If sorghum yields a profit of 800,000 shillings per hectare while maize yields 600,000 shillings per hectare, how many hectares should be planted with each crop for maximum profit? View Ans"
+        },
+        {
+          "number": "12",
+          "type": "essay",
+          "text": "Carefully study the frequency distribution table which shows the marks of 100 students in a Physics examination. Marks 41 - 50 51 - 60 61 - 70 71 - 80 81 - 90 91 - 100 Number of Students Calculate (a) the mean given the assumed mean is 75.5, (b) the median in two decimal places, (c) the mode in two decimal places. View Ans"
+        },
+        {
+          "number": "13",
+          "type": "essay",
+          "text": "(a) The figure below shows a rectangular prism in which AB = 10 cm , BC = 8 cm and Calculate the length of DF (Leave your answer in surd form) View Ans (b) If O is the centre of a circle given below, find the value of x . View Ans (c) Calculate the circumference of a small circle, in kilometres, along the parallel of latitude 30&deg; N (Leave your answer in surd form). View Ans"
+        },
+        {
+          "number": "14",
+          "type": "essay",
+          "text": "Mr. Chapakazi commenced business on 1 st June, 2011 with capital in cash 5,500,000/= June 2 Bought goods by Cash 2,000,000/= 3 Bought furniture for Cash 600,000/= 7 Sold goods for Cash 2,000,000/= 11 Cash purchases 700,000/= 13 Paid Rent for Cash 2,000,000/= 16 Cash Sales 950,000/= 20 Paid Transport for Cash 80,000/= 22 Sold goods for cash 250,000/= 26 Paid salaries for Cash 160,000= Record the above transactions in the cash account, balance them and extract the Trial Balance. View Ans"
+        },
+        {
+          "number": "15",
+          "type": "essay",
+          "text": "(a) Given find A &minus;1 . (b) Use the results obtained in part (a) to find the point of intersection of the following system of simultaneous equations: 2 x + 6 y = 22 4 x + 8 y = 32 (c) Find the image of the point obtained in part (b) above under a rotation 90&deg; anticlockwise. View Ans"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "text": "(a) A die and a coin are tossed together. What is the probability of getting a tail and an even number? View Ans (b) Draw the graph of the inverse of R = {( x , y ) : y &ge; 0 and y &le; x }. Find its domain and range. View Ans (c) Without using a table of values, draw the graph of y = x 2 &minus; 4 x + 2 and use it to solve the equation x 2 &minus; 4 x = 5. View Ans"
+        }
+      ]
+    }
+  ],
+  "title": "ONLINE FORM FOUR NECTA MATHEMATICS YEAR 2013 REVIEW (QNS. & ANS.)",
+  "question_count": 24
+}

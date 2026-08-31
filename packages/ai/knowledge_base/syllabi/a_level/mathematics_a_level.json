@@ -1,0 +1,293 @@
+{
+  "subject_code": "012",
+  "subject_name": "Mathematics",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of some advanced concepts in Mathematics",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "MAT-FV-U1-L1",
+              "title": "Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)",
+              "markdown_content": "## a) Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)",
+              "periods": "110",
+              "page": 14
+            },
+            {
+              "lesson_id": "MAT-FV-U1-L2",
+              "title": "Explore advanced tenets of linear programming (transportation: two sources and two destinations",
+              "markdown_content": "## b) Explore advanced tenets of linear programming (transportation: two sources and two destinations",
+              "periods": "",
+              "page": 14
+            },
+            {
+              "lesson_id": "MAT-FV-U1-L3",
+              "title": "two sources and three destinations)",
+              "markdown_content": "## a) two sources and three destinations)",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "MAT-FV-U1-L4",
+              "title": "Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)",
+              "markdown_content": "## c) Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)",
+              "periods": "",
+              "page": 16
+            },
+            {
+              "lesson_id": "MAT-FV-U1-L5",
+              "title": "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+              "markdown_content": "## d) Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+              "periods": "",
+              "page": 17
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate basic understanding of calculus",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "MAT-FV-U1-L6",
+              "title": "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+              "markdown_content": "## a) Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+              "periods": "90",
+              "page": 19
+            },
+            {
+              "lesson_id": "MAT-FV-U1-L7",
+              "title": "Determine the nature of stationary points, rates of change between quantities, small changes in quantities, and series expansions of different functions",
+              "markdown_content": "## b) Determine the nature of stationary points, rates of change between quantities, small changes in quantities, and series expansions of different functions",
+              "periods": "",
+              "page": 20
+            },
+            {
+              "lesson_id": "MAT-FV-U1-L8",
+              "title": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+              "markdown_content": "## c) Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+              "periods": "",
+              "page": 21
+            },
+            {
+              "lesson_id": "MAT-FV-U1-L9",
+              "title": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+              "markdown_content": "## d) Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+              "periods": "",
+              "page": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate mastery of set theory and logic",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of set theory and logic",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "MAT-FV-U2-L10",
+              "title": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+              "markdown_content": "## a) Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+              "periods": "56",
+              "page": 22
+            },
+            {
+              "lesson_id": "MAT-FV-U2-L11",
+              "title": "Use knowledge of sets to organise, create, and categorise objects",
+              "markdown_content": "## b) Use knowledge of sets to organise, create, and categorise objects",
+              "periods": "",
+              "page": 23
+            },
+            {
+              "lesson_id": "MAT-FV-U2-L12",
+              "title": "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+              "markdown_content": "## c) Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+              "periods": "",
+              "page": 23
+            },
+            {
+              "lesson_id": "MAT-FV-U2-L13",
+              "title": "Use logic to analyse arguments and construct circuit diagrams",
+              "markdown_content": "## d) Use logic to analyse arguments and construct circuit diagrams",
+              "periods": "",
+              "page": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Demonstrate mastery of advanced algebra",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of algebra",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "MAT-FV-U3-L14",
+              "title": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+              "markdown_content": "## a) Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+              "periods": "94",
+              "page": 24
+            },
+            {
+              "lesson_id": "MAT-FV-U3-L15",
+              "title": "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+              "markdown_content": "## a) and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+              "periods": "",
+              "page": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Conduct a project in Mathematics",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Carry out a project in Mathematics",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "MAT-FV-U4-L16",
+              "title": "Carry out a project to solve a problem using mathematical skills",
+              "markdown_content": "## a) Carry out a project to solve a problem using mathematical skills",
+              "periods": "",
+              "page": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of some advanced concepts in Mathematics",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "MAT-FVI-U1-L17",
+              "title": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+              "markdown_content": "## a) Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+              "periods": "170",
+              "page": 26
+            },
+            {
+              "lesson_id": "MAT-FVI-U1-L18",
+              "title": "Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+              "markdown_content": "## b) Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+              "periods": "",
+              "page": 27
+            },
+            {
+              "lesson_id": "MAT-FVI-U1-L19",
+              "title": "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+              "markdown_content": "## c) Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+              "periods": "",
+              "page": 27
+            },
+            {
+              "lesson_id": "MAT-FVI-U1-L20",
+              "title": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+              "markdown_content": "## d) Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+              "periods": "",
+              "page": 28
+            },
+            {
+              "lesson_id": "MAT-FVI-U1-L21",
+              "title": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+              "markdown_content": "## e) Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+              "periods": "",
+              "page": 29
+            },
+            {
+              "lesson_id": "MAT-FVI-U1-L22",
+              "title": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+              "markdown_content": "## f) Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+              "periods": "",
+              "page": 29
+            },
+            {
+              "lesson_id": "MAT-FVI-U1-L23",
+              "title": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+              "markdown_content": "## g) Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+              "periods": "",
+              "page": 30
+            },
+            {
+              "lesson_id": "MAT-FVI-U1-L24",
+              "title": "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+              "markdown_content": "## h) Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+              "periods": "",
+              "page": 31
+            },
+            {
+              "lesson_id": "MAT-FVI-U1-L25",
+              "title": "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+              "markdown_content": "## i) Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+              "periods": "",
+              "page": 32
+            },
+            {
+              "lesson_id": "MAT-FVI-U1-L26",
+              "title": "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+              "markdown_content": "## j) Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+              "periods": "",
+              "page": 33
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an advanced understanding of statistics",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "MAT-FVI-U1-L27",
+              "title": "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+              "markdown_content": "## a) Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+              "periods": "126",
+              "page": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct a project in Mathematics",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Carry out a project in Mathematics",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "MAT-FVI-U2-L28",
+              "title": "Complete the project started in Form Five and submit the report for assessment",
+              "markdown_content": "## a) Complete the project started in Form Five and submit the report for assessment",
+              "periods": "54",
+              "page": 34
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

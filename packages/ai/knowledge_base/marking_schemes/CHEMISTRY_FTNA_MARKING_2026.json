@@ -1,0 +1,81 @@
+{
+  "code": "032",
+  "subject": "Chemistry",
+  "year": "2026",
+  "max_marks": 100,
+  "sections": [
+    {
+      "name": "SECTION A (15 MARKS)",
+      "marks": 15,
+      "questions": [
+        {
+          "number": "1",
+          "marks": 10,
+          "answer_html": "MCQ i-x: C,B,C,C,B,C,C,C,C,B (1 each). See JSON per paper."
+        },
+        {
+          "number": "2",
+          "marks": 5,
+          "answer_html": "Matching safety: i->B eyes, ii->A vapors, iii->E poisoning, iv->D ingestion, v->C contamination (1 each)."
+        }
+      ]
+    },
+    {
+      "name": "SECTION B (70 MARKS)",
+      "marks": 70,
+      "questions": [
+        {
+          "number": "3",
+          "marks": 10,
+          "answer_html": "(a) Dissolve, filter sand, evaporate, crystallize [4] (b) Filtration - insolubility, Evaporation - volatility [6]"
+        },
+        {
+          "number": "4",
+          "marks": 10,
+          "answer_html": "(a) Hard has Ca/Mg salts, soft forms lather [4] (b)(i) Boiling, Clark's [3] (ii) Permanent due to sulphates not decomposed by heat [3]"
+        },
+        {
+          "number": "5",
+          "marks": 10,
+          "answer_html": "(a) Config 2:8:2, Group II Period 3 [4] (b) Diagram 2 shells [6]"
+        },
+        {
+          "number": "6",
+          "marks": 10,
+          "answer_html": "(a) 2H2O2->2H2O+O2, MnO2 catalyst [6] (b) Glowing splint relights [4]"
+        },
+        {
+          "number": "7",
+          "marks": 10,
+          "answer_html": "(a) Empirical simplest ratio, molecular actual [4] (b) CH2O empirical, C2H4O2 molecular [6]"
+        },
+        {
+          "number": "8",
+          "marks": 10,
+          "answer_html": "(a) Rust hydrated iron oxide Fe2O3.xH2O needs O2+H2O [4] (b) Painting, galvanizing, oiling [6]"
+        },
+        {
+          "number": "9",
+          "marks": 10,
+          "answer_html": "(a)(i) Combustion reaction with O2 [3] (ii) CO2 denser than air, no O2, non-conductive [3] (b) Complete CO2+H2O vs incomplete CO+H2O/C [4]"
+        }
+      ]
+    },
+    {
+      "name": "SECTION C (15 MARKS)",
+      "marks": 15,
+      "questions": [
+        {
+          "number": "10",
+          "marks": 15,
+          "answer_html": "(a) NaOH+HCl->NaCl+H2O ionic H+ + OH- ->H2O [5] (b) M1V1=M2V2 => M=0.125M [5] (c) n=0.0025 mol => m=0.146g [5]"
+        }
+      ]
+    }
+  ],
+  "linked_forms": [
+    "form1",
+    "form2"
+  ],
+  "source_template": "CHEMISTRY_FTNA_MARKING_2026.html"
+}

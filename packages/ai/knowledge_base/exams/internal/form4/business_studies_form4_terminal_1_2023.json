@@ -1,0 +1,249 @@
+{
+  "filename": "business_studies_form4_terminal_1_2023.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Business Studies - Terminal Exam 1 (FORM4 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 107,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of the concepts, theories and principles of Business Education",
+          "text": "With examples, illustrate how 'Demonstrate mastery of the concepts, theories and principles of Business Education' is applied in the community. - with example",
+          "competence": "Demonstrate mastery of the concepts, theories and principles"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Explain the concept of 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' with examples relevant to Tanzania. - locally",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+          "text": "Compare and contrast 'Describe the basic tenets of ethics for small businesses (meaning, norms, and value' with related concepts. - with example",
+          "competence": "Describe the basic tenets of ethics for small businesses (me"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the role of microfinancing and cooperatives in facilitating business formation and operations",
+          "text": "Propose measures to improve 'Describe the role of microfinancing and cooperatives in facilitating business formation and operations' in schools. - with diagram",
+          "competence": "Describe the role of microfinancing and cooperatives in faci"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+          "text": "Analyse the causes and effects of 'Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function'. - with example",
+          "competence": "Describe the basic aspects of warehousing and inventorying f"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)",
+          "text": "How does 'Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)' relate to sustainable development? - locally",
+          "competence": "Describe the basic aspects of business environment (stakehol"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Define 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe some advanced aspects of marketing (marketing mix - 4Cs and 7Ps, market changes, market segmentation, marketing boards, market research, e-marketing)",
+          "text": "Explain the concept of 'Describe some advanced aspects of marketing (marketing mix - 4Cs and 7Ps, market changes, market segmentation, marketing boards, market research, e-marketing)' with examples relevant to Tanzania. - locally",
+          "competence": "Describe some advanced aspects of marketing (marketing mix -"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+          "text": "Explain the concept of 'Describe some basic aspects of operations management (methods of production, value addition and stock administration)' with examples relevant to Tanzania.",
+          "competence": "Describe some basic aspects of operations management (method"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the basic aspects of management for small businesses (meaning, financial and other records keeping, calculation of profit and loss, budgeting and control and administratio",
+          "text": "Assess the impact of 'Describe the basic aspects of management for small businesses (meaning, financial and other records keeping, calculation of profit and loss, budgeting and control and administratio' on society.",
+          "competence": "Describe the basic aspects of management for small businesse"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc",
+          "text": "Outline the procedures involved in 'Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc'. - locally",
+          "competence": "Describe procedures for registering small businesses in Tanz"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an advanced understanding of the principles of business",
+          "text": "Discuss the factors influencing 'Demonstrate an advanced understanding of the principles of business'.",
+          "competence": "Demonstrate an advanced understanding of the principles of b"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin",
+          "text": "Discuss the factors influencing 'Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin'. - with diagram",
+          "competence": "Develop a plan for a small business identified from the oppo"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)",
+          "text": "Outline the procedures involved in 'Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)'. - with diagram",
+          "competence": "Explain some aspects of insurance for medium businesses (cho"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+          "text": "Describe the process of 'Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures' step by step. - locally",
+          "competence": "Describe some advanced aspects of financing medium businesse"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe taxes and levies associated with small businesses in Tanzania (meaning, types, importance, and sanctions for non- complianc",
+          "text": "Examine the advantages and disadvantages of 'Describe taxes and levies associated with small businesses in Tanzania (meaning, types, importance, and sanctions for non- complianc'. - with example",
+          "competence": "Describe taxes and levies associated with small businesses i"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "to facilitate trade",
+          "text": "Describe the process of 'to facilitate trade' step by step.",
+          "competence": "to facilitate trade"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Apply business theories into practice",
+          "text": "With examples, illustrate how 'Apply business theories into practice' is applied in the community. - with diagram",
+          "competence": "Apply business theories into practice"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate mastery of the basic skills of operating a small-scale business",
+          "text": "Analyse the causes and effects of 'Demonstrate mastery of the basic skills of operating a small-scale business'.",
+          "competence": "Demonstrate mastery of the basic skills of operating a small"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "What are the characteristics of 'Describe the basic principles of communication and networking for small businesses'?",
+          "competence": "Describe the basic principles of communication and networkin"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "With examples, illustrate how 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract' is applied in the community. - with diagram",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Complete and submit the business plan developed in Form Five",
+          "text": "Explain the relationship between 'Complete and submit the business plan developed in Form Five' and its environment.",
+          "competence": "Complete and submit the business plan developed in Form Five"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Prepare a medium scale business plan",
+          "text": "With examples, illustrate how 'Prepare a medium scale business plan' is applied in the community.",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Propose measures to improve 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)' in schools.",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio",
+          "text": "Discuss the factors influencing 'Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio'.",
+          "competence": "Describe the basic aspects of marketing for small businesses"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate mastery of the concepts, theories and principles of Business Education",
+    "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+    "Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+    "Describe the role of microfinancing and cooperatives in facilitating business formation and operations",
+    "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+    "Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)",
+    "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+    "Describe some advanced aspects of marketing (marketing mix - 4Cs and 7Ps, market changes, market segmentation, marketing boards, market research, e-marketing)",
+    "Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+    "Describe the basic aspects of management for small businesses (meaning, financial and other records keeping, calculation of profit and loss, budgeting and control and administratio"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

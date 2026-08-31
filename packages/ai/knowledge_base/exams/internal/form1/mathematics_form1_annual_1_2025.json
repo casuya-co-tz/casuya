@@ -1,0 +1,289 @@
+{
+  "filename": "mathematics_form1_annual_1_2025.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2025",
+  "time": "3:00 Hours",
+  "title": "Mathematics - Annual Exam 1 (FORM1 2025)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 138,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use rates and variations in different contexts",
+          "text": "Explain the relationship between 'Use rates and variations in different contexts' and its environment.",
+          "competence": "Use rates and variations in different contexts"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "two sources and three destinations)",
+          "text": "With examples, illustrate how 'two sources and three destinations)' is applied in the community. - locally",
+          "competence": "two sources and three destinations)"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Carry out a project to solve a problem using mathematical skills",
+          "text": "Evaluate the role of 'Carry out a project to solve a problem using mathematical skills' in national development.",
+          "competence": "Carry out a project to solve a problem using mathematical sk"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "Describe the process of 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc' step by step. - with diagram",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "text": "Explain the concept of 'Demonstrate an advanced understanding of statistics' with examples relevant to Tanzania. - with example",
+          "competence": "Demonstrate an advanced understanding of statistics"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use probability in problem solving",
+          "text": "Evaluate the role of 'Use probability in problem solving' in national development.",
+          "competence": "Use probability in problem solving"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use ratios and proportions in daily life",
+          "text": "Define 'Use ratios and proportions in daily life' and discuss its importance in everyday life. - locally",
+          "competence": "Use ratios and proportions in daily life"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "text": "Compare and contrast 'Demonstrate an advanced understanding of set theory and logic' with related concepts. - with diagram",
+          "competence": "Demonstrate an advanced understanding of set theory and logi"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+          "text": "Explain the relationship between 'Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)' and its environment.",
+          "competence": "Explore basic tenets of differentiation (first principles, p"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+          "text": "Propose measures to improve 'Use algebraic expressions to model situations (word problems into algebraic expressions and equation' in schools. - with example",
+          "competence": "Use algebraic expressions to model situations (word problems"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "What are the characteristics of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm'?",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+          "text": "Explain the relationship between 'Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde' and its environment. - with example",
+          "competence": "Identify and use laws of exponents involving positive, negat"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)",
+          "text": "What are the characteristics of 'Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)'?",
+          "competence": "Explore advanced tenets of functions (polynomials, rational,"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+          "text": "Explain the relationship between 'Determine the probability of an event, expectation, variance, and standard deviation of random variables' and its environment. - locally",
+          "competence": "Determine the probability of an event, expectation, variance"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul",
+          "text": "What are the characteristics of 'Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul'? - with diagram",
+          "competence": "Apply matrices to solve simultaneous equations of two unknow"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Complete the project started in Form Five and submit the report for assessment",
+          "text": "Discuss the factors influencing 'Complete the project started in Form Five and submit the report for assessment'. - with example",
+          "competence": "Complete the project started in Form Five and submit the rep"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+          "text": "Explain the concept of 'Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explore the basic tenets of sequences and series (Arithmetic"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Evaluate the role of 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)' in national development. - with diagram",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Determine the nature of stationary points, rates of change between quantities, small changes in quantities, and series expansions of different functions",
+          "text": "Discuss the challenges facing 'Determine the nature of stationary points, rates of change between quantities, small changes in quantities, and series expansions of different functions' in Tanzania and propose solutions.",
+          "competence": "Determine the nature of stationary points, rates of change b"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Solve problems on rates and variations",
+          "text": "Define 'Solve problems on rates and variations' and discuss its importance in everyday life.",
+          "competence": "Solve problems on rates and variations"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+          "text": "Compare and contrast 'Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line' with related concepts.",
+          "competence": "Explore the basic tenets of coordinate geometry (midpoint of"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "Assess the impact of 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)' on society. - locally",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use mathematical software to solve and draw graphs of simultaneous equations",
+          "text": "Propose measures to improve 'Use mathematical software to solve and draw graphs of simultaneous equations' in schools. - with diagram",
+          "competence": "Use mathematical software to solve and draw graphs of simult"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concepts of rates and variations",
+          "text": "With examples, illustrate how 'Describe the concepts of rates and variations' is applied in the community. - with example",
+          "competence": "Describe the concepts of rates and variations"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "Propose measures to improve 'Use approximations in computations and measurements of quantities in various contexts' in schools.",
+          "competence": "Use approximations in computations and measurements of quant"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Recognize properties of similar triangles",
+          "text": "Discuss the challenges facing 'Recognize properties of similar triangles' in Tanzania and propose solutions.",
+          "competence": "Recognize properties of similar triangles"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "Propose measures to improve 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation' in schools. - with diagram",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 8,
+          "topic": "(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function",
+          "text": "Describe the process of '(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function' step by step.",
+          "competence": "(types of relations, domain and range of relations, graphs o"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+          "text": "Discuss the challenges facing 'Use basic coordinate geometry, trigonometry and vectors skills in daily life' in Tanzania and propose solutions. - with diagram",
+          "competence": "Use basic coordinate geometry, trigonometry and vectors skil"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+          "text": "Compare and contrast 'Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)' with related concepts. - with diagram",
+          "competence": "Explore advanced tenets of statistics (measures of central t"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use rates and variations in different contexts",
+    "two sources and three destinations)",
+    "Carry out a project to solve a problem using mathematical skills",
+    "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+    "Demonstrate an advanced understanding of statistics",
+    "Use probability in problem solving",
+    "Use ratios and proportions in daily life",
+    "Demonstrate an advanced understanding of set theory and logic",
+    "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+    "Use algebraic expressions to model situations (word problems into algebraic expressions and equation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

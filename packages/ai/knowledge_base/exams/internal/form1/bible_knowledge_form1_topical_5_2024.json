@@ -1,0 +1,121 @@
+{
+  "filename": "bible_knowledge_form1_topical_5_2024.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Bible Knowledge - Topical Test 5 (FORM1 2024): Classify the books in the Bible",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Classify the books in the Bible",
+          "text": "Discuss the factors influencing 'Classify the books in the Bible'. - with diagram",
+          "competence": "Classify the books in the Bible"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of the Holy Scripture in the Book of Acts of the Apostles",
+          "text": "Describe the main features of 'Demonstrate mastery of the Holy Scripture in the Book of Acts of the Apostles'. - locally",
+          "competence": "Demonstrate mastery of the Holy Scripture in the Book of Act"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Classify the books in the Bible",
+          "text": "Discuss the challenges facing 'Classify the books in the Bible' in Tanzania and propose solutions. - with diagram",
+          "competence": "Classify the books in the Bible"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of the Holy Scripture in the Book of Acts of the Apostles",
+          "text": "Explain the relationship between 'Demonstrate mastery of the Holy Scripture in the Book of Acts of the Apostles' and its environment. - with diagram",
+          "competence": "Demonstrate mastery of the Holy Scripture in the Book of Act"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Classify the books in the Bible",
+          "text": "Propose measures to improve 'Classify the books in the Bible' in schools. - locally",
+          "competence": "Classify the books in the Bible"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Classify the books in the Bible",
+          "text": "Compare and contrast 'Classify the books in the Bible' with related concepts.",
+          "competence": "Classify the books in the Bible"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Classify the books in the Bible",
+          "text": "Outline the procedures involved in 'Classify the books in the Bible'.",
+          "competence": "Classify the books in the Bible"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Classify the books in the Bible",
+          "text": "With examples, illustrate how 'Classify the books in the Bible' is applied in the community.",
+          "competence": "Classify the books in the Bible"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Classify the books in the Bible",
+          "text": "Describe the process of 'Classify the books in the Bible' step by step. - with diagram",
+          "competence": "Classify the books in the Bible"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Classify the books in the Bible",
+          "text": "Discuss the challenges facing 'Classify the books in the Bible' in Tanzania and propose solutions.",
+          "competence": "Classify the books in the Bible"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Classify the books in the Bible",
+    "Demonstrate mastery of the Holy Scripture in the Book of Acts of the Apostles"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

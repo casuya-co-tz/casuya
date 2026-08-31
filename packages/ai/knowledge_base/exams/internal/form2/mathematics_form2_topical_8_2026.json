@@ -1,0 +1,121 @@
+{
+  "filename": "mathematics_form2_topical_8_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Mathematics - Topical Test 8 (FORM2 2026): Explore the basic tenets of hyperbo",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)'. - with example",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Describe the main features of 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)'.",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)'.",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "Explain the relationship between 'Solve simultaneous equations using substitution and elimination methods' and its environment. - with example",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Explain the relationship between 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)' and its environment.",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "Describe the main features of 'Solve simultaneous equations using substitution and elimination methods'. - with diagram",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "With examples, illustrate how 'Solve simultaneous equations using substitution and elimination methods' is applied in the community.",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Explain the relationship between 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)' and its environment. - with example",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "Outline the procedures involved in 'Solve simultaneous equations using substitution and elimination methods'. - with example",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "Compare and contrast 'Solve simultaneous equations using substitution and elimination methods' with related concepts. - with diagram",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+    "Solve simultaneous equations using substitution and elimination methods"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

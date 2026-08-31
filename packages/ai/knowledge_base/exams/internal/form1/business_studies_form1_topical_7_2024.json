@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form1_topical_7_2024.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 7 (FORM1 2024): Describe some basic aspects of oper",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 32,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "What are the characteristics of 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract'? - with example",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "Propose measures to improve 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract' in schools. - with diagram",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "Define 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract' and discuss its importance in everyday life.",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+          "text": "Evaluate the role of 'Describe some basic aspects of operations management (methods of production, value addition and stock administration)' in national development.",
+          "competence": "Describe some basic aspects of operations management (method"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "Propose measures to improve 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract' in schools.",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+          "text": "Describe the main features of 'Describe some basic aspects of operations management (methods of production, value addition and stock administration)'. - with diagram",
+          "competence": "Describe some basic aspects of operations management (method"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+          "text": "Discuss the challenges facing 'Describe some basic aspects of operations management (methods of production, value addition and stock administration)' in Tanzania and propose solutions. - with example",
+          "competence": "Describe some basic aspects of operations management (method"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "Outline the procedures involved in 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract'. - locally",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+          "text": "What are the characteristics of 'Describe some basic aspects of operations management (methods of production, value addition and stock administration)'? - locally",
+          "competence": "Describe some basic aspects of operations management (method"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+          "text": "Describe the process of 'Describe some basic aspects of operations management (methods of production, value addition and stock administration)' step by step.",
+          "competence": "Describe some basic aspects of operations management (method"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+    "Describe some basic aspects of operations management (methods of production, value addition and stock administration)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

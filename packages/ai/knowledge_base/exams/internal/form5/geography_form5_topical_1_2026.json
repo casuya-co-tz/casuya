@@ -1,0 +1,121 @@
+{
+  "filename": "geography_form5_topical_1_2026.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Geography - Topical Test 1 (FORM5 2026): Describe major features of the Eart",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+          "text": "Discuss the challenges facing 'Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian' in Tanzania and propose solutions.",
+          "competence": "Describe the Earth (origin, shape, size, position and moveme"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+          "text": "Outline the procedures involved in 'Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian'. - locally",
+          "competence": "Describe the Earth (origin, shape, size, position and moveme"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+          "text": "Analyse the causes and effects of 'Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone'.",
+          "competence": "Describe major features of the Earth’s surface (continents, "
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+          "text": "Discuss the factors influencing 'Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone'. - with example",
+          "competence": "Describe major features of the Earth’s surface (continents, "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+          "text": "Explain the relationship between 'Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian' and its environment. - locally",
+          "competence": "Describe the Earth (origin, shape, size, position and moveme"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+          "text": "Outline the procedures involved in 'Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian'. - with diagram",
+          "competence": "Describe the Earth (origin, shape, size, position and moveme"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+          "text": "Discuss the challenges facing 'Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone' in Tanzania and propose solutions. - locally",
+          "competence": "Describe major features of the Earth’s surface (continents, "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+          "text": "What are the characteristics of 'Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone'?",
+          "competence": "Describe major features of the Earth’s surface (continents, "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+          "text": "Describe the process of 'Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone' step by step. - with diagram",
+          "competence": "Describe major features of the Earth’s surface (continents, "
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+          "text": "Describe the main features of 'Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone'.",
+          "competence": "Describe major features of the Earth’s surface (continents, "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+    "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

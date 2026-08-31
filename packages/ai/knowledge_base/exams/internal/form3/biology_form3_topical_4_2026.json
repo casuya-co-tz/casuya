@@ -1,0 +1,121 @@
+{
+  "filename": "biology_form3_topical_4_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Biology - Topical Test 4 (FORM3 2026): Carry out investigations related to",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 44,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "With examples, illustrate how 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' is applied in the community.",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+          "text": "Evaluate the role of 'Carry out investigations related to photosynthesis (conditions necessary for photosynthesi' in national development. - with diagram",
+          "competence": "Carry out investigations related to photosynthesis (conditio"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+          "text": "Define 'Carry out investigations related to photosynthesis (conditions necessary for photosynthesi' and discuss its importance in everyday life. - with example",
+          "competence": "Carry out investigations related to photosynthesis (conditio"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+          "text": "Outline the procedures involved in 'Carry out investigations related to photosynthesis (conditions necessary for photosynthesi'.",
+          "competence": "Carry out investigations related to photosynthesis (conditio"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Explain the concept of 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+          "text": "Explain the concept of 'Carry out investigations related to photosynthesis (conditions necessary for photosynthesi' with examples relevant to Tanzania. - with example",
+          "competence": "Carry out investigations related to photosynthesis (conditio"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+          "text": "Discuss the challenges facing 'Carry out investigations related to photosynthesis (conditions necessary for photosynthesi' in Tanzania and propose solutions.",
+          "competence": "Carry out investigations related to photosynthesis (conditio"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Examine the advantages and disadvantages of 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation'. - with example",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation'. - with example",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Define 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' and discuss its importance in everyday life. - with example",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+    "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

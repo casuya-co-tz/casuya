@@ -1,0 +1,382 @@
+{
+  "file": "BIOLOGY F1 SCHEME NEW 2026.docx",
+  "subjects": [
+    {
+      "table_index": 0,
+      "headers": [
+        "Main competence",
+        "Specific competence",
+        "Main learning activities",
+        "Specific learning activities",
+        "Month",
+        "Week",
+        "Number of periods",
+        "Teaching and learning methods",
+        "Teaching and learning resources",
+        "Assessment tools",
+        "Reference(s)",
+        "Remark(s)"
+      ],
+      "column_count": 12,
+      "entries": [
+        {
+          "competence": "1.0Demonstrate mastery of the concepts, principles and processes of Biology",
+          "objective": "1.1 Describe the physiological, anatomical and ecological processes of living organisms",
+          "learning_act": "(a)Explain the basic concepts of Biology",
+          "month": "March",
+          "week": "1ST",
+          "period": "3",
+          "teaching_act": "Group discussion: To guide students in manageable groups to discuss meaning of biology, basic biological terminologies and Branches of biology",
+          "materials": "Charts ,relevant text, and online resources on basic concept of biology",
+          "assessment": "Presentations Questions and Answers",
+          "references": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania"
+        },
+        {
+          "competence": "1.0Demonstrate mastery of the concepts, principles and processes of Biology",
+          "objective": "1.1 Describe the physiological, anatomical and ecological processes of living organisms",
+          "learning_act": "(a)Explain the basic concepts of Biology",
+          "month": "March",
+          "week": "1ST",
+          "period": "3",
+          "teaching_act": "Brainstorming: To guide students to brainstorm on importance of biology in our life",
+          "materials": "Charts ,relevant text, and online resources on basic concept of biology",
+          "assessment": "- Oral questions",
+          "references": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania"
+        },
+        {
+          "month": "March",
+          "week": "2ND",
+          "period": "3",
+          "teaching_act": "Jigsaw: To guide students in manageable groups, to explain the relationship of Biology with other disciplines through jigsaw",
+          "assessment": "Group discussion reports and presentations Quiz",
+          "references": ". Oxford; (2011). Biology for Secondary Schools Form One: Student’s Book. Oxford University Press (T) Ltd."
+        },
+        {
+          "learning_act": "(b)Describe a cell",
+          "month": "March",
+          "week": "2ND",
+          "period": "3",
+          "teaching_act": "Group Discussion: To guide students in manageable groups to discuss concept of cell",
+          "materials": "Cells charts/ models, light microscope, slide covers, microscope slides, and cells online resources",
+          "assessment": "Presentations Questions and Answers",
+          "references": ". Oxford; (2011). Biology for Secondary Schools Form One: Student’s Book. Oxford University Press (T) Ltd."
+        },
+        {
+          "learning_act": "(b)Describe a cell",
+          "month": "March",
+          "week": "3RD",
+          "period": "3",
+          "teaching_act": "ICT-Based learning: To guide students to explain cell structures and cell differentiation through simulation",
+          "materials": "Cells charts/ models, light microscope, slide covers, microscope slides, and cells online resources",
+          "assessment": "- Questions and Answers",
+          "references": ". Oxford; (2011). Biology for Secondary Schools Form One: Student’s Book. Oxford University Press (T) Ltd."
+        },
+        {
+          "month": "March",
+          "week": "4TH",
+          "period": "3",
+          "teaching_act": "Experimentation: To guide students to prepare microscope slides of a plant and animal cell",
+          "assessment": "Written reports Observation"
+        }
+      ],
+      "entry_count": 6
+    },
+    {
+      "table_index": 1,
+      "headers": [
+        "Main competence",
+        "Specific competence",
+        "Main learning activities",
+        "Specific learning activities",
+        "Month",
+        "Week",
+        "Number of periods",
+        "Teaching and learning methods",
+        "Teaching and learning resources",
+        "Assessment tools",
+        "Referenc e(s)",
+        "Remark(s)"
+      ],
+      "column_count": 12,
+      "entries": [
+        {
+          "competence": "1.0Demonstrate mastery of the concepts, principles and processes of Biology",
+          "objective": "1.1 Describe the physiological, anatomical and ecological processes of living organisms",
+          "learning_act": "(c) Describe nutrition in plants (photosynthesis, leaf structure and mineral requirements)",
+          "month": "April",
+          "week": "2-4TH",
+          "period": "9",
+          "teaching_act": "Field visit: To guide students to collect different plant leaves around the school compound to observe and explain the external structure of leaves.",
+          "materials": "Relevant equipment and apparatus, heat sources, water, relevant chemicals and reagents, leaves, pond weeds, nutrition in plants models/ charts, and nutrition in plants online resources",
+          "assessment": "Presentations Questions and Answers"
+        },
+        {
+          "competence": "1.0Demonstrate mastery of the concepts, principles and processes of Biology",
+          "objective": "1.1 Describe the physiological, anatomical and ecological processes of living organisms",
+          "learning_act": "(c) Describe nutrition in plants (photosynthesis, leaf structure and mineral requirements)",
+          "month": "May",
+          "week": "1ST",
+          "period": "3",
+          "teaching_act": "Group Discussion: To guide students in manageable groups to discuss the concept of nutrition in plants, internal structure of a leaf and how Photosynthesis occurs in the leaf",
+          "materials": "Relevant equipment and apparatus, heat sources, water, relevant chemicals and reagents, leaves, pond weeds, nutrition in plants models/ charts, and nutrition in plants online resources",
+          "assessment": "Presentations Questions and Answers"
+        },
+        {
+          "competence": "1.0Demonstrate mastery of the concepts, principles and processes of Biology",
+          "objective": "1.1 Describe the physiological, anatomical and ecological processes of living organisms",
+          "learning_act": "(c) Describe nutrition in plants (photosynthesis, leaf structure and mineral requirements)",
+          "month": "May",
+          "week": "1ST",
+          "period": "3",
+          "teaching_act": "Guest speaker: To invite guest speaker(Agricultural extension officer) to share with students on mineral requirements in plants",
+          "materials": "Relevant equipment and apparatus, heat sources, water, relevant chemicals and reagents, leaves, pond weeds, nutrition in plants models/ charts, and nutrition in plants online resources",
+          "assessment": "Quiz Question and Answers"
+        },
+        {
+          "competence": "2.0 Communicating using scientific biological terminologies",
+          "objective": "2.1Demonstrate mastery of scientific biological terminologies",
+          "learning_act": "(a)Explain the concept and systems of classification",
+          "month": "May",
+          "week": "2ND",
+          "period": "3",
+          "teaching_act": "Field visit: To guide students to collect various living things around the school compound and group all the items according to their similarities Brainstorming: To guide students to brainstorm on the concept of classification",
+          "materials": "Variety of living organisms, classification charts, and classification online resources",
+          "assessment": "Observation Question and Answers"
+        },
+        {
+          "competence": "2.0 Communicating using scientific biological terminologies",
+          "objective": "2.1Demonstrate mastery of scientific biological terminologies",
+          "learning_act": "(a)Explain the concept and systems of classification",
+          "month": "May",
+          "week": "2ND",
+          "period": "3",
+          "teaching_act": "Project: To guide students to assign scientific names to organisms and label trees around their school environment",
+          "materials": "Variety of living organisms, classification charts, and classification online resources",
+          "assessment": "-Observation -Written report and Herbarium"
+        },
+        {
+          "competence": "2.0 Communicating using scientific biological terminologies",
+          "objective": "2.1Demonstrate mastery of scientific biological terminologies",
+          "learning_act": "(a)Explain the concept and systems of classification",
+          "month": "May",
+          "week": "3RD",
+          "period": "3",
+          "teaching_act": "Group Discussion: To guide students in manageable groups to discuss systems of classification and scientific rules of naming organisms",
+          "materials": "Variety of living organisms, classification charts, and classification online resources",
+          "assessment": "Presentations Questions and Answers"
+        },
+        {
+          "competence": "2.0 Communicating using scientific biological terminologies",
+          "objective": "2.1Demonstrate mastery of scientific biological terminologies",
+          "learning_act": "(b)Describe the major groups of organisms:",
+          "month": "May",
+          "week": "4TH",
+          "period": "3",
+          "teaching_act": "Field visit: To guide students in groups to collect various living organisms around the school compound which are representatives of the Kingdom Monera and classify them Discussion: To guide students in manageable groups , to identify the organisms under kingdom Monera, discuss their features and economic importance",
+          "materials": "Variety of living organisms, preserved specimens, charts on major groups of organisms, and classification online resources",
+          "assessment": "Observation Question and Answers"
+        }
+      ],
+      "entry_count": 7
+    },
+    {
+      "table_index": 2,
+      "headers": [
+        "Main competence",
+        "Specific competence",
+        "Main learning activities",
+        "Specific learning activities",
+        "Month",
+        "Month",
+        "Week",
+        "Number of periods",
+        "Teaching and learning methods",
+        "Teaching and learning resources",
+        "Assessment tools",
+        "Referenc e(s)",
+        "Remark(s)"
+      ],
+      "column_count": 13,
+      "entries": [
+        {
+          "competence": "2.0 Communicating using scientific biological terminologies",
+          "objective": "2.1Demonstrate mastery of scientific biological terminologies",
+          "learning_act": "(b)Describe the major groups of organisms:",
+          "month": "July",
+          "week": "2ND",
+          "period": "2ND",
+          "teaching_act": "3",
+          "materials": "Field visit: To guide students in groups to collect various living organisms around the school compound which are representatives of Kingdom Protoctista and classify them Discussion: To guide students in manageable groups, to identify the organisms under kingdom Protoctista, Discuss their features and economic importance",
+          "assessment": "Variety of living organisms, preserved specimens, charts on major groups of organisms, and classification online resources",
+          "remarks": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania . Oxford; (2011). Biology for Secondary Schools Form One: Student ’s Book. Oxford University Press(T)Ltd."
+        },
+        {
+          "competence": "2.0 Communicating using scientific biological terminologies",
+          "objective": "2.1Demonstrate mastery of scientific biological terminologies",
+          "learning_act": "(b)Describe the major groups of organisms:",
+          "month": "July",
+          "week": "3RD AN D 4TH",
+          "period": "3RD AN D 4TH",
+          "teaching_act": "6",
+          "materials": "Field visit: To guide students in groups to collect various living organisms around the school compound which are representatives of Kingdom Fungi and classify them. Discussion: To guide students in manageable groups, to identify the organisms under kingdom Fungi, Discuss their features and economic importance",
+          "assessment": "Variety of living organisms, preserved specimens, charts on major groups of organisms, and classification online resources",
+          "remarks": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania . Oxford; (2011). Biology for Secondary Schools Form One: Student ’s Book. Oxford University Press(T)Ltd."
+        },
+        {
+          "competence": "2.0 Communicating using scientific biological terminologies",
+          "objective": "2.1Demonstrate mastery of scientific biological terminologies",
+          "learning_act": "(b)Describe the major groups of organisms:",
+          "month": "August",
+          "week": "1ST AN D 3RD",
+          "period": "1ST AN D 3RD",
+          "teaching_act": "9",
+          "materials": "Field visit: To guide students in groups to collect various living organisms around the school compound which are representatives of Kingdom Fungi and classify them. Discussion: To guide students in manageable groups, to identify the organisms under kingdom Plantae, discuss their features and economic importance",
+          "assessment": "Variety of living organisms, preserved specimens, charts on major groups of organisms, and classification online resources",
+          "remarks": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania . Oxford; (2011). Biology for Secondary Schools Form One: Student ’s Book. Oxford University Press(T)Ltd."
+        },
+        {
+          "month": "September",
+          "week": "3RD AND 4TH",
+          "period": "3RD AND 4TH",
+          "teaching_act": "6",
+          "materials": "Field visit: To guide students in groups to collect various living organisms around the school compound which are representatives of Kingdom Animalia and classify them."
+        }
+      ],
+      "entry_count": 4
+    },
+    {
+      "table_index": 3,
+      "headers": [
+        "Main competence",
+        "Specific competence",
+        "Main learning activities",
+        "Specific learning activities",
+        "Month",
+        "Week",
+        "Number of periods",
+        "Teaching and learning methods",
+        "Teaching and learning resources",
+        "Assessment tools",
+        "Reference (s)",
+        "Remark(s)"
+      ],
+      "column_count": 12,
+      "entries": [
+        {
+          "competence": "2.0 Communicating using scientific biological terminologies",
+          "objective": "2.1Demonstrate mastery of scientific biological terminologies",
+          "learning_act": "(b)Describe the major groups of organisms:",
+          "month": "October",
+          "week": "1ST",
+          "period": "3",
+          "teaching_act": "Discussion: To guide students in manageable groups, to identify the organisms under kingdom Animalia, discuss their features and economic importance",
+          "materials": "Variety of living organisms, preserved specimens, charts on major groups of organisms, and classification online resources",
+          "assessment": "Question and Answers Presentations",
+          "references": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania . Oxford; (2011). Biology for Secondary Schools Form One: Student ’s Book. Oxford University Press(T)Ltd."
+        },
+        {
+          "competence": "2.0 Communicating using scientific biological terminologies",
+          "objective": "2.1Demonstrate mastery of scientific biological terminologies",
+          "learning_act": "(b)Describe the major groups of organisms:",
+          "month": "October",
+          "week": "1ST",
+          "period": "3",
+          "teaching_act": "Field visit: To guide students in groups to collect various living organisms around the school compound which are representatives of the virus Discussion: To guide students in manageable groups, to identify viruses, discuss their features and economic importance",
+          "materials": "Variety of living organisms, preserved specimens, charts on major groups of organisms, and classification online resources",
+          "assessment": "Observation Question and Answers",
+          "references": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania . Oxford; (2011). Biology for Secondary Schools Form One: Student ’s Book. Oxford University Press(T)Ltd."
+        },
+        {
+          "competence": "3.0 Conduct biological investigation",
+          "objective": "3.1 Demonstrate mastery of basic skills for conducting biological investigations",
+          "learning_act": "(a)Describe the basic skills for conducting biological experiments",
+          "month": "October",
+          "week": "2ND",
+          "teaching_act": "Group discussion: To guide students to visit biology laboratory to identify common apparatus and equipment used in biological experiments Experimentation: To guide students to perform activities that involve observation, measurement and experimentation",
+          "materials": "Basic skills for conducting biological experiments Online resources, Variety of equipment and apparati used in conducting biological experiments",
+          "assessment": "- Observation - Question and Answers",
+          "references": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania . Oxford; (2011). Biology for Secondary Schools Form One: Student ’s Book. Oxford University Press(T)Ltd."
+        },
+        {
+          "competence": "3.0 Conduct biological investigation",
+          "objective": "3.1 Demonstrate mastery of basic skills for conducting biological investigations",
+          "learning_act": "(b)Carry out microscopic observation of a cell",
+          "month": "October",
+          "week": "3RD",
+          "teaching_act": "Group discussion: To guide students in manageable groups to explore procedures that are required to observe a cell under a microscope Laboratory practical: To guide students to observe cells of living things under light microscope",
+          "materials": "Light microscope, slide covers, microscope slide and other relevant apparati",
+          "assessment": "Observation Question and Answers Homework",
+          "references": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania . Oxford; (2011). Biology for Secondary Schools Form One: Student ’s Book. Oxford University Press(T)Ltd."
+        }
+      ],
+      "entry_count": 4
+    },
+    {
+      "table_index": 4,
+      "headers": [
+        "Main competence",
+        "Specific competence",
+        "Main learning activities",
+        "Specific learning activities",
+        "Month",
+        "Week",
+        "Number of periods",
+        "Teaching and learning methods",
+        "Teaching and learning resources",
+        "Assessment tools",
+        "Reference(s)",
+        "Remark(s)"
+      ],
+      "column_count": 12,
+      "entries": [
+        {
+          "competence": "3.0 Conduct biological investigation",
+          "objective": "3.1 Demonstrate mastery of basic skills for conducting biological investigations",
+          "learning_act": "(c)Carry out investigations related to photosynthesis (conditions necessary for photosynthesis)",
+          "month": "October",
+          "week": "4TH",
+          "teaching_act": "Experimentation: To guide students to carry out investigations on the conditions necessary for photosynthesis",
+          "materials": "Variety of equipment and apparati, live plant specimens, relevant chemicals, reagents.",
+          "assessment": "Observation Question and Answers Homework",
+          "references": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania ."
+        },
+        {
+          "competence": "3.0 Conduct biological investigation",
+          "objective": "3.1 Demonstrate mastery of basic skills for conducting biological investigations",
+          "learning_act": "3.2Prepareand present results of biological investigations",
+          "month": "November",
+          "week": "1ST",
+          "teaching_act": "Group discussion: Guide students in groups to discuss the steps in preparation of biological investigation report",
+          "materials": "Relevant text on steps for scientific investigations and report writing, online resources on report writing",
+          "assessment": "Observations Guiding questions Challenging questions",
+          "references": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania ."
+        },
+        {
+          "competence": "3.0 Conduct biological investigation",
+          "objective": "3.1 Demonstrate mastery of basic skills for conducting biological investigations",
+          "learning_act": "3.2Prepareand present results of biological investigations",
+          "month": "November",
+          "week": "2ND",
+          "teaching_act": "Project: Guide students to prepare a report using the steps in preparation of a biological investigation report",
+          "materials": "Relevant text on steps for scientific investigations and report writing, online resources on report writing",
+          "assessment": "Observations Guiding questions Challenging questions",
+          "references": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania ."
+        },
+        {
+          "competence": "3.0 Conduct biological investigation",
+          "objective": "3.1 Demonstrate mastery of basic skills for conducting biological investigations",
+          "learning_act": "3.2Prepareand present results of biological investigations",
+          "month": "November",
+          "week": "3RD",
+          "teaching_act": "Presentation: Guide students to present a biological investigation report",
+          "materials": "Relevant text on steps for scientific investigations and report writing, online resources on report writing",
+          "assessment": "Observations Guiding questions Challenging questions",
+          "references": "Tanzania Institute of education; (2024). Biology for Secondary Schools Form One: Student’s Book. Dar Es Salaam – Tanzania ."
+        }
+      ],
+      "entry_count": 4
+    }
+  ],
+  "form": "Form1",
+  "year": "2026"
+}

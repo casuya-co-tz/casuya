@@ -1,0 +1,121 @@
+{
+  "filename": "computer_science_form2_topical_5_2024.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Computer Science - Topical Test 5 (FORM2 2024): Explain spreadsheet concepts",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain spreadsheet concepts",
+          "text": "Discuss the challenges facing 'Explain spreadsheet concepts' in Tanzania and propose solutions.",
+          "competence": "Explain spreadsheet concepts"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Word Processing Concepts",
+          "text": "Discuss the challenges facing 'Word Processing Concepts' in Tanzania and propose solutions. - with diagram",
+          "competence": "Word Processing Concepts"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain spreadsheet concepts",
+          "text": "Discuss the challenges facing 'Explain spreadsheet concepts' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain spreadsheet concepts"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain spreadsheet concepts",
+          "text": "Discuss the challenges facing 'Explain spreadsheet concepts' in Tanzania and propose solutions.",
+          "competence": "Explain spreadsheet concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain spreadsheet concepts",
+          "text": "Evaluate the role of 'Explain spreadsheet concepts' in national development. - with diagram",
+          "competence": "Explain spreadsheet concepts"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Word Processing Concepts",
+          "text": "Compare and contrast 'Word Processing Concepts' with related concepts.",
+          "competence": "Word Processing Concepts"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain spreadsheet concepts",
+          "text": "Evaluate the role of 'Explain spreadsheet concepts' in national development. - with example",
+          "competence": "Explain spreadsheet concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain spreadsheet concepts",
+          "text": "Discuss the challenges facing 'Explain spreadsheet concepts' in Tanzania and propose solutions. - with example",
+          "competence": "Explain spreadsheet concepts"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain spreadsheet concepts",
+          "text": "Describe the main features of 'Explain spreadsheet concepts'. - with example",
+          "competence": "Explain spreadsheet concepts"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Word Processing Concepts",
+          "text": "Compare and contrast 'Word Processing Concepts' with related concepts. - with example",
+          "competence": "Word Processing Concepts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain spreadsheet concepts",
+    "Word Processing Concepts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

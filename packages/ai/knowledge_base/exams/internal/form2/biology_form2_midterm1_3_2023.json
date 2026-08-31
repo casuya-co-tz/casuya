@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form2_midterm1_3_2023.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 1 Exam 3 (FORM2 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 76,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Investigate the process of nervous coordination (reflex arc and knee jer",
+          "text": "Explain the concept of 'Investigate the process of nervous coordination (reflex arc and knee jer' with examples relevant to Tanzania.",
+          "competence": "Investigate the process of nervous coordination (reflex arc "
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Design and carry out a project in Biology",
+          "text": "Analyse the causes and effects of 'Design and carry out a project in Biology'.",
+          "competence": "Design and carry out a project in Biology"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "text": "Analyse the causes and effects of 'Describe the physiological, anatomical and ecological processes of living organisms'. - with diagram",
+          "competence": "Describe the physiological, anatomical and ecological proces"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+          "text": "Describe the main features of 'Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio'.",
+          "competence": "Describe the mechanism of transportation of materials in flo"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Conduct a project in Biology",
+          "text": "Explain the concept of 'Conduct a project in Biology' with examples relevant to Tanzania. - with diagram",
+          "competence": "Conduct a project in Biology"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Describe the main features of 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline'. - with example",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "With examples, illustrate how 'Explain growth process in animals (growth patterns and metamorphosis)' is applied in the community.",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+          "text": "Explain the concept of 'Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the mechanism of transportation of materials in the"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain the physiology and theories underlying transportation of materials in plants",
+          "text": "Examine the advantages and disadvantages of 'Explain the physiology and theories underlying transportation of materials in plants'. - with example",
+          "competence": "Explain the physiology and theories underlying transportatio"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+          "text": "Analyse the causes and effects of 'Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio'. - with example",
+          "competence": "Describe the basic skills for conducting biological experime"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "theory, evidence of evolution, and speciation)",
+          "text": "Evaluate the role of 'theory, evidence of evolution, and speciation)' in national development. - with diagram",
+          "competence": "theory, evidence of evolution, and speciation)"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the mechanism of excretion in the human body (systems: organs, product",
+          "text": "With examples, illustrate how 'Describe the mechanism of excretion in the human body (systems: organs, product' is applied in the community.",
+          "competence": "Describe the mechanism of excretion in the human body (syste"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Investigate processes of transportation of materials in flowering plants",
+          "text": "Explain the concept of 'Investigate processes of transportation of materials in flowering plants' with examples relevant to Tanzania.",
+          "competence": "Investigate processes of transportation of materials in flow"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Discuss the challenges facing 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' in Tanzania and propose solutions. - with example",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Carry out experiments to determine the pulse rate in human",
+          "text": "Analyse the causes and effects of 'Carry out experiments to determine the pulse rate in human'. - with diagram",
+          "competence": "Carry out experiments to determine the pulse rate in human"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Outline the procedures involved in 'Develop and carry out a simple research project in Biology'. - with diagram",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+          "text": "Outline the procedures involved in 'Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)'. - with diagram",
+          "competence": "Describe the distinctive characteristics of kingdoms, phyla/"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+          "text": "Compare and contrast 'Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio' with related concepts. - with example",
+          "competence": "Describe reproduction in plants (concept of reproduction in "
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "text": "Compare and contrast 'Demonstrate mastery of basic skills for conducting biological investigations' with related concepts. - with example",
+          "competence": "Demonstrate mastery of basic skills for conducting biologica"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+          "text": "Define 'Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt' and discuss its importance in everyday life.",
+          "competence": "Describe reproduction in humans (sexual reproduction in huma"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Investigate the process of nervous coordination (reflex arc and knee jer",
+    "Design and carry out a project in Biology",
+    "Describe the physiological, anatomical and ecological processes of living organisms",
+    "Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+    "Conduct a project in Biology",
+    "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+    "Explain growth process in animals (growth patterns and metamorphosis)",
+    "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+    "Explain the physiology and theories underlying transportation of materials in plants",
+    "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,289 @@
+{
+  "subject_code": "061",
+  "subject_name": "Commerce",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "INTRODUCTION TO COMMERCE",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Concept of Commerce",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "061-F1-U1-L1",
+              "title": "Explain concept of commerce",
+              "markdown_content": "## Explain concept of commerce",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Production",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "061-F1-U1-L2",
+              "title": "Explain production",
+              "markdown_content": "## Explain production",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Trade",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "061-F1-U1-L3",
+              "title": "Explain trade",
+              "markdown_content": "## Explain trade",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Aids to Trade",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "061-F1-U1-L4",
+              "title": "Explain aids to trade",
+              "markdown_content": "## Explain aids to trade",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "BUSINESS UNITS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Sole Proprietorship",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "061-F2-U2-L1",
+              "title": "Explain sole proprietorship",
+              "markdown_content": "## Explain sole proprietorship",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Partnership",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "061-F2-U2-L2",
+              "title": "Explain partnership",
+              "markdown_content": "## Explain partnership",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Cooperative",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "061-F2-U2-L3",
+              "title": "Explain cooperative",
+              "markdown_content": "## Explain cooperative",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Companies",
+          "competence_code": "2.4",
+          "lessons": [
+            {
+              "lesson_id": "061-F2-U2-L4",
+              "title": "Explain companies",
+              "markdown_content": "## Explain companies",
+              "page": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "MARKETING",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Market and Marketing",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "061-F2-U3-L1",
+              "title": "Explain market and marketing",
+              "markdown_content": "## Explain market and marketing",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Marketing Mix",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "061-F2-U3-L2",
+              "title": "Explain marketing mix",
+              "markdown_content": "## Explain marketing mix",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Advertisement",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "061-F2-U3-L3",
+              "title": "Explain advertisement",
+              "markdown_content": "## Explain advertisement",
+              "page": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "FINANCE AND TAXATION",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Sources of Business Finance",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "061-F3-U4-L1",
+              "title": "Explain sources of business finance",
+              "markdown_content": "## Explain sources of business finance",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Taxation",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "061-F3-U4-L2",
+              "title": "Explain taxation",
+              "markdown_content": "## Explain taxation",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Insurance",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "061-F3-U4-L3",
+              "title": "Explain insurance",
+              "markdown_content": "## Explain insurance",
+              "page": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "TRANSPORT AND COMMUNICATION",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Transport",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "061-F3-U5-L1",
+              "title": "Explain transport",
+              "markdown_content": "## Explain transport",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Communication",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "061-F3-U5-L2",
+              "title": "Explain communication",
+              "markdown_content": "## Explain communication",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Warehousing",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "061-F3-U5-L3",
+              "title": "Explain warehousing",
+              "markdown_content": "## Explain warehousing",
+              "page": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "STORE MANAGEMENT",
+      "form": 4,
+      "topics": [
+        {
+          "topic_name": "Storekeeping",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "061-F4-U6-L1",
+              "title": "Explain storekeeping",
+              "markdown_content": "## Explain storekeeping",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Stock Control",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "061-F4-U6-L2",
+              "title": "Explain stock control",
+              "markdown_content": "## Explain stock control",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Documentation",
+          "competence_code": "6.3",
+          "lessons": [
+            {
+              "lesson_id": "061-F4-U6-L3",
+              "title": "Explain documentation",
+              "markdown_content": "## Explain documentation",
+              "page": 16
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

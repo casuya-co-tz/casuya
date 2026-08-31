@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form6_topical_3_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 3 (FORM6 2025): Use appropriate non-verbal cues in ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use appropriate non-verbal cues in interpersonal communication",
+          "text": "Describe the process of 'Use appropriate non-verbal cues in interpersonal communication' step by step. - with example",
+          "competence": "Use appropriate non-verbal cues in interpersonal communicati"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use appropriate non-verbal cues in interpersonal communication",
+          "text": "Assess the impact of 'Use appropriate non-verbal cues in interpersonal communication' on society. - with example",
+          "competence": "Use appropriate non-verbal cues in interpersonal communicati"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use appropriate non-verbal cues in interpersonal communication",
+          "text": "With examples, illustrate how 'Use appropriate non-verbal cues in interpersonal communication' is applied in the community. - locally",
+          "competence": "Use appropriate non-verbal cues in interpersonal communicati"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use appropriate non-verbal cues in interpersonal communication",
+          "text": "Examine the advantages and disadvantages of 'Use appropriate non-verbal cues in interpersonal communication'.",
+          "competence": "Use appropriate non-verbal cues in interpersonal communicati"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use appropriate non-verbal cues in interpersonal communication",
+          "text": "Discuss the factors influencing 'Use appropriate non-verbal cues in interpersonal communication'.",
+          "competence": "Use appropriate non-verbal cues in interpersonal communicati"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Discuss the ethics of interpretation",
+          "text": "How does 'Discuss the ethics of interpretation' relate to sustainable development?",
+          "competence": "Discuss the ethics of interpretation"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use appropriate non-verbal cues in interpersonal communication",
+          "text": "Describe the process of 'Use appropriate non-verbal cues in interpersonal communication' step by step.",
+          "competence": "Use appropriate non-verbal cues in interpersonal communicati"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use appropriate non-verbal cues in interpersonal communication",
+          "text": "Discuss the factors influencing 'Use appropriate non-verbal cues in interpersonal communication'. - with diagram",
+          "competence": "Use appropriate non-verbal cues in interpersonal communicati"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use appropriate non-verbal cues in interpersonal communication",
+          "text": "Describe the main features of 'Use appropriate non-verbal cues in interpersonal communication'.",
+          "competence": "Use appropriate non-verbal cues in interpersonal communicati"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Discuss the ethics of interpretation",
+          "text": "Analyse the causes and effects of 'Discuss the ethics of interpretation'. - locally",
+          "competence": "Discuss the ethics of interpretation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use appropriate non-verbal cues in interpersonal communication",
+    "Discuss the ethics of interpretation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

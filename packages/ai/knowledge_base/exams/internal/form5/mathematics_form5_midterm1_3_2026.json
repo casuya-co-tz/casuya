@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form5_midterm1_3_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 1 Exam 3 (FORM5 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 95,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "Outline the procedures involved in 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)'. - with diagram",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use laws of logarithms to solve problems",
+          "text": "With examples, illustrate how 'Use laws of logarithms to solve problems' is applied in the community. - locally",
+          "competence": "Use laws of logarithms to solve problems"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "Explain the concept of 'Use geometry, approximations, relations and functions in various contexts' with examples relevant to Tanzania.",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "Evaluate the role of 'Use approximations in computations and measurements of quantities in various contexts' in national development. - with example",
+          "competence": "Use approximations in computations and measurements of quant"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Evaluate the role of 'Explore advanced tenets of set theory (operations, expressions, and cardinality)' in national development. - with diagram",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "What are the characteristics of 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)'? - with example",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Solve ratio and proportion problems",
+          "text": "Describe the main features of 'Solve ratio and proportion problems'.",
+          "competence": "Solve ratio and proportion problems"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)'. - locally",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Assess the impact of 'Find the inverses of relations and functions' on society. - with example",
+          "competence": "Find the inverses of relations and functions"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Describe the main features of 'Convert repeating/ recurring decimals into fractions and vice versa'.",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+          "text": "Explain the relationship between 'Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line' and its environment. - with diagram",
+          "competence": "Explore the basic tenets of coordinate geometry (midpoint of"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Write numbers in standard form",
+          "text": "How does 'Write numbers in standard form' relate to sustainable development?",
+          "competence": "Write numbers in standard form"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Find the number of elements in a set",
+          "text": "Explain the concept of 'Find the number of elements in a set' with examples relevant to Tanzania.",
+          "competence": "Find the number of elements in a set"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+          "text": "With examples, illustrate how 'Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs' is applied in the community. - with example",
+          "competence": "Find the general term for AP and GP and use them to derive f"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Compare and contrast 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' with related concepts. - with example",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+          "text": "Describe the process of 'Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation' step by step.",
+          "competence": "Explore the basic tenets of coordinate geometry (gradient an"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "Discuss the challenges facing 'Describe the concepts of geometry (similarities and congruenc' in Tanzania and propose solutions.",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)' in Tanzania and propose solutions. - locally",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use basic skills of circles in daily life",
+          "text": "Compare and contrast 'Use basic skills of circles in daily life' with related concepts.",
+          "competence": "Use basic skills of circles in daily life"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Determine trigonometric ratios of angles and special angles",
+          "text": "Discuss the challenges facing 'Determine trigonometric ratios of angles and special angles' in Tanzania and propose solutions.",
+          "competence": "Determine trigonometric ratios of angles and special angles"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+    "Use laws of logarithms to solve problems",
+    "Use geometry, approximations, relations and functions in various contexts",
+    "Use approximations in computations and measurements of quantities in various contexts",
+    "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+    "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+    "Solve ratio and proportion problems",
+    "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+    "Find the inverses of relations and functions",
+    "Convert repeating/ recurring decimals into fractions and vice versa"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

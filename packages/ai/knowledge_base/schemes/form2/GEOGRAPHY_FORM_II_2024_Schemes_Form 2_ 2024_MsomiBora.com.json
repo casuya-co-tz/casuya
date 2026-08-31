@@ -1,0 +1,436 @@
+{
+  "file": "GEOGRAPHY FORM II 2024.docx",
+  "subjects": [
+    {
+      "table_index": 0,
+      "headers": [
+        "MAIN COMPETENCE",
+        "SPECIFIC COMPETENCE",
+        "TEACHING ACTIVITIES",
+        "MONTH",
+        "WEEK",
+        "PERIODS",
+        "REFERENCES",
+        "TEACHING/LEARNING MATERIAS",
+        "ASSESSMENT TOOLS",
+        "REMARKS"
+      ],
+      "column_count": 10,
+      "entries": [
+        {
+          "competence": "HUMAN ACTIVITIES",
+          "objective": "(a). Concept of Human activities",
+          "teaching_act": "Prepare students to explain the meaning of Human activities.",
+          "month": "January",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "HUMAN ACTIVITIES",
+          "objective": "(b) Identify major types of human activities",
+          "teaching_act": "Providing different photographs that shows human activities.",
+          "month": "January",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "AGRICULTURE",
+          "objective": "Small scale Agriculture",
+          "teaching_act": "To prepare students to describe the characteristics of small scale agriculture.",
+          "month": "January",
+          "week": "3RD TO 4TH",
+          "period": "06",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Quiz"
+        },
+        {
+          "competence": "AGRICULTURE",
+          "objective": "Small scale Agriculture",
+          "teaching_act": "To Prepare students to: outline the effects of rapid population growth on small scale agriculture. -identify the advantages and disadvantages of small scale agriculture and ways to improve small scale agriculture.",
+          "month": "January",
+          "week": "3RD TO 4TH",
+          "period": "06",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "AGRICULTURE",
+          "objective": "(b) Large scale Agriculture.",
+          "teaching_act": "To prepare students to: describe the meaning of large scale agriculture and list the major crops grown in large scale agriculture. -Discuss characteristics of large scale agriculture, and identify major producing countries for respective crops in the world",
+          "month": "January",
+          "week": "3RD TO 4TH",
+          "period": "06",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Exercise"
+        },
+        {
+          "objective": "(c) Livestock Keeping",
+          "teaching_act": "To prepare students to: identify different types of livestock keeping and explain how livestock keeping is practiced. -to explain in groups to discuss the benefits and contract of livestock keeping practices and o compare livestock keeping between Australia and Tanzania.",
+          "month": "January",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Test"
+        },
+        {
+          "competence": "WATER MANAGEMENT FOR ECONOMIC DEVELOPMENT",
+          "objective": "Importance of water.",
+          "teaching_act": "To prepare students to explain the meaning, importance and uses of water",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Quiz"
+        },
+        {
+          "competence": "WATER MANAGEMENT FOR ECONOMIC DEVELOPMENT",
+          "objective": "Importance of water.",
+          "teaching_act": "To prepare students to explain the meaning, importance and uses of water",
+          "month": "February",
+          "week": "1ST",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Quiz"
+        },
+        {
+          "competence": "WATER MANAGEMENT FOR ECONOMIC DEVELOPMENT",
+          "objective": "(b) River Basin Development",
+          "teaching_act": "To prepare students to: -Read texts on river development and describe conditions for river basin development. -Give maps to students to look Rufiji and Tennessee River Basin Project.",
+          "month": "February",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "WATER MANAGEMENT FOR ECONOMIC DEVELOPMENT",
+          "objective": "(c) Land reclamation",
+          "teaching_act": "To prepare students to explain aims for land reclamation and describe technology used in land reclamation.",
+          "month": "February",
+          "week": "3RD",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Quiz"
+        },
+        {
+          "competence": "WATER MANAGEMENT FOR ECONOMIC DEVELOPMENT",
+          "objective": "(d) Sustainable use of water resources",
+          "teaching_act": "To prepare students in groups to explain the types of underground water and how it can be taped for use at local and national level.",
+          "month": "February",
+          "week": "4TH",
+          "period": "06",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Test"
+        },
+        {
+          "competence": "WATER MANAGEMENT FOR ECONOMIC DEVELOPMENT",
+          "objective": "(d) Sustainable use of water resources",
+          "teaching_act": "To prepare students in groups to explain the types of underground water and how it can be taped for use at local and national level.",
+          "month": "March",
+          "week": "1ST",
+          "period": "06",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Test"
+        },
+        {
+          "competence": "WATER MANAGEMENT FOR ECONOMIC DEVELOPMENT",
+          "objective": "(e)Water Pollution",
+          "teaching_act": "To prepare students to present on the sources of water pollution and describe ways of conserving water resources.",
+          "month": "March",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Oral questions"
+        },
+        {
+          "competence": "SUSTAINABLE USE OF FOREST RESOURCES.",
+          "objective": "Types of forest resources",
+          "teaching_act": "To prepare students to identify types of forests and locate the distribution of forests by types and explain factors for their distribution.",
+          "month": "March",
+          "week": "3RD",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "SUSTAINABLE USE OF FOREST RESOURCES.",
+          "objective": "(b) Importance of forestry resources",
+          "teaching_act": "By using prior knowledge on forestry resources, prepare students to discuss the importance and values of forests in social and economic life.",
+          "month": "March",
+          "week": "3RD",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Exercise"
+        },
+        {
+          "objective": "(c) Important areas of forest products, their transport in the world.",
+          "teaching_act": "In groups to prepare students to discuss importance countries in timber, production by using well map and Atlas-then explain the means of transport and problems of timber transportation in the world.",
+          "month": "April",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Group assignment"
+        },
+        {
+          "objective": "(d) Problems associated with forestry resources harvesting.",
+          "teaching_act": "By using examples prepare students to identify problems facing forestry resources and ways to address problems facing forestry in the world.",
+          "month": "April",
+          "week": "3RD",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Oral questions"
+        },
+        {
+          "competence": "SUSTAINABLE MINING",
+          "objective": "Types of mining industry.",
+          "teaching_act": "Prepare students in groups to name different types of mining industries.",
+          "month": "April",
+          "week": "4TH",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Quiz"
+        },
+        {
+          "competence": "SUSTAINABLE MINING",
+          "objective": "Types of mining industry.",
+          "teaching_act": "Prepare students in groups to name different types of mining industries.",
+          "month": "April",
+          "week": "4TH",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press"
+        },
+        {
+          "competence": "SUSTAINABLE MINING",
+          "objective": "(b) Types and distribution of mining regions in the world",
+          "teaching_act": "Prepare students in groups to explain major types of minerals found in the world and locate mining regions in the world map and the types of minerals extracted.",
+          "month": "April",
+          "week": "4TH",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Quick test"
+        },
+        {
+          "competence": "SUSTAINABLE MINING",
+          "objective": "(c)Methods of mining",
+          "teaching_act": "-Prepare students to categorize various ways of mining and explain ways of processing different types of minerals.",
+          "month": "April",
+          "week": "4TH",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "SUSTAINABLE MINING",
+          "objective": "(d)Contribution of mining industry to the economy of Tanzania",
+          "teaching_act": "To prepare students in groups to study data showing the production of different minerals in Tanzania and make presentation.",
+          "month": "May",
+          "week": "1ST",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Group exercise"
+        },
+        {
+          "competence": "SUSTAINABLE MINING",
+          "objective": "(e) Effects of the mining industry in the environment",
+          "teaching_act": "Organise a visit to a nearby mining area, students to observe the effects of mining activities to the environment.",
+          "month": "May",
+          "week": "1ST",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Oral questions"
+        },
+        {
+          "competence": "SUSTAINABLE MINING",
+          "objective": "(f) Focal studies oil production in the middle.",
+          "teaching_act": "-prepare students to discuss the advantages and disadvantages of oil production in Middle East and Natural Gas in Tanzania. -prepare students to discuss lessons which Tanzania can learn from these case studies.",
+          "month": "May",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "TOURISM",
+          "objective": "(a) Concept of Tourism",
+          "teaching_act": "Prepare students to define tourism.",
+          "month": "May",
+          "week": "3RD",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Oral questions"
+        },
+        {
+          "objective": "Factors for the development and growth of the tourist industry in the world.",
+          "teaching_act": "By using map showing tourist sites, students in groups to describe factors contributed to the growth and development of tourism industry in the world.",
+          "month": "July",
+          "week": "1ST",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Quiz"
+        },
+        {
+          "objective": "(c) Importance of tourism in the world",
+          "teaching_act": "To prepare students to: Brain-storm importance of tourism. -Make presentation on the importance and identify the impact of tourism and state ways of addressing the negative impact of tourism.",
+          "month": "July",
+          "week": "1ST",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Homework"
+        },
+        {
+          "objective": "(d) Focal studies on tourism industry",
+          "teaching_act": "To prepare students to discuss factors which promote growth of tourism industry in these countries – and identify problems facing this industry.",
+          "month": "July",
+          "week": "1ST",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Exercise"
+        },
+        {
+          "objective": "(d) Focal studies on tourism industry",
+          "teaching_act": "To prepare students to discuss factors which promote growth of tourism industry in these countries – and identify problems facing this industry.",
+          "month": "July",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Exercise"
+        },
+        {
+          "objective": "(d) Focal studies on tourism industry",
+          "teaching_act": "Prepare students to identify methods used to increase the income and lesson that can be drawn to promote tourism industry in Tanzania.",
+          "month": "July",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "MANUFACTU-RING INDUSTRY",
+          "objective": "(a) Concept and importance of manufacturing industry.",
+          "teaching_act": "Prepare students to define manufacturing and explain the importance of it.",
+          "month": "July",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Quick test"
+        },
+        {
+          "objective": "(b) Types of manufacturing industry",
+          "teaching_act": "Prepare students to discuss in groups on the types of manufacturing industry and identify products of each type of manufacturing industry.",
+          "month": "July",
+          "week": "3RD",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press ‘’",
+          "assessment": "Oral questions"
+        },
+        {
+          "objective": "Factors for location of industry",
+          "teaching_act": "By using prior knowledge guide students to brainstorm factors for location of industry.",
+          "month": "July",
+          "week": "4TH",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press ‘’",
+          "assessment": "Exercise"
+        },
+        {
+          "objective": "(d) Pollutants from manufacturing industry.",
+          "teaching_act": "Prepare students by using texts on industrial pollutants to discuss the concept of pollutants and explain how each pollutant affects the environment.",
+          "month": "August",
+          "week": "1ST",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press ‘’",
+          "assessment": "Exercise"
+        },
+        {
+          "objective": "(e) Focal studies",
+          "teaching_act": "Prepare students in discussing the production of cars in Japan, Electronic equipment in S. Korea and Textiles in Tanzania.",
+          "month": "August",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press ‘’",
+          "assessment": "Discussion questions"
+        },
+        {
+          "competence": "SUSTAINABLE USE OF POWER AND ENERGY RESOURCES.",
+          "objective": "(a) Define Power and Energy",
+          "teaching_act": "Prepare students brainstorm the definition of power and energy.",
+          "month": "August",
+          "week": "3RD",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press ‘’",
+          "assessment": "Oral questions."
+        },
+        {
+          "competence": "SUSTAINABLE USE OF POWER AND ENERGY RESOURCES.",
+          "objective": "(b) Major sources of Power",
+          "teaching_act": "Prepare students to describe major sources of power and energy and describe the origin of different types of energy and power sources.",
+          "month": "August",
+          "week": "3RD",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press ‘’",
+          "assessment": "Oral questions"
+        },
+        {
+          "objective": "(c) Methods of extracting power and energy.",
+          "teaching_act": "Prepare students to discuss methods used to extract power and energy.",
+          "month": "September",
+          "week": "3RD",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Homework"
+        },
+        {
+          "objective": "(d) Problems facing power and energy production",
+          "teaching_act": "Organize a visit to various energy producing centres and discuss problems facing power and energy production.",
+          "month": "September",
+          "week": "4TH",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Presentation"
+        },
+        {
+          "objective": "(e) Focal studies solar and wind power in USA, HEP and Biogas in Tanzania.",
+          "teaching_act": "In groups to prepare students to discuss the importance of power in Tanzania and problems facing this sector and give ways to solve these problems.",
+          "month": "October",
+          "week": "1ST",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Group assignment"
+        },
+        {
+          "competence": "TRANSPORT",
+          "objective": "(a) Main types of transport",
+          "teaching_act": "Prepare students to brainstorm the definition of transport and main types of transport in the world.",
+          "month": "October",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "TRANSPORT",
+          "objective": "(b) Importance of transport",
+          "teaching_act": "Prepare students in groups to discuss the importance of transport in Tanzania and East Africa.",
+          "month": "October",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Quiz"
+        },
+        {
+          "competence": "TRANSPORT",
+          "objective": "(c) Problems facing transport industry",
+          "teaching_act": "Prepare students to discuss the problems facing transportation in East Africa.",
+          "month": "October",
+          "week": "2ND",
+          "period": "03",
+          "references": "Shomari M. & Paul K(2009)Geography in focus, form two, Oxford University press",
+          "assessment": "Test"
+        }
+      ],
+      "entry_count": 43
+    }
+  ],
+  "form": "",
+  "year": "2024"
+}

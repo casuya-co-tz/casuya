@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form2_midterm1_3_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 3 (FORM2 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 89,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain cooperative",
+          "text": "Describe the main features of 'Explain cooperative'. - with example",
+          "competence": "Explain cooperative"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Communication",
+          "text": "Discuss the challenges facing 'Communication' in Tanzania and propose solutions.",
+          "competence": "Communication"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Sources of Business Finance",
+          "text": "Evaluate the role of 'Sources of Business Finance' in national development. - with example",
+          "competence": "Sources of Business Finance"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain documentation",
+          "text": "Outline the procedures involved in 'Explain documentation'.",
+          "competence": "Explain documentation"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Advertisement",
+          "text": "Examine the advantages and disadvantages of 'Advertisement'. - with example",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain warehousing",
+          "text": "Compare and contrast 'Explain warehousing' with related concepts. - with example",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain production",
+          "text": "Evaluate the role of 'Explain production' in national development. - with example",
+          "competence": "Explain production"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain marketing mix",
+          "text": "Outline the procedures involved in 'Explain marketing mix'.",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain insurance",
+          "text": "Discuss the challenges facing 'Explain insurance' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Sole Proprietorship",
+          "text": "Discuss the challenges facing 'Sole Proprietorship' in Tanzania and propose solutions. - with diagram",
+          "competence": "Sole Proprietorship"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain communication",
+          "text": "Discuss the challenges facing 'Explain communication' in Tanzania and propose solutions. - with example",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Transport",
+          "text": "Analyse the causes and effects of 'Transport'. - with example",
+          "competence": "Transport"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Cooperative",
+          "text": "Compare and contrast 'Cooperative' with related concepts.",
+          "competence": "Cooperative"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain companies",
+          "text": "Define 'Explain companies' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain companies"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain concept of commerce",
+          "text": "Describe the main features of 'Explain concept of commerce'.",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain aids to trade",
+          "text": "Discuss the challenges facing 'Explain aids to trade' in Tanzania and propose solutions.",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain transport",
+          "text": "With examples, illustrate how 'Explain transport' is applied in the community.",
+          "competence": "Explain transport"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain trade",
+          "text": "Examine the advantages and disadvantages of 'Explain trade'. - with diagram",
+          "competence": "Explain trade"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Warehousing",
+          "text": "Evaluate the role of 'Warehousing' in national development. - with diagram",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain stock control",
+          "text": "Outline the procedures involved in 'Explain stock control'.",
+          "competence": "Explain stock control"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain cooperative",
+    "Communication",
+    "Sources of Business Finance",
+    "Explain documentation",
+    "Advertisement",
+    "Explain warehousing",
+    "Explain production",
+    "Explain marketing mix",
+    "Explain insurance",
+    "Sole Proprietorship"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

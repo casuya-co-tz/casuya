@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form4_midterm1_2_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 1 Exam 2 (FORM4 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 100,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "Define 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "With examples, illustrate how 'Describe the concept of matter (physical and chemical changes of matte' is applied in the community. - with diagram",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+          "text": "Define 'Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons' and discuss its importance in everyday life.",
+          "competence": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohy"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+          "text": "Discuss the challenges facing 'Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software' in Tanzania and propose solutions.",
+          "competence": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+          "text": "Analyse the causes and effects of 'Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)'. - with diagram",
+          "competence": "Perform experiments involving chemical equilibria and report"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "With examples, illustrate how 'Discuss the contribution of Chemistry in the development of modern society' is applied in the community. - with example",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Discuss the challenges facing 'Demonstrate mastery of concepts, theories and principles in Chemistry' in Tanzania and propose solutions.",
+          "competence": "Demonstrate mastery of concepts, theories and principles in "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Compare the properties of compounds with those of constituent elements",
+          "text": "Evaluate the role of 'Compare the properties of compounds with those of constituent elements' in national development. - with example",
+          "competence": "Compare the properties of compounds with those of constituen"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of chemical bonding (covalent and electrovalent bondin",
+          "text": "Analyse the causes and effects of 'Describe the concept of chemical bonding (covalent and electrovalent bondin'. - with diagram",
+          "competence": "Describe the concept of chemical bonding (covalent and elect"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "and their applications in daily life",
+          "text": "With examples, illustrate how 'and their applications in daily life' is applied in the community. - with example",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu",
+          "text": "Examine the advantages and disadvantages of 'Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu'. - with example",
+          "competence": "Describe basic Chemistry laboratory skills (chemistry labora"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+          "text": "Analyse the causes and effects of 'Investigate the composition of chemical species in substances using systematic qualitative analysis'. - with diagram",
+          "competence": "Investigate the composition of chemical species in substance"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+          "text": "Define 'Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides' and discuss its importance in everyday life. - with example",
+          "competence": "Examine reactions of aromatic hydrocarbons, phenols, carbony"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Outline the procedures involved in '. Demonstrate mastery of concepts, theories and principles in Chemistry'. - with example",
+          "competence": ". Demonstrate mastery of concepts, theories and principles i"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Conduct synthesis of selected organic compounds",
+          "text": "Define 'Conduct synthesis of selected organic compounds' and discuss its importance in everyday life.",
+          "competence": "Conduct synthesis of selected organic compounds"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+          "text": "Analyse the causes and effects of 'Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture'.",
+          "competence": "Describe the applications of volumetric analysis in real lif"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "With examples, illustrate how 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate' is applied in the community. - with diagram",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes'.",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)",
+          "text": "Evaluate the role of 'Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)' in national development. - with example",
+          "competence": "Describe the concept of chemical equilibria in predicting th"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism",
+          "text": "Define 'Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism' and discuss its importance in everyday life. - with diagram",
+          "competence": "Examine the applications of energetics in daily life in comb"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+    "Describe the concept of matter (physical and chemical changes of matte",
+    "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+    "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+    "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+    "Discuss the contribution of Chemistry in the development of modern society",
+    "Demonstrate mastery of concepts, theories and principles in Chemistry",
+    "Compare the properties of compounds with those of constituent elements",
+    "Describe the concept of chemical bonding (covalent and electrovalent bondin",
+    "and their applications in daily life"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

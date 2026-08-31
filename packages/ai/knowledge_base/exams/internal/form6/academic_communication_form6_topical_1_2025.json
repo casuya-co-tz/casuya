@@ -1,0 +1,121 @@
+{
+  "filename": "academic_communication_form6_topical_1_2025.json",
+  "subject": "Academic Communication",
+  "subject_slug": "academic_communication",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Academic Communication - Topical Test 1 (FORM6 2025): Prepare and make academic presentat",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare and make academic presentations in English",
+          "text": "Examine the advantages and disadvantages of 'Prepare and make academic presentations in English'.",
+          "competence": "Prepare and make academic presentations in English"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)",
+          "text": "Examine the advantages and disadvantages of 'Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)'. - locally",
+          "competence": "Write references and citations in academic documents manuall"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)",
+          "text": "Compare and contrast 'Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)' with related concepts.",
+          "competence": "Write references and citations in academic documents manuall"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare and make academic presentations in English",
+          "text": "Explain the concept of 'Prepare and make academic presentations in English' with examples relevant to Tanzania. - with example",
+          "competence": "Prepare and make academic presentations in English"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)",
+          "text": "Explain the concept of 'Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)' with examples relevant to Tanzania.",
+          "competence": "Write references and citations in academic documents manuall"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)",
+          "text": "Explain the concept of 'Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)' with examples relevant to Tanzania.",
+          "competence": "Write references and citations in academic documents manuall"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Prepare and make academic presentations in English",
+          "text": "Propose measures to improve 'Prepare and make academic presentations in English' in schools.",
+          "competence": "Prepare and make academic presentations in English"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)",
+          "text": "With examples, illustrate how 'Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)' is applied in the community.",
+          "competence": "Write references and citations in academic documents manuall"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Prepare and make academic presentations in English",
+          "text": "What are the characteristics of 'Prepare and make academic presentations in English'? - with diagram",
+          "competence": "Prepare and make academic presentations in English"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Prepare and make academic presentations in English",
+          "text": "Compare and contrast 'Prepare and make academic presentations in English' with related concepts.",
+          "competence": "Prepare and make academic presentations in English"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Prepare and make academic presentations in English",
+    "Write references and citations in academic documents manually and by using software (e.g., Mendeley, Endnote, etc.)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

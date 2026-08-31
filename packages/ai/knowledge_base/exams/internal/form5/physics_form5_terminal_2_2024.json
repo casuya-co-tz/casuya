@@ -1,0 +1,249 @@
+{
+  "filename": "physics_form5_terminal_2_2024.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2024",
+  "time": "2:30 Hours",
+  "title": "Physics - Terminal Exam 2 (FORM5 2024)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 107,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the principles, theories and concepts of current electricity (direct and alternating current and electrical networks)",
+          "text": "How does 'Explain the principles, theories and concepts of current electricity (direct and alternating current and electrical networks)' relate to sustainable development? - with diagram",
+          "competence": "Explain the principles, theories and concepts of current ele"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Conduct a project in Physics",
+          "text": "Outline the procedures involved in 'Conduct a project in Physics'. - with diagram",
+          "competence": "Conduct a project in Physics"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Law of Motion.",
+          "text": "Discuss the factors influencing 'Law of Motion.'. - with diagram",
+          "competence": "Law of Motion."
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "explain the sun as a source of energy",
+          "text": "Examine the advantages and disadvantages of 'explain the sun as a source of energy'.",
+          "competence": "explain the sun as a source of energy"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "identify the different kinds of simple machines",
+          "text": "Compare and contrast 'identify the different kinds of simple machines' with related concepts. - locally",
+          "competence": "identify the different kinds of simple machines"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "explain the causes of ocean tides",
+          "text": "Discuss the challenges facing 'explain the causes of ocean tides' in Tanzania and propose solutions. - locally",
+          "competence": "explain the causes of ocean tides"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Capillarity",
+          "text": "Discuss the factors influencing 'Capillarity'. - with example",
+          "competence": "Capillarity"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Projection Lantern",
+          "text": "Outline the procedures involved in 'Projection Lantern'. - with example",
+          "competence": "Projection Lantern"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "determine the equivalent resistance of more than two resistors in series and parallel",
+          "text": "Outline the procedures involved in 'determine the equivalent resistance of more than two resistors in series and parallel'. - with example",
+          "competence": "determine the equivalent resistance of more than two resisto"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "measure atmospheric pressure",
+          "text": "How does 'measure atmospheric pressure' relate to sustainable development? - locally",
+          "competence": "measure atmospheric pressure"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Sulphuric acid",
+          "text": "Evaluate the role of 'Sulphuric acid' in national development.",
+          "competence": "Sulphuric acid"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "describe the principle of measurement of earthquake; and",
+          "text": "Outline the procedures involved in 'describe the principle of measurement of earthquake; and'.",
+          "competence": "describe the principle of measurement of earthquake; and"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "state the principle of conservation of linear momentum",
+          "text": "Describe the process of 'state the principle of conservation of linear momentum' step by step. - with example",
+          "competence": "state the principle of conservation of linear momentum"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "explain the concept of rays and beam of light",
+          "text": "Analyse the causes and effects of 'explain the concept of rays and beam of light'.",
+          "competence": "explain the concept of rays and beam of light"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 3,
+          "topic": "explain the occurrence of global warming; and",
+          "text": "Discuss the factors influencing 'explain the occurrence of global warming; and'. - with example",
+          "competence": "explain the occurrence of global warming; and"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Surface Tension",
+          "text": "Describe the process of 'Surface Tension' step by step. - with example",
+          "competence": "Surface Tension"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "distinguish regular from irregular relfection of light",
+          "text": "What are the characteristics of 'distinguish regular from irregular relfection of light'? - with diagram",
+          "competence": "distinguish regular from irregular relfection of light"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "determine the acceleration of a body; and",
+          "text": "Outline the procedures involved in 'determine the acceleration of a body; and'. - locally",
+          "competence": "determine the acceleration of a body; and"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "identify good and bad conductors of heat",
+          "text": "Examine the advantages and disadvantages of 'identify good and bad conductors of heat'. - locally",
+          "competence": "identify good and bad conductors of heat"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "construct a simple projection lantern",
+          "text": "Discuss the factors influencing 'construct a simple projection lantern'. - with example",
+          "competence": "construct a simple projection lantern"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Concept of Temperature",
+          "text": "Explain the concept of 'Concept of Temperature' with examples relevant to Tanzania. - with example",
+          "competence": "Concept of Temperature"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "describe the structure and mode of action of the X-ray tube",
+          "text": "Compare and contrast 'describe the structure and mode of action of the X-ray tube' with related concepts. - locally",
+          "competence": "describe the structure and mode of action of the X-ray tube"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "water and Kerosene",
+          "text": "Discuss the challenges facing 'water and Kerosene' in Tanzania and propose solutions.",
+          "competence": "water and Kerosene"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "describe methods of producing artiifcial radioactive isotopes; and",
+          "text": "Explain the relationship between 'describe methods of producing artiifcial radioactive isotopes; and' and its environment.",
+          "competence": "describe methods of producing artiifcial radioactive isotope"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "measure accurately the temperature of a body",
+          "text": "Define 'measure accurately the temperature of a body' and discuss its importance in everyday life.",
+          "competence": "measure accurately the temperature of a body"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the principles, theories and concepts of current electricity (direct and alternating current and electrical networks)",
+    "Conduct a project in Physics",
+    "Law of Motion.",
+    "explain the sun as a source of energy",
+    "identify the different kinds of simple machines",
+    "explain the causes of ocean tides",
+    "Capillarity",
+    "Projection Lantern",
+    "determine the equivalent resistance of more than two resistors in series and parallel",
+    "measure atmospheric pressure"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

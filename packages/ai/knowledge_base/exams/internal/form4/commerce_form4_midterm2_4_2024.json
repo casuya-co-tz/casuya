@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form4_midterm2_4_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 2 Exam 4 (FORM4 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 69,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Sole Proprietorship",
+          "text": "Describe the main features of 'Sole Proprietorship'.",
+          "competence": "Sole Proprietorship"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Insurance",
+          "text": "Explain the concept of 'Insurance' with examples relevant to Tanzania. - with diagram",
+          "competence": "Insurance"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Marketing Mix",
+          "text": "Discuss the challenges facing 'Marketing Mix' in Tanzania and propose solutions. - with example",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Advertisement",
+          "text": "Describe the main features of 'Advertisement'. - with diagram",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain marketing mix",
+          "text": "Outline the procedures involved in 'Explain marketing mix'.",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain sole proprietorship",
+          "text": "Analyse the causes and effects of 'Explain sole proprietorship'. - with example",
+          "competence": "Explain sole proprietorship"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Sources of Business Finance",
+          "text": "Define 'Sources of Business Finance' and discuss its importance in everyday life.",
+          "competence": "Sources of Business Finance"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain advertisement",
+          "text": "Outline the procedures involved in 'Explain advertisement'. - with example",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Concept of Commerce",
+          "text": "Discuss the challenges facing 'Concept of Commerce' in Tanzania and propose solutions. - with example",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain taxation",
+          "text": "Describe the main features of 'Explain taxation'.",
+          "competence": "Explain taxation"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Market and Marketing",
+          "text": "Evaluate the role of 'Market and Marketing' in national development. - with example",
+          "competence": "Market and Marketing"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Companies",
+          "text": "Explain the concept of 'Companies' with examples relevant to Tanzania.",
+          "competence": "Companies"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Transport",
+          "text": "Describe the main features of 'Transport'. - with diagram",
+          "competence": "Transport"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain aids to trade",
+          "text": "Compare and contrast 'Explain aids to trade' with related concepts.",
+          "competence": "Explain aids to trade"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Warehousing",
+          "text": "Evaluate the role of 'Warehousing' in national development. - with diagram",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain sources of business finance",
+          "text": "Define 'Explain sources of business finance' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Aids to Trade",
+          "text": "Outline the procedures involved in 'Aids to Trade'. - with example",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain stock control",
+          "text": "Define 'Explain stock control' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Production",
+          "text": "Examine the advantages and disadvantages of 'Production'.",
+          "competence": "Production"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain market and marketing",
+          "text": "Describe the main features of 'Explain market and marketing'.",
+          "competence": "Explain market and marketing"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Sole Proprietorship",
+    "Insurance",
+    "Marketing Mix",
+    "Advertisement",
+    "Explain marketing mix",
+    "Explain sole proprietorship",
+    "Sources of Business Finance",
+    "Explain advertisement",
+    "Concept of Commerce",
+    "Explain taxation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

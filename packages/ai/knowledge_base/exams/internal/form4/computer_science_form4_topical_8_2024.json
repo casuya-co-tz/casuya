@@ -1,0 +1,121 @@
+{
+  "filename": "computer_science_form4_topical_8_2024.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Computer Science - Topical Test 8 (FORM4 2024): Explain database concepts",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain database concepts",
+          "text": "Evaluate the role of 'Explain database concepts' in national development. - with example",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain database concepts",
+          "text": "Examine the advantages and disadvantages of 'Explain database concepts'. - with diagram",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Database Concepts",
+          "text": "Describe the main features of 'Database Concepts'. - with example",
+          "competence": "Database Concepts"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain database concepts",
+          "text": "With examples, illustrate how 'Explain database concepts' is applied in the community. - with diagram",
+          "competence": "Explain database concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain database concepts",
+          "text": "Examine the advantages and disadvantages of 'Explain database concepts'. - with example",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain database concepts",
+          "text": "Describe the main features of 'Explain database concepts'. - with diagram",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Database Concepts",
+          "text": "Describe the main features of 'Database Concepts'.",
+          "competence": "Database Concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Database Concepts",
+          "text": "Outline the procedures involved in 'Database Concepts'.",
+          "competence": "Database Concepts"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain database concepts",
+          "text": "Define 'Explain database concepts' and discuss its importance in everyday life. - with example",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain database concepts",
+          "text": "Define 'Explain database concepts' and discuss its importance in everyday life.",
+          "competence": "Explain database concepts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain database concepts",
+    "Database Concepts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

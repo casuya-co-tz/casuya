@@ -1,0 +1,209 @@
+{
+  "filename": "computer_science_form2_midterm1_2_2025.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Computer Science - Midterm 1 Exam 2 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 104,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain introduction to programming",
+          "text": "Define 'Explain introduction to programming' and discuss its importance in everyday life. - with example",
+          "competence": "Explain introduction to programming"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Data Processing",
+          "text": "Discuss the challenges facing 'Data Processing' in Tanzania and propose solutions.",
+          "competence": "Data Processing"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain algorithm and flowchart",
+          "text": "Discuss the challenges facing 'Explain algorithm and flowchart' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain algorithm and flowchart"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Database Concepts",
+          "text": "Discuss the challenges facing 'Database Concepts' in Tanzania and propose solutions. - with example",
+          "competence": "Database Concepts"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Computer Software",
+          "text": "With examples, illustrate how 'Computer Software' is applied in the community. - with diagram",
+          "competence": "Computer Software"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain computer hardware",
+          "text": "Outline the procedures involved in 'Explain computer hardware'.",
+          "competence": "Explain computer hardware"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain spreadsheet concepts",
+          "text": "Evaluate the role of 'Explain spreadsheet concepts' in national development. - with diagram",
+          "competence": "Explain spreadsheet concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain data processing",
+          "text": "Define 'Explain data processing' and discuss its importance in everyday life.",
+          "competence": "Explain data processing"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Introduction to Programming",
+          "text": "With examples, illustrate how 'Introduction to Programming' is applied in the community. - with example",
+          "competence": "Introduction to Programming"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Internet Services",
+          "text": "Outline the procedures involved in 'Internet Services'.",
+          "competence": "Internet Services"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain internet services",
+          "text": "With examples, illustrate how 'Explain internet services' is applied in the community.",
+          "competence": "Explain internet services"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Algorithm and Flowchart",
+          "text": "Examine the advantages and disadvantages of 'Algorithm and Flowchart'. - with example",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain document creation",
+          "text": "Outline the procedures involved in 'Explain document creation'. - with diagram",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Computer Basics",
+          "text": "Explain the concept of 'Computer Basics' with examples relevant to Tanzania. - with diagram",
+          "competence": "Computer Basics"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain computer software",
+          "text": "Examine the advantages and disadvantages of 'Explain computer software'. - with example",
+          "competence": "Explain computer software"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain computer basics",
+          "text": "Analyse the causes and effects of 'Explain computer basics'. - with diagram",
+          "competence": "Explain computer basics"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Computer Security",
+          "text": "Discuss the challenges facing 'Computer Security' in Tanzania and propose solutions. - with diagram",
+          "competence": "Computer Security"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain computer networks",
+          "text": "Describe the main features of 'Explain computer networks'. - with diagram",
+          "competence": "Explain computer networks"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain computer security",
+          "text": "Define 'Explain computer security' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain computer security"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Document Creation",
+          "text": "Compare and contrast 'Document Creation' with related concepts. - with example",
+          "competence": "Document Creation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain introduction to programming",
+    "Data Processing",
+    "Explain algorithm and flowchart",
+    "Database Concepts",
+    "Computer Software",
+    "Explain computer hardware",
+    "Explain spreadsheet concepts",
+    "Explain data processing",
+    "Introduction to Programming",
+    "Internet Services"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

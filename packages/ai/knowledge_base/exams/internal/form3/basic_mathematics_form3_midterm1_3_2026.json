@@ -1,0 +1,209 @@
+{
+  "filename": "basic_mathematics_form3_midterm1_3_2026.json",
+  "subject": "Basic Mathematics",
+  "subject_slug": "basic_mathematics",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Basic Mathematics - Midterm 1 Exam 3 (FORM3 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 83,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Angles",
+          "text": "Describe the main features of 'Angles'.",
+          "competence": "Angles"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain angles",
+          "text": "Analyse the causes and effects of 'Explain angles'. - with diagram",
+          "competence": "Explain angles"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain whole numbers",
+          "text": "Describe the main features of 'Explain whole numbers'.",
+          "competence": "Explain whole numbers"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Whole Numbers",
+          "text": "Analyse the causes and effects of 'Whole Numbers'. - with example",
+          "competence": "Whole Numbers"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Sets",
+          "text": "Outline the procedures involved in 'Sets'.",
+          "competence": "Sets"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Fractions",
+          "text": "Examine the advantages and disadvantages of 'Fractions'. - with example",
+          "competence": "Fractions"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Probability",
+          "text": "Define 'Probability' and discuss its importance in everyday life. - with example",
+          "competence": "Probability"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain data collection",
+          "text": "With examples, illustrate how 'Explain data collection' is applied in the community. - with diagram",
+          "competence": "Explain data collection"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain circles",
+          "text": "Analyse the causes and effects of 'Explain circles'. - with diagram",
+          "competence": "Explain circles"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Mensuration",
+          "text": "Analyse the causes and effects of 'Mensuration'.",
+          "competence": "Mensuration"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain mensuration",
+          "text": "With examples, illustrate how 'Explain mensuration' is applied in the community. - with diagram",
+          "competence": "Explain mensuration"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain decimals",
+          "text": "Examine the advantages and disadvantages of 'Explain decimals'. - with example",
+          "competence": "Explain decimals"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain probability",
+          "text": "Outline the procedures involved in 'Explain probability'. - with diagram",
+          "competence": "Explain probability"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain algebraic expressions",
+          "text": "Define 'Explain algebraic expressions' and discuss its importance in everyday life. - with example",
+          "competence": "Explain algebraic expressions"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain fractions",
+          "text": "Explain the concept of 'Explain fractions' with examples relevant to Tanzania.",
+          "competence": "Explain fractions"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain sets",
+          "text": "Explain the concept of 'Explain sets' with examples relevant to Tanzania.",
+          "competence": "Explain sets"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Equations",
+          "text": "Examine the advantages and disadvantages of 'Equations'. - with example",
+          "competence": "Equations"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Algebraic Expressions",
+          "text": "Evaluate the role of 'Algebraic Expressions' in national development. - with example",
+          "competence": "Algebraic Expressions"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain percentages",
+          "text": "Discuss the challenges facing 'Explain percentages' in Tanzania and propose solutions.",
+          "competence": "Explain percentages"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Data Collection",
+          "text": "Define 'Data Collection' and discuss its importance in everyday life. - with diagram",
+          "competence": "Data Collection"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Angles",
+    "Explain angles",
+    "Explain whole numbers",
+    "Whole Numbers",
+    "Sets",
+    "Fractions",
+    "Probability",
+    "Explain data collection",
+    "Explain circles",
+    "Mensuration"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

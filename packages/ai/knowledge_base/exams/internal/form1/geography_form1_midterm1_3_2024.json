@@ -1,0 +1,209 @@
+{
+  "filename": "geography_form1_midterm1_3_2024.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Geography - Midterm 1 Exam 3 (FORM1 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 82,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Conduct a project in Geography",
+          "text": "With examples, illustrate how 'Conduct a project in Geography' is applied in the community.",
+          "competence": "Conduct a project in Geography"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and Earth systems",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an understanding of the origin and the structure of the Earth and Earth systems'. - with diagram",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
+          "text": "Outline the procedures involved in 'Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica'. - with diagram",
+          "competence": "Describe the major climatic regions of the world (tropical, "
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
+          "text": "Examine the advantages and disadvantages of 'Explain the concept and scope of Geography (branches, importance and relationship with other discipline'.",
+          "competence": "Explain the concept and scope of Geography (branches, import"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the basic techniques in land surveying",
+          "text": "Assess the impact of 'Demonstrate an understanding of the basic techniques in land surveying' on society. - locally",
+          "competence": "Demonstrate an understanding of the basic techniques in land"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Examine the advantages and disadvantages of 'Identify a geographical challenge in society and design a project to address it'. - with example",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use the principles of map interpretation (visualizing symbols, signs, understanding themes, direction and association) to infer geographical features",
+          "text": "Describe the main features of 'Use the principles of map interpretation (visualizing symbols, signs, understanding themes, direction and association) to infer geographical features'.",
+          "competence": "Use the principles of map interpretation (visualizing symbol"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes",
+          "text": "With examples, illustrate how 'Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes' is applied in the community. - with example",
+          "competence": "Describe the internal forces responsible for the formation o"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+          "text": "Define 'Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the Earth (origin, shape, size, position and moveme"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an Advanced understanding of concepts and theories explaining the structure of the Earth and the interactions of earth systems",
+          "text": "Explain the concept of 'Demonstrate an Advanced understanding of concepts and theories explaining the structure of the Earth and the interactions of earth systems' with examples relevant to Tanzania.",
+          "competence": "Demonstrate an Advanced understanding of concepts and theori"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe rocks and the rock cycle (meaning, characteristics, types, formation, weathering and soil formation)",
+          "text": "Describe the main features of 'Describe rocks and the rock cycle (meaning, characteristics, types, formation, weathering and soil formation)'. - with diagram",
+          "competence": "Describe rocks and the rock cycle (meaning, characteristics,"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl",
+          "text": "Outline the procedures involved in 'Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl'. - locally",
+          "competence": "Describe the geographical factors that influence the spatial"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)",
+          "text": "Describe the process of 'Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)' step by step.",
+          "competence": "Carry out some Advanced surveying activities (plane table, p"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the relationship between geography, environmental health, human settlements and economic activities",
+          "text": "Compare and contrast 'Demonstrate an understanding of the relationship between geography, environmental health, human settlements and economic activities' with related concepts. - locally",
+          "competence": "Demonstrate an understanding of the relationship between geo"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Compare and contrast 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' with related concepts. - locally",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate mastery of research skills in Geography",
+          "text": "How does 'Demonstrate mastery of research skills in Geography' relate to sustainable development?",
+          "competence": "Demonstrate mastery of research skills in Geography"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the major features of the Earth surface",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of the major features of the Earth surface' in Tanzania and propose solutions. - with diagram",
+          "competence": "Demonstrate an understanding of the major features of the Ea"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Complete and submit for assessment the project started in Form Five",
+          "text": "Describe the process of 'Complete and submit for assessment the project started in Form Five' step by step.",
+          "competence": "Complete and submit for assessment the project started in Fo"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Interpret maps and photographs",
+          "text": "Describe the process of 'Interpret maps and photographs' step by step.",
+          "competence": "Interpret maps and photographs"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the relationship between relief, climate and natural vegetation",
+          "text": "How does 'Demonstrate an understanding of the relationship between relief, climate and natural vegetation' relate to sustainable development?",
+          "competence": "Demonstrate an understanding of the relationship between rel"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Conduct a project in Geography",
+    "Demonstrate an understanding of the origin and the structure of the Earth and Earth systems",
+    "Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
+    "Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
+    "Demonstrate an understanding of the basic techniques in land surveying",
+    "Identify a geographical challenge in society and design a project to address it",
+    "Use the principles of map interpretation (visualizing symbols, signs, understanding themes, direction and association) to infer geographical features",
+    "Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes",
+    "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+    "Demonstrate an Advanced understanding of concepts and theories explaining the structure of the Earth and the interactions of earth systems"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

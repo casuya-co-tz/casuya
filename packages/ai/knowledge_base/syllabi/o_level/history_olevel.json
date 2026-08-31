@@ -1,0 +1,236 @@
+{
+  "subject_code": "012",
+  "subject_name": "History",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of African history before colonialism",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the concept of History and sources of historical information",
+          "competence_code": "1.1",
+          "lessons": []
+        },
+        {
+          "topic_name": "Demonstrate an understanding of theories of the origin of human beings",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "HIS-F1-U1-L1",
+              "title": "Describe the theories of the origin of human beings",
+              "markdown_content": "## a) Describe the theories of the origin of human beings",
+              "page": 15
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L2",
+              "title": "Describe the stages of human evolution and their technological Ages",
+              "markdown_content": "## b) Describe the stages of human evolution and their technological Ages",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the economic, political, social and technological development of pre-colonial Africa",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "HIS-F1-U1-L3",
+              "title": "Describe different modes of production in pre-colonial Africa",
+              "markdown_content": "## a) Describe different modes of production in pre-colonial Africa",
+              "page": 17
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L4",
+              "title": "Explain different economic activities and their impact on pre-colonial African societies",
+              "markdown_content": "## b) Explain different economic activities and their impact on pre-colonial African societies",
+              "page": 18
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L5",
+              "title": "Describe social-political organisations and education in pre-colonial African societies",
+              "markdown_content": "## c) Describe social-political organisations and education in pre-colonial African societies",
+              "page": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of African history before colonialism",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of interactions among African societies during the pre-colonial period",
+          "competence_code": "1.1",
+          "lessons": []
+        },
+        {
+          "topic_name": ". Demonstrate an understanding of the early contacts among the people of Africa, the Middle East, the Far East and Europe from the 1st Century to the 19th Century",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "HIS-F1-U1-L6",
+              "title": "Describe the early contacts between African societies and the Middle East, Far East and Europe from the 1st Century up to the 15th Century (conditions and consequence",
+              "markdown_content": "## a) Describe the early contacts between African societies and the Middle East, Far East and Europe from the 1st Century up to the 15th Century (conditions and consequence",
+              "page": 20
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L7",
+              "title": "Explain the contacts between African societies and the Portuguese, French, Dutch and British from the 15th Century up to the 18th Century",
+              "markdown_content": "## b) Explain the contacts between African societies and the Portuguese, French, Dutch and British from the 15th Century up to the 18th Century",
+              "page": 21
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L8",
+              "title": "Describe the origin, development and effects of the slave trade from the 15th Century to the 19th Century",
+              "markdown_content": "## c) Describe the origin, development and effects of the slave trade from the 15th Century to the 19th Century",
+              "page": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the relationship between capitalism and Africa",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the development of capitalism and its impact on Africa",
+          "competence_code": "1.1",
+          "lessons": []
+        },
+        {
+          "topic_name": "Demonstrate an understanding of colonial systems in Africa",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "HIS-F1-U1-L9",
+              "title": "Discuss colonial administrative systems in Africa (German, French, British and Portugues",
+              "markdown_content": "## a) Discuss colonial administrative systems in Africa (German, French, British and Portugues",
+              "page": 23
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L10",
+              "title": "Discuss colonial economic systems in Africa (Establishment, characteristics, sectors, labour issue",
+              "markdown_content": "## b) Discuss colonial economic systems in Africa (Establishment, characteristics, sectors, labour issue",
+              "page": 24
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L11",
+              "title": "Assess the nature and patterns of colonial social services in Africa",
+              "markdown_content": "## c) Assess the nature and patterns of colonial social services in Africa",
+              "page": 24
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L12",
+              "title": "Relate colonial economic, political, infrastructure, and education systems in Africa with the current African systems",
+              "markdown_content": "## d) Relate colonial economic, political, infrastructure, and education systems in Africa with the current African systems",
+              "page": 25
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the history of nationalist movements in Africa",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "HIS-F1-U1-L13",
+              "title": "Describe nationalist movements in Africa",
+              "markdown_content": "## a) Describe nationalist movements in Africa",
+              "page": 25
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L14",
+              "title": "Assess the rise of nationalist movements in Africa",
+              "markdown_content": "## b) Assess the rise of nationalist movements in Africa",
+              "page": 26
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L15",
+              "title": "Appraise the lessons drawn from the nationalist movements in Africa",
+              "markdown_content": "## c) Appraise the lessons drawn from the nationalist movements in Africa",
+              "page": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the history of nation- building in post-colonial Africa",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of the history of nation-building in post-colonial Africa",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "HIS-F1-U1-L16",
+              "title": "Describe the concept and origin of nation-building in Africa",
+              "markdown_content": "## a) Describe the concept and origin of nation-building in Africa",
+              "page": 27
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L17",
+              "title": "Evaluate the strategies used in nation- building",
+              "markdown_content": "## b) Evaluate the strategies used in nation- building",
+              "page": 27
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the successes and challenges of nation-building in post-colonial Africa",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "HIS-F1-U1-L18",
+              "title": "Appraise the achievements and challenges of nation- building in post-colonial Africa",
+              "markdown_content": "## a) Appraise the achievements and challenges of nation- building in post-colonial Africa",
+              "page": 28
+            },
+            {
+              "lesson_id": "HIS-F1-U1-L19",
+              "title": "Design and carry out a project on nation-building between the 1960s and 1970s (use one African country as a case stud",
+              "markdown_content": "## b) Design and carry out a project on nation-building between the 1960s and 1970s (use one African country as a case stud",
+              "page": 29
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate mastery of the history of Africa’s participation in regional and international affairs",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the regional integration in Africa",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "HIS-F1-U2-L20",
+              "title": "Describe the origin and development of the Organisation of African Unity (OAU/ African Union (AU) and economic regional groupings in Africa",
+              "markdown_content": "## a) Describe the origin and development of the Organisation of African Unity (OAU/ African Union (AU) and economic regional groupings in Africa",
+              "page": 30
+            },
+            {
+              "lesson_id": "HIS-F1-U2-L21",
+              "title": "Assess the performance of continental and regional integration efforts in Africa",
+              "markdown_content": "## b) Assess the performance of continental and regional integration efforts in Africa",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the history of Africa’s participation in the United Nations Organisation",
+          "competence_code": "2.2",
+          "lessons": []
+        }
+      ]
+    }
+  ]
+}

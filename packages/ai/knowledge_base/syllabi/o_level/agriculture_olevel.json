@@ -1,0 +1,289 @@
+{
+  "subject_code": "034",
+  "subject_name": "Agriculture",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "INTRODUCTION TO AGRICULTURE",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Concept of Agriculture",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "034-F1-U1-L1",
+              "title": "Explain concept of agriculture",
+              "markdown_content": "## Explain concept of agriculture",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Importance of Agriculture",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "034-F1-U1-L2",
+              "title": "Explain importance of agriculture",
+              "markdown_content": "## Explain importance of agriculture",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Branches of Agriculture",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "034-F1-U1-L3",
+              "title": "Explain branches of agriculture",
+              "markdown_content": "## Explain branches of agriculture",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "PRINCIPLES OF CROP PRODUCTION",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Crop Classification",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "034-F1-U2-L1",
+              "title": "Explain crop classification",
+              "markdown_content": "## Explain crop classification",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Crop Production Practices",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "034-F1-U2-L2",
+              "title": "Explain crop production practices",
+              "markdown_content": "## Explain crop production practices",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Vegetable Production",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "034-F1-U2-L3",
+              "title": "Explain vegetable production",
+              "markdown_content": "## Explain vegetable production",
+              "page": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "ANIMAL HUSBANDRY",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Animal Classification",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "034-F2-U3-L1",
+              "title": "Explain animal classification",
+              "markdown_content": "## Explain animal classification",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Livestock Management",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "034-F2-U3-L2",
+              "title": "Explain livestock management",
+              "markdown_content": "## Explain livestock management",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Animal Nutrition",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "034-F2-U3-L3",
+              "title": "Explain animal nutrition",
+              "markdown_content": "## Explain animal nutrition",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Animal Health",
+          "competence_code": "3.4",
+          "lessons": [
+            {
+              "lesson_id": "034-F2-U3-L4",
+              "title": "Explain animal health",
+              "markdown_content": "## Explain animal health",
+              "page": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "SOIL SCIENCE",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Soil Formation",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "034-F2-U4-L1",
+              "title": "Explain soil formation",
+              "markdown_content": "## Explain soil formation",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Soil Properties",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "034-F2-U4-L2",
+              "title": "Explain soil properties",
+              "markdown_content": "## Explain soil properties",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Soil Fertility",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "034-F2-U4-L3",
+              "title": "Explain soil fertility",
+              "markdown_content": "## Explain soil fertility",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Soil Conservation",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "034-F2-U4-L4",
+              "title": "Explain soil conservation",
+              "markdown_content": "## Explain soil conservation",
+              "page": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "AGRICULTURAL ECONOMICS",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Farm Records",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "034-F3-U5-L1",
+              "title": "Explain farm records",
+              "markdown_content": "## Explain farm records",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Agricultural Marketing",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "034-F3-U5-L2",
+              "title": "Explain agricultural marketing",
+              "markdown_content": "## Explain agricultural marketing",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Farm Management",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "034-F3-U5-L3",
+              "title": "Explain farm management",
+              "markdown_content": "## Explain farm management",
+              "page": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "PASTURE AND RANGE MANAGEMENT",
+      "form": 4,
+      "topics": [
+        {
+          "topic_name": "Pasture Establishment",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "034-F4-U6-L1",
+              "title": "Explain pasture establishment",
+              "markdown_content": "## Explain pasture establishment",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Range Management",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "034-F4-U6-L2",
+              "title": "Explain range management",
+              "markdown_content": "## Explain range management",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Forage Conservation",
+          "competence_code": "6.3",
+          "lessons": [
+            {
+              "lesson_id": "034-F4-U6-L3",
+              "title": "Explain forage conservation",
+              "markdown_content": "## Explain forage conservation",
+              "page": 16
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

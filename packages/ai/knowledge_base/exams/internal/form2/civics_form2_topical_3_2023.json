@@ -1,0 +1,121 @@
+{
+  "filename": "civics_form2_topical_3_2023.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Civics - Topical Test 3 (FORM2 2023): Explain interpersonal relationships",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 42,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain interpersonal relationships",
+          "text": "Analyse the causes and effects of 'Explain interpersonal relationships'.",
+          "competence": "Explain interpersonal relationships"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Local Government",
+          "text": "Compare and contrast 'Local Government' with related concepts. - with diagram",
+          "competence": "Local Government"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain interpersonal relationships",
+          "text": "Explain the concept of 'Explain interpersonal relationships' with examples relevant to Tanzania. - with example",
+          "competence": "Explain interpersonal relationships"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain interpersonal relationships",
+          "text": "Discuss the challenges facing 'Explain interpersonal relationships' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain interpersonal relationships"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Local Government",
+          "text": "Examine the advantages and disadvantages of 'Local Government'.",
+          "competence": "Local Government"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Local Government",
+          "text": "Outline the procedures involved in 'Local Government'.",
+          "competence": "Local Government"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Local Government",
+          "text": "Discuss the challenges facing 'Local Government' in Tanzania and propose solutions. - with example",
+          "competence": "Local Government"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Local Government",
+          "text": "Describe the main features of 'Local Government'. - with example",
+          "competence": "Local Government"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain interpersonal relationships",
+          "text": "Define 'Explain interpersonal relationships' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain interpersonal relationships"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain interpersonal relationships",
+          "text": "Define 'Explain interpersonal relationships' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain interpersonal relationships"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain interpersonal relationships",
+    "Local Government"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

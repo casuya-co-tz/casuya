@@ -1,0 +1,203 @@
+{
+  "subject_code": "014",
+  "subject_name": "Basic Applied Mathematics",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Use applied mathematical knowledge and skills",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": ". Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BAS-FV-U1-L1",
+              "title": "Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)",
+              "markdown_content": "## a) Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)",
+              "periods": "25",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Use functions and calculus to solve problems in different contexts",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "BAS-FV-U1-L2",
+              "title": "Explore some advanced tenets of functions (Properties, Domain and Range and graphs of cubic functions, rational functions with a constant numerator and a linear equation in the denominator, logarithmic, and exponential functions)",
+              "markdown_content": "## a) Explore some advanced tenets of functions (Properties, Domain and Range and graphs of cubic functions, rational functions with a constant numerator and a linear equation in the denominator, logarithmic, and exponential functions)",
+              "periods": "88",
+              "page": 14
+            },
+            {
+              "lesson_id": "BAS-FV-U1-L3",
+              "title": "Solve real life problems involving growth and decay",
+              "markdown_content": "## b) Solve real life problems involving growth and decay",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "BAS-FV-U1-L4",
+              "title": "Explore the basic tenets of calculus (Differentiation: first principles, power rule, chain rule, product rule, and quotient rule, Integration: substitution method)",
+              "markdown_content": "## c) Explore the basic tenets of calculus (Differentiation: first principles, power rule, chain rule, product rule, and quotient rule, Integration: substitution method)",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "BAS-FV-U1-L5",
+              "title": "Use differentiation methods to solve real life problems (maximum and minimum, curve sketching, rate of change",
+              "markdown_content": "## d) Use differentiation methods to solve real life problems (maximum and minimum, curve sketching, rate of change",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "BAS-FV-U1-L6",
+              "title": "marginal cost and marginal revenue functions)",
+              "markdown_content": "## a) marginal cost and marginal revenue functions)",
+              "periods": "",
+              "page": 16
+            },
+            {
+              "lesson_id": "BAS-FV-U1-L7",
+              "title": "Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)",
+              "markdown_content": "## e) Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)",
+              "periods": "",
+              "page": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Use algebra, set theory, and logic to solve problems in different contexts",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Apply knowledge of sequences and series in different contexts",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BAS-FV-U2-L8",
+              "title": "Use sequences and series to determine simple and compound interest",
+              "markdown_content": "## a) Use sequences and series to determine simple and compound interest",
+              "periods": "27",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Apply knowledge of algebra and number theory in different contexts",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "BAS-FV-U2-L9",
+              "title": "Explore some advanced tenets of algebra (solve simultaneous equations of one linear and one quadratic equation algebraically and",
+              "markdown_content": "## a) Explore some advanced tenets of algebra (solve simultaneous equations of one linear and one quadratic equation algebraically and",
+              "periods": "",
+              "page": 17
+            },
+            {
+              "lesson_id": "BAS-FV-U2-L10",
+              "title": "graphically, graphs of direct and inverse variation)",
+              "markdown_content": "## a) graphically, graphs of direct and inverse variation)",
+              "periods": "",
+              "page": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Use applied mathematical knowledge and skills",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BAS-FVI-U1-L11",
+              "title": "Explore some advanced tenets of coordinate geometry (area of a triangle, angle between two lines and perpendicular distance from a point to a line)",
+              "markdown_content": "## a) Explore some advanced tenets of coordinate geometry (area of a triangle, angle between two lines and perpendicular distance from a point to a line)",
+              "periods": "48",
+              "page": 19
+            },
+            {
+              "lesson_id": "BAS-FVI-U1-L12",
+              "title": "Explore some advanced tenets of vectors (unit vector, scalar",
+              "markdown_content": "## b) Explore some advanced tenets of vectors (unit vector, scalar",
+              "periods": "",
+              "page": 19
+            },
+            {
+              "lesson_id": "BAS-FVI-U1-L13",
+              "title": "product, cross product, angle between two vectors and work done by a constant force, derivative and integration of vector functions)",
+              "markdown_content": "## a) product, cross product, angle between two vectors and work done by a constant force, derivative and integration of vector functions)",
+              "periods": "",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Use statistics to solve problems in different contexts",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "BAS-FVI-U1-L14",
+              "title": "Explore some advanced tenets of statistics (measure of central tendency and dispersion:",
+              "markdown_content": "## a) Explore some advanced tenets of statistics (measure of central tendency and dispersion:",
+              "periods": "38",
+              "page": 20
+            },
+            {
+              "lesson_id": "BAS-FVI-U1-L15",
+              "title": "calculate mean by the coding method, variance, standard deviation, quartiles, and percentiles)",
+              "markdown_content": "## a) calculate mean by the coding method, variance, standard deviation, quartiles, and percentiles)",
+              "periods": "",
+              "page": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Use algebra, set theory and logic to solve problems in different contexts",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Use set theory and logic in argumentation and decision making",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BAS-FVI-U2-L16",
+              "title": "Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)",
+              "markdown_content": "## a) Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)",
+              "periods": "54",
+              "page": 21
+            },
+            {
+              "lesson_id": "BAS-FVI-U2-L17",
+              "title": "Explore the basic tenets of logic (statements, connectives, truth table, arguments involving three propositions, electrical networks involving three propositions)",
+              "markdown_content": "## b) Explore the basic tenets of logic (statements, connectives, truth table, arguments involving three propositions, electrical networks involving three propositions)",
+              "periods": "",
+              "page": 22
+            },
+            {
+              "lesson_id": "BAS-FVI-U2-L18",
+              "title": "Use logic to analyse validity of arguments",
+              "markdown_content": "## c) Use logic to analyse validity of arguments",
+              "periods": "",
+              "page": 23
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

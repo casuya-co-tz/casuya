@@ -1,0 +1,289 @@
+{
+  "filename": "biology_form3_annual_1_2025.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2025",
+  "time": "3:00 Hours",
+  "title": "Biology - Annual Exam 1 (FORM3 2025)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 133,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "With examples, illustrate how 'Describe a cell (meaning,types, structures and function' is applied in the community.",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Explain the concept of 'Develop and carry out a simple research project in Biology' with examples relevant to Tanzania. - with diagram",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Compare and contrast 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' with related concepts.",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+          "text": "Compare and contrast 'Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)' with related concepts.",
+          "competence": "Describe the physiology of gaseous exchange and respiration "
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "With examples, illustrate how 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )' is applied in the community. - with diagram",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+          "text": "Discuss the challenges facing 'Investigate growth in flowering plants (hypogeal and epigeal germinatio' in Tanzania and propose solutions.",
+          "competence": "Investigate growth in flowering plants (hypogeal and epigeal"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Describe the main features of 'Investigate food nutrients in various food samples'.",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe coordination in plants (tropic, response",
+          "text": "Outline the procedures involved in 'Describe coordination in plants (tropic, response'.",
+          "competence": "Describe coordination in plants (tropic, response"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+          "text": "Analyse the causes and effects of 'Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)'.",
+          "competence": "Describe principles of inheritance in living organisms (here"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio",
+          "text": "Examine the advantages and disadvantages of 'Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio'.",
+          "competence": "Describe the mechanism of regulation in the human body (temp"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+          "text": "Analyse the causes and effects of 'Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)'.",
+          "competence": "Describe the distinctive characteristics of kingdoms, phyla/"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Perform investigations on the anatomy and physiology of living organisms",
+          "text": "Analyse the causes and effects of 'Perform investigations on the anatomy and physiology of living organisms'.",
+          "competence": "Perform investigations on the anatomy and physiology of livi"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+          "text": "Describe the main features of 'Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt'. - with example",
+          "competence": "Describe reproduction in humans (sexual reproduction in huma"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+          "text": "Examine the advantages and disadvantages of 'Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)'.",
+          "competence": "Explain growth process in plants (cell cycle, growth pattern"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Define 'Complete and submit a report for the research project started in Form Three' and discuss its importance in everyday life.",
+          "competence": "Complete and submit a report for the research project starte"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "Discuss the challenges facing 'Plan and execute in an independent biological investigation' in Tanzania and propose solutions. - with diagram",
+          "competence": "Plan and execute in an independent biological investigation"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Evaluate the role of 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline' in national development.",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "Evaluate the role of 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement' in national development. - with example",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Examine the advantages and disadvantages of 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms'. - with example",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Describe the main features of 'Prepare and present a report on cell and photosynthesis investigations'. - with example",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+          "text": "Examine the advantages and disadvantages of 'Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)'.",
+          "competence": "Explain the concept of ecology (methods of studying, biodive"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Describe the main features of 'Carry out microscopic observation of a cell'. - with example",
+          "competence": "Carry out microscopic observation of a cell"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "Examine the advantages and disadvantages of 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system'. - with example",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "text": "Describe the main features of 'Demonstrate an advanced understanding of concepts, theories and principles in Biology'. - with diagram",
+          "competence": "Demonstrate an advanced understanding of concepts, theories "
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+          "text": "Explain the concept of 'Describe nutrition in human and ruminants (nutrients, digestive system and processe' with examples relevant to Tanzania.",
+          "competence": "Describe nutrition in human and ruminants (nutrients, digest"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 4,
+          "topic": "theory, evidence of evolution, and speciation)",
+          "text": "Outline the procedures involved in 'theory, evidence of evolution, and speciation)'.",
+          "competence": "theory, evidence of evolution, and speciation)"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the mechanism of excretion in the human body (systems: organs, product",
+          "text": "Analyse the causes and effects of 'Describe the mechanism of excretion in the human body (systems: organs, product'. - with diagram",
+          "competence": "Describe the mechanism of excretion in the human body (syste"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Prepare and present results of biological investigations",
+          "text": "Explain the concept of 'Prepare and present results of biological investigations' with examples relevant to Tanzania. - with diagram",
+          "competence": "Prepare and present results of biological investigations"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Investigate the process of nervous coordination (reflex arc and knee jer",
+          "text": "Outline the procedures involved in 'Investigate the process of nervous coordination (reflex arc and knee jer'.",
+          "competence": "Investigate the process of nervous coordination (reflex arc "
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)",
+          "text": "Outline the procedures involved in 'Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)'. - with diagram",
+          "competence": "Describe the physiology of coordination (mechanism of transm"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe a cell (meaning,types, structures and function",
+    "Develop and carry out a simple research project in Biology",
+    "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+    "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+    "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+    "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+    "Investigate food nutrients in various food samples",
+    "Describe coordination in plants (tropic, response",
+    "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+    "Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

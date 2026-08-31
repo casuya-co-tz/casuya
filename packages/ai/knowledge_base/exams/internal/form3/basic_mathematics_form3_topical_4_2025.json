@@ -1,0 +1,121 @@
+{
+  "filename": "basic_mathematics_form3_topical_4_2025.json",
+  "subject": "Basic Mathematics",
+  "subject_slug": "basic_mathematics",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Basic Mathematics - Topical Test 4 (FORM3 2025): Explain percentages",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain percentages",
+          "text": "Explain the concept of 'Explain percentages' with examples relevant to Tanzania. - with example",
+          "competence": "Explain percentages"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain percentages",
+          "text": "Describe the main features of 'Explain percentages'. - with diagram",
+          "competence": "Explain percentages"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Sets",
+          "text": "Discuss the challenges facing 'Sets' in Tanzania and propose solutions.",
+          "competence": "Sets"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain percentages",
+          "text": "Discuss the challenges facing 'Explain percentages' in Tanzania and propose solutions.",
+          "competence": "Explain percentages"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain percentages",
+          "text": "Define 'Explain percentages' and discuss its importance in everyday life.",
+          "competence": "Explain percentages"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain percentages",
+          "text": "Evaluate the role of 'Explain percentages' in national development. - with diagram",
+          "competence": "Explain percentages"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Sets",
+          "text": "Examine the advantages and disadvantages of 'Sets'. - with example",
+          "competence": "Sets"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Sets",
+          "text": "Define 'Sets' and discuss its importance in everyday life.",
+          "competence": "Sets"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Sets",
+          "text": "Compare and contrast 'Sets' with related concepts. - with example",
+          "competence": "Sets"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain percentages",
+          "text": "Examine the advantages and disadvantages of 'Explain percentages'. - with example",
+          "competence": "Explain percentages"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain percentages",
+    "Sets"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

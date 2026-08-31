@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form2_topical_2_2025.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 2 (FORM2 2025): Kueleza dhana na miundo ya silabi z",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 46,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kueleza dhana na miundo ya silabi za Kiswahili",
+          "text": "Assess the impact of 'Kueleza dhana na miundo ya silabi za Kiswahili' on society. - with diagram",
+          "competence": "Kueleza dhana na miundo ya silabi za Kiswahili"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kueleza dhana na miundo ya silabi za Kiswahili",
+          "text": "Explain the relationship between 'Kueleza dhana na miundo ya silabi za Kiswahili' and its environment.",
+          "competence": "Kueleza dhana na miundo ya silabi za Kiswahili"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kueleza dhana na miundo ya silabi za Kiswahili",
+          "text": "Describe the process of 'Kueleza dhana na miundo ya silabi za Kiswahili' step by step.",
+          "competence": "Kueleza dhana na miundo ya silabi za Kiswahili"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kutofautisha lugha ya staha na isiyo ya staha",
+          "text": "Propose measures to improve 'Kutofautisha lugha ya staha na isiyo ya staha' in schools.",
+          "competence": "Kutofautisha lugha ya staha na isiyo ya staha"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kutofautisha lugha ya staha na isiyo ya staha",
+          "text": "Analyse the causes and effects of 'Kutofautisha lugha ya staha na isiyo ya staha'. - locally",
+          "competence": "Kutofautisha lugha ya staha na isiyo ya staha"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kutofautisha lugha ya staha na isiyo ya staha",
+          "text": "Explain the concept of 'Kutofautisha lugha ya staha na isiyo ya staha' with examples relevant to Tanzania. - with diagram",
+          "competence": "Kutofautisha lugha ya staha na isiyo ya staha"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kueleza dhana na miundo ya silabi za Kiswahili",
+          "text": "Discuss the factors influencing 'Kueleza dhana na miundo ya silabi za Kiswahili'.",
+          "competence": "Kueleza dhana na miundo ya silabi za Kiswahili"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kueleza dhana na miundo ya silabi za Kiswahili",
+          "text": "Compare and contrast 'Kueleza dhana na miundo ya silabi za Kiswahili' with related concepts. - locally",
+          "competence": "Kueleza dhana na miundo ya silabi za Kiswahili"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kutofautisha lugha ya staha na isiyo ya staha",
+          "text": "Evaluate the role of 'Kutofautisha lugha ya staha na isiyo ya staha' in national development.",
+          "competence": "Kutofautisha lugha ya staha na isiyo ya staha"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kutofautisha lugha ya staha na isiyo ya staha",
+          "text": "Analyse the causes and effects of 'Kutofautisha lugha ya staha na isiyo ya staha'. - with example",
+          "competence": "Kutofautisha lugha ya staha na isiyo ya staha"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kueleza dhana na miundo ya silabi za Kiswahili",
+    "Kutofautisha lugha ya staha na isiyo ya staha"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

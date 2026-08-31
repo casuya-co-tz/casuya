@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form2_topical_2_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 2 (FORM2 2025): Conduct a socio- cultural analysis ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Conduct a socio- cultural analysis of functional texts",
+          "text": "What are the characteristics of 'Conduct a socio- cultural analysis of functional texts'?",
+          "competence": "Conduct a socio- cultural analysis of functional texts"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts",
+          "text": "Evaluate the role of 'Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts' in national development.",
+          "competence": "Compare a variety of complex oral texts with appropriate pro"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Conduct a socio- cultural analysis of functional texts",
+          "text": "Discuss the challenges facing 'Conduct a socio- cultural analysis of functional texts' in Tanzania and propose solutions.",
+          "competence": "Conduct a socio- cultural analysis of functional texts"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Conduct a socio- cultural analysis of functional texts",
+          "text": "Assess the impact of 'Conduct a socio- cultural analysis of functional texts' on society.",
+          "competence": "Conduct a socio- cultural analysis of functional texts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts",
+          "text": "Examine the advantages and disadvantages of 'Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts'. - locally",
+          "competence": "Compare a variety of complex oral texts with appropriate pro"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Conduct a socio- cultural analysis of functional texts",
+          "text": "Describe the process of 'Conduct a socio- cultural analysis of functional texts' step by step.",
+          "competence": "Conduct a socio- cultural analysis of functional texts"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Conduct a socio- cultural analysis of functional texts",
+          "text": "Propose measures to improve 'Conduct a socio- cultural analysis of functional texts' in schools. - locally",
+          "competence": "Conduct a socio- cultural analysis of functional texts"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts",
+          "text": "Outline the procedures involved in 'Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts'.",
+          "competence": "Compare a variety of complex oral texts with appropriate pro"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts",
+          "text": "Describe the main features of 'Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts'. - with example",
+          "competence": "Compare a variety of complex oral texts with appropriate pro"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Conduct a socio- cultural analysis of functional texts",
+          "text": "Describe the process of 'Conduct a socio- cultural analysis of functional texts' step by step.",
+          "competence": "Conduct a socio- cultural analysis of functional texts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Conduct a socio- cultural analysis of functional texts",
+    "Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

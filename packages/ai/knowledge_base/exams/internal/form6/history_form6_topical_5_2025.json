@@ -1,0 +1,121 @@
+{
+  "filename": "history_form6_topical_5_2025.json",
+  "subject": "History",
+  "subject_slug": "history",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "History - Topical Test 5 (FORM6 2025): Demonstrate an understanding of the",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 42,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the concept of industrial revolution (meaning, processes and characteristics)",
+          "text": "Examine the advantages and disadvantages of 'Explain the concept of industrial revolution (meaning, processes and characteristics)'. - with diagram",
+          "competence": "Explain the concept of industrial revolution (meaning, proce"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the concept of industrial revolution (meaning, processes and characteristics)",
+          "text": "Compare and contrast 'Explain the concept of industrial revolution (meaning, processes and characteristics)' with related concepts.",
+          "competence": "Explain the concept of industrial revolution (meaning, proce"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century",
+          "text": "Explain the concept of 'Demonstrate an understanding of the history of the great wars of the 17th to 19th Century' with examples relevant to Tanzania. - locally",
+          "competence": "Demonstrate an understanding of the history of the great war"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century",
+          "text": "What are the characteristics of 'Demonstrate an understanding of the history of the great wars of the 17th to 19th Century'? - locally",
+          "competence": "Demonstrate an understanding of the history of the great war"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of the history of the great wars of the 17th to 19th Century'. - with diagram",
+          "competence": "Demonstrate an understanding of the history of the great war"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century",
+          "text": "Discuss the factors influencing 'Demonstrate an understanding of the history of the great wars of the 17th to 19th Century'.",
+          "competence": "Demonstrate an understanding of the history of the great war"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of industrial revolution (meaning, processes and characteristics)",
+          "text": "Compare and contrast 'Explain the concept of industrial revolution (meaning, processes and characteristics)' with related concepts.",
+          "competence": "Explain the concept of industrial revolution (meaning, proce"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century",
+          "text": "Compare and contrast 'Demonstrate an understanding of the history of the great wars of the 17th to 19th Century' with related concepts. - with diagram",
+          "competence": "Demonstrate an understanding of the history of the great war"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century",
+          "text": "How does 'Demonstrate an understanding of the history of the great wars of the 17th to 19th Century' relate to sustainable development? - with diagram",
+          "competence": "Demonstrate an understanding of the history of the great war"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain the concept of industrial revolution (meaning, processes and characteristics)",
+          "text": "Describe the main features of 'Explain the concept of industrial revolution (meaning, processes and characteristics)'.",
+          "competence": "Explain the concept of industrial revolution (meaning, proce"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of industrial revolution (meaning, processes and characteristics)",
+    "Demonstrate an understanding of the history of the great wars of the 17th to 19th Century"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

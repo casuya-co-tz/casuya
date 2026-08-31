@@ -1,0 +1,209 @@
+{
+  "filename": "physics_form5_midterm2_1_2024.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Physics - Midterm 2 Exam 1 (FORM5 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 102,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "determine the sign of charges; and",
+          "text": "Compare and contrast 'determine the sign of charges; and' with related concepts. - locally",
+          "competence": "determine the sign of charges; and"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "determine the frequency of a musical note; and",
+          "text": "Evaluate the role of 'determine the frequency of a musical note; and' in national development.",
+          "competence": "determine the frequency of a musical note; and"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "explain the concept of retardation",
+          "text": "What are the characteristics of 'explain the concept of retardation'? - with example",
+          "competence": "explain the concept of retardation"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "explain the principle of a hydraulic press; and",
+          "text": "Explain the relationship between 'explain the principle of a hydraulic press; and' and its environment. - with example",
+          "competence": "explain the principle of a hydraulic press; and"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Retort stand i",
+          "text": "Explain the relationship between 'Retort stand i' and its environment. - with example",
+          "competence": "Retort stand i"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Concept of Force",
+          "text": "How does 'Concept of Force' relate to sustainable development? - with example",
+          "competence": "Concept of Force"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "use the First Aid Kit to render ifrst aid",
+          "text": "Compare and contrast 'use the First Aid Kit to render ifrst aid' with related concepts. - locally",
+          "competence": "use the First Aid Kit to render ifrst aid"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "construct a simple lens camera",
+          "text": "Examine the advantages and disadvantages of 'construct a simple lens camera'. - with diagram",
+          "competence": "construct a simple lens camera"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "explain the concept of force; and",
+          "text": "Discuss the factors influencing 'explain the concept of force; and'.",
+          "competence": "explain the concept of force; and"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Introduction to Astronomy",
+          "text": "Compare and contrast 'Introduction to Astronomy' with related concepts. - with example",
+          "competence": "Introduction to Astronomy"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "deifne the term temperature; and",
+          "text": "Outline the procedures involved in 'deifne the term temperature; and'. - with diagram",
+          "competence": "deifne the term temperature; and"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "explain the concept of humidity",
+          "text": "How does 'explain the concept of humidity' relate to sustainable development? - with example",
+          "competence": "explain the concept of humidity"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "construct a simple compound microscope",
+          "text": "Outline the procedures involved in 'construct a simple compound microscope'. - locally",
+          "competence": "construct a simple compound microscope"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "explain the uses of mechanical energy",
+          "text": "Compare and contrast 'explain the uses of mechanical energy' with related concepts. - locally",
+          "competence": "explain the uses of mechanical energy"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Solid objects ii",
+          "text": "Analyse the causes and effects of 'Solid objects ii'. - with diagram",
+          "competence": "Solid objects ii"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Convection",
+          "text": "Propose measures to improve 'Convection' in schools. - with diagram",
+          "competence": "Convection"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "construct a simple astronomical telescope",
+          "text": "Examine the advantages and disadvantages of 'construct a simple astronomical telescope'. - with example",
+          "competence": "construct a simple astronomical telescope"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Concept of Pressure",
+          "text": "Compare and contrast 'Concept of Pressure' with related concepts. - with example",
+          "competence": "Concept of Pressure"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "identify sources of greenhouse",
+          "text": "Explain the concept of 'identify sources of greenhouse' with examples relevant to Tanzania. - with diagram",
+          "competence": "identify sources of greenhouse"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Connecting wires",
+          "text": "Examine the advantages and disadvantages of 'Connecting wires'. - with example",
+          "competence": "Connecting wires"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "determine the sign of charges; and",
+    "determine the frequency of a musical note; and",
+    "explain the concept of retardation",
+    "explain the principle of a hydraulic press; and",
+    "Retort stand i",
+    "Concept of Force",
+    "use the First Aid Kit to render ifrst aid",
+    "construct a simple lens camera",
+    "explain the concept of force; and",
+    "Introduction to Astronomy"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

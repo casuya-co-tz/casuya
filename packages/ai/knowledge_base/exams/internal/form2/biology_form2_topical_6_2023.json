@@ -1,0 +1,121 @@
+{
+  "filename": "biology_form2_topical_6_2023.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Biology - Topical Test 6 (FORM2 2023): Describe the mechanism of reproduct",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 35,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation'.",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Define 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' and discuss its importance in everyday life. - with example",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Examine the advantages and disadvantages of 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation'. - with example",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+          "text": "Examine the advantages and disadvantages of 'Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)'. - with example",
+          "competence": "Describe the mechanism of reproduction in animals (gametogen"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' in Tanzania and propose solutions.",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+          "text": "Describe the main features of 'Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)'. - with diagram",
+          "competence": "Describe the mechanism of reproduction in animals (gametogen"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Compare and contrast 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' with related concepts. - with example",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+          "text": "Outline the procedures involved in 'Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)'. - with diagram",
+          "competence": "Describe the mechanism of reproduction in animals (gametogen"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+    "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

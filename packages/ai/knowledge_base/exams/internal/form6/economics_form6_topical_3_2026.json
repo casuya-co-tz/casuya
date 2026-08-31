@@ -1,0 +1,121 @@
+{
+  "filename": "economics_form6_topical_3_2026.json",
+  "subject": "Economics",
+  "subject_slug": "economics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Economics - Topical Test 3 (FORM6 2026): Describe economic systems (forms, f",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe economic systems (forms, features, advantages and disadvantages)",
+          "text": "Define 'Describe economic systems (forms, features, advantages and disadvantages)' and discuss its importance in everyday life. - locally",
+          "competence": "Describe economic systems (forms, features, advantages and d"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "What are the characteristics of 'Examine the influence of the economic system on resource allocation and distribution'? - locally",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe economic systems (forms, features, advantages and disadvantages)",
+          "text": "Describe the process of 'Describe economic systems (forms, features, advantages and disadvantages)' step by step. - locally",
+          "competence": "Describe economic systems (forms, features, advantages and d"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Discuss the challenges facing 'Examine the influence of the economic system on resource allocation and distribution' in Tanzania and propose solutions.",
+          "competence": "Examine the influence of the economic system on resource all"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Describe the process of 'Examine the influence of the economic system on resource allocation and distribution' step by step. - with diagram",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Explain the relationship between 'Examine the influence of the economic system on resource allocation and distribution' and its environment.",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "How does 'Examine the influence of the economic system on resource allocation and distribution' relate to sustainable development? - with diagram",
+          "competence": "Examine the influence of the economic system on resource all"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe economic systems (forms, features, advantages and disadvantages)",
+          "text": "Assess the impact of 'Describe economic systems (forms, features, advantages and disadvantages)' on society. - with diagram",
+          "competence": "Describe economic systems (forms, features, advantages and d"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Examine the advantages and disadvantages of 'Examine the influence of the economic system on resource allocation and distribution'. - with diagram",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Evaluate the role of 'Examine the influence of the economic system on resource allocation and distribution' in national development.",
+          "competence": "Examine the influence of the economic system on resource all"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe economic systems (forms, features, advantages and disadvantages)",
+    "Examine the influence of the economic system on resource allocation and distribution"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

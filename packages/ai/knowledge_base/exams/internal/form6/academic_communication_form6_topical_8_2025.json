@@ -1,0 +1,121 @@
+{
+  "filename": "academic_communication_form6_topical_8_2025.json",
+  "subject": "Academic Communication",
+  "subject_slug": "academic_communication",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Academic Communication - Topical Test 8 (FORM6 2025): Pronounce words correctly using str",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 48,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Pronounce words correctly using stress and intonation in oral and written communications",
+          "text": "What are the characteristics of 'Pronounce words correctly using stress and intonation in oral and written communications'? - locally",
+          "competence": "Pronounce words correctly using stress and intonation in ora"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare posters for academic presentations",
+          "text": "Discuss the factors influencing 'Prepare posters for academic presentations'. - locally",
+          "competence": "Prepare posters for academic presentations"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Pronounce words correctly using stress and intonation in oral and written communications",
+          "text": "Analyse the causes and effects of 'Pronounce words correctly using stress and intonation in oral and written communications'.",
+          "competence": "Pronounce words correctly using stress and intonation in ora"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Pronounce words correctly using stress and intonation in oral and written communications",
+          "text": "Propose measures to improve 'Pronounce words correctly using stress and intonation in oral and written communications' in schools. - with example",
+          "competence": "Pronounce words correctly using stress and intonation in ora"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Pronounce words correctly using stress and intonation in oral and written communications",
+          "text": "Explain the concept of 'Pronounce words correctly using stress and intonation in oral and written communications' with examples relevant to Tanzania.",
+          "competence": "Pronounce words correctly using stress and intonation in ora"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Prepare posters for academic presentations",
+          "text": "Discuss the factors influencing 'Prepare posters for academic presentations'.",
+          "competence": "Prepare posters for academic presentations"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Pronounce words correctly using stress and intonation in oral and written communications",
+          "text": "Analyse the causes and effects of 'Pronounce words correctly using stress and intonation in oral and written communications'. - locally",
+          "competence": "Pronounce words correctly using stress and intonation in ora"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Prepare posters for academic presentations",
+          "text": "Describe the main features of 'Prepare posters for academic presentations'.",
+          "competence": "Prepare posters for academic presentations"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Pronounce words correctly using stress and intonation in oral and written communications",
+          "text": "With examples, illustrate how 'Pronounce words correctly using stress and intonation in oral and written communications' is applied in the community. - locally",
+          "competence": "Pronounce words correctly using stress and intonation in ora"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Prepare posters for academic presentations",
+          "text": "Explain the concept of 'Prepare posters for academic presentations' with examples relevant to Tanzania.",
+          "competence": "Prepare posters for academic presentations"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Pronounce words correctly using stress and intonation in oral and written communications",
+    "Prepare posters for academic presentations"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

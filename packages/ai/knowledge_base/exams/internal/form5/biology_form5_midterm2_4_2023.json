@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form5_midterm2_4_2023.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 2 Exam 4 (FORM5 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 94,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "With examples, illustrate how 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )' is applied in the community. - with example",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+          "text": "Explain the concept of 'Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)' with examples relevant to Tanzania. - with example",
+          "competence": "Explain growth process in plants (cell cycle, growth pattern"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+          "text": "Compare and contrast 'Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)' with related concepts. - with diagram",
+          "competence": "Explain the concept of regulation in mammals (feedback mecha"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+          "text": "Examine the advantages and disadvantages of 'Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio'. - with diagram",
+          "competence": "Describe reproduction in plants (concept of reproduction in "
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+          "text": "Outline the procedures involved in 'Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio'. - with example",
+          "competence": "Describe the mechanisms of growth in mammals and flowering p"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio",
+          "text": "Discuss the challenges facing 'Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the mechanism of regulation in the human body (temp"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Carry out a biological project work using biological principles",
+          "text": "With examples, illustrate how 'Carry out a biological project work using biological principles' is applied in the community. - with diagram",
+          "competence": "Carry out a biological project work using biological princip"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+          "text": "With examples, illustrate how 'Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces' is applied in the community. - with example",
+          "competence": "Describe the mechanism of gaseous exchange in plants (parts "
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+          "text": "Evaluate the role of 'Describe nutrition in human and ruminants (nutrients, digestive system and processe' in national development. - with example",
+          "competence": "Describe nutrition in human and ruminants (nutrients, digest"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+          "text": "Describe the main features of 'Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt'. - with example",
+          "competence": "Describe reproduction in humans (sexual reproduction in huma"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "text": "Evaluate the role of 'Describe the physiological, anatomical and ecological processes of living organisms' in national development. - with diagram",
+          "competence": "Describe the physiological, anatomical and ecological proces"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Perform investigations on the anatomy and physiology of living organisms",
+          "text": "Define 'Perform investigations on the anatomy and physiology of living organisms' and discuss its importance in everyday life. - with diagram",
+          "competence": "Perform investigations on the anatomy and physiology of livi"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Evaluate the role of 'Describe a cell (meaning,types, structures and function' in national development. - with diagram",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "and gas exchange in living organisms",
+          "text": "Evaluate the role of 'and gas exchange in living organisms' in national development. - with diagram",
+          "competence": "and gas exchange in living organisms"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Outline the procedures involved in 'Prepare and present a report on cell and photosynthesis investigations'. - with diagram",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4",
+          "text": "Outline the procedures involved in 'Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4'. - with diagram",
+          "competence": "Explain the physiology of photosynthesis (mechanism of light"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+          "text": "Describe the main features of 'Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)'. - with example",
+          "competence": "Apply knowledge on binomial nomenclature in different fields"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Analyse the causes and effects of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry'. - with diagram",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate mastery of advanced skills for conducting biological investigations",
+          "text": "Define 'Demonstrate mastery of advanced skills for conducting biological investigations' and discuss its importance in everyday life. - with diagram",
+          "competence": "Demonstrate mastery of advanced skills for conducting biolog"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "Examine the advantages and disadvantages of 'Explain growth process in animals (growth patterns and metamorphosis)'. - with example",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+    "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+    "Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+    "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+    "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+    "Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio",
+    "Carry out a biological project work using biological principles",
+    "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+    "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+    "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

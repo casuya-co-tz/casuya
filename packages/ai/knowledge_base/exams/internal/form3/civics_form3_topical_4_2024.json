@@ -1,0 +1,121 @@
+{
+  "filename": "civics_form3_topical_4_2024.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Civics - Topical Test 4 (FORM3 2024): Explain globalization",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 49,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain globalization",
+          "text": "Compare and contrast 'Explain globalization' with related concepts.",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain globalization",
+          "text": "Discuss the challenges facing 'Explain globalization' in Tanzania and propose solutions. - with example",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain child rights",
+          "text": "Outline the procedures involved in 'Explain child rights'.",
+          "competence": "Explain child rights"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain child rights",
+          "text": "Compare and contrast 'Explain child rights' with related concepts. - with diagram",
+          "competence": "Explain child rights"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain child rights",
+          "text": "Explain the concept of 'Explain child rights' with examples relevant to Tanzania. - with example",
+          "competence": "Explain child rights"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain globalization",
+          "text": "Discuss the challenges facing 'Explain globalization' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain globalization",
+          "text": "Explain the concept of 'Explain globalization' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain globalization"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain child rights",
+          "text": "Define 'Explain child rights' and discuss its importance in everyday life.",
+          "competence": "Explain child rights"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain globalization",
+          "text": "Define 'Explain globalization' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain child rights",
+          "text": "Define 'Explain child rights' and discuss its importance in everyday life.",
+          "competence": "Explain child rights"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain globalization",
+    "Explain child rights"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form2_midterm1_2_2025.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 1 Exam 2 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 88,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain national unity",
+          "text": "Discuss the challenges facing 'Explain national unity' in Tanzania and propose solutions. - with example",
+          "competence": "Explain national unity"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Citizenship",
+          "text": "Define 'Citizenship' and discuss its importance in everyday life. - with example",
+          "competence": "Citizenship"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Gender",
+          "text": "Examine the advantages and disadvantages of 'Gender'.",
+          "competence": "Gender"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Concept of Nation",
+          "text": "With examples, illustrate how 'Concept of Nation' is applied in the community. - with diagram",
+          "competence": "Concept of Nation"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain life skills",
+          "text": "Define 'Explain life skills' and discuss its importance in everyday life.",
+          "competence": "Explain life skills"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Concept of Human Rights",
+          "text": "With examples, illustrate how 'Concept of Human Rights' is applied in the community.",
+          "competence": "Concept of Human Rights"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Globalization",
+          "text": "Define 'Globalization' and discuss its importance in everyday life. - with diagram",
+          "competence": "Globalization"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "National Unity",
+          "text": "Define 'National Unity' and discuss its importance in everyday life. - with diagram",
+          "competence": "National Unity"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Democracy",
+          "text": "Examine the advantages and disadvantages of 'Democracy'. - with example",
+          "competence": "Democracy"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain gender",
+          "text": "Compare and contrast 'Explain gender' with related concepts. - with diagram",
+          "competence": "Explain gender"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Child Rights",
+          "text": "Analyse the causes and effects of 'Child Rights'. - with example",
+          "competence": "Child Rights"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Elections",
+          "text": "Describe the main features of 'Elections'.",
+          "competence": "Elections"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain national symbols",
+          "text": "Discuss the challenges facing 'Explain national symbols' in Tanzania and propose solutions.",
+          "competence": "Explain national symbols"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain constitution",
+          "text": "With examples, illustrate how 'Explain constitution' is applied in the community. - with diagram",
+          "competence": "Explain constitution"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Central Government",
+          "text": "Explain the concept of 'Central Government' with examples relevant to Tanzania.",
+          "competence": "Central Government"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "National Symbols",
+          "text": "Define 'National Symbols' and discuss its importance in everyday life. - with example",
+          "competence": "National Symbols"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Culture and Tradition",
+          "text": "With examples, illustrate how 'Culture and Tradition' is applied in the community.",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain elections",
+          "text": "Explain the concept of 'Explain elections' with examples relevant to Tanzania.",
+          "competence": "Explain elections"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain concept of human rights",
+          "text": "With examples, illustrate how 'Explain concept of human rights' is applied in the community. - with diagram",
+          "competence": "Explain concept of human rights"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain child rights",
+          "text": "Describe the main features of 'Explain child rights'.",
+          "competence": "Explain child rights"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain national unity",
+    "Citizenship",
+    "Gender",
+    "Concept of Nation",
+    "Explain life skills",
+    "Concept of Human Rights",
+    "Globalization",
+    "National Unity",
+    "Democracy",
+    "Explain gender"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

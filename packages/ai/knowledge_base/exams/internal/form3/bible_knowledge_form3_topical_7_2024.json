@@ -1,0 +1,121 @@
+{
+  "filename": "bible_knowledge_form3_topical_7_2024.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Bible Knowledge - Topical Test 7 (FORM3 2024): Discuss the characteristics of the ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the Book of Exodus to understand God’s love and compassion",
+          "text": "Compare and contrast 'Use the Book of Exodus to understand God’s love and compassion' with related concepts. - with diagram",
+          "competence": "Use the Book of Exodus to understand God’s love and compassi"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use the Book of Exodus to understand God’s love and compassion",
+          "text": "Explain the relationship between 'Use the Book of Exodus to understand God’s love and compassion' and its environment.",
+          "competence": "Use the Book of Exodus to understand God’s love and compassi"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "Analyse the causes and effects of 'Discuss the characteristics of the families found in the Gospel according to Luke'. - with example",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "Outline the procedures involved in 'Discuss the characteristics of the families found in the Gospel according to Luke'. - with diagram",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use the Book of Exodus to understand God’s love and compassion",
+          "text": "Explain the concept of 'Use the Book of Exodus to understand God’s love and compassion' with examples relevant to Tanzania. - with diagram",
+          "competence": "Use the Book of Exodus to understand God’s love and compassi"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "With examples, illustrate how 'Discuss the characteristics of the families found in the Gospel according to Luke' is applied in the community. - with diagram",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use the Book of Exodus to understand God’s love and compassion",
+          "text": "Analyse the causes and effects of 'Use the Book of Exodus to understand God’s love and compassion'. - with diagram",
+          "competence": "Use the Book of Exodus to understand God’s love and compassi"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "Compare and contrast 'Discuss the characteristics of the families found in the Gospel according to Luke' with related concepts. - with example",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "Compare and contrast 'Discuss the characteristics of the families found in the Gospel according to Luke' with related concepts. - with diagram",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use the Book of Exodus to understand God’s love and compassion",
+          "text": "Compare and contrast 'Use the Book of Exodus to understand God’s love and compassion' with related concepts. - with example",
+          "competence": "Use the Book of Exodus to understand God’s love and compassi"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use the Book of Exodus to understand God’s love and compassion",
+    "Discuss the characteristics of the families found in the Gospel according to Luke"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "computer_science_form2_midterm2_1_2025.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Computer Science - Midterm 2 Exam 1 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 93,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Document Creation",
+          "text": "Analyse the causes and effects of 'Document Creation'.",
+          "competence": "Document Creation"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Database Concepts",
+          "text": "Compare and contrast 'Database Concepts' with related concepts. - with diagram",
+          "competence": "Database Concepts"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain data processing",
+          "text": "Define 'Explain data processing' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain data processing"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain computer security",
+          "text": "With examples, illustrate how 'Explain computer security' is applied in the community.",
+          "competence": "Explain computer security"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain computer basics",
+          "text": "Examine the advantages and disadvantages of 'Explain computer basics'. - with example",
+          "competence": "Explain computer basics"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Computer Hardware",
+          "text": "Discuss the challenges facing 'Computer Hardware' in Tanzania and propose solutions. - with example",
+          "competence": "Computer Hardware"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Introduction to Programming",
+          "text": "Define 'Introduction to Programming' and discuss its importance in everyday life. - with diagram",
+          "competence": "Introduction to Programming"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain computer networks",
+          "text": "Evaluate the role of 'Explain computer networks' in national development. - with diagram",
+          "competence": "Explain computer networks"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain introduction to programming",
+          "text": "Analyse the causes and effects of 'Explain introduction to programming'.",
+          "competence": "Explain introduction to programming"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain computer software",
+          "text": "Evaluate the role of 'Explain computer software' in national development. - with example",
+          "competence": "Explain computer software"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain internet services",
+          "text": "Outline the procedures involved in 'Explain internet services'.",
+          "competence": "Explain internet services"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Word Processing Concepts",
+          "text": "Describe the main features of 'Word Processing Concepts'. - with example",
+          "competence": "Word Processing Concepts"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain spreadsheet concepts",
+          "text": "Define 'Explain spreadsheet concepts' and discuss its importance in everyday life. - with example",
+          "competence": "Explain spreadsheet concepts"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Spreadsheet Concepts",
+          "text": "Discuss the challenges facing 'Spreadsheet Concepts' in Tanzania and propose solutions.",
+          "competence": "Spreadsheet Concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Computer Software",
+          "text": "Define 'Computer Software' and discuss its importance in everyday life.",
+          "competence": "Computer Software"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Computer Basics",
+          "text": "Outline the procedures involved in 'Computer Basics'. - with example",
+          "competence": "Computer Basics"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain word processing concepts",
+          "text": "Analyse the causes and effects of 'Explain word processing concepts'.",
+          "competence": "Explain word processing concepts"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain database concepts",
+          "text": "Explain the concept of 'Explain database concepts' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain computer hardware",
+          "text": "Analyse the causes and effects of 'Explain computer hardware'. - with diagram",
+          "competence": "Explain computer hardware"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Internet Services",
+          "text": "Outline the procedures involved in 'Internet Services'.",
+          "competence": "Internet Services"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Document Creation",
+    "Database Concepts",
+    "Explain data processing",
+    "Explain computer security",
+    "Explain computer basics",
+    "Computer Hardware",
+    "Introduction to Programming",
+    "Explain computer networks",
+    "Explain introduction to programming",
+    "Explain computer software"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

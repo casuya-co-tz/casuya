@@ -1,0 +1,247 @@
+{
+  "code": "033",
+  "subject": "Biology",
+  "level": "Form 3-4 (CSEE)",
+  "year": "2025/2026",
+  "max_marks": 100,
+  "template_file": "marking_schemes/BIOLOGY_CSEE_MARKING_SCHEME_2026.html",
+  "also_in": "exam_formats/templates/BIOLOGY_CSEE_MARKING_SCHEME_2026.html",
+  "source_html": "C:/Users/Admin/Downloads/gemini-code-1788178368643.html",
+  "sections": [
+    {
+      "name": "A",
+      "marks": 16,
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 10,
+          "answers": [
+            "C",
+            "B",
+            "C",
+            "B",
+            "C",
+            "C",
+            "B",
+            "B",
+            "C",
+            "B"
+          ],
+          "detail": "10x1 mark, items i-x: C,B,C,B,C,C,B,B,C,B"
+        },
+        {
+          "number": "2",
+          "type": "matching",
+          "marks": 6,
+          "answers": [
+            "B",
+            "C",
+            "D",
+            "F",
+            "G",
+            "H"
+          ],
+          "detail": "6x1 mark, i->B Epidermis, ii->C Urea, iii->D Neuron, iv->F Phloem, v->G Placenta, vi->H Photosynthesis"
+        }
+      ]
+    },
+    {
+      "name": "B",
+      "marks": 54,
+      "questions": [
+        {
+          "number": "3",
+          "marks": 9,
+          "parts": [
+            {
+              "label": "a",
+              "marks": 3,
+              "answer": "Plant vs Animal: cell wall/chloroplast/large vacuole vs membrane/no chloroplast/small vacuoles"
+            },
+            {
+              "label": "b",
+              "marks": 6,
+              "parts": [
+                "Cell wall support rigidity [2]",
+                "Chloroplast photosynthesis [2]",
+                "Nucleus controls inheritance [2]"
+              ]
+            }
+          ]
+        },
+        {
+          "number": "4",
+          "marks": 9,
+          "parts": [
+            {
+              "label": "a",
+              "marks": 3,
+              "answer": "Balanced diet definition 1 mark + importance 2 marks"
+            },
+            {
+              "label": "b",
+              "marks": 6,
+              "answer": "Mouth salivary amylase->maltose 2, Stomach HCl stops 1, Duodenum pancreatic amylase->maltose 2, Ileum maltase->glucose 1"
+            }
+          ]
+        },
+        {
+          "number": "5",
+          "marks": 9,
+          "parts": [
+            {
+              "label": "i",
+              "marks": 3,
+              "answer": "Left ventricle thicker to pump systemic high pressure vs right pulmonary low pressure"
+            },
+            {
+              "label": "ii",
+              "marks": 4,
+              "answer": "Vena Cava -> Right Atrium -> Tricuspid Valve -> Right Ventricle -> Semilunar Valve -> Pulmonary Artery"
+            },
+            {
+              "label": "iii",
+              "marks": 2,
+              "answer": "Tricuspid closes during systole to prevent backflow to right atrium"
+            }
+          ]
+        },
+        {
+          "number": "6",
+          "marks": 9,
+          "parts": [
+            {
+              "label": "a",
+              "marks": 3,
+              "answer": "Gaseous exchange diffusion 1.5 + Cellular respiration chemical breakdown 1.5"
+            },
+            {
+              "label": "b",
+              "marks": 6,
+              "parts": [
+                "Thin wall one-cell [2]",
+                "Dense capillary network [2]",
+                "Moist lining [2]"
+              ]
+            }
+          ]
+        },
+        {
+          "number": "7",
+          "marks": 9,
+          "parts": [
+            {
+              "label": "a",
+              "marks": 3,
+              "answer": "Voluntary cerebrum e.g. writing 1.5 + Involuntary spinal cord e.g. knee jerk 1.5"
+            },
+            {
+              "label": "b",
+              "marks": 6,
+              "answer": "Reflex arc: Receptor 1 + Sensory neuron 1 + Relay neuron 1 + Motor neuron 1 + Effector biceps 2"
+            }
+          ]
+        },
+        {
+          "number": "8",
+          "marks": 9,
+          "parts": [
+            {
+              "label": "a",
+              "marks": 3,
+              "answer": "Epigeal hypocotyl cotyledons above 1.5 + Hypogeal epicotyl cotyledons below 1.5"
+            },
+            {
+              "label": "b",
+              "marks": 6,
+              "parts": [
+                "Tube B only germinates (moisture+oxygen+25C) 3",
+                "Tube C oil blocks oxygen 1.5 + Tube D 4C inactivates enzymes 1.5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C",
+      "marks": 30,
+      "questions": [
+        {
+          "number": "9",
+          "marks": 15,
+          "parts": [
+            {
+              "label": "a",
+              "marks": 3,
+              "answer": "Mendel Law of Segregation: alleles in pairs segregate to one per gamete"
+            },
+            {
+              "label": "b",
+              "marks": 8,
+              "answer": "Tt x tt => Gametes T/t x t/t => Punnett Tt:tt 1:1 genotype, phenotype 1 Tall:1 Dwarf"
+            },
+            {
+              "label": "c",
+              "marks": 4,
+              "answer": "Sex-linked on X without Y counterpart, e.g. haemophilia, colour blindness"
+            }
+          ]
+        },
+        {
+          "number": "10",
+          "marks": 15,
+          "parts": [
+            {
+              "label": "i",
+              "marks": 5,
+              "answer": "Ultrafiltration: afferent wider than efferent creates hydrostatic pressure forcing water/glucose/amino acids/salts/urea into Bowman's capsule, retain blood cells/proteins"
+            },
+            {
+              "label": "ii",
+              "marks": 5,
+              "answer": "Selective reabsorption in PCT: glucose/amino acids active transport ATP+microvilli, water osmosis"
+            },
+            {
+              "label": "iii",
+              "marks": 5,
+              "answer": "ADH when low water potential: hypothalamus -> posterior pituitary -> ADH increases DCT/collecting duct permeability -> more water reabsorbed -> concentrated low volume urine"
+            }
+          ]
+        },
+        {
+          "number": "11",
+          "marks": 15,
+          "parts": [
+            {
+              "label": "a",
+              "marks": 6,
+              "answer": "Lamarck use/disuse + acquired inheritance 3 + criticisms no germ change non-heritable 3"
+            },
+            {
+              "label": "b",
+              "marks": 6,
+              "answer": "Darwin 5 steps: overproduction 1, struggle 1, variation 1, survival fittest 1.5, inheritance speciation 1.5"
+            },
+            {
+              "label": "c",
+              "marks": 3,
+              "answer": "Homologous pentadactyl 1, Analogous wings 1, Vestigial appendix 1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "marking_guidelines": [
+    "Award marks strictly according to allocation grid",
+    "For biological diagrams: Neatness (N), Title (T), Features (F), Labelling (L)",
+    "Accept equivalent biologically valid alternative terms"
+  ],
+  "linked_exams": [
+    "exams/internal/form3/biology_form3_csee_pilot_*.json (20)",
+    "exams/internal/form4/biology_form4_csee_pilot_*.json (20)"
+  ],
+  "csee_code": "033"
+}

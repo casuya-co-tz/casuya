@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form4_midterm1_3_2023.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 3 (FORM4 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 93,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain warehousing",
+          "text": "Compare and contrast 'Explain warehousing' with related concepts.",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Stock Control",
+          "text": "Evaluate the role of 'Stock Control' in national development. - with diagram",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Aids to Trade",
+          "text": "Examine the advantages and disadvantages of 'Aids to Trade'. - with diagram",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain production",
+          "text": "Explain the concept of 'Explain production' with examples relevant to Tanzania.",
+          "competence": "Explain production"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain partnership",
+          "text": "Examine the advantages and disadvantages of 'Explain partnership'. - with diagram",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain cooperative",
+          "text": "Explain the concept of 'Explain cooperative' with examples relevant to Tanzania.",
+          "competence": "Explain cooperative"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Transport",
+          "text": "With examples, illustrate how 'Transport' is applied in the community. - with example",
+          "competence": "Transport"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain aids to trade",
+          "text": "Evaluate the role of 'Explain aids to trade' in national development.",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain sole proprietorship",
+          "text": "Define 'Explain sole proprietorship' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain sole proprietorship"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain insurance",
+          "text": "With examples, illustrate how 'Explain insurance' is applied in the community.",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Storekeeping",
+          "text": "Explain the concept of 'Storekeeping' with examples relevant to Tanzania. - with example",
+          "competence": "Storekeeping"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain concept of commerce",
+          "text": "Discuss the challenges facing 'Explain concept of commerce' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Sources of Business Finance",
+          "text": "Evaluate the role of 'Sources of Business Finance' in national development. - with diagram",
+          "competence": "Sources of Business Finance"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Companies",
+          "text": "Explain the concept of 'Companies' with examples relevant to Tanzania. - with diagram",
+          "competence": "Companies"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain trade",
+          "text": "Explain the concept of 'Explain trade' with examples relevant to Tanzania. - with example",
+          "competence": "Explain trade"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Production",
+          "text": "With examples, illustrate how 'Production' is applied in the community.",
+          "competence": "Production"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Communication",
+          "text": "Evaluate the role of 'Communication' in national development. - with example",
+          "competence": "Communication"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain marketing mix",
+          "text": "Discuss the challenges facing 'Explain marketing mix' in Tanzania and propose solutions. - with example",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain advertisement",
+          "text": "Outline the procedures involved in 'Explain advertisement'.",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Sole Proprietorship",
+          "text": "Analyse the causes and effects of 'Sole Proprietorship'. - with example",
+          "competence": "Sole Proprietorship"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain warehousing",
+    "Stock Control",
+    "Aids to Trade",
+    "Explain production",
+    "Explain partnership",
+    "Explain cooperative",
+    "Transport",
+    "Explain aids to trade",
+    "Explain sole proprietorship",
+    "Explain insurance"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

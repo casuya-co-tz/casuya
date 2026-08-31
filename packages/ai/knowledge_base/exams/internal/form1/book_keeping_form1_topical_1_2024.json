@@ -1,0 +1,121 @@
+{
+  "filename": "book_keeping_form1_topical_1_2024.json",
+  "subject": "Book Keeping",
+  "subject_slug": "book_keeping",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Book Keeping - Topical Test 1 (FORM1 2024): Explain balance sheet",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 37,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Concept of Book Keeping",
+          "text": "Explain the concept of 'Concept of Book Keeping' with examples relevant to Tanzania. - with diagram",
+          "competence": "Concept of Book Keeping"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Concept of Book Keeping",
+          "text": "Outline the procedures involved in 'Concept of Book Keeping'.",
+          "competence": "Concept of Book Keeping"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain balance sheet",
+          "text": "With examples, illustrate how 'Explain balance sheet' is applied in the community. - with example",
+          "competence": "Explain balance sheet"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain balance sheet",
+          "text": "Analyse the causes and effects of 'Explain balance sheet'. - with example",
+          "competence": "Explain balance sheet"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Concept of Book Keeping",
+          "text": "Describe the main features of 'Concept of Book Keeping'. - with diagram",
+          "competence": "Concept of Book Keeping"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain balance sheet",
+          "text": "With examples, illustrate how 'Explain balance sheet' is applied in the community.",
+          "competence": "Explain balance sheet"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Concept of Book Keeping",
+          "text": "Describe the main features of 'Concept of Book Keeping'.",
+          "competence": "Concept of Book Keeping"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain balance sheet",
+          "text": "Discuss the challenges facing 'Explain balance sheet' in Tanzania and propose solutions.",
+          "competence": "Explain balance sheet"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain balance sheet",
+          "text": "Define 'Explain balance sheet' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain balance sheet"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain balance sheet",
+          "text": "Compare and contrast 'Explain balance sheet' with related concepts.",
+          "competence": "Explain balance sheet"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Concept of Book Keeping",
+    "Explain balance sheet"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

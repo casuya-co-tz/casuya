@@ -1,0 +1,289 @@
+{
+  "filename": "mathematics_form6_annual_1_2023.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2023",
+  "time": "3:00 Hours",
+  "title": "Mathematics - Annual Exam 1 (FORM6 2023)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 125,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept of rational, irrational, and real numbers",
+          "text": "Compare and contrast 'Explain the concept of rational, irrational, and real numbers' with related concepts. - with diagram",
+          "competence": "Explain the concept of rational, irrational, and real number"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Calculate angles of elevation and depression",
+          "text": "Evaluate the role of 'Calculate angles of elevation and depression' in national development.",
+          "competence": "Calculate angles of elevation and depression"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+          "text": "Discuss the factors influencing 'Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)'. - locally",
+          "competence": "Explore the basic tenets of probability theory (counting pri"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "Explain the concept of 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the importance of numbers in real-life situations",
+          "text": "Evaluate the role of 'Describe the importance of numbers in real-life situations' in national development. - with diagram",
+          "competence": "Describe the importance of numbers in real-life situations"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Solve problems on rates and variations",
+          "text": "What are the characteristics of 'Solve problems on rates and variations'? - locally",
+          "competence": "Solve problems on rates and variations"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+          "text": "Explain the relationship between 'Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)' and its environment.",
+          "competence": "Explore the basic tenets of complex numbers (modulus, argume"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Explain the concept of 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic' with examples relevant to Tanzania. - locally",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+          "text": "With examples, illustrate how 'Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde' is applied in the community.",
+          "competence": "Identify and use laws of exponents involving positive, negat"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Determine the equation of a straight line and draw its graph",
+          "text": "Describe the main features of 'Determine the equation of a straight line and draw its graph'.",
+          "competence": "Determine the equation of a straight line and draw its graph"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Write numbers in standard form",
+          "text": "With examples, illustrate how 'Write numbers in standard form' is applied in the community. - with diagram",
+          "competence": "Write numbers in standard form"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "How does 'Describe the concepts of geometry (similarities and congruenc' relate to sustainable development? - locally",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Represent rational numbers on a number line",
+          "text": "Discuss the challenges facing 'Represent rational numbers on a number line' in Tanzania and propose solutions. - locally",
+          "competence": "Represent rational numbers on a number line"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Determine trigonometric ratios of angles and special angles",
+          "text": "Discuss the challenges facing 'Determine trigonometric ratios of angles and special angles' in Tanzania and propose solutions. - locally",
+          "competence": "Determine trigonometric ratios of angles and special angles"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow'. - with diagram",
+          "competence": "Explore the basic tenets of algebra (algebraic expressions a"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Carry out a project to solve a problem using mathematical skills",
+          "text": "Analyse the causes and effects of 'Carry out a project to solve a problem using mathematical skills'. - with diagram",
+          "competence": "Carry out a project to solve a problem using mathematical sk"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Describe the process of 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' step by step.",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "Outline the procedures involved in 'Perform operations on radicals and rationalize the denominators'.",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
+          "text": "Assess the impact of 'Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set' on society.",
+          "competence": "Distinguish among different types of sets (universal set, eq"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Describe the main features of 'Explore advanced tenets of set theory (operations, expressions, and cardinality)'. - with example",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 4,
+          "topic": "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+          "text": "Evaluate the role of 'and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)' in national development. - locally",
+          "competence": "and rational inequalities, 3x3 matrices, partial fractions, "
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+          "text": "Discuss the challenges facing 'Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)' in Tanzania and propose solutions. - locally",
+          "competence": "Explore advanced tenets of statistics (measures of central t"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "text": "Analyse the causes and effects of 'Demonstrate an advanced understanding of set theory and logic'. - with example",
+          "competence": "Demonstrate an advanced understanding of set theory and logi"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+          "text": "Define 'Determine the probability of an event, expectation, variance, and standard deviation of random variables' and discuss its importance in everyday life.",
+          "competence": "Determine the probability of an event, expectation, variance"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use probability in problem solving",
+          "text": "Compare and contrast 'Use probability in problem solving' with related concepts. - with example",
+          "competence": "Use probability in problem solving"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate basic understanding of calculus'. - with diagram",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 4,
+          "topic": "two sources and three destinations)",
+          "text": "What are the characteristics of 'two sources and three destinations)'? - locally",
+          "competence": "two sources and three destinations)"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concepts of relations and functions (linear and quadrati",
+          "text": "Assess the impact of 'Describe the concepts of relations and functions (linear and quadrati' on society. - with diagram",
+          "competence": "Describe the concepts of relations and functions (linear and"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Find the number of elements in a set",
+          "text": "Describe the main features of 'Find the number of elements in a set'. - with diagram",
+          "competence": "Find the number of elements in a set"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Approximate numbers to the required significant figures and decimal places",
+          "text": "Explain the concept of 'Approximate numbers to the required significant figures and decimal places' with examples relevant to Tanzania. - with diagram",
+          "competence": "Approximate numbers to the required significant figures and "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of rational, irrational, and real numbers",
+    "Calculate angles of elevation and depression",
+    "Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+    "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+    "Describe the importance of numbers in real-life situations",
+    "Solve problems on rates and variations",
+    "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+    "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+    "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+    "Determine the equation of a straight line and draw its graph"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

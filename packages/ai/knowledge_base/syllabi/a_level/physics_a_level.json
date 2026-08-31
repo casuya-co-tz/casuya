@@ -1,0 +1,284 @@
+{
+  "subject_code": "031",
+  "subject_name": "Physics",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of concepts, theories and principles in Physics",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-FV-U1-L1",
+              "title": "Explain the fundamental principles of measurement (dimensional analysis, precision, accuracy and uncertainties)",
+              "markdown_content": "## a) Explain the fundamental principles of measurement (dimensional analysis, precision, accuracy and uncertainties)",
+              "periods": "105",
+              "page": 14
+            },
+            {
+              "lesson_id": "PHY-FV-U1-L2",
+              "title": "Describe the basic tenets of mechanics and",
+              "markdown_content": "## b) Describe the basic tenets of mechanics and",
+              "periods": "",
+              "page": 14
+            },
+            {
+              "lesson_id": "PHY-FV-U1-L3",
+              "title": "two dimensional motion (projectile motion, circular motion, rotation, gravitation and fluid mechanics)",
+              "markdown_content": "## a) two dimensional motion (projectile motion, circular motion, rotation, gravitation and fluid mechanics)",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "PHY-FV-U1-L4",
+              "title": "Describe the fundamental concepts, principles and theories underlying the thermal properties of materials (heat transfer, kinetic theory",
+              "markdown_content": "## c) Describe the fundamental concepts, principles and theories underlying the thermal properties of materials (heat transfer, kinetic theory",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "PHY-FV-U1-L5",
+              "title": "of solids, liquids and gases, thermodynamics and thermal radiation)",
+              "markdown_content": "## a) of solids, liquids and gases, thermodynamics and thermal radiation)",
+              "periods": "",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-FV-U1-L6",
+              "title": "Explore the basic tenets of vibrations and waves (simple harmonic motion, and wave propagation {interference, diffraction and polarization})",
+              "markdown_content": "## d) Explore the basic tenets of vibrations and waves (simple harmonic motion, and wave propagation {interference, diffraction and polarization})",
+              "periods": "",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-FV-U1-L7",
+              "title": "Explain the concept, theories and principles of electrostatics (electric field, electric potential and capacitance)",
+              "markdown_content": "## e) Explain the concept, theories and principles of electrostatics (electric field, electric potential and capacitance)",
+              "periods": "",
+              "page": 17
+            }
+          ]
+        },
+        {
+          "topic_name": "Use various instruments to carry out measurements in Physics",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-FV-U1-L8",
+              "title": "Use various instruments to carry out experiments in mechanics, vibrations and waves, thermal properties of materials and electrostatics",
+              "markdown_content": "## a) Use various instruments to carry out experiments in mechanics, vibrations and waves, thermal properties of materials and electrostatics",
+              "periods": "55",
+              "page": 18
+            },
+            {
+              "lesson_id": "PHY-FV-U1-L9",
+              "title": "Analyse the precision and accuracy of measurements",
+              "markdown_content": "## b) Analyse the precision and accuracy of measurements",
+              "periods": "",
+              "page": 19
+            }
+          ]
+        },
+        {
+          "topic_name": "Analyse the efficacy of different techniques and instruments in physical measurements",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-FV-U1-L10",
+              "title": "Analyse the strengths and weaknesses of various instruments and techniques used in mechanics, vibrations and waves, thermal properties of materials and electrostatics",
+              "markdown_content": "## a) Analyse the strengths and weaknesses of various instruments and techniques used in mechanics, vibrations and waves, thermal properties of materials and electrostatics",
+              "periods": "38",
+              "page": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct experiments in Physics",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Carry out experiments in Physics",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-FV-U2-L11",
+              "title": "Design and carry out scientific experiments related to mechanics, vibrations and waves, thermal properties of materials and electrostatics",
+              "markdown_content": "## a) Design and carry out scientific experiments related to mechanics, vibrations and waves, thermal properties of materials and electrostatics",
+              "periods": "120",
+              "page": 20
+            },
+            {
+              "lesson_id": "PHY-FV-U2-L12",
+              "title": "Use ICT tools to analyse and present data (Ms Excel, PSPP, R, MATLAB, Python and Origin)",
+              "markdown_content": "## b) Use ICT tools to analyse and present data (Ms Excel, PSPP, R, MATLAB, Python and Origin)",
+              "periods": "",
+              "page": 20
+            },
+            {
+              "lesson_id": "PHY-FV-U2-L13",
+              "title": "Use various methods to disseminate scientific results in Physics (reports, journal articles and case studies)",
+              "markdown_content": "## c) Use various methods to disseminate scientific results in Physics (reports, journal articles and case studies)",
+              "periods": "",
+              "page": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Conduct a project in Physics",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Conduct a project in Physics",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-FV-U3-L14",
+              "title": "Design and carry out a research project in Physics",
+              "markdown_content": "## a) Design and carry out a research project in Physics",
+              "periods": "72",
+              "page": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of concepts, theories and principles in Physics",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of the concepts, theories and principles in Physics",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-FVI-U1-L15",
+              "title": "Explain the principles, theories and concepts of current electricity (direct and alternating current and electrical networks)",
+              "markdown_content": "## a) Explain the principles, theories and concepts of current electricity (direct and alternating current and electrical networks)",
+              "periods": "180",
+              "page": 23
+            },
+            {
+              "lesson_id": "PHY-FVI-U1-L16",
+              "title": "Explore the basic tenets of electromagnetism (electromagnetic force, induction and electromagnetic waves)",
+              "markdown_content": "## b) Explore the basic tenets of electromagnetism (electromagnetic force, induction and electromagnetic waves)",
+              "periods": "",
+              "page": 24
+            },
+            {
+              "lesson_id": "PHY-FVI-U1-L17",
+              "title": "Explore the basic tenets of electronics and telecommunication (band theory, semiconductors, transistors, logic gates and satellites)",
+              "markdown_content": "## c) Explore the basic tenets of electronics and telecommunication (band theory, semiconductors, transistors, logic gates and satellites)",
+              "periods": "",
+              "page": 25
+            },
+            {
+              "lesson_id": "PHY-FVI-U1-L18",
+              "title": "Explore some advanced tenets of atomic Physics (atomic transitions, nuclear physics, LASER, X-rays, α, β and γ radiations)",
+              "markdown_content": "## d) Explore some advanced tenets of atomic Physics (atomic transitions, nuclear physics, LASER, X-rays, α, β and γ radiations)",
+              "periods": "",
+              "page": 27
+            },
+            {
+              "lesson_id": "PHY-FVI-U1-L19",
+              "title": "Explore the basic tenets of energy and energy sources (solar radiation, wind energy, hydropower and thermal reactors)",
+              "markdown_content": "## e) Explore the basic tenets of energy and energy sources (solar radiation, wind energy, hydropower and thermal reactors)",
+              "periods": "",
+              "page": 28
+            },
+            {
+              "lesson_id": "PHY-FVI-U1-L20",
+              "title": "Explore the basic tenets of medical Physics (nervous system, electro- cardiography, diagnostic imaging and radiotherapy)",
+              "markdown_content": "## f) Explore the basic tenets of medical Physics (nervous system, electro- cardiography, diagnostic imaging and radiotherapy)",
+              "periods": "",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "topic_name": "Use various instruments to carry out measurements in Physics",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-FVI-U1-L21",
+              "title": "Use various instruments to carry out experiments in current electricity, electromagnetism, electronics, telecommunication, energy sources, medical physics and atomic physics Interactive simulation: Facilitate students to visualize and understand the use of various measuring instruments used in current electricity",
+              "markdown_content": "## a) Use various instruments to carry out experiments in current electricity, electromagnetism, electronics, telecommunication, energy sources, medical physics and atomic physics Interactive simulation: Facilitate students to visualize and understand the use of various measuring instruments used in current electricity",
+              "periods": "35",
+              "page": 30
+            },
+            {
+              "lesson_id": "PHY-FVI-U1-L22",
+              "title": "electromagnetism, electronics, telecommunication, energy sources, medical Physics and physics of the atom",
+              "markdown_content": "## a) electromagnetism, electronics, telecommunication, energy sources, medical Physics and physics of the atom",
+              "periods": "",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "topic_name": "Analyse the efficacy of different techniques and instruments in physical measurements",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-FVI-U1-L23",
+              "title": "Analyse the strengths and weaknesses of the various instruments and techniques used in current electricity, electromagnetism, electronics, telecommunication, energy sources, medical physics and atomic Physics",
+              "markdown_content": "## a) Analyse the strengths and weaknesses of the various instruments and techniques used in current electricity, electromagnetism, electronics, telecommunication, energy sources, medical physics and atomic Physics",
+              "periods": "40",
+              "page": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct experiments in Physics",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Carry out experiments in Physics",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-FVI-U2-L24",
+              "title": "Design and carry out scientific experiments related to current electricity, electromagnetism, electronics, telecommunication, energy sources, medical physics and atomic physics",
+              "markdown_content": "## a) Design and carry out scientific experiments related to current electricity, electromagnetism, electronics, telecommunication, energy sources, medical physics and atomic physics",
+              "periods": "85",
+              "page": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Conduct a project in Physics",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Conduct a project in Physics",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-FVI-U3-L25",
+              "title": "Complete and submit a report for the research project started in Form Five",
+              "markdown_content": "## a) Complete and submit a report for the research project started in Form Five",
+              "periods": "50",
+              "page": 33
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

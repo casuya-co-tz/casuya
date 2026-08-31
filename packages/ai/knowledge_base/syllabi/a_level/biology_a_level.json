@@ -1,0 +1,516 @@
+{
+  "subject_code": "033",
+  "subject_name": "Biology",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of advanced concepts, theories and principles in Biology",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-FV-U1-L1",
+              "title": "Describe the concept of the cell (cell theory, organelles and biological molecules)",
+              "markdown_content": "## a) Describe the concept of the cell (cell theory, organelles and biological molecules)",
+              "periods": "185",
+              "page": 14
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L2",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 15
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L3",
+              "title": "Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4",
+              "markdown_content": "## b) Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L4",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 16
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L5",
+              "title": "Describe the structure of epithelial tissues in relation to its digestive role",
+              "markdown_content": "## c) Describe the structure of epithelial tissues in relation to its digestive role",
+              "periods": "",
+              "page": 16
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L6",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 17
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L7",
+              "title": "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+              "markdown_content": "## d) Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+              "periods": "",
+              "page": 17
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L8",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 18
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L9",
+              "title": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+              "markdown_content": "## e) Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+              "periods": "",
+              "page": 18
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L10",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 19
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L11",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 20
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L12",
+              "title": "Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)",
+              "markdown_content": "## f) Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)",
+              "periods": "",
+              "page": 20
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L13",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 21
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L14",
+              "title": "Discribe the application or role of synthetic phytohormones",
+              "markdown_content": "## g) Discribe the application or role of synthetic phytohormones",
+              "periods": "",
+              "page": 21
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L15",
+              "title": "Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+              "markdown_content": "## h) Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+              "periods": "",
+              "page": 21
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L16",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 22
+            },
+            {
+              "lesson_id": "BIO-FV-U1-L17",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate mastery of taxonomic terminologies",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the principles of binomial nomenclature and classification",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-FV-U2-L18",
+              "title": "Explain classification systems and taxonomic rank",
+              "markdown_content": "## a) Explain classification systems and taxonomic rank",
+              "periods": "60",
+              "page": 23
+            },
+            {
+              "lesson_id": "BIO-FV-U2-L19",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 24
+            },
+            {
+              "lesson_id": "BIO-FV-U2-L20",
+              "title": "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+              "markdown_content": "## b) Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+              "periods": "",
+              "page": 24
+            },
+            {
+              "lesson_id": "BIO-FV-U2-L21",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 25
+            },
+            {
+              "lesson_id": "BIO-FV-U2-L22",
+              "title": "Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+              "markdown_content": "## c) Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+              "periods": "",
+              "page": 25
+            },
+            {
+              "lesson_id": "BIO-FV-U2-L23",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 26
+            },
+            {
+              "lesson_id": "BIO-FV-U2-L24",
+              "title": "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+              "markdown_content": "## d) Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+              "periods": "",
+              "page": 26
+            },
+            {
+              "lesson_id": "BIO-FV-U2-L25",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Conduct biological investigations",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of advanced skills for conducting biological investigations",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-FV-U3-L26",
+              "title": "Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)",
+              "markdown_content": "## a) Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)",
+              "periods": "30",
+              "page": 27
+            },
+            {
+              "lesson_id": "BIO-FV-U3-L27",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 28
+            },
+            {
+              "lesson_id": "BIO-FV-U3-L28",
+              "title": "Plan and execute in an independent biological investigation",
+              "markdown_content": "## b) Plan and execute in an independent biological investigation",
+              "periods": "",
+              "page": 28
+            }
+          ]
+        },
+        {
+          "topic_name": "Perform investigations on the anatomy and physiology of living organisms",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-FV-U3-L29",
+              "title": "Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis",
+              "markdown_content": "## a) Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis",
+              "periods": "45",
+              "page": 28
+            },
+            {
+              "lesson_id": "BIO-FV-U3-L30",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 29
+            },
+            {
+              "lesson_id": "BIO-FV-U3-L31",
+              "title": "and gas exchange in living organisms",
+              "markdown_content": "## a) and gas exchange in living organisms",
+              "periods": "",
+              "page": 29
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Conduct a project in Biology",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Conduct a project in Biology",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-FV-U4-L32",
+              "title": "Design and carry out a project in Biology",
+              "markdown_content": "## a) Design and carry out a project in Biology",
+              "periods": "30",
+              "page": 29
+            },
+            {
+              "lesson_id": "BIO-FVI-U4-L33",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of advanced concepts, theories and principles in Biology",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-FVI-U1-L34",
+              "title": "Explain the physiology and theories underlying transportation of materials in plants",
+              "markdown_content": "## a) Explain the physiology and theories underlying transportation of materials in plants",
+              "periods": "240",
+              "page": 30
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L35",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 31
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L36",
+              "title": "Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)",
+              "markdown_content": "## b) Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)",
+              "periods": "",
+              "page": 31
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L37",
+              "title": "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+              "markdown_content": "## c) Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+              "periods": "",
+              "page": 31
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L38",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 32
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L39",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 33
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L40",
+              "title": "Explain growth process in animals (growth patterns and metamorphosis)",
+              "markdown_content": "## d) Explain growth process in animals (growth patterns and metamorphosis)",
+              "periods": "",
+              "page": 33
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L41",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 34
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L42",
+              "title": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+              "markdown_content": "## e) Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+              "periods": "",
+              "page": 34
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L43",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 35
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L44",
+              "title": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+              "markdown_content": "## f) Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+              "periods": "",
+              "page": 35
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L45",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 36
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L46",
+              "title": "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+              "markdown_content": "## g) Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+              "periods": "",
+              "page": 36
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L47",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 37
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L48",
+              "title": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+              "markdown_content": "## h) Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+              "periods": "",
+              "page": 37
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L49",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 38
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L50",
+              "title": "theory, evidence of evolution, and speciation)",
+              "markdown_content": "## a) theory, evidence of evolution, and speciation)",
+              "periods": "",
+              "page": 38
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L51",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 39
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L52",
+              "title": "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+              "markdown_content": "## i) Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+              "periods": "",
+              "page": 39
+            },
+            {
+              "lesson_id": "BIO-FVI-U1-L53",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct biological investigations",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of advanced skills for conducting biological investigations",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-FVI-U2-L54",
+              "title": "Prepare and present a report based on the findings",
+              "markdown_content": "## a) Prepare and present a report based on the findings",
+              "periods": "20",
+              "page": 40
+            },
+            {
+              "lesson_id": "BIO-FVI-U2-L55",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 41
+            }
+          ]
+        },
+        {
+          "topic_name": "Perform investigations on the anatomy and physiology of living organisms",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-FVI-U2-L56",
+              "title": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+              "markdown_content": "## a) Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+              "periods": "40",
+              "page": 41
+            },
+            {
+              "lesson_id": "BIO-FVI-U2-L57",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 42
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct a project in Biology",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Conduct a project in Biology",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-FVI-U2-L58",
+              "title": "Complete and submit for assessment a scientific report of the project started in Form Five",
+              "markdown_content": "## a) Complete and submit for assessment a scientific report of the project started in Form Five",
+              "periods": "50",
+              "page": 42
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

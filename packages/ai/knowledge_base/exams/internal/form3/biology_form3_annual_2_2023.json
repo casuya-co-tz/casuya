@@ -1,0 +1,289 @@
+{
+  "filename": "biology_form3_annual_2_2023.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2023",
+  "time": "3:00 Hours",
+  "title": "Biology - Annual Exam 2 (FORM3 2023)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 153,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of the cell (cell theory, organelles and biological molecules)",
+          "text": "Compare and contrast 'Describe the concept of the cell (cell theory, organelles and biological molecules)' with related concepts. - with example",
+          "competence": "Describe the concept of the cell (cell theory, organelles an"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe coordination in plants (tropic, response",
+          "text": "Explain the concept of 'Describe coordination in plants (tropic, response' with examples relevant to Tanzania. - with example",
+          "competence": "Describe coordination in plants (tropic, response"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)",
+          "text": "Discuss the challenges facing 'Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)' in Tanzania and propose solutions.",
+          "competence": "Describe the physiology of coordination (mechanism of transm"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+          "text": "With examples, illustrate how 'Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)' is applied in the community.",
+          "competence": "Explain growth process in plants (cell cycle, growth pattern"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+          "text": "Describe the main features of 'Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)'.",
+          "competence": "Describe the mechanism of reproduction in animals (gametogen"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain classification systems and taxonomic rank",
+          "text": "Evaluate the role of 'Explain classification systems and taxonomic rank' in national development.",
+          "competence": "Explain classification systems and taxonomic rank"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare and present a report based on the findings",
+          "text": "Examine the advantages and disadvantages of 'Prepare and present a report based on the findings'.",
+          "competence": "Prepare and present a report based on the findings"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "Evaluate the role of 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution' in national development. - with example",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+          "text": "Explain the concept of 'and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste' with examples relevant to Tanzania.",
+          "competence": "and animals (nervous coordination in human, structure of neu"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the principles of binomial nomenclature and classification",
+          "text": "Define 'Demonstrate an understanding of the principles of binomial nomenclature and classification' and discuss its importance in everyday life. - with example",
+          "competence": "Demonstrate an understanding of the principles of binomial n"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "and gas exchange in living organisms",
+          "text": "Discuss the challenges facing 'and gas exchange in living organisms' in Tanzania and propose solutions. - with diagram",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "theory, evidence of evolution, and speciation)",
+          "text": "Compare and contrast 'theory, evidence of evolution, and speciation)' with related concepts.",
+          "competence": "theory, evidence of evolution, and speciation)"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "Explain the concept of 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system' with examples relevant to Tanzania.",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+          "text": "Examine the advantages and disadvantages of 'Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)'. - with diagram",
+          "competence": "Apply knowledge on binomial nomenclature in different fields"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Explain the concept of 'Investigate food nutrients in various food samples' with examples relevant to Tanzania. - with diagram",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Discribe the application or role of synthetic phytohormones",
+          "text": "Evaluate the role of 'Discribe the application or role of synthetic phytohormones' in national development.",
+          "competence": "Discribe the application or role of synthetic phytohormones"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+          "text": "Outline the procedures involved in 'Investigate growth in flowering plants (hypogeal and epigeal germinatio'. - with example",
+          "competence": "Investigate growth in flowering plants (hypogeal and epigeal"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the physiology and theories underlying transportation of materials in plants",
+          "text": "With examples, illustrate how 'Explain the physiology and theories underlying transportation of materials in plants' is applied in the community. - with diagram",
+          "competence": "Explain the physiology and theories underlying transportatio"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+          "text": "Describe the main features of 'Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)'. - with example",
+          "competence": "Describe the physiology of gaseous exchange and respiration "
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Evaluate the role of 'Complete and submit a report for the research project started in Form Three' in national development. - with diagram",
+          "competence": "Complete and submit a report for the research project starte"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Investigate processes of transportation of materials in flowering plants",
+          "text": "Outline the procedures involved in 'Investigate processes of transportation of materials in flowering plants'.",
+          "competence": "Investigate processes of transportation of materials in flow"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "With examples, illustrate how 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )' is applied in the community. - with example",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+          "text": "Examine the advantages and disadvantages of 'Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)'. - with diagram",
+          "competence": "Describe principles of binomial nomenclature (rules of scien"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)",
+          "text": "Outline the procedures involved in 'Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)'. - with example",
+          "competence": "Apply skills used in biological investigation (observation, "
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "Outline the procedures involved in 'Explain growth process in animals (growth patterns and metamorphosis)'.",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "With examples, illustrate how 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline' is applied in the community. - with example",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Perform investigations on the anatomy and physiology of living organisms",
+          "text": "Evaluate the role of 'Perform investigations on the anatomy and physiology of living organisms' in national development. - with example",
+          "competence": "Perform investigations on the anatomy and physiology of livi"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "text": "Discuss the challenges facing 'Demonstrate mastery of basic skills for conducting biological investigations' in Tanzania and propose solutions. - with diagram",
+          "competence": "Demonstrate mastery of basic skills for conducting biologica"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+          "text": "Explain the concept of 'Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the major groups of organisms: (Monera, Protista, F"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+          "text": "With examples, illustrate how 'Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)' is applied in the community.",
+          "competence": "Explain the concept of regulation in mammals (feedback mecha"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concept of the cell (cell theory, organelles and biological molecules)",
+    "Describe coordination in plants (tropic, response",
+    "Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)",
+    "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+    "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+    "Explain classification systems and taxonomic rank",
+    "Prepare and present a report based on the findings",
+    "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+    "and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+    "Demonstrate an understanding of the principles of binomial nomenclature and classification"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

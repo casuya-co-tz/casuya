@@ -1,0 +1,249 @@
+{
+  "filename": "chemistry_form6_terminal_2_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Chemistry - Terminal Exam 2 (FORM6 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 131,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": ", compounds (binary compoun",
+          "text": "Define ', compounds (binary compoun' and discuss its importance in everyday life. - with example",
+          "competence": ", compounds (binary compoun"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+          "text": "Analyse the causes and effects of 'Describe the extraction of iron from its ore (ores, stages, and methods of extractio'. - with example",
+          "competence": "Describe the extraction of iron from its ore (ores, stages, "
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol' in Tanzania and propose solutions. - with example",
+          "competence": "Explore the basic tenets of Organic Chemistry (organic compo"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform experiments on volumetric analysis",
+          "text": "Outline the procedures involved in 'Perform experiments on volumetric analysis'.",
+          "competence": "Perform experiments on volumetric analysis"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)",
+          "text": "Analyse the causes and effects of 'Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)'. - with diagram",
+          "competence": "Describe the concept of chemical equilibria in predicting th"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "Define 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Describe the main features of 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms'. - with example",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)",
+          "text": "Evaluate the role of 'Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)' in national development. - with diagram",
+          "competence": "Investigate the applications of chemical kinetics in industr"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+          "text": "Discuss the challenges facing 'Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the concept of the atom (Dalton’s atomic theory, Bo"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+          "text": "With examples, illustrate how 'Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline' is applied in the community.",
+          "competence": "Describe the concept of Chemistry (meaning, branches, applic"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe acids, bases and salts (reactions of acids and bases with various substance",
+          "text": "Compare and contrast 'Describe acids, bases and salts (reactions of acids and bases with various substance' with related concepts. - with example",
+          "competence": "Describe acids, bases and salts (reactions of acids and base"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+          "text": "Describe the main features of '. Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry'. - with diagram",
+          "competence": ". Demonstrate an advanced understanding of the concepts, the"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Conduct synthesis of selected organic compounds",
+          "text": "Define 'Conduct synthesis of selected organic compounds' and discuss its importance in everyday life. - with example",
+          "competence": "Conduct synthesis of selected organic compounds"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of advanced concepts and principles in organic chemistry'.",
+          "competence": "Demonstrate an understanding of advanced concepts and princi"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Define 'Perform experiments on the changes of matter from one state to another' and discuss its importance in everyday life.",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Evaluate the role of 'Use the electronic configuration of an element to locate their positions in the periodic table' in national development. - with diagram",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "and their applications in daily life",
+          "text": "Discuss the challenges facing 'and their applications in daily life' in Tanzania and propose solutions. - with example",
+          "competence": "and their applications in daily life"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Conduct a project in Chemistry",
+          "text": "Compare and contrast 'Conduct a project in Chemistry' with related concepts. - with example",
+          "competence": "Conduct a project in Chemistry"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Explain the concept of 'Conduct experiments in Chemistry' with examples relevant to Tanzania. - with diagram",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+          "text": "Examine the advantages and disadvantages of 'Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons'. - with example",
+          "competence": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohy"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber",
+          "text": "Outline the procedures involved in 'Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber'. - with diagram",
+          "competence": "Examine reactions of haloalkanes, amines and polymers for pr"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism",
+          "text": "Examine the advantages and disadvantages of 'Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism'.",
+          "competence": "Examine the applications of energetics in daily life in comb"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+          "text": "Evaluate the role of 'Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)' in national development.",
+          "competence": "Investigate the applications of electrochemistry in industri"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid'. - with example",
+          "competence": "Demonstrate oxidizing and displacement properties of non-met"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+          "text": "Describe the main features of 'Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons'. - with example",
+          "competence": "Appreciate the applications of gas laws in daily life such a"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    ", compounds (binary compoun",
+    "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+    "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+    "Perform experiments on volumetric analysis",
+    "Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)",
+    "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+    "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+    "Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)",
+    "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+    "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,249 @@
+{
+  "filename": "academic_communication_form6_terminal_1_2026.json",
+  "subject": "Academic Communication",
+  "subject_slug": "academic_communication",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2026",
+  "time": "2:30 Hours",
+  "title": "Academic Communication - Terminal Exam 1 (FORM6 2026)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 121,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Interpret simple illustrations used in documents",
+          "text": "With examples, illustrate how 'Interpret simple illustrations used in documents' is applied in the community.",
+          "competence": "Interpret simple illustrations used in documents"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate the understanding of basic principles and usage of English language (e.g., syntax, pronunciation, grammar, etc.)",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate the understanding of basic principles and usage of English language (e.g., syntax, pronunciation, grammar, etc.)'. - with example",
+          "competence": "Demonstrate the understanding of basic principles and usage "
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Search for academic information from physical and online sources",
+          "text": "Propose measures to improve 'Search for academic information from physical and online sources' in schools. - with example",
+          "competence": "Search for academic information from physical and online sou"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Interpret complex illustrations used in various documents",
+          "text": "Discuss the factors influencing 'Interpret complex illustrations used in various documents'.",
+          "competence": "Interpret complex illustrations used in various documents"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Apply principles of language to construct sentences, paragraphs, and texts",
+          "text": "Discuss the factors influencing 'Apply principles of language to construct sentences, paragraphs, and texts'. - locally",
+          "competence": "Apply principles of language to construct sentences, paragra"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use field- specific vocabularies (e.g., science, commerce, agriculture, etc.) in oral and written communication",
+          "text": "Describe the main features of 'Use field- specific vocabularies (e.g., science, commerce, agriculture, etc.) in oral and written communication'. - with example",
+          "competence": "Use field- specific vocabularies (e.g., science, commerce, a"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use simple illustrations to prepare academic documents",
+          "text": "Outline the procedures involved in 'Use simple illustrations to prepare academic documents'.",
+          "competence": "Use simple illustrations to prepare academic documents"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Participate in formal and informal meetings (e.g., school, workplace, home, village, ward)",
+          "text": "Examine the advantages and disadvantages of 'Participate in formal and informal meetings (e.g., school, workplace, home, village, ward)'. - locally",
+          "competence": "Participate in formal and informal meetings (e.g., school, w"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Evaluate the importance of stress and intonation in oral communications",
+          "text": "Discuss the factors influencing 'Evaluate the importance of stress and intonation in oral communications'. - with example",
+          "competence": "Evaluate the importance of stress and intonation in oral com"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Apply principles of language to construct sentences, paragraphs and texts",
+          "text": "Examine the advantages and disadvantages of 'Apply principles of language to construct sentences, paragraphs and texts'. - with example",
+          "competence": "Apply principles of language to construct sentences, paragra"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate mastery of the use of English in academic communication",
+          "text": "With examples, illustrate how 'Demonstrate mastery of the use of English in academic communication' is applied in the community. - locally",
+          "competence": "Demonstrate mastery of the use of English in academic commun"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Prepare and make academic presentations in English",
+          "text": "Compare and contrast 'Prepare and make academic presentations in English' with related concepts. - with diagram",
+          "competence": "Prepare and make academic presentations in English"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use ICT to search for academic information",
+          "text": "Explain the concept of 'Use ICT to search for academic information' with examples relevant to Tanzania. - with example",
+          "competence": "Use ICT to search for academic information"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Write project proposals and project reports",
+          "text": "Define 'Write project proposals and project reports' and discuss its importance in everyday life. - locally",
+          "competence": "Write project proposals and project reports"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use complex illustrations to prepare academic documents",
+          "text": "Examine the advantages and disadvantages of 'Use complex illustrations to prepare academic documents'. - locally",
+          "competence": "Use complex illustrations to prepare academic documents"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Narrate diverse events/activities/ stories orally and in written communication",
+          "text": "Explain the concept of 'Narrate diverse events/activities/ stories orally and in written communication' with examples relevant to Tanzania. - locally",
+          "competence": "Narrate diverse events/activities/ stories orally and in wri"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Write various reports using appropriate procedures",
+          "text": "What are the characteristics of 'Write various reports using appropriate procedures'? - locally",
+          "competence": "Write various reports using appropriate procedures"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use multimedia devices (e.g., computer, projector, TV, etc.) in oral presentations",
+          "text": "With examples, illustrate how 'Use multimedia devices (e.g., computer, projector, TV, etc.) in oral presentations' is applied in the community.",
+          "competence": "Use multimedia devices (e.g., computer, projector, TV, etc.)"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use e-mails, fax, online professional platforms (e.g., LinkedIn) and online portals (e.g., Ajira portal) to communicate information",
+          "text": "Discuss the factors influencing 'Use e-mails, fax, online professional platforms (e.g., LinkedIn) and online portals (e.g., Ajira portal) to communicate information'.",
+          "competence": "Use e-mails, fax, online professional platforms (e.g., Linke"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Construct paragraphs using appropriate steps in writing texts",
+          "text": "Explain the relationship between 'Construct paragraphs using appropriate steps in writing texts' and its environment.",
+          "competence": "Construct paragraphs using appropriate steps in writing text"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Write different sentences using appropriate punctuation marks",
+          "text": "Explain the relationship between 'Write different sentences using appropriate punctuation marks' and its environment. - with example",
+          "competence": "Write different sentences using appropriate punctuation mark"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Participate in face-to- face research interviews to collect information",
+          "text": "Examine the advantages and disadvantages of 'Participate in face-to- face research interviews to collect information'. - locally",
+          "competence": "Participate in face-to- face research interviews to collect "
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Interpret implied meanings of words and sentences in various contexts",
+          "text": "Define 'Interpret implied meanings of words and sentences in various contexts' and discuss its importance in everyday life. - with example",
+          "competence": "Interpret implied meanings of words and sentences in various"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Conduct online research interviews to collect information",
+          "text": "Describe the process of 'Conduct online research interviews to collect information' step by step. - with diagram",
+          "competence": "Conduct online research interviews to collect information"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Prepare posters for academic presentations",
+          "text": "With examples, illustrate how 'Prepare posters for academic presentations' is applied in the community. - with example",
+          "competence": "Prepare posters for academic presentations"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Interpret simple illustrations used in documents",
+    "Demonstrate the understanding of basic principles and usage of English language (e.g., syntax, pronunciation, grammar, etc.)",
+    "Search for academic information from physical and online sources",
+    "Interpret complex illustrations used in various documents",
+    "Apply principles of language to construct sentences, paragraphs, and texts",
+    "Use field- specific vocabularies (e.g., science, commerce, agriculture, etc.) in oral and written communication",
+    "Use simple illustrations to prepare academic documents",
+    "Participate in formal and informal meetings (e.g., school, workplace, home, village, ward)",
+    "Evaluate the importance of stress and intonation in oral communications",
+    "Apply principles of language to construct sentences, paragraphs and texts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

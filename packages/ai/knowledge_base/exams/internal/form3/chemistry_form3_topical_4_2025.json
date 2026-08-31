@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form3_topical_4_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 4 (FORM3 2025): and mixtures (types of solution and",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)'. - with example",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "and mixtures (types of solution and separation of mixture",
+          "text": "Discuss the challenges facing 'and mixtures (types of solution and separation of mixture' in Tanzania and propose solutions. - with diagram",
+          "competence": "and mixtures (types of solution and separation of mixture"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "and mixtures (types of solution and separation of mixture",
+          "text": "Compare and contrast 'and mixtures (types of solution and separation of mixture' with related concepts. - with example",
+          "competence": "and mixtures (types of solution and separation of mixture"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Define 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' and discuss its importance in everyday life.",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Evaluate the role of 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' in national development.",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Discuss the challenges facing 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' in Tanzania and propose solutions. - with example",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Compare and contrast 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' with related concepts.",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Compare and contrast 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' with related concepts. - with diagram",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Discuss the challenges facing 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Outline the procedures involved in 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)'. - with diagram",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+    "and mixtures (types of solution and separation of mixture"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

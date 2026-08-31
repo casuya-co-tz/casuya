@@ -1,0 +1,121 @@
+{
+  "filename": "mathematics_form5_topical_6_2024.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Mathematics - Topical Test 6 (FORM5 2024): Use vectors to solve problems relat",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+          "text": "Examine the advantages and disadvantages of 'Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors'. - with example",
+          "competence": "Use vectors to solve problems related to displacement, veloc"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "Describe the main features of 'Perform operations on radicals and rationalize the denominators'.",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+          "text": "Examine the advantages and disadvantages of 'Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors'. - with example",
+          "competence": "Use vectors to solve problems related to displacement, veloc"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+          "text": "Compare and contrast 'Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors' with related concepts. - locally",
+          "competence": "Use vectors to solve problems related to displacement, veloc"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "How does 'Perform operations on radicals and rationalize the denominators' relate to sustainable development?",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "Describe the process of 'Perform operations on radicals and rationalize the denominators' step by step. - locally",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "How does 'Perform operations on radicals and rationalize the denominators' relate to sustainable development? - with example",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+          "text": "Describe the main features of 'Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors'.",
+          "competence": "Use vectors to solve problems related to displacement, veloc"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "Describe the process of 'Perform operations on radicals and rationalize the denominators' step by step.",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+          "text": "Discuss the factors influencing 'Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors'. - with example",
+          "competence": "Use vectors to solve problems related to displacement, veloc"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+    "Perform operations on radicals and rationalize the denominators"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

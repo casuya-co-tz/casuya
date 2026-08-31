@@ -1,0 +1,121 @@
+{
+  "filename": "history_form4_topical_4_2026.json",
+  "subject": "History",
+  "subject_slug": "history",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "History - Topical Test 4 (FORM4 2026): Demonstrate an understanding of the",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 48,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the history of conflicts and wars of the 20th Century",
+          "text": "Evaluate the role of 'Demonstrate an understanding of the history of conflicts and wars of the 20th Century' in national development.",
+          "competence": "Demonstrate an understanding of the history of conflicts and"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the history of conflicts and wars of the 20th Century",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of the history of conflicts and wars of the 20th Century' in Tanzania and propose solutions. - with example",
+          "competence": "Demonstrate an understanding of the history of conflicts and"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems",
+          "text": "Explain the relationship between 'Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems' and its environment. - with example",
+          "competence": "Demonstrate an understanding of the contribution of politica"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the history of conflicts and wars of the 20th Century",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the history of conflicts and wars of the 20th Century' is applied in the community. - with diagram",
+          "competence": "Demonstrate an understanding of the history of conflicts and"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems",
+          "text": "Describe the process of 'Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems' step by step. - locally",
+          "competence": "Demonstrate an understanding of the contribution of politica"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the history of conflicts and wars of the 20th Century",
+          "text": "Evaluate the role of 'Demonstrate an understanding of the history of conflicts and wars of the 20th Century' in national development.",
+          "competence": "Demonstrate an understanding of the history of conflicts and"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems'. - with diagram",
+          "competence": "Demonstrate an understanding of the contribution of politica"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the history of conflicts and wars of the 20th Century",
+          "text": "Compare and contrast 'Demonstrate an understanding of the history of conflicts and wars of the 20th Century' with related concepts.",
+          "competence": "Demonstrate an understanding of the history of conflicts and"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems",
+          "text": "Assess the impact of 'Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems' on society. - with diagram",
+          "competence": "Demonstrate an understanding of the contribution of politica"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems'. - locally",
+          "competence": "Demonstrate an understanding of the contribution of politica"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate an understanding of the history of conflicts and wars of the 20th Century",
+    "Demonstrate an understanding of the contribution of political revolutions in Europe to the growth of current administrative systems"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

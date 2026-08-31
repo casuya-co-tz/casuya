@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form2_midterm2_1_2023.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 2 Exam 1 (FORM2 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 75,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Describe the main features of 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline'. - with diagram",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+          "text": "Examine the advantages and disadvantages of 'Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)'.",
+          "competence": "Apply knowledge on binomial nomenclature in different fields"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "Evaluate the role of 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system' in national development. - with diagram",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "Evaluate the role of 'Demonstrate mastery of scientific biological terminologies' in national development. - with example",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)",
+          "text": "Explain the concept of 'Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)' with examples relevant to Tanzania.",
+          "competence": "Apply skills used in biological investigation (observation, "
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Prepare and present results of biological investigations",
+          "text": "Define 'Prepare and present results of biological investigations' and discuss its importance in everyday life. - with example",
+          "competence": "Prepare and present results of biological investigations"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+          "text": "Compare and contrast 'Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio' with related concepts. - with diagram",
+          "competence": "Describe the mechanism of transportation of materials in the"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Discribe the application or role of synthetic phytohormones",
+          "text": "With examples, illustrate how 'Discribe the application or role of synthetic phytohormones' is applied in the community.",
+          "competence": "Discribe the application or role of synthetic phytohormones"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "text": "Analyse the causes and effects of 'Describe the physiological, anatomical and ecological processes of living organisms'. - with example",
+          "competence": "Describe the physiological, anatomical and ecological proces"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Investigate tropic responses in plants",
+          "text": "Outline the procedures involved in 'Investigate tropic responses in plants'.",
+          "competence": "Investigate tropic responses in plants"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+          "text": "Define 'Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)' and discuss its importance in everyday life.",
+          "competence": "Explain the concept of regulation in mammals (feedback mecha"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "Evaluate the role of 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution' in national development. - with example",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)",
+          "text": "With examples, illustrate how 'Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)' is applied in the community. - with example",
+          "competence": "Describe the mechanism of blood circulation in vertebrates ("
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "text": "Compare and contrast 'Demonstrate an advanced understanding of concepts, theories and principles in Biology' with related concepts.",
+          "competence": "Demonstrate an advanced understanding of concepts, theories "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+          "text": "Evaluate the role of 'Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse' in national development.",
+          "competence": "Describe the major groups of organisms: (Monera, Protista, F"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe coordination in plants (tropic, response",
+          "text": "With examples, illustrate how 'Describe coordination in plants (tropic, response' is applied in the community. - with example",
+          "competence": "Describe coordination in plants (tropic, response"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "With examples, illustrate how 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)' is applied in the community.",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio",
+          "text": "Discuss the challenges facing 'Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio' in Tanzania and propose solutions.",
+          "competence": "Describe the mechanisms of gaseous exchange and respiration "
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+          "text": "Examine the advantages and disadvantages of 'Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)'.",
+          "competence": "Describe the distinctive characteristics of kingdoms, phyla/"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Define 'Complete and submit a report for the research project started in Form Three' and discuss its importance in everyday life.",
+          "competence": "Complete and submit a report for the research project starte"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+    "Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+    "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+    "Demonstrate mastery of scientific biological terminologies",
+    "Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)",
+    "Prepare and present results of biological investigations",
+    "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+    "Discribe the application or role of synthetic phytohormones",
+    "Describe the physiological, anatomical and ecological processes of living organisms",
+    "Investigate tropic responses in plants"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

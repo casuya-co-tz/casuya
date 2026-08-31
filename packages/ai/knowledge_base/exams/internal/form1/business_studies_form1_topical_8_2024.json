@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form1_topical_8_2024.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 8 (FORM1 2024): Describe the concept and theories o",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 52,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "How does 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' relate to sustainable development?",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "With examples, illustrate how 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' is applied in the community. - with example",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "With examples, illustrate how 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' is applied in the community.",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Explain the relationship between 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc' and its environment. - locally",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Discuss the factors influencing 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc'.",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Explain the relationship between 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc' and its environment. - with diagram",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "What are the characteristics of 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi'? - locally",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Discuss the factors influencing 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi'.",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Discuss the factors influencing 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc'.",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Explain the concept of 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' with examples relevant to Tanzania. - locally",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+    "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

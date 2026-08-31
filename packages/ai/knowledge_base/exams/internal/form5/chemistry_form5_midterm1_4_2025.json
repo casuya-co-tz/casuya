@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form5_midterm1_4_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 1 Exam 4 (FORM5 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 98,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Design and carry-out a simple research project in Chemistry",
+          "text": "Define 'Design and carry-out a simple research project in Chemistry' and discuss its importance in everyday life. - with example",
+          "competence": "Design and carry-out a simple research project in Chemistry"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Conduct a project in Chemistry",
+          "text": "Analyse the causes and effects of 'Conduct a project in Chemistry'. - with example",
+          "competence": "Conduct a project in Chemistry"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+          "text": "With examples, illustrate how 'Investigate the composition of chemical species in substances using systematic qualitative analysis' is applied in the community.",
+          "competence": "Investigate the composition of chemical species in substance"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
+          "text": "Describe the main features of 'Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid'. - with diagram",
+          "competence": "Demonstrate oxidizing and displacement properties of non-met"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+          "text": "Compare and contrast 'Use the concept of atomic structure to determine the atomic and mass numbers of an element' with related concepts. - with example",
+          "competence": "Use the concept of atomic structure to determine the atomic "
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Determine empirical and molecular formulae of common compounds",
+          "text": "Discuss the challenges facing 'Determine empirical and molecular formulae of common compounds' in Tanzania and propose solutions. - with example",
+          "competence": "Determine empirical and molecular formulae of common compoun"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+          "text": "With examples, illustrate how 'Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)' is applied in the community. - with example",
+          "competence": "Investigate the applications of electrochemistry in industri"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+          "text": "Define 'Describe the concept of gases in terms of the gas laws and the kinetic theory of gases' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the concept of gases in terms of the gas laws and t"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Explain the concept of 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' with examples relevant to Tanzania.",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
+          "text": "Evaluate the role of 'Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal' in national development. - with diagram",
+          "competence": "Explain the concept of the periodic table (1st 20 elements i"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+          "text": "Analyse the causes and effects of 'Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)'. - with example",
+          "competence": "Describe the concept of colligative properties in understand"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Describe the main features of 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species'.",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+          "text": "Describe the main features of 'Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline'. - with diagram",
+          "competence": "Describe the concept of Chemistry (meaning, branches, applic"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "and their applications in daily life",
+          "text": "Analyse the causes and effects of 'and their applications in daily life'. - with diagram",
+          "competence": "and their applications in daily life"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+          "text": "Discuss the challenges facing 'Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software' in Tanzania and propose solutions. - with diagram",
+          "competence": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Describe the main features of 'Design and carry out a project in Chemistry'. - with diagram",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table' in Tanzania and propose solutions. - with diagram",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore reactions of complex compounds",
+          "text": "Evaluate the role of 'Explore reactions of complex compounds' in national development. - with example",
+          "competence": "Explore reactions of complex compounds"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+          "text": "Outline the procedures involved in 'Use the prepared indicators to test acidity and alkalinity of substances found in the locality'. - with diagram",
+          "competence": "Use the prepared indicators to test acidity and alkalinity o"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "Outline the procedures involved in 'Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers'.",
+          "competence": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carb"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Design and carry-out a simple research project in Chemistry",
+    "Conduct a project in Chemistry",
+    "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+    "Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
+    "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+    "Determine empirical and molecular formulae of common compounds",
+    "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+    "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+    "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+    "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

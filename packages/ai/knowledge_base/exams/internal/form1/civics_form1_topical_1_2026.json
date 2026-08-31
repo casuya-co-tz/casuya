@@ -1,0 +1,121 @@
+{
+  "filename": "civics_form1_topical_1_2026.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Civics - Topical Test 1 (FORM1 2026): Explain elections",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 44,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain elections",
+          "text": "Explain the concept of 'Explain elections' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain elections"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Culture and Tradition",
+          "text": "Define 'Culture and Tradition' and discuss its importance in everyday life. - with diagram",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Culture and Tradition",
+          "text": "Compare and contrast 'Culture and Tradition' with related concepts.",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain elections",
+          "text": "Describe the main features of 'Explain elections'.",
+          "competence": "Explain elections"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Culture and Tradition",
+          "text": "Explain the concept of 'Culture and Tradition' with examples relevant to Tanzania.",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain elections",
+          "text": "Define 'Explain elections' and discuss its importance in everyday life.",
+          "competence": "Explain elections"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Culture and Tradition",
+          "text": "Discuss the challenges facing 'Culture and Tradition' in Tanzania and propose solutions. - with diagram",
+          "competence": "Culture and Tradition"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain elections",
+          "text": "With examples, illustrate how 'Explain elections' is applied in the community. - with diagram",
+          "competence": "Explain elections"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain elections",
+          "text": "Describe the main features of 'Explain elections'. - with diagram",
+          "competence": "Explain elections"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain elections",
+          "text": "With examples, illustrate how 'Explain elections' is applied in the community. - with diagram",
+          "competence": "Explain elections"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain elections",
+    "Culture and Tradition"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

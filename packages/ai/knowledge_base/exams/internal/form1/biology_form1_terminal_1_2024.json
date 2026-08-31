@@ -1,0 +1,249 @@
+{
+  "filename": "biology_form1_terminal_1_2024.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2024",
+  "time": "2:30 Hours",
+  "title": "Biology - Terminal Exam 1 (FORM1 2024)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 116,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Discribe the application or role of synthetic phytohormones",
+          "text": "With examples, illustrate how 'Discribe the application or role of synthetic phytohormones' is applied in the community.",
+          "competence": "Discribe the application or role of synthetic phytohormones"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Compare and contrast 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )' with related concepts. - with diagram",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Outline the procedures involved in 'Complete and submit a report for the research project started in Form Three'.",
+          "competence": "Complete and submit a report for the research project starte"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare and present a report based on the findings",
+          "text": "Outline the procedures involved in 'Prepare and present a report based on the findings'.",
+          "competence": "Prepare and present a report based on the findings"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Compare and contrast 'Develop and carry out a simple research project in Biology' with related concepts. - with diagram",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis",
+          "text": "With examples, illustrate how 'Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis' is applied in the community. - with diagram",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Investigate processes of transportation of materials in flowering plants",
+          "text": "Explain the concept of 'Investigate processes of transportation of materials in flowering plants' with examples relevant to Tanzania. - with example",
+          "competence": "Investigate processes of transportation of materials in flow"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the structure of epithelial tissues in relation to its digestive role",
+          "text": "Examine the advantages and disadvantages of 'Describe the structure of epithelial tissues in relation to its digestive role'. - with diagram",
+          "competence": "Describe the structure of epithelial tissues in relation to "
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "Outline the procedures involved in 'Plan and execute in an independent biological investigation'.",
+          "competence": "Plan and execute in an independent biological investigation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "and gas exchange in living organisms",
+          "text": "Examine the advantages and disadvantages of 'and gas exchange in living organisms'. - with example",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Explain the concept of 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline' with examples relevant to Tanzania. - with example",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the principles of binomial nomenclature and classification",
+          "text": "Compare and contrast 'Demonstrate an understanding of the principles of binomial nomenclature and classification' with related concepts. - with example",
+          "competence": "Demonstrate an understanding of the principles of binomial n"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+          "text": "Explain the concept of 'Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)' with examples relevant to Tanzania.",
+          "competence": "Describe the mechanism of reproduction in animals (gametogen"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+          "text": "Analyse the causes and effects of 'Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)'. - with example",
+          "competence": "Describe the distinctive characteristics of kingdoms, phyla/"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Explain the concept of 'Investigate food nutrients in various food samples' with examples relevant to Tanzania. - with diagram",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+          "text": "Explain the concept of 'Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)' with examples relevant to Tanzania. - with example",
+          "competence": "Explain the concept of ecology (methods of studying, biodive"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+          "text": "Outline the procedures involved in 'Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt'.",
+          "competence": "Describe reproduction in humans (sexual reproduction in huma"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Design and carry out a project in Biology",
+          "text": "Examine the advantages and disadvantages of 'Design and carry out a project in Biology'.",
+          "competence": "Design and carry out a project in Biology"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Investigate aerobic and anaerobic respiration in living organisms",
+          "text": "Analyse the causes and effects of 'Investigate aerobic and anaerobic respiration in living organisms'. - with example",
+          "competence": "Investigate aerobic and anaerobic respiration in living orga"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4",
+          "text": "Examine the advantages and disadvantages of 'Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4'. - with example",
+          "competence": "Explain the physiology of photosynthesis (mechanism of light"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Outline the procedures involved in 'Carry out investigation related to reproduction in flowering plants (flower structure and embry'. - with diagram",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain classification systems and taxonomic rank",
+          "text": "Describe the main features of 'Explain classification systems and taxonomic rank'. - with example",
+          "competence": "Explain classification systems and taxonomic rank"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the mechanism of excretion in the human body (systems: organs, product",
+          "text": "Define 'Describe the mechanism of excretion in the human body (systems: organs, product' and discuss its importance in everyday life.",
+          "competence": "Describe the mechanism of excretion in the human body (syste"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+          "text": "Discuss the challenges facing 'Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)' in Tanzania and propose solutions. - with example",
+          "competence": "Describe principles of inheritance in living organisms (here"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Discribe the application or role of synthetic phytohormones",
+    "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+    "Complete and submit a report for the research project started in Form Three",
+    "Prepare and present a report based on the findings",
+    "Develop and carry out a simple research project in Biology",
+    "Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis",
+    "Investigate processes of transportation of materials in flowering plants",
+    "Describe the structure of epithelial tissues in relation to its digestive role",
+    "Plan and execute in an independent biological investigation",
+    "and gas exchange in living organisms"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

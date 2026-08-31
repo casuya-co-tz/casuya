@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form2_midterm1_2_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 2 (FORM2 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 92,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain market and marketing",
+          "text": "Describe the main features of 'Explain market and marketing'. - with diagram",
+          "competence": "Explain market and marketing"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain warehousing",
+          "text": "Compare and contrast 'Explain warehousing' with related concepts. - with example",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain insurance",
+          "text": "With examples, illustrate how 'Explain insurance' is applied in the community. - with example",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Insurance",
+          "text": "Outline the procedures involved in 'Insurance'. - with diagram",
+          "competence": "Insurance"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Trade",
+          "text": "Define 'Trade' and discuss its importance in everyday life.",
+          "competence": "Trade"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain sources of business finance",
+          "text": "Explain the concept of 'Explain sources of business finance' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Sole Proprietorship",
+          "text": "With examples, illustrate how 'Sole Proprietorship' is applied in the community. - with diagram",
+          "competence": "Sole Proprietorship"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain production",
+          "text": "With examples, illustrate how 'Explain production' is applied in the community.",
+          "competence": "Explain production"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain concept of commerce",
+          "text": "Outline the procedures involved in 'Explain concept of commerce'.",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Production",
+          "text": "Examine the advantages and disadvantages of 'Production'. - with example",
+          "competence": "Production"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Transport",
+          "text": "Outline the procedures involved in 'Transport'.",
+          "competence": "Transport"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Concept of Commerce",
+          "text": "Explain the concept of 'Concept of Commerce' with examples relevant to Tanzania.",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Cooperative",
+          "text": "Discuss the challenges facing 'Cooperative' in Tanzania and propose solutions. - with example",
+          "competence": "Cooperative"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain advertisement",
+          "text": "Discuss the challenges facing 'Explain advertisement' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain advertisement"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Sources of Business Finance",
+          "text": "Analyse the causes and effects of 'Sources of Business Finance'. - with example",
+          "competence": "Sources of Business Finance"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain transport",
+          "text": "Analyse the causes and effects of 'Explain transport'.",
+          "competence": "Explain transport"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Market and Marketing",
+          "text": "Define 'Market and Marketing' and discuss its importance in everyday life. - with diagram",
+          "competence": "Market and Marketing"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Aids to Trade",
+          "text": "Analyse the causes and effects of 'Aids to Trade'.",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain cooperative",
+          "text": "Define 'Explain cooperative' and discuss its importance in everyday life. - with example",
+          "competence": "Explain cooperative"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain documentation",
+          "text": "Outline the procedures involved in 'Explain documentation'. - with diagram",
+          "competence": "Explain documentation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain market and marketing",
+    "Explain warehousing",
+    "Explain insurance",
+    "Insurance",
+    "Trade",
+    "Explain sources of business finance",
+    "Sole Proprietorship",
+    "Explain production",
+    "Explain concept of commerce",
+    "Production"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

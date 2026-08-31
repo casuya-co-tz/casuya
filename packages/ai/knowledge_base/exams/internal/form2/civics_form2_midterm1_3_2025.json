@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form2_midterm1_3_2025.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 1 Exam 3 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 71,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Globalization",
+          "text": "Discuss the challenges facing 'Globalization' in Tanzania and propose solutions. - with diagram",
+          "competence": "Globalization"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain interpersonal relationships",
+          "text": "Explain the concept of 'Explain interpersonal relationships' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain interpersonal relationships"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain national unity",
+          "text": "Discuss the challenges facing 'Explain national unity' in Tanzania and propose solutions.",
+          "competence": "Explain national unity"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain globalization",
+          "text": "Discuss the challenges facing 'Explain globalization' in Tanzania and propose solutions. - with example",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain local government",
+          "text": "Evaluate the role of 'Explain local government' in national development. - with example",
+          "competence": "Explain local government"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Central Government",
+          "text": "With examples, illustrate how 'Central Government' is applied in the community. - with diagram",
+          "competence": "Central Government"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Interpersonal Relationships",
+          "text": "Outline the procedures involved in 'Interpersonal Relationships'.",
+          "competence": "Interpersonal Relationships"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Concept of Human Rights",
+          "text": "Analyse the causes and effects of 'Concept of Human Rights'.",
+          "competence": "Concept of Human Rights"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain gender",
+          "text": "Examine the advantages and disadvantages of 'Explain gender'. - with diagram",
+          "competence": "Explain gender"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain culture and tradition",
+          "text": "With examples, illustrate how 'Explain culture and tradition' is applied in the community.",
+          "competence": "Explain culture and tradition"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain democracy",
+          "text": "Describe the main features of 'Explain democracy'. - with diagram",
+          "competence": "Explain democracy"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Citizenship",
+          "text": "Evaluate the role of 'Citizenship' in national development. - with diagram",
+          "competence": "Citizenship"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Life Skills",
+          "text": "With examples, illustrate how 'Life Skills' is applied in the community. - with diagram",
+          "competence": "Life Skills"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Democracy",
+          "text": "Describe the main features of 'Democracy'. - with example",
+          "competence": "Democracy"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain concept of human rights",
+          "text": "Describe the main features of 'Explain concept of human rights'. - with example",
+          "competence": "Explain concept of human rights"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain life skills",
+          "text": "Define 'Explain life skills' and discuss its importance in everyday life. - with example",
+          "competence": "Explain life skills"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Elections",
+          "text": "Examine the advantages and disadvantages of 'Elections'. - with example",
+          "competence": "Elections"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain citizenship",
+          "text": "With examples, illustrate how 'Explain citizenship' is applied in the community.",
+          "competence": "Explain citizenship"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain constitution",
+          "text": "Define 'Explain constitution' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain central government",
+          "text": "Describe the main features of 'Explain central government'.",
+          "competence": "Explain central government"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Globalization",
+    "Explain interpersonal relationships",
+    "Explain national unity",
+    "Explain globalization",
+    "Explain local government",
+    "Central Government",
+    "Interpersonal Relationships",
+    "Concept of Human Rights",
+    "Explain gender",
+    "Explain culture and tradition"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

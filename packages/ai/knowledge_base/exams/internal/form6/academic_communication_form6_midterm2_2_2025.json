@@ -1,0 +1,209 @@
+{
+  "filename": "academic_communication_form6_midterm2_2_2025.json",
+  "subject": "Academic Communication",
+  "subject_slug": "academic_communication",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Academic Communication - Midterm 2 Exam 2 (FORM6 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 86,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Learning activities",
+          "text": "Evaluate the role of 'Learning activities' in national development.",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Search for academic information from physical and online sources",
+          "text": "Discuss the factors influencing 'Search for academic information from physical and online sources'. - with example",
+          "competence": "Search for academic information from physical and online sou"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare posters for academic presentations",
+          "text": "Define 'Prepare posters for academic presentations' and discuss its importance in everyday life.",
+          "competence": "Prepare posters for academic presentations"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Narrate diverse events/activities/ stories orally and in written communication",
+          "text": "With examples, illustrate how 'Narrate diverse events/activities/ stories orally and in written communication' is applied in the community. - with example",
+          "competence": "Narrate diverse events/activities/ stories orally and in wri"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Apply principles of language to construct sentences, paragraphs and texts",
+          "text": "Discuss the challenges facing 'Apply principles of language to construct sentences, paragraphs and texts' in Tanzania and propose solutions.",
+          "competence": "Apply principles of language to construct sentences, paragra"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use simple illustrations to prepare academic documents",
+          "text": "Evaluate the role of 'Use simple illustrations to prepare academic documents' in national development.",
+          "competence": "Use simple illustrations to prepare academic documents"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Justify the necessity of word order in sentence construction",
+          "text": "Define 'Justify the necessity of word order in sentence construction' and discuss its importance in everyday life.",
+          "competence": "Justify the necessity of word order in sentence construction"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate mastery of the use of English in academic communication",
+          "text": "Describe the main features of 'Demonstrate mastery of the use of English in academic communication'.",
+          "competence": "Demonstrate mastery of the use of English in academic commun"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Identify simple and complex illustrations from various documents",
+          "text": "What are the characteristics of 'Identify simple and complex illustrations from various documents'?",
+          "competence": "Identify simple and complex illustrations from various docum"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Write project proposals and project reports",
+          "text": "Describe the process of 'Write project proposals and project reports' step by step. - with example",
+          "competence": "Write project proposals and project reports"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Interpret complex illustrations used in various documents",
+          "text": "With examples, illustrate how 'Interpret complex illustrations used in various documents' is applied in the community.",
+          "competence": "Interpret complex illustrations used in various documents"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use multimedia devices (e.g., computer, projector, TV, etc.) in oral presentations",
+          "text": "Propose measures to improve 'Use multimedia devices (e.g., computer, projector, TV, etc.) in oral presentations' in schools. - locally",
+          "competence": "Use multimedia devices (e.g., computer, projector, TV, etc.)"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Construct sentences (complex, compound, etc.) by observing subject-verb agreement and appropriate word order in oral and written communications",
+          "text": "With examples, illustrate how 'Construct sentences (complex, compound, etc.) by observing subject-verb agreement and appropriate word order in oral and written communications' is applied in the community. - locally",
+          "competence": "Construct sentences (complex, compound, etc.) by observing s"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills",
+          "text": "Describe the process of 'Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills' step by step.",
+          "competence": "Make presentations on diverse matters (e.g., health, death, "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Present project proposals and project reports",
+          "text": "Discuss the factors influencing 'Present project proposals and project reports'.",
+          "competence": "Present project proposals and project reports"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Form words using word-formation processes that express clarity and fluency in oral and written communications",
+          "text": "Discuss the challenges facing 'Form words using word-formation processes that express clarity and fluency in oral and written communications' in Tanzania and propose solutions. - with diagram",
+          "competence": "Form words using word-formation processes that express clari"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use e-mails, fax, online professional platforms (e.g., LinkedIn) and online portals (e.g., Ajira portal) to communicate information",
+          "text": "Discuss the challenges facing 'Use e-mails, fax, online professional platforms (e.g., LinkedIn) and online portals (e.g., Ajira portal) to communicate information' in Tanzania and propose solutions.",
+          "competence": "Use e-mails, fax, online professional platforms (e.g., Linke"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Interpret implied meanings of words and sentences in various contexts",
+          "text": "Describe the process of 'Interpret implied meanings of words and sentences in various contexts' step by step. - with example",
+          "competence": "Interpret implied meanings of words and sentences in various"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Pronounce words correctly using stress and intonation in oral and written communications",
+          "text": "Assess the impact of 'Pronounce words correctly using stress and intonation in oral and written communications' on society. - with diagram",
+          "competence": "Pronounce words correctly using stress and intonation in ora"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Make classroom presentations",
+          "text": "Examine the advantages and disadvantages of 'Make classroom presentations'.",
+          "competence": "Make classroom presentations"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Learning activities",
+    "Search for academic information from physical and online sources",
+    "Prepare posters for academic presentations",
+    "Narrate diverse events/activities/ stories orally and in written communication",
+    "Apply principles of language to construct sentences, paragraphs and texts",
+    "Use simple illustrations to prepare academic documents",
+    "Justify the necessity of word order in sentence construction",
+    "Demonstrate mastery of the use of English in academic communication",
+    "Identify simple and complex illustrations from various documents",
+    "Write project proposals and project reports"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

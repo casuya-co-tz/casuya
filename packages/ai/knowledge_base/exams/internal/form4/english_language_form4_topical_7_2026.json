@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form4_topical_7_2026.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 7 (FORM4 2026): Express feelings and emotions depic",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 47,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)",
+          "text": "Analyse the causes and effects of 'Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)'. - locally",
+          "competence": "Express feelings and emotions depicted/ portrayed in various"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)",
+          "text": "Compare and contrast 'Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)' with related concepts. - with example",
+          "competence": "Express feelings and emotions depicted/ portrayed in various"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain meaning of written texts derived from different registers (journalism, medicine and religion)",
+          "text": "How does 'Explain meaning of written texts derived from different registers (journalism, medicine and religion)' relate to sustainable development? - locally",
+          "competence": "Explain meaning of written texts derived from different regi"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain meaning of written texts derived from different registers (journalism, medicine and religion)",
+          "text": "How does 'Explain meaning of written texts derived from different registers (journalism, medicine and religion)' relate to sustainable development?",
+          "competence": "Explain meaning of written texts derived from different regi"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain meaning of written texts derived from different registers (journalism, medicine and religion)",
+          "text": "How does 'Explain meaning of written texts derived from different registers (journalism, medicine and religion)' relate to sustainable development? - locally",
+          "competence": "Explain meaning of written texts derived from different regi"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain meaning of written texts derived from different registers (journalism, medicine and religion)",
+          "text": "Discuss the challenges facing 'Explain meaning of written texts derived from different registers (journalism, medicine and religion)' in Tanzania and propose solutions.",
+          "competence": "Explain meaning of written texts derived from different regi"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)",
+          "text": "Describe the process of 'Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)' step by step.",
+          "competence": "Express feelings and emotions depicted/ portrayed in various"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)",
+          "text": "With examples, illustrate how 'Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)' is applied in the community. - with diagram",
+          "competence": "Express feelings and emotions depicted/ portrayed in various"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain meaning of written texts derived from different registers (journalism, medicine and religion)",
+          "text": "How does 'Explain meaning of written texts derived from different registers (journalism, medicine and religion)' relate to sustainable development?",
+          "competence": "Explain meaning of written texts derived from different regi"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain meaning of written texts derived from different registers (journalism, medicine and religion)",
+          "text": "Compare and contrast 'Explain meaning of written texts derived from different registers (journalism, medicine and religion)' with related concepts. - locally",
+          "competence": "Explain meaning of written texts derived from different regi"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)",
+    "Explain meaning of written texts derived from different registers (journalism, medicine and religion)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

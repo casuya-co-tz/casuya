@@ -1,0 +1,121 @@
+{
+  "filename": "agriculture_form2_topical_8_2023.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Agriculture - Topical Test 8 (FORM2 2023): Animal Health",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 35,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain agricultural marketing",
+          "text": "Examine the advantages and disadvantages of 'Explain agricultural marketing'. - with diagram",
+          "competence": "Explain agricultural marketing"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Animal Health",
+          "text": "Examine the advantages and disadvantages of 'Animal Health'. - with diagram",
+          "competence": "Animal Health"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain agricultural marketing",
+          "text": "Discuss the challenges facing 'Explain agricultural marketing' in Tanzania and propose solutions. - with example",
+          "competence": "Explain agricultural marketing"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Animal Health",
+          "text": "Describe the main features of 'Animal Health'.",
+          "competence": "Animal Health"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Animal Health",
+          "text": "Explain the concept of 'Animal Health' with examples relevant to Tanzania. - with diagram",
+          "competence": "Animal Health"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain agricultural marketing",
+          "text": "With examples, illustrate how 'Explain agricultural marketing' is applied in the community.",
+          "competence": "Explain agricultural marketing"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain agricultural marketing",
+          "text": "Compare and contrast 'Explain agricultural marketing' with related concepts. - with diagram",
+          "competence": "Explain agricultural marketing"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Animal Health",
+          "text": "Evaluate the role of 'Animal Health' in national development.",
+          "competence": "Animal Health"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain agricultural marketing",
+          "text": "Describe the main features of 'Explain agricultural marketing'. - with example",
+          "competence": "Explain agricultural marketing"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Animal Health",
+          "text": "Outline the procedures involved in 'Animal Health'. - with example",
+          "competence": "Animal Health"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain agricultural marketing",
+    "Animal Health"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

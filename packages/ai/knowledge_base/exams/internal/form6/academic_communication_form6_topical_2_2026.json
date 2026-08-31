@@ -1,0 +1,121 @@
+{
+  "filename": "academic_communication_form6_topical_2_2026.json",
+  "subject": "Academic Communication",
+  "subject_slug": "academic_communication",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Academic Communication - Topical Test 2 (FORM6 2026): Narrate diverse events/activities/ ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "Discuss the challenges facing 'Demonstrate mastery of using illustrations in academic documents' in Tanzania and propose solutions.",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Narrate diverse events/activities/ stories orally and in written communication",
+          "text": "How does 'Narrate diverse events/activities/ stories orally and in written communication' relate to sustainable development?",
+          "competence": "Narrate diverse events/activities/ stories orally and in wri"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "Assess the impact of 'Demonstrate mastery of using illustrations in academic documents' on society.",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Narrate diverse events/activities/ stories orally and in written communication",
+          "text": "Describe the process of 'Narrate diverse events/activities/ stories orally and in written communication' step by step.",
+          "competence": "Narrate diverse events/activities/ stories orally and in wri"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Narrate diverse events/activities/ stories orally and in written communication",
+          "text": "Describe the main features of 'Narrate diverse events/activities/ stories orally and in written communication'.",
+          "competence": "Narrate diverse events/activities/ stories orally and in wri"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Narrate diverse events/activities/ stories orally and in written communication",
+          "text": "With examples, illustrate how 'Narrate diverse events/activities/ stories orally and in written communication' is applied in the community.",
+          "competence": "Narrate diverse events/activities/ stories orally and in wri"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Narrate diverse events/activities/ stories orally and in written communication",
+          "text": "Assess the impact of 'Narrate diverse events/activities/ stories orally and in written communication' on society.",
+          "competence": "Narrate diverse events/activities/ stories orally and in wri"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "Describe the process of 'Demonstrate mastery of using illustrations in academic documents' step by step. - with diagram",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Narrate diverse events/activities/ stories orally and in written communication",
+          "text": "Compare and contrast 'Narrate diverse events/activities/ stories orally and in written communication' with related concepts.",
+          "competence": "Narrate diverse events/activities/ stories orally and in wri"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Narrate diverse events/activities/ stories orally and in written communication",
+          "text": "Compare and contrast 'Narrate diverse events/activities/ stories orally and in written communication' with related concepts.",
+          "competence": "Narrate diverse events/activities/ stories orally and in wri"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate mastery of using illustrations in academic documents",
+    "Narrate diverse events/activities/ stories orally and in written communication"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

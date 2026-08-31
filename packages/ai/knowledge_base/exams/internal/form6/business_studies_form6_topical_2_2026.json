@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form6_topical_2_2026.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 2 (FORM6 2026): Describe the basic tenets of ethics",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Compare and contrast 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)' with related concepts. - with diagram",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Define 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)' and discuss its importance in everyday life. - locally",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+          "text": "Discuss the factors influencing 'Describe the basic tenets of ethics for small businesses (meaning, norms, and value'. - with diagram",
+          "competence": "Describe the basic tenets of ethics for small businesses (me"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+          "text": "What are the characteristics of 'Describe the basic tenets of ethics for small businesses (meaning, norms, and value'?",
+          "competence": "Describe the basic tenets of ethics for small businesses (me"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Discuss the challenges facing 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)' in Tanzania and propose solutions. - locally",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+          "text": "Describe the process of 'Describe the basic tenets of ethics for small businesses (meaning, norms, and value' step by step. - locally",
+          "competence": "Describe the basic tenets of ethics for small businesses (me"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+          "text": "Propose measures to improve 'Describe the basic tenets of ethics for small businesses (meaning, norms, and value' in schools. - locally",
+          "competence": "Describe the basic tenets of ethics for small businesses (me"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "With examples, illustrate how 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)' is applied in the community. - with example",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+          "text": "Assess the impact of 'Describe the basic tenets of ethics for small businesses (meaning, norms, and value' on society. - with example",
+          "competence": "Describe the basic tenets of ethics for small businesses (me"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+          "text": "Compare and contrast 'Describe the basic tenets of ethics for small businesses (meaning, norms, and value' with related concepts. - with diagram",
+          "competence": "Describe the basic tenets of ethics for small businesses (me"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+    "Describe the basic tenets of ethics for small businesses (meaning, norms, and value"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

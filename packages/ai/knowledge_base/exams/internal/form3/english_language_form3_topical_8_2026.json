@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form3_topical_8_2026.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 8 (FORM3 2026): Read a variety of texts and comment",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 48,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Read a variety of texts and comment on the implied meanings from the author’s point of view",
+          "text": "Define 'Read a variety of texts and comment on the implied meanings from the author’s point of view' and discuss its importance in everyday life. - locally",
+          "competence": "Read a variety of texts and comment on the implied meanings "
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)",
+          "text": "Discuss the factors influencing 'Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)'.",
+          "competence": "Respond to oral messages with confidence and autonomy (e.g.,"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Read a variety of texts and comment on the implied meanings from the author’s point of view",
+          "text": "Analyse the causes and effects of 'Read a variety of texts and comment on the implied meanings from the author’s point of view'.",
+          "competence": "Read a variety of texts and comment on the implied meanings "
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Read a variety of texts and comment on the implied meanings from the author’s point of view",
+          "text": "Discuss the challenges facing 'Read a variety of texts and comment on the implied meanings from the author’s point of view' in Tanzania and propose solutions. - with example",
+          "competence": "Read a variety of texts and comment on the implied meanings "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)",
+          "text": "Evaluate the role of 'Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)' in national development.",
+          "competence": "Respond to oral messages with confidence and autonomy (e.g.,"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)",
+          "text": "With examples, illustrate how 'Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)' is applied in the community.",
+          "competence": "Respond to oral messages with confidence and autonomy (e.g.,"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Read a variety of texts and comment on the implied meanings from the author’s point of view",
+          "text": "How does 'Read a variety of texts and comment on the implied meanings from the author’s point of view' relate to sustainable development? - with example",
+          "competence": "Read a variety of texts and comment on the implied meanings "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)",
+          "text": "Propose measures to improve 'Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)' in schools.",
+          "competence": "Respond to oral messages with confidence and autonomy (e.g.,"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Read a variety of texts and comment on the implied meanings from the author’s point of view",
+          "text": "What are the characteristics of 'Read a variety of texts and comment on the implied meanings from the author’s point of view'? - with example",
+          "competence": "Read a variety of texts and comment on the implied meanings "
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)",
+          "text": "Describe the main features of 'Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)'. - locally",
+          "competence": "Respond to oral messages with confidence and autonomy (e.g.,"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Read a variety of texts and comment on the implied meanings from the author’s point of view",
+    "Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

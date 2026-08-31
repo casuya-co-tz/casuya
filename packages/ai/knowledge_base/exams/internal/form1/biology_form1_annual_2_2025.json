@@ -1,0 +1,289 @@
+{
+  "filename": "biology_form1_annual_2_2025.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2025",
+  "time": "3:00 Hours",
+  "title": "Biology - Annual Exam 2 (FORM1 2025)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 128,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "Outline the procedures involved in 'Demonstrate mastery of scientific biological terminologies'. - with example",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+          "text": "Define 'Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the major groups of organisms: (Monera, Protista, F"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Carry out experiments to determine the pulse rate in human",
+          "text": "Examine the advantages and disadvantages of 'Carry out experiments to determine the pulse rate in human'. - with example",
+          "competence": "Carry out experiments to determine the pulse rate in human"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+          "text": "Define 'Investigate growth in flowering plants (hypogeal and epigeal germinatio' and discuss its importance in everyday life. - with diagram",
+          "competence": "Investigate growth in flowering plants (hypogeal and epigeal"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+          "text": "Discuss the challenges facing 'Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)' in Tanzania and propose solutions. - with example",
+          "competence": "Describe principles of inheritance in living organisms (here"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Design and carry out a project in Biology",
+          "text": "With examples, illustrate how 'Design and carry out a project in Biology' is applied in the community.",
+          "competence": "Design and carry out a project in Biology"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+          "text": "Describe the main features of 'Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)'. - with example",
+          "competence": "Explain growth process in plants (cell cycle, growth pattern"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Define 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' and discuss its importance in everyday life.",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "and gas exchange in living organisms",
+          "text": "Analyse the causes and effects of 'and gas exchange in living organisms'. - with example",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain classification systems and taxonomic rank",
+          "text": "Explain the concept of 'Explain classification systems and taxonomic rank' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain classification systems and taxonomic rank"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Examine the advantages and disadvantages of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry'. - with diagram",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)",
+          "text": "Analyse the causes and effects of 'Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)'. - with diagram",
+          "competence": "Describe the physiology of coordination (mechanism of transm"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the mechanism of excretion in the human body (systems: organs, product",
+          "text": "Outline the procedures involved in 'Describe the mechanism of excretion in the human body (systems: organs, product'. - with example",
+          "competence": "Describe the mechanism of excretion in the human body (syste"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Evaluate the role of 'Prepare and present a report on cell and photosynthesis investigations' in national development.",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Discuss the challenges facing 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline' in Tanzania and propose solutions. - with example",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+          "text": "Describe the main features of 'and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste'.",
+          "competence": "and animals (nervous coordination in human, structure of neu"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Complete and submit for assessment a scientific report of the project started in Form Five",
+          "text": "With examples, illustrate how 'Complete and submit for assessment a scientific report of the project started in Form Five' is applied in the community. - with diagram",
+          "competence": "Complete and submit for assessment a scientific report of th"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Analyse the causes and effects of 'Develop and carry out a simple research project in Biology'. - with example",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+          "text": "Outline the procedures involved in 'Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)'.",
+          "competence": "Describe the mechanism of reproduction in animals (gametogen"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Outline the procedures involved in 'Complete and submit a report for the research project started in Form Three'. - with example",
+          "competence": "Complete and submit a report for the research project starte"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Perform investigations on the anatomy and physiology of living organisms",
+          "text": "Examine the advantages and disadvantages of 'Perform investigations on the anatomy and physiology of living organisms'.",
+          "competence": "Perform investigations on the anatomy and physiology of livi"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "With examples, illustrate how 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' is applied in the community.",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Outline the procedures involved in 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )'. - with diagram",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Investigate tropic responses in plants",
+          "text": "Explain the concept of 'Investigate tropic responses in plants' with examples relevant to Tanzania.",
+          "competence": "Investigate tropic responses in plants"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "text": "Define 'Describe the physiological, anatomical and ecological processes of living organisms' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the physiological, anatomical and ecological proces"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+          "text": "Discuss the challenges facing 'Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe principles of binomial nomenclature (rules of scien"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Prepare and present a report based on the findings",
+          "text": "Examine the advantages and disadvantages of 'Prepare and present a report based on the findings'.",
+          "competence": "Prepare and present a report based on the findings"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the structure of epithelial tissues in relation to its digestive role",
+          "text": "Analyse the causes and effects of 'Describe the structure of epithelial tissues in relation to its digestive role'. - with diagram",
+          "competence": "Describe the structure of epithelial tissues in relation to "
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Investigate aerobic and anaerobic respiration in living organisms",
+          "text": "Analyse the causes and effects of 'Investigate aerobic and anaerobic respiration in living organisms'.",
+          "competence": "Investigate aerobic and anaerobic respiration in living orga"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 8,
+          "topic": "theory, evidence of evolution, and speciation)",
+          "text": "Compare and contrast 'theory, evidence of evolution, and speciation)' with related concepts. - with diagram",
+          "competence": "theory, evidence of evolution, and speciation)"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate mastery of scientific biological terminologies",
+    "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+    "Carry out experiments to determine the pulse rate in human",
+    "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+    "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+    "Design and carry out a project in Biology",
+    "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+    "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+    "and gas exchange in living organisms",
+    "Explain classification systems and taxonomic rank"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

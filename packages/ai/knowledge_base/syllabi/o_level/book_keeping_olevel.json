@@ -1,0 +1,198 @@
+{
+  "subject_code": "062",
+  "subject_name": "Book Keeping",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "INTRODUCTION TO BOOK KEEPING",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Concept of Book Keeping",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "062-F1-U1-L1",
+              "title": "Explain concept of book keeping",
+              "markdown_content": "## Explain concept of book keeping",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Double Entry Principle",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "062-F1-U1-L2",
+              "title": "Explain double entry principle",
+              "markdown_content": "## Explain double entry principle",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Books of Original Entry",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "062-F1-U1-L3",
+              "title": "Explain books of original entry",
+              "markdown_content": "## Explain books of original entry",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "LEDGER AND TRIAL BALANCE",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Ledger Accounts",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "062-F2-U2-L1",
+              "title": "Explain ledger accounts",
+              "markdown_content": "## Explain ledger accounts",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Trial Balance",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "062-F2-U2-L2",
+              "title": "Explain trial balance",
+              "markdown_content": "## Explain trial balance",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Correction of Errors",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "062-F2-U2-L3",
+              "title": "Explain correction of errors",
+              "markdown_content": "## Explain correction of errors",
+              "page": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "FINANCIAL STATEMENTS",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Trading Account",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "062-F3-U3-L1",
+              "title": "Explain trading account",
+              "markdown_content": "## Explain trading account",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Profit and Loss Account",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "062-F3-U3-L2",
+              "title": "Explain profit and loss account",
+              "markdown_content": "## Explain profit and loss account",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Balance Sheet",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "062-F3-U3-L3",
+              "title": "Explain balance sheet",
+              "markdown_content": "## Explain balance sheet",
+              "page": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "BANK RECONCILIATION",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Bank Reconciliation Statement",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "062-F3-U4-L1",
+              "title": "Explain bank reconciliation statement",
+              "markdown_content": "## Explain bank reconciliation statement",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Petty Cash Book",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "062-F3-U4-L2",
+              "title": "Explain petty cash book",
+              "markdown_content": "## Explain petty cash book",
+              "page": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "ACCOUNTS OF NON-PROFIT",
+      "form": 4,
+      "topics": [
+        {
+          "topic_name": "Receipts and Payments",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "062-F4-U5-L1",
+              "title": "Explain receipts and payments",
+              "markdown_content": "## Explain receipts and payments",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Income and Expenditure",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "062-F4-U5-L2",
+              "title": "Explain income and expenditure",
+              "markdown_content": "## Explain income and expenditure",
+              "page": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

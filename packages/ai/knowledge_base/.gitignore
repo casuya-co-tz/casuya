@@ -1,0 +1,3 @@
+# Keep large binary PDF source material OUT of the repo (192MB).
+# The RAG runtime uses only the parsed JSON, not the original PDFs.
+**/pdfs/

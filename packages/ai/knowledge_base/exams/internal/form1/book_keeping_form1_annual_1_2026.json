@@ -1,0 +1,289 @@
+{
+  "filename": "book_keeping_form1_annual_1_2026.json",
+  "subject": "Book Keeping",
+  "subject_slug": "book_keeping",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2026",
+  "time": "3:00 Hours",
+  "title": "Book Keeping - Annual Exam 1 (FORM1 2026)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 145,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Bank Reconciliation Statement",
+          "text": "Outline the procedures involved in 'Bank Reconciliation Statement'. - with diagram",
+          "competence": "Bank Reconciliation Statement"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Receipts and Payments",
+          "text": "Describe the main features of 'Receipts and Payments'. - with example",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain bank reconciliation statement",
+          "text": "Analyse the causes and effects of 'Explain bank reconciliation statement'. - with example",
+          "competence": "Explain bank reconciliation statement"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain double entry principle",
+          "text": "Evaluate the role of 'Explain double entry principle' in national development. - with example",
+          "competence": "Explain double entry principle"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Double Entry Principle",
+          "text": "Discuss the challenges facing 'Double Entry Principle' in Tanzania and propose solutions. - with example",
+          "competence": "Double Entry Principle"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Trading Account",
+          "text": "Describe the main features of 'Trading Account'.",
+          "competence": "Trading Account"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Trial Balance",
+          "text": "Outline the procedures involved in 'Trial Balance'.",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain trading account",
+          "text": "Explain the concept of 'Explain trading account' with examples relevant to Tanzania. - with example",
+          "competence": "Explain trading account"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain trial balance",
+          "text": "Examine the advantages and disadvantages of 'Explain trial balance'. - with diagram",
+          "competence": "Explain trial balance"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain ledger accounts",
+          "text": "Outline the procedures involved in 'Explain ledger accounts'. - with diagram",
+          "competence": "Explain ledger accounts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain books of original entry",
+          "text": "Outline the procedures involved in 'Explain books of original entry'. - with example",
+          "competence": "Explain books of original entry"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain concept of book keeping",
+          "text": "Define 'Explain concept of book keeping' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain concept of book keeping"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain income and expenditure",
+          "text": "Analyse the causes and effects of 'Explain income and expenditure'. - with example",
+          "competence": "Explain income and expenditure"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Ledger Accounts",
+          "text": "Describe the main features of 'Ledger Accounts'.",
+          "competence": "Ledger Accounts"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain receipts and payments",
+          "text": "Define 'Explain receipts and payments' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain receipts and payments"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Profit and Loss Account",
+          "text": "Compare and contrast 'Profit and Loss Account' with related concepts.",
+          "competence": "Profit and Loss Account"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Concept of Book Keeping",
+          "text": "Analyse the causes and effects of 'Concept of Book Keeping'.",
+          "competence": "Concept of Book Keeping"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain correction of errors",
+          "text": "Discuss the challenges facing 'Explain correction of errors' in Tanzania and propose solutions.",
+          "competence": "Explain correction of errors"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain petty cash book",
+          "text": "Explain the concept of 'Explain petty cash book' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain petty cash book"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Bank Reconciliation Statement",
+          "text": "Describe the main features of 'Bank Reconciliation Statement'.",
+          "competence": "Bank Reconciliation Statement"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Books of Original Entry",
+          "text": "Describe the main features of 'Books of Original Entry'. - with example",
+          "competence": "Books of Original Entry"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain trading account",
+          "text": "Discuss the challenges facing 'Explain trading account' in Tanzania and propose solutions. - with example",
+          "competence": "Explain trading account"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Ledger Accounts",
+          "text": "Describe the main features of 'Ledger Accounts'. - with diagram",
+          "competence": "Ledger Accounts"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Petty Cash Book",
+          "text": "Describe the main features of 'Petty Cash Book'.",
+          "competence": "Petty Cash Book"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Balance Sheet",
+          "text": "Explain the concept of 'Balance Sheet' with examples relevant to Tanzania. - with diagram",
+          "competence": "Balance Sheet"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Correction of Errors",
+          "text": "Explain the concept of 'Correction of Errors' with examples relevant to Tanzania. - with diagram",
+          "competence": "Correction of Errors"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain profit and loss account",
+          "text": "Examine the advantages and disadvantages of 'Explain profit and loss account'. - with diagram",
+          "competence": "Explain profit and loss account"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Ledger Accounts",
+          "text": "Analyse the causes and effects of 'Ledger Accounts'. - with diagram",
+          "competence": "Ledger Accounts"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain balance sheet",
+          "text": "Examine the advantages and disadvantages of 'Explain balance sheet'.",
+          "competence": "Explain balance sheet"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Income and Expenditure",
+          "text": "Analyse the causes and effects of 'Income and Expenditure'. - with example",
+          "competence": "Income and Expenditure"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Bank Reconciliation Statement",
+    "Receipts and Payments",
+    "Explain bank reconciliation statement",
+    "Explain double entry principle",
+    "Double Entry Principle",
+    "Trading Account",
+    "Trial Balance",
+    "Explain trading account",
+    "Explain trial balance",
+    "Explain ledger accounts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,289 @@
+{
+  "filename": "economics_form6_annual_1_2026.json",
+  "subject": "Economics",
+  "subject_slug": "economics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2026",
+  "time": "3:00 Hours",
+  "title": "Economics - Annual Exam 1 (FORM6 2026)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 137,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Design and execute a research project on an appropriate economic problem",
+          "text": "Describe the main features of 'Design and execute a research project on an appropriate economic problem'. - with example",
+          "competence": "Design and execute a research project on an appropriate econ"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe national income (key terms, approaches of measuring, determinants, importance, effect on standard of living and determination of equilibrium)",
+          "text": "Propose measures to improve 'Describe national income (key terms, approaches of measuring, determinants, importance, effect on standard of living and determination of equilibrium)' in schools. - locally",
+          "competence": "Describe national income (key terms, approaches of measuring"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of the market (meaning, types and structures)",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of the market (meaning, types and structures)'. - with example",
+          "competence": "Describe the concept of the market (meaning, types and struc"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe inflation (meaning, types, causes, effects and control measures)",
+          "text": "With examples, illustrate how 'Describe inflation (meaning, types, causes, effects and control measures)' is applied in the community.",
+          "competence": "Describe inflation (meaning, types, causes, effects and cont"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "production function, objectives and profit of firms, scale and costs of production and revenue)",
+          "text": "Describe the main features of 'production function, objectives and profit of firms, scale and costs of production and revenue)'.",
+          "competence": "production function, objectives and profit of firms, scale a"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Assess the impact of 'Examine the influence of the economic system on resource allocation and distribution' on society. - locally",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Apply macroeconomic theories to explain the state of national and international economies",
+          "text": "How does 'Apply macroeconomic theories to explain the state of national and international economies' relate to sustainable development?",
+          "competence": "Apply macroeconomic theories to explain the state of nationa"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the price theory (demand, supply, market equilibrium and elasticity)",
+          "text": "What are the characteristics of 'Describe the price theory (demand, supply, market equilibrium and elasticity)'? - with example",
+          "competence": "Describe the price theory (demand, supply, market equilibriu"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of macroeconomics (meaning, scope and goals)",
+          "text": "Define 'Explore the basic tenets of macroeconomics (meaning, scope and goals)' and discuss its importance in everyday life.",
+          "competence": "Explore the basic tenets of macroeconomics (meaning, scope a"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the concepts, theories and principles used in Economics",
+          "text": "Assess the impact of 'Demonstrate an understanding of the concepts, theories and principles used in Economics' on society. - with example",
+          "competence": "Demonstrate an understanding of the concepts, theories and p"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe public finance (key terms, government revenue and expenditure, public debt and fiscal policy)",
+          "text": "How does 'Describe public finance (key terms, government revenue and expenditure, public debt and fiscal policy)' relate to sustainable development? - locally",
+          "competence": "Describe public finance (key terms, government revenue and e"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Complete and submit a report of the project developed in Form Five",
+          "text": "With examples, illustrate how 'Complete and submit a report of the project developed in Form Five' is applied in the community. - locally",
+          "competence": "Complete and submit a report of the project developed in For"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use the price theory to explain the effects of pricing on consumer behaviour and business profits",
+          "text": "Assess the impact of 'Use the price theory to explain the effects of pricing on consumer behaviour and business profits' on society. - with example",
+          "competence": "Use the price theory to explain the effects of pricing on co"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of microeconomics (meaning, scope and goals)",
+          "text": "Evaluate the role of 'Explore the basic tenets of microeconomics (meaning, scope and goals)' in national development. - locally",
+          "competence": "Explore the basic tenets of microeconomics (meaning, scope a"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe money (key terms, the evolution of money, functions and monetary policies)",
+          "text": "Compare and contrast 'Describe money (key terms, the evolution of money, functions and monetary policies)' with related concepts.",
+          "competence": "Describe money (key terms, the evolution of money, functions"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe economic systems (forms, features, advantages and disadvantages)",
+          "text": "Compare and contrast 'Describe economic systems (forms, features, advantages and disadvantages)' with related concepts.",
+          "competence": "Describe economic systems (forms, features, advantages and d"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Apply production, cost and market theories to make decisions on price and output",
+          "text": "Discuss the factors influencing 'Apply production, cost and market theories to make decisions on price and output'.",
+          "competence": "Apply production, cost and market theories to make decisions"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Apply macroeconomic theories to explain the levels of socio- economic development of nations",
+          "text": "Explain the concept of 'Apply macroeconomic theories to explain the levels of socio- economic development of nations' with examples relevant to Tanzania. - with diagram",
+          "competence": "Apply macroeconomic theories to explain the levels of socio-"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe international trade (meaning, advantages, disadvantages, terms of trade, balance of payments, absolute and comparative advantage and protectionism)",
+          "text": "How does 'Describe international trade (meaning, advantages, disadvantages, terms of trade, balance of payments, absolute and comparative advantage and protectionism)' relate to sustainable development?",
+          "competence": "Describe international trade (meaning, advantages, disadvant"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept and scope of economics (meaning and origin, importance, its relationship with other subjects, basic terminologies, branches, the central economic problem and fundamental economic questions)",
+          "text": "With examples, illustrate how 'Describe the concept and scope of economics (meaning and origin, importance, its relationship with other subjects, basic terminologies, branches, the central economic problem and fundamental economic questions)' is applied in the community.",
+          "competence": "Describe the concept and scope of economics (meaning and ori"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe unemployment (key terms, forms, causes, effects and control measures)",
+          "text": "Examine the advantages and disadvantages of 'Describe unemployment (key terms, forms, causes, effects and control measures)'. - with diagram",
+          "competence": "Describe unemployment (key terms, forms, causes, effects and"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the price theory (demand, supply, market equilibrium and elasticity)",
+          "text": "Describe the main features of 'Describe the price theory (demand, supply, market equilibrium and elasticity)'.",
+          "competence": "Describe the price theory (demand, supply, market equilibriu"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate mastery of economic analysis",
+          "text": "Explain the concept of 'Demonstrate mastery of economic analysis' with examples relevant to Tanzania. - locally",
+          "competence": "Demonstrate mastery of economic analysis"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Complete and submit a report of the project developed in Form Five",
+          "text": "Assess the impact of 'Complete and submit a report of the project developed in Form Five' on society. - locally",
+          "competence": "Complete and submit a report of the project developed in For"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "D emonstrate mastery of economic analysis",
+          "text": "Evaluate the role of 'D emonstrate mastery of economic analysis' in national development.",
+          "competence": "D emonstrate mastery of economic analysis"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Design and carry out a project in Economics",
+          "text": "Examine the advantages and disadvantages of 'Design and carry out a project in Economics'.",
+          "competence": "Design and carry out a project in Economics"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore the basic tenets of macroeconomics (meaning, scope and goals)",
+          "text": "Define 'Explore the basic tenets of macroeconomics (meaning, scope and goals)' and discuss its importance in everyday life. - with example",
+          "competence": "Explore the basic tenets of macroeconomics (meaning, scope a"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 10,
+          "topic": "D escribe the theories of production and costs (factors of production",
+          "text": "Propose measures to improve 'D escribe the theories of production and costs (factors of production' in schools. - with example",
+          "competence": "D escribe the theories of production and costs (factors of p"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of macroeconomics (meaning, scope and goals)",
+          "text": "How does 'Explore the basic tenets of macroeconomics (meaning, scope and goals)' relate to sustainable development? - locally",
+          "competence": "Explore the basic tenets of macroeconomics (meaning, scope a"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "What are the characteristics of 'Examine the influence of the economic system on resource allocation and distribution'?",
+          "competence": "Examine the influence of the economic system on resource all"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Design and execute a research project on an appropriate economic problem",
+    "Describe national income (key terms, approaches of measuring, determinants, importance, effect on standard of living and determination of equilibrium)",
+    "Describe the concept of the market (meaning, types and structures)",
+    "Describe inflation (meaning, types, causes, effects and control measures)",
+    "production function, objectives and profit of firms, scale and costs of production and revenue)",
+    "Examine the influence of the economic system on resource allocation and distribution",
+    "Apply macroeconomic theories to explain the state of national and international economies",
+    "Describe the price theory (demand, supply, market equilibrium and elasticity)",
+    "Explore the basic tenets of macroeconomics (meaning, scope and goals)",
+    "Demonstrate an understanding of the concepts, theories and principles used in Economics"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

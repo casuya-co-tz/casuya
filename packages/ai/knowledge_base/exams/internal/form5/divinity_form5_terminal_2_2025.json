@@ -1,0 +1,249 @@
+{
+  "filename": "divinity_form5_terminal_2_2025.json",
+  "subject": "Divinity",
+  "subject_slug": "divinity",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2025",
+  "time": "2:30 Hours",
+  "title": "Divinity - Terminal Exam 2 (FORM5 2025)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 110,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Learning activities",
+          "text": "Propose measures to improve 'Learning activities' in schools.",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Discuss the reasons behind the Epistle of Paul to the Romans",
+          "text": "Propose measures to improve 'Discuss the reasons behind the Epistle of Paul to the Romans' in schools.",
+          "competence": "Discuss the reasons behind the Epistle of Paul to the Romans"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the writings of Matthew to discuss the concept of the Gospel",
+          "text": "Compare and contrast 'Use the writings of Matthew to discuss the concept of the Gospel' with related concepts. - locally",
+          "competence": "Use the writings of Matthew to discuss the concept of the Go"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the ministries of Elijah and Elisha to discuss the concept of courage",
+          "text": "Examine the advantages and disadvantages of 'Use the ministries of Elijah and Elisha to discuss the concept of courage'.",
+          "competence": "Use the ministries of Elijah and Elisha to discuss the conce"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept of Divinity",
+          "text": "Define 'Explain the concept of Divinity' and discuss its importance in everyday life. - with example",
+          "competence": "Explain the concept of Divinity"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use the Book of Hosea to understand God’s compassion, mercy and the importance of forgiveness",
+          "text": "Discuss the challenges facing 'Use the Book of Hosea to understand God’s compassion, mercy and the importance of forgiveness' in Tanzania and propose solutions.",
+          "competence": "Use the Book of Hosea to understand God’s compassion, mercy "
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea'.",
+          "competence": "Demonstrate an understanding of the concepts of social justi"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Discuss the main ideas contained in the Book of Isaiah (Chapters 40- 45)",
+          "text": "Discuss the factors influencing 'Discuss the main ideas contained in the Book of Isaiah (Chapters 40- 45)'. - with example",
+          "competence": "Discuss the main ideas contained in the Book of Isaiah (Chap"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah' is applied in the community. - with diagram",
+          "competence": "Demonstrate an understanding of the importance of responsibi"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use the Book of Amos to discuss the concept of social justice and violation of community rights",
+          "text": "Propose measures to improve 'Use the Book of Amos to discuss the concept of social justice and violation of community rights' in schools. - with diagram",
+          "competence": "Use the Book of Amos to discuss the concept of social justic"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Discuss the love of God to others as portrayed in the Gospel according to John",
+          "text": "With examples, illustrate how 'Discuss the love of God to others as portrayed in the Gospel according to John' is applied in the community.",
+          "competence": "Discuss the love of God to others as portrayed in the Gospel"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the teachings of Prophet Isaiah",
+          "text": "Assess the impact of 'Demonstrate an understanding of the teachings of Prophet Isaiah' on society.",
+          "competence": "Demonstrate an understanding of the teachings of Prophet Isa"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use Epistle of James to discuss the evils of prejudice in society",
+          "text": "Analyse the causes and effects of 'Use Epistle of James to discuss the evils of prejudice in society'. - locally",
+          "competence": "Use Epistle of James to discuss the evils of prejudice in so"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use the ministries of Elijah and Elisha to discuss the importance of making the right decisions at the right time",
+          "text": "Outline the procedures involved in 'Use the ministries of Elijah and Elisha to discuss the importance of making the right decisions at the right time'. - with example",
+          "competence": "Use the ministries of Elijah and Elisha to discuss the impor"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Discuss the love of Jesus as portrayed in the Gospel according to John",
+          "text": "Analyse the causes and effects of 'Discuss the love of Jesus as portrayed in the Gospel according to John'.",
+          "competence": "Discuss the love of Jesus as portrayed in the Gospel accordi"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Discuss the main ideas contained in the Book of Isaiah (Chapter 1-12)",
+          "text": "Explain the concept of 'Discuss the main ideas contained in the Book of Isaiah (Chapter 1-12)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Discuss the main ideas contained in the Book of Isaiah (Chap"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Discuss the role of women in the Gospel according to Matthew",
+          "text": "Define 'Discuss the role of women in the Gospel according to Matthew' and discuss its importance in everyday life.",
+          "competence": "Discuss the role of women in the Gospel according to Matthew"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use the writings of John to discuss the concept of the Gospel",
+          "text": "Discuss the factors influencing 'Use the writings of John to discuss the concept of the Gospel'. - with diagram",
+          "competence": "Use the writings of John to discuss the concept of the Gospe"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the Gospel according to John",
+          "text": "Define 'Demonstrate an understanding of the Gospel according to John' and discuss its importance in everyday life.",
+          "competence": "Demonstrate an understanding of the Gospel according to John"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use the books of Haggai and Zechariah to discuss the importance of responsibility",
+          "text": "Propose measures to improve 'Use the books of Haggai and Zechariah to discuss the importance of responsibility' in schools. - with example",
+          "competence": "Use the books of Haggai and Zechariah to discuss the importa"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the Gospel according to Matthew",
+          "text": "Evaluate the role of 'Demonstrate an understanding of the Gospel according to Matthew' in national development. - with diagram",
+          "competence": "Demonstrate an understanding of the Gospel according to Matt"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+          "text": "Explain the relationship between 'Use the Book of Isaiah to discuss the importance of repentance and living a holy life' and its environment.",
+          "competence": "Use the Book of Isaiah to discuss the importance of repentan"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Discuss the importance of living the Faith in action as expounded in the Epistle of James",
+          "text": "Discuss the factors influencing 'Discuss the importance of living the Faith in action as expounded in the Epistle of James'. - locally",
+          "competence": "Discuss the importance of living the Faith in action as expo"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Discuss the rights and obligations of rulers and their subjects as portrayed in the Epistle of Paul to the Romans",
+          "text": "Explain the relationship between 'Discuss the rights and obligations of rulers and their subjects as portrayed in the Epistle of Paul to the Romans' and its environment.",
+          "competence": "Discuss the rights and obligations of rulers and their subje"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "How does 'Demonstrate an understanding of the Epistle of Paul to the Romans' relate to sustainable development?",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Learning activities",
+    "Discuss the reasons behind the Epistle of Paul to the Romans",
+    "Use the writings of Matthew to discuss the concept of the Gospel",
+    "Use the ministries of Elijah and Elisha to discuss the concept of courage",
+    "Explain the concept of Divinity",
+    "Use the Book of Hosea to understand God’s compassion, mercy and the importance of forgiveness",
+    "Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea",
+    "Discuss the main ideas contained in the Book of Isaiah (Chapters 40- 45)",
+    "Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah",
+    "Use the Book of Amos to discuss the concept of social justice and violation of community rights"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

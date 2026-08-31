@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form6_midterm1_1_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 1 Exam 1 (FORM6 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 86,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+          "text": "Evaluate the role of 'Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs' in national development.",
+          "competence": "Find the general term for AP and GP and use them to derive f"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul",
+          "text": "Analyse the causes and effects of 'Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul'.",
+          "competence": "Apply matrices to solve simultaneous equations of two unknow"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Explain the concept of 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' with examples relevant to Tanzania.",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)",
+          "text": "Outline the procedures involved in 'Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)'. - with example",
+          "competence": "Explore advanced tenets of coordinate geometry (angle betwee"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of inequalities and absolute values of real numbers",
+          "text": "Explain the concept of 'Explain the concept of inequalities and absolute values of real numbers' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain the concept of inequalities and absolute values of r"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Explain the concept of 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic' with examples relevant to Tanzania. - locally",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use logic to analyse arguments and construct circuit diagrams",
+          "text": "Discuss the challenges facing 'Use logic to analyse arguments and construct circuit diagrams' in Tanzania and propose solutions. - with example",
+          "competence": "Use logic to analyse arguments and construct circuit diagram"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+          "text": "Discuss the factors influencing 'Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)'. - locally",
+          "competence": "Explore advanced tenets of vectors (ratio theorems, dot prod"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+          "text": "How does 'Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde' relate to sustainable development? - locally",
+          "competence": "Identify and use laws of exponents involving positive, negat"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Carry out a project in Mathematics",
+          "text": "Outline the procedures involved in 'Carry out a project in Mathematics'. - with diagram",
+          "competence": "Carry out a project in Mathematics"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use statistics in problem solving",
+          "text": "Assess the impact of 'Use statistics in problem solving' on society. - with diagram",
+          "competence": "Use statistics in problem solving"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+          "text": "Discuss the challenges facing 'Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)' in Tanzania and propose solutions.",
+          "competence": "Explore basic tenets of logic (connectives, propositions, ar"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use rates and variations in different contexts",
+          "text": "Discuss the challenges facing 'Use rates and variations in different contexts' in Tanzania and propose solutions. - locally",
+          "competence": "Use rates and variations in different contexts"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+          "text": "Define 'Explain the concept of approximations (rounding off, significant figures, and decimal place' and discuss its importance in everyday life. - with example",
+          "competence": "Explain the concept of approximations (rounding off, signifi"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use ratios and proportions in daily life",
+          "text": "Discuss the challenges facing 'Use ratios and proportions in daily life' in Tanzania and propose solutions.",
+          "competence": "Use ratios and proportions in daily life"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+          "text": "With examples, illustrate how 'Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic' is applied in the community.",
+          "competence": "Explore advanced tenets of algebra (series of squares and cu"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "What are the characteristics of 'Convert repeating/ recurring decimals into fractions and vice versa'? - with diagram",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use laws of logarithms to solve problems",
+          "text": "Assess the impact of 'Use laws of logarithms to solve problems' on society.",
+          "competence": "Use laws of logarithms to solve problems"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Define 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)' and discuss its importance in everyday life. - with example",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+          "text": "Discuss the factors influencing 'Use algebraic expressions to model situations (word problems into algebraic expressions and equation'.",
+          "competence": "Use algebraic expressions to model situations (word problems"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+    "Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul",
+    "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+    "Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)",
+    "Explain the concept of inequalities and absolute values of real numbers",
+    "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+    "Use logic to analyse arguments and construct circuit diagrams",
+    "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+    "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+    "Carry out a project in Mathematics"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

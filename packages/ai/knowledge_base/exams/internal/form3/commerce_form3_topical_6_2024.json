@@ -1,0 +1,121 @@
+{
+  "filename": "commerce_form3_topical_6_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Commerce - Topical Test 6 (FORM3 2024): Explain partnership",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain market and marketing",
+          "text": "Analyse the causes and effects of 'Explain market and marketing'. - with diagram",
+          "competence": "Explain market and marketing"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain partnership",
+          "text": "Evaluate the role of 'Explain partnership' in national development. - with example",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain partnership",
+          "text": "Discuss the challenges facing 'Explain partnership' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain market and marketing",
+          "text": "Evaluate the role of 'Explain market and marketing' in national development. - with example",
+          "competence": "Explain market and marketing"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain partnership",
+          "text": "Analyse the causes and effects of 'Explain partnership'. - with diagram",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain partnership",
+          "text": "Evaluate the role of 'Explain partnership' in national development. - with example",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain partnership",
+          "text": "Explain the concept of 'Explain partnership' with examples relevant to Tanzania. - with example",
+          "competence": "Explain partnership"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain market and marketing",
+          "text": "With examples, illustrate how 'Explain market and marketing' is applied in the community. - with example",
+          "competence": "Explain market and marketing"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain market and marketing",
+          "text": "Compare and contrast 'Explain market and marketing' with related concepts.",
+          "competence": "Explain market and marketing"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain partnership",
+          "text": "Describe the main features of 'Explain partnership'.",
+          "competence": "Explain partnership"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain market and marketing",
+    "Explain partnership"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

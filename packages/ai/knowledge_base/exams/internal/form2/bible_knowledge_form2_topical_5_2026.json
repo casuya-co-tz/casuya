@@ -1,0 +1,121 @@
+{
+  "filename": "bible_knowledge_form2_topical_5_2026.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Bible Knowledge - Topical Test 5 (FORM2 2026): Discuss the authorship of the Book ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
+          "text": "Propose measures to improve 'Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos' in schools. - with diagram",
+          "competence": "Discuss the authorship of the Book of the Acts of the Apostl"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
+          "text": "Assess the impact of 'Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos' on society.",
+          "competence": "Discuss the authorship of the Book of the Acts of the Apostl"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
+          "text": "Discuss the factors influencing 'Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos'. - with example",
+          "competence": "Discuss the authorship of the Book of the Acts of the Apostl"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
+          "text": "Evaluate the role of 'Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos' in national development.",
+          "competence": "Discuss the authorship of the Book of the Acts of the Apostl"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
+          "text": "Outline the procedures involved in 'Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos'. - locally",
+          "competence": "Discuss the authorship of the Book of the Acts of the Apostl"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of the Bible and Bible Knowledge",
+          "text": "Outline the procedures involved in 'Explain the concept of the Bible and Bible Knowledge'. - with example",
+          "competence": "Explain the concept of the Bible and Bible Knowledge"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
+          "text": "Evaluate the role of 'Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos' in national development.",
+          "competence": "Discuss the authorship of the Book of the Acts of the Apostl"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
+          "text": "Assess the impact of 'Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos' on society. - locally",
+          "competence": "Discuss the authorship of the Book of the Acts of the Apostl"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the concept of the Bible and Bible Knowledge",
+          "text": "Discuss the challenges facing 'Explain the concept of the Bible and Bible Knowledge' in Tanzania and propose solutions.",
+          "competence": "Explain the concept of the Bible and Bible Knowledge"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
+          "text": "Describe the main features of 'Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos'. - with diagram",
+          "competence": "Discuss the authorship of the Book of the Acts of the Apostl"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
+    "Explain the concept of the Bible and Bible Knowledge"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

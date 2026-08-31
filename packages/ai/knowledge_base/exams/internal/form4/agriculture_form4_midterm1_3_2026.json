@@ -1,0 +1,209 @@
+{
+  "filename": "agriculture_form4_midterm1_3_2026.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Agriculture - Midterm 1 Exam 3 (FORM4 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 94,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain animal health",
+          "text": "Compare and contrast 'Explain animal health' with related concepts.",
+          "competence": "Explain animal health"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain animal nutrition",
+          "text": "With examples, illustrate how 'Explain animal nutrition' is applied in the community.",
+          "competence": "Explain animal nutrition"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain animal classification",
+          "text": "Evaluate the role of 'Explain animal classification' in national development. - with example",
+          "competence": "Explain animal classification"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Animal Classification",
+          "text": "Define 'Animal Classification' and discuss its importance in everyday life. - with example",
+          "competence": "Animal Classification"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Soil Properties",
+          "text": "Evaluate the role of 'Soil Properties' in national development. - with example",
+          "competence": "Soil Properties"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain forage conservation",
+          "text": "Define 'Explain forage conservation' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain forage conservation"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain soil fertility",
+          "text": "Describe the main features of 'Explain soil fertility'. - with example",
+          "competence": "Explain soil fertility"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Concept of Agriculture",
+          "text": "Outline the procedures involved in 'Concept of Agriculture'.",
+          "competence": "Concept of Agriculture"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Range Management",
+          "text": "Compare and contrast 'Range Management' with related concepts.",
+          "competence": "Range Management"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Crop Classification",
+          "text": "Outline the procedures involved in 'Crop Classification'. - with diagram",
+          "competence": "Crop Classification"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain agricultural marketing",
+          "text": "Compare and contrast 'Explain agricultural marketing' with related concepts. - with example",
+          "competence": "Explain agricultural marketing"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Animal Nutrition",
+          "text": "Compare and contrast 'Animal Nutrition' with related concepts. - with example",
+          "competence": "Animal Nutrition"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain concept of agriculture",
+          "text": "Analyse the causes and effects of 'Explain concept of agriculture'. - with example",
+          "competence": "Explain concept of agriculture"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Soil Fertility",
+          "text": "Define 'Soil Fertility' and discuss its importance in everyday life. - with diagram",
+          "competence": "Soil Fertility"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain crop production practices",
+          "text": "Outline the procedures involved in 'Explain crop production practices'. - with diagram",
+          "competence": "Explain crop production practices"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Vegetable Production",
+          "text": "Compare and contrast 'Vegetable Production' with related concepts. - with example",
+          "competence": "Vegetable Production"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain vegetable production",
+          "text": "Describe the main features of 'Explain vegetable production'. - with example",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain crop classification",
+          "text": "Compare and contrast 'Explain crop classification' with related concepts.",
+          "competence": "Explain crop classification"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain importance of agriculture",
+          "text": "Analyse the causes and effects of 'Explain importance of agriculture'. - with example",
+          "competence": "Explain importance of agriculture"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Crop Production Practices",
+          "text": "Analyse the causes and effects of 'Crop Production Practices'. - with diagram",
+          "competence": "Crop Production Practices"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain animal health",
+    "Explain animal nutrition",
+    "Explain animal classification",
+    "Animal Classification",
+    "Soil Properties",
+    "Explain forage conservation",
+    "Explain soil fertility",
+    "Concept of Agriculture",
+    "Range Management",
+    "Crop Classification"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

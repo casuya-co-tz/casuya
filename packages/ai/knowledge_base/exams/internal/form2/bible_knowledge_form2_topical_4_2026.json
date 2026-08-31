@@ -1,0 +1,121 @@
+{
+  "filename": "bible_knowledge_form2_topical_4_2026.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Bible Knowledge - Topical Test 4 (FORM2 2026): Describe the Concept of the Book of",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 49,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of the Bible and Bible Knowledge",
+          "text": "Propose measures to improve 'Explain the concept of the Bible and Bible Knowledge' in schools.",
+          "competence": "Explain the concept of the Bible and Bible Knowledge"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the concept of the Bible and Bible Knowledge",
+          "text": "Explain the relationship between 'Explain the concept of the Bible and Bible Knowledge' and its environment. - with diagram",
+          "competence": "Explain the concept of the Bible and Bible Knowledge"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the Concept of the Book of Exodus",
+          "text": "Propose measures to improve 'Describe the Concept of the Book of Exodus' in schools. - with example",
+          "competence": "Describe the Concept of the Book of Exodus"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the Concept of the Book of Exodus",
+          "text": "With examples, illustrate how 'Describe the Concept of the Book of Exodus' is applied in the community.",
+          "competence": "Describe the Concept of the Book of Exodus"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept of the Bible and Bible Knowledge",
+          "text": "Discuss the challenges facing 'Explain the concept of the Bible and Bible Knowledge' in Tanzania and propose solutions.",
+          "competence": "Explain the concept of the Bible and Bible Knowledge"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept of the Bible and Bible Knowledge",
+          "text": "Describe the process of 'Explain the concept of the Bible and Bible Knowledge' step by step. - locally",
+          "competence": "Explain the concept of the Bible and Bible Knowledge"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the Concept of the Book of Exodus",
+          "text": "What are the characteristics of 'Describe the Concept of the Book of Exodus'? - with example",
+          "competence": "Describe the Concept of the Book of Exodus"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain the concept of the Bible and Bible Knowledge",
+          "text": "Assess the impact of 'Explain the concept of the Bible and Bible Knowledge' on society.",
+          "competence": "Explain the concept of the Bible and Bible Knowledge"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain the concept of the Bible and Bible Knowledge",
+          "text": "Explain the concept of 'Explain the concept of the Bible and Bible Knowledge' with examples relevant to Tanzania.",
+          "competence": "Explain the concept of the Bible and Bible Knowledge"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of the Bible and Bible Knowledge",
+          "text": "Propose measures to improve 'Explain the concept of the Bible and Bible Knowledge' in schools.",
+          "competence": "Explain the concept of the Bible and Bible Knowledge"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of the Bible and Bible Knowledge",
+    "Describe the Concept of the Book of Exodus"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

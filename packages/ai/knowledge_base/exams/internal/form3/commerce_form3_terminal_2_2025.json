@@ -1,0 +1,249 @@
+{
+  "filename": "commerce_form3_terminal_2_2025.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2025",
+  "time": "2:30 Hours",
+  "title": "Commerce - Terminal Exam 2 (FORM3 2025)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 102,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Documentation",
+          "text": "Outline the procedures involved in 'Documentation'. - with diagram",
+          "competence": "Documentation"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Communication",
+          "text": "Define 'Communication' and discuss its importance in everyday life. - with example",
+          "competence": "Communication"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Market and Marketing",
+          "text": "Explain the concept of 'Market and Marketing' with examples relevant to Tanzania. - with example",
+          "competence": "Market and Marketing"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain transport",
+          "text": "Describe the main features of 'Explain transport'. - with diagram",
+          "competence": "Explain transport"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain storekeeping",
+          "text": "Define 'Explain storekeeping' and discuss its importance in everyday life. - with example",
+          "competence": "Explain storekeeping"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Trade",
+          "text": "With examples, illustrate how 'Trade' is applied in the community. - with diagram",
+          "competence": "Trade"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Insurance",
+          "text": "Outline the procedures involved in 'Insurance'. - with diagram",
+          "competence": "Insurance"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Stock Control",
+          "text": "With examples, illustrate how 'Stock Control' is applied in the community.",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Aids to Trade",
+          "text": "Outline the procedures involved in 'Aids to Trade'.",
+          "competence": "Aids to Trade"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Storekeeping",
+          "text": "Describe the main features of 'Storekeeping'.",
+          "competence": "Storekeeping"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain market and marketing",
+          "text": "Analyse the causes and effects of 'Explain market and marketing'.",
+          "competence": "Explain market and marketing"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Sources of Business Finance",
+          "text": "Discuss the challenges facing 'Sources of Business Finance' in Tanzania and propose solutions. - with example",
+          "competence": "Sources of Business Finance"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain cooperative",
+          "text": "Define 'Explain cooperative' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain cooperative"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain trade",
+          "text": "Examine the advantages and disadvantages of 'Explain trade'. - with diagram",
+          "competence": "Explain trade"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Sole Proprietorship",
+          "text": "Outline the procedures involved in 'Sole Proprietorship'.",
+          "competence": "Sole Proprietorship"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain sole proprietorship",
+          "text": "Discuss the challenges facing 'Explain sole proprietorship' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain sole proprietorship"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Marketing Mix",
+          "text": "Outline the procedures involved in 'Marketing Mix'. - with example",
+          "competence": "Marketing Mix"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Companies",
+          "text": "Outline the procedures involved in 'Companies'. - with example",
+          "competence": "Companies"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain sources of business finance",
+          "text": "Evaluate the role of 'Explain sources of business finance' in national development. - with example",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Concept of Commerce",
+          "text": "Evaluate the role of 'Concept of Commerce' in national development. - with diagram",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain communication",
+          "text": "Define 'Explain communication' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Taxation",
+          "text": "Compare and contrast 'Taxation' with related concepts. - with example",
+          "competence": "Taxation"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain advertisement",
+          "text": "Describe the main features of 'Explain advertisement'.",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Warehousing",
+          "text": "Define 'Warehousing' and discuss its importance in everyday life. - with example",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain documentation",
+          "text": "Discuss the challenges facing 'Explain documentation' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain documentation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Documentation",
+    "Communication",
+    "Market and Marketing",
+    "Explain transport",
+    "Explain storekeeping",
+    "Trade",
+    "Insurance",
+    "Stock Control",
+    "Aids to Trade",
+    "Storekeeping"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

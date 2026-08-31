@@ -1,0 +1,121 @@
+{
+  "filename": "civics_form2_topical_8_2025.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Civics - Topical Test 8 (FORM2 2025): Life Skills",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 47,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Globalization",
+          "text": "Describe the main features of 'Globalization'. - with diagram",
+          "competence": "Globalization"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Life Skills",
+          "text": "Examine the advantages and disadvantages of 'Life Skills'. - with diagram",
+          "competence": "Life Skills"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Life Skills",
+          "text": "Discuss the challenges facing 'Life Skills' in Tanzania and propose solutions.",
+          "competence": "Life Skills"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Globalization",
+          "text": "Compare and contrast 'Globalization' with related concepts. - with diagram",
+          "competence": "Globalization"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Globalization",
+          "text": "Outline the procedures involved in 'Globalization'.",
+          "competence": "Globalization"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Globalization",
+          "text": "Evaluate the role of 'Globalization' in national development.",
+          "competence": "Globalization"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Life Skills",
+          "text": "Compare and contrast 'Life Skills' with related concepts. - with example",
+          "competence": "Life Skills"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Globalization",
+          "text": "Analyse the causes and effects of 'Globalization'. - with diagram",
+          "competence": "Globalization"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Globalization",
+          "text": "Analyse the causes and effects of 'Globalization'. - with diagram",
+          "competence": "Globalization"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Globalization",
+          "text": "Evaluate the role of 'Globalization' in national development.",
+          "competence": "Globalization"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Globalization",
+    "Life Skills"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

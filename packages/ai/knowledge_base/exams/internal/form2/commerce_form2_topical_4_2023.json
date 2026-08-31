@@ -1,0 +1,121 @@
+{
+  "filename": "commerce_form2_topical_4_2023.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Commerce - Topical Test 4 (FORM2 2023): Explain storekeeping",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 58,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain stock control",
+          "text": "Explain the concept of 'Explain stock control' with examples relevant to Tanzania. - with example",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain storekeeping",
+          "text": "Examine the advantages and disadvantages of 'Explain storekeeping'. - with diagram",
+          "competence": "Explain storekeeping"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain stock control",
+          "text": "Compare and contrast 'Explain stock control' with related concepts.",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain stock control",
+          "text": "Compare and contrast 'Explain stock control' with related concepts.",
+          "competence": "Explain stock control"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain storekeeping",
+          "text": "Outline the procedures involved in 'Explain storekeeping'. - with example",
+          "competence": "Explain storekeeping"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain storekeeping",
+          "text": "With examples, illustrate how 'Explain storekeeping' is applied in the community.",
+          "competence": "Explain storekeeping"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain stock control",
+          "text": "With examples, illustrate how 'Explain stock control' is applied in the community.",
+          "competence": "Explain stock control"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain stock control",
+          "text": "With examples, illustrate how 'Explain stock control' is applied in the community. - with example",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain stock control",
+          "text": "Outline the procedures involved in 'Explain stock control'. - with diagram",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain stock control",
+          "text": "With examples, illustrate how 'Explain stock control' is applied in the community.",
+          "competence": "Explain stock control"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain stock control",
+    "Explain storekeeping"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

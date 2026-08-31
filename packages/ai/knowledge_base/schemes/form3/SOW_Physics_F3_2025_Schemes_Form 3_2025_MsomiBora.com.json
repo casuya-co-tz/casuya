@@ -1,0 +1,407 @@
+{
+  "file": "SOW Physics F3 2025 - MsomiBora.com.docx",
+  "subjects": [
+    {
+      "table_index": 0,
+      "headers": [
+        "MAIN COMPETENCE",
+        "SPECIFIC COMPETENCE",
+        "TEACHING ACTIVITIES",
+        "MONTH",
+        "WEEK",
+        "PERIODS",
+        "REFERENCE",
+        "TEACHING/LEARNING TOOLS",
+        "ASSESSMENT TOOLS",
+        "REMARKS"
+      ],
+      "column_count": 10,
+      "entries": [
+        {
+          "competence": "APPLICATIONS OF VECTORS",
+          "objective": "Scalar and Vector quantities",
+          "teaching_act": "Prepare students to classify the physical quantities into scalars and vectors To demonstrate on adding vectors by graphical method Prepare students to find the resultant and direction of a vector by using triangle and parallelogram laws Prepare students to state triangle and parallelogram laws of forces",
+          "month": "January",
+          "week": "2ND",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Graph paper, ruler, mathematical set."
+        },
+        {
+          "competence": "APPLICATIONS OF VECTORS",
+          "objective": "Relative motion",
+          "teaching_act": "Prepare students to explain the concept of relative motion Prepare students to find the relative velocities of two bodies by drawing or calculation Prepare students to discuss the applications of relative motion in daily life.",
+          "month": "January",
+          "week": "3RD",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Graph paper. Ruler Mathematic set"
+        },
+        {
+          "competence": "APPLICATIONS OF VECTORS",
+          "objective": "Resolution of Vectors",
+          "teaching_act": "Prepare students to explain the concept of resolution of vector Prepare them to resolve a vector into two mutually perpendicular directions. Prepare students to solve problems of forces and velocities by resolving",
+          "month": "January",
+          "week": "3RD",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Charts of moving boat or air plane"
+        },
+        {
+          "competence": "FRICTION",
+          "objective": "Concept of friction",
+          "teaching_act": "Prepare students to explain the concept of friction. Prepare students to discuss the advantages and disadvantages of friction in daily life Group students and Prepare them to discuss the way of reducing friction.",
+          "month": "January",
+          "week": "4TH",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Rollers, Grease, ball-bearing"
+        },
+        {
+          "objective": "Type of Friction",
+          "teaching_act": "Prepare the students to discuss the types of friction forces Prepare them to determine the limiting friction by using a black of wood.",
+          "month": "February",
+          "week": "1ST",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "- Block of wood - Rough surface - Spring balance - Pulley - String"
+        },
+        {
+          "objective": "Laws of friction",
+          "teaching_act": "Prepare students to stake laws of friction Prepare students to define the coefficient of static and dynamic friction.",
+          "month": "February",
+          "week": "2ND",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "- Block of wood - Rough surface - Spring balance - Pulley - String"
+        },
+        {
+          "competence": "LIGHT",
+          "objective": "Refraction of light",
+          "teaching_act": "Prepare students of define refraction of light using a stick immersed in a glass of water. Demonstrate to students on finding the angle of incidents and angle of refraction.",
+          "month": "February",
+          "week": "3RD",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "- Rectangular Glass block -Optical pins -Protractor - Drawing board. -Ruler. -White paper"
+        },
+        {
+          "competence": "LIGHT",
+          "objective": "Laws of Refraction of light.",
+          "teaching_act": "Prepare students to state laws of refraction of light. - Prepare students to carry out an experiment to determine the refractive index of a material.",
+          "month": "February",
+          "week": "4TH",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania."
+        },
+        {
+          "competence": "LIGHT",
+          "objective": "Critical angle and total internal reflection",
+          "teaching_act": "Prepare students to define critical angle and total internal refraction Prepare students to determine critical angle and total internal reflection using semicircular glass block. Discuss with students on refraction through triangular prism. Demonstrate dispersion of white light. Discuss on angle of deviation.",
+          "month": "February",
+          "week": "4TH",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Semicircular glass block Optical pins Plane paper Triangular prism"
+        },
+        {
+          "competence": "LIGHT",
+          "objective": "Critical angle and total internal reflection",
+          "teaching_act": "Prepare students to define critical angle and total internal refraction Prepare students to determine critical angle and total internal reflection using semicircular glass block. Discuss with students on refraction through triangular prism. Demonstrate dispersion of white light. Discuss on angle of deviation.",
+          "month": "March",
+          "week": "1ST",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Semicircular glass block Optical pins Plane paper Triangular prism"
+        },
+        {
+          "competence": "LIGHT",
+          "objective": "Colours of Light",
+          "teaching_act": "Prepare students to determine angle of deviation and minimum deviation. Explain the components of white light. Discuss on the methods of recombination of colours of white light. Demonstrate the appearance of coloured objects in white light.",
+          "month": "March",
+          "week": "2ND\\ TO 3RD",
+          "period": "08",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Triangular glass block. Optical pins. White paper Coloured objects Coloured filters White objects"
+        },
+        {
+          "objective": "Refraction of Light Lens",
+          "teaching_act": "Prepare student to identity primary, secondary and complementary colour of light. Discuss with students about additive and subtractive colour mixing Display the concave and convex lenses to students. Explain the terms focal length, principle focus, principle axis and optical centre as applied to lenses.",
+          "month": "April",
+          "week": "2ND TO 3RD",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Blue, Green and Red filters. White screen. Concave and convex mirrors"
+        },
+        {
+          "objective": "Refraction of Light Lens",
+          "teaching_act": "Prepare students to determine the focal length of a convex lens. Discuss using ray diagrams how to locate the image formation by a lens. Guide the students to determine the position, sixe and nature of the image formed by using lens formula 1 = 1 +1 ƒ ų ű Do more calculations as example",
+          "month": "April",
+          "week": "4TH",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Convex lens Meter rule."
+        },
+        {
+          "competence": "OPTICAL INSTRUMENTS",
+          "objective": "Simple microscope",
+          "teaching_act": "Prepare students to describe the structure and mode of action of a simple microscope",
+          "month": "May",
+          "week": "1ST",
+          "period": "02",
+          "assessment": "Simple microscope"
+        },
+        {
+          "competence": "OPTICAL INSTRUMENTS",
+          "objective": "Compound Microscope",
+          "teaching_act": "Prepare the students to discuss the structure and mode of action of a compound microscope. Prepare students to highlight the common uses of a compound microscope in daily life.",
+          "month": "May",
+          "week": "1ST",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Chart of compound microscope Lenses screen, objects."
+        },
+        {
+          "competence": "OPTICAL INSTRUMENTS",
+          "objective": "Astronomical telescope",
+          "teaching_act": "Prepare students to describe the structure and mode of action of an astronomical telescope. Highlight the uses of an astronomical telescope.",
+          "month": "May",
+          "week": "2ND",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Lenses. Chart of an astronomical telescope"
+        },
+        {
+          "competence": "OPTICAL INSTRUMENTS",
+          "objective": "Projection lantern",
+          "teaching_act": "Prepare students to discuss on the structure and mode of action of a projection lantern Discuss, by demonstration, the uses of a projection lantern",
+          "month": "May",
+          "week": "2ND",
+          "period": "02",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Projection lantern Slides -Chart of projection lantern"
+        },
+        {
+          "competence": "OPTICAL INSTRUMENTS",
+          "objective": "Lens camera",
+          "teaching_act": "Prepare students to discuss on the structure and mode of action of a lens camera Ask students to mention uses of a camera",
+          "month": "May",
+          "week": "3RD",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Lens camera Chart of lens Camera"
+        },
+        {
+          "objective": "The Human eye",
+          "teaching_act": "Describe the structure and mode of action of a human eye. Prepare students to identify the defects of the human eye and how they can be connected Ask students to write down the similarities of human eye and lens camera as a home work. Do calculations on optical instruments.",
+          "month": "July",
+          "week": "1ST",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Model of human eye. Optical diagram of lens camera"
+        },
+        {
+          "competence": "THERMAL EXPANSION",
+          "objective": "Thermal energy and thermal expansion of solids",
+          "teaching_act": "Prepare students to brainstorm on the concept of heat. Highlight the sources of thermal energy in everyday life. Prepare students of differentiate between heat and temperature. Prepare students to demonstrate the expansion of solids using ball and ring experiment.",
+          "month": "July",
+          "week": "2ND",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Ball and ring Source of heart"
+        },
+        {
+          "competence": "THERMAL EXPANSION",
+          "objective": "Thermal energy and thermal expansion of solids",
+          "teaching_act": "Prepare students to discuss in groups the expansion and contraction of solids interns of the kinetic theory of matter. Prepare students to develop the formula of linear expansion of solids Highlight on applications of the expansion of solids.",
+          "month": "July",
+          "week": "3RD",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania."
+        },
+        {
+          "competence": "THERMAL EXPANSION",
+          "objective": "Thermal expansion of liquid",
+          "teaching_act": "Prepare students to explain the apparent expansion of a liquid. Demonstrate the volume expansion of liquids (different) Prepare students to define volume expansivity of liquid Prepare students, through question, how hear affect the density of liquids. Verify the anomalous expansion of water, and explain the application of liquids in everyday life.",
+          "month": "July",
+          "week": "4TH",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Ball and ring Source of heart."
+        },
+        {
+          "competence": "THERMAL EXPANSION",
+          "objective": "Thermal Expansion of gases",
+          "teaching_act": "Prepare students to discuss the concept of the thermal expansion of gases. Prepare students to the statement of Charles’s law and Boyle’s law. Lead students to derive the general gas law pv = constant r",
+          "month": "August",
+          "week": "1ST",
+          "period": "08",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Graph paper Model of a position engine"
+        },
+        {
+          "competence": "THERMAL EXPANSION",
+          "objective": "Thermal Expansion of gases",
+          "teaching_act": "Prepare students by questions and answer technique to explain the concept of the absolute zero temperature and the absolute scale of temperature (Kelvin) Prepare students to convert in degree centigrade to Kelvin. Prepare students to convert in degree centigrade to Kelvin. Prepare students to discuss the value of standard temperature and pressure.",
+          "month": "August",
+          "week": "2ND",
+          "period": "08",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Graph paper Model of a position engine"
+        },
+        {
+          "competence": "TRANSFER OF THERMAL ENERGY",
+          "objective": "Conduction",
+          "teaching_act": "Prepare students to brainstorm the concept of heat transfer -Prepare students to identify good and bad conductors of heat. - Prepare students to explain how heat losses due to conduction can be minimized. Discuss with students the selective uses of good and bad conductors of heat in everyday life.",
+          "month": "August",
+          "week": "3RD",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Brass rods Wood a bar Foam insulation. Thick carpet Curtains."
+        },
+        {
+          "objective": "Convection",
+          "teaching_act": "Prepare students to demonstrate convection currents in water using crystals of potassium permanganate. Prepare students to discuss heat transfer in liquids and gases using the kinetic theory of mater. Prepare students to minimize heat losses due to convection. Prepare students to minimize heat losses due to convection.",
+          "month": "September",
+          "week": "3RD",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Smoke Potassium permanganate Water Diagram of sea and land breezes"
+        },
+        {
+          "objective": "Radiations",
+          "teaching_act": "Guide students to brainstorm how heat from the sun reaches the earth’s surface - Prepare students to demonstrate that black surfaces are good absorbers and emitters of radiant heat. - Prepare students to discuss the way heat loss by radiation can be minimized by using thermos flask.",
+          "month": "September",
+          "week": "4TH",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Thermometer Concave reflector Lens Thermos flask"
+        },
+        {
+          "competence": "MEASUREMENT OF THERMAL ENERGY",
+          "objective": "Heart Capacity",
+          "teaching_act": "Discuss with the students on the factors which determine heat quantity of a substance. Prepare students to the definition of the heat capacity of s substance. Highlight the concept of specific heat capacity of a substance.",
+          "month": "September",
+          "week": "4TH",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Heat Thermometer Beaker"
+        },
+        {
+          "competence": "MEASUREMENT OF THERMAL ENERGY",
+          "objective": "Change of State",
+          "teaching_act": "Prepare students to demonstrate the behavior of particles in a solid, liquid and gases. Prepare students to discuss the concept of melting/freezing points of a substance. Prepare students to demonstrate the effect of the impurities of freezing point and boiling point of water.",
+          "month": "October",
+          "week": "1ST",
+          "period": "08",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Naphthalene thermometer Test tube Graph paper ice Salt Water Beaker"
+        },
+        {
+          "competence": "MEASUREMENT OF THERMAL ENERGY",
+          "objective": "Change of state Effect of pressure on boiling point and freezing point",
+          "teaching_act": "Prepare students to demonstrate the effect of pressure on the boiling point and freezing point of water. Prepare students to demonstrate the effect of phenomenon of regulation. Highlight the concept of boiling and evaporation in respect to the kinetic theory of matter",
+          "month": "October",
+          "week": "1ST",
+          "period": "08",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Conical flask Rubber band Thermometer Water Ice block Weight Thin wire Beaker"
+        },
+        {
+          "objective": "Latent heat of fusion and vaporization",
+          "teaching_act": "Prepare students to discuss in groups the concept of the specific latent heat of fusion and vaporization of substance and its S.I. Units. Prepare students to discuss the heating of water into vapour and plot the temperature time graph to deduce the latent heat of vaporization.",
+          "month": "October",
+          "week": "2ND",
+          "period": "08",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania."
+        },
+        {
+          "objective": "Refrigerator",
+          "teaching_act": "Display a chart of a diagram of a refrigerator and lead students to discuss the parts of it. Describe the mechanism of the refrigeration. Prepare students to discuss the concept of evaporation of liquids",
+          "month": "October",
+          "week": "2ND",
+          "period": "08",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Chart of diagram of refrigerator Refrigerator Ether spirit Conical flask"
+        },
+        {
+          "competence": "VAPOUR AND HUMIDITY",
+          "objective": "Vapour",
+          "teaching_act": "Prepare students to the factors affecting evaporation of liquid. Help students to distinguish between saturated and unsaturated vapours.",
+          "month": "October",
+          "week": "3RD",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania."
+        },
+        {
+          "competence": "VAPOUR AND HUMIDITY",
+          "objective": "Saturated vapour pressure (S.V.P)",
+          "teaching_act": "Prepare students to discuss the increase of S.V.P of a volatile liquid due to temperature rise. Prepare students to discuss the concept of humidity. Prepare students to explain the process of dew formation and the factors that influence the formation of dew.",
+          "month": "October",
+          "week": "3RD",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania."
+        },
+        {
+          "competence": "VAPOUR AND HUMIDITY",
+          "objective": "Relative humidity",
+          "teaching_act": "Prepare students in determination of Relative Humidity of air using wet and dry bulb hydrometer. Prepare students to discuss the effect of R.H. in everyday life.",
+          "month": "October",
+          "week": "4TH",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Wet and dry bulb - hygrometer."
+        },
+        {
+          "competence": "CURRENT ELECTRICITY",
+          "objective": "Emf and P.D",
+          "teaching_act": "Prepare students to discuss the concept of emf and p.d. Prepare students to state the units of emf and p.d. Prepare students to measure the emf and p.d across a conductor Prepare students to connect and analyse simple electric circuits",
+          "month": "November",
+          "week": "1ST",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Battery Wire Ammeter voltameter"
+        },
+        {
+          "objective": "Resistance to electric current",
+          "teaching_act": "Prepare students to discuss the concept of resistance Prepare students to state the units of resistance Prepare students to measure resistance Prepare students to connect and analyse simple electric circuits",
+          "month": "November",
+          "week": "2ND",
+          "period": "08",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Battery Wire Ammeter Voltameter resistor"
+        },
+        {
+          "objective": "Effects of an electric current",
+          "teaching_act": "Prepare students to discuss the effects of an electric circuit",
+          "month": "November",
+          "week": "3RD",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Battery Wire Ammeter Voltameter resistor"
+        },
+        {
+          "objective": "Electric installation",
+          "teaching_act": "Prepare students to discuss electric installation",
+          "month": "November",
+          "week": "4TH",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Battery Wire Ammeter Voltameter resistor"
+        },
+        {
+          "objective": "Cells",
+          "teaching_act": "Prepare students to discuss electric cells",
+          "month": "November",
+          "week": "4TH",
+          "period": "04",
+          "references": "TIE(2022) Physics for secondary school s student’s book form three, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "assessment": "Battery Wire Ammeter Voltameter resistor"
+        }
+      ],
+      "entry_count": 40
+    }
+  ],
+  "form": "Form3",
+  "year": "2025"
+}

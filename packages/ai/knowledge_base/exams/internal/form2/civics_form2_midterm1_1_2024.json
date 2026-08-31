@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form2_midterm1_1_2024.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 1 Exam 1 (FORM2 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 92,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Democracy",
+          "text": "Analyse the causes and effects of 'Democracy'. - with diagram",
+          "competence": "Democracy"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain concept of human rights",
+          "text": "Analyse the causes and effects of 'Explain concept of human rights'.",
+          "competence": "Explain concept of human rights"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Globalization",
+          "text": "Define 'Globalization' and discuss its importance in everyday life. - with example",
+          "competence": "Globalization"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain central government",
+          "text": "Examine the advantages and disadvantages of 'Explain central government'. - with diagram",
+          "competence": "Explain central government"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "National Unity",
+          "text": "Analyse the causes and effects of 'National Unity'. - with example",
+          "competence": "National Unity"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain local government",
+          "text": "Explain the concept of 'Explain local government' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain local government"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Interpersonal Relationships",
+          "text": "Discuss the challenges facing 'Interpersonal Relationships' in Tanzania and propose solutions.",
+          "competence": "Interpersonal Relationships"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain democracy",
+          "text": "Outline the procedures involved in 'Explain democracy'. - with diagram",
+          "competence": "Explain democracy"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain life skills",
+          "text": "Evaluate the role of 'Explain life skills' in national development.",
+          "competence": "Explain life skills"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain national symbols",
+          "text": "Define 'Explain national symbols' and discuss its importance in everyday life.",
+          "competence": "Explain national symbols"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain culture and tradition",
+          "text": "Examine the advantages and disadvantages of 'Explain culture and tradition'.",
+          "competence": "Explain culture and tradition"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain child rights",
+          "text": "Evaluate the role of 'Explain child rights' in national development. - with diagram",
+          "competence": "Explain child rights"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Concept of Nation",
+          "text": "Analyse the causes and effects of 'Concept of Nation'. - with example",
+          "competence": "Concept of Nation"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain citizenship",
+          "text": "Examine the advantages and disadvantages of 'Explain citizenship'.",
+          "competence": "Explain citizenship"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain interpersonal relationships",
+          "text": "Describe the main features of 'Explain interpersonal relationships'. - with example",
+          "competence": "Explain interpersonal relationships"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain gender",
+          "text": "Define 'Explain gender' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain gender"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Central Government",
+          "text": "Compare and contrast 'Central Government' with related concepts.",
+          "competence": "Central Government"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain national unity",
+          "text": "Explain the concept of 'Explain national unity' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain national unity"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Concept of Human Rights",
+          "text": "Describe the main features of 'Concept of Human Rights'. - with diagram",
+          "competence": "Concept of Human Rights"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain concept of nation",
+          "text": "Examine the advantages and disadvantages of 'Explain concept of nation'. - with diagram",
+          "competence": "Explain concept of nation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Democracy",
+    "Explain concept of human rights",
+    "Globalization",
+    "Explain central government",
+    "National Unity",
+    "Explain local government",
+    "Interpersonal Relationships",
+    "Explain democracy",
+    "Explain life skills",
+    "Explain national symbols"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

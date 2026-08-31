@@ -1,0 +1,121 @@
+{
+  "filename": "physics_form5_topical_1_2024.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Physics - Topical Test 1 (FORM5 2024): explain the terms principle axis, p",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 47,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "explain the concepts of measurement",
+          "text": "With examples, illustrate how 'explain the concepts of measurement' is applied in the community.",
+          "competence": "explain the concepts of measurement"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors",
+          "text": "How does 'explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors' relate to sustainable development?",
+          "competence": "explain the terms principle axis, pole, principle focus, rad"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "explain the concepts of measurement",
+          "text": "Describe the process of 'explain the concepts of measurement' step by step. - with diagram",
+          "competence": "explain the concepts of measurement"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "explain the concepts of measurement",
+          "text": "Assess the impact of 'explain the concepts of measurement' on society. - with example",
+          "competence": "explain the concepts of measurement"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors",
+          "text": "Define 'explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors' and discuss its importance in everyday life.",
+          "competence": "explain the terms principle axis, pole, principle focus, rad"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors",
+          "text": "Analyse the causes and effects of 'explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors'.",
+          "competence": "explain the terms principle axis, pole, principle focus, rad"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors",
+          "text": "Discuss the factors influencing 'explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors'. - with diagram",
+          "competence": "explain the terms principle axis, pole, principle focus, rad"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors",
+          "text": "Explain the concept of 'explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors' with examples relevant to Tanzania.",
+          "competence": "explain the terms principle axis, pole, principle focus, rad"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "explain the concepts of measurement",
+          "text": "Explain the relationship between 'explain the concepts of measurement' and its environment. - with diagram",
+          "competence": "explain the concepts of measurement"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors",
+          "text": "Evaluate the role of 'explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors' in national development.",
+          "competence": "explain the terms principle axis, pole, principle focus, rad"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "explain the concepts of measurement",
+    "explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form5_topical_6_2026.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 6 (FORM5 2026): Kujadili maendeleo ya fasihi katika",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 43,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi",
+          "text": "Explain the relationship between 'Kujadili maendeleo ya fasihi katika kipindi cha utandawazi' and its environment. - locally",
+          "competence": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi",
+          "text": "Propose measures to improve 'Kujadili maendeleo ya fasihi katika kipindi cha utandawazi' in schools.",
+          "competence": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku",
+          "text": "Explain the concept of 'Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku' with examples relevant to Tanzania. - locally",
+          "competence": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku",
+          "text": "With examples, illustrate how 'Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku' is applied in the community. - locally",
+          "competence": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi",
+          "text": "Discuss the factors influencing 'Kujadili maendeleo ya fasihi katika kipindi cha utandawazi'.",
+          "competence": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku",
+          "text": "Analyse the causes and effects of 'Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku'.",
+          "competence": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi",
+          "text": "Evaluate the role of 'Kujadili maendeleo ya fasihi katika kipindi cha utandawazi' in national development. - with diagram",
+          "competence": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku",
+          "text": "Describe the main features of 'Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku'. - with diagram",
+          "competence": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi",
+          "text": "Propose measures to improve 'Kujadili maendeleo ya fasihi katika kipindi cha utandawazi' in schools.",
+          "competence": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku",
+          "text": "Examine the advantages and disadvantages of 'Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku'.",
+          "competence": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi",
+    "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

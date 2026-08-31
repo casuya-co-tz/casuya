@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form1_midterm2_3_2025.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 2 Exam 3 (FORM1 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 78,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Taxation",
+          "text": "Describe the main features of 'Taxation'. - with diagram",
+          "competence": "Taxation"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain trade",
+          "text": "Outline the procedures involved in 'Explain trade'. - with diagram",
+          "competence": "Explain trade"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain taxation",
+          "text": "Discuss the challenges facing 'Explain taxation' in Tanzania and propose solutions.",
+          "competence": "Explain taxation"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Trade",
+          "text": "Examine the advantages and disadvantages of 'Trade'. - with diagram",
+          "competence": "Trade"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain cooperative",
+          "text": "Discuss the challenges facing 'Explain cooperative' in Tanzania and propose solutions. - with example",
+          "competence": "Explain cooperative"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain stock control",
+          "text": "Outline the procedures involved in 'Explain stock control'. - with diagram",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Production",
+          "text": "Evaluate the role of 'Production' in national development. - with example",
+          "competence": "Production"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain aids to trade",
+          "text": "Outline the procedures involved in 'Explain aids to trade'. - with diagram",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Partnership",
+          "text": "Examine the advantages and disadvantages of 'Partnership'. - with example",
+          "competence": "Partnership"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain sole proprietorship",
+          "text": "Analyse the causes and effects of 'Explain sole proprietorship'. - with example",
+          "competence": "Explain sole proprietorship"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain insurance",
+          "text": "With examples, illustrate how 'Explain insurance' is applied in the community. - with example",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Cooperative",
+          "text": "Examine the advantages and disadvantages of 'Cooperative'. - with diagram",
+          "competence": "Cooperative"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain advertisement",
+          "text": "Describe the main features of 'Explain advertisement'. - with diagram",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Sole Proprietorship",
+          "text": "Define 'Sole Proprietorship' and discuss its importance in everyday life.",
+          "competence": "Sole Proprietorship"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain warehousing",
+          "text": "Outline the procedures involved in 'Explain warehousing'. - with diagram",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Insurance",
+          "text": "Compare and contrast 'Insurance' with related concepts. - with diagram",
+          "competence": "Insurance"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain partnership",
+          "text": "With examples, illustrate how 'Explain partnership' is applied in the community. - with diagram",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Communication",
+          "text": "Discuss the challenges facing 'Communication' in Tanzania and propose solutions.",
+          "competence": "Communication"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Stock Control",
+          "text": "Define 'Stock Control' and discuss its importance in everyday life. - with example",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain market and marketing",
+          "text": "With examples, illustrate how 'Explain market and marketing' is applied in the community. - with diagram",
+          "competence": "Explain market and marketing"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Taxation",
+    "Explain trade",
+    "Explain taxation",
+    "Trade",
+    "Explain cooperative",
+    "Explain stock control",
+    "Production",
+    "Explain aids to trade",
+    "Partnership",
+    "Explain sole proprietorship"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

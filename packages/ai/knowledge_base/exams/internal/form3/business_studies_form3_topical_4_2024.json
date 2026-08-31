@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form3_topical_4_2024.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 4 (FORM3 2024): Complete and submit the business pl",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 35,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Complete and submit the business plan developed in Form Five",
+          "text": "Examine the advantages and disadvantages of 'Complete and submit the business plan developed in Form Five'. - with example",
+          "competence": "Complete and submit the business plan developed in Form Five"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Complete and submit the business plan developed in Form Five",
+          "text": "How does 'Complete and submit the business plan developed in Form Five' relate to sustainable development? - locally",
+          "competence": "Complete and submit the business plan developed in Form Five"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Complete and submit the business plan developed in Form Five",
+          "text": "How does 'Complete and submit the business plan developed in Form Five' relate to sustainable development? - locally",
+          "competence": "Complete and submit the business plan developed in Form Five"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+          "text": "Define 'Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function' and discuss its importance in everyday life.",
+          "competence": "Describe the basic aspects of warehousing and inventorying f"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+          "text": "Evaluate the role of 'Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function' in national development. - locally",
+          "competence": "Describe the basic aspects of warehousing and inventorying f"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Complete and submit the business plan developed in Form Five",
+          "text": "Examine the advantages and disadvantages of 'Complete and submit the business plan developed in Form Five'.",
+          "competence": "Complete and submit the business plan developed in Form Five"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Complete and submit the business plan developed in Form Five",
+          "text": "Define 'Complete and submit the business plan developed in Form Five' and discuss its importance in everyday life. - with diagram",
+          "competence": "Complete and submit the business plan developed in Form Five"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Complete and submit the business plan developed in Form Five",
+          "text": "Explain the concept of 'Complete and submit the business plan developed in Form Five' with examples relevant to Tanzania.",
+          "competence": "Complete and submit the business plan developed in Form Five"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Complete and submit the business plan developed in Form Five",
+          "text": "Assess the impact of 'Complete and submit the business plan developed in Form Five' on society.",
+          "competence": "Complete and submit the business plan developed in Form Five"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Complete and submit the business plan developed in Form Five",
+          "text": "What are the characteristics of 'Complete and submit the business plan developed in Form Five'? - with diagram",
+          "competence": "Complete and submit the business plan developed in Form Five"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Complete and submit the business plan developed in Form Five",
+    "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

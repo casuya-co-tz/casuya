@@ -1,0 +1,121 @@
+{
+  "filename": "book_keeping_form3_topical_7_2024.json",
+  "subject": "Book Keeping",
+  "subject_slug": "book_keeping",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Book Keeping - Topical Test 7 (FORM3 2024): Explain bank reconciliation stateme",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 49,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain bank reconciliation statement",
+          "text": "Compare and contrast 'Explain bank reconciliation statement' with related concepts.",
+          "competence": "Explain bank reconciliation statement"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain bank reconciliation statement",
+          "text": "Discuss the challenges facing 'Explain bank reconciliation statement' in Tanzania and propose solutions. - with example",
+          "competence": "Explain bank reconciliation statement"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Trial Balance",
+          "text": "Discuss the challenges facing 'Trial Balance' in Tanzania and propose solutions.",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain bank reconciliation statement",
+          "text": "Define 'Explain bank reconciliation statement' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain bank reconciliation statement"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Trial Balance",
+          "text": "Compare and contrast 'Trial Balance' with related concepts. - with example",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Trial Balance",
+          "text": "Analyse the causes and effects of 'Trial Balance'.",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain bank reconciliation statement",
+          "text": "Examine the advantages and disadvantages of 'Explain bank reconciliation statement'. - with diagram",
+          "competence": "Explain bank reconciliation statement"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Trial Balance",
+          "text": "Analyse the causes and effects of 'Trial Balance'. - with diagram",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Trial Balance",
+          "text": "Analyse the causes and effects of 'Trial Balance'. - with diagram",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain bank reconciliation statement",
+          "text": "Outline the procedures involved in 'Explain bank reconciliation statement'. - with diagram",
+          "competence": "Explain bank reconciliation statement"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain bank reconciliation statement",
+    "Trial Balance"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

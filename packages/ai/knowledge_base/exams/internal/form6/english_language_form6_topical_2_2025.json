@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form6_topical_2_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 2 (FORM6 2025): Analyse theories and principles of ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 32,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Analyse theories and principles of translation",
+          "text": "Compare and contrast 'Analyse theories and principles of translation' with related concepts. - locally",
+          "competence": "Analyse theories and principles of translation"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Construct sentences with proper intonation",
+          "text": "Describe the process of 'Construct sentences with proper intonation' step by step.",
+          "competence": "Construct sentences with proper intonation"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Analyse theories and principles of translation",
+          "text": "Outline the procedures involved in 'Analyse theories and principles of translation'. - with diagram",
+          "competence": "Analyse theories and principles of translation"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Construct sentences with proper intonation",
+          "text": "Propose measures to improve 'Construct sentences with proper intonation' in schools. - locally",
+          "competence": "Construct sentences with proper intonation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Analyse theories and principles of translation",
+          "text": "Define 'Analyse theories and principles of translation' and discuss its importance in everyday life.",
+          "competence": "Analyse theories and principles of translation"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Analyse theories and principles of translation",
+          "text": "Outline the procedures involved in 'Analyse theories and principles of translation'. - with diagram",
+          "competence": "Analyse theories and principles of translation"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Analyse theories and principles of translation",
+          "text": "Explain the concept of 'Analyse theories and principles of translation' with examples relevant to Tanzania. - locally",
+          "competence": "Analyse theories and principles of translation"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Analyse theories and principles of translation",
+          "text": "Evaluate the role of 'Analyse theories and principles of translation' in national development. - locally",
+          "competence": "Analyse theories and principles of translation"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Construct sentences with proper intonation",
+          "text": "Outline the procedures involved in 'Construct sentences with proper intonation'. - locally",
+          "competence": "Construct sentences with proper intonation"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Analyse theories and principles of translation",
+          "text": "Propose measures to improve 'Analyse theories and principles of translation' in schools.",
+          "competence": "Analyse theories and principles of translation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Analyse theories and principles of translation",
+    "Construct sentences with proper intonation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

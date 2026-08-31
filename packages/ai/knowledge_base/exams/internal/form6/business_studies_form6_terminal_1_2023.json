@@ -1,0 +1,249 @@
+{
+  "filename": "business_studies_form6_terminal_1_2023.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Business Studies - Terminal Exam 1 (FORM6 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 114,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio",
+          "text": "Compare and contrast 'Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio' with related concepts. - with diagram",
+          "competence": "Describe the basic aspects of marketing for small businesses"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+          "text": "How does 'Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend' relate to sustainable development? - locally",
+          "competence": "Describe sources of capital for small businesses (loans, sav"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Identify business opportunities available in the local environment",
+          "text": "Explain the relationship between 'Identify business opportunities available in the local environment' and its environment. - locally",
+          "competence": "Identify business opportunities available in the local envir"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+          "text": "Describe the main features of 'Describe some basic aspects of operations management (methods of production, value addition and stock administration)'. - locally",
+          "competence": "Describe some basic aspects of operations management (method"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the policies and laws governing medium scale business",
+          "text": "Assess the impact of 'Demonstrate an understanding of the policies and laws governing medium scale business' on society.",
+          "competence": "Demonstrate an understanding of the policies and laws govern"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of basic business ethics",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate mastery of basic business ethics'. - with diagram",
+          "competence": "Demonstrate mastery of basic business ethics"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare a medium scale business plan",
+          "text": "Explain the relationship between 'Prepare a medium scale business plan' and its environment. - with example",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Analyse the causes and effects of 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi'. - with diagram",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use appropriate selling methods and techniques (branding, logos, packaging, after sales services, barcoding, direct mail and internet auction",
+          "text": "Explain the concept of 'Use appropriate selling methods and techniques (branding, logos, packaging, after sales services, barcoding, direct mail and internet auction' with examples relevant to Tanzania. - locally",
+          "competence": "Use appropriate selling methods and techniques (branding, lo"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+          "text": "Examine the advantages and disadvantages of 'Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures'. - with diagram",
+          "competence": "Describe some advanced aspects of financing medium businesse"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe some advanced aspects of marketing (marketing mix - 4Cs and 7Ps, market changes, market segmentation, marketing boards, market research, e-marketing)",
+          "text": "With examples, illustrate how 'Describe some advanced aspects of marketing (marketing mix - 4Cs and 7Ps, market changes, market segmentation, marketing boards, market research, e-marketing)' is applied in the community. - locally",
+          "competence": "Describe some advanced aspects of marketing (marketing mix -"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Identify relevant procedures and practices for buying and selling products within and outside the country",
+          "text": "Describe the main features of 'Identify relevant procedures and practices for buying and selling products within and outside the country'. - with diagram",
+          "competence": "Identify relevant procedures and practices for buying and se"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe taxes and levies associated with small businesses in Tanzania (meaning, types, importance, and sanctions for non- complianc",
+          "text": "Assess the impact of 'Describe taxes and levies associated with small businesses in Tanzania (meaning, types, importance, and sanctions for non- complianc' on society. - locally",
+          "competence": "Describe taxes and levies associated with small businesses i"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the role of microfinancing and cooperatives in facilitating business formation and operations",
+          "text": "Discuss the factors influencing 'Describe the role of microfinancing and cooperatives in facilitating business formation and operations'.",
+          "competence": "Describe the role of microfinancing and cooperatives in faci"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc",
+          "text": "Describe the main features of 'Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc'. - with diagram",
+          "competence": "Describe procedures for registering small businesses in Tanz"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic aspects of the policy and regulatory environment governing small businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-law",
+          "text": "Describe the main features of 'Explore the basic aspects of the policy and regulatory environment governing small businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-law'. - with example",
+          "competence": "Explore the basic aspects of the policy and regulatory envir"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+          "text": "Examine the advantages and disadvantages of 'Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function'. - with example",
+          "competence": "Describe the basic aspects of warehousing and inventorying f"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate mastery of the concepts, theories and principles of Business Education",
+          "text": "Describe the main features of 'Demonstrate mastery of the concepts, theories and principles of Business Education'. - with diagram",
+          "competence": "Demonstrate mastery of the concepts, theories and principles"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "crowd funding and government grants)",
+          "text": "Explain the relationship between 'crowd funding and government grants)' and its environment.",
+          "competence": "crowd funding and government grants)"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "to facilitate trade",
+          "text": "How does 'to facilitate trade' relate to sustainable development? - with diagram",
+          "competence": "to facilitate trade"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)",
+          "text": "Outline the procedures involved in 'Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)'. - with diagram",
+          "competence": "Explain some aspects of insurance for medium businesses (cho"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate mastery of the basic skills of operating a small-scale business",
+          "text": "With examples, illustrate how 'Demonstrate mastery of the basic skills of operating a small-scale business' is applied in the community.",
+          "competence": "Demonstrate mastery of the basic skills of operating a small"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe taxes and levies associated with medium businesses in Tanzania",
+          "text": "With examples, illustrate how 'Describe taxes and levies associated with medium businesses in Tanzania' is applied in the community. - locally",
+          "competence": "Describe taxes and levies associated with medium businesses "
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate mastery of the basic skills of trading locally and internationally",
+          "text": "Describe the process of 'Demonstrate mastery of the basic skills of trading locally and internationally' step by step. - with diagram",
+          "competence": "Demonstrate mastery of the basic skills of trading locally a"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Identify an appropriate business opportunity and develop its business plan",
+          "text": "Discuss the challenges facing 'Identify an appropriate business opportunity and develop its business plan' in Tanzania and propose solutions. - with example",
+          "competence": "Identify an appropriate business opportunity and develop its"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio",
+    "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+    "Identify business opportunities available in the local environment",
+    "Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+    "Demonstrate an understanding of the policies and laws governing medium scale business",
+    "Demonstrate mastery of basic business ethics",
+    "Prepare a medium scale business plan",
+    "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+    "Use appropriate selling methods and techniques (branding, logos, packaging, after sales services, barcoding, direct mail and internet auction",
+    "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "divinity_form6_topical_3_2026.json",
+  "subject": "Divinity",
+  "subject_slug": "divinity",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Divinity - Topical Test 3 (FORM6 2026): Demonstrate an understanding of the",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 37,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "Explain the relationship between 'Demonstrate an understanding of the Epistle of Paul to the Romans' and its environment. - locally",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "Propose measures to improve 'Demonstrate an understanding of the Epistle of Paul to the Romans' in schools. - with example",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah'.",
+          "competence": "Demonstrate an understanding of the importance of responsibi"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the Epistle of Paul to the Romans' is applied in the community.",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah'.",
+          "competence": "Demonstrate an understanding of the importance of responsibi"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah' is applied in the community. - with diagram",
+          "competence": "Demonstrate an understanding of the importance of responsibi"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of the Epistle of Paul to the Romans' in Tanzania and propose solutions. - with example",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah",
+          "text": "What are the characteristics of 'Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah'?",
+          "competence": "Demonstrate an understanding of the importance of responsibi"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "Discuss the factors influencing 'Demonstrate an understanding of the Epistle of Paul to the Romans'.",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "Explain the concept of 'Demonstrate an understanding of the Epistle of Paul to the Romans' with examples relevant to Tanzania.",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate an understanding of the Epistle of Paul to the Romans",
+    "Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

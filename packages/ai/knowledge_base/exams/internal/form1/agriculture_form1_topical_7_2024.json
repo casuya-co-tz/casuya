@@ -1,0 +1,121 @@
+{
+  "filename": "agriculture_form1_topical_7_2024.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Agriculture - Topical Test 7 (FORM1 2024): Explain soil properties",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 49,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Crop Classification",
+          "text": "Define 'Crop Classification' and discuss its importance in everyday life. - with example",
+          "competence": "Crop Classification"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain soil properties",
+          "text": "Analyse the causes and effects of 'Explain soil properties'. - with example",
+          "competence": "Explain soil properties"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain soil properties",
+          "text": "Examine the advantages and disadvantages of 'Explain soil properties'. - with diagram",
+          "competence": "Explain soil properties"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain soil properties",
+          "text": "Examine the advantages and disadvantages of 'Explain soil properties'. - with diagram",
+          "competence": "Explain soil properties"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain soil properties",
+          "text": "Outline the procedures involved in 'Explain soil properties'. - with example",
+          "competence": "Explain soil properties"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Crop Classification",
+          "text": "With examples, illustrate how 'Crop Classification' is applied in the community.",
+          "competence": "Crop Classification"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain soil properties",
+          "text": "Compare and contrast 'Explain soil properties' with related concepts. - with diagram",
+          "competence": "Explain soil properties"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Crop Classification",
+          "text": "Define 'Crop Classification' and discuss its importance in everyday life. - with diagram",
+          "competence": "Crop Classification"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Crop Classification",
+          "text": "Compare and contrast 'Crop Classification' with related concepts.",
+          "competence": "Crop Classification"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Crop Classification",
+          "text": "Examine the advantages and disadvantages of 'Crop Classification'. - with example",
+          "competence": "Crop Classification"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Crop Classification",
+    "Explain soil properties"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

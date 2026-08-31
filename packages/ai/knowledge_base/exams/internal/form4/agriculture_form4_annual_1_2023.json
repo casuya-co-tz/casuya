@@ -1,0 +1,289 @@
+{
+  "filename": "agriculture_form4_annual_1_2023.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2023",
+  "time": "3:00 Hours",
+  "title": "Agriculture - Annual Exam 1 (FORM4 2023)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 141,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Vegetable Production",
+          "text": "Examine the advantages and disadvantages of 'Vegetable Production'. - with diagram",
+          "competence": "Vegetable Production"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Farm Management",
+          "text": "Define 'Farm Management' and discuss its importance in everyday life. - with example",
+          "competence": "Farm Management"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Farm Records",
+          "text": "Examine the advantages and disadvantages of 'Farm Records'.",
+          "competence": "Farm Records"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain animal nutrition",
+          "text": "Describe the main features of 'Explain animal nutrition'.",
+          "competence": "Explain animal nutrition"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain soil properties",
+          "text": "Outline the procedures involved in 'Explain soil properties'.",
+          "competence": "Explain soil properties"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Agricultural Marketing",
+          "text": "Define 'Agricultural Marketing' and discuss its importance in everyday life. - with diagram",
+          "competence": "Agricultural Marketing"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain farm management",
+          "text": "Outline the procedures involved in 'Explain farm management'. - with diagram",
+          "competence": "Explain farm management"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Range Management",
+          "text": "Evaluate the role of 'Range Management' in national development.",
+          "competence": "Range Management"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain concept of agriculture",
+          "text": "Examine the advantages and disadvantages of 'Explain concept of agriculture'.",
+          "competence": "Explain concept of agriculture"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Animal Nutrition",
+          "text": "Outline the procedures involved in 'Animal Nutrition'. - with example",
+          "competence": "Animal Nutrition"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain range management",
+          "text": "Outline the procedures involved in 'Explain range management'.",
+          "competence": "Explain range management"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain animal health",
+          "text": "Define 'Explain animal health' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain animal health"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Pasture Establishment",
+          "text": "Outline the procedures involved in 'Pasture Establishment'. - with diagram",
+          "competence": "Pasture Establishment"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Forage Conservation",
+          "text": "With examples, illustrate how 'Forage Conservation' is applied in the community. - with example",
+          "competence": "Forage Conservation"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Animal Classification",
+          "text": "Explain the concept of 'Animal Classification' with examples relevant to Tanzania.",
+          "competence": "Animal Classification"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain agricultural marketing",
+          "text": "Explain the concept of 'Explain agricultural marketing' with examples relevant to Tanzania. - with example",
+          "competence": "Explain agricultural marketing"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Importance of Agriculture",
+          "text": "Describe the main features of 'Importance of Agriculture'. - with example",
+          "competence": "Importance of Agriculture"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain farm records",
+          "text": "Compare and contrast 'Explain farm records' with related concepts. - with example",
+          "competence": "Explain farm records"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain vegetable production",
+          "text": "Discuss the challenges facing 'Explain vegetable production' in Tanzania and propose solutions. - with example",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Soil Formation",
+          "text": "Evaluate the role of 'Soil Formation' in national development. - with example",
+          "competence": "Soil Formation"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Livestock Management",
+          "text": "Evaluate the role of 'Livestock Management' in national development. - with diagram",
+          "competence": "Livestock Management"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain crop classification",
+          "text": "Define 'Explain crop classification' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain crop classification"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain animal classification",
+          "text": "With examples, illustrate how 'Explain animal classification' is applied in the community.",
+          "competence": "Explain animal classification"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain soil fertility",
+          "text": "Explain the concept of 'Explain soil fertility' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain soil fertility"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain forage conservation",
+          "text": "Explain the concept of 'Explain forage conservation' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain forage conservation"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Branches of Agriculture",
+          "text": "Evaluate the role of 'Branches of Agriculture' in national development. - with diagram",
+          "competence": "Branches of Agriculture"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain pasture establishment",
+          "text": "Define 'Explain pasture establishment' and discuss its importance in everyday life. - with example",
+          "competence": "Explain pasture establishment"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Soil Fertility",
+          "text": "Define 'Soil Fertility' and discuss its importance in everyday life. - with example",
+          "competence": "Soil Fertility"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Crop Classification",
+          "text": "Analyse the causes and effects of 'Crop Classification'. - with diagram",
+          "competence": "Crop Classification"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Soil Conservation",
+          "text": "Evaluate the role of 'Soil Conservation' in national development. - with example",
+          "competence": "Soil Conservation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Vegetable Production",
+    "Farm Management",
+    "Farm Records",
+    "Explain animal nutrition",
+    "Explain soil properties",
+    "Agricultural Marketing",
+    "Explain farm management",
+    "Range Management",
+    "Explain concept of agriculture",
+    "Animal Nutrition"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

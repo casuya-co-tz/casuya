@@ -1,0 +1,249 @@
+{
+  "filename": "civics_form1_terminal_1_2023.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Civics - Terminal Exam 1 (FORM1 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 110,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain central government",
+          "text": "Analyse the causes and effects of 'Explain central government'. - with diagram",
+          "competence": "Explain central government"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Concept of Human Rights",
+          "text": "Discuss the challenges facing 'Concept of Human Rights' in Tanzania and propose solutions.",
+          "competence": "Concept of Human Rights"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain constitution",
+          "text": "Evaluate the role of 'Explain constitution' in national development. - with diagram",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain local government",
+          "text": "With examples, illustrate how 'Explain local government' is applied in the community. - with example",
+          "competence": "Explain local government"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Child Rights",
+          "text": "With examples, illustrate how 'Child Rights' is applied in the community.",
+          "competence": "Child Rights"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain national symbols",
+          "text": "Discuss the challenges facing 'Explain national symbols' in Tanzania and propose solutions. - with example",
+          "competence": "Explain national symbols"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain national unity",
+          "text": "Explain the concept of 'Explain national unity' with examples relevant to Tanzania. - with example",
+          "competence": "Explain national unity"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain citizenship",
+          "text": "Analyse the causes and effects of 'Explain citizenship'. - with diagram",
+          "competence": "Explain citizenship"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Concept of Nation",
+          "text": "With examples, illustrate how 'Concept of Nation' is applied in the community.",
+          "competence": "Concept of Nation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain concept of nation",
+          "text": "Examine the advantages and disadvantages of 'Explain concept of nation'. - with example",
+          "competence": "Explain concept of nation"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "National Unity",
+          "text": "Describe the main features of 'National Unity'.",
+          "competence": "National Unity"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Local Government",
+          "text": "Examine the advantages and disadvantages of 'Local Government'. - with diagram",
+          "competence": "Local Government"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "National Symbols",
+          "text": "Describe the main features of 'National Symbols'. - with example",
+          "competence": "National Symbols"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain interpersonal relationships",
+          "text": "Define 'Explain interpersonal relationships' and discuss its importance in everyday life. - with example",
+          "competence": "Explain interpersonal relationships"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain child rights",
+          "text": "Evaluate the role of 'Explain child rights' in national development. - with example",
+          "competence": "Explain child rights"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Gender",
+          "text": "Discuss the challenges facing 'Gender' in Tanzania and propose solutions. - with diagram",
+          "competence": "Gender"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Democracy",
+          "text": "Describe the main features of 'Democracy'. - with example",
+          "competence": "Democracy"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Citizenship",
+          "text": "With examples, illustrate how 'Citizenship' is applied in the community. - with example",
+          "competence": "Citizenship"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Central Government",
+          "text": "Analyse the causes and effects of 'Central Government'. - with diagram",
+          "competence": "Central Government"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain concept of human rights",
+          "text": "Explain the concept of 'Explain concept of human rights' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain concept of human rights"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain democracy",
+          "text": "Compare and contrast 'Explain democracy' with related concepts. - with example",
+          "competence": "Explain democracy"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain elections",
+          "text": "With examples, illustrate how 'Explain elections' is applied in the community. - with diagram",
+          "competence": "Explain elections"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain gender",
+          "text": "With examples, illustrate how 'Explain gender' is applied in the community. - with diagram",
+          "competence": "Explain gender"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Constitution",
+          "text": "Examine the advantages and disadvantages of 'Constitution'.",
+          "competence": "Constitution"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain life skills",
+          "text": "Examine the advantages and disadvantages of 'Explain life skills'. - with example",
+          "competence": "Explain life skills"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain central government",
+    "Concept of Human Rights",
+    "Explain constitution",
+    "Explain local government",
+    "Child Rights",
+    "Explain national symbols",
+    "Explain national unity",
+    "Explain citizenship",
+    "Concept of Nation",
+    "Explain concept of nation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,249 @@
+{
+  "filename": "basic_mathematics_form4_terminal_2_2024.json",
+  "subject": "Basic Mathematics",
+  "subject_slug": "basic_mathematics",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2024",
+  "time": "2:30 Hours",
+  "title": "Basic Mathematics - Terminal Exam 2 (FORM4 2024)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 106,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain percentages",
+          "text": "Examine the advantages and disadvantages of 'Explain percentages'. - with example",
+          "competence": "Explain percentages"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain circles",
+          "text": "Define 'Explain circles' and discuss its importance in everyday life.",
+          "competence": "Explain circles"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain decimals",
+          "text": "Define 'Explain decimals' and discuss its importance in everyday life. - with example",
+          "competence": "Explain decimals"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Inequations",
+          "text": "Analyse the causes and effects of 'Inequations'. - with example",
+          "competence": "Inequations"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain angles",
+          "text": "Discuss the challenges facing 'Explain angles' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain angles"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain data collection",
+          "text": "Explain the concept of 'Explain data collection' with examples relevant to Tanzania.",
+          "competence": "Explain data collection"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Equations",
+          "text": "Examine the advantages and disadvantages of 'Equations'. - with example",
+          "competence": "Equations"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Mensuration",
+          "text": "Discuss the challenges facing 'Mensuration' in Tanzania and propose solutions. - with example",
+          "competence": "Mensuration"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain whole numbers",
+          "text": "Examine the advantages and disadvantages of 'Explain whole numbers'. - with diagram",
+          "competence": "Explain whole numbers"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Triangles",
+          "text": "Explain the concept of 'Triangles' with examples relevant to Tanzania.",
+          "competence": "Triangles"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Percentages",
+          "text": "Explain the concept of 'Percentages' with examples relevant to Tanzania. - with diagram",
+          "competence": "Percentages"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain fractions",
+          "text": "Outline the procedures involved in 'Explain fractions'. - with diagram",
+          "competence": "Explain fractions"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Decimals",
+          "text": "Compare and contrast 'Decimals' with related concepts. - with example",
+          "competence": "Decimals"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain probability",
+          "text": "Compare and contrast 'Explain probability' with related concepts.",
+          "competence": "Explain probability"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Whole Numbers",
+          "text": "Describe the main features of 'Whole Numbers'.",
+          "competence": "Whole Numbers"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain triangles",
+          "text": "Evaluate the role of 'Explain triangles' in national development. - with diagram",
+          "competence": "Explain triangles"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Angles",
+          "text": "With examples, illustrate how 'Angles' is applied in the community. - with example",
+          "competence": "Angles"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain algebraic expressions",
+          "text": "With examples, illustrate how 'Explain algebraic expressions' is applied in the community. - with example",
+          "competence": "Explain algebraic expressions"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Fractions",
+          "text": "Discuss the challenges facing 'Fractions' in Tanzania and propose solutions. - with example",
+          "competence": "Fractions"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain equations",
+          "text": "Define 'Explain equations' and discuss its importance in everyday life.",
+          "competence": "Explain equations"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Sets",
+          "text": "Compare and contrast 'Sets' with related concepts.",
+          "competence": "Sets"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain inequations",
+          "text": "Describe the main features of 'Explain inequations'.",
+          "competence": "Explain inequations"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain mensuration",
+          "text": "Outline the procedures involved in 'Explain mensuration'.",
+          "competence": "Explain mensuration"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Data Collection",
+          "text": "Explain the concept of 'Data Collection' with examples relevant to Tanzania. - with example",
+          "competence": "Data Collection"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Algebraic Expressions",
+          "text": "With examples, illustrate how 'Algebraic Expressions' is applied in the community.",
+          "competence": "Algebraic Expressions"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain percentages",
+    "Explain circles",
+    "Explain decimals",
+    "Inequations",
+    "Explain angles",
+    "Explain data collection",
+    "Equations",
+    "Mensuration",
+    "Explain whole numbers",
+    "Triangles"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,289 @@
+{
+  "filename": "agriculture_form2_annual_2_2024.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2024",
+  "time": "3:00 Hours",
+  "title": "Agriculture - Annual Exam 2 (FORM2 2024)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 134,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Forage Conservation",
+          "text": "Analyse the causes and effects of 'Forage Conservation'. - with example",
+          "competence": "Forage Conservation"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain animal nutrition",
+          "text": "Describe the main features of 'Explain animal nutrition'.",
+          "competence": "Explain animal nutrition"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain soil fertility",
+          "text": "Define 'Explain soil fertility' and discuss its importance in everyday life. - with example",
+          "competence": "Explain soil fertility"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Livestock Management",
+          "text": "Compare and contrast 'Livestock Management' with related concepts. - with example",
+          "competence": "Livestock Management"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain pasture establishment",
+          "text": "With examples, illustrate how 'Explain pasture establishment' is applied in the community.",
+          "competence": "Explain pasture establishment"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Importance of Agriculture",
+          "text": "Define 'Importance of Agriculture' and discuss its importance in everyday life. - with diagram",
+          "competence": "Importance of Agriculture"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain importance of agriculture",
+          "text": "Outline the procedures involved in 'Explain importance of agriculture'. - with example",
+          "competence": "Explain importance of agriculture"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Farm Management",
+          "text": "Explain the concept of 'Farm Management' with examples relevant to Tanzania. - with example",
+          "competence": "Farm Management"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain soil conservation",
+          "text": "Analyse the causes and effects of 'Explain soil conservation'. - with example",
+          "competence": "Explain soil conservation"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Pasture Establishment",
+          "text": "Analyse the causes and effects of 'Pasture Establishment'.",
+          "competence": "Pasture Establishment"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain concept of agriculture",
+          "text": "Discuss the challenges facing 'Explain concept of agriculture' in Tanzania and propose solutions.",
+          "competence": "Explain concept of agriculture"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain farm management",
+          "text": "Define 'Explain farm management' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain farm management"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Soil Formation",
+          "text": "With examples, illustrate how 'Soil Formation' is applied in the community. - with diagram",
+          "competence": "Soil Formation"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain animal classification",
+          "text": "Outline the procedures involved in 'Explain animal classification'.",
+          "competence": "Explain animal classification"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Farm Records",
+          "text": "Evaluate the role of 'Farm Records' in national development.",
+          "competence": "Farm Records"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Agricultural Marketing",
+          "text": "Discuss the challenges facing 'Agricultural Marketing' in Tanzania and propose solutions. - with diagram",
+          "competence": "Agricultural Marketing"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Vegetable Production",
+          "text": "Analyse the causes and effects of 'Vegetable Production'. - with diagram",
+          "competence": "Vegetable Production"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Animal Classification",
+          "text": "Outline the procedures involved in 'Animal Classification'. - with example",
+          "competence": "Animal Classification"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain vegetable production",
+          "text": "Compare and contrast 'Explain vegetable production' with related concepts.",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain agricultural marketing",
+          "text": "With examples, illustrate how 'Explain agricultural marketing' is applied in the community.",
+          "competence": "Explain agricultural marketing"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain crop production practices",
+          "text": "With examples, illustrate how 'Explain crop production practices' is applied in the community.",
+          "competence": "Explain crop production practices"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Range Management",
+          "text": "Explain the concept of 'Range Management' with examples relevant to Tanzania. - with example",
+          "competence": "Range Management"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Crop Classification",
+          "text": "Describe the main features of 'Crop Classification'. - with diagram",
+          "competence": "Crop Classification"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain crop classification",
+          "text": "Evaluate the role of 'Explain crop classification' in national development. - with diagram",
+          "competence": "Explain crop classification"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Soil Conservation",
+          "text": "With examples, illustrate how 'Soil Conservation' is applied in the community. - with example",
+          "competence": "Soil Conservation"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Branches of Agriculture",
+          "text": "Compare and contrast 'Branches of Agriculture' with related concepts. - with example",
+          "competence": "Branches of Agriculture"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Concept of Agriculture",
+          "text": "Outline the procedures involved in 'Concept of Agriculture'. - with diagram",
+          "competence": "Concept of Agriculture"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain soil formation",
+          "text": "Describe the main features of 'Explain soil formation'. - with example",
+          "competence": "Explain soil formation"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Crop Production Practices",
+          "text": "Examine the advantages and disadvantages of 'Crop Production Practices'. - with example",
+          "competence": "Crop Production Practices"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain forage conservation",
+          "text": "Evaluate the role of 'Explain forage conservation' in national development.",
+          "competence": "Explain forage conservation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Forage Conservation",
+    "Explain animal nutrition",
+    "Explain soil fertility",
+    "Livestock Management",
+    "Explain pasture establishment",
+    "Importance of Agriculture",
+    "Explain importance of agriculture",
+    "Farm Management",
+    "Explain soil conservation",
+    "Pasture Establishment"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

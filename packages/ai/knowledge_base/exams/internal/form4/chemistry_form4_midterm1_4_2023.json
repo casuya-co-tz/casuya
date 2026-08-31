@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form4_midterm1_4_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 1 Exam 4 (FORM4 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 101,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)'. - with example",
+          "competence": "Describe the concept of chemical equilibria in predicting th"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Define 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)' and discuss its importance in everyday life.",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+          "text": "Describe the main features of '. Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry'. - with diagram",
+          "competence": ". Demonstrate an advanced understanding of the concepts, the"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+          "text": "Outline the procedures involved in 'Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms'.",
+          "competence": "Relate the types of chemical reactions with common processes"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Examine the advantages and disadvantages of 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes'. - with example",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+          "text": "Evaluate the role of 'Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)' in national development. - with diagram",
+          "competence": "Explore the periodic trends of elements in the modern period"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Compare and contrast 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms' with related concepts. - with example",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "With examples, illustrate how 'Demonstrate mastery of concepts, theories and principles in Chemistry' is applied in the community. - with example",
+          "competence": "Demonstrate mastery of concepts, theories and principles in "
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Prepare sulphuric acid from sulphur dioxide",
+          "text": "Discuss the challenges facing 'Prepare sulphuric acid from sulphur dioxide' in Tanzania and propose solutions.",
+          "competence": "Prepare sulphuric acid from sulphur dioxide"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table'. - with example",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "With examples, illustrate how 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi' is applied in the community. - with example",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Analyse the causes and effects of '. Demonstrate mastery of concepts, theories and principles in Chemistry'. - with example",
+          "competence": ". Demonstrate mastery of concepts, theories and principles i"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Examine the advantages and disadvantages of 'Design and carry out a project in Chemistry'. - with example",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain Avogadro’s law in relation to molar quantities",
+          "text": "Explain the concept of 'Explain Avogadro’s law in relation to molar quantities' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain Avogadro’s law in relation to molar quantities"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of advanced concepts and principles in organic chemistry' in Tanzania and propose solutions. - with diagram",
+          "competence": "Demonstrate an understanding of advanced concepts and princi"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+          "text": "Describe the main features of 'Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal'.",
+          "competence": "Describe the preparation and properties of various compounds"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Define 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate' and discuss its importance in everyday life.",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Analyse the causes and effects of 'Conduct experiments in Chemistry'.",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+          "text": "Explain the concept of 'Explain the changes in the physical and chemical properties of elements across and down the periodic table' with examples relevant to Tanzania.",
+          "competence": "Explain the changes in the physical and chemical properties "
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber",
+          "text": "Discuss the challenges facing 'Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber' in Tanzania and propose solutions. - with example",
+          "competence": "Examine reactions of haloalkanes, amines and polymers for pr"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)",
+    "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+    ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+    "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+    "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+    "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+    "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+    "Demonstrate mastery of concepts, theories and principles in Chemistry",
+    "Prepare sulphuric acid from sulphur dioxide",
+    "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

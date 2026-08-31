@@ -1,0 +1,209 @@
+{
+  "filename": "agriculture_form3_midterm2_4_2024.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Agriculture - Midterm 2 Exam 4 (FORM3 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 75,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain branches of agriculture",
+          "text": "Define 'Explain branches of agriculture' and discuss its importance in everyday life.",
+          "competence": "Explain branches of agriculture"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain range management",
+          "text": "Describe the main features of 'Explain range management'. - with diagram",
+          "competence": "Explain range management"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Animal Nutrition",
+          "text": "Define 'Animal Nutrition' and discuss its importance in everyday life. - with diagram",
+          "competence": "Animal Nutrition"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Importance of Agriculture",
+          "text": "Analyse the causes and effects of 'Importance of Agriculture'.",
+          "competence": "Importance of Agriculture"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Animal Classification",
+          "text": "Analyse the causes and effects of 'Animal Classification'. - with diagram",
+          "competence": "Animal Classification"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Forage Conservation",
+          "text": "Outline the procedures involved in 'Forage Conservation'. - with diagram",
+          "competence": "Forage Conservation"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain animal classification",
+          "text": "Examine the advantages and disadvantages of 'Explain animal classification'. - with diagram",
+          "competence": "Explain animal classification"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Livestock Management",
+          "text": "Explain the concept of 'Livestock Management' with examples relevant to Tanzania. - with diagram",
+          "competence": "Livestock Management"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain animal nutrition",
+          "text": "With examples, illustrate how 'Explain animal nutrition' is applied in the community. - with diagram",
+          "competence": "Explain animal nutrition"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Vegetable Production",
+          "text": "With examples, illustrate how 'Vegetable Production' is applied in the community. - with diagram",
+          "competence": "Vegetable Production"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Soil Conservation",
+          "text": "Evaluate the role of 'Soil Conservation' in national development.",
+          "competence": "Soil Conservation"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Agricultural Marketing",
+          "text": "Evaluate the role of 'Agricultural Marketing' in national development. - with diagram",
+          "competence": "Agricultural Marketing"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Branches of Agriculture",
+          "text": "Examine the advantages and disadvantages of 'Branches of Agriculture'. - with example",
+          "competence": "Branches of Agriculture"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Soil Properties",
+          "text": "With examples, illustrate how 'Soil Properties' is applied in the community.",
+          "competence": "Soil Properties"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain farm records",
+          "text": "Describe the main features of 'Explain farm records'.",
+          "competence": "Explain farm records"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain soil fertility",
+          "text": "Discuss the challenges facing 'Explain soil fertility' in Tanzania and propose solutions. - with example",
+          "competence": "Explain soil fertility"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain soil conservation",
+          "text": "With examples, illustrate how 'Explain soil conservation' is applied in the community.",
+          "competence": "Explain soil conservation"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain crop classification",
+          "text": "With examples, illustrate how 'Explain crop classification' is applied in the community.",
+          "competence": "Explain crop classification"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain farm management",
+          "text": "Outline the procedures involved in 'Explain farm management'. - with diagram",
+          "competence": "Explain farm management"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Pasture Establishment",
+          "text": "Compare and contrast 'Pasture Establishment' with related concepts. - with example",
+          "competence": "Pasture Establishment"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain branches of agriculture",
+    "Explain range management",
+    "Animal Nutrition",
+    "Importance of Agriculture",
+    "Animal Classification",
+    "Forage Conservation",
+    "Explain animal classification",
+    "Livestock Management",
+    "Explain animal nutrition",
+    "Vegetable Production"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

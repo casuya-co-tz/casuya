@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form1_midterm1_3_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 1 Exam 3 (FORM1 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 83,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Explain the concept of 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' with examples relevant to Tanzania.",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concepts of rates and variations",
+          "text": "Discuss the challenges facing 'Describe the concepts of rates and variations' in Tanzania and propose solutions.",
+          "competence": "Describe the concepts of rates and variations"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use basic skills of circles in daily life",
+          "text": "With examples, illustrate how 'Use basic skills of circles in daily life' is applied in the community.",
+          "competence": "Use basic skills of circles in daily life"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)",
+          "text": "Explain the concept of 'Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)' with examples relevant to Tanzania. - locally",
+          "competence": "Explore advanced tenets of coordinate geometry (angle betwee"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "text": "Assess the impact of 'Demonstrate an advanced understanding of knowledge and skills in Mathematics' on society. - locally",
+          "competence": "Demonstrate an advanced understanding of knowledge and skill"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "Evaluate the role of 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)' in national development. - with diagram",
+          "competence": "Use differential equations to solve real life problems relat"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+          "text": "How does 'Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)' relate to sustainable development?",
+          "competence": "Explore basic tenets of differentiation (first principles, p"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Represent two sets in a Venn diagram",
+          "text": "Propose measures to improve 'Represent two sets in a Venn diagram' in schools.",
+          "competence": "Represent two sets in a Venn diagram"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+          "text": "With examples, illustrate how 'Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)' is applied in the community. - locally",
+          "competence": "Explore the basic tenets of complex numbers (modulus, argume"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Discuss the challenges facing 'Find the inverses of relations and functions' in Tanzania and propose solutions. - with diagram",
+          "competence": "Find the inverses of relations and functions"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "Assess the impact of 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)' on society. - locally",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+          "text": "Explain the relationship between 'Use algebraic expressions to model situations (word problems into algebraic expressions and equation' and its environment. - locally",
+          "competence": "Use algebraic expressions to model situations (word problems"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Discuss the factors influencing 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic'. - with diagram",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Calculate angles of elevation and depression",
+          "text": "Compare and contrast 'Calculate angles of elevation and depression' with related concepts. - locally",
+          "competence": "Calculate angles of elevation and depression"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+          "text": "Propose measures to improve 'Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)' in schools. - with example",
+          "competence": "Explore advanced tenets of trigonometry (ratios, small angle"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "Define 'Describe the concepts of geometry (similarities and congruenc' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Describe the process of 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)' step by step. - with example",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use knowledge of sets to organise, create, and categorise objects",
+          "text": "Describe the process of 'Use knowledge of sets to organise, create, and categorise objects' step by step. - locally",
+          "competence": "Use knowledge of sets to organise, create, and categorise ob"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+          "text": "Explain the concept of 'Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic' with examples relevant to Tanzania. - locally",
+          "competence": "Explore advanced tenets of algebra (series of squares and cu"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+          "text": "How does 'Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala' relate to sustainable development?",
+          "competence": "Explore the basic tenets of vectors (displacement and positi"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+    "Describe the concepts of rates and variations",
+    "Use basic skills of circles in daily life",
+    "Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)",
+    "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+    "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+    "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+    "Represent two sets in a Venn diagram",
+    "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+    "Find the inverses of relations and functions"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

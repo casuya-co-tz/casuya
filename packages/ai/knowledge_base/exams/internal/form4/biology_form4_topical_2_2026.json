@@ -1,0 +1,121 @@
+{
+  "filename": "biology_form4_topical_2_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Biology - Topical Test 2 (FORM4 2026): Learning activities",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 43,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Explain the concept of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' with examples relevant to Tanzania.",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Learning activities",
+          "text": "Describe the main features of 'Learning activities'. - with diagram",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Learning activities",
+          "text": "Evaluate the role of 'Learning activities' in national development. - with diagram",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Learning activities",
+          "text": "Define 'Learning activities' and discuss its importance in everyday life. - with diagram",
+          "competence": "Learning activities"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Learning activities",
+          "text": "Analyse the causes and effects of 'Learning activities'. - with example",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Compare and contrast 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' with related concepts. - with diagram",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Analyse the causes and effects of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)'.",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Define 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' and discuss its importance in everyday life.",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Learning activities",
+          "text": "Discuss the challenges facing 'Learning activities' in Tanzania and propose solutions. - with diagram",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Describe the main features of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)'. - with example",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+    "Learning activities"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

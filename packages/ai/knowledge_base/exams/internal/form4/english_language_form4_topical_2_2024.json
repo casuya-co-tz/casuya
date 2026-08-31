@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form4_topical_2_2024.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 2 (FORM4 2024): Construct complex and stylistic mea",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 35,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)",
+          "text": "Examine the advantages and disadvantages of 'Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)'.",
+          "competence": "Automate the production of oral descriptions and conversatio"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)",
+          "text": "Define 'Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)' and discuss its importance in everyday life.",
+          "competence": "Automate the production of oral descriptions and conversatio"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "text": "Explain the concept of 'Construct complex and stylistic meanings from diverse and multiple texts' with examples relevant to Tanzania. - with example",
+          "competence": "Construct complex and stylistic meanings from diverse and mu"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "text": "Discuss the challenges facing 'Construct complex and stylistic meanings from diverse and multiple texts' in Tanzania and propose solutions. - with example",
+          "competence": "Construct complex and stylistic meanings from diverse and mu"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "text": "Explain the concept of 'Construct complex and stylistic meanings from diverse and multiple texts' with examples relevant to Tanzania. - with example",
+          "competence": "Construct complex and stylistic meanings from diverse and mu"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)",
+          "text": "Compare and contrast 'Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)' with related concepts. - with diagram",
+          "competence": "Automate the production of oral descriptions and conversatio"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "text": "With examples, illustrate how 'Construct complex and stylistic meanings from diverse and multiple texts' is applied in the community.",
+          "competence": "Construct complex and stylistic meanings from diverse and mu"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)",
+          "text": "Describe the main features of 'Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)'. - locally",
+          "competence": "Automate the production of oral descriptions and conversatio"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "text": "Examine the advantages and disadvantages of 'Construct complex and stylistic meanings from diverse and multiple texts'.",
+          "competence": "Construct complex and stylistic meanings from diverse and mu"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)",
+          "text": "What are the characteristics of 'Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)'?",
+          "competence": "Automate the production of oral descriptions and conversatio"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)",
+    "Construct complex and stylistic meanings from diverse and multiple texts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

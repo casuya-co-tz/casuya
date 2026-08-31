@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form1_topical_2_2026.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 2 (FORM1 2026): Use different atomic theories to de",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes'. - with diagram",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Evaluate the role of 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes' in national development.",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes'. - with example",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Explain the concept of 'Use different atomic theories to determine the electronic configuration of elements with different properties' with examples relevant to Tanzania. - with example",
+          "competence": "Use different atomic theories to determine the electronic co"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Define 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes' and discuss its importance in everyday life.",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Examine the advantages and disadvantages of 'Use different atomic theories to determine the electronic configuration of elements with different properties'.",
+          "competence": "Use different atomic theories to determine the electronic co"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Explain the concept of 'Use different atomic theories to determine the electronic configuration of elements with different properties' with examples relevant to Tanzania. - with example",
+          "competence": "Use different atomic theories to determine the electronic co"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Compare and contrast 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes' with related concepts. - with example",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Define 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes'.",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+    "Use different atomic theories to determine the electronic configuration of elements with different properties"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

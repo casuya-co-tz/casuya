@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form4_midterm1_1_2024.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 1 Exam 1 (FORM4 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 90,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Local Government",
+          "text": "Outline the procedures involved in 'Local Government'.",
+          "competence": "Local Government"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain citizenship",
+          "text": "With examples, illustrate how 'Explain citizenship' is applied in the community.",
+          "competence": "Explain citizenship"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Elections",
+          "text": "Describe the main features of 'Elections'. - with diagram",
+          "competence": "Elections"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain interpersonal relationships",
+          "text": "Analyse the causes and effects of 'Explain interpersonal relationships'. - with example",
+          "competence": "Explain interpersonal relationships"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Life Skills",
+          "text": "Analyse the causes and effects of 'Life Skills'. - with example",
+          "competence": "Life Skills"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Gender",
+          "text": "Define 'Gender' and discuss its importance in everyday life.",
+          "competence": "Gender"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Interpersonal Relationships",
+          "text": "Explain the concept of 'Interpersonal Relationships' with examples relevant to Tanzania.",
+          "competence": "Interpersonal Relationships"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain child rights",
+          "text": "Define 'Explain child rights' and discuss its importance in everyday life.",
+          "competence": "Explain child rights"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain concept of nation",
+          "text": "Examine the advantages and disadvantages of 'Explain concept of nation'.",
+          "competence": "Explain concept of nation"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain culture and tradition",
+          "text": "Explain the concept of 'Explain culture and tradition' with examples relevant to Tanzania. - with example",
+          "competence": "Explain culture and tradition"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Citizenship",
+          "text": "Define 'Citizenship' and discuss its importance in everyday life.",
+          "competence": "Citizenship"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Central Government",
+          "text": "Evaluate the role of 'Central Government' in national development.",
+          "competence": "Central Government"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "National Unity",
+          "text": "Describe the main features of 'National Unity'. - with example",
+          "competence": "National Unity"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain life skills",
+          "text": "Examine the advantages and disadvantages of 'Explain life skills'.",
+          "competence": "Explain life skills"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain gender",
+          "text": "Examine the advantages and disadvantages of 'Explain gender'. - with example",
+          "competence": "Explain gender"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain globalization",
+          "text": "Define 'Explain globalization' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain constitution",
+          "text": "Analyse the causes and effects of 'Explain constitution'. - with diagram",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Democracy",
+          "text": "Examine the advantages and disadvantages of 'Democracy'.",
+          "competence": "Democracy"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Globalization",
+          "text": "Define 'Globalization' and discuss its importance in everyday life. - with diagram",
+          "competence": "Globalization"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Child Rights",
+          "text": "With examples, illustrate how 'Child Rights' is applied in the community. - with diagram",
+          "competence": "Child Rights"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Local Government",
+    "Explain citizenship",
+    "Elections",
+    "Explain interpersonal relationships",
+    "Life Skills",
+    "Gender",
+    "Interpersonal Relationships",
+    "Explain child rights",
+    "Explain concept of nation",
+    "Explain culture and tradition"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

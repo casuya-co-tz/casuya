@@ -1,0 +1,360 @@
+{
+  "level": "CSEE",
+  "subject": "Physics",
+  "year": "2006",
+  "source": "learninghubtz.co.tz",
+  "sections": [
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "text": "This paper consists of sections A, B and C."
+        }
+      ]
+    },
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "3",
+          "type": "essay",
+          "text": "Cellular phones are not allowed in the examination room."
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "text": "Electronic calculators are not allowed in the examination room."
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "text": "Write your Examination Number on every page of your answer booklet(s)."
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "text": "Whenever necessary use the following constants: Acceleration due to gravity g = 9.8 m/s 2 Specific heat capacity of water Cw = 4200 J/kg K"
+        }
+      ]
+    },
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "text": "For each of the items (i) &shy; (x) choose the correct answer from among the given alternatives and write its letter beside the item number."
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Metals conduct heat better than non&shy;metals because: metals are good conductors of electricity metals have free electrons while non&shy;metals have not molecules of metals have higher velocity than that of non&shy;metals metals are normally of high specific heat capacity the crystalline structure of metals is more compact than that of non&shy;metals. Choose Answer : - -"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "A metre rule is pivoted at point A as illustrated by the diagram below and balanced by a force of 2.5 N. Figure 1 The mass of the metre rule in kilogram is given by: 0.15 2.50 0.10 0.25 1.50 Choose Answer : - -"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Which of the following will not affect the rate of evaporation of water in a dam? Surface area Depth Humidity Barometric pressure Temperature. Choose Answer : - -"
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": "Aluminium has a specific heat capacity more than twice that of copper. Identical masses of aluminium and copper, both at 0&deg;C are dropped together into a can of hot water. When the system has come to equilibrium aluminium is at a higher temperature than copper aluminium and copper are at the same temperature copper is at a higher temperature than aluminium temperature difference between the copper and aluminium depends on the amount of water in the can the temperatures of the copper and aluminium will be higher than that of water. Choose Answer : - -"
+        },
+        {
+          "number": "v",
+          "type": "mcq",
+          "text": "In the diagram below (fig. 2) a beam of white light entering a triangular glass prism is refracted and dispersion of colour occurs. Figure 2 A thermometer placed at Y records a rise in temperature from the radiation produced. The correct name for this radiation is ultra violet x-&shy;rays gamma rays infra&shy;red beta particles Choose Answer : - -"
+        },
+        {
+          "number": "vi",
+          "type": "mcq",
+          "text": "A wire of uniform cross&shy;sectional area has a length of 10 m, a resistance of 2 ? and a resistivity of 2 x 10 &shy;-7 ?m. The cross sectional area in m 2 is:- 2 x 10 -4 1 x 10 -5 0.5 x 10 &shy;-5 1 x 10 -6 5 x 10 -4 Choose Answer : - -"
+        },
+        {
+          "number": "vii",
+          "type": "mcq",
+          "text": "When the plastic pen is rubbed against dry hair, the pen attracts small pieces of paper. This means that the: hair becomes negatively charged hair becomes positively charged pen loses electrons hair gains electrons paper loses electrons. Choose Answer : - -"
+        },
+        {
+          "number": "viii",
+          "type": "mcq",
+          "text": "Electric pressure is measured in current volts watts ampere force. Choose Answer : - -"
+        },
+        {
+          "number": "ix",
+          "type": "mcq",
+          "text": "In the circuit diagram below (fig. 3) A, B, C and D are just positions and the switch is closed. Fig. 3 Choose the correct statement. The current at A will be different from the current at B The two lamps are wired in parallel The current reaches B before it reaches C With an extra lamp at D the current will be low With an extra lamp at A the batteries will run down immediately. Choose Answer : - -"
+        },
+        {
+          "number": "x",
+          "type": "mcq",
+          "text": "The property which distinguishes longitudinal waves from transverse waves is the ability to be refracted need for a material medium relative directions of oscillations and propagation wavelength the speed of propagation. Choose Answer : - -"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "text": "Match the items in list A with responses in list B by writing the letter of the correct response beside the item number. List A List B"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Internal resistance"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Short sighted person"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Thermistor"
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": "Eddy current"
+        },
+        {
+          "number": "v",
+          "type": "mcq",
+          "text": "Elasticity"
+        },
+        {
+          "number": "vi",
+          "type": "mcq",
+          "text": "Thermopile"
+        },
+        {
+          "number": "vii",
+          "type": "mcq",
+          "text": "Chromatic aberration"
+        },
+        {
+          "number": "viii",
+          "type": "mcq",
+          "text": "Secondary colours"
+        },
+        {
+          "number": "ix",
+          "type": "mcq",
+          "text": "Electrolysis"
+        },
+        {
+          "number": "x",
+          "type": "mcq",
+          "text": "Isotopes Material whose resistance increases with temperature Laminated soft iron core Stretching force produces extension Coloured images from convex lenses Coloured images from concave lenses Same element different masses Same element with different atomic number Use of solenoid A temperature dependent resistor Restoring force brings body to original shape Converts radiant energy to heat energy Converts radiant energy to electric energy Resistance of a cell caused by an induced electromotive force Normally uses bi&shy;concave lenses Decomposition of electrons in an electrolyte by the passage of current Normally uses bi&shy;convex lenses Magenta, cyan and green Magenta, cyan and yellow Decomposition of an electrolyte by the passage of an electric current Caused by the chemical reaction within the cell View Ans"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "questions": [
+        {
+          "number": "3",
+          "type": "essay",
+          "text": "(a) A rocket taking off vertically, pushes out 25 kg of exhaust gas every second at a velocity of 100 m/s. If the total mass of the rocket is 200 kg,"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "what is the resultant upward force on the rocket? (2&frac12; marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "what is the upward acceleration of the rocket? (2 marks) (b) Calculate the acceleration of the rocket in 3(a) above when it has burned off 100 kg of fuel. (3 marks) View Ans (c) A simple weighing machine is made of a uniform bar 125 cm long and mass 5 kg and pivoted 2.5 cm from one end. Find the mass that must be suspended at the end of the long arm so as to balance a mass of 320 kg suspended at the end of the short arm. (2&frac12; marks) View Ans"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "text": "(a) State briefly:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "The cause of refraction of light when passing through transparent media. (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Position of image in concave mirror, of a very distant object. (1 mark)"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Cause for a blurred image in concave mirrors or convex lenses. (1 mark) (b) Explain the following:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Condition giving rise to critical angle and total internal reflection. (1&frac12; mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Two principles in Physics used to make telescopes. (1&frac12; mark) View Ans (c) A telescope of 5.0 m diameter reflector of focal length 18.0 m is used to focus the image of the sun. using the distance of the sun from the earth and diameter of the sun as 1.5 x 10 11 m and 1.4 x 10 9 m respectively, calculate the:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "position of the image of the sun. (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "diameter of the image of the sun. (2 marks) View Ans"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "text": "(a) Define the following terms:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Ampere (ii) Coulomb (iii) Volt (iv) Ohm (4 marks) View Ans (b) (i) State Ohm&rsquo;s law and two (2) of its limitations. (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Determine the internal resistance of a cell and the value of R given that the p.d. of the cell in open circuit is 1.5 V, when connected to a 10 ? resistor its p.d. becomes 1.0 V, but when connected to a resistor of R ? the p.d. falls to 0.5 V (2 mark) View Ans (c) A 200 g of liquid at 21&deg;C is heated to 51&deg;C by a current of 5 A at 6 V for 5.0 minutes. What is the specific heat capacity of the liquid? (2 marks) View Ans"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "text": "(a) (i) Differentiate between heat and temperature. (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "With the aid of a sketch graph explain the importance of the anomalous expansion of water. (2 mark) View Ans (b) Give reasons for the following"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "A gap is left between two successive rails. (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "A glass tumbler breaks when hot liquid is poured. (1 mark) (c) Define the coefficient of linear expansivity. (1 mark) A copper pipe of length 100 cm at 15&deg;C increases its length by 0.15% when a steam at 100&deg;C passes through. Find the coefficient of linear expansivity of copper. (3 marks) View Ans"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "text": "(a) A radioactive source is known to emit one type of radiation only i.e. ?, ? or ?. The source was placed in a holder as shown in fig. 4 below, first without a magnet and then a magnet was introduced. A detector was placed at positions 1, 2 and 3 and the count rates recorded in the table below. Figure 4 Counts per minute Detector position Magnet not present Magnet present 295 300"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "What is the reason for placing the two metal plates in front of the source?"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "What is the value of the background counts per minute?"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Define the background count. (3 marks) (b) What is meant by the half-&shy;life of a radioactive element? (1 mark) View Ans (c) A radioactive element has an initial count rate of 1200 counts per minute measured by a scale and this falls to 150 counts per minutes in 15 hours."
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Determine the half-&shy;life of the element. (3 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "If the initial number of atoms in another sample of this element is 3.0 x 1020, how many atoms will have decayed in 25 hours? (3 marks) View Ans"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "text": "(a) (i) How does a conductor differ from a semiconductor in terms of energy levels? (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "By means of a well labelled diagram, describe the electric and magnetic effects on the cathode beam deflection in a c.r.o. (3 marks) View Ans (b) (i) What is a diode? (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Make a sketch of the output voltage against time for half-&shy;wave rectification. explain why the output flows in pulses. (2 marks) View Ans (c) Describe and explain how a full-&shy;wave rectification is achieved by using two diodes. (2 marks) View Ans"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "questions": [
+        {
+          "number": "9",
+          "type": "essay",
+          "text": "(a) What do you understand by the following terms"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Triple point of water. (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Specific latent heat of fusion. (1 mark) (b) State three (3) differences between evaporation and boiling. (3 marks) View Ans (c) A tin contains water at 290 K and is heated at a constant rate. It is observed that the water reaches boiling point after 2 minutes and after further 12 minutes it is completely boiled away. Calculate the specific latent heat of steam. (5 marks) View Ans"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "text": "(a) Explain the meaning of"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Magnetic induction. (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Magnetic screening. (1 mark) (b) Draw a circuit diagram of an electric bell and explain how it works. (4 marks) View Ans (c) (i) Draw the symbols for PNP and NPN transistors. (2 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Sketch the simple circuit for NPN transistor amplifier. (2 marks) View Ans"
+        },
+        {
+          "number": "11",
+          "type": "essay",
+          "text": "(a) (i) Distinguish between speed and velocity. (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Define uniform velocity and uniform acceleration. (2 marks) View Ans (b) Sketch the diagram of a body which starts from rest and accelerates uniformly for sometimes to a constant velocity and then maintains this velocity for a certain period of time before decelerating uniformly to a stop. (2 marks) View Ans (c) A car moving with a uniform velocity of 100 m/s is decelerated at 2.5 m/s 2 to a stop. Calculate"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "The time taken for the car to stop. (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "The distance traveled by the car before it is brought to rest. (2 marks) View Ans"
+        }
+      ]
+    }
+  ],
+  "title": "ONLINE FORM FOUR NECTA PHYSICS YEAR 2006 REVIEW (QNS. & ANS.)",
+  "question_count": 65
+}

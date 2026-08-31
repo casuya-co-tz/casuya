@@ -1,0 +1,289 @@
+{
+  "filename": "physics_form6_annual_1_2023.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2023",
+  "time": "3:00 Hours",
+  "title": "Physics - Annual Exam 1 (FORM6 2023)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 119,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "determine the half-life of a radioactive element; and",
+          "text": "What are the characteristics of 'determine the half-life of a radioactive element; and'?",
+          "competence": "determine the half-life of a radioactive element; and"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "The Nucleus of an Atom",
+          "text": "Assess the impact of 'The Nucleus of an Atom' on society. - locally",
+          "competence": "The Nucleus of an Atom"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Sulphuric acid",
+          "text": "Assess the impact of 'Sulphuric acid' on society. - with diagram",
+          "competence": "Sulphuric acid"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "demonstrate the effect of pressure on the boiling point and freezing point of a substance",
+          "text": "Describe the main features of 'demonstrate the effect of pressure on the boiling point and freezing point of a substance'.",
+          "competence": "demonstrate the effect of pressure on the boiling point and "
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "explain the concepts of measurement",
+          "text": "Describe the main features of 'explain the concepts of measurement'.",
+          "competence": "explain the concepts of measurement"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "apply knowledge of conduction in daily life",
+          "text": "Assess the impact of 'apply knowledge of conduction in daily life' on society.",
+          "competence": "apply knowledge of conduction in daily life"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "identify the applications of osmosis in daily life",
+          "text": "Describe the process of 'identify the applications of osmosis in daily life' step by step. - locally",
+          "competence": "identify the applications of osmosis in daily life"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "state the applications of earth’s magnetic ifeld",
+          "text": "Describe the process of 'state the applications of earth’s magnetic ifeld' step by step. - with diagram",
+          "competence": "state the applications of earth’s magnetic ifeld"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "explain the apparent expansion of liquids",
+          "text": "Discuss the challenges facing 'explain the apparent expansion of liquids' in Tanzania and propose solutions.",
+          "competence": "explain the apparent expansion of liquids"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "identify factors affecting loudness, pitch and quality of a musical sound",
+          "text": "Analyse the causes and effects of 'identify factors affecting loudness, pitch and quality of a musical sound'.",
+          "competence": "identify factors affecting loudness, pitch and quality of a "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "verify that light rays travels in straight line; and",
+          "text": "Analyse the causes and effects of 'verify that light rays travels in straight line; and'.",
+          "competence": "verify that light rays travels in straight line; and"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "describe the structure of a compound microscope",
+          "text": "Define 'describe the structure of a compound microscope' and discuss its importance in everyday life.",
+          "competence": "describe the structure of a compound microscope"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "identify the steps of investigation. scientiifc",
+          "text": "With examples, illustrate how 'identify the steps of investigation. scientiifc' is applied in the community.",
+          "competence": "identify the steps of investigation. scientiifc"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Scissors ii",
+          "text": "Analyse the causes and effects of 'Scissors ii'. - locally",
+          "competence": "Scissors ii"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 3,
+          "topic": "explain the concept of up thrust",
+          "text": "What are the characteristics of 'explain the concept of up thrust'? - with diagram",
+          "competence": "explain the concept of up thrust"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 4,
+          "topic": "identify magnetic and non-magnetic materials/ substances",
+          "text": "Examine the advantages and disadvantages of 'identify magnetic and non-magnetic materials/ substances'. - locally",
+          "competence": "identify magnetic and non-magnetic materials/ substances"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Solid objects ii",
+          "text": "Propose measures to improve 'Solid objects ii' in schools. - with example",
+          "competence": "Solid objects ii"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Analyse the strengths and weaknesses of the various instruments and techniques used in current electricity, electromagnetism, electronics, telecommunication, energy sources, medical physics and atomic Physics",
+          "text": "Propose measures to improve 'Analyse the strengths and weaknesses of the various instruments and techniques used in current electricity, electromagnetism, electronics, telecommunication, energy sources, medical physics and atomic Physics' in schools. - with diagram",
+          "competence": "Analyse the strengths and weaknesses of the various instrume"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 6,
+          "topic": "describe the correction of the defects of the human eye; and",
+          "text": "Discuss the challenges facing 'describe the correction of the defects of the human eye; and' in Tanzania and propose solutions. - with diagram",
+          "competence": "describe the correction of the defects of the human eye; and"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Regular solid e.g. Rectangular wooden blocks of different sizes",
+          "text": "With examples, illustrate how 'Regular solid e.g. Rectangular wooden blocks of different sizes' is applied in the community. - locally",
+          "competence": "Regular solid e.g. Rectangular wooden blocks of different si"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "explain stable, unstable and neutral equilibrium; and",
+          "text": "How does 'explain stable, unstable and neutral equilibrium; and' relate to sustainable development? - with example",
+          "competence": "explain stable, unstable and neutral equilibrium; and"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "identify types of magnets; and",
+          "text": "With examples, illustrate how 'identify types of magnets; and' is applied in the community.",
+          "competence": "identify types of magnets; and"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 6,
+          "topic": "identify the application of microwaves, radio-waves, infra-red, gamma rays and x-rays; and",
+          "text": "Propose measures to improve 'identify the application of microwaves, radio-waves, infra-red, gamma rays and x-rays; and' in schools. - with example",
+          "competence": "identify the application of microwaves, radio-waves, infra-r"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 3,
+          "topic": "measure relative humidity",
+          "text": "Outline the procedures involved in 'measure relative humidity'. - locally",
+          "competence": "measure relative humidity"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 6,
+          "topic": "identify transparent, translucent and opaque materials",
+          "text": "With examples, illustrate how 'identify transparent, translucent and opaque materials' is applied in the community. - with diagram",
+          "competence": "identify transparent, translucent and opaque materials"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 8,
+          "topic": "justify the relationship between tension and extension of a loaded elastic material; and",
+          "text": "Compare and contrast 'justify the relationship between tension and extension of a loaded elastic material; and' with related concepts. - with example",
+          "competence": "justify the relationship between tension and extension of a "
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 3,
+          "topic": "describe methods of reducing friction",
+          "text": "Examine the advantages and disadvantages of 'describe methods of reducing friction'.",
+          "competence": "describe methods of reducing friction"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 5,
+          "topic": "electromagnetism, electronics, telecommunication, energy sources, medical Physics and physics of the atom",
+          "text": "Compare and contrast 'electromagnetism, electronics, telecommunication, energy sources, medical Physics and physics of the atom' with related concepts. - with diagram",
+          "competence": "electromagnetism, electronics, telecommunication, energy sou"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 3,
+          "topic": "explain the concept of conduction of heat",
+          "text": "What are the characteristics of 'explain the concept of conduction of heat'? - with example",
+          "competence": "explain the concept of conduction of heat"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Lead shots/bearing i",
+          "text": "Analyse the causes and effects of 'Lead shots/bearing i'. - with diagram",
+          "competence": "Lead shots/bearing i"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "determine the half-life of a radioactive element; and",
+    "The Nucleus of an Atom",
+    "Sulphuric acid",
+    "demonstrate the effect of pressure on the boiling point and freezing point of a substance",
+    "explain the concepts of measurement",
+    "apply knowledge of conduction in daily life",
+    "identify the applications of osmosis in daily life",
+    "state the applications of earth’s magnetic ifeld",
+    "explain the apparent expansion of liquids",
+    "identify factors affecting loudness, pitch and quality of a musical sound"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

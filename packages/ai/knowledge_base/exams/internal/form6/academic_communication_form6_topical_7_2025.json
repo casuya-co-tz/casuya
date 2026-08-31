@@ -1,0 +1,121 @@
+{
+  "filename": "academic_communication_form6_topical_7_2025.json",
+  "subject": "Academic Communication",
+  "subject_slug": "academic_communication",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Academic Communication - Topical Test 7 (FORM6 2025): Interpret literal meanings of words",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Interpret literal meanings of words and sentences in various contexts",
+          "text": "Explain the relationship between 'Interpret literal meanings of words and sentences in various contexts' and its environment. - with diagram",
+          "competence": "Interpret literal meanings of words and sentences in various"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Write different sentences using appropriate punctuation marks",
+          "text": "Describe the process of 'Write different sentences using appropriate punctuation marks' step by step.",
+          "competence": "Write different sentences using appropriate punctuation mark"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Write different sentences using appropriate punctuation marks",
+          "text": "Propose measures to improve 'Write different sentences using appropriate punctuation marks' in schools. - with diagram",
+          "competence": "Write different sentences using appropriate punctuation mark"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Write different sentences using appropriate punctuation marks",
+          "text": "Explain the concept of 'Write different sentences using appropriate punctuation marks' with examples relevant to Tanzania. - with example",
+          "competence": "Write different sentences using appropriate punctuation mark"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Interpret literal meanings of words and sentences in various contexts",
+          "text": "Discuss the factors influencing 'Interpret literal meanings of words and sentences in various contexts'. - locally",
+          "competence": "Interpret literal meanings of words and sentences in various"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Write different sentences using appropriate punctuation marks",
+          "text": "Compare and contrast 'Write different sentences using appropriate punctuation marks' with related concepts. - locally",
+          "competence": "Write different sentences using appropriate punctuation mark"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Interpret literal meanings of words and sentences in various contexts",
+          "text": "Propose measures to improve 'Interpret literal meanings of words and sentences in various contexts' in schools.",
+          "competence": "Interpret literal meanings of words and sentences in various"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Interpret literal meanings of words and sentences in various contexts",
+          "text": "Describe the process of 'Interpret literal meanings of words and sentences in various contexts' step by step. - with example",
+          "competence": "Interpret literal meanings of words and sentences in various"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Write different sentences using appropriate punctuation marks",
+          "text": "Explain the relationship between 'Write different sentences using appropriate punctuation marks' and its environment.",
+          "competence": "Write different sentences using appropriate punctuation mark"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Interpret literal meanings of words and sentences in various contexts",
+          "text": "Discuss the challenges facing 'Interpret literal meanings of words and sentences in various contexts' in Tanzania and propose solutions.",
+          "competence": "Interpret literal meanings of words and sentences in various"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Interpret literal meanings of words and sentences in various contexts",
+    "Write different sentences using appropriate punctuation marks"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

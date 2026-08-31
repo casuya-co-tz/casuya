@@ -1,0 +1,121 @@
+{
+  "filename": "biology_form4_topical_6_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Biology - Topical Test 6 (FORM4 2026): Prepare and present a report on cel",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 45,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Compare and contrast 'Prepare and present a report on cell and photosynthesis investigations' with related concepts. - with diagram",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "With examples, illustrate how 'Prepare and present a report on cell and photosynthesis investigations' is applied in the community. - with example",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Describe the main features of 'Carry out microscopic observation of a cell'. - with diagram",
+          "competence": "Carry out microscopic observation of a cell"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Examine the advantages and disadvantages of 'Prepare and present a report on cell and photosynthesis investigations'. - with example",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Compare and contrast 'Carry out microscopic observation of a cell' with related concepts. - with example",
+          "competence": "Carry out microscopic observation of a cell"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Explain the concept of 'Prepare and present a report on cell and photosynthesis investigations' with examples relevant to Tanzania.",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Compare and contrast 'Prepare and present a report on cell and photosynthesis investigations' with related concepts. - with example",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Define 'Prepare and present a report on cell and photosynthesis investigations' and discuss its importance in everyday life. - with diagram",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "With examples, illustrate how 'Carry out microscopic observation of a cell' is applied in the community.",
+          "competence": "Carry out microscopic observation of a cell"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Discuss the challenges facing 'Carry out microscopic observation of a cell' in Tanzania and propose solutions. - with diagram",
+          "competence": "Carry out microscopic observation of a cell"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Prepare and present a report on cell and photosynthesis investigations",
+    "Carry out microscopic observation of a cell"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

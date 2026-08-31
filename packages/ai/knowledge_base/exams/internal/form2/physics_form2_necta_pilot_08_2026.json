@@ -1,0 +1,385 @@
+{
+  "filename": "physics_form2_necta_pilot_08_2026.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "code": "031",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "necta_pilot",
+  "term": "Pilot",
+  "year": "2026",
+  "duration": "2:30 Hours",
+  "title": "Physics - Form 2 NECTA Pilot (2026) Paper 08",
+  "instructions": [
+    "This paper consists of sections A, B and C with a total of ten (10) questions.",
+    "Answer all questions in the spaces provided.",
+    "Section A and C carries fifteen (15) marks each and section B carries seventy (70) marks.",
+    "All writing must be in blue or black ink.",
+    "Communication devices and unauthorised materials are not allowed in the assessment room.",
+    "Calculators and mathematical tables may be used in the assessment room.",
+    "Write your Assessment Number at the top right corner of every page.",
+    "The following information may be useful: (i) Acceleration due to gravity, g = 10 m/s-2. (ii) Pie π = 3.14"
+  ],
+  "assessor_table": {
+    "questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "total": true,
+    "checker": true
+  },
+  "sections": [
+    {
+      "name": "Section A",
+      "marks": 15,
+      "instructions": "Answer all questions in this section.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 10,
+          "text": "For each of the items (i) - (x), choose the correct answer from the given alternatives and write its letter in the box provided. (10 marks)",
+          "items": [
+            {
+              "number": "i",
+              "text": "Why does a plastic comb rubbed with dry hair attracts small pieces of paper?",
+              "options": {
+                "A": "Because the comb becomes magnetic",
+                "B": "Because the comb gains electric charge",
+                "C": "Because the paper becomes heavier",
+                "D": "Because air pushes the paper"
+              },
+              "answer": "B",
+              "marks": 1
+            },
+            {
+              "number": "ii",
+              "text": "Which devices can be used to demonstrate the existence of atmospheric pressure?",
+              "options": {
+                "A": "Siphon and Plunger",
+                "B": "Magdeburg hemispheres and Force pump",
+                "C": "Magdeburg hemispheres and Crushing can",
+                "D": "Crushing can and Syringe"
+              },
+              "answer": "C",
+              "marks": 1
+            },
+            {
+              "number": "iii",
+              "text": "State Newton's first law",
+              "options": {
+                "A": "Body remains at rest unless acted by force",
+                "B": "F=ma",
+                "C": "Action=reaction",
+                "D": "Energy conserved"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "iv",
+              "text": "Identify simple circuit components",
+              "options": {
+                "A": "Battery, switch, bulb",
+                "B": "Hammer, nail",
+                "C": "Lens, mirror",
+                "D": "Test tube"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "v",
+              "text": "Which machine has mechanical advantage>1?",
+              "options": {
+                "A": "Lever",
+                "B": "Single fixed pulley",
+                "C": "Inclined plane gentle",
+                "D": "All"
+              },
+              "answer": "D",
+              "marks": 1
+            },
+            {
+              "number": "vi",
+              "text": "Which is sustainable energy source?",
+              "options": {
+                "A": "Solar",
+                "B": "Diesel",
+                "C": "Coal",
+                "D": "Kerosene"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "vii",
+              "text": "Calculate density: mass 500g volume 250cm3",
+              "options": {
+                "A": "2 g/cm3",
+                "B": "0.5 g/cm3",
+                "C": "750 g/cm3",
+                "D": "250 g/cm3"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "viii",
+              "text": "What is the SI unit of linear momentum?",
+              "options": {
+                "A": "kg m/s",
+                "B": "Newton",
+                "C": "Joule",
+                "D": "Pascal"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "ix",
+              "text": "A student lifts a load and measures height using a meter rule. What physical quantity does the student calculate?",
+              "options": {
+                "A": "Work",
+                "B": "Force",
+                "C": "Pressure",
+                "D": "Energy"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "x",
+              "text": "Explain wind as a source of energy",
+              "options": {
+                "A": "Moving air kinetic",
+                "B": "Solar heat",
+                "C": "Water flow",
+                "D": "Coal"
+              },
+              "answer": "A",
+              "marks": 1
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "type": "matching",
+          "marks": 5,
+          "text": "Match the functions of instruments in List A with their corresponding instruments in List B by writing the correct answer below the item number in the table provided. (5 marks)",
+          "ListA": [
+            "Measures the atmospheric pressures.",
+            "Measures the gas pressure in a car tyres.",
+            "Used to free blocked water sinks.",
+            "Used for sucking and ejecting liquid by increasing and decreasing pressure.",
+            "Allows water to flow because of pressure differences."
+          ],
+          "ListB": [
+            "Siphon",
+            "Lift pump",
+            "Syringe",
+            "Vacuum cleaner",
+            "Barometer",
+            "Plunger",
+            "Pressure gauge"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "marks": 70,
+      "instructions": "Answer all questions in this section.",
+      "questions": [
+        {
+          "number": "3",
+          "type": "structured",
+          "stem": "Measurement: beaker contains 120 cm3 liquid, pipette 25 cm3 used thrice.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "What does measurement involve?",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Calculate volume left in original beaker.",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "4",
+          "type": "structured",
+          "stem": "Explain Newton's laws and conservation of momentum.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "State Newton's second law and define linear momentum.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Distinguish elastic vs inelastic collisions with example.",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "5",
+          "type": "structured",
+          "stem": "Explain simple machines - lever and pulley.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Determine mechanical advantage of lever (load 60N effort 20N).",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Explain pulley system velocity ratio and efficiency.",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "stem": "A man mass 40 kg walks up 25 steps each 20 cm high in 10 s. Find power.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Explain how work is done.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Calculate power in kilowatts.",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "stem": "Two students designed circuits with three 6 Ohm resistors to 12V battery: A series, B parallel.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Calculate total resistance for each.",
+              "marks": 5
+            },
+            {
+              "label": "b",
+              "text": "Calculate current drawn in each case.",
+              "marks": 5
+            },
+            {
+              "label": "c",
+              "text": "Show which arrangement is safer for 2A rated battery.",
+              "marks": 5
+            }
+          ],
+          "marks": 15
+        },
+        {
+          "number": "8",
+          "type": "structured",
+          "stem": "A plastic rod is rubbed with a dry cloth and attracts small pieces of paper.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Apply concept of electron transfer to explain how rod becomes charged.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Why can rod attract neutral pieces? What happens in humid environment?",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "stem": "Spring: mass 500 g hung from spring constant 20 N/m.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Determine stretch in cm.",
+              "marks": 3
+            },
+            {
+              "label": "b",
+              "text": "If another object stretches to 35 cm, calculate its mass.",
+              "marks": 3
+            },
+            {
+              "label": "c",
+              "text": "Why is soap used in washing clothes?",
+              "marks": 4
+            }
+          ],
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "marks": 15,
+      "instructions": "Answer question ten (10).",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "stem": "Two students designed circuits using three identical resistors each of 6 Ohm connected to 12 V battery. Student A connects them in series and student B connects them in parallel.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Calculate total resistance for each arrangement.",
+              "marks": 5
+            },
+            {
+              "label": "b",
+              "text": "Calculate the current drawn from battery in each case.",
+              "marks": 5
+            },
+            {
+              "label": "c",
+              "text": "Using mathematical evidence, show arrangement safer for 2A rated battery.",
+              "marks": 5
+            }
+          ],
+          "marks": 15
+        }
+      ]
+    }
+  ],
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 100,
+  "format_template": "PHYSICS_F2_NECTA_PILOT_2026.html",
+  "syllabus_topics_covered": [
+    "Concept of Current Electricity",
+    "construct a simple lightning conductor",
+    "deifne current electricity; and",
+    "Simple Electric Circuits",
+    "identify simple circuit components"
+  ],
+  "source": "necta-pilot-template",
+  "curriculum": "TIE 2023-2025",
+  "format_reference": "NECTA FTNA Pilot 2026 - 031 Physics"
+}

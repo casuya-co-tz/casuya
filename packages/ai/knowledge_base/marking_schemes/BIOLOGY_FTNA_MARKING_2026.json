@@ -1,0 +1,81 @@
+{
+  "code": "033",
+  "subject": "Biology",
+  "year": "2026",
+  "max_marks": 100,
+  "sections": [
+    {
+      "name": "SECTION A (15 MARKS)",
+      "marks": 15,
+      "questions": [
+        {
+          "number": "1",
+          "marks": 10,
+          "answer_html": "MCQ: C,B,C,D,B,B,B,C,C,B (1 each)."
+        },
+        {
+          "number": "2",
+          "marks": 5,
+          "answer_html": "Matching: i->C HCl+pepsin, ii->E absorption, iii->A bile, iv->B water reabsorption, v->F insulin (1 each)."
+        }
+      ]
+    },
+    {
+      "name": "SECTION B (70 MARKS)",
+      "marks": 70,
+      "questions": [
+        {
+          "number": "3",
+          "marks": 10,
+          "answer_html": "(a) Fine adjustment sharp focus, objective magnifies [4] (b) Total=10*40=400x [6]"
+        },
+        {
+          "number": "4",
+          "marks": 10,
+          "answer_html": "(a) Four items: bandage, iodine, scissors, gauze [4] (b)(i) Keep calm, immobilize, no tourniquet, hospital [3] (ii) Blocks circulation causes tissue death [3]"
+        },
+        {
+          "number": "5",
+          "marks": 10,
+          "answer_html": "(a) Plant has wall/chloroplast/large vacuole vs animal none/small [4] (b) Plant cell diagram with wall, membrane, nucleus, chloroplast, vacuole [6]"
+        },
+        {
+          "number": "6",
+          "marks": 10,
+          "answer_html": "(a) Gaseous exchange features: thin wall, moist, large area, capillary network [6] (b) Breathing physical vs respiration chemical [4]"
+        },
+        {
+          "number": "7",
+          "marks": 10,
+          "answer_html": "(a) Balanced diet 7 nutrients in correct proportions [4] (b) Benedict blue->green->yellow->brick red for reducing sugar [6]"
+        },
+        {
+          "number": "8",
+          "marks": 10,
+          "answer_html": "(a) Transpiration water loss through stomata, cooling, transport [4] (b) Temp increase, humidity decrease, wind increase all increase rate [6]"
+        },
+        {
+          "number": "9",
+          "marks": 10,
+          "answer_html": "(a)(i) Waste management [3] (ii) Sewage prevents cholera via clean water [3] (b) Communicable infectious e.g. cholera vs non-communicable e.g. diabetes [4]"
+        }
+      ]
+    },
+    {
+      "name": "SECTION C (15 MARKS)",
+      "marks": 15,
+      "questions": [
+        {
+          "number": "10",
+          "marks": 15,
+          "answer_html": "(a) Blood components: RBC O2, WBC immunity, platelets clotting, plasma transport [5] (b) Arteries thick elastic high pressure, veins thin valves low pressure, capillaries thin single layer exchange [5] (c) Double circulation: systemic+pulmonary, efficient O2 delivery [5]"
+        }
+      ]
+    }
+  ],
+  "linked_forms": [
+    "form1",
+    "form2"
+  ],
+  "source_template": "BIOLOGY_FTNA_MARKING_2026.html"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form6_midterm1_2_2023.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 1 Exam 2 (FORM6 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 72,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concepts of relations and functions (linear and quadrati",
+          "text": "Evaluate the role of 'Describe the concepts of relations and functions (linear and quadrati' in national development. - with example",
+          "competence": "Describe the concepts of relations and functions (linear and"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+          "text": "Describe the process of 'Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)' step by step. - with example",
+          "competence": "Explore basic tenets of logic (connectives, propositions, ar"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "two sources and three destinations)",
+          "text": "Evaluate the role of 'two sources and three destinations)' in national development. - with diagram",
+          "competence": "two sources and three destinations)"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use numerical skills in different contexts",
+          "text": "Discuss the challenges facing 'Use numerical skills in different contexts' in Tanzania and propose solutions. - locally",
+          "competence": "Use numerical skills in different contexts"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Describe the process of 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' step by step.",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+          "text": "Propose measures to improve 'Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)' in schools. - with example",
+          "competence": "Explore the basic tenets of complex numbers (modulus, argume"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+          "text": "Explain the concept of 'Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explore the basic tenets of vectors (displacement and positi"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow",
+          "text": "Evaluate the role of 'Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow' in national development. - locally",
+          "competence": "Explore the basic tenets of algebra (algebraic expressions a"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "What are the characteristics of 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)'?",
+          "competence": "Use differential equations to solve real life problems relat"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Determine the equation of a straight line and draw its graph",
+          "text": "Explain the concept of 'Determine the equation of a straight line and draw its graph' with examples relevant to Tanzania.",
+          "competence": "Determine the equation of a straight line and draw its graph"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+          "text": "Examine the advantages and disadvantages of 'Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs'. - with example",
+          "competence": "Find the general term for AP and GP and use them to derive f"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+          "text": "Compare and contrast 'Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation' with related concepts. - with example",
+          "competence": "Explore the basic tenets of coordinate geometry (gradient an"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "Propose measures to improve 'Use approximations in computations and measurements of quantities in various contexts' in schools.",
+          "competence": "Use approximations in computations and measurements of quant"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "Explain the concept of 'Use geometry, approximations, relations and functions in various contexts' with examples relevant to Tanzania. - with example",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+          "text": "Discuss the factors influencing 'Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)'. - with diagram",
+          "competence": "Explore advanced tenets of trigonometry (ratios, small angle"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Carry out a project in Mathematics",
+          "text": "What are the characteristics of 'Carry out a project in Mathematics'? - with example",
+          "competence": "Carry out a project in Mathematics"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Compare sets (subsets and universal set",
+          "text": "Outline the procedures involved in 'Compare sets (subsets and universal set'. - with example",
+          "competence": "Compare sets (subsets and universal set"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+          "text": "Analyse the causes and effects of 'Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)'. - with diagram",
+          "competence": "Explore advanced tenets of vectors (ratio theorems, dot prod"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Evaluate the role of 'Convert repeating/ recurring decimals into fractions and vice versa' in national development.",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain postulates, proofs, and theorems of congruent triangles",
+          "text": "Define 'Explain postulates, proofs, and theorems of congruent triangles' and discuss its importance in everyday life. - with example",
+          "competence": "Explain postulates, proofs, and theorems of congruent triang"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concepts of relations and functions (linear and quadrati",
+    "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+    "two sources and three destinations)",
+    "Use numerical skills in different contexts",
+    "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+    "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+    "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+    "Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow",
+    "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+    "Determine the equation of a straight line and draw its graph"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

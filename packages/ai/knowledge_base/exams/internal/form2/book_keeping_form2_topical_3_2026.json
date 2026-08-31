@@ -1,0 +1,121 @@
+{
+  "filename": "book_keeping_form2_topical_3_2026.json",
+  "subject": "Book Keeping",
+  "subject_slug": "book_keeping",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Book Keeping - Topical Test 3 (FORM2 2026): Petty Cash Book",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 47,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Balance Sheet",
+          "text": "Define 'Balance Sheet' and discuss its importance in everyday life. - with example",
+          "competence": "Balance Sheet"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Petty Cash Book",
+          "text": "Describe the main features of 'Petty Cash Book'.",
+          "competence": "Petty Cash Book"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Balance Sheet",
+          "text": "Outline the procedures involved in 'Balance Sheet'. - with diagram",
+          "competence": "Balance Sheet"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Balance Sheet",
+          "text": "Discuss the challenges facing 'Balance Sheet' in Tanzania and propose solutions. - with example",
+          "competence": "Balance Sheet"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Balance Sheet",
+          "text": "Compare and contrast 'Balance Sheet' with related concepts.",
+          "competence": "Balance Sheet"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Petty Cash Book",
+          "text": "With examples, illustrate how 'Petty Cash Book' is applied in the community. - with diagram",
+          "competence": "Petty Cash Book"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Balance Sheet",
+          "text": "Outline the procedures involved in 'Balance Sheet'. - with example",
+          "competence": "Balance Sheet"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Balance Sheet",
+          "text": "Examine the advantages and disadvantages of 'Balance Sheet'.",
+          "competence": "Balance Sheet"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Petty Cash Book",
+          "text": "Explain the concept of 'Petty Cash Book' with examples relevant to Tanzania.",
+          "competence": "Petty Cash Book"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Balance Sheet",
+          "text": "Discuss the challenges facing 'Balance Sheet' in Tanzania and propose solutions. - with diagram",
+          "competence": "Balance Sheet"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Balance Sheet",
+    "Petty Cash Book"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

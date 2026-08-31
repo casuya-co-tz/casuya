@@ -1,0 +1,289 @@
+{
+  "filename": "biology_form5_annual_2_2025.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2025",
+  "time": "3:00 Hours",
+  "title": "Biology - Annual Exam 2 (FORM5 2025)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 120,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the physiology and theories underlying transportation of materials in plants",
+          "text": "Examine the advantages and disadvantages of 'Explain the physiology and theories underlying transportation of materials in plants'. - with diagram",
+          "competence": "Explain the physiology and theories underlying transportatio"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Investigate the process of nervous coordination (reflex arc and knee jer",
+          "text": "Examine the advantages and disadvantages of 'Investigate the process of nervous coordination (reflex arc and knee jer'.",
+          "competence": "Investigate the process of nervous coordination (reflex arc "
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "With examples, illustrate how 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' is applied in the community. - with diagram",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Investigate tropic responses in plants",
+          "text": "Examine the advantages and disadvantages of 'Investigate tropic responses in plants'. - with example",
+          "competence": "Investigate tropic responses in plants"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare and present a report based on the findings",
+          "text": "Compare and contrast 'Prepare and present a report based on the findings' with related concepts. - with diagram",
+          "competence": "Prepare and present a report based on the findings"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Compare and contrast 'Develop and carry out a simple research project in Biology' with related concepts. - with diagram",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Carry out experiments to determine the pulse rate in human",
+          "text": "Explain the concept of 'Carry out experiments to determine the pulse rate in human' with examples relevant to Tanzania. - with example",
+          "competence": "Carry out experiments to determine the pulse rate in human"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "text": "Compare and contrast 'Describe the physiological, anatomical and ecological processes of living organisms' with related concepts. - with example",
+          "competence": "Describe the physiological, anatomical and ecological proces"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Design and carry out a project in Biology",
+          "text": "Describe the main features of 'Design and carry out a project in Biology'. - with example",
+          "competence": "Design and carry out a project in Biology"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Carry out a biological project work using biological principles",
+          "text": "Describe the main features of 'Carry out a biological project work using biological principles'. - with example",
+          "competence": "Carry out a biological project work using biological princip"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+          "text": "Describe the main features of 'Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio'.",
+          "competence": "Describe the mechanisms of growth in mammals and flowering p"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Prepare and present results of biological investigations",
+          "text": "Describe the main features of 'Prepare and present results of biological investigations'.",
+          "competence": "Prepare and present results of biological investigations"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "Examine the advantages and disadvantages of 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement'.",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+          "text": "Examine the advantages and disadvantages of 'Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)'. - with example",
+          "competence": "Describe principles of inheritance in living organisms (here"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Define 'Prepare and present a report on cell and photosynthesis investigations' and discuss its importance in everyday life.",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "With examples, illustrate how 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system' is applied in the community. - with example",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Investigate aerobic and anaerobic respiration in living organisms",
+          "text": "Examine the advantages and disadvantages of 'Investigate aerobic and anaerobic respiration in living organisms'. - with example",
+          "competence": "Investigate aerobic and anaerobic respiration in living orga"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "Discuss the challenges facing 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)' in Tanzania and propose solutions. - with example",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Evaluate the role of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry' in national development.",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "Examine the advantages and disadvantages of 'Explain growth process in animals (growth patterns and metamorphosis)'.",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4",
+          "text": "Compare and contrast 'Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4' with related concepts.",
+          "competence": "Explain the physiology of photosynthesis (mechanism of light"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "Explain the concept of 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution' with examples relevant to Tanzania. - with example",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Learning activities",
+          "text": "With examples, illustrate how 'Learning activities' is applied in the community. - with diagram",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Describe the main features of 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline'.",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "text": "Analyse the causes and effects of 'Demonstrate an advanced understanding of concepts, theories and principles in Biology'. - with example",
+          "competence": "Demonstrate an advanced understanding of concepts, theories "
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate mastery of advanced skills for conducting biological investigations",
+          "text": "Define 'Demonstrate mastery of advanced skills for conducting biological investigations' and discuss its importance in everyday life. - with example",
+          "competence": "Demonstrate mastery of advanced skills for conducting biolog"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 6,
+          "topic": "and gas exchange in living organisms",
+          "text": "Compare and contrast 'and gas exchange in living organisms' with related concepts. - with diagram",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "With examples, illustrate how 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' is applied in the community.",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+          "text": "Define 'Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe principles of binomial nomenclature (rules of scien"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Discuss the challenges facing 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )' in Tanzania and propose solutions.",
+          "competence": "Prepare and present a report of a biological investigation o"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the physiology and theories underlying transportation of materials in plants",
+    "Investigate the process of nervous coordination (reflex arc and knee jer",
+    "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+    "Investigate tropic responses in plants",
+    "Prepare and present a report based on the findings",
+    "Develop and carry out a simple research project in Biology",
+    "Carry out experiments to determine the pulse rate in human",
+    "Describe the physiological, anatomical and ecological processes of living organisms",
+    "Design and carry out a project in Biology",
+    "Carry out a biological project work using biological principles"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

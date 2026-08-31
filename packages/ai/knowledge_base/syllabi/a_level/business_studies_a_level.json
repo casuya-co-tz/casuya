@@ -1,0 +1,225 @@
+{
+  "subject_code": "061",
+  "subject_name": "Business Studies",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of principles of business",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of the principles of business",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-FV-U1-L1",
+              "title": "Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)",
+              "markdown_content": "## a) Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)",
+              "periods": "160",
+              "page": 14
+            },
+            {
+              "lesson_id": "BUS-FV-U1-L2",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 15
+            },
+            {
+              "lesson_id": "BUS-FV-U1-L3",
+              "title": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+              "markdown_content": "## b) Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "BUS-FV-U1-L4",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 16
+            },
+            {
+              "lesson_id": "BUS-FV-U1-L5",
+              "title": "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+              "markdown_content": "## c) Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+              "periods": "",
+              "page": 16
+            },
+            {
+              "lesson_id": "BUS-FV-U1-L6",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 17
+            },
+            {
+              "lesson_id": "BUS-FV-U1-L7",
+              "title": "crowd funding and government grants)",
+              "markdown_content": "## a) crowd funding and government grants)",
+              "periods": "",
+              "page": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate an understanding of the business environment",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the policies and laws governing medium scale business",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-FV-U2-L8",
+              "title": "Explore the basic aspects of the policy and regulatory environment governing medium businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-laws)",
+              "markdown_content": "## a) Explore the basic aspects of the policy and regulatory environment governing medium businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-laws)",
+              "periods": "120",
+              "page": 17
+            },
+            {
+              "lesson_id": "BUS-FV-U2-L9",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 18
+            },
+            {
+              "lesson_id": "BUS-FV-U2-L10",
+              "title": "Describe procedures for registering medium businesses in Tanzania (types of licences, importance of registration and sanctions for non- compliance)",
+              "markdown_content": "## b) Describe procedures for registering medium businesses in Tanzania (types of licences, importance of registration and sanctions for non- compliance)",
+              "periods": "",
+              "page": 18
+            },
+            {
+              "lesson_id": "BUS-FV-U2-L11",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Conduct a project in Business Studies",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Prepare a medium scale business plan",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-FV-U3-L12",
+              "title": "Identify an appropriate business opportunity and develop its business plan",
+              "markdown_content": "## a) Identify an appropriate business opportunity and develop its business plan",
+              "periods": "70",
+              "page": 19
+            },
+            {
+              "lesson_id": "BUS-FV-U3-L13",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of principles of business",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of the principles of business",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-FVI-U1-L14",
+              "title": "Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+              "markdown_content": "## a) Describe some basic aspects of operations management (methods of production, value addition and stock administration)",
+              "periods": "210",
+              "page": 21
+            },
+            {
+              "lesson_id": "BUS-FVI-U1-L15",
+              "title": "Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)",
+              "markdown_content": "## b) Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)",
+              "periods": "Online/offline sources, Insurance documents (guides, fliers, claim application form and Cover note), Bank and Financial Institutions Act",
+              "page": 22
+            },
+            {
+              "lesson_id": "BUS-FVI-U1-L16",
+              "title": "Describe some advanced aspects of marketing (marketing mix - 4Cs and 7Ps, market changes, market segmentation, marketing boards, market research, e-marketing)",
+              "markdown_content": "## c) Describe some advanced aspects of marketing (marketing mix - 4Cs and 7Ps, market changes, market segmentation, marketing boards, market research, e-marketing)",
+              "periods": "ICT devices, demonstrating how e-marketing operates",
+              "page": 23
+            },
+            {
+              "lesson_id": "BUS-FVI-U1-L17",
+              "title": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+              "markdown_content": "## d) Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+              "periods": "",
+              "page": 24
+            },
+            {
+              "lesson_id": "BUS-FVI-U1-L18",
+              "title": "formation of a contract, types of misrepresentation, forms and consequences of breach of contract and remedies for breach)",
+              "markdown_content": "## a) formation of a contract, types of misrepresentation, forms and consequences of breach of contract and remedies for breach)",
+              "periods": "",
+              "page": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate an understanding of the business environment",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the policies and laws governing medium scale businesses",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-FVI-U2-L19",
+              "title": "Describe taxes and levies associated with medium businesses in Tanzania",
+              "markdown_content": "## a) Describe taxes and levies associated with medium businesses in Tanzania",
+              "periods": "60",
+              "page": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Conduct a project in Business Studies",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Prepare a medium scale business plan",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-FVI-U3-L20",
+              "title": "Complete and submit the business plan developed in Form Five",
+              "markdown_content": "## a) Complete and submit the business plan developed in Form Five",
+              "periods": "90",
+              "page": 27
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

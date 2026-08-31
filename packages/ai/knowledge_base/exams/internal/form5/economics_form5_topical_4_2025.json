@@ -1,0 +1,121 @@
+{
+  "filename": "economics_form5_topical_4_2025.json",
+  "subject": "Economics",
+  "subject_slug": "economics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Economics - Topical Test 4 (FORM5 2025): Use the price theory to explain the",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 55,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use the price theory to explain the effects of pricing on consumer behaviour and business profits",
+          "text": "Evaluate the role of 'Use the price theory to explain the effects of pricing on consumer behaviour and business profits' in national development. - locally",
+          "competence": "Use the price theory to explain the effects of pricing on co"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Apply macroeconomic theories to explain the levels of socio- economic development of nations",
+          "text": "Examine the advantages and disadvantages of 'Apply macroeconomic theories to explain the levels of socio- economic development of nations'. - with diagram",
+          "competence": "Apply macroeconomic theories to explain the levels of socio-"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Apply macroeconomic theories to explain the levels of socio- economic development of nations",
+          "text": "Describe the process of 'Apply macroeconomic theories to explain the levels of socio- economic development of nations' step by step. - with example",
+          "competence": "Apply macroeconomic theories to explain the levels of socio-"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use the price theory to explain the effects of pricing on consumer behaviour and business profits",
+          "text": "Explain the relationship between 'Use the price theory to explain the effects of pricing on consumer behaviour and business profits' and its environment. - with example",
+          "competence": "Use the price theory to explain the effects of pricing on co"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use the price theory to explain the effects of pricing on consumer behaviour and business profits",
+          "text": "Describe the process of 'Use the price theory to explain the effects of pricing on consumer behaviour and business profits' step by step.",
+          "competence": "Use the price theory to explain the effects of pricing on co"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use the price theory to explain the effects of pricing on consumer behaviour and business profits",
+          "text": "Define 'Use the price theory to explain the effects of pricing on consumer behaviour and business profits' and discuss its importance in everyday life. - locally",
+          "competence": "Use the price theory to explain the effects of pricing on co"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Apply macroeconomic theories to explain the levels of socio- economic development of nations",
+          "text": "Explain the concept of 'Apply macroeconomic theories to explain the levels of socio- economic development of nations' with examples relevant to Tanzania.",
+          "competence": "Apply macroeconomic theories to explain the levels of socio-"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Apply macroeconomic theories to explain the levels of socio- economic development of nations",
+          "text": "Propose measures to improve 'Apply macroeconomic theories to explain the levels of socio- economic development of nations' in schools. - locally",
+          "competence": "Apply macroeconomic theories to explain the levels of socio-"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Apply macroeconomic theories to explain the levels of socio- economic development of nations",
+          "text": "Explain the relationship between 'Apply macroeconomic theories to explain the levels of socio- economic development of nations' and its environment.",
+          "competence": "Apply macroeconomic theories to explain the levels of socio-"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Apply macroeconomic theories to explain the levels of socio- economic development of nations",
+          "text": "Describe the process of 'Apply macroeconomic theories to explain the levels of socio- economic development of nations' step by step. - with example",
+          "competence": "Apply macroeconomic theories to explain the levels of socio-"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use the price theory to explain the effects of pricing on consumer behaviour and business profits",
+    "Apply macroeconomic theories to explain the levels of socio- economic development of nations"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

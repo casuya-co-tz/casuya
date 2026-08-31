@@ -1,0 +1,289 @@
+{
+  "filename": "commerce_form1_annual_1_2025.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2025",
+  "time": "3:00 Hours",
+  "title": "Commerce - Annual Exam 1 (FORM1 2025)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 150,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain warehousing",
+          "text": "Discuss the challenges facing 'Explain warehousing' in Tanzania and propose solutions. - with example",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain concept of commerce",
+          "text": "Examine the advantages and disadvantages of 'Explain concept of commerce'. - with diagram",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain partnership",
+          "text": "With examples, illustrate how 'Explain partnership' is applied in the community. - with diagram",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Transport",
+          "text": "Outline the procedures involved in 'Transport'. - with example",
+          "competence": "Transport"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain transport",
+          "text": "Compare and contrast 'Explain transport' with related concepts. - with diagram",
+          "competence": "Explain transport"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Storekeeping",
+          "text": "Compare and contrast 'Storekeeping' with related concepts. - with example",
+          "competence": "Storekeeping"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain insurance",
+          "text": "Define 'Explain insurance' and discuss its importance in everyday life.",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Sources of Business Finance",
+          "text": "With examples, illustrate how 'Sources of Business Finance' is applied in the community. - with example",
+          "competence": "Sources of Business Finance"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain production",
+          "text": "Define 'Explain production' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain production"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain sources of business finance",
+          "text": "With examples, illustrate how 'Explain sources of business finance' is applied in the community.",
+          "competence": "Explain sources of business finance"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain marketing mix",
+          "text": "Evaluate the role of 'Explain marketing mix' in national development.",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Stock Control",
+          "text": "Describe the main features of 'Stock Control'. - with diagram",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Trade",
+          "text": "Outline the procedures involved in 'Trade'. - with diagram",
+          "competence": "Trade"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain sole proprietorship",
+          "text": "Analyse the causes and effects of 'Explain sole proprietorship'. - with example",
+          "competence": "Explain sole proprietorship"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Companies",
+          "text": "Compare and contrast 'Companies' with related concepts. - with example",
+          "competence": "Companies"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain documentation",
+          "text": "Outline the procedures involved in 'Explain documentation'.",
+          "competence": "Explain documentation"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Communication",
+          "text": "With examples, illustrate how 'Communication' is applied in the community. - with diagram",
+          "competence": "Communication"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Market and Marketing",
+          "text": "Describe the main features of 'Market and Marketing'. - with example",
+          "competence": "Market and Marketing"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain cooperative",
+          "text": "Outline the procedures involved in 'Explain cooperative'. - with diagram",
+          "competence": "Explain cooperative"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain aids to trade",
+          "text": "With examples, illustrate how 'Explain aids to trade' is applied in the community. - with example",
+          "competence": "Explain aids to trade"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Sole Proprietorship",
+          "text": "Explain the concept of 'Sole Proprietorship' with examples relevant to Tanzania.",
+          "competence": "Sole Proprietorship"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Documentation",
+          "text": "Compare and contrast 'Documentation' with related concepts. - with example",
+          "competence": "Documentation"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain stock control",
+          "text": "Define 'Explain stock control' and discuss its importance in everyday life.",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Aids to Trade",
+          "text": "Define 'Aids to Trade' and discuss its importance in everyday life.",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Concept of Commerce",
+          "text": "Outline the procedures involved in 'Concept of Commerce'. - with diagram",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Taxation",
+          "text": "Examine the advantages and disadvantages of 'Taxation'. - with diagram",
+          "competence": "Taxation"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Marketing Mix",
+          "text": "Analyse the causes and effects of 'Marketing Mix'.",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain trade",
+          "text": "With examples, illustrate how 'Explain trade' is applied in the community.",
+          "competence": "Explain trade"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Production",
+          "text": "Compare and contrast 'Production' with related concepts. - with diagram",
+          "competence": "Production"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Partnership",
+          "text": "Compare and contrast 'Partnership' with related concepts. - with example",
+          "competence": "Partnership"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain warehousing",
+    "Explain concept of commerce",
+    "Explain partnership",
+    "Transport",
+    "Explain transport",
+    "Storekeeping",
+    "Explain insurance",
+    "Sources of Business Finance",
+    "Explain production",
+    "Explain sources of business finance"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

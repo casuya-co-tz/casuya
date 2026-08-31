@@ -1,0 +1,289 @@
+{
+  "filename": "mathematics_form5_annual_1_2023.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2023",
+  "time": "3:00 Hours",
+  "title": "Mathematics - Annual Exam 1 (FORM5 2023)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 122,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use numerical skills in different contexts",
+          "text": "With examples, illustrate how 'Use numerical skills in different contexts' is applied in the community. - with example",
+          "competence": "Use numerical skills in different contexts"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)'.",
+          "competence": "Explore the basic tenets of probability theory (counting pri"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "text": "Explain the relationship between 'Demonstrate an advanced understanding of knowledge and skills in Mathematics' and its environment.",
+          "competence": "Demonstrate an advanced understanding of knowledge and skill"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "What are the characteristics of 'Use geometry, approximations, relations and functions in various contexts'?",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Find the domain and range of relations and functions",
+          "text": "Discuss the challenges facing 'Find the domain and range of relations and functions' in Tanzania and propose solutions. - with diagram",
+          "competence": "Find the domain and range of relations and functions"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the importance of numbers in real-life situations",
+          "text": "Outline the procedures involved in 'Describe the importance of numbers in real-life situations'.",
+          "competence": "Describe the importance of numbers in real-life situations"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use logic to analyse arguments and construct circuit diagrams",
+          "text": "What are the characteristics of 'Use logic to analyse arguments and construct circuit diagrams'?",
+          "competence": "Use logic to analyse arguments and construct circuit diagram"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Determine the equation of a straight line and draw its graph",
+          "text": "Explain the concept of 'Determine the equation of a straight line and draw its graph' with examples relevant to Tanzania.",
+          "competence": "Determine the equation of a straight line and draw its graph"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)",
+          "text": "Explain the concept of 'Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)' with examples relevant to Tanzania.",
+          "competence": "Explore advanced tenets of functions (polynomials, rational,"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
+          "text": "Assess the impact of 'Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul' on society.",
+          "competence": "Solve quadratic equations by using different methods (factor"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+          "text": "Outline the procedures involved in 'Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)'. - with example",
+          "competence": "Explore advanced tenets of statistics (measures of central t"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Find the gradient/ slope of a line",
+          "text": "Describe the main features of 'Find the gradient/ slope of a line'.",
+          "competence": "Find the gradient/ slope of a line"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use probability in problem solving",
+          "text": "What are the characteristics of 'Use probability in problem solving'? - locally",
+          "competence": "Use probability in problem solving"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function",
+          "text": "Discuss the challenges facing '(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function' in Tanzania and propose solutions.",
+          "competence": "(types of relations, domain and range of relations, graphs o"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Carry out a project in Mathematics",
+          "text": "How does 'Carry out a project in Mathematics' relate to sustainable development? - with example",
+          "competence": "Carry out a project in Mathematics"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "text": "Describe the main features of 'Demonstrate an advanced understanding of set theory and logic'. - with diagram",
+          "competence": "Demonstrate an advanced understanding of set theory and logi"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use laws of logarithms to solve problems",
+          "text": "Compare and contrast 'Use laws of logarithms to solve problems' with related concepts. - locally",
+          "competence": "Use laws of logarithms to solve problems"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Calculate arithmetic mean, geometric mean, and compound interest",
+          "text": "Explain the relationship between 'Calculate arithmetic mean, geometric mean, and compound interest' and its environment. - locally",
+          "competence": "Calculate arithmetic mean, geometric mean, and compound inte"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Compare sets (subsets and universal set",
+          "text": "Explain the relationship between 'Compare sets (subsets and universal set' and its environment. - with diagram",
+          "competence": "Compare sets (subsets and universal set"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+          "text": "Discuss the factors influencing 'Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line'. - with example",
+          "competence": "Explore the basic tenets of coordinate geometry (midpoint of"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+          "text": "Examine the advantages and disadvantages of 'Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation'.",
+          "competence": "Explore the basic tenets of coordinate geometry (gradient an"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+          "text": "What are the characteristics of 'Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)'?",
+          "competence": "Explore the basic tenets of sequences and series (Arithmetic"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+          "text": "Explain the concept of 'Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic' with examples relevant to Tanzania. - locally",
+          "competence": "Explore advanced tenets of algebra (series of squares and cu"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
+          "text": "How does 'Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio' relate to sustainable development? - with example",
+          "competence": "Explore the basic tenets of trigonometry (trigonometric rati"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Carry out a project to solve a problem using mathematical skills",
+          "text": "Outline the procedures involved in 'Carry out a project to solve a problem using mathematical skills'.",
+          "competence": "Carry out a project to solve a problem using mathematical sk"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "Compare and contrast 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)' with related concepts. - with example",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Determine trigonometric ratios of angles and special angles",
+          "text": "Examine the advantages and disadvantages of 'Determine trigonometric ratios of angles and special angles'.",
+          "competence": "Determine trigonometric ratios of angles and special angles"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+          "text": "Explain the concept of 'Use basic coordinate geometry, trigonometry and vectors skills in daily life' with examples relevant to Tanzania. - with example",
+          "competence": "Use basic coordinate geometry, trigonometry and vectors skil"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate basic understanding of calculus'. - with example",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "Describe the process of 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation' step by step. - locally",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use numerical skills in different contexts",
+    "Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+    "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+    "Use geometry, approximations, relations and functions in various contexts",
+    "Find the domain and range of relations and functions",
+    "Describe the importance of numbers in real-life situations",
+    "Use logic to analyse arguments and construct circuit diagrams",
+    "Determine the equation of a straight line and draw its graph",
+    "Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)",
+    "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

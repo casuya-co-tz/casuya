@@ -1,0 +1,415 @@
+{
+  "form": "form1",
+  "subject": "Physics",
+  "topic_count": 8,
+  "topics": [
+    {
+      "topic_number": "1",
+      "topic_name": "INTRODUCTION TO PHYSICS",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=cGh5c2ljcw%3D%3D &tno=1&m_topic=INTRODUCTION TO PHYSICS",
+      "plan": {
+        "competence": "Define the term physics",
+        "general_objectives": "demonstrate laboratory practice and safety;",
+        "specific_objectives": "By the end of the lesson the student should be able to: a) explain the concept of Physics b) establish the relationship between Physics and other subjects, state the importance of studying Physics",
+        "main_topic": "INTRODUCTION TO PHYSICS",
+        "sub_topic": "Concept of Physics",
+        "teaching_aids": "i) Charts of different machines ii) Picture",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Guide students to brainstorm on the three branches of science and explain why physics is a science",
+            "student_activities": "Students to discuss the three branches of science",
+            "assessment": "Is the student able to describe the three branches of science?"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "To assist students to brainstorm and discuss the concept of Physics",
+            "student_activities": "Students to identify various things related to Physics",
+            "assessment": "Is the student able to explain the concept of Physics?"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "To guide students in their small groups to discuss the relationship between Physics with other subjects.",
+            "student_activities": "Students to explain the relationship of Physics with other subjects.",
+            "assessment": "Is the student able to establish the relationship between Physics and other subjects?"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "To guide students in their small groups to discuss the relationship between Physics with other subjects.",
+            "student_activities": "Students to discuss and state the importance of studying Physics.",
+            "assessment": "Is the student able to state the importance of studying Physics?"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "Write notes and questions for students to copy",
+            "student_activities": "Students to write notes and questions",
+            "assessment": "Is the student able to answer questions correctly?"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "2",
+      "topic_name": "INTRODUCTION TO LABORATORY TECHNIQUES",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=cGh5c2ljcw%3D%3D &tno=2&m_topic=INTRODUCTION TO LABORATORY TECHNIQUES",
+      "plan": {
+        "competence": "Take precautions when working in laboratory",
+        "general_objectives": "Demonstrate laboratory practice and safety;",
+        "specific_objectives": "By the end of the lesson the student should be able to: a) state Physics laboratory rules b) explain the safety measures in Physics laboratory",
+        "main_topic": "INTRODUCTION TO LABORATORY TECHNIQUES",
+        "sub_topic": "Laboratory Rules and Safety",
+        "teaching_aids": "i) Wall charts and pictures showing safety measures in Physics laboratory. ii) Foam or Carbon dioxide fire extinguisher",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Brainstorm with students to explain why laboratory rules are important",
+            "student_activities": "Students to brainstorm on the importance of laboratory rules",
+            "assessment": "Is the stident able to state the importance of laboratory rules?"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "to guide students to discuss the laboratory rules.",
+            "student_activities": "Students to list the Physics laboratory rules",
+            "assessment": "Is the student able to state Physics laboratory rules?"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "to guide students in groups to discuss important safety measures for the Physics laboratory",
+            "student_activities": "Students to explain important safety measures for Physics laboratory.",
+            "assessment": "Is the student able to explain safety measures in Physics laboratory?"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "to guide students in groups to discuss important safety measures for the Physics laboratory",
+            "student_activities": "Students to respond to teachers questions approprietely",
+            "assessment": "Is the student able to answer the questions correctly?"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "Sum up the students responses by correcting wrong answers and give them questions",
+            "student_activities": "Students to listen keenly and take notes",
+            "assessment": "Is the student able to identify key ideas from the lesson?"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "3",
+      "topic_name": "MEASUREMENT",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=cGh5c2ljcw%3D%3D &tno=3&m_topic=MEASUREMENT",
+      "plan": {
+        "competence": "Make use of measurement in daily life",
+        "general_objectives": "develop skills for making physical measurements;",
+        "specific_objectives": "By the end of the lesson, the student should be able to: a) explain the concepts of measurement;b) state the importance of measurement in real life.",
+        "main_topic": "MEASUREMENT",
+        "sub_topic": "3.1 Concepts of Measurement",
+        "teaching_aids": "i) Solid body ii) Liquid iii) Measurement tools",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "By using YES/NO cards to lead students in groups to read case study about the concept of measurement",
+            "student_activities": "students in groups to read case study about the concept of measurement",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "By using Think-Pair-Share technique, to guide students to state the importance of measurement in real life",
+            "student_activities": "Students in pairs to explain the concept of measurement.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "Guide Students in groups to apply measurement in various bodies",
+            "student_activities": "Students in groups to apply measurement in various bodies",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "Guide Students in groups to apply measurement in various bodies",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "4",
+      "topic_name": "FORCE",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=cGh5c2ljcw%3D%3D &tno=4&m_topic=FORCE",
+      "plan": {
+        "competence": "Describe force",
+        "general_objectives": "recognize behaviour and properties of matter.",
+        "specific_objectives": "By the end of the lesson, the student should be able to:a) explain the concept of force; and b) state the S.I. unit of force.",
+        "main_topic": "FORCE",
+        "sub_topic": "4.1 Concept of Force",
+        "teaching_aids": "i) Spring balance i) Magnets i) Rubber band i) Block of wood i) Iron filings i) Weights",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "to use information from YES/ NO cards to assess student�s understanding on the concept of force.",
+            "student_activities": "Students hold up either YES or NO card to respond to the teacher�s questions on the concept of force",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "to assist students to perform demonstration about the concept of force.",
+            "student_activities": "students to perform demonstration about the concept of force.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "to guide students through Think-Pair-Share technique to derive the S.I. unit of force.",
+            "student_activities": "Students in groups to state the S.I. unit of force.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "to guide students through Think-Pair-Share technique to derive the S.I. unit of force.",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "5",
+      "topic_name": "ARCHIMEDES PRINCIPLE AND LAW OF FLOATATION",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=cGh5c2ljcw%3D%3D &tno=5&m_topic=ARCHIMEDES PRINCIPLE AND LAW OF FLOATATION",
+      "plan": {
+        "competence": "Verify Archimedes principle",
+        "general_objectives": "demonstrate laws and principles of Physics;",
+        "specific_objectives": "By the end of the lesson, the student should be able to;a) explain the concept of up thrust;;Verify the Archimedes Principle;",
+        "main_topic": "ARCHIMEDES PRINCIPLE AND LAW OF FLOATATION",
+        "sub_topic": "Archimedes Principle",
+        "teaching_aids": "i) Spring balance ii) Wateriii) Threadiv) Measuring cylinder v) Stones",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "to guide students through Think-Pair-Share technique to discuss the concept of upthrust.",
+            "student_activities": "students through Think-Pair-Share technique to discuss the concept of upthrust.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "20",
+            "teacher_activities": "Guide Students in groups to perform an experiment to determine the upthrust.",
+            "student_activities": "Students in groups to perform an experiment to determine the upthrust.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "5",
+            "teacher_activities": "to lead students to carry out experiment to verify Archimedes Principle",
+            "student_activities": "Students in groups to verify Archimedes Principle experimentally",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "5",
+            "teacher_activities": "to lead students to carry out experiment to verify Archimedes Principle",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "5",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "6",
+      "topic_name": "STRUCTURE AND PROPERTIES OF MATTER",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=cGh5c2ljcw%3D%3D &tno=6&m_topic=STRUCTURE AND PROPERTIES OF MATTER",
+      "plan": {
+        "competence": "Justify particulate nature of matter",
+        "general_objectives": "Recognize behaviour and properties of matter.",
+        "specific_objectives": "By the end of the lesson, the student should be able to:a) explain the concept of matter;b) justify the particulate nature of matter;",
+        "main_topic": "STRUCTURE AND PROPERTIES OF MATTER",
+        "sub_topic": "Structure of Matter",
+        "teaching_aids": "i) Water ii) Coloured substances eg KMnO4 iii) Microscopeiv) Pollen gains,v) Marblesvi) Beaker",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "to use concept map technique to discuss with students the concept of matter",
+            "student_activities": "Students in pairs to explain the concept of matter.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "20",
+            "teacher_activities": "to guide students to justify the particulate nature of matter by applying Brownian motion in liquids and in gases.",
+            "student_activities": "students to justify the particulate nature of matter by applying Brownian motion in liquids and in gases.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "5",
+            "teacher_activities": "Guide Students to perform experiment to justify the particulate nature of matter by applying Brownian motion in liquids and in gases.",
+            "student_activities": "Students to perform experiment to justify the particulate nature of matter by applying Brownian motion in liquids and in gases.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "5",
+            "teacher_activities": "Guide Students to perform experiment to justify the particulate nature of matter by applying Brownian motion in liquids and in gases.",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "5",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "7",
+      "topic_name": "PRESSURE",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=cGh5c2ljcw%3D%3D &tno=7&m_topic=PRESSURE",
+      "plan": {
+        "competence": "describe pressure",
+        "general_objectives": "demonstrate laws and principles of Physics;",
+        "specific_objectives": "By the end of the lesson, the student should be able to; a) explain the concept of pressure; and b) state S.I. unit of pressure.",
+        "main_topic": "PRESSURE",
+        "sub_topic": "Concept of Pressure",
+        "teaching_aids": "Waterii) Buckets with thin and thick handlesiii) Piece of woodiv) Blunt and sharpv) knives",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "By using Think-Pair-Share technique to guide students to explain the concept of pressure.",
+            "student_activities": "Students to discuss and explain the concept of pressure.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "Guide Students in groups to lifting a bucket with thin handle and thick handle and explain observationi",
+            "student_activities": "Students in groups to lifting a bucket with thin handle and thick handle and explain observationi",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "to guide students to derive the S.I unit of pressure.",
+            "student_activities": "Students in groups to discuss the term pressure and state its S.I unit.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "to guide students to derive the S.I unit of pressure.",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "8",
+      "topic_name": "WORK, ENERGY AND POWER",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=cGh5c2ljcw%3D%3D &tno=8&m_topic=WORK, ENERGY AND POWER",
+      "plan": {
+        "competence": "describe work",
+        "general_objectives": "Demonstrate laws and principles of Physics;",
+        "specific_objectives": "By the end of the lesson, the student should be able to;a) explain the concept of work;b) state S.I. unit of work;",
+        "main_topic": "WORK, ENERGY AND POWER",
+        "sub_topic": "work",
+        "teaching_aids": "i) Metre ruleii) Beam balance iii) Spring balance iv) Tape measure",
+        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "to guide students to brainstorm the concept of work as applied to Physics.",
+            "student_activities": "Students in pairs to explain the concept of work as applied to Physics.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "to guide students to derive the S.I unit of work.",
+            "student_activities": "students to derive the S.I unit of work.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "Guide Students in small groups to state the S.I units of force.",
+            "student_activities": "Students in small groups to state the S.I units of force.",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "Guide Students in small groups to state the S.I units of force.",
+            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
+            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
+            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+          }
+        ]
+      }
+    }
+  ]
+}

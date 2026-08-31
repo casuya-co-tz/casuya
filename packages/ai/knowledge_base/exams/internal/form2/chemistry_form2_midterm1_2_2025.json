@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form2_midterm1_2_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 1 Exam 2 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 89,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Design and carry-out a simple research project in Chemistry",
+          "text": "Examine the advantages and disadvantages of 'Design and carry-out a simple research project in Chemistry'. - with example",
+          "competence": "Design and carry-out a simple research project in Chemistry"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Outline the procedures involved in 'Analyse the periodic trends of elements in relation to their physical and chemical properties'. - with example",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "and their applications in daily life",
+          "text": "Define 'and their applications in daily life' and discuss its importance in everyday life.",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Outline the procedures involved in 'Use different atomic theories to determine the electronic configuration of elements with different properties'. - with diagram",
+          "competence": "Use different atomic theories to determine the electronic co"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+          "text": "Outline the procedures involved in 'Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)'. - with diagram",
+          "competence": "Perform experiments involving chemical equilibria and report"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare sulphuric acid from sulphur dioxide",
+          "text": "Discuss the challenges facing 'Prepare sulphuric acid from sulphur dioxide' in Tanzania and propose solutions. - with diagram",
+          "competence": "Prepare sulphuric acid from sulphur dioxide"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+          "text": "Define 'Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Investigate the applications of electrochemistry in industri"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Explain the concept of 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)'. - with example",
+          "competence": "Describe the concept of colligative properties in understand"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Perform experiments on volumetric analysis",
+          "text": "Examine the advantages and disadvantages of 'Perform experiments on volumetric analysis'. - with example",
+          "competence": "Perform experiments on volumetric analysis"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "Define 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi' and discuss its importance in everyday life. - with example",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore reactions of complex compounds",
+          "text": "Define 'Explore reactions of complex compounds' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explore reactions of complex compounds"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
+          "text": "With examples, illustrate how 'Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals' is applied in the community. - with example",
+          "competence": "Perform experiments on the applications of electrolysis in c"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Outline the procedures involved in 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)'. - with diagram",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+          "text": "Evaluate the role of 'Use the concept of atomic structure to determine the atomic and mass numbers of an element' in national development. - with diagram",
+          "competence": "Use the concept of atomic structure to determine the atomic "
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Compare and contrast 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate' with related concepts. - with diagram",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+          "text": "Evaluate the role of 'Investigate the composition of chemical species in substances using systematic qualitative analysis' in national development. - with example",
+          "competence": "Investigate the composition of chemical species in substance"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+          "text": "Analyse the causes and effects of 'Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms'. - with example",
+          "competence": "Relate the types of chemical reactions with common processes"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe acids, bases and salts (reactions of acids and bases with various substance",
+          "text": "Describe the main features of 'Describe acids, bases and salts (reactions of acids and bases with various substance'. - with example",
+          "competence": "Describe acids, bases and salts (reactions of acids and base"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use appropriate software to sketch the set-ups of experiments",
+          "text": "Analyse the causes and effects of 'Use appropriate software to sketch the set-ups of experiments'. - with diagram",
+          "competence": "Use appropriate software to sketch the set-ups of experiment"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Design and carry-out a simple research project in Chemistry",
+    "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+    "and their applications in daily life",
+    "Use different atomic theories to determine the electronic configuration of elements with different properties",
+    "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+    "Prepare sulphuric acid from sulphur dioxide",
+    "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+    "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+    "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+    "Perform experiments on volumetric analysis"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

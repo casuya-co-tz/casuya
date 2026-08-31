@@ -1,0 +1,121 @@
+{
+  "filename": "agriculture_form2_topical_1_2025.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Agriculture - Topical Test 1 (FORM2 2025): Explain concept of agriculture",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 42,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain concept of agriculture",
+          "text": "With examples, illustrate how 'Explain concept of agriculture' is applied in the community. - with diagram",
+          "competence": "Explain concept of agriculture"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Soil Formation",
+          "text": "Explain the concept of 'Soil Formation' with examples relevant to Tanzania. - with diagram",
+          "competence": "Soil Formation"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Soil Formation",
+          "text": "Evaluate the role of 'Soil Formation' in national development. - with example",
+          "competence": "Soil Formation"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain concept of agriculture",
+          "text": "Outline the procedures involved in 'Explain concept of agriculture'. - with example",
+          "competence": "Explain concept of agriculture"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Soil Formation",
+          "text": "Compare and contrast 'Soil Formation' with related concepts. - with example",
+          "competence": "Soil Formation"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Soil Formation",
+          "text": "Outline the procedures involved in 'Soil Formation'.",
+          "competence": "Soil Formation"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain concept of agriculture",
+          "text": "Discuss the challenges facing 'Explain concept of agriculture' in Tanzania and propose solutions.",
+          "competence": "Explain concept of agriculture"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Soil Formation",
+          "text": "Outline the procedures involved in 'Soil Formation'. - with diagram",
+          "competence": "Soil Formation"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain concept of agriculture",
+          "text": "Analyse the causes and effects of 'Explain concept of agriculture'. - with diagram",
+          "competence": "Explain concept of agriculture"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain concept of agriculture",
+          "text": "Analyse the causes and effects of 'Explain concept of agriculture'.",
+          "competence": "Explain concept of agriculture"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain concept of agriculture",
+    "Soil Formation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

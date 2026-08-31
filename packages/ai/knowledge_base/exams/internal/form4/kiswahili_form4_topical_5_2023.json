@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form4_topical_5_2023.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 5 (FORM4 2023): Kutafsiri matini mbalimbali",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kutafsiri matini mbalimbali",
+          "text": "Propose measures to improve 'Kutafsiri matini mbalimbali' in schools.",
+          "competence": "Kutafsiri matini mbalimbali"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu",
+          "text": "With examples, illustrate how 'Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu' is applied in the community. - with example",
+          "competence": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhim"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu",
+          "text": "Compare and contrast 'Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu' with related concepts. - with diagram",
+          "competence": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhim"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kutafsiri matini mbalimbali",
+          "text": "Compare and contrast 'Kutafsiri matini mbalimbali' with related concepts. - with diagram",
+          "competence": "Kutafsiri matini mbalimbali"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kutafsiri matini mbalimbali",
+          "text": "Describe the process of 'Kutafsiri matini mbalimbali' step by step. - locally",
+          "competence": "Kutafsiri matini mbalimbali"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu",
+          "text": "How does 'Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu' relate to sustainable development? - with example",
+          "competence": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhim"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu",
+          "text": "Assess the impact of 'Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu' on society. - locally",
+          "competence": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhim"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kutafsiri matini mbalimbali",
+          "text": "Define 'Kutafsiri matini mbalimbali' and discuss its importance in everyday life. - with example",
+          "competence": "Kutafsiri matini mbalimbali"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kutafsiri matini mbalimbali",
+          "text": "Discuss the challenges facing 'Kutafsiri matini mbalimbali' in Tanzania and propose solutions. - with diagram",
+          "competence": "Kutafsiri matini mbalimbali"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu",
+          "text": "Compare and contrast 'Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu' with related concepts. - locally",
+          "competence": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhim"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kutafsiri matini mbalimbali",
+    "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

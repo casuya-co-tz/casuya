@@ -1,0 +1,121 @@
+{
+  "filename": "geography_form5_topical_3_2026.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Geography - Topical Test 3 (FORM5 2026): Develop and carry out a simple rese",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 44,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "Describe the process of 'Develop and carry out a simple research project in Geography' step by step. - with example",
+          "competence": "Develop and carry out a simple research project in Geography"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "Examine the advantages and disadvantages of 'Develop and carry out a simple research project in Geography'.",
+          "competence": "Develop and carry out a simple research project in Geography"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of some advanced skills in land surveying",
+          "text": "With examples, illustrate how 'Demonstrate mastery of some advanced skills in land surveying' is applied in the community. - with diagram",
+          "competence": "Demonstrate mastery of some advanced skills in land surveyin"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of some advanced skills in land surveying",
+          "text": "Evaluate the role of 'Demonstrate mastery of some advanced skills in land surveying' in national development. - with example",
+          "competence": "Demonstrate mastery of some advanced skills in land surveyin"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate mastery of some advanced skills in land surveying",
+          "text": "Define 'Demonstrate mastery of some advanced skills in land surveying' and discuss its importance in everyday life. - with example",
+          "competence": "Demonstrate mastery of some advanced skills in land surveyin"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate mastery of some advanced skills in land surveying",
+          "text": "Analyse the causes and effects of 'Demonstrate mastery of some advanced skills in land surveying'. - with diagram",
+          "competence": "Demonstrate mastery of some advanced skills in land surveyin"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "Propose measures to improve 'Develop and carry out a simple research project in Geography' in schools. - with example",
+          "competence": "Develop and carry out a simple research project in Geography"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "Explain the concept of 'Develop and carry out a simple research project in Geography' with examples relevant to Tanzania. - with diagram",
+          "competence": "Develop and carry out a simple research project in Geography"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate mastery of some advanced skills in land surveying",
+          "text": "Discuss the challenges facing 'Demonstrate mastery of some advanced skills in land surveying' in Tanzania and propose solutions. - with example",
+          "competence": "Demonstrate mastery of some advanced skills in land surveyin"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate mastery of some advanced skills in land surveying",
+          "text": "Evaluate the role of 'Demonstrate mastery of some advanced skills in land surveying' in national development.",
+          "competence": "Demonstrate mastery of some advanced skills in land surveyin"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Develop and carry out a simple research project in Geography",
+    "Demonstrate mastery of some advanced skills in land surveying"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

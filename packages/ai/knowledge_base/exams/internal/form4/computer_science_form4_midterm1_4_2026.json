@@ -1,0 +1,209 @@
+{
+  "filename": "computer_science_form4_midterm1_4_2026.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Computer Science - Midterm 1 Exam 4 (FORM4 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 86,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain word processing concepts",
+          "text": "Outline the procedures involved in 'Explain word processing concepts'. - with diagram",
+          "competence": "Explain word processing concepts"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain internet services",
+          "text": "Describe the main features of 'Explain internet services'. - with diagram",
+          "competence": "Explain internet services"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Database Concepts",
+          "text": "Evaluate the role of 'Database Concepts' in national development.",
+          "competence": "Database Concepts"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain document creation",
+          "text": "Define 'Explain document creation' and discuss its importance in everyday life.",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Computer Networks",
+          "text": "Describe the main features of 'Computer Networks'. - with example",
+          "competence": "Computer Networks"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain computer hardware",
+          "text": "Define 'Explain computer hardware' and discuss its importance in everyday life.",
+          "competence": "Explain computer hardware"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Word Processing Concepts",
+          "text": "Outline the procedures involved in 'Word Processing Concepts'. - with example",
+          "competence": "Word Processing Concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Document Creation",
+          "text": "Describe the main features of 'Document Creation'. - with example",
+          "competence": "Document Creation"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Introduction to Programming",
+          "text": "Analyse the causes and effects of 'Introduction to Programming'.",
+          "competence": "Introduction to Programming"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Spreadsheet Concepts",
+          "text": "Discuss the challenges facing 'Spreadsheet Concepts' in Tanzania and propose solutions.",
+          "competence": "Spreadsheet Concepts"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain algorithm and flowchart",
+          "text": "Define 'Explain algorithm and flowchart' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain algorithm and flowchart"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Computer Security",
+          "text": "With examples, illustrate how 'Computer Security' is applied in the community. - with diagram",
+          "competence": "Computer Security"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Data Processing",
+          "text": "Describe the main features of 'Data Processing'. - with example",
+          "competence": "Data Processing"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Computer Software",
+          "text": "Analyse the causes and effects of 'Computer Software'.",
+          "competence": "Computer Software"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain computer software",
+          "text": "With examples, illustrate how 'Explain computer software' is applied in the community. - with example",
+          "competence": "Explain computer software"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain computer security",
+          "text": "Analyse the causes and effects of 'Explain computer security'. - with example",
+          "competence": "Explain computer security"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain computer networks",
+          "text": "With examples, illustrate how 'Explain computer networks' is applied in the community. - with diagram",
+          "competence": "Explain computer networks"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Algorithm and Flowchart",
+          "text": "Evaluate the role of 'Algorithm and Flowchart' in national development.",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Computer Basics",
+          "text": "Evaluate the role of 'Computer Basics' in national development. - with diagram",
+          "competence": "Computer Basics"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain database concepts",
+          "text": "Explain the concept of 'Explain database concepts' with examples relevant to Tanzania.",
+          "competence": "Explain database concepts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain word processing concepts",
+    "Explain internet services",
+    "Database Concepts",
+    "Explain document creation",
+    "Computer Networks",
+    "Explain computer hardware",
+    "Word Processing Concepts",
+    "Document Creation",
+    "Introduction to Programming",
+    "Spreadsheet Concepts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

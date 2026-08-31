@@ -1,0 +1,121 @@
+{
+  "filename": "physics_form6_topical_7_2026.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Physics - Topical Test 7 (FORM6 2026): Applications of Eletromagnetic Wave",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "construct a simple astronomical telescope",
+          "text": "Compare and contrast 'construct a simple astronomical telescope' with related concepts. - with diagram",
+          "competence": "construct a simple astronomical telescope"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Applications of Eletromagnetic Wave in Daily Life",
+          "text": "Evaluate the role of 'Applications of Eletromagnetic Wave in Daily Life' in national development. - locally",
+          "competence": "Applications of Eletromagnetic Wave in Daily Life"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Applications of Eletromagnetic Wave in Daily Life",
+          "text": "Discuss the challenges facing 'Applications of Eletromagnetic Wave in Daily Life' in Tanzania and propose solutions. - with example",
+          "competence": "Applications of Eletromagnetic Wave in Daily Life"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "construct a simple astronomical telescope",
+          "text": "Describe the process of 'construct a simple astronomical telescope' step by step.",
+          "competence": "construct a simple astronomical telescope"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Applications of Eletromagnetic Wave in Daily Life",
+          "text": "Describe the main features of 'Applications of Eletromagnetic Wave in Daily Life'.",
+          "competence": "Applications of Eletromagnetic Wave in Daily Life"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Applications of Eletromagnetic Wave in Daily Life",
+          "text": "Define 'Applications of Eletromagnetic Wave in Daily Life' and discuss its importance in everyday life. - with diagram",
+          "competence": "Applications of Eletromagnetic Wave in Daily Life"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Applications of Eletromagnetic Wave in Daily Life",
+          "text": "With examples, illustrate how 'Applications of Eletromagnetic Wave in Daily Life' is applied in the community.",
+          "competence": "Applications of Eletromagnetic Wave in Daily Life"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Applications of Eletromagnetic Wave in Daily Life",
+          "text": "Explain the relationship between 'Applications of Eletromagnetic Wave in Daily Life' and its environment. - with diagram",
+          "competence": "Applications of Eletromagnetic Wave in Daily Life"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "construct a simple astronomical telescope",
+          "text": "Assess the impact of 'construct a simple astronomical telescope' on society.",
+          "competence": "construct a simple astronomical telescope"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "construct a simple astronomical telescope",
+          "text": "How does 'construct a simple astronomical telescope' relate to sustainable development? - locally",
+          "competence": "construct a simple astronomical telescope"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "construct a simple astronomical telescope",
+    "Applications of Eletromagnetic Wave in Daily Life"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

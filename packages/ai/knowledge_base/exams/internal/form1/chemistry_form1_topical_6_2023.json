@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form1_topical_6_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 6 (FORM1 2023): Use the International Union of Pure",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Compare and contrast 'Discuss the contribution of Chemistry in the development of modern society' with related concepts. - with example",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Analyse the causes and effects of 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species'. - with diagram",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Evaluate the role of 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species' in national development. - with diagram",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Outline the procedures involved in 'Discuss the contribution of Chemistry in the development of modern society'. - with example",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Compare and contrast 'Discuss the contribution of Chemistry in the development of modern society' with related concepts. - with example",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Analyse the causes and effects of 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species'.",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Outline the procedures involved in 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species'. - with diagram",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Outline the procedures involved in 'Discuss the contribution of Chemistry in the development of modern society'.",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Analyse the causes and effects of 'Discuss the contribution of Chemistry in the development of modern society'. - with diagram",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Evaluate the role of 'Discuss the contribution of Chemistry in the development of modern society' in national development. - with example",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Discuss the contribution of Chemistry in the development of modern society",
+    "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

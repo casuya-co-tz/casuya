@@ -1,0 +1,289 @@
+{
+  "filename": "chemistry_form3_annual_2_2026.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2026",
+  "time": "3:00 Hours",
+  "title": "Chemistry - Annual Exam 2 (FORM3 2026)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 149,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+          "text": "Outline the procedures involved in 'Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)'.",
+          "competence": "Describe the concept of two component liquid systems (immisc"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "With examples, illustrate how 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction' is applied in the community.",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "Define 'Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers' and discuss its importance in everyday life.",
+          "competence": "Describe the concepts of aromatic hydrocarbons, halogen deri"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines",
+          "text": "With examples, illustrate how 'phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines' is applied in the community. - with example",
+          "competence": "phenols, carbonyl compounds, carboxylic acids and their deri"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+          "text": "Analyse the causes and effects of 'Explain the changes in the physical and chemical properties of elements across and down the periodic table'. - with diagram",
+          "competence": "Explain the changes in the physical and chemical properties "
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Define 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Analyse the causes and effects of 'Use the electronic configuration of an element to locate their positions in the periodic table'. - with diagram",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+          "text": "Define 'Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms' and discuss its importance in everyday life. - with example",
+          "competence": "Relate the types of chemical reactions with common processes"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+          "text": "Outline the procedures involved in 'Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants'. - with diagram",
+          "competence": "Examine the applications of colligative properties in the pu"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "Define 'Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers' and discuss its importance in everyday life. - with diagram",
+          "competence": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carb"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Define 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)",
+          "text": "Analyse the causes and effects of 'Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)'. - with example",
+          "competence": "Investigate the applications of chemical kinetics in industr"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+          "text": "Compare and contrast 'Describe the extraction of iron from its ore (ores, stages, and methods of extractio' with related concepts. - with example",
+          "competence": "Describe the extraction of iron from its ore (ores, stages, "
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+          "text": "Define 'Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explore the periodic trends of elements in the modern period"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Prepare acid- base indicators using locally available materials",
+          "text": "Describe the main features of 'Prepare acid- base indicators using locally available materials'. - with example",
+          "competence": "Prepare acid- base indicators using locally available materi"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Describe the main features of 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes'. - with example",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+          "text": "Discuss the challenges facing 'Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)' in Tanzania and propose solutions.",
+          "competence": "Describe the concept of the atom (Dalton’s atomic theory, Bo"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Design and carry-out a simple research project in Chemistry",
+          "text": "Discuss the challenges facing 'Design and carry-out a simple research project in Chemistry' in Tanzania and propose solutions. - with diagram",
+          "competence": "Design and carry-out a simple research project in Chemistry"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Discuss the challenges facing 'Use different atomic theories to determine the electronic configuration of elements with different properties' in Tanzania and propose solutions. - with example",
+          "competence": "Use different atomic theories to determine the electronic co"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Analyse the causes and effects of 'Demonstrate mastery of concepts, theories and principles in Chemistry'.",
+          "competence": "Demonstrate mastery of concepts, theories and principles in "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Prepare sulphuric acid from sulphur dioxide",
+          "text": "Explain the concept of 'Prepare sulphuric acid from sulphur dioxide' with examples relevant to Tanzania.",
+          "competence": "Prepare sulphuric acid from sulphur dioxide"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+          "text": "Outline the procedures involved in 'Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)'. - with example",
+          "competence": "Perform experiments involving chemical equilibria and report"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use chemical symbols, formulae and equations to represent chemical reaction",
+          "text": "Compare and contrast 'Use chemical symbols, formulae and equations to represent chemical reaction' with related concepts.",
+          "competence": "Use chemical symbols, formulae and equations to represent ch"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+          "text": "Evaluate the role of 'Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle' in national development. - with example",
+          "competence": "Describe the modern concept of atomic structure (Dalton’s at"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 10,
+          "topic": "and their applications in daily life",
+          "text": "Explain the concept of 'and their applications in daily life' with examples relevant to Tanzania.",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 10,
+          "topic": ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+          "text": "Examine the advantages and disadvantages of '. Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry'. - with example",
+          "competence": ". Demonstrate an advanced understanding of the concepts, the"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Describe the main features of 'Perform experiments on the changes of matter from one state to another'.",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+          "text": "Analyse the causes and effects of 'Use the prepared indicators to test acidity and alkalinity of substances found in the locality'. - with diagram",
+          "competence": "Use the prepared indicators to test acidity and alkalinity o"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Define 'Describe the concept of matter (physical and chemical changes of matte' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Conduct synthesis of selected organic compounds",
+          "text": "Outline the procedures involved in 'Conduct synthesis of selected organic compounds'. - with diagram",
+          "competence": "Conduct synthesis of selected organic compounds"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+    "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+    "Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+    "phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines",
+    "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+    "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+    "Use the electronic configuration of an element to locate their positions in the periodic table",
+    "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+    "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+    "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

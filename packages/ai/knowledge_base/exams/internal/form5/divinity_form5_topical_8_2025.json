@@ -1,0 +1,121 @@
+{
+  "filename": "divinity_form5_topical_8_2025.json",
+  "subject": "Divinity",
+  "subject_slug": "divinity",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Divinity - Topical Test 8 (FORM5 2025): Demonstrate an understanding of the",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 44,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea",
+          "text": "Assess the impact of 'Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea' on society.",
+          "competence": "Demonstrate an understanding of the concepts of social justi"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea",
+          "text": "Evaluate the role of 'Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea' in national development. - with example",
+          "competence": "Demonstrate an understanding of the concepts of social justi"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea'. - with diagram",
+          "competence": "Demonstrate an understanding of the concepts of social justi"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "Define 'Demonstrate an understanding of the Epistle of Paul to the Romans' and discuss its importance in everyday life.",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea",
+          "text": "Discuss the factors influencing 'Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea'.",
+          "competence": "Demonstrate an understanding of the concepts of social justi"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "Define 'Demonstrate an understanding of the Epistle of Paul to the Romans' and discuss its importance in everyday life.",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "Evaluate the role of 'Demonstrate an understanding of the Epistle of Paul to the Romans' in national development. - locally",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "Explain the concept of 'Demonstrate an understanding of the Epistle of Paul to the Romans' with examples relevant to Tanzania. - locally",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "text": "Propose measures to improve 'Demonstrate an understanding of the Epistle of Paul to the Romans' in schools.",
+          "competence": "Demonstrate an understanding of the Epistle of Paul to the R"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea'.",
+          "competence": "Demonstrate an understanding of the concepts of social justi"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea",
+    "Demonstrate an understanding of the Epistle of Paul to the Romans"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

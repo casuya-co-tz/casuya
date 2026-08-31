@@ -1,0 +1,121 @@
+{
+  "filename": "biology_form2_topical_7_2025.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Biology - Topical Test 7 (FORM2 2025): Prepare and present a report of a b",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 52,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Compare and contrast 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )' with related concepts.",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare and present results of biological investigations",
+          "text": "Define 'Prepare and present results of biological investigations' and discuss its importance in everyday life. - with example",
+          "competence": "Prepare and present results of biological investigations"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Describe the main features of 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )'. - with example",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare and present results of biological investigations",
+          "text": "Examine the advantages and disadvantages of 'Prepare and present results of biological investigations'. - with diagram",
+          "competence": "Prepare and present results of biological investigations"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Prepare and present results of biological investigations",
+          "text": "Discuss the challenges facing 'Prepare and present results of biological investigations' in Tanzania and propose solutions. - with example",
+          "competence": "Prepare and present results of biological investigations"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Prepare and present results of biological investigations",
+          "text": "Discuss the challenges facing 'Prepare and present results of biological investigations' in Tanzania and propose solutions. - with example",
+          "competence": "Prepare and present results of biological investigations"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Examine the advantages and disadvantages of 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )'. - with example",
+          "competence": "Prepare and present a report of a biological investigation o"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Prepare and present results of biological investigations",
+          "text": "Examine the advantages and disadvantages of 'Prepare and present results of biological investigations'. - with example",
+          "competence": "Prepare and present results of biological investigations"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Prepare and present results of biological investigations",
+          "text": "Explain the concept of 'Prepare and present results of biological investigations' with examples relevant to Tanzania. - with example",
+          "competence": "Prepare and present results of biological investigations"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Prepare and present results of biological investigations",
+          "text": "Compare and contrast 'Prepare and present results of biological investigations' with related concepts. - with example",
+          "competence": "Prepare and present results of biological investigations"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+    "Prepare and present results of biological investigations"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

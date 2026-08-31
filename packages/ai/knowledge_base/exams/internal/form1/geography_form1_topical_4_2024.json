@@ -1,0 +1,121 @@
+{
+  "filename": "geography_form1_topical_4_2024.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Geography - Topical Test 4 (FORM1 2024): Examine the impacts of population d",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Analyse the causes and effects of 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change'.",
+          "competence": "Examine the impacts of population distribution on economic a"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Carry out simple tape/chain surveying",
+          "text": "Analyse the causes and effects of 'Carry out simple tape/chain surveying'. - locally",
+          "competence": "Carry out simple tape/chain surveying"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Carry out simple tape/chain surveying",
+          "text": "Evaluate the role of 'Carry out simple tape/chain surveying' in national development. - locally",
+          "competence": "Carry out simple tape/chain surveying"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Carry out simple tape/chain surveying",
+          "text": "Define 'Carry out simple tape/chain surveying' and discuss its importance in everyday life. - with example",
+          "competence": "Carry out simple tape/chain surveying"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Evaluate the role of 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change' in national development. - with example",
+          "competence": "Examine the impacts of population distribution on economic a"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "With examples, illustrate how 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change' is applied in the community. - locally",
+          "competence": "Examine the impacts of population distribution on economic a"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Explain the relationship between 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change' and its environment.",
+          "competence": "Examine the impacts of population distribution on economic a"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Explain the concept of 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change' with examples relevant to Tanzania.",
+          "competence": "Examine the impacts of population distribution on economic a"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Explain the relationship between 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change' and its environment.",
+          "competence": "Examine the impacts of population distribution on economic a"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Carry out simple tape/chain surveying",
+          "text": "Assess the impact of 'Carry out simple tape/chain surveying' on society. - with example",
+          "competence": "Carry out simple tape/chain surveying"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+    "Carry out simple tape/chain surveying"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

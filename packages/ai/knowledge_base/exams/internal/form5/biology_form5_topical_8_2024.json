@@ -1,0 +1,121 @@
+{
+  "filename": "biology_form5_topical_8_2024.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Biology - Topical Test 8 (FORM5 2024): Describe nutrition in plants (photo",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 43,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Evaluate the role of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' in national development. - with diagram",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Describe the main features of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)'. - with diagram",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "With examples, illustrate how 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement' is applied in the community.",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Evaluate the role of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' in national development. - with diagram",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "Discuss the challenges facing 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Describe the main features of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)'.",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Evaluate the role of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' in national development. - with example",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Analyse the causes and effects of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)'.",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Define 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Define 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+    "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

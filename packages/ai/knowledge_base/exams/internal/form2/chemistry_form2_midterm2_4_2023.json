@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form2_midterm2_4_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 2 Exam 4 (FORM2 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 83,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore reactions of complex compounds",
+          "text": "Discuss the challenges facing 'Explore reactions of complex compounds' in Tanzania and propose solutions. - with example",
+          "competence": "Explore reactions of complex compounds"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Outline the procedures involved in 'Demonstrate mastery of concepts, theories and principles in Chemistry'. - with example",
+          "competence": "Demonstrate mastery of concepts, theories and principles in "
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "and their applications in daily life",
+          "text": "Discuss the challenges facing 'and their applications in daily life' in Tanzania and propose solutions. - with example",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)",
+          "text": "Analyse the causes and effects of 'Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)'. - with diagram",
+          "competence": "Investigate the applications of chemical kinetics in industr"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+          "text": "Outline the procedures involved in 'Use the prepared indicators to test acidity and alkalinity of substances found in the locality'. - with example",
+          "competence": "Use the prepared indicators to test acidity and alkalinity o"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+          "text": "Analyse the causes and effects of 'Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms'. - with example",
+          "competence": "Relate the types of chemical reactions with common processes"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+          "text": "Define 'Describe the extraction of iron from its ore (ores, stages, and methods of extractio' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the extraction of iron from its ore (ores, stages, "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+          "text": "Outline the procedures involved in 'Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)'. - with diagram",
+          "competence": "Explore the periodic trends of elements in the modern period"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+          "text": "Describe the main features of 'Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures'. - with diagram",
+          "competence": "Describe the chemical reactions of aliphatic hydrocarbons an"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+          "text": "Explain the concept of 'Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants' with examples relevant to Tanzania. - with example",
+          "competence": "Examine the applications of colligative properties in the pu"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use chemical symbols, formulae and equations to represent chemical reaction",
+          "text": "Outline the procedures involved in 'Use chemical symbols, formulae and equations to represent chemical reaction'.",
+          "competence": "Use chemical symbols, formulae and equations to represent ch"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "Compare and contrast 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi' with related concepts. - with example",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+          "text": "Discuss the challenges facing 'Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the preparation and properties of various compounds"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines",
+          "text": "With examples, illustrate how 'phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines' is applied in the community. - with example",
+          "competence": "phenols, carbonyl compounds, carboxylic acids and their deri"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Conduct synthesis of selected organic compounds",
+          "text": "Compare and contrast 'Conduct synthesis of selected organic compounds' with related concepts. - with example",
+          "competence": "Conduct synthesis of selected organic compounds"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Compare and contrast 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry' with related concepts. - with example",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)'.",
+          "competence": "Describe the concept of the atom (Dalton’s atomic theory, Bo"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Complete and submit a report for the project started in Form Three",
+          "text": "With examples, illustrate how 'Complete and submit a report for the project started in Form Three' is applied in the community. - with example",
+          "competence": "Complete and submit a report for the project started in Form"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+          "text": "Define 'Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol' and discuss its importance in everyday life. - with example",
+          "competence": "Explore the basic tenets of Organic Chemistry (organic compo"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "Define 'Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the concepts of aromatic hydrocarbons, halogen deri"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore reactions of complex compounds",
+    "Demonstrate mastery of concepts, theories and principles in Chemistry",
+    "and their applications in daily life",
+    "Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)",
+    "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+    "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+    "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+    "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+    "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+    "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

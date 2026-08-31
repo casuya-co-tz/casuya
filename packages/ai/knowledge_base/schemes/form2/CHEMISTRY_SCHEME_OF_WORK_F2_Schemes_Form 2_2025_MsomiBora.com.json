@@ -1,0 +1,76 @@
+{
+  "file": "CHEMISTRY SCHEME OF WORK F2 - MsomiBora.com.docx",
+  "subjects": [
+    {
+      "table_index": 0,
+      "headers": [
+        "COMPETENCE",
+        "GENERAL OBJECTIVE",
+        "MONTH",
+        "WEEK",
+        "MAIN TOPIC",
+        "SUB-TOPIC",
+        "PERIODS",
+        "TEACHING ACTIVITIES",
+        "LEARNING ACTIVITIES",
+        "T/L MATERIALS",
+        "REFERENCES",
+        "ASSESSMENT",
+        "REMARK S"
+      ],
+      "column_count": 13,
+      "entries": [
+        {
+          "competence": "Preparing and testing properties of simple gases in the laboratory.",
+          "objective": "To explain the preparation and properties of simple gases.",
+          "month": "January",
+          "week": "3",
+          "main_topic": "OXYGEN",
+          "sub_topic": "1.1Preparatio n and properties of Oxygen",
+          "period": "4",
+          "teaching_act": "i) Guiding students on preparation of Oxygen from Hydrogen peroxide ii) Guiding students to carry out the characteristic test for Oxygen gas. iii) Leading a discussion on the physical and chemical properties of oxygen",
+          "learning_act": "i) Carrying out an experiment to prepare Oxygen from H2O2 or by heating KCLO3 ii) Burning metals and some non-metals to oxygen. iii) In groups, to discuss the risks of using KMnO4 and HgO to prepare oxygen in laboratory.",
+          "materials": "H2O2, KCLO3, MnO2, flat bottomed flask, beehive shelve, delivery tube, troughs, gas jar, water, thistle funnel, freshly prepared O2, P, litmus paper, candle, combustion spoon, Mg ribbon, C, S, Ca granules, wooden splint, KMnO4.",
+          "assessment": "Students to prepare and collect a sample of oxygen gas in the laboratory. to perform simple experiments on physical and chemical properties of oxygen has. to explain properties of oxygen."
+        },
+        {
+          "competence": "Preparing and testing properties of simple gases in the laboratory.",
+          "objective": "To explain the preparation and properties of simple gases.",
+          "month": "January",
+          "week": "4",
+          "main_topic": "OXYGEN",
+          "sub_topic": "1.2 Uses of oxygen",
+          "period": "4",
+          "teaching_act": "i) Guiding students in groups to discuss daily life uses of oxygen. ii) Guiding students to discuss the relationship between uses of oxygen and properties.",
+          "learning_act": "i) Discussing about uses of oxygen ii) Discussing about the relationship between uses of oxygen and properties.",
+          "materials": "Wall charts, flip charts, pictures showing uses and properties of oxygen in the mentioned process.",
+          "assessment": "i) to list the uses of oxygen in daily life. ii) to relate some uses of oxygen to its properties."
+        },
+        {
+          "month": "February",
+          "week": "1",
+          "main_topic": "HYDROGEN",
+          "sub_topic": "2.1 Preparation and properties of Hydrogen.",
+          "period": "2",
+          "teaching_act": "i) Demonstration on the preparation of a small sample of hydrogen using Zinc and dilute HCl ii) Demonstrating an experiment on ‘pop’ sound test for hydrogen. iii) Carrying out an experiment on reduction of CuO using H2 gas. iv) Guiding a discussion on the physical and chemical properties of H2 gas.",
+          "learning_act": "i) Observing the demonstration on the preparation of sample of hydrogen using Zinc and dilute HCl. ii) Demonstrating an experiment on ‘pop’ sound test for hydrogen. iii) Discussing on the physical and chemical properties of H2 gas.",
+          "materials": "Zinc granules, dil. HCl, trough, thistle funnel, beehive shelves, flat bottomed flask, test tube, wooden splints, CuO, PbO, litmus paper, CoCl, paper, combustion tubes, source of heat, anhydrous CaCl2, wall chart showing physical and chemical properties of H2.",
+          "assessment": "Students to i) Explain the preparation of a sample H2 in the laboratory. ii) to explain properties of H2 gas."
+        },
+        {
+          "month": "February",
+          "main_topic": "HYDROGEN",
+          "sub_topic": "2.2 Uses of Hydrogen",
+          "period": "2",
+          "teaching_act": "i) Leading discussion on the uses of Hydrogen industrially to manufacture margarine and ammonia. ii) Leading discussion on the relationship between uses and properties of hydrogen.",
+          "learning_act": "i) Discussing in groups the daily life uses of hydrogen. ii) Discussing on the relationship between the uses and properties of hydrogen.",
+          "materials": "Wall chart, flip charts, pictures showing the production of ammonium fertilizers, margarine, uses of hydrogen, properties of hydrogen.",
+          "assessment": "students i) to state the uses of hydrogen gas in daily life. ii) to relate some uses of hydrogen to its properties."
+        }
+      ],
+      "entry_count": 4
+    }
+  ],
+  "form": "Form2",
+  "year": ""
+}

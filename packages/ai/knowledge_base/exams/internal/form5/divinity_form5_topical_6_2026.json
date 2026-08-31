@@ -1,0 +1,121 @@
+{
+  "filename": "divinity_form5_topical_6_2026.json",
+  "subject": "Divinity",
+  "subject_slug": "divinity",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Divinity - Topical Test 6 (FORM5 2026): Demonstrate an understanding of the",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 43,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+          "text": "Define 'Use the Book of Isaiah to discuss the importance of repentance and living a holy life' and discuss its importance in everyday life.",
+          "competence": "Use the Book of Isaiah to discuss the importance of repentan"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+          "text": "How does 'Use the Book of Isaiah to discuss the importance of repentance and living a holy life' relate to sustainable development? - with example",
+          "competence": "Use the Book of Isaiah to discuss the importance of repentan"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the Epistle of James",
+          "text": "Explain the relationship between 'Demonstrate an understanding of the Epistle of James' and its environment. - with example",
+          "competence": "Demonstrate an understanding of the Epistle of James"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the Epistle of James",
+          "text": "Compare and contrast 'Demonstrate an understanding of the Epistle of James' with related concepts.",
+          "competence": "Demonstrate an understanding of the Epistle of James"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+          "text": "Describe the main features of 'Use the Book of Isaiah to discuss the importance of repentance and living a holy life'.",
+          "competence": "Use the Book of Isaiah to discuss the importance of repentan"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the Epistle of James",
+          "text": "Evaluate the role of 'Demonstrate an understanding of the Epistle of James' in national development. - locally",
+          "competence": "Demonstrate an understanding of the Epistle of James"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+          "text": "Explain the relationship between 'Use the Book of Isaiah to discuss the importance of repentance and living a holy life' and its environment. - locally",
+          "competence": "Use the Book of Isaiah to discuss the importance of repentan"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+          "text": "Explain the relationship between 'Use the Book of Isaiah to discuss the importance of repentance and living a holy life' and its environment. - locally",
+          "competence": "Use the Book of Isaiah to discuss the importance of repentan"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the Epistle of James",
+          "text": "Describe the main features of 'Demonstrate an understanding of the Epistle of James'. - locally",
+          "competence": "Demonstrate an understanding of the Epistle of James"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+          "text": "Examine the advantages and disadvantages of 'Use the Book of Isaiah to discuss the importance of repentance and living a holy life'. - with example",
+          "competence": "Use the Book of Isaiah to discuss the importance of repentan"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+    "Demonstrate an understanding of the Epistle of James"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form5_topical_5_2026.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 5 (FORM5 2026): Compose stories using proper gramma",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 43,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Compose stories using proper grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition",
+          "text": "Describe the main features of 'Compose stories using proper grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition'. - locally",
+          "competence": "Compose stories using proper grammar and vocabulary (structu"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Write speeches on a variety of topics, including cross- cutting issues",
+          "text": "Evaluate the role of 'Write speeches on a variety of topics, including cross- cutting issues' in national development.",
+          "competence": "Write speeches on a variety of topics, including cross- cutt"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Write speeches on a variety of topics, including cross- cutting issues",
+          "text": "Explain the concept of 'Write speeches on a variety of topics, including cross- cutting issues' with examples relevant to Tanzania. - with example",
+          "competence": "Write speeches on a variety of topics, including cross- cutt"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Write speeches on a variety of topics, including cross- cutting issues",
+          "text": "Explain the concept of 'Write speeches on a variety of topics, including cross- cutting issues' with examples relevant to Tanzania. - with diagram",
+          "competence": "Write speeches on a variety of topics, including cross- cutt"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Write speeches on a variety of topics, including cross- cutting issues",
+          "text": "Assess the impact of 'Write speeches on a variety of topics, including cross- cutting issues' on society. - with diagram",
+          "competence": "Write speeches on a variety of topics, including cross- cutt"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Write speeches on a variety of topics, including cross- cutting issues",
+          "text": "Discuss the factors influencing 'Write speeches on a variety of topics, including cross- cutting issues'. - locally",
+          "competence": "Write speeches on a variety of topics, including cross- cutt"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Compose stories using proper grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition",
+          "text": "Explain the relationship between 'Compose stories using proper grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition' and its environment. - with diagram",
+          "competence": "Compose stories using proper grammar and vocabulary (structu"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Compose stories using proper grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition",
+          "text": "Analyse the causes and effects of 'Compose stories using proper grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition'.",
+          "competence": "Compose stories using proper grammar and vocabulary (structu"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Write speeches on a variety of topics, including cross- cutting issues",
+          "text": "Discuss the challenges facing 'Write speeches on a variety of topics, including cross- cutting issues' in Tanzania and propose solutions.",
+          "competence": "Write speeches on a variety of topics, including cross- cutt"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Compose stories using proper grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition",
+          "text": "Propose measures to improve 'Compose stories using proper grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition' in schools. - with diagram",
+          "competence": "Compose stories using proper grammar and vocabulary (structu"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Compose stories using proper grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition",
+    "Write speeches on a variety of topics, including cross- cutting issues"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

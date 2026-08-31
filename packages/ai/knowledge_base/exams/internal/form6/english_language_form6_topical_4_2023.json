@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form6_topical_4_2023.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 4 (FORM6 2023): Read texts for comprehension",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore strategies for deriving meanings of words from given texts (e.g., contextual guessin",
+          "text": "Compare and contrast 'Explore strategies for deriving meanings of words from given texts (e.g., contextual guessin' with related concepts. - with diagram",
+          "competence": "Explore strategies for deriving meanings of words from given"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Read texts for comprehension",
+          "text": "Outline the procedures involved in 'Read texts for comprehension'. - with diagram",
+          "competence": "Read texts for comprehension"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Read texts for comprehension",
+          "text": "Define 'Read texts for comprehension' and discuss its importance in everyday life. - with diagram",
+          "competence": "Read texts for comprehension"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Read texts for comprehension",
+          "text": "Define 'Read texts for comprehension' and discuss its importance in everyday life.",
+          "competence": "Read texts for comprehension"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Read texts for comprehension",
+          "text": "Explain the relationship between 'Read texts for comprehension' and its environment. - with example",
+          "competence": "Read texts for comprehension"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore strategies for deriving meanings of words from given texts (e.g., contextual guessin",
+          "text": "Describe the main features of 'Explore strategies for deriving meanings of words from given texts (e.g., contextual guessin'. - locally",
+          "competence": "Explore strategies for deriving meanings of words from given"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Read texts for comprehension",
+          "text": "Evaluate the role of 'Read texts for comprehension' in national development. - with example",
+          "competence": "Read texts for comprehension"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Read texts for comprehension",
+          "text": "Describe the process of 'Read texts for comprehension' step by step. - locally",
+          "competence": "Read texts for comprehension"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Read texts for comprehension",
+          "text": "Describe the main features of 'Read texts for comprehension'.",
+          "competence": "Read texts for comprehension"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore strategies for deriving meanings of words from given texts (e.g., contextual guessin",
+          "text": "Describe the process of 'Explore strategies for deriving meanings of words from given texts (e.g., contextual guessin' step by step. - with diagram",
+          "competence": "Explore strategies for deriving meanings of words from given"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore strategies for deriving meanings of words from given texts (e.g., contextual guessin",
+    "Read texts for comprehension"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

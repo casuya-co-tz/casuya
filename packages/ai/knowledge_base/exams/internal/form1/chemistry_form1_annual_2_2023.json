@@ -1,0 +1,289 @@
+{
+  "filename": "chemistry_form1_annual_2_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2023",
+  "time": "3:00 Hours",
+  "title": "Chemistry - Annual Exam 2 (FORM1 2023)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 161,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts' in Tanzania and propose solutions. - with diagram",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+          "text": "Examine the advantages and disadvantages of 'Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol'.",
+          "competence": "Explore the basic tenets of Organic Chemistry (organic compo"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
+          "text": "Compare and contrast 'Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal' with related concepts. - with diagram",
+          "competence": "Explain the concept of the periodic table (1st 20 elements i"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Explain the concept of 'Design and carry out a project in Chemistry' with examples relevant to Tanzania. - with example",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Describe the main features of 'Use the electronic configuration of an element to locate their positions in the periodic table'. - with example",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+          "text": "Define 'Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons' and discuss its importance in everyday life. - with diagram",
+          "competence": "Appreciate the applications of gas laws in daily life such a"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+          "text": "Outline the procedures involved in 'Investigate the composition of chemical species in substances using systematic qualitative analysis'. - with diagram",
+          "competence": "Investigate the composition of chemical species in substance"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Discuss the challenges facing 'Use different atomic theories to determine the electronic configuration of elements with different properties' in Tanzania and propose solutions. - with example",
+          "competence": "Use different atomic theories to determine the electronic co"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Analyse the causes and effects of 'Describe the concept of matter (physical and chemical changes of matte'. - with diagram",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
+          "text": "Examine the advantages and disadvantages of 'Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste'. - with example",
+          "competence": "Explain the concept of chemical formulae and nomenclature (v"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+          "text": "Explain the concept of 'Use the prepared indicators to test acidity and alkalinity of substances found in the locality' with examples relevant to Tanzania. - with example",
+          "competence": "Use the prepared indicators to test acidity and alkalinity o"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Evaluate the role of '. Demonstrate mastery of concepts, theories and principles in Chemistry' in national development.",
+          "competence": ". Demonstrate mastery of concepts, theories and principles i"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)",
+          "text": "Evaluate the role of 'Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)' in national development.",
+          "competence": "Assess the applications of chemical equilibria in industries"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+          "text": "Outline the procedures involved in 'Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons'.",
+          "competence": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohy"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+          "text": "Compare and contrast 'Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)' with related concepts. - with diagram",
+          "competence": "Describe the concept of two component liquid systems (immisc"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+          "text": "Examine the advantages and disadvantages of 'Describe the extraction of iron from its ore (ores, stages, and methods of extractio'. - with example",
+          "competence": "Describe the extraction of iron from its ore (ores, stages, "
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+          "text": "Compare and contrast 'Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle' with related concepts. - with example",
+          "competence": "Describe the modern concept of atomic structure (Dalton’s at"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain Avogadro’s law in relation to molar quantities",
+          "text": "Examine the advantages and disadvantages of 'Explain Avogadro’s law in relation to molar quantities'.",
+          "competence": "Explain Avogadro’s law in relation to molar quantities"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Prepare acid- base indicators using locally available materials",
+          "text": "Define 'Prepare acid- base indicators using locally available materials' and discuss its importance in everyday life.",
+          "competence": "Prepare acid- base indicators using locally available materi"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+          "text": "Compare and contrast 'Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline' with related concepts. - with diagram",
+          "competence": "Describe the concept of Chemistry (meaning, branches, applic"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
+          "text": "Outline the procedures involved in 'Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols'. - with diagram",
+          "competence": "Demonstrate the local and industrial preparations of aliphat"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use chemical symbols, formulae and equations to represent chemical reaction",
+          "text": "Compare and contrast 'Use chemical symbols, formulae and equations to represent chemical reaction' with related concepts.",
+          "competence": "Use chemical symbols, formulae and equations to represent ch"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concepts of chemical elements (criteria for assigning chemical symbol",
+          "text": "Describe the main features of 'Describe the concepts of chemical elements (criteria for assigning chemical symbol'. - with diagram",
+          "competence": "Describe the concepts of chemical elements (criteria for ass"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Compare and contrast 'Analyse the periodic trends of elements in relation to their physical and chemical properties' with related concepts. - with example",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+          "text": "Analyse the causes and effects of 'Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances'. - with diagram",
+          "competence": "Examine the applications of two component liquid systems in "
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+          "text": "Examine the advantages and disadvantages of 'Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms'. - with diagram",
+          "competence": "Relate the types of chemical reactions with common processes"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)'. - with diagram",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Conduct synthesis of selected organic compounds",
+          "text": "Define 'Conduct synthesis of selected organic compounds' and discuss its importance in everyday life.",
+          "competence": "Conduct synthesis of selected organic compounds"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "Discuss the challenges facing 'Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers' in Tanzania and propose solutions.",
+          "competence": "Describe the concepts of aromatic hydrocarbons, halogen deri"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+    "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+    "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
+    "Design and carry out a project in Chemistry",
+    "Use the electronic configuration of an element to locate their positions in the periodic table",
+    "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+    "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+    "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+    "Use different atomic theories to determine the electronic configuration of elements with different properties",
+    "Describe the concept of matter (physical and chemical changes of matte"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

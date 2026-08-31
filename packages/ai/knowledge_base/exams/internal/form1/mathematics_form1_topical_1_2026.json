@@ -1,0 +1,121 @@
+{
+  "filename": "mathematics_form1_topical_1_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Mathematics - Topical Test 1 (FORM1 2026): Demonstrate basic understanding of ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 47,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "Explain the relationship between 'Demonstrate basic understanding of calculus' and its environment.",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "Compare and contrast 'Demonstrate basic understanding of calculus' with related concepts. - with diagram",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)'. - locally",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Explain the concept of 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)' with examples relevant to Tanzania.",
+          "competence": "Explore the basic tenets of first and second order different"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "Explain the concept of 'Demonstrate basic understanding of calculus' with examples relevant to Tanzania.",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "With examples, illustrate how 'Demonstrate basic understanding of calculus' is applied in the community. - locally",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "What are the characteristics of 'Demonstrate basic understanding of calculus'? - locally",
+          "competence": "Demonstrate basic understanding of calculus"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Explain the relationship between 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)' and its environment. - locally",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "Explain the relationship between 'Demonstrate basic understanding of calculus' and its environment. - locally",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Evaluate the role of 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)' in national development.",
+          "competence": "Explore the basic tenets of first and second order different"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate basic understanding of calculus",
+    "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

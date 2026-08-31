@@ -1,0 +1,121 @@
+{
+  "filename": "physics_form6_topical_5_2023.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Physics - Topical Test 5 (FORM6 2023): Concept of Magnetism",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Concept of Magnetism",
+          "text": "Evaluate the role of 'Concept of Magnetism' in national development.",
+          "competence": "Concept of Magnetism"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Concept of Magnetism",
+          "text": "Assess the impact of 'Concept of Magnetism' on society. - with diagram",
+          "competence": "Concept of Magnetism"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Concept of Magnetism",
+          "text": "With examples, illustrate how 'Concept of Magnetism' is applied in the community. - locally",
+          "competence": "Concept of Magnetism"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Concept of Magnetism",
+          "text": "Examine the advantages and disadvantages of 'Concept of Magnetism'. - locally",
+          "competence": "Concept of Magnetism"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Concept of Magnetism",
+          "text": "Assess the impact of 'Concept of Magnetism' on society. - with diagram",
+          "competence": "Concept of Magnetism"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Concept of Magnetism",
+          "text": "Discuss the factors influencing 'Concept of Magnetism'. - with example",
+          "competence": "Concept of Magnetism"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Concept of Magnetism",
+          "text": "Define 'Concept of Magnetism' and discuss its importance in everyday life. - with example",
+          "competence": "Concept of Magnetism"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Concept of Magnetism",
+          "text": "Explain the concept of 'Concept of Magnetism' with examples relevant to Tanzania.",
+          "competence": "Concept of Magnetism"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept, theories and principles of electrostatics (electric field, electric potential and capacitance)",
+          "text": "Compare and contrast 'Explain the concept, theories and principles of electrostatics (electric field, electric potential and capacitance)' with related concepts. - locally",
+          "competence": "Explain the concept, theories and principles of electrostati"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept, theories and principles of electrostatics (electric field, electric potential and capacitance)",
+          "text": "Discuss the challenges facing 'Explain the concept, theories and principles of electrostatics (electric field, electric potential and capacitance)' in Tanzania and propose solutions.",
+          "competence": "Explain the concept, theories and principles of electrostati"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Concept of Magnetism",
+    "Explain the concept, theories and principles of electrostatics (electric field, electric potential and capacitance)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

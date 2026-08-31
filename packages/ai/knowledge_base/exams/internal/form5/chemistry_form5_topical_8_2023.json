@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form5_topical_8_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 8 (FORM5 2023): Analyse the uses of transition elem",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 47,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Evaluate the role of 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species' in national development.",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Explain the concept of 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' with examples relevant to Tanzania.",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Evaluate the role of 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' in national development. - with example",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Discuss the challenges facing 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species' in Tanzania and propose solutions.",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "With examples, illustrate how 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' is applied in the community. - with example",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Outline the procedures involved in 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species'. - with example",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Explain the concept of 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Explain the concept of 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' with examples relevant to Tanzania.",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Explain the concept of 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species' with examples relevant to Tanzania.",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Discuss the challenges facing 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species' in Tanzania and propose solutions.",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+    "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

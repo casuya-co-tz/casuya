@@ -14,6 +14,7 @@ import * as path from 'path';
 import dotenv from 'dotenv';
 import { CasuyaAI } from './src/casuya-ai';
 import { ProviderType } from './src/types/providers';
+import { getKnowledgeBase } from './src/kb';
 import {
   QuestionType,
   QuestionCategory,
@@ -130,6 +131,15 @@ async function start() {
   const { providers, default: defaultProvider } = buildProviders();
   console.log(`[casuya-ai] Active provider: ${defaultProvider}`);
 
+  const kb = getKnowledgeBase();
+  if (kb.ready) {
+    console.log(
+      `[casuya-ai] Knowledge base ready: ${kb.stats.total} docs (subjects: ${kb.stats.subjects})`,
+    );
+  } else {
+    console.warn(`[casuya-ai] Knowledge base NOT available: ${kb.error?.message || 'unknown'}`);
+  }
+
   const ai = new CasuyaAI({ providers, defaultProvider });
   await ai.initializeProviders(providers, defaultProvider);
 
@@ -179,28 +189,49 @@ async function start() {
           const { question, context, subject_slug, form_level } = body;
           const subjectKey = (subject_slug || '').toLowerCase() as keyof typeof TutoringSubject;
           const subjectValue = TutoringSubject[subjectKey] || TutoringSubject.GENERAL;
-          return safeAsync(
-            async () => {
-              const result = await ai.tutoring.tutor({
-                studentId: 'platform',
-                subject: subjectValue,
-                topic: (context || 'topic').slice(0, 40),
-                mode: TutoringMode.EXPLAIN,
-                message: question,
-                context: { lessonId: undefined, currentConcept: context },
-                preferences: form_level
-                  ? ({ formLevel: form_level } as any)
-                  : undefined,
-              });
-              let msg = result.message;
-              const thinkMatch = msg.match(/<think>[\s\S]*?<\/think>/);
-              if (thinkMatch) {
-                msg = msg.replace(thinkMatch[0], '').trim();
-              }
-              return { response: msg };
-            },
-            { response: `Explanation: ${question}` },
-          );
+          const query = (question || '') + ' ' + (context || '');
+
+          let ragText = '';
+          let ragDocs: { title: string; kind: string; subject: string }[] = [];
+          if (kb.ready) {
+            const rag = kb.buildRagContext(
+              query,
+              { subject: subject_slug || undefined, form: undefined, limit: 3 },
+              Number(process.env.KB_RAG_MAX_CHARS) || 5000,
+            );
+            ragDocs = rag.docs.map((d) => ({ title: d.title, kind: d.kind, subject: d.subject }));
+            if (rag.docs.length && rag.text) {
+              ragText = `\n\n# REFERENCE MATERIAL (from NECTA/TIE knowledge base)\nUse only what is relevant here to ground your answer. If the material doesn't answer the question, say so honestly rather than guessing.\n\n${rag.text}\n# END REFERENCE MATERIAL`;
+            }
+          }
+
+          try {
+            const result = await ai.tutoring.tutor({
+              studentId: 'platform',
+              subject: subjectValue,
+              topic: (context || 'topic').slice(0, 40),
+              mode: TutoringMode.EXPLAIN,
+              message: question + ragText,
+              context: { lessonId: undefined, currentConcept: context },
+              preferences: form_level
+                ? ({ formLevel: form_level } as any)
+                : undefined,
+            });
+            let msg = result.message;
+            const thinkMatch = msg.match(/ thinking[\s\S]*?<\/think>/);
+            if (thinkMatch) {
+              msg = msg.replace(thinkMatch[0], '').trim();
+            }
+            return { response: msg, sourced: !!ragText, kbHits: ragDocs };
+          } catch (err) {
+            console.error('[explain] tutor failed, using KB-grounded fallback:', err);
+            const source = ragDocs[0] && ragDocs[0].title ? ` (based on ${ragDocs[0].title})` : '';
+            return {
+              response: `Explanation: ${question}${source}`,
+              sourced: !!ragText,
+              kbHits: ragDocs,
+            };
+          }
         }
 
         case '/api/content/analyze': {
@@ -259,6 +290,80 @@ async function start() {
             difficulty: body.difficulty || 'medium',
             problem: `A ${body.topic || 'physics'} problem at ${body.difficulty || 'medium'} difficulty.`,
           };
+
+        case '/api/kb/health':
+          return {
+            ready: kb.ready,
+            stats: kb.stats,
+            subjects: kb.subjectCodes,
+            error: kb.error?.message || null,
+          };
+
+        case '/api/kb/search': {
+          const { q, subject, form, year, kind, limit } = body;
+          if (!kb.ready) return { error: 'kb_unavailable', message: kb.error?.message };
+          const hitDocs = kb.search(String(q || ''), {
+            subject: typeof subject === 'string' ? subject : undefined,
+            form: typeof form === 'string' ? form : undefined,
+            year: typeof year === 'string' ? year : undefined,
+            kind: Array.isArray(kind) ? kind : undefined,
+            limit: Number(limit) || 8,
+          });
+          return {
+            hits: hitDocs.map((h) => ({
+              docId: h.docId,
+              title: h.doc.title,
+              kind: h.doc.kind,
+              subject: h.doc.subject,
+              code: h.doc.code,
+              form: h.doc.form,
+              year: h.doc.year,
+              score: h.score,
+              snippet: kb.renderSnippet(h.docId, 200),
+            })),
+          };
+        }
+
+        case '/api/kb/syllabus': {
+          if (!kb.ready) return { error: 'kb_unavailable', message: kb.error?.message };
+          const code = typeof body.code === 'string' ? body.code : body.subject;
+          const doc = kb.lookupSyllabus(String(code || ''));
+          if (!doc) return { error: 'not_found', message: `syllabus not found for ${code}` };
+          return { syllabus: { title: doc.title, ...kb.getDocText(doc.id) ? { content: kb.getDocText(doc.id) } : {} } };
+        }
+
+        case '/api/kb/exams/search': {
+          if (!kb.ready) return { error: 'kb_unavailable', message: kb.error?.message };
+          const { level, subject, year, form, limit } = body;
+          const docs = kb.lookupExam({
+            level: typeof level === 'string' ? level : undefined,
+            subject: typeof subject === 'string' ? subject : undefined,
+            year: typeof year === 'string' ? year : undefined,
+            form: typeof form === 'string' ? form : undefined,
+          });
+          return {
+            total: docs.length,
+            exams: docs.slice(0, Number(limit) || 20).map((d) => ({
+              docId: d.id,
+              title: d.title,
+              subject: d.subject,
+              level: d.level,
+              form: d.form,
+              year: d.year,
+              file: d.file,
+            })),
+          };
+        }
+
+        case '/api/kb/exams/detail': {
+          if (!kb.ready) return { error: 'kb_unavailable', message: kb.error?.message };
+          const id = Number(body.docId || body.id);
+          if (!Number.isFinite(id)) return { error: 'bad_request', message: 'docId required' };
+          const text = kb.getDocText(id);
+          const doc = kb.getDoc(id);
+          if (!doc || text == null) return { error: 'not_found', message: `doc ${id} not found` };
+          return { doc: { title: doc.title, kind: doc.kind, subject: doc.subject, level: doc.level }, content: text };
+        }
 
         default:
           return { error: 'not_found', path: url };

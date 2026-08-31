@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form3_midterm2_3_2026.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 2 Exam 3 (FORM3 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 77,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Insurance",
+          "text": "Explain the concept of 'Insurance' with examples relevant to Tanzania. - with example",
+          "competence": "Insurance"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain communication",
+          "text": "Compare and contrast 'Explain communication' with related concepts.",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Taxation",
+          "text": "Outline the procedures involved in 'Taxation'. - with diagram",
+          "competence": "Taxation"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Sole Proprietorship",
+          "text": "Compare and contrast 'Sole Proprietorship' with related concepts.",
+          "competence": "Sole Proprietorship"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain aids to trade",
+          "text": "Analyse the causes and effects of 'Explain aids to trade'. - with example",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain insurance",
+          "text": "Define 'Explain insurance' and discuss its importance in everyday life.",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Aids to Trade",
+          "text": "With examples, illustrate how 'Aids to Trade' is applied in the community.",
+          "competence": "Aids to Trade"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain companies",
+          "text": "Analyse the causes and effects of 'Explain companies'. - with diagram",
+          "competence": "Explain companies"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Transport",
+          "text": "Analyse the causes and effects of 'Transport'. - with example",
+          "competence": "Transport"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Market and Marketing",
+          "text": "Explain the concept of 'Market and Marketing' with examples relevant to Tanzania.",
+          "competence": "Market and Marketing"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain transport",
+          "text": "Explain the concept of 'Explain transport' with examples relevant to Tanzania. - with example",
+          "competence": "Explain transport"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Marketing Mix",
+          "text": "Analyse the causes and effects of 'Marketing Mix'. - with diagram",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain advertisement",
+          "text": "Evaluate the role of 'Explain advertisement' in national development. - with diagram",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Production",
+          "text": "Analyse the causes and effects of 'Production'. - with example",
+          "competence": "Production"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Concept of Commerce",
+          "text": "Describe the main features of 'Concept of Commerce'. - with example",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain documentation",
+          "text": "Examine the advantages and disadvantages of 'Explain documentation'.",
+          "competence": "Explain documentation"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Stock Control",
+          "text": "With examples, illustrate how 'Stock Control' is applied in the community. - with diagram",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain trade",
+          "text": "Outline the procedures involved in 'Explain trade'. - with example",
+          "competence": "Explain trade"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain warehousing",
+          "text": "Analyse the causes and effects of 'Explain warehousing'. - with example",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Partnership",
+          "text": "Compare and contrast 'Partnership' with related concepts. - with diagram",
+          "competence": "Partnership"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Insurance",
+    "Explain communication",
+    "Taxation",
+    "Sole Proprietorship",
+    "Explain aids to trade",
+    "Explain insurance",
+    "Aids to Trade",
+    "Explain companies",
+    "Transport",
+    "Market and Marketing"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

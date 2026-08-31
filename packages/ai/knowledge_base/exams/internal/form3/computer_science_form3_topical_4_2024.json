@@ -1,0 +1,121 @@
+{
+  "filename": "computer_science_form3_topical_4_2024.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Computer Science - Topical Test 4 (FORM3 2024): Explain document creation",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 45,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain document creation",
+          "text": "Describe the main features of 'Explain document creation'.",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain document creation",
+          "text": "Evaluate the role of 'Explain document creation' in national development.",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain document creation",
+          "text": "Define 'Explain document creation' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Database Concepts",
+          "text": "Evaluate the role of 'Database Concepts' in national development.",
+          "competence": "Database Concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain document creation",
+          "text": "Evaluate the role of 'Explain document creation' in national development. - with diagram",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain document creation",
+          "text": "Explain the concept of 'Explain document creation' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Database Concepts",
+          "text": "Analyse the causes and effects of 'Database Concepts'. - with diagram",
+          "competence": "Database Concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain document creation",
+          "text": "Discuss the challenges facing 'Explain document creation' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Database Concepts",
+          "text": "Define 'Database Concepts' and discuss its importance in everyday life. - with diagram",
+          "competence": "Database Concepts"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Database Concepts",
+          "text": "Evaluate the role of 'Database Concepts' in national development.",
+          "competence": "Database Concepts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain document creation",
+    "Database Concepts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

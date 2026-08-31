@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form4_topical_6_2026.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 6 (FORM4 2026): Demonstrate an advanced understandi",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 37,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Analyse the causes and effects of 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms'.",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Outline the procedures involved in 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms'. - with diagram",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "With examples, illustrate how 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms' is applied in the community.",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry'.",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Evaluate the role of 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry' in national development.",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Describe the main features of 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms'. - with diagram",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Compare and contrast 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry' with related concepts. - with diagram",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Analyse the causes and effects of 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms'. - with example",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Evaluate the role of 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry' in national development. - with example",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Analyse the causes and effects of 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry'. - with example",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+    "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

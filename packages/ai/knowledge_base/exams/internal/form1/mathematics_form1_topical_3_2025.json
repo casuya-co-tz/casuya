@@ -1,0 +1,121 @@
+{
+  "filename": "mathematics_form1_topical_3_2025.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Mathematics - Topical Test 3 (FORM1 2025): Explore the basic tenets of first a",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 50,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Discuss the factors influencing 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)'.",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Assess the impact of 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)' on society. - with diagram",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Find the inverses of relations and functions",
+          "text": "With examples, illustrate how 'Find the inverses of relations and functions' is applied in the community. - with example",
+          "competence": "Find the inverses of relations and functions"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Discuss the factors influencing 'Find the inverses of relations and functions'.",
+          "competence": "Find the inverses of relations and functions"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)'.",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Outline the procedures involved in 'Find the inverses of relations and functions'. - with diagram",
+          "competence": "Find the inverses of relations and functions"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Analyse the causes and effects of 'Find the inverses of relations and functions'. - with example",
+          "competence": "Find the inverses of relations and functions"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Outline the procedures involved in 'Find the inverses of relations and functions'. - with example",
+          "competence": "Find the inverses of relations and functions"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Discuss the challenges facing 'Find the inverses of relations and functions' in Tanzania and propose solutions. - locally",
+          "competence": "Find the inverses of relations and functions"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Explain the relationship between 'Find the inverses of relations and functions' and its environment. - with example",
+          "competence": "Find the inverses of relations and functions"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+    "Find the inverses of relations and functions"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,249 @@
+{
+  "filename": "chemistry_form3_terminal_1_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2025",
+  "time": "2:30 Hours",
+  "title": "Chemistry - Terminal Exam 1 (FORM3 2025)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 108,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Explain the concept of 'Design and carry out a project in Chemistry' with examples relevant to Tanzania. - with diagram",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+          "text": "Compare and contrast 'Use the prepared indicators to test acidity and alkalinity of substances found in the locality' with related concepts. - with diagram",
+          "competence": "Use the prepared indicators to test acidity and alkalinity o"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Examine the advantages and disadvantages of 'Discuss the contribution of Chemistry in the development of modern society'. - with diagram",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)",
+          "text": "Compare and contrast 'Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)' with related concepts. - with diagram",
+          "competence": "Assess the applications of chemical equilibria in industries"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts' in Tanzania and propose solutions. - with diagram",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+          "text": "Evaluate the role of 'Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle' in national development. - with example",
+          "competence": "Describe the modern concept of atomic structure (Dalton’s at"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Compare and contrast 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)' with related concepts.",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+          "text": "Describe the main features of 'Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)'. - with diagram",
+          "competence": "Describe the concept of two component liquid systems (immisc"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Prepare acid- base indicators using locally available materials",
+          "text": "Define 'Prepare acid- base indicators using locally available materials' and discuss its importance in everyday life. - with example",
+          "competence": "Prepare acid- base indicators using locally available materi"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "and mixtures (types of solution and separation of mixture",
+          "text": "Explain the concept of 'and mixtures (types of solution and separation of mixture' with examples relevant to Tanzania. - with diagram",
+          "competence": "and mixtures (types of solution and separation of mixture"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+          "text": "Analyse the causes and effects of 'Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances'.",
+          "competence": "Examine the applications of two component liquid systems in "
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
+          "text": "Describe the main features of 'Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals'. - with diagram",
+          "competence": "Perform experiments on the applications of electrolysis in c"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+          "text": "Outline the procedures involved in 'Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)'. - with example",
+          "competence": "Describe the physical and chemical properties of transition "
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation",
+          "text": "Outline the procedures involved in 'Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation'.",
+          "competence": "Explain the principles of volumetric analysis (preparation o"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain Avogadro’s law in relation to molar quantities",
+          "text": "With examples, illustrate how 'Explain Avogadro’s law in relation to molar quantities' is applied in the community. - with diagram",
+          "competence": "Explain Avogadro’s law in relation to molar quantities"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "and their applications in daily life",
+          "text": "With examples, illustrate how 'and their applications in daily life' is applied in the community. - with example",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+          "text": "Outline the procedures involved in 'Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software'.",
+          "competence": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+          "text": "Explain the concept of 'Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)' with examples relevant to Tanzania.",
+          "competence": "Describe the concept of colligative properties in understand"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
+          "text": "Define 'Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste' and discuss its importance in everyday life. - with example",
+          "competence": "Explain the concept of chemical formulae and nomenclature (v"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+          "text": "With examples, illustrate how 'Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides' is applied in the community.",
+          "competence": "Examine reactions of aromatic hydrocarbons, phenols, carbony"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+          "text": "Explain the concept of 'Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the mole concept (comparison of the mole with other"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Discuss the challenges facing 'Use different atomic theories to determine the electronic configuration of elements with different properties' in Tanzania and propose solutions.",
+          "competence": "Use different atomic theories to determine the electronic co"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+          "text": "Evaluate the role of 'Describe the concept of gases in terms of the gas laws and the kinetic theory of gases' in national development.",
+          "competence": "Describe the concept of gases in terms of the gas laws and t"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+          "text": "Explain the concept of 'Demonstrate an understanding of chemical concepts and principles and their application in different contexts' with examples relevant to Tanzania. - with diagram",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Prepare sulphuric acid from sulphur dioxide",
+          "text": "Compare and contrast 'Prepare sulphuric acid from sulphur dioxide' with related concepts.",
+          "competence": "Prepare sulphuric acid from sulphur dioxide"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Design and carry out a project in Chemistry",
+    "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+    "Discuss the contribution of Chemistry in the development of modern society",
+    "Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)",
+    "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+    "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+    "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+    "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+    "Prepare acid- base indicators using locally available materials",
+    "and mixtures (types of solution and separation of mixture"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

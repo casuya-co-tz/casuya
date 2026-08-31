@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form2_topical_2_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 2 (FORM2 2025): Explore the basic tenets of Organic",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Explain the concept of 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+          "text": "Define 'Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explore the basic tenets of Organic Chemistry (organic compo"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Evaluate the role of 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid' in national development. - with example",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Explain the concept of 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+          "text": "Evaluate the role of 'Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol' in national development.",
+          "competence": "Explore the basic tenets of Organic Chemistry (organic compo"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Examine the advantages and disadvantages of 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid'. - with diagram",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+          "text": "Describe the main features of 'Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol'. - with example",
+          "competence": "Explore the basic tenets of Organic Chemistry (organic compo"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Analyse the causes and effects of 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid'. - with example",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Examine the advantages and disadvantages of 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid'. - with diagram",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Discuss the challenges facing 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid' in Tanzania and propose solutions. - with example",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+    "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

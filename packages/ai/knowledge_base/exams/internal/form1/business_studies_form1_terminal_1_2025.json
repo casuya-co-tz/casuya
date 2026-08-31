@@ -1,0 +1,249 @@
+{
+  "filename": "business_studies_form1_terminal_1_2025.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2025",
+  "time": "2:30 Hours",
+  "title": "Business Studies - Terminal Exam 1 (FORM1 2025)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 95,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Analyse the causes and effects of 'Describe the basic principles of communication and networking for small businesses'. - with diagram",
+          "competence": "Describe the basic principles of communication and networkin"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe taxes and levies associated with medium businesses in Tanzania",
+          "text": "Define 'Describe taxes and levies associated with medium businesses in Tanzania' and discuss its importance in everyday life.",
+          "competence": "Describe taxes and levies associated with medium businesses "
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe procedures for registering medium businesses in Tanzania (types of licences, importance of registration and sanctions for non- compliance)",
+          "text": "Explain the relationship between 'Describe procedures for registering medium businesses in Tanzania (types of licences, importance of registration and sanctions for non- compliance)' and its environment. - with example",
+          "competence": "Describe procedures for registering medium businesses in Tan"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Define 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of basic business ethics",
+          "text": "Explain the relationship between 'Demonstrate mastery of basic business ethics' and its environment. - with diagram",
+          "competence": "Demonstrate mastery of basic business ethics"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+          "text": "Analyse the causes and effects of 'Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend'. - locally",
+          "competence": "Describe sources of capital for small businesses (loans, sav"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Learning activities",
+          "text": "Compare and contrast 'Learning activities' with related concepts. - with diagram",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin",
+          "text": "Evaluate the role of 'Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin' in national development. - with example",
+          "competence": "Develop a plan for a small business identified from the oppo"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Prepare a medium scale business plan",
+          "text": "Assess the impact of 'Prepare a medium scale business plan' on society. - with example",
+          "competence": "Prepare a medium scale business plan"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+          "text": "How does 'Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function' relate to sustainable development? - locally",
+          "competence": "Describe the basic aspects of warehousing and inventorying f"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the concept and scope of business studies, and its relationship with other disciplines",
+          "text": "Assess the impact of 'Describe the concept and scope of business studies, and its relationship with other disciplines' on society. - with diagram",
+          "competence": "Describe the concept and scope of business studies, and its "
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Propose measures to improve 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc' in schools.",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the basic aspects of management for small businesses (meaning, financial and other records keeping, calculation of profit and loss, budgeting and control and administratio",
+          "text": "Evaluate the role of 'Describe the basic aspects of management for small businesses (meaning, financial and other records keeping, calculation of profit and loss, budgeting and control and administratio' in national development.",
+          "competence": "Describe the basic aspects of management for small businesse"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the role of microfinancing and cooperatives in facilitating business formation and operations",
+          "text": "Discuss the challenges facing 'Describe the role of microfinancing and cooperatives in facilitating business formation and operations' in Tanzania and propose solutions.",
+          "competence": "Describe the role of microfinancing and cooperatives in faci"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Apply business theories into practice",
+          "text": "Assess the impact of 'Apply business theories into practice' on society.",
+          "competence": "Apply business theories into practice"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore the basic aspects of the policy and regulatory environment governing small businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-law",
+          "text": "Propose measures to improve 'Explore the basic aspects of the policy and regulatory environment governing small businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-law' in schools.",
+          "competence": "Explore the basic aspects of the policy and regulatory envir"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Identify relevant procedures and practices for buying and selling products within and outside the country",
+          "text": "What are the characteristics of 'Identify relevant procedures and practices for buying and selling products within and outside the country'? - with example",
+          "competence": "Identify relevant procedures and practices for buying and se"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of the policies and laws governing medium scale businesses",
+          "text": "How does 'Demonstrate an understanding of the policies and laws governing medium scale businesses' relate to sustainable development? - with diagram",
+          "competence": "Demonstrate an understanding of the policies and laws govern"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe sole proprietorship (meaning, features, advantages and disadvantages and start-u",
+          "text": "Explain the relationship between 'Describe sole proprietorship (meaning, features, advantages and disadvantages and start-u' and its environment.",
+          "competence": "Describe sole proprietorship (meaning, features, advantages "
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of production (meaning, types, factors and importanc",
+          "text": "Assess the impact of 'Explain the concept of production (meaning, types, factors and importanc' on society.",
+          "competence": "Explain the concept of production (meaning, types, factors a"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate mastery of the basic skills of trading locally and internationally",
+          "text": "Propose measures to improve 'Demonstrate mastery of the basic skills of trading locally and internationally' in schools.",
+          "competence": "Demonstrate mastery of the basic skills of trading locally a"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "How does 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' relate to sustainable development? - with diagram",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "crowd funding and government grants)",
+          "text": "Propose measures to improve 'crowd funding and government grants)' in schools.",
+          "competence": "crowd funding and government grants)"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Assess the impact of 'Use pricing techniques to determine appropriate prices of products' on society. - with example",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)",
+          "text": "Compare and contrast 'Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)' with related concepts.",
+          "competence": "Describe the basic aspects of business environment (stakehol"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the basic principles of communication and networking for small businesses",
+    "Describe taxes and levies associated with medium businesses in Tanzania",
+    "Describe procedures for registering medium businesses in Tanzania (types of licences, importance of registration and sanctions for non- compliance)",
+    "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+    "Demonstrate mastery of basic business ethics",
+    "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+    "Learning activities",
+    "Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin",
+    "Prepare a medium scale business plan",
+    "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

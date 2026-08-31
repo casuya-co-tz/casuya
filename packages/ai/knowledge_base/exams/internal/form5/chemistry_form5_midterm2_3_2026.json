@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form5_midterm2_3_2026.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 2 Exam 3 (FORM5 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 82,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+          "text": "Analyse the causes and effects of 'Explain the changes in the physical and chemical properties of elements across and down the periodic table'.",
+          "competence": "Explain the changes in the physical and chemical properties "
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)",
+          "text": "With examples, illustrate how 'Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)' is applied in the community. - with diagram",
+          "competence": "Investigate the applications of chemical kinetics in industr"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Define 'Demonstrate mastery of concepts, theories and principles in Chemistry' and discuss its importance in everyday life. - with diagram",
+          "competence": "Demonstrate mastery of concepts, theories and principles in "
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform experiments on volumetric analysis",
+          "text": "Explain the concept of 'Perform experiments on volumetric analysis' with examples relevant to Tanzania.",
+          "competence": "Perform experiments on volumetric analysis"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare acid- base indicators using locally available materials",
+          "text": "Describe the main features of 'Prepare acid- base indicators using locally available materials'. - with diagram",
+          "competence": "Prepare acid- base indicators using locally available materi"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+          "text": "Outline the procedures involved in 'Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)'. - with example",
+          "competence": "Describe the concept of two component liquid systems (immisc"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Describe the main features of 'Describe the concept of matter (physical and chemical changes of matte'. - with diagram",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Explain the concept of 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate' with examples relevant to Tanzania. - with example",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+          "text": "Explain the concept of 'Demonstrate an understanding of advanced concepts and principles in organic chemistry' with examples relevant to Tanzania. - with diagram",
+          "competence": "Demonstrate an understanding of advanced concepts and princi"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Prepare sulphuric acid from sulphur dioxide",
+          "text": "Compare and contrast 'Prepare sulphuric acid from sulphur dioxide' with related concepts.",
+          "competence": "Prepare sulphuric acid from sulphur dioxide"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Explain the concept of '. Demonstrate mastery of concepts, theories and principles in Chemistry' with examples relevant to Tanzania. - with diagram",
+          "competence": ". Demonstrate mastery of concepts, theories and principles i"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Discuss the challenges facing 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' in Tanzania and propose solutions.",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Discuss the challenges facing 'Conduct experiments in Chemistry' in Tanzania and propose solutions. - with diagram",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+          "text": "Explain the concept of 'Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the chemical reactions of aliphatic hydrocarbons an"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+          "text": "Examine the advantages and disadvantages of 'Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)'.",
+          "competence": "Explore the periodic trends of elements in the modern period"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Complete and submit for assessment a scientific report of the project started in Form Five",
+          "text": "Analyse the causes and effects of 'Complete and submit for assessment a scientific report of the project started in Form Five'. - with diagram",
+          "competence": "Complete and submit for assessment a scientific report of th"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Conduct synthesis of selected organic compounds",
+          "text": "Examine the advantages and disadvantages of 'Conduct synthesis of selected organic compounds'.",
+          "competence": "Conduct synthesis of selected organic compounds"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Explain the concept of 'Perform experiments on the changes of matter from one state to another' with examples relevant to Tanzania. - with example",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Evaluate the role of 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry' in national development.",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concept of chemical bonding (covalent and electrovalent bondin",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of chemical bonding (covalent and electrovalent bondin'. - with diagram",
+          "competence": "Describe the concept of chemical bonding (covalent and elect"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+    "Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)",
+    "Demonstrate mastery of concepts, theories and principles in Chemistry",
+    "Perform experiments on volumetric analysis",
+    "Prepare acid- base indicators using locally available materials",
+    "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+    "Describe the concept of matter (physical and chemical changes of matte",
+    "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+    "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+    "Prepare sulphuric acid from sulphur dioxide"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

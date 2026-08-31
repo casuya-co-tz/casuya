@@ -1,0 +1,121 @@
+{
+  "filename": "bible_knowledge_form3_topical_4_2024.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Bible Knowledge - Topical Test 4 (FORM3 2024): Describe the history of the biblica",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 33,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept of patriotism as appears in the Book of Joshua",
+          "text": "Explain the concept of 'Explain the concept of patriotism as appears in the Book of Joshua' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain the concept of patriotism as appears in the Book of "
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the history of the biblical Patriarchs",
+          "text": "Compare and contrast 'Describe the history of the biblical Patriarchs' with related concepts. - with diagram",
+          "competence": "Describe the history of the biblical Patriarchs"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the history of the biblical Patriarchs",
+          "text": "Discuss the challenges facing 'Describe the history of the biblical Patriarchs' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the history of the biblical Patriarchs"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the history of the biblical Patriarchs",
+          "text": "Describe the process of 'Describe the history of the biblical Patriarchs' step by step. - with diagram",
+          "competence": "Describe the history of the biblical Patriarchs"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of patriotism as appears in the Book of Joshua",
+          "text": "Define 'Explain the concept of patriotism as appears in the Book of Joshua' and discuss its importance in everyday life. - with example",
+          "competence": "Explain the concept of patriotism as appears in the Book of "
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the history of the biblical Patriarchs",
+          "text": "Assess the impact of 'Describe the history of the biblical Patriarchs' on society.",
+          "competence": "Describe the history of the biblical Patriarchs"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain the concept of patriotism as appears in the Book of Joshua",
+          "text": "Propose measures to improve 'Explain the concept of patriotism as appears in the Book of Joshua' in schools. - with example",
+          "competence": "Explain the concept of patriotism as appears in the Book of "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain the concept of patriotism as appears in the Book of Joshua",
+          "text": "Compare and contrast 'Explain the concept of patriotism as appears in the Book of Joshua' with related concepts.",
+          "competence": "Explain the concept of patriotism as appears in the Book of "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of patriotism as appears in the Book of Joshua",
+          "text": "With examples, illustrate how 'Explain the concept of patriotism as appears in the Book of Joshua' is applied in the community. - with example",
+          "competence": "Explain the concept of patriotism as appears in the Book of "
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept of patriotism as appears in the Book of Joshua",
+          "text": "Describe the main features of 'Explain the concept of patriotism as appears in the Book of Joshua'.",
+          "competence": "Explain the concept of patriotism as appears in the Book of "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of patriotism as appears in the Book of Joshua",
+    "Describe the history of the biblical Patriarchs"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

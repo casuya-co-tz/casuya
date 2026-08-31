@@ -1,0 +1,249 @@
+{
+  "filename": "mathematics_form6_terminal_2_2023.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Mathematics - Terminal Exam 2 (FORM6 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 103,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+          "text": "Examine the advantages and disadvantages of 'Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)'.",
+          "competence": "Explore the basic tenets of complex numbers (modulus, argume"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "text": "Outline the procedures involved in 'Demonstrate an advanced understanding of statistics'. - with diagram",
+          "competence": "Demonstrate an advanced understanding of statistics"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+          "text": "What are the characteristics of 'Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)'? - locally",
+          "competence": "Explore advanced tenets of vectors (ratio theorems, dot prod"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "Discuss the challenges facing 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)' in Tanzania and propose solutions. - with example",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Define 'Convert repeating/ recurring decimals into fractions and vice versa' and discuss its importance in everyday life. - locally",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Represent two sets in a Venn diagram",
+          "text": "Discuss the challenges facing 'Represent two sets in a Venn diagram' in Tanzania and propose solutions.",
+          "competence": "Represent two sets in a Venn diagram"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Determine trigonometric ratios of angles and special angles",
+          "text": "What are the characteristics of 'Determine trigonometric ratios of angles and special angles'? - locally",
+          "competence": "Determine trigonometric ratios of angles and special angles"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "Discuss the factors influencing 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)'.",
+          "competence": "Use differential equations to solve real life problems relat"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Calculate arithmetic mean, geometric mean, and compound interest",
+          "text": "What are the characteristics of 'Calculate arithmetic mean, geometric mean, and compound interest'?",
+          "competence": "Calculate arithmetic mean, geometric mean, and compound inte"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Explain the relationship between 'Explain the concept of ratios and proportions' and its environment.",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "text": "Explain the concept of 'Demonstrate an advanced understanding of algebra' with examples relevant to Tanzania.",
+          "competence": "Demonstrate an advanced understanding of algebra"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
+          "text": "Discuss the factors influencing 'Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set'.",
+          "competence": "Distinguish among different types of sets (universal set, eq"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the concept of rational, irrational, and real numbers",
+          "text": "How does 'Explain the concept of rational, irrational, and real numbers' relate to sustainable development?",
+          "competence": "Explain the concept of rational, irrational, and real number"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+          "text": "Propose measures to improve 'Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde' in schools. - with example",
+          "competence": "Identify and use laws of exponents involving positive, negat"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Draw graphs of relations and functions",
+          "text": "Examine the advantages and disadvantages of 'Draw graphs of relations and functions'. - locally",
+          "competence": "Draw graphs of relations and functions"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "Outline the procedures involved in 'Describe the concepts of geometry (similarities and congruenc'.",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "With examples, illustrate how 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc' is applied in the community.",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use knowledge of sets to organise, create, and categorise objects",
+          "text": "Compare and contrast 'Use knowledge of sets to organise, create, and categorise objects' with related concepts. - with example",
+          "competence": "Use knowledge of sets to organise, create, and categorise ob"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concepts of rates and variations",
+          "text": "Propose measures to improve 'Describe the concepts of rates and variations' in schools. - locally",
+          "competence": "Describe the concepts of rates and variations"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use logic to analyse arguments and construct circuit diagrams",
+          "text": "Propose measures to improve 'Use logic to analyse arguments and construct circuit diagrams' in schools. - with diagram",
+          "competence": "Use logic to analyse arguments and construct circuit diagram"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of inequalities and absolute values of real numbers",
+          "text": "Discuss the challenges facing 'Explain the concept of inequalities and absolute values of real numbers' in Tanzania and propose solutions.",
+          "competence": "Explain the concept of inequalities and absolute values of r"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "Discuss the factors influencing 'Use geometry, approximations, relations and functions in various contexts'.",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Derive and use compound angles to solve problems",
+          "text": "Discuss the factors influencing 'Derive and use compound angles to solve problems'.",
+          "competence": "Derive and use compound angles to solve problems"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+          "text": "Explain the relationship between 'Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs' and its environment.",
+          "competence": "Find the general term for AP and GP and use them to derive f"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+          "text": "With examples, illustrate how 'Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic' is applied in the community.",
+          "competence": "Explore advanced tenets of algebra (series of squares and cu"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+    "Demonstrate an advanced understanding of statistics",
+    "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+    "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+    "Convert repeating/ recurring decimals into fractions and vice versa",
+    "Represent two sets in a Venn diagram",
+    "Determine trigonometric ratios of angles and special angles",
+    "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+    "Calculate arithmetic mean, geometric mean, and compound interest",
+    "Explain the concept of ratios and proportions"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

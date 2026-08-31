@@ -1,0 +1,289 @@
+{
+  "filename": "english_language_form6_annual_2_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2025",
+  "time": "3:00 Hours",
+  "title": "English Language - Annual Exam 2 (FORM6 2025)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 139,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Critique selected poems and plays based on form and content",
+          "text": "Explain the concept of 'Critique selected poems and plays based on form and content' with examples relevant to Tanzania. - with example",
+          "competence": "Critique selected poems and plays based on form and content"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Respond to oral messages from different contexts",
+          "text": "Discuss the challenges facing 'Respond to oral messages from different contexts' in Tanzania and propose solutions. - with diagram",
+          "competence": "Respond to oral messages from different contexts"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Read a variety of functional texts (e.g., recipes, product manuals, transport schedules, forms, brochures, and menu",
+          "text": "Evaluate the role of 'Read a variety of functional texts (e.g., recipes, product manuals, transport schedules, forms, brochures, and menu' in national development. - with example",
+          "competence": "Read a variety of functional texts (e.g., recipes, product m"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Compile information searched from various sources",
+          "text": "Discuss the challenges facing 'Compile information searched from various sources' in Tanzania and propose solutions. - with example",
+          "competence": "Compile information searched from various sources"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Manage short translation and editing projects using Computer- Assisted Tools",
+          "text": "Describe the process of 'Manage short translation and editing projects using Computer- Assisted Tools' step by step. - locally",
+          "competence": "Manage short translation and editing projects using Computer"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Draw inferences (conclusion",
+          "text": "Examine the advantages and disadvantages of 'Draw inferences (conclusion'. - with example",
+          "competence": "Draw inferences (conclusion"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Employ paralinguistic features to communicate information in a variety of settings",
+          "text": "Propose measures to improve 'Employ paralinguistic features to communicate information in a variety of settings' in schools.",
+          "competence": "Employ paralinguistic features to communicate information in"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Utilise ICT tools to search for general information (e.g., books, journal",
+          "text": "With examples, illustrate how 'Utilise ICT tools to search for general information (e.g., books, journal' is applied in the community. - with example",
+          "competence": "Utilise ICT tools to search for general information (e.g., b"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Develop plans of writing literary works (e.g., characters, themes, setting and plot)",
+          "text": "Examine the advantages and disadvantages of 'Develop plans of writing literary works (e.g., characters, themes, setting and plot)'.",
+          "competence": "Develop plans of writing literary works (e.g., characters, t"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use the principles of editing and proofreading to edit and proofread simple and short texts in a school context (e.g., laboratory rules, announcement",
+          "text": "Outline the procedures involved in 'Use the principles of editing and proofreading to edit and proofread simple and short texts in a school context (e.g., laboratory rules, announcement'. - with diagram",
+          "competence": "Use the principles of editing and proofreading to edit and p"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Prepare and deliver complex speeches on various topics including cross-cutting issues using appropriate vocabulary and grammar (e.g., tenses and cohesive devices)",
+          "text": "Explain the relationship between 'Prepare and deliver complex speeches on various topics including cross-cutting issues using appropriate vocabulary and grammar (e.g., tenses and cohesive devices)' and its environment.",
+          "competence": "Prepare and deliver complex speeches on various topics inclu"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Make a summary of stories",
+          "text": "Evaluate the role of 'Make a summary of stories' in national development.",
+          "competence": "Make a summary of stories"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Read a variety of texts and identifying the contextual clues (e.g., general context, co-text, punctuations) for understanding implied meanings",
+          "text": "Propose measures to improve 'Read a variety of texts and identifying the contextual clues (e.g., general context, co-text, punctuations) for understanding implied meanings' in schools. - locally",
+          "competence": "Read a variety of texts and identifying the contextual clues"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Critique a selected novella based on form and content",
+          "text": "Analyse the causes and effects of 'Critique a selected novella based on form and content'. - with diagram",
+          "competence": "Critique a selected novella based on form and content"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+          "text": "Outline the procedures involved in 'Interpret messages in large formal settings (e.g., church, mosque and meeting'. - locally",
+          "competence": "Interpret messages in large formal settings (e.g., church, m"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the basic principles and methods of editing and proofreading",
+          "text": "Compare and contrast 'Describe the basic principles and methods of editing and proofreading' with related concepts. - with example",
+          "competence": "Describe the basic principles and methods of editing and pro"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use words from conversations and written texts to produce new vocabulary by attaching suffixes and prefixes (e.g., kind-unkind; slow-slowl",
+          "text": "Describe the process of 'Use words from conversations and written texts to produce new vocabulary by attaching suffixes and prefixes (e.g., kind-unkind; slow-slowl' step by step. - with diagram",
+          "competence": "Use words from conversations and written texts to produce ne"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 10,
+          "topic": "(from English to Kiswahili and vice vers",
+          "text": "Examine the advantages and disadvantages of '(from English to Kiswahili and vice vers'. - with example",
+          "competence": "(from English to Kiswahili and vice vers"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Express ideas, opinions and facts in mass communication contexts",
+          "text": "What are the characteristics of 'Express ideas, opinions and facts in mass communication contexts'?",
+          "competence": "Express ideas, opinions and facts in mass communication cont"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Participate in spontaneous and non-spontaneous conversations with people using different dialects of the English language",
+          "text": "With examples, illustrate how 'Participate in spontaneous and non-spontaneous conversations with people using different dialects of the English language' is applied in the community.",
+          "competence": "Participate in spontaneous and non-spontaneous conversations"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use appropriate language and expressions in communicating with people of different age groups and statuses (e.g., peers, elders, family members, leader",
+          "text": "Analyse the causes and effects of 'Use appropriate language and expressions in communicating with people of different age groups and statuses (e.g., peers, elders, family members, leader'. - with diagram",
+          "competence": "Use appropriate language and expressions in communicating wi"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Apply literary skills in developing literary works",
+          "text": "Describe the process of 'Apply literary skills in developing literary works' step by step. - with diagram",
+          "competence": "Apply literary skills in developing literary works"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Recognise words with opposite meanings from conversations and written texts",
+          "text": "Define 'Recognise words with opposite meanings from conversations and written texts' and discuss its importance in everyday life. - locally",
+          "competence": "Recognise words with opposite meanings from conversations an"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Discover the meanings of vocabulary using context, technical dictionary, thesaurus and encyclopaedia",
+          "text": "How does 'Discover the meanings of vocabulary using context, technical dictionary, thesaurus and encyclopaedia' relate to sustainable development?",
+          "competence": "Discover the meanings of vocabulary using context, technical"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Respond appropriately in a variety of oral and written communication contexts",
+          "text": "Explain the relationship between 'Respond appropriately in a variety of oral and written communication contexts' and its environment.",
+          "competence": "Respond appropriately in a variety of oral and written commu"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Recognise the basic principles of editing and proofreading texts (e.g., sentence construction, language clarity, grammar, semantic rules, logical flo",
+          "text": "With examples, illustrate how 'Recognise the basic principles of editing and proofreading texts (e.g., sentence construction, language clarity, grammar, semantic rules, logical flo' is applied in the community. - with example",
+          "competence": "Recognise the basic principles of editing and proofreading t"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use cohesive devices to deliver oral presentations of events (e.g., first of all, moreover, but, however, yet, in contrast, although, otherwise, still, on the contrary, on the other han",
+          "text": "Evaluate the role of 'Use cohesive devices to deliver oral presentations of events (e.g., first of all, moreover, but, however, yet, in contrast, although, otherwise, still, on the contrary, on the other han' in national development.",
+          "competence": "Use cohesive devices to deliver oral presentations of events"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Translate a variety of long texts (from English to Kiswahili and vice vers",
+          "text": "How does 'Translate a variety of long texts (from English to Kiswahili and vice vers' relate to sustainable development?",
+          "competence": "Translate a variety of long texts (from English to Kiswahili"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Evaluate the context in which literary texts are written, read and understood",
+          "text": "Define 'Evaluate the context in which literary texts are written, read and understood' and discuss its importance in everyday life. - with example",
+          "competence": "Evaluate the context in which literary texts are written, re"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Apply principles of editing and proofreading in a variety of texts",
+          "text": "Compare and contrast 'Apply principles of editing and proofreading in a variety of texts' with related concepts.",
+          "competence": "Apply principles of editing and proofreading in a variety of"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Critique selected poems and plays based on form and content",
+    "Respond to oral messages from different contexts",
+    "Read a variety of functional texts (e.g., recipes, product manuals, transport schedules, forms, brochures, and menu",
+    "Compile information searched from various sources",
+    "Manage short translation and editing projects using Computer- Assisted Tools",
+    "Draw inferences (conclusion",
+    "Employ paralinguistic features to communicate information in a variety of settings",
+    "Utilise ICT tools to search for general information (e.g., books, journal",
+    "Develop plans of writing literary works (e.g., characters, themes, setting and plot)",
+    "Use the principles of editing and proofreading to edit and proofread simple and short texts in a school context (e.g., laboratory rules, announcement"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form1_midterm1_2_2024.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 1 Exam 2 (FORM1 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 92,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain culture and tradition",
+          "text": "Examine the advantages and disadvantages of 'Explain culture and tradition'. - with example",
+          "competence": "Explain culture and tradition"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain national symbols",
+          "text": "Discuss the challenges facing 'Explain national symbols' in Tanzania and propose solutions. - with example",
+          "competence": "Explain national symbols"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain elections",
+          "text": "Analyse the causes and effects of 'Explain elections'. - with diagram",
+          "competence": "Explain elections"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain central government",
+          "text": "Evaluate the role of 'Explain central government' in national development. - with diagram",
+          "competence": "Explain central government"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Interpersonal Relationships",
+          "text": "Describe the main features of 'Interpersonal Relationships'. - with example",
+          "competence": "Interpersonal Relationships"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Globalization",
+          "text": "Examine the advantages and disadvantages of 'Globalization'.",
+          "competence": "Globalization"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "National Unity",
+          "text": "Explain the concept of 'National Unity' with examples relevant to Tanzania.",
+          "competence": "National Unity"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "National Symbols",
+          "text": "Explain the concept of 'National Symbols' with examples relevant to Tanzania. - with diagram",
+          "competence": "National Symbols"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain interpersonal relationships",
+          "text": "Analyse the causes and effects of 'Explain interpersonal relationships'.",
+          "competence": "Explain interpersonal relationships"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain globalization",
+          "text": "Compare and contrast 'Explain globalization' with related concepts. - with example",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Central Government",
+          "text": "Analyse the causes and effects of 'Central Government'.",
+          "competence": "Central Government"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain child rights",
+          "text": "Explain the concept of 'Explain child rights' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain child rights"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Citizenship",
+          "text": "Explain the concept of 'Citizenship' with examples relevant to Tanzania. - with diagram",
+          "competence": "Citizenship"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Elections",
+          "text": "With examples, illustrate how 'Elections' is applied in the community. - with example",
+          "competence": "Elections"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain life skills",
+          "text": "Evaluate the role of 'Explain life skills' in national development.",
+          "competence": "Explain life skills"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain citizenship",
+          "text": "Examine the advantages and disadvantages of 'Explain citizenship'. - with example",
+          "competence": "Explain citizenship"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Child Rights",
+          "text": "Evaluate the role of 'Child Rights' in national development. - with diagram",
+          "competence": "Child Rights"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain gender",
+          "text": "Discuss the challenges facing 'Explain gender' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain gender"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Gender",
+          "text": "Discuss the challenges facing 'Gender' in Tanzania and propose solutions. - with example",
+          "competence": "Gender"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain concept of nation",
+          "text": "Evaluate the role of 'Explain concept of nation' in national development. - with diagram",
+          "competence": "Explain concept of nation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain culture and tradition",
+    "Explain national symbols",
+    "Explain elections",
+    "Explain central government",
+    "Interpersonal Relationships",
+    "Globalization",
+    "National Unity",
+    "National Symbols",
+    "Explain interpersonal relationships",
+    "Explain globalization"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

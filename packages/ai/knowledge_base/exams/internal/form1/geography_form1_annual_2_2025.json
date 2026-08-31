@@ -1,0 +1,289 @@
+{
+  "filename": "geography_form1_annual_2_2025.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2025",
+  "time": "3:00 Hours",
+  "title": "Geography - Annual Exam 2 (FORM1 2025)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 146,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Interpret maps and photographs",
+          "text": "Analyse the causes and effects of 'Interpret maps and photographs'. - locally",
+          "competence": "Interpret maps and photographs"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)",
+          "text": "Discuss the challenges facing 'Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the theories (continental drift, Isostacy and plate"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Apply the techniques of photograph interpretation to analyse geographical phenomena",
+          "text": "How does 'Apply the techniques of photograph interpretation to analyse geographical phenomena' relate to sustainable development?",
+          "competence": "Apply the techniques of photograph interpretation to analyse"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+          "text": "Outline the procedures involved in 'Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian'.",
+          "competence": "Describe the Earth (origin, shape, size, position and moveme"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
+          "text": "Outline the procedures involved in 'Explain the concept and scope of Geography (branches, importance and relationship with other discipline'.",
+          "competence": "Explain the concept and scope of Geography (branches, import"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and Earth systems",
+          "text": "Propose measures to improve 'Demonstrate an understanding of the origin and the structure of the Earth and Earth systems' in schools.",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the basic techniques in land surveying",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an understanding of the basic techniques in land surveying'.",
+          "competence": "Demonstrate an understanding of the basic techniques in land"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)",
+          "text": "Explain the relationship between 'Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)' and its environment.",
+          "competence": "Describe the interactions among the major earth systems (atm"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Compare and contrast 'Identify a geographical challenge in society and design a project to address it' with related concepts.",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of rocks and the rock cycle",
+          "text": "Propose measures to improve 'Demonstrate an understanding of rocks and the rock cycle' in schools. - locally",
+          "competence": "Demonstrate an understanding of rocks and the rock cycle"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+          "text": "Compare and contrast 'Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change' with related concepts. - with example",
+          "competence": "Examine the impacts of population distribution on economic a"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain the basic concepts of hydrology (meaning, types and importance)",
+          "text": "Analyse the causes and effects of 'Explain the basic concepts of hydrology (meaning, types and importance)'. - with diagram",
+          "competence": "Explain the basic concepts of hydrology (meaning, types and "
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl",
+          "text": "Outline the procedures involved in 'Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl'. - locally",
+          "competence": "Describe the geographical factors that influence the spatial"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate mastery of research skills in Geography",
+          "text": "Evaluate the role of 'Demonstrate mastery of research skills in Geography' in national development.",
+          "competence": "Demonstrate mastery of research skills in Geography"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen",
+          "text": "Define 'Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen' and discuss its importance in everyday life.",
+          "competence": "Describe the basic principles of photograph interpretation ("
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the basic concept of photograph in Geography (meaning, types, elements and use",
+          "text": "Explain the concept of 'Describe the basic concept of photograph in Geography (meaning, types, elements and use' with examples relevant to Tanzania. - locally",
+          "competence": "Describe the basic concept of photograph in Geography (meani"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Explain the relationship between 'and their major characteristics (location, size/ thickness, density and gross compositio' and its environment.",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the hydrological cycle (Outputs, storages, flows and underground water)",
+          "text": "Compare and contrast 'Describe the hydrological cycle (Outputs, storages, flows and underground water)' with related concepts. - with diagram",
+          "competence": "Describe the hydrological cycle (Outputs, storages, flows an"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of the major features of the Earth surface",
+          "text": "What are the characteristics of 'Demonstrate an understanding of the major features of the Earth surface'? - with diagram",
+          "competence": "Demonstrate an understanding of the major features of the Ea"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the forces responsible for formation of the major relief features of the Earth",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of the forces responsible for formation of the major relief features of the Earth'.",
+          "competence": "Demonstrate an understanding of the forces responsible for f"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+          "text": "Explain the concept of 'Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the relationship between major features of the Eart"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Carry out simple tape/chain surveying",
+          "text": "Compare and contrast 'Carry out simple tape/chain surveying' with related concepts. - with example",
+          "competence": "Carry out simple tape/chain surveying"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)",
+          "text": "With examples, illustrate how 'Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)' is applied in the community.",
+          "competence": "Carry out some Advanced surveying activities (plane table, p"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an Advanced understanding of concepts and theories explaining the structure of the Earth and the interactions of earth systems",
+          "text": "With examples, illustrate how 'Demonstrate an Advanced understanding of concepts and theories explaining the structure of the Earth and the interactions of earth systems' is applied in the community. - with example",
+          "competence": "Demonstrate an Advanced understanding of concepts and theori"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Carry out a project in Geography",
+          "text": "Analyse the causes and effects of 'Carry out a project in Geography'. - with diagram",
+          "competence": "Carry out a project in Geography"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the basics of hydrology and the hydrological cycle",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an understanding of the basics of hydrology and the hydrological cycle'.",
+          "competence": "Demonstrate an understanding of the basics of hydrology and "
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the relationship between geography, environmental health, human settlements and economic activities",
+          "text": "Describe the process of 'Demonstrate an understanding of the relationship between geography, environmental health, human settlements and economic activities' step by step. - with example",
+          "competence": "Demonstrate an understanding of the relationship between geo"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
+          "text": "Discuss the factors influencing 'Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica'. - locally",
+          "competence": "Describe the major climatic regions of the world (tropical, "
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the internal structure of the Earth (crust, mantle, cor",
+          "text": "Explain the concept of 'Describe the internal structure of the Earth (crust, mantle, cor' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the internal structure of the Earth (crust, mantle,"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the external forces (waves, gravitational forces, wind and running water) that shape the Earth’s surface (valleys, gullies, dunes, deltas, flood plains, yardangs, zeugens etc.)",
+          "text": "How does 'Describe the external forces (waves, gravitational forces, wind and running water) that shape the Earth’s surface (valleys, gullies, dunes, deltas, flood plains, yardangs, zeugens etc.)' relate to sustainable development?",
+          "competence": "Describe the external forces (waves, gravitational forces, w"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Interpret maps and photographs",
+    "Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)",
+    "Apply the techniques of photograph interpretation to analyse geographical phenomena",
+    "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+    "Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
+    "Demonstrate an understanding of the origin and the structure of the Earth and Earth systems",
+    "Demonstrate an understanding of the basic techniques in land surveying",
+    "Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)",
+    "Identify a geographical challenge in society and design a project to address it",
+    "Demonstrate an understanding of rocks and the rock cycle"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

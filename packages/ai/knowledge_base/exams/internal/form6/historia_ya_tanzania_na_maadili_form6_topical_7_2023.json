@@ -1,0 +1,121 @@
+{
+  "filename": "historia_ya_tanzania_na_maadili_form6_topical_7_2023.json",
+  "subject": "Historia ya Tanzania na Maadili",
+  "subject_slug": "historia_ya_tanzania_na_maadili",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Historia ya Tanzania na Maadili - Topical Test 7 (FORM6 2023): Kujadili chimbuko la Azimio la Arus",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+          "text": "Describe the main features of 'Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa'. - locally",
+          "competence": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujeng"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kujadili chimbuko la Azimio la Arusha",
+          "text": "Analyse the causes and effects of 'Kujadili chimbuko la Azimio la Arusha'. - locally",
+          "competence": "Kujadili chimbuko la Azimio la Arusha"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kujadili chimbuko la Azimio la Arusha",
+          "text": "How does 'Kujadili chimbuko la Azimio la Arusha' relate to sustainable development? - with diagram",
+          "competence": "Kujadili chimbuko la Azimio la Arusha"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kujadili chimbuko la Azimio la Arusha",
+          "text": "Explain the concept of 'Kujadili chimbuko la Azimio la Arusha' with examples relevant to Tanzania. - with example",
+          "competence": "Kujadili chimbuko la Azimio la Arusha"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kujadili chimbuko la Azimio la Arusha",
+          "text": "What are the characteristics of 'Kujadili chimbuko la Azimio la Arusha'? - with example",
+          "competence": "Kujadili chimbuko la Azimio la Arusha"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kujadili chimbuko la Azimio la Arusha",
+          "text": "Explain the relationship between 'Kujadili chimbuko la Azimio la Arusha' and its environment. - locally",
+          "competence": "Kujadili chimbuko la Azimio la Arusha"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+          "text": "How does 'Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa' relate to sustainable development? - with example",
+          "competence": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujeng"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+          "text": "What are the characteristics of 'Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa'? - with diagram",
+          "competence": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujeng"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+          "text": "Outline the procedures involved in 'Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa'.",
+          "competence": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujeng"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+          "text": "Define 'Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa' and discuss its importance in everyday life. - with diagram",
+          "competence": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujeng"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+    "Kujadili chimbuko la Azimio la Arusha"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

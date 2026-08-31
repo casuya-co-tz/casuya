@@ -1,0 +1,121 @@
+{
+  "filename": "commerce_form1_topical_2_2023.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Commerce - Topical Test 2 (FORM1 2023): Companies",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 50,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain partnership",
+          "text": "Discuss the challenges facing 'Explain partnership' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Companies",
+          "text": "Discuss the challenges facing 'Companies' in Tanzania and propose solutions.",
+          "competence": "Companies"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain partnership",
+          "text": "Evaluate the role of 'Explain partnership' in national development.",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain partnership",
+          "text": "Describe the main features of 'Explain partnership'.",
+          "competence": "Explain partnership"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain partnership",
+          "text": "Outline the procedures involved in 'Explain partnership'. - with example",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain partnership",
+          "text": "Outline the procedures involved in 'Explain partnership'.",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain partnership",
+          "text": "Define 'Explain partnership' and discuss its importance in everyday life. - with example",
+          "competence": "Explain partnership"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Companies",
+          "text": "Compare and contrast 'Companies' with related concepts. - with diagram",
+          "competence": "Companies"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Companies",
+          "text": "Analyse the causes and effects of 'Companies'. - with diagram",
+          "competence": "Companies"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Companies",
+          "text": "Explain the concept of 'Companies' with examples relevant to Tanzania. - with example",
+          "competence": "Companies"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain partnership",
+    "Companies"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

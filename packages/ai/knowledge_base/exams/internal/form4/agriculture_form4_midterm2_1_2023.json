@@ -1,0 +1,209 @@
+{
+  "filename": "agriculture_form4_midterm2_1_2023.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Agriculture - Midterm 2 Exam 1 (FORM4 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 86,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Crop Classification",
+          "text": "Examine the advantages and disadvantages of 'Crop Classification'. - with example",
+          "competence": "Crop Classification"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Concept of Agriculture",
+          "text": "With examples, illustrate how 'Concept of Agriculture' is applied in the community. - with diagram",
+          "competence": "Concept of Agriculture"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain crop production practices",
+          "text": "Evaluate the role of 'Explain crop production practices' in national development.",
+          "competence": "Explain crop production practices"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Branches of Agriculture",
+          "text": "Analyse the causes and effects of 'Branches of Agriculture'.",
+          "competence": "Branches of Agriculture"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain vegetable production",
+          "text": "Analyse the causes and effects of 'Explain vegetable production'. - with diagram",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Soil Conservation",
+          "text": "Compare and contrast 'Soil Conservation' with related concepts. - with diagram",
+          "competence": "Soil Conservation"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain soil formation",
+          "text": "Explain the concept of 'Explain soil formation' with examples relevant to Tanzania.",
+          "competence": "Explain soil formation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain farm records",
+          "text": "With examples, illustrate how 'Explain farm records' is applied in the community. - with diagram",
+          "competence": "Explain farm records"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Farm Records",
+          "text": "Compare and contrast 'Farm Records' with related concepts.",
+          "competence": "Farm Records"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Pasture Establishment",
+          "text": "Compare and contrast 'Pasture Establishment' with related concepts.",
+          "competence": "Pasture Establishment"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Animal Classification",
+          "text": "Compare and contrast 'Animal Classification' with related concepts. - with example",
+          "competence": "Animal Classification"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain concept of agriculture",
+          "text": "Discuss the challenges facing 'Explain concept of agriculture' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain concept of agriculture"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain soil fertility",
+          "text": "Compare and contrast 'Explain soil fertility' with related concepts.",
+          "competence": "Explain soil fertility"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain branches of agriculture",
+          "text": "With examples, illustrate how 'Explain branches of agriculture' is applied in the community. - with example",
+          "competence": "Explain branches of agriculture"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain animal nutrition",
+          "text": "Examine the advantages and disadvantages of 'Explain animal nutrition'. - with example",
+          "competence": "Explain animal nutrition"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain importance of agriculture",
+          "text": "Analyse the causes and effects of 'Explain importance of agriculture'. - with example",
+          "competence": "Explain importance of agriculture"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain farm management",
+          "text": "Explain the concept of 'Explain farm management' with examples relevant to Tanzania. - with example",
+          "competence": "Explain farm management"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Soil Properties",
+          "text": "Discuss the challenges facing 'Soil Properties' in Tanzania and propose solutions.",
+          "competence": "Soil Properties"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Agricultural Marketing",
+          "text": "Analyse the causes and effects of 'Agricultural Marketing'. - with diagram",
+          "competence": "Agricultural Marketing"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Forage Conservation",
+          "text": "With examples, illustrate how 'Forage Conservation' is applied in the community.",
+          "competence": "Forage Conservation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Crop Classification",
+    "Concept of Agriculture",
+    "Explain crop production practices",
+    "Branches of Agriculture",
+    "Explain vegetable production",
+    "Soil Conservation",
+    "Explain soil formation",
+    "Explain farm records",
+    "Farm Records",
+    "Pasture Establishment"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

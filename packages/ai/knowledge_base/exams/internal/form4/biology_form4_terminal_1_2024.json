@@ -1,0 +1,249 @@
+{
+  "filename": "biology_form4_terminal_1_2024.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2024",
+  "time": "2:30 Hours",
+  "title": "Biology - Terminal Exam 1 (FORM4 2024)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 118,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Conduct a project in Biology",
+          "text": "Analyse the causes and effects of 'Conduct a project in Biology'. - with diagram",
+          "competence": "Conduct a project in Biology"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain classification systems and taxonomic rank",
+          "text": "Describe the main features of 'Explain classification systems and taxonomic rank'. - with diagram",
+          "competence": "Explain classification systems and taxonomic rank"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+          "text": "Describe the main features of 'Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)'.",
+          "competence": "Explain growth process in plants (cell cycle, growth pattern"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Evaluate the role of 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline' in national development. - with diagram",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Carry out a biological project work using biological principles",
+          "text": "Outline the procedures involved in 'Carry out a biological project work using biological principles'. - with diagram",
+          "competence": "Carry out a biological project work using biological princip"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+          "text": "Compare and contrast 'Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)' with related concepts. - with example",
+          "competence": "Apply knowledge on binomial nomenclature in different fields"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+          "text": "Examine the advantages and disadvantages of 'Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio'. - with diagram",
+          "competence": "Describe the basic skills for conducting biological experime"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Define 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' and discuss its importance in everyday life.",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Investigate tropic responses in plants",
+          "text": "Analyse the causes and effects of 'Investigate tropic responses in plants'. - with diagram",
+          "competence": "Investigate tropic responses in plants"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+          "text": "Define 'Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio' and discuss its importance in everyday life.",
+          "competence": "Describe reproduction in plants (concept of reproduction in "
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis",
+          "text": "Outline the procedures involved in 'Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis'. - with diagram",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "Outline the procedures involved in 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system'.",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio",
+          "text": "With examples, illustrate how 'Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio' is applied in the community. - with example",
+          "competence": "Describe the mechanism of regulation in the human body (temp"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "Discuss the challenges facing 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution' in Tanzania and propose solutions. - with example",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+          "text": "Outline the procedures involved in 'Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces'.",
+          "competence": "Describe the mechanism of gaseous exchange in plants (parts "
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+          "text": "With examples, illustrate how 'Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)' is applied in the community. - with example",
+          "competence": "Explain the concept of ecology (methods of studying, biodive"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Evaluate the role of 'Describe a cell (meaning,types, structures and function' in national development.",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Investigate aerobic and anaerobic respiration in living organisms",
+          "text": "Outline the procedures involved in 'Investigate aerobic and anaerobic respiration in living organisms'. - with diagram",
+          "competence": "Investigate aerobic and anaerobic respiration in living orga"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)",
+          "text": "Define 'Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)' and discuss its importance in everyday life. - with example",
+          "competence": "Apply skills used in biological investigation (observation, "
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "Describe the main features of 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)'. - with example",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+          "text": "Outline the procedures involved in 'Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt'. - with diagram",
+          "competence": "Describe reproduction in humans (sexual reproduction in huma"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Investigate the process of nervous coordination (reflex arc and knee jer",
+          "text": "Discuss the challenges facing 'Investigate the process of nervous coordination (reflex arc and knee jer' in Tanzania and propose solutions. - with diagram",
+          "competence": "Investigate the process of nervous coordination (reflex arc "
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "Describe the main features of 'Explain growth process in animals (growth patterns and metamorphosis)'.",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate mastery of scientific biological terminologies'.",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "text": "Compare and contrast 'Describe the physiological, anatomical and ecological processes of living organisms' with related concepts. - with example",
+          "competence": "Describe the physiological, anatomical and ecological proces"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Conduct a project in Biology",
+    "Explain classification systems and taxonomic rank",
+    "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+    "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+    "Carry out a biological project work using biological principles",
+    "Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+    "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+    "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+    "Investigate tropic responses in plants",
+    "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

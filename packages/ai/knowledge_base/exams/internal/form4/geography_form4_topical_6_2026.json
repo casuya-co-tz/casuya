@@ -1,0 +1,121 @@
+{
+  "filename": "geography_form4_topical_6_2026.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Geography - Topical Test 6 (FORM4 2026): Demonstrate an understanding of the",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Evaluate the role of 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' in national development.",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Compare and contrast 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' with related concepts.",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Conduct a project in Geography",
+          "text": "Explain the relationship between 'Conduct a project in Geography' and its environment.",
+          "competence": "Conduct a project in Geography"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Propose measures to improve 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' in schools. - locally",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Define 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' and discuss its importance in everyday life.",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Conduct a project in Geography",
+          "text": "What are the characteristics of 'Conduct a project in Geography'?",
+          "competence": "Conduct a project in Geography"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Conduct a project in Geography",
+          "text": "Explain the relationship between 'Conduct a project in Geography' and its environment.",
+          "competence": "Conduct a project in Geography"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Discuss the factors influencing 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems'. - with example",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Propose measures to improve 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' in schools. - locally",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' is applied in the community.",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+    "Conduct a project in Geography"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

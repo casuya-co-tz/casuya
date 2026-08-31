@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form6_midterm2_4_2024.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 2 Exam 4 (FORM6 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 78,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Draw graphs of relations and functions",
+          "text": "Outline the procedures involved in 'Draw graphs of relations and functions'. - locally",
+          "competence": "Draw graphs of relations and functions"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)",
+          "text": "What are the characteristics of 'Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)'? - locally",
+          "competence": "Explore advanced tenets of functions (polynomials, rational,"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Define 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concepts of rates and variations",
+          "text": "Explain the concept of 'Describe the concepts of rates and variations' with examples relevant to Tanzania.",
+          "competence": "Describe the concepts of rates and variations"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concepts of relations and functions (linear and quadrati",
+          "text": "Define 'Describe the concepts of relations and functions (linear and quadrati' and discuss its importance in everyday life. - locally",
+          "competence": "Describe the concepts of relations and functions (linear and"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Evaluate the role of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' in national development.",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Solve problems on rates and variations",
+          "text": "Outline the procedures involved in 'Solve problems on rates and variations'.",
+          "competence": "Solve problems on rates and variations"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "What are the characteristics of 'Explore advanced tenets of set theory (operations, expressions, and cardinality)'? - with example",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "Describe the main features of 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)'.",
+          "competence": "Use differential equations to solve real life problems relat"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "text": "Define 'Demonstrate an advanced understanding of statistics' and discuss its importance in everyday life.",
+          "competence": "Demonstrate an advanced understanding of statistics"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "Describe the process of 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation' step by step. - with diagram",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the concept of rational, irrational, and real numbers",
+          "text": "Describe the main features of 'Explain the concept of rational, irrational, and real numbers'. - with example",
+          "competence": "Explain the concept of rational, irrational, and real number"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Round off numbers and estimate values of expressions",
+          "text": "Assess the impact of 'Round off numbers and estimate values of expressions' on society. - locally",
+          "competence": "Round off numbers and estimate values of expressions"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
+          "text": "Discuss the factors influencing 'Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set'. - locally",
+          "competence": "Explore the basic tenets of sets (types of sets, subsets, op"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "Describe the main features of 'Perform operations on radicals and rationalize the denominators'.",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+          "text": "Describe the main features of 'Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)'.",
+          "competence": "Explore advanced tenets of vectors (ratio theorems, dot prod"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use ratios and proportions in daily life",
+          "text": "What are the characteristics of 'Use ratios and proportions in daily life'?",
+          "competence": "Use ratios and proportions in daily life"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
+          "text": "Define 'Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio' and discuss its importance in everyday life. - with example",
+          "competence": "Explore the basic tenets of trigonometry (trigonometric rati"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Complete the project started in Form Five and submit the report for assessment",
+          "text": "What are the characteristics of 'Complete the project started in Form Five and submit the report for assessment'?",
+          "competence": "Complete the project started in Form Five and submit the rep"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+          "text": "Evaluate the role of 'Explain the concept of approximations (rounding off, significant figures, and decimal place' in national development. - with diagram",
+          "competence": "Explain the concept of approximations (rounding off, signifi"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Draw graphs of relations and functions",
+    "Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)",
+    "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+    "Describe the concepts of rates and variations",
+    "Describe the concepts of relations and functions (linear and quadrati",
+    "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+    "Solve problems on rates and variations",
+    "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+    "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+    "Demonstrate an advanced understanding of statistics"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

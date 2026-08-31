@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form5_midterm1_3_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 1 Exam 3 (FORM5 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 93,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "text": "Compare and contrast 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table' with related concepts.",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Evaluate the role of 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' in national development. - with example",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Evaluate the role of 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species' in national development. - with diagram",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+          "text": "With examples, illustrate how 'Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)' is applied in the community.",
+          "competence": "Describe the concept of energetics (Heat/enthalpy of reactio"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+          "text": "Explain the concept of 'Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the chemical reactions of aliphatic hydrocarbons an"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Complete and submit a report for the project started in Form Three",
+          "text": "Define 'Complete and submit a report for the project started in Form Three' and discuss its importance in everyday life. - with example",
+          "competence": "Complete and submit a report for the project started in Form"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "Outline the procedures involved in 'Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers'. - with diagram",
+          "competence": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carb"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Evaluate the role of 'Use different atomic theories to determine the electronic configuration of elements with different properties' in national development. - with example",
+          "competence": "Use different atomic theories to determine the electronic co"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+          "text": "Explain the concept of 'Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons' with examples relevant to Tanzania.",
+          "competence": "Appreciate the applications of gas laws in daily life such a"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Outline the procedures involved in 'Use the electronic configuration of an element to locate their positions in the periodic table'. - with example",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Analyse the causes and effects of 'Perform experiments on the changes of matter from one state to another'. - with example",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+          "text": "Compare and contrast 'Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)' with related concepts. - with example",
+          "competence": "Describe the physical and chemical properties of transition "
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+          "text": "Define 'Demonstrate an understanding of advanced concepts and principles in organic chemistry' and discuss its importance in everyday life. - with diagram",
+          "competence": "Demonstrate an understanding of advanced concepts and princi"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table'. - with example",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use chemical symbols, formulae and equations to represent chemical reaction",
+          "text": "Outline the procedures involved in 'Use chemical symbols, formulae and equations to represent chemical reaction'. - with diagram",
+          "competence": "Use chemical symbols, formulae and equations to represent ch"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)",
+          "text": "Analyse the causes and effects of 'Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)'. - with diagram",
+          "competence": "Assess the applications of chemical equilibria in industries"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+          "text": "Describe the main features of 'Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)'. - with example",
+          "competence": "Investigate the applications of electrochemistry in industri"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+          "text": "Outline the procedures involved in 'Describe the concept of gases in terms of the gas laws and the kinetic theory of gases'.",
+          "competence": "Describe the concept of gases in terms of the gas laws and t"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+          "text": "Describe the main features of 'Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)'. - with example",
+          "competence": "Describe the concept of the atom (Dalton’s atomic theory, Bo"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use appropriate software to sketch the set-ups of experiments",
+          "text": "Discuss the challenges facing 'Use appropriate software to sketch the set-ups of experiments' in Tanzania and propose solutions. - with example",
+          "competence": "Use appropriate software to sketch the set-ups of experiment"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+    "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+    "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+    "Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+    "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+    "Complete and submit a report for the project started in Form Three",
+    "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+    "Use different atomic theories to determine the electronic configuration of elements with different properties",
+    "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+    "Use the electronic configuration of an element to locate their positions in the periodic table"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

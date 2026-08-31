@@ -1,0 +1,209 @@
+{
+  "filename": "kiswahili_form2_midterm1_3_2025.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Kiswahili - Midterm 1 Exam 3 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 94,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kusoma matini kwa ufasaha na ufahamu",
+          "text": "Discuss the challenges facing 'Kusoma matini kwa ufasaha na ufahamu' in Tanzania and propose solutions. - with diagram",
+          "competence": "Kusoma matini kwa ufasaha na ufahamu"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kukalimani mazungumzo mbalimbali",
+          "text": "What are the characteristics of 'Kukalimani mazungumzo mbalimbali'?",
+          "competence": "Kukalimani mazungumzo mbalimbali"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutathmini matini za kiufundi zilizohaririwa na wengine",
+          "text": "Examine the advantages and disadvantages of 'Kutathmini matini za kiufundi zilizohaririwa na wengine'.",
+          "competence": "Kutathmini matini za kiufundi zilizohaririwa na wengine"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kuhakiki fani na maudhui katika mashairi",
+          "text": "Propose measures to improve 'Kuhakiki fani na maudhui katika mashairi' in schools. - with example",
+          "competence": "Kuhakiki fani na maudhui katika mashairi"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kutambua chimbuko na asili ya Kiswahili",
+          "text": "What are the characteristics of 'Kutambua chimbuko na asili ya Kiswahili'? - with diagram",
+          "competence": "Kutambua chimbuko na asili ya Kiswahili"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutumia lugha kwa ufasaha katika malumbano ya hoja",
+          "text": "Evaluate the role of 'Kutumia lugha kwa ufasaha katika malumbano ya hoja' in national development. - with example",
+          "competence": "Kutumia lugha kwa ufasaha katika malumbano ya hoja"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kufafanua misingi ya uhakiki wa kazi za fasihi simulizi na fasihi andishi (vipengele vya fani na maudhu",
+          "text": "Explain the concept of 'Kufafanua misingi ya uhakiki wa kazi za fasihi simulizi na fasihi andishi (vipengele vya fani na maudhu' with examples relevant to Tanzania.",
+          "competence": "Kufafanua misingi ya uhakiki wa kazi za fasihi simulizi na f"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sambamba",
+          "text": "Analyse the causes and effects of 'Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sambamba'.",
+          "competence": "Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sa"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kutafsiri matini ndefu sahili",
+          "text": "What are the characteristics of 'Kutafsiri matini ndefu sahili'? - with example",
+          "competence": "Kutafsiri matini ndefu sahili"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kubaini msamiati mpya kutoka katika mazungumzo changamani na kawaida katika miktadha anuai",
+          "text": "How does 'Kubaini msamiati mpya kutoka katika mazungumzo changamani na kawaida katika miktadha anuai' relate to sustainable development?",
+          "competence": "Kubaini msamiati mpya kutoka katika mazungumzo changamani na"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kuzungumza kwa kutumia mitindo mbalimbali ya lugha ya mazungumzo na kwa kuzingatia miktadha, umri, jinsia na uhusiano",
+          "text": "Discuss the challenges facing 'Kuzungumza kwa kutumia mitindo mbalimbali ya lugha ya mazungumzo na kwa kuzingatia miktadha, umri, jinsia na uhusiano' in Tanzania and propose solutions.",
+          "competence": "Kuzungumza kwa kutumia mitindo mbalimbali ya lugha ya mazung"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali",
+          "text": "Examine the advantages and disadvantages of 'Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali'.",
+          "competence": "Kubaini maneno yenye maana za msingi na za ziada katika mati"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kutathmini maendeleo ya fasihi",
+          "text": "Examine the advantages and disadvantages of 'Kutathmini maendeleo ya fasihi'. - with example",
+          "competence": "Kutathmini maendeleo ya fasihi"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kusoma matini ndefu changamani na kuelezea kwa maandishi mawazo makuu yaliyomo kwa kuzingatia stadi za mawasiliano (mf. uwazi, ukamilifu wa hoja, usahihi, muwala, uwekevu na staha",
+          "text": "Assess the impact of 'Kusoma matini ndefu changamani na kuelezea kwa maandishi mawazo makuu yaliyomo kwa kuzingatia stadi za mawasiliano (mf. uwazi, ukamilifu wa hoja, usahihi, muwala, uwekevu na staha' on society.",
+          "competence": "Kusoma matini ndefu changamani na kuelezea kwa maandishi maw"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kutatua changamoto zinazojitokeza katika kutafsiri matini",
+          "text": "Describe the main features of 'Kutatua changamoto zinazojitokeza katika kutafsiri matini'. - with diagram",
+          "competence": "Kutatua changamoto zinazojitokeza katika kutafsiri matini"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kujadili nadharia kuhusu chimbuko na asili ya lugha ya Kiswahili",
+          "text": "Analyse the causes and effects of 'Kujadili nadharia kuhusu chimbuko na asili ya lugha ya Kiswahili'. - locally",
+          "competence": "Kujadili nadharia kuhusu chimbuko na asili ya lugha ya Kiswa"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kutafsiri matini mbalimbali",
+          "text": "Define 'Kutafsiri matini mbalimbali' and discuss its importance in everyday life. - locally",
+          "competence": "Kutafsiri matini mbalimbali"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kutafsiri matini za kawaida kwa mbinu ya tafsiri ya kisemantiki",
+          "text": "Discuss the challenges facing 'Kutafsiri matini za kawaida kwa mbinu ya tafsiri ya kisemantiki' in Tanzania and propose solutions.",
+          "competence": "Kutafsiri matini za kawaida kwa mbinu ya tafsiri ya kisemant"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kuandika barua na makala za magazetini",
+          "text": "Describe the main features of 'Kuandika barua na makala za magazetini'.",
+          "competence": "Kuandika barua na makala za magazetini"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kuhakiki fani na maudhui katika riwaya",
+          "text": "Describe the process of 'Kuhakiki fani na maudhui katika riwaya' step by step.",
+          "competence": "Kuhakiki fani na maudhui katika riwaya"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kusoma matini kwa ufasaha na ufahamu",
+    "Kukalimani mazungumzo mbalimbali",
+    "Kutathmini matini za kiufundi zilizohaririwa na wengine",
+    "Kuhakiki fani na maudhui katika mashairi",
+    "Kutambua chimbuko na asili ya Kiswahili",
+    "Kutumia lugha kwa ufasaha katika malumbano ya hoja",
+    "Kufafanua misingi ya uhakiki wa kazi za fasihi simulizi na fasihi andishi (vipengele vya fani na maudhu",
+    "Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sambamba",
+    "Kutafsiri matini ndefu sahili",
+    "Kubaini msamiati mpya kutoka katika mazungumzo changamani na kawaida katika miktadha anuai"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

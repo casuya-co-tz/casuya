@@ -1,0 +1,121 @@
+{
+  "filename": "agriculture_form2_topical_6_2026.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Agriculture - Topical Test 6 (FORM2 2026): Explain branches of agriculture",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 50,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Importance of Agriculture",
+          "text": "With examples, illustrate how 'Importance of Agriculture' is applied in the community.",
+          "competence": "Importance of Agriculture"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain branches of agriculture",
+          "text": "Discuss the challenges facing 'Explain branches of agriculture' in Tanzania and propose solutions. - with example",
+          "competence": "Explain branches of agriculture"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain branches of agriculture",
+          "text": "Compare and contrast 'Explain branches of agriculture' with related concepts. - with example",
+          "competence": "Explain branches of agriculture"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Importance of Agriculture",
+          "text": "Explain the concept of 'Importance of Agriculture' with examples relevant to Tanzania.",
+          "competence": "Importance of Agriculture"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Importance of Agriculture",
+          "text": "Define 'Importance of Agriculture' and discuss its importance in everyday life. - with example",
+          "competence": "Importance of Agriculture"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Importance of Agriculture",
+          "text": "Discuss the challenges facing 'Importance of Agriculture' in Tanzania and propose solutions.",
+          "competence": "Importance of Agriculture"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain branches of agriculture",
+          "text": "Outline the procedures involved in 'Explain branches of agriculture'.",
+          "competence": "Explain branches of agriculture"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Importance of Agriculture",
+          "text": "Define 'Importance of Agriculture' and discuss its importance in everyday life. - with diagram",
+          "competence": "Importance of Agriculture"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Importance of Agriculture",
+          "text": "Examine the advantages and disadvantages of 'Importance of Agriculture'. - with diagram",
+          "competence": "Importance of Agriculture"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Importance of Agriculture",
+          "text": "With examples, illustrate how 'Importance of Agriculture' is applied in the community. - with diagram",
+          "competence": "Importance of Agriculture"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Importance of Agriculture",
+    "Explain branches of agriculture"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

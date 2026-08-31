@@ -1,0 +1,249 @@
+{
+  "filename": "mathematics_form2_terminal_1_2024.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2024",
+  "time": "2:30 Hours",
+  "title": "Mathematics - Terminal Exam 1 (FORM2 2024)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 103,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Solve problems on rates and variations",
+          "text": "Explain the concept of 'Solve problems on rates and variations' with examples relevant to Tanzania. - with diagram",
+          "competence": "Solve problems on rates and variations"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Evaluate the role of 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)' in national development.",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use ratios and proportions in daily life",
+          "text": "Describe the main features of 'Use ratios and proportions in daily life'. - with example",
+          "competence": "Use ratios and proportions in daily life"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "Discuss the challenges facing 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)' in Tanzania and propose solutions.",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "Evaluate the role of 'Solve simultaneous equations using substitution and elimination methods' in national development.",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "text": "Describe the process of 'Demonstrate an advanced understanding of statistics' step by step. - locally",
+          "competence": "Demonstrate an advanced understanding of statistics"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Describe the process of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' step by step. - with diagram",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "Examine the advantages and disadvantages of 'Use geometry, approximations, relations and functions in various contexts'. - with diagram",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Write numbers in standard form",
+          "text": "Propose measures to improve 'Write numbers in standard form' in schools. - locally",
+          "competence": "Write numbers in standard form"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use knowledge of sets to organise, create, and categorise objects",
+          "text": "Describe the main features of 'Use knowledge of sets to organise, create, and categorise objects'.",
+          "competence": "Use knowledge of sets to organise, create, and categorise ob"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use numerical skills in different contexts",
+          "text": "Explain the relationship between 'Use numerical skills in different contexts' and its environment. - locally",
+          "competence": "Use numerical skills in different contexts"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "What are the characteristics of 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)'? - with diagram",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Find the number of elements in a set",
+          "text": "Propose measures to improve 'Find the number of elements in a set' in schools. - locally",
+          "competence": "Find the number of elements in a set"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "text": "Propose measures to improve 'Demonstrate an advanced understanding of set theory and logic' in schools.",
+          "competence": "Demonstrate an advanced understanding of set theory and logi"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use probability in problem solving",
+          "text": "Assess the impact of 'Use probability in problem solving' on society.",
+          "competence": "Use probability in problem solving"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+          "text": "Propose measures to improve 'Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation' in schools. - locally",
+          "competence": "Explore the basic tenets of coordinate geometry (gradient an"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "How does 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)' relate to sustainable development?",
+          "competence": "Use differential equations to solve real life problems relat"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
+          "text": "With examples, illustrate how 'Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set' is applied in the community.",
+          "competence": "Explore the basic tenets of sets (types of sets, subsets, op"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+          "text": "Explain the concept of 'Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explore basic tenets of differentiation (first principles, p"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concepts of rates and variations",
+          "text": "How does 'Describe the concepts of rates and variations' relate to sustainable development? - with example",
+          "competence": "Describe the concepts of rates and variations"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "Discuss the challenges facing 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)' in Tanzania and propose solutions.",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Calculate arithmetic mean, geometric mean, and compound interest",
+          "text": "Describe the main features of 'Calculate arithmetic mean, geometric mean, and compound interest'. - with example",
+          "competence": "Calculate arithmetic mean, geometric mean, and compound inte"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Find the inverses of relations and functions",
+          "text": "With examples, illustrate how 'Find the inverses of relations and functions' is applied in the community. - locally",
+          "competence": "Find the inverses of relations and functions"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Represent rational numbers on a number line",
+          "text": "Propose measures to improve 'Represent rational numbers on a number line' in schools. - with diagram",
+          "competence": "Represent rational numbers on a number line"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Apply sine and cosine rules to find distances or angles of elevation",
+          "text": "Explain the concept of 'Apply sine and cosine rules to find distances or angles of elevation' with examples relevant to Tanzania. - with example",
+          "competence": "Apply sine and cosine rules to find distances or angles of e"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Solve problems on rates and variations",
+    "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+    "Use ratios and proportions in daily life",
+    "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+    "Solve simultaneous equations using substitution and elimination methods",
+    "Demonstrate an advanced understanding of statistics",
+    "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+    "Use geometry, approximations, relations and functions in various contexts",
+    "Write numbers in standard form",
+    "Use knowledge of sets to organise, create, and categorise objects"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

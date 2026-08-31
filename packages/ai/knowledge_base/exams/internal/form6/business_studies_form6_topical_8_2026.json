@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form6_topical_8_2026.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 8 (FORM6 2026): Apply business theories into practi",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 57,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+          "text": "Outline the procedures involved in 'Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures'. - with diagram",
+          "competence": "Describe some advanced aspects of financing medium businesse"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Apply business theories into practice",
+          "text": "Assess the impact of 'Apply business theories into practice' on society. - locally",
+          "competence": "Apply business theories into practice"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Apply business theories into practice",
+          "text": "Outline the procedures involved in 'Apply business theories into practice'.",
+          "competence": "Apply business theories into practice"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+          "text": "Evaluate the role of 'Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures' in national development. - with diagram",
+          "competence": "Describe some advanced aspects of financing medium businesse"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+          "text": "Describe the process of 'Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures' step by step. - locally",
+          "competence": "Describe some advanced aspects of financing medium businesse"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Apply business theories into practice",
+          "text": "Compare and contrast 'Apply business theories into practice' with related concepts.",
+          "competence": "Apply business theories into practice"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Apply business theories into practice",
+          "text": "Propose measures to improve 'Apply business theories into practice' in schools.",
+          "competence": "Apply business theories into practice"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Apply business theories into practice",
+          "text": "Outline the procedures involved in 'Apply business theories into practice'.",
+          "competence": "Apply business theories into practice"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+          "text": "Describe the main features of 'Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures'.",
+          "competence": "Describe some advanced aspects of financing medium businesse"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Apply business theories into practice",
+          "text": "Assess the impact of 'Apply business theories into practice' on society.",
+          "competence": "Apply business theories into practice"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+    "Apply business theories into practice"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "history_form6_topical_6_2023.json",
+  "subject": "History",
+  "subject_slug": "history",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "History - Topical Test 6 (FORM6 2023): Describe the stages of human evolut",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 51,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the stages of human evolution and their technological Ages",
+          "text": "Outline the procedures involved in 'Describe the stages of human evolution and their technological Ages'. - with diagram",
+          "competence": "Describe the stages of human evolution and their technologic"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the stages of human evolution and their technological Ages",
+          "text": "Evaluate the role of 'Describe the stages of human evolution and their technological Ages' in national development.",
+          "competence": "Describe the stages of human evolution and their technologic"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the concept of History and sources of historical information",
+          "text": "Compare and contrast 'Demonstrate an understanding of the concept of History and sources of historical information' with related concepts. - with example",
+          "competence": "Demonstrate an understanding of the concept of History and s"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the concept of History and sources of historical information",
+          "text": "Compare and contrast 'Demonstrate an understanding of the concept of History and sources of historical information' with related concepts.",
+          "competence": "Demonstrate an understanding of the concept of History and s"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the stages of human evolution and their technological Ages",
+          "text": "Explain the relationship between 'Describe the stages of human evolution and their technological Ages' and its environment. - with example",
+          "competence": "Describe the stages of human evolution and their technologic"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the concept of History and sources of historical information",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of the concept of History and sources of historical information' in Tanzania and propose solutions. - with diagram",
+          "competence": "Demonstrate an understanding of the concept of History and s"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of the concept of History and sources of historical information",
+          "text": "Propose measures to improve 'Demonstrate an understanding of the concept of History and sources of historical information' in schools.",
+          "competence": "Demonstrate an understanding of the concept of History and s"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the stages of human evolution and their technological Ages",
+          "text": "Explain the relationship between 'Describe the stages of human evolution and their technological Ages' and its environment.",
+          "competence": "Describe the stages of human evolution and their technologic"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the concept of History and sources of historical information",
+          "text": "What are the characteristics of 'Demonstrate an understanding of the concept of History and sources of historical information'?",
+          "competence": "Demonstrate an understanding of the concept of History and s"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the stages of human evolution and their technological Ages",
+          "text": "Discuss the factors influencing 'Describe the stages of human evolution and their technological Ages'. - with example",
+          "competence": "Describe the stages of human evolution and their technologic"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the stages of human evolution and their technological Ages",
+    "Demonstrate an understanding of the concept of History and sources of historical information"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

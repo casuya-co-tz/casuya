@@ -1,0 +1,121 @@
+{
+  "filename": "agriculture_form1_topical_5_2023.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Agriculture - Topical Test 5 (FORM1 2023): Explain branches of agriculture",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 32,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain branches of agriculture",
+          "text": "Discuss the challenges facing 'Explain branches of agriculture' in Tanzania and propose solutions.",
+          "competence": "Explain branches of agriculture"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain vegetable production",
+          "text": "Discuss the challenges facing 'Explain vegetable production' in Tanzania and propose solutions.",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain vegetable production",
+          "text": "Define 'Explain vegetable production' and discuss its importance in everyday life. - with example",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain vegetable production",
+          "text": "Compare and contrast 'Explain vegetable production' with related concepts. - with example",
+          "competence": "Explain vegetable production"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain branches of agriculture",
+          "text": "Discuss the challenges facing 'Explain branches of agriculture' in Tanzania and propose solutions.",
+          "competence": "Explain branches of agriculture"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain vegetable production",
+          "text": "Evaluate the role of 'Explain vegetable production' in national development.",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain vegetable production",
+          "text": "Compare and contrast 'Explain vegetable production' with related concepts.",
+          "competence": "Explain vegetable production"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain vegetable production",
+          "text": "Describe the main features of 'Explain vegetable production'.",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain vegetable production",
+          "text": "Outline the procedures involved in 'Explain vegetable production'.",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain vegetable production",
+          "text": "Evaluate the role of 'Explain vegetable production' in national development. - with example",
+          "competence": "Explain vegetable production"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain branches of agriculture",
+    "Explain vegetable production"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,249 @@
+{
+  "filename": "mathematics_form2_terminal_2_2023.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Mathematics - Terminal Exam 2 (FORM2 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 106,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio'.",
+          "competence": "Explore the basic tenets of trigonometry (trigonometric rati"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Round off numbers and estimate values of expressions",
+          "text": "With examples, illustrate how 'Round off numbers and estimate values of expressions' is applied in the community.",
+          "competence": "Round off numbers and estimate values of expressions"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+          "text": "Analyse the causes and effects of 'Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic'.",
+          "competence": "Explore advanced tenets of algebra (series of squares and cu"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+          "text": "Analyse the causes and effects of 'and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)'. - locally",
+          "competence": "and rational inequalities, 3x3 matrices, partial fractions, "
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Apply sine and cosine rules to find distances or angles of elevation",
+          "text": "Explain the concept of 'Apply sine and cosine rules to find distances or angles of elevation' with examples relevant to Tanzania. - locally",
+          "competence": "Apply sine and cosine rules to find distances or angles of e"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Assess the impact of 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic' on society.",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Determine trigonometric ratios of angles and special angles",
+          "text": "Describe the main features of 'Determine trigonometric ratios of angles and special angles'.",
+          "competence": "Determine trigonometric ratios of angles and special angles"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Find the gradient/ slope of a line",
+          "text": "Evaluate the role of 'Find the gradient/ slope of a line' in national development.",
+          "competence": "Find the gradient/ slope of a line"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Solve problems on rates and variations",
+          "text": "Evaluate the role of 'Solve problems on rates and variations' in national development. - with diagram",
+          "competence": "Solve problems on rates and variations"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use probability in problem solving",
+          "text": "Define 'Use probability in problem solving' and discuss its importance in everyday life.",
+          "competence": "Use probability in problem solving"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)'.",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+          "text": "Assess the impact of 'Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs' on society. - with diagram",
+          "competence": "Find the general term for AP and GP and use them to derive f"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow",
+          "text": "With examples, illustrate how 'Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow' is applied in the community. - locally",
+          "competence": "Explore the basic tenets of algebra (algebraic expressions a"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "Describe the main features of 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)'.",
+          "competence": "Use differential equations to solve real life problems relat"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use algebra and matrices in problem solving",
+          "text": "Evaluate the role of 'Use algebra and matrices in problem solving' in national development. - locally",
+          "competence": "Use algebra and matrices in problem solving"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Determine the equation of a straight line and draw its graph",
+          "text": "Outline the procedures involved in 'Determine the equation of a straight line and draw its graph'.",
+          "competence": "Determine the equation of a straight line and draw its graph"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)",
+          "text": "Assess the impact of 'Explore advanced tenets of functions (polynomials, rational, composite, exponential, and logarithmic)' on society.",
+          "competence": "Explore advanced tenets of functions (polynomials, rational,"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Carry out a project to solve a problem using mathematical skills",
+          "text": "Assess the impact of 'Carry out a project to solve a problem using mathematical skills' on society. - locally",
+          "competence": "Carry out a project to solve a problem using mathematical sk"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Examine the advantages and disadvantages of 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)'.",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "Describe the process of 'Use geometry, approximations, relations and functions in various contexts' step by step.",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Explain the concept of 'Explain the concept of ratios and proportions' with examples relevant to Tanzania. - with example",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Derive and use compound angles to solve problems",
+          "text": "Explain the concept of 'Derive and use compound angles to solve problems' with examples relevant to Tanzania. - with diagram",
+          "competence": "Derive and use compound angles to solve problems"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use sets, sequences and series in problem solving",
+          "text": "Propose measures to improve 'Use sets, sequences and series in problem solving' in schools. - with example",
+          "competence": "Use sets, sequences and series in problem solving"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation' in Tanzania and propose solutions.",
+          "competence": "Explore the basic tenets of coordinate geometry (gradient an"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use knowledge of sets to organise, create, and categorise objects",
+          "text": "Describe the process of 'Use knowledge of sets to organise, create, and categorise objects' step by step. - with example",
+          "competence": "Use knowledge of sets to organise, create, and categorise ob"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
+    "Round off numbers and estimate values of expressions",
+    "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+    "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+    "Apply sine and cosine rules to find distances or angles of elevation",
+    "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+    "Determine trigonometric ratios of angles and special angles",
+    "Find the gradient/ slope of a line",
+    "Solve problems on rates and variations",
+    "Use probability in problem solving"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

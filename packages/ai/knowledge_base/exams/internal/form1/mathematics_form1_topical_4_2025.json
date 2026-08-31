@@ -1,0 +1,121 @@
+{
+  "filename": "mathematics_form1_topical_4_2025.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Mathematics - Topical Test 4 (FORM1 2025): Explore advanced tenets of set theo",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 37,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Compare and contrast 'Explore advanced tenets of set theory (operations, expressions, and cardinality)' with related concepts. - with example",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Describe the main features of 'Explore advanced tenets of set theory (operations, expressions, and cardinality)'.",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Solve linear simultaneous equations graphically",
+          "text": "Discuss the factors influencing 'Solve linear simultaneous equations graphically'. - with example",
+          "competence": "Solve linear simultaneous equations graphically"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Solve linear simultaneous equations graphically",
+          "text": "Describe the process of 'Solve linear simultaneous equations graphically' step by step. - with example",
+          "competence": "Solve linear simultaneous equations graphically"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Examine the advantages and disadvantages of 'Explore advanced tenets of set theory (operations, expressions, and cardinality)'.",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Discuss the factors influencing 'Explore advanced tenets of set theory (operations, expressions, and cardinality)'. - with diagram",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Assess the impact of 'Explore advanced tenets of set theory (operations, expressions, and cardinality)' on society.",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Assess the impact of 'Explore advanced tenets of set theory (operations, expressions, and cardinality)' on society.",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Describe the main features of 'Explore advanced tenets of set theory (operations, expressions, and cardinality)'.",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Solve linear simultaneous equations graphically",
+          "text": "Explain the relationship between 'Solve linear simultaneous equations graphically' and its environment.",
+          "competence": "Solve linear simultaneous equations graphically"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+    "Solve linear simultaneous equations graphically"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

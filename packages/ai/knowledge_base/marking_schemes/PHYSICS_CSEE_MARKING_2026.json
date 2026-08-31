@@ -1,0 +1,86 @@
+{
+  "code": "031",
+  "subject": "Physics",
+  "year": "2025/2026",
+  "max_marks": 100,
+  "sections": [
+    {
+      "name": "SECTION A (16 MARKS)",
+      "marks": 16,
+      "questions": [
+        {
+          "number": "1",
+          "marks": 10,
+          "answer_html": "MCQ i-x: A,B,B,B,C,A,C,B,B,B (1 mark each, see JSON)."
+        },
+        {
+          "number": "2",
+          "marks": 6,
+          "answer_html": "Matching wave: i->D Diffraction, ii->B Refraction, iii->E Interference, iv->A Dispersion, v->G Reflection, vi->C Polarization (1 each)."
+        }
+      ]
+    },
+    {
+      "name": "SECTION B (54 MARKS)",
+      "marks": 54,
+      "questions": [
+        {
+          "number": "3",
+          "marks": 9,
+          "answer_html": "(a) Ohm's law V=IR [3] (b)(i) 1/R=1/3+1/6 => R=2Ω [3] (ii) I=V/R=12/2=6A [3]"
+        },
+        {
+          "number": "4",
+          "marks": 9,
+          "answer_html": "(a) Transverse perpendicular vs longitudinal parallel [4] (b) λ=c/f=3e8/1e8=3m [5]"
+        },
+        {
+          "number": "5",
+          "marks": 9,
+          "answer_html": "(i) Electromagnetic induction [2] (ii) Eddy currents minimized by laminated core, copper losses by thick wire [7]"
+        },
+        {
+          "number": "6",
+          "marks": 9,
+          "answer_html": "(a) Thermionic emission heated cathode emits electrons, CRO uses: display waveforms, measure voltage [4] (b)(i) KE=eV=1.6e-19*2500=4e-16J [3] (ii) v=sqrt(2KE/m)=2.96e7 m/s [2]"
+        },
+        {
+          "number": "7",
+          "marks": 9,
+          "answer_html": "(a) Forward low resistance, reverse high [3] (b)(i) D1/D3 conduct on + half, D2/D4 on - [3] (ii) Full-wave pulsating DC waveform [3]"
+        },
+        {
+          "number": "8",
+          "marks": 9,
+          "answer_html": "(a) Half-life time for half atoms to decay [2] (b) X is α 4_2He, Y is β 0_-1e [4] (c) Shielding, distance, time, tongs [3]"
+        }
+      ]
+    },
+    {
+      "name": "SECTION C (30 MARKS)",
+      "marks": 30,
+      "questions": [
+        {
+          "number": "9",
+          "marks": 15,
+          "answer_html": "(a) Archimedes upthrust=weight displaced, flotation weight=upthrust [4] (b)(i) Vsub= (700*0.05)/1000=0.035m3 [4] (ii) m_lead=15kg [4] (c) W_air - W_water / W_air etc [3]"
+        },
+        {
+          "number": "10",
+          "marks": 15,
+          "answer_html": "(a) Greenhouse gases trap IR: CO2, CH4 [4] (b) Terrestrial rocky vs Jovian gaseous, examples Earth/Mars vs Jupiter/Saturn [5] (c) S-waves blocked by liquid outer core, P-waves refracted [6]"
+        },
+        {
+          "number": "11",
+          "marks": 15,
+          "answer_html": "(a) F=ma [2] (b)(i) Free-body: 75N up, 50N down [3] (ii) a=(75-50)/5=5 m/s2 up [4] (c) F=ma, v2=u2+2as => a=-5, F=5000N [6]"
+        }
+      ]
+    }
+  ],
+  "linked_forms": [
+    "form3",
+    "form4"
+  ],
+  "source_template": "PHYSICS_CSEE_MARKING_2026.html"
+}

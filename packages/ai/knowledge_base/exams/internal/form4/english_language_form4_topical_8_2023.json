@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form4_topical_8_2023.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 8 (FORM4 2023): Make comments on oral messages",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 52,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Make comments on oral messages",
+          "text": "Analyse the causes and effects of 'Make comments on oral messages'. - locally",
+          "competence": "Make comments on oral messages"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Compile information searched from various sources",
+          "text": "Examine the advantages and disadvantages of 'Compile information searched from various sources'. - with diagram",
+          "competence": "Compile information searched from various sources"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Make comments on oral messages",
+          "text": "Describe the main features of 'Make comments on oral messages'. - locally",
+          "competence": "Make comments on oral messages"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Compile information searched from various sources",
+          "text": "Analyse the causes and effects of 'Compile information searched from various sources'. - with example",
+          "competence": "Compile information searched from various sources"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Compile information searched from various sources",
+          "text": "Outline the procedures involved in 'Compile information searched from various sources'. - locally",
+          "competence": "Compile information searched from various sources"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Compile information searched from various sources",
+          "text": "Assess the impact of 'Compile information searched from various sources' on society. - locally",
+          "competence": "Compile information searched from various sources"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Compile information searched from various sources",
+          "text": "Define 'Compile information searched from various sources' and discuss its importance in everyday life.",
+          "competence": "Compile information searched from various sources"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Make comments on oral messages",
+          "text": "With examples, illustrate how 'Make comments on oral messages' is applied in the community.",
+          "competence": "Make comments on oral messages"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Make comments on oral messages",
+          "text": "Assess the impact of 'Make comments on oral messages' on society. - locally",
+          "competence": "Make comments on oral messages"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Make comments on oral messages",
+          "text": "How does 'Make comments on oral messages' relate to sustainable development? - with diagram",
+          "competence": "Make comments on oral messages"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Make comments on oral messages",
+    "Compile information searched from various sources"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

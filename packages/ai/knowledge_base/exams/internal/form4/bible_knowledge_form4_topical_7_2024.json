@@ -1,0 +1,121 @@
+{
+  "filename": "bible_knowledge_form4_topical_7_2024.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Bible Knowledge - Topical Test 7 (FORM4 2024): Discuss the characteristics of the ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 42,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept of patriotism as appears in the Book of Joshua",
+          "text": "Evaluate the role of 'Explain the concept of patriotism as appears in the Book of Joshua' in national development. - locally",
+          "competence": "Explain the concept of patriotism as appears in the Book of "
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the concept of patriotism as appears in the Book of Joshua",
+          "text": "Outline the procedures involved in 'Explain the concept of patriotism as appears in the Book of Joshua'.",
+          "competence": "Explain the concept of patriotism as appears in the Book of "
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "Propose measures to improve 'Discuss the characteristics of the families found in the Gospel according to Luke' in schools. - locally",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "Outline the procedures involved in 'Discuss the characteristics of the families found in the Gospel according to Luke'. - locally",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "Compare and contrast 'Discuss the characteristics of the families found in the Gospel according to Luke' with related concepts.",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain the concept of patriotism as appears in the Book of Joshua",
+          "text": "Discuss the factors influencing 'Explain the concept of patriotism as appears in the Book of Joshua'. - locally",
+          "competence": "Explain the concept of patriotism as appears in the Book of "
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain the concept of patriotism as appears in the Book of Joshua",
+          "text": "Explain the concept of 'Explain the concept of patriotism as appears in the Book of Joshua' with examples relevant to Tanzania.",
+          "competence": "Explain the concept of patriotism as appears in the Book of "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "Explain the relationship between 'Discuss the characteristics of the families found in the Gospel according to Luke' and its environment. - locally",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "Analyse the causes and effects of 'Discuss the characteristics of the families found in the Gospel according to Luke'.",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Discuss the characteristics of the families found in the Gospel according to Luke",
+          "text": "How does 'Discuss the characteristics of the families found in the Gospel according to Luke' relate to sustainable development? - with example",
+          "competence": "Discuss the characteristics of the families found in the Gos"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of patriotism as appears in the Book of Joshua",
+    "Discuss the characteristics of the families found in the Gospel according to Luke"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

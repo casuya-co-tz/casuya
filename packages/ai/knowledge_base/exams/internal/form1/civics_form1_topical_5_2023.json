@@ -1,0 +1,121 @@
+{
+  "filename": "civics_form1_topical_5_2023.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Civics - Topical Test 5 (FORM1 2023): Globalization",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Globalization",
+          "text": "Discuss the challenges facing 'Globalization' in Tanzania and propose solutions. - with diagram",
+          "competence": "Globalization"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Culture and Tradition",
+          "text": "Discuss the challenges facing 'Culture and Tradition' in Tanzania and propose solutions. - with example",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Culture and Tradition",
+          "text": "Evaluate the role of 'Culture and Tradition' in national development. - with example",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Globalization",
+          "text": "Explain the concept of 'Globalization' with examples relevant to Tanzania. - with diagram",
+          "competence": "Globalization"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Globalization",
+          "text": "Explain the concept of 'Globalization' with examples relevant to Tanzania. - with example",
+          "competence": "Globalization"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Culture and Tradition",
+          "text": "Evaluate the role of 'Culture and Tradition' in national development. - with example",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Globalization",
+          "text": "Outline the procedures involved in 'Globalization'.",
+          "competence": "Globalization"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Globalization",
+          "text": "Describe the main features of 'Globalization'.",
+          "competence": "Globalization"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Culture and Tradition",
+          "text": "Explain the concept of 'Culture and Tradition' with examples relevant to Tanzania. - with example",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Culture and Tradition",
+          "text": "Define 'Culture and Tradition' and discuss its importance in everyday life.",
+          "competence": "Culture and Tradition"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Globalization",
+    "Culture and Tradition"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

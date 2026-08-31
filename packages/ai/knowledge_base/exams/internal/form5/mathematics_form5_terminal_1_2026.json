@@ -1,0 +1,249 @@
+{
+  "filename": "mathematics_form5_terminal_1_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2026",
+  "time": "2:30 Hours",
+  "title": "Mathematics - Terminal Exam 1 (FORM5 2026)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 117,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
+          "text": "Propose measures to improve 'Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio' in schools. - with diagram",
+          "competence": "Explore the basic tenets of trigonometry (trigonometric rati"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use sets, sequences and series in problem solving",
+          "text": "What are the characteristics of 'Use sets, sequences and series in problem solving'? - with example",
+          "competence": "Use sets, sequences and series in problem solving"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)' in Tanzania and propose solutions.",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Approximate numbers to the required significant figures and decimal places",
+          "text": "Discuss the factors influencing 'Approximate numbers to the required significant figures and decimal places'. - with diagram",
+          "competence": "Approximate numbers to the required significant figures and "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use basic skills of circles in daily life",
+          "text": "Evaluate the role of 'Use basic skills of circles in daily life' in national development. - locally",
+          "competence": "Use basic skills of circles in daily life"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Carry out a project in Mathematics",
+          "text": "Examine the advantages and disadvantages of 'Carry out a project in Mathematics'.",
+          "competence": "Carry out a project in Mathematics"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "Define 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)' and discuss its importance in everyday life. - locally",
+          "competence": "Use differential equations to solve real life problems relat"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+          "text": "Evaluate the role of 'Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)' in national development. - locally",
+          "competence": "Explore the basic tenets of complex numbers (modulus, argume"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Apply sine and cosine rules to find distances or angles of elevation",
+          "text": "Describe the main features of 'Apply sine and cosine rules to find distances or angles of elevation'.",
+          "competence": "Apply sine and cosine rules to find distances or angles of e"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "With examples, illustrate how 'Perform operations on radicals and rationalize the denominators' is applied in the community.",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+          "text": "Define 'Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)' and discuss its importance in everyday life.",
+          "competence": "Explore the basic tenets of sequences and series (Arithmetic"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow",
+          "text": "Assess the impact of 'Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow' on society.",
+          "competence": "Explore the basic tenets of algebra (algebraic expressions a"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Perform operations with sets (union, intersection, and complement of a se",
+          "text": "Examine the advantages and disadvantages of 'Perform operations with sets (union, intersection, and complement of a se'. - with diagram",
+          "competence": "Perform operations with sets (union, intersection, and compl"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Find the gradient/ slope of a line",
+          "text": "Evaluate the role of 'Find the gradient/ slope of a line' in national development.",
+          "competence": "Find the gradient/ slope of a line"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+          "text": "Compare and contrast 'Use algebraic expressions to model situations (word problems into algebraic expressions and equation' with related concepts. - locally",
+          "competence": "Use algebraic expressions to model situations (word problems"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Carry out a project to solve a problem using mathematical skills",
+          "text": "Describe the main features of 'Carry out a project to solve a problem using mathematical skills'.",
+          "competence": "Carry out a project to solve a problem using mathematical sk"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Solve inequalities in one unknown",
+          "text": "Assess the impact of 'Solve inequalities in one unknown' on society. - with diagram",
+          "competence": "Solve inequalities in one unknown"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use algebra and matrices in problem solving",
+          "text": "Outline the procedures involved in 'Use algebra and matrices in problem solving'. - with diagram",
+          "competence": "Use algebra and matrices in problem solving"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Compare and contrast 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' with related concepts. - locally",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+          "text": "Evaluate the role of 'Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)' in national development. - with example",
+          "competence": "Explore advanced tenets of trigonometry (ratios, small angle"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concepts of relations and functions (linear and quadrati",
+          "text": "Assess the impact of 'Describe the concepts of relations and functions (linear and quadrati' on society.",
+          "competence": "Describe the concepts of relations and functions (linear and"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+          "text": "Propose measures to improve 'Explain the concept of approximations (rounding off, significant figures, and decimal place' in schools. - with example",
+          "competence": "Explain the concept of approximations (rounding off, signifi"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Complete the project started in Form Five and submit the report for assessment",
+          "text": "Propose measures to improve 'Complete the project started in Form Five and submit the report for assessment' in schools. - locally",
+          "competence": "Complete the project started in Form Five and submit the rep"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "text": "Describe the process of 'Demonstrate an advanced understanding of statistics' step by step.",
+          "competence": "Demonstrate an advanced understanding of statistics"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "Discuss the factors influencing 'Use approximations in computations and measurements of quantities in various contexts'. - with example",
+          "competence": "Use approximations in computations and measurements of quant"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
+    "Use sets, sequences and series in problem solving",
+    "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+    "Approximate numbers to the required significant figures and decimal places",
+    "Use basic skills of circles in daily life",
+    "Carry out a project in Mathematics",
+    "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+    "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+    "Apply sine and cosine rules to find distances or angles of elevation",
+    "Perform operations on radicals and rationalize the denominators"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

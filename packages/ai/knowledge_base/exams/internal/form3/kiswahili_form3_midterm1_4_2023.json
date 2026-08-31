@@ -1,0 +1,209 @@
+{
+  "filename": "kiswahili_form3_midterm1_4_2023.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Kiswahili - Midterm 1 Exam 4 (FORM3 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 88,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kuondoa utata katika lugha",
+          "text": "Discuss the challenges facing 'Kuondoa utata katika lugha' in Tanzania and propose solutions.",
+          "competence": "Kuondoa utata katika lugha"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kuhusianisha kazi za fasihi na maisha halisi",
+          "text": "With examples, illustrate how 'Kuhusianisha kazi za fasihi na maisha halisi' is applied in the community.",
+          "competence": "Kuhusianisha kazi za fasihi na maisha halisi"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kusimulia habari na matukio kwa kuzingatia kiimbo, mkazo, na lafudhi pamoja na dhima zake",
+          "text": "Propose measures to improve 'Kusimulia habari na matukio kwa kuzingatia kiimbo, mkazo, na lafudhi pamoja na dhima zake' in schools. - with example",
+          "competence": "Kusimulia habari na matukio kwa kuzingatia kiimbo, mkazo, na"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kutathmini nadharia za chimbuko la fasihi",
+          "text": "Outline the procedures involved in 'Kutathmini nadharia za chimbuko la fasihi'. - locally",
+          "competence": "Kutathmini nadharia za chimbuko la fasihi"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kutunga kazi za fasihi",
+          "text": "Describe the main features of 'Kutunga kazi za fasihi'. - with diagram",
+          "competence": "Kutunga kazi za fasihi"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali",
+          "text": "Describe the process of 'Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali' step by step. - locally",
+          "competence": "Kubaini maneno yenye maana za msingi na za ziada katika mati"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kutathmini namna maudhui ya kazi alizozihakiki yanavyosadifu jamii inayomzunguka",
+          "text": "Examine the advantages and disadvantages of 'Kutathmini namna maudhui ya kazi alizozihakiki yanavyosadifu jamii inayomzunguka'. - with example",
+          "competence": "Kutathmini namna maudhui ya kazi alizozihakiki yanavyosadifu"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "(mfano: taarifa ya habari, midahalo, na mazungumzo ya watu sokoni)",
+          "text": "Explain the relationship between '(mfano: taarifa ya habari, midahalo, na mazungumzo ya watu sokoni)' and its environment. - with diagram",
+          "competence": "(mfano: taarifa ya habari, midahalo, na mazungumzo ya watu s"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kuigiza usaili kwa kuzungumza na kuandika",
+          "text": "Compare and contrast 'Kuigiza usaili kwa kuzungumza na kuandika' with related concepts.",
+          "competence": "Kuigiza usaili kwa kuzungumza na kuandika"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki baada ya uhuru",
+          "text": "With examples, illustrate how 'Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki baada ya uhuru' is applied in the community.",
+          "competence": "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kutathmini matini zilizohaririwa",
+          "text": "Outline the procedures involved in 'Kutathmini matini zilizohaririwa'. - with example",
+          "competence": "Kutathmini matini zilizohaririwa"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kujadili dhana na misingi ya ukalimani",
+          "text": "Define 'Kujadili dhana na misingi ya ukalimani' and discuss its importance in everyday life. - with example",
+          "competence": "Kujadili dhana na misingi ya ukalimani"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kutathmini maendeleo ya fasihi",
+          "text": "Explain the concept of 'Kutathmini maendeleo ya fasihi' with examples relevant to Tanzania. - with diagram",
+          "competence": "Kutathmini maendeleo ya fasihi"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kusahihisha makosa ya kisarufi na kimantiki katika matumizi ya lugha",
+          "text": "How does 'Kusahihisha makosa ya kisarufi na kimantiki katika matumizi ya lugha' relate to sustainable development?",
+          "competence": "Kusahihisha makosa ya kisarufi na kimantiki katika matumizi "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kusikiliza habari na kuzielezea kwa maneno yake mwenyewe kwa kuzingatia stadi za mawasiliano (mf. uwazi, ukamilifu wa hoja, usahihi, muwala, uwekevu na stah",
+          "text": "Analyse the causes and effects of 'Kusikiliza habari na kuzielezea kwa maneno yake mwenyewe kwa kuzingatia stadi za mawasiliano (mf. uwazi, ukamilifu wa hoja, usahihi, muwala, uwekevu na stah'. - with diagram",
+          "competence": "Kusikiliza habari na kuzielezea kwa maneno yake mwenyewe kwa"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kusoma matini kwa ufasaha na ufahamu",
+          "text": "Outline the procedures involved in 'Kusoma matini kwa ufasaha na ufahamu'. - with example",
+          "competence": "Kusoma matini kwa ufasaha na ufahamu"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kueleza kwa muhtasari mazungumzo changamani aliyoyasikiliza",
+          "text": "Discuss the factors influencing 'Kueleza kwa muhtasari mazungumzo changamani aliyoyasikiliza'. - with example",
+          "competence": "Kueleza kwa muhtasari mazungumzo changamani aliyoyasikiliza"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kuzungumza kwa kutumia mitindo mbalimbali ya lugha ya mazungumzo na kwa kuzingatia miktadha, umri, jinsia na uhusiano",
+          "text": "Assess the impact of 'Kuzungumza kwa kutumia mitindo mbalimbali ya lugha ya mazungumzo na kwa kuzingatia miktadha, umri, jinsia na uhusiano' on society. - with example",
+          "competence": "Kuzungumza kwa kutumia mitindo mbalimbali ya lugha ya mazung"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Kuhariri matini changamani anuai za kiufundi",
+          "text": "How does 'Kuhariri matini changamani anuai za kiufundi' relate to sustainable development?",
+          "competence": "Kuhariri matini changamani anuai za kiufundi"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujumbe katika usomaji wa matini fupi changamani",
+          "text": "Analyse the causes and effects of 'Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujumbe katika usomaji wa matini fupi changamani'. - with diagram",
+          "competence": "Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujum"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kuondoa utata katika lugha",
+    "Kuhusianisha kazi za fasihi na maisha halisi",
+    "Kusimulia habari na matukio kwa kuzingatia kiimbo, mkazo, na lafudhi pamoja na dhima zake",
+    "Kutathmini nadharia za chimbuko la fasihi",
+    "Kutunga kazi za fasihi",
+    "Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali",
+    "Kutathmini namna maudhui ya kazi alizozihakiki yanavyosadifu jamii inayomzunguka",
+    "(mfano: taarifa ya habari, midahalo, na mazungumzo ya watu sokoni)",
+    "Kuigiza usaili kwa kuzungumza na kuandika",
+    "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki baada ya uhuru"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

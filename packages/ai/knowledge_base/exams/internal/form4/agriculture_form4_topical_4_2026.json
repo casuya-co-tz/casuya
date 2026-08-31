@@ -1,0 +1,121 @@
+{
+  "filename": "agriculture_form4_topical_4_2026.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Agriculture - Topical Test 4 (FORM4 2026): Crop Production Practices",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 33,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Soil Fertility",
+          "text": "Compare and contrast 'Soil Fertility' with related concepts.",
+          "competence": "Soil Fertility"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Soil Fertility",
+          "text": "Compare and contrast 'Soil Fertility' with related concepts. - with diagram",
+          "competence": "Soil Fertility"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Crop Production Practices",
+          "text": "With examples, illustrate how 'Crop Production Practices' is applied in the community. - with example",
+          "competence": "Crop Production Practices"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Crop Production Practices",
+          "text": "Examine the advantages and disadvantages of 'Crop Production Practices'.",
+          "competence": "Crop Production Practices"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Crop Production Practices",
+          "text": "Explain the concept of 'Crop Production Practices' with examples relevant to Tanzania.",
+          "competence": "Crop Production Practices"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Soil Fertility",
+          "text": "With examples, illustrate how 'Soil Fertility' is applied in the community.",
+          "competence": "Soil Fertility"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Crop Production Practices",
+          "text": "Compare and contrast 'Crop Production Practices' with related concepts. - with diagram",
+          "competence": "Crop Production Practices"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Crop Production Practices",
+          "text": "Discuss the challenges facing 'Crop Production Practices' in Tanzania and propose solutions.",
+          "competence": "Crop Production Practices"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Soil Fertility",
+          "text": "Analyse the causes and effects of 'Soil Fertility'.",
+          "competence": "Soil Fertility"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Crop Production Practices",
+          "text": "Discuss the challenges facing 'Crop Production Practices' in Tanzania and propose solutions. - with example",
+          "competence": "Crop Production Practices"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Soil Fertility",
+    "Crop Production Practices"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

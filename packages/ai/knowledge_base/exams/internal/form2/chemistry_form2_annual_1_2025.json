@@ -1,0 +1,289 @@
+{
+  "filename": "chemistry_form2_annual_1_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2025",
+  "time": "3:00 Hours",
+  "title": "Chemistry - Annual Exam 1 (FORM2 2025)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 125,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Complete and submit for assessment a scientific report of the project started in Form Five",
+          "text": "Discuss the challenges facing 'Complete and submit for assessment a scientific report of the project started in Form Five' in Tanzania and propose solutions. - with diagram",
+          "competence": "Complete and submit for assessment a scientific report of th"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of chemical bonding (covalent and electrovalent bondin",
+          "text": "Analyse the causes and effects of 'Describe the concept of chemical bonding (covalent and electrovalent bondin'. - with diagram",
+          "competence": "Describe the concept of chemical bonding (covalent and elect"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+          "text": "Explain the concept of 'Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the concept of colligative properties in understand"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Describe the main features of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)'. - with example",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Discuss the challenges facing 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' in Tanzania and propose solutions.",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Analyse the causes and effects of 'Use the electronic configuration of an element to locate their positions in the periodic table'. - with diagram",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Examine the advantages and disadvantages of 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate'. - with example",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of the principles of extraction of metals",
+          "text": "Compare and contrast 'Demonstrate mastery of the principles of extraction of metals' with related concepts. - with diagram",
+          "competence": "Demonstrate mastery of the principles of extraction of metal"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Discuss the challenges facing 'Discuss the contribution of Chemistry in the development of modern society' in Tanzania and propose solutions.",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Determine empirical and molecular formulae of common compounds",
+          "text": "Examine the advantages and disadvantages of 'Determine empirical and molecular formulae of common compounds'. - with example",
+          "competence": "Determine empirical and molecular formulae of common compoun"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation",
+          "text": "Examine the advantages and disadvantages of 'Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation'. - with diagram",
+          "competence": "Explain the principles of volumetric analysis (preparation o"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+          "text": "With examples, illustrate how 'Use the prepared indicators to test acidity and alkalinity of substances found in the locality' is applied in the community. - with example",
+          "competence": "Use the prepared indicators to test acidity and alkalinity o"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Design and carry-out a simple research project in Chemistry",
+          "text": "With examples, illustrate how 'Design and carry-out a simple research project in Chemistry' is applied in the community. - with diagram",
+          "competence": "Design and carry-out a simple research project in Chemistry"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+          "text": "Describe the main features of 'Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)'. - with example",
+          "competence": "Describe the physical and chemical properties of transition "
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Compare the properties of compounds with those of constituent elements",
+          "text": "Evaluate the role of 'Compare the properties of compounds with those of constituent elements' in national development. - with example",
+          "competence": "Compare the properties of compounds with those of constituen"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Conduct synthesis of selected organic compounds",
+          "text": "Outline the procedures involved in 'Conduct synthesis of selected organic compounds'. - with diagram",
+          "competence": "Conduct synthesis of selected organic compounds"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+          "text": "Explain the concept of 'Demonstrate an understanding of chemical concepts and principles and their application in different contexts' with examples relevant to Tanzania. - with example",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Complete and submit a report for the project started in Form Three",
+          "text": "Outline the procedures involved in 'Complete and submit a report for the project started in Form Three'.",
+          "competence": "Complete and submit a report for the project started in Form"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Discuss the challenges facing 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' in Tanzania and propose solutions. - with example",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Evaluate the role of 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes' in national development.",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Discuss the challenges facing 'Conduct experiments in Chemistry' in Tanzania and propose solutions.",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "and their applications in daily life",
+          "text": "Define 'and their applications in daily life' and discuss its importance in everyday life. - with example",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+          "text": "With examples, illustrate how 'Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle' is applied in the community. - with example",
+          "competence": "Describe the modern concept of atomic structure (Dalton’s at"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+          "text": "Describe the main features of 'Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)'. - with diagram",
+          "competence": "Explore the periodic trends of elements in the modern period"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Define 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "With examples, illustrate how 'Describe the concept of matter (physical and chemical changes of matte' is applied in the community. - with example",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+          "text": "Outline the procedures involved in 'Use the concept of atomic structure to determine the atomic and mass numbers of an element'. - with example",
+          "competence": "Use the concept of atomic structure to determine the atomic "
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Prepare acid- base indicators using locally available materials",
+          "text": "With examples, illustrate how 'Prepare acid- base indicators using locally available materials' is applied in the community. - with diagram",
+          "competence": "Prepare acid- base indicators using locally available materi"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Define 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table' and discuss its importance in everyday life.",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Explain the concept of 'Use different atomic theories to determine the electronic configuration of elements with different properties' with examples relevant to Tanzania. - with diagram",
+          "competence": "Use different atomic theories to determine the electronic co"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Complete and submit for assessment a scientific report of the project started in Form Five",
+    "Describe the concept of chemical bonding (covalent and electrovalent bondin",
+    "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+    "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+    "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+    "Use the electronic configuration of an element to locate their positions in the periodic table",
+    "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+    "Demonstrate mastery of the principles of extraction of metals",
+    "Discuss the contribution of Chemistry in the development of modern society",
+    "Determine empirical and molecular formulae of common compounds"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form3_midterm2_1_2023.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 2 Exam 1 (FORM3 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 82,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Outline the procedures involved in 'Investigate food nutrients in various food samples'.",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "Evaluate the role of 'Plan and execute in an independent biological investigation' in national development. - with example",
+          "competence": "Plan and execute in an independent biological investigation"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "Compare and contrast 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement' with related concepts.",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+          "text": "Examine the advantages and disadvantages of 'Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio'. - with diagram",
+          "competence": "Describe the mechanisms of growth in mammals and flowering p"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Perform investigations on the anatomy and physiology of living organisms",
+          "text": "Describe the main features of 'Perform investigations on the anatomy and physiology of living organisms'. - with example",
+          "competence": "Perform investigations on the anatomy and physiology of livi"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+          "text": "Explain the concept of 'Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the distinctive characteristics of kingdoms, phyla/"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Conduct a project in Biology",
+          "text": "Evaluate the role of 'Conduct a project in Biology' in national development.",
+          "competence": "Conduct a project in Biology"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+          "text": "Describe the main features of 'Describe nutrition in human and ruminants (nutrients, digestive system and processe'. - with example",
+          "competence": "Describe nutrition in human and ruminants (nutrients, digest"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Analyse the causes and effects of 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )'. - with example",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the principles of binomial nomenclature and classification",
+          "text": "Explain the concept of 'Demonstrate an understanding of the principles of binomial nomenclature and classification' with examples relevant to Tanzania. - with diagram",
+          "competence": "Demonstrate an understanding of the principles of binomial n"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Outline the procedures involved in 'Carry out investigation related to reproduction in flowering plants (flower structure and embry'. - with example",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+          "text": "Evaluate the role of 'Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)' in national development. - with example",
+          "competence": "Describe the mechanism of reproduction in animals (gametogen"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Prepare and present a report based on the findings",
+          "text": "Outline the procedures involved in 'Prepare and present a report based on the findings'. - with example",
+          "competence": "Prepare and present a report based on the findings"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe coordination in plants (tropic, response",
+          "text": "Explain the concept of 'Describe coordination in plants (tropic, response' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe coordination in plants (tropic, response"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Explain the concept of 'Develop and carry out a simple research project in Biology' with examples relevant to Tanzania. - with example",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+          "text": "Compare and contrast 'Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces' with related concepts.",
+          "competence": "Describe the mechanism of gaseous exchange in plants (parts "
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)",
+          "text": "Compare and contrast 'Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)' with related concepts.",
+          "competence": "Describe the mechanism of blood circulation in vertebrates ("
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Compare and contrast 'Complete and submit a report for the research project started in Form Three' with related concepts. - with example",
+          "competence": "Complete and submit a report for the research project starte"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+          "text": "Outline the procedures involved in 'Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt'. - with example",
+          "competence": "Describe reproduction in humans (sexual reproduction in huma"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+          "text": "Outline the procedures involved in 'Investigate growth in flowering plants (hypogeal and epigeal germinatio'. - with diagram",
+          "competence": "Investigate growth in flowering plants (hypogeal and epigeal"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Investigate food nutrients in various food samples",
+    "Plan and execute in an independent biological investigation",
+    "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+    "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+    "Perform investigations on the anatomy and physiology of living organisms",
+    "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+    "Conduct a project in Biology",
+    "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+    "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+    "Demonstrate an understanding of the principles of binomial nomenclature and classification"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

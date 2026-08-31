@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form6_midterm2_1_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 2 Exam 1 (FORM6 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 87,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Define 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Complete and submit a report for the project started in Form Three",
+          "text": "Compare and contrast 'Complete and submit a report for the project started in Form Three' with related concepts. - with diagram",
+          "competence": "Complete and submit a report for the project started in Form"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Discuss the challenges facing 'Use the electronic configuration of an element to locate their positions in the periodic table' in Tanzania and propose solutions. - with diagram",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "Compare and contrast 'Perform experiments on separation of different mixtures using different methods' with related concepts. - with example",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Design and carry-out a simple research project in Chemistry",
+          "text": "Compare and contrast 'Design and carry-out a simple research project in Chemistry' with related concepts. - with example",
+          "competence": "Design and carry-out a simple research project in Chemistry"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+          "text": "Compare and contrast 'Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal' with related concepts. - with diagram",
+          "competence": "Describe the preparation and properties of various compounds"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concepts of chemical elements (criteria for assigning chemical symbol",
+          "text": "Examine the advantages and disadvantages of 'Describe the concepts of chemical elements (criteria for assigning chemical symbol'. - with example",
+          "competence": "Describe the concepts of chemical elements (criteria for ass"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Conduct a project in Chemistry",
+          "text": "Compare and contrast 'Conduct a project in Chemistry' with related concepts. - with diagram",
+          "competence": "Conduct a project in Chemistry"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+          "text": "Evaluate the role of 'Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons' in national development. - with diagram",
+          "competence": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohy"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use appropriate software to sketch the set-ups of experiments",
+          "text": "Analyse the causes and effects of 'Use appropriate software to sketch the set-ups of experiments'. - with diagram",
+          "competence": "Use appropriate software to sketch the set-ups of experiment"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": ", compounds (binary compoun",
+          "text": "Explain the concept of ', compounds (binary compoun' with examples relevant to Tanzania.",
+          "competence": ", compounds (binary compoun"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Discuss the challenges facing 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid' in Tanzania and propose solutions.",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "With examples, illustrate how 'Use different atomic theories to determine the electronic configuration of elements with different properties' is applied in the community. - with diagram",
+          "competence": "Use different atomic theories to determine the electronic co"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of chemical concepts and principles and their application in different contexts'. - with diagram",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+          "text": "Compare and contrast 'Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)' with related concepts. - with diagram",
+          "competence": "Describe the concept of colligative properties in understand"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+          "text": "Explain the concept of 'Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the concept of Chemistry (meaning, branches, applic"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Compare and contrast 'Conduct experiments in Chemistry' with related concepts. - with diagram",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber",
+          "text": "Compare and contrast 'Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber' with related concepts.",
+          "competence": "Examine reactions of haloalkanes, amines and polymers for pr"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of advanced concepts and principles in organic chemistry' is applied in the community. - with example",
+          "competence": "Demonstrate an understanding of advanced concepts and princi"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "With examples, illustrate how 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)' is applied in the community. - with diagram",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+    "Complete and submit a report for the project started in Form Three",
+    "Use the electronic configuration of an element to locate their positions in the periodic table",
+    "Perform experiments on separation of different mixtures using different methods",
+    "Design and carry-out a simple research project in Chemistry",
+    "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+    "Describe the concepts of chemical elements (criteria for assigning chemical symbol",
+    "Conduct a project in Chemistry",
+    "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+    "Use appropriate software to sketch the set-ups of experiments"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

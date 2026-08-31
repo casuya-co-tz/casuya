@@ -1,0 +1,121 @@
+{
+  "filename": "computer_science_form1_topical_5_2025.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Computer Science - Topical Test 5 (FORM1 2025): Computer Basics",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 34,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Algorithm and Flowchart",
+          "text": "Compare and contrast 'Algorithm and Flowchart' with related concepts. - with example",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Algorithm and Flowchart",
+          "text": "Evaluate the role of 'Algorithm and Flowchart' in national development. - with example",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Computer Basics",
+          "text": "Examine the advantages and disadvantages of 'Computer Basics'. - with diagram",
+          "competence": "Computer Basics"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Computer Basics",
+          "text": "Outline the procedures involved in 'Computer Basics'. - with diagram",
+          "competence": "Computer Basics"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Computer Basics",
+          "text": "Evaluate the role of 'Computer Basics' in national development. - with example",
+          "competence": "Computer Basics"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Computer Basics",
+          "text": "Describe the main features of 'Computer Basics'.",
+          "competence": "Computer Basics"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Algorithm and Flowchart",
+          "text": "Explain the concept of 'Algorithm and Flowchart' with examples relevant to Tanzania.",
+          "competence": "Algorithm and Flowchart"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Computer Basics",
+          "text": "Define 'Computer Basics' and discuss its importance in everyday life.",
+          "competence": "Computer Basics"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Algorithm and Flowchart",
+          "text": "Examine the advantages and disadvantages of 'Algorithm and Flowchart'. - with example",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Computer Basics",
+          "text": "Compare and contrast 'Computer Basics' with related concepts. - with diagram",
+          "competence": "Computer Basics"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Algorithm and Flowchart",
+    "Computer Basics"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

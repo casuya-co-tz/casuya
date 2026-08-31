@@ -1,0 +1,289 @@
+{
+  "filename": "geography_form5_annual_2_2026.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2026",
+  "time": "3:00 Hours",
+  "title": "Geography - Annual Exam 2 (FORM5 2026)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 131,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Reading and interpreting various type of maps and their importance (topographical and statistical ma",
+          "text": "With examples, illustrate how 'Reading and interpreting various type of maps and their importance (topographical and statistical ma' is applied in the community.",
+          "competence": "Reading and interpreting various type of maps and their impo"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)",
+          "text": "Compare and contrast 'Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)' with related concepts. - with diagram",
+          "competence": "Describe the theories (continental drift, Isostacy and plate"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+          "text": "Discuss the challenges facing 'Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern' in Tanzania and propose solutions.",
+          "competence": "Describe the basic principles of reading and interpreting ma"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Carry out a project in Geography",
+          "text": "Describe the process of 'Carry out a project in Geography' step by step. - with diagram",
+          "competence": "Carry out a project in Geography"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of surveying (meaning, types, equipment, methods, and importanc",
+          "text": "How does 'Explore the basic tenets of surveying (meaning, types, equipment, methods, and importanc' relate to sustainable development? - locally",
+          "competence": "Explore the basic tenets of surveying (meaning, types, equip"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen",
+          "text": "Analyse the causes and effects of 'Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen'.",
+          "competence": "Describe the basic principles of photograph interpretation ("
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+          "text": "Compare and contrast 'Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian' with related concepts.",
+          "competence": "Describe the Earth (origin, shape, size, position and moveme"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Describe the main features of 'Identify a geographical challenge in society and design a project to address it'.",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)",
+          "text": "Discuss the challenges facing 'Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)' in Tanzania and propose solutions.",
+          "competence": "Carry out some Advanced surveying activities (plane table, p"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Apply the techniques of photograph interpretation to analyse geographical phenomena",
+          "text": "Outline the procedures involved in 'Apply the techniques of photograph interpretation to analyse geographical phenomena'.",
+          "competence": "Apply the techniques of photograph interpretation to analyse"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the basic techniques in land surveying",
+          "text": "Define 'Demonstrate an understanding of the basic techniques in land surveying' and discuss its importance in everyday life.",
+          "competence": "Demonstrate an understanding of the basic techniques in land"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Acquire, present and interpret geographical data through charts, graphs, maps and diagrams (choropleth, scatter plots, dot maps, flow line etc.) for planning and decision making",
+          "text": "Assess the impact of 'Acquire, present and interpret geographical data through charts, graphs, maps and diagrams (choropleth, scatter plots, dot maps, flow line etc.) for planning and decision making' on society. - with diagram",
+          "competence": "Acquire, present and interpret geographical data through cha"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the major features of the Earth surface",
+          "text": "What are the characteristics of 'Demonstrate an understanding of the major features of the Earth surface'? - with diagram",
+          "competence": "Demonstrate an understanding of the major features of the Ea"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
+          "text": "Compare and contrast 'Explain the concept and scope of Geography (branches, importance and relationship with other discipline' with related concepts. - with example",
+          "competence": "Explain the concept and scope of Geography (branches, import"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes",
+          "text": "Describe the main features of 'Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes'. - with diagram",
+          "competence": "Describe the internal forces responsible for the formation o"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl",
+          "text": "Discuss the factors influencing 'Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl'. - with diagram",
+          "competence": "Describe the geographical factors that influence the spatial"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of rocks and the rock cycle",
+          "text": "Evaluate the role of 'Demonstrate an understanding of rocks and the rock cycle' in national development. - with diagram",
+          "competence": "Demonstrate an understanding of rocks and the rock cycle"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the hydrological cycle (Outputs, storages, flows and underground water)",
+          "text": "With examples, illustrate how 'Describe the hydrological cycle (Outputs, storages, flows and underground water)' is applied in the community. - with diagram",
+          "competence": "Describe the hydrological cycle (Outputs, storages, flows an"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Interpret maps and photographs",
+          "text": "Describe the main features of 'Interpret maps and photographs'. - with diagram",
+          "competence": "Interpret maps and photographs"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and Earth systems",
+          "text": "Compare and contrast 'Demonstrate an understanding of the origin and the structure of the Earth and Earth systems' with related concepts.",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 5,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Describe the process of 'and their major characteristics (location, size/ thickness, density and gross compositio' step by step.",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+          "text": "Examine the advantages and disadvantages of 'Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation'. - with diagram",
+          "competence": "Describe the relationship between major features of the Eart"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)",
+          "text": "Discuss the factors influencing 'Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)'.",
+          "competence": "Describe the interactions among the major earth systems (atm"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate mastery of research skills in Geography",
+          "text": "Explain the relationship between 'Demonstrate mastery of research skills in Geography' and its environment.",
+          "competence": "Demonstrate mastery of research skills in Geography"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of the basic techniques of map and photograph interpretation",
+          "text": "Describe the main features of 'Demonstrate an understanding of the basic techniques of map and photograph interpretation'.",
+          "competence": "Demonstrate an understanding of the basic techniques of map "
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an Advanced understanding of concepts and theories explaining the structure of the Earth and the interactions of earth systems",
+          "text": "Define 'Demonstrate an Advanced understanding of concepts and theories explaining the structure of the Earth and the interactions of earth systems' and discuss its importance in everyday life. - locally",
+          "competence": "Demonstrate an Advanced understanding of concepts and theori"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+          "text": "How does 'Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone' relate to sustainable development? - with diagram",
+          "competence": "Describe major features of the Earth’s surface (continents, "
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Complete and submit for assessment the project started in Form Five",
+          "text": "What are the characteristics of 'Complete and submit for assessment the project started in Form Five'?",
+          "competence": "Complete and submit for assessment the project started in Fo"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Complete and submit a report of the project started in Form Three",
+          "text": "Analyse the causes and effects of 'Complete and submit a report of the project started in Form Three'. - with diagram",
+          "competence": "Complete and submit a report of the project started in Form "
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Conduct a project in Geography",
+          "text": "Discuss the factors influencing 'Conduct a project in Geography'. - with diagram",
+          "competence": "Conduct a project in Geography"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Reading and interpreting various type of maps and their importance (topographical and statistical ma",
+    "Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)",
+    "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+    "Carry out a project in Geography",
+    "Explore the basic tenets of surveying (meaning, types, equipment, methods, and importanc",
+    "Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen",
+    "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+    "Identify a geographical challenge in society and design a project to address it",
+    "Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)",
+    "Apply the techniques of photograph interpretation to analyse geographical phenomena"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

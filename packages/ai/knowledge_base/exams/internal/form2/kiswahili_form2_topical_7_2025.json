@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form2_topical_7_2025.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 7 (FORM2 2025): Kutumia kwa usahihi ishara zinazoam",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 37,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "katika sentensi",
+          "text": "Define 'katika sentensi' and discuss its importance in everyday life.",
+          "competence": "katika sentensi"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutumia kwa usahihi ishara zinazoambatana na mazungumzo katika kuwasiliana",
+          "text": "Evaluate the role of 'Kutumia kwa usahihi ishara zinazoambatana na mazungumzo katika kuwasiliana' in national development.",
+          "competence": "Kutumia kwa usahihi ishara zinazoambatana na mazungumzo kati"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "katika sentensi",
+          "text": "What are the characteristics of 'katika sentensi'? - with diagram",
+          "competence": "katika sentensi"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "katika sentensi",
+          "text": "Describe the process of 'katika sentensi' step by step. - locally",
+          "competence": "katika sentensi"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "katika sentensi",
+          "text": "Define 'katika sentensi' and discuss its importance in everyday life. - with example",
+          "competence": "katika sentensi"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "katika sentensi",
+          "text": "Discuss the factors influencing 'katika sentensi'. - with diagram",
+          "competence": "katika sentensi"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "katika sentensi",
+          "text": "Evaluate the role of 'katika sentensi' in national development. - with diagram",
+          "competence": "katika sentensi"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "katika sentensi",
+          "text": "Assess the impact of 'katika sentensi' on society. - with diagram",
+          "competence": "katika sentensi"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kutumia kwa usahihi ishara zinazoambatana na mazungumzo katika kuwasiliana",
+          "text": "Discuss the factors influencing 'Kutumia kwa usahihi ishara zinazoambatana na mazungumzo katika kuwasiliana'. - locally",
+          "competence": "Kutumia kwa usahihi ishara zinazoambatana na mazungumzo kati"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "katika sentensi",
+          "text": "Examine the advantages and disadvantages of 'katika sentensi'.",
+          "competence": "katika sentensi"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "katika sentensi",
+    "Kutumia kwa usahihi ishara zinazoambatana na mazungumzo katika kuwasiliana"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

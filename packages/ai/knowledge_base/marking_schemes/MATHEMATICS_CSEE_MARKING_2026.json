@@ -1,0 +1,95 @@
+{
+  "code": "041",
+  "subject": "Basic Mathematics",
+  "year": "2025/2026",
+  "max_marks": 100,
+  "sections": [
+    {
+      "name": "SECTION A (60 MARKS)",
+      "marks": 60,
+      "questions": [
+        {
+          "number": "1",
+          "marks": 6,
+          "answer_html": "(a) Using tables sqrt(0.0456x38.7)/2.15^2 =0.2870 (4sf) [3] (b) LCM 144s =2min24s => 8:02:24 AM [3]"
+        },
+        {
+          "number": "2",
+          "marks": 6,
+          "answer_html": "(a) log10(x^2+6)-log10(x)=1 => x=2 or 3 [3] (b) Rationalize (3√2+2)/(√8-√2)= (3√2+2)/√2 => ... =4 [3]"
+        },
+        {
+          "number": "3",
+          "marks": 6,
+          "answer_html": "(a) Venn: both =7 (24+18+5-40) [3] (b) P(same)= (5/8*4/7)+(3/8*2/7)=26/56=13/28 [3]"
+        },
+        {
+          "number": "4",
+          "marks": 6,
+          "answer_html": "(a) k=1 (slope -2, perp 1/2) [3] (b) 2p-3q=9i+2j magnitude √85 unit (9/√85,2/√85) [3]"
+        },
+        {
+          "number": "5",
+          "marks": 6,
+          "answer_html": "(a) Angle ADC=64° (angle in semicircle) [3] (b) Perimeter 18cm (scale factor 2/3) [3]"
+        },
+        {
+          "number": "6",
+          "marks": 6,
+          "answer_html": "(a) V=k r2/h => k=100, V=4400 [3] (b) Marked 150k, sale 135k profit 12.5% [3]"
+        },
+        {
+          "number": "7",
+          "marks": 6,
+          "answer_html": "(a) Area trapezium (18+12)/2*10=150m2 [3] (b) SI=165750 => total 1,015,750 [3]"
+        },
+        {
+          "number": "8",
+          "marks": 6,
+          "answer_html": "(a) a=3 d=4 [3] (b) Sum S10=3069 [3]"
+        },
+        {
+          "number": "9",
+          "marks": 6,
+          "answer_html": "(a) h=12 tan35=8.4m [3] (b) Distance=80/tan24=179.7m [3]"
+        },
+        {
+          "number": "10",
+          "marks": 6,
+          "answer_html": "(a) x=2,0.5 via formula [3] (b) Completing square (x-1.25)^2=... [3]"
+        }
+      ]
+    },
+    {
+      "name": "SECTION B (40 MARKS)",
+      "marks": 40,
+      "questions": [
+        {
+          "number": "11",
+          "marks": 10,
+          "answer_html": "(a) Intersection (3,1), line ⊥ 3x+4y=12 slope -3/4 => perp 4/3 => y-1=4/3(x-3) => 4x-3y=9 [5] (b) Objective P=15000x+25000y, max at (4,8) => 260k [5]"
+        },
+        {
+          "number": "12",
+          "marks": 10,
+          "answer_html": "(a) AC=10cm (3-4-5) [3] (b) VA=13cm (VO12 + OA5) [3] (c) Angle ~67.4° [4]"
+        },
+        {
+          "number": "13",
+          "marks": 10,
+          "answer_html": "(a) Inverse [[1,-1.5],[-1,2]] solution x=1 y=2 [5] (b) P' = (-2,4) rotation 90° anticlockwise about origin [5]"
+        },
+        {
+          "number": "14",
+          "marks": 10,
+          "answer_html": "(a) (x-2)^2 -1 [3] (b) Turning (2,-1) minimum [3] (c) Graph intercepts 1 and 3, vertex 2,-1 [4]"
+        }
+      ]
+    }
+  ],
+  "linked_forms": [
+    "form3",
+    "form4"
+  ],
+  "source_template": "MATHEMATICS_CSEE_MARKING_2026.html"
+}

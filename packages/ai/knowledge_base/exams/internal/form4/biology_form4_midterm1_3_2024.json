@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form4_midterm1_3_2024.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 1 Exam 3 (FORM4 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 91,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+          "text": "Examine the advantages and disadvantages of 'Describe nutrition in human and ruminants (nutrients, digestive system and processe'. - with example",
+          "competence": "Describe nutrition in human and ruminants (nutrients, digest"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Outline the procedures involved in 'Prepare and present a report on cell and photosynthesis investigations'. - with example",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "Examine the advantages and disadvantages of 'Plan and execute in an independent biological investigation'. - with diagram",
+          "competence": "Plan and execute in an independent biological investigation"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Carry out experiments to determine the pulse rate in human",
+          "text": "Outline the procedures involved in 'Carry out experiments to determine the pulse rate in human'. - with example",
+          "competence": "Carry out experiments to determine the pulse rate in human"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Describe the main features of 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation'.",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Define 'Develop and carry out a simple research project in Biology' and discuss its importance in everyday life. - with diagram",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Explain the concept of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+          "text": "Examine the advantages and disadvantages of 'Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)'.",
+          "competence": "Describe principles of inheritance in living organisms (here"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+          "text": "Outline the procedures involved in 'Investigate growth in flowering plants (hypogeal and epigeal germinatio'.",
+          "competence": "Investigate growth in flowering plants (hypogeal and epigeal"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the mechanism of excretion in the human body (systems: organs, product",
+          "text": "Examine the advantages and disadvantages of 'Describe the mechanism of excretion in the human body (systems: organs, product'. - with diagram",
+          "competence": "Describe the mechanism of excretion in the human body (syste"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Analyse the causes and effects of 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline'. - with diagram",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+          "text": "Discuss the challenges facing 'Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio' in Tanzania and propose solutions. - with example",
+          "competence": "Describe the basic skills for conducting biological experime"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+          "text": "Describe the main features of 'Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)'. - with example",
+          "competence": "Describe principles of binomial nomenclature (rules of scien"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Conduct a project in Biology",
+          "text": "Outline the procedures involved in 'Conduct a project in Biology'. - with diagram",
+          "competence": "Conduct a project in Biology"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+          "text": "Examine the advantages and disadvantages of 'Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)'. - with example",
+          "competence": "Describe the physiology of gaseous exchange and respiration "
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+          "text": "Explain the concept of 'Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the mechanism of transportation of materials in the"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain classification systems and taxonomic rank",
+          "text": "Compare and contrast 'Explain classification systems and taxonomic rank' with related concepts. - with diagram",
+          "competence": "Explain classification systems and taxonomic rank"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the structure of epithelial tissues in relation to its digestive role",
+          "text": "Analyse the causes and effects of 'Describe the structure of epithelial tissues in relation to its digestive role'.",
+          "competence": "Describe the structure of epithelial tissues in relation to "
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "Compare and contrast 'Demonstrate mastery of scientific biological terminologies' with related concepts.",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+          "text": "With examples, illustrate how 'Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)' is applied in the community. - with diagram",
+          "competence": "Describe the mechanism of reproduction in animals (gametogen"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+    "Prepare and present a report on cell and photosynthesis investigations",
+    "Plan and execute in an independent biological investigation",
+    "Carry out experiments to determine the pulse rate in human",
+    "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+    "Develop and carry out a simple research project in Biology",
+    "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+    "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+    "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+    "Describe the mechanism of excretion in the human body (systems: organs, product"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

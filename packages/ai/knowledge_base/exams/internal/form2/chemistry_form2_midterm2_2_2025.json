@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form2_midterm2_2_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 2 Exam 2 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 87,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "With examples, illustrate how 'Perform experiments on separation of different mixtures using different methods' is applied in the community. - with diagram",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Compare the properties of compounds with those of constituent elements",
+          "text": "Analyse the causes and effects of 'Compare the properties of compounds with those of constituent elements'. - with diagram",
+          "competence": "Compare the properties of compounds with those of constituen"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+          "text": "Examine the advantages and disadvantages of 'Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software'.",
+          "competence": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+          "text": "Define 'Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)' and discuss its importance in everyday life.",
+          "competence": "Explore the periodic trends of elements in the modern period"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+          "text": "Outline the procedures involved in 'Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)'. - with example",
+          "competence": "Describe the concept of energetics (Heat/enthalpy of reactio"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+          "text": "Evaluate the role of 'Use the concept of atomic structure to determine the atomic and mass numbers of an element' in national development.",
+          "competence": "Use the concept of atomic structure to determine the atomic "
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Define 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species' and discuss its importance in everyday life. - with example",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe acids, bases and salts (reactions of acids and bases with various substance",
+          "text": "Examine the advantages and disadvantages of 'Describe acids, bases and salts (reactions of acids and bases with various substance'. - with example",
+          "competence": "Describe acids, bases and salts (reactions of acids and base"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+          "text": "Explain the concept of 'Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Investigate the applications of electrochemistry in industri"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Conduct a project in Chemistry",
+          "text": "Evaluate the role of 'Conduct a project in Chemistry' in national development.",
+          "competence": "Conduct a project in Chemistry"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+          "text": "With examples, illustrate how 'Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)' is applied in the community. - with example",
+          "competence": "Describe the concept of the atom (Dalton’s atomic theory, Bo"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Evaluate the role of 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes' in national development.",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "text": "Discuss the challenges facing 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table' in Tanzania and propose solutions. - with example",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Define 'Perform experiments on the changes of matter from one state to another' and discuss its importance in everyday life. - with diagram",
+          "competence": "Perform experiments on the changes of matter from one state "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Describe the main features of 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts'. - with diagram",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+          "text": "Compare and contrast 'Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures' with related concepts. - with diagram",
+          "competence": "Describe the chemical reactions of aliphatic hydrocarbons an"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+          "text": "Define 'Explain the changes in the physical and chemical properties of elements across and down the periodic table' and discuss its importance in everyday life.",
+          "competence": "Explain the changes in the physical and chemical properties "
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore reactions of complex compounds",
+          "text": "Explain the concept of 'Explore reactions of complex compounds' with examples relevant to Tanzania. - with example",
+          "competence": "Explore reactions of complex compounds"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Explain the concept of 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+          "text": "Evaluate the role of 'Describe the extraction of iron from its ore (ores, stages, and methods of extractio' in national development.",
+          "competence": "Describe the extraction of iron from its ore (ores, stages, "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Perform experiments on separation of different mixtures using different methods",
+    "Compare the properties of compounds with those of constituent elements",
+    "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+    "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+    "Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+    "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+    "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+    "Describe acids, bases and salts (reactions of acids and bases with various substance",
+    "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+    "Conduct a project in Chemistry"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

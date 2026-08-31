@@ -1,0 +1,121 @@
+{
+  "filename": "book_keeping_form2_topical_7_2024.json",
+  "subject": "Book Keeping",
+  "subject_slug": "book_keeping",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Book Keeping - Topical Test 7 (FORM2 2024): Explain double entry principle",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 33,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain double entry principle",
+          "text": "Define 'Explain double entry principle' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain double entry principle"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Trial Balance",
+          "text": "Explain the concept of 'Trial Balance' with examples relevant to Tanzania. - with example",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain double entry principle",
+          "text": "Evaluate the role of 'Explain double entry principle' in national development. - with example",
+          "competence": "Explain double entry principle"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Trial Balance",
+          "text": "Compare and contrast 'Trial Balance' with related concepts. - with diagram",
+          "competence": "Trial Balance"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Trial Balance",
+          "text": "Examine the advantages and disadvantages of 'Trial Balance'. - with example",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Trial Balance",
+          "text": "With examples, illustrate how 'Trial Balance' is applied in the community.",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain double entry principle",
+          "text": "Compare and contrast 'Explain double entry principle' with related concepts.",
+          "competence": "Explain double entry principle"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain double entry principle",
+          "text": "Define 'Explain double entry principle' and discuss its importance in everyday life.",
+          "competence": "Explain double entry principle"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Trial Balance",
+          "text": "Discuss the challenges facing 'Trial Balance' in Tanzania and propose solutions. - with diagram",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain double entry principle",
+          "text": "Discuss the challenges facing 'Explain double entry principle' in Tanzania and propose solutions. - with example",
+          "competence": "Explain double entry principle"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain double entry principle",
+    "Trial Balance"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

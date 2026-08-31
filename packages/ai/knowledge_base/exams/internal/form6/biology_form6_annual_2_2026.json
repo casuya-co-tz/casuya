@@ -1,0 +1,289 @@
+{
+  "filename": "biology_form6_annual_2_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2026",
+  "time": "3:00 Hours",
+  "title": "Biology - Annual Exam 2 (FORM6 2026)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 139,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "text": "Describe the main features of 'Demonstrate an advanced understanding of concepts, theories and principles in Biology'. - with diagram",
+          "competence": "Demonstrate an advanced understanding of concepts, theories "
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Compare and contrast 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline' with related concepts. - with diagram",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+          "text": "Outline the procedures involved in 'Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio'. - with example",
+          "competence": "Describe the mechanism of transportation of materials in the"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Investigate tropic responses in plants",
+          "text": "With examples, illustrate how 'Investigate tropic responses in plants' is applied in the community.",
+          "competence": "Investigate tropic responses in plants"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+          "text": "Compare and contrast 'Investigate growth in flowering plants (hypogeal and epigeal germinatio' with related concepts. - with diagram",
+          "competence": "Investigate growth in flowering plants (hypogeal and epigeal"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "Outline the procedures involved in 'Demonstrate mastery of scientific biological terminologies'.",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+          "text": "With examples, illustrate how 'Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)' is applied in the community. - with example",
+          "competence": "Describe the physiology of gaseous exchange and respiration "
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain classification systems and taxonomic rank",
+          "text": "Explain the concept of 'Explain classification systems and taxonomic rank' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain classification systems and taxonomic rank"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Analyse the causes and effects of 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )'.",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe coordination in plants (tropic, response",
+          "text": "With examples, illustrate how 'Describe coordination in plants (tropic, response' is applied in the community. - with diagram",
+          "competence": "Describe coordination in plants (tropic, response"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "Describe the main features of 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)'. - with example",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Analyse the causes and effects of 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms'. - with diagram",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the mechanism of excretion in the human body (systems: organs, product",
+          "text": "Outline the procedures involved in 'Describe the mechanism of excretion in the human body (systems: organs, product'. - with diagram",
+          "competence": "Describe the mechanism of excretion in the human body (syste"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4",
+          "text": "Outline the procedures involved in 'Explain the physiology of photosynthesis (mechanism of light reaction and dark reaction in C 3 and C plants) 4'. - with example",
+          "competence": "Explain the physiology of photosynthesis (mechanism of light"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+          "text": "Outline the procedures involved in 'Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse'.",
+          "competence": "Describe the major groups of organisms: (Monera, Protista, F"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "Outline the procedures involved in 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system'. - with diagram",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "Explain the concept of 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "text": "Analyse the causes and effects of 'Demonstrate mastery of basic skills for conducting biological investigations'.",
+          "competence": "Demonstrate mastery of basic skills for conducting biologica"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Design and carry out a project in Biology",
+          "text": "Examine the advantages and disadvantages of 'Design and carry out a project in Biology'. - with example",
+          "competence": "Design and carry out a project in Biology"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Learning activities",
+          "text": "Define 'Learning activities' and discuss its importance in everyday life.",
+          "competence": "Learning activities"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concept of the cell (cell theory, organelles and biological molecules)",
+          "text": "With examples, illustrate how 'Describe the concept of the cell (cell theory, organelles and biological molecules)' is applied in the community. - with diagram",
+          "competence": "Describe the concept of the cell (cell theory, organelles an"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Explain the concept of 'Prepare and present a report on cell and photosynthesis investigations' with examples relevant to Tanzania. - with example",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Describe the main features of 'Describe a cell (meaning,types, structures and function'.",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Explain the concept of 'Carry out microscopic observation of a cell' with examples relevant to Tanzania. - with diagram",
+          "competence": "Carry out microscopic observation of a cell"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+          "text": "Describe the main features of 'Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)'. - with diagram",
+          "competence": "Describe the distinctive characteristics of kingdoms, phyla/"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the structure of epithelial tissues in relation to its digestive role",
+          "text": "Examine the advantages and disadvantages of 'Describe the structure of epithelial tissues in relation to its digestive role'. - with example",
+          "competence": "Describe the structure of epithelial tissues in relation to "
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+          "text": "Explain the concept of 'Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the basic skills for conducting biological experime"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Explain the concept of 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' with examples relevant to Tanzania.",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Perform investigations on the anatomy and physiology of living organisms",
+          "text": "Outline the procedures involved in 'Perform investigations on the anatomy and physiology of living organisms'. - with diagram",
+          "competence": "Perform investigations on the anatomy and physiology of livi"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)",
+          "text": "Examine the advantages and disadvantages of 'Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)'.",
+          "competence": "Apply skills used in biological investigation (observation, "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+    "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+    "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+    "Investigate tropic responses in plants",
+    "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+    "Demonstrate mastery of scientific biological terminologies",
+    "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+    "Explain classification systems and taxonomic rank",
+    "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+    "Describe coordination in plants (tropic, response"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

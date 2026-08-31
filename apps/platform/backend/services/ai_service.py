@@ -170,6 +170,12 @@ async def get_tutoring_response(
         "context": lesson_context,
     }
 
+    # Always pass subject when known so the AI service can trigger KB RAG retrieval.
+    if subject_slug:
+        payload["subject_slug"] = subject_slug
+    if form_level:
+        payload["form_level"] = form_level
+
     # Inject NECTA/TIE curriculum context if subject info is available
     if subject_slug and form_level:
         try:
@@ -178,20 +184,18 @@ async def get_tutoring_response(
             curriculum_ctx = get_curriculum_context(subject_slug, form_level)
             if curriculum_ctx:
                 payload["curriculum_context"] = curriculum_ctx
-                payload["subject_slug"] = subject_slug
-                payload["form_level"] = form_level
         except Exception as exc:
             logger.debug("Could not fetch syllabus context: %s", exc)
 
     result = await _call_ai_service("/api/tutoring/explain", payload)
     if result and "response" in result:
         response = result["response"]
-        # Strip <think>...</think> blocks from models that use chain-of-thought
-        # Some models (e.g. Qwen) emit <think> without a closing tag
-        response = re.sub(r"<think>[\s\S]*?<\/think>", "", response).strip()
-        if "<think>" in response:
-            # No closing tag — take everything after the last <think> block
-            parts = response.split("<think>")
+        # Strip  thinking... response blocks from models that use chain-of-thought
+        # Some models (e.g. Qwen) emit  thinking without a closing tag
+        response = re.sub(r" thinking[\s\S]*?<\/think>", "", response).strip()
+        if " thinking" in response:
+            # No closing tag — take everything after the last  thinking block
+            parts = response.split(" thinking")
             response = parts[-1].strip()
         return response
 
@@ -267,6 +271,55 @@ async def translate_content(text: str, target_language: str) -> str:
         return result.get("translated") or result.get("translatedText") or text
 
     return text  # Return original if service unavailable
+
+
+# ---------- Knowledge Base (RAG) ----------
+
+
+async def search_knowledge_base(
+    query: str,
+    subject: str | None = None,
+    form: str | None = None,
+    year: str | None = None,
+    kind: list[str] | None = None,
+    limit: int = 8,
+) -> list[dict]:
+    """Search the NECTA/TIE knowledge base (syllabi, exams, marking schemes).
+
+    Proxies to the casuya-ai service's /api/kb/search endpoint. Returns a list
+    of matching source documents so the platform can surface grounded references.
+    """
+    payload: dict = {"q": query, "limit": limit}
+    if subject:
+        payload["subject"] = subject
+    if form:
+        payload["form"] = form
+    if year:
+        payload["year"] = year
+    if kind:
+        payload["kind"] = kind
+
+    result = await _call_ai_service("/api/kb/search", payload)
+    if result and "hits" in result:
+        return result["hits"]
+    return []
+
+
+async def get_syllabus(code: str) -> dict | None:
+    """Fetch a syllabus from the knowledge base by NECTA subject code."""
+    result = await _call_ai_service(
+        "/api/kb/syllabus",
+        {"code": code},
+    )
+    if result and "syllabus" in result:
+        return result["syllabus"]
+    return None
+
+
+async def get_kb_health() -> dict | None:
+    """Report knowledge-base readiness and corpus stats from the AI service."""
+    result = await _call_ai_service("/api/kb/health", {})
+    return result if result else None
 
 
 # ---------- Math/STEM ----------

@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form6_topical_8_2024.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 8 (FORM6 2024): Practise pronunciation with proper ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 44,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "(English to Kiswahili and vice vers",
+          "text": "Discuss the factors influencing '(English to Kiswahili and vice vers'.",
+          "competence": "(English to Kiswahili and vice vers"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "(English to Kiswahili and vice vers",
+          "text": "Explain the relationship between '(English to Kiswahili and vice vers' and its environment. - locally",
+          "competence": "(English to Kiswahili and vice vers"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "(English to Kiswahili and vice vers",
+          "text": "Describe the main features of '(English to Kiswahili and vice vers'.",
+          "competence": "(English to Kiswahili and vice vers"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Practise pronunciation with proper word stress assignment",
+          "text": "How does 'Practise pronunciation with proper word stress assignment' relate to sustainable development?",
+          "competence": "Practise pronunciation with proper word stress assignment"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Practise pronunciation with proper word stress assignment",
+          "text": "Analyse the causes and effects of 'Practise pronunciation with proper word stress assignment'. - locally",
+          "competence": "Practise pronunciation with proper word stress assignment"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Practise pronunciation with proper word stress assignment",
+          "text": "What are the characteristics of 'Practise pronunciation with proper word stress assignment'? - with example",
+          "competence": "Practise pronunciation with proper word stress assignment"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "(English to Kiswahili and vice vers",
+          "text": "Propose measures to improve '(English to Kiswahili and vice vers' in schools. - with diagram",
+          "competence": "(English to Kiswahili and vice vers"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Practise pronunciation with proper word stress assignment",
+          "text": "With examples, illustrate how 'Practise pronunciation with proper word stress assignment' is applied in the community.",
+          "competence": "Practise pronunciation with proper word stress assignment"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "(English to Kiswahili and vice vers",
+          "text": "Examine the advantages and disadvantages of '(English to Kiswahili and vice vers'. - locally",
+          "competence": "(English to Kiswahili and vice vers"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Practise pronunciation with proper word stress assignment",
+          "text": "Propose measures to improve 'Practise pronunciation with proper word stress assignment' in schools. - with example",
+          "competence": "Practise pronunciation with proper word stress assignment"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "(English to Kiswahili and vice vers",
+    "Practise pronunciation with proper word stress assignment"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

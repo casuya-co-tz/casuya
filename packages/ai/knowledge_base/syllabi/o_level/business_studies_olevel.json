@@ -1,0 +1,286 @@
+{
+  "subject_code": "061",
+  "subject_name": "Business Studies",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of business knowledge",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of the concepts, theories and principles of Business Education",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U1-L1",
+              "title": "Describe the concept and scope of business studies, and its relationship with other disciplines",
+              "markdown_content": "## a) Describe the concept and scope of business studies, and its relationship with other disciplines",
+              "page": 14
+            },
+            {
+              "lesson_id": "BUS-F1-U1-L2",
+              "title": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+              "markdown_content": "## b) Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+              "page": 16
+            },
+            {
+              "lesson_id": "BUS-F1-U1-L3",
+              "title": "Describe sole proprietorship (meaning, features, advantages and disadvantages and start-u",
+              "markdown_content": "## c) Describe sole proprietorship (meaning, features, advantages and disadvantages and start-u",
+              "page": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of business knowledge",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of the concepts, theories and principles of Business Education",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U1-L4",
+              "title": "Explain the concept of production (meaning, types, factors and importanc",
+              "markdown_content": "## a) Explain the concept of production (meaning, types, factors and importanc",
+              "page": 19
+            },
+            {
+              "lesson_id": "BUS-F1-U1-L5",
+              "title": "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+              "markdown_content": "## b) Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+              "page": 21
+            },
+            {
+              "lesson_id": "BUS-F1-U1-L6",
+              "title": "Describe the role of microfinancing and cooperatives in facilitating business formation and operations",
+              "markdown_content": "## c) Describe the role of microfinancing and cooperatives in facilitating business formation and operations",
+              "page": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Solve social challenges using business skills",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of the basic skills of operating a small-scale business",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U2-L7",
+              "title": "Describe the basic aspects of management for small businesses (meaning, financial and other records keeping, calculation of profit and loss, budgeting and control and administratio",
+              "markdown_content": "## a) Describe the basic aspects of management for small businesses (meaning, financial and other records keeping, calculation of profit and loss, budgeting and control and administratio",
+              "page": 24
+            },
+            {
+              "lesson_id": "BUS-F1-U2-L8",
+              "title": "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+              "markdown_content": "## b) Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+              "page": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Apply business knowledge in various contexts",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Apply business theories into practice",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U3-L9",
+              "title": "Identify business opportunities available in the local environment",
+              "markdown_content": "## a) Identify business opportunities available in the local environment",
+              "page": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of business knowledge",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of the concepts, theories and principles of Business Education",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U1-L10",
+              "title": "Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio",
+              "markdown_content": "## a) Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio",
+              "page": 29
+            },
+            {
+              "lesson_id": "BUS-F1-U1-L11",
+              "title": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+              "markdown_content": "## b) Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+              "page": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Solve social challenges using business skills",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of the basic skills of operating a small-scale business",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U2-L12",
+              "title": "Explore the basic aspects of the policy and regulatory environment governing small businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-law",
+              "markdown_content": "## a) Explore the basic aspects of the policy and regulatory environment governing small businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-law",
+              "page": 32
+            },
+            {
+              "lesson_id": "BUS-F1-U2-L13",
+              "title": "Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc",
+              "markdown_content": "## b) Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc",
+              "page": 34
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Apply business knowledge in various contexts",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Apply business theories into practice",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U3-L14",
+              "title": "Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin",
+              "markdown_content": "## a) Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin",
+              "page": 36
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate mastery of basic business ethics",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U3-L15",
+              "title": "Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+              "markdown_content": "## a) Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+              "page": 38
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of business knowledge",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of the concepts, theories and principles of Business Education",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U1-L16",
+              "title": "Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim",
+              "markdown_content": "## a) Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim",
+              "page": 40
+            },
+            {
+              "lesson_id": "BUS-F1-U1-L17",
+              "title": "Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio",
+              "markdown_content": "## b) Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio",
+              "page": 41
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Solve social challenges using business skills",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of the basic skills of operating a small-scale business",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U2-L18",
+              "title": "Describe taxes and levies associated with small businesses in Tanzania (meaning, types, importance, and sanctions for non- complianc",
+              "markdown_content": "## a) Describe taxes and levies associated with small businesses in Tanzania (meaning, types, importance, and sanctions for non- complianc",
+              "page": 43
+            },
+            {
+              "lesson_id": "BUS-F1-U2-L19",
+              "title": "Describe the basic principles of communication and networking for small businesses",
+              "markdown_content": "## b) Describe the basic principles of communication and networking for small businesses",
+              "page": 44
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate mastery of the basic skills of trading locally and internationally",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "BUS-F1-U2-L20",
+              "title": "Use pricing techniques to determine appropriate prices of products",
+              "markdown_content": "## a) Use pricing techniques to determine appropriate prices of products",
+              "page": 45
+            },
+            {
+              "lesson_id": "BUS-F1-U2-L21",
+              "title": "Identify relevant procedures and practices for buying and selling products within and outside the country",
+              "markdown_content": "## b) Identify relevant procedures and practices for buying and selling products within and outside the country",
+              "page": 47
+            },
+            {
+              "lesson_id": "BUS-F1-U2-L22",
+              "title": "Use appropriate selling methods and techniques (branding, logos, packaging, after sales services, barcoding, direct mail and internet auction",
+              "markdown_content": "## c) Use appropriate selling methods and techniques (branding, logos, packaging, after sales services, barcoding, direct mail and internet auction",
+              "page": 47
+            },
+            {
+              "lesson_id": "BUS-F1-U2-L23",
+              "title": "to facilitate trade",
+              "markdown_content": "## s) to facilitate trade",
+              "page": 47
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Apply business knowledge in various contexts",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Apply business theories into practice",
+          "competence_code": "3.1",
+          "lessons": []
+        }
+      ]
+    }
+  ]
+}

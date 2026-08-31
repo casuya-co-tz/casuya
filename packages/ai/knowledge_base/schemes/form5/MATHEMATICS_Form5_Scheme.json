@@ -1,0 +1,358 @@
+{
+  "file": "MATHEMATICS_Form5_NECTA_Scheme.json",
+  "subjects": [
+    {
+      "subject_name": "Mathematics",
+      "subject_code": "012",
+      "form": "Form 5",
+      "year": "2025/2026",
+      "headers": [
+        "Week",
+        "Topic",
+        "Sub Topic",
+        "Competence",
+        "Learning Activities",
+        "Assessment",
+        "Resources"
+      ],
+      "column_count": 7,
+      "entries": [
+        {
+          "week": 1,
+          "period": "Period 1",
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "sub_topic": "Subtopic 1: Demonstrate an advanced understanding of knowledge and skills in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 2,
+          "period": "Period 2",
+          "topic": "Demonstrate basic understanding of calculus",
+          "sub_topic": "Subtopic 2: Demonstrate basic understanding of calculus - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate basic understanding of calculus",
+          "learning_activities": "Discussion, practical, research on Demonstrate basic understanding of calculus",
+          "assessment": "Quiz, assignment, presentation on Demonstrate basic understanding of calculus",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 3,
+          "period": "Period 3",
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "sub_topic": "Subtopic 3: Demonstrate an advanced understanding of set theory and logic - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of set theory and logic",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of set theory and logic",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of set theory and logic",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 4,
+          "period": "Period 4",
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "sub_topic": "Subtopic 4: Demonstrate an advanced understanding of algebra - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of algebra",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of algebra",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of algebra",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 5,
+          "period": "Period 5",
+          "topic": "Carry out a project in Mathematics",
+          "sub_topic": "Subtopic 5: Carry out a project in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Carry out a project in Mathematics",
+          "learning_activities": "Discussion, practical, research on Carry out a project in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Carry out a project in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 6,
+          "period": "Period 6",
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "sub_topic": "Subtopic 6: Demonstrate an advanced understanding of knowledge and skills in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 7,
+          "period": "Period 7",
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "sub_topic": "Subtopic 7: Demonstrate an advanced understanding of statistics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of statistics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of statistics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of statistics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 8,
+          "period": "Period 8",
+          "topic": "Carry out a project in Mathematics",
+          "sub_topic": "Subtopic 8: Carry out a project in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Carry out a project in Mathematics",
+          "learning_activities": "Discussion, practical, research on Carry out a project in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Carry out a project in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 9,
+          "period": "Period 9",
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "sub_topic": "Subtopic 9: Demonstrate an advanced understanding of knowledge and skills in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 10,
+          "period": "Period 10",
+          "topic": "Demonstrate basic understanding of calculus",
+          "sub_topic": "Subtopic 10: Demonstrate basic understanding of calculus - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate basic understanding of calculus",
+          "learning_activities": "Discussion, practical, research on Demonstrate basic understanding of calculus",
+          "assessment": "Quiz, assignment, presentation on Demonstrate basic understanding of calculus",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 11,
+          "period": "Period 11",
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "sub_topic": "Subtopic 11: Demonstrate an advanced understanding of set theory and logic - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of set theory and logic",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of set theory and logic",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of set theory and logic",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 12,
+          "period": "Period 12",
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "sub_topic": "Subtopic 12: Demonstrate an advanced understanding of algebra - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of algebra",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of algebra",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of algebra",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 13,
+          "period": "Period 13",
+          "topic": "Carry out a project in Mathematics",
+          "sub_topic": "Subtopic 13: Carry out a project in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Carry out a project in Mathematics",
+          "learning_activities": "Discussion, practical, research on Carry out a project in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Carry out a project in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 14,
+          "period": "Period 14",
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "sub_topic": "Subtopic 14: Demonstrate an advanced understanding of knowledge and skills in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 15,
+          "period": "Period 15",
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "sub_topic": "Subtopic 15: Demonstrate an advanced understanding of statistics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of statistics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of statistics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of statistics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 16,
+          "period": "Period 16",
+          "topic": "Carry out a project in Mathematics",
+          "sub_topic": "Subtopic 16: Carry out a project in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Carry out a project in Mathematics",
+          "learning_activities": "Discussion, practical, research on Carry out a project in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Carry out a project in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 17,
+          "period": "Period 17",
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "sub_topic": "Subtopic 17: Demonstrate an advanced understanding of knowledge and skills in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 18,
+          "period": "Period 18",
+          "topic": "Demonstrate basic understanding of calculus",
+          "sub_topic": "Subtopic 18: Demonstrate basic understanding of calculus - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate basic understanding of calculus",
+          "learning_activities": "Discussion, practical, research on Demonstrate basic understanding of calculus",
+          "assessment": "Quiz, assignment, presentation on Demonstrate basic understanding of calculus",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 19,
+          "period": "Period 19",
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "sub_topic": "Subtopic 19: Demonstrate an advanced understanding of set theory and logic - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of set theory and logic",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of set theory and logic",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of set theory and logic",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 20,
+          "period": "Period 20",
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "sub_topic": "Subtopic 20: Demonstrate an advanced understanding of algebra - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of algebra",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of algebra",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of algebra",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 21,
+          "period": "Period 21",
+          "topic": "Carry out a project in Mathematics",
+          "sub_topic": "Subtopic 21: Carry out a project in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Carry out a project in Mathematics",
+          "learning_activities": "Discussion, practical, research on Carry out a project in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Carry out a project in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 22,
+          "period": "Period 22",
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "sub_topic": "Subtopic 22: Demonstrate an advanced understanding of knowledge and skills in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 23,
+          "period": "Period 23",
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "sub_topic": "Subtopic 23: Demonstrate an advanced understanding of statistics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of statistics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of statistics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of statistics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 24,
+          "period": "Period 24",
+          "topic": "Carry out a project in Mathematics",
+          "sub_topic": "Subtopic 24: Carry out a project in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Carry out a project in Mathematics",
+          "learning_activities": "Discussion, practical, research on Carry out a project in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Carry out a project in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 25,
+          "period": "Period 25",
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "sub_topic": "Subtopic 25: Demonstrate an advanced understanding of knowledge and skills in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 26,
+          "period": "Period 26",
+          "topic": "Demonstrate basic understanding of calculus",
+          "sub_topic": "Subtopic 26: Demonstrate basic understanding of calculus - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate basic understanding of calculus",
+          "learning_activities": "Discussion, practical, research on Demonstrate basic understanding of calculus",
+          "assessment": "Quiz, assignment, presentation on Demonstrate basic understanding of calculus",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 27,
+          "period": "Period 27",
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "sub_topic": "Subtopic 27: Demonstrate an advanced understanding of set theory and logic - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of set theory and logic",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of set theory and logic",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of set theory and logic",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 28,
+          "period": "Period 28",
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "sub_topic": "Subtopic 28: Demonstrate an advanced understanding of algebra - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of algebra",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of algebra",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of algebra",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 29,
+          "period": "Period 29",
+          "topic": "Carry out a project in Mathematics",
+          "sub_topic": "Subtopic 29: Carry out a project in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Carry out a project in Mathematics",
+          "learning_activities": "Discussion, practical, research on Carry out a project in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Carry out a project in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 30,
+          "period": "Period 30",
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "sub_topic": "Subtopic 30: Demonstrate an advanced understanding of knowledge and skills in Mathematics - Detailed",
+          "competence": "Demonstrate understanding of Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "learning_activities": "Discussion, practical, research on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "assessment": "Quiz, assignment, presentation on Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "resources": "Textbook 012, lab materials",
+          "remarks": ""
+        }
+      ],
+      "entry_count": 30,
+      "table_index": 0
+    }
+  ],
+  "form": "Form 5",
+  "year": "2025/2026",
+  "source": "generated from syllabus"
+}

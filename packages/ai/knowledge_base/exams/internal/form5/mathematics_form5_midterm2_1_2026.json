@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form5_midterm2_1_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 2 Exam 1 (FORM5 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 88,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+          "text": "Assess the impact of 'Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)' on society. - with diagram",
+          "competence": "Explore the basic tenets of complex numbers (modulus, argume"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Find the domain and range of relations and functions",
+          "text": "How does 'Find the domain and range of relations and functions' relate to sustainable development? - with diagram",
+          "competence": "Find the domain and range of relations and functions"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
+          "text": "With examples, illustrate how 'Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set' is applied in the community. - locally",
+          "competence": "Distinguish among different types of sets (universal set, eq"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "What are the characteristics of 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic'? - locally",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+          "text": "Describe the process of 'Use basic coordinate geometry, trigonometry and vectors skills in daily life' step by step.",
+          "competence": "Use basic coordinate geometry, trigonometry and vectors skil"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Calculate angles of elevation and depression",
+          "text": "Describe the main features of 'Calculate angles of elevation and depression'. - locally",
+          "competence": "Calculate angles of elevation and depression"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use mathematical software to solve and draw graphs of simultaneous equations",
+          "text": "Explain the concept of 'Use mathematical software to solve and draw graphs of simultaneous equations' with examples relevant to Tanzania. - with example",
+          "competence": "Use mathematical software to solve and draw graphs of simult"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+          "text": "Analyse the causes and effects of 'Use algebraic expressions to model situations (word problems into algebraic expressions and equation'.",
+          "competence": "Use algebraic expressions to model situations (word problems"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "Outline the procedures involved in 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)'. - with diagram",
+          "competence": "Use differential equations to solve real life problems relat"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+          "text": "Explain the concept of 'Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs' with examples relevant to Tanzania.",
+          "competence": "Find the general term for AP and GP and use them to derive f"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Determine trigonometric ratios of angles and special angles",
+          "text": "Discuss the factors influencing 'Determine trigonometric ratios of angles and special angles'. - with diagram",
+          "competence": "Determine trigonometric ratios of angles and special angles"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+          "text": "Assess the impact of 'Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)' on society.",
+          "competence": "Explore advanced tenets of statistics (measures of central t"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use laws of logarithms to solve problems",
+          "text": "With examples, illustrate how 'Use laws of logarithms to solve problems' is applied in the community.",
+          "competence": "Use laws of logarithms to solve problems"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "Analyse the causes and effects of 'Solve simultaneous equations using substitution and elimination methods'.",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Explain the relationship between 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' and its environment.",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)' in Tanzania and propose solutions. - locally",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
+          "text": "Define 'Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set' and discuss its importance in everyday life.",
+          "competence": "Explore the basic tenets of sets (types of sets, subsets, op"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Determine the equation of a straight line and draw its graph",
+          "text": "With examples, illustrate how 'Determine the equation of a straight line and draw its graph' is applied in the community. - locally",
+          "competence": "Determine the equation of a straight line and draw its graph"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Carry out a project to solve a problem using mathematical skills",
+          "text": "How does 'Carry out a project to solve a problem using mathematical skills' relate to sustainable development?",
+          "competence": "Carry out a project to solve a problem using mathematical sk"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "Assess the impact of 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation' on society.",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of complex numbers (modulus, argument, Argand diagram, polar form, De Moivre’s theorem and Euler’s formula)",
+    "Find the domain and range of relations and functions",
+    "Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
+    "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+    "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+    "Calculate angles of elevation and depression",
+    "Use mathematical software to solve and draw graphs of simultaneous equations",
+    "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+    "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+    "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

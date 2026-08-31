@@ -1,0 +1,289 @@
+{
+  "filename": "chemistry_form2_annual_2_2026.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2026",
+  "time": "3:00 Hours",
+  "title": "Chemistry - Annual Exam 2 (FORM2 2026)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 149,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain Avogadro’s law in relation to molar quantities",
+          "text": "Explain the concept of 'Explain Avogadro’s law in relation to molar quantities' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain Avogadro’s law in relation to molar quantities"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+          "text": "Describe the main features of '. Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry'.",
+          "competence": ". Demonstrate an advanced understanding of the concepts, the"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi'. - with diagram",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "With examples, illustrate how 'Perform experiments on the changes of matter from one state to another' is applied in the community.",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Examine the advantages and disadvantages of 'Use the electronic configuration of an element to locate their positions in the periodic table'.",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+          "text": "With examples, illustrate how 'Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance' is applied in the community. - with example",
+          "competence": "Describe the mole concept (comparison of the mole with other"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "With examples, illustrate how 'Design and carry out a project in Chemistry' is applied in the community. - with diagram",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation",
+          "text": "Explain the concept of 'Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation' with examples relevant to Tanzania. - with example",
+          "competence": "Explain the principles of volumetric analysis (preparation o"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)",
+          "text": "Describe the main features of 'Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)'. - with diagram",
+          "competence": "Assess the applications of chemical equilibria in industries"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines",
+          "text": "Compare and contrast 'phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines' with related concepts.",
+          "competence": "phenols, carbonyl compounds, carboxylic acids and their deri"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept of chemical bonding and the interactions of atoms to form molecules",
+          "text": "Describe the main features of 'Explain the concept of chemical bonding and the interactions of atoms to form molecules'. - with example",
+          "competence": "Explain the concept of chemical bonding and the interactions"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber",
+          "text": "Define 'Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber' and discuss its importance in everyday life.",
+          "competence": "Examine reactions of haloalkanes, amines and polymers for pr"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of chemical concepts and principles and their application in different contexts' is applied in the community. - with example",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
+          "text": "Define 'Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal' and discuss its importance in everyday life. - with example",
+          "competence": "Explain the concept of the periodic table (1st 20 elements i"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore reactions of complex compounds",
+          "text": "With examples, illustrate how 'Explore reactions of complex compounds' is applied in the community.",
+          "competence": "Explore reactions of complex compounds"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table'.",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe acids, bases and salts (reactions of acids and bases with various substance",
+          "text": "Define 'Describe acids, bases and salts (reactions of acids and bases with various substance' and discuss its importance in everyday life.",
+          "competence": "Describe acids, bases and salts (reactions of acids and base"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table'.",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+          "text": "Explain the concept of 'Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants' with examples relevant to Tanzania.",
+          "competence": "Examine the applications of colligative properties in the pu"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
+          "text": "Explain the concept of 'Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals' with examples relevant to Tanzania. - with diagram",
+          "competence": "Perform experiments on the applications of electrolysis in c"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of chemical bonding (covalent and electrovalent bondin",
+          "text": "Discuss the challenges facing 'Describe the concept of chemical bonding (covalent and electrovalent bondin' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the concept of chemical bonding (covalent and elect"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+          "text": "Compare and contrast 'Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle' with related concepts. - with diagram",
+          "competence": "Describe the modern concept of atomic structure (Dalton’s at"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Describe the main features of 'Conduct experiments in Chemistry'.",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Evaluate the role of 'Analyse the periodic trends of elements in relation to their physical and chemical properties' in national development.",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Perform experiments on volumetric analysis",
+          "text": "Define 'Perform experiments on volumetric analysis' and discuss its importance in everyday life. - with diagram",
+          "competence": "Perform experiments on volumetric analysis"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Explain the concept of 'Use different atomic theories to determine the electronic configuration of elements with different properties' with examples relevant to Tanzania. - with example",
+          "competence": "Use different atomic theories to determine the electronic co"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 8,
+          "topic": ", compounds (binary compoun",
+          "text": "Explain the concept of ', compounds (binary compoun' with examples relevant to Tanzania. - with example",
+          "competence": ", compounds (binary compoun"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+          "text": "Analyse the causes and effects of 'Explain the changes in the physical and chemical properties of elements across and down the periodic table'.",
+          "competence": "Explain the changes in the physical and chemical properties "
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
+          "text": "Compare and contrast 'Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols' with related concepts. - with example",
+          "competence": "Demonstrate the local and industrial preparations of aliphat"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline'.",
+          "competence": "Describe the concept of Chemistry (meaning, branches, applic"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain Avogadro’s law in relation to molar quantities",
+    ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+    "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+    "Perform experiments on the changes of matter from one state to another",
+    "Use the electronic configuration of an element to locate their positions in the periodic table",
+    "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+    "Design and carry out a project in Chemistry",
+    "Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation",
+    "Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)",
+    "phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

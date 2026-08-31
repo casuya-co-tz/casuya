@@ -1,0 +1,61 @@
+{
+  "code": "033",
+  "subject": "Biology",
+  "level": "Form 3-4 (CSEE Pilot)",
+  "template_file": "exam_formats/templates/BIOLOGY_CSEE_PILOT_2026.html",
+  "source_html": "C:/Users/Admin/Downloads/gemini-code-1788177940162.html",
+  "duration": "3:00 Hours",
+  "year": "2025/2026",
+  "structure": {
+    "total_questions": 11,
+    "total_marks": 100,
+    "sections": [
+      {
+        "name": "A",
+        "marks": 16,
+        "questions": [
+          1,
+          2
+        ],
+        "description": "Q1 MCQ i-x 10 marks (mitochondrion, ball/socket joint, pulmonary vein, osmosis, kwashiorkor, ATP 36-38, insulin, nephron, auxin, ABxO) + Q2 Matching epidermis/urea/neuron/phloem/placenta/photosynthesis 6 marks"
+      },
+      {
+        "name": "B",
+        "marks": 54,
+        "questions": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "description": "Q3 plant vs animal cell 9, Q4 balanced diet + cassava digestion 9, Q5 heart diagram thicker left ventricle 9, Q6 gaseous exchange alveoli 9, Q7 reflex arc 9, Q8 epigeal/hypogeal germination tubes A-D 9"
+      },
+      {
+        "name": "C",
+        "marks": 30,
+        "questions": [
+          9,
+          10,
+          11
+        ],
+        "description": "Choose 2x15: Q9 Mendel Tt x tt Punnett, Q10 nephron ultrafiltration/PCT/ADH, Q11 Lamarck/Darwin evolution"
+      }
+    ],
+    "instructions": [
+      "This paper consists of sections A, B, and C with a total of eleven (11) questions.",
+      "Answer ALL questions in sections A and B, and TWO (2) questions from section C.",
+      "Cellular phones and any unauthorized materials are NOT allowed in the examination room.",
+      "All drawings should be made in pencil, clearly labeled, and neat."
+    ],
+    "layout_features": [
+      "A4 4 pages, header 033 BIOLOGY, meta bar Time/Year, instructions block, section heads underlined, SVG heart/nephron diagrams, footer 033 Page X of 4"
+    ]
+  },
+  "applied_to": [
+    "form3",
+    "form4"
+  ],
+  "internal_exams_generated": 40
+}

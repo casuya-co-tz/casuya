@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form3_topical_7_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 7 (FORM3 2025): Evaluate edited field specific text",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 45,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the concept of interpretation",
+          "text": "Outline the procedures involved in 'Explain the concept of interpretation'. - locally",
+          "competence": "Explain the concept of interpretation"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of interpretation",
+          "text": "Discuss the challenges facing 'Explain the concept of interpretation' in Tanzania and propose solutions.",
+          "competence": "Explain the concept of interpretation"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the concept of interpretation",
+          "text": "Describe the main features of 'Explain the concept of interpretation'. - with example",
+          "competence": "Explain the concept of interpretation"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the concept of interpretation",
+          "text": "Propose measures to improve 'Explain the concept of interpretation' in schools. - with diagram",
+          "competence": "Explain the concept of interpretation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain the concept of interpretation",
+          "text": "Discuss the challenges facing 'Explain the concept of interpretation' in Tanzania and propose solutions.",
+          "competence": "Explain the concept of interpretation"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept of interpretation",
+          "text": "Discuss the challenges facing 'Explain the concept of interpretation' in Tanzania and propose solutions. - locally",
+          "competence": "Explain the concept of interpretation"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Evaluate edited field specific texts with an editorial perspective",
+          "text": "What are the characteristics of 'Evaluate edited field specific texts with an editorial perspective'? - with diagram",
+          "competence": "Evaluate edited field specific texts with an editorial persp"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept of interpretation",
+          "text": "Describe the main features of 'Explain the concept of interpretation'. - locally",
+          "competence": "Explain the concept of interpretation"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain the concept of interpretation",
+          "text": "Evaluate the role of 'Explain the concept of interpretation' in national development. - with diagram",
+          "competence": "Explain the concept of interpretation"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Evaluate edited field specific texts with an editorial perspective",
+          "text": "Describe the main features of 'Evaluate edited field specific texts with an editorial perspective'. - locally",
+          "competence": "Evaluate edited field specific texts with an editorial persp"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of interpretation",
+    "Evaluate edited field specific texts with an editorial perspective"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

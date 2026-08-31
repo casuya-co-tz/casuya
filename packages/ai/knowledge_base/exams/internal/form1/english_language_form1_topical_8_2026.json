@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form1_topical_8_2026.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 8 (FORM1 2026): Describe activities and events of a",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 49,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Differentiate the structure and style of different functional texts",
+          "text": "How does 'Differentiate the structure and style of different functional texts' relate to sustainable development?",
+          "competence": "Differentiate the structure and style of different functiona"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game",
+          "text": "Analyse the causes and effects of 'Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game'. - with diagram",
+          "competence": "Describe activities and events of a social or cultural natur"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game",
+          "text": "Explain the concept of 'Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game' with examples relevant to Tanzania.",
+          "competence": "Describe activities and events of a social or cultural natur"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Differentiate the structure and style of different functional texts",
+          "text": "Explain the concept of 'Differentiate the structure and style of different functional texts' with examples relevant to Tanzania. - locally",
+          "competence": "Differentiate the structure and style of different functiona"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game",
+          "text": "Analyse the causes and effects of 'Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game'. - with diagram",
+          "competence": "Describe activities and events of a social or cultural natur"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game",
+          "text": "Outline the procedures involved in 'Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game'. - locally",
+          "competence": "Describe activities and events of a social or cultural natur"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Differentiate the structure and style of different functional texts",
+          "text": "Propose measures to improve 'Differentiate the structure and style of different functional texts' in schools. - locally",
+          "competence": "Differentiate the structure and style of different functiona"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game",
+          "text": "Propose measures to improve 'Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game' in schools.",
+          "competence": "Describe activities and events of a social or cultural natur"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game",
+          "text": "Propose measures to improve 'Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game' in schools.",
+          "competence": "Describe activities and events of a social or cultural natur"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game",
+          "text": "Propose measures to improve 'Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game' in schools. - with diagram",
+          "competence": "Describe activities and events of a social or cultural natur"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Differentiate the structure and style of different functional texts",
+    "Describe activities and events of a social or cultural nature (e.g., celebrations, parades, accidents, elections, funerals, sport and game"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

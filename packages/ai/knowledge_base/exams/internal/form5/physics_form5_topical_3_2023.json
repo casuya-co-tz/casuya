@@ -1,0 +1,121 @@
+{
+  "filename": "physics_form5_topical_3_2023.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Physics - Topical Test 3 (FORM5 2023): Hydraulic Press",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 43,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "explain the origin of charges",
+          "text": "Discuss the challenges facing 'explain the origin of charges' in Tanzania and propose solutions.",
+          "competence": "explain the origin of charges"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "explain the origin of charges",
+          "text": "Define 'explain the origin of charges' and discuss its importance in everyday life.",
+          "competence": "explain the origin of charges"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "explain the origin of charges",
+          "text": "How does 'explain the origin of charges' relate to sustainable development?",
+          "competence": "explain the origin of charges"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "explain the origin of charges",
+          "text": "Explain the concept of 'explain the origin of charges' with examples relevant to Tanzania. - with example",
+          "competence": "explain the origin of charges"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Hydraulic Press",
+          "text": "Describe the process of 'Hydraulic Press' step by step.",
+          "competence": "Hydraulic Press"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "explain the origin of charges",
+          "text": "Evaluate the role of 'explain the origin of charges' in national development. - with example",
+          "competence": "explain the origin of charges"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Hydraulic Press",
+          "text": "Examine the advantages and disadvantages of 'Hydraulic Press'. - with example",
+          "competence": "Hydraulic Press"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Hydraulic Press",
+          "text": "Define 'Hydraulic Press' and discuss its importance in everyday life.",
+          "competence": "Hydraulic Press"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "explain the origin of charges",
+          "text": "Propose measures to improve 'explain the origin of charges' in schools.",
+          "competence": "explain the origin of charges"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "explain the origin of charges",
+          "text": "How does 'explain the origin of charges' relate to sustainable development?",
+          "competence": "explain the origin of charges"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "explain the origin of charges",
+    "Hydraulic Press"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

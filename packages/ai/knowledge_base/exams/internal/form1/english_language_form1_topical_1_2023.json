@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form1_topical_1_2023.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 1 (FORM1 2023): Express feelings and emotions depic",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Sort and categorise information obtained from various sources into related themes",
+          "text": "What are the characteristics of 'Sort and categorise information obtained from various sources into related themes'? - with diagram",
+          "competence": "Sort and categorise information obtained from various source"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)",
+          "text": "Compare and contrast 'Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)' with related concepts. - with example",
+          "competence": "Express feelings and emotions depicted/ portrayed in various"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)",
+          "text": "With examples, illustrate how 'Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)' is applied in the community. - locally",
+          "competence": "Express feelings and emotions depicted/ portrayed in various"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)",
+          "text": "How does 'Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)' relate to sustainable development? - with diagram",
+          "competence": "Express feelings and emotions depicted/ portrayed in various"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Sort and categorise information obtained from various sources into related themes",
+          "text": "How does 'Sort and categorise information obtained from various sources into related themes' relate to sustainable development?",
+          "competence": "Sort and categorise information obtained from various source"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)",
+          "text": "Analyse the causes and effects of 'Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)'. - locally",
+          "competence": "Express feelings and emotions depicted/ portrayed in various"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Sort and categorise information obtained from various sources into related themes",
+          "text": "Describe the process of 'Sort and categorise information obtained from various sources into related themes' step by step. - with diagram",
+          "competence": "Sort and categorise information obtained from various source"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Sort and categorise information obtained from various sources into related themes",
+          "text": "Discuss the factors influencing 'Sort and categorise information obtained from various sources into related themes'.",
+          "competence": "Sort and categorise information obtained from various source"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)",
+          "text": "Discuss the challenges facing 'Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)' in Tanzania and propose solutions.",
+          "competence": "Express feelings and emotions depicted/ portrayed in various"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Sort and categorise information obtained from various sources into related themes",
+          "text": "Evaluate the role of 'Sort and categorise information obtained from various sources into related themes' in national development.",
+          "competence": "Sort and categorise information obtained from various source"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Sort and categorise information obtained from various sources into related themes",
+    "Express feelings and emotions depicted/ portrayed in various social contexts using appropriate phrases (e.g., I am saddened…, I am upset…, my condolences… I feel happy… hurray…)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

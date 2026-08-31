@@ -1,0 +1,121 @@
+{
+  "filename": "agriculture_form2_topical_2_2025.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Agriculture - Topical Test 2 (FORM2 2025): Explain importance of agriculture",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 44,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain importance of agriculture",
+          "text": "Evaluate the role of 'Explain importance of agriculture' in national development.",
+          "competence": "Explain importance of agriculture"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Farm Management",
+          "text": "Analyse the causes and effects of 'Farm Management'. - with example",
+          "competence": "Farm Management"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Farm Management",
+          "text": "Analyse the causes and effects of 'Farm Management'.",
+          "competence": "Farm Management"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain importance of agriculture",
+          "text": "Describe the main features of 'Explain importance of agriculture'. - with diagram",
+          "competence": "Explain importance of agriculture"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain importance of agriculture",
+          "text": "Describe the main features of 'Explain importance of agriculture'. - with diagram",
+          "competence": "Explain importance of agriculture"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain importance of agriculture",
+          "text": "Examine the advantages and disadvantages of 'Explain importance of agriculture'.",
+          "competence": "Explain importance of agriculture"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain importance of agriculture",
+          "text": "Describe the main features of 'Explain importance of agriculture'. - with example",
+          "competence": "Explain importance of agriculture"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain importance of agriculture",
+          "text": "Outline the procedures involved in 'Explain importance of agriculture'. - with example",
+          "competence": "Explain importance of agriculture"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain importance of agriculture",
+          "text": "Outline the procedures involved in 'Explain importance of agriculture'.",
+          "competence": "Explain importance of agriculture"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain importance of agriculture",
+          "text": "Compare and contrast 'Explain importance of agriculture' with related concepts. - with example",
+          "competence": "Explain importance of agriculture"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain importance of agriculture",
+    "Farm Management"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

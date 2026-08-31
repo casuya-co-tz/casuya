@@ -1,0 +1,209 @@
+{
+  "filename": "business_studies_form6_midterm2_1_2024.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Business Studies - Midterm 2 Exam 1 (FORM6 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 85,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Identify business opportunities available in the local environment",
+          "text": "Discuss the factors influencing 'Identify business opportunities available in the local environment'.",
+          "competence": "Identify business opportunities available in the local envir"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the policies and laws governing medium scale business",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the policies and laws governing medium scale business' is applied in the community.",
+          "competence": "Demonstrate an understanding of the policies and laws govern"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+          "text": "Analyse the causes and effects of 'Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures'.",
+          "competence": "Describe some advanced aspects of financing medium businesse"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use appropriate selling methods and techniques (branding, logos, packaging, after sales services, barcoding, direct mail and internet auction",
+          "text": "Describe the process of 'Use appropriate selling methods and techniques (branding, logos, packaging, after sales services, barcoding, direct mail and internet auction' step by step.",
+          "competence": "Use appropriate selling methods and techniques (branding, lo"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an advanced understanding of the principles of business",
+          "text": "Outline the procedures involved in 'Demonstrate an advanced understanding of the principles of business'. - locally",
+          "competence": "Demonstrate an advanced understanding of the principles of b"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin",
+          "text": "Analyse the causes and effects of 'Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin'. - with diagram",
+          "competence": "Develop a plan for a small business identified from the oppo"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare a medium scale business plan",
+          "text": "Assess the impact of 'Prepare a medium scale business plan' on society. - with example",
+          "competence": "Prepare a medium scale business plan"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)",
+          "text": "Explain the concept of 'Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the basic aspects of business environment (stakehol"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Complete and submit the business plan developed in Form Five",
+          "text": "Compare and contrast 'Complete and submit the business plan developed in Form Five' with related concepts. - locally",
+          "competence": "Complete and submit the business plan developed in Form Five"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio",
+          "text": "What are the characteristics of 'Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio'?",
+          "competence": "Describe business partnerships (meaning, types, features, ad"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Compare and contrast 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' with related concepts.",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate mastery of the concepts, theories and principles of Business Education",
+          "text": "Explain the relationship between 'Demonstrate mastery of the concepts, theories and principles of Business Education' and its environment. - locally",
+          "competence": "Demonstrate mastery of the concepts, theories and principles"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Analyse the causes and effects of 'Use pricing techniques to determine appropriate prices of products'. - locally",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of the policies and laws governing medium scale businesses",
+          "text": "Propose measures to improve 'Demonstrate an understanding of the policies and laws governing medium scale businesses' in schools. - locally",
+          "competence": "Demonstrate an understanding of the policies and laws govern"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "to facilitate trade",
+          "text": "Explain the relationship between 'to facilitate trade' and its environment.",
+          "competence": "to facilitate trade"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)",
+          "text": "Analyse the causes and effects of 'Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)'.",
+          "competence": "Explain some aspects of insurance for medium businesses (cho"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Evaluate the role of 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)' in national development.",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Identify an appropriate business opportunity and develop its business plan",
+          "text": "Outline the procedures involved in 'Identify an appropriate business opportunity and develop its business plan'. - with diagram",
+          "competence": "Identify an appropriate business opportunity and develop its"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe sole proprietorship (meaning, features, advantages and disadvantages and start-u",
+          "text": "Explain the concept of 'Describe sole proprietorship (meaning, features, advantages and disadvantages and start-u' with examples relevant to Tanzania.",
+          "competence": "Describe sole proprietorship (meaning, features, advantages "
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe taxes and levies associated with medium businesses in Tanzania",
+          "text": "With examples, illustrate how 'Describe taxes and levies associated with medium businesses in Tanzania' is applied in the community. - with diagram",
+          "competence": "Describe taxes and levies associated with medium businesses "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Identify business opportunities available in the local environment",
+    "Demonstrate an understanding of the policies and laws governing medium scale business",
+    "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+    "Use appropriate selling methods and techniques (branding, logos, packaging, after sales services, barcoding, direct mail and internet auction",
+    "Demonstrate an advanced understanding of the principles of business",
+    "Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin",
+    "Prepare a medium scale business plan",
+    "Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)",
+    "Complete and submit the business plan developed in Form Five",
+    "Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

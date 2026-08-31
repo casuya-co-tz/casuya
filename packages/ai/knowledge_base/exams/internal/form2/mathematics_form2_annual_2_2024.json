@@ -1,0 +1,289 @@
+{
+  "filename": "mathematics_form2_annual_2_2024.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2024",
+  "time": "3:00 Hours",
+  "title": "Mathematics - Annual Exam 2 (FORM2 2024)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 132,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "Analyse the causes and effects of 'Use geometry, approximations, relations and functions in various contexts'.",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow",
+          "text": "Assess the impact of 'Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow' on society.",
+          "competence": "Explore the basic tenets of algebra (algebraic expressions a"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use logic to analyse arguments and construct circuit diagrams",
+          "text": "Evaluate the role of 'Use logic to analyse arguments and construct circuit diagrams' in national development. - with diagram",
+          "competence": "Use logic to analyse arguments and construct circuit diagram"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Solve inequalities in one unknown",
+          "text": "Explain the concept of 'Solve inequalities in one unknown' with examples relevant to Tanzania. - with diagram",
+          "competence": "Solve inequalities in one unknown"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Draw graphs of relations and functions",
+          "text": "Compare and contrast 'Draw graphs of relations and functions' with related concepts. - locally",
+          "competence": "Draw graphs of relations and functions"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "Compare and contrast 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life' with related concepts. - locally",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Describe the main features of 'Explore advanced tenets of set theory (operations, expressions, and cardinality)'.",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain postulates, proofs, and theorems of congruent triangles",
+          "text": "Explain the relationship between 'Explain postulates, proofs, and theorems of congruent triangles' and its environment. - with diagram",
+          "competence": "Explain postulates, proofs, and theorems of congruent triang"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use mathematical software to solve and draw graphs of simultaneous equations",
+          "text": "Evaluate the role of 'Use mathematical software to solve and draw graphs of simultaneous equations' in national development. - locally",
+          "competence": "Use mathematical software to solve and draw graphs of simult"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Explain the relationship between 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' and its environment. - with diagram",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the concepts of rates and variations",
+          "text": "Assess the impact of 'Describe the concepts of rates and variations' on society. - locally",
+          "competence": "Describe the concepts of rates and variations"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+          "text": "How does 'Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)' relate to sustainable development?",
+          "competence": "Explore advanced tenets of trigonometry (ratios, small angle"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+          "text": "What are the characteristics of 'Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)'? - with diagram",
+          "competence": "Explore advanced tenets of statistics (measures of central t"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "Examine the advantages and disadvantages of 'Describe the concepts of geometry (similarities and congruenc'.",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Calculate arithmetic mean, geometric mean, and compound interest",
+          "text": "Explain the relationship between 'Calculate arithmetic mean, geometric mean, and compound interest' and its environment. - with diagram",
+          "competence": "Calculate arithmetic mean, geometric mean, and compound inte"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)'. - with diagram",
+          "competence": "Explore the basic tenets of probability theory (counting pri"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm'. - with example",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore advanced tenets of linear programming (transportation: two sources and two destinations",
+          "text": "Discuss the challenges facing 'Explore advanced tenets of linear programming (transportation: two sources and two destinations' in Tanzania and propose solutions. - locally",
+          "competence": "Explore advanced tenets of linear programming (transportatio"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation'.",
+          "competence": "Explore the basic tenets of coordinate geometry (gradient an"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Carry out a project to solve a problem using mathematical skills",
+          "text": "Assess the impact of 'Carry out a project to solve a problem using mathematical skills' on society. - with diagram",
+          "competence": "Carry out a project to solve a problem using mathematical sk"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "Assess the impact of 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)' on society.",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+          "text": "Examine the advantages and disadvantages of 'Use basic coordinate geometry, trigonometry and vectors skills in daily life'. - locally",
+          "competence": "Use basic coordinate geometry, trigonometry and vectors skil"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "text": "Evaluate the role of 'Demonstrate an advanced understanding of set theory and logic' in national development. - locally",
+          "competence": "Demonstrate an advanced understanding of set theory and logi"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Apply sine and cosine rules to find distances or angles of elevation",
+          "text": "Discuss the factors influencing 'Apply sine and cosine rules to find distances or angles of elevation'.",
+          "competence": "Apply sine and cosine rules to find distances or angles of e"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Solve problems on rates and variations",
+          "text": "Outline the procedures involved in 'Solve problems on rates and variations'.",
+          "competence": "Solve problems on rates and variations"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Derive and use compound angles to solve problems",
+          "text": "Assess the impact of 'Derive and use compound angles to solve problems' on society. - with example",
+          "competence": "Derive and use compound angles to solve problems"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "text": "Evaluate the role of 'Demonstrate an advanced understanding of algebra' in national development. - with example",
+          "competence": "Demonstrate an advanced understanding of algebra"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "Propose measures to improve 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc' in schools. - locally",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the importance of numbers in real-life situations",
+          "text": "Explain the concept of 'Describe the importance of numbers in real-life situations' with examples relevant to Tanzania. - locally",
+          "competence": "Describe the importance of numbers in real-life situations"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+          "text": "Evaluate the role of 'Explain the concept of approximations (rounding off, significant figures, and decimal place' in national development.",
+          "competence": "Explain the concept of approximations (rounding off, signifi"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use geometry, approximations, relations and functions in various contexts",
+    "Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow",
+    "Use logic to analyse arguments and construct circuit diagrams",
+    "Solve inequalities in one unknown",
+    "Draw graphs of relations and functions",
+    "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+    "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+    "Explain postulates, proofs, and theorems of congruent triangles",
+    "Use mathematical software to solve and draw graphs of simultaneous equations",
+    "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

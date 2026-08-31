@@ -1,0 +1,249 @@
+{
+  "filename": "mathematics_form1_terminal_2_2024.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2024",
+  "time": "2:30 Hours",
+  "title": "Mathematics - Terminal Exam 2 (FORM1 2024)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 105,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+          "text": "What are the characteristics of 'Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)'?",
+          "competence": "Explore basic tenets of logic (connectives, propositions, ar"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Apply sine and cosine rules to find distances or angles of elevation",
+          "text": "Assess the impact of 'Apply sine and cosine rules to find distances or angles of elevation' on society. - locally",
+          "competence": "Apply sine and cosine rules to find distances or angles of e"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Solve ratio and proportion problems",
+          "text": "Evaluate the role of 'Solve ratio and proportion problems' in national development. - with diagram",
+          "competence": "Solve ratio and proportion problems"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Find the number of elements in a set",
+          "text": "Evaluate the role of 'Find the number of elements in a set' in national development. - with diagram",
+          "competence": "Find the number of elements in a set"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "text": "Explain the relationship between 'Demonstrate an advanced understanding of knowledge and skills in Mathematics' and its environment.",
+          "competence": "Demonstrate an advanced understanding of knowledge and skill"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+          "text": "Evaluate the role of 'Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)' in national development.",
+          "competence": "Explore advanced tenets of vectors (ratio theorems, dot prod"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Round off numbers and estimate values of expressions",
+          "text": "Explain the relationship between 'Round off numbers and estimate values of expressions' and its environment. - with diagram",
+          "competence": "Round off numbers and estimate values of expressions"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+          "text": "With examples, illustrate how 'Use basic coordinate geometry, trigonometry, and vectors skills in daily life' is applied in the community.",
+          "competence": "Use basic coordinate geometry, trigonometry, and vectors ski"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+          "text": "Describe the main features of 'Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)'.",
+          "competence": "Explore advanced tenets of trigonometry (ratios, small angle"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Determine the nature of stationary points, rates of change between quantities, small changes in quantities, and series expansions of different functions",
+          "text": "Discuss the challenges facing 'Determine the nature of stationary points, rates of change between quantities, small changes in quantities, and series expansions of different functions' in Tanzania and propose solutions. - locally",
+          "competence": "Determine the nature of stationary points, rates of change b"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "Define 'Describe the concepts of geometry (similarities and congruenc' and discuss its importance in everyday life.",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Complete the project started in Form Five and submit the report for assessment",
+          "text": "Describe the main features of 'Complete the project started in Form Five and submit the report for assessment'.",
+          "competence": "Complete the project started in Form Five and submit the rep"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the importance of numbers in real-life situations",
+          "text": "With examples, illustrate how 'Describe the importance of numbers in real-life situations' is applied in the community. - with diagram",
+          "competence": "Describe the importance of numbers in real-life situations"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+          "text": "With examples, illustrate how 'Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)' is applied in the community.",
+          "competence": "Explore the basic tenets of probability theory (counting pri"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Represent two sets in a Venn diagram",
+          "text": "Examine the advantages and disadvantages of 'Represent two sets in a Venn diagram'. - with example",
+          "competence": "Represent two sets in a Venn diagram"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use numerical skills in different contexts",
+          "text": "Describe the main features of 'Use numerical skills in different contexts'. - with example",
+          "competence": "Use numerical skills in different contexts"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+          "text": "Propose measures to improve 'Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)' in schools. - with diagram",
+          "competence": "Explore basic tenets of differentiation (first principles, p"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Examine the advantages and disadvantages of 'Find the inverses of relations and functions'.",
+          "competence": "Find the inverses of relations and functions"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Determine trigonometric ratios of angles and special angles",
+          "text": "Discuss the challenges facing 'Determine trigonometric ratios of angles and special angles' in Tanzania and propose solutions.",
+          "competence": "Determine trigonometric ratios of angles and special angles"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use statistics in problem solving",
+          "text": "Compare and contrast 'Use statistics in problem solving' with related concepts. - with diagram",
+          "competence": "Use statistics in problem solving"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Determine the equation of a straight line and draw its graph",
+          "text": "Define 'Determine the equation of a straight line and draw its graph' and discuss its importance in everyday life. - with diagram",
+          "competence": "Determine the equation of a straight line and draw its graph"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
+          "text": "Define 'Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul' and discuss its importance in everyday life. - with example",
+          "competence": "Solve quadratic equations by using different methods (factor"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "Describe the main features of 'Use geometry, approximations, relations and functions in various contexts'. - locally",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Calculate arithmetic mean, geometric mean, and compound interest",
+          "text": "Outline the procedures involved in 'Calculate arithmetic mean, geometric mean, and compound interest'. - locally",
+          "competence": "Calculate arithmetic mean, geometric mean, and compound inte"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "With examples, illustrate how 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc' is applied in the community.",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+    "Apply sine and cosine rules to find distances or angles of elevation",
+    "Solve ratio and proportion problems",
+    "Find the number of elements in a set",
+    "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+    "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+    "Round off numbers and estimate values of expressions",
+    "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
+    "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+    "Determine the nature of stationary points, rates of change between quantities, small changes in quantities, and series expansions of different functions"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

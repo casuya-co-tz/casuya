@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form5_midterm2_3_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 2 Exam 3 (FORM5 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 82,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "What are the characteristics of 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)'?",
+          "competence": "Use differential equations to solve real life problems relat"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "How does 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation' relate to sustainable development? - with example",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Derive and use compound angles to solve problems",
+          "text": "Outline the procedures involved in 'Derive and use compound angles to solve problems'. - locally",
+          "competence": "Derive and use compound angles to solve problems"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+          "text": "Discuss the challenges facing 'and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)' in Tanzania and propose solutions.",
+          "competence": "and rational inequalities, 3x3 matrices, partial fractions, "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "Describe the process of 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)' step by step. - with diagram",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+          "text": "Discuss the factors influencing 'Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)'. - with example",
+          "competence": "Explore advanced tenets of statistics (measures of central t"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Determine trigonometric ratios of angles and special angles",
+          "text": "Discuss the challenges facing 'Determine trigonometric ratios of angles and special angles' in Tanzania and propose solutions. - with diagram",
+          "competence": "Determine trigonometric ratios of angles and special angles"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "With examples, illustrate how 'Explore advanced tenets of set theory (operations, expressions, and cardinality)' is applied in the community.",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of rational, irrational, and real numbers",
+          "text": "With examples, illustrate how 'Explain the concept of rational, irrational, and real numbers' is applied in the community. - with example",
+          "competence": "Explain the concept of rational, irrational, and real number"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "Evaluate the role of 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)' in national development. - with example",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the concepts of relations and functions (linear and quadrati",
+          "text": "Outline the procedures involved in 'Describe the concepts of relations and functions (linear and quadrati'. - with example",
+          "competence": "Describe the concepts of relations and functions (linear and"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "Evaluate the role of 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc' in national development. - with diagram",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+          "text": "How does 'Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs' relate to sustainable development? - locally",
+          "competence": "Find the general term for AP and GP and use them to derive f"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+          "text": "Explain the concept of 'Use algebraic expressions to model situations (word problems into algebraic expressions and equation' with examples relevant to Tanzania. - locally",
+          "competence": "Use algebraic expressions to model situations (word problems"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use statistics in problem solving",
+          "text": "How does 'Use statistics in problem solving' relate to sustainable development? - locally",
+          "competence": "Use statistics in problem solving"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use ratios and proportions in daily life",
+          "text": "Assess the impact of 'Use ratios and proportions in daily life' on society.",
+          "competence": "Use ratios and proportions in daily life"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line'. - with example",
+          "competence": "Explore the basic tenets of coordinate geometry (midpoint of"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use basic skills of circles in daily life",
+          "text": "Outline the procedures involved in 'Use basic skills of circles in daily life'. - locally",
+          "competence": "Use basic skills of circles in daily life"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Calculate angles of elevation and depression",
+          "text": "What are the characteristics of 'Calculate angles of elevation and depression'?",
+          "competence": "Calculate angles of elevation and depression"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Draw graphs of relations and functions",
+          "text": "What are the characteristics of 'Draw graphs of relations and functions'? - with diagram",
+          "competence": "Draw graphs of relations and functions"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+    "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+    "Derive and use compound angles to solve problems",
+    "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+    "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+    "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+    "Determine trigonometric ratios of angles and special angles",
+    "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+    "Explain the concept of rational, irrational, and real numbers",
+    "Explore basic tenets of integration (by parts, substitution method, and partial fractions)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

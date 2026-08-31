@@ -1,0 +1,249 @@
+{
+  "filename": "biology_form3_terminal_2_2024.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2024",
+  "time": "2:30 Hours",
+  "title": "Biology - Terminal Exam 2 (FORM3 2024)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 98,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate mastery of basic skills for conducting biological investigations'. - with example",
+          "competence": "Demonstrate mastery of basic skills for conducting biologica"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "Outline the procedures involved in 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system'.",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Examine the advantages and disadvantages of 'Develop and carry out a simple research project in Biology'. - with diagram",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+          "text": "Explain the concept of 'Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)' with examples relevant to Tanzania.",
+          "competence": "Describe principles of binomial nomenclature (rules of scien"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the physiology and theories underlying transportation of materials in plants",
+          "text": "Describe the main features of 'Explain the physiology and theories underlying transportation of materials in plants'. - with example",
+          "competence": "Explain the physiology and theories underlying transportatio"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain classification systems and taxonomic rank",
+          "text": "Discuss the challenges facing 'Explain classification systems and taxonomic rank' in Tanzania and propose solutions.",
+          "competence": "Explain classification systems and taxonomic rank"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe coordination in plants (tropic, response",
+          "text": "Describe the main features of 'Describe coordination in plants (tropic, response'. - with example",
+          "competence": "Describe coordination in plants (tropic, response"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Define 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline' and discuss its importance in everyday life.",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Complete and submit for assessment a scientific report of the project started in Form Five",
+          "text": "Evaluate the role of 'Complete and submit for assessment a scientific report of the project started in Form Five' in national development.",
+          "competence": "Complete and submit for assessment a scientific report of th"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Define 'Carry out microscopic observation of a cell' and discuss its importance in everyday life. - with example",
+          "competence": "Carry out microscopic observation of a cell"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Describe the main features of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)'. - with diagram",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "With examples, illustrate how 'Plan and execute in an independent biological investigation' is applied in the community. - with example",
+          "competence": "Plan and execute in an independent biological investigation"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the principles of binomial nomenclature and classification",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the principles of binomial nomenclature and classification' is applied in the community. - with example",
+          "competence": "Demonstrate an understanding of the principles of binomial n"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)",
+          "text": "Discuss the challenges facing 'Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)' in Tanzania and propose solutions. - with example",
+          "competence": "Describe the physiology of coordination (mechanism of transm"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Describe the main features of 'Investigate food nutrients in various food samples'. - with example",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "Describe the main features of 'Explain growth process in animals (growth patterns and metamorphosis)'. - with example",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Design and carry out a project in Biology",
+          "text": "Analyse the causes and effects of 'Design and carry out a project in Biology'.",
+          "competence": "Design and carry out a project in Biology"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+          "text": "Define 'Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)' and discuss its importance in everyday life. - with example",
+          "competence": "Explain growth process in plants (cell cycle, growth pattern"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Investigate tropic responses in plants",
+          "text": "Outline the procedures involved in 'Investigate tropic responses in plants'. - with diagram",
+          "competence": "Investigate tropic responses in plants"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate mastery of advanced skills for conducting biological investigations",
+          "text": "Analyse the causes and effects of 'Demonstrate mastery of advanced skills for conducting biological investigations'. - with example",
+          "competence": "Demonstrate mastery of advanced skills for conducting biolog"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "and gas exchange in living organisms",
+          "text": "Discuss the challenges facing 'and gas exchange in living organisms' in Tanzania and propose solutions. - with diagram",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Examine the advantages and disadvantages of 'Complete and submit a report for the research project started in Form Three'.",
+          "competence": "Complete and submit a report for the research project starte"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Carry out experiments to determine the pulse rate in human",
+          "text": "Discuss the challenges facing 'Carry out experiments to determine the pulse rate in human' in Tanzania and propose solutions. - with diagram",
+          "competence": "Carry out experiments to determine the pulse rate in human"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "theory, evidence of evolution, and speciation)",
+          "text": "Compare and contrast 'theory, evidence of evolution, and speciation)' with related concepts.",
+          "competence": "theory, evidence of evolution, and speciation)"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "With examples, illustrate how 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution' is applied in the community.",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate mastery of basic skills for conducting biological investigations",
+    "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+    "Develop and carry out a simple research project in Biology",
+    "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+    "Explain the physiology and theories underlying transportation of materials in plants",
+    "Explain classification systems and taxonomic rank",
+    "Describe coordination in plants (tropic, response",
+    "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+    "Complete and submit for assessment a scientific report of the project started in Form Five",
+    "Carry out microscopic observation of a cell"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

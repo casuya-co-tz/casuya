@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form3_topical_1_2025.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 1 (FORM3 2025): Kusikiliza mijadala/ habari changam",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu",
+          "text": "Describe the process of 'Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu' step by step.",
+          "competence": "Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu",
+          "text": "How does 'Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu' relate to sustainable development?",
+          "competence": "Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu",
+          "text": "How does 'Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu' relate to sustainable development? - locally",
+          "competence": "Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kutunga nyimbo, ngonjera na maigizo",
+          "text": "Propose measures to improve 'Kutunga nyimbo, ngonjera na maigizo' in schools.",
+          "competence": "Kutunga nyimbo, ngonjera na maigizo"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kutunga nyimbo, ngonjera na maigizo",
+          "text": "How does 'Kutunga nyimbo, ngonjera na maigizo' relate to sustainable development? - with diagram",
+          "competence": "Kutunga nyimbo, ngonjera na maigizo"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kutunga nyimbo, ngonjera na maigizo",
+          "text": "How does 'Kutunga nyimbo, ngonjera na maigizo' relate to sustainable development?",
+          "competence": "Kutunga nyimbo, ngonjera na maigizo"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kutunga nyimbo, ngonjera na maigizo",
+          "text": "What are the characteristics of 'Kutunga nyimbo, ngonjera na maigizo'? - with diagram",
+          "competence": "Kutunga nyimbo, ngonjera na maigizo"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu",
+          "text": "Explain the concept of 'Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu' with examples relevant to Tanzania.",
+          "competence": "Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kutunga nyimbo, ngonjera na maigizo",
+          "text": "Analyse the causes and effects of 'Kutunga nyimbo, ngonjera na maigizo'. - with diagram",
+          "competence": "Kutunga nyimbo, ngonjera na maigizo"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kutunga nyimbo, ngonjera na maigizo",
+          "text": "Evaluate the role of 'Kutunga nyimbo, ngonjera na maigizo' in national development. - locally",
+          "competence": "Kutunga nyimbo, ngonjera na maigizo"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu",
+    "Kutunga nyimbo, ngonjera na maigizo"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

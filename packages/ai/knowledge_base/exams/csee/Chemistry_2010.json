@@ -1,0 +1,410 @@
+{
+  "level": "CSEE",
+  "subject": "Chemistry",
+  "year": "2010",
+  "source": "learninghubtz.co.tz",
+  "sections": [
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "text": "This paper consists of sections A, B and C."
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "questions": [
+        {
+          "number": "3",
+          "type": "essay",
+          "text": "Calculators and cellular phones are not allowed in the examination room."
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "text": "Write your Examination Number on every page of your answer booklet(s)."
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "text": "The following constants may be used: Atomic masses: H = 1, O = 16, Na = 23, Mg = 24, C = 12 Cl = 35.5, K = 39, Pb = 207. Avogadro’s number = 6.02 x 103 23 . GMV at s.t.p. = 22.4 dm . 1 Faraday = 96,500 coulombs. Standard pressure = 760 mm Hg. Standard temperature = 273 K. 1 litre = 1 dm 3 = 1000 cm 3 ."
+        }
+      ]
+    },
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "text": "For each of the items (i) ­ (x), choose the correct answer among the given alternatives and write its letter beside the item number in the answer booklet provided."
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "1.4 g of potassium hydroxide is dissolved in water to form 250 cm 3 of solution. What is the molarity of this solution? 0.01 M 0.1 M 1.4 M 5.6 M 6.0 M Choose Answer : - -"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "In the blast furnace carbon monoxide is prepared by passing carbon dioxide over a red­hot coke. Carbon dioxide is an accelerator an oxidizing agent a reducing agent a catalyst oxidized. Choose Answer : - -"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "A catalyst can be described as a substance that alters the rate of reaction that slows down the rate of reaction used in every reaction so as to speed up rate of reaction that starts and speeds up the rate of reaction that terminates chemical reaction. Choose Answer : - -"
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": "A covalent bond is formed when a metal combines with a non­metal potassium and oxygen combine ammonia is formed two metals combine atom looses an electron. Choose Answer : - -"
+        },
+        {
+          "number": "v",
+          "type": "mcq",
+          "text": "A solvent can be obtained from a solution by evaporation followed by decantation filtration and condensation evaporation and filtration evaporation and condensation crystallization followed by sublimation. Choose Answer : - -"
+        },
+        {
+          "number": "vi",
+          "type": "mcq",
+          "text": "Aqueous sugar solution is a poor conductor of electricity because water and sugar are covalent compounds water is a non­electrolyte sugar is a non­electrolyte sugar is covalent when in liquid form sugar dissolves completely in water. Choose Answer : - -"
+        },
+        {
+          "number": "vii",
+          "type": "mcq",
+          "text": "The process of giving away water of crystallization to the atmosphere by a chemical substance is called efflorescence deliquescence hygroscopic sublimation vapourisation. Choose Answer : - -"
+        },
+        {
+          "number": "viii",
+          "type": "mcq",
+          "text": "Copper can be separated from a mixture of zinc and copper by adding to the mixture concentrated H2SO 4 dilute H2SO 4 aqueous solution of ZnSO4 concentrated HNO 3 a catalyst. Choose Answer : - -"
+        },
+        {
+          "number": "ix",
+          "type": "mcq",
+          "text": "Among the factors that determine the ions to be discharged at electrodes when salt solutions are electrolysed are their non metallic nature relative concentrations in the solution relative ionic masses electronic configuration position in the periodic table. Choose Answer : - -"
+        },
+        {
+          "number": "x",
+          "type": "mcq",
+          "text": "The mass of sodium hydroxide contained in 25 cm 3 of 0.1 M NaOH is 0.5 gm B 2.85 gm 250 gm 0.2 gm 25 gm Choose Answer : - -"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "text": "Match the items in LIST A with the responses in LIST B by writing the letter of the correct response beside the item number. LIST A LIST B"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Oxygen"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Sulphur dioxide"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Ammonia"
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": "Hydrogen Chloride"
+        },
+        {
+          "number": "v",
+          "type": "mcq",
+          "text": "Carbon monoxide"
+        },
+        {
+          "number": "vi",
+          "type": "mcq",
+          "text": "Nitrogen"
+        },
+        {
+          "number": "vii",
+          "type": "mcq",
+          "text": "Hydrogen"
+        },
+        {
+          "number": "viii",
+          "type": "mcq",
+          "text": "Chlorine"
+        },
+        {
+          "number": "ix",
+          "type": "mcq",
+          "text": "Nitrogen dioxide"
+        },
+        {
+          "number": "x",
+          "type": "mcq",
+          "text": "Carbon dioxide Green&shy;yellow gas which rapidly bleaches damp litmus paper Heats with cracking sound It rekindles a glowing splint of wood Colourless gas, extremely poisonous since it combines with hemoglobin in red blood cells. Brown&shy;ring test Produces a white precipitates of silver chloride in a drop of a solution of silver nitrate It is the only alkaline gas Substitution reaction Explodes with air when flame applied Sweet &shy; aroma smell It is a brown gas It is very irritating smell and decolorizes potassium manganate (VII) solution with no precipitation left It turns lime water milky Colourless, odourless, non&shy;poisonous gas commonly used as a refrigerant Characteristic yellow flame Good solvent for fats and grease, non&shy;poisonous Blackens lead (II) ethanoate paper Turns brown on exposure to air Freezes at 0&deg;C and boils at 100&deg;C Rotten&shy; egg smell View Ans"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "questions": [
+        {
+          "number": "3",
+          "type": "essay",
+          "text": "(a) Asubuhi Njema’s child was sick. When she took her to the hospital, she was prescribed some medicine including a bottle of syrup. The bottle was written, Shake before you use. What does this statement signify? (3 marks) View Ans (b) (i) What is the first step to take when you want to identify the contents of a given salt containing one anion and one cation?"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "In a solution of water, identify a solute and a solvent. Justify your answer. (4 marks) View Ans (c) Sodium is a solid while chlorine is a gas at room temperature although they are in the same period in the periodic table. What is the cause of this difference? (3 marks) View Ans"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "text": "(a) Draw a well labeled diagram of a non­luminous Bunsen burner flame (3 marks) View Ans (b) Explain the meaning of the following:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Malleable"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Ductile"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Brittle (3 marks) View Ans (c) Give an account of the following"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Anhydrous copper (II) sulphate becomes coloured when exposed to the air for a long time."
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Carbon dioxide can be collected by the downward delivery method."
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Concentrated sulphuric acid is not used for drying hydrogen sulphide gas."
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": "Sodium metal is kept in paraffin oil. (4 marks) View Ans"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "text": "(a) Classify the following reactions into oxidation and reduction reactions."
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "S( s) + O 2( g) ? SO 2( g)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "N2( g) + 3H 2( g) ? 2NH 3( g)"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Fe2+ (aq) ­ e ­ ? Fe3+ (aq)"
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": "Fe 3+ (aq) ­ e ­ ? Fe 2+ (aq) (4 marks) View Ans (b) What is the oxidation number of iron in iron (III) chloride? (3 marks) View Ans (c) In the following reaction, name a reducing agent substance and an oxidizing agent: CuO ( s ) + H 2( g ) ? Cu ( s ) + H 2 O ( g) (3 marks) View Ans"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "text": "(a) Which homologous series of organic compounds can be represented by the following general formula?"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Cn H 2n+2"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "C n H 2n"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "C n H 2 n+1 OH (3 marks) View Ans (b) Give the name of the first compound in each series. (3 marks) View Ans (c) (i) Describe a reaction by which a named compound of series in (a) (ii) can be converted to a compound of series in (a) (ii)."
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "How can a compound of series (a) (iii) be converted to a compound of series in (a) (ii)? (4 marks) View Ans"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "text": "(a) Differentiate empirical formula from molecular formula. (2 marks) View Ans (b) Calculate the percentage composition by mass of water in a hydrated magnesium chloride MgCl2•6H 2O. (3 marks) View Ans (c) Calculate the empirical formula for a compound with the following composition: lead 8.32 g, sulphur 1.28 g, oxygen 2.56 g (relative atomic wt of lead = 207, sulphur = 32, oxygen = 16) (5 marks) View Ans"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "text": "(a) Ammonia gas can be prepared by heating an ammonium salt with an alkali"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Name the most common pair of reagents suitable for this reaction."
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Write the equation for the reaction. (4 marks) View Ans (b) Ammonia is very soluble in water and less dense than air. How does each of the properties determine the way in which ammonia is collected in a gas jar? (4 marks) View Ans (c) Give reasons for the following:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Solution of chlorine in water is acidic"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Yellow phosphorus is stored under water. View Ans"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "questions": [
+        {
+          "number": "9",
+          "type": "essay",
+          "text": "(a) (i) What are the natural causes of soil acidity?"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "What cations prevail in acidic soils? (2 marks) View Ans (b) (i) On treatment with calcium hydroxide the soil pH was raised from 5 to 7. What can you say about the properties of calcium hydroxide?"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "What effects can the alkalinity of a soil have on the availability of nutrients?"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Is it sensible to add lime to a field which has received an application of ammonium sulphate fertilizer? Explain. (5 marks) View Ans (c) Which reference to pH, solubility and any other factors, list the main properties of the following fertilizers used in our country:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Ammonium sulphate"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Super phosphate"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Urea (3 marks) View Ans"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "text": "(a) (i) State Avogadro’s law of gaseous volume."
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Find the volume of oxygen gas required to burn completely 1 dm 3 of methane. CH4 + 2O 2( g) ? CO 2 + 2H 2O."
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "What is the volume of carbon dioxide formed in the reaction at (ii) (4 marks) View Ans (b) Define the following terms:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Mole"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Molecular weight (2 marks) View Ans (c) Calculate the total number of"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "molecules in 0.18g of water"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "electrons present in 0.0001 moles of pure magnesium metal (4 marks) View Ans"
+        },
+        {
+          "number": "11",
+          "type": "essay",
+          "text": "(a) Elements A, B, C and D have atomic numbers 6, 8, 17 and 20 respectively. Write electronic structures of these elements. (4 marks) View Ans (b) Write down the formulae of the simplest compounds you would expect when"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "A and B combine chemically"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "C and D combine chemically. (2 marks) View Ans (c) (i) What types of bonding you would expect to occur in each of the compounds formed in (b)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "List three (3) differences in properties you would expect to find between the compounds in (i) as a result of their difference in types of bonding. (4 marks) View Ans"
+        },
+        {
+          "number": "12",
+          "type": "essay",
+          "text": "Read the following information carefully then answer questions that follow: 25 cm 3 of potassium hydroxide were placed in a flask and a few drops of phenolphthalein indicator were added. Dilute hydrochloric acid was added until the indicator changed colour. It was found that 21 cm 3 of acid were used. (b) (i) What piece of apparatus should be used to measure out accurately 25 cm 3 of sodium hydroxide solution?"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "What colour was the solution in the flask at the start of the titration?"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "What colour did it turn when the alkali had been neutralized? (3 marks) (c) (i) Was the acid more concentrated or less concentrated than the alkali? Give reasons for your answer."
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Name the salt formed in the neutralization."
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Write an equation for the reaction. (4 marks) (d) Utilizing the given information describe how you can obtain pure crystals of the salt. (3 marks) View Ans"
+        }
+      ]
+    }
+  ],
+  "title": "ONLINE FORM FOUR NECTA CHEMISTRY YEAR 2010 REVIEW (QNS. & ANS.)",
+  "question_count": 75
+}

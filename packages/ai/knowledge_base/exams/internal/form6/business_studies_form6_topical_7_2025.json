@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form6_topical_7_2025.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 7 (FORM6 2025): to facilitate trade",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Compare and contrast 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' with related concepts. - locally",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Explain the relationship between 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' and its environment. - with diagram",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Explain the concept of 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' with examples relevant to Tanzania. - locally",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "to facilitate trade",
+          "text": "How does 'to facilitate trade' relate to sustainable development? - locally",
+          "competence": "to facilitate trade"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "to facilitate trade",
+          "text": "What are the characteristics of 'to facilitate trade'? - locally",
+          "competence": "to facilitate trade"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Define 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "to facilitate trade",
+          "text": "Explain the relationship between 'to facilitate trade' and its environment. - locally",
+          "competence": "to facilitate trade"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Evaluate the role of 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' in national development.",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Analyse the causes and effects of 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi'.",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Analyse the causes and effects of 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi'. - with example",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+    "to facilitate trade"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

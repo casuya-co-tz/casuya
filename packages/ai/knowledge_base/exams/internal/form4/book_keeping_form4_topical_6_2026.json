@@ -1,0 +1,121 @@
+{
+  "filename": "book_keeping_form4_topical_6_2026.json",
+  "subject": "Book Keeping",
+  "subject_slug": "book_keeping",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Book Keeping - Topical Test 6 (FORM4 2026): Receipts and Payments",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 47,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain bank reconciliation statement",
+          "text": "Explain the concept of 'Explain bank reconciliation statement' with examples relevant to Tanzania.",
+          "competence": "Explain bank reconciliation statement"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Receipts and Payments",
+          "text": "Explain the concept of 'Receipts and Payments' with examples relevant to Tanzania.",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Receipts and Payments",
+          "text": "Define 'Receipts and Payments' and discuss its importance in everyday life.",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Receipts and Payments",
+          "text": "Define 'Receipts and Payments' and discuss its importance in everyday life.",
+          "competence": "Receipts and Payments"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain bank reconciliation statement",
+          "text": "Analyse the causes and effects of 'Explain bank reconciliation statement'. - with example",
+          "competence": "Explain bank reconciliation statement"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Receipts and Payments",
+          "text": "Describe the main features of 'Receipts and Payments'. - with example",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain bank reconciliation statement",
+          "text": "Examine the advantages and disadvantages of 'Explain bank reconciliation statement'. - with example",
+          "competence": "Explain bank reconciliation statement"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Receipts and Payments",
+          "text": "Compare and contrast 'Receipts and Payments' with related concepts. - with example",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Receipts and Payments",
+          "text": "Analyse the causes and effects of 'Receipts and Payments'. - with example",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain bank reconciliation statement",
+          "text": "Evaluate the role of 'Explain bank reconciliation statement' in national development.",
+          "competence": "Explain bank reconciliation statement"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain bank reconciliation statement",
+    "Receipts and Payments"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

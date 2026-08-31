@@ -1,0 +1,1129 @@
+{
+  "subject_code": "021",
+  "subject_name": "Kiswahili",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Kumudu stadi za juu za Kiswahili",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kukuza uelewa wa misingi na kanuni za Kiswahili",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U1-L1",
+              "title": "Kufafanua dhana ya fonimu na alofoni za lugha ya Kiswahili (maana, aina, sifa bainifu, uhusiano wa fonimu na alofoni)",
+              "markdown_content": "## a) Kufafanua dhana ya fonimu na alofoni za lugha ya Kiswahili (maana, aina, sifa bainifu, uhusiano wa fonimu na alofoni)",
+              "periods": "44",
+              "page": 15
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L2",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 16
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L3",
+              "title": "Kueleza dhana na miundo ya silabi za Kiswahili",
+              "markdown_content": "## b) Kueleza dhana na miundo ya silabi za Kiswahili",
+              "periods": "",
+              "page": 16
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L4",
+              "title": "Kufafanua sifa na dhima za viarudhi vya lugha ya Kiswahili katika utamkaji",
+              "markdown_content": "## c) Kufafanua sifa na dhima za viarudhi vya lugha ya Kiswahili katika utamkaji",
+              "periods": "",
+              "page": 16
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L5",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 17
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L6",
+              "title": "Kufafanua vipashio vinavyojenga neno (mofu na alomofu)",
+              "markdown_content": "## d) Kufafanua vipashio vinavyojenga neno (mofu na alomofu)",
+              "periods": "",
+              "page": 17
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L7",
+              "title": "Kuchambua vipashio vinavyojenga neno na dhima zake",
+              "markdown_content": "## e) Kuchambua vipashio vinavyojenga neno na dhima zake",
+              "periods": "",
+              "page": 17
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L8",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 18
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L9",
+              "title": "Kuchanganua sentensi changamani na ambatani kwa kutumia mikabala ya kidhima na kimuundo (kwa njia ya matawi, jedwali, mishale na maelezo)",
+              "markdown_content": "## f) Kuchanganua sentensi changamani na ambatani kwa kutumia mikabala ya kidhima na kimuundo (kwa njia ya matawi, jedwali, mishale na maelezo)",
+              "periods": "",
+              "page": 18
+            }
+          ]
+        },
+        {
+          "topic_name": "Kukuza msamiati kutokana na mazungu- mzo na maandishi changamani",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U1-L10",
+              "title": "Kubaini msamiati mpya kutoka katika mazungumzo changamani na kawaida katika miktadha anuai",
+              "markdown_content": "## a) Kubaini msamiati mpya kutoka katika mazungumzo changamani na kawaida katika miktadha anuai",
+              "periods": "22",
+              "page": 18
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L11",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 19
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L12",
+              "title": "(mfano: taarifa ya habari, midahalo, na mazungumzo ya watu sokoni)",
+              "markdown_content": "## a) (mfano: taarifa ya habari, midahalo, na mazungumzo ya watu sokoni)",
+              "periods": "",
+              "page": 19
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L13",
+              "title": "Kubaini msamiati mpya kutoka katika matini andishi za kawaida",
+              "markdown_content": "## b) Kubaini msamiati mpya kutoka katika matini andishi za kawaida",
+              "periods": "",
+              "page": 19
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L14",
+              "title": "Kutumia msamiati mpya katika kuzungumza na kuandika matini za kawaida na changamani",
+              "markdown_content": "## c) Kutumia msamiati mpya katika kuzungumza na kuandika matini za kawaida na changamani",
+              "periods": "",
+              "page": 19
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L15",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutumia msamiati na sarufi stahiki katika miktadha mbalimbali",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U1-L16",
+              "title": "Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wahusika, na miktadha)",
+              "markdown_content": "## a) Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wahusika, na miktadha)",
+              "periods": "30",
+              "page": 20
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L17",
+              "title": "Kueleza dhana ya utata (maana na aina)",
+              "markdown_content": "## b) Kueleza dhana ya utata (maana na aina)",
+              "periods": "",
+              "page": 20
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L18",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 21
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L19",
+              "title": "Kufafanua sababu za utata katika lugha",
+              "markdown_content": "## c) Kufafanua sababu za utata katika lugha",
+              "periods": "",
+              "page": 21
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L20",
+              "title": "Kuondoa utata katika lugha",
+              "markdown_content": "## d) Kuondoa utata katika lugha",
+              "periods": "",
+              "page": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Kuthamini Kiswahili kama lugha ya taifa",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kutambua chimbuko na asili ya Kiswahili",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U2-L21",
+              "title": "Kujadili nadharia kuhusu chimbuko na asili ya lugha ya Kiswahili",
+              "markdown_content": "## a) Kujadili nadharia kuhusu chimbuko na asili ya lugha ya Kiswahili",
+              "periods": "22",
+              "page": 21
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L22",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 22
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L23",
+              "title": "Kuthibitisha Ubantu wa lugha ya Kiswahili kiisimu",
+              "markdown_content": "## b) Kuthibitisha Ubantu wa lugha ya Kiswahili kiisimu",
+              "periods": "",
+              "page": 22
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L24",
+              "title": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria",
+              "markdown_content": "## c) Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria",
+              "periods": "",
+              "page": 22
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L25",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 23
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutathmini kukua na kuenea kwa Kiswahili",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U2-L26",
+              "title": "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki kabla ya uhuru",
+              "markdown_content": "## a) Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki kabla ya uhuru",
+              "periods": "22",
+              "page": 23
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L27",
+              "title": "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki baada ya uhuru",
+              "markdown_content": "## b) Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki baada ya uhuru",
+              "periods": "",
+              "page": 23
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L28",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 24
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L29",
+              "title": "Kujadili kukua na kuenea kwa Kiswahili kutokana na maendeleo ya sayansi na teknolojia",
+              "markdown_content": "## c) Kujadili kukua na kuenea kwa Kiswahili kutokana na maendeleo ya sayansi na teknolojia",
+              "periods": "",
+              "page": 24
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutambua matumizi ya lugha ya kwanza, pili, rasmi na lugha ya taifa",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U2-L30",
+              "title": "Kufafanua dhana na matumizi ya lugha ya kwanza na lugha ya pili",
+              "markdown_content": "## a) Kufafanua dhana na matumizi ya lugha ya kwanza na lugha ya pili",
+              "periods": "28",
+              "page": 24
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L31",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 25
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L32",
+              "title": "Kufafanua dhana na matumizi ya lugha rasmi na lugha ya taifa",
+              "markdown_content": "## b) Kufafanua dhana na matumizi ya lugha rasmi na lugha ya taifa",
+              "periods": "",
+              "page": 25
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L33",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 26
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L34",
+              "title": "Kujadili dhana na sifa ya lugha ya kimataifa",
+              "markdown_content": "## c) Kujadili dhana na sifa ya lugha ya kimataifa",
+              "periods": "",
+              "page": 26
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L35",
+              "title": "Kujadili sifa za Kiswahili kama lugha ya kimataifa",
+              "markdown_content": "## d) Kujadili sifa za Kiswahili kama lugha ya kimataifa",
+              "periods": "",
+              "page": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Kuhariri kazi mbalimbali",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kumudu stadi za uhariri",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U3-L36",
+              "title": "Kubainisha kanuni za uhariri",
+              "markdown_content": "## a) Kubainisha kanuni za uhariri",
+              "periods": "36",
+              "page": 26
+            },
+            {
+              "lesson_id": "KIS-FV-U3-L37",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 27
+            },
+            {
+              "lesson_id": "KIS-FV-U3-L38",
+              "title": "Kufafanua vipengele vya lugha na maudhui vinavyozingatiwa katika uhariri",
+              "markdown_content": "## b) Kufafanua vipengele vya lugha na maudhui vinavyozingatiwa katika uhariri",
+              "periods": "",
+              "page": 27
+            },
+            {
+              "lesson_id": "KIS-FV-U3-L39",
+              "title": "Kufafanua alama za uhariri",
+              "markdown_content": "## c) Kufafanua alama za uhariri",
+              "periods": "",
+              "page": 27
+            },
+            {
+              "lesson_id": "KIS-FV-U3-L40",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 28
+            },
+            {
+              "lesson_id": "KIS-FV-U3-L41",
+              "title": "Kuhariri matini za kawaida",
+              "markdown_content": "## c) Kuhariri matini za kawaida",
+              "periods": "",
+              "page": 28
+            },
+            {
+              "lesson_id": "KIS-FV-U3-L42",
+              "title": "Kutathmini matini za kawaida zilizohaririwa na wengine",
+              "markdown_content": "## d) Kutathmini matini za kawaida zilizohaririwa na wengine",
+              "periods": "",
+              "page": 28
+            },
+            {
+              "lesson_id": "KIS-FV-U3-L43",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 29
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Kutafsiri na kukalimani kazi mbalimbali",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kutafsiri matini mbalimbali",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U4-L44",
+              "title": "Kufafanua mbinu za tafsiri",
+              "markdown_content": "## a) Kufafanua mbinu za tafsiri",
+              "periods": "28",
+              "page": 29
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L45",
+              "title": "Kutafsiri matini za kawaida kwa mbinu ya tafsiri sisisi",
+              "markdown_content": "## b) Kutafsiri matini za kawaida kwa mbinu ya tafsiri sisisi",
+              "periods": "",
+              "page": 29
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L46",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 30
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L47",
+              "title": "Kutafsiri matini za kawaida kwa mbinu ya tafsiri ya kisemantiki",
+              "markdown_content": "## c) Kutafsiri matini za kawaida kwa mbinu ya tafsiri ya kisemantiki",
+              "periods": "",
+              "page": 30
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L48",
+              "title": "Kutafsiri matini za kawaida kwa mbinu ya tafsiri ya kimawasiliano",
+              "markdown_content": "## d) Kutafsiri matini za kawaida kwa mbinu ya tafsiri ya kimawasiliano",
+              "periods": "",
+              "page": 30
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L49",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "topic_name": "Kukalimani mazungumzo mbalimbali",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U4-L50",
+              "title": "Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu",
+              "markdown_content": "## a) Kufafanua stadi ya kusikiliza huku ukinukuu kumbukumbu muhimu",
+              "periods": "28",
+              "page": 31
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L51",
+              "title": "Kufafanua aina za ukalimani",
+              "markdown_content": "## b) Kufafanua aina za ukalimani",
+              "periods": "",
+              "page": 31
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L52",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 32
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L53",
+              "title": "Kunukuu kumbukumbu muhimu katika mazungumzo mbalimbali wakati wa kukalimani",
+              "markdown_content": "## c) Kunukuu kumbukumbu muhimu katika mazungumzo mbalimbali wakati wa kukalimani",
+              "periods": "",
+              "page": 32
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L54",
+              "title": "Kukalimani mazungumzo kwa ukalimani fuatizi, nong’onezi na kiungo",
+              "markdown_content": "## d) Kukalimani mazungumzo kwa ukalimani fuatizi, nong’onezi na kiungo",
+              "periods": "",
+              "page": 32
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L55",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "Kuthamini kazi za fasihi",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kutambua nadharia ya fasihi",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U5-L56",
+              "title": "Kujadili mitazamo kuhusu dhana ya fasihi",
+              "markdown_content": "## a) Kujadili mitazamo kuhusu dhana ya fasihi",
+              "periods": "14",
+              "page": 33
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L57",
+              "title": "Kutathmini nadharia za chimbuko la fasihi",
+              "markdown_content": "## b) Kutathmini nadharia za chimbuko la fasihi",
+              "periods": "",
+              "page": 33
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L58",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 34
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutathmini maendeleo ya fasihi",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U5-L59",
+              "title": "Kujadili maendeleo ya fasihi kabla ya ujio wa wageni",
+              "markdown_content": "## a) Kujadili maendeleo ya fasihi kabla ya ujio wa wageni",
+              "periods": "24",
+              "page": 34
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L60",
+              "title": "Kujadili maendeleo ya fasihi baada ya ujio wa wageni",
+              "markdown_content": "## b) Kujadili maendeleo ya fasihi baada ya ujio wa wageni",
+              "periods": "",
+              "page": 34
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L61",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 35
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L62",
+              "title": "Kujadili maendeleo ya fasihi baada ya uhuru",
+              "markdown_content": "## c) Kujadili maendeleo ya fasihi baada ya uhuru",
+              "periods": "",
+              "page": 35
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuhakiki kazi za fasihi",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U5-L63",
+              "title": "Kuhakiki fani na maudhui katika riwaya",
+              "markdown_content": "## a) Kuhakiki fani na maudhui katika riwaya",
+              "periods": "30",
+              "page": 35
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L64",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 36
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L65",
+              "title": "Kuhusianisha ujumbe unaopatikana katika riwaya na maisha ya kila siku",
+              "markdown_content": "## b) Kuhusianisha ujumbe unaopatikana katika riwaya na maisha ya kila siku",
+              "periods": "",
+              "page": 36
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L66",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 37
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L67",
+              "title": "Kuhakiki fani na maudhui katika tamthiliya",
+              "markdown_content": "## c) Kuhakiki fani na maudhui katika tamthiliya",
+              "periods": "",
+              "page": 37
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L68",
+              "title": "Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku",
+              "markdown_content": "## d) Kuhusianisha ujumbe unaopatikana katika tamthiliya na maisha ya kila siku",
+              "periods": "",
+              "page": 37
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L69",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 38
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutunga kazi za fasihi",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U5-L70",
+              "title": "Kubaini mbinu za utungaji wa riwaya na tamthiliya",
+              "markdown_content": "## a) Kubaini mbinu za utungaji wa riwaya na tamthiliya",
+              "periods": "22",
+              "page": 38
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L71",
+              "title": "Kutunga riwaya",
+              "markdown_content": "## b) Kutunga riwaya",
+              "periods": "",
+              "page": 38
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L72",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 39
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L73",
+              "title": "Kutunga tamthiliya",
+              "markdown_content": "## c) Kutunga tamthiliya",
+              "periods": "",
+              "page": 39
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L74",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Kumudu stadi za juu za Kiswahili",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kukuza uelewa wa misingi na kanuni za Kiswahili",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U1-L75",
+              "title": "Kueleza dhana ya maana na aina zake",
+              "markdown_content": "## a) Kueleza dhana ya maana na aina zake",
+              "periods": "46",
+              "page": 40
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L76",
+              "title": "Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali",
+              "markdown_content": "## b) Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali",
+              "periods": "",
+              "page": 40
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L77",
+              "title": "Kutumia maneno yenye maana za msingi na ziada katika miktadha mbalimbali",
+              "markdown_content": "## c) Kutumia maneno yenye maana za msingi na ziada katika miktadha mbalimbali",
+              "periods": "",
+              "page": 40
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L78",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 41
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L79",
+              "title": "Kufafanua uhusiano wa kimaana wa maneno (mfano: antonimia, homonimia, sinonimia, na polisemia)",
+              "markdown_content": "## d) Kufafanua uhusiano wa kimaana wa maneno (mfano: antonimia, homonimia, sinonimia, na polisemia)",
+              "periods": "",
+              "page": 41
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L80",
+              "title": "Kutumia kamusi kubainisha maana za antonimia, homonimia, sinonimia na polisemia",
+              "markdown_content": "## e) Kutumia kamusi kubainisha maana za antonimia, homonimia, sinonimia na polisemia",
+              "periods": "",
+              "page": 41
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L81",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 42
+            }
+          ]
+        },
+        {
+          "topic_name": "Kukuza msamiati kutokana na mazungumzo na maandishi changamani",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U1-L82",
+              "title": "Kubaini msamiati mpya kutoka katika mazungumzo changamani ya kiufundi (mfano: matini ya kisheria, sayansi na teknolojia, kitaaluma, na sera)",
+              "markdown_content": "## a) Kubaini msamiati mpya kutoka katika mazungumzo changamani ya kiufundi (mfano: matini ya kisheria, sayansi na teknolojia, kitaaluma, na sera)",
+              "periods": "28",
+              "page": 42
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L83",
+              "title": "Kubaini msamiati mpya kutoka katika matini andishi changamani ya kiufundi",
+              "markdown_content": "## b) Kubaini msamiati mpya kutoka katika matini andishi changamani ya kiufundi",
+              "periods": "",
+              "page": 42
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L84",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 43
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L85",
+              "title": "(mfano: kisheria, sayansi na teknolojia, kitaaluma, na sera)",
+              "markdown_content": "## a) (mfano: kisheria, sayansi na teknolojia, kitaaluma, na sera)",
+              "periods": "",
+              "page": 43
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L86",
+              "title": "Kuandika matini kuhusu fani mahususi kwa kutumia msamiati mpya (mfano: kemia, fizikia, fasihi)",
+              "markdown_content": "## c) Kuandika matini kuhusu fani mahususi kwa kutumia msamiati mpya (mfano: kemia, fizikia, fasihi)",
+              "periods": "",
+              "page": 43
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutumia msamiati na sarufi stahiki katika miktadha mbalimbali",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U1-L87",
+              "title": "Kusahihisha makosa ya kisarufi na kimantiki katika matumizi ya lugha",
+              "markdown_content": "## a) Kusahihisha makosa ya kisarufi na kimantiki katika matumizi ya lugha",
+              "periods": "18",
+              "page": 43
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L88",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 44
+            },
+            {
+              "lesson_id": "KIS-FV-U1-L89",
+              "title": "Kutofautisha lugha ya staha na isiyo ya staha",
+              "markdown_content": "## b) Kutofautisha lugha ya staha na isiyo ya staha",
+              "periods": "",
+              "page": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Kuthamini Kiswahili kama lugha ya taifa",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kutambua chimbuko na asili ya Kiswahili",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U2-L90",
+              "title": "Kufafanua dhana na aina za lahaja",
+              "markdown_content": "## a) Kufafanua dhana na aina za lahaja",
+              "periods": "30",
+              "page": 44
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L91",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 45
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L92",
+              "title": "Kujadili sababu za kuibuka kwa lahaja za Kiswahili",
+              "markdown_content": "## b) Kujadili sababu za kuibuka kwa lahaja za Kiswahili",
+              "periods": "",
+              "page": 45
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L93",
+              "title": "Kujadili dhana na mchakato wa usanifishaji wa Kiswahili",
+              "markdown_content": "## c) Kujadili dhana na mchakato wa usanifishaji wa Kiswahili",
+              "periods": "",
+              "page": 45
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L94",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 46
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L95",
+              "title": "Kujadili umuhimu wa lahaja katika ukuzaji na usanifishaji wa Kiswahili",
+              "markdown_content": "## d) Kujadili umuhimu wa lahaja katika ukuzaji na usanifishaji wa Kiswahili",
+              "periods": "",
+              "page": 46
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutathmini kukua na kuenea kwa Kiswahili",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U2-L96",
+              "title": "Kujadili kukua na kuenea kwa Kiswahili kutokana na muamko wa utangamano wa nchi za Afrika",
+              "markdown_content": "## a) Kujadili kukua na kuenea kwa Kiswahili kutokana na muamko wa utangamano wa nchi za Afrika",
+              "periods": "",
+              "page": 46
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L97",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 47
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L98",
+              "title": "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+              "markdown_content": "## b) Kutathimini kukua na kuenea kwa Kiswahili duniani",
+              "periods": "",
+              "page": 47
+            },
+            {
+              "lesson_id": "KIS-FV-U2-L99",
+              "title": "Kujadili fursa mbalimbali za lugha ya Kiswahili",
+              "markdown_content": "## c) Kujadili fursa mbalimbali za lugha ya Kiswahili",
+              "periods": "",
+              "page": 47
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Kuhariri kazi mbali- mbali",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kumudu stadi za uhariri",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U3-L100",
+              "title": "Kuhariri matini changamani anuai za kiufundi",
+              "markdown_content": "## a) Kuhariri matini changamani anuai za kiufundi",
+              "periods": "20",
+              "page": 47
+            },
+            {
+              "lesson_id": "KIS-FV-U3-L101",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 48
+            },
+            {
+              "lesson_id": "KIS-FV-U3-L102",
+              "title": "Kutathmini matini za kiufundi zilizohaririwa na wengine",
+              "markdown_content": "## b) Kutathmini matini za kiufundi zilizohaririwa na wengine",
+              "periods": "",
+              "page": 48
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Kutafsiri na kukalimani kazi mbalimbali",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kutafsiri matini mbalimbali",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U4-L103",
+              "title": "Kutafsiri matini za fani mahususi kwa mbinu ya kisemantiki na kimawasiliano (mfano: kifasihi, kisayansi, na kisheria)",
+              "markdown_content": "## a) Kutafsiri matini za fani mahususi kwa mbinu ya kisemantiki na kimawasiliano (mfano: kifasihi, kisayansi, na kisheria)",
+              "periods": "12",
+              "page": 48
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L104",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 49
+            }
+          ]
+        },
+        {
+          "topic_name": "Kukalimani mazungumzo mbalimbali",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U4-L105",
+              "title": "Kukalimani mazungumzo kwa ukalimani sawia/ sambamba",
+              "markdown_content": "## a) Kukalimani mazungumzo kwa ukalimani sawia/ sambamba",
+              "periods": "28",
+              "page": 49
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L106",
+              "title": "Kubaini changamoto zinazojitokeza katika ukalimani sawia/ sambamba",
+              "markdown_content": "## b) Kubaini changamoto zinazojitokeza katika ukalimani sawia/ sambamba",
+              "periods": "",
+              "page": 49
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L107",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 50
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L108",
+              "title": "Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sambamba",
+              "markdown_content": "## c) Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sambamba",
+              "periods": "",
+              "page": 50
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutathmini kazi mbalimbali za tafsiri",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U4-L109",
+              "title": "Kueleza dhana ya kutathmini tafsiri (maana, sababu, umuhimu na matokeo)",
+              "markdown_content": "## a) Kueleza dhana ya kutathmini tafsiri (maana, sababu, umuhimu na matokeo)",
+              "periods": "28",
+              "page": 50
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L110",
+              "title": "Kufafanua mbinu za kutathmini tafsiri",
+              "markdown_content": "## b) Kufafanua mbinu za kutathmini tafsiri",
+              "periods": "",
+              "page": 50
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L111",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 51
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L112",
+              "title": "Kutathmini matini mbalimbali zilizotafsiriwa",
+              "markdown_content": "## c) Kutathmini matini mbalimbali zilizotafsiriwa",
+              "periods": "",
+              "page": 51
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutathmini ukalimani",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U4-L113",
+              "title": "Kueleza dhana ya kutathmini ukalimani (maana, sababu, umuhimu, na matokeo ya tathmini)",
+              "markdown_content": "## a) Kueleza dhana ya kutathmini ukalimani (maana, sababu, umuhimu, na matokeo ya tathmini)",
+              "periods": "36",
+              "page": 51
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L114",
+              "title": "Kubaini mbinu za kutathmini ukalimani",
+              "markdown_content": "## b) Kubaini mbinu za kutathmini ukalimani",
+              "periods": "",
+              "page": 51
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L115",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 52
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L116",
+              "title": "Kutathmini ukalimani",
+              "markdown_content": "## c) Kutathmini ukalimani",
+              "periods": "",
+              "page": 52
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L117",
+              "title": "Kubainisha fursa mbalimbali za ukalimani",
+              "markdown_content": "## d) Kubainisha fursa mbalimbali za ukalimani",
+              "periods": "",
+              "page": 52
+            },
+            {
+              "lesson_id": "KIS-FV-U4-L118",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 53
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "Kuthamini kazi za fasihi",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Kutathmini maendeleo ya fasihi",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U5-L119",
+              "title": "Kujadili maendeleo ya fasihi katika kipindi cha utandawazi",
+              "markdown_content": "## a) Kujadili maendeleo ya fasihi katika kipindi cha utandawazi",
+              "periods": "18",
+              "page": 53
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L120",
+              "title": "Kujadili nafasi ya uhuru wa mwandishi na udhamini katika maendeleo ya fasihi",
+              "markdown_content": "## b) Kujadili nafasi ya uhuru wa mwandishi na udhamini katika maendeleo ya fasihi",
+              "periods": "",
+              "page": 53
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuhakiki kazi za fasihi",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U5-L121",
+              "title": "Kuhakiki fani na maudhui katika mashairi",
+              "markdown_content": "## a) Kuhakiki fani na maudhui katika mashairi",
+              "periods": "28",
+              "page": 53
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L122",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 54
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L123",
+              "title": "Kuhusianisha ujumbe unaopatikana katika mashairi na maisha ya kila siku",
+              "markdown_content": "## b) Kuhusianisha ujumbe unaopatikana katika mashairi na maisha ya kila siku",
+              "periods": "",
+              "page": 54
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L124",
+              "title": "Kusanifu matini mbalimbali za kisanaa",
+              "markdown_content": "## c) Kusanifu matini mbalimbali za kisanaa",
+              "periods": "",
+              "page": 54
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L125",
+              "title": "Shughuli za ujifunzaji",
+              "markdown_content": "## a) Shughuli za ujifunzaji",
+              "periods": "Idadi ya vipindi",
+              "page": 55
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutunga kazi za fasihi",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "KIS-FV-U5-L126",
+              "title": "Kubaini mbinu za utungaji wa mashairi",
+              "markdown_content": "## a) Kubaini mbinu za utungaji wa mashairi",
+              "periods": "28",
+              "page": 55
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L127",
+              "title": "Kutunga mashairi anuai",
+              "markdown_content": "## b) Kutunga mashairi anuai",
+              "periods": "",
+              "page": 55
+            },
+            {
+              "lesson_id": "KIS-FV-U5-L128",
+              "title": "Kujadili fursa za utungaji wa kazi za fasihi",
+              "markdown_content": "## c) Kujadili fursa za utungaji wa kazi za fasihi",
+              "periods": "",
+              "page": 55
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

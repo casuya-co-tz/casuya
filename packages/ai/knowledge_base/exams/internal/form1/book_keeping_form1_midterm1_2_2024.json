@@ -1,0 +1,209 @@
+{
+  "filename": "book_keeping_form1_midterm1_2_2024.json",
+  "subject": "Book Keeping",
+  "subject_slug": "book_keeping",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Book Keeping - Midterm 1 Exam 2 (FORM1 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 107,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain books of original entry",
+          "text": "Outline the procedures involved in 'Explain books of original entry'.",
+          "competence": "Explain books of original entry"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Double Entry Principle",
+          "text": "With examples, illustrate how 'Double Entry Principle' is applied in the community.",
+          "competence": "Double Entry Principle"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain income and expenditure",
+          "text": "Outline the procedures involved in 'Explain income and expenditure'. - with diagram",
+          "competence": "Explain income and expenditure"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain ledger accounts",
+          "text": "Compare and contrast 'Explain ledger accounts' with related concepts. - with diagram",
+          "competence": "Explain ledger accounts"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain concept of book keeping",
+          "text": "Analyse the causes and effects of 'Explain concept of book keeping'. - with example",
+          "competence": "Explain concept of book keeping"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Trial Balance",
+          "text": "Outline the procedures involved in 'Trial Balance'.",
+          "competence": "Trial Balance"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Receipts and Payments",
+          "text": "With examples, illustrate how 'Receipts and Payments' is applied in the community.",
+          "competence": "Receipts and Payments"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Petty Cash Book",
+          "text": "Outline the procedures involved in 'Petty Cash Book'.",
+          "competence": "Petty Cash Book"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain profit and loss account",
+          "text": "Describe the main features of 'Explain profit and loss account'.",
+          "competence": "Explain profit and loss account"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Concept of Book Keeping",
+          "text": "Examine the advantages and disadvantages of 'Concept of Book Keeping'.",
+          "competence": "Concept of Book Keeping"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain receipts and payments",
+          "text": "Describe the main features of 'Explain receipts and payments'.",
+          "competence": "Explain receipts and payments"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Profit and Loss Account",
+          "text": "Discuss the challenges facing 'Profit and Loss Account' in Tanzania and propose solutions. - with example",
+          "competence": "Profit and Loss Account"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Trading Account",
+          "text": "Examine the advantages and disadvantages of 'Trading Account'. - with example",
+          "competence": "Trading Account"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Bank Reconciliation Statement",
+          "text": "Compare and contrast 'Bank Reconciliation Statement' with related concepts.",
+          "competence": "Bank Reconciliation Statement"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Correction of Errors",
+          "text": "Describe the main features of 'Correction of Errors'. - with example",
+          "competence": "Correction of Errors"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain balance sheet",
+          "text": "Define 'Explain balance sheet' and discuss its importance in everyday life. - with example",
+          "competence": "Explain balance sheet"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Ledger Accounts",
+          "text": "Analyse the causes and effects of 'Ledger Accounts'. - with diagram",
+          "competence": "Ledger Accounts"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Income and Expenditure",
+          "text": "Outline the procedures involved in 'Income and Expenditure'. - with example",
+          "competence": "Income and Expenditure"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain trading account",
+          "text": "Examine the advantages and disadvantages of 'Explain trading account'. - with diagram",
+          "competence": "Explain trading account"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Books of Original Entry",
+          "text": "Define 'Books of Original Entry' and discuss its importance in everyday life. - with diagram",
+          "competence": "Books of Original Entry"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain books of original entry",
+    "Double Entry Principle",
+    "Explain income and expenditure",
+    "Explain ledger accounts",
+    "Explain concept of book keeping",
+    "Trial Balance",
+    "Receipts and Payments",
+    "Petty Cash Book",
+    "Explain profit and loss account",
+    "Concept of Book Keeping"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

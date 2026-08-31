@@ -1,0 +1,121 @@
+{
+  "filename": "basic_applied_mathematics_form5_topical_4_2025.json",
+  "subject": "Basic Applied Mathematics",
+  "subject_slug": "basic_applied_mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Basic Applied Mathematics - Topical Test 4 (FORM5 2025): Explore advanced tenets of set theo",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 35,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)",
+          "text": "Evaluate the role of 'Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)' in national development. - with example",
+          "competence": "Explore advanced tenets of set theory (operations involving "
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "graphically, graphs of direct and inverse variation)",
+          "text": "Outline the procedures involved in 'graphically, graphs of direct and inverse variation)'.",
+          "competence": "graphically, graphs of direct and inverse variation)"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "graphically, graphs of direct and inverse variation)",
+          "text": "How does 'graphically, graphs of direct and inverse variation)' relate to sustainable development?",
+          "competence": "graphically, graphs of direct and inverse variation)"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)",
+          "text": "What are the characteristics of 'Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)'? - with example",
+          "competence": "Explore advanced tenets of set theory (operations involving "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)",
+          "text": "Outline the procedures involved in 'Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)'.",
+          "competence": "Explore advanced tenets of set theory (operations involving "
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "graphically, graphs of direct and inverse variation)",
+          "text": "Discuss the factors influencing 'graphically, graphs of direct and inverse variation)'. - with example",
+          "competence": "graphically, graphs of direct and inverse variation)"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "graphically, graphs of direct and inverse variation)",
+          "text": "Assess the impact of 'graphically, graphs of direct and inverse variation)' on society. - with example",
+          "competence": "graphically, graphs of direct and inverse variation)"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)",
+          "text": "Assess the impact of 'Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)' on society.",
+          "competence": "Explore advanced tenets of set theory (operations involving "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "graphically, graphs of direct and inverse variation)",
+          "text": "Outline the procedures involved in 'graphically, graphs of direct and inverse variation)'.",
+          "competence": "graphically, graphs of direct and inverse variation)"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "graphically, graphs of direct and inverse variation)",
+          "text": "What are the characteristics of 'graphically, graphs of direct and inverse variation)'? - locally",
+          "competence": "graphically, graphs of direct and inverse variation)"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)",
+    "graphically, graphs of direct and inverse variation)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

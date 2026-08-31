@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form1_midterm2_4_2026.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 2 Exam 4 (FORM1 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 83,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain citizenship",
+          "text": "Explain the concept of 'Explain citizenship' with examples relevant to Tanzania. - with example",
+          "competence": "Explain citizenship"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Gender",
+          "text": "Compare and contrast 'Gender' with related concepts. - with example",
+          "competence": "Gender"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain democracy",
+          "text": "Define 'Explain democracy' and discuss its importance in everyday life. - with example",
+          "competence": "Explain democracy"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain life skills",
+          "text": "With examples, illustrate how 'Explain life skills' is applied in the community. - with example",
+          "competence": "Explain life skills"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain concept of human rights",
+          "text": "Evaluate the role of 'Explain concept of human rights' in national development. - with diagram",
+          "competence": "Explain concept of human rights"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain globalization",
+          "text": "Compare and contrast 'Explain globalization' with related concepts.",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain central government",
+          "text": "Evaluate the role of 'Explain central government' in national development. - with diagram",
+          "competence": "Explain central government"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Central Government",
+          "text": "With examples, illustrate how 'Central Government' is applied in the community.",
+          "competence": "Central Government"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain culture and tradition",
+          "text": "Evaluate the role of 'Explain culture and tradition' in national development. - with example",
+          "competence": "Explain culture and tradition"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Concept of Human Rights",
+          "text": "Describe the main features of 'Concept of Human Rights'. - with example",
+          "competence": "Concept of Human Rights"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain concept of nation",
+          "text": "Define 'Explain concept of nation' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain concept of nation"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain interpersonal relationships",
+          "text": "Analyse the causes and effects of 'Explain interpersonal relationships'. - with diagram",
+          "competence": "Explain interpersonal relationships"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain national unity",
+          "text": "Define 'Explain national unity' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain national unity"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Child Rights",
+          "text": "Compare and contrast 'Child Rights' with related concepts.",
+          "competence": "Child Rights"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Democracy",
+          "text": "Compare and contrast 'Democracy' with related concepts. - with diagram",
+          "competence": "Democracy"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain local government",
+          "text": "Examine the advantages and disadvantages of 'Explain local government'.",
+          "competence": "Explain local government"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain national symbols",
+          "text": "Outline the procedures involved in 'Explain national symbols'. - with diagram",
+          "competence": "Explain national symbols"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Elections",
+          "text": "Define 'Elections' and discuss its importance in everyday life.",
+          "competence": "Elections"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "National Symbols",
+          "text": "Evaluate the role of 'National Symbols' in national development. - with example",
+          "competence": "National Symbols"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Citizenship",
+          "text": "Analyse the causes and effects of 'Citizenship'. - with example",
+          "competence": "Citizenship"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain citizenship",
+    "Gender",
+    "Explain democracy",
+    "Explain life skills",
+    "Explain concept of human rights",
+    "Explain globalization",
+    "Explain central government",
+    "Central Government",
+    "Explain culture and tradition",
+    "Concept of Human Rights"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

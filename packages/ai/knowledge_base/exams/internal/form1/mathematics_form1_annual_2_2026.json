@@ -1,0 +1,289 @@
+{
+  "filename": "mathematics_form1_annual_2_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2026",
+  "time": "3:00 Hours",
+  "title": "Mathematics - Annual Exam 2 (FORM1 2026)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 146,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Complete the project started in Form Five and submit the report for assessment",
+          "text": "Examine the advantages and disadvantages of 'Complete the project started in Form Five and submit the report for assessment'.",
+          "competence": "Complete the project started in Form Five and submit the rep"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Derive and use compound angles to solve problems",
+          "text": "Explain the concept of 'Derive and use compound angles to solve problems' with examples relevant to Tanzania.",
+          "competence": "Derive and use compound angles to solve problems"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use basic skills of circles in daily life",
+          "text": "Describe the main features of 'Use basic skills of circles in daily life'.",
+          "competence": "Use basic skills of circles in daily life"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Solve ratio and proportion problems",
+          "text": "Analyse the causes and effects of 'Solve ratio and proportion problems'. - with example",
+          "competence": "Solve ratio and proportion problems"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+          "text": "Discuss the challenges facing 'Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)' in Tanzania and propose solutions.",
+          "competence": "Explore basic tenets of differentiation (first principles, p"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+          "text": "Describe the process of 'Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)' step by step. - with example",
+          "competence": "Explore the basic tenets of hyperbolic functions (definition"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Find the gradient/ slope of a line",
+          "text": "Describe the process of 'Find the gradient/ slope of a line' step by step. - with example",
+          "competence": "Find the gradient/ slope of a line"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use knowledge of sets to organise, create, and categorise objects",
+          "text": "Explain the concept of 'Use knowledge of sets to organise, create, and categorise objects' with examples relevant to Tanzania.",
+          "competence": "Use knowledge of sets to organise, create, and categorise ob"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "text": "Explain the concept of 'Demonstrate an advanced understanding of statistics' with examples relevant to Tanzania. - with example",
+          "competence": "Demonstrate an advanced understanding of statistics"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+          "text": "Describe the main features of 'Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic'. - with diagram",
+          "competence": "Explore advanced tenets of algebra (series of squares and cu"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+          "text": "Analyse the causes and effects of 'Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)'.",
+          "competence": "Explore advanced tenets of trigonometry (ratios, small angle"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Find the domain and range of relations and functions",
+          "text": "Describe the main features of 'Find the domain and range of relations and functions'. - with diagram",
+          "competence": "Find the domain and range of relations and functions"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)",
+          "text": "Outline the procedures involved in 'Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)'. - with diagram",
+          "competence": "Explore advanced tenets of coordinate geometry (angle betwee"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala' in Tanzania and propose solutions. - with example",
+          "competence": "Explore the basic tenets of vectors (displacement and positi"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Round off numbers and estimate values of expressions",
+          "text": "Compare and contrast 'Round off numbers and estimate values of expressions' with related concepts. - with diagram",
+          "competence": "Round off numbers and estimate values of expressions"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "text": "Compare and contrast 'Demonstrate an advanced understanding of set theory and logic' with related concepts.",
+          "competence": "Demonstrate an advanced understanding of set theory and logi"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "Discuss the challenges facing 'Describe the concepts of geometry (similarities and congruenc' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "With examples, illustrate how 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm' is applied in the community.",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use numerical skills in different contexts",
+          "text": "Evaluate the role of 'Use numerical skills in different contexts' in national development.",
+          "competence": "Use numerical skills in different contexts"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+          "text": "Propose measures to improve 'Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors' in schools. - locally",
+          "competence": "Use vectors to solve problems related to displacement, veloc"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use ratios and proportions in daily life",
+          "text": "Explain the concept of 'Use ratios and proportions in daily life' with examples relevant to Tanzania. - locally",
+          "competence": "Use ratios and proportions in daily life"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "Compare and contrast 'Perform operations on radicals and rationalize the denominators' with related concepts.",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "text": "Describe the main features of 'Demonstrate an advanced understanding of algebra'.",
+          "competence": "Demonstrate an advanced understanding of algebra"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "Explain the relationship between 'Explore advanced tenets of set theory (operations, expressions, and cardinality)' and its environment. - with example",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Solve linear simultaneous equations graphically",
+          "text": "Analyse the causes and effects of 'Solve linear simultaneous equations graphically'. - locally",
+          "competence": "Solve linear simultaneous equations graphically"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Recognize properties of similar triangles",
+          "text": "What are the characteristics of 'Recognize properties of similar triangles'?",
+          "competence": "Recognize properties of similar triangles"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+          "text": "Explain the concept of 'Use algebraic expressions to model situations (word problems into algebraic expressions and equation' with examples relevant to Tanzania.",
+          "competence": "Use algebraic expressions to model situations (word problems"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+          "text": "Describe the process of 'Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde' step by step.",
+          "competence": "Identify and use laws of exponents involving positive, negat"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concepts of relations and functions (linear and quadrati",
+          "text": "Evaluate the role of 'Describe the concepts of relations and functions (linear and quadrati' in national development.",
+          "competence": "Describe the concepts of relations and functions (linear and"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of rational, irrational, and real numbers",
+          "text": "Explain the relationship between 'Explain the concept of rational, irrational, and real numbers' and its environment.",
+          "competence": "Explain the concept of rational, irrational, and real number"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Complete the project started in Form Five and submit the report for assessment",
+    "Derive and use compound angles to solve problems",
+    "Use basic skills of circles in daily life",
+    "Solve ratio and proportion problems",
+    "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+    "Explore the basic tenets of hyperbolic functions (definition, conversion into logarithmic form, series of hyperbolic cosine and sine functions, derivatives and integration)",
+    "Find the gradient/ slope of a line",
+    "Use knowledge of sets to organise, create, and categorise objects",
+    "Demonstrate an advanced understanding of statistics",
+    "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

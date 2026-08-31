@@ -1,0 +1,289 @@
+{
+  "filename": "english_language_form3_annual_2_2023.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2023",
+  "time": "3:00 Hours",
+  "title": "English Language - Annual Exam 2 (FORM3 2023)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 130,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of interpretation",
+          "text": "With examples, illustrate how 'Explain the concept of interpretation' is applied in the community. - with example",
+          "competence": "Explain the concept of interpretation"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Analyse the genres of literature and appreciate their conventions",
+          "text": "With examples, illustrate how 'Analyse the genres of literature and appreciate their conventions' is applied in the community.",
+          "competence": "Analyse the genres of literature and appreciate their conven"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Write Curriculum Vitae (CV) for different purposes",
+          "text": "Explain the relationship between 'Write Curriculum Vitae (CV) for different purposes' and its environment. - with diagram",
+          "competence": "Write Curriculum Vitae (CV) for different purposes"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Interpret messages in small formal settings (e.g., classroom and subject group discussion",
+          "text": "What are the characteristics of 'Interpret messages in small formal settings (e.g., classroom and subject group discussion'?",
+          "competence": "Interpret messages in small formal settings (e.g., classroom"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Translate a variety of general texts using Computer- Assisted Translation (CAT) tools",
+          "text": "Discuss the challenges facing 'Translate a variety of general texts using Computer- Assisted Translation (CAT) tools' in Tanzania and propose solutions. - locally",
+          "competence": "Translate a variety of general texts using Computer- Assiste"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Analyse the theories and principles of editing and proofreading",
+          "text": "Discuss the challenges facing 'Analyse the theories and principles of editing and proofreading' in Tanzania and propose solutions. - locally",
+          "competence": "Analyse the theories and principles of editing and proofread"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Deduce the main ideas from an oral presentation or language task",
+          "text": "Describe the main features of 'Deduce the main ideas from an oral presentation or language task'. - with example",
+          "competence": "Deduce the main ideas from an oral presentation or language "
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Discuss the ethics of translation as a career",
+          "text": "Compare and contrast 'Discuss the ethics of translation as a career' with related concepts.",
+          "competence": "Discuss the ethics of translation as a career"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Assess the language used in a selected novella",
+          "text": "Explain the concept of 'Assess the language used in a selected novella' with examples relevant to Tanzania. - with example",
+          "competence": "Assess the language used in a selected novella"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Employ paralinguistic features to communicate information in a variety of settings",
+          "text": "Explain the concept of 'Employ paralinguistic features to communicate information in a variety of settings' with examples relevant to Tanzania. - with example",
+          "competence": "Employ paralinguistic features to communicate information in"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Analyse techniques of critiquing literary texts based on their conventions",
+          "text": "Explain the relationship between 'Analyse techniques of critiquing literary texts based on their conventions' and its environment. - with example",
+          "competence": "Analyse techniques of critiquing literary texts based on the"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Paraphrase various oral messages from different contexts",
+          "text": "Describe the main features of 'Paraphrase various oral messages from different contexts'. - with example",
+          "competence": "Paraphrase various oral messages from different contexts"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Construct sentences using vocabulary acquired from conversations and written texts",
+          "text": "Compare and contrast 'Construct sentences using vocabulary acquired from conversations and written texts' with related concepts. - with diagram",
+          "competence": "Construct sentences using vocabulary acquired from conversat"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition",
+          "text": "Discuss the challenges facing 'Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition' in Tanzania and propose solutions. - locally",
+          "competence": "Edit and proofread texts in a school context (e.g., school r"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use the principles of editing and proofreading to edit and proofread simple and short texts in a school context (e.g., laboratory rules, announcement",
+          "text": "Discuss the challenges facing 'Use the principles of editing and proofreading to edit and proofread simple and short texts in a school context (e.g., laboratory rules, announcement' in Tanzania and propose solutions. - with diagram",
+          "competence": "Use the principles of editing and proofreading to edit and p"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Express daily routines (structure: present simpl",
+          "text": "Propose measures to improve 'Express daily routines (structure: present simpl' in schools. - with example",
+          "competence": "Express daily routines (structure: present simpl"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Produce contextualised oral and written descriptions based on personal experience",
+          "text": "Describe the main features of 'Produce contextualised oral and written descriptions based on personal experience'.",
+          "competence": "Produce contextualised oral and written descriptions based o"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Identify different ways/strategies for organising information from various sources",
+          "text": "Explain the concept of 'Identify different ways/strategies for organising information from various sources' with examples relevant to Tanzania. - with example",
+          "competence": "Identify different ways/strategies for organising informatio"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Conduct a socio- cultural analysis of functional texts",
+          "text": "Discuss the challenges facing 'Conduct a socio- cultural analysis of functional texts' in Tanzania and propose solutions. - with example",
+          "competence": "Conduct a socio- cultural analysis of functional texts"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use correct grammar and vocabulary in oral and written language tasks",
+          "text": "Assess the impact of 'Use correct grammar and vocabulary in oral and written language tasks' on society. - with example",
+          "competence": "Use correct grammar and vocabulary in oral and written langu"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Write words heard from oral and audio/audio- visual sources",
+          "text": "Explain the concept of 'Write words heard from oral and audio/audio- visual sources' with examples relevant to Tanzania. - with diagram",
+          "competence": "Write words heard from oral and audio/audio- visual sources"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe conditions about various situations and circumstances (structure: conditional sentence",
+          "text": "Evaluate the role of 'Describe conditions about various situations and circumstances (structure: conditional sentence' in national development. - with example",
+          "competence": "Describe conditions about various situations and circumstanc"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Apply literary skills in developing literary works",
+          "text": "Describe the process of 'Apply literary skills in developing literary works' step by step. - locally",
+          "competence": "Apply literary skills in developing literary works"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Examine information from oral sources",
+          "text": "Evaluate the role of 'Examine information from oral sources' in national development. - with example",
+          "competence": "Examine information from oral sources"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Practise pronunciation of words with short and long vowels (e.g., sit/seat, hit/ heat, pot/por",
+          "text": "Describe the main features of 'Practise pronunciation of words with short and long vowels (e.g., sit/seat, hit/ heat, pot/por'. - with diagram",
+          "competence": "Practise pronunciation of words with short and long vowels ("
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 10,
+          "topic": "using correct grammar and vocabulary",
+          "text": "How does 'using correct grammar and vocabulary' relate to sustainable development?",
+          "competence": "using correct grammar and vocabulary"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Discuss information from various oral sources",
+          "text": "How does 'Discuss information from various oral sources' relate to sustainable development?",
+          "competence": "Discuss information from various oral sources"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Develop vocabulary from conversations and written texts",
+          "text": "Assess the impact of 'Develop vocabulary from conversations and written texts' on society. - with diagram",
+          "competence": "Develop vocabulary from conversations and written texts"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Manage short translation and editing projects using Computer- Assisted Tools",
+          "text": "Assess the impact of 'Manage short translation and editing projects using Computer- Assisted Tools' on society. - locally",
+          "competence": "Manage short translation and editing projects using Computer"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Create a variety of complex oral and written texts for different communicative purposes",
+          "text": "Explain the relationship between 'Create a variety of complex oral and written texts for different communicative purposes' and its environment. - with diagram",
+          "competence": "Create a variety of complex oral and written texts for diffe"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of interpretation",
+    "Analyse the genres of literature and appreciate their conventions",
+    "Write Curriculum Vitae (CV) for different purposes",
+    "Interpret messages in small formal settings (e.g., classroom and subject group discussion",
+    "Translate a variety of general texts using Computer- Assisted Translation (CAT) tools",
+    "Analyse the theories and principles of editing and proofreading",
+    "Deduce the main ideas from an oral presentation or language task",
+    "Discuss the ethics of translation as a career",
+    "Assess the language used in a selected novella",
+    "Employ paralinguistic features to communicate information in a variety of settings"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

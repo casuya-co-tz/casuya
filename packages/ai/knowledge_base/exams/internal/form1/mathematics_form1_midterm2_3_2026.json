@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form1_midterm2_3_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 2 Exam 3 (FORM1 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 103,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+          "text": "What are the characteristics of 'Use algebraic expressions to model situations (word problems into algebraic expressions and equation'? - with diagram",
+          "competence": "Use algebraic expressions to model situations (word problems"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "text": "Explain the concept of 'Demonstrate an advanced understanding of knowledge and skills in Mathematics' with examples relevant to Tanzania. - with example",
+          "competence": "Demonstrate an advanced understanding of knowledge and skill"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "What are the characteristics of 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)'?",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
+          "text": "What are the characteristics of 'Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul'? - with example",
+          "competence": "Solve quadratic equations by using different methods (factor"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+          "text": "Discuss the challenges facing 'Explain the concept of approximations (rounding off, significant figures, and decimal place' in Tanzania and propose solutions.",
+          "competence": "Explain the concept of approximations (rounding off, signifi"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+          "text": "Propose measures to improve 'Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)' in schools. - with example",
+          "competence": "Explore basic tenets of differentiation (first principles, p"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain postulates, proofs, and theorems of congruent triangles",
+          "text": "Explain the concept of 'Explain postulates, proofs, and theorems of congruent triangles' with examples relevant to Tanzania.",
+          "competence": "Explain postulates, proofs, and theorems of congruent triang"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Describe the process of 'Explain the concept of ratios and proportions' step by step.",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use numerical skills in different contexts",
+          "text": "Describe the process of 'Use numerical skills in different contexts' step by step.",
+          "competence": "Use numerical skills in different contexts"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Determine the equation of a straight line and draw its graph",
+          "text": "Explain the relationship between 'Determine the equation of a straight line and draw its graph' and its environment. - with example",
+          "competence": "Determine the equation of a straight line and draw its graph"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Solve linear simultaneous equations graphically",
+          "text": "Explain the relationship between 'Solve linear simultaneous equations graphically' and its environment.",
+          "competence": "Solve linear simultaneous equations graphically"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "With examples, illustrate how 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' is applied in the community. - locally",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+          "text": "What are the characteristics of 'Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)'? - with diagram",
+          "competence": "Explore basic tenets of logic (connectives, propositions, ar"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the concept of inequalities and absolute values of real numbers",
+          "text": "Evaluate the role of 'Explain the concept of inequalities and absolute values of real numbers' in national development. - with example",
+          "competence": "Explain the concept of inequalities and absolute values of r"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use statistics in problem solving",
+          "text": "Discuss the challenges facing 'Use statistics in problem solving' in Tanzania and propose solutions. - locally",
+          "competence": "Use statistics in problem solving"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Find the inverses of relations and functions",
+          "text": "Define 'Find the inverses of relations and functions' and discuss its importance in everyday life. - with diagram",
+          "competence": "Find the inverses of relations and functions"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "What are the characteristics of 'Convert repeating/ recurring decimals into fractions and vice versa'? - with diagram",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an advanced understanding of set theory and logic",
+          "text": "Outline the procedures involved in 'Demonstrate an advanced understanding of set theory and logic'.",
+          "competence": "Demonstrate an advanced understanding of set theory and logi"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+          "text": "Discuss the factors influencing 'Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation'.",
+          "competence": "Explore the basic tenets of coordinate geometry (gradient an"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "Discuss the challenges facing 'Solve simultaneous equations using substitution and elimination methods' in Tanzania and propose solutions. - with diagram",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+    "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+    "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+    "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
+    "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+    "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+    "Explain postulates, proofs, and theorems of congruent triangles",
+    "Explain the concept of ratios and proportions",
+    "Use numerical skills in different contexts",
+    "Determine the equation of a straight line and draw its graph"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

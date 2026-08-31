@@ -1,0 +1,121 @@
+{
+  "filename": "academic_communication_form6_topical_4_2025.json",
+  "subject": "Academic Communication",
+  "subject_slug": "academic_communication",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Academic Communication - Topical Test 4 (FORM6 2025): Form words using word-formation pro",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 32,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Prepare posters for academic presentations",
+          "text": "Explain the concept of 'Prepare posters for academic presentations' with examples relevant to Tanzania. - with diagram",
+          "competence": "Prepare posters for academic presentations"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Prepare posters for academic presentations",
+          "text": "Analyse the causes and effects of 'Prepare posters for academic presentations'.",
+          "competence": "Prepare posters for academic presentations"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare posters for academic presentations",
+          "text": "With examples, illustrate how 'Prepare posters for academic presentations' is applied in the community.",
+          "competence": "Prepare posters for academic presentations"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare posters for academic presentations",
+          "text": "Explain the concept of 'Prepare posters for academic presentations' with examples relevant to Tanzania.",
+          "competence": "Prepare posters for academic presentations"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Prepare posters for academic presentations",
+          "text": "How does 'Prepare posters for academic presentations' relate to sustainable development? - with example",
+          "competence": "Prepare posters for academic presentations"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Form words using word-formation processes that express clarity and fluency in oral and written communications",
+          "text": "Compare and contrast 'Form words using word-formation processes that express clarity and fluency in oral and written communications' with related concepts. - locally",
+          "competence": "Form words using word-formation processes that express clari"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Prepare posters for academic presentations",
+          "text": "What are the characteristics of 'Prepare posters for academic presentations'? - locally",
+          "competence": "Prepare posters for academic presentations"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Prepare posters for academic presentations",
+          "text": "Explain the concept of 'Prepare posters for academic presentations' with examples relevant to Tanzania. - with example",
+          "competence": "Prepare posters for academic presentations"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Form words using word-formation processes that express clarity and fluency in oral and written communications",
+          "text": "Examine the advantages and disadvantages of 'Form words using word-formation processes that express clarity and fluency in oral and written communications'. - with example",
+          "competence": "Form words using word-formation processes that express clari"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Prepare posters for academic presentations",
+          "text": "Examine the advantages and disadvantages of 'Prepare posters for academic presentations'. - locally",
+          "competence": "Prepare posters for academic presentations"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Prepare posters for academic presentations",
+    "Form words using word-formation processes that express clarity and fluency in oral and written communications"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

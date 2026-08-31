@@ -1,0 +1,209 @@
+{
+  "filename": "physics_form5_midterm2_2_2024.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Physics - Midterm 2 Exam 2 (FORM5 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 104,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "explain the generation of electricity from water",
+          "text": "Analyse the causes and effects of 'explain the generation of electricity from water'.",
+          "competence": "explain the generation of electricity from water"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Beam balance i",
+          "text": "Describe the main features of 'Beam balance i'.",
+          "competence": "Beam balance i"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "explain the origin of magnetism",
+          "text": "Propose measures to improve 'explain the origin of magnetism' in schools.",
+          "competence": "explain the origin of magnetism"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "identify the cell defects",
+          "text": "Outline the procedures involved in 'identify the cell defects'. - with diagram",
+          "competence": "identify the cell defects"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Various objects i",
+          "text": "Discuss the challenges facing 'Various objects i' in Tanzania and propose solutions.",
+          "competence": "Various objects i"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "explain the concept of pressure; and",
+          "text": "Discuss the factors influencing 'explain the concept of pressure; and'. - locally",
+          "competence": "explain the concept of pressure; and"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "determine equivalence capacitance of a combination of capacitors",
+          "text": "Outline the procedures involved in 'determine equivalence capacitance of a combination of capacitors'.",
+          "competence": "determine equivalence capacitance of a combination of capaci"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Capillarity",
+          "text": "Discuss the challenges facing 'Capillarity' in Tanzania and propose solutions. - with example",
+          "competence": "Capillarity"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Lead shots/bearing i",
+          "text": "Discuss the factors influencing 'Lead shots/bearing i'.",
+          "competence": "Lead shots/bearing i"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use various instruments to carry out measurements in Physics",
+          "text": "Examine the advantages and disadvantages of 'Use various instruments to carry out measurements in Physics'.",
+          "competence": "Use various instruments to carry out measurements in Physics"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Introduction to Astronomy",
+          "text": "Define 'Introduction to Astronomy' and discuss its importance in everyday life. - with diagram",
+          "competence": "Introduction to Astronomy"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "describe the functions of a fuse and a circuit breaker",
+          "text": "Describe the main features of 'describe the functions of a fuse and a circuit breaker'. - with diagram",
+          "competence": "describe the functions of a fuse and a circuit breaker"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "two dimensional motion (projectile motion, circular motion, rotation, gravitation and fluid mechanics)",
+          "text": "Discuss the factors influencing 'two dimensional motion (projectile motion, circular motion, rotation, gravitation and fluid mechanics)'. - with diagram",
+          "competence": "two dimensional motion (projectile motion, circular motion, "
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "demonstrate the effect of pressure on the boiling point and freezing point of a substance",
+          "text": "Compare and contrast 'demonstrate the effect of pressure on the boiling point and freezing point of a substance' with related concepts. - with example",
+          "competence": "demonstrate the effect of pressure on the boiling point and "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Sound Waves",
+          "text": "Evaluate the role of 'Sound Waves' in national development. - locally",
+          "competence": "Sound Waves"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "mention forces holding the nucleus",
+          "text": "Analyse the causes and effects of 'mention forces holding the nucleus'. - with example",
+          "competence": "mention forces holding the nucleus"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "identify the two types of charges",
+          "text": "Examine the advantages and disadvantages of 'identify the two types of charges'. - with example",
+          "competence": "identify the two types of charges"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "explain the concept of surface tension",
+          "text": "Assess the impact of 'explain the concept of surface tension' on society. - with diagram",
+          "competence": "explain the concept of surface tension"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "deifne the fundamental interval of a thermometer",
+          "text": "Describe the process of 'deifne the fundamental interval of a thermometer' step by step. - with example",
+          "competence": "deifne the fundamental interval of a thermometer"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "trace the passage of light through a triangular prism",
+          "text": "Evaluate the role of 'trace the passage of light through a triangular prism' in national development. - with example",
+          "competence": "trace the passage of light through a triangular prism"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "explain the generation of electricity from water",
+    "Beam balance i",
+    "explain the origin of magnetism",
+    "identify the cell defects",
+    "Various objects i",
+    "explain the concept of pressure; and",
+    "determine equivalence capacitance of a combination of capacitors",
+    "Capillarity",
+    "Lead shots/bearing i",
+    "Use various instruments to carry out measurements in Physics"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,420 @@
+{
+  "level": "CSEE",
+  "subject": "Physics",
+  "year": "2007",
+  "source": "learninghubtz.co.tz",
+  "sections": [
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "text": "This paper consists of sections A, B and C."
+        }
+      ]
+    },
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "4",
+          "type": "essay",
+          "text": "Cellular phones are not allowed in the examination room."
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "text": "Write your Examination Number on every page of your answer booklet(s)."
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "text": "Where necessary use the following constants: Acceleration due to gravity g = 9.8 m/s 2 Pi ="
+        }
+      ]
+    },
+    {
+      "name": "Section A",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "text": "For each of the items (i) ­ (x) choose the correct answer from among the given alternatives and write its letter beside the item number."
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "A stone is thrown horizontally from the top of a building at a speed of 12 m/s. How long does it take to fall 45 metres vertically? (Assume negligible air resistance). 1.0 sec. 5.0 sec. 3.0 sec. 8.0 sec. 2.14 sec. Choose Answer : - -"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Which of the following statements is correct? Friction acts in the same direction as motion. Air friction can cause a body to become hot. Certain lubricants can reduce friction to zero. For a given body the frictional force depends on the area in contact with the surface. Walking would be made easier if friction did not exist. Choose Answer : - -"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "The dew point is defined as the rate at which water vapour present in the atmosphere evaporates amount of water on grass found in the morning amount of water vapour required to saturate air water vapour content of the atmosphere temperature at which water vapour present in air is just sufficient to saturate it. Choose Answer : - -"
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": "When a pipe is played a sound wave x is produced inside the pipe and a sound Y is heard outside the pipe, then x is transverse and Y is longitudinal x and Y are both transverse waves x is progressive and Y is stationary x is stationary and Y is a progressive wave x is progressive and Y is longitudinal. Choose Answer : - -"
+        },
+        {
+          "number": "v",
+          "type": "mcq",
+          "text": "When a lighted match is brought near the negatively charged electroscope, the leaf of the electroscope collapses because the heat increases molecular vibrations which knock off the electrons from the cap flame provides energy for the electrons to escape from the cap match emits Y-rays positive charges from the air ionized by the flame are attracted by the cap match emits ?-particles. Choose Answer : - -"
+        },
+        {
+          "number": "vi",
+          "type": "mcq",
+          "text": "In the circuit shown in figure 1 the battery and the ammeter have negligible internal resistance. What will be the ammeter reading? Fig. 1 2.5 A 0.4 A 0.5 A 1.6 A 2.0 A Choose Answer : - -"
+        },
+        {
+          "number": "vii",
+          "type": "mcq",
+          "text": "A conductor becomes a magnet when it is wrapped with a coil of wire a soft iron core is used an electric current flows through it its resistance is increased It is passed through an electric field Choose Answer : - -"
+        },
+        {
+          "number": "viii",
+          "type": "mcq",
+          "text": "A mixed beam of Y-particles, ?-particles and ?-rays enters a magnetic field at right angles to the direction of the beam. Which of the following best represent the correct paths taken by the radiations? - -"
+        },
+        {
+          "number": "ix",
+          "type": "mcq",
+          "text": "A semi conductor diode is used for producing a.c. from a d.c. power supply rectification controlling energy losses amplification supplying heat in some electrical devices. Choose Answer : - -"
+        },
+        {
+          "number": "x",
+          "type": "mcq",
+          "text": "Saturn as a member of the solar system is the largest planet with no known satellites is the planet seen by naked eye satellites with a temperature ­200°C is the planet only seen through telescope and is the furthest from the sun has five moons and a ring system is the second largest planet with known natural satellites and a ring system. Choose Answer : - -"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "text": "Match the responses in List B with the words/phrases in List A by writing the letter of the correct response beside the item number. List A List B"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Hooke&rsquo;s law"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Transfer of heat by radiation"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "Total internal reflection"
+        },
+        {
+          "number": "iv",
+          "type": "mcq",
+          "text": "Production of many positive charges in small amounts"
+        },
+        {
+          "number": "v",
+          "type": "mcq",
+          "text": "Ohm&rsquo;s law not applicable"
+        },
+        {
+          "number": "vi",
+          "type": "mcq",
+          "text": "Longitudinal waves"
+        },
+        {
+          "number": "vii",
+          "type": "mcq",
+          "text": "Proton"
+        },
+        {
+          "number": "viii",
+          "type": "mcq",
+          "text": "Telephone earpiece"
+        },
+        {
+          "number": "ix",
+          "type": "mcq",
+          "text": "Geiger&shy;muller counter"
+        },
+        {
+          "number": "x",
+          "type": "mcq",
+          "text": "Collector&shy;base in common base mode Electrophorus Converts sound waves into electric currents Occur in gases and vacuum Extensions is proportional to plasticity Positively charged particles of the nucleus Detects and counts all radioactive radiations and x&shy;-rays Converts electric currents into sound waves Extension of spring is proportional to the applied force Van der Graaf generator Detects and counts ?&shy;particle radiation only Light must pass from a denser medium to a less dense medium Helium nucleus Emitter-&shy;base is reverse biases When physical conditions of a wire are altered Light passes from less dense to a denser medium Travel parallel to the direction of the wave Reversed biased Occur in the atmosphere Travel perpendicular to the direction of the wave When there occurs no loss of p.d. in an electric circuit. View Ans"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "questions": [
+        {
+          "number": "3",
+          "type": "essay",
+          "text": "(a) (i) Define relative density (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "In an experiment using Hare&rsquo;s apparatus, the lengths of methanol and water columns were found to be 16 cm and 12.80 cm respectively. Find the relative density of methanol. (2 marks)"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "If the length of methanol column was altered to 21.50 cm what would be the new height of the water column? (1 mark) View Ans (b) The letter &ldquo;g&rdquo; can be used to denote an acceleration or the amount of force. State the conditions and the SI units under each use. (2 marks) View Ans (c) An uniform half metre rule is freely pivoted at the 15 cm mark and balances horizontally when a body of mass 40 g is hung at the 2.0 cm mark."
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Make a clear sketch to show the forces and their positions in the arrangement. (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Calculate the mass of the half&shy;metre rule. (2 marks) View Ans"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "text": "(a) What is meant by"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "upper fixed point?"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "lower fixed point? (1 mark) View Ans (b) (i) List down the four (4) advantages of mercury over alcohol as thermometric liquids. (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Give two (2) similarities and two (2) differences between a maximum thermometer and a minimum thermometer. (2 marks) View Ans (c) (i) How are the heat losses in a thermos flask checked? (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Determine the final temperature obtained when 500 g of water at 100&deg;C was mixed with 500 g of water at 10&deg;C and well stirred. (Note: The specific heat capacity of water C = 4,20 J kg &shy;1 &deg;C &shy;1 ). (3 marks) View Ans"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "text": "(a) (i) State the conditions necessary for total internal reflection to occur. (2 marks) (ii) Why does an object appear coloured when light falls onto it? (1 mark) View Ans (b) (i) What is meant by the term complimentary colours? (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Explain why the result of mixing blue and yellow paints is very different from that of mixing blue and yellow lights? (3 marks) View Ans (c) A screen is placed 80 cm from an object. A lens is used to produce on the screen an image with magnification 3. Calculate the"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "distance between the object and lens. (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "focal length of the lens. (2 marks) View Ans"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "text": "(a) (i) What are the essential features of a capacitor? (1 mark) What role does a capacitor play when used in"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "d.c. circuits?"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "a.c. circuits? Give one example for each. (2 marks) View Ans (b) (i) What happens when a wire is connected to a charged capacitor? (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "An insulated plate A having a negative charge is joined to a plate B of positive charge by a resistance wire. If a charge of 10 6 C flows through the wire of resistance 2 ? in 10 &shy;6 seconds how much heat is dissipated in the wire? (1 mark) View Ans (c) Discuss the charge distribution on"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "the surface of a solid conductor of irregular shape"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "a hollow conductor"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "a lightning conductor as clouds pass over its spikes. (2 marks) View Ans"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "text": "(a) (i) List three (3) factors that affect the resistance of a wire and discuss how they affect the resistance. (3 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "In the circuit shown in figure 2 the total resistance between X and Y is 2.0 ?. Calculate the unknown resistance Q. (2 marks) View Ans (b) (i) How does the electromotive force e.m.f. differ from the potential difference of a cell?"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Would you expect two identical cells in parallel to drive more current through a resistor than one cell does? Explain. (2 marks) View Ans (c) A 2.0 m long resistance wire of cross section 0.5 mm 2 has a resistance of 2.2 ?. Find the"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "resistivity of the material"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "length of the wire that would give a total resistance of 1.0 ? when placed in parallel. (3 marks) View Ans"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "text": "(a) (i) Name three (3) basic radiation that occur naturally."
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Discuss briefly the properties of the radiations mentioned in 8(a)(i) above in terms of penetrating power (3 marks) View Ans (b) (i) Define mass number and atomic number (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Thorium disintegrates in the following manner State the particles emitted at each part of the disintegration. (2 marks) View Ans (c) A thorium 228 radioactive source placed in a polythene bottle decayed into a radioactive gas thoron. The decay process was recorded by the Geiger-&shy;Muller (G&shy;M) tube as follows: Time in minutes Count rate"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "Draw the graph of the count rate against time."
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "From the graph determine the half-&shy;life of thoron. (3 marks) View Ans"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "questions": [
+        {
+          "number": "9",
+          "type": "essay",
+          "text": "(a) (i) State Archimede&rsquo;s principle. (1 mark) A block of metal of density 2700 kg/m 3 has a volume of 4.0 x 10 &shy;2 m 3 . Calculate the:"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "mass of the block (1 mark)"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "apparent weight when immersed in brine of density 1200 kg/m 3 . (1 mark) View Ans (b) What energy transformation occurs in the following"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "bullet fired from the nozzle of a gun. (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "battery used to light a bulb torch. (1 mark) View Ans (c) How is kinetic energy distinguished from potential energy? (1 mark) A bullet of mass 3.0 g moving at 400 ms &shy;1 hits a tree trunk and comes to rest inside the tree after penetrating a depths of 60 mm, calculate the:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "kinetic energy of the bullet as it hits the tree. (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "average force of retardation as it passes through the tree. (2 marks) View Ans"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "text": "(a) (i) State Ohm&rsquo;s law. (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Describe the factors affecting resistance. (2 marks)"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "A 5 ? resistor and a 1 ? resistor are connected in parallel to a cell of e.m.f. 6 V and internal resistance 0.5 ?. Calculate the current flowing round the circuit. (2 marks) View Ans (b) (i) Why is it economical to transmit electricity over long distances by high voltages rather than low voltages? Explain. (1 mark) Fig. 3 Figure 3 shows a model of an electrical transmission system. AB and CD each represent a long length of cable each having a resistance of 4 ?. The current in AB is 0.1 A, find the:"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "power lost by AB and CD."
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "p.d. across BD."
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "current through the bulb. (3 marks) View Ans (c) State the factors which determine the size of an induced e.m.f. (1 mark) View Ans"
+        },
+        {
+          "number": "11",
+          "type": "essay",
+          "text": "(a) (i) Explain why cathode ray tubes (CRT) are evacuated. (1 mark)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "What happens to the CRT when a gas is maintained? (1 mark)"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "If a gas is maintained in a CRT, will the image be formed onto the screen? Explain. (1 mark) View Ans (b) In the production of x-&shy;rays what are the roles of"
+        },
+        {
+          "number": "i",
+          "type": "mcq",
+          "text": "low voltage?"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "high voltage?"
+        },
+        {
+          "number": "iii",
+          "type": "mcq",
+          "text": "tungsten target? (3 marks) View Ans (c) How are hard x-&shy;rays produced? (1 mark) View Ans (d) (i) Discuss the differences between conductors and semiconductors in terms of their sensitivities and conduction bands. (2 marks)"
+        },
+        {
+          "number": "ii",
+          "type": "mcq",
+          "text": "Use the following information to calculate the current gain of a C-&shy;E amplifier. (1 mark) I B &times;10 &shy;6 A 100 200 300 400 500 I C &times; 10 &shy;3 A View Ans"
+        }
+      ]
+    }
+  ],
+  "title": "ONLINE FORM FOUR NECTA PHYSICS YEAR 2007 REVIEW (QNS. & ANS.)",
+  "question_count": 77
+}

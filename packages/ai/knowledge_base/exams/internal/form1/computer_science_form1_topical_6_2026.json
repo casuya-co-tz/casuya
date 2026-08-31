@@ -1,0 +1,121 @@
+{
+  "filename": "computer_science_form1_topical_6_2026.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Computer Science - Topical Test 6 (FORM1 2026): Explain word processing concepts",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 37,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain word processing concepts",
+          "text": "Describe the main features of 'Explain word processing concepts'. - with diagram",
+          "competence": "Explain word processing concepts"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain word processing concepts",
+          "text": "Analyse the causes and effects of 'Explain word processing concepts'. - with example",
+          "competence": "Explain word processing concepts"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain word processing concepts",
+          "text": "Evaluate the role of 'Explain word processing concepts' in national development.",
+          "competence": "Explain word processing concepts"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain word processing concepts",
+          "text": "Define 'Explain word processing concepts' and discuss its importance in everyday life. - with example",
+          "competence": "Explain word processing concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Document Creation",
+          "text": "Describe the main features of 'Document Creation'. - with example",
+          "competence": "Document Creation"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain word processing concepts",
+          "text": "Discuss the challenges facing 'Explain word processing concepts' in Tanzania and propose solutions. - with example",
+          "competence": "Explain word processing concepts"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain word processing concepts",
+          "text": "With examples, illustrate how 'Explain word processing concepts' is applied in the community. - with diagram",
+          "competence": "Explain word processing concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Document Creation",
+          "text": "Define 'Document Creation' and discuss its importance in everyday life. - with example",
+          "competence": "Document Creation"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain word processing concepts",
+          "text": "Explain the concept of 'Explain word processing concepts' with examples relevant to Tanzania.",
+          "competence": "Explain word processing concepts"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain word processing concepts",
+          "text": "Evaluate the role of 'Explain word processing concepts' in national development.",
+          "competence": "Explain word processing concepts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain word processing concepts",
+    "Document Creation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

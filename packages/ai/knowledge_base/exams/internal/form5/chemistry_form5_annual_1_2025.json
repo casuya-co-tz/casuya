@@ -1,0 +1,289 @@
+{
+  "filename": "chemistry_form5_annual_1_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2025",
+  "time": "3:00 Hours",
+  "title": "Chemistry - Annual Exam 1 (FORM5 2025)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 125,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Define 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "With examples, illustrate how 'Demonstrate mastery of concepts, theories and principles in Chemistry' is applied in the community. - with example",
+          "competence": "Demonstrate mastery of concepts, theories and principles in "
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use chemical symbols, formulae and equations to represent chemical reaction",
+          "text": "Compare and contrast 'Use chemical symbols, formulae and equations to represent chemical reaction' with related concepts.",
+          "competence": "Use chemical symbols, formulae and equations to represent ch"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
+          "text": "Outline the procedures involved in 'Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste'. - with example",
+          "competence": "Explain the concept of chemical formulae and nomenclature (v"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism",
+          "text": "Discuss the challenges facing 'Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism' in Tanzania and propose solutions. - with example",
+          "competence": "Examine the applications of energetics in daily life in comb"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+          "text": "Explain the concept of 'Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons' with examples relevant to Tanzania. - with example",
+          "competence": "Appreciate the applications of gas laws in daily life such a"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+          "text": "Explain the concept of 'Demonstrate an understanding of advanced concepts and principles in organic chemistry' with examples relevant to Tanzania. - with example",
+          "competence": "Demonstrate an understanding of advanced concepts and princi"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept of chemical bonding and the interactions of atoms to form molecules",
+          "text": "Define 'Explain the concept of chemical bonding and the interactions of atoms to form molecules' and discuss its importance in everyday life.",
+          "competence": "Explain the concept of chemical bonding and the interactions"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe acids, bases and salts (reactions of acids and bases with various substance",
+          "text": "Define 'Describe acids, bases and salts (reactions of acids and bases with various substance' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe acids, bases and salts (reactions of acids and base"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Analyse the causes and effects of 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid'.",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Compare the properties of compounds with those of constituent elements",
+          "text": "Compare and contrast 'Compare the properties of compounds with those of constituent elements' with related concepts. - with example",
+          "competence": "Compare the properties of compounds with those of constituen"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Compare and contrast 'Analyse the periodic trends of elements in relation to their physical and chemical properties' with related concepts. - with example",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+          "text": "Discuss the challenges facing 'Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the physical and chemical properties of transition "
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "With examples, illustrate how 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' is applied in the community. - with example",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the concept of electronic arrangements",
+          "text": "Describe the main features of 'Describe the concept of electronic arrangements'. - with example",
+          "competence": "Describe the concept of electronic arrangements"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Analyse the causes and effects of 'Use different atomic theories to determine the electronic configuration of elements with different properties'. - with diagram",
+          "competence": "Use different atomic theories to determine the electronic co"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Analyse the causes and effects of 'Discuss the contribution of Chemistry in the development of modern society'.",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes' in Tanzania and propose solutions.",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+          "text": "Discuss the challenges facing 'Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides' in Tanzania and propose solutions. - with example",
+          "competence": "Examine reactions of aromatic hydrocarbons, phenols, carbony"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore reactions of complex compounds",
+          "text": "With examples, illustrate how 'Explore reactions of complex compounds' is applied in the community. - with example",
+          "competence": "Explore reactions of complex compounds"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "With examples, illustrate how 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species' is applied in the community.",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Explain the concept of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table' with examples relevant to Tanzania.",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Outline the procedures involved in 'Describe the concept of matter (physical and chemical changes of matte'. - with example",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Design and carry-out a simple research project in Chemistry",
+          "text": "Outline the procedures involved in 'Design and carry-out a simple research project in Chemistry'. - with diagram",
+          "competence": "Design and carry-out a simple research project in Chemistry"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+          "text": "Explain the concept of 'Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)' with examples relevant to Tanzania. - with example",
+          "competence": "Investigate the applications of electrochemistry in industri"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+          "text": "Compare and contrast 'Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)' with related concepts.",
+          "competence": "Describe the concept of the atom (Dalton’s atomic theory, Bo"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+          "text": "With examples, illustrate how 'Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle' is applied in the community.",
+          "competence": "Describe the modern concept of atomic structure (Dalton’s at"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+          "text": "Compare and contrast 'Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline' with related concepts.",
+          "competence": "Describe the concept of Chemistry (meaning, branches, applic"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Discuss the challenges facing 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)' in Tanzania and propose solutions.",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 5,
+          "topic": "and their applications in daily life",
+          "text": "Compare and contrast 'and their applications in daily life' with related concepts.",
+          "competence": "and their applications in daily life"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+    "Demonstrate mastery of concepts, theories and principles in Chemistry",
+    "Use chemical symbols, formulae and equations to represent chemical reaction",
+    "Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
+    "Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism",
+    "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+    "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+    "Explain the concept of chemical bonding and the interactions of atoms to form molecules",
+    "Describe acids, bases and salts (reactions of acids and bases with various substance",
+    "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form3_topical_8_2024.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 8 (FORM3 2024): Kujadili dhana, kanuni na misingi y",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria",
+          "text": "Assess the impact of 'Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria' on society.",
+          "competence": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria",
+          "text": "Analyse the causes and effects of 'Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria'.",
+          "competence": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kujadili dhana, kanuni na misingi ya uhariri",
+          "text": "With examples, illustrate how 'Kujadili dhana, kanuni na misingi ya uhariri' is applied in the community.",
+          "competence": "Kujadili dhana, kanuni na misingi ya uhariri"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria",
+          "text": "Examine the advantages and disadvantages of 'Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria'. - with example",
+          "competence": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria",
+          "text": "Discuss the challenges facing 'Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria' in Tanzania and propose solutions. - with example",
+          "competence": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria",
+          "text": "Propose measures to improve 'Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria' in schools. - with diagram",
+          "competence": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kujadili dhana, kanuni na misingi ya uhariri",
+          "text": "Evaluate the role of 'Kujadili dhana, kanuni na misingi ya uhariri' in national development.",
+          "competence": "Kujadili dhana, kanuni na misingi ya uhariri"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria",
+          "text": "What are the characteristics of 'Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria'? - with diagram",
+          "competence": "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kujadili dhana, kanuni na misingi ya uhariri",
+          "text": "Explain the concept of 'Kujadili dhana, kanuni na misingi ya uhariri' with examples relevant to Tanzania. - with diagram",
+          "competence": "Kujadili dhana, kanuni na misingi ya uhariri"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kujadili dhana, kanuni na misingi ya uhariri",
+          "text": "Describe the process of 'Kujadili dhana, kanuni na misingi ya uhariri' step by step. - with diagram",
+          "competence": "Kujadili dhana, kanuni na misingi ya uhariri"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kuthibitisha Ubantu wa lugha ya Kiswahili kihistoria",
+    "Kujadili dhana, kanuni na misingi ya uhariri"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

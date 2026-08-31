@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form6_topical_5_2026.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 5 (FORM6 2026): Elaborate the principles of interpr",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 48,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Elaborate the principles of interpretation",
+          "text": "Examine the advantages and disadvantages of 'Elaborate the principles of interpretation'. - with example",
+          "competence": "Elaborate the principles of interpretation"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Elaborate the principles of interpretation",
+          "text": "Compare and contrast 'Elaborate the principles of interpretation' with related concepts. - with example",
+          "competence": "Elaborate the principles of interpretation"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition",
+          "text": "Discuss the challenges facing 'Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition' in Tanzania and propose solutions. - with example",
+          "competence": "Edit and proofread texts in a school context (e.g., school r"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition",
+          "text": "Compare and contrast 'Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition' with related concepts. - locally",
+          "competence": "Edit and proofread texts in a school context (e.g., school r"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition",
+          "text": "Compare and contrast 'Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition' with related concepts.",
+          "competence": "Edit and proofread texts in a school context (e.g., school r"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Elaborate the principles of interpretation",
+          "text": "With examples, illustrate how 'Elaborate the principles of interpretation' is applied in the community. - locally",
+          "competence": "Elaborate the principles of interpretation"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Elaborate the principles of interpretation",
+          "text": "Explain the relationship between 'Elaborate the principles of interpretation' and its environment. - locally",
+          "competence": "Elaborate the principles of interpretation"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Elaborate the principles of interpretation",
+          "text": "Define 'Elaborate the principles of interpretation' and discuss its importance in everyday life.",
+          "competence": "Elaborate the principles of interpretation"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition",
+          "text": "Examine the advantages and disadvantages of 'Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition'.",
+          "competence": "Edit and proofread texts in a school context (e.g., school r"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition",
+          "text": "Analyse the causes and effects of 'Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition'. - locally",
+          "competence": "Edit and proofread texts in a school context (e.g., school r"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Elaborate the principles of interpretation",
+    "Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

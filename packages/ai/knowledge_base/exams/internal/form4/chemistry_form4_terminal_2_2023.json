@@ -1,0 +1,249 @@
+{
+  "filename": "chemistry_form4_terminal_2_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Chemistry - Terminal Exam 2 (FORM4 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 114,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+          "text": "Describe the main features of 'Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture'. - with diagram",
+          "competence": "Describe the applications of volumetric analysis in real lif"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry'. - with diagram",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+          "text": "Evaluate the role of 'Describe the extraction of iron from its ore (ores, stages, and methods of extractio' in national development. - with diagram",
+          "competence": "Describe the extraction of iron from its ore (ores, stages, "
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table'.",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Describe the main features of 'Perform experiments on the changes of matter from one state to another'. - with example",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform experiments on volumetric analysis",
+          "text": "Analyse the causes and effects of 'Perform experiments on volumetric analysis'. - with diagram",
+          "competence": "Perform experiments on volumetric analysis"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+          "text": "Compare and contrast 'Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)' with related concepts.",
+          "competence": "Describe the concept of energetics (Heat/enthalpy of reactio"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use chemical symbols, formulae and equations to represent chemical reaction",
+          "text": "Define 'Use chemical symbols, formulae and equations to represent chemical reaction' and discuss its importance in everyday life. - with diagram",
+          "competence": "Use chemical symbols, formulae and equations to represent ch"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+          "text": "Define 'Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software' and discuss its importance in everyday life. - with diagram",
+          "competence": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Explain the concept of 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts' with examples relevant to Tanzania.",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Analyse the causes and effects of 'Conduct experiments in Chemistry'. - with example",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+          "text": "Define 'Investigate the composition of chemical species in substances using systematic qualitative analysis' and discuss its importance in everyday life.",
+          "competence": "Investigate the composition of chemical species in substance"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Prepare sulphuric acid from sulphur dioxide",
+          "text": "Evaluate the role of 'Prepare sulphuric acid from sulphur dioxide' in national development.",
+          "competence": "Prepare sulphuric acid from sulphur dioxide"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe acids, bases and salts (reactions of acids and bases with various substance",
+          "text": "Describe the main features of 'Describe acids, bases and salts (reactions of acids and bases with various substance'. - with diagram",
+          "competence": "Describe acids, bases and salts (reactions of acids and base"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "With examples, illustrate how '. Demonstrate mastery of concepts, theories and principles in Chemistry' is applied in the community.",
+          "competence": ". Demonstrate mastery of concepts, theories and principles i"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber",
+          "text": "Discuss the challenges facing 'Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber' in Tanzania and propose solutions. - with example",
+          "competence": "Examine reactions of haloalkanes, amines and polymers for pr"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines",
+          "text": "Discuss the challenges facing 'phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines' in Tanzania and propose solutions. - with example",
+          "competence": "phenols, carbonyl compounds, carboxylic acids and their deri"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Evaluate the role of 'Use the electronic configuration of an element to locate their positions in the periodic table' in national development.",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+          "text": "Define 'Demonstrate an understanding of advanced concepts and principles in organic chemistry' and discuss its importance in everyday life.",
+          "competence": "Demonstrate an understanding of advanced concepts and princi"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the concept of electronic arrangements",
+          "text": "Outline the procedures involved in 'Describe the concept of electronic arrangements'.",
+          "competence": "Describe the concept of electronic arrangements"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
+          "text": "Discuss the challenges facing 'Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain the concept of chemical formulae and nomenclature (v"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+          "text": "Examine the advantages and disadvantages of 'Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)'. - with example",
+          "competence": "Explore the periodic trends of elements in the modern period"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Complete and submit for assessment a scientific report of the project started in Form Five",
+          "text": "Outline the procedures involved in 'Complete and submit for assessment a scientific report of the project started in Form Five'. - with diagram",
+          "competence": "Complete and submit for assessment a scientific report of th"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+          "text": "Compare and contrast 'Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle' with related concepts.",
+          "competence": "Describe the modern concept of atomic structure (Dalton’s at"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "and mixtures (types of solution and separation of mixture",
+          "text": "Outline the procedures involved in 'and mixtures (types of solution and separation of mixture'.",
+          "competence": "and mixtures (types of solution and separation of mixture"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+    "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+    "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+    "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+    "Perform experiments on the changes of matter from one state to another",
+    "Perform experiments on volumetric analysis",
+    "Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+    "Use chemical symbols, formulae and equations to represent chemical reaction",
+    "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+    "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

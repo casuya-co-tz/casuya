@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form5_midterm2_2_2023.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 2 Exam 2 (FORM5 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 72,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Draw graphs of relations and functions",
+          "text": "How does 'Draw graphs of relations and functions' relate to sustainable development? - with example",
+          "competence": "Draw graphs of relations and functions"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Convert repeating/ recurring decimals into fractions and vice versa",
+          "text": "Examine the advantages and disadvantages of 'Convert repeating/ recurring decimals into fractions and vice versa'.",
+          "competence": "Convert repeating/ recurring decimals into fractions and vic"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Examine the advantages and disadvantages of 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic'. - locally",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Determine the equation of a straight line and draw its graph",
+          "text": "How does 'Determine the equation of a straight line and draw its graph' relate to sustainable development? - locally",
+          "competence": "Determine the equation of a straight line and draw its graph"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use sets, sequences and series in problem solving",
+          "text": "What are the characteristics of 'Use sets, sequences and series in problem solving'? - with example",
+          "competence": "Use sets, sequences and series in problem solving"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function",
+          "text": "With examples, illustrate how '(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function' is applied in the community. - with diagram",
+          "competence": "(types of relations, domain and range of relations, graphs o"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "text": "Explain the concept of 'Demonstrate an advanced understanding of statistics' with examples relevant to Tanzania. - with diagram",
+          "competence": "Demonstrate an advanced understanding of statistics"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "How does 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation' relate to sustainable development?",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+          "text": "Define 'Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)' and discuss its importance in everyday life. - locally",
+          "competence": "Use differential equations to solve real life problems relat"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "text": "What are the characteristics of 'Demonstrate an advanced understanding of knowledge and skills in Mathematics'? - locally",
+          "competence": "Demonstrate an advanced understanding of knowledge and skill"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use algebra and matrices in problem solving",
+          "text": "Describe the main features of 'Use algebra and matrices in problem solving'.",
+          "competence": "Use algebra and matrices in problem solving"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)",
+          "text": "Explain the relationship between 'Explore advanced tenets of statistics (measures of central tendency and dispersion: mean, variance and standard deviation by coding method, quartiles, and percentiles)' and its environment. - with diagram",
+          "competence": "Explore advanced tenets of statistics (measures of central t"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)",
+          "text": "How does 'Explore the basic tenets of first and second order differential equations (linearity, degree, order, formulation, solutions, homogeneity, separability, and exactness)' relate to sustainable development? - with diagram",
+          "competence": "Explore the basic tenets of first and second order different"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Determine trigonometric ratios of angles and special angles",
+          "text": "Explain the concept of 'Determine trigonometric ratios of angles and special angles' with examples relevant to Tanzania. - with example",
+          "competence": "Determine trigonometric ratios of angles and special angles"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+          "text": "Propose measures to improve 'Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)' in schools. - with diagram",
+          "competence": "Explore basic tenets of differentiation (first principles, p"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "How does 'Perform operations on radicals and rationalize the denominators' relate to sustainable development? - with example",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Solve inequalities in one unknown",
+          "text": "With examples, illustrate how 'Solve inequalities in one unknown' is applied in the community. - locally",
+          "competence": "Solve inequalities in one unknown"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
+          "text": "Explain the concept of 'Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio' with examples relevant to Tanzania.",
+          "competence": "Explore the basic tenets of trigonometry (trigonometric rati"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept of rational, irrational, and real numbers",
+          "text": "Define 'Explain the concept of rational, irrational, and real numbers' and discuss its importance in everyday life. - locally",
+          "competence": "Explain the concept of rational, irrational, and real number"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+          "text": "Compare and contrast 'Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)' with related concepts.",
+          "competence": "Explore advanced tenets of trigonometry (ratios, small angle"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Draw graphs of relations and functions",
+    "Convert repeating/ recurring decimals into fractions and vice versa",
+    "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+    "Determine the equation of a straight line and draw its graph",
+    "Use sets, sequences and series in problem solving",
+    "(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function",
+    "Demonstrate an advanced understanding of statistics",
+    "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+    "Use differential equations to solve real life problems related to growth (decay, cooling of bodies, falling bodies, electrical circuits, and vibrating springs)",
+    "Demonstrate an advanced understanding of knowledge and skills in Mathematics"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

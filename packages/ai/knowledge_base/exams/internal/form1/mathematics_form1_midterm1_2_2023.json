@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form1_midterm1_2_2023.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 1 Exam 2 (FORM1 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 79,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Describe the process of 'Explain the concept of ratios and proportions' step by step.",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
+          "text": "With examples, illustrate how 'Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set' is applied in the community. - with example",
+          "competence": "Explore the basic tenets of sets (types of sets, subsets, op"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use laws of logarithms to solve problems",
+          "text": "Evaluate the role of 'Use laws of logarithms to solve problems' in national development. - with example",
+          "competence": "Use laws of logarithms to solve problems"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use rates and variations in different contexts",
+          "text": "What are the characteristics of 'Use rates and variations in different contexts'?",
+          "competence": "Use rates and variations in different contexts"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+          "text": "What are the characteristics of 'Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line'?",
+          "competence": "Explore the basic tenets of coordinate geometry (midpoint of"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use sets, sequences and series in problem solving",
+          "text": "Examine the advantages and disadvantages of 'Use sets, sequences and series in problem solving'. - locally",
+          "competence": "Use sets, sequences and series in problem solving"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Carry out a project in Mathematics",
+          "text": "With examples, illustrate how 'Carry out a project in Mathematics' is applied in the community.",
+          "competence": "Carry out a project in Mathematics"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Apply sine and cosine rules to find distances or angles of elevation",
+          "text": "What are the characteristics of 'Apply sine and cosine rules to find distances or angles of elevation'?",
+          "competence": "Apply sine and cosine rules to find distances or angles of e"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "Outline the procedures involved in 'Solve simultaneous equations using substitution and elimination methods'.",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+          "text": "Describe the process of 'Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors' step by step. - with diagram",
+          "competence": "Use vectors to solve problems related to displacement, veloc"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use probability in problem solving",
+          "text": "Discuss the factors influencing 'Use probability in problem solving'. - with diagram",
+          "competence": "Use probability in problem solving"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use ratios and proportions in daily life",
+          "text": "What are the characteristics of 'Use ratios and proportions in daily life'? - locally",
+          "competence": "Use ratios and proportions in daily life"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Write numbers in standard form",
+          "text": "Evaluate the role of 'Write numbers in standard form' in national development. - locally",
+          "competence": "Write numbers in standard form"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "Compare and contrast 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)' with related concepts.",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+          "text": "How does 'Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde' relate to sustainable development? - with diagram",
+          "competence": "Identify and use laws of exponents involving positive, negat"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
+          "text": "Examine the advantages and disadvantages of 'Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul'.",
+          "competence": "Solve quadratic equations by using different methods (factor"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use basic skills of circles in daily life",
+          "text": "Examine the advantages and disadvantages of 'Use basic skills of circles in daily life'. - with example",
+          "competence": "Use basic skills of circles in daily life"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
+          "text": "Discuss the factors influencing 'Explain the concept of approximations (rounding off, significant figures, and decimal place'. - locally",
+          "competence": "Explain the concept of approximations (rounding off, signifi"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Calculate arithmetic mean, geometric mean, and compound interest",
+          "text": "Outline the procedures involved in 'Calculate arithmetic mean, geometric mean, and compound interest'. - with example",
+          "competence": "Calculate arithmetic mean, geometric mean, and compound inte"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "Analyse the causes and effects of 'Use geometry, approximations, relations and functions in various contexts'. - with diagram",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of ratios and proportions",
+    "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
+    "Use laws of logarithms to solve problems",
+    "Use rates and variations in different contexts",
+    "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+    "Use sets, sequences and series in problem solving",
+    "Carry out a project in Mathematics",
+    "Apply sine and cosine rules to find distances or angles of elevation",
+    "Solve simultaneous equations using substitution and elimination methods",
+    "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

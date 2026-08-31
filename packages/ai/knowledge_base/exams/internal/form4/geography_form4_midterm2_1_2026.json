@@ -1,0 +1,209 @@
+{
+  "filename": "geography_form4_midterm2_1_2026.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Geography - Midterm 2 Exam 1 (FORM4 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 81,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
+          "text": "Evaluate the role of 'Explain the concept and scope of Geography (branches, importance and relationship with other discipline' in national development.",
+          "competence": "Explain the concept and scope of Geography (branches, import"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "Discuss the challenges facing 'Develop and carry out a simple research project in Geography' in Tanzania and propose solutions.",
+          "competence": "Develop and carry out a simple research project in Geography"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Acquire, present and interpret geographical data through charts, graphs, maps and diagrams (choropleth, scatter plots, dot maps, flow line etc.) for planning and decision making",
+          "text": "Explain the relationship between 'Acquire, present and interpret geographical data through charts, graphs, maps and diagrams (choropleth, scatter plots, dot maps, flow line etc.) for planning and decision making' and its environment. - with diagram",
+          "competence": "Acquire, present and interpret geographical data through cha"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
+          "text": "Define 'Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica' and discuss its importance in everyday life. - locally",
+          "competence": "Describe the major climatic regions of the world (tropical, "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Complete and submit for assessment the project started in Form Five",
+          "text": "Describe the main features of 'Complete and submit for assessment the project started in Form Five'. - locally",
+          "competence": "Complete and submit for assessment the project started in Fo"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Apply the techniques of photograph interpretation to analyse geographical phenomena",
+          "text": "Describe the process of 'Apply the techniques of photograph interpretation to analyse geographical phenomena' step by step. - with diagram",
+          "competence": "Apply the techniques of photograph interpretation to analyse"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the internal structure of the Earth (crust, mantle, cor",
+          "text": "Discuss the challenges facing 'Describe the internal structure of the Earth (crust, mantle, cor' in Tanzania and propose solutions. - locally",
+          "competence": "Describe the internal structure of the Earth (crust, mantle,"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of the relationship between relief, climate and natural vegetation",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of the relationship between relief, climate and natural vegetation'. - with diagram",
+          "competence": "Demonstrate an understanding of the relationship between rel"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore the basic tenets of surveying (meaning, types, equipment, methods, and importanc",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of surveying (meaning, types, equipment, methods, and importanc' in Tanzania and propose solutions. - locally",
+          "competence": "Explore the basic tenets of surveying (meaning, types, equip"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Interpret maps and photographs",
+          "text": "Describe the process of 'Interpret maps and photographs' step by step.",
+          "competence": "Interpret maps and photographs"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Reading and interpreting various type of maps and their importance (topographical and statistical ma",
+          "text": "With examples, illustrate how 'Reading and interpreting various type of maps and their importance (topographical and statistical ma' is applied in the community.",
+          "competence": "Reading and interpreting various type of maps and their impo"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the basic techniques in land surveying",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the basic techniques in land surveying' is applied in the community. - with example",
+          "competence": "Demonstrate an understanding of the basic techniques in land"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the basic concept of photograph in Geography (meaning, types, elements and use",
+          "text": "Explain the concept of 'Describe the basic concept of photograph in Geography (meaning, types, elements and use' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the basic concept of photograph in Geography (meani"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of the basics of hydrology and the hydrological cycle",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of the basics of hydrology and the hydrological cycle'. - locally",
+          "competence": "Demonstrate an understanding of the basics of hydrology and "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)",
+          "text": "Evaluate the role of 'Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)' in national development. - with diagram",
+          "competence": "Describe the theories (continental drift, Isostacy and plate"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Carry out simple tape/chain surveying",
+          "text": "Assess the impact of 'Carry out simple tape/chain surveying' on society. - with example",
+          "competence": "Carry out simple tape/chain surveying"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+          "text": "Compare and contrast 'Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone' with related concepts.",
+          "competence": "Describe major features of the Earth’s surface (continents, "
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Define 'and their major characteristics (location, size/ thickness, density and gross compositio' and discuss its importance in everyday life. - with diagram",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Conduct a project in Geography",
+          "text": "Discuss the challenges facing 'Conduct a project in Geography' in Tanzania and propose solutions. - with example",
+          "competence": "Conduct a project in Geography"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)",
+          "text": "Define 'Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)' and discuss its importance in everyday life.",
+          "competence": "Carry out some Advanced surveying activities (plane table, p"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
+    "Develop and carry out a simple research project in Geography",
+    "Acquire, present and interpret geographical data through charts, graphs, maps and diagrams (choropleth, scatter plots, dot maps, flow line etc.) for planning and decision making",
+    "Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
+    "Complete and submit for assessment the project started in Form Five",
+    "Apply the techniques of photograph interpretation to analyse geographical phenomena",
+    "Describe the internal structure of the Earth (crust, mantle, cor",
+    "Demonstrate an understanding of the relationship between relief, climate and natural vegetation",
+    "Explore the basic tenets of surveying (meaning, types, equipment, methods, and importanc",
+    "Interpret maps and photographs"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

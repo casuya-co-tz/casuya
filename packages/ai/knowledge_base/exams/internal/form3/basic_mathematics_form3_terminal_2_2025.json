@@ -1,0 +1,249 @@
+{
+  "filename": "basic_mathematics_form3_terminal_2_2025.json",
+  "subject": "Basic Mathematics",
+  "subject_slug": "basic_mathematics",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2025",
+  "time": "2:30 Hours",
+  "title": "Basic Mathematics - Terminal Exam 2 (FORM3 2025)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 109,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Triangles",
+          "text": "Explain the concept of 'Triangles' with examples relevant to Tanzania. - with example",
+          "competence": "Triangles"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Inequations",
+          "text": "Describe the main features of 'Inequations'. - with example",
+          "competence": "Inequations"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain mensuration",
+          "text": "Examine the advantages and disadvantages of 'Explain mensuration'.",
+          "competence": "Explain mensuration"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Algebraic Expressions",
+          "text": "Describe the main features of 'Algebraic Expressions'.",
+          "competence": "Algebraic Expressions"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Sets",
+          "text": "Describe the main features of 'Sets'. - with example",
+          "competence": "Sets"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain equations",
+          "text": "Evaluate the role of 'Explain equations' in national development. - with diagram",
+          "competence": "Explain equations"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain circles",
+          "text": "Discuss the challenges facing 'Explain circles' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain circles"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain algebraic expressions",
+          "text": "With examples, illustrate how 'Explain algebraic expressions' is applied in the community.",
+          "competence": "Explain algebraic expressions"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Mensuration",
+          "text": "Describe the main features of 'Mensuration'.",
+          "competence": "Mensuration"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain data collection",
+          "text": "Describe the main features of 'Explain data collection'.",
+          "competence": "Explain data collection"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Circles",
+          "text": "Explain the concept of 'Circles' with examples relevant to Tanzania. - with diagram",
+          "competence": "Circles"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain probability",
+          "text": "Compare and contrast 'Explain probability' with related concepts.",
+          "competence": "Explain probability"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Decimals",
+          "text": "Outline the procedures involved in 'Decimals'. - with diagram",
+          "competence": "Decimals"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Percentages",
+          "text": "Discuss the challenges facing 'Percentages' in Tanzania and propose solutions. - with diagram",
+          "competence": "Percentages"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Probability",
+          "text": "Describe the main features of 'Probability'. - with example",
+          "competence": "Probability"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Data Collection",
+          "text": "Describe the main features of 'Data Collection'. - with example",
+          "competence": "Data Collection"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Equations",
+          "text": "Define 'Equations' and discuss its importance in everyday life.",
+          "competence": "Equations"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain whole numbers",
+          "text": "Define 'Explain whole numbers' and discuss its importance in everyday life.",
+          "competence": "Explain whole numbers"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain fractions",
+          "text": "Compare and contrast 'Explain fractions' with related concepts.",
+          "competence": "Explain fractions"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain triangles",
+          "text": "Evaluate the role of 'Explain triangles' in national development. - with example",
+          "competence": "Explain triangles"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain sets",
+          "text": "Discuss the challenges facing 'Explain sets' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain sets"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Fractions",
+          "text": "Explain the concept of 'Fractions' with examples relevant to Tanzania. - with diagram",
+          "competence": "Fractions"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Whole Numbers",
+          "text": "Explain the concept of 'Whole Numbers' with examples relevant to Tanzania. - with example",
+          "competence": "Whole Numbers"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Angles",
+          "text": "Examine the advantages and disadvantages of 'Angles'. - with diagram",
+          "competence": "Angles"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain inequations",
+          "text": "Explain the concept of 'Explain inequations' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain inequations"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Triangles",
+    "Inequations",
+    "Explain mensuration",
+    "Algebraic Expressions",
+    "Sets",
+    "Explain equations",
+    "Explain circles",
+    "Explain algebraic expressions",
+    "Mensuration",
+    "Explain data collection"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

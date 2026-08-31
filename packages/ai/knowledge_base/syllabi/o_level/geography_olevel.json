@@ -1,0 +1,218 @@
+{
+  "subject_code": "013",
+  "subject_name": "Geography",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the structure of the Earth",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the origin and the structure of the Earth and Earth systems",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-F1-U1-L1",
+              "title": "Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
+              "markdown_content": "## a) Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
+              "page": 15
+            },
+            {
+              "lesson_id": "GEO-F1-U1-L2",
+              "title": "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+              "markdown_content": "## b) Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the major features of the Earth surface",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "GEO-F1-U1-L3",
+              "title": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+              "markdown_content": "## a) Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+              "page": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the structure of the Earth",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-F1-U1-L4",
+              "title": "Describe the internal structure of the Earth (crust, mantle, cor",
+              "markdown_content": "## a) Describe the internal structure of the Earth (crust, mantle, cor",
+              "page": 18
+            },
+            {
+              "lesson_id": "GEO-F1-U1-L5",
+              "title": "and their major characteristics (location, size/ thickness, density and gross compositio",
+              "markdown_content": "## e) and their major characteristics (location, size/ thickness, density and gross compositio",
+              "page": 18
+            },
+            {
+              "lesson_id": "GEO-F1-U1-L6",
+              "title": "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+              "markdown_content": "## b) Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+              "page": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate mastery of basic skills and techniques in Geography",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the basic techniques of map and photograph interpretation",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-F1-U2-L7",
+              "title": "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+              "markdown_content": "## a) Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+              "page": 20
+            },
+            {
+              "lesson_id": "GEO-F1-U2-L8",
+              "title": "Reading and interpreting various type of maps and their importance (topographical and statistical ma",
+              "markdown_content": "## b) Reading and interpreting various type of maps and their importance (topographical and statistical ma",
+              "page": 20
+            },
+            {
+              "lesson_id": "GEO-F1-U2-L9",
+              "title": "Describe the basic concept of photograph in Geography (meaning, types, elements and use",
+              "markdown_content": "## b) Describe the basic concept of photograph in Geography (meaning, types, elements and use",
+              "page": 21
+            },
+            {
+              "lesson_id": "GEO-F1-U2-L10",
+              "title": "Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen",
+              "markdown_content": "## c) Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen",
+              "page": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the structure of the Earth",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the relationship between relief, climate and natural vegetation",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-F1-U1-L11",
+              "title": "Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
+              "markdown_content": "## a) Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
+              "page": 23
+            },
+            {
+              "lesson_id": "GEO-F1-U1-L12",
+              "title": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+              "markdown_content": "## b) Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+              "page": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate mastery of basic skills and techniques in Geography",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the basic techniques in land surveying",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-F1-U2-L13",
+              "title": "Explore the basic tenets of surveying (meaning, types, equipment, methods, and importanc",
+              "markdown_content": "## a) Explore the basic tenets of surveying (meaning, types, equipment, methods, and importanc",
+              "page": 25
+            },
+            {
+              "lesson_id": "GEO-F1-U2-L14",
+              "title": "Carry out simple tape/chain surveying",
+              "markdown_content": "## b) Carry out simple tape/chain surveying",
+              "page": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Demonstrate mastery of human geography",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Carry out a project in Geography",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-F1-U3-L15",
+              "title": "Develop and carry out a simple research project in Geography",
+              "markdown_content": "## a) Develop and carry out a simple research project in Geography",
+              "page": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of human geography",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the relationship between geography, environmental health, human settlements and economic activities",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-F1-U1-L16",
+              "title": "Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl",
+              "markdown_content": "## a) Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl",
+              "page": 28
+            },
+            {
+              "lesson_id": "GEO-F1-U1-L17",
+              "title": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+              "markdown_content": "## b) Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "topic_name": "Carry out a project in Geography",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "GEO-F1-U1-L18",
+              "title": "Complete and submit a report of the project started in Form Three",
+              "markdown_content": "## a) Complete and submit a report of the project started in Form Three",
+              "page": 30
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

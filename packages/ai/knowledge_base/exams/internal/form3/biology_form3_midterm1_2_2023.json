@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form3_midterm1_2_2023.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 1 Exam 2 (FORM3 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 72,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "text": "Describe the main features of 'Demonstrate mastery of basic skills for conducting biological investigations'. - with diagram",
+          "competence": "Demonstrate mastery of basic skills for conducting biologica"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of advanced skills for conducting biological investigations",
+          "text": "Define 'Demonstrate mastery of advanced skills for conducting biological investigations' and discuss its importance in everyday life. - with diagram",
+          "competence": "Demonstrate mastery of advanced skills for conducting biolog"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+          "text": "With examples, illustrate how 'Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)' is applied in the community. - with diagram",
+          "competence": "Describe principles of binomial nomenclature (rules of scien"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+          "text": "Describe the main features of 'Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)'. - with example",
+          "competence": "Apply knowledge on binomial nomenclature in different fields"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+          "text": "Analyse the causes and effects of 'Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system'. - with diagram",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "Discuss the challenges facing 'Demonstrate mastery of scientific biological terminologies' in Tanzania and propose solutions.",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Investigate aerobic and anaerobic respiration in living organisms",
+          "text": "Compare and contrast 'Investigate aerobic and anaerobic respiration in living organisms' with related concepts.",
+          "competence": "Investigate aerobic and anaerobic respiration in living orga"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+          "text": "Define 'Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation' and discuss its importance in everyday life.",
+          "competence": "Explore the basic tenets of genetics (genetic materials, pri"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Analyse the causes and effects of 'Develop and carry out a simple research project in Biology'. - with example",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Examine the advantages and disadvantages of 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )'.",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "theory, evidence of evolution, and speciation)",
+          "text": "Evaluate the role of 'theory, evidence of evolution, and speciation)' in national development. - with diagram",
+          "competence": "theory, evidence of evolution, and speciation)"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+          "text": "Analyse the causes and effects of 'Carry out investigations related to photosynthesis (conditions necessary for photosynthesi'. - with example",
+          "competence": "Carry out investigations related to photosynthesis (conditio"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+          "text": "Define 'Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)' and discuss its importance in everyday life. - with example",
+          "competence": "Explain the concept of ecology (methods of studying, biodive"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Investigate processes of transportation of materials in flowering plants",
+          "text": "Describe the main features of 'Investigate processes of transportation of materials in flowering plants'. - with example",
+          "competence": "Investigate processes of transportation of materials in flow"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Examine the advantages and disadvantages of 'Prepare and present a report on cell and photosynthesis investigations'. - with diagram",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+          "text": "Describe the main features of 'Describe nutrition in human and ruminants (nutrients, digestive system and processe'. - with diagram",
+          "competence": "Describe nutrition in human and ruminants (nutrients, digest"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Evaluate the role of 'Describe a cell (meaning,types, structures and function' in national development. - with example",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Perform investigations on the anatomy and physiology of living organisms",
+          "text": "With examples, illustrate how 'Perform investigations on the anatomy and physiology of living organisms' is applied in the community.",
+          "competence": "Perform investigations on the anatomy and physiology of livi"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)",
+          "text": "Define 'Explain growth process in plants (cell cycle, growth patterns, seed dormancy and viability, and primary and secondary growth)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain growth process in plants (cell cycle, growth pattern"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+          "text": "Evaluate the role of 'Investigate growth in flowering plants (hypogeal and epigeal germinatio' in national development. - with diagram",
+          "competence": "Investigate growth in flowering plants (hypogeal and epigeal"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate mastery of basic skills for conducting biological investigations",
+    "Demonstrate mastery of advanced skills for conducting biological investigations",
+    "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+    "Apply knowledge on binomial nomenclature in different fields (forestry, medicine and agriculture)",
+    "Design and carry out anatomical and physiological investigations related to transportation in plants and animals, growth in plants and reproductive system",
+    "Demonstrate mastery of scientific biological terminologies",
+    "Investigate aerobic and anaerobic respiration in living organisms",
+    "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+    "Develop and carry out a simple research project in Biology",
+    "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

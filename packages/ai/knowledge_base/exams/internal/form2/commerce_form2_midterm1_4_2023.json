@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form2_midterm1_4_2023.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 4 (FORM2 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 97,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain production",
+          "text": "With examples, illustrate how 'Explain production' is applied in the community. - with diagram",
+          "competence": "Explain production"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Documentation",
+          "text": "Examine the advantages and disadvantages of 'Documentation'. - with diagram",
+          "competence": "Documentation"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Cooperative",
+          "text": "Analyse the causes and effects of 'Cooperative'. - with example",
+          "competence": "Cooperative"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Communication",
+          "text": "Outline the procedures involved in 'Communication'.",
+          "competence": "Communication"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Stock Control",
+          "text": "Analyse the causes and effects of 'Stock Control'.",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Sources of Business Finance",
+          "text": "Compare and contrast 'Sources of Business Finance' with related concepts. - with example",
+          "competence": "Sources of Business Finance"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Companies",
+          "text": "Analyse the causes and effects of 'Companies'. - with diagram",
+          "competence": "Companies"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Storekeeping",
+          "text": "Compare and contrast 'Storekeeping' with related concepts.",
+          "competence": "Storekeeping"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain aids to trade",
+          "text": "Analyse the causes and effects of 'Explain aids to trade'.",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Production",
+          "text": "Explain the concept of 'Production' with examples relevant to Tanzania. - with diagram",
+          "competence": "Production"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Advertisement",
+          "text": "Analyse the causes and effects of 'Advertisement'. - with diagram",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain concept of commerce",
+          "text": "Explain the concept of 'Explain concept of commerce' with examples relevant to Tanzania. - with example",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Marketing Mix",
+          "text": "Evaluate the role of 'Marketing Mix' in national development. - with diagram",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain stock control",
+          "text": "Examine the advantages and disadvantages of 'Explain stock control'. - with diagram",
+          "competence": "Explain stock control"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain market and marketing",
+          "text": "Discuss the challenges facing 'Explain market and marketing' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain market and marketing"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Taxation",
+          "text": "Discuss the challenges facing 'Taxation' in Tanzania and propose solutions. - with example",
+          "competence": "Taxation"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain storekeeping",
+          "text": "Compare and contrast 'Explain storekeeping' with related concepts. - with diagram",
+          "competence": "Explain storekeeping"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Concept of Commerce",
+          "text": "With examples, illustrate how 'Concept of Commerce' is applied in the community.",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Partnership",
+          "text": "Discuss the challenges facing 'Partnership' in Tanzania and propose solutions. - with diagram",
+          "competence": "Partnership"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain sources of business finance",
+          "text": "Outline the procedures involved in 'Explain sources of business finance'. - with diagram",
+          "competence": "Explain sources of business finance"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain production",
+    "Documentation",
+    "Cooperative",
+    "Communication",
+    "Stock Control",
+    "Sources of Business Finance",
+    "Companies",
+    "Storekeeping",
+    "Explain aids to trade",
+    "Production"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form1_topical_4_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 4 (FORM1 2025): Discuss information from various or",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 45,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Write reports on various events (e.g., sports, graduation, study tour",
+          "text": "Analyse the causes and effects of 'Write reports on various events (e.g., sports, graduation, study tour'. - locally",
+          "competence": "Write reports on various events (e.g., sports, graduation, s"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Discuss information from various oral sources",
+          "text": "Describe the main features of 'Discuss information from various oral sources'. - with example",
+          "competence": "Discuss information from various oral sources"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Discuss information from various oral sources",
+          "text": "How does 'Discuss information from various oral sources' relate to sustainable development? - locally",
+          "competence": "Discuss information from various oral sources"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Write reports on various events (e.g., sports, graduation, study tour",
+          "text": "Compare and contrast 'Write reports on various events (e.g., sports, graduation, study tour' with related concepts. - locally",
+          "competence": "Write reports on various events (e.g., sports, graduation, s"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Discuss information from various oral sources",
+          "text": "Propose measures to improve 'Discuss information from various oral sources' in schools.",
+          "competence": "Discuss information from various oral sources"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Discuss information from various oral sources",
+          "text": "Explain the concept of 'Discuss information from various oral sources' with examples relevant to Tanzania. - locally",
+          "competence": "Discuss information from various oral sources"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Write reports on various events (e.g., sports, graduation, study tour",
+          "text": "Describe the main features of 'Write reports on various events (e.g., sports, graduation, study tour'.",
+          "competence": "Write reports on various events (e.g., sports, graduation, s"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Discuss information from various oral sources",
+          "text": "Describe the main features of 'Discuss information from various oral sources'. - with example",
+          "competence": "Discuss information from various oral sources"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Discuss information from various oral sources",
+          "text": "With examples, illustrate how 'Discuss information from various oral sources' is applied in the community. - with example",
+          "competence": "Discuss information from various oral sources"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Discuss information from various oral sources",
+          "text": "Evaluate the role of 'Discuss information from various oral sources' in national development.",
+          "competence": "Discuss information from various oral sources"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Write reports on various events (e.g., sports, graduation, study tour",
+    "Discuss information from various oral sources"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

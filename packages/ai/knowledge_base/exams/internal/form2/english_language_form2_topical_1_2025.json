@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form2_topical_1_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 1 (FORM2 2025): Synthesise ideas from a variety of ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 34,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Synthesise ideas from a variety of oral sources",
+          "text": "Describe the main features of 'Synthesise ideas from a variety of oral sources'. - locally",
+          "competence": "Synthesise ideas from a variety of oral sources"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Synthesise ideas from a variety of oral sources",
+          "text": "Outline the procedures involved in 'Synthesise ideas from a variety of oral sources'.",
+          "competence": "Synthesise ideas from a variety of oral sources"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "using different tenses",
+          "text": "Compare and contrast 'using different tenses' with related concepts.",
+          "competence": "using different tenses"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "using different tenses",
+          "text": "Compare and contrast 'using different tenses' with related concepts.",
+          "competence": "using different tenses"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Synthesise ideas from a variety of oral sources",
+          "text": "Define 'Synthesise ideas from a variety of oral sources' and discuss its importance in everyday life. - locally",
+          "competence": "Synthesise ideas from a variety of oral sources"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Synthesise ideas from a variety of oral sources",
+          "text": "Examine the advantages and disadvantages of 'Synthesise ideas from a variety of oral sources'. - locally",
+          "competence": "Synthesise ideas from a variety of oral sources"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "using different tenses",
+          "text": "With examples, illustrate how 'using different tenses' is applied in the community. - with diagram",
+          "competence": "using different tenses"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "using different tenses",
+          "text": "Explain the relationship between 'using different tenses' and its environment. - with diagram",
+          "competence": "using different tenses"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "using different tenses",
+          "text": "Discuss the challenges facing 'using different tenses' in Tanzania and propose solutions.",
+          "competence": "using different tenses"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Synthesise ideas from a variety of oral sources",
+          "text": "Examine the advantages and disadvantages of 'Synthesise ideas from a variety of oral sources'.",
+          "competence": "Synthesise ideas from a variety of oral sources"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Synthesise ideas from a variety of oral sources",
+    "using different tenses"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

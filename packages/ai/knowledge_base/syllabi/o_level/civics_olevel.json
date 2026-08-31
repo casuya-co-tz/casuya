@@ -1,0 +1,241 @@
+{
+  "subject_code": "011",
+  "subject_name": "Civics",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "OUR NATION",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Concept of Nation",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "011-F1-U1-L1",
+              "title": "Explain concept of nation",
+              "markdown_content": "## Explain concept of nation",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "National Symbols",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "011-F1-U1-L2",
+              "title": "Explain national symbols",
+              "markdown_content": "## Explain national symbols",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "National Unity",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "011-F1-U1-L3",
+              "title": "Explain national unity",
+              "markdown_content": "## Explain national unity",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "PROMOTION OF LIFE SKILLS",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Life Skills",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "011-F1-U2-L1",
+              "title": "Explain life skills",
+              "markdown_content": "## Explain life skills",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Interpersonal Relationships",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "011-F1-U2-L2",
+              "title": "Explain interpersonal relationships",
+              "markdown_content": "## Explain interpersonal relationships",
+              "page": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "HUMAN RIGHTS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of Human Rights",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "011-F2-U3-L1",
+              "title": "Explain concept of human rights",
+              "markdown_content": "## Explain concept of human rights",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Child Rights",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "011-F2-U3-L2",
+              "title": "Explain child rights",
+              "markdown_content": "## Explain child rights",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Gender",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "011-F2-U3-L3",
+              "title": "Explain gender",
+              "markdown_content": "## Explain gender",
+              "page": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "RESPONSIBLE CITIZENSHIP",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Citizenship",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "011-F2-U4-L1",
+              "title": "Explain citizenship",
+              "markdown_content": "## Explain citizenship",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Democracy",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "011-F2-U4-L2",
+              "title": "Explain democracy",
+              "markdown_content": "## Explain democracy",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Constitution",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "011-F2-U4-L3",
+              "title": "Explain constitution",
+              "markdown_content": "## Explain constitution",
+              "page": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "GOVERNMENT",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Central Government",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "011-F3-U5-L1",
+              "title": "Explain central government",
+              "markdown_content": "## Explain central government",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Local Government",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "011-F3-U5-L2",
+              "title": "Explain local government",
+              "markdown_content": "## Explain local government",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Elections",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "011-F3-U5-L3",
+              "title": "Explain elections",
+              "markdown_content": "## Explain elections",
+              "page": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "CULTURE",
+      "form": 4,
+      "topics": [
+        {
+          "topic_name": "Culture and Tradition",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "011-F4-U6-L1",
+              "title": "Explain culture and tradition",
+              "markdown_content": "## Explain culture and tradition",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Globalization",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "011-F4-U6-L2",
+              "title": "Explain globalization",
+              "markdown_content": "## Explain globalization",
+              "page": 16
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

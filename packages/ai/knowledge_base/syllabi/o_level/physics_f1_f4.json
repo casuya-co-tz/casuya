@@ -1,0 +1,2701 @@
+{
+  "subject_code": "031",
+  "subject_name": "Physics",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 2,
+      "unit_title": "INTRODUCTION TO LABORATORY PRACTICE",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Laboratory Rules and Safety",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U2-L1",
+              "title": "state Physics laboratory rules",
+              "markdown_content": "## a) state Physics laboratory rules",
+              "page": 12
+            },
+            {
+              "lesson_id": "PHY-F1-U2-L2",
+              "title": "explain the safety measures in Physics laboratory",
+              "markdown_content": "## b) explain the safety measures in Physics laboratory",
+              "page": 12
+            },
+            {
+              "lesson_id": "PHY-F1-U2-L3",
+              "title": "use the First Aid Kit to render ifrst aid",
+              "markdown_content": "## c) use the First Aid Kit to render ifrst aid",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Basic Principles of Scientiifc Investigation",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U2-L4",
+              "title": "use warning signs in daily life",
+              "markdown_content": "## e) use warning signs in daily life",
+              "page": 13
+            },
+            {
+              "lesson_id": "PHY-F1-U2-L5",
+              "title": "explain the concept of scientiifc investigation",
+              "markdown_content": "## a) explain the concept of scientiifc investigation",
+              "page": 13
+            },
+            {
+              "lesson_id": "PHY-F1-U2-L6",
+              "title": "identify the steps of investigation. scientiifc",
+              "markdown_content": "## b) identify the steps of investigation. scientiifc",
+              "page": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "MEASUREMENT",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Concepts of Measurement",
+          "competence_code": "3.1",
+          "lessons": []
+        },
+        {
+          "topic_name": "Fundamental Quantities",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U3-L7",
+              "title": "explain the concepts of measurement",
+              "markdown_content": "## a) explain the concepts of measurement",
+              "page": 14
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L8",
+              "title": "state the importance of measurement in real life",
+              "markdown_content": "## b) state the importance of measurement in real life",
+              "page": 14
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L9",
+              "title": "deifne a fundamental quantity",
+              "markdown_content": "## a) deifne a fundamental quantity",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Derived Quantities",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U3-L10",
+              "title": "state the S.I. unit of fundamental quantities; and",
+              "markdown_content": "## c) state the S.I. unit of fundamental quantities; and",
+              "page": 15
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L11",
+              "title": "use appropriate instruments for measuring fundamental quantities",
+              "markdown_content": "## d) use appropriate instruments for measuring fundamental quantities",
+              "page": 15
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L12",
+              "title": "explain derived quantities; and",
+              "markdown_content": "## a) explain derived quantities; and",
+              "page": 15
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L13",
+              "title": "Metre rule i",
+              "markdown_content": "## i) Metre rule i",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L14",
+              "title": "Spring balance ii",
+              "markdown_content": "## i) Spring balance ii",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L15",
+              "title": "Beam balance i",
+              "markdown_content": "## i) Beam balance i",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L16",
+              "title": "Digital balance",
+              "markdown_content": "## v) Digital balance",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L17",
+              "title": "Measuring cylinder",
+              "markdown_content": "## v) Measuring cylinder",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L18",
+              "title": "Stop watch i",
+              "markdown_content": "## i) Stop watch i",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L19",
+              "title": "Solid objects ii",
+              "markdown_content": "## i) Solid objects ii",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L20",
+              "title": "Spring balance i",
+              "markdown_content": "## i) Spring balance i",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L21",
+              "title": "Beam balance i",
+              "markdown_content": "## i) Beam balance i",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L22",
+              "title": "Metre rule ii",
+              "markdown_content": "## i) Metre rule ii",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L23",
+              "title": "Regular solid e.g. Rectangular wooden blocks of different sizes",
+              "markdown_content": "## i) Regular solid e.g. Rectangular wooden blocks of different sizes",
+              "page": 16
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L24",
+              "title": "determine the density of a liquid",
+              "markdown_content": "## c) determine the density of a liquid",
+              "page": 17
+            },
+            {
+              "lesson_id": "PHY-F1-U3-L25",
+              "title": "deifne the relative density of a substance",
+              "markdown_content": "## d) deifne the relative density of a substance",
+              "page": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "FORCE",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Concept of Force",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U4-L26",
+              "title": "interpret applications of density and relative density in real life",
+              "markdown_content": "## f) interpret applications of density and relative density in real life",
+              "page": 18
+            },
+            {
+              "lesson_id": "PHY-F1-U4-L27",
+              "title": "explain the concept of force; and",
+              "markdown_content": "## a) explain the concept of force; and",
+              "page": 18
+            }
+          ]
+        },
+        {
+          "topic_name": "Types of Forces",
+          "competence_code": "4.2",
+          "lessons": []
+        },
+        {
+          "topic_name": "Effects of Forces",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U4-L28",
+              "title": "identify fundamental types of forces; and",
+              "markdown_content": "## a) identify fundamental types of forces; and",
+              "page": 19
+            },
+            {
+              "lesson_id": "PHY-F1-U4-L29",
+              "title": "describe the properties of each type of the fundamental forces",
+              "markdown_content": "## b) describe the properties of each type of the fundamental forces",
+              "page": 19
+            },
+            {
+              "lesson_id": "PHY-F1-U4-L30",
+              "title": "identify effects of forces; and",
+              "markdown_content": "## a) identify effects of forces; and",
+              "page": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "ARCHIMEDES PRINCIPLE AND LAW OF FLOTATION",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Archimedes Principle",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U5-L31",
+              "title": "explain the concept of up thrust",
+              "markdown_content": "## a) explain the concept of up thrust",
+              "page": 20
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L32",
+              "title": "Verify the Archimedes Principle; and",
+              "markdown_content": "## b) Verify the Archimedes Principle; and",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Law of Flotation",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U5-L33",
+              "title": "distinguish lfoating and sinking of objects",
+              "markdown_content": "## a) distinguish lfoating and sinking of objects",
+              "page": 21
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L34",
+              "title": "explain the conditions for a substance to lfoat in lfuids",
+              "markdown_content": "## b) explain the conditions for a substance to lfoat in lfuids",
+              "page": 21
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L35",
+              "title": "state the law of lfotation",
+              "markdown_content": "## d) state the law of lfotation",
+              "page": 22
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L36",
+              "title": "apply the law of lfotation in everyday life",
+              "markdown_content": "## e) apply the law of lfotation in everyday life",
+              "page": 22
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L37",
+              "title": "Test tube i",
+              "markdown_content": "## i) Test tube i",
+              "page": 23
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L38",
+              "title": "Lead shots/bearing i",
+              "markdown_content": "## i) Lead shots/bearing i",
+              "page": 23
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L39",
+              "title": "water and Kerosene",
+              "markdown_content": "## v) water and Kerosene",
+              "page": 23
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L40",
+              "title": "Hydrometer i",
+              "markdown_content": "## i) Hydrometer i",
+              "page": 23
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L41",
+              "title": "Various objects i",
+              "markdown_content": "## i) Various objects i",
+              "page": 23
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L42",
+              "title": "explain the kinetic theory of matter; and",
+              "markdown_content": "## c) explain the kinetic theory of matter; and",
+              "page": 24
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L43",
+              "title": "classify three states of matter",
+              "markdown_content": "## d) classify three states of matter",
+              "page": 24
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L44",
+              "title": "justify the relationship between tension and extension of a loaded elastic material; and",
+              "markdown_content": "## b) justify the relationship between tension and extension of a loaded elastic material; and",
+              "page": 25
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L45",
+              "title": "identify the applications of elasticity in real life",
+              "markdown_content": "## c) identify the applications of elasticity in real life",
+              "page": 25
+            }
+          ]
+        },
+        {
+          "topic_name": "Surface Tension",
+          "competence_code": "6.4",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U5-L46",
+              "title": "apply adhesion and cohesion in daily life",
+              "markdown_content": "## b) apply adhesion and cohesion in daily life",
+              "page": 26
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L47",
+              "title": "explain the concept of surface tension",
+              "markdown_content": "## a) explain the concept of surface tension",
+              "page": 26
+            }
+          ]
+        },
+        {
+          "topic_name": "Capillarity",
+          "competence_code": "6.5",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U5-L48",
+              "title": "explain the concept of capillarity; and",
+              "markdown_content": "## a) explain the concept of capillarity; and",
+              "page": 27
+            },
+            {
+              "lesson_id": "PHY-F1-U5-L49",
+              "title": "identify the applications of capillarity in daily life",
+              "markdown_content": "## b) identify the applications of capillarity in daily life",
+              "page": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 7,
+      "unit_title": "PRESSURE",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Concept of Pressure",
+          "competence_code": "7.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U7-L50",
+              "title": "identify the applications of osmosis in daily life",
+              "markdown_content": "## b) identify the applications of osmosis in daily life",
+              "page": 28
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L51",
+              "title": "explain the concept of pressure; and",
+              "markdown_content": "## a) explain the concept of pressure; and",
+              "page": 28
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L52",
+              "title": "state S.I. unit of pressure",
+              "markdown_content": "## b) state S.I. unit of pressure",
+              "page": 28
+            }
+          ]
+        },
+        {
+          "topic_name": "Pressure in Liquids",
+          "competence_code": "7.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U7-L53",
+              "title": "identify the applications of pressure due to solids",
+              "markdown_content": "## b) identify the applications of pressure due to solids",
+              "page": 29
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L54",
+              "title": "describe the characteristics of pressure in liquids",
+              "markdown_content": "## a) describe the characteristics of pressure in liquids",
+              "page": 29
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L55",
+              "title": "solve problems involving pressure in liquids",
+              "markdown_content": "## c) solve problems involving pressure in liquids",
+              "page": 30
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L56",
+              "title": "explain the principle of a hydraulic press; and",
+              "markdown_content": "## d) explain the principle of a hydraulic press; and",
+              "page": 30
+            }
+          ]
+        },
+        {
+          "topic_name": "Atmospheric Pressure",
+          "competence_code": "7.4",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U7-L57",
+              "title": "describe the existence of atmospheric pressure",
+              "markdown_content": "## a) describe the existence of atmospheric pressure",
+              "page": 31
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L58",
+              "title": "identify the applications of atmospheric pressure; and",
+              "markdown_content": "## b) identify the applications of atmospheric pressure; and",
+              "page": 31
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L59",
+              "title": "measure atmospheric pressure",
+              "markdown_content": "## c) measure atmospheric pressure",
+              "page": 31
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L60",
+              "title": "state S.I. unit of work; and",
+              "markdown_content": "## b) state S.I. unit of work; and",
+              "page": 32
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L61",
+              "title": "determine the work done by an applied force",
+              "markdown_content": "## c) determine the work done by an applied force",
+              "page": 32
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L62",
+              "title": "state S.I. unit of energy",
+              "markdown_content": "## b) state S.I. unit of energy",
+              "page": 33
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L63",
+              "title": "identify different forms of energy",
+              "markdown_content": "## c) identify different forms of energy",
+              "page": 33
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L64",
+              "title": "distinguish between potential energy and kinetic energy",
+              "markdown_content": "## d) distinguish between potential energy and kinetic energy",
+              "page": 33
+            }
+          ]
+        },
+        {
+          "topic_name": "Power",
+          "competence_code": "8.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U7-L65",
+              "title": "state the principle of conservation of energy; and",
+              "markdown_content": "## f) state the principle of conservation of energy; and",
+              "page": 34
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L66",
+              "title": "explain the uses of mechanical energy",
+              "markdown_content": "## g) explain the uses of mechanical energy",
+              "page": 34
+            },
+            {
+              "lesson_id": "PHY-F1-U7-L67",
+              "title": "explain the concept of power",
+              "markdown_content": "## a) explain the concept of power",
+              "page": 34
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 9,
+      "unit_title": "LIGHT",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Sources of Light",
+          "competence_code": "9.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U9-L68",
+              "title": "determine the rate of doing work",
+              "markdown_content": "## c) determine the rate of doing work",
+              "page": 35
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L69",
+              "title": "explain the concept of light",
+              "markdown_content": "## a) explain the concept of light",
+              "page": 35
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L70",
+              "title": "identify sources of light; and",
+              "markdown_content": "## b) identify sources of light; and",
+              "page": 35
+            }
+          ]
+        },
+        {
+          "topic_name": "Propagation and Transmission of Light",
+          "competence_code": "9.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U9-L71",
+              "title": "explain the concept of rays and beam of light",
+              "markdown_content": "## a) explain the concept of rays and beam of light",
+              "page": 36
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L72",
+              "title": "verify that light rays travels in straight line; and",
+              "markdown_content": "## b) verify that light rays travels in straight line; and",
+              "page": 36
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L73",
+              "title": "identify transparent, translucent and opaque materials",
+              "markdown_content": "## c) identify transparent, translucent and opaque materials",
+              "page": 36
+            }
+          ]
+        },
+        {
+          "topic_name": "Relfection of Light",
+          "competence_code": "9.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U9-L74",
+              "title": "explain the concept of relfection of light",
+              "markdown_content": "## a) explain the concept of relfection of light",
+              "page": 37
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L75",
+              "title": "distinguish regular from irregular relfection of light",
+              "markdown_content": "## b) distinguish regular from irregular relfection of light",
+              "page": 37
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L76",
+              "title": "describe image formed by a plane mirror",
+              "markdown_content": "## d) describe image formed by a plane mirror",
+              "page": 38
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L77",
+              "title": "explain the origin of charges",
+              "markdown_content": "## b) explain the origin of charges",
+              "page": 40
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L78",
+              "title": "identify the two types of charges",
+              "markdown_content": "## c) identify the two types of charges",
+              "page": 40
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L79",
+              "title": "state the fundamental law of static electricity; and",
+              "markdown_content": "## d) state the fundamental law of static electricity; and",
+              "page": 40
+            }
+          ]
+        },
+        {
+          "topic_name": "Detection of Charges",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U9-L80",
+              "title": "describe the structure of a gold leaf electroscope",
+              "markdown_content": "## a) describe the structure of a gold leaf electroscope",
+              "page": 41
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L81",
+              "title": "determine the sign of charges; and",
+              "markdown_content": "## b) determine the sign of charges; and",
+              "page": 41
+            }
+          ]
+        },
+        {
+          "topic_name": "Conductors and Insulators",
+          "competence_code": "1.3",
+          "lessons": []
+        },
+        {
+          "topic_name": "Capacitors",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U9-L82",
+              "title": "explain the concept of capacitance",
+              "markdown_content": "## a) explain the concept of capacitance",
+              "page": 42
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L83",
+              "title": "describe the construction of an air-iflled capacitor; and",
+              "markdown_content": "## c) describe the construction of an air-iflled capacitor; and",
+              "page": 43
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L84",
+              "title": "determine equivalence capacitance of a combination of capacitors",
+              "markdown_content": "## d) determine equivalence capacitance of a combination of capacitors",
+              "page": 43
+            }
+          ]
+        },
+        {
+          "topic_name": "Lightning Conductor",
+          "competence_code": "1.6",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F1-U9-L85",
+              "title": "show that charge on a conductor is concentrated on sharply curved surfaces",
+              "markdown_content": "## b) show that charge on a conductor is concentrated on sharply curved surfaces",
+              "page": 44
+            },
+            {
+              "lesson_id": "PHY-F1-U9-L86",
+              "title": "explain the phenomenon of lightning conductor",
+              "markdown_content": "## a) explain the phenomenon of lightning conductor",
+              "page": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "CURRENT ELECTRICITY",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of Current Electricity",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U2-L87",
+              "title": "construct a simple lightning conductor",
+              "markdown_content": "## c) construct a simple lightning conductor",
+              "page": 45
+            },
+            {
+              "lesson_id": "PHY-F2-U2-L88",
+              "title": "deifne current electricity; and",
+              "markdown_content": "## a) deifne current electricity; and",
+              "page": 45
+            }
+          ]
+        },
+        {
+          "topic_name": "Simple Electric Circuits",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U2-L89",
+              "title": "identify simple circuit components",
+              "markdown_content": "## a) identify simple circuit components",
+              "page": 46
+            },
+            {
+              "lesson_id": "PHY-F2-U2-L90",
+              "title": "identify simple electric symbols",
+              "markdown_content": "## b) identify simple electric symbols",
+              "page": 46
+            },
+            {
+              "lesson_id": "PHY-F2-U2-L91",
+              "title": "explain the concept of current, voltage and resistance",
+              "markdown_content": "## c) explain the concept of current, voltage and resistance",
+              "page": 46
+            },
+            {
+              "lesson_id": "PHY-F2-U2-L92",
+              "title": "connect simple electric circuits",
+              "markdown_content": "## e) connect simple electric circuits",
+              "page": 47
+            },
+            {
+              "lesson_id": "PHY-F2-U2-L93",
+              "title": "measure electric current and voltage; and",
+              "markdown_content": "## f) measure electric current and voltage; and",
+              "page": 47
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "MAGNETISM",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of Magnetism",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U3-L94",
+              "title": "explain the origin of magnetism",
+              "markdown_content": "## a) explain the origin of magnetism",
+              "page": 48
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L95",
+              "title": "identify magnetic and non-magnetic materials/ substances",
+              "markdown_content": "## b) identify magnetic and non-magnetic materials/ substances",
+              "page": 48
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L96",
+              "title": "identify types of magnets; and",
+              "markdown_content": "## d) identify types of magnets; and",
+              "page": 49
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L97",
+              "title": "identify applications of magnets",
+              "markdown_content": "## e) identify applications of magnets",
+              "page": 49
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L98",
+              "title": "demonstrate magnetization and demagnetization",
+              "markdown_content": "## b) demonstrate magnetization and demagnetization",
+              "page": 50
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L99",
+              "title": "design methods of storing magnets",
+              "markdown_content": "## c) design methods of storing magnets",
+              "page": 50
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L100",
+              "title": "illustrate the magnetic lines of force around a magnet using iron ifllings or compass needle; and",
+              "markdown_content": "## b) illustrate the magnetic lines of force around a magnet using iron ifllings or compass needle; and",
+              "page": 51
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L101",
+              "title": "explain the method of magnetic shielding",
+              "markdown_content": "## c) explain the method of magnetic shielding",
+              "page": 51
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L102",
+              "title": "Compass needle i",
+              "markdown_content": "## i) Compass needle i",
+              "page": 52
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L103",
+              "title": "Retort stand i",
+              "markdown_content": "## i) Retort stand i",
+              "page": 52
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L104",
+              "title": "World globe",
+              "markdown_content": "## v) World globe",
+              "page": 52
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L105",
+              "title": "Bar magnet i",
+              "markdown_content": "## i) Bar magnet i",
+              "page": 52
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L106",
+              "title": "Retort stand",
+              "markdown_content": "## i) Retort stand",
+              "page": 52
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L107",
+              "title": "Bar magnet i",
+              "markdown_content": "## i) Bar magnet i",
+              "page": 52
+            },
+            {
+              "lesson_id": "PHY-F2-U3-L108",
+              "title": "Iron ifllings",
+              "markdown_content": "## i) Iron ifllings",
+              "page": 52
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "FORCES IN EQUILIBRIUM",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Moment of a Force",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U4-L109",
+              "title": "state the applications of earth’s magnetic ifeld",
+              "markdown_content": "## e) state the applications of earth’s magnetic ifeld",
+              "page": 53
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L110",
+              "title": "explain the effects of turning forces",
+              "markdown_content": "## a) explain the effects of turning forces",
+              "page": 53
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L111",
+              "title": "determine the moment of force",
+              "markdown_content": "## b) determine the moment of force",
+              "page": 53
+            }
+          ]
+        },
+        {
+          "topic_name": "Center of Gravity",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U4-L112",
+              "title": "apply the principle of moments in daily life",
+              "markdown_content": "## d) apply the principle of moments in daily life",
+              "page": 54
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L113",
+              "title": "explain centre of gravity",
+              "markdown_content": "## a) explain centre of gravity",
+              "page": 54
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L114",
+              "title": "determine center of gravity of regular shaped body; and",
+              "markdown_content": "## b) determine center of gravity of regular shaped body; and",
+              "page": 54
+            }
+          ]
+        },
+        {
+          "topic_name": "Types of equilibrium",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U4-L115",
+              "title": "explain the conditions for equilibrium",
+              "markdown_content": "## a) explain the conditions for equilibrium",
+              "page": 55
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L116",
+              "title": "explain stable, unstable and neutral equilibrium; and",
+              "markdown_content": "## b) explain stable, unstable and neutral equilibrium; and",
+              "page": 55
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L117",
+              "title": "apply conditions of stable, unstable and neutral equilibrium in daily life",
+              "markdown_content": "## c) apply conditions of stable, unstable and neutral equilibrium in daily life",
+              "page": 55
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L118",
+              "title": "explain the terms applied in simple machines; and",
+              "markdown_content": "## b) explain the terms applied in simple machines; and",
+              "page": 56
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L119",
+              "title": "identify the different kinds of simple machines",
+              "markdown_content": "## c) identify the different kinds of simple machines",
+              "page": 56
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L120",
+              "title": "determine the mechanical advantage, velocity ratio and efifciency of lever; and",
+              "markdown_content": "## b) determine the mechanical advantage, velocity ratio and efifciency of lever; and",
+              "page": 57
+            }
+          ]
+        },
+        {
+          "topic_name": "Pulleys",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U4-L121",
+              "title": "identify different pulley systems; and",
+              "markdown_content": "## a) identify different pulley systems; and",
+              "page": 58
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L122",
+              "title": "determine, mechanical advantage, velocity ratio and efifciency of pulley system",
+              "markdown_content": "## b) determine, mechanical advantage, velocity ratio and efifciency of pulley system",
+              "page": 58
+            }
+          ]
+        },
+        {
+          "topic_name": "Inclined Plane",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U4-L123",
+              "title": "state the concept of inclined plane",
+              "markdown_content": "## a) state the concept of inclined plane",
+              "page": 59
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L124",
+              "title": "determine mechanical advantage, velocity ratio and efifciency of inclined plane",
+              "markdown_content": "## b) determine mechanical advantage, velocity ratio and efifciency of inclined plane",
+              "page": 59
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L125",
+              "title": "apply inclined plane in daily life",
+              "markdown_content": "## c) apply inclined plane in daily life",
+              "page": 59
+            }
+          ]
+        },
+        {
+          "topic_name": "Wheel and Axle",
+          "competence_code": "5.6",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U4-L126",
+              "title": "determine the mechanical advantage, velocity ratio and efifciency of a screw jack; and",
+              "markdown_content": "## b) determine the mechanical advantage, velocity ratio and efifciency of a screw jack; and",
+              "page": 60
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L127",
+              "title": "use the screw jack in daily life",
+              "markdown_content": "## c) use the screw jack in daily life",
+              "page": 60
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L128",
+              "title": "describe the structure of a wheel and axle",
+              "markdown_content": "## a) describe the structure of a wheel and axle",
+              "page": 60
+            }
+          ]
+        },
+        {
+          "topic_name": "Hydraulic Press",
+          "competence_code": "5.7",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U4-L129",
+              "title": "use the wheel and axle in daily life",
+              "markdown_content": "## c) use the wheel and axle in daily life",
+              "page": 61
+            },
+            {
+              "lesson_id": "PHY-F2-U4-L130",
+              "title": "describe the structure of hydraulic press",
+              "markdown_content": "## a) describe the structure of hydraulic press",
+              "page": 61
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "MOTION IN STRAIGHT LINE",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Distance and Displacement",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U6-L131",
+              "title": "use the hydraulic press in daily life",
+              "markdown_content": "## c) use the hydraulic press in daily life",
+              "page": 62
+            },
+            {
+              "lesson_id": "PHY-F2-U6-L132",
+              "title": "distinguish between distance and displacement",
+              "markdown_content": "## a) distinguish between distance and displacement",
+              "page": 62
+            }
+          ]
+        },
+        {
+          "topic_name": "Speed and Velocity",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U6-L133",
+              "title": "distinguish between speed and velocity",
+              "markdown_content": "## a) distinguish between speed and velocity",
+              "page": 63
+            },
+            {
+              "lesson_id": "PHY-F2-U6-L134",
+              "title": "state the SI unit of speed and velocity; and",
+              "markdown_content": "## b) state the SI unit of speed and velocity; and",
+              "page": 63
+            },
+            {
+              "lesson_id": "PHY-F2-U6-L135",
+              "title": "determine average velocity of a body",
+              "markdown_content": "## c) determine average velocity of a body",
+              "page": 63
+            },
+            {
+              "lesson_id": "PHY-F2-U6-L136",
+              "title": "determine the acceleration of a body; and",
+              "markdown_content": "## b) determine the acceleration of a body; and",
+              "page": 64
+            },
+            {
+              "lesson_id": "PHY-F2-U6-L137",
+              "title": "explain the concept of retardation",
+              "markdown_content": "## c) explain the concept of retardation",
+              "page": 64
+            }
+          ]
+        },
+        {
+          "topic_name": "Motion under Gravity",
+          "competence_code": "6.5",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U6-L138",
+              "title": "apply equations of accelerated motion in daily life",
+              "markdown_content": "## b) apply equations of accelerated motion in daily life",
+              "page": 65
+            },
+            {
+              "lesson_id": "PHY-F2-U6-L139",
+              "title": "explain the concept of gravitational force",
+              "markdown_content": "## a) explain the concept of gravitational force",
+              "page": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 7,
+      "unit_title": "NEWTON’S LAWS OF MOTION 1st",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Law of Motion.",
+          "competence_code": "7.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U7-L140",
+              "title": "explain the applications of gravitational force",
+              "markdown_content": "## c) explain the applications of gravitational force",
+              "page": 66
+            },
+            {
+              "lesson_id": "PHY-F2-U7-L141",
+              "title": "explain the concept of inertia",
+              "markdown_content": "## a) explain the concept of inertia",
+              "page": 66
+            }
+          ]
+        },
+        {
+          "topic_name": "Law of Motion",
+          "competence_code": "7.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U7-L142",
+              "title": "verify Newton’s ifrst law of motion",
+              "markdown_content": "## c) verify Newton’s ifrst law of motion",
+              "page": 67
+            },
+            {
+              "lesson_id": "PHY-F2-U7-L143",
+              "title": "explain concept of linear momentum",
+              "markdown_content": "## a) explain concept of linear momentum",
+              "page": 67
+            },
+            {
+              "lesson_id": "PHY-F2-U7-L144",
+              "title": "state the S.I unit of linear momentum",
+              "markdown_content": "## b) state the S.I unit of linear momentum",
+              "page": 67
+            },
+            {
+              "lesson_id": "PHY-F2-U7-L145",
+              "title": "state Newton’s second law of motion and",
+              "markdown_content": "## d) state Newton’s second law of motion and",
+              "page": 68
+            }
+          ]
+        },
+        {
+          "topic_name": "Conservation of Linear Momentum",
+          "competence_code": "7.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U7-L146",
+              "title": "distinguish between elastic and inelastic collisions",
+              "markdown_content": "## a) distinguish between elastic and inelastic collisions",
+              "page": 69
+            },
+            {
+              "lesson_id": "PHY-F2-U7-L147",
+              "title": "state the principle of conservation of linear momentum",
+              "markdown_content": "## b) state the principle of conservation of linear momentum",
+              "page": 69
+            },
+            {
+              "lesson_id": "PHY-F2-U7-L148",
+              "title": "punch bags i",
+              "markdown_content": "## i) punch bags i",
+              "page": 70
+            },
+            {
+              "lesson_id": "PHY-F2-U7-L149",
+              "title": "car air bags ii",
+              "markdown_content": "## i) car air bags ii",
+              "page": 70
+            },
+            {
+              "lesson_id": "PHY-F2-U7-L150",
+              "title": "pool table i",
+              "markdown_content": "## i) pool table i",
+              "page": 70
+            },
+            {
+              "lesson_id": "PHY-F2-U7-L151",
+              "title": "kicking a ball conservation",
+              "markdown_content": "## v) kicking a ball conservation",
+              "page": 70
+            },
+            {
+              "lesson_id": "PHY-F2-U7-L152",
+              "title": "Bicycle pump ii",
+              "markdown_content": "## i) Bicycle pump ii",
+              "page": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 8,
+      "unit_title": "TEMPERATURE",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of Temperature",
+          "competence_code": "8.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U8-L153",
+              "title": "apply Newton’s third law of motion",
+              "markdown_content": "## c) apply Newton’s third law of motion",
+              "page": 71
+            },
+            {
+              "lesson_id": "PHY-F2-U8-L154",
+              "title": "deifne the term temperature; and",
+              "markdown_content": "## a) deifne the term temperature; and",
+              "page": 71
+            }
+          ]
+        },
+        {
+          "topic_name": "Measurement of Temperature",
+          "competence_code": "8.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U8-L155",
+              "title": "identify measurable physical properties that change with temperature",
+              "markdown_content": "## a) identify measurable physical properties that change with temperature",
+              "page": 72
+            },
+            {
+              "lesson_id": "PHY-F2-U8-L156",
+              "title": "deifne the fundamental interval of a thermometer",
+              "markdown_content": "## b) deifne the fundamental interval of a thermometer",
+              "page": 72
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 9,
+      "unit_title": "SUSTAINABLE ENERGY SOURCES",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Water Energy",
+          "competence_code": "9.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U9-L157",
+              "title": "measure accurately the temperature of a body",
+              "markdown_content": "## d) measure accurately the temperature of a body",
+              "page": 73
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L158",
+              "title": "explain the generation of electricity from water",
+              "markdown_content": "## a) explain the generation of electricity from water",
+              "page": 73
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L159",
+              "title": "explain the importance of water energy; and",
+              "markdown_content": "## b) explain the importance of water energy; and",
+              "page": 73
+            }
+          ]
+        },
+        {
+          "topic_name": "Solar Energy",
+          "competence_code": "9.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U9-L160",
+              "title": "explain the sun as a source of energy",
+              "markdown_content": "## a) explain the sun as a source of energy",
+              "page": 74
+            }
+          ]
+        },
+        {
+          "topic_name": "Wind Energy",
+          "competence_code": "9.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U9-L161",
+              "title": "construct a model of solar panel",
+              "markdown_content": "## c) construct a model of solar panel",
+              "page": 75
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L162",
+              "title": "explain wind as a source of energy",
+              "markdown_content": "## a) explain wind as a source of energy",
+              "page": 75
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L163",
+              "title": "construct a model of a wind mill; and",
+              "markdown_content": "## b) construct a model of a wind mill; and",
+              "page": 75
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L164",
+              "title": "Diagram of sea wave energy plant i",
+              "markdown_content": "## i) Diagram of sea wave energy plant i",
+              "page": 76
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L165",
+              "title": "Sea wave charts",
+              "markdown_content": "## i) Sea wave charts",
+              "page": 76
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L166",
+              "title": "Cardboard i",
+              "markdown_content": "## i) Cardboard i",
+              "page": 76
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L167",
+              "title": "Scissors ii",
+              "markdown_content": "## i) Scissors ii",
+              "page": 76
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L168",
+              "title": "Diagram of geothermal plant i",
+              "markdown_content": "## i) Diagram of geothermal plant i",
+              "page": 76
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L169",
+              "title": "add vectors using graphical method; and",
+              "markdown_content": "## b) add vectors using graphical method; and",
+              "page": 79
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L170",
+              "title": "state the triangle and parallelogram laws of forces",
+              "markdown_content": "## c) state the triangle and parallelogram laws of forces",
+              "page": 79
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L171",
+              "title": "calculate the relative velocity of two bodies; and",
+              "markdown_content": "## b) calculate the relative velocity of two bodies; and",
+              "page": 80
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L172",
+              "title": "apply the concept of relative motion in daily life",
+              "markdown_content": "## c) apply the concept of relative motion in daily life",
+              "page": 80
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L173",
+              "title": "resolve a vector into two perpendicular components; and",
+              "markdown_content": "## b) resolve a vector into two perpendicular components; and",
+              "page": 81
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L174",
+              "title": "apply resolution of vectors in solving problems",
+              "markdown_content": "## c) apply resolution of vectors in solving problems",
+              "page": 81
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L175",
+              "title": "realize the advantages and disadvantages of friction in daily life; and",
+              "markdown_content": "## b) realize the advantages and disadvantages of friction in daily life; and",
+              "page": 82
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L176",
+              "title": "describe methods of reducing friction",
+              "markdown_content": "## c) describe methods of reducing friction",
+              "page": 82
+            }
+          ]
+        },
+        {
+          "topic_name": "Laws of Friction",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F2-U9-L177",
+              "title": "determine limiting friction",
+              "markdown_content": "## b) determine limiting friction",
+              "page": 83
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L178",
+              "title": "state laws of friction",
+              "markdown_content": "## a) state laws of friction",
+              "page": 83
+            },
+            {
+              "lesson_id": "PHY-F2-U9-L179",
+              "title": "determine the coefifcient of friction; and",
+              "markdown_content": "## b) determine the coefifcient of friction; and",
+              "page": 83
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "LIGHT",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Relfection of Light from Curved Mirrors",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U3-L180",
+              "title": "distinguish between concave and convex mirrors",
+              "markdown_content": "## a) distinguish between concave and convex mirrors",
+              "page": 84
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L181",
+              "title": "explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors",
+              "markdown_content": "## b) explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors",
+              "page": 84
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L182",
+              "title": "Determine practically the focal length of a concave mirror",
+              "markdown_content": "## d) Determine practically the focal length of a concave mirror",
+              "page": 85
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L183",
+              "title": "use convex and concave mirrors in daily life",
+              "markdown_content": "## f) use convex and concave mirrors in daily life",
+              "page": 86
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L184",
+              "title": "measure the angle of incidence and angle of refraction",
+              "markdown_content": "## b) measure the angle of incidence and angle of refraction",
+              "page": 87
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L185",
+              "title": "state the laws of refraction",
+              "markdown_content": "## c) state the laws of refraction",
+              "page": 87
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L186",
+              "title": "explain the concept of critical angle and total internal relfection of light; and",
+              "markdown_content": "## e) explain the concept of critical angle and total internal relfection of light; and",
+              "page": 88
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L187",
+              "title": "explain the occurrence of mirage",
+              "markdown_content": "## f) explain the occurrence of mirage",
+              "page": 88
+            }
+          ]
+        },
+        {
+          "topic_name": "Refraction of Light by Triangular Prism",
+          "competence_code": "3.4",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U3-L188",
+              "title": "trace the passage of light through a rectangular prism",
+              "markdown_content": "## b) trace the passage of light through a rectangular prism",
+              "page": 89
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L189",
+              "title": "trace the passage of light through a triangular prism",
+              "markdown_content": "## a) trace the passage of light through a triangular prism",
+              "page": 89
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L190",
+              "title": "determine the angles of deviation and minimum deviation; and",
+              "markdown_content": "## c) determine the angles of deviation and minimum deviation; and",
+              "page": 90
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L191",
+              "title": "construct a simple prism binocular",
+              "markdown_content": "## d) construct a simple prism binocular",
+              "page": 90
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L192",
+              "title": "recombine colours of white light",
+              "markdown_content": "## b) recombine colours of white light",
+              "page": 91
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L193",
+              "title": "explain the appearances of coloured object under white light",
+              "markdown_content": "## c) explain the appearances of coloured object under white light",
+              "page": 91
+            }
+          ]
+        },
+        {
+          "topic_name": "Refraction of Light by Lenses",
+          "competence_code": "3.6",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U3-L194",
+              "title": "distinguish between additive and subtractive combination of colours",
+              "markdown_content": "## e) distinguish between additive and subtractive combination of colours",
+              "page": 92
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L195",
+              "title": "distinguish between convex and concave lenses",
+              "markdown_content": "## a) distinguish between convex and concave lenses",
+              "page": 92
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L196",
+              "title": "determine practically the focal length of a lens",
+              "markdown_content": "## c) determine practically the focal length of a lens",
+              "page": 93
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L197",
+              "title": "locate the image formed by a lens",
+              "markdown_content": "## d) locate the image formed by a lens",
+              "page": 93
+            },
+            {
+              "lesson_id": "PHY-F3-U3-L198",
+              "title": "determine the magniifcation of a lens; and",
+              "markdown_content": "## f) determine the magniifcation of a lens; and",
+              "page": 94
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "OPTICAL INSTRUMENTS",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Simple Microscope",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U4-L199",
+              "title": "describe the structure of the simple microscope",
+              "markdown_content": "## a) describe the structure of the simple microscope",
+              "page": 95
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L200",
+              "title": "describe the mode of action of a simple microscope",
+              "markdown_content": "## b) describe the mode of action of a simple microscope",
+              "page": 95
+            }
+          ]
+        },
+        {
+          "topic_name": "Compound Microscope",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U4-L201",
+              "title": "describe the structure of a compound microscope",
+              "markdown_content": "## a) describe the structure of a compound microscope",
+              "page": 96
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L202",
+              "title": "describe the mode of action of a compound microscope",
+              "markdown_content": "## b) describe the mode of action of a compound microscope",
+              "page": 96
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L203",
+              "title": "mention uses of a compound microscope; and",
+              "markdown_content": "## d) mention uses of a compound microscope; and",
+              "page": 97
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L204",
+              "title": "construct a simple compound microscope",
+              "markdown_content": "## e) construct a simple compound microscope",
+              "page": 97
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L205",
+              "title": "describe the mode of action of an astronomical telescope",
+              "markdown_content": "## b) describe the mode of action of an astronomical telescope",
+              "page": 98
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L206",
+              "title": "determine the magniifcation of an astronomical telescope",
+              "markdown_content": "## c) determine the magniifcation of an astronomical telescope",
+              "page": 98
+            }
+          ]
+        },
+        {
+          "topic_name": "Projection Lantern",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U4-L207",
+              "title": "construct a simple astronomical telescope",
+              "markdown_content": "## e) construct a simple astronomical telescope",
+              "page": 99
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L208",
+              "title": "describe the structure of the projection lantern",
+              "markdown_content": "## a) describe the structure of the projection lantern",
+              "page": 99
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L209",
+              "title": "describe the mode of action of a projection lantern",
+              "markdown_content": "## b) describe the mode of action of a projection lantern",
+              "page": 99
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L210",
+              "title": "mention uses of a projection lantern; and",
+              "markdown_content": "## d) mention uses of a projection lantern; and",
+              "page": 100
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L211",
+              "title": "construct a simple projection lantern",
+              "markdown_content": "## e) construct a simple projection lantern",
+              "page": 100
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L212",
+              "title": "describe the mode of action of the lens camera",
+              "markdown_content": "## b) describe the mode of action of the lens camera",
+              "page": 101
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L213",
+              "title": "determine the magniifcation of the lens camera; and",
+              "markdown_content": "## c) determine the magniifcation of the lens camera; and",
+              "page": 101
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L214",
+              "title": "construct a simple lens camera",
+              "markdown_content": "## d) construct a simple lens camera",
+              "page": 101
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L215",
+              "title": "explain accommodation power of the human eye",
+              "markdown_content": "## b) explain accommodation power of the human eye",
+              "page": 102
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L216",
+              "title": "identify the defects of the human eye",
+              "markdown_content": "## c) identify the defects of the human eye",
+              "page": 102
+            },
+            {
+              "lesson_id": "PHY-F3-U4-L217",
+              "title": "describe the correction of the defects of the human eye; and",
+              "markdown_content": "## d) describe the correction of the defects of the human eye; and",
+              "page": 102
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "THERMAL EXPANSION",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Thermal Energy",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U5-L218",
+              "title": "explain the concept of heat",
+              "markdown_content": "## a) explain the concept of heat",
+              "page": 103
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L219",
+              "title": "state the sources of thermal energy in everyday life and",
+              "markdown_content": "## b) state the sources of thermal energy in everyday life and",
+              "page": 103
+            }
+          ]
+        },
+        {
+          "topic_name": "Thermal Expansion of Solids",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U5-L220",
+              "title": "demonstrate expansion of solids",
+              "markdown_content": "## a) demonstrate expansion of solids",
+              "page": 104
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L221",
+              "title": "explain expansion of solids in terms of kinetic theory of matter",
+              "markdown_content": "## b) explain expansion of solids in terms of kinetic theory of matter",
+              "page": 104
+            }
+          ]
+        },
+        {
+          "topic_name": "Thermal Expansion of Liquids",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U5-L222",
+              "title": "explain the applications of expansion of solids in daily life",
+              "markdown_content": "## d) explain the applications of expansion of solids in daily life",
+              "page": 105
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L223",
+              "title": "explain the apparent expansion of liquids",
+              "markdown_content": "## a) explain the apparent expansion of liquids",
+              "page": 105
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L224",
+              "title": "verify the anomalous expansion of water; and",
+              "markdown_content": "## c) verify the anomalous expansion of water; and",
+              "page": 106
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L225",
+              "title": "explain the applications of expansion of liquids in everyday life",
+              "markdown_content": "## d) explain the applications of expansion of liquids in everyday life",
+              "page": 106
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L226",
+              "title": "Source of heat i",
+              "markdown_content": "## i) Source of heat i",
+              "page": 107
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L227",
+              "title": "capillary tube with mercury pellet ii",
+              "markdown_content": "## i) capillary tube with mercury pellet ii",
+              "page": 107
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L228",
+              "title": "tripod stand experiment",
+              "markdown_content": "## v) tripod stand experiment",
+              "page": 107
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L229",
+              "title": "Thermometer vi",
+              "markdown_content": "## i) Thermometer vi",
+              "page": 107
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L230",
+              "title": "graph paper vii",
+              "markdown_content": "## i) graph paper vii",
+              "page": 107
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L231",
+              "title": "Tall jar. i",
+              "markdown_content": "## i) Tall jar. i",
+              "page": 107
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L232",
+              "title": "Sulphuric acid",
+              "markdown_content": "## x) Sulphuric acid",
+              "page": 107
+            },
+            {
+              "lesson_id": "PHY-F3-U5-L233",
+              "title": "investigate the relationship between pressure and temperature of a ifxed mass of gas at constant volume",
+              "markdown_content": "## d) investigate the relationship between pressure and temperature of a ifxed mass of gas at constant volume",
+              "page": 108
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "TRANSFER OF THERMAL ENERGY",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Conduction",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U6-L234",
+              "title": "explain the concept of conduction of heat",
+              "markdown_content": "## a) explain the concept of conduction of heat",
+              "page": 109
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L235",
+              "title": "identify good and bad conductors of heat",
+              "markdown_content": "## b) identify good and bad conductors of heat",
+              "page": 109
+            }
+          ]
+        },
+        {
+          "topic_name": "Convection",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U6-L236",
+              "title": "apply knowledge of conduction in daily life",
+              "markdown_content": "## d) apply knowledge of conduction in daily life",
+              "page": 110
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L237",
+              "title": "explain the concept of convection of heat",
+              "markdown_content": "## a) explain the concept of convection of heat",
+              "page": 110
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L238",
+              "title": "explain how to minimize heat losses due to convection; and",
+              "markdown_content": "## c) explain how to minimize heat losses due to convection; and",
+              "page": 111
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L239",
+              "title": "apply knowledge of convection to daily life",
+              "markdown_content": "## d) apply knowledge of convection to daily life",
+              "page": 111
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L240",
+              "title": "identify good absorbers and emitters of radiant heat; and",
+              "markdown_content": "## b) identify good absorbers and emitters of radiant heat; and",
+              "page": 112
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L241",
+              "title": "minimize heat losses due to radiation",
+              "markdown_content": "## c) minimize heat losses due to radiation",
+              "page": 112
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L242",
+              "title": "Thermometer ii",
+              "markdown_content": "## i) Thermometer ii",
+              "page": 113
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L243",
+              "title": "Calorimeter i",
+              "markdown_content": "## i) Calorimeter i",
+              "page": 113
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L244",
+              "title": "Thermometer ii",
+              "markdown_content": "## i) Thermometer ii",
+              "page": 113
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L245",
+              "title": "wooden base i",
+              "markdown_content": "## i) wooden base i",
+              "page": 113
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L246",
+              "title": "Beam balance",
+              "markdown_content": "## v) Beam balance",
+              "page": 113
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L247",
+              "title": "Calorimeter i",
+              "markdown_content": "## i) Calorimeter i",
+              "page": 113
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L248",
+              "title": "Thermometer ii",
+              "markdown_content": "## i) Thermometer ii",
+              "page": 113
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L249",
+              "title": "wooden base i",
+              "markdown_content": "## i) wooden base i",
+              "page": 113
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L250",
+              "title": "Beam balance",
+              "markdown_content": "## v) Beam balance",
+              "page": 113
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L251",
+              "title": "determine experimentally the melting point of a substance from its cooling curve",
+              "markdown_content": "## b) determine experimentally the melting point of a substance from its cooling curve",
+              "page": 114
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L252",
+              "title": "demonstrate the effect of pressure on the boiling point and freezing point of a substance",
+              "markdown_content": "## d) demonstrate the effect of pressure on the boiling point and freezing point of a substance",
+              "page": 115
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L253",
+              "title": "explain the phenomenon of regulation",
+              "markdown_content": "## e) explain the phenomenon of regulation",
+              "page": 115
+            },
+            {
+              "lesson_id": "PHY-F3-U6-L254",
+              "title": "demonstrate latent heat of fusion and vaporization; and",
+              "markdown_content": "## g) demonstrate latent heat of fusion and vaporization; and",
+              "page": 116
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 8,
+      "unit_title": "VAPOUR AND HUMIDITY",
+      "form": 3,
+      "topics": [
+        {
+          "topic_name": "Vapour",
+          "competence_code": "8.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U8-L255",
+              "title": "explain the process of evaporation of liquid",
+              "markdown_content": "## a) explain the process of evaporation of liquid",
+              "page": 117
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L256",
+              "title": "identify factors affecting evaporation of a liquid",
+              "markdown_content": "## b) identify factors affecting evaporation of a liquid",
+              "page": 117
+            }
+          ]
+        },
+        {
+          "topic_name": "Humidity",
+          "competence_code": "8.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U8-L257",
+              "title": "explain the effect of temperature on saturated vapour pressure (S.V.P) of a liquid",
+              "markdown_content": "## d) explain the effect of temperature on saturated vapour pressure (S.V.P) of a liquid",
+              "page": 118
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L258",
+              "title": "explain the concept of humidity",
+              "markdown_content": "## a) explain the concept of humidity",
+              "page": 118
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L259",
+              "title": "measure relative humidity",
+              "markdown_content": "## c) measure relative humidity",
+              "page": 119
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L260",
+              "title": "apply the knowledge of humidity in daily life",
+              "markdown_content": "## d) apply the knowledge of humidity in daily life",
+              "page": 119
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L261",
+              "title": "state the S.I units of electromotive force and potential difference; and",
+              "markdown_content": "## b) state the S.I units of electromotive force and potential difference; and",
+              "page": 120
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L262",
+              "title": "measure electromotive force of a cell and potential difference across a conductor",
+              "markdown_content": "## c) measure electromotive force of a cell and potential difference across a conductor",
+              "page": 120
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L263",
+              "title": "describe factors which determine the resistance of a conductor",
+              "markdown_content": "## b) describe factors which determine the resistance of a conductor",
+              "page": 121
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L264",
+              "title": "identify types of resistors",
+              "markdown_content": "## d) identify types of resistors",
+              "page": 122
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L265",
+              "title": "determine the equivalent resistance of more than two resistors in series and parallel",
+              "markdown_content": "## e) determine the equivalent resistance of more than two resistors in series and parallel",
+              "page": 122
+            }
+          ]
+        },
+        {
+          "topic_name": "Effects of an Electric Current",
+          "competence_code": "9.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U8-L266",
+              "title": "Connect and analyse a simple electric circuit",
+              "markdown_content": "## g) Connect and analyse a simple electric circuit",
+              "page": 123
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L267",
+              "title": "explain the mechanism of heating by electric current",
+              "markdown_content": "## a) explain the mechanism of heating by electric current",
+              "page": 123
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L268",
+              "title": "determine electrical power; and",
+              "markdown_content": "## c) determine electrical power; and",
+              "page": 124
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L269",
+              "title": "interpret the power rating of electrical appliances",
+              "markdown_content": "## d) interpret the power rating of electrical appliances",
+              "page": 124
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L270",
+              "title": "describe the functions of a fuse and a circuit breaker",
+              "markdown_content": "## b) describe the functions of a fuse and a circuit breaker",
+              "page": 125
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L271",
+              "title": "perform wiring on a board; and",
+              "markdown_content": "## c) perform wiring on a board; and",
+              "page": 125
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L272",
+              "title": "check and rectify electrical faults in domestic appliances",
+              "markdown_content": "## d) check and rectify electrical faults in domestic appliances",
+              "page": 125
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L273",
+              "title": "determine voltage combination of cells in series and parallel",
+              "markdown_content": "## b) determine voltage combination of cells in series and parallel",
+              "page": 126
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L274",
+              "title": "identify the cell defects",
+              "markdown_content": "## c) identify the cell defects",
+              "page": 126
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L275",
+              "title": "explain the charging and discharging phenomenon of an accumulator; and",
+              "markdown_content": "## e) explain the charging and discharging phenomenon of an accumulator; and",
+              "page": 127
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L276",
+              "title": "use cells and accumulators in daily life",
+              "markdown_content": "## f) use cells and accumulators in daily life",
+              "page": 127
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L277",
+              "title": "explain the terms wave length, frequency and velocity of a wave; and",
+              "markdown_content": "## b) explain the terms wave length, frequency and velocity of a wave; and",
+              "page": 129
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L278",
+              "title": "identify types of waves",
+              "markdown_content": "## c) identify types of waves",
+              "page": 129
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L279",
+              "title": "mention the application of relfection, refraction, diffraction and interference of waves in daily life; and",
+              "markdown_content": "## b) mention the application of relfection, refraction, diffraction and interference of waves in daily life; and",
+              "page": 130
+            }
+          ]
+        },
+        {
+          "topic_name": "Propagation of Waves",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U8-L280",
+              "title": "describe the propagation of mechanical waves",
+              "markdown_content": "## a) describe the propagation of mechanical waves",
+              "page": 131
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L281",
+              "title": "explain the propagation of electromagnetic waves",
+              "markdown_content": "## b) explain the propagation of electromagnetic waves",
+              "page": 131
+            }
+          ]
+        },
+        {
+          "topic_name": "Sound Waves",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U8-L282",
+              "title": "determine the refractive index of a medium",
+              "markdown_content": "## d) determine the refractive index of a medium",
+              "page": 132
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L283",
+              "title": "identify sources of sound waves",
+              "markdown_content": "## a) identify sources of sound waves",
+              "page": 132
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L284",
+              "title": "explain the concept of audibility range",
+              "markdown_content": "## b) explain the concept of audibility range",
+              "page": 132
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L285",
+              "title": "explain the concept of echo and reverberation of sound",
+              "markdown_content": "## d) explain the concept of echo and reverberation of sound",
+              "page": 133
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L286",
+              "title": "determine the speed of sound in air",
+              "markdown_content": "## e) determine the speed of sound in air",
+              "page": 133
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L287",
+              "title": "identify factors affecting loudness, pitch and quality of a musical sound",
+              "markdown_content": "## b) identify factors affecting loudness, pitch and quality of a musical sound",
+              "page": 134
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L288",
+              "title": "identify the different musical instruments",
+              "markdown_content": "## c) identify the different musical instruments",
+              "page": 134
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L289",
+              "title": "determine the frequency of a musical note; and",
+              "markdown_content": "## e) determine the frequency of a musical note; and",
+              "page": 135
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L290",
+              "title": "distinguish between the fundamental note and overtones",
+              "markdown_content": "## f) distinguish between the fundamental note and overtones",
+              "page": 135
+            }
+          ]
+        },
+        {
+          "topic_name": "Electromagnetic Spectrum",
+          "competence_code": "1.6",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U8-L291",
+              "title": "construct a simple musical instrument",
+              "markdown_content": "## h) construct a simple musical instrument",
+              "page": 136
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L292",
+              "title": "explain the concept of the electromagnetic spectrum",
+              "markdown_content": "## a) explain the concept of the electromagnetic spectrum",
+              "page": 136
+            }
+          ]
+        },
+        {
+          "topic_name": "Applications of Eletromagnetic Wave in Daily Life",
+          "competence_code": "1.7",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F3-U8-L293",
+              "title": "detect infra-red, visible and ultra- violet rays",
+              "markdown_content": "## c) detect infra-red, visible and ultra- violet rays",
+              "page": 137
+            },
+            {
+              "lesson_id": "PHY-F3-U8-L294",
+              "title": "identify the application of microwaves, radio-waves, infra-red, gamma rays and x-rays; and",
+              "markdown_content": "## a) identify the application of microwaves, radio-waves, infra-red, gamma rays and x-rays; and",
+              "page": 137
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "ELECTROMAGNETISM",
+      "form": 4,
+      "topics": [
+        {
+          "topic_name": "Magnetic ifelds due to a current – carrying conductor",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U2-L295",
+              "title": "explain how electric current produces a magnetic ifeld",
+              "markdown_content": "## a) explain how electric current produces a magnetic ifeld",
+              "page": 138
+            },
+            {
+              "lesson_id": "PHY-F4-U2-L296",
+              "title": "identify the pattern of the magnetic ifeld lines around a straight conductor",
+              "markdown_content": "## b) identify the pattern of the magnetic ifeld lines around a straight conductor",
+              "page": 138
+            },
+            {
+              "lesson_id": "PHY-F4-U2-L297",
+              "title": "determine presence and direction of a force on a current- carrying conductor in a magnetic ifeld; and",
+              "markdown_content": "## d) determine presence and direction of a force on a current- carrying conductor in a magnetic ifeld; and",
+              "page": 139
+            }
+          ]
+        },
+        {
+          "topic_name": "Electromagnetic Induction",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U2-L298",
+              "title": "explain the concept of electromagnetic induction",
+              "markdown_content": "## a) explain the concept of electromagnetic induction",
+              "page": 140
+            },
+            {
+              "lesson_id": "PHY-F4-U2-L299",
+              "title": "explain the concepts of self and mutual induction",
+              "markdown_content": "## c) explain the concepts of self and mutual induction",
+              "page": 141
+            },
+            {
+              "lesson_id": "PHY-F4-U2-L300",
+              "title": "describe the mode of action of a.c. and d.c. generator; and",
+              "markdown_content": "## e) describe the mode of action of a.c. and d.c. generator; and",
+              "page": 142
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "RADIOACTIVITY",
+      "form": 4,
+      "topics": [
+        {
+          "topic_name": "The Nucleus of an Atom",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U3-L301",
+              "title": "describe the structure of the nucleus of an atom",
+              "markdown_content": "## a) describe the structure of the nucleus of an atom",
+              "page": 143
+            }
+          ]
+        },
+        {
+          "topic_name": "Natural Radioactivity",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U3-L302",
+              "title": "mention forces holding the nucleus",
+              "markdown_content": "## c) mention forces holding the nucleus",
+              "page": 144
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L303",
+              "title": "explain the concept of radioactivity",
+              "markdown_content": "## a) explain the concept of radioactivity",
+              "page": 144
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L304",
+              "title": "explain the nuclear changes due to the emission of alpha(α), beta (β) and gamma (γ) radiations",
+              "markdown_content": "## c) explain the nuclear changes due to the emission of alpha(α), beta (β) and gamma (γ) radiations",
+              "page": 145
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L305",
+              "title": "explain the detection of (α), (β) and (γ) radiations",
+              "markdown_content": "## d) explain the detection of (α), (β) and (γ) radiations",
+              "page": 145
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L306",
+              "title": "determine the half-life of a radioactive element; and",
+              "markdown_content": "## f) determine the half-life of a radioactive element; and",
+              "page": 146
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L307",
+              "title": "identify the applications of natural radioactive substances",
+              "markdown_content": "## g) identify the applications of natural radioactive substances",
+              "page": 146
+            }
+          ]
+        },
+        {
+          "topic_name": "Radiation Hazards and Safety",
+          "competence_code": "3.4",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U3-L308",
+              "title": "describe methods of producing artiifcial radioactive isotopes; and",
+              "markdown_content": "## b) describe methods of producing artiifcial radioactive isotopes; and",
+              "page": 147
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L309",
+              "title": "mention the applications of artiifcial radioactivity",
+              "markdown_content": "## c) mention the applications of artiifcial radioactivity",
+              "page": 147
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L310",
+              "title": "explain the effects of nuclear radiations on human body; and",
+              "markdown_content": "## a) explain the effects of nuclear radiations on human body; and",
+              "page": 147
+            }
+          ]
+        },
+        {
+          "topic_name": "Nuclear Fission and Fusion",
+          "competence_code": "3.5",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U3-L311",
+              "title": "explain the nuclear ifssion and fusion",
+              "markdown_content": "## a) explain the nuclear ifssion and fusion",
+              "page": 148
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L312",
+              "title": "mention the applications of nuclear ifssion and fusion",
+              "markdown_content": "## b) mention the applications of nuclear ifssion and fusion",
+              "page": 148
+            }
+          ]
+        },
+        {
+          "topic_name": "X - rays",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U3-L313",
+              "title": "state the properties of cathode rays",
+              "markdown_content": "## b) state the properties of cathode rays",
+              "page": 149
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L314",
+              "title": "state the applications of cathode ray tube",
+              "markdown_content": "## c) state the applications of cathode ray tube",
+              "page": 149
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L315",
+              "title": "describe the structure and mode of action of the X-ray tube",
+              "markdown_content": "## a) describe the structure and mode of action of the X-ray tube",
+              "page": 149
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L316",
+              "title": "state the properties of X-rays; and",
+              "markdown_content": "## c) state the properties of X-rays; and",
+              "page": 150
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L317",
+              "title": "identify the applications of X-rays in daily life",
+              "markdown_content": "## d) identify the applications of X-rays in daily life",
+              "page": 150
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L318",
+              "title": "Conductors i",
+              "markdown_content": "## i) Conductors i",
+              "page": 151
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L319",
+              "title": "Semiconductors ii",
+              "markdown_content": "## i) Semiconductors ii",
+              "page": 151
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L320",
+              "title": "Insulators conductors, i",
+              "markdown_content": "## i) Insulators conductors, i",
+              "page": 151
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L321",
+              "title": "Galvanometer v",
+              "markdown_content": "## v) Galvanometer v",
+              "page": 151
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L322",
+              "title": "Connecting wires",
+              "markdown_content": "## i) Connecting wires",
+              "page": 151
+            }
+          ]
+        },
+        {
+          "topic_name": "Diodes",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U3-L323",
+              "title": "describe the construction of P-N junction",
+              "markdown_content": "## a) describe the construction of P-N junction",
+              "page": 152
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L324",
+              "title": "explain the mode of action of a P-N junction",
+              "markdown_content": "## b) explain the mode of action of a P-N junction",
+              "page": 152
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L325",
+              "title": "identify the types of diodes; and",
+              "markdown_content": "## c) identify the types of diodes; and",
+              "page": 152
+            }
+          ]
+        },
+        {
+          "topic_name": "Transistor",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U3-L326",
+              "title": "describe the construction of a PNP transistor",
+              "markdown_content": "## a) describe the construction of a PNP transistor",
+              "page": 153
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L327",
+              "title": "explain the mode of action of a PNP transistor",
+              "markdown_content": "## b) explain the mode of action of a PNP transistor",
+              "page": 153
+            }
+          ]
+        },
+        {
+          "topic_name": "Single Stage Ampliifer",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U3-L328",
+              "title": "outline the applications of transistors in daily life",
+              "markdown_content": "## d) outline the applications of transistors in daily life",
+              "page": 154
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L329",
+              "title": "explain the concept of analogue signals",
+              "markdown_content": "## a) explain the concept of analogue signals",
+              "page": 154
+            },
+            {
+              "lesson_id": "PHY-F4-U3-L330",
+              "title": "explain the concept of digital signals; and",
+              "markdown_content": "## b) explain the concept of digital signals; and",
+              "page": 154
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "ELEMENTARY ASTRONOMY",
+      "form": 4,
+      "topics": [
+        {
+          "topic_name": "Introduction to Astronomy",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U6-L331",
+              "title": "explain the concept of astronomy; and",
+              "markdown_content": "## a) explain the concept of astronomy; and",
+              "page": 155
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L332",
+              "title": "explain the importance of astronomy in everyday life",
+              "markdown_content": "## b) explain the importance of astronomy in everyday life",
+              "page": 155
+            }
+          ]
+        },
+        {
+          "topic_name": "Constellations",
+          "competence_code": "6.3",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U6-L333",
+              "title": "explain the force of gravitation which maintains celestrial bodies in their orbits",
+              "markdown_content": "## b) explain the force of gravitation which maintains celestrial bodies in their orbits",
+              "page": 156
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L334",
+              "title": "explain the concept of constellation",
+              "markdown_content": "## a) explain the concept of constellation",
+              "page": 156
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L335",
+              "title": "identify constellations; and",
+              "markdown_content": "## b) identify constellations; and",
+              "page": 156
+            }
+          ]
+        },
+        {
+          "topic_name": "The Earth and the Moon",
+          "competence_code": "6.4",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U6-L336",
+              "title": "describe the surface features and temperature of the moon; and",
+              "markdown_content": "## a) describe the surface features and temperature of the moon; and",
+              "page": 157
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L337",
+              "title": "explain the causes of ocean tides",
+              "markdown_content": "## b) explain the causes of ocean tides",
+              "page": 157
+            }
+          ]
+        },
+        {
+          "topic_name": "Earthquakes and Volcanoes",
+          "competence_code": "7.2",
+          "lessons": [
+            {
+              "lesson_id": "PHY-F4-U6-L338",
+              "title": "describe the composition of the layers of the earth; and",
+              "markdown_content": "## b) describe the composition of the layers of the earth; and",
+              "page": 158
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L339",
+              "title": "explain the importance of the layers of the earth",
+              "markdown_content": "## c) explain the importance of the layers of the earth",
+              "page": 158
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L340",
+              "title": "explain the origin of volcanoes",
+              "markdown_content": "## a) explain the origin of volcanoes",
+              "page": 158
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L341",
+              "title": "explain the origin of earthquake; and",
+              "markdown_content": "## c) explain the origin of earthquake; and",
+              "page": 159
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L342",
+              "title": "describe the principle of measurement of earthquake; and",
+              "markdown_content": "## d) describe the principle of measurement of earthquake; and",
+              "page": 159
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L343",
+              "title": "identify precautions against earthquake hazards",
+              "markdown_content": "## e) identify precautions against earthquake hazards",
+              "page": 159
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L344",
+              "title": "describe the composition of the atmosphere",
+              "markdown_content": "## b) describe the composition of the atmosphere",
+              "page": 160
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L345",
+              "title": "explain the importance of various layers of the atmosphere",
+              "markdown_content": "## c) explain the importance of various layers of the atmosphere",
+              "page": 160
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L346",
+              "title": "identify sources of greenhouse",
+              "markdown_content": "## b) identify sources of greenhouse",
+              "page": 161
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L347",
+              "title": "explain the occurrence of global warming; and",
+              "markdown_content": "## c) explain the occurrence of global warming; and",
+              "page": 161
+            },
+            {
+              "lesson_id": "PHY-F4-U6-L348",
+              "title": "state the consequences of global warming",
+              "markdown_content": "## d) state the consequences of global warming",
+              "page": 161
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

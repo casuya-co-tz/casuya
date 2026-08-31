@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form4_midterm2_2_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 2 Exam 2 (FORM4 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 83,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain cooperative",
+          "text": "Discuss the challenges facing 'Explain cooperative' in Tanzania and propose solutions.",
+          "competence": "Explain cooperative"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Companies",
+          "text": "Define 'Companies' and discuss its importance in everyday life. - with example",
+          "competence": "Companies"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain aids to trade",
+          "text": "Outline the procedures involved in 'Explain aids to trade'. - with example",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Trade",
+          "text": "Explain the concept of 'Trade' with examples relevant to Tanzania. - with diagram",
+          "competence": "Trade"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Storekeeping",
+          "text": "Analyse the causes and effects of 'Storekeeping'.",
+          "competence": "Storekeeping"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain sole proprietorship",
+          "text": "With examples, illustrate how 'Explain sole proprietorship' is applied in the community. - with diagram",
+          "competence": "Explain sole proprietorship"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain insurance",
+          "text": "Outline the procedures involved in 'Explain insurance'.",
+          "competence": "Explain insurance"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain taxation",
+          "text": "Examine the advantages and disadvantages of 'Explain taxation'. - with diagram",
+          "competence": "Explain taxation"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Warehousing",
+          "text": "Define 'Warehousing' and discuss its importance in everyday life.",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Documentation",
+          "text": "Compare and contrast 'Documentation' with related concepts. - with diagram",
+          "competence": "Documentation"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain sources of business finance",
+          "text": "Explain the concept of 'Explain sources of business finance' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain production",
+          "text": "Outline the procedures involved in 'Explain production'. - with example",
+          "competence": "Explain production"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain warehousing",
+          "text": "Compare and contrast 'Explain warehousing' with related concepts.",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Insurance",
+          "text": "With examples, illustrate how 'Insurance' is applied in the community.",
+          "competence": "Insurance"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain stock control",
+          "text": "Examine the advantages and disadvantages of 'Explain stock control'. - with example",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Communication",
+          "text": "Compare and contrast 'Communication' with related concepts.",
+          "competence": "Communication"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Partnership",
+          "text": "Describe the main features of 'Partnership'. - with example",
+          "competence": "Partnership"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Advertisement",
+          "text": "Compare and contrast 'Advertisement' with related concepts. - with example",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Concept of Commerce",
+          "text": "Define 'Concept of Commerce' and discuss its importance in everyday life. - with example",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain trade",
+          "text": "Define 'Explain trade' and discuss its importance in everyday life.",
+          "competence": "Explain trade"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain cooperative",
+    "Companies",
+    "Explain aids to trade",
+    "Trade",
+    "Storekeeping",
+    "Explain sole proprietorship",
+    "Explain insurance",
+    "Explain taxation",
+    "Warehousing",
+    "Documentation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

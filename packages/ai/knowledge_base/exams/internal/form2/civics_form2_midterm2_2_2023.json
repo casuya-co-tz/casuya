@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form2_midterm2_2_2023.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 2 Exam 2 (FORM2 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 83,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Local Government",
+          "text": "Analyse the causes and effects of 'Local Government'.",
+          "competence": "Local Government"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain elections",
+          "text": "Examine the advantages and disadvantages of 'Explain elections'.",
+          "competence": "Explain elections"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain concept of human rights",
+          "text": "Define 'Explain concept of human rights' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain concept of human rights"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "National Unity",
+          "text": "Define 'National Unity' and discuss its importance in everyday life. - with diagram",
+          "competence": "National Unity"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Elections",
+          "text": "Evaluate the role of 'Elections' in national development. - with example",
+          "competence": "Elections"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain central government",
+          "text": "With examples, illustrate how 'Explain central government' is applied in the community.",
+          "competence": "Explain central government"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain globalization",
+          "text": "Discuss the challenges facing 'Explain globalization' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain globalization"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Gender",
+          "text": "Compare and contrast 'Gender' with related concepts. - with diagram",
+          "competence": "Gender"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain democracy",
+          "text": "Define 'Explain democracy' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain democracy"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Concept of Nation",
+          "text": "Describe the main features of 'Concept of Nation'. - with diagram",
+          "competence": "Concept of Nation"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain life skills",
+          "text": "Examine the advantages and disadvantages of 'Explain life skills'.",
+          "competence": "Explain life skills"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Democracy",
+          "text": "Analyse the causes and effects of 'Democracy'.",
+          "competence": "Democracy"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain local government",
+          "text": "With examples, illustrate how 'Explain local government' is applied in the community. - with diagram",
+          "competence": "Explain local government"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Interpersonal Relationships",
+          "text": "Define 'Interpersonal Relationships' and discuss its importance in everyday life.",
+          "competence": "Interpersonal Relationships"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Child Rights",
+          "text": "Compare and contrast 'Child Rights' with related concepts.",
+          "competence": "Child Rights"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Culture and Tradition",
+          "text": "With examples, illustrate how 'Culture and Tradition' is applied in the community. - with diagram",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "National Symbols",
+          "text": "Describe the main features of 'National Symbols'. - with example",
+          "competence": "National Symbols"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain constitution",
+          "text": "Examine the advantages and disadvantages of 'Explain constitution'. - with example",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain national unity",
+          "text": "Examine the advantages and disadvantages of 'Explain national unity'. - with diagram",
+          "competence": "Explain national unity"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Central Government",
+          "text": "Compare and contrast 'Central Government' with related concepts.",
+          "competence": "Central Government"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Local Government",
+    "Explain elections",
+    "Explain concept of human rights",
+    "National Unity",
+    "Elections",
+    "Explain central government",
+    "Explain globalization",
+    "Gender",
+    "Explain democracy",
+    "Concept of Nation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

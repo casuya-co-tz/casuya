@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form6_topical_2_2026.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 2 (FORM6 2026): katika sentensi",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 46,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish",
+          "text": "Discuss the challenges facing 'Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish' in Tanzania and propose solutions. - locally",
+          "competence": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa k"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish",
+          "text": "Define 'Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish' and discuss its importance in everyday life.",
+          "competence": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa k"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "katika sentensi",
+          "text": "Describe the process of 'katika sentensi' step by step. - with diagram",
+          "competence": "katika sentensi"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "katika sentensi",
+          "text": "Examine the advantages and disadvantages of 'katika sentensi'. - with diagram",
+          "competence": "katika sentensi"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish",
+          "text": "What are the characteristics of 'Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish'? - locally",
+          "competence": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa k"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish",
+          "text": "Assess the impact of 'Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish' on society. - with example",
+          "competence": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa k"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish",
+          "text": "Explain the relationship between 'Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish' and its environment. - locally",
+          "competence": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa k"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "katika sentensi",
+          "text": "Evaluate the role of 'katika sentensi' in national development.",
+          "competence": "katika sentensi"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "katika sentensi",
+          "text": "Describe the main features of 'katika sentensi'. - with example",
+          "competence": "katika sentensi"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish",
+          "text": "Propose measures to improve 'Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish' in schools.",
+          "competence": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa k"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish",
+    "katika sentensi"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

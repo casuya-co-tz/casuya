@@ -1,0 +1,121 @@
+{
+  "filename": "geography_form1_topical_7_2024.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Geography - Topical Test 7 (FORM1 2024): and their major characteristics (lo",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 43,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+          "text": "Discuss the factors influencing 'Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern'.",
+          "competence": "Describe the basic principles of reading and interpreting ma"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Examine the advantages and disadvantages of 'and their major characteristics (location, size/ thickness, density and gross compositio'. - with example",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+          "text": "Describe the process of 'Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern' step by step. - with diagram",
+          "competence": "Describe the basic principles of reading and interpreting ma"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+          "text": "Evaluate the role of 'Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern' in national development.",
+          "competence": "Describe the basic principles of reading and interpreting ma"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Explain the concept of 'and their major characteristics (location, size/ thickness, density and gross compositio' with examples relevant to Tanzania. - with diagram",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+          "text": "Examine the advantages and disadvantages of 'Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern'.",
+          "competence": "Describe the basic principles of reading and interpreting ma"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+          "text": "With examples, illustrate how 'Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern' is applied in the community. - locally",
+          "competence": "Describe the basic principles of reading and interpreting ma"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Describe the process of 'and their major characteristics (location, size/ thickness, density and gross compositio' step by step. - locally",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+          "text": "With examples, illustrate how 'Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern' is applied in the community. - locally",
+          "competence": "Describe the basic principles of reading and interpreting ma"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Evaluate the role of 'and their major characteristics (location, size/ thickness, density and gross compositio' in national development. - with example",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+    "and their major characteristics (location, size/ thickness, density and gross compositio"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

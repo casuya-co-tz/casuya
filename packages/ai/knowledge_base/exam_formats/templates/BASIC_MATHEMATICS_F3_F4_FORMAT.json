@@ -1,0 +1,58 @@
+{
+  "code": "041",
+  "subject": "Basic Mathematics",
+  "level": "Form 3-4 (CSEE Pilot)",
+  "template_file": "exam_formats/templates/BASIC_MATHEMATICS_CSEE_PILOT_2026.html",
+  "source_html": "C:/Users/Admin/Downloads/gemini-code-1788176647820.html",
+  "duration": "3:00 Hours",
+  "year": "2025/2026",
+  "structure": {
+    "total_questions": 14,
+    "total_marks": 100,
+    "sections": [
+      {
+        "name": "A",
+        "marks": 60,
+        "questions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "description": "10 Qs x6 marks: tables/LCM, logs, Venn/prob, coordinate vectors, circle geometry, variation/profit, trapezium/interest, AP/GP, trig, quadratics"
+      },
+      {
+        "name": "B",
+        "marks": 40,
+        "questions": [
+          11,
+          12,
+          13,
+          14
+        ],
+        "description": "4 Qs x10 marks: linear programming, pyramid, matrix inverse, function vertex/graph"
+      }
+    ],
+    "instructions": [
+      "This paper consists of sections A and B with a total of fourteen (14) compulsory questions.",
+      "Section A carries sixty (60) marks and Section B carries forty (40) marks.",
+      "All necessary working and answers for each question must be shown clearly.",
+      "Mathematical tables and non-programmable scientific calculators may be used.",
+      "All writing must be in blue or black ink except drawings which must be in pencil."
+    ],
+    "layout_features": [
+      "A4 3 pages, header 041 BASIC MATHEMATICS, meta bar Time/Year, instructions block bordered, section head underlined, MathJax LaTeX, SVG diagrams (circle, pyramid), sub-questions indented"
+    ]
+  },
+  "applied_to": [
+    "form3",
+    "form4"
+  ],
+  "internal_exams_generated": 40
+}

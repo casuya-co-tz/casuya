@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form2_midterm2_1_2025.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 2 Exam 1 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 91,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain democracy",
+          "text": "Outline the procedures involved in 'Explain democracy'.",
+          "competence": "Explain democracy"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain local government",
+          "text": "Examine the advantages and disadvantages of 'Explain local government'. - with diagram",
+          "competence": "Explain local government"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain citizenship",
+          "text": "Define 'Explain citizenship' and discuss its importance in everyday life. - with example",
+          "competence": "Explain citizenship"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Culture and Tradition",
+          "text": "With examples, illustrate how 'Culture and Tradition' is applied in the community. - with example",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain globalization",
+          "text": "Analyse the causes and effects of 'Explain globalization'. - with diagram",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Citizenship",
+          "text": "Define 'Citizenship' and discuss its importance in everyday life.",
+          "competence": "Citizenship"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "National Symbols",
+          "text": "Outline the procedures involved in 'National Symbols'. - with example",
+          "competence": "National Symbols"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Concept of Nation",
+          "text": "Discuss the challenges facing 'Concept of Nation' in Tanzania and propose solutions. - with example",
+          "competence": "Concept of Nation"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain national unity",
+          "text": "Outline the procedures involved in 'Explain national unity'.",
+          "competence": "Explain national unity"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Gender",
+          "text": "Compare and contrast 'Gender' with related concepts.",
+          "competence": "Gender"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Elections",
+          "text": "Compare and contrast 'Elections' with related concepts. - with example",
+          "competence": "Elections"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Child Rights",
+          "text": "Define 'Child Rights' and discuss its importance in everyday life.",
+          "competence": "Child Rights"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain constitution",
+          "text": "Outline the procedures involved in 'Explain constitution'. - with example",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain central government",
+          "text": "Analyse the causes and effects of 'Explain central government'. - with example",
+          "competence": "Explain central government"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain culture and tradition",
+          "text": "Define 'Explain culture and tradition' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain culture and tradition"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain national symbols",
+          "text": "Evaluate the role of 'Explain national symbols' in national development.",
+          "competence": "Explain national symbols"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Interpersonal Relationships",
+          "text": "Outline the procedures involved in 'Interpersonal Relationships'. - with example",
+          "competence": "Interpersonal Relationships"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain concept of nation",
+          "text": "Compare and contrast 'Explain concept of nation' with related concepts.",
+          "competence": "Explain concept of nation"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Democracy",
+          "text": "With examples, illustrate how 'Democracy' is applied in the community. - with example",
+          "competence": "Democracy"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain life skills",
+          "text": "Analyse the causes and effects of 'Explain life skills'. - with diagram",
+          "competence": "Explain life skills"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain democracy",
+    "Explain local government",
+    "Explain citizenship",
+    "Culture and Tradition",
+    "Explain globalization",
+    "Citizenship",
+    "National Symbols",
+    "Concept of Nation",
+    "Explain national unity",
+    "Gender"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

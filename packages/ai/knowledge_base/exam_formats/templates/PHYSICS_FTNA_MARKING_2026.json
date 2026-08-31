@@ -1,0 +1,81 @@
+{
+  "code": "031",
+  "subject": "Physics",
+  "year": "2026",
+  "max_marks": 100,
+  "sections": [
+    {
+      "name": "SECTION A (15 MARKS)",
+      "marks": 15,
+      "questions": [
+        {
+          "number": "1",
+          "marks": 10,
+          "answer_html": "Award 1 mark for each correct MCQ (i-x): Sample answers C,B,A,B,C,B,C,A,C,B (varies per paper, see JSON answer key).<br>Paper-specific answer key stored in JSON <code>items[].answer</code>."
+        },
+        {
+          "number": "2",
+          "marks": 5,
+          "answer_html": "Matching List A/B: i->E Barometer, ii->G Pressure gauge, iii->F Plunger, iv->C Syringe, v->A Siphon (1 mark each)."
+        }
+      ]
+    },
+    {
+      "name": "SECTION B (70 MARKS)",
+      "marks": 70,
+      "questions": [
+        {
+          "number": "3",
+          "marks": 10,
+          "answer_html": "(a) Pressure = Force/Area [2] Sharp nail small area large pressure [2] (b) Increased force increases pressure even blunt can penetrate, but requires larger force [6]"
+        },
+        {
+          "number": "4",
+          "marks": 10,
+          "answer_html": "(a) Electron transfer: cloth loses electrons rod gains negative charge [4] (b)(i) Induced polarization neutral paper attracted [3] (ii) Humid air conducts charge away, attraction weakens [3]"
+        },
+        {
+          "number": "5",
+          "marks": 10,
+          "answer_html": "(a) v = u + at = 0 +2*5=10 m/s [4] (b) No, changing acceleration means non-uniform, velocity time graph not straight [6]"
+        },
+        {
+          "number": "6",
+          "marks": 10,
+          "answer_html": "(a) Lead shots lower centre of gravity + long narrow tube increases sensitivity [6] (b) Hydrometer floats higher in water than in 0.75 g/cm3 liquid, verify by marking [4]"
+        },
+        {
+          "number": "7",
+          "marks": 10,
+          "answer_html": "(a) Work = Force x distance in direction of force [4] (b) Work = mgh =40*10*5=2000J Power=2000/10=200W=0.2kW [6]"
+        },
+        {
+          "number": "8",
+          "marks": 10,
+          "answer_html": "(a) Measurement is comparing unknown with standard [4] (b) Volume left =120 -3*25=45 cm3 [6]"
+        },
+        {
+          "number": "9",
+          "marks": 10,
+          "answer_html": "(a)(i) Extension e= (0.5*10)/20=0.25m=25cm [3] (ii) m = ke/g =20*0.35/10=0.7kg [3] (b) Soap reduces surface tension, improves wetting [4]"
+        }
+      ]
+    },
+    {
+      "name": "SECTION C (15 MARKS)",
+      "marks": 15,
+      "questions": [
+        {
+          "number": "10",
+          "marks": 15,
+          "answer_html": "(a) Rs_series=18Ω Rs_parallel=2Ω [5] (b) Is=0.67A Ip=6A [5] (c) Is <2A safe, Ip=6A >2A unsafe, series safer [5]"
+        }
+      ]
+    }
+  ],
+  "linked_forms": [
+    "form1",
+    "form2"
+  ],
+  "source_template": "PHYSICS_FTNA_MARKING_2026.html"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form1_midterm1_2_2026.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 2 (FORM1 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 102,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain insurance",
+          "text": "Outline the procedures involved in 'Explain insurance'. - with example",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain concept of commerce",
+          "text": "Explain the concept of 'Explain concept of commerce' with examples relevant to Tanzania.",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Market and Marketing",
+          "text": "With examples, illustrate how 'Market and Marketing' is applied in the community. - with example",
+          "competence": "Market and Marketing"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Sole Proprietorship",
+          "text": "Explain the concept of 'Sole Proprietorship' with examples relevant to Tanzania. - with diagram",
+          "competence": "Sole Proprietorship"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Warehousing",
+          "text": "Compare and contrast 'Warehousing' with related concepts. - with diagram",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Marketing Mix",
+          "text": "Outline the procedures involved in 'Marketing Mix'. - with diagram",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain cooperative",
+          "text": "Define 'Explain cooperative' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain cooperative"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain documentation",
+          "text": "Explain the concept of 'Explain documentation' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain documentation"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain storekeeping",
+          "text": "Analyse the causes and effects of 'Explain storekeeping'.",
+          "competence": "Explain storekeeping"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Insurance",
+          "text": "Examine the advantages and disadvantages of 'Insurance'.",
+          "competence": "Insurance"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Taxation",
+          "text": "Describe the main features of 'Taxation'. - with diagram",
+          "competence": "Taxation"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Storekeeping",
+          "text": "With examples, illustrate how 'Storekeeping' is applied in the community.",
+          "competence": "Storekeeping"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Cooperative",
+          "text": "Evaluate the role of 'Cooperative' in national development. - with diagram",
+          "competence": "Cooperative"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain advertisement",
+          "text": "Evaluate the role of 'Explain advertisement' in national development. - with example",
+          "competence": "Explain advertisement"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain partnership",
+          "text": "Explain the concept of 'Explain partnership' with examples relevant to Tanzania. - with example",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Stock Control",
+          "text": "With examples, illustrate how 'Stock Control' is applied in the community. - with example",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Concept of Commerce",
+          "text": "Evaluate the role of 'Concept of Commerce' in national development.",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain taxation",
+          "text": "Outline the procedures involved in 'Explain taxation'.",
+          "competence": "Explain taxation"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Production",
+          "text": "Compare and contrast 'Production' with related concepts. - with diagram",
+          "competence": "Production"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain aids to trade",
+          "text": "Discuss the challenges facing 'Explain aids to trade' in Tanzania and propose solutions. - with example",
+          "competence": "Explain aids to trade"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain insurance",
+    "Explain concept of commerce",
+    "Market and Marketing",
+    "Sole Proprietorship",
+    "Warehousing",
+    "Marketing Mix",
+    "Explain cooperative",
+    "Explain documentation",
+    "Explain storekeeping",
+    "Insurance"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

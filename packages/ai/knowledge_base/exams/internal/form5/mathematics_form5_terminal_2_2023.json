@@ -1,0 +1,249 @@
+{
+  "filename": "mathematics_form5_terminal_2_2023.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Mathematics - Terminal Exam 2 (FORM5 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 106,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use probability in problem solving",
+          "text": "Examine the advantages and disadvantages of 'Use probability in problem solving'. - locally",
+          "competence": "Use probability in problem solving"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of inequalities and absolute values of real numbers",
+          "text": "With examples, illustrate how 'Explain the concept of inequalities and absolute values of real numbers' is applied in the community. - with example",
+          "competence": "Explain the concept of inequalities and absolute values of r"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Solve linear simultaneous equations graphically",
+          "text": "What are the characteristics of 'Solve linear simultaneous equations graphically'?",
+          "competence": "Solve linear simultaneous equations graphically"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Find the domain and range of relations and functions",
+          "text": "Discuss the factors influencing 'Find the domain and range of relations and functions'. - with example",
+          "competence": "Find the domain and range of relations and functions"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Examine the advantages and disadvantages of 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)'. - with diagram",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate basic understanding of calculus",
+          "text": "How does 'Demonstrate basic understanding of calculus' relate to sustainable development? - locally",
+          "competence": "Demonstrate basic understanding of calculus"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Apply sine and cosine rules to find distances or angles of elevation",
+          "text": "Describe the process of 'Apply sine and cosine rules to find distances or angles of elevation' step by step.",
+          "competence": "Apply sine and cosine rules to find distances or angles of e"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+          "text": "Propose measures to improve 'Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala' in schools. - with example",
+          "competence": "Explore the basic tenets of vectors (displacement and positi"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "Discuss the challenges facing 'Use geometry, approximations, relations and functions in various contexts' in Tanzania and propose solutions. - with diagram",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)",
+          "text": "Outline the procedures involved in 'Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)'. - with example",
+          "competence": "Explore basic tenets of differentiation (first principles, p"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+          "text": "Explain the concept of 'Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explore the basic tenets of sequences and series (Arithmetic"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Discuss the challenges facing 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic' in Tanzania and propose solutions. - with example",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul",
+          "text": "With examples, illustrate how 'Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul' is applied in the community.",
+          "competence": "Apply matrices to solve simultaneous equations of two unknow"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "Examine the advantages and disadvantages of 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation'.",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+          "text": "Propose measures to improve 'Determine the probability of an event, expectation, variance, and standard deviation of random variables' in schools.",
+          "competence": "Determine the probability of an event, expectation, variance"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+          "text": "With examples, illustrate how 'Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic' is applied in the community. - locally",
+          "competence": "Explore advanced tenets of algebra (series of squares and cu"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the concepts of rates and variations",
+          "text": "With examples, illustrate how 'Describe the concepts of rates and variations' is applied in the community. - locally",
+          "competence": "Describe the concepts of rates and variations"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)",
+          "text": "Discuss the challenges facing 'Explore advanced tenets of coordinate geometry (angle between two lines, perpendicular distance, locus of a moving point, ratio theorem, and equations of a circle)' in Tanzania and propose solutions.",
+          "competence": "Explore advanced tenets of coordinate geometry (angle betwee"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an advanced understanding of knowledge and skills in Mathematics",
+          "text": "Describe the process of 'Demonstrate an advanced understanding of knowledge and skills in Mathematics' step by step.",
+          "competence": "Demonstrate an advanced understanding of knowledge and skill"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore advanced tenets of linear programming (transportation: two sources and two destinations",
+          "text": "Assess the impact of 'Explore advanced tenets of linear programming (transportation: two sources and two destinations' on society. - with diagram",
+          "competence": "Explore advanced tenets of linear programming (transportatio"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain postulates, proofs, and theorems of congruent triangles",
+          "text": "Analyse the causes and effects of 'Explain postulates, proofs, and theorems of congruent triangles'.",
+          "competence": "Explain postulates, proofs, and theorems of congruent triang"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use numerical skills in different contexts",
+          "text": "Discuss the challenges facing 'Use numerical skills in different contexts' in Tanzania and propose solutions. - with example",
+          "competence": "Use numerical skills in different contexts"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+          "text": "Assess the impact of 'Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)' on society. - with diagram",
+          "competence": "Explore advanced tenets of vectors (ratio theorems, dot prod"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Represent two sets in a Venn diagram",
+          "text": "Discuss the factors influencing 'Represent two sets in a Venn diagram'.",
+          "competence": "Represent two sets in a Venn diagram"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+          "text": "Propose measures to improve 'Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors' in schools.",
+          "competence": "Use vectors to solve problems related to displacement, veloc"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use probability in problem solving",
+    "Explain the concept of inequalities and absolute values of real numbers",
+    "Solve linear simultaneous equations graphically",
+    "Find the domain and range of relations and functions",
+    "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+    "Demonstrate basic understanding of calculus",
+    "Apply sine and cosine rules to find distances or angles of elevation",
+    "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+    "Use geometry, approximations, relations and functions in various contexts",
+    "Explore basic tenets of differentiation (first principles, power rule, chain rule, product rule, quotient rule, and partial derivatives)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

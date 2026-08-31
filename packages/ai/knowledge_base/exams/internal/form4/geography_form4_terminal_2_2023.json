@@ -1,0 +1,249 @@
+{
+  "filename": "geography_form4_terminal_2_2023.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Geography - Terminal Exam 2 (FORM4 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 125,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Conduct a project in Geography",
+          "text": "Define 'Conduct a project in Geography' and discuss its importance in everyday life.",
+          "competence": "Conduct a project in Geography"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+          "text": "Analyse the causes and effects of 'Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern'. - with diagram",
+          "competence": "Describe the basic principles of reading and interpreting ma"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Evaluate the role of 'Identify a geographical challenge in society and design a project to address it' in national development. - locally",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the forces responsible for formation of the major relief features of the Earth",
+          "text": "Describe the main features of 'Demonstrate an understanding of the forces responsible for formation of the major relief features of the Earth'. - with example",
+          "competence": "Demonstrate an understanding of the forces responsible for f"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "What are the characteristics of 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems'? - with example",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "and their major characteristics (location, size/ thickness, density and gross compositio",
+          "text": "Compare and contrast 'and their major characteristics (location, size/ thickness, density and gross compositio' with related concepts. - with example",
+          "competence": "and their major characteristics (location, size/ thickness, "
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl",
+          "text": "Explain the concept of 'Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl' with examples relevant to Tanzania.",
+          "competence": "Describe the geographical factors that influence the spatial"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
+          "text": "Evaluate the role of 'Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica' in national development.",
+          "competence": "Describe the major climatic regions of the world (tropical, "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes",
+          "text": "Examine the advantages and disadvantages of 'Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes'.",
+          "competence": "Describe the internal forces responsible for the formation o"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Complete and submit for assessment the project started in Form Five",
+          "text": "Analyse the causes and effects of 'Complete and submit for assessment the project started in Form Five'. - locally",
+          "competence": "Complete and submit for assessment the project started in Fo"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Interpret maps and photographs",
+          "text": "Propose measures to improve 'Interpret maps and photographs' in schools.",
+          "competence": "Interpret maps and photographs"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "Define 'Develop and carry out a simple research project in Geography' and discuss its importance in everyday life.",
+          "competence": "Develop and carry out a simple research project in Geography"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+          "text": "Define 'Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the relationship between major features of the Eart"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Complete and submit a report of the project started in Form Three",
+          "text": "Analyse the causes and effects of 'Complete and submit a report of the project started in Form Three'. - locally",
+          "competence": "Complete and submit a report of the project started in Form "
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the hydrological cycle (Outputs, storages, flows and underground water)",
+          "text": "Compare and contrast 'Describe the hydrological cycle (Outputs, storages, flows and underground water)' with related concepts. - with example",
+          "competence": "Describe the hydrological cycle (Outputs, storages, flows an"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+          "text": "Discuss the challenges facing 'Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe major features of the Earth’s surface (continents, "
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)",
+          "text": "Explain the concept of 'Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the interactions among the major earth systems (atm"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate mastery of research skills in Geography",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate mastery of research skills in Geography'.",
+          "competence": "Demonstrate mastery of research skills in Geography"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the basic techniques of map and photograph interpretation",
+          "text": "Explain the relationship between 'Demonstrate an understanding of the basic techniques of map and photograph interpretation' and its environment.",
+          "competence": "Demonstrate an understanding of the basic techniques of map "
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use the principles of map interpretation (visualizing symbols, signs, understanding themes, direction and association) to infer geographical features",
+          "text": "Define 'Use the principles of map interpretation (visualizing symbols, signs, understanding themes, direction and association) to infer geographical features' and discuss its importance in everyday life. - with diagram",
+          "competence": "Use the principles of map interpretation (visualizing symbol"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+          "text": "Examine the advantages and disadvantages of 'Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher'.",
+          "competence": "Describe the main external Earth systems (Hydrosphere, Atmos"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Carry out a project in Geography",
+          "text": "Propose measures to improve 'Carry out a project in Geography' in schools. - with example",
+          "competence": "Carry out a project in Geography"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the relationship between geography, environmental health, human settlements and economic activities",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the relationship between geography, environmental health, human settlements and economic activities' is applied in the community. - with example",
+          "competence": "Demonstrate an understanding of the relationship between geo"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the major features of the Earth surface",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of the major features of the Earth surface'. - with diagram",
+          "competence": "Demonstrate an understanding of the major features of the Ea"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
+          "text": "Describe the process of 'Explain the concept and scope of Geography (branches, importance and relationship with other discipline' step by step. - locally",
+          "competence": "Explain the concept and scope of Geography (branches, import"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Conduct a project in Geography",
+    "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
+    "Identify a geographical challenge in society and design a project to address it",
+    "Demonstrate an understanding of the forces responsible for formation of the major relief features of the Earth",
+    "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+    "and their major characteristics (location, size/ thickness, density and gross compositio",
+    "Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl",
+    "Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
+    "Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes",
+    "Complete and submit for assessment the project started in Form Five"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

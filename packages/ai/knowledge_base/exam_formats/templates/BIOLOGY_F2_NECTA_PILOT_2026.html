@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BIOLOGY F2 NECTA PILOT EXAM 2026</title>
+<style>
+    /* Global Page & Print Setup */
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 12pt;
+        line-height: 1.5;
+        background-color: #525659;
+        margin: 0;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #000;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .page {
+        background: #fff;
+        width: 210mm;
+        height: 297mm;
+        padding: 15mm 20mm;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    @media print {
+        body {
+            background-color: transparent;
+            padding: 0;
+        }
+        .page {
+            margin-bottom: 0;
+            box-shadow: none;
+            page-break-after: always;
+        }
+    }
+
+    .page-content {
+        flex-grow: 1;
+    }
+
+    /* Header Styling */
+    .top-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 8px;
+    }
+
+    .san-box {
+        border: 1.5px solid #000;
+        padding: 2px 8px;
+        font-size: 12pt;
+        font-weight: bold;
+    }
+
+    .assessment-no-line {
+        font-size: 12pt;
+        font-weight: bold;
+    }
+
+    .header-text {
+        text-align: center;
+        font-weight: bold;
+        font-size: 12pt;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    .meta-bar {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 12pt;
+        margin-bottom: 12px;
+        padding-bottom: 4px;
+    }
+
+    /* Instructions Formatting */
+    .instructions-block {
+        font-size: 12pt;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .instructions-block ol {
+        margin: 4px 0;
+        padding-left: 18px;
+    }
+
+    .instructions-block ol li {
+        margin-bottom: 4px;
+    }
+
+    .instructions-block ul {
+        margin: 2px 0;
+        padding-left: 15px;
+        list-style-type: none;
+    }
+
+    /* Assessor Table Placed Directly Below Instructions */
+    .assessor-table-container {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    table.assessor-table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 11pt;
+        line-height: 1.3;
+        border: 1.5px solid #000;
+    }
+
+    table.assessor-table th, table.assessor-table td {
+        border: 1px solid #000;
+        padding: 4px 6px;
+        text-align: center;
+    }
+
+    table.assessor-table th {
+        font-weight: bold;
+        background-color: #fff;
+    }
+
+    table.assessor-table td:first-child {
+        font-weight: bold;
+        width: 40%;
+    }
+
+    table.assessor-table td:nth-child(2) {
+        width: 35%;
+    }
+
+    table.assessor-table td:nth-child(3) {
+        width: 25%;
+    }
+
+    /* Footer Styling */
+    .footer-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11pt;
+        padding-top: 5px;
+    }
+
+    /* Section & Question Formatting */
+    .section-header {
+        text-align: center;
+        font-weight: bold;
+        font-size: 12pt;
+        margin: 10px 0 8px 0;
+    }
+
+    .question {
+        font-size: 12pt;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .mcq-item {
+        margin-bottom: 8px;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    .mcq-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .mcq-text {
+        flex: 1;
+        padding-right: 10px;
+    }
+
+    .answer-box {
+        width: 30px;
+        height: 22px;
+        border: 1px solid #000;
+        display: inline-block;
+        flex-shrink: 0;
+    }
+
+    .options-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 15px;
+        margin-top: 2px;
+        padding-left: 18px;
+    }
+
+    .options-single {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin-top: 2px;
+        padding-left: 18px;
+    }
+
+    /* Tables */
+    table.matching-table, table.matching-ans-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8px 0;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    table.matching-table th, table.matching-table td,
+    table.matching-ans-table th, table.matching-ans-table td {
+        border: 1px solid #000;
+        padding: 4px 6px;
+    }
+
+    table.matching-table th {
+        text-align: left;
+    }
+
+    table.matching-ans-table td {
+        text-align: center;
+    }
+
+    /* Answer Space Holders */
+    .answer-space {
+        width: 100%;
+    }
+
+    .sub-question {
+        margin-top: 6px;
+        padding-left: 12px;
+    }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+    <div class="page-content">
+        <div class="top-header">
+            <div class="san-box">033</div>
+            <div class="assessment-no-line">Student's Assessment Number ..........................................</div>
+        </div>
+
+        <div class="header-text">
+            THE UNITED REPUBLIC OF TANZANIA<br>
+            NATIONAL EXAMINATIONS COUNCIL OF TANZANIA<br>
+            FORM TWO NATIONAL ASSESSMENT PILOT
+        </div>
+
+        <div class="header-text" style="font-size: 12pt; margin-bottom: 2px;">
+            BIOLOGY
+        </div>
+        <div class="header-text" style="font-size: 12pt; font-weight: normal; margin-bottom: 8px;">
+            (For Both School and Private Students)
+        </div>
+
+        <div class="meta-bar">
+            <span>Duration: 2:30 Hours</span>
+            <span>Year: 2026</span>
+        </div>
+
+        <!-- Instructions Block -->
+        <div class="instructions-block">
+            <strong>Instructions</strong>
+            <ol>
+                <li>This paper consists of sections A, B and C with a total of ten (10) questions.</li>
+                <li>Answer all questions in the spaces provided.</li>
+                <li>Section A carries fifteen (15) marks, section B carries seventy (70) marks, and section C carries fifteen (15) marks.</li>
+                <li>All writing must be in blue or black ink except diagrams which must be drawn in pencil.</li>
+                <li>Cellular phones and any unauthorized materials are not allowed in the assessment room.</li>
+                <li>Write your Assessment Number at the top right corner of every page.</li>
+            </ol>
+        </div>
+
+        <!-- Assessor Table Placed Directly Below Instructions -->
+        <div class="assessor-table-container">
+            <table class="assessor-table">
+                <thead>
+                    <tr>
+                        <th colspan="3">FOR ASSESSOR'S USE ONLY</th>
+                    </tr>
+                    <tr>
+                        <th>QUESTION NUMBER</th>
+                        <th>ASSESSOR'S SCORE</th>
+                        <th>INITIALS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td></td><td></td></tr>
+                    <tr><td>2</td><td></td><td></td></tr>
+                    <tr><td>3</td><td></td><td></td></tr>
+                    <tr><td>4</td><td></td><td></td></tr>
+                    <tr><td>5</td><td></td><td></td></tr>
+                    <tr><td>6</td><td></td><td></td></tr>
+                    <tr><td>7</td><td></td><td></td></tr>
+                    <tr><td>8</td><td></td><td></td></tr>
+                    <tr><td>9</td><td></td><td></td></tr>
+                    <tr><td>10</td><td></td><td></td></tr>
+                    <tr><td>TOTAL</td><td></td><td></td></tr>
+                    <tr>
+                        <td colspan="2" style="font-weight: bold; text-align: left; padding-left: 8px;">CHECKER'S INITIALS</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span style="font-family: monospace;">519033100019</span>
+        <span>2</span>
+        <span>Page 1 of 10</span>
+    </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+    <div class="page-content">
+        <div style="text-align: right;" class="assessment-no-line">Student's Assessment Number ..........................................</div>
+        
+        <div class="section-header">SECTION A (15 Marks)</div>
+        <p style="font-size: 12pt; margin: 0 0 8px 0;">Answer all questions in this section.</p>
+
+        <div class="question">
+            1. For each of the items (i) - (x), choose the correct answer from the given alternatives and write its letter in the box provided. (10 marks)
+        </div>
+
+        <div class="mcq-item">
+            <div class="mcq-header">
+                <div class="mcq-text">(i) Which organelle is responsible for cellular respiration and energy production in a eukaryotic cell?</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="options-grid">
+                <div>A Chloroplast</div>
+                <div>B Nucleus</div>
+                <div>C Mitochondrion</div>
+                <div>D Ribosome</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <div class="mcq-header">
+                <div class="mcq-text">(ii) The process of maintaining a constant internal body environment in living organisms is called:</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="options-grid">
+                <div>A Osmoregulation</div>
+                <div>B Homeostasis</div>
+                <div>C Excretion</div>
+                <div>D Respiration</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <div class="mcq-header">
+                <div class="mcq-text">(iii) Which deficiency disease is caused by lack of Vitamin C in human diet?</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="options-grid">
+                <div>A Rickets</div>
+                <div>B Beriberi</div>
+                <div>C Scurvy</div>
+                <div>D Kwashiorkor</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <div class="mcq-header">
+                <div class="mcq-text">(iv) Which blood group is considered a universal donor?</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="options-grid">
+                <div>A Blood group A</div>
+                <div>B Blood group B</div>
+                <div>C Blood group AB</div>
+                <div>D Blood group O</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <div class="mcq-header">
+                <div class="mcq-text">(v) Which kingdom comprises unicellular prokaryotic organisms such as bacteria?</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="options-single">
+                <div>A Kingdom Protoctista</div>
+                <div>B Kingdom Monera</div>
+                <div>C Kingdom Fungi</div>
+                <div>D Kingdom Plantae</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <div class="mcq-header">
+                <div class="mcq-text">(vi) What is the main product of photosynthesis that plants store as starch?</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="options-single">
+                <div>A Amino acids</div>
+                <div>B Glucose</div>
+                <div>C Fatty acids</div>
+                <div>D Sucrose</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <div class="mcq-header">
+                <div class="mcq-text">(vii) Which enzyme breaks down starch into maltose in the human mouth?</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="options-grid">
+                <div>A Pepsin</div>
+                <div>B Salivary amylase</div>
+                <div>C Lipase</div>
+                <div>D Trypsin</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <div class="mcq-header">
+                <div class="mcq-text">(viii) The movement of water molecules from a region of low solute concentration to high solute concentration across a semi-permeable membrane is:</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="options-grid">
+                <div>A Diffusion</div>
+                <div>B Active transport</div>
+                <div>C Osmosis</div>
+                <div>D Transpiration</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span></span>
+        <span>Page 2 of 10</span>
+    </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+    <div class="page-content">
+        <div style="text-align: right;" class="assessment-no-line">Student's Assessment Number ..........................................</div>
+        <br>
+
+        <div class="mcq-item">
+            <div class="mcq-header">
+                <div class="mcq-text">(ix) Which blood vessel carries oxygenated blood from the lungs to the left atrium of the heart?</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="options-single">
+                <div>A Pulmonary artery</div>
+                <div>B Vena cava</div>
+                <div>C Pulmonary vein</div>
+                <div>D Aorta</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <div class="mcq-header">
+                <div class="mcq-text">(x) Which gaseous exchange structure is used by insects for respiration?</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="options-grid">
+                <div>A Gills</div>
+                <div>B Tracheoles</div>
+                <div>C Alveoli</div>
+                <div>D Moist skin</div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="question">
+            2. Match the human digestive system organs in <strong>List A</strong> with their primary functions in <strong>List B</strong> by writing the correct letter in the answer table provided. (5 marks)
+        </div>
+
+        <table class="matching-table">
+            <thead>
+                <tr>
+                    <th style="width: 55%;">List A</th>
+                    <th style="width: 45%;">List B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>(i) Stomach</td>
+                    <td>A Secretes bile to emulsify fats.</td>
+                </tr>
+                <tr>
+                    <td>(ii) Small intestine (Ileum)</td>
+                    <td>B Reabsorbs water and mineral salts.</td>
+                </tr>
+                <tr>
+                    <td>(iii) Liver</td>
+                    <td>C Produces hydrochloric acid and pepsin.</td>
+                </tr>
+                <tr>
+                    <td>(iv) Large intestine (Colon)</td>
+                    <td>D Stores undigested waste prior to egestion.</td>
+                </tr>
+                <tr>
+                    <td>(v) Pancreas</td>
+                    <td>E Main site for nutrient absorption into blood.<br>F Secretes insulin and pancreatic juice.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="font-weight: bold; font-size: 12pt; margin-top: 15px;">Answers</p>
+        <table class="matching-ans-table">
+            <tbody>
+                <tr>
+                    <td style="font-weight: bold; width: 15%;">List A</td>
+                    <td style="width: 17%;">(i)</td>
+                    <td style="width: 17%;">(ii)</td>
+                    <td style="width: 17%;">(iii)</td>
+                    <td style="width: 17%;">(iv)</td>
+                    <td style="width: 17%;">(v)</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">List B</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer-bar">
+        <span></span>
+        <span>Page 3 of 10</span>
+    </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+    <div class="page-content">
+        <div style="text-align: right;" class="assessment-no-line">Student's Assessment Number ..........................................</div>
+        
+        <div class="section-header">SECTION B (70 Marks)</div>
+        <p style="font-size: 12pt; margin: 0 0 10px 0;">Answer all questions in this section.</p>
+
+        <div class="question">
+            3. Light microscope is an essential tool in studying biological specimens in the laboratory.
+            <div class="sub-question">
+                (a) State the function of the fine adjustment knob and objective lens. (4 marks)
+            </div>
+            <div class="answer-space" style="height: 220px;"></div>
+            <div class="sub-question">
+                (b) Calculate total magnification if the eyepiece lens magnification is 10x and the objective lens magnification is 40x. (6 marks)
+            </div>
+            <div class="answer-space" style="height: 250px;"></div>
+        </div>
+
+        <div class="question">
+            4. First Aid is immediate help given to a sick or injured person before professional medical help arrives.
+            <div class="sub-question">
+                (a) Outline four items found in a standard First Aid box and state their functions. (4 marks)
+            </div>
+            <div class="answer-space" style="height: 200px;"></div>
+            <div class="sub-question">
+                (b) (i) Describe the First Aid procedure for a victim of snake bite. (3 marks)
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span></span>
+        <span>Page 4 of 10</span>
+    </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+    <div class="page-content">
+        <div style="text-align: right;" class="assessment-no-line">Student's Assessment Number ..........................................</div>
+        
+        <div class="sub-question" style="margin-top: 0;">
+            (ii) Explain why a tourniquet should not be tied too tightly for prolonged periods. (3 marks)
+        </div>
+        <div class="answer-space" style="height: 220px;"></div>
+
+        <div class="question">
+            5. Animal and Plant cells share basic organelles but possess distinct differences.
+            <div class="sub-question">
+                (a) State three structural differences between a plant cell and an animal cell. (4 marks)
+            </div>
+            <div class="answer-space" style="height: 250px;"></div>
+            <div class="sub-question">
+                (b) Draw a large, well-labeled diagram of a typical plant cell as seen under a light microscope. (6 marks)
+            </div>
+            <div class="answer-space" style="height: 250px;"></div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span></span>
+        <span>Page 5 of 10</span>
+    </div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page">
+    <div class="page-content">
+        <div style="text-align: right;" class="assessment-no-line">Student's Assessment Number ..........................................</div>
+        
+        <div class="question">
+            6. Gaseous exchange is a vital physiological process for all living organisms.
+            <div class="sub-question">
+                (a) List four features of an efficient gaseous exchange surface in mammals. (6 marks)
+            </div>
+            <div class="answer-space" style="height: 350px;"></div>
+            <div class="sub-question">
+                (b) Differentiate between breathing and cellular respiration. (4 marks)
+            </div>
+            <div class="answer-space" style="height: 300px;"></div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span></span>
+        <span>Page 6 of 10</span>
+    </div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page">
+    <div class="page-content">
+        <div style="text-align: right;" class="assessment-no-line">Student's Assessment Number ..........................................</div>
+        
+        <div class="question">
+            7. (a) Define balanced diet and list its essential major food components. (4 marks)
+            <div class="answer-space" style="height: 220px;"></div>
+            <div class="sub-question" style="padding-left: 0;">
+                (b) Describe a laboratory test for reducing sugars using Benedict's solution and state the expected observation. (6 marks)
+            </div>
+            <div class="answer-space" style="height: 300px;"></div>
+        </div>
+
+        <div class="question">
+            8. (a) What is transpiration and why is it essential for plants? (4 marks)
+            <div class="answer-space" style="height: 200px;"></div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span></span>
+        <span>Page 7 of 10</span>
+    </div>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page">
+    <div class="page-content">
+        <div style="text-align: right;" class="assessment-no-line">Student's Assessment Number ..........................................</div>
+        
+        <div class="sub-question" style="padding-left: 0;">
+            (b) Explain how environmental temperature, humidity, and wind speed affect the rate of transpiration. (6 marks)
+        </div>
+        <div class="answer-space" style="height: 320px;"></div>
+
+        <div class="question">
+            9. (a) Define waste management and state two ways human activities generate hazardous waste.
+            <div class="sub-question">
+                (i) (3 marks)
+            </div>
+            <div class="answer-space" style="height: 280px;"></div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span></span>
+        <span>Page 8 of 10</span>
+    </div>
+</div>
+
+<!-- PAGE 9 -->
+<div class="page">
+    <div class="page-content">
+        <div style="text-align: right;" class="assessment-no-line">Student's Assessment Number ..........................................</div>
+        
+        <div class="sub-question" style="padding-left: 12px;">
+            (ii) Explain the importance of proper sewage disposal in preventing cholera outbreaks. (3 marks)
+        </div>
+        <div class="answer-space" style="height: 220px;"></div>
+
+        <div class="sub-question" style="padding-left: 0;">
+            (b) Differentiate between communicable diseases and non-communicable diseases giving one example for each. (4 marks)
+        </div>
+        <div class="answer-space" style="height: 220px;"></div>
+
+        <div class="section-header">SECTION C (15 Marks)</div>
+        <p style="font-size: 12pt; margin: 0 0 10px 0;">Answer question ten (10).</p>
+
+        <div class="question">
+            10. Human blood transport system relies on heart pumping action, blood vessels, and blood components.
+            <div class="sub-question">
+                (a) Explain four major structural components of human blood and their functions. (5 marks)
+            </div>
+            <div class="answer-space" style="height: 200px;"></div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <span></span>
+        <span>Page 9 of 10</span>
+    </div>
+</div>
+
+<!-- PAGE 10 -->
+<div class="page">
+    <div class="page-content">
+        <div style="text-align: right;" class="assessment-no-line">Student's Assessment Number ..........................................</div>
+        
+        <div class="sub-question">
+            (b) Compare the structural and functional differences between arteries, veins, and capillaries. (5 marks)
+        </div>
+        <div class="answer-space" style="height: 380px;"></div>
+
+        <div class="sub-question">
+            (c) Explain double circulation in humans and state why it is advantageous over single circulation. (5 marks)
+        </div>
+        <div class="answer-space" style="height: 380px;"></div>
+    </div>
+
+    <div class="footer-bar">
+        <span></span>
+        <span>Page 10 of 10</span>
+    </div>
+</div>
+
+</body>
+</html>

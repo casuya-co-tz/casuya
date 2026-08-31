@@ -1,0 +1,121 @@
+{
+  "filename": "bible_knowledge_form2_topical_6_2025.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Bible Knowledge - Topical Test 6 (FORM2 2025): Demonstrate an appreciation of the ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use the Book of Joshua to discuss the importance of bravery, humility and perseverance",
+          "text": "Describe the main features of 'Use the Book of Joshua to discuss the importance of bravery, humility and perseverance'. - with example",
+          "competence": "Use the Book of Joshua to discuss the importance of bravery,"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use the Book of Joshua to discuss the importance of bravery, humility and perseverance",
+          "text": "Propose measures to improve 'Use the Book of Joshua to discuss the importance of bravery, humility and perseverance' in schools. - locally",
+          "competence": "Use the Book of Joshua to discuss the importance of bravery,"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an appreciation of the importance of statistics based on the Book of Numbers",
+          "text": "Discuss the challenges facing 'Demonstrate an appreciation of the importance of statistics based on the Book of Numbers' in Tanzania and propose solutions. - locally",
+          "competence": "Demonstrate an appreciation of the importance of statistics "
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use the Book of Joshua to discuss the importance of bravery, humility and perseverance",
+          "text": "Evaluate the role of 'Use the Book of Joshua to discuss the importance of bravery, humility and perseverance' in national development.",
+          "competence": "Use the Book of Joshua to discuss the importance of bravery,"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an appreciation of the importance of statistics based on the Book of Numbers",
+          "text": "Outline the procedures involved in 'Demonstrate an appreciation of the importance of statistics based on the Book of Numbers'. - locally",
+          "competence": "Demonstrate an appreciation of the importance of statistics "
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an appreciation of the importance of statistics based on the Book of Numbers",
+          "text": "How does 'Demonstrate an appreciation of the importance of statistics based on the Book of Numbers' relate to sustainable development?",
+          "competence": "Demonstrate an appreciation of the importance of statistics "
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an appreciation of the importance of statistics based on the Book of Numbers",
+          "text": "Analyse the causes and effects of 'Demonstrate an appreciation of the importance of statistics based on the Book of Numbers'.",
+          "competence": "Demonstrate an appreciation of the importance of statistics "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an appreciation of the importance of statistics based on the Book of Numbers",
+          "text": "Analyse the causes and effects of 'Demonstrate an appreciation of the importance of statistics based on the Book of Numbers'.",
+          "competence": "Demonstrate an appreciation of the importance of statistics "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an appreciation of the importance of statistics based on the Book of Numbers",
+          "text": "Define 'Demonstrate an appreciation of the importance of statistics based on the Book of Numbers' and discuss its importance in everyday life. - locally",
+          "competence": "Demonstrate an appreciation of the importance of statistics "
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an appreciation of the importance of statistics based on the Book of Numbers",
+          "text": "Discuss the challenges facing 'Demonstrate an appreciation of the importance of statistics based on the Book of Numbers' in Tanzania and propose solutions. - with diagram",
+          "competence": "Demonstrate an appreciation of the importance of statistics "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use the Book of Joshua to discuss the importance of bravery, humility and perseverance",
+    "Demonstrate an appreciation of the importance of statistics based on the Book of Numbers"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

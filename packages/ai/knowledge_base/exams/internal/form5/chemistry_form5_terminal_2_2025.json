@@ -1,0 +1,249 @@
+{
+  "filename": "chemistry_form5_terminal_2_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2025",
+  "time": "2:30 Hours",
+  "title": "Chemistry - Terminal Exam 2 (FORM5 2025)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 118,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Design and carry-out a simple research project in Chemistry",
+          "text": "With examples, illustrate how 'Design and carry-out a simple research project in Chemistry' is applied in the community.",
+          "competence": "Design and carry-out a simple research project in Chemistry"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+          "text": "With examples, illustrate how 'Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons' is applied in the community. - with diagram",
+          "competence": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohy"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Explain the concept of 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Compare and contrast 'Conduct experiments in Chemistry' with related concepts.",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Examine the advantages and disadvantages of 'Use the electronic configuration of an element to locate their positions in the periodic table'. - with diagram",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+          "text": "Discuss the challenges facing 'Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol' in Tanzania and propose solutions.",
+          "competence": "Explore the basic tenets of Organic Chemistry (organic compo"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+          "text": "Define 'Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the preparation and properties of various compounds"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+          "text": "Evaluate the role of 'Demonstrate an understanding of chemical concepts and principles and their application in different contexts' in national development. - with diagram",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+          "text": "Define 'Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software' and discuss its importance in everyday life. - with diagram",
+          "competence": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Compare and contrast 'Perform experiments on the changes of matter from one state to another' with related concepts. - with diagram",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Evaluate the role of 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts' in national development. - with diagram",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use appropriate software to sketch the set-ups of experiments",
+          "text": "Compare and contrast 'Use appropriate software to sketch the set-ups of experiments' with related concepts.",
+          "competence": "Use appropriate software to sketch the set-ups of experiment"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Analyse the causes and effects of 'Describe the concept of matter (physical and chemical changes of matte'. - with diagram",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore reactions of complex compounds",
+          "text": "Discuss the challenges facing 'Explore reactions of complex compounds' in Tanzania and propose solutions.",
+          "competence": "Explore reactions of complex compounds"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "Evaluate the role of 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi' in national development. - with diagram",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Conduct synthesis of selected organic compounds",
+          "text": "Evaluate the role of 'Conduct synthesis of selected organic compounds' in national development. - with example",
+          "competence": "Conduct synthesis of selected organic compounds"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+          "text": "Describe the main features of 'Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance'. - with diagram",
+          "competence": "Describe the mole concept (comparison of the mole with other"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Define 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Prepare acid- base indicators using locally available materials",
+          "text": "Discuss the challenges facing 'Prepare acid- base indicators using locally available materials' in Tanzania and propose solutions. - with example",
+          "competence": "Prepare acid- base indicators using locally available materi"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+          "text": "Compare and contrast 'Explain the changes in the physical and chemical properties of elements across and down the periodic table' with related concepts. - with diagram",
+          "competence": "Explain the changes in the physical and chemical properties "
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain the concept of chemical bonding and the interactions of atoms to form molecules",
+          "text": "Compare and contrast 'Explain the concept of chemical bonding and the interactions of atoms to form molecules' with related concepts. - with example",
+          "competence": "Explain the concept of chemical bonding and the interactions"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of gases in terms of the gas laws and the kinetic theory of gases'. - with example",
+          "competence": "Describe the concept of gases in terms of the gas laws and t"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Explain the concept of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table' with examples relevant to Tanzania. - with diagram",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes'.",
+          "competence": "Explore the basic tenets of qualitative analysis (preliminar"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)",
+          "text": "Compare and contrast 'Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)' with related concepts.",
+          "competence": "Assess the applications of chemical equilibria in industries"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Design and carry-out a simple research project in Chemistry",
+    "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+    "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+    "Conduct experiments in Chemistry",
+    "Use the electronic configuration of an element to locate their positions in the periodic table",
+    "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+    "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+    "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+    "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+    "Perform experiments on the changes of matter from one state to another"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

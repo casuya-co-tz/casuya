@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form3_topical_7_2026.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 7 (FORM3 2026): Describe the concept of chemical ki",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Explain the concept of 'Conduct experiments in Chemistry' with examples relevant to Tanzania. - with example",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Examine the advantages and disadvantages of 'Conduct experiments in Chemistry'.",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Describe the main features of 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)'. - with example",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Evaluate the role of 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)' in national development. - with diagram",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Discuss the challenges facing 'Conduct experiments in Chemistry' in Tanzania and propose solutions.",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Evaluate the role of 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)' in national development. - with example",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Describe the main features of 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)'.",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Compare and contrast 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)' with related concepts.",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Evaluate the role of 'Conduct experiments in Chemistry' in national development. - with diagram",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Discuss the challenges facing 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)' in Tanzania and propose solutions.",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Conduct experiments in Chemistry",
+    "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

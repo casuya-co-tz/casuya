@@ -1,0 +1,289 @@
+{
+  "filename": "physics_form5_annual_2_2026.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2026",
+  "time": "3:00 Hours",
+  "title": "Physics - Annual Exam 2 (FORM5 2026)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 149,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "identify the different kinds of simple machines",
+          "text": "Discuss the challenges facing 'identify the different kinds of simple machines' in Tanzania and propose solutions.",
+          "competence": "identify the different kinds of simple machines"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Thermal Expansion of Liquids",
+          "text": "Assess the impact of 'Thermal Expansion of Liquids' on society. - with example",
+          "competence": "Thermal Expansion of Liquids"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "identify the cell defects",
+          "text": "What are the characteristics of 'identify the cell defects'? - with diagram",
+          "competence": "identify the cell defects"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "state the applications of earth’s magnetic ifeld",
+          "text": "Discuss the factors influencing 'state the applications of earth’s magnetic ifeld'.",
+          "competence": "state the applications of earth’s magnetic ifeld"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "identify the applications of pressure due to solids",
+          "text": "Assess the impact of 'identify the applications of pressure due to solids' on society. - locally",
+          "competence": "identify the applications of pressure due to solids"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Capillarity",
+          "text": "Discuss the challenges facing 'Capillarity' in Tanzania and propose solutions.",
+          "competence": "Capillarity"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "explain the concept of digital signals; and",
+          "text": "Explain the concept of 'explain the concept of digital signals; and' with examples relevant to Tanzania.",
+          "competence": "explain the concept of digital signals; and"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "explain the terms applied in simple machines; and",
+          "text": "Define 'explain the terms applied in simple machines; and' and discuss its importance in everyday life. - with example",
+          "competence": "explain the terms applied in simple machines; and"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "state the laws of refraction",
+          "text": "Discuss the challenges facing 'state the laws of refraction' in Tanzania and propose solutions.",
+          "competence": "state the laws of refraction"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Connect and analyse a simple electric circuit",
+          "text": "Evaluate the role of 'Connect and analyse a simple electric circuit' in national development.",
+          "competence": "Connect and analyse a simple electric circuit"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "describe the structure and mode of action of the X-ray tube",
+          "text": "Outline the procedures involved in 'describe the structure and mode of action of the X-ray tube'. - with diagram",
+          "competence": "describe the structure and mode of action of the X-ray tube"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "distinguish between elastic and inelastic collisions",
+          "text": "Compare and contrast 'distinguish between elastic and inelastic collisions' with related concepts.",
+          "competence": "distinguish between elastic and inelastic collisions"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Beam balance i",
+          "text": "Propose measures to improve 'Beam balance i' in schools. - locally",
+          "competence": "Beam balance i"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "describe the mode of action of a compound microscope",
+          "text": "Explain the relationship between 'describe the mode of action of a compound microscope' and its environment. - with diagram",
+          "competence": "describe the mode of action of a compound microscope"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 8,
+          "topic": "construct a simple lightning conductor",
+          "text": "Analyse the causes and effects of 'construct a simple lightning conductor'.",
+          "competence": "construct a simple lightning conductor"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "explain the effect of temperature on saturated vapour pressure (S.V.P) of a liquid",
+          "text": "Outline the procedures involved in 'explain the effect of temperature on saturated vapour pressure (S.V.P) of a liquid'. - with diagram",
+          "competence": "explain the effect of temperature on saturated vapour pressu"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Archimedes Principle",
+          "text": "Analyse the causes and effects of 'Archimedes Principle'. - with diagram",
+          "competence": "Archimedes Principle"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 5,
+          "topic": "identify the applications of natural radioactive substances",
+          "text": "Describe the main features of 'identify the applications of natural radioactive substances'. - with example",
+          "competence": "identify the applications of natural radioactive substances"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Surface Tension",
+          "text": "Define 'Surface Tension' and discuss its importance in everyday life. - with diagram",
+          "competence": "Surface Tension"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 5,
+          "topic": "state the S.I units of electromotive force and potential difference; and",
+          "text": "Describe the process of 'state the S.I units of electromotive force and potential difference; and' step by step.",
+          "competence": "state the S.I units of electromotive force and potential dif"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "describe the structure of the simple microscope",
+          "text": "Propose measures to improve 'describe the structure of the simple microscope' in schools. - locally",
+          "competence": "describe the structure of the simple microscope"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Sound Waves",
+          "text": "Analyse the causes and effects of 'Sound Waves'. - locally",
+          "competence": "Sound Waves"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 10,
+          "topic": "minimize heat losses due to radiation",
+          "text": "Examine the advantages and disadvantages of 'minimize heat losses due to radiation'.",
+          "competence": "minimize heat losses due to radiation"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "use convex and concave mirrors in daily life",
+          "text": "Explain the concept of 'use convex and concave mirrors in daily life' with examples relevant to Tanzania. - locally",
+          "competence": "use convex and concave mirrors in daily life"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 10,
+          "topic": "explain the origin of magnetism",
+          "text": "Describe the process of 'explain the origin of magnetism' step by step. - with example",
+          "competence": "explain the origin of magnetism"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 6,
+          "topic": "apply knowledge of conduction in daily life",
+          "text": "Explain the relationship between 'apply knowledge of conduction in daily life' and its environment. - locally",
+          "competence": "apply knowledge of conduction in daily life"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 10,
+          "topic": "explain the concept of inertia",
+          "text": "Explain the concept of 'explain the concept of inertia' with examples relevant to Tanzania.",
+          "competence": "explain the concept of inertia"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 8,
+          "topic": "apply equations of accelerated motion in daily life",
+          "text": "Outline the procedures involved in 'apply equations of accelerated motion in daily life'. - with diagram",
+          "competence": "apply equations of accelerated motion in daily life"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 6,
+          "topic": "apply Newton’s third law of motion",
+          "text": "Assess the impact of 'apply Newton’s third law of motion' on society.",
+          "competence": "apply Newton’s third law of motion"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 4,
+          "topic": "describe the composition of the atmosphere",
+          "text": "Discuss the factors influencing 'describe the composition of the atmosphere'. - with diagram",
+          "competence": "describe the composition of the atmosphere"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "identify the different kinds of simple machines",
+    "Thermal Expansion of Liquids",
+    "identify the cell defects",
+    "state the applications of earth’s magnetic ifeld",
+    "identify the applications of pressure due to solids",
+    "Capillarity",
+    "explain the concept of digital signals; and",
+    "explain the terms applied in simple machines; and",
+    "state the laws of refraction",
+    "Connect and analyse a simple electric circuit"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

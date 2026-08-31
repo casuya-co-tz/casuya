@@ -1,0 +1,218 @@
+{
+  "subject_code": "151",
+  "subject_name": "Economics",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of basic concepts, theories and principles in Economics",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the concepts, theories and principles used in Economics",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "ECO-FV-U1-L1",
+              "title": "Describe the concept and scope of economics (meaning and origin, importance, its relationship with other subjects, basic terminologies, branches, the central economic problem and fundamental economic questions)",
+              "markdown_content": "## a) Describe the concept and scope of economics (meaning and origin, importance, its relationship with other subjects, basic terminologies, branches, the central economic problem and fundamental economic questions)",
+              "periods": "220",
+              "page": 14
+            },
+            {
+              "lesson_id": "ECO-FV-U1-L2",
+              "title": "Describe economic systems (forms, features, advantages and disadvantages)",
+              "markdown_content": "## b) Describe economic systems (forms, features, advantages and disadvantages)",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "ECO-FV-U1-L3",
+              "title": "Explore the basic tenets of microeconomics (meaning, scope and goals)",
+              "markdown_content": "## c) Explore the basic tenets of microeconomics (meaning, scope and goals)",
+              "periods": "",
+              "page": 16
+            },
+            {
+              "lesson_id": "ECO-FV-U1-L4",
+              "title": "Describe the price theory (demand, supply, market equilibrium and elasticity)",
+              "markdown_content": "## d) Describe the price theory (demand, supply, market equilibrium and elasticity)",
+              "periods": "",
+              "page": 17
+            },
+            {
+              "lesson_id": "ECO-FV-U1-L5",
+              "title": "D escribe the theories of production and costs (factors of production",
+              "markdown_content": "## e) D escribe the theories of production and costs (factors of production",
+              "periods": "",
+              "page": 17
+            },
+            {
+              "lesson_id": "ECO-FV-U1-L6",
+              "title": "production function, objectives and profit of firms, scale and costs of production and revenue)",
+              "markdown_content": "## a) production function, objectives and profit of firms, scale and costs of production and revenue)",
+              "periods": "",
+              "page": 18
+            },
+            {
+              "lesson_id": "ECO-FV-U1-L7",
+              "title": "Describe the concept of the market (meaning, types and structures)",
+              "markdown_content": "## f) Describe the concept of the market (meaning, types and structures)",
+              "periods": "",
+              "page": 18
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate mastery of economic analysis",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "ECO-FV-U1-L8",
+              "title": "Examine the influence of the economic system on resource allocation and distribution",
+              "markdown_content": "## a) Examine the influence of the economic system on resource allocation and distribution",
+              "periods": "50",
+              "page": 19
+            },
+            {
+              "lesson_id": "ECO-FV-U1-L9",
+              "title": "Use the price theory to explain the effects of pricing on consumer behaviour and business profits",
+              "markdown_content": "## b) Use the price theory to explain the effects of pricing on consumer behaviour and business profits",
+              "periods": "",
+              "page": 20
+            },
+            {
+              "lesson_id": "ECO-FV-U1-L10",
+              "title": "Apply production, cost and market theories to make decisions on price and output",
+              "markdown_content": "## c) Apply production, cost and market theories to make decisions on price and output",
+              "periods": "",
+              "page": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": ". Conduct a project in Economics",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Design and carry out a project in Economics",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "ECO-FV-U2-L11",
+              "title": "Design and execute a research project on an appropriate economic problem",
+              "markdown_content": "## a) Design and execute a research project on an appropriate economic problem",
+              "periods": "80",
+              "page": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of basic concepts, theories and principles in Economics",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the concepts, theories and principles used in Economics",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "ECO-FVI-U1-L12",
+              "title": "Explore the basic tenets of macroeconomics (meaning, scope and goals)",
+              "markdown_content": "## a) Explore the basic tenets of macroeconomics (meaning, scope and goals)",
+              "periods": "",
+              "page": 23
+            },
+            {
+              "lesson_id": "ECO-FVI-U1-L13",
+              "title": "Describe national income (key terms, approaches of measuring, determinants, importance, effect on standard of living and determination of equilibrium)",
+              "markdown_content": "## b) Describe national income (key terms, approaches of measuring, determinants, importance, effect on standard of living and determination of equilibrium)",
+              "periods": "",
+              "page": 24
+            },
+            {
+              "lesson_id": "ECO-FVI-U1-L14",
+              "title": "Describe unemployment (key terms, forms, causes, effects and control measures)",
+              "markdown_content": "## c) Describe unemployment (key terms, forms, causes, effects and control measures)",
+              "periods": "",
+              "page": 25
+            },
+            {
+              "lesson_id": "ECO-FVI-U1-L15",
+              "title": "Describe money (key terms, the evolution of money, functions and monetary policies)",
+              "markdown_content": "## d) Describe money (key terms, the evolution of money, functions and monetary policies)",
+              "periods": "",
+              "page": 26
+            },
+            {
+              "lesson_id": "ECO-FVI-U1-L16",
+              "title": "Describe inflation (meaning, types, causes, effects and control measures)",
+              "markdown_content": "## e) Describe inflation (meaning, types, causes, effects and control measures)",
+              "periods": "",
+              "page": 27
+            },
+            {
+              "lesson_id": "ECO-FVI-U1-L17",
+              "title": "Describe public finance (key terms, government revenue and expenditure, public debt and fiscal policy)",
+              "markdown_content": "## f) Describe public finance (key terms, government revenue and expenditure, public debt and fiscal policy)",
+              "periods": "",
+              "page": 28
+            },
+            {
+              "lesson_id": "ECO-FVI-U1-L18",
+              "title": "Describe international trade (meaning, advantages, disadvantages, terms of trade, balance of payments, absolute and comparative advantage and protectionism)",
+              "markdown_content": "## g) Describe international trade (meaning, advantages, disadvantages, terms of trade, balance of payments, absolute and comparative advantage and protectionism)",
+              "periods": "",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "topic_name": "D emonstrate mastery of economic analysis",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "ECO-FVI-U1-L19",
+              "title": "Apply macroeconomic theories to explain the state of national and international economies",
+              "markdown_content": "## a) Apply macroeconomic theories to explain the state of national and international economies",
+              "periods": "50",
+              "page": 31
+            },
+            {
+              "lesson_id": "ECO-FVI-U1-L20",
+              "title": "Apply macroeconomic theories to explain the levels of socio- economic development of nations",
+              "markdown_content": "## b) Apply macroeconomic theories to explain the levels of socio- economic development of nations",
+              "periods": "",
+              "page": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct a project in Economics",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Design and carry out a project in Economics",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "ECO-FVI-U2-L21",
+              "title": "Complete and submit a report of the project developed in Form Five",
+              "markdown_content": "## a) Complete and submit a report of the project developed in Form Five",
+              "periods": "50",
+              "page": 32
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

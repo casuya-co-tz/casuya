@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form2_topical_7_2026.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 7 (FORM2 2026): Use pricing techniques to determine",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare a medium scale business plan",
+          "text": "Propose measures to improve 'Prepare a medium scale business plan' in schools. - locally",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare a medium scale business plan",
+          "text": "Explain the relationship between 'Prepare a medium scale business plan' and its environment. - with example",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare a medium scale business plan",
+          "text": "Explain the concept of 'Prepare a medium scale business plan' with examples relevant to Tanzania. - locally",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "What are the characteristics of 'Use pricing techniques to determine appropriate prices of products'?",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Prepare a medium scale business plan",
+          "text": "With examples, illustrate how 'Prepare a medium scale business plan' is applied in the community.",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Prepare a medium scale business plan",
+          "text": "Assess the impact of 'Prepare a medium scale business plan' on society. - locally",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Assess the impact of 'Use pricing techniques to determine appropriate prices of products' on society.",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Prepare a medium scale business plan",
+          "text": "With examples, illustrate how 'Prepare a medium scale business plan' is applied in the community.",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Evaluate the role of 'Use pricing techniques to determine appropriate prices of products' in national development. - locally",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Describe the main features of 'Use pricing techniques to determine appropriate prices of products'. - with diagram",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Prepare a medium scale business plan",
+    "Use pricing techniques to determine appropriate prices of products"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

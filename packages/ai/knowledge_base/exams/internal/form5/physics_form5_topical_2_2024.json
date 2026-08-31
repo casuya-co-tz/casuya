@@ -1,0 +1,121 @@
+{
+  "filename": "physics_form5_topical_2_2024.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Physics - Topical Test 2 (FORM5 2024): apply the knowledge of humidity in ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 48,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "apply the knowledge of humidity in daily life",
+          "text": "With examples, illustrate how 'apply the knowledge of humidity in daily life' is applied in the community. - with diagram",
+          "competence": "apply the knowledge of humidity in daily life"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "apply the knowledge of humidity in daily life",
+          "text": "Discuss the challenges facing 'apply the knowledge of humidity in daily life' in Tanzania and propose solutions. - with diagram",
+          "competence": "apply the knowledge of humidity in daily life"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "apply the knowledge of humidity in daily life",
+          "text": "With examples, illustrate how 'apply the knowledge of humidity in daily life' is applied in the community. - with diagram",
+          "competence": "apply the knowledge of humidity in daily life"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "apply the knowledge of humidity in daily life",
+          "text": "With examples, illustrate how 'apply the knowledge of humidity in daily life' is applied in the community.",
+          "competence": "apply the knowledge of humidity in daily life"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "pool table i",
+          "text": "Analyse the causes and effects of 'pool table i'. - locally",
+          "competence": "pool table i"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "pool table i",
+          "text": "Analyse the causes and effects of 'pool table i'.",
+          "competence": "pool table i"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "apply the knowledge of humidity in daily life",
+          "text": "Describe the process of 'apply the knowledge of humidity in daily life' step by step. - with diagram",
+          "competence": "apply the knowledge of humidity in daily life"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "apply the knowledge of humidity in daily life",
+          "text": "Describe the process of 'apply the knowledge of humidity in daily life' step by step. - with diagram",
+          "competence": "apply the knowledge of humidity in daily life"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "apply the knowledge of humidity in daily life",
+          "text": "Describe the main features of 'apply the knowledge of humidity in daily life'. - locally",
+          "competence": "apply the knowledge of humidity in daily life"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "pool table i",
+          "text": "Propose measures to improve 'pool table i' in schools.",
+          "competence": "pool table i"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "apply the knowledge of humidity in daily life",
+    "pool table i"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

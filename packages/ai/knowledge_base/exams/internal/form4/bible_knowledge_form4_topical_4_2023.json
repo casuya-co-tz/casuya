@@ -1,0 +1,121 @@
+{
+  "filename": "bible_knowledge_form4_topical_4_2023.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Bible Knowledge - Topical Test 4 (FORM4 2023): Identify the consequences of not ap",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Discuss Saul’s conversion and his missionary journeys",
+          "text": "Describe the main features of 'Discuss Saul’s conversion and his missionary journeys'.",
+          "competence": "Discuss Saul’s conversion and his missionary journeys"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Discuss Saul’s conversion and his missionary journeys",
+          "text": "Describe the process of 'Discuss Saul’s conversion and his missionary journeys' step by step. - with example",
+          "competence": "Discuss Saul’s conversion and his missionary journeys"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Identify the consequences of not appreciating God’s",
+          "text": "Examine the advantages and disadvantages of 'Identify the consequences of not appreciating God’s'. - with diagram",
+          "competence": "Identify the consequences of not appreciating God’s"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Identify the consequences of not appreciating God’s",
+          "text": "Assess the impact of 'Identify the consequences of not appreciating God’s' on society. - with diagram",
+          "competence": "Identify the consequences of not appreciating God’s"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Discuss Saul’s conversion and his missionary journeys",
+          "text": "Discuss the factors influencing 'Discuss Saul’s conversion and his missionary journeys'.",
+          "competence": "Discuss Saul’s conversion and his missionary journeys"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Identify the consequences of not appreciating God’s",
+          "text": "Describe the main features of 'Identify the consequences of not appreciating God’s'.",
+          "competence": "Identify the consequences of not appreciating God’s"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Discuss Saul’s conversion and his missionary journeys",
+          "text": "Compare and contrast 'Discuss Saul’s conversion and his missionary journeys' with related concepts. - locally",
+          "competence": "Discuss Saul’s conversion and his missionary journeys"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Identify the consequences of not appreciating God’s",
+          "text": "Define 'Identify the consequences of not appreciating God’s' and discuss its importance in everyday life. - with diagram",
+          "competence": "Identify the consequences of not appreciating God’s"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Identify the consequences of not appreciating God’s",
+          "text": "Describe the process of 'Identify the consequences of not appreciating God’s' step by step. - with diagram",
+          "competence": "Identify the consequences of not appreciating God’s"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Identify the consequences of not appreciating God’s",
+          "text": "What are the characteristics of 'Identify the consequences of not appreciating God’s'?",
+          "competence": "Identify the consequences of not appreciating God’s"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Discuss Saul’s conversion and his missionary journeys",
+    "Identify the consequences of not appreciating God’s"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

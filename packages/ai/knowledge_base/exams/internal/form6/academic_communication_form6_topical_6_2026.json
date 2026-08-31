@@ -1,0 +1,121 @@
+{
+  "filename": "academic_communication_form6_topical_6_2026.json",
+  "subject": "Academic Communication",
+  "subject_slug": "academic_communication",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Academic Communication - Topical Test 6 (FORM6 2026): Interpret simple illustrations used",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 32,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Interpret simple illustrations used in documents",
+          "text": "Examine the advantages and disadvantages of 'Interpret simple illustrations used in documents'. - locally",
+          "competence": "Interpret simple illustrations used in documents"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "How does 'Demonstrate mastery of using illustrations in academic documents' relate to sustainable development?",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Interpret simple illustrations used in documents",
+          "text": "Propose measures to improve 'Interpret simple illustrations used in documents' in schools.",
+          "competence": "Interpret simple illustrations used in documents"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "Describe the process of 'Demonstrate mastery of using illustrations in academic documents' step by step. - locally",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "Discuss the challenges facing 'Demonstrate mastery of using illustrations in academic documents' in Tanzania and propose solutions. - locally",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "Assess the impact of 'Demonstrate mastery of using illustrations in academic documents' on society. - with diagram",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "Evaluate the role of 'Demonstrate mastery of using illustrations in academic documents' in national development.",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "Explain the concept of 'Demonstrate mastery of using illustrations in academic documents' with examples relevant to Tanzania. - with diagram",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate mastery of using illustrations in academic documents'.",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate mastery of using illustrations in academic documents",
+          "text": "Explain the relationship between 'Demonstrate mastery of using illustrations in academic documents' and its environment.",
+          "competence": "Demonstrate mastery of using illustrations in academic docum"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Interpret simple illustrations used in documents",
+    "Demonstrate mastery of using illustrations in academic documents"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

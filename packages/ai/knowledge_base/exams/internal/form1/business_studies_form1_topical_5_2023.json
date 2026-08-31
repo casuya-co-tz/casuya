@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form1_topical_5_2023.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 5 (FORM1 2023): Use pricing techniques to determine",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 52,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim",
+          "text": "Assess the impact of 'Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim' on society. - with diagram",
+          "competence": "Explain the basic aspects of insurance for small businesses "
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Define 'Use pricing techniques to determine appropriate prices of products' and discuss its importance in everyday life. - with diagram",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Analyse the causes and effects of 'Use pricing techniques to determine appropriate prices of products'.",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Outline the procedures involved in 'Use pricing techniques to determine appropriate prices of products'.",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim",
+          "text": "Explain the relationship between 'Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim' and its environment. - with diagram",
+          "competence": "Explain the basic aspects of insurance for small businesses "
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim",
+          "text": "Propose measures to improve 'Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim' in schools. - with diagram",
+          "competence": "Explain the basic aspects of insurance for small businesses "
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "With examples, illustrate how 'Use pricing techniques to determine appropriate prices of products' is applied in the community. - locally",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Examine the advantages and disadvantages of 'Use pricing techniques to determine appropriate prices of products'. - with example",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim",
+          "text": "Compare and contrast 'Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim' with related concepts. - with example",
+          "competence": "Explain the basic aspects of insurance for small businesses "
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Analyse the causes and effects of 'Use pricing techniques to determine appropriate prices of products'.",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim",
+    "Use pricing techniques to determine appropriate prices of products"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

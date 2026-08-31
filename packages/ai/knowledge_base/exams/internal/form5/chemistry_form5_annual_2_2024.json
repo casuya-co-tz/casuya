@@ -1,0 +1,289 @@
+{
+  "filename": "chemistry_form5_annual_2_2024.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2024",
+  "time": "3:00 Hours",
+  "title": "Chemistry - Annual Exam 2 (FORM5 2024)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 127,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Perform experiments on volumetric analysis",
+          "text": "Define 'Perform experiments on volumetric analysis' and discuss its importance in everyday life.",
+          "competence": "Perform experiments on volumetric analysis"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Outline the procedures involved in 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry'.",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+          "text": "Explain the concept of 'Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms' with examples relevant to Tanzania. - with example",
+          "competence": "Relate the types of chemical reactions with common processes"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concepts of chemical elements (criteria for assigning chemical symbol",
+          "text": "With examples, illustrate how 'Describe the concepts of chemical elements (criteria for assigning chemical symbol' is applied in the community. - with example",
+          "competence": "Describe the concepts of chemical elements (criteria for ass"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "With examples, illustrate how 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi' is applied in the community.",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain Avogadro’s law in relation to molar quantities",
+          "text": "Describe the main features of 'Explain Avogadro’s law in relation to molar quantities'. - with diagram",
+          "competence": "Explain Avogadro’s law in relation to molar quantities"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)'.",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Evaluate the role of 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' in national development.",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Compare and contrast 'Analyse the periodic trends of elements in relation to their physical and chemical properties' with related concepts. - with example",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+          "text": "Discuss the challenges facing 'Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)' in Tanzania and propose solutions. - with example",
+          "competence": "Describe the physical and chemical properties of transition "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of advanced concepts and principles in organic chemistry'. - with diagram",
+          "competence": "Demonstrate an understanding of advanced concepts and princi"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+          "text": "Analyse the causes and effects of 'Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline'.",
+          "competence": "Describe the concept of Chemistry (meaning, branches, applic"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Examine the advantages and disadvantages of 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid'. - with diagram",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate mastery of the principles of extraction of metals",
+          "text": "With examples, illustrate how 'Demonstrate mastery of the principles of extraction of metals' is applied in the community.",
+          "competence": "Demonstrate mastery of the principles of extraction of metal"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Describe the main features of 'Discuss the contribution of Chemistry in the development of modern society'. - with diagram",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+          "text": "With examples, illustrate how '. Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry' is applied in the community. - with diagram",
+          "competence": ". Demonstrate an advanced understanding of the concepts, the"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+          "text": "Analyse the causes and effects of 'Use the concept of atomic structure to determine the atomic and mass numbers of an element'. - with example",
+          "competence": "Use the concept of atomic structure to determine the atomic "
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction'.",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
+          "text": "Outline the procedures involved in 'Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals'. - with diagram",
+          "competence": "Perform experiments on the applications of electrolysis in c"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Examine the advantages and disadvantages of 'Perform experiments on the changes of matter from one state to another'. - with example",
+          "competence": "Perform experiments on the changes of matter from one state "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Prepare acid- base indicators using locally available materials",
+          "text": "Define 'Prepare acid- base indicators using locally available materials' and discuss its importance in everyday life.",
+          "competence": "Prepare acid- base indicators using locally available materi"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 6,
+          "topic": "phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines",
+          "text": "Examine the advantages and disadvantages of 'phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines'. - with diagram",
+          "competence": "phenols, carbonyl compounds, carboxylic acids and their deri"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Describe the main features of 'Design and carry out a project in Chemistry'.",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Discuss the challenges facing 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate' in Tanzania and propose solutions. - with example",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+          "text": "Compare and contrast 'Explain the changes in the physical and chemical properties of elements across and down the periodic table' with related concepts. - with diagram",
+          "competence": "Explain the changes in the physical and chemical properties "
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+          "text": "Outline the procedures involved in 'Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures'. - with example",
+          "competence": "Describe the chemical reactions of aliphatic hydrocarbons an"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+          "text": "Compare and contrast 'Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture' with related concepts.",
+          "competence": "Describe the applications of volumetric analysis in real lif"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+          "text": "Analyse the causes and effects of 'Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)'. - with example",
+          "competence": "Describe the concept of the atom (Dalton’s atomic theory, Bo"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
+          "text": "Evaluate the role of 'Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid' in national development. - with example",
+          "competence": "Demonstrate oxidizing and displacement properties of non-met"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the physical and chemical properties of elements on the basis of their arrangements in the periodic table",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the physical and chemical properties of elements on the basis of their arrangements in the periodic table' is applied in the community. - with example",
+          "competence": "Demonstrate an understanding of the physical and chemical pr"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Perform experiments on volumetric analysis",
+    "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+    "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+    "Describe the concepts of chemical elements (criteria for assigning chemical symbol",
+    "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+    "Explain Avogadro’s law in relation to molar quantities",
+    "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+    "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+    "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+    "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

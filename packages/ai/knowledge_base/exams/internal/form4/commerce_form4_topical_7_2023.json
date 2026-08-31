@@ -1,0 +1,121 @@
+{
+  "filename": "commerce_form4_topical_7_2023.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Commerce - Topical Test 7 (FORM4 2023): Aids to Trade",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 48,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain aids to trade",
+          "text": "Compare and contrast 'Explain aids to trade' with related concepts. - with example",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Aids to Trade",
+          "text": "Explain the concept of 'Aids to Trade' with examples relevant to Tanzania.",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Aids to Trade",
+          "text": "Analyse the causes and effects of 'Aids to Trade'.",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain aids to trade",
+          "text": "Examine the advantages and disadvantages of 'Explain aids to trade'. - with example",
+          "competence": "Explain aids to trade"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain aids to trade",
+          "text": "With examples, illustrate how 'Explain aids to trade' is applied in the community. - with diagram",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain aids to trade",
+          "text": "Evaluate the role of 'Explain aids to trade' in national development.",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain aids to trade",
+          "text": "Analyse the causes and effects of 'Explain aids to trade'. - with diagram",
+          "competence": "Explain aids to trade"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Aids to Trade",
+          "text": "Describe the main features of 'Aids to Trade'. - with diagram",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Aids to Trade",
+          "text": "Define 'Aids to Trade' and discuss its importance in everyday life.",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Aids to Trade",
+          "text": "Define 'Aids to Trade' and discuss its importance in everyday life.",
+          "competence": "Aids to Trade"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain aids to trade",
+    "Aids to Trade"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "basic_applied_mathematics_form6_midterm2_2_2025.json",
+  "subject": "Basic Applied Mathematics",
+  "subject_slug": "basic_applied_mathematics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Basic Applied Mathematics - Midterm 2 Exam 2 (FORM6 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 86,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "product, cross product, angle between two vectors and work done by a constant force, derivative and integration of vector functions)",
+          "text": "Define 'product, cross product, angle between two vectors and work done by a constant force, derivative and integration of vector functions)' and discuss its importance in everyday life.",
+          "competence": "product, cross product, angle between two vectors and work d"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Apply knowledge of sequences and series in different contexts",
+          "text": "Discuss the factors influencing 'Apply knowledge of sequences and series in different contexts'.",
+          "competence": "Apply knowledge of sequences and series in different context"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore some advanced tenets of functions (Properties, Domain and Range and graphs of cubic functions, rational functions with a constant numerator and a linear equation in the denominator, logarithmic, and exponential functions)",
+          "text": "Explain the concept of 'Explore some advanced tenets of functions (Properties, Domain and Range and graphs of cubic functions, rational functions with a constant numerator and a linear equation in the denominator, logarithmic, and exponential functions)' with examples relevant to Tanzania.",
+          "competence": "Explore some advanced tenets of functions (Properties, Domai"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use sequences and series to determine simple and compound interest",
+          "text": "Examine the advantages and disadvantages of 'Use sequences and series to determine simple and compound interest'.",
+          "competence": "Use sequences and series to determine simple and compound in"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore some advanced tenets of statistics (measure of central tendency and dispersion:",
+          "text": "Discuss the challenges facing 'Explore some advanced tenets of statistics (measure of central tendency and dispersion:' in Tanzania and propose solutions. - locally",
+          "competence": "Explore some advanced tenets of statistics (measure of centr"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": ". Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts",
+          "text": "Describe the process of '. Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts' step by step.",
+          "competence": ". Use some advanced skills in geometry, trigonometry, and ve"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of logic (statements, connectives, truth table, arguments involving three propositions, electrical networks involving three propositions)",
+          "text": "Assess the impact of 'Explore the basic tenets of logic (statements, connectives, truth table, arguments involving three propositions, electrical networks involving three propositions)' on society. - with example",
+          "competence": "Explore the basic tenets of logic (statements, connectives, "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore some advanced tenets of coordinate geometry (area of a triangle, angle between two lines and perpendicular distance from a point to a line)",
+          "text": "Describe the main features of 'Explore some advanced tenets of coordinate geometry (area of a triangle, angle between two lines and perpendicular distance from a point to a line)'.",
+          "competence": "Explore some advanced tenets of coordinate geometry (area of"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "calculate mean by the coding method, variance, standard deviation, quartiles, and percentiles)",
+          "text": "Assess the impact of 'calculate mean by the coding method, variance, standard deviation, quartiles, and percentiles)' on society.",
+          "competence": "calculate mean by the coding method, variance, standard devi"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use set theory and logic in argumentation and decision making",
+          "text": "Assess the impact of 'Use set theory and logic in argumentation and decision making' on society.",
+          "competence": "Use set theory and logic in argumentation and decision makin"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use functions and calculus to solve problems in different contexts",
+          "text": "Describe the main features of 'Use functions and calculus to solve problems in different contexts'. - with example",
+          "competence": "Use functions and calculus to solve problems in different co"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the basic tenets of calculus (Differentiation: first principles, power rule, chain rule, product rule, and quotient rule, Integration: substitution method)",
+          "text": "Describe the main features of 'Explore the basic tenets of calculus (Differentiation: first principles, power rule, chain rule, product rule, and quotient rule, Integration: substitution method)'.",
+          "competence": "Explore the basic tenets of calculus (Differentiation: first"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore some advanced tenets of vectors (unit vector, scalar",
+          "text": "Discuss the factors influencing 'Explore some advanced tenets of vectors (unit vector, scalar'. - locally",
+          "competence": "Explore some advanced tenets of vectors (unit vector, scalar"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Solve real life problems involving growth and decay",
+          "text": "Describe the process of 'Solve real life problems involving growth and decay' step by step.",
+          "competence": "Solve real life problems involving growth and decay"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)",
+          "text": "How does 'Explore some advanced tenets of trigonometry (relationship of the secant, cosecant, and cotangent to the sine, cosine, and tangent, trigonometric identities: Pythagorean, compound and double angles)' relate to sustainable development? - locally",
+          "competence": "Explore some advanced tenets of trigonometry (relationship o"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)",
+          "text": "Discuss the factors influencing 'Explore advanced tenets of set theory (operations involving three sets and cardinality of a set)'.",
+          "competence": "Explore advanced tenets of set theory (operations involving "
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use differentiation methods to solve real life problems (maximum and minimum, curve sketching, rate of change",
+          "text": "Define 'Use differentiation methods to solve real life problems (maximum and minimum, curve sketching, rate of change' and discuss its importance in everyday life.",
+          "competence": "Use differentiation methods to solve real life problems (max"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "graphically, graphs of direct and inverse variation)",
+          "text": "Define 'graphically, graphs of direct and inverse variation)' and discuss its importance in everyday life.",
+          "competence": "graphically, graphs of direct and inverse variation)"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "How does 'Use statistics to solve problems in different contexts' relate to sustainable development? - with diagram",
+          "competence": "Use statistics to solve problems in different contexts"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts",
+          "text": "Describe the process of 'Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts' step by step. - with diagram",
+          "competence": "Use some advanced skills in geometry, trigonometry, and vect"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "product, cross product, angle between two vectors and work done by a constant force, derivative and integration of vector functions)",
+    "Apply knowledge of sequences and series in different contexts",
+    "Explore some advanced tenets of functions (Properties, Domain and Range and graphs of cubic functions, rational functions with a constant numerator and a linear equation in the denominator, logarithmic, and exponential functions)",
+    "Use sequences and series to determine simple and compound interest",
+    "Explore some advanced tenets of statistics (measure of central tendency and dispersion:",
+    ". Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts",
+    "Explore the basic tenets of logic (statements, connectives, truth table, arguments involving three propositions, electrical networks involving three propositions)",
+    "Explore some advanced tenets of coordinate geometry (area of a triangle, angle between two lines and perpendicular distance from a point to a line)",
+    "calculate mean by the coding method, variance, standard deviation, quartiles, and percentiles)",
+    "Use set theory and logic in argumentation and decision making"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

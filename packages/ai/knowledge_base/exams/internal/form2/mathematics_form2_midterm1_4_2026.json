@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form2_midterm1_4_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 1 Exam 4 (FORM2 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 97,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Define 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' and discuss its importance in everyday life.",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Calculate angles of elevation and depression",
+          "text": "Explain the relationship between 'Calculate angles of elevation and depression' and its environment.",
+          "competence": "Calculate angles of elevation and depression"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+          "text": "Discuss the challenges facing 'Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)' in Tanzania and propose solutions.",
+          "competence": "Explore basic tenets of logic (connectives, propositions, ar"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use numerical skills in different contexts",
+          "text": "Analyse the causes and effects of 'Use numerical skills in different contexts'. - with diagram",
+          "competence": "Use numerical skills in different contexts"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Calculate arithmetic mean, geometric mean, and compound interest",
+          "text": "Analyse the causes and effects of 'Calculate arithmetic mean, geometric mean, and compound interest'.",
+          "competence": "Calculate arithmetic mean, geometric mean, and compound inte"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use statistics in problem solving",
+          "text": "Describe the process of 'Use statistics in problem solving' step by step. - locally",
+          "competence": "Use statistics in problem solving"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concepts of relations and functions (linear and quadrati",
+          "text": "Evaluate the role of 'Describe the concepts of relations and functions (linear and quadrati' in national development. - with example",
+          "competence": "Describe the concepts of relations and functions (linear and"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Carry out a project to solve a problem using mathematical skills",
+          "text": "Assess the impact of 'Carry out a project to solve a problem using mathematical skills' on society. - with diagram",
+          "competence": "Carry out a project to solve a problem using mathematical sk"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use approximations in computations and measurements of quantities in various contexts",
+          "text": "How does 'Use approximations in computations and measurements of quantities in various contexts' relate to sustainable development? - locally",
+          "competence": "Use approximations in computations and measurements of quant"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Represent rational numbers on a number line",
+          "text": "How does 'Represent rational numbers on a number line' relate to sustainable development? - with example",
+          "competence": "Represent rational numbers on a number line"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the concept of rational, irrational, and real numbers",
+          "text": "Analyse the causes and effects of 'Explain the concept of rational, irrational, and real numbers'.",
+          "competence": "Explain the concept of rational, irrational, and real number"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Solve simultaneous equations using substitution and elimination methods",
+          "text": "With examples, illustrate how 'Solve simultaneous equations using substitution and elimination methods' is applied in the community. - with diagram",
+          "competence": "Solve simultaneous equations using substitution and eliminat"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use probability in problem solving",
+          "text": "Analyse the causes and effects of 'Use probability in problem solving'. - locally",
+          "competence": "Use probability in problem solving"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Find the gradient/ slope of a line",
+          "text": "Examine the advantages and disadvantages of 'Find the gradient/ slope of a line'.",
+          "competence": "Find the gradient/ slope of a line"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "Assess the impact of 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc' on society.",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic",
+          "text": "Explain the concept of 'Explore advanced tenets of algebra (series of squares and cubes of natural numbers, roots, quadratic' with examples relevant to Tanzania.",
+          "competence": "Explore advanced tenets of algebra (series of squares and cu"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use logic to analyse arguments and construct circuit diagrams",
+          "text": "Assess the impact of 'Use logic to analyse arguments and construct circuit diagrams' on society.",
+          "competence": "Use logic to analyse arguments and construct circuit diagram"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Represent two sets in a Venn diagram",
+          "text": "What are the characteristics of 'Represent two sets in a Venn diagram'?",
+          "competence": "Represent two sets in a Venn diagram"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+          "text": "Discuss the challenges facing 'Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde' in Tanzania and propose solutions. - with example",
+          "competence": "Identify and use laws of exponents involving positive, negat"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use rates and variations in different contexts",
+          "text": "Assess the impact of 'Use rates and variations in different contexts' on society. - with example",
+          "competence": "Use rates and variations in different contexts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+    "Calculate angles of elevation and depression",
+    "Explore basic tenets of logic (connectives, propositions, arguments, and electrical networks)",
+    "Use numerical skills in different contexts",
+    "Calculate arithmetic mean, geometric mean, and compound interest",
+    "Use statistics in problem solving",
+    "Describe the concepts of relations and functions (linear and quadrati",
+    "Carry out a project to solve a problem using mathematical skills",
+    "Use approximations in computations and measurements of quantities in various contexts",
+    "Represent rational numbers on a number line"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

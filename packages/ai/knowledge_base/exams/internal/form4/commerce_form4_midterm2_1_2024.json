@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form4_midterm2_1_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 2 Exam 1 (FORM4 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 93,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain insurance",
+          "text": "Compare and contrast 'Explain insurance' with related concepts.",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Stock Control",
+          "text": "Evaluate the role of 'Stock Control' in national development. - with diagram",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain communication",
+          "text": "Evaluate the role of 'Explain communication' in national development.",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain trade",
+          "text": "Outline the procedures involved in 'Explain trade'.",
+          "competence": "Explain trade"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Transport",
+          "text": "Analyse the causes and effects of 'Transport'.",
+          "competence": "Transport"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain stock control",
+          "text": "Analyse the causes and effects of 'Explain stock control'. - with example",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Sources of Business Finance",
+          "text": "Explain the concept of 'Sources of Business Finance' with examples relevant to Tanzania. - with diagram",
+          "competence": "Sources of Business Finance"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain aids to trade",
+          "text": "Evaluate the role of 'Explain aids to trade' in national development. - with diagram",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Warehousing",
+          "text": "With examples, illustrate how 'Warehousing' is applied in the community. - with example",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain warehousing",
+          "text": "Outline the procedures involved in 'Explain warehousing'. - with example",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain companies",
+          "text": "Examine the advantages and disadvantages of 'Explain companies'.",
+          "competence": "Explain companies"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain sources of business finance",
+          "text": "Define 'Explain sources of business finance' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain sole proprietorship",
+          "text": "Define 'Explain sole proprietorship' and discuss its importance in everyday life.",
+          "competence": "Explain sole proprietorship"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Companies",
+          "text": "Explain the concept of 'Companies' with examples relevant to Tanzania. - with diagram",
+          "competence": "Companies"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain cooperative",
+          "text": "Discuss the challenges facing 'Explain cooperative' in Tanzania and propose solutions.",
+          "competence": "Explain cooperative"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Advertisement",
+          "text": "Analyse the causes and effects of 'Advertisement'.",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain advertisement",
+          "text": "Define 'Explain advertisement' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Insurance",
+          "text": "Describe the main features of 'Insurance'.",
+          "competence": "Insurance"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain market and marketing",
+          "text": "Define 'Explain market and marketing' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain market and marketing"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Market and Marketing",
+          "text": "Compare and contrast 'Market and Marketing' with related concepts.",
+          "competence": "Market and Marketing"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain insurance",
+    "Stock Control",
+    "Explain communication",
+    "Explain trade",
+    "Transport",
+    "Explain stock control",
+    "Sources of Business Finance",
+    "Explain aids to trade",
+    "Warehousing",
+    "Explain warehousing"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "commerce_form3_topical_5_2026.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Commerce - Topical Test 5 (FORM3 2026): Marketing Mix",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain communication",
+          "text": "Define 'Explain communication' and discuss its importance in everyday life. - with example",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Marketing Mix",
+          "text": "With examples, illustrate how 'Marketing Mix' is applied in the community. - with diagram",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain communication",
+          "text": "Discuss the challenges facing 'Explain communication' in Tanzania and propose solutions.",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Marketing Mix",
+          "text": "Discuss the challenges facing 'Marketing Mix' in Tanzania and propose solutions. - with example",
+          "competence": "Marketing Mix"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Marketing Mix",
+          "text": "Compare and contrast 'Marketing Mix' with related concepts.",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Marketing Mix",
+          "text": "Explain the concept of 'Marketing Mix' with examples relevant to Tanzania. - with diagram",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Marketing Mix",
+          "text": "Explain the concept of 'Marketing Mix' with examples relevant to Tanzania. - with diagram",
+          "competence": "Marketing Mix"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain communication",
+          "text": "Evaluate the role of 'Explain communication' in national development. - with diagram",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Marketing Mix",
+          "text": "Discuss the challenges facing 'Marketing Mix' in Tanzania and propose solutions. - with example",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain communication",
+          "text": "Discuss the challenges facing 'Explain communication' in Tanzania and propose solutions.",
+          "competence": "Explain communication"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain communication",
+    "Marketing Mix"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

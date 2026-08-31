@@ -1,0 +1,121 @@
+{
+  "filename": "civics_form1_topical_3_2026.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Civics - Topical Test 3 (FORM1 2026): National Unity",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "National Unity",
+          "text": "Compare and contrast 'National Unity' with related concepts.",
+          "competence": "National Unity"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Life Skills",
+          "text": "Describe the main features of 'Life Skills'. - with diagram",
+          "competence": "Life Skills"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "National Unity",
+          "text": "Outline the procedures involved in 'National Unity'. - with example",
+          "competence": "National Unity"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "National Unity",
+          "text": "Evaluate the role of 'National Unity' in national development. - with diagram",
+          "competence": "National Unity"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "National Unity",
+          "text": "Examine the advantages and disadvantages of 'National Unity'. - with example",
+          "competence": "National Unity"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Life Skills",
+          "text": "Describe the main features of 'Life Skills'. - with diagram",
+          "competence": "Life Skills"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Life Skills",
+          "text": "Explain the concept of 'Life Skills' with examples relevant to Tanzania.",
+          "competence": "Life Skills"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Life Skills",
+          "text": "Define 'Life Skills' and discuss its importance in everyday life.",
+          "competence": "Life Skills"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "National Unity",
+          "text": "Discuss the challenges facing 'National Unity' in Tanzania and propose solutions. - with example",
+          "competence": "National Unity"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "National Unity",
+          "text": "Compare and contrast 'National Unity' with related concepts. - with example",
+          "competence": "National Unity"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "National Unity",
+    "Life Skills"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

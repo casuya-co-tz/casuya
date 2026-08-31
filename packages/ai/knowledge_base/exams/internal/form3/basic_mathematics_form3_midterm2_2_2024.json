@@ -1,0 +1,209 @@
+{
+  "filename": "basic_mathematics_form3_midterm2_2_2024.json",
+  "subject": "Basic Mathematics",
+  "subject_slug": "basic_mathematics",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Basic Mathematics - Midterm 2 Exam 2 (FORM3 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 78,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain fractions",
+          "text": "Examine the advantages and disadvantages of 'Explain fractions'. - with example",
+          "competence": "Explain fractions"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Fractions",
+          "text": "Compare and contrast 'Fractions' with related concepts. - with example",
+          "competence": "Fractions"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Whole Numbers",
+          "text": "Describe the main features of 'Whole Numbers'.",
+          "competence": "Whole Numbers"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Algebraic Expressions",
+          "text": "Examine the advantages and disadvantages of 'Algebraic Expressions'.",
+          "competence": "Algebraic Expressions"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain triangles",
+          "text": "Explain the concept of 'Explain triangles' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain triangles"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain probability",
+          "text": "With examples, illustrate how 'Explain probability' is applied in the community. - with diagram",
+          "competence": "Explain probability"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain sets",
+          "text": "Compare and contrast 'Explain sets' with related concepts.",
+          "competence": "Explain sets"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain circles",
+          "text": "Define 'Explain circles' and discuss its importance in everyday life.",
+          "competence": "Explain circles"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Probability",
+          "text": "Define 'Probability' and discuss its importance in everyday life.",
+          "competence": "Probability"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain angles",
+          "text": "With examples, illustrate how 'Explain angles' is applied in the community. - with example",
+          "competence": "Explain angles"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Equations",
+          "text": "With examples, illustrate how 'Equations' is applied in the community. - with diagram",
+          "competence": "Equations"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Sets",
+          "text": "With examples, illustrate how 'Sets' is applied in the community. - with example",
+          "competence": "Sets"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Decimals",
+          "text": "Discuss the challenges facing 'Decimals' in Tanzania and propose solutions. - with diagram",
+          "competence": "Decimals"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain whole numbers",
+          "text": "With examples, illustrate how 'Explain whole numbers' is applied in the community. - with diagram",
+          "competence": "Explain whole numbers"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain decimals",
+          "text": "Examine the advantages and disadvantages of 'Explain decimals'.",
+          "competence": "Explain decimals"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Percentages",
+          "text": "With examples, illustrate how 'Percentages' is applied in the community. - with diagram",
+          "competence": "Percentages"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Inequations",
+          "text": "Define 'Inequations' and discuss its importance in everyday life. - with example",
+          "competence": "Inequations"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain algebraic expressions",
+          "text": "With examples, illustrate how 'Explain algebraic expressions' is applied in the community.",
+          "competence": "Explain algebraic expressions"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Angles",
+          "text": "Compare and contrast 'Angles' with related concepts. - with example",
+          "competence": "Angles"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain data collection",
+          "text": "Evaluate the role of 'Explain data collection' in national development. - with example",
+          "competence": "Explain data collection"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain fractions",
+    "Fractions",
+    "Whole Numbers",
+    "Algebraic Expressions",
+    "Explain triangles",
+    "Explain probability",
+    "Explain sets",
+    "Explain circles",
+    "Probability",
+    "Explain angles"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

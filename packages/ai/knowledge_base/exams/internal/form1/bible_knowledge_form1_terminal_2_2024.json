@@ -1,0 +1,249 @@
+{
+  "filename": "bible_knowledge_form1_terminal_2_2024.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2024",
+  "time": "2:30 Hours",
+  "title": "Bible Knowledge - Terminal Exam 2 (FORM1 2024)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 113,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Analyse the Fall of Man and its consequences",
+          "text": "Describe the main features of 'Analyse the Fall of Man and its consequences'. - with example",
+          "competence": "Analyse the Fall of Man and its consequences"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Discuss the methods used by the Jerusa- lem Council to solve con- flict and bring peace, equality and unity in the early Church",
+          "text": "Explain the concept of 'Discuss the methods used by the Jerusa- lem Council to solve con- flict and bring peace, equality and unity in the early Church' with examples relevant to Tanzania.",
+          "competence": "Discuss the methods used by the Jerusa- lem Council to solve"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an appreciation of God’s commandments as outlined in the Book of Exodus",
+          "text": "What are the characteristics of 'Demonstrate an appreciation of God’s commandments as outlined in the Book of Exodus'?",
+          "competence": "Demonstrate an appreciation of God’s commandments as outline"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an appreciation of devotion to spreading the Gospel",
+          "text": "Propose measures to improve 'Demonstrate an appreciation of devotion to spreading the Gospel' in schools. - locally",
+          "competence": "Demonstrate an appreciation of devotion to spreading the Gos"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Show how the concept of God’s love and compassion appears in the Book of Exodus",
+          "text": "With examples, illustrate how 'Show how the concept of God’s love and compassion appears in the Book of Exodus' is applied in the community.",
+          "competence": "Show how the concept of God’s love and compassion appears in"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Show the indicators of Moses’ leadership qualities",
+          "text": "Assess the impact of 'Show the indicators of Moses’ leadership qualities' on society. - locally",
+          "competence": "Show the indicators of Moses’ leadership qualities"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the Sinai Covenant",
+          "text": "What are the characteristics of 'Explain the Sinai Covenant'? - with diagram",
+          "competence": "Explain the Sinai Covenant"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the Concept of the Book of Exodus",
+          "text": "Outline the procedures involved in 'Describe the Concept of the Book of Exodus'.",
+          "competence": "Describe the Concept of the Book of Exodus"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the Book of Joshua to discuss the importance of preparing leaders",
+          "text": "Describe the main features of 'Use the Book of Joshua to discuss the importance of preparing leaders'.",
+          "competence": "Use the Book of Joshua to discuss the importance of preparin"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use the Gospel according to Luke to appreciate the importance of family life",
+          "text": "Define 'Use the Gospel according to Luke to appreciate the importance of family life' and discuss its importance in everyday life.",
+          "competence": "Use the Gospel according to Luke to appreciate the importanc"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Identify the methods used by Jesus in his Ministry (parables and miracle",
+          "text": "Assess the impact of 'Identify the methods used by Jesus in his Ministry (parables and miracle' on society. - with example",
+          "competence": "Identify the methods used by Jesus in his Ministry (parables"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the concept of God’s creation",
+          "text": "Assess the impact of 'Describe the concept of God’s creation' on society. - locally",
+          "competence": "Describe the concept of God’s creation"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Identify the main ideas in the book of Joshua",
+          "text": "How does 'Identify the main ideas in the book of Joshua' relate to sustainable development?",
+          "competence": "Identify the main ideas in the book of Joshua"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate mastery of the Holy Scripture through the Book of Joshua",
+          "text": "Compare and contrast 'Demonstrate mastery of the Holy Scripture through the Book of Joshua' with related concepts. - with example",
+          "competence": "Demonstrate mastery of the Holy Scripture through the Book o"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Clarify God’s Commandments as stated in the Book of Exodus",
+          "text": "With examples, illustrate how 'Clarify God’s Commandments as stated in the Book of Exodus' is applied in the community. - with example",
+          "competence": "Clarify God’s Commandments as stated in the Book of Exodus"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Love and Compassion",
+          "text": "Evaluate the role of 'Love and Compassion' in national development. - locally",
+          "competence": "Love and Compassion"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Determine the resolution of conflicts during the growth of the early Church",
+          "text": "Explain the concept of 'Determine the resolution of conflicts during the growth of the early Church' with examples relevant to Tanzania.",
+          "competence": "Determine the resolution of conflicts during the growth of t"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Discuss the themes appearing in the Book of the Acts of the Apostles",
+          "text": "Propose measures to improve 'Discuss the themes appearing in the Book of the Acts of the Apostles' in schools. - locally",
+          "competence": "Discuss the themes appearing in the Book of the Acts of the "
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use the Book of Acts of the Apostles to appreciate the importance of justice, peace and equality",
+          "text": "Discuss the challenges facing 'Use the Book of Acts of the Apostles to appreciate the importance of justice, peace and equality' in Tanzania and propose solutions. - locally",
+          "competence": "Use the Book of Acts of the Apostles to appreciate the impor"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use the Book of the Acts of the Apostles to defend human rights",
+          "text": "Analyse the causes and effects of 'Use the Book of the Acts of the Apostles to defend human rights'. - with example",
+          "competence": "Use the Book of the Acts of the Apostles to defend human rig"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate mastery of the Holy Scripture in the Book of Acts of the Apostles",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate mastery of the Holy Scripture in the Book of Acts of the Apostles'. - with example",
+          "competence": "Demonstrate mastery of the Holy Scripture in the Book of Act"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate mastery of the Holy Scripture through the Book of Genesis",
+          "text": "Explain the relationship between 'Demonstrate mastery of the Holy Scripture through the Book of Genesis' and its environment. - with diagram",
+          "competence": "Demonstrate mastery of the Holy Scripture through the Book o"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate mastery of the Holy Scripture in the Gospel according to Luke",
+          "text": "Explain the relationship between 'Demonstrate mastery of the Holy Scripture in the Gospel according to Luke' and its environment.",
+          "competence": "Demonstrate mastery of the Holy Scripture in the Gospel acco"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use the Gospel according to Luke to defend human rights",
+          "text": "Evaluate the role of 'Use the Gospel according to Luke to defend human rights' in national development.",
+          "competence": "Use the Gospel according to Luke to defend human rights"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept of the Book of Genesis",
+          "text": "Discuss the factors influencing 'Explain the concept of the Book of Genesis'. - with diagram",
+          "competence": "Explain the concept of the Book of Genesis"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Analyse the Fall of Man and its consequences",
+    "Discuss the methods used by the Jerusa- lem Council to solve con- flict and bring peace, equality and unity in the early Church",
+    "Demonstrate an appreciation of God’s commandments as outlined in the Book of Exodus",
+    "Demonstrate an appreciation of devotion to spreading the Gospel",
+    "Show how the concept of God’s love and compassion appears in the Book of Exodus",
+    "Show the indicators of Moses’ leadership qualities",
+    "Explain the Sinai Covenant",
+    "Describe the Concept of the Book of Exodus",
+    "Use the Book of Joshua to discuss the importance of preparing leaders",
+    "Use the Gospel according to Luke to appreciate the importance of family life"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "geography_form5_topical_7_2023.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Geography - Topical Test 7 (FORM5 2023): Develop and carry out a simple rese",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 37,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Assess the impact of 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' on society.",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "Describe the main features of 'Develop and carry out a simple research project in Geography'. - with example",
+          "competence": "Develop and carry out a simple research project in Geography"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "What are the characteristics of 'Develop and carry out a simple research project in Geography'?",
+          "competence": "Develop and carry out a simple research project in Geography"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Propose measures to improve 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' in schools.",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems'.",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "Discuss the challenges facing 'Develop and carry out a simple research project in Geography' in Tanzania and propose solutions.",
+          "competence": "Develop and carry out a simple research project in Geography"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "Describe the process of 'Develop and carry out a simple research project in Geography' step by step.",
+          "competence": "Develop and carry out a simple research project in Geography"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "Examine the advantages and disadvantages of 'Develop and carry out a simple research project in Geography'.",
+          "competence": "Develop and carry out a simple research project in Geography"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Describe the process of 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' step by step.",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Develop and carry out a simple research project in Geography",
+          "text": "How does 'Develop and carry out a simple research project in Geography' relate to sustainable development? - with example",
+          "competence": "Develop and carry out a simple research project in Geography"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+    "Develop and carry out a simple research project in Geography"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

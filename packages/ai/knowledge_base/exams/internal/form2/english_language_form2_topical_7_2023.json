@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form2_topical_7_2023.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 7 (FORM2 2023): Differentiate intralingua, interlin",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 48,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Differentiate intralingua, interlingua and sign language interpretations",
+          "text": "Analyse the causes and effects of 'Differentiate intralingua, interlingua and sign language interpretations'. - with example",
+          "competence": "Differentiate intralingua, interlingua and sign language int"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the concept of translation",
+          "text": "Discuss the challenges facing 'Explain the concept of translation' in Tanzania and propose solutions. - with example",
+          "competence": "Explain the concept of translation"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Differentiate intralingua, interlingua and sign language interpretations",
+          "text": "Outline the procedures involved in 'Differentiate intralingua, interlingua and sign language interpretations'. - with diagram",
+          "competence": "Differentiate intralingua, interlingua and sign language int"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the concept of translation",
+          "text": "How does 'Explain the concept of translation' relate to sustainable development?",
+          "competence": "Explain the concept of translation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Differentiate intralingua, interlingua and sign language interpretations",
+          "text": "Discuss the factors influencing 'Differentiate intralingua, interlingua and sign language interpretations'. - with example",
+          "competence": "Differentiate intralingua, interlingua and sign language int"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept of translation",
+          "text": "Compare and contrast 'Explain the concept of translation' with related concepts.",
+          "competence": "Explain the concept of translation"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the concept of translation",
+          "text": "Define 'Explain the concept of translation' and discuss its importance in everyday life.",
+          "competence": "Explain the concept of translation"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Differentiate intralingua, interlingua and sign language interpretations",
+          "text": "With examples, illustrate how 'Differentiate intralingua, interlingua and sign language interpretations' is applied in the community. - locally",
+          "competence": "Differentiate intralingua, interlingua and sign language int"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept of translation",
+          "text": "With examples, illustrate how 'Explain the concept of translation' is applied in the community. - with diagram",
+          "competence": "Explain the concept of translation"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Differentiate intralingua, interlingua and sign language interpretations",
+          "text": "Examine the advantages and disadvantages of 'Differentiate intralingua, interlingua and sign language interpretations'.",
+          "competence": "Differentiate intralingua, interlingua and sign language int"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Differentiate intralingua, interlingua and sign language interpretations",
+    "Explain the concept of translation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

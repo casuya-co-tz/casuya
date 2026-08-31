@@ -1,0 +1,121 @@
+{
+  "filename": "commerce_form2_topical_6_2025.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Commerce - Topical Test 6 (FORM2 2025): Warehousing",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain stock control",
+          "text": "With examples, illustrate how 'Explain stock control' is applied in the community.",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Warehousing",
+          "text": "Describe the main features of 'Warehousing'. - with diagram",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Warehousing",
+          "text": "Compare and contrast 'Warehousing' with related concepts. - with diagram",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain stock control",
+          "text": "Explain the concept of 'Explain stock control' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain stock control"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Warehousing",
+          "text": "Evaluate the role of 'Warehousing' in national development.",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain stock control",
+          "text": "Evaluate the role of 'Explain stock control' in national development. - with example",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Warehousing",
+          "text": "Describe the main features of 'Warehousing'. - with example",
+          "competence": "Warehousing"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Warehousing",
+          "text": "Explain the concept of 'Warehousing' with examples relevant to Tanzania.",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain stock control",
+          "text": "Describe the main features of 'Explain stock control'. - with example",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Warehousing",
+          "text": "Compare and contrast 'Warehousing' with related concepts. - with diagram",
+          "competence": "Warehousing"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain stock control",
+    "Warehousing"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

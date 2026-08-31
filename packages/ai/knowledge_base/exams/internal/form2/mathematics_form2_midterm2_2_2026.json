@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form2_midterm2_2_2026.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 2 Exam 2 (FORM2 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 80,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use rates and variations in different contexts",
+          "text": "With examples, illustrate how 'Use rates and variations in different contexts' is applied in the community. - with example",
+          "competence": "Use rates and variations in different contexts"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of statistics",
+          "text": "Discuss the challenges facing 'Demonstrate an advanced understanding of statistics' in Tanzania and propose solutions.",
+          "competence": "Demonstrate an advanced understanding of statistics"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of rational, irrational, and real numbers",
+          "text": "Analyse the causes and effects of 'Explain the concept of rational, irrational, and real numbers'. - with diagram",
+          "competence": "Explain the concept of rational, irrational, and real number"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
+          "text": "Assess the impact of 'Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul' on society. - locally",
+          "competence": "Solve quadratic equations by using different methods (factor"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "Describe the process of 'Describe the concepts of geometry (similarities and congruenc' step by step. - locally",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Perform operations on radicals and rationalize the denominators",
+          "text": "Compare and contrast 'Perform operations on radicals and rationalize the denominators' with related concepts. - locally",
+          "competence": "Perform operations on radicals and rationalize the denominat"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Complete the project started in Form Five and submit the report for assessment",
+          "text": "Define 'Complete the project started in Form Five and submit the report for assessment' and discuss its importance in everyday life.",
+          "competence": "Complete the project started in Form Five and submit the rep"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "Define 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc' and discuss its importance in everyday life.",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use knowledge of sets to organise, create, and categorise objects",
+          "text": "Describe the main features of 'Use knowledge of sets to organise, create, and categorise objects'. - with example",
+          "competence": "Use knowledge of sets to organise, create, and categorise ob"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)",
+          "text": "Propose measures to improve 'and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)' in schools.",
+          "competence": "and rational inequalities, 3x3 matrices, partial fractions, "
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use probability in problem solving",
+          "text": "Analyse the causes and effects of 'Use probability in problem solving'.",
+          "competence": "Use probability in problem solving"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Assess the impact of 'Explain the concept of ratios and proportions' on society.",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Approximate numbers to the required significant figures and decimal places",
+          "text": "Compare and contrast 'Approximate numbers to the required significant figures and decimal places' with related concepts. - with diagram",
+          "competence": "Approximate numbers to the required significant figures and "
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
+          "text": "Describe the process of 'Use algebraic expressions to model situations (word problems into algebraic expressions and equation' step by step. - with diagram",
+          "competence": "Use algebraic expressions to model situations (word problems"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Determine the probability of an event, expectation, variance, and standard deviation of random variables",
+          "text": "Outline the procedures involved in 'Determine the probability of an event, expectation, variance, and standard deviation of random variables'. - with example",
+          "competence": "Determine the probability of an event, expectation, variance"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+          "text": "What are the characteristics of 'Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm'?",
+          "competence": "Explore the basic tenets of algebra (binary operations, quad"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Carry out a project in Mathematics",
+          "text": "Discuss the challenges facing 'Carry out a project in Mathematics' in Tanzania and propose solutions. - locally",
+          "competence": "Carry out a project in Mathematics"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)",
+          "text": "Describe the process of 'Explore the basic tenets of numerical methods (errors, secant method, Newton- Raphson method, trapezoidal rule, and Simpson’s rule)' step by step.",
+          "competence": "Explore the basic tenets of numerical methods (errors, secan"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the importance of numbers in real-life situations",
+          "text": "What are the characteristics of 'Describe the importance of numbers in real-life situations'? - locally",
+          "competence": "Describe the importance of numbers in real-life situations"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)'. - with example",
+          "competence": "Explore the basic tenets of sequences and series (Arithmetic"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use rates and variations in different contexts",
+    "Demonstrate an advanced understanding of statistics",
+    "Explain the concept of rational, irrational, and real numbers",
+    "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
+    "Describe the concepts of geometry (similarities and congruenc",
+    "Perform operations on radicals and rationalize the denominators",
+    "Complete the project started in Form Five and submit the report for assessment",
+    "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+    "Use knowledge of sets to organise, create, and categorise objects",
+    "and rational inequalities, 3x3 matrices, partial fractions, mathematical induction, and binomial theorem)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

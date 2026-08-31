@@ -1,0 +1,358 @@
+{
+  "file": "BAM_Form5_NECTA_Scheme.json",
+  "subjects": [
+    {
+      "subject_name": "BAM",
+      "subject_code": "014",
+      "form": "Form 5",
+      "year": "2025/2026",
+      "headers": [
+        "Week",
+        "Topic",
+        "Sub Topic",
+        "Competence",
+        "Learning Activities",
+        "Assessment",
+        "Resources"
+      ],
+      "column_count": 7,
+      "entries": [
+        {
+          "week": 1,
+          "period": "Period 1",
+          "topic": "BAM Topic 1",
+          "sub_topic": "Subtopic 1: BAM Topic 1 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 1",
+          "learning_activities": "Discussion, practical, research on BAM Topic 1",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 1",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 2,
+          "period": "Period 2",
+          "topic": "BAM Topic 2",
+          "sub_topic": "Subtopic 2: BAM Topic 2 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 2",
+          "learning_activities": "Discussion, practical, research on BAM Topic 2",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 2",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 3,
+          "period": "Period 3",
+          "topic": "BAM Topic 3",
+          "sub_topic": "Subtopic 3: BAM Topic 3 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 3",
+          "learning_activities": "Discussion, practical, research on BAM Topic 3",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 3",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 4,
+          "period": "Period 4",
+          "topic": "BAM Topic 4",
+          "sub_topic": "Subtopic 4: BAM Topic 4 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 4",
+          "learning_activities": "Discussion, practical, research on BAM Topic 4",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 4",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 5,
+          "period": "Period 5",
+          "topic": "BAM Topic 5",
+          "sub_topic": "Subtopic 5: BAM Topic 5 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 5",
+          "learning_activities": "Discussion, practical, research on BAM Topic 5",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 5",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 6,
+          "period": "Period 6",
+          "topic": "BAM Topic 6",
+          "sub_topic": "Subtopic 6: BAM Topic 6 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 6",
+          "learning_activities": "Discussion, practical, research on BAM Topic 6",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 6",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 7,
+          "period": "Period 7",
+          "topic": "BAM Topic 7",
+          "sub_topic": "Subtopic 7: BAM Topic 7 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 7",
+          "learning_activities": "Discussion, practical, research on BAM Topic 7",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 7",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 8,
+          "period": "Period 8",
+          "topic": "BAM Topic 8",
+          "sub_topic": "Subtopic 8: BAM Topic 8 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 8",
+          "learning_activities": "Discussion, practical, research on BAM Topic 8",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 8",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 9,
+          "period": "Period 9",
+          "topic": "BAM Topic 9",
+          "sub_topic": "Subtopic 9: BAM Topic 9 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 9",
+          "learning_activities": "Discussion, practical, research on BAM Topic 9",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 9",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 10,
+          "period": "Period 10",
+          "topic": "BAM Topic 10",
+          "sub_topic": "Subtopic 10: BAM Topic 10 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 10",
+          "learning_activities": "Discussion, practical, research on BAM Topic 10",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 10",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 11,
+          "period": "Period 11",
+          "topic": "BAM Topic 1",
+          "sub_topic": "Subtopic 11: BAM Topic 1 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 1",
+          "learning_activities": "Discussion, practical, research on BAM Topic 1",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 1",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 12,
+          "period": "Period 12",
+          "topic": "BAM Topic 2",
+          "sub_topic": "Subtopic 12: BAM Topic 2 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 2",
+          "learning_activities": "Discussion, practical, research on BAM Topic 2",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 2",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 13,
+          "period": "Period 13",
+          "topic": "BAM Topic 3",
+          "sub_topic": "Subtopic 13: BAM Topic 3 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 3",
+          "learning_activities": "Discussion, practical, research on BAM Topic 3",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 3",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 14,
+          "period": "Period 14",
+          "topic": "BAM Topic 4",
+          "sub_topic": "Subtopic 14: BAM Topic 4 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 4",
+          "learning_activities": "Discussion, practical, research on BAM Topic 4",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 4",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 15,
+          "period": "Period 15",
+          "topic": "BAM Topic 5",
+          "sub_topic": "Subtopic 15: BAM Topic 5 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 5",
+          "learning_activities": "Discussion, practical, research on BAM Topic 5",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 5",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 16,
+          "period": "Period 16",
+          "topic": "BAM Topic 6",
+          "sub_topic": "Subtopic 16: BAM Topic 6 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 6",
+          "learning_activities": "Discussion, practical, research on BAM Topic 6",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 6",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 17,
+          "period": "Period 17",
+          "topic": "BAM Topic 7",
+          "sub_topic": "Subtopic 17: BAM Topic 7 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 7",
+          "learning_activities": "Discussion, practical, research on BAM Topic 7",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 7",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 18,
+          "period": "Period 18",
+          "topic": "BAM Topic 8",
+          "sub_topic": "Subtopic 18: BAM Topic 8 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 8",
+          "learning_activities": "Discussion, practical, research on BAM Topic 8",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 8",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 19,
+          "period": "Period 19",
+          "topic": "BAM Topic 9",
+          "sub_topic": "Subtopic 19: BAM Topic 9 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 9",
+          "learning_activities": "Discussion, practical, research on BAM Topic 9",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 9",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 20,
+          "period": "Period 20",
+          "topic": "BAM Topic 10",
+          "sub_topic": "Subtopic 20: BAM Topic 10 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 10",
+          "learning_activities": "Discussion, practical, research on BAM Topic 10",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 10",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 21,
+          "period": "Period 21",
+          "topic": "BAM Topic 1",
+          "sub_topic": "Subtopic 21: BAM Topic 1 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 1",
+          "learning_activities": "Discussion, practical, research on BAM Topic 1",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 1",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 22,
+          "period": "Period 22",
+          "topic": "BAM Topic 2",
+          "sub_topic": "Subtopic 22: BAM Topic 2 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 2",
+          "learning_activities": "Discussion, practical, research on BAM Topic 2",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 2",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 23,
+          "period": "Period 23",
+          "topic": "BAM Topic 3",
+          "sub_topic": "Subtopic 23: BAM Topic 3 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 3",
+          "learning_activities": "Discussion, practical, research on BAM Topic 3",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 3",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 24,
+          "period": "Period 24",
+          "topic": "BAM Topic 4",
+          "sub_topic": "Subtopic 24: BAM Topic 4 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 4",
+          "learning_activities": "Discussion, practical, research on BAM Topic 4",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 4",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 25,
+          "period": "Period 25",
+          "topic": "BAM Topic 5",
+          "sub_topic": "Subtopic 25: BAM Topic 5 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 5",
+          "learning_activities": "Discussion, practical, research on BAM Topic 5",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 5",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 26,
+          "period": "Period 26",
+          "topic": "BAM Topic 6",
+          "sub_topic": "Subtopic 26: BAM Topic 6 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 6",
+          "learning_activities": "Discussion, practical, research on BAM Topic 6",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 6",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 27,
+          "period": "Period 27",
+          "topic": "BAM Topic 7",
+          "sub_topic": "Subtopic 27: BAM Topic 7 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 7",
+          "learning_activities": "Discussion, practical, research on BAM Topic 7",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 7",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 28,
+          "period": "Period 28",
+          "topic": "BAM Topic 8",
+          "sub_topic": "Subtopic 28: BAM Topic 8 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 8",
+          "learning_activities": "Discussion, practical, research on BAM Topic 8",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 8",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 29,
+          "period": "Period 29",
+          "topic": "BAM Topic 9",
+          "sub_topic": "Subtopic 29: BAM Topic 9 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 9",
+          "learning_activities": "Discussion, practical, research on BAM Topic 9",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 9",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        },
+        {
+          "week": 30,
+          "period": "Period 30",
+          "topic": "BAM Topic 10",
+          "sub_topic": "Subtopic 30: BAM Topic 10 - Detailed",
+          "competence": "Demonstrate understanding of BAM Topic 10",
+          "learning_activities": "Discussion, practical, research on BAM Topic 10",
+          "assessment": "Quiz, assignment, presentation on BAM Topic 10",
+          "resources": "Textbook 014, lab materials",
+          "remarks": ""
+        }
+      ],
+      "entry_count": 30,
+      "table_index": 0
+    }
+  ],
+  "form": "Form 5",
+  "year": "2025/2026",
+  "source": "generated from syllabus"
+}

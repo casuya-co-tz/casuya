@@ -1,0 +1,249 @@
+{
+  "filename": "economics_form6_terminal_1_2023.json",
+  "subject": "Economics",
+  "subject_slug": "economics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2023",
+  "time": "2:30 Hours",
+  "title": "Economics - Terminal Exam 1 (FORM6 2023)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 128,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe public finance (key terms, government revenue and expenditure, public debt and fiscal policy)",
+          "text": "Assess the impact of 'Describe public finance (key terms, government revenue and expenditure, public debt and fiscal policy)' on society.",
+          "competence": "Describe public finance (key terms, government revenue and e"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe national income (key terms, approaches of measuring, determinants, importance, effect on standard of living and determination of equilibrium)",
+          "text": "What are the characteristics of 'Describe national income (key terms, approaches of measuring, determinants, importance, effect on standard of living and determination of equilibrium)'?",
+          "competence": "Describe national income (key terms, approaches of measuring"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "production function, objectives and profit of firms, scale and costs of production and revenue)",
+          "text": "Explain the concept of 'production function, objectives and profit of firms, scale and costs of production and revenue)' with examples relevant to Tanzania. - with diagram",
+          "competence": "production function, objectives and profit of firms, scale a"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Examine the influence of the economic system on resource allocation and distribution",
+          "text": "Explain the concept of 'Examine the influence of the economic system on resource allocation and distribution' with examples relevant to Tanzania. - locally",
+          "competence": "Examine the influence of the economic system on resource all"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept and scope of economics (meaning and origin, importance, its relationship with other subjects, basic terminologies, branches, the central economic problem and fundamental economic questions)",
+          "text": "Discuss the challenges facing 'Describe the concept and scope of economics (meaning and origin, importance, its relationship with other subjects, basic terminologies, branches, the central economic problem and fundamental economic questions)' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the concept and scope of economics (meaning and ori"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe international trade (meaning, advantages, disadvantages, terms of trade, balance of payments, absolute and comparative advantage and protectionism)",
+          "text": "With examples, illustrate how 'Describe international trade (meaning, advantages, disadvantages, terms of trade, balance of payments, absolute and comparative advantage and protectionism)' is applied in the community.",
+          "competence": "Describe international trade (meaning, advantages, disadvant"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "D emonstrate mastery of economic analysis",
+          "text": "Compare and contrast 'D emonstrate mastery of economic analysis' with related concepts. - with example",
+          "competence": "D emonstrate mastery of economic analysis"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe inflation (meaning, types, causes, effects and control measures)",
+          "text": "Propose measures to improve 'Describe inflation (meaning, types, causes, effects and control measures)' in schools.",
+          "competence": "Describe inflation (meaning, types, causes, effects and cont"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Apply production, cost and market theories to make decisions on price and output",
+          "text": "What are the characteristics of 'Apply production, cost and market theories to make decisions on price and output'? - with diagram",
+          "competence": "Apply production, cost and market theories to make decisions"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Design and execute a research project on an appropriate economic problem",
+          "text": "Explain the relationship between 'Design and execute a research project on an appropriate economic problem' and its environment. - with example",
+          "competence": "Design and execute a research project on an appropriate econ"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of the market (meaning, types and structures)",
+          "text": "Analyse the causes and effects of 'Describe the concept of the market (meaning, types and structures)'.",
+          "competence": "Describe the concept of the market (meaning, types and struc"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "D escribe the theories of production and costs (factors of production",
+          "text": "Explain the relationship between 'D escribe the theories of production and costs (factors of production' and its environment.",
+          "competence": "D escribe the theories of production and costs (factors of p"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe unemployment (key terms, forms, causes, effects and control measures)",
+          "text": "With examples, illustrate how 'Describe unemployment (key terms, forms, causes, effects and control measures)' is applied in the community. - with example",
+          "competence": "Describe unemployment (key terms, forms, causes, effects and"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the concepts, theories and principles used in Economics",
+          "text": "Explain the concept of 'Demonstrate an understanding of the concepts, theories and principles used in Economics' with examples relevant to Tanzania. - locally",
+          "competence": "Demonstrate an understanding of the concepts, theories and p"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Apply macroeconomic theories to explain the state of national and international economies",
+          "text": "Describe the main features of 'Apply macroeconomic theories to explain the state of national and international economies'. - with example",
+          "competence": "Apply macroeconomic theories to explain the state of nationa"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe money (key terms, the evolution of money, functions and monetary policies)",
+          "text": "Assess the impact of 'Describe money (key terms, the evolution of money, functions and monetary policies)' on society. - with example",
+          "competence": "Describe money (key terms, the evolution of money, functions"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate mastery of economic analysis",
+          "text": "Describe the main features of 'Demonstrate mastery of economic analysis'.",
+          "competence": "Demonstrate mastery of economic analysis"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explore the basic tenets of microeconomics (meaning, scope and goals)",
+          "text": "What are the characteristics of 'Explore the basic tenets of microeconomics (meaning, scope and goals)'?",
+          "competence": "Explore the basic tenets of microeconomics (meaning, scope a"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the price theory (demand, supply, market equilibrium and elasticity)",
+          "text": "Discuss the factors influencing 'Describe the price theory (demand, supply, market equilibrium and elasticity)'. - locally",
+          "competence": "Describe the price theory (demand, supply, market equilibriu"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Design and carry out a project in Economics",
+          "text": "Analyse the causes and effects of 'Design and carry out a project in Economics'. - with example",
+          "competence": "Design and carry out a project in Economics"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe economic systems (forms, features, advantages and disadvantages)",
+          "text": "Discuss the factors influencing 'Describe economic systems (forms, features, advantages and disadvantages)'. - locally",
+          "competence": "Describe economic systems (forms, features, advantages and d"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Apply macroeconomic theories to explain the levels of socio- economic development of nations",
+          "text": "Discuss the factors influencing 'Apply macroeconomic theories to explain the levels of socio- economic development of nations'. - locally",
+          "competence": "Apply macroeconomic theories to explain the levels of socio-"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Complete and submit a report of the project developed in Form Five",
+          "text": "Describe the process of 'Complete and submit a report of the project developed in Form Five' step by step. - with diagram",
+          "competence": "Complete and submit a report of the project developed in For"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore the basic tenets of macroeconomics (meaning, scope and goals)",
+          "text": "Outline the procedures involved in 'Explore the basic tenets of macroeconomics (meaning, scope and goals)'. - locally",
+          "competence": "Explore the basic tenets of macroeconomics (meaning, scope a"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use the price theory to explain the effects of pricing on consumer behaviour and business profits",
+          "text": "Define 'Use the price theory to explain the effects of pricing on consumer behaviour and business profits' and discuss its importance in everyday life.",
+          "competence": "Use the price theory to explain the effects of pricing on co"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe public finance (key terms, government revenue and expenditure, public debt and fiscal policy)",
+    "Describe national income (key terms, approaches of measuring, determinants, importance, effect on standard of living and determination of equilibrium)",
+    "production function, objectives and profit of firms, scale and costs of production and revenue)",
+    "Examine the influence of the economic system on resource allocation and distribution",
+    "Describe the concept and scope of economics (meaning and origin, importance, its relationship with other subjects, basic terminologies, branches, the central economic problem and fundamental economic questions)",
+    "Describe international trade (meaning, advantages, disadvantages, terms of trade, balance of payments, absolute and comparative advantage and protectionism)",
+    "D emonstrate mastery of economic analysis",
+    "Describe inflation (meaning, types, causes, effects and control measures)",
+    "Apply production, cost and market theories to make decisions on price and output",
+    "Design and execute a research project on an appropriate economic problem"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

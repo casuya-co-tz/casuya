@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form3_topical_2_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 2 (FORM3 2025): Interpret messages in large formal ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+          "text": "Discuss the factors influencing 'Interpret messages in large formal settings (e.g., church, mosque and meeting'. - locally",
+          "competence": "Interpret messages in large formal settings (e.g., church, m"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+          "text": "With examples, illustrate how 'Interpret messages in large formal settings (e.g., church, mosque and meeting' is applied in the community.",
+          "competence": "Interpret messages in large formal settings (e.g., church, m"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Read texts for comprehension",
+          "text": "Assess the impact of 'Read texts for comprehension' on society.",
+          "competence": "Read texts for comprehension"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+          "text": "Explain the concept of 'Interpret messages in large formal settings (e.g., church, mosque and meeting' with examples relevant to Tanzania. - locally",
+          "competence": "Interpret messages in large formal settings (e.g., church, m"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+          "text": "Discuss the challenges facing 'Interpret messages in large formal settings (e.g., church, mosque and meeting' in Tanzania and propose solutions. - with example",
+          "competence": "Interpret messages in large formal settings (e.g., church, m"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+          "text": "Assess the impact of 'Interpret messages in large formal settings (e.g., church, mosque and meeting' on society. - locally",
+          "competence": "Interpret messages in large formal settings (e.g., church, m"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+          "text": "Examine the advantages and disadvantages of 'Interpret messages in large formal settings (e.g., church, mosque and meeting'. - with example",
+          "competence": "Interpret messages in large formal settings (e.g., church, m"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+          "text": "Examine the advantages and disadvantages of 'Interpret messages in large formal settings (e.g., church, mosque and meeting'.",
+          "competence": "Interpret messages in large formal settings (e.g., church, m"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+          "text": "Outline the procedures involved in 'Interpret messages in large formal settings (e.g., church, mosque and meeting'. - locally",
+          "competence": "Interpret messages in large formal settings (e.g., church, m"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+          "text": "Propose measures to improve 'Interpret messages in large formal settings (e.g., church, mosque and meeting' in schools. - with diagram",
+          "competence": "Interpret messages in large formal settings (e.g., church, m"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+    "Read texts for comprehension"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,346 @@
+{
+  "subject_code": "033",
+  "subject_name": "Biology",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the concepts, principles and processes of Biology",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U1-L1",
+              "title": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+              "markdown_content": "## a) Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+              "page": 15
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L2",
+              "title": "Describe a cell (meaning,types, structures and function",
+              "markdown_content": "## b) Describe a cell (meaning,types, structures and function",
+              "page": 16
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L3",
+              "title": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+              "markdown_content": "## c) Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+              "page": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Communicating using scientific biological terminologies",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of scientific biological terminologies",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U2-L4",
+              "title": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+              "markdown_content": "## a) Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+              "page": 17
+            },
+            {
+              "lesson_id": "BIO-F1-U2-L5",
+              "title": "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+              "markdown_content": "## b) Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+              "page": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Conduct biological investigations",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U3-L6",
+              "title": "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+              "markdown_content": "## a) Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+              "page": 20
+            },
+            {
+              "lesson_id": "BIO-F1-U3-L7",
+              "title": "Carry out microscopic observation of a cell",
+              "markdown_content": "## b) Carry out microscopic observation of a cell",
+              "page": 21
+            },
+            {
+              "lesson_id": "BIO-F1-U3-L8",
+              "title": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+              "markdown_content": "## c) Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Prepare and present results of biological investigations",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U3-L9",
+              "title": "Prepare and present a report on cell and photosynthesis investigations",
+              "markdown_content": "## a) Prepare and present a report on cell and photosynthesis investigations",
+              "page": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the concepts, principles and processes of Biology",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U1-L10",
+              "title": "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+              "markdown_content": "## a) Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+              "page": 23
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L11",
+              "title": "Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+              "markdown_content": "## b) Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+              "page": 24
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L12",
+              "title": "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+              "markdown_content": "## c) Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+              "page": 25
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L13",
+              "title": "Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio",
+              "markdown_content": "## d) Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio",
+              "page": 26
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L14",
+              "title": "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+              "markdown_content": "## e) Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+              "page": 28
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct biological investigations",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U2-L15",
+              "title": "Investigate food nutrients in various food samples",
+              "markdown_content": "## a) Investigate food nutrients in various food samples",
+              "page": 28
+            },
+            {
+              "lesson_id": "BIO-F1-U2-L16",
+              "title": "Investigate processes of transportation of materials in flowering plants",
+              "markdown_content": "## b) Investigate processes of transportation of materials in flowering plants",
+              "page": 29
+            },
+            {
+              "lesson_id": "BIO-F1-U2-L17",
+              "title": "Carry out experiments to determine the pulse rate in human",
+              "markdown_content": "## c) Carry out experiments to determine the pulse rate in human",
+              "page": 30
+            },
+            {
+              "lesson_id": "BIO-F1-U2-L18",
+              "title": "Investigate aerobic and anaerobic respiration in living organisms",
+              "markdown_content": "## d) Investigate aerobic and anaerobic respiration in living organisms",
+              "page": 30
+            }
+          ]
+        },
+        {
+          "topic_name": "Prepare and present results of biological investigations",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U2-L19",
+              "title": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+              "markdown_content": "## a) Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+              "page": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the concepts, principles and processes of Biology",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U1-L20",
+              "title": "Describe coordination in plants (tropic, response",
+              "markdown_content": "## a) Describe coordination in plants (tropic, response",
+              "page": 32
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L21",
+              "title": "and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+              "markdown_content": "## s) and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+              "page": 32
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L22",
+              "title": "Describe the mechanism of excretion in the human body (systems: organs, product",
+              "markdown_content": "## b) Describe the mechanism of excretion in the human body (systems: organs, product",
+              "page": 33
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L23",
+              "title": "Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio",
+              "markdown_content": "## c) Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio",
+              "page": 34
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct biological investigations",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U2-L24",
+              "title": "Investigate the process of nervous coordination (reflex arc and knee jer",
+              "markdown_content": "## a) Investigate the process of nervous coordination (reflex arc and knee jer",
+              "page": 35
+            },
+            {
+              "lesson_id": "BIO-F1-U2-L25",
+              "title": "Investigate tropic responses in plants",
+              "markdown_content": "## b) Investigate tropic responses in plants",
+              "page": 36
+            }
+          ]
+        },
+        {
+          "topic_name": "Carry out a biological project work using biological principles",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U2-L26",
+              "title": "Develop and carry out a simple research project in Biology",
+              "markdown_content": "## a) Develop and carry out a simple research project in Biology",
+              "page": 36
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the concepts, principles and processes of Biology",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U1-L27",
+              "title": "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+              "markdown_content": "## a) Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+              "page": 37
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L28",
+              "title": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+              "markdown_content": "## b) Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+              "page": 38
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L29",
+              "title": "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+              "markdown_content": "## c) Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+              "page": 39
+            },
+            {
+              "lesson_id": "BIO-F1-U1-L30",
+              "title": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+              "markdown_content": "## d) Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+              "page": 41
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct biological investigations",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U2-L31",
+              "title": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+              "markdown_content": "## a) Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+              "page": 42
+            },
+            {
+              "lesson_id": "BIO-F1-U2-L32",
+              "title": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+              "markdown_content": "## b) Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+              "page": 42
+            }
+          ]
+        },
+        {
+          "topic_name": "Carry out a biological project work using biological principles",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-U2-L33",
+              "title": "Complete and submit a report for the research project started in Form Three",
+              "markdown_content": "## a) Complete and submit a report for the research project started in Form Three",
+              "page": 43
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

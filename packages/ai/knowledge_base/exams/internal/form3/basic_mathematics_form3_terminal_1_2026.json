@@ -1,0 +1,249 @@
+{
+  "filename": "basic_mathematics_form3_terminal_1_2026.json",
+  "subject": "Basic Mathematics",
+  "subject_slug": "basic_mathematics",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2026",
+  "time": "2:30 Hours",
+  "title": "Basic Mathematics - Terminal Exam 1 (FORM3 2026)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 126,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Inequations",
+          "text": "Evaluate the role of 'Inequations' in national development.",
+          "competence": "Inequations"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Data Collection",
+          "text": "Define 'Data Collection' and discuss its importance in everyday life. - with diagram",
+          "competence": "Data Collection"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Probability",
+          "text": "Analyse the causes and effects of 'Probability'. - with example",
+          "competence": "Probability"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Triangles",
+          "text": "Explain the concept of 'Triangles' with examples relevant to Tanzania. - with diagram",
+          "competence": "Triangles"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain triangles",
+          "text": "Examine the advantages and disadvantages of 'Explain triangles'.",
+          "competence": "Explain triangles"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain decimals",
+          "text": "Examine the advantages and disadvantages of 'Explain decimals'.",
+          "competence": "Explain decimals"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain percentages",
+          "text": "Evaluate the role of 'Explain percentages' in national development. - with example",
+          "competence": "Explain percentages"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Equations",
+          "text": "Compare and contrast 'Equations' with related concepts. - with diagram",
+          "competence": "Equations"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain inequations",
+          "text": "With examples, illustrate how 'Explain inequations' is applied in the community. - with example",
+          "competence": "Explain inequations"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Decimals",
+          "text": "Describe the main features of 'Decimals'.",
+          "competence": "Decimals"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain circles",
+          "text": "Examine the advantages and disadvantages of 'Explain circles'. - with example",
+          "competence": "Explain circles"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain mensuration",
+          "text": "Analyse the causes and effects of 'Explain mensuration'. - with example",
+          "competence": "Explain mensuration"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain sets",
+          "text": "Describe the main features of 'Explain sets'. - with diagram",
+          "competence": "Explain sets"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain probability",
+          "text": "Define 'Explain probability' and discuss its importance in everyday life.",
+          "competence": "Explain probability"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Percentages",
+          "text": "Discuss the challenges facing 'Percentages' in Tanzania and propose solutions. - with diagram",
+          "competence": "Percentages"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain angles",
+          "text": "Compare and contrast 'Explain angles' with related concepts. - with example",
+          "competence": "Explain angles"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain data collection",
+          "text": "Compare and contrast 'Explain data collection' with related concepts. - with diagram",
+          "competence": "Explain data collection"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Algebraic Expressions",
+          "text": "Describe the main features of 'Algebraic Expressions'. - with diagram",
+          "competence": "Algebraic Expressions"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Whole Numbers",
+          "text": "Analyse the causes and effects of 'Whole Numbers'. - with example",
+          "competence": "Whole Numbers"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Mensuration",
+          "text": "With examples, illustrate how 'Mensuration' is applied in the community.",
+          "competence": "Mensuration"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain equations",
+          "text": "Describe the main features of 'Explain equations'. - with diagram",
+          "competence": "Explain equations"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Fractions",
+          "text": "Outline the procedures involved in 'Fractions'. - with diagram",
+          "competence": "Fractions"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain whole numbers",
+          "text": "Examine the advantages and disadvantages of 'Explain whole numbers'.",
+          "competence": "Explain whole numbers"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Angles",
+          "text": "With examples, illustrate how 'Angles' is applied in the community. - with diagram",
+          "competence": "Angles"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Sets",
+          "text": "Outline the procedures involved in 'Sets'. - with diagram",
+          "competence": "Sets"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Inequations",
+    "Data Collection",
+    "Probability",
+    "Triangles",
+    "Explain triangles",
+    "Explain decimals",
+    "Explain percentages",
+    "Equations",
+    "Explain inequations",
+    "Decimals"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

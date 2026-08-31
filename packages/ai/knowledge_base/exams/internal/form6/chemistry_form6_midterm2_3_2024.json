@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form6_midterm2_3_2024.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 2 Exam 3 (FORM6 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 86,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Complete and submit for assessment a scientific report of the project started in Form Five",
+          "text": "Describe the main features of 'Complete and submit for assessment a scientific report of the project started in Form Five'. - with diagram",
+          "competence": "Complete and submit for assessment a scientific report of th"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Explain the concept of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)' with examples relevant to Tanzania.",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu",
+          "text": "Define 'Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu' and discuss its importance in everyday life.",
+          "competence": "Describe basic Chemistry laboratory skills (chemistry labora"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Compare and contrast 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction' with related concepts.",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+          "text": "Examine the advantages and disadvantages of '. Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry'.",
+          "competence": ". Demonstrate an advanced understanding of the concepts, the"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Evaluate the role of 'Perform experiments on the changes of matter from one state to another' in national development.",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+          "text": "Outline the procedures involved in 'Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline'.",
+          "competence": "Describe the concept of Chemistry (meaning, branches, applic"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+          "text": "Describe the main features of 'Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)'.",
+          "competence": "Describe the concept of two component liquid systems (immisc"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "With examples, illustrate how 'Design and carry out a project in Chemistry' is applied in the community.",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+          "text": "Discuss the challenges facing 'Use the concept of atomic structure to determine the atomic and mass numbers of an element' in Tanzania and propose solutions. - with diagram",
+          "competence": "Use the concept of atomic structure to determine the atomic "
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Describe the main features of 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)'. - with diagram",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Perform experiments on volumetric analysis",
+          "text": "Describe the main features of 'Perform experiments on volumetric analysis'. - with example",
+          "competence": "Perform experiments on volumetric analysis"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+          "text": "Outline the procedures involved in 'Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides'.",
+          "competence": "Examine reactions of aromatic hydrocarbons, phenols, carbony"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Discuss the challenges facing 'Use the electronic configuration of an element to locate their positions in the periodic table' in Tanzania and propose solutions. - with example",
+          "competence": "Use the electronic configuration of an element to locate the"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table'.",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Explain the concept of 'Describe the concept of matter (physical and chemical changes of matte' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+          "text": "Compare and contrast 'Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol' with related concepts. - with diagram",
+          "competence": "Explore the basic tenets of Organic Chemistry (organic compo"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept of chemical bonding and the interactions of atoms to form molecules",
+          "text": "Discuss the challenges facing 'Explain the concept of chemical bonding and the interactions of atoms to form molecules' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain the concept of chemical bonding and the interactions"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Outline the procedures involved in 'Demonstrate mastery of concepts, theories and principles in Chemistry'.",
+          "competence": "Demonstrate mastery of concepts, theories and principles in "
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Describe the main features of '. Demonstrate mastery of concepts, theories and principles in Chemistry'. - with diagram",
+          "competence": ". Demonstrate mastery of concepts, theories and principles i"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Complete and submit for assessment a scientific report of the project started in Form Five",
+    "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+    "Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu",
+    "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+    ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+    "Perform experiments on the changes of matter from one state to another",
+    "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+    "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+    "Design and carry out a project in Chemistry",
+    "Use the concept of atomic structure to determine the atomic and mass numbers of an element"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "kiswahili_form1_midterm1_2_2025.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Kiswahili - Midterm 1 Exam 2 (FORM1 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 80,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kuimba nyimbo na kutamba ngonjera",
+          "text": "Describe the main features of 'Kuimba nyimbo na kutamba ngonjera'. - locally",
+          "competence": "Kuimba nyimbo na kutamba ngonjera"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kujieleza kwa ufasaha kwa maandishi katika miktadha mbalimbali",
+          "text": "With examples, illustrate how 'Kujieleza kwa ufasaha kwa maandishi katika miktadha mbalimbali' is applied in the community.",
+          "competence": "Kujieleza kwa ufasaha kwa maandishi katika miktadha mbalimba"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kukalimani mazungumzo kwa ukalimani fuatizi, nong’onezi na kiungo",
+          "text": "Describe the main features of 'Kukalimani mazungumzo kwa ukalimani fuatizi, nong’onezi na kiungo'.",
+          "competence": "Kukalimani mazungumzo kwa ukalimani fuatizi, nong’onezi na k"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kuandika barua na makala za magazetini",
+          "text": "Discuss the factors influencing 'Kuandika barua na makala za magazetini'. - with example",
+          "competence": "Kuandika barua na makala za magazetini"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kushiriki katika majadiliano ya masuala mbalimbali kwa kuzingatia sifa za lugha ya mazungumzo (mf. lugha ya mkato, kupeana nafas",
+          "text": "Discuss the challenges facing 'Kushiriki katika majadiliano ya masuala mbalimbali kwa kuzingatia sifa za lugha ya mazungumzo (mf. lugha ya mkato, kupeana nafas' in Tanzania and propose solutions.",
+          "competence": "Kushiriki katika majadiliano ya masuala mbalimbali kwa kuzin"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutunga tamthiliya",
+          "text": "Define 'Kutunga tamthiliya' and discuss its importance in everyday life. - with diagram",
+          "competence": "Kutunga tamthiliya"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kufafanua dhana ya fonimu na alofoni za lugha ya Kiswahili (maana, aina, sifa bainifu, uhusiano wa fonimu na alofoni)",
+          "text": "Discuss the factors influencing 'Kufafanua dhana ya fonimu na alofoni za lugha ya Kiswahili (maana, aina, sifa bainifu, uhusiano wa fonimu na alofoni)'. - with example",
+          "competence": "Kufafanua dhana ya fonimu na alofoni za lugha ya Kiswahili ("
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kujadili maendeleo ya fasihi baada ya uhuru",
+          "text": "Describe the main features of 'Kujadili maendeleo ya fasihi baada ya uhuru'.",
+          "competence": "Kujadili maendeleo ya fasihi baada ya uhuru"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali",
+          "text": "Describe the process of 'Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali' step by step.",
+          "competence": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo",
+          "text": "Describe the main features of 'Kuwasiliana kwa ufasaha kwa njia ya mazungumzo'.",
+          "competence": "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kufafanua dhana na aina za lahaja",
+          "text": "Explain the concept of 'Kufafanua dhana na aina za lahaja' with examples relevant to Tanzania. - with diagram",
+          "competence": "Kufafanua dhana na aina za lahaja"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kujadili dhana na sifa ya lugha ya kimataifa",
+          "text": "Explain the concept of 'Kujadili dhana na sifa ya lugha ya kimataifa' with examples relevant to Tanzania.",
+          "competence": "Kujadili dhana na sifa ya lugha ya kimataifa"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kukalimani mazungumzo mbalimbali",
+          "text": "Analyse the causes and effects of 'Kukalimani mazungumzo mbalimbali'. - locally",
+          "competence": "Kukalimani mazungumzo mbalimbali"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kunukuu kumbukumbu muhimu katika mazungumzo mbalimbali wakati wa kukalimani",
+          "text": "With examples, illustrate how 'Kunukuu kumbukumbu muhimu katika mazungumzo mbalimbali wakati wa kukalimani' is applied in the community. - with example",
+          "competence": "Kunukuu kumbukumbu muhimu katika mazungumzo mbalimbali wakat"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kuandika hoja kuu kutoka katika matini fupi changamani alizozisoma kwa kuzingatia sifa za lugha ya maandishi (mf. alama za uandishi, miunganiko sahihi ya tungo, usanif",
+          "text": "Evaluate the role of 'Kuandika hoja kuu kutoka katika matini fupi changamani alizozisoma kwa kuzingatia sifa za lugha ya maandishi (mf. alama za uandishi, miunganiko sahihi ya tungo, usanif' in national development. - locally",
+          "competence": "Kuandika hoja kuu kutoka katika matini fupi changamani alizo"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kukalimani mazungumzo kwa ukalimani sawia/ sambamba",
+          "text": "Evaluate the role of 'Kukalimani mazungumzo kwa ukalimani sawia/ sambamba' in national development. - locally",
+          "competence": "Kukalimani mazungumzo kwa ukalimani sawia/ sambamba"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kuzungumza kwa ufasaha katika miktadha mbalimbali (mf. nyumbani, shuleni na hospitalin",
+          "text": "Outline the procedures involved in 'Kuzungumza kwa ufasaha katika miktadha mbalimbali (mf. nyumbani, shuleni na hospitalin'. - locally",
+          "competence": "Kuzungumza kwa ufasaha katika miktadha mbalimbali (mf. nyumb"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz",
+          "text": "Analyse the causes and effects of 'Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz'.",
+          "competence": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mas"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kuhariri matini za kawaida",
+          "text": "Explain the relationship between 'Kuhariri matini za kawaida' and its environment. - with example",
+          "competence": "Kuhariri matini za kawaida"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kuhariri matini fupi za Kiswahili",
+          "text": "What are the characteristics of 'Kuhariri matini fupi za Kiswahili'?",
+          "competence": "Kuhariri matini fupi za Kiswahili"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kuimba nyimbo na kutamba ngonjera",
+    "Kujieleza kwa ufasaha kwa maandishi katika miktadha mbalimbali",
+    "Kukalimani mazungumzo kwa ukalimani fuatizi, nong’onezi na kiungo",
+    "Kuandika barua na makala za magazetini",
+    "Kushiriki katika majadiliano ya masuala mbalimbali kwa kuzingatia sifa za lugha ya mazungumzo (mf. lugha ya mkato, kupeana nafas",
+    "Kutunga tamthiliya",
+    "Kufafanua dhana ya fonimu na alofoni za lugha ya Kiswahili (maana, aina, sifa bainifu, uhusiano wa fonimu na alofoni)",
+    "Kujadili maendeleo ya fasihi baada ya uhuru",
+    "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali",
+    "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

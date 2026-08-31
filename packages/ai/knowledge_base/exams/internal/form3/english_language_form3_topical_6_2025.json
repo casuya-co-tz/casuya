@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form3_topical_6_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 6 (FORM3 2025): Analyse techniques of critiquing li",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 52,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Analyse techniques of critiquing literary texts based on their conventions",
+          "text": "Evaluate the role of 'Analyse techniques of critiquing literary texts based on their conventions' in national development. - locally",
+          "competence": "Analyse techniques of critiquing literary texts based on the"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Analyse techniques of critiquing literary texts based on their conventions",
+          "text": "Explain the concept of 'Analyse techniques of critiquing literary texts based on their conventions' with examples relevant to Tanzania.",
+          "competence": "Analyse techniques of critiquing literary texts based on the"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Analyse techniques of critiquing literary texts based on their conventions",
+          "text": "Evaluate the role of 'Analyse techniques of critiquing literary texts based on their conventions' in national development. - with diagram",
+          "competence": "Analyse techniques of critiquing literary texts based on the"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Analyse techniques of critiquing literary texts based on their conventions",
+          "text": "Discuss the challenges facing 'Analyse techniques of critiquing literary texts based on their conventions' in Tanzania and propose solutions. - with diagram",
+          "competence": "Analyse techniques of critiquing literary texts based on the"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Make a summary of stories",
+          "text": "Examine the advantages and disadvantages of 'Make a summary of stories'.",
+          "competence": "Make a summary of stories"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Make a summary of stories",
+          "text": "Assess the impact of 'Make a summary of stories' on society. - with example",
+          "competence": "Make a summary of stories"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Analyse techniques of critiquing literary texts based on their conventions",
+          "text": "Discuss the challenges facing 'Analyse techniques of critiquing literary texts based on their conventions' in Tanzania and propose solutions. - with diagram",
+          "competence": "Analyse techniques of critiquing literary texts based on the"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Make a summary of stories",
+          "text": "Explain the concept of 'Make a summary of stories' with examples relevant to Tanzania.",
+          "competence": "Make a summary of stories"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Analyse techniques of critiquing literary texts based on their conventions",
+          "text": "Propose measures to improve 'Analyse techniques of critiquing literary texts based on their conventions' in schools.",
+          "competence": "Analyse techniques of critiquing literary texts based on the"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Analyse techniques of critiquing literary texts based on their conventions",
+          "text": "Discuss the factors influencing 'Analyse techniques of critiquing literary texts based on their conventions'. - with diagram",
+          "competence": "Analyse techniques of critiquing literary texts based on the"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Analyse techniques of critiquing literary texts based on their conventions",
+    "Make a summary of stories"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

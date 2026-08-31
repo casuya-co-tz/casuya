@@ -1,0 +1,121 @@
+{
+  "filename": "bible_knowledge_form4_topical_6_2023.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Bible Knowledge - Topical Test 6 (FORM4 2023): Use the Book of Joshua to discuss t",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Identify the main ideas in the book of Joshua",
+          "text": "With examples, illustrate how 'Identify the main ideas in the book of Joshua' is applied in the community. - with diagram",
+          "competence": "Identify the main ideas in the book of Joshua"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Identify the main ideas in the book of Joshua",
+          "text": "How does 'Identify the main ideas in the book of Joshua' relate to sustainable development? - with example",
+          "competence": "Identify the main ideas in the book of Joshua"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use the Book of Joshua to discuss the importance of bravery, humility and perseverance",
+          "text": "Evaluate the role of 'Use the Book of Joshua to discuss the importance of bravery, humility and perseverance' in national development. - locally",
+          "competence": "Use the Book of Joshua to discuss the importance of bravery,"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Identify the main ideas in the book of Joshua",
+          "text": "Define 'Identify the main ideas in the book of Joshua' and discuss its importance in everyday life.",
+          "competence": "Identify the main ideas in the book of Joshua"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use the Book of Joshua to discuss the importance of bravery, humility and perseverance",
+          "text": "How does 'Use the Book of Joshua to discuss the importance of bravery, humility and perseverance' relate to sustainable development? - with example",
+          "competence": "Use the Book of Joshua to discuss the importance of bravery,"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Identify the main ideas in the book of Joshua",
+          "text": "What are the characteristics of 'Identify the main ideas in the book of Joshua'?",
+          "competence": "Identify the main ideas in the book of Joshua"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Identify the main ideas in the book of Joshua",
+          "text": "Outline the procedures involved in 'Identify the main ideas in the book of Joshua'. - with example",
+          "competence": "Identify the main ideas in the book of Joshua"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use the Book of Joshua to discuss the importance of bravery, humility and perseverance",
+          "text": "Describe the main features of 'Use the Book of Joshua to discuss the importance of bravery, humility and perseverance'.",
+          "competence": "Use the Book of Joshua to discuss the importance of bravery,"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Identify the main ideas in the book of Joshua",
+          "text": "Describe the process of 'Identify the main ideas in the book of Joshua' step by step.",
+          "competence": "Identify the main ideas in the book of Joshua"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use the Book of Joshua to discuss the importance of bravery, humility and perseverance",
+          "text": "Define 'Use the Book of Joshua to discuss the importance of bravery, humility and perseverance' and discuss its importance in everyday life. - with diagram",
+          "competence": "Use the Book of Joshua to discuss the importance of bravery,"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Identify the main ideas in the book of Joshua",
+    "Use the Book of Joshua to discuss the importance of bravery, humility and perseverance"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

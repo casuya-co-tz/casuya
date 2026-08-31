@@ -1,0 +1,121 @@
+{
+  "filename": "agriculture_form1_topical_2_2023.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Agriculture - Topical Test 2 (FORM1 2023): Explain vegetable production",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 46,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain vegetable production",
+          "text": "Examine the advantages and disadvantages of 'Explain vegetable production'. - with example",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Animal Health",
+          "text": "Analyse the causes and effects of 'Animal Health'. - with diagram",
+          "competence": "Animal Health"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Animal Health",
+          "text": "Evaluate the role of 'Animal Health' in national development.",
+          "competence": "Animal Health"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain vegetable production",
+          "text": "Compare and contrast 'Explain vegetable production' with related concepts. - with diagram",
+          "competence": "Explain vegetable production"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Animal Health",
+          "text": "Describe the main features of 'Animal Health'.",
+          "competence": "Animal Health"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Animal Health",
+          "text": "Discuss the challenges facing 'Animal Health' in Tanzania and propose solutions. - with example",
+          "competence": "Animal Health"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain vegetable production",
+          "text": "Outline the procedures involved in 'Explain vegetable production'. - with diagram",
+          "competence": "Explain vegetable production"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain vegetable production",
+          "text": "Analyse the causes and effects of 'Explain vegetable production'.",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Animal Health",
+          "text": "Analyse the causes and effects of 'Animal Health'. - with example",
+          "competence": "Animal Health"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain vegetable production",
+          "text": "Discuss the challenges facing 'Explain vegetable production' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain vegetable production"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain vegetable production",
+    "Animal Health"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

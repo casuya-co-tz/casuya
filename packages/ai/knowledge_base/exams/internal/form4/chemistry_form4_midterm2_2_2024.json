@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form4_midterm2_2_2024.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 2 Exam 2 (FORM4 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 79,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "Discuss the challenges facing 'Discuss the contribution of Chemistry in the development of modern society' in Tanzania and propose solutions. - with example",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+          "text": "Describe the main features of 'Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures'. - with example",
+          "competence": "Describe the chemical reactions of aliphatic hydrocarbons an"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Compare and contrast 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts' with related concepts.",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Evaluate the role of 'Conduct experiments in Chemistry' in national development.",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+          "text": "Discuss the challenges facing 'Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)' in Tanzania and propose solutions. - with diagram",
+          "competence": "Investigate the applications of electrochemistry in industri"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
+          "text": "Evaluate the role of 'Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal' in national development.",
+          "competence": "Explain the concept of the periodic table (1st 20 elements i"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Analyse the causes and effects of 'Describe the concept of matter (physical and chemical changes of matte'. - with example",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table'. - with diagram",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Explain the concept of 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' with examples relevant to Tanzania.",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Outline the procedures involved in '. Demonstrate mastery of concepts, theories and principles in Chemistry'. - with diagram",
+          "competence": ". Demonstrate mastery of concepts, theories and principles i"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+          "text": "Explain the concept of 'Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)' with examples relevant to Tanzania.",
+          "competence": "Describe the physical and chemical properties of transition "
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explore reactions of complex compounds",
+          "text": "Describe the main features of 'Explore reactions of complex compounds'. - with example",
+          "competence": "Explore reactions of complex compounds"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of chemical bonding and the interactions of atoms to form molecules",
+          "text": "Describe the main features of 'Explain the concept of chemical bonding and the interactions of atoms to form molecules'.",
+          "competence": "Explain the concept of chemical bonding and the interactions"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism",
+          "text": "With examples, illustrate how 'Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism' is applied in the community. - with diagram",
+          "competence": "Examine the applications of energetics in daily life in comb"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Describe the main features of 'Use the electronic configuration of an element to locate their positions in the periodic table'. - with example",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Define 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry' and discuss its importance in everyday life. - with example",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Analyse the causes and effects of 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid'. - with diagram",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+          "text": "Describe the main features of 'Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides'. - with example",
+          "competence": "Examine reactions of aromatic hydrocarbons, phenols, carbony"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+          "text": "Analyse the causes and effects of 'Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons'. - with example",
+          "competence": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohy"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe acids, bases and salts (reactions of acids and bases with various substance",
+          "text": "Discuss the challenges facing 'Describe acids, bases and salts (reactions of acids and bases with various substance' in Tanzania and propose solutions.",
+          "competence": "Describe acids, bases and salts (reactions of acids and base"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Discuss the contribution of Chemistry in the development of modern society",
+    "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+    "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+    "Conduct experiments in Chemistry",
+    "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+    "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
+    "Describe the concept of matter (physical and chemical changes of matte",
+    "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+    "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+    ". Demonstrate mastery of concepts, theories and principles in Chemistry"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

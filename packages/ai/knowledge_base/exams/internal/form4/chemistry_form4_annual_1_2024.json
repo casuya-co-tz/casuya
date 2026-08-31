@@ -1,0 +1,289 @@
+{
+  "filename": "chemistry_form4_annual_1_2024.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2024",
+  "time": "3:00 Hours",
+  "title": "Chemistry - Annual Exam 1 (FORM4 2024)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 108,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Complete and submit a report for the project started in Form Three",
+          "text": "Define 'Complete and submit a report for the project started in Form Three' and discuss its importance in everyday life.",
+          "competence": "Complete and submit a report for the project started in Form"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+          "text": "Explain the concept of 'Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software' with examples relevant to Tanzania. - with example",
+          "competence": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
+          "text": "Outline the procedures involved in 'Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols'. - with diagram",
+          "competence": "Demonstrate the local and industrial preparations of aliphat"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+          "text": "Outline the procedures involved in 'Describe the concept of gases in terms of the gas laws and the kinetic theory of gases'. - with diagram",
+          "competence": "Describe the concept of gases in terms of the gas laws and t"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Conduct experiments in Chemistry",
+          "text": "Compare and contrast 'Conduct experiments in Chemistry' with related concepts.",
+          "competence": "Conduct experiments in Chemistry"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Define 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table' and discuss its importance in everyday life. - with diagram",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Explain the concept of 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms' with examples relevant to Tanzania. - with diagram",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+          "text": "Describe the main features of 'Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)'. - with diagram",
+          "competence": "Describe the concept of energetics (Heat/enthalpy of reactio"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Describe the main features of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction'. - with example",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+          "text": "Outline the procedures involved in 'Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal'. - with diagram",
+          "competence": "Describe the preparation and properties of various compounds"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate mastery of concepts, theories and principles in Chemistry'. - with example",
+          "competence": "Demonstrate mastery of concepts, theories and principles in "
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "and their applications in daily life",
+          "text": "Discuss the challenges facing 'and their applications in daily life' in Tanzania and propose solutions. - with diagram",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Conduct a project in Chemistry",
+          "text": "Outline the procedures involved in 'Conduct a project in Chemistry'.",
+          "competence": "Conduct a project in Chemistry"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+          "text": "Explain the concept of 'Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides' with examples relevant to Tanzania. - with diagram",
+          "competence": "Examine reactions of aromatic hydrocarbons, phenols, carbony"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)",
+          "text": "Explain the concept of 'Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)' with examples relevant to Tanzania.",
+          "competence": "Describe the concept of chemical equilibria in predicting th"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+          "text": "Explain the concept of 'Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the modern concept of atomic structure (Dalton’s at"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "Define 'Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers' and discuss its importance in everyday life. - with example",
+          "competence": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carb"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+          "text": "Discuss the challenges facing 'Describe the extraction of iron from its ore (ores, stages, and methods of extractio' in Tanzania and propose solutions. - with example",
+          "competence": "Describe the extraction of iron from its ore (ores, stages, "
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+          "text": "With examples, illustrate how 'Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol' is applied in the community. - with diagram",
+          "competence": "Explore the basic tenets of Organic Chemistry (organic compo"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Examine the advantages and disadvantages of 'Use different atomic theories to determine the electronic configuration of elements with different properties'. - with diagram",
+          "competence": "Use different atomic theories to determine the electronic co"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+          "text": "Explain the concept of 'Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons' with examples relevant to Tanzania. - with diagram",
+          "competence": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohy"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+          "text": "Outline the procedures involved in 'Explain the changes in the physical and chemical properties of elements across and down the periodic table'.",
+          "competence": "Explain the changes in the physical and chemical properties "
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism",
+          "text": "Analyse the causes and effects of 'Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism'.",
+          "competence": "Examine the applications of energetics in daily life in comb"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
+          "text": "Outline the procedures involved in 'Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste'.",
+          "competence": "Explain the concept of chemical formulae and nomenclature (v"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+          "text": "Define 'Use the concept of atomic structure to determine the atomic and mass numbers of an element' and discuss its importance in everyday life. - with example",
+          "competence": "Use the concept of atomic structure to determine the atomic "
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
+          "text": "Analyse the causes and effects of 'Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid'. - with diagram",
+          "competence": "Demonstrate oxidizing and displacement properties of non-met"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of the physical and chemical properties of elements on the basis of their arrangements in the periodic table",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the physical and chemical properties of elements on the basis of their arrangements in the periodic table' is applied in the community.",
+          "competence": "Demonstrate an understanding of the physical and chemical pr"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+          "text": "Compare and contrast 'Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture' with related concepts.",
+          "competence": "Describe the applications of volumetric analysis in real lif"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "Discuss the challenges facing 'Perform experiments on separation of different mixtures using different methods' in Tanzania and propose solutions. - with example",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+          "text": "Describe the main features of 'Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)'. - with example",
+          "competence": "Describe the concept of two component liquid systems (immisc"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Complete and submit a report for the project started in Form Three",
+    "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+    "Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
+    "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+    "Conduct experiments in Chemistry",
+    "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+    "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+    "Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+    "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+    "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form3_midterm1_1_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 1 Exam 1 (FORM3 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 88,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "text": "Outline the procedures involved in 'Describe the physiological, anatomical and ecological processes of living organisms'.",
+          "competence": "Describe the physiological, anatomical and ecological proces"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+          "text": "Explain the concept of 'Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio' with examples relevant to Tanzania.",
+          "competence": "Describe the mechanism of transportation of materials in flo"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Learning activities",
+          "text": "Explain the concept of 'Learning activities' with examples relevant to Tanzania. - with diagram",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare and present a report based on the findings",
+          "text": "Explain the concept of 'Prepare and present a report based on the findings' with examples relevant to Tanzania.",
+          "competence": "Prepare and present a report based on the findings"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "and gas exchange in living organisms",
+          "text": "Outline the procedures involved in 'and gas exchange in living organisms'. - with diagram",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+          "text": "Analyse the causes and effects of 'Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces'.",
+          "competence": "Describe the mechanism of gaseous exchange in plants (parts "
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+          "text": "Describe the main features of 'Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio'.",
+          "competence": "Describe the mechanisms of growth in mammals and flowering p"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+          "text": "Discuss the challenges facing 'Investigate growth in flowering plants (hypogeal and epigeal germinatio' in Tanzania and propose solutions. - with example",
+          "competence": "Investigate growth in flowering plants (hypogeal and epigeal"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the structure of epithelial tissues in relation to its digestive role",
+          "text": "Analyse the causes and effects of 'Describe the structure of epithelial tissues in relation to its digestive role'.",
+          "competence": "Describe the structure of epithelial tissues in relation to "
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+          "text": "Explain the concept of 'Carry out investigations related to photosynthesis (conditions necessary for photosynthesi' with examples relevant to Tanzania.",
+          "competence": "Carry out investigations related to photosynthesis (conditio"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)",
+          "text": "Analyse the causes and effects of 'Describe the physiology of gaseous exchange and respiration in mammals (transportation of gases, aerobic and anaerobic respiration mechanisms)'.",
+          "competence": "Describe the physiology of gaseous exchange and respiration "
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Carry out a biological project work using biological principles",
+          "text": "Evaluate the role of 'Carry out a biological project work using biological principles' in national development. - with diagram",
+          "competence": "Carry out a biological project work using biological princip"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "Explain the concept of 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)' with examples relevant to Tanzania. - with example",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "Explain the concept of 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement' with examples relevant to Tanzania. - with example",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Examine the advantages and disadvantages of 'Investigate food nutrients in various food samples'.",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "Describe the main features of 'Explain growth process in animals (growth patterns and metamorphosis)'. - with example",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Discribe the application or role of synthetic phytohormones",
+          "text": "Discuss the challenges facing 'Discribe the application or role of synthetic phytohormones' in Tanzania and propose solutions. - with diagram",
+          "competence": "Discribe the application or role of synthetic phytohormones"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Conduct a project in Biology",
+          "text": "Define 'Conduct a project in Biology' and discuss its importance in everyday life. - with diagram",
+          "competence": "Conduct a project in Biology"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+          "text": "Define 'Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt' and discuss its importance in everyday life.",
+          "competence": "Describe reproduction in humans (sexual reproduction in huma"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the concept of the cell (cell theory, organelles and biological molecules)",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of the cell (cell theory, organelles and biological molecules)'. - with diagram",
+          "competence": "Describe the concept of the cell (cell theory, organelles an"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the physiological, anatomical and ecological processes of living organisms",
+    "Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+    "Learning activities",
+    "Prepare and present a report based on the findings",
+    "and gas exchange in living organisms",
+    "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+    "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+    "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+    "Describe the structure of epithelial tissues in relation to its digestive role",
+    "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

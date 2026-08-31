@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form5_topical_2_2025.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 2 (FORM5 2025): Demonstrate mastery of the basic sk",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 51,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Describe the main features of 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)'.",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of the basic skills of trading locally and internationally",
+          "text": "Analyse the causes and effects of 'Demonstrate mastery of the basic skills of trading locally and internationally'. - with diagram",
+          "competence": "Demonstrate mastery of the basic skills of trading locally a"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate mastery of the basic skills of trading locally and internationally",
+          "text": "Define 'Demonstrate mastery of the basic skills of trading locally and internationally' and discuss its importance in everyday life. - locally",
+          "competence": "Demonstrate mastery of the basic skills of trading locally a"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Discuss the challenges facing 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)' in Tanzania and propose solutions. - locally",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate mastery of the basic skills of trading locally and internationally",
+          "text": "Evaluate the role of 'Demonstrate mastery of the basic skills of trading locally and internationally' in national development. - locally",
+          "competence": "Demonstrate mastery of the basic skills of trading locally a"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Examine the advantages and disadvantages of 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)'.",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate mastery of the basic skills of trading locally and internationally",
+          "text": "Discuss the challenges facing 'Demonstrate mastery of the basic skills of trading locally and internationally' in Tanzania and propose solutions.",
+          "competence": "Demonstrate mastery of the basic skills of trading locally a"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate mastery of the basic skills of trading locally and internationally",
+          "text": "How does 'Demonstrate mastery of the basic skills of trading locally and internationally' relate to sustainable development?",
+          "competence": "Demonstrate mastery of the basic skills of trading locally a"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate mastery of the basic skills of trading locally and internationally",
+          "text": "Assess the impact of 'Demonstrate mastery of the basic skills of trading locally and internationally' on society.",
+          "competence": "Demonstrate mastery of the basic skills of trading locally a"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Describe the main features of 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)'. - locally",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+    "Demonstrate mastery of the basic skills of trading locally and internationally"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

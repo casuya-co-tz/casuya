@@ -1,0 +1,121 @@
+{
+  "filename": "agriculture_form2_topical_4_2025.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Agriculture - Topical Test 4 (FORM2 2025): Vegetable Production",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 32,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Vegetable Production",
+          "text": "Describe the main features of 'Vegetable Production'.",
+          "competence": "Vegetable Production"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Vegetable Production",
+          "text": "Analyse the causes and effects of 'Vegetable Production'. - with example",
+          "competence": "Vegetable Production"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Soil Fertility",
+          "text": "Examine the advantages and disadvantages of 'Soil Fertility'.",
+          "competence": "Soil Fertility"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Soil Fertility",
+          "text": "Analyse the causes and effects of 'Soil Fertility'. - with diagram",
+          "competence": "Soil Fertility"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Vegetable Production",
+          "text": "Describe the main features of 'Vegetable Production'. - with diagram",
+          "competence": "Vegetable Production"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Vegetable Production",
+          "text": "Describe the main features of 'Vegetable Production'. - with example",
+          "competence": "Vegetable Production"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Soil Fertility",
+          "text": "Examine the advantages and disadvantages of 'Soil Fertility'. - with example",
+          "competence": "Soil Fertility"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Vegetable Production",
+          "text": "Compare and contrast 'Vegetable Production' with related concepts. - with diagram",
+          "competence": "Vegetable Production"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Soil Fertility",
+          "text": "Describe the main features of 'Soil Fertility'. - with example",
+          "competence": "Soil Fertility"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Soil Fertility",
+          "text": "Outline the procedures involved in 'Soil Fertility'. - with example",
+          "competence": "Soil Fertility"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Vegetable Production",
+    "Soil Fertility"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

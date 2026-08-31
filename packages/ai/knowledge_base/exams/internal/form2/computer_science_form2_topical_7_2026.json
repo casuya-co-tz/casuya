@@ -1,0 +1,121 @@
+{
+  "filename": "computer_science_form2_topical_7_2026.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Computer Science - Topical Test 7 (FORM2 2026): Explain database concepts",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 49,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain database concepts",
+          "text": "Discuss the challenges facing 'Explain database concepts' in Tanzania and propose solutions.",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain database concepts",
+          "text": "Describe the main features of 'Explain database concepts'. - with example",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain algorithm and flowchart",
+          "text": "Discuss the challenges facing 'Explain algorithm and flowchart' in Tanzania and propose solutions. - with example",
+          "competence": "Explain algorithm and flowchart"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain database concepts",
+          "text": "Describe the main features of 'Explain database concepts'. - with diagram",
+          "competence": "Explain database concepts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain database concepts",
+          "text": "Outline the procedures involved in 'Explain database concepts'.",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain database concepts",
+          "text": "Evaluate the role of 'Explain database concepts' in national development.",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain algorithm and flowchart",
+          "text": "Define 'Explain algorithm and flowchart' and discuss its importance in everyday life. - with example",
+          "competence": "Explain algorithm and flowchart"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain database concepts",
+          "text": "Evaluate the role of 'Explain database concepts' in national development. - with example",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain database concepts",
+          "text": "With examples, illustrate how 'Explain database concepts' is applied in the community. - with example",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain database concepts",
+          "text": "Examine the advantages and disadvantages of 'Explain database concepts'. - with example",
+          "competence": "Explain database concepts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain database concepts",
+    "Explain algorithm and flowchart"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form6_topical_5_2025.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 5 (FORM6 2025): Kukalimani mazungumzo kwa ukalimani",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 37,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kutafsiri matini fupi sahili",
+          "text": "Explain the relationship between 'Kutafsiri matini fupi sahili' and its environment. - with diagram",
+          "competence": "Kutafsiri matini fupi sahili"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutafsiri matini fupi sahili",
+          "text": "What are the characteristics of 'Kutafsiri matini fupi sahili'? - with example",
+          "competence": "Kutafsiri matini fupi sahili"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kukalimani mazungumzo kwa ukalimani sawia/ sambamba",
+          "text": "Discuss the factors influencing 'Kukalimani mazungumzo kwa ukalimani sawia/ sambamba'.",
+          "competence": "Kukalimani mazungumzo kwa ukalimani sawia/ sambamba"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kutafsiri matini fupi sahili",
+          "text": "Define 'Kutafsiri matini fupi sahili' and discuss its importance in everyday life. - locally",
+          "competence": "Kutafsiri matini fupi sahili"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kutafsiri matini fupi sahili",
+          "text": "Outline the procedures involved in 'Kutafsiri matini fupi sahili'.",
+          "competence": "Kutafsiri matini fupi sahili"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kutafsiri matini fupi sahili",
+          "text": "Describe the process of 'Kutafsiri matini fupi sahili' step by step. - with example",
+          "competence": "Kutafsiri matini fupi sahili"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kutafsiri matini fupi sahili",
+          "text": "Describe the main features of 'Kutafsiri matini fupi sahili'. - with example",
+          "competence": "Kutafsiri matini fupi sahili"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kutafsiri matini fupi sahili",
+          "text": "Define 'Kutafsiri matini fupi sahili' and discuss its importance in everyday life.",
+          "competence": "Kutafsiri matini fupi sahili"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kutafsiri matini fupi sahili",
+          "text": "Explain the concept of 'Kutafsiri matini fupi sahili' with examples relevant to Tanzania.",
+          "competence": "Kutafsiri matini fupi sahili"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kutafsiri matini fupi sahili",
+          "text": "Describe the process of 'Kutafsiri matini fupi sahili' step by step.",
+          "competence": "Kutafsiri matini fupi sahili"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kutafsiri matini fupi sahili",
+    "Kukalimani mazungumzo kwa ukalimani sawia/ sambamba"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

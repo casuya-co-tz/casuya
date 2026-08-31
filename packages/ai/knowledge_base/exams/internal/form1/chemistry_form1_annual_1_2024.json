@@ -1,0 +1,289 @@
+{
+  "filename": "chemistry_form1_annual_1_2024.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2024",
+  "time": "3:00 Hours",
+  "title": "Chemistry - Annual Exam 1 (FORM1 2024)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 118,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+          "text": "Describe the main features of 'Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons'. - with example",
+          "competence": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohy"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "With examples, illustrate how 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' is applied in the community. - with example",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Describe the main features of 'Use the electronic configuration of an element to locate their positions in the periodic table'.",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Analyse the causes and effects of 'Analyse the periodic trends of elements in relation to their physical and chemical properties'. - with example",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+          "text": "Examine the advantages and disadvantages of 'Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances'.",
+          "competence": "Examine the applications of two component liquid systems in "
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore reactions of complex compounds",
+          "text": "Evaluate the role of 'Explore reactions of complex compounds' in national development.",
+          "competence": "Explore reactions of complex compounds"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+          "text": "Define 'Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance' and discuss its importance in everyday life.",
+          "competence": "Describe the mole concept (comparison of the mole with other"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+          "text": "Define 'Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the concept of Chemistry (meaning, branches, applic"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Compare and contrast 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table' with related concepts. - with diagram",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Evaluate the role of 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species' in national development.",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+          "text": "Outline the procedures involved in 'Demonstrate an understanding of chemical concepts and principles and their application in different contexts'. - with diagram",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation",
+          "text": "Explain the concept of 'Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation' with examples relevant to Tanzania.",
+          "competence": "Explain the principles of volumetric analysis (preparation o"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain Avogadro’s law in relation to molar quantities",
+          "text": "Examine the advantages and disadvantages of 'Explain Avogadro’s law in relation to molar quantities'. - with example",
+          "competence": "Explain Avogadro’s law in relation to molar quantities"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+          "text": "Outline the procedures involved in 'Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)'. - with diagram",
+          "competence": "Perform experiments involving chemical equilibria and report"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Prepare acid- base indicators using locally available materials",
+          "text": "Describe the main features of 'Prepare acid- base indicators using locally available materials'.",
+          "competence": "Prepare acid- base indicators using locally available materi"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
+          "text": "With examples, illustrate how 'Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals' is applied in the community. - with example",
+          "competence": "Perform experiments on the applications of electrolysis in c"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+          "text": "Define 'Investigate the composition of chemical species in substances using systematic qualitative analysis' and discuss its importance in everyday life. - with diagram",
+          "competence": "Investigate the composition of chemical species in substance"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+          "text": "Discuss the challenges facing 'Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)' in Tanzania and propose solutions.",
+          "competence": "Describe the concept of two component liquid systems (immisc"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+          "text": "Define 'Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)' and discuss its importance in everyday life. - with example",
+          "competence": "Explore the periodic trends of elements in the modern period"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber",
+          "text": "Describe the main features of 'Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber'. - with diagram",
+          "competence": "Examine reactions of haloalkanes, amines and polymers for pr"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)'. - with diagram",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+          "text": "Analyse the causes and effects of 'Explain the changes in the physical and chemical properties of elements across and down the periodic table'. - with example",
+          "competence": "Explain the changes in the physical and chemical properties "
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concept of electronic arrangements",
+          "text": "Outline the procedures involved in 'Describe the concept of electronic arrangements'. - with example",
+          "competence": "Describe the concept of electronic arrangements"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Determine empirical and molecular formulae of common compounds",
+          "text": "Define 'Determine empirical and molecular formulae of common compounds' and discuss its importance in everyday life.",
+          "competence": "Determine empirical and molecular formulae of common compoun"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of chemical bonding and the interactions of atoms to form molecules",
+          "text": "Evaluate the role of 'Explain the concept of chemical bonding and the interactions of atoms to form molecules' in national development.",
+          "competence": "Explain the concept of chemical bonding and the interactions"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
+          "text": "Explain the concept of 'Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols' with examples relevant to Tanzania. - with diagram",
+          "competence": "Demonstrate the local and industrial preparations of aliphat"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "With examples, illustrate how 'Perform experiments on separation of different mixtures using different methods' is applied in the community. - with example",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+          "text": "Outline the procedures involved in 'Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal'.",
+          "competence": "Describe the preparation and properties of various compounds"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+          "text": "Analyse the causes and effects of 'Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)'. - with diagram",
+          "competence": "Investigate the applications of electrochemistry in industri"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+          "text": "Compare and contrast 'Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi' with related concepts. - with example",
+          "competence": "Explore the basic tenets of ionic theory and electrolysis (i"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+    "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+    "Use the electronic configuration of an element to locate their positions in the periodic table",
+    "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+    "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+    "Explore reactions of complex compounds",
+    "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+    "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+    "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+    "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

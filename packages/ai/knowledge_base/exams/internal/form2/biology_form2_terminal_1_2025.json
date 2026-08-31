@@ -1,0 +1,249 @@
+{
+  "filename": "biology_form2_terminal_1_2025.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2025",
+  "time": "2:30 Hours",
+  "title": "Biology - Terminal Exam 1 (FORM2 2025)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 115,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+          "text": "With examples, illustrate how 'Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio' is applied in the community. - with diagram",
+          "competence": "Describe the mechanism of transportation of materials in flo"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+          "text": "Explain the concept of 'Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio' with examples relevant to Tanzania. - with example",
+          "competence": "Describe reproduction in plants (concept of reproduction in "
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an advanced understanding of concepts, theories and principles in Biology'. - with diagram",
+          "competence": "Demonstrate an advanced understanding of concepts, theories "
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "Outline the procedures involved in 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)'. - with example",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Examine the advantages and disadvantages of 'Develop and carry out a simple research project in Biology'. - with example",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+          "text": "Discuss the challenges facing 'Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces' in Tanzania and propose solutions. - with example",
+          "competence": "Describe the mechanism of gaseous exchange in plants (parts "
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Outline the procedures involved in 'Prepare and present a report on cell and photosynthesis investigations'.",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Conduct a project in Biology",
+          "text": "Define 'Conduct a project in Biology' and discuss its importance in everyday life. - with diagram",
+          "competence": "Conduct a project in Biology"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "and gas exchange in living organisms",
+          "text": "Define 'and gas exchange in living organisms' and discuss its importance in everyday life.",
+          "competence": "and gas exchange in living organisms"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Design and carry out a project in Biology",
+          "text": "Evaluate the role of 'Design and carry out a project in Biology' in national development. - with diagram",
+          "competence": "Design and carry out a project in Biology"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+          "text": "Define 'Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the mechanism of transportation of materials in the"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "Discuss the challenges facing 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain classification systems and taxonomic rank",
+          "text": "With examples, illustrate how 'Explain classification systems and taxonomic rank' is applied in the community. - with example",
+          "competence": "Explain classification systems and taxonomic rank"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe coordination in plants (tropic, response",
+          "text": "Compare and contrast 'Describe coordination in plants (tropic, response' with related concepts. - with diagram",
+          "competence": "Describe coordination in plants (tropic, response"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis",
+          "text": "Define 'Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis' and discuss its importance in everyday life. - with diagram",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Explain the concept of 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' with examples relevant to Tanzania.",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+          "text": "Compare and contrast 'Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)' with related concepts. - with example",
+          "competence": "Explain the concept of regulation in mammals (feedback mecha"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Investigate tropic responses in plants",
+          "text": "Compare and contrast 'Investigate tropic responses in plants' with related concepts.",
+          "competence": "Investigate tropic responses in plants"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the structure of epithelial tissues in relation to its digestive role",
+          "text": "Discuss the challenges facing 'Describe the structure of epithelial tissues in relation to its digestive role' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the structure of epithelial tissues in relation to "
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)",
+          "text": "With examples, illustrate how 'Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)' is applied in the community.",
+          "competence": "Describe the mechanism of blood circulation in vertebrates ("
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "Compare and contrast 'Explain growth process in animals (growth patterns and metamorphosis)' with related concepts. - with diagram",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Complete and submit a report for the research project started in Form Three",
+          "text": "Explain the concept of 'Complete and submit a report for the research project started in Form Three' with examples relevant to Tanzania. - with diagram",
+          "competence": "Complete and submit a report for the research project starte"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Describe the main features of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry'. - with diagram",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+          "text": "Evaluate the role of 'Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)' in national development. - with diagram",
+          "competence": "Describe principles of inheritance in living organisms (here"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+          "text": "Evaluate the role of 'Describe nutrition in human and ruminants (nutrients, digestive system and processe' in national development. - with diagram",
+          "competence": "Describe nutrition in human and ruminants (nutrients, digest"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+    "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+    "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+    "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+    "Develop and carry out a simple research project in Biology",
+    "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+    "Prepare and present a report on cell and photosynthesis investigations",
+    "Conduct a project in Biology",
+    "and gas exchange in living organisms",
+    "Design and carry out a project in Biology"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

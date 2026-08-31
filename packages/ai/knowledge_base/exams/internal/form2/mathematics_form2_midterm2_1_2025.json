@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form2_midterm2_1_2025.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 2 Exam 1 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 93,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "Explain the concept of 'Describe the concepts of geometry (similarities and congruenc' with examples relevant to Tanzania.",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation'.",
+          "competence": "Explore the basic tenets of coordinate geometry (gradient an"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "Discuss the factors influencing 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)'. - with example",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use knowledge of sets to organise, create, and categorise objects",
+          "text": "Explain the relationship between 'Use knowledge of sets to organise, create, and categorise objects' and its environment.",
+          "competence": "Use knowledge of sets to organise, create, and categorise ob"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)'.",
+          "competence": "Explore the basic tenets of sequences and series (Arithmetic"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "Compare and contrast 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc' with related concepts.",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain postulates, proofs, and theorems of congruent triangles",
+          "text": "Outline the procedures involved in 'Explain postulates, proofs, and theorems of congruent triangles'.",
+          "competence": "Explain postulates, proofs, and theorems of congruent triang"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the concept of inequalities and absolute values of real numbers",
+          "text": "Explain the concept of 'Explain the concept of inequalities and absolute values of real numbers' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain the concept of inequalities and absolute values of r"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Apply sine and cosine rules to find distances or angles of elevation",
+          "text": "What are the characteristics of 'Apply sine and cosine rules to find distances or angles of elevation'? - locally",
+          "competence": "Apply sine and cosine rules to find distances or angles of e"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Represent two sets in a Venn diagram",
+          "text": "Define 'Represent two sets in a Venn diagram' and discuss its importance in everyday life. - with example",
+          "competence": "Represent two sets in a Venn diagram"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use rates and variations in different contexts",
+          "text": "Define 'Use rates and variations in different contexts' and discuss its importance in everyday life. - with diagram",
+          "competence": "Use rates and variations in different contexts"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "Outline the procedures involved in 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)'.",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Calculate angles of elevation and depression",
+          "text": "Discuss the challenges facing 'Calculate angles of elevation and depression' in Tanzania and propose solutions. - with example",
+          "competence": "Calculate angles of elevation and depression"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+          "text": "Describe the process of 'Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs' step by step.",
+          "competence": "Find the general term for AP and GP and use them to derive f"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Find the number of elements in a set",
+          "text": "Describe the process of 'Find the number of elements in a set' step by step.",
+          "competence": "Find the number of elements in a set"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)",
+          "text": "Compare and contrast 'Explore the basic tenets of probability theory (counting principles, independent and dependent events, probability distributions)' with related concepts. - with diagram",
+          "competence": "Explore the basic tenets of probability theory (counting pri"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Determine the equation of a straight line and draw its graph",
+          "text": "Discuss the factors influencing 'Determine the equation of a straight line and draw its graph'. - with example",
+          "competence": "Determine the equation of a straight line and draw its graph"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Find the domain and range of relations and functions",
+          "text": "Outline the procedures involved in 'Find the domain and range of relations and functions'. - with example",
+          "competence": "Find the domain and range of relations and functions"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Carry out a project in Mathematics",
+          "text": "With examples, illustrate how 'Carry out a project in Mathematics' is applied in the community.",
+          "competence": "Carry out a project in Mathematics"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Represent rational numbers on a number line",
+          "text": "Compare and contrast 'Represent rational numbers on a number line' with related concepts.",
+          "competence": "Represent rational numbers on a number line"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concepts of geometry (similarities and congruenc",
+    "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
+    "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+    "Use knowledge of sets to organise, create, and categorise objects",
+    "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+    "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+    "Explain postulates, proofs, and theorems of congruent triangles",
+    "Explain the concept of inequalities and absolute values of real numbers",
+    "Apply sine and cosine rules to find distances or angles of elevation",
+    "Represent two sets in a Venn diagram"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,389 @@
+{
+  "filename": "physics_form4_csee_pilot_06_2026.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "code": "031",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "csee_pilot",
+  "term": "Pilot",
+  "year": "2026",
+  "duration": "3:00 Hours",
+  "title": "Physics - Form 4 CSEE Pilot (2026) Paper 06",
+  "instructions": [
+    "This paper consists of sections A, B, and C with a total of eleven (11) questions.",
+    "Answer ALL questions in sections A and B, and TWO (2) questions from section C.",
+    "Cellular phones and any unauthorized materials are NOT allowed in the examination room.",
+    "Non-programmable calculators and mathematical tables may be used.",
+    "Where necessary, use acceleration due to gravity g=10 m/s2, speed of light c=3.0x10^8 m/s, charge of electron e=1.6x10^-19 C, density of water ρw=1000 kg/m3."
+  ],
+  "assessor_table": null,
+  "sections": [
+    {
+      "name": "Section A",
+      "marks": 16,
+      "instructions": "Answer ALL questions in this section.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 10,
+          "text": "For each of items (i)-(x), choose correct answer and write its letter in box provided:",
+          "items": [
+            {
+              "number": "i",
+              "text": "Force 50N moves body through 4m in direction of force in 2 seconds. Power exerted?",
+              "options": {
+                "A": "50 W",
+                "B": "100 W",
+                "C": "200 W",
+                "D": "400 W"
+              },
+              "answer": "B",
+              "marks": 1
+            },
+            {
+              "number": "ii",
+              "text": "Which is SI unit of power?",
+              "options": {
+                "A": "Joule",
+                "B": "Watt",
+                "C": "Newton",
+                "D": "Pascal"
+              },
+              "answer": "B",
+              "marks": 1
+            },
+            {
+              "number": "iii",
+              "text": "Process by which electrons emitted from heated metal surface is called:",
+              "options": {
+                "A": "Photoelectric emission",
+                "B": "Thermionic emission",
+                "C": "Secondary emission",
+                "D": "Field emission"
+              },
+              "answer": "B",
+              "marks": 1
+            },
+            {
+              "number": "iv",
+              "text": "Half-life of radioactive isotope is 4 hours. Initial mass 80g, mass remains after 12 hours?",
+              "options": {
+                "A": "40 g",
+                "B": "20 g",
+                "C": "10 g",
+                "D": "5 g"
+              },
+              "answer": "C",
+              "marks": 1
+            },
+            {
+              "number": "v",
+              "text": "Neutral point in magnetic field created by bar magnet and Earth's field is where:",
+              "options": {
+                "A": "Magnetic flux maximum",
+                "B": "Net magnetic field zero",
+                "C": "Gravitational equals magnetic",
+                "D": "Magnetic lines cross"
+              },
+              "answer": "B",
+              "marks": 1
+            },
+            {
+              "number": "vi",
+              "text": "Which is sustainable energy source?",
+              "options": {
+                "A": "Solar",
+                "B": "Coal",
+                "C": "Diesel",
+                "D": "Kerosene"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "vii",
+              "text": "What type of semiconductor is formed when pure Silicon doped with pentavalent impurity like Phosphorus?",
+              "options": {
+                "A": "p-type",
+                "B": "n-type",
+                "C": "Intrinsic",
+                "D": "Insulator"
+              },
+              "answer": "B",
+              "marks": 1
+            },
+            {
+              "number": "viii",
+              "text": "Ray enters glass block refractive index 1.5 at incidence 30°, sine of angle of refraction?",
+              "options": {
+                "A": "0.33",
+                "B": "0.50",
+                "C": "0.75",
+                "D": "0.67"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "ix",
+              "text": "State of matter with definite shape and volume",
+              "options": {
+                "A": "Solid",
+                "B": "Liquid",
+                "C": "Gas",
+                "D": "Plasma"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "x",
+              "text": "Which instrument is most suitable for measuring internal diameter of narrow test tube?",
+              "options": {
+                "A": "Vernier Calliper",
+                "B": "Micrometer Screw Gauge",
+                "C": "Metre Rule",
+                "D": "Tape Measure"
+              },
+              "answer": "A",
+              "marks": 1
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "type": "matching",
+          "marks": 6,
+          "text": "Match items in LIST A with corresponding responses in LIST B by writing letter of correct response beside item number:",
+          "ListA": [
+            "The phenomenon where a wave bends around edges of obstacle or narrow opening.",
+            "The bending of light rays as they travel across boundary between two transparent media.",
+            "The superposition of two or more coherent waves resulting in regions of maximum and minimum intensities.",
+            "The splitting of white light into component spectral colors through triangular glass prism.",
+            "The bouncing back of light waves into same medium upon striking polished surface.",
+            "The restriction of light vibrations to single plane perpendicular to propagation."
+          ],
+          "ListB": [
+            "Dispersion",
+            "Refraction",
+            "Polarization",
+            "Diffraction",
+            "Interference",
+            "Total Internal Reflection",
+            "Reflection",
+            "Resonance"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "marks": 54,
+      "instructions": "Answer ALL questions in this section. Each question carries 9 marks.",
+      "questions": [
+        {
+          "number": "3",
+          "type": "structured",
+          "stem": "Distinguish forward bias and reverse bias operations of p-n junction diode. [3 marks]",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Distinguish forward vs reverse bias.",
+              "marks": 3
+            },
+            {
+              "label": "b",
+              "text": "Bridge rectifier system: (i) Explain full-wave rectification during positive half-cycle [3 marks]",
+              "marks": 3
+            },
+            {
+              "label": "c",
+              "text": "(ii) Draw output voltage waveform across RL [3 marks]",
+              "marks": 3
+            }
+          ],
+          "marks": 9
+        },
+        {
+          "number": "4",
+          "type": "structured",
+          "stem": "Distinguish between transverse waves and longitudinal waves, giving one example each. [4 marks]",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Distinguish transverse vs longitudinal with examples.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Radio wave frequency 100 MHz, calculate wavelength in air speed 3.0x10^8 m/s. [5 marks]",
+              "marks": 5
+            }
+          ],
+          "marks": 9
+        },
+        {
+          "number": "5",
+          "type": "structured",
+          "stem": "Define thermionic emission and mention two practical applications of CRO. [4 marks]",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Define thermionic emission and mention two CRO applications.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "In CRT electrons accelerated from rest through 2.5kV. (i) Kinetic energy acquired in Joules [3 marks]",
+              "marks": 3
+            },
+            {
+              "label": "c",
+              "text": "(ii) Maximum velocity reached (me=9.1x10^-31 kg) [2 marks]",
+              "marks": 2
+            }
+          ],
+          "marks": 9
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "stem": "State Ohm's law and give two limitations.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "State Ohm's law and give two limitations. [3 marks]",
+              "marks": 3
+            },
+            {
+              "label": "b",
+              "text": "Two resistors 3Ω and 6Ω are connected in parallel across 12V battery. (i) Total equivalent resistance [3 marks]",
+              "marks": 3
+            },
+            {
+              "label": "c",
+              "text": "(ii) Total current drawn from battery [3 marks]",
+              "marks": 3
+            }
+          ],
+          "marks": 9
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "stem": "Step-down transformer connected to AC mains supply (Np=800 Ns=200 diagram).",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "(i) State fundamental principle of operation of transformer. [2 marks]",
+              "marks": 2
+            },
+            {
+              "label": "b",
+              "text": "(ii) Explain two main energy losses in transformers and how each minimized. [7 marks]",
+              "marks": 7
+            }
+          ],
+          "marks": 9
+        },
+        {
+          "number": "8",
+          "type": "structured",
+          "stem": "Define half-life of radioactive substance. [2 marks]",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Define half-life.",
+              "marks": 2
+            },
+            {
+              "label": "b",
+              "text": "Complete nuclear reactions: 238_92U ->234_90Th + X ; 234_90Th ->234_91Pa + Y and identify X/Y [4 marks]",
+              "marks": 4
+            },
+            {
+              "label": "c",
+              "text": "State three safety precautions when handling radioactive isotopes [3 marks]",
+              "marks": 3
+            }
+          ],
+          "marks": 9
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "marks": 30,
+      "instructions": "Answer TWO (2) questions from this section. Each question carries 15 marks.",
+      "questions": [
+        {
+          "number": "9",
+          "type": "structured",
+          "stem": "Explain greenhouse effect and list two primary greenhouse gases responsible for global warming. [4 marks]",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Explain greenhouse effect and list two gases.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Differentiate Terrestrial vs Jovian planets, two examples each [5 marks]",
+              "marks": 5
+            },
+            {
+              "label": "c",
+              "text": "Explain how P-waves and S-waves utilized to determine liquid nature of Earth's outer core [6 marks]",
+              "marks": 6
+            }
+          ],
+          "marks": 15
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "stem": "State Archimedes' Principle and Law of Flotation. [4 marks]",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "State both principles.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Solid wooden block density 700 kg/m3 volume 0.05 m3 floats in fresh water. (i) Calculate volume submerged [4 marks]",
+              "marks": 4
+            },
+            {
+              "label": "c",
+              "text": "(ii) Calculate minimum mass of lead to be placed on block to completely submerge [4 marks]",
+              "marks": 4
+            },
+            {
+              "label": "d",
+              "text": "(c) Describe experiment to determine relative density of irregular solid that sinks using spring balance [3 marks]",
+              "marks": 3
+            }
+          ],
+          "marks": 15
+        }
+      ]
+    }
+  ],
+  "total_questions": 11,
+  "question_count": 11,
+  "total_marks": 100,
+  "format_template": "PHYSICS_CSEE_PILOT_2026.html",
+  "syllabus_topics_covered": [
+    "Measurement",
+    "Transformer",
+    "Electron emission",
+    "Semiconductor",
+    "Radioactivity"
+  ],
+  "source": "necta-csee-pilot",
+  "curriculum": "TIE 2023-2025",
+  "format_reference": "NECTA CSEE 2025/2026 - 031 Physics"
+}

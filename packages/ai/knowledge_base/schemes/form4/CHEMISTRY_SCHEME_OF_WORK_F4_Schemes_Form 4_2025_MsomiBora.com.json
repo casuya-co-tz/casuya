@@ -1,0 +1,457 @@
+{
+  "file": "CHEMISTRY SCHEME OF WORK F4 - MsomiBora.com.docx",
+  "subjects": [
+    {
+      "table_index": 0,
+      "headers": [
+        "MAIN COMPETENCE",
+        "SPECIFIC COMPETENCE",
+        "TEACHING ACTIVITIES",
+        "MONTH",
+        "WEEK",
+        "PERIODS",
+        "REFERENCE",
+        "TEACHING/LEARNING TOOLS",
+        "ASSESSMENT TOOLS",
+        "REMARKS"
+      ],
+      "column_count": 10,
+      "entries": [
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.1 General chemical properties of non metals",
+          "teaching_act": "To prepare students to discuss the oxidizing properties of non metals as good electron acceptors",
+          "month": "January",
+          "week": "3RD",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Chart of oxidation reactions of non metal"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.1 General chemical properties of non metals",
+          "teaching_act": "To demonstrate the displacement of non – metal by another non metal from a compound",
+          "month": "January",
+          "week": "3RD",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Cl2 KI"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.2 Chlorine",
+          "teaching_act": "To lead students to discuss and make observations on the chemical properties of chlorine Demonstrate the oxidizing properties of chlorine",
+          "month": "January",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "SO2, H2S FeCl2, Dyes, Cl, coloured flowers"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.2 Chlorine",
+          "teaching_act": "To prepare students to discuss uses of chlorine",
+          "month": "January",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Chart of uses of Cl2"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.3 Hydrogen Chloride",
+          "teaching_act": "Prepare students prepare Hcl gas in the Laboratory using conc. H2SO4 and NaCl.",
+          "month": "January",
+          "week": "4TH",
+          "period": "12",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "NaCl, NH4ClConc. H2SO4,HCl"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.3 Hydrogen Chloride",
+          "teaching_act": "Lead a discussion on the uses of HCl gas.",
+          "month": "January",
+          "week": "4TH",
+          "period": "12",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Chart of the uses of HCl gas"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.4 Sulphur",
+          "teaching_act": "To prepare students to discuss the extraction of sulphur by the Frisch process",
+          "month": "February",
+          "week": "1ST",
+          "period": "12",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Diagram of the industrial extraction of Sulphur"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.4 Sulphur",
+          "teaching_act": "Lead a discussion on the properties and uses of sulphur",
+          "month": "February",
+          "week": "2ND",
+          "period": "12",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "S, Cu, Fe, Conc H2SO4, K2Cr2O7"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.5 Sulphur dioxide",
+          "teaching_act": "To prepare students to discuss the uses properties and hazards of sulphur dioxide",
+          "month": "February",
+          "week": "3RD",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "SO2, NaOH, KMnO4, FeCl2, HNO3 H2S, Mg, PbO"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.6 Sulphuric acid",
+          "teaching_act": "To prepare students to discuss the contact process for the manufacture of H2SO4",
+          "month": "February",
+          "week": "4TH",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Chart of industrial manufacture of H2SO4"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.6 Sulphuric acid",
+          "teaching_act": "To prepare students to discuss the properties and uses of H2SO4",
+          "month": "February",
+          "week": "4TH",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Mg, MgO, NaOH, conc H2SO4, C, CuSO4, products"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.7 Nitrogen",
+          "teaching_act": "Prepare students to prepare a sample of nitrogen gas in the laboratory and discuss its uses",
+          "month": "March",
+          "week": "1ST 2ND",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Gas jar, Cu, conc. KOH, heat, flosses"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.8 Ammonia",
+          "teaching_act": "To demonstrate the preparation of dry sample of NH3 in the laboratory",
+          "month": "March",
+          "week": "3RD",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Ca(OH)2, NH4Cl, CaO, litmus, conc. HCl"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.8 Ammonia",
+          "teaching_act": "To prepare students to discuss the uses and properties of NH3 gas",
+          "month": "March",
+          "week": "3RD",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "HCl, CaO, O2, NH3, H2O, and Litmus"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.9 Carbon",
+          "teaching_act": "To lead students on the discussion on the forms in which carbon exists and allotropic forms of carbon",
+          "month": "March",
+          "week": "1ST 2ND",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Egg shells CO32-, coal, graphite and Diamond"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.10 Carbon dioxide",
+          "teaching_act": "To prepare students to prepare a dry CO2 gas in the laboratory",
+          "month": "March",
+          "week": "1ST 2ND",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "CaCO3, HCl, Apparatus"
+        },
+        {
+          "competence": "NON METALS AND THEIR COMPOUNDS",
+          "objective": "1.10 Carbon dioxide",
+          "teaching_act": "To lead students to observe and analyze the properties and uses of CO2",
+          "month": "March",
+          "week": "1ST 2ND",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "CO2, Ca(OH)2, Ba (OH)2 CaCO3, Mg, H2O"
+        },
+        {
+          "competence": "ORGANIC CHEMISTRY",
+          "objective": "3.1Introduction to organic chemistry",
+          "teaching_act": "To prepare students to compare organic chemistry with inorganic chemistry",
+          "week": "4TH",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. SCSU &MoEVT",
+          "assessment": "Organic and inorganic"
+        },
+        {
+          "competence": "ORGANIC CHEMISTRY",
+          "objective": "3.1Introduction to organic chemistry",
+          "teaching_act": "To prepare students to compare organic chemistry with inorganic chemistry",
+          "week": "4TH",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. SCSU &MoEVT",
+          "assessment": "compounds"
+        },
+        {
+          "competence": "ORGANIC CHEMISTRY",
+          "objective": "3.1Introduction to organic chemistry",
+          "teaching_act": "To lead students to discuss the importance of organic chemistry",
+          "month": "April",
+          "week": "4TH",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. SCSU &MoEVT",
+          "assessment": "Samples of organic compounds"
+        },
+        {
+          "competence": "ORGANIC CHEMISTRY",
+          "objective": "3.1Introduction to organic chemistry",
+          "teaching_act": "Prepare student to discuss the origin of organic compounds",
+          "month": "April",
+          "week": "4TH",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. SCSU &MoEVT",
+          "assessment": "Synthetic organic compounds"
+        },
+        {
+          "competence": "ORGANIC CHEMISTRY",
+          "objective": "3.1Introduction to organic chemistry",
+          "teaching_act": "To prepare students to discuss the fractional distillation of crude oil",
+          "month": "April",
+          "week": "4TH",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. SCSU &MoEVT",
+          "assessment": "Chart of fractional distillation"
+        },
+        {
+          "competence": "ORGANIC CHEMISTRY",
+          "objective": "3.2 Hydrocarbons",
+          "teaching_act": "Lead students to discuss the classification and homologous series of hydrocarbons",
+          "month": "April",
+          "week": "4TH",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. SCSU &MoEVT",
+          "assessment": "Chart of classes and series of homologous of hydrocarbons"
+        },
+        {
+          "competence": "ORGANIC CHEMISTRY",
+          "objective": "3.2 Hydrocarbons",
+          "teaching_act": "To guide students to discuss on the Isomerism, Isomers, general formula of hydrocarbons.",
+          "month": "May",
+          "week": "1ST",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. SCSU &MoEVT",
+          "assessment": "Isomers of hydrocarbons"
+        },
+        {
+          "competence": "ORGANIC CHEMISTRY",
+          "objective": "3.3Properties of hydrocarbons",
+          "teaching_act": "To prepare students to discuss on the physical properties, saturated/ unsaturated and chemical properties of hydrocarbons",
+          "month": "May",
+          "week": "2ND",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. SCSU &MoEVT",
+          "assessment": "Chart of saturated or unsaturated and properties of hydrocarbons"
+        },
+        {
+          "competence": "ORGANIC CHEMISTRY",
+          "objective": "3.4Alcohols",
+          "teaching_act": "To prepare students to discuss on the Lab. Prep. Of Ethanol, homologous series, structures of isomers properties of alcohol their uses and the harmful effects of alcohol",
+          "month": "May",
+          "week": "3rd & 4th",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. SCSU &MoEVT",
+          "assessment": "Charts of isomers, yeast, H2O and sugar"
+        },
+        {
+          "objective": "3.5 Carboxylic acids",
+          "teaching_act": "To prepare students to find out sources of acids, discuss on the oxidation of ethanol, homologous series, properties and soap preparation",
+          "month": "May",
+          "week": "3rd & 4th",
+          "period": "08",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. SCSU &MoEVT",
+          "assessment": "NaOH, Na2CO3, NaHCO3, acids and soap"
+        },
+        {
+          "competence": "SOIL CHEMISTRY",
+          "objective": "3.1 Soil Formation",
+          "teaching_act": "To prepare students to discuss the process soil formation and factors",
+          "month": "July",
+          "week": "2ND",
+          "period": "08",
+          "assessment": "Soil samples of different end types marble Dilute acid"
+        },
+        {
+          "competence": "SOIL CHEMISTRY",
+          "objective": "3.2 Soil Reaction",
+          "teaching_act": "To prepare students to discuss the concept of soil reaction, its causes, and effects to plant growth and how to measure pH of the soil. To guide students to manage the soil pH by liming.",
+          "month": "July",
+          "week": "3RD",
+          "period": "04",
+          "assessment": "pH meter soil pH Kit samples of soil Liming material"
+        },
+        {
+          "competence": "SOIL CHEMISTRY",
+          "objective": "3.3Plant nutrients in the soil",
+          "teaching_act": "prepare students to discuss on the microelements and macro elements",
+          "month": "July",
+          "week": "4TH",
+          "period": "04",
+          "assessment": "Chart showing soil nutrients"
+        },
+        {
+          "competence": "SOIL CHEMISTRY",
+          "objective": "3.4Manure and fertilizers",
+          "teaching_act": "prepare a discussion on Preparation of composite manure Advantages and elements of natural manure Types of fertilizers. Fertilizer grackles and analysis Methods of fertilizer application",
+          "month": "July",
+          "week": "4TH",
+          "period": "04",
+          "assessment": "Samples of composite manure fertilizers (NPK, MSP, DSP, TSP Urea, CAN Superphosphate. Natural Manure"
+        },
+        {
+          "competence": "SOIL CHEMISTRY",
+          "objective": "3.5Soil fertility and productivity",
+          "teaching_act": "prepare students to discuss about the soil fertility and productivity",
+          "month": "July",
+          "week": "4TH",
+          "period": "04",
+          "assessment": "Samples or plots of soil fertile and productive soil."
+        },
+        {
+          "competence": "4. POLLUTION",
+          "objective": "4.1 Concept of pollution",
+          "teaching_act": "prepare students to discuss the meaning of pollution land give examples of pollution in real life situations",
+          "month": "August",
+          "week": "1ST",
+          "period": "04",
+          "references": "TIE(2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Charts and pictures of pollution"
+        },
+        {
+          "competence": "4. POLLUTION",
+          "objective": "4.2 Terrestrial pollution",
+          "teaching_act": "prepare a discussion on; Human activities which cause terrestrial pollution Hazards caused by terrestrial pollution Methods of preventing terrestrial pollution",
+          "month": "August",
+          "week": "1ST",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Land pollution"
+        },
+        {
+          "competence": "4. POLLUTION",
+          "objective": "4.3 Aquatic pollution",
+          "teaching_act": "prepare students to discuss on; Human activities which cause water pollution Hazards which are caused by water pollution Ways of preventing water pollution",
+          "month": "August",
+          "week": "2ND",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Water pollution"
+        },
+        {
+          "competence": "4. POLLUTION",
+          "objective": "4.4 Aerial pollution",
+          "teaching_act": "Organize students to discuss on Human activities causes aerial pollution Hazards caused by air pollution Methods of preventing air pollution Control/preventive measures of air pollution",
+          "month": "August",
+          "week": "2ND",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Air pollution"
+        },
+        {
+          "objective": "4.5 Environmental conservation",
+          "teaching_act": "prepare students to Discuss the meaning of environmental conservation. - Guide students to plant flowers and tree, clean the environment and conserve the environments",
+          "month": "August",
+          "week": "3rd 4TH",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Pictures of un-conserved and conserved environment"
+        },
+        {
+          "objective": "4.6 Global warming",
+          "teaching_act": "prepare a discussion on: Meaning of global warming and green house effect Green house gases Climatic condition caused by global warming Ways of preventing global warming",
+          "month": "August",
+          "week": "3rd 4TH",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Pictures to illustrate the green house effects, hurricanes, deserts floods"
+        },
+        {
+          "objective": "4.7. O-zone layer Destruction",
+          "teaching_act": "To discuss on: Meaning and significance of the Ozone layer. How ozone layer is destroyed Protective methods of Ozone layer",
+          "month": "August",
+          "week": "3rd 4TH",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM.",
+          "assessment": "Charts illustrates Ozone layer destruction"
+        },
+        {
+          "competence": "5. QUALITATIVE ANALYSIS",
+          "objective": "5.1 The concept of qualitative Analysis",
+          "teaching_act": "To prepare a discuss on the meaning and importance of qualitative analysis in real life",
+          "month": "September",
+          "week": "3RD",
+          "period": "04",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. ,",
+          "assessment": "Apparatus for a qualitative analysis"
+        },
+        {
+          "competence": "5. QUALITATIVE ANALYSIS",
+          "objective": "5.2 Qualitative analysis procedures",
+          "teaching_act": "prepare students to practice the use of apparatus for qualitative analysis",
+          "month": "September",
+          "week": "3RD",
+          "period": "4",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. ,",
+          "assessment": "Apparatus for qualitative analysis"
+        },
+        {
+          "competence": "5. QUALITATIVE ANALYSIS",
+          "objective": "5.2 Qualitative analysis procedures",
+          "teaching_act": "To prepare students to carry out preliminary test on an unknown sample",
+          "week": "4TH",
+          "period": "4",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. ,",
+          "assessment": "Conc. H2SO4, DilHCl, SO42- Litmus, NO3-, HCO-3, NH4+, Cl-, CO32-, H2O"
+        },
+        {
+          "competence": "5. QUALITATIVE ANALYSIS",
+          "objective": "5.2 Qualitative analysis procedures",
+          "teaching_act": "prepare student to prepare solutions from soluble and insoluble salts",
+          "week": "4TH",
+          "period": "4",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. ,",
+          "assessment": "Distilled H2O, Dil. HCl, HNO3, CO32-, NO3-, SO42-, NH4, HCO3-"
+        },
+        {
+          "competence": "5. QUALITATIVE ANALYSIS",
+          "objective": "5.2 Qualitative analysis procedures",
+          "teaching_act": "prepare students to carry out experiments to precipitate Cu2+, Fe2+, Fe3+, Ca2+, Pb2+, Zn2+",
+          "week": "4TH",
+          "period": "4",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. ,",
+          "assessment": "NaOH, NH4OH, KI, K, Ferro, Ferri, solutions"
+        },
+        {
+          "competence": "5. QUALITATIVE ANALYSIS",
+          "objective": "5.2 Qualitative analysis procedures",
+          "teaching_act": "prepare students to confirm the identified ions.",
+          "week": "4TH",
+          "period": "4",
+          "references": "Tanzania Institute of Education (2022), Chemistry for Secondary Schools, Book four, TIE, DSM. ,",
+          "assessment": "BaCl2, NaOH, HCl, NH4OH, MgSO4, NH4 Oxalate."
+        }
+      ],
+      "entry_count": 45
+    }
+  ],
+  "form": "Form4",
+  "year": ""
+}

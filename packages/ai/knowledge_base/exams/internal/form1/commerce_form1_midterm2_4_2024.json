@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form1_midterm2_4_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 2 Exam 4 (FORM1 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 98,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Partnership",
+          "text": "Examine the advantages and disadvantages of 'Partnership'. - with example",
+          "competence": "Partnership"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain storekeeping",
+          "text": "Evaluate the role of 'Explain storekeeping' in national development. - with diagram",
+          "competence": "Explain storekeeping"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain concept of commerce",
+          "text": "Discuss the challenges facing 'Explain concept of commerce' in Tanzania and propose solutions.",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Marketing Mix",
+          "text": "Examine the advantages and disadvantages of 'Marketing Mix'. - with diagram",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Insurance",
+          "text": "Examine the advantages and disadvantages of 'Insurance'.",
+          "competence": "Insurance"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain transport",
+          "text": "Discuss the challenges facing 'Explain transport' in Tanzania and propose solutions. - with example",
+          "competence": "Explain transport"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Sources of Business Finance",
+          "text": "Evaluate the role of 'Sources of Business Finance' in national development. - with example",
+          "competence": "Sources of Business Finance"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Storekeeping",
+          "text": "Describe the main features of 'Storekeeping'. - with diagram",
+          "competence": "Storekeeping"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Trade",
+          "text": "Define 'Trade' and discuss its importance in everyday life. - with diagram",
+          "competence": "Trade"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Taxation",
+          "text": "Examine the advantages and disadvantages of 'Taxation'. - with diagram",
+          "competence": "Taxation"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Warehousing",
+          "text": "Evaluate the role of 'Warehousing' in national development.",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Market and Marketing",
+          "text": "With examples, illustrate how 'Market and Marketing' is applied in the community. - with example",
+          "competence": "Market and Marketing"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Concept of Commerce",
+          "text": "Discuss the challenges facing 'Concept of Commerce' in Tanzania and propose solutions. - with example",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Stock Control",
+          "text": "Evaluate the role of 'Stock Control' in national development. - with example",
+          "competence": "Stock Control"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Production",
+          "text": "Examine the advantages and disadvantages of 'Production'.",
+          "competence": "Production"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain insurance",
+          "text": "Explain the concept of 'Explain insurance' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Communication",
+          "text": "With examples, illustrate how 'Communication' is applied in the community. - with example",
+          "competence": "Communication"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Advertisement",
+          "text": "Discuss the challenges facing 'Advertisement' in Tanzania and propose solutions. - with diagram",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain warehousing",
+          "text": "Describe the main features of 'Explain warehousing'.",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain sources of business finance",
+          "text": "Explain the concept of 'Explain sources of business finance' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain sources of business finance"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Partnership",
+    "Explain storekeeping",
+    "Explain concept of commerce",
+    "Marketing Mix",
+    "Insurance",
+    "Explain transport",
+    "Sources of Business Finance",
+    "Storekeeping",
+    "Trade",
+    "Taxation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

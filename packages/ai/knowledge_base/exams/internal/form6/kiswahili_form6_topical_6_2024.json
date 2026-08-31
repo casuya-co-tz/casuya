@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form6_topical_6_2024.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 6 (FORM6 2024): Kuhakiki fani na maudhui katika kaz",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+          "text": "Analyse the causes and effects of 'Kutathimini kukua na kuenea kwa Kiswahili duniani'.",
+          "competence": "Kutathimini kukua na kuenea kwa Kiswahili duniani"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+          "text": "With examples, illustrate how 'Kutathimini kukua na kuenea kwa Kiswahili duniani' is applied in the community. - with diagram",
+          "competence": "Kutathimini kukua na kuenea kwa Kiswahili duniani"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz",
+          "text": "Analyse the causes and effects of 'Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz'.",
+          "competence": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mas"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+          "text": "Describe the process of 'Kutathimini kukua na kuenea kwa Kiswahili duniani' step by step.",
+          "competence": "Kutathimini kukua na kuenea kwa Kiswahili duniani"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+          "text": "Explain the relationship between 'Kutathimini kukua na kuenea kwa Kiswahili duniani' and its environment. - locally",
+          "competence": "Kutathimini kukua na kuenea kwa Kiswahili duniani"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz",
+          "text": "Define 'Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz' and discuss its importance in everyday life. - with example",
+          "competence": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mas"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+          "text": "Assess the impact of 'Kutathimini kukua na kuenea kwa Kiswahili duniani' on society. - with diagram",
+          "competence": "Kutathimini kukua na kuenea kwa Kiswahili duniani"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+          "text": "Compare and contrast 'Kutathimini kukua na kuenea kwa Kiswahili duniani' with related concepts.",
+          "competence": "Kutathimini kukua na kuenea kwa Kiswahili duniani"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+          "text": "Discuss the challenges facing 'Kutathimini kukua na kuenea kwa Kiswahili duniani' in Tanzania and propose solutions.",
+          "competence": "Kutathimini kukua na kuenea kwa Kiswahili duniani"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz",
+          "text": "Explain the relationship between 'Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz' and its environment. - with example",
+          "competence": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mas"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kutathimini kukua na kuenea kwa Kiswahili duniani",
+    "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

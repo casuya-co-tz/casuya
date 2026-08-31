@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form6_topical_1_2023.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 1 (FORM6 2023): Kutumia kanuni za kipragmatiki kati",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 54,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wahusika, na miktadha)",
+          "text": "Define 'Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wahusika, na miktadha)' and discuss its importance in everyday life. - with example",
+          "competence": "Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wa"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutambua chimbuko na asili ya Kiswahili",
+          "text": "Define 'Kutambua chimbuko na asili ya Kiswahili' and discuss its importance in everyday life. - with diagram",
+          "competence": "Kutambua chimbuko na asili ya Kiswahili"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wahusika, na miktadha)",
+          "text": "How does 'Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wahusika, na miktadha)' relate to sustainable development? - with diagram",
+          "competence": "Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wa"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutambua chimbuko na asili ya Kiswahili",
+          "text": "Analyse the causes and effects of 'Kutambua chimbuko na asili ya Kiswahili'. - with diagram",
+          "competence": "Kutambua chimbuko na asili ya Kiswahili"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kutambua chimbuko na asili ya Kiswahili",
+          "text": "Assess the impact of 'Kutambua chimbuko na asili ya Kiswahili' on society.",
+          "competence": "Kutambua chimbuko na asili ya Kiswahili"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wahusika, na miktadha)",
+          "text": "Compare and contrast 'Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wahusika, na miktadha)' with related concepts.",
+          "competence": "Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wa"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kutambua chimbuko na asili ya Kiswahili",
+          "text": "Assess the impact of 'Kutambua chimbuko na asili ya Kiswahili' on society. - with diagram",
+          "competence": "Kutambua chimbuko na asili ya Kiswahili"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Kutambua chimbuko na asili ya Kiswahili",
+          "text": "Propose measures to improve 'Kutambua chimbuko na asili ya Kiswahili' in schools. - locally",
+          "competence": "Kutambua chimbuko na asili ya Kiswahili"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kutambua chimbuko na asili ya Kiswahili",
+          "text": "Describe the process of 'Kutambua chimbuko na asili ya Kiswahili' step by step. - with diagram",
+          "competence": "Kutambua chimbuko na asili ya Kiswahili"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kutambua chimbuko na asili ya Kiswahili",
+          "text": "Assess the impact of 'Kutambua chimbuko na asili ya Kiswahili' on society.",
+          "competence": "Kutambua chimbuko na asili ya Kiswahili"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kutumia kanuni za kipragmatiki katika lugha (mfano: mada, wahusika, na miktadha)",
+    "Kutambua chimbuko na asili ya Kiswahili"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

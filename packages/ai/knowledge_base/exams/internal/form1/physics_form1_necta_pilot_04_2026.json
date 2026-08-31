@@ -1,0 +1,375 @@
+{
+  "filename": "physics_form1_necta_pilot_04_2026.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "code": "031",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "necta_pilot",
+  "term": "Pilot",
+  "year": "2026",
+  "duration": "2:30 Hours",
+  "title": "Physics - Form 1 NECTA Pilot (2026) Paper 04",
+  "instructions": [
+    "This paper consists of sections A, B and C with a total of ten (10) questions.",
+    "Answer all questions in the spaces provided.",
+    "Section A and C carries fifteen (15) marks each and section B carries seventy (70) marks.",
+    "All writing must be in blue or black ink.",
+    "Communication devices and unauthorised materials are not allowed in the assessment room.",
+    "Calculators and mathematical tables may be used in the assessment room.",
+    "Write your Assessment Number at the top right corner of every page.",
+    "The following information may be useful: (i) Acceleration due to gravity, g = 10 m/s-2. (ii) Pie π = 3.14"
+  ],
+  "assessor_table": {
+    "questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "total": true,
+    "checker": true
+  },
+  "sections": [
+    {
+      "name": "Section A",
+      "marks": 15,
+      "instructions": "Answer all questions in this section.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 10,
+          "text": "For each of the items (i) - (x), choose the correct answer from the given alternatives and write its letter in the box provided. (10 marks)",
+          "items": [
+            {
+              "number": "i",
+              "text": "What does measurement involve?",
+              "options": {
+                "A": "Guessing quantity",
+                "B": "Comparing unknown with standard",
+                "C": "Drawing",
+                "D": "Heating"
+              },
+              "answer": "B",
+              "marks": 1
+            },
+            {
+              "number": "ii",
+              "text": "Explain surface tension",
+              "options": {
+                "A": "Cohesion between liquid molecules",
+                "B": "Adhesion to wall",
+                "C": "Gravity",
+                "D": "Magnetism"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "iii",
+              "text": "Which state of matter has definite shape and volume?",
+              "options": {
+                "A": "Solid",
+                "B": "Liquid",
+                "C": "Gas",
+                "D": "Plasma"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "iv",
+              "text": "Which safety rule is essential in Physics laboratory?",
+              "options": {
+                "A": "Taste chemicals",
+                "B": "Run in lab",
+                "C": "Wear closed shoes",
+                "D": "Eat in lab"
+              },
+              "answer": "C",
+              "marks": 1
+            },
+            {
+              "number": "v",
+              "text": "Which of the following is a branch of Physics?",
+              "options": {
+                "A": "Botany",
+                "B": "Chemistry",
+                "C": "Mechanics",
+                "D": "Zoology"
+              },
+              "answer": "C",
+              "marks": 1
+            },
+            {
+              "number": "vi",
+              "text": "A substance has a mass of 200 g and volume of 50 cm3. What is its density?",
+              "options": {
+                "A": "0.25 g/cm3",
+                "B": "4 g/cm3",
+                "C": "250 g/cm3",
+                "D": "150 g/cm3"
+              },
+              "answer": "B",
+              "marks": 1
+            },
+            {
+              "number": "vii",
+              "text": "What is the principle of Archimedes?",
+              "options": {
+                "A": "Upthrust equals weight of displaced fluid",
+                "B": "Force equals mass x acceleration",
+                "C": "Pressure increases with depth",
+                "D": "Light travels straight"
+              },
+              "answer": "A",
+              "marks": 1
+            },
+            {
+              "number": "viii",
+              "text": "Which of the following is the SI unit of mass?",
+              "options": {
+                "A": "Gram",
+                "B": "Kilogram",
+                "C": "Newton",
+                "D": "Litre"
+              },
+              "answer": "B",
+              "marks": 1
+            },
+            {
+              "number": "ix",
+              "text": "State the SI unit of pressure",
+              "options": {
+                "A": "Newton",
+                "B": "Pascal",
+                "C": "Joule",
+                "D": "Watt"
+              },
+              "answer": "B",
+              "marks": 1
+            },
+            {
+              "number": "x",
+              "text": "Why does a solid sink in water?",
+              "options": {
+                "A": "Because its volume is large",
+                "B": "Because its mass is small",
+                "C": "Because its density is greater than that of water",
+                "D": "Because water pushes it down"
+              },
+              "answer": "C",
+              "marks": 1
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "type": "matching",
+          "marks": 5,
+          "text": "Match the functions of instruments in List A with their corresponding instruments in List B by writing the correct answer below the item number in the table provided. (5 marks)",
+          "ListA": [
+            "Measures the atmospheric pressures.",
+            "Measures length of small objects.",
+            "Measures mass of object.",
+            "Measures volume of liquid.",
+            "Measures time interval."
+          ],
+          "ListB": [
+            "Barometer",
+            "Vernier caliper",
+            "Beam balance",
+            "Measuring cylinder",
+            "Stop watch",
+            "Siphon",
+            "Plunger"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "marks": 70,
+      "instructions": "Answer all questions in this section.",
+      "questions": [
+        {
+          "number": "3",
+          "type": "structured",
+          "stem": "A sharp nail penetrates wood more easily than a blunt nail when the same force is applied.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Use the pressure formula to explain this observation.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Explain what would happen if the force applied to the blunt nail is increased significantly.",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "4",
+          "type": "structured",
+          "stem": "A solid object has mass 300 g and volume 100 cm3.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Calculate its density in g/cm3.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Explain whether it will float in water (density 1 g/cm3).",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "5",
+          "type": "structured",
+          "stem": "Describe pressure in liquids.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Explain characteristics of pressure in liquids.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Solve: pressure at depth 0.5 m in water (g=10, density=1000).",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "stem": "Explain Archimedes principle.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Explain concept of upthrust with diagram.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Verify Archimedes principle experimentally.",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "stem": "Describe surface tension and capillarity.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Explain surface tension due to cohesion.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Give two applications of capillarity in daily life.",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "8",
+          "type": "structured",
+          "stem": "Explain work and energy.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Explain how work is done (W=Fxd).",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "A man 40kg climbs 25 steps 20cm in 10s, find power in kW.",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "stem": "Explain laboratory safety and measurement.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Explain the safety measures in Physics laboratory.",
+              "marks": 4
+            },
+            {
+              "label": "b",
+              "text": "Use the First Aid Kit procedure if acid spills on skin.",
+              "marks": 6
+            }
+          ],
+          "marks": 10
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "marks": 15,
+      "instructions": "Answer question ten (10).",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "stem": "A student investigates light reflection using plane mirror.",
+          "sub_questions": [
+            {
+              "label": "a",
+              "text": "Explain concept of reflection with laws.",
+              "marks": 5
+            },
+            {
+              "label": "b",
+              "text": "Distinguish regular vs irregular reflection.",
+              "marks": 5
+            },
+            {
+              "label": "c",
+              "text": "Describe image formed by plane mirror.",
+              "marks": 5
+            }
+          ],
+          "marks": 15
+        }
+      ]
+    }
+  ],
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 100,
+  "format_template": "PHYSICS_F2_NECTA_PILOT_2026.html",
+  "syllabus_topics_covered": [
+    "Laboratory Rules and Safety",
+    "state Physics laboratory rules",
+    "explain the safety measures in Physics laboratory",
+    "use the First Aid Kit to render ifrst aid",
+    "Basic Principles of Scientiifc Investigation"
+  ],
+  "source": "necta-pilot-template",
+  "curriculum": "TIE 2023-2025",
+  "format_reference": "NECTA FTNA Pilot 2026 - 031 Physics"
+}

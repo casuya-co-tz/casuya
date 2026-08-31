@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form2_topical_4_2026.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 4 (FORM2 2026): Perform experiments on the changes ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "With examples, illustrate how 'Perform experiments on the changes of matter from one state to another' is applied in the community. - with diagram",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Analyse the causes and effects of 'Describe the concept of matter (physical and chemical changes of matte'. - with example",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Analyse the causes and effects of 'Perform experiments on the changes of matter from one state to another'.",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Examine the advantages and disadvantages of 'Perform experiments on the changes of matter from one state to another'.",
+          "competence": "Perform experiments on the changes of matter from one state "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Analyse the causes and effects of 'Describe the concept of matter (physical and chemical changes of matte'. - with example",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "Describe the main features of 'Perform experiments on the changes of matter from one state to another'. - with example",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of matter (physical and chemical changes of matte'. - with example",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Perform experiments on the changes of matter from one state to another",
+          "text": "With examples, illustrate how 'Perform experiments on the changes of matter from one state to another' is applied in the community. - with example",
+          "competence": "Perform experiments on the changes of matter from one state "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Explain the concept of 'Describe the concept of matter (physical and chemical changes of matte' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "Define 'Describe the concept of matter (physical and chemical changes of matte' and discuss its importance in everyday life.",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Perform experiments on the changes of matter from one state to another",
+    "Describe the concept of matter (physical and chemical changes of matte"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

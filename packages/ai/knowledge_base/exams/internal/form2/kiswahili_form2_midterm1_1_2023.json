@@ -1,0 +1,209 @@
+{
+  "filename": "kiswahili_form2_midterm1_1_2023.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Kiswahili - Midterm 1 Exam 1 (FORM2 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 80,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kutathmini kazi mbalimbali za tafsiri",
+          "text": "Explain the concept of 'Kutathmini kazi mbalimbali za tafsiri' with examples relevant to Tanzania.",
+          "competence": "Kutathmini kazi mbalimbali za tafsiri"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki kabla ya uhuru",
+          "text": "Define 'Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki kabla ya uhuru' and discuss its importance in everyday life. - locally",
+          "competence": "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kufafanua dhana na matumizi ya lugha ya kwanza na lugha ya pili",
+          "text": "Explain the concept of 'Kufafanua dhana na matumizi ya lugha ya kwanza na lugha ya pili' with examples relevant to Tanzania. - with example",
+          "competence": "Kufafanua dhana na matumizi ya lugha ya kwanza na lugha ya p"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali",
+          "text": "What are the characteristics of 'Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali'? - with diagram",
+          "competence": "Kubaini maneno yenye maana za msingi na za ziada katika mati"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kuhakiki kazi za fasihi",
+          "text": "What are the characteristics of 'Kuhakiki kazi za fasihi'? - locally",
+          "competence": "Kuhakiki kazi za fasihi"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo",
+          "text": "Discuss the challenges facing 'Kuwasiliana kwa ufasaha kwa njia ya mazungumzo' in Tanzania and propose solutions.",
+          "competence": "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali",
+          "text": "Examine the advantages and disadvantages of 'Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali'.",
+          "competence": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kufafanua alama za uhariri",
+          "text": "Propose measures to improve 'Kufafanua alama za uhariri' in schools. - locally",
+          "competence": "Kufafanua alama za uhariri"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kueleza dhana ya maana na aina zake",
+          "text": "Compare and contrast 'Kueleza dhana ya maana na aina zake' with related concepts. - with example",
+          "competence": "Kueleza dhana ya maana na aina zake"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kujadili mitazamo kuhusu dhana ya fasihi",
+          "text": "Examine the advantages and disadvantages of 'Kujadili mitazamo kuhusu dhana ya fasihi'. - with example",
+          "competence": "Kujadili mitazamo kuhusu dhana ya fasihi"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kuhakiki fani na maudhui katika tamthiliya",
+          "text": "Explain the relationship between 'Kuhakiki fani na maudhui katika tamthiliya' and its environment. - locally",
+          "competence": "Kuhakiki fani na maudhui katika tamthiliya"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kutambua chimbuko na asili ya Kiswahili",
+          "text": "Examine the advantages and disadvantages of 'Kutambua chimbuko na asili ya Kiswahili'.",
+          "competence": "Kutambua chimbuko na asili ya Kiswahili"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kusikiliza hoja na kuandika kumbukumbu",
+          "text": "Define 'Kusikiliza hoja na kuandika kumbukumbu' and discuss its importance in everyday life.",
+          "competence": "Kusikiliza hoja na kuandika kumbukumbu"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kuchambua vipashio vinavyojenga neno na dhima zake",
+          "text": "Describe the main features of 'Kuchambua vipashio vinavyojenga neno na dhima zake'.",
+          "competence": "Kuchambua vipashio vinavyojenga neno na dhima zake"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kumudu stadi za uhariri",
+          "text": "Compare and contrast 'Kumudu stadi za uhariri' with related concepts. - with diagram",
+          "competence": "Kumudu stadi za uhariri"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kusoma matini ndefu changamani, kuandika muhtasari wa hoja kuu zilizomo na kutoa maoni juu ya hoja hizo",
+          "text": "Assess the impact of 'Kusoma matini ndefu changamani, kuandika muhtasari wa hoja kuu zilizomo na kutoa maoni juu ya hoja hizo' on society.",
+          "competence": "Kusoma matini ndefu changamani, kuandika muhtasari wa hoja k"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kutumia msamiati kwa usahihi katika mazungumzo na maandishi",
+          "text": "Explain the relationship between 'Kutumia msamiati kwa usahihi katika mazungumzo na maandishi' and its environment. - locally",
+          "competence": "Kutumia msamiati kwa usahihi katika mazungumzo na maandishi"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kuzungumza kwa ufasaha katika miktadha mbalimbali (mf. nyumbani, shuleni na hospitalin",
+          "text": "Discuss the challenges facing 'Kuzungumza kwa ufasaha katika miktadha mbalimbali (mf. nyumbani, shuleni na hospitalin' in Tanzania and propose solutions. - locally",
+          "competence": "Kuzungumza kwa ufasaha katika miktadha mbalimbali (mf. nyumb"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz",
+          "text": "Analyse the causes and effects of 'Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz'.",
+          "competence": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mas"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kubaini msamiati mpya kutoka katika matini andishi za kawaida",
+          "text": "Analyse the causes and effects of 'Kubaini msamiati mpya kutoka katika matini andishi za kawaida'. - with diagram",
+          "competence": "Kubaini msamiati mpya kutoka katika matini andishi za kawaid"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kutathmini kazi mbalimbali za tafsiri",
+    "Kujadili kukua na kuenea kwa Kiswahili katika nchi za Afrika Mashariki kabla ya uhuru",
+    "Kufafanua dhana na matumizi ya lugha ya kwanza na lugha ya pili",
+    "Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali",
+    "Kuhakiki kazi za fasihi",
+    "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo",
+    "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali",
+    "Kufafanua alama za uhariri",
+    "Kueleza dhana ya maana na aina zake",
+    "Kujadili mitazamo kuhusu dhana ya fasihi"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

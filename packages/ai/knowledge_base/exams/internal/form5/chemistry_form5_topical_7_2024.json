@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form5_topical_7_2024.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 7 (FORM5 2024): Perform experiments on separation o",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 49,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Outline the procedures involved in 'Use the electronic configuration of an element to locate their positions in the periodic table'. - with example",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Evaluate the role of 'Use the electronic configuration of an element to locate their positions in the periodic table' in national development.",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "Describe the main features of 'Perform experiments on separation of different mixtures using different methods'. - with example",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "Compare and contrast 'Perform experiments on separation of different mixtures using different methods' with related concepts.",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Examine the advantages and disadvantages of 'Use the electronic configuration of an element to locate their positions in the periodic table'.",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Compare and contrast 'Use the electronic configuration of an element to locate their positions in the periodic table' with related concepts. - with diagram",
+          "competence": "Use the electronic configuration of an element to locate the"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "Explain the concept of 'Perform experiments on separation of different mixtures using different methods' with examples relevant to Tanzania. - with diagram",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "Explain the concept of 'Perform experiments on separation of different mixtures using different methods' with examples relevant to Tanzania. - with example",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "Compare and contrast 'Perform experiments on separation of different mixtures using different methods' with related concepts. - with example",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use the electronic configuration of an element to locate their positions in the periodic table",
+          "text": "Evaluate the role of 'Use the electronic configuration of an element to locate their positions in the periodic table' in national development. - with example",
+          "competence": "Use the electronic configuration of an element to locate the"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use the electronic configuration of an element to locate their positions in the periodic table",
+    "Perform experiments on separation of different mixtures using different methods"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

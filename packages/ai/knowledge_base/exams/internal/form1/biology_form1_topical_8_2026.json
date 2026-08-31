@@ -1,0 +1,121 @@
+{
+  "filename": "biology_form1_topical_8_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Biology - Topical Test 8 (FORM1 2026): and gas exchange in living organism",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 49,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "and gas exchange in living organisms",
+          "text": "Evaluate the role of 'and gas exchange in living organisms' in national development.",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "Describe the main features of 'Plan and execute in an independent biological investigation'. - with example",
+          "competence": "Plan and execute in an independent biological investigation"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "Examine the advantages and disadvantages of 'Plan and execute in an independent biological investigation'. - with diagram",
+          "competence": "Plan and execute in an independent biological investigation"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "and gas exchange in living organisms",
+          "text": "Explain the concept of 'and gas exchange in living organisms' with examples relevant to Tanzania.",
+          "competence": "and gas exchange in living organisms"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "Define 'Plan and execute in an independent biological investigation' and discuss its importance in everyday life. - with example",
+          "competence": "Plan and execute in an independent biological investigation"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "and gas exchange in living organisms",
+          "text": "Define 'and gas exchange in living organisms' and discuss its importance in everyday life. - with diagram",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "and gas exchange in living organisms",
+          "text": "Compare and contrast 'and gas exchange in living organisms' with related concepts. - with example",
+          "competence": "and gas exchange in living organisms"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "and gas exchange in living organisms",
+          "text": "Define 'and gas exchange in living organisms' and discuss its importance in everyday life. - with example",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "Discuss the challenges facing 'Plan and execute in an independent biological investigation' in Tanzania and propose solutions. - with diagram",
+          "competence": "Plan and execute in an independent biological investigation"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Plan and execute in an independent biological investigation",
+          "text": "With examples, illustrate how 'Plan and execute in an independent biological investigation' is applied in the community. - with example",
+          "competence": "Plan and execute in an independent biological investigation"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "and gas exchange in living organisms",
+    "Plan and execute in an independent biological investigation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

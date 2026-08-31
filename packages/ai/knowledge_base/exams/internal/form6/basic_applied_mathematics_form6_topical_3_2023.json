@@ -1,0 +1,121 @@
+{
+  "filename": "basic_applied_mathematics_form6_topical_3_2023.json",
+  "subject": "Basic Applied Mathematics",
+  "subject_slug": "basic_applied_mathematics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Basic Applied Mathematics - Topical Test 3 (FORM6 2023): Use integration methods to solve re",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 51,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Describe the main features of 'Use statistics to solve problems in different contexts'.",
+          "competence": "Use statistics to solve problems in different contexts"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Explain the concept of 'Use statistics to solve problems in different contexts' with examples relevant to Tanzania.",
+          "competence": "Use statistics to solve problems in different contexts"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)",
+          "text": "Define 'Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Use integration methods to solve real life problems (area un"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)",
+          "text": "Explain the relationship between 'Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)' and its environment. - with diagram",
+          "competence": "Use integration methods to solve real life problems (area un"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)",
+          "text": "Examine the advantages and disadvantages of 'Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)'.",
+          "competence": "Use integration methods to solve real life problems (area un"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Define 'Use statistics to solve problems in different contexts' and discuss its importance in everyday life. - with diagram",
+          "competence": "Use statistics to solve problems in different contexts"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Discuss the factors influencing 'Use statistics to solve problems in different contexts'.",
+          "competence": "Use statistics to solve problems in different contexts"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Explain the concept of 'Use statistics to solve problems in different contexts' with examples relevant to Tanzania. - locally",
+          "competence": "Use statistics to solve problems in different contexts"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)",
+          "text": "Describe the process of 'Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)' step by step. - locally",
+          "competence": "Use integration methods to solve real life problems (area un"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "Discuss the challenges facing 'Use statistics to solve problems in different contexts' in Tanzania and propose solutions. - with example",
+          "competence": "Use statistics to solve problems in different contexts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use statistics to solve problems in different contexts",
+    "Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

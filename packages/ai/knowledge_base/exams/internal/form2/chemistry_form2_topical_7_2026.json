@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form2_topical_7_2026.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 7 (FORM2 2026): Describe the concepts of aromatic h",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 43,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Analyse the causes and effects of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction'. - with diagram",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Analyse the causes and effects of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction'.",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Analyse the causes and effects of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction'.",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "With examples, illustrate how 'Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers' is applied in the community. - with example",
+          "competence": "Describe the concepts of aromatic hydrocarbons, halogen deri"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+          "text": "Explain the concept of 'Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the concepts of aromatic hydrocarbons, halogen deri"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Analyse the causes and effects of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction'. - with diagram",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Compare and contrast 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction' with related concepts. - with diagram",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Explain the concept of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction' with examples relevant to Tanzania.",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Define 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction' and discuss its importance in everyday life.",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Explain the concept of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction' with examples relevant to Tanzania.",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+    "Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

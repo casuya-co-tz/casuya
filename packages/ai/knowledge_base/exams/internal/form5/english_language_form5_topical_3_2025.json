@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form5_topical_3_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 3 (FORM5 2025): Construct complex and stylistic mea",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 35,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Express the main ideas from a text",
+          "text": "Describe the process of 'Express the main ideas from a text' step by step. - with example",
+          "competence": "Express the main ideas from a text"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "text": "Propose measures to improve 'Construct complex and stylistic meanings from diverse and multiple texts' in schools. - with diagram",
+          "competence": "Construct complex and stylistic meanings from diverse and mu"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Express the main ideas from a text",
+          "text": "Define 'Express the main ideas from a text' and discuss its importance in everyday life. - locally",
+          "competence": "Express the main ideas from a text"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Express the main ideas from a text",
+          "text": "Compare and contrast 'Express the main ideas from a text' with related concepts. - with diagram",
+          "competence": "Express the main ideas from a text"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Express the main ideas from a text",
+          "text": "Propose measures to improve 'Express the main ideas from a text' in schools. - locally",
+          "competence": "Express the main ideas from a text"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Express the main ideas from a text",
+          "text": "Examine the advantages and disadvantages of 'Express the main ideas from a text'. - locally",
+          "competence": "Express the main ideas from a text"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "text": "Propose measures to improve 'Construct complex and stylistic meanings from diverse and multiple texts' in schools. - with example",
+          "competence": "Construct complex and stylistic meanings from diverse and mu"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Express the main ideas from a text",
+          "text": "What are the characteristics of 'Express the main ideas from a text'?",
+          "competence": "Express the main ideas from a text"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "text": "Evaluate the role of 'Construct complex and stylistic meanings from diverse and multiple texts' in national development.",
+          "competence": "Construct complex and stylistic meanings from diverse and mu"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "text": "Propose measures to improve 'Construct complex and stylistic meanings from diverse and multiple texts' in schools.",
+          "competence": "Construct complex and stylistic meanings from diverse and mu"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Express the main ideas from a text",
+    "Construct complex and stylistic meanings from diverse and multiple texts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

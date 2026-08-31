@@ -1,0 +1,121 @@
+{
+  "filename": "historia_ya_tanzania_na_maadili_form2_topical_3_2025.json",
+  "subject": "Historia ya Tanzania na Maadili",
+  "subject_slug": "historia_ya_tanzania_na_maadili",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Historia ya Tanzania na Maadili - Topical Test 3 (FORM2 2025): Kubaini historia na urithi wa taifa",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 35,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kueleza dhana na chimbuko la ukoloni mamboleo",
+          "text": "Discuss the challenges facing 'Kueleza dhana na chimbuko la ukoloni mamboleo' in Tanzania and propose solutions.",
+          "competence": "Kueleza dhana na chimbuko la ukoloni mamboleo"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kueleza dhana na chimbuko la ukoloni mamboleo",
+          "text": "Discuss the factors influencing 'Kueleza dhana na chimbuko la ukoloni mamboleo'. - with example",
+          "competence": "Kueleza dhana na chimbuko la ukoloni mamboleo"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kueleza dhana na chimbuko la ukoloni mamboleo",
+          "text": "Discuss the challenges facing 'Kueleza dhana na chimbuko la ukoloni mamboleo' in Tanzania and propose solutions.",
+          "competence": "Kueleza dhana na chimbuko la ukoloni mamboleo"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini",
+          "text": "Discuss the challenges facing 'Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini' in Tanzania and propose solutions.",
+          "competence": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kueleza dhana na chimbuko la ukoloni mamboleo",
+          "text": "Discuss the challenges facing 'Kueleza dhana na chimbuko la ukoloni mamboleo' in Tanzania and propose solutions.",
+          "competence": "Kueleza dhana na chimbuko la ukoloni mamboleo"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini",
+          "text": "Examine the advantages and disadvantages of 'Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini'. - with diagram",
+          "competence": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini",
+          "text": "Define 'Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini' and discuss its importance in everyday life.",
+          "competence": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini",
+          "text": "What are the characteristics of 'Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini'? - locally",
+          "competence": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kueleza dhana na chimbuko la ukoloni mamboleo",
+          "text": "Analyse the causes and effects of 'Kueleza dhana na chimbuko la ukoloni mamboleo'. - with example",
+          "competence": "Kueleza dhana na chimbuko la ukoloni mamboleo"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini",
+          "text": "Propose measures to improve 'Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini' in schools. - with example",
+          "competence": "Kubaini historia na urithi wa taifa katika maeneo mbalimbali"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kueleza dhana na chimbuko la ukoloni mamboleo",
+    "Kubaini historia na urithi wa taifa katika maeneo mbalimbali nchini"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

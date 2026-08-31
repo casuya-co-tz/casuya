@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form5_topical_3_2024.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 3 (FORM5 2024): Demonstrate an understanding of cha",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Analyse the causes and effects of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)'. - with diagram",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "text": "Describe the main features of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table'. - with example",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "text": "Describe the main features of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table'.",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "With examples, illustrate how 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)' is applied in the community.",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Describe the main features of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)'. - with diagram",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Explain the concept of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)' with examples relevant to Tanzania.",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "text": "Define 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table' and discuss its importance in everyday life. - with diagram",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Evaluate the role of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)' in national development. - with diagram",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table'. - with diagram",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+          "text": "Describe the main features of 'Describe the concept of complex compounds (type of complexes and factors affecting complex formation)'.",
+          "competence": "Describe the concept of complex compounds (type of complexes"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+    "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

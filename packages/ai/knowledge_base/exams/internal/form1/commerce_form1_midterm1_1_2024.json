@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form1_midterm1_1_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 1 (FORM1 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 97,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Documentation",
+          "text": "Outline the procedures involved in 'Documentation'.",
+          "competence": "Documentation"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain concept of commerce",
+          "text": "With examples, illustrate how 'Explain concept of commerce' is applied in the community. - with example",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain taxation",
+          "text": "Examine the advantages and disadvantages of 'Explain taxation'. - with example",
+          "competence": "Explain taxation"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Marketing Mix",
+          "text": "Analyse the causes and effects of 'Marketing Mix'. - with diagram",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain partnership",
+          "text": "Examine the advantages and disadvantages of 'Explain partnership'. - with diagram",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain market and marketing",
+          "text": "Define 'Explain market and marketing' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain market and marketing"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain stock control",
+          "text": "Examine the advantages and disadvantages of 'Explain stock control'. - with example",
+          "competence": "Explain stock control"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Trade",
+          "text": "Explain the concept of 'Trade' with examples relevant to Tanzania. - with diagram",
+          "competence": "Trade"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Cooperative",
+          "text": "Analyse the causes and effects of 'Cooperative'. - with example",
+          "competence": "Cooperative"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Taxation",
+          "text": "Explain the concept of 'Taxation' with examples relevant to Tanzania.",
+          "competence": "Taxation"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Advertisement",
+          "text": "Compare and contrast 'Advertisement' with related concepts.",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Storekeeping",
+          "text": "Discuss the challenges facing 'Storekeeping' in Tanzania and propose solutions.",
+          "competence": "Storekeeping"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain sole proprietorship",
+          "text": "Define 'Explain sole proprietorship' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain sole proprietorship"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Partnership",
+          "text": "Describe the main features of 'Partnership'. - with example",
+          "competence": "Partnership"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Production",
+          "text": "With examples, illustrate how 'Production' is applied in the community. - with diagram",
+          "competence": "Production"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Sole Proprietorship",
+          "text": "Outline the procedures involved in 'Sole Proprietorship'. - with diagram",
+          "competence": "Sole Proprietorship"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Stock Control",
+          "text": "Discuss the challenges facing 'Stock Control' in Tanzania and propose solutions. - with example",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Transport",
+          "text": "Explain the concept of 'Transport' with examples relevant to Tanzania. - with diagram",
+          "competence": "Transport"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain documentation",
+          "text": "Evaluate the role of 'Explain documentation' in national development. - with example",
+          "competence": "Explain documentation"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Insurance",
+          "text": "Define 'Insurance' and discuss its importance in everyday life. - with example",
+          "competence": "Insurance"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Documentation",
+    "Explain concept of commerce",
+    "Explain taxation",
+    "Marketing Mix",
+    "Explain partnership",
+    "Explain market and marketing",
+    "Explain stock control",
+    "Trade",
+    "Cooperative",
+    "Taxation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

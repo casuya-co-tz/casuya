@@ -1,0 +1,249 @@
+{
+  "filename": "business_studies_form5_terminal_1_2024.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2024",
+  "time": "2:30 Hours",
+  "title": "Business Studies - Terminal Exam 1 (FORM5 2024)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 113,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an advanced understanding of the principles of business",
+          "text": "Examine the advantages and disadvantages of 'Demonstrate an advanced understanding of the principles of business'. - with example",
+          "competence": "Demonstrate an advanced understanding of the principles of b"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Identify an appropriate business opportunity and develop its business plan",
+          "text": "Discuss the factors influencing 'Identify an appropriate business opportunity and develop its business plan'. - locally",
+          "competence": "Identify an appropriate business opportunity and develop its"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "With examples, illustrate how 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract' is applied in the community.",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio",
+          "text": "With examples, illustrate how 'Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio' is applied in the community.",
+          "competence": "Describe business partnerships (meaning, types, features, ad"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "to facilitate trade",
+          "text": "Compare and contrast 'to facilitate trade' with related concepts.",
+          "competence": "to facilitate trade"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Identify business opportunities available in the local environment",
+          "text": "Evaluate the role of 'Identify business opportunities available in the local environment' in national development. - locally",
+          "competence": "Identify business opportunities available in the local envir"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate mastery of the basic skills of operating a small-scale business",
+          "text": "With examples, illustrate how 'Demonstrate mastery of the basic skills of operating a small-scale business' is applied in the community. - with diagram",
+          "competence": "Demonstrate mastery of the basic skills of operating a small"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)",
+          "text": "With examples, illustrate how 'Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)' is applied in the community.",
+          "competence": "Explain some aspects of insurance for medium businesses (cho"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+          "text": "Describe the process of 'Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend' step by step. - with example",
+          "competence": "Describe sources of capital for small businesses (loans, sav"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Demonstrate mastery of the basic skills of trading locally and internationally",
+          "text": "Discuss the factors influencing 'Demonstrate mastery of the basic skills of trading locally and internationally'.",
+          "competence": "Demonstrate mastery of the basic skills of trading locally a"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "crowd funding and government grants)",
+          "text": "Compare and contrast 'crowd funding and government grants)' with related concepts.",
+          "competence": "crowd funding and government grants)"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Prepare a medium scale business plan",
+          "text": "Describe the process of 'Prepare a medium scale business plan' step by step.",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate mastery of the concepts, theories and principles of Business Education",
+          "text": "Evaluate the role of 'Demonstrate mastery of the concepts, theories and principles of Business Education' in national development. - with example",
+          "competence": "Demonstrate mastery of the concepts, theories and principles"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Examine the advantages and disadvantages of 'Describe the basic principles of communication and networking for small businesses'. - locally",
+          "competence": "Describe the basic principles of communication and networkin"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the policies and laws governing medium scale business",
+          "text": "Describe the main features of 'Demonstrate an understanding of the policies and laws governing medium scale business'. - with diagram",
+          "competence": "Demonstrate an understanding of the policies and laws govern"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Compare and contrast 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' with related concepts. - with example",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin",
+          "text": "Discuss the challenges facing 'Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin' in Tanzania and propose solutions. - with example",
+          "competence": "Develop a plan for a small business identified from the oppo"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)",
+          "text": "Evaluate the role of 'Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)' in national development.",
+          "competence": "Describe the basic aspects of business environment (stakehol"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio",
+          "text": "Compare and contrast 'Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio' with related concepts.",
+          "competence": "Describe the basic aspects of marketing for small businesses"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Propose measures to improve 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc' in schools.",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore the basic aspects of the policy and regulatory environment governing medium businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-laws)",
+          "text": "Explain the concept of 'Explore the basic aspects of the policy and regulatory environment governing medium businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-laws)' with examples relevant to Tanzania. - locally",
+          "competence": "Explore the basic aspects of the policy and regulatory envir"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Learning activities",
+          "text": "How does 'Learning activities' relate to sustainable development?",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of the policies and laws governing medium scale businesses",
+          "text": "How does 'Demonstrate an understanding of the policies and laws governing medium scale businesses' relate to sustainable development? - with diagram",
+          "competence": "Demonstrate an understanding of the policies and laws govern"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of production (meaning, types, factors and importanc",
+          "text": "Compare and contrast 'Explain the concept of production (meaning, types, factors and importanc' with related concepts. - locally",
+          "competence": "Explain the concept of production (meaning, types, factors a"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Identify relevant procedures and practices for buying and selling products within and outside the country",
+          "text": "Examine the advantages and disadvantages of 'Identify relevant procedures and practices for buying and selling products within and outside the country'. - with diagram",
+          "competence": "Identify relevant procedures and practices for buying and se"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate an advanced understanding of the principles of business",
+    "Identify an appropriate business opportunity and develop its business plan",
+    "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+    "Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio",
+    "to facilitate trade",
+    "Identify business opportunities available in the local environment",
+    "Demonstrate mastery of the basic skills of operating a small-scale business",
+    "Explain some aspects of insurance for medium businesses (choice of appropriate insurance plan and procedures for filing insurance claims)",
+    "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+    "Demonstrate mastery of the basic skills of trading locally and internationally"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

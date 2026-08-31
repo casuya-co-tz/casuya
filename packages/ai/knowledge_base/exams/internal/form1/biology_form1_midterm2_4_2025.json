@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form1_midterm2_4_2025.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 2 Exam 4 (FORM1 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 116,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Carry out a biological project work using biological principles",
+          "text": "Evaluate the role of 'Carry out a biological project work using biological principles' in national development.",
+          "competence": "Carry out a biological project work using biological princip"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Evaluate the role of 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )' in national development. - with diagram",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "Analyse the causes and effects of 'Explain growth process in animals (growth patterns and metamorphosis)'. - with diagram",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "text": "Explain the concept of 'Demonstrate an advanced understanding of concepts, theories and principles in Biology' with examples relevant to Tanzania.",
+          "competence": "Demonstrate an advanced understanding of concepts, theories "
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+          "text": "Evaluate the role of 'Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio' in national development. - with diagram",
+          "competence": "Describe the mechanisms of growth in mammals and flowering p"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Investigate tropic responses in plants",
+          "text": "Analyse the causes and effects of 'Investigate tropic responses in plants'.",
+          "competence": "Investigate tropic responses in plants"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis",
+          "text": "With examples, illustrate how 'Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis' is applied in the community. - with diagram",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+          "text": "Outline the procedures involved in 'Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)'. - with diagram",
+          "competence": "Describe the mechanism of reproduction in animals (gametogen"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the physiology and theories underlying transportation of materials in plants",
+          "text": "Define 'Explain the physiology and theories underlying transportation of materials in plants' and discuss its importance in everyday life.",
+          "competence": "Explain the physiology and theories underlying transportatio"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "With examples, illustrate how 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' is applied in the community. - with diagram",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+          "text": "Compare and contrast 'Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)' with related concepts.",
+          "competence": "Explain the concept of ecology (methods of studying, biodive"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Investigate the process of nervous coordination (reflex arc and knee jer",
+          "text": "Explain the concept of 'Investigate the process of nervous coordination (reflex arc and knee jer' with examples relevant to Tanzania.",
+          "competence": "Investigate the process of nervous coordination (reflex arc "
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "With examples, illustrate how 'Demonstrate mastery of scientific biological terminologies' is applied in the community.",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "Explain the concept of 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+          "text": "Discuss the challenges facing 'Carry out investigations related to photosynthesis (conditions necessary for photosynthesi' in Tanzania and propose solutions. - with diagram",
+          "competence": "Carry out investigations related to photosynthesis (conditio"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Discribe the application or role of synthetic phytohormones",
+          "text": "Discuss the challenges facing 'Discribe the application or role of synthetic phytohormones' in Tanzania and propose solutions. - with example",
+          "competence": "Discribe the application or role of synthetic phytohormones"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate mastery of advanced skills for conducting biological investigations",
+          "text": "Outline the procedures involved in 'Demonstrate mastery of advanced skills for conducting biological investigations'. - with example",
+          "competence": "Demonstrate mastery of advanced skills for conducting biolog"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+          "text": "Discuss the challenges facing 'Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt' in Tanzania and propose solutions.",
+          "competence": "Describe reproduction in humans (sexual reproduction in huma"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+          "text": "Explain the concept of 'Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio' with examples relevant to Tanzania.",
+          "competence": "Describe the basic skills for conducting biological experime"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Prepare and present a report based on the findings",
+          "text": "Analyse the causes and effects of 'Prepare and present a report based on the findings'. - with example",
+          "competence": "Prepare and present a report based on the findings"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Carry out a biological project work using biological principles",
+    "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+    "Explain growth process in animals (growth patterns and metamorphosis)",
+    "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+    "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+    "Investigate tropic responses in plants",
+    "Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis",
+    "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+    "Explain the physiology and theories underlying transportation of materials in plants",
+    "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

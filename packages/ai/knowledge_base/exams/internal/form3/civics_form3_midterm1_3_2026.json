@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form3_midterm1_3_2026.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 1 Exam 3 (FORM3 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 91,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain local government",
+          "text": "Compare and contrast 'Explain local government' with related concepts. - with diagram",
+          "competence": "Explain local government"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain globalization",
+          "text": "Analyse the causes and effects of 'Explain globalization'. - with diagram",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "National Unity",
+          "text": "Analyse the causes and effects of 'National Unity'. - with example",
+          "competence": "National Unity"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain central government",
+          "text": "Examine the advantages and disadvantages of 'Explain central government'. - with example",
+          "competence": "Explain central government"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain constitution",
+          "text": "Compare and contrast 'Explain constitution' with related concepts. - with diagram",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Interpersonal Relationships",
+          "text": "Describe the main features of 'Interpersonal Relationships'. - with diagram",
+          "competence": "Interpersonal Relationships"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "National Symbols",
+          "text": "Compare and contrast 'National Symbols' with related concepts. - with example",
+          "competence": "National Symbols"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain gender",
+          "text": "Examine the advantages and disadvantages of 'Explain gender'. - with example",
+          "competence": "Explain gender"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain national symbols",
+          "text": "Analyse the causes and effects of 'Explain national symbols'. - with diagram",
+          "competence": "Explain national symbols"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Citizenship",
+          "text": "Define 'Citizenship' and discuss its importance in everyday life.",
+          "competence": "Citizenship"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Child Rights",
+          "text": "Define 'Child Rights' and discuss its importance in everyday life. - with example",
+          "competence": "Child Rights"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain concept of human rights",
+          "text": "Discuss the challenges facing 'Explain concept of human rights' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain concept of human rights"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain culture and tradition",
+          "text": "Evaluate the role of 'Explain culture and tradition' in national development. - with example",
+          "competence": "Explain culture and tradition"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain national unity",
+          "text": "Discuss the challenges facing 'Explain national unity' in Tanzania and propose solutions.",
+          "competence": "Explain national unity"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain concept of nation",
+          "text": "Define 'Explain concept of nation' and discuss its importance in everyday life. - with example",
+          "competence": "Explain concept of nation"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Local Government",
+          "text": "Outline the procedures involved in 'Local Government'.",
+          "competence": "Local Government"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain democracy",
+          "text": "Examine the advantages and disadvantages of 'Explain democracy'. - with example",
+          "competence": "Explain democracy"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain child rights",
+          "text": "Describe the main features of 'Explain child rights'. - with diagram",
+          "competence": "Explain child rights"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Life Skills",
+          "text": "Analyse the causes and effects of 'Life Skills'.",
+          "competence": "Life Skills"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Concept of Human Rights",
+          "text": "Describe the main features of 'Concept of Human Rights'.",
+          "competence": "Concept of Human Rights"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain local government",
+    "Explain globalization",
+    "National Unity",
+    "Explain central government",
+    "Explain constitution",
+    "Interpersonal Relationships",
+    "National Symbols",
+    "Explain gender",
+    "Explain national symbols",
+    "Citizenship"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

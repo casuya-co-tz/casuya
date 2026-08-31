@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form2_midterm1_2_2025.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 1 Exam 2 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 90,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+          "text": "Examine the advantages and disadvantages of 'Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)'.",
+          "competence": "Explain the concept of regulation in mammals (feedback mecha"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+          "text": "Compare and contrast 'Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)' with related concepts. - with diagram",
+          "competence": "Describe principles of binomial nomenclature (rules of scien"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "text": "Discuss the challenges facing 'Demonstrate mastery of basic skills for conducting biological investigations' in Tanzania and propose solutions. - with example",
+          "competence": "Demonstrate mastery of basic skills for conducting biologica"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+          "text": "With examples, illustrate how 'Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)' is applied in the community. - with example",
+          "competence": "Explain the concept of gaseous exchange in plants (mechanism"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the mechanism of excretion in the human body (systems: organs, product",
+          "text": "Discuss the challenges facing 'Describe the mechanism of excretion in the human body (systems: organs, product' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the mechanism of excretion in the human body (syste"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+          "text": "Define 'Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain the basic concepts of Biology (meaning, branches, ba"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+          "text": "Define 'Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio' and discuss its importance in everyday life. - with example",
+          "competence": "Describe reproduction in plants (concept of reproduction in "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Prepare and present a report based on the findings",
+          "text": "Discuss the challenges facing 'Prepare and present a report based on the findings' in Tanzania and propose solutions. - with diagram",
+          "competence": "Prepare and present a report based on the findings"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the principles of binomial nomenclature and classification",
+          "text": "Describe the main features of 'Demonstrate an understanding of the principles of binomial nomenclature and classification'. - with example",
+          "competence": "Demonstrate an understanding of the principles of binomial n"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio",
+          "text": "Describe the main features of 'Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio'.",
+          "competence": "Describe the mechanism of regulation in the human body (temp"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Describe the main features of 'Investigate food nutrients in various food samples'. - with example",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+          "text": "Describe the main features of 'Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)'. - with example",
+          "competence": "Describe principles of inheritance in living organisms (here"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Carry out experiments to determine the pulse rate in human",
+          "text": "With examples, illustrate how 'Carry out experiments to determine the pulse rate in human' is applied in the community. - with example",
+          "competence": "Carry out experiments to determine the pulse rate in human"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Evaluate the role of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)' in national development. - with diagram",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "Explain the concept of 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution' with examples relevant to Tanzania.",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate mastery of advanced skills for conducting biological investigations",
+          "text": "With examples, illustrate how 'Demonstrate mastery of advanced skills for conducting biological investigations' is applied in the community.",
+          "competence": "Demonstrate mastery of advanced skills for conducting biolog"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)",
+          "text": "Define 'Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the physiology of coordination (mechanism of transm"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio",
+          "text": "With examples, illustrate how 'Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio' is applied in the community. - with diagram",
+          "competence": "Describe the mechanisms of gaseous exchange and respiration "
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Conduct a project in Biology",
+          "text": "Evaluate the role of 'Conduct a project in Biology' in national development. - with example",
+          "competence": "Conduct a project in Biology"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+          "text": "Outline the procedures involved in 'Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio'. - with diagram",
+          "competence": "Describe the mechanism of transportation of materials in flo"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+    "Describe principles of binomial nomenclature (rules of scientific naming, taxonomic and taxonomic hierarchy)",
+    "Demonstrate mastery of basic skills for conducting biological investigations",
+    "Explain the concept of gaseous exchange in plants (mechanism and theories of stomata opening and closing)",
+    "Describe the mechanism of excretion in the human body (systems: organs, product",
+    "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
+    "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+    "Prepare and present a report based on the findings",
+    "Demonstrate an understanding of the principles of binomial nomenclature and classification",
+    "Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

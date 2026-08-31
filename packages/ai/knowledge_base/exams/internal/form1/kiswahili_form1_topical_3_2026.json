@@ -1,0 +1,121 @@
+{
+  "filename": "kiswahili_form1_topical_3_2026.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Kiswahili - Topical Test 3 (FORM1 2026): Kubaini mbinu za utungaji wa mashai",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 44,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik",
+          "text": "Propose measures to improve 'Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik' in schools. - with diagram",
+          "competence": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakik"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kubaini mbinu za utungaji wa mashairi",
+          "text": "Examine the advantages and disadvantages of 'Kubaini mbinu za utungaji wa mashairi'. - with example",
+          "competence": "Kubaini mbinu za utungaji wa mashairi"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Kubaini mbinu za utungaji wa mashairi",
+          "text": "Examine the advantages and disadvantages of 'Kubaini mbinu za utungaji wa mashairi'.",
+          "competence": "Kubaini mbinu za utungaji wa mashairi"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kubaini mbinu za utungaji wa mashairi",
+          "text": "Describe the main features of 'Kubaini mbinu za utungaji wa mashairi'. - with example",
+          "competence": "Kubaini mbinu za utungaji wa mashairi"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik",
+          "text": "Describe the main features of 'Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik'. - with diagram",
+          "competence": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakik"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik",
+          "text": "Explain the concept of 'Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik' with examples relevant to Tanzania.",
+          "competence": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakik"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik",
+          "text": "Discuss the challenges facing 'Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik' in Tanzania and propose solutions. - with diagram",
+          "competence": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakik"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Kubaini mbinu za utungaji wa mashairi",
+          "text": "With examples, illustrate how 'Kubaini mbinu za utungaji wa mashairi' is applied in the community.",
+          "competence": "Kubaini mbinu za utungaji wa mashairi"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kubaini mbinu za utungaji wa mashairi",
+          "text": "Outline the procedures involved in 'Kubaini mbinu za utungaji wa mashairi'.",
+          "competence": "Kubaini mbinu za utungaji wa mashairi"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik",
+          "text": "How does 'Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik' relate to sustainable development? - with diagram",
+          "competence": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakik"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik",
+    "Kubaini mbinu za utungaji wa mashairi"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

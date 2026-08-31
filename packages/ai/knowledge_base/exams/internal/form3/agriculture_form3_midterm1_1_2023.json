@@ -1,0 +1,209 @@
+{
+  "filename": "agriculture_form3_midterm1_1_2023.json",
+  "subject": "Agriculture",
+  "subject_slug": "agriculture",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Agriculture - Midterm 1 Exam 1 (FORM3 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 96,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain branches of agriculture",
+          "text": "Evaluate the role of 'Explain branches of agriculture' in national development. - with example",
+          "competence": "Explain branches of agriculture"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Soil Conservation",
+          "text": "Analyse the causes and effects of 'Soil Conservation'.",
+          "competence": "Soil Conservation"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Importance of Agriculture",
+          "text": "Describe the main features of 'Importance of Agriculture'. - with example",
+          "competence": "Importance of Agriculture"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain crop production practices",
+          "text": "Examine the advantages and disadvantages of 'Explain crop production practices'.",
+          "competence": "Explain crop production practices"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain agricultural marketing",
+          "text": "Explain the concept of 'Explain agricultural marketing' with examples relevant to Tanzania.",
+          "competence": "Explain agricultural marketing"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain crop classification",
+          "text": "Describe the main features of 'Explain crop classification'. - with diagram",
+          "competence": "Explain crop classification"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain farm records",
+          "text": "Explain the concept of 'Explain farm records' with examples relevant to Tanzania. - with example",
+          "competence": "Explain farm records"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain soil conservation",
+          "text": "Describe the main features of 'Explain soil conservation'.",
+          "competence": "Explain soil conservation"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain importance of agriculture",
+          "text": "Evaluate the role of 'Explain importance of agriculture' in national development. - with example",
+          "competence": "Explain importance of agriculture"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain animal classification",
+          "text": "Discuss the challenges facing 'Explain animal classification' in Tanzania and propose solutions. - with example",
+          "competence": "Explain animal classification"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Soil Properties",
+          "text": "Discuss the challenges facing 'Soil Properties' in Tanzania and propose solutions. - with diagram",
+          "competence": "Soil Properties"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Livestock Management",
+          "text": "Describe the main features of 'Livestock Management'.",
+          "competence": "Livestock Management"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain soil properties",
+          "text": "Describe the main features of 'Explain soil properties'. - with example",
+          "competence": "Explain soil properties"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Range Management",
+          "text": "Describe the main features of 'Range Management'. - with diagram",
+          "competence": "Range Management"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain vegetable production",
+          "text": "Examine the advantages and disadvantages of 'Explain vegetable production'.",
+          "competence": "Explain vegetable production"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Soil Fertility",
+          "text": "Define 'Soil Fertility' and discuss its importance in everyday life. - with diagram",
+          "competence": "Soil Fertility"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain concept of agriculture",
+          "text": "Explain the concept of 'Explain concept of agriculture' with examples relevant to Tanzania.",
+          "competence": "Explain concept of agriculture"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain animal nutrition",
+          "text": "With examples, illustrate how 'Explain animal nutrition' is applied in the community.",
+          "competence": "Explain animal nutrition"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain livestock management",
+          "text": "Describe the main features of 'Explain livestock management'. - with example",
+          "competence": "Explain livestock management"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Farm Management",
+          "text": "Describe the main features of 'Farm Management'. - with diagram",
+          "competence": "Farm Management"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain branches of agriculture",
+    "Soil Conservation",
+    "Importance of Agriculture",
+    "Explain crop production practices",
+    "Explain agricultural marketing",
+    "Explain crop classification",
+    "Explain farm records",
+    "Explain soil conservation",
+    "Explain importance of agriculture",
+    "Explain animal classification"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

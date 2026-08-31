@@ -1,0 +1,326 @@
+{
+  "subject_code": "032",
+  "subject_name": "Chemistry",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the concepts, theories and principles in Chemistry",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-FV-U1-L1",
+              "title": "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+              "markdown_content": "## a) Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+              "periods": "90",
+              "page": 14
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L2",
+              "title": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+              "markdown_content": "## b) Use different atomic theories to determine the electronic configuration of elements with different properties",
+              "periods": "",
+              "page": 14
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L3",
+              "title": "Explain the concept of chemical bonding and the interactions of atoms to form molecules",
+              "markdown_content": "## c) Explain the concept of chemical bonding and the interactions of atoms to form molecules",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L4",
+              "title": "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+              "markdown_content": "## d) Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L5",
+              "title": "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+              "markdown_content": "## e) Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+              "periods": "",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "CHE-FV-U1-L6",
+              "title": "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+              "markdown_content": "## a) Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+              "periods": "36",
+              "page": 16
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L7",
+              "title": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+              "markdown_content": "## b) Analyse the periodic trends of elements in relation to their physical and chemical properties",
+              "periods": "",
+              "page": 17
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "CHE-FV-U1-L8",
+              "title": "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+              "markdown_content": "## a) Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+              "periods": "124",
+              "page": 18
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L9",
+              "title": "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+              "markdown_content": "## b) Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+              "periods": "",
+              "page": 19
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L10",
+              "title": "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+              "markdown_content": "## c) Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+              "periods": "",
+              "page": 19
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L11",
+              "title": "Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+              "markdown_content": "## d) Examine the applications of two component liquid systems in pharmaceutical industries and in the extraction of plant components, separation and purification of substances",
+              "periods": "",
+              "page": 20
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L12",
+              "title": "Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+              "markdown_content": "## e) Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+              "periods": "",
+              "page": 21
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L13",
+              "title": "Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism",
+              "markdown_content": "## f) Examine the applications of energetics in daily life in combustion of fuel, cooking and human body metabolism",
+              "periods": "",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of advanced concepts and principles in organic chemistry",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "CHE-FV-U1-L14",
+              "title": "Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+              "markdown_content": "## a) Describe the concepts of aromatic hydrocarbons, halogen derivatives of hydrocarbons, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+              "periods": "82",
+              "page": 22
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L15",
+              "title": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+              "markdown_content": "## b) Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+              "periods": "",
+              "page": 22
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L16",
+              "title": "phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines",
+              "markdown_content": "## a) phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines",
+              "periods": "",
+              "page": 23
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L17",
+              "title": "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+              "markdown_content": "## c) Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+              "periods": "",
+              "page": 23
+            },
+            {
+              "lesson_id": "CHE-FV-U1-L18",
+              "title": "Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber",
+              "markdown_content": "## d) Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber",
+              "periods": "",
+              "page": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct experiments in chemistry",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Conduct synthesis of selected organic compounds",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-FV-U2-L19",
+              "title": "Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+              "markdown_content": "## a) Synthesise aromatic hydrocarbons, haloalkanes, phenols, carbonyl compounds, carboxylic acids and their derivatives, amines and polymers",
+              "periods": "28",
+              "page": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Conduct a project in Chemistry",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Conduct a project in Chemistry",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-FV-U3-L20",
+              "title": "Design and carry out a project in Chemistry",
+              "markdown_content": "## a) Design and carry out a project in Chemistry",
+              "periods": "30",
+              "page": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the concepts, theories and principles in Chemistry",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": ". Demonstrate an advanced understanding of the concepts, theories and principles of Chemistry",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-FVI-U1-L21",
+              "title": "Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)",
+              "markdown_content": "## a) Describe the concept of chemical equilibria in predicting the direction of reactions for formation of desired products (dynamic equilibrium, ionic equilibrium and acid-base equilibrium)",
+              "periods": "96",
+              "page": 27
+            },
+            {
+              "lesson_id": "CHE-FVI-U1-L22",
+              "title": "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+              "markdown_content": "## b) Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+              "periods": "",
+              "page": 28
+            },
+            {
+              "lesson_id": "CHE-FVI-U1-L23",
+              "title": "Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)",
+              "markdown_content": "## c) Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)",
+              "periods": "",
+              "page": 28
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "CHE-FVI-U1-L24",
+              "title": "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+              "markdown_content": "## a) Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+              "periods": "120",
+              "page": 29
+            },
+            {
+              "lesson_id": "CHE-FVI-U1-L25",
+              "title": "Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+              "markdown_content": "## b) Describe the concept of complex compounds (type of complexes and factors affecting complex formation)",
+              "periods": "",
+              "page": 30
+            },
+            {
+              "lesson_id": "CHE-FVI-U1-L26",
+              "title": "Explore reactions of complex compounds",
+              "markdown_content": "## c) Explore reactions of complex compounds",
+              "periods": "",
+              "page": 30
+            },
+            {
+              "lesson_id": "CHE-FVI-U1-L27",
+              "title": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+              "markdown_content": "## d) Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+              "periods": "",
+              "page": 30
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of chemical concepts and principles and their application in different contexts",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "CHE-FVI-U1-L28",
+              "title": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+              "markdown_content": "## a) Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+              "periods": "114",
+              "page": 31
+            },
+            {
+              "lesson_id": "CHE-FVI-U1-L29",
+              "title": "Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)",
+              "markdown_content": "## b) Investigate the applications of chemical kinetics in industries and real-life situation (catalyst in production, medical aspects, baking industries, food storage)",
+              "periods": "",
+              "page": 32
+            },
+            {
+              "lesson_id": "CHE-FVI-U1-L30",
+              "title": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+              "markdown_content": "## c) Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+              "periods": "",
+              "page": 32
+            },
+            {
+              "lesson_id": "CHE-FVI-U1-L31",
+              "title": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+              "markdown_content": "## d) Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+              "periods": "",
+              "page": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct a project in Chemistry",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Conduct a project in Chemistry",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-FVI-U2-L32",
+              "title": "Complete and submit for assessment a scientific report of the project started in Form Five",
+              "markdown_content": "## a) Complete and submit for assessment a scientific report of the project started in Form Five",
+              "periods": "60",
+              "page": 34
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form5_midterm2_2_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 2 Exam 2 (FORM5 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 90,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+          "text": "With examples, illustrate how 'Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons' is applied in the community.",
+          "competence": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohy"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+          "text": "Explain the concept of 'Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the physical and chemical properties of transition "
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+          "text": "Describe the main features of 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table'.",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+          "text": "Analyse the causes and effects of 'Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture'. - with example",
+          "competence": "Describe the applications of volumetric analysis in real lif"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
+          "text": "With examples, illustrate how 'Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid' is applied in the community. - with diagram",
+          "competence": "Demonstrate oxidizing and displacement properties of non-met"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+          "text": "Outline the procedures involved in 'Describe the extraction of iron from its ore (ores, stages, and methods of extractio'. - with example",
+          "competence": "Describe the extraction of iron from its ore (ores, stages, "
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Conduct synthesis of selected organic compounds",
+          "text": "With examples, illustrate how 'Conduct synthesis of selected organic compounds' is applied in the community. - with example",
+          "competence": "Conduct synthesis of selected organic compounds"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+          "text": "Compare and contrast 'Demonstrate an understanding of chemical concepts and principles and their applications in different contexts' with related concepts.",
+          "competence": "Demonstrate an understanding of chemical concepts and princi"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+          "text": "Evaluate the role of 'Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle' in national development. - with diagram",
+          "competence": "Describe the modern concept of atomic structure (Dalton’s at"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+          "text": "Describe the main features of 'Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms'. - with example",
+          "competence": "Relate the types of chemical reactions with common processes"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Explain the concept of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concept of gases in terms of the gas laws and the kinetic theory of gases",
+          "text": "Explain the concept of 'Describe the concept of gases in terms of the gas laws and the kinetic theory of gases' with examples relevant to Tanzania.",
+          "competence": "Describe the concept of gases in terms of the gas laws and t"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
+          "text": "Define 'Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste' and discuss its importance in everyday life.",
+          "competence": "Explain the concept of chemical formulae and nomenclature (v"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)",
+          "text": "Discuss the challenges facing 'Describe the concept of chemical kinetics (rate laws, activation energy, catalysis)' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the concept of chemical kinetics (rate laws, activa"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain Avogadro’s law in relation to molar quantities",
+          "text": "Outline the procedures involved in 'Explain Avogadro’s law in relation to molar quantities'. - with diagram",
+          "competence": "Explain Avogadro’s law in relation to molar quantities"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Conduct a project in Chemistry",
+          "text": "Define 'Conduct a project in Chemistry' and discuss its importance in everyday life.",
+          "competence": "Conduct a project in Chemistry"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe acids, bases and salts (reactions of acids and bases with various substance",
+          "text": "Analyse the causes and effects of 'Describe acids, bases and salts (reactions of acids and bases with various substance'. - with example",
+          "competence": "Describe acids, bases and salts (reactions of acids and base"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the concept of electronic arrangements",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept of electronic arrangements'. - with example",
+          "competence": "Describe the concept of electronic arrangements"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+          "text": "Outline the procedures involved in 'Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)'.",
+          "competence": "Describe the concept of the atom (Dalton’s atomic theory, Bo"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of changes in the physical and chemical properties of elements according to their position in the periodic table' is applied in the community. - with diagram",
+          "competence": "Demonstrate an understanding of changes in the physical and "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+    "Describe the physical and chemical properties of transition elements (variable oxidation states, catalytic properties, magnetic properties, alloy formation)",
+    "Demonstrate an understanding of changes in the physical and chemical properties of elements according to their positions in the periodic table",
+    "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+    "Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
+    "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+    "Conduct synthesis of selected organic compounds",
+    "Demonstrate an understanding of chemical concepts and principles and their applications in different contexts",
+    "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+    "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

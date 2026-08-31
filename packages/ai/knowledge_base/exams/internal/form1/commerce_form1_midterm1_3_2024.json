@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form1_midterm1_3_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 3 (FORM1 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 73,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Advertisement",
+          "text": "Define 'Advertisement' and discuss its importance in everyday life. - with diagram",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Taxation",
+          "text": "Compare and contrast 'Taxation' with related concepts. - with diagram",
+          "competence": "Taxation"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Market and Marketing",
+          "text": "Analyse the causes and effects of 'Market and Marketing'. - with example",
+          "competence": "Market and Marketing"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Marketing Mix",
+          "text": "Evaluate the role of 'Marketing Mix' in national development. - with example",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain sources of business finance",
+          "text": "Explain the concept of 'Explain sources of business finance' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Communication",
+          "text": "Analyse the causes and effects of 'Communication'. - with example",
+          "competence": "Communication"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain storekeeping",
+          "text": "Describe the main features of 'Explain storekeeping'. - with example",
+          "competence": "Explain storekeeping"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Concept of Commerce",
+          "text": "Discuss the challenges facing 'Concept of Commerce' in Tanzania and propose solutions. - with diagram",
+          "competence": "Concept of Commerce"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain market and marketing",
+          "text": "Evaluate the role of 'Explain market and marketing' in national development. - with example",
+          "competence": "Explain market and marketing"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain concept of commerce",
+          "text": "With examples, illustrate how 'Explain concept of commerce' is applied in the community. - with example",
+          "competence": "Explain concept of commerce"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain communication",
+          "text": "Examine the advantages and disadvantages of 'Explain communication'. - with example",
+          "competence": "Explain communication"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain warehousing",
+          "text": "With examples, illustrate how 'Explain warehousing' is applied in the community. - with diagram",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain stock control",
+          "text": "Explain the concept of 'Explain stock control' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain stock control"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Companies",
+          "text": "Explain the concept of 'Companies' with examples relevant to Tanzania. - with diagram",
+          "competence": "Companies"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Warehousing",
+          "text": "Analyse the causes and effects of 'Warehousing'. - with diagram",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Trade",
+          "text": "Evaluate the role of 'Trade' in national development. - with example",
+          "competence": "Trade"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Partnership",
+          "text": "Define 'Partnership' and discuss its importance in everyday life. - with example",
+          "competence": "Partnership"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain marketing mix",
+          "text": "Examine the advantages and disadvantages of 'Explain marketing mix'. - with example",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain trade",
+          "text": "Evaluate the role of 'Explain trade' in national development. - with diagram",
+          "competence": "Explain trade"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Cooperative",
+          "text": "Compare and contrast 'Cooperative' with related concepts. - with diagram",
+          "competence": "Cooperative"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Advertisement",
+    "Taxation",
+    "Market and Marketing",
+    "Marketing Mix",
+    "Explain sources of business finance",
+    "Communication",
+    "Explain storekeeping",
+    "Concept of Commerce",
+    "Explain market and marketing",
+    "Explain concept of commerce"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

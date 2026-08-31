@@ -1,0 +1,121 @@
+{
+  "filename": "commerce_form4_topical_5_2026.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Commerce - Topical Test 5 (FORM4 2026): Aids to Trade",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 40,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain advertisement",
+          "text": "With examples, illustrate how 'Explain advertisement' is applied in the community.",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain advertisement",
+          "text": "Outline the procedures involved in 'Explain advertisement'. - with example",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain advertisement",
+          "text": "With examples, illustrate how 'Explain advertisement' is applied in the community. - with diagram",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Aids to Trade",
+          "text": "Compare and contrast 'Aids to Trade' with related concepts. - with example",
+          "competence": "Aids to Trade"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain advertisement",
+          "text": "Analyse the causes and effects of 'Explain advertisement'.",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Aids to Trade",
+          "text": "Describe the main features of 'Aids to Trade'. - with example",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Aids to Trade",
+          "text": "Define 'Aids to Trade' and discuss its importance in everyday life. - with example",
+          "competence": "Aids to Trade"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Aids to Trade",
+          "text": "Define 'Aids to Trade' and discuss its importance in everyday life. - with example",
+          "competence": "Aids to Trade"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain advertisement",
+          "text": "Discuss the challenges facing 'Explain advertisement' in Tanzania and propose solutions.",
+          "competence": "Explain advertisement"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain advertisement",
+          "text": "Describe the main features of 'Explain advertisement'. - with diagram",
+          "competence": "Explain advertisement"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain advertisement",
+    "Aids to Trade"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

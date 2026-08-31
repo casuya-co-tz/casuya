@@ -1,0 +1,86 @@
+{
+  "code": "021",
+  "subject": "Chemistry",
+  "year": "2025/2026",
+  "max_marks": 100,
+  "sections": [
+    {
+      "name": "SECTION A (16 MARKS)",
+      "marks": 16,
+      "questions": [
+        {
+          "number": "1",
+          "marks": 10,
+          "answer_html": "MCQ: A,C,B,C,B,C,B,B,B,C (1 each)."
+        },
+        {
+          "number": "2",
+          "marks": 6,
+          "answer_html": "Matching: i->D Endothermic, ii->B Reducing, iii->E Catalyst, iv->F Activation, v->C Neutralization, vi->G Oxidizing (1 each)."
+        }
+      ]
+    },
+    {
+      "name": "SECTION B (54 MARKS)",
+      "marks": 54,
+      "questions": [
+        {
+          "number": "3",
+          "marks": 9,
+          "answer_html": "(a) Atomic number protons, mass protons+neutrons [3] (b)(i) Config 2:8:7 [2] (ii) Group VII Period 3 [2] (iii) CaCl2 [2]"
+        },
+        {
+          "number": "4",
+          "marks": 9,
+          "answer_html": "(a) Empirical simplest, molecular actual [3] (b)(i) CH2O [4] (ii) C2H4O2 (Mr60) [2]"
+        },
+        {
+          "number": "5",
+          "marks": 9,
+          "answer_html": "(i) NH4Cl+Ca(OH)2 [2] (ii) Prevents water backflow [2] (iii) 2NH4Cl+Ca(OH)2->CaCl2+2NH3+2H2O [3] (iv) Downward displacement, NH3 less dense than air [2]"
+        },
+        {
+          "number": "6",
+          "marks": 9,
+          "answer_html": "(a) Mass deposited proportional to charge [2] (b)(i) Q=It=2.5*1930=4825C [3] (ii) m= (Q*M)/(nF)=1.6g [4]"
+        },
+        {
+          "number": "7",
+          "marks": 9,
+          "answer_html": "(a) Hard Ca/Mg, temporary bicarbonates vs permanent sulphates [4] (b)(i) Ca(HCO3)2->CaCO3+CO2+H2O [2.5] (ii) Na2CO3+CaSO4->CaCO3+Na2SO4 [2.5]"
+        },
+        {
+          "number": "8",
+          "marks": 9,
+          "answer_html": "(a)(i) Propan-1-ol (ii) But-2-ene [4] (b)(i) Bromine water decolorizes ethene not ethane [3] (ii) C2H4+H2->C2H6 [2]"
+        }
+      ]
+    },
+    {
+      "name": "SECTION C (30 MARKS)",
+      "marks": 30,
+      "questions": [
+        {
+          "number": "9",
+          "marks": 15,
+          "answer_html": "(a) Molarity mol/dm3, standard known concentration [4] (b)(i) 2NaOH+H2SO4->Na2SO4+2H2O [3] (ii) M=0.0625M [5] (iii) g/dm3 =M*98=6.125 [3]"
+        },
+        {
+          "number": "10",
+          "marks": 15,
+          "answer_html": "(i) Hematite Fe2O3 [1] (ii) Coke fuel + reducing agent CO [2] (iii) Fe2O3+3CO->2Fe+3CO2 etc [6] (iv) CaO+SiO2->CaSiO3 slag protects iron [6]"
+        },
+        {
+          "number": "11",
+          "marks": 15,
+          "answer_html": "(a) pH -log[H+] affects nutrient availability [4] (b) Manure slow organic vs fertilizer fast inorganic [6] (c) Contour, terracing, mulching [5]"
+        }
+      ]
+    }
+  ],
+  "linked_forms": [
+    "form3",
+    "form4"
+  ],
+  "source_template": "CHEMISTRY_CSEE_MARKING_2026.html"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form1_topical_6_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 6 (FORM1 2025): Respond to conversations using rhet",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 46,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Participate in contextualised oral conversations",
+          "text": "Define 'Participate in contextualised oral conversations' and discuss its importance in everyday life. - with diagram",
+          "competence": "Participate in contextualised oral conversations"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Respond to conversations using rhetorical devices",
+          "text": "How does 'Respond to conversations using rhetorical devices' relate to sustainable development? - locally",
+          "competence": "Respond to conversations using rhetorical devices"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Participate in contextualised oral conversations",
+          "text": "Assess the impact of 'Participate in contextualised oral conversations' on society.",
+          "competence": "Participate in contextualised oral conversations"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Respond to conversations using rhetorical devices",
+          "text": "Propose measures to improve 'Respond to conversations using rhetorical devices' in schools. - locally",
+          "competence": "Respond to conversations using rhetorical devices"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Respond to conversations using rhetorical devices",
+          "text": "Compare and contrast 'Respond to conversations using rhetorical devices' with related concepts. - with example",
+          "competence": "Respond to conversations using rhetorical devices"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Participate in contextualised oral conversations",
+          "text": "Examine the advantages and disadvantages of 'Participate in contextualised oral conversations'. - locally",
+          "competence": "Participate in contextualised oral conversations"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Respond to conversations using rhetorical devices",
+          "text": "Discuss the challenges facing 'Respond to conversations using rhetorical devices' in Tanzania and propose solutions.",
+          "competence": "Respond to conversations using rhetorical devices"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Participate in contextualised oral conversations",
+          "text": "Compare and contrast 'Participate in contextualised oral conversations' with related concepts.",
+          "competence": "Participate in contextualised oral conversations"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Respond to conversations using rhetorical devices",
+          "text": "What are the characteristics of 'Respond to conversations using rhetorical devices'?",
+          "competence": "Respond to conversations using rhetorical devices"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Participate in contextualised oral conversations",
+          "text": "Propose measures to improve 'Participate in contextualised oral conversations' in schools. - with example",
+          "competence": "Participate in contextualised oral conversations"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Participate in contextualised oral conversations",
+    "Respond to conversations using rhetorical devices"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form1_midterm2_2_2024.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 2 Exam 2 (FORM1 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 92,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain concept of human rights",
+          "text": "Define 'Explain concept of human rights' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain concept of human rights"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Child Rights",
+          "text": "Discuss the challenges facing 'Child Rights' in Tanzania and propose solutions. - with example",
+          "competence": "Child Rights"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain national symbols",
+          "text": "Define 'Explain national symbols' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain national symbols"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Interpersonal Relationships",
+          "text": "Explain the concept of 'Interpersonal Relationships' with examples relevant to Tanzania. - with diagram",
+          "competence": "Interpersonal Relationships"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain globalization",
+          "text": "Define 'Explain globalization' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Culture and Tradition",
+          "text": "Discuss the challenges facing 'Culture and Tradition' in Tanzania and propose solutions. - with example",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain concept of nation",
+          "text": "Evaluate the role of 'Explain concept of nation' in national development. - with diagram",
+          "competence": "Explain concept of nation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Local Government",
+          "text": "With examples, illustrate how 'Local Government' is applied in the community.",
+          "competence": "Local Government"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "National Symbols",
+          "text": "Analyse the causes and effects of 'National Symbols'.",
+          "competence": "National Symbols"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Central Government",
+          "text": "Explain the concept of 'Central Government' with examples relevant to Tanzania. - with example",
+          "competence": "Central Government"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain elections",
+          "text": "Compare and contrast 'Explain elections' with related concepts. - with example",
+          "competence": "Explain elections"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain national unity",
+          "text": "Explain the concept of 'Explain national unity' with examples relevant to Tanzania.",
+          "competence": "Explain national unity"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Citizenship",
+          "text": "Analyse the causes and effects of 'Citizenship'.",
+          "competence": "Citizenship"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Gender",
+          "text": "Compare and contrast 'Gender' with related concepts.",
+          "competence": "Gender"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain citizenship",
+          "text": "Describe the main features of 'Explain citizenship'. - with example",
+          "competence": "Explain citizenship"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain culture and tradition",
+          "text": "Examine the advantages and disadvantages of 'Explain culture and tradition'.",
+          "competence": "Explain culture and tradition"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Elections",
+          "text": "Explain the concept of 'Elections' with examples relevant to Tanzania.",
+          "competence": "Elections"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain constitution",
+          "text": "Describe the main features of 'Explain constitution'. - with diagram",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain interpersonal relationships",
+          "text": "With examples, illustrate how 'Explain interpersonal relationships' is applied in the community. - with diagram",
+          "competence": "Explain interpersonal relationships"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Concept of Human Rights",
+          "text": "Analyse the causes and effects of 'Concept of Human Rights'. - with diagram",
+          "competence": "Concept of Human Rights"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain concept of human rights",
+    "Child Rights",
+    "Explain national symbols",
+    "Interpersonal Relationships",
+    "Explain globalization",
+    "Culture and Tradition",
+    "Explain concept of nation",
+    "Local Government",
+    "National Symbols",
+    "Central Government"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

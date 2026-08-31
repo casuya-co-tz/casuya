@@ -1,0 +1,121 @@
+{
+  "filename": "biology_form4_topical_7_2025.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Biology - Topical Test 7 (FORM4 2025): Describe the mechanism of reproduct",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 50,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Explain the concept of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry' with examples relevant to Tanzania.",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Analyse the causes and effects of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)'. - with example",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Explain the concept of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry' with examples relevant to Tanzania.",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Examine the advantages and disadvantages of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry'. - with example",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Compare and contrast 'Carry out investigation related to reproduction in flowering plants (flower structure and embry' with related concepts.",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Examine the advantages and disadvantages of 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)'. - with diagram",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Outline the procedures involved in 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)'.",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)",
+          "text": "Outline the procedures involved in 'Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)'.",
+          "competence": "Describe the mechanism of reproduction in plants (gametogene"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Evaluate the role of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry' in national development. - with diagram",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Examine the advantages and disadvantages of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry'.",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+    "Describe the mechanism of reproduction in plants (gametogenesis, fertilisation, and life cycles of selected plants)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

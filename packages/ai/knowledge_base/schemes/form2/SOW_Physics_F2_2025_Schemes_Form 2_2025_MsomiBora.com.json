@@ -1,0 +1,398 @@
+{
+  "file": "SOW Physics F2 2025 - MsomiBora.com.docx",
+  "subjects": [
+    {
+      "table_index": 0,
+      "headers": [
+        "MAIN COMPETENCE",
+        "SPECIFIC COMPETENCE",
+        "TEACHER’S ACTIVITIES",
+        "MONTH",
+        "WEEK",
+        "PERIODS",
+        "REFERENCES",
+        "TEACHING AND LEARNING TOOLS",
+        "ASSESSMENT TOOLS",
+        "REMARKS"
+      ],
+      "column_count": 10,
+      "entries": [
+        {
+          "competence": "1 STATIC ELECTRICITY",
+          "objective": "1.1 Concept of static electricity",
+          "month": "January",
+          "week": "2ND",
+          "period": "01",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Plastic pen Plastic comb Tissue paper fur",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "1 STATIC ELECTRICITY",
+          "objective": "1.2 Detection of charges",
+          "month": "January",
+          "week": "3RD",
+          "period": "01",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Gold leaf electroscope Diagram of G/ leaf electroscope Electrophorus C/wire",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "1 STATIC ELECTRICITY",
+          "objective": "1.3 conductors and insulators",
+          "month": "January",
+          "week": "3RD",
+          "period": "01",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Copper wire Aluminum Bulb Glass rod Wood Fur, Wax",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "1 STATIC ELECTRICITY",
+          "objective": "1.4 Capacitors",
+          "week": "4TH",
+          "period": "04",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Source of charge Copper electrodes Variable capacitor Battery Resistor voltmeter capacitors",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "r",
+          "objective": "1.5 Charge distribution along the Surface of a conductor",
+          "month": "February",
+          "week": "1ST",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Electrophorus Different shapes of conductor Gold leaf electroscope Proof plane",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "r",
+          "objective": "1.6 Lightening conductor",
+          "month": "February",
+          "week": "2ND",
+          "period": "03",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Chart showing lighting Copper plate Sharp pointed conductor",
+          "assessment": "Classwork"
+        },
+        {
+          "competence": "2.CURRENT ELECTRICITY",
+          "objective": "2.1 Concepts of Electricity",
+          "month": "February",
+          "week": "3RD",
+          "period": "03",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Dry cell Accumulator Dynamo Generator Solar panel",
+          "assessment": "Assignment"
+        },
+        {
+          "competence": "2.CURRENT ELECTRICITY",
+          "objective": "2.2 Simple Electric Circuit",
+          "month": "February",
+          "week": "4TH",
+          "period": "06",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Charts showing basic electric symbols Battery, cell, Resistors, switch, c/ wires Bulb",
+          "assessment": "Groupwork"
+        },
+        {
+          "competence": "2.CURRENT ELECTRICITY",
+          "objective": "2.2 Simple Electric Circuit",
+          "month": "March",
+          "week": "1ST",
+          "period": "06",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Charts showing basic electric symbols Battery, cell, Resistors, switch, c/ wires Bulb",
+          "assessment": "Groupwork"
+        },
+        {
+          "competence": "3. MAGNETISM",
+          "objective": "3.1 Concept of Magnetism",
+          "month": "March",
+          "week": "2ND",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Magnets Magnetic materials Non magnetic materials Flip charts Marker pen",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "3. MAGNETISM",
+          "objective": "3.2 Magnetization and demagnetization",
+          "month": "March",
+          "week": "3RD",
+          "period": "04",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Bar magnet Iron nail A.C source Steel bar",
+          "assessment": "Exercise"
+        },
+        {
+          "objective": "3.4 Earth’s Magnetic Field",
+          "month": "April",
+          "week": "2ND",
+          "period": "03",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Magnet Compass needle nail Iron fillings Pencil plain paper",
+          "assessment": "Homework Classwork"
+        },
+        {
+          "competence": "4.0 FORCES IN EQUILIBRIUMS",
+          "objective": "4.1 Moment of a Force",
+          "month": "April",
+          "week": "3RD",
+          "period": "03",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Hinged window Suspended piece of wood Meter rule String\\two different masses B/ balance",
+          "assessment": "Assignment"
+        },
+        {
+          "competence": "4.0 FORCES IN EQUILIBRIUMS",
+          "objective": "4.2 Center of gravity",
+          "month": "April",
+          "week": "4TH",
+          "period": "03",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Flip chart Different object with different center of gravity",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "4.0 FORCES IN EQUILIBRIUMS",
+          "objective": "4.3 Types of equilibrium",
+          "month": "May",
+          "week": "1ST",
+          "period": "03",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Ropes Solid wooden cone Model of bus",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "5.0. SIMPLE MACHINE",
+          "objective": "5.1 Concept of simple machine",
+          "month": "May",
+          "week": "2ND",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Bolts and nuts Spanner Single fixed pulley Stone Bottle opener",
+          "assessment": "Classwork"
+        },
+        {
+          "competence": "5.0. SIMPLE MACHINE",
+          "objective": "5.2 Levers",
+          "month": "May",
+          "week": "3RD",
+          "period": "04",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Scissors, claw hammer Nut cracker Wheel barrow Crow bar",
+          "assessment": "Assignment"
+        },
+        {
+          "objective": "5.3 Pulleys",
+          "month": "July",
+          "week": "1ST",
+          "period": "03",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "s/fixed pulley s/movable pulley rope meter ruler",
+          "assessment": "Groupwork"
+        },
+        {
+          "objective": "5.6 Inclined plane",
+          "month": "July",
+          "week": "2ND",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Heavy load Inclined plane ladder",
+          "assessment": "Test"
+        },
+        {
+          "objective": "5.7 Screw jack",
+          "month": "July",
+          "week": "2ND",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Screw jack Car jack Heavy loads car",
+          "assessment": "Exercise"
+        },
+        {
+          "objective": "5.8 Wheel and axle",
+          "month": "July",
+          "week": "3RD",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Wheel and axle Bicycle Heavy load Windlass machine",
+          "assessment": "Homework"
+        },
+        {
+          "objective": "5.9 Hydraulic press",
+          "month": "July",
+          "week": "4TH",
+          "period": "04",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Model of hydraulic press Strings Internet Reference books Flip chart Flash cards",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "6.0 MOTION IN STRAIGHT LINE",
+          "objective": "6.0 Distance and displacement",
+          "month": "August",
+          "week": "1ST",
+          "period": "01",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Tape measure Timer Internet Reference books flash cards",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "6.0 MOTION IN STRAIGHT LINE",
+          "objective": "6.1 Speed and velocity",
+          "month": "August",
+          "week": "1ST",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Speedometer Timer Measuring tape Velocity time graph",
+          "assessment": "Classwork"
+        },
+        {
+          "competence": "6.0 MOTION IN STRAIGHT LINE",
+          "objective": "6.2 Acceleration",
+          "month": "August",
+          "week": "2ND",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Velocity time graph Trolleys Ticker- tape- timer",
+          "assessment": "Assignment"
+        },
+        {
+          "competence": "6.0 MOTION IN STRAIGHT LINE",
+          "objective": "6.3 Equation of uniform accelerated motion",
+          "month": "August",
+          "week": "2ND",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Kinematics reference books Velocity time graph Bank of kinematics questions",
+          "assessment": "Groupwork"
+        },
+        {
+          "competence": "6.0 MOTION IN STRAIGHT LINE",
+          "objective": "6.4 motion under gravity",
+          "week": "3RD",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Stones Balls Pendulum bob Thread Meter ruler Stop watch Retort stand Graph paper Internet",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "7.0 NEWTONS LAWS OF MOTION",
+          "objective": "7.1 Newtons first Law of motion",
+          "month": "September",
+          "week": "3RD",
+          "period": "03",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Heavy loads Bottle Cards Coin Tea cups",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "7.0 NEWTONS LAWS OF MOTION",
+          "objective": "7.2 Second Law of motion",
+          "month": "September",
+          "week": "3RD",
+          "period": "03",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Trolley Various masses Timmer Meter ruler String Trick- tape- timer Muddy surface Hard/soft surface",
+          "assessment": "Classwork"
+        },
+        {
+          "competence": "7.0 NEWTONS LAWS OF MOTION",
+          "objective": "7.3 Conservation linear momentum",
+          "month": "September",
+          "week": "4TH",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Tennis ball Spongy floor/surface Hard/soft surface Muddy surface Trolley Various Reference books",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "7.0 NEWTONS LAWS OF MOTION",
+          "objective": "7.4 Third law of motion",
+          "month": "September",
+          "week": "4TH",
+          "period": "01",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Balloon Bicycle pump Table Weighing scale",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "8. TEMPERATURE MOTION",
+          "objective": "8.1 Concept of temperature",
+          "month": "October",
+          "week": "1ST",
+          "period": "01",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Water, ice Alcohol Melting ice Boiling water",
+          "assessment": "Classwork"
+        },
+        {
+          "competence": "8. TEMPERATURE MOTION",
+          "objective": "8.2 Measurement of Temperature",
+          "month": "October",
+          "week": "1ST",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Thermometer Water, ice Alcohol Melting ice Boiling water",
+          "assessment": "Assignment"
+        },
+        {
+          "competence": "9. SUSTAINABLE ENERGY",
+          "objective": "9.1 Water energy",
+          "month": "October",
+          "week": "2ND",
+          "period": "01",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Hydroelectric power plant Reference book Internet",
+          "assessment": "Groupwork"
+        },
+        {
+          "competence": "9. SUSTAINABLE ENERGY",
+          "objective": "9.2 Solar energy",
+          "month": "October",
+          "week": "2ND",
+          "period": "01",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Solar panel Cell Photovoltaic (solar) Solar cell",
+          "assessment": "Test"
+        },
+        {
+          "competence": "9. SUSTAINABLE ENERGY",
+          "objective": "9.3 Wind energy",
+          "month": "October",
+          "week": "2ND",
+          "period": "01",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Wind Feathers Cotton wool Wood Nails glue",
+          "assessment": "Exercise"
+        },
+        {
+          "competence": "9. SUSTAINABLE ENERGY",
+          "objective": "9.4 Sea wave energy",
+          "month": "October",
+          "week": "2ND",
+          "period": "02",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Flip chart Marker pen Masking tape Internet",
+          "assessment": "Homework"
+        },
+        {
+          "competence": "9. SUSTAINABLE ENERGY",
+          "objective": "9.5 Geothermal energy",
+          "month": "October",
+          "week": "2ND",
+          "period": "01",
+          "references": "TIE(2021) Physics for secondary school s student’s book form two, Tanzania Institute of education , Dar es salaam ,Tanzania.",
+          "teaching_act": "Flip chart Marker pen Masking tape Internet Reference books",
+          "assessment": "Classwork"
+        }
+      ],
+      "entry_count": 38
+    }
+  ],
+  "form": "Form2",
+  "year": "2025"
+}

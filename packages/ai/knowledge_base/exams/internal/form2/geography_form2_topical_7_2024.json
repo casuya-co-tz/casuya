@@ -1,0 +1,121 @@
+{
+  "filename": "geography_form2_topical_7_2024.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Geography - Topical Test 7 (FORM2 2024): Describe the relationship between m",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 36,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+          "text": "Define 'Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher' and discuss its importance in everyday life.",
+          "competence": "Describe the main external Earth systems (Hydrosphere, Atmos"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+          "text": "Describe the process of 'Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation' step by step. - with example",
+          "competence": "Describe the relationship between major features of the Eart"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+          "text": "Explain the concept of 'Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the main external Earth systems (Hydrosphere, Atmos"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+          "text": "Explain the relationship between 'Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation' and its environment. - with example",
+          "competence": "Describe the relationship between major features of the Eart"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+          "text": "With examples, illustrate how 'Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher' is applied in the community. - with diagram",
+          "competence": "Describe the main external Earth systems (Hydrosphere, Atmos"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+          "text": "Describe the main features of 'Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher'.",
+          "competence": "Describe the main external Earth systems (Hydrosphere, Atmos"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+          "text": "Analyse the causes and effects of 'Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher'.",
+          "competence": "Describe the main external Earth systems (Hydrosphere, Atmos"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+          "text": "How does 'Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation' relate to sustainable development?",
+          "competence": "Describe the relationship between major features of the Eart"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+          "text": "Propose measures to improve 'Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation' in schools.",
+          "competence": "Describe the relationship between major features of the Eart"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+          "text": "Evaluate the role of 'Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation' in national development.",
+          "competence": "Describe the relationship between major features of the Eart"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+    "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

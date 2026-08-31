@@ -1,0 +1,463 @@
+{
+  "subject_code": "032",
+  "subject_name": "Chemistry",
+  "level": "Form 1-4",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of basic concepts, theories and principles in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U1-L1",
+              "title": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+              "markdown_content": "## a) Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+              "page": 15
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L2",
+              "title": "Discuss the contribution of Chemistry in the development of modern society",
+              "markdown_content": "## b) Discuss the contribution of Chemistry in the development of modern society",
+              "page": 16
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L3",
+              "title": "Describe the concept of matter (physical and chemical changes of matte",
+              "markdown_content": "## c) Describe the concept of matter (physical and chemical changes of matte",
+              "page": 17
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L4",
+              "title": "Describe the concepts of chemical elements (criteria for assigning chemical symbol",
+              "markdown_content": "## d) Describe the concepts of chemical elements (criteria for assigning chemical symbol",
+              "page": 18
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L5",
+              "title": ", compounds (binary compoun",
+              "markdown_content": "## s) , compounds (binary compoun",
+              "page": 18
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L6",
+              "title": "and mixtures (types of solution and separation of mixture",
+              "markdown_content": "## d) and mixtures (types of solution and separation of mixture",
+              "page": 18
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L7",
+              "title": "Compare the properties of compounds with those of constituent elements",
+              "markdown_content": "## e) Compare the properties of compounds with those of constituent elements",
+              "page": 19
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L8",
+              "title": "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
+              "markdown_content": "## f) Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
+              "page": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct experiments in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Conduct experiments in Chemistry",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U2-L9",
+              "title": "Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu",
+              "markdown_content": "## a) Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu",
+              "page": 21
+            },
+            {
+              "lesson_id": "CHE-F1-U2-L10",
+              "title": "Perform experiments on the changes of matter from one state to another",
+              "markdown_content": "## b) Perform experiments on the changes of matter from one state to another",
+              "page": 22
+            },
+            {
+              "lesson_id": "CHE-F1-U2-L11",
+              "title": "Perform experiments on separation of different mixtures using different methods",
+              "markdown_content": "## c) Perform experiments on separation of different mixtures using different methods",
+              "page": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of basic concepts, theories and principles in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U1-L12",
+              "title": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+              "markdown_content": "## a) Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
+              "page": 24
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L13",
+              "title": "Describe the concept of electronic arrangements",
+              "markdown_content": "## b) Describe the concept of electronic arrangements",
+              "page": 25
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L14",
+              "title": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+              "markdown_content": "## c) Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+              "page": 26
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L15",
+              "title": "Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
+              "markdown_content": "## d) Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
+              "page": 27
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L16",
+              "title": "Determine empirical and molecular formulae of common compounds",
+              "markdown_content": "## e) Determine empirical and molecular formulae of common compounds",
+              "page": 28
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L17",
+              "title": "Describe the concept of chemical bonding (covalent and electrovalent bondin",
+              "markdown_content": "## f) Describe the concept of chemical bonding (covalent and electrovalent bondin",
+              "page": 29
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L18",
+              "title": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+              "markdown_content": "## g) Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+              "page": 30
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L19",
+              "title": "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+              "markdown_content": "## h) Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+              "page": 31
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L20",
+              "title": "Describe acids, bases and salts (reactions of acids and bases with various substance",
+              "markdown_content": "## i) Describe acids, bases and salts (reactions of acids and bases with various substance",
+              "page": 32
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L21",
+              "title": "and their applications in daily life",
+              "markdown_content": "## s) and their applications in daily life",
+              "page": 32
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the physical and chemical properties of elements on the basis of their arrangements in the periodic table",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U1-L22",
+              "title": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+              "markdown_content": "## a) Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+              "page": 33
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L23",
+              "title": "Use the electronic configuration of an element to locate their positions in the periodic table",
+              "markdown_content": "## b) Use the electronic configuration of an element to locate their positions in the periodic table",
+              "page": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct experiments in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Conduct experiments in Chemistry",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U2-L24",
+              "title": "Prepare acid- base indicators using locally available materials",
+              "markdown_content": "## a) Prepare acid- base indicators using locally available materials",
+              "page": 34
+            },
+            {
+              "lesson_id": "CHE-F1-U2-L25",
+              "title": "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+              "markdown_content": "## b) Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+              "page": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of basic concepts, theories and principles in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U1-L26",
+              "title": "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+              "markdown_content": "## a) Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+              "page": 36
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L27",
+              "title": "Explain Avogadro’s law in relation to molar quantities",
+              "markdown_content": "## b) Explain Avogadro’s law in relation to molar quantities",
+              "page": 37
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L28",
+              "title": "Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation",
+              "markdown_content": "## c) Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation",
+              "page": 38
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L29",
+              "title": "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+              "markdown_content": "## d) Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+              "page": 39
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L30",
+              "title": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+              "markdown_content": "## e) Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
+              "page": 40
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L31",
+              "title": "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+              "markdown_content": "## f) Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+              "page": 41
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L32",
+              "title": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+              "markdown_content": "## g) Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+              "page": 42
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Conduct experiments in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Conduct experiments in Chemistry",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U2-L33",
+              "title": "Perform experiments on volumetric analysis",
+              "markdown_content": "## a) Perform experiments on volumetric analysis",
+              "page": 43
+            },
+            {
+              "lesson_id": "CHE-F1-U2-L34",
+              "title": "Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
+              "markdown_content": "## b) Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
+              "page": 44
+            },
+            {
+              "lesson_id": "CHE-F1-U2-L35",
+              "title": "Use appropriate software to sketch the set-ups of experiments",
+              "markdown_content": "## c) Use appropriate software to sketch the set-ups of experiments",
+              "page": 45
+            },
+            {
+              "lesson_id": "CHE-F1-U2-L36",
+              "title": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+              "markdown_content": "## d) Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+              "page": 46
+            },
+            {
+              "lesson_id": "CHE-F1-U2-L37",
+              "title": "Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
+              "markdown_content": "## e) Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
+              "page": 47
+            },
+            {
+              "lesson_id": "CHE-F1-U2-L38",
+              "title": "Prepare sulphuric acid from sulphur dioxide",
+              "markdown_content": "## f) Prepare sulphuric acid from sulphur dioxide",
+              "page": 48
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Demonstrate mastery of basic principles of extraction of metals",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of the principles of extraction of metals",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U3-L39",
+              "title": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+              "markdown_content": "## a) Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+              "page": 49
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Conduct a project in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Conduct a project in Chemistry",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U4-L40",
+              "title": "Design and carry-out a simple research project in Chemistry",
+              "markdown_content": "## a) Design and carry-out a simple research project in Chemistry",
+              "page": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of basic concepts, theories and principles in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U1-L41",
+              "title": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+              "markdown_content": "## a) Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+              "page": 51
+            },
+            {
+              "lesson_id": "CHE-F1-U1-L42",
+              "title": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+              "markdown_content": "## b) Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+              "page": 52
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate mastery of basic terminologies in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U2-L43",
+              "title": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+              "markdown_content": "## a) Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+              "page": 53
+            },
+            {
+              "lesson_id": "CHE-F1-U2-L44",
+              "title": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+              "markdown_content": "## b) Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+              "page": 54
+            }
+          ]
+        },
+        {
+          "topic_name": "Use chemical symbols, formulae and equations to represent chemical reaction",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U2-L45",
+              "title": "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+              "markdown_content": "## a) Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+              "page": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Conduct experiments in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Conduct experiments in Chemistry",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U3-L46",
+              "title": "Investigate the composition of chemical species in substances using systematic qualitative analysis",
+              "markdown_content": "## a) Investigate the composition of chemical species in substances using systematic qualitative analysis",
+              "page": 56
+            },
+            {
+              "lesson_id": "CHE-F1-U3-L47",
+              "title": "Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
+              "markdown_content": "## b) Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
+              "page": 57
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Conduct a project in Chemistry",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Conduct a project in Chemistry",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "CHE-F1-U4-L48",
+              "title": "Complete and submit a report for the project started in Form Three",
+              "markdown_content": "## a) Complete and submit a report for the project started in Form Three",
+              "page": 58
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

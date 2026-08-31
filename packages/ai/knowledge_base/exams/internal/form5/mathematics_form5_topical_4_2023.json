@@ -1,0 +1,121 @@
+{
+  "filename": "mathematics_form5_topical_4_2023.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Mathematics - Topical Test 4 (FORM5 2023): Explain the concept of ratios and p",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 48,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Assess the impact of 'Explain the concept of ratios and proportions' on society. - with diagram",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "How does 'Describe the concepts of geometry (similarities and congruenc' relate to sustainable development? - with example",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Examine the advantages and disadvantages of 'Explain the concept of ratios and proportions'. - locally",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "How does 'Explain the concept of ratios and proportions' relate to sustainable development?",
+          "competence": "Explain the concept of ratios and proportions"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "With examples, illustrate how 'Describe the concepts of geometry (similarities and congruenc' is applied in the community. - locally",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Outline the procedures involved in 'Explain the concept of ratios and proportions'. - with example",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "Describe the process of 'Describe the concepts of geometry (similarities and congruenc' step by step.",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the concepts of geometry (similarities and congruenc",
+          "text": "Explain the concept of 'Describe the concepts of geometry (similarities and congruenc' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the concepts of geometry (similarities and congruen"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Explain the concept of 'Explain the concept of ratios and proportions' with examples relevant to Tanzania. - locally",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "How does 'Explain the concept of ratios and proportions' relate to sustainable development? - locally",
+          "competence": "Explain the concept of ratios and proportions"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of ratios and proportions",
+    "Describe the concepts of geometry (similarities and congruenc"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

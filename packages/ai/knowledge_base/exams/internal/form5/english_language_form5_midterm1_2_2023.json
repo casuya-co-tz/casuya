@@ -1,0 +1,209 @@
+{
+  "filename": "english_language_form5_midterm1_2_2023.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "English Language - Midterm 1 Exam 2 (FORM5 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 103,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Assess the language used in a selected novella",
+          "text": "Describe the main features of 'Assess the language used in a selected novella'. - with diagram",
+          "competence": "Assess the language used in a selected novella"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the distinctive features of different genres of literature",
+          "text": "Discuss the factors influencing 'Explain the distinctive features of different genres of literature'. - with example",
+          "competence": "Explain the distinctive features of different genres of lite"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Create a variety of texts for different communicative purposes using the appropriate tone and register",
+          "text": "Explain the concept of 'Create a variety of texts for different communicative purposes using the appropriate tone and register' with examples relevant to Tanzania. - with example",
+          "competence": "Create a variety of texts for different communicative purpos"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic principles and methods of editing and proofreading",
+          "text": "Define 'Describe the basic principles and methods of editing and proofreading' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the basic principles and methods of editing and pro"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Compile information searched from various sources",
+          "text": "Compare and contrast 'Compile information searched from various sources' with related concepts. - locally",
+          "competence": "Compile information searched from various sources"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Analyse theories and principles of interpretation",
+          "text": "Analyse the causes and effects of 'Analyse theories and principles of interpretation'.",
+          "competence": "Analyse theories and principles of interpretation"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use the principles of editing and proofreading to edit and proofread simple and short texts in a school context (e.g., laboratory rules, announcement",
+          "text": "Describe the main features of 'Use the principles of editing and proofreading to edit and proofread simple and short texts in a school context (e.g., laboratory rules, announcement'.",
+          "competence": "Use the principles of editing and proofreading to edit and p"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Express ideas and opinions in different group communicative settings (differing, counter-arguing, supporting idea",
+          "text": "With examples, illustrate how 'Express ideas and opinions in different group communicative settings (differing, counter-arguing, supporting idea' is applied in the community.",
+          "competence": "Express ideas and opinions in different group communicative "
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Create simple literary works",
+          "text": "Define 'Create simple literary works' and discuss its importance in everyday life. - with example",
+          "competence": "Create simple literary works"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Evaluate edited field specific texts with an editorial perspective",
+          "text": "Compare and contrast 'Evaluate edited field specific texts with an editorial perspective' with related concepts. - with example",
+          "competence": "Evaluate edited field specific texts with an editorial persp"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Give directions",
+          "text": "Outline the procedures involved in 'Give directions'.",
+          "competence": "Give directions"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Comment on the usefulness of different functional texts",
+          "text": "Explain the relationship between 'Comment on the usefulness of different functional texts' and its environment.",
+          "competence": "Comment on the usefulness of different functional texts"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Edit and proofread a variety of complex texts",
+          "text": "With examples, illustrate how 'Edit and proofread a variety of complex texts' is applied in the community. - locally",
+          "competence": "Edit and proofread a variety of complex texts"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Express ideas and opinions in different interpersonal communication settings (e.g., I think…, I guess…, In my opinion…, I would say …)",
+          "text": "Assess the impact of 'Express ideas and opinions in different interpersonal communication settings (e.g., I think…, I guess…, In my opinion…, I would say …)' on society. - locally",
+          "competence": "Express ideas and opinions in different interpersonal commun"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Evaluate information received through mass communication",
+          "text": "With examples, illustrate how 'Evaluate information received through mass communication' is applied in the community.",
+          "competence": "Evaluate information received through mass communication"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Read texts critically to recognise potential implications beyond the author’s explicit meaning",
+          "text": "Explain the relationship between 'Read texts critically to recognise potential implications beyond the author’s explicit meaning' and its environment. - with diagram",
+          "competence": "Read texts critically to recognise potential implications be"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Employ paralinguistic features to communicate information in a variety of settings",
+          "text": "Define 'Employ paralinguistic features to communicate information in a variety of settings' and discuss its importance in everyday life. - locally",
+          "competence": "Employ paralinguistic features to communicate information in"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Recognise the basic principles of editing and proofreading texts (e.g., sentence construction, language clarity, grammar, semantic rules, logical flo",
+          "text": "With examples, illustrate how 'Recognise the basic principles of editing and proofreading texts (e.g., sentence construction, language clarity, grammar, semantic rules, logical flo' is applied in the community. - locally",
+          "competence": "Recognise the basic principles of editing and proofreading t"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Read texts for comprehension",
+          "text": "Examine the advantages and disadvantages of 'Read texts for comprehension'. - with example",
+          "competence": "Read texts for comprehension"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Comprehend oral messages with confidence and autonomy",
+          "text": "How does 'Comprehend oral messages with confidence and autonomy' relate to sustainable development? - locally",
+          "competence": "Comprehend oral messages with confidence and autonomy"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Assess the language used in a selected novella",
+    "Explain the distinctive features of different genres of literature",
+    "Create a variety of texts for different communicative purposes using the appropriate tone and register",
+    "Describe the basic principles and methods of editing and proofreading",
+    "Compile information searched from various sources",
+    "Analyse theories and principles of interpretation",
+    "Use the principles of editing and proofreading to edit and proofread simple and short texts in a school context (e.g., laboratory rules, announcement",
+    "Express ideas and opinions in different group communicative settings (differing, counter-arguing, supporting idea",
+    "Create simple literary works",
+    "Evaluate edited field specific texts with an editorial perspective"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

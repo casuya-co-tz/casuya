@@ -1,0 +1,289 @@
+{
+  "filename": "english_language_form1_annual_1_2023.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2023",
+  "time": "3:00 Hours",
+  "title": "English Language - Annual Exam 1 (FORM1 2023)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 130,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Ask and respond to questions in interview sessions (e.g., job interview, panel interview, TV/radio intervie",
+          "text": "Assess the impact of 'Ask and respond to questions in interview sessions (e.g., job interview, panel interview, TV/radio intervie' on society. - with example",
+          "competence": "Ask and respond to questions in interview sessions (e.g., jo"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Compare own values and perspectives with those implied in selected poems and plays",
+          "text": "Assess the impact of 'Compare own values and perspectives with those implied in selected poems and plays' on society. - with example",
+          "competence": "Compare own values and perspectives with those implied in se"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Express ownership/ possession (structure: have/has in present simple and had in past simple, apostrophe, possessive pronoun",
+          "text": "Define 'Express ownership/ possession (structure: have/has in present simple and had in past simple, apostrophe, possessive pronoun' and discuss its importance in everyday life. - with diagram",
+          "competence": "Express ownership/ possession (structure: have/has in presen"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use complex stylistic features (e.g., dialects, registers and figures of speech) obtained from written texts to convey meanings",
+          "text": "What are the characteristics of 'Use complex stylistic features (e.g., dialects, registers and figures of speech) obtained from written texts to convey meanings'?",
+          "competence": "Use complex stylistic features (e.g., dialects, registers an"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use appropriate grammar and vocabulary in oral and in written language tasks",
+          "text": "Evaluate the role of 'Use appropriate grammar and vocabulary in oral and in written language tasks' in national development. - locally",
+          "competence": "Use appropriate grammar and vocabulary in oral and in writte"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "using different tenses",
+          "text": "Discuss the factors influencing 'using different tenses'. - with diagram",
+          "competence": "using different tenses"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Read a variety of texts (e.g., letters, articles and newspapers) to obtain implied meanings",
+          "text": "Discuss the challenges facing 'Read a variety of texts (e.g., letters, articles and newspapers) to obtain implied meanings' in Tanzania and propose solutions.",
+          "competence": "Read a variety of texts (e.g., letters, articles and newspap"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Synthesise ideas and draw conclusions from multiple and diverse texts",
+          "text": "With examples, illustrate how 'Synthesise ideas and draw conclusions from multiple and diverse texts' is applied in the community. - locally",
+          "competence": "Synthesise ideas and draw conclusions from multiple and dive"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Write words heard from oral and audio/audio- visual sources",
+          "text": "Assess the impact of 'Write words heard from oral and audio/audio- visual sources' on society.",
+          "competence": "Write words heard from oral and audio/audio- visual sources"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Translate a variety of complex technical texts using Computer – Assisted Translation (CAT) tools",
+          "text": "Define 'Translate a variety of complex technical texts using Computer – Assisted Translation (CAT) tools' and discuss its importance in everyday life.",
+          "competence": "Translate a variety of complex technical texts using Compute"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Respond appropriately in a variety of oral and written communication contexts",
+          "text": "What are the characteristics of 'Respond appropriately in a variety of oral and written communication contexts'? - locally",
+          "competence": "Respond appropriately in a variety of oral and written commu"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Appreciate the aesthetics and value of literature",
+          "text": "Describe the main features of 'Appreciate the aesthetics and value of literature'.",
+          "competence": "Appreciate the aesthetics and value of literature"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Respond to conversations using rhetorical devices",
+          "text": "Analyse the causes and effects of 'Respond to conversations using rhetorical devices'.",
+          "competence": "Respond to conversations using rhetorical devices"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "from a text",
+          "text": "Discuss the challenges facing 'from a text' in Tanzania and propose solutions. - with diagram",
+          "competence": "from a text"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use appropriate non-verbal cues in group communication",
+          "text": "What are the characteristics of 'Use appropriate non-verbal cues in group communication'?",
+          "competence": "Use appropriate non-verbal cues in group communication"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "text": "Describe the process of 'Construct complex and stylistic meanings from diverse and multiple texts' step by step.",
+          "competence": "Construct complex and stylistic meanings from diverse and mu"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Apply pronunciation techniques in spontaneous and non-spontaneous conversations",
+          "text": "Evaluate the role of 'Apply pronunciation techniques in spontaneous and non-spontaneous conversations' in national development. - with example",
+          "competence": "Apply pronunciation techniques in spontaneous and non-sponta"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Apply principles of interpretation to provide simple authentic interpretations",
+          "text": "Explain the concept of 'Apply principles of interpretation to provide simple authentic interpretations' with examples relevant to Tanzania.",
+          "competence": "Apply principles of interpretation to provide simple authent"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Write reports on various events (e.g., sports, graduation, study tour",
+          "text": "Discuss the challenges facing 'Write reports on various events (e.g., sports, graduation, study tour' in Tanzania and propose solutions.",
+          "competence": "Write reports on various events (e.g., sports, graduation, s"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Manage complex translation and edit projects using Computer- Assisted tools",
+          "text": "What are the characteristics of 'Manage complex translation and edit projects using Computer- Assisted tools'?",
+          "competence": "Manage complex translation and edit projects using Computer-"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Utilise ICT tools to search for general information (e.g., books, journal",
+          "text": "Propose measures to improve 'Utilise ICT tools to search for general information (e.g., books, journal' in schools. - with example",
+          "competence": "Utilise ICT tools to search for general information (e.g., b"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Apply principles of translation to produce simple authentic translation",
+          "text": "How does 'Apply principles of translation to produce simple authentic translation' relate to sustainable development?",
+          "competence": "Apply principles of translation to produce simple authentic "
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Conduct a socio- cultural analysis of functional texts",
+          "text": "Discuss the challenges facing 'Conduct a socio- cultural analysis of functional texts' in Tanzania and propose solutions.",
+          "competence": "Conduct a socio- cultural analysis of functional texts"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Participate in oral conversations in advanced settings (e.g., airports, migration, diplomacy and diplomatic protocols etc)",
+          "text": "How does 'Participate in oral conversations in advanced settings (e.g., airports, migration, diplomacy and diplomatic protocols etc)' relate to sustainable development? - with diagram",
+          "competence": "Participate in oral conversations in advanced settings (e.g."
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Write biographies (structure: past and present tense, third perso",
+          "text": "Discuss the challenges facing 'Write biographies (structure: past and present tense, third perso' in Tanzania and propose solutions.",
+          "competence": "Write biographies (structure: past and present tense, third "
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 5,
+          "topic": "(Structure: May I…, I would like…, could you …, I offer you…)",
+          "text": "Define '(Structure: May I…, I would like…, could you …, I offer you…)' and discuss its importance in everyday life.",
+          "competence": "(Structure: May I…, I would like…, could you …, I offer you…"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use appropriate grammar and vocabulary for oral communication in a variety of contexts",
+          "text": "Explain the relationship between 'Use appropriate grammar and vocabulary for oral communication in a variety of contexts' and its environment. - locally",
+          "competence": "Use appropriate grammar and vocabulary for oral communicatio"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Summarise information from a variety of oral sources",
+          "text": "Evaluate the role of 'Summarise information from a variety of oral sources' in national development. - with diagram",
+          "competence": "Summarise information from a variety of oral sources"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Assess the language used in a selected novella",
+          "text": "What are the characteristics of 'Assess the language used in a selected novella'? - with example",
+          "competence": "Assess the language used in a selected novella"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Request for services in different contexts",
+          "text": "Discuss the factors influencing 'Request for services in different contexts'. - with diagram",
+          "competence": "Request for services in different contexts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Ask and respond to questions in interview sessions (e.g., job interview, panel interview, TV/radio intervie",
+    "Compare own values and perspectives with those implied in selected poems and plays",
+    "Express ownership/ possession (structure: have/has in present simple and had in past simple, apostrophe, possessive pronoun",
+    "Use complex stylistic features (e.g., dialects, registers and figures of speech) obtained from written texts to convey meanings",
+    "Use appropriate grammar and vocabulary in oral and in written language tasks",
+    "using different tenses",
+    "Read a variety of texts (e.g., letters, articles and newspapers) to obtain implied meanings",
+    "Synthesise ideas and draw conclusions from multiple and diverse texts",
+    "Write words heard from oral and audio/audio- visual sources",
+    "Translate a variety of complex technical texts using Computer – Assisted Translation (CAT) tools"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

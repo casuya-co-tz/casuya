@@ -1,0 +1,121 @@
+{
+  "filename": "computer_science_form2_topical_6_2024.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Computer Science - Topical Test 6 (FORM2 2024): Explain computer hardware",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain computer hardware",
+          "text": "Evaluate the role of 'Explain computer hardware' in national development.",
+          "competence": "Explain computer hardware"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain computer hardware",
+          "text": "Evaluate the role of 'Explain computer hardware' in national development. - with example",
+          "competence": "Explain computer hardware"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain computer hardware",
+          "text": "Define 'Explain computer hardware' and discuss its importance in everyday life. - with example",
+          "competence": "Explain computer hardware"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain data processing",
+          "text": "Outline the procedures involved in 'Explain data processing'. - with example",
+          "competence": "Explain data processing"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain computer hardware",
+          "text": "Define 'Explain computer hardware' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain computer hardware"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain computer hardware",
+          "text": "Examine the advantages and disadvantages of 'Explain computer hardware'. - with diagram",
+          "competence": "Explain computer hardware"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain computer hardware",
+          "text": "Examine the advantages and disadvantages of 'Explain computer hardware'.",
+          "competence": "Explain computer hardware"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain data processing",
+          "text": "Define 'Explain data processing' and discuss its importance in everyday life.",
+          "competence": "Explain data processing"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain data processing",
+          "text": "Evaluate the role of 'Explain data processing' in national development. - with example",
+          "competence": "Explain data processing"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain computer hardware",
+          "text": "Evaluate the role of 'Explain computer hardware' in national development.",
+          "competence": "Explain computer hardware"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain computer hardware",
+    "Explain data processing"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

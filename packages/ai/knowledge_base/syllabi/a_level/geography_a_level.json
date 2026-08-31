@@ -1,0 +1,194 @@
+{
+  "subject_code": "013",
+  "subject_name": "Geography",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the structure of the Earth",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an Advanced understanding of concepts and theories explaining the structure of the Earth and the interactions of earth systems",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-FV-U1-L1",
+              "title": "Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)",
+              "markdown_content": "## a) Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)",
+              "periods": "60",
+              "page": 14
+            },
+            {
+              "lesson_id": "GEO-FV-U1-L2",
+              "title": "Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)",
+              "markdown_content": "## b) Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)",
+              "periods": "",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the forces responsible for formation of the major relief features of the Earth",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "GEO-FV-U1-L3",
+              "title": "Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes",
+              "markdown_content": "## a) Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes",
+              "periods": "80",
+              "page": 16
+            },
+            {
+              "lesson_id": "GEO-FV-U1-L4",
+              "title": "Describe the external forces (waves, gravitational forces, wind and running water) that shape the Earth’s surface (valleys, gullies, dunes, deltas, flood plains, yardangs, zeugens etc.)",
+              "markdown_content": "## b) Describe the external forces (waves, gravitational forces, wind and running water) that shape the Earth’s surface (valleys, gullies, dunes, deltas, flood plains, yardangs, zeugens etc.)",
+              "periods": "70",
+              "page": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate mastery of skills and techniques in Geography",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate mastery of some advanced skills in land surveying",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-FV-U2-L5",
+              "title": "Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)",
+              "markdown_content": "## a) Carry out some Advanced surveying activities (plane table, prismatic compass, leveling)",
+              "periods": "70",
+              "page": 18
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate mastery of research skills in Geography",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "GEO-FV-U2-L6",
+              "title": "Acquire, present and interpret geographical data through charts, graphs, maps and diagrams (choropleth, scatter plots, dot maps, flow line etc.) for planning and decision making",
+              "markdown_content": "## a) Acquire, present and interpret geographical data through charts, graphs, maps and diagrams (choropleth, scatter plots, dot maps, flow line etc.) for planning and decision making",
+              "periods": "80",
+              "page": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Conduct a project in Geography",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Conduct a project in Geography",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-FV-U3-L7",
+              "title": "Identify a geographical challenge in society and design a project to address it",
+              "markdown_content": "## a) Identify a geographical challenge in society and design a project to address it",
+              "periods": "20",
+              "page": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the structure of the Earth",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of rocks and the rock cycle",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-FVI-U1-L8",
+              "title": "Describe rocks and the rock cycle (meaning, characteristics, types, formation, weathering and soil formation)",
+              "markdown_content": "## a) Describe rocks and the rock cycle (meaning, characteristics, types, formation, weathering and soil formation)",
+              "periods": "80",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the basics of hydrology and the hydrological cycle",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "GEO-FVI-U1-L9",
+              "title": "Explain the basic concepts of hydrology (meaning, types and importance)",
+              "markdown_content": "## a) Explain the basic concepts of hydrology (meaning, types and importance)",
+              "periods": "90",
+              "page": 22
+            },
+            {
+              "lesson_id": "GEO-FVI-U1-L10",
+              "title": "Describe the hydrological cycle (Outputs, storages, flows and underground water)",
+              "markdown_content": "## b) Describe the hydrological cycle (Outputs, storages, flows and underground water)",
+              "periods": "",
+              "page": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate mastery of skills and techniques in Geography",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Interpret maps and photographs",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-FVI-U2-L11",
+              "title": "Use the principles of map interpretation (visualizing symbols, signs, understanding themes, direction and association) to infer geographical features",
+              "markdown_content": "## a) Use the principles of map interpretation (visualizing symbols, signs, understanding themes, direction and association) to infer geographical features",
+              "periods": "130",
+              "page": 23
+            },
+            {
+              "lesson_id": "GEO-FVI-U2-L12",
+              "title": "Apply the techniques of photograph interpretation to analyse geographical phenomena",
+              "markdown_content": "## b) Apply the techniques of photograph interpretation to analyse geographical phenomena",
+              "periods": "",
+              "page": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Conduct a project in Geography",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Conduct a project in Geography",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "GEO-FVI-U3-L13",
+              "title": "Complete and submit for assessment the project started in Form Five",
+              "markdown_content": "## a) Complete and submit for assessment the project started in Form Five",
+              "periods": "50",
+              "page": 24
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

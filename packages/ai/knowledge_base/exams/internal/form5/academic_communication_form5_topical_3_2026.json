@@ -1,0 +1,121 @@
+{
+  "filename": "academic_communication_form5_topical_3_2026.json",
+  "subject": "Academic Communication",
+  "subject_slug": "academic_communication",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Academic Communication - Topical Test 3 (FORM5 2026): Make presentations on diverse matte",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 46,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills",
+          "text": "Explain the relationship between 'Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills' and its environment. - locally",
+          "competence": "Make presentations on diverse matters (e.g., health, death, "
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Participate in face-to- face research interviews to collect information",
+          "text": "Define 'Participate in face-to- face research interviews to collect information' and discuss its importance in everyday life.",
+          "competence": "Participate in face-to- face research interviews to collect "
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Participate in face-to- face research interviews to collect information",
+          "text": "Assess the impact of 'Participate in face-to- face research interviews to collect information' on society. - with diagram",
+          "competence": "Participate in face-to- face research interviews to collect "
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Participate in face-to- face research interviews to collect information",
+          "text": "Discuss the challenges facing 'Participate in face-to- face research interviews to collect information' in Tanzania and propose solutions.",
+          "competence": "Participate in face-to- face research interviews to collect "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills",
+          "text": "Assess the impact of 'Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills' on society.",
+          "competence": "Make presentations on diverse matters (e.g., health, death, "
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills",
+          "text": "Explain the concept of 'Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills' with examples relevant to Tanzania. - with diagram",
+          "competence": "Make presentations on diverse matters (e.g., health, death, "
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Participate in face-to- face research interviews to collect information",
+          "text": "Assess the impact of 'Participate in face-to- face research interviews to collect information' on society. - with example",
+          "competence": "Participate in face-to- face research interviews to collect "
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills",
+          "text": "Describe the main features of 'Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills'.",
+          "competence": "Make presentations on diverse matters (e.g., health, death, "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills",
+          "text": "Analyse the causes and effects of 'Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills'.",
+          "competence": "Make presentations on diverse matters (e.g., health, death, "
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills",
+          "text": "Outline the procedures involved in 'Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills'. - with diagram",
+          "competence": "Make presentations on diverse matters (e.g., health, death, "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Make presentations on diverse matters (e.g., health, death, celebration, etc.) and contexts (e.g., school, home, workplace, etc.) using informative skills",
+    "Participate in face-to- face research interviews to collect information"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

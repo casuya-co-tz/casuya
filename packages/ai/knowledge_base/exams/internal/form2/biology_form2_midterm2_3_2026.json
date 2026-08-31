@@ -1,0 +1,209 @@
+{
+  "filename": "biology_form2_midterm2_3_2026.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2026",
+  "time": "2:00 Hours",
+  "title": "Biology - Midterm 2 Exam 3 (FORM2 2026)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 93,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain the physiology and theories underlying transportation of materials in plants",
+          "text": "With examples, illustrate how 'Explain the physiology and theories underlying transportation of materials in plants' is applied in the community. - with example",
+          "competence": "Explain the physiology and theories underlying transportatio"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+          "text": "Explain the concept of 'Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms' with examples relevant to Tanzania.",
+          "competence": "Explain the concept and systems of classification (meaning ,"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Carry out microscopic observation of a cell",
+          "text": "Compare and contrast 'Carry out microscopic observation of a cell' with related concepts. - with example",
+          "competence": "Carry out microscopic observation of a cell"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Conduct a project in Biology",
+          "text": "Discuss the challenges facing 'Conduct a project in Biology' in Tanzania and propose solutions. - with diagram",
+          "competence": "Conduct a project in Biology"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+          "text": "Outline the procedures involved in 'Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)'.",
+          "competence": "Explain the concept of ecology (methods of studying, biodive"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "Describe the main features of 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement'. - with example",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+          "text": "Analyse the causes and effects of 'and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste'.",
+          "competence": "and animals (nervous coordination in human, structure of neu"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+          "text": "With examples, illustrate how 'Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse' is applied in the community. - with example",
+          "competence": "Describe the major groups of organisms: (Monera, Protista, F"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)",
+          "text": "Discuss the challenges facing 'Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the physiology of coordination (mechanism of transm"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "With examples, illustrate how 'Develop and carry out a simple research project in Biology' is applied in the community. - with example",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "With examples, illustrate how 'Demonstrate mastery of scientific biological terminologies' is applied in the community. - with diagram",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+          "text": "Outline the procedures involved in 'Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio'. - with diagram",
+          "competence": "Describe the basic skills for conducting biological experime"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
+          "text": "Discuss the challenges facing 'Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the mechanism of gaseous exchange in plants (parts "
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)",
+          "text": "Examine the advantages and disadvantages of 'Describe the distinctive characteristics of kingdoms, phyla/ divisions and class (Monera, Protoctista, Fungi, Plantae, and Animalia)'. - with diagram",
+          "competence": "Describe the distinctive characteristics of kingdoms, phyla/"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+          "text": "Define 'Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio' and discuss its importance in everyday life.",
+          "competence": "Describe the mechanism of transportation of materials in flo"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)",
+          "text": "Explain the concept of 'Apply skills used in biological investigation (observation, measurement, data collection, and report writing skills)' with examples relevant to Tanzania.",
+          "competence": "Apply skills used in biological investigation (observation, "
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+          "text": "Compare and contrast 'Carry out investigations related to photosynthesis (conditions necessary for photosynthesi' with related concepts.",
+          "competence": "Carry out investigations related to photosynthesis (conditio"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Compare and contrast 'Investigate food nutrients in various food samples' with related concepts. - with example",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "theory, evidence of evolution, and speciation)",
+          "text": "Analyse the causes and effects of 'theory, evidence of evolution, and speciation)'. - with diagram",
+          "competence": "theory, evidence of evolution, and speciation)"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe coordination in plants (tropic, response",
+          "text": "Compare and contrast 'Describe coordination in plants (tropic, response' with related concepts. - with diagram",
+          "competence": "Describe coordination in plants (tropic, response"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the physiology and theories underlying transportation of materials in plants",
+    "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
+    "Carry out microscopic observation of a cell",
+    "Conduct a project in Biology",
+    "Explain the concept of ecology (methods of studying, biodiversity, ecological succession, and conservation methods)",
+    "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+    "and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+    "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+    "Describe the physiology of coordination (mechanism of transmission of nerve impulse, seeing, hearing and body balance)",
+    "Develop and carry out a simple research project in Biology"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

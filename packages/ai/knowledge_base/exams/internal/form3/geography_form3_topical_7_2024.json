@@ -1,0 +1,121 @@
+{
+  "filename": "geography_form3_topical_7_2024.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Geography - Topical Test 7 (FORM3 2024): Demonstrate an understanding of the",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Discuss the factors influencing 'Identify a geographical challenge in society and design a project to address it'.",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Evaluate the role of 'Identify a geographical challenge in society and design a project to address it' in national development.",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "With examples, illustrate how 'Identify a geographical challenge in society and design a project to address it' is applied in the community. - with example",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the basics of hydrology and the hydrological cycle",
+          "text": "Evaluate the role of 'Demonstrate an understanding of the basics of hydrology and the hydrological cycle' in national development. - locally",
+          "competence": "Demonstrate an understanding of the basics of hydrology and "
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Define 'Identify a geographical challenge in society and design a project to address it' and discuss its importance in everyday life.",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the basics of hydrology and the hydrological cycle",
+          "text": "Describe the process of 'Demonstrate an understanding of the basics of hydrology and the hydrological cycle' step by step. - with example",
+          "competence": "Demonstrate an understanding of the basics of hydrology and "
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Discuss the challenges facing 'Identify a geographical challenge in society and design a project to address it' in Tanzania and propose solutions. - with example",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Define 'Identify a geographical challenge in society and design a project to address it' and discuss its importance in everyday life.",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Propose measures to improve 'Identify a geographical challenge in society and design a project to address it' in schools. - with example",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "Describe the main features of 'Identify a geographical challenge in society and design a project to address it'.",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Identify a geographical challenge in society and design a project to address it",
+    "Demonstrate an understanding of the basics of hydrology and the hydrological cycle"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

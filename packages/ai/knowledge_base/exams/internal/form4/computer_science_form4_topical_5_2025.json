@@ -1,0 +1,121 @@
+{
+  "filename": "computer_science_form4_topical_5_2025.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Computer Science - Topical Test 5 (FORM4 2025): Computer Networks",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Computer Networks",
+          "text": "Explain the concept of 'Computer Networks' with examples relevant to Tanzania.",
+          "competence": "Computer Networks"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain computer security",
+          "text": "With examples, illustrate how 'Explain computer security' is applied in the community. - with diagram",
+          "competence": "Explain computer security"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain computer security",
+          "text": "Compare and contrast 'Explain computer security' with related concepts. - with example",
+          "competence": "Explain computer security"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Computer Networks",
+          "text": "Analyse the causes and effects of 'Computer Networks'. - with diagram",
+          "competence": "Computer Networks"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain computer security",
+          "text": "With examples, illustrate how 'Explain computer security' is applied in the community.",
+          "competence": "Explain computer security"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain computer security",
+          "text": "Describe the main features of 'Explain computer security'.",
+          "competence": "Explain computer security"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain computer security",
+          "text": "Compare and contrast 'Explain computer security' with related concepts. - with diagram",
+          "competence": "Explain computer security"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain computer security",
+          "text": "Explain the concept of 'Explain computer security' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain computer security"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Computer Networks",
+          "text": "Outline the procedures involved in 'Computer Networks'.",
+          "competence": "Computer Networks"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain computer security",
+          "text": "Describe the main features of 'Explain computer security'. - with diagram",
+          "competence": "Explain computer security"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Computer Networks",
+    "Explain computer security"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

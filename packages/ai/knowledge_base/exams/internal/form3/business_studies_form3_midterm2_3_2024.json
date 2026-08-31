@@ -1,0 +1,209 @@
+{
+  "filename": "business_studies_form3_midterm2_3_2024.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Business Studies - Midterm 2 Exam 3 (FORM3 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 86,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of production (meaning, types, factors and importanc",
+          "text": "Propose measures to improve 'Explain the concept of production (meaning, types, factors and importanc' in schools.",
+          "competence": "Explain the concept of production (meaning, types, factors a"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Assess the impact of 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc' on society.",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Apply business theories into practice",
+          "text": "Evaluate the role of 'Apply business theories into practice' in national development.",
+          "competence": "Apply business theories into practice"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe sole proprietorship (meaning, features, advantages and disadvantages and start-u",
+          "text": "Define 'Describe sole proprietorship (meaning, features, advantages and disadvantages and start-u' and discuss its importance in everyday life. - locally",
+          "competence": "Describe sole proprietorship (meaning, features, advantages "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept and scope of business studies, and its relationship with other disciplines",
+          "text": "What are the characteristics of 'Describe the concept and scope of business studies, and its relationship with other disciplines'? - with example",
+          "competence": "Describe the concept and scope of business studies, and its "
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin",
+          "text": "Discuss the factors influencing 'Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin'.",
+          "competence": "Develop a plan for a small business identified from the oppo"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "Discuss the factors influencing 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract'. - locally",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Identify business opportunities available in the local environment",
+          "text": "Explain the concept of 'Identify business opportunities available in the local environment' with examples relevant to Tanzania. - with example",
+          "competence": "Identify business opportunities available in the local envir"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "to facilitate trade",
+          "text": "Evaluate the role of 'to facilitate trade' in national development.",
+          "competence": "to facilitate trade"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Identify an appropriate business opportunity and develop its business plan",
+          "text": "Examine the advantages and disadvantages of 'Identify an appropriate business opportunity and develop its business plan'. - with diagram",
+          "competence": "Identify an appropriate business opportunity and develop its"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc",
+          "text": "With examples, illustrate how 'Describe procedures for registering small businesses in Tanzania (types of licenses, importance of registration and sanctions for non-complianc' is applied in the community. - locally",
+          "competence": "Describe procedures for registering small businesses in Tanz"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim",
+          "text": "Evaluate the role of 'Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim' in national development. - with diagram",
+          "competence": "Explain the basic aspects of insurance for small businesses "
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the basic tenets of ethics for small businesses (meaning, norms, and value",
+          "text": "Describe the process of 'Describe the basic tenets of ethics for small businesses (meaning, norms, and value' step by step.",
+          "competence": "Describe the basic tenets of ethics for small businesses (me"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe some advanced aspects of marketing (marketing mix - 4Cs and 7Ps, market changes, market segmentation, marketing boards, market research, e-marketing)",
+          "text": "Assess the impact of 'Describe some advanced aspects of marketing (marketing mix - 4Cs and 7Ps, market changes, market segmentation, marketing boards, market research, e-marketing)' on society. - with diagram",
+          "competence": "Describe some advanced aspects of marketing (marketing mix -"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate mastery of the concepts, theories and principles of Business Education",
+          "text": "Assess the impact of 'Demonstrate mastery of the concepts, theories and principles of Business Education' on society. - locally",
+          "competence": "Demonstrate mastery of the concepts, theories and principles"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of the policies and laws governing medium scale businesses",
+          "text": "Define 'Demonstrate an understanding of the policies and laws governing medium scale businesses' and discuss its importance in everyday life. - locally",
+          "competence": "Demonstrate an understanding of the policies and laws govern"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Prepare a medium scale business plan",
+          "text": "Examine the advantages and disadvantages of 'Prepare a medium scale business plan'. - with diagram",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of the policies and laws governing medium scale business",
+          "text": "Discuss the factors influencing 'Demonstrate an understanding of the policies and laws governing medium scale business'. - with example",
+          "competence": "Demonstrate an understanding of the policies and laws govern"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)",
+          "text": "Explain the concept of 'Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)' with examples relevant to Tanzania.",
+          "competence": "Describe the basic aspects of business environment (stakehol"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+          "text": "What are the characteristics of 'Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function'?",
+          "competence": "Describe the basic aspects of warehousing and inventorying f"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of production (meaning, types, factors and importanc",
+    "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+    "Apply business theories into practice",
+    "Describe sole proprietorship (meaning, features, advantages and disadvantages and start-u",
+    "Describe the concept and scope of business studies, and its relationship with other disciplines",
+    "Develop a plan for a small business identified from the opportunities in Form II (identification, financing, production and distribution, and marketin",
+    "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+    "Identify business opportunities available in the local environment",
+    "to facilitate trade",
+    "Identify an appropriate business opportunity and develop its business plan"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

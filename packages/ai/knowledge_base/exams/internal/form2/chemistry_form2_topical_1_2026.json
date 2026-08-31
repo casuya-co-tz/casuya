@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form2_topical_1_2026.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 1 (FORM2 2026): Use Chemistry software to draw orga",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 34,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Evaluate the role of 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms' in national development. - with diagram",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Define 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms' and discuss its importance in everyday life.",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Define 'Design and carry out a project in Chemistry' and discuss its importance in everyday life. - with diagram",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Outline the procedures involved in 'Design and carry out a project in Chemistry'. - with example",
+          "competence": "Design and carry out a project in Chemistry"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Compare and contrast 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms' with related concepts.",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Examine the advantages and disadvantages of 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms'. - with example",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Explain the concept of 'Design and carry out a project in Chemistry' with examples relevant to Tanzania.",
+          "competence": "Design and carry out a project in Chemistry"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Describe the main features of 'Design and carry out a project in Chemistry'. - with diagram",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Evaluate the role of 'Design and carry out a project in Chemistry' in national development. - with diagram",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Evaluate the role of 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms' in national development. - with example",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+    "Design and carry out a project in Chemistry"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,121 @@
+{
+  "filename": "economics_form5_topical_6_2024.json",
+  "subject": "Economics",
+  "subject_slug": "economics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Economics - Topical Test 6 (FORM5 2024): Demonstrate mastery of economic ana",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 52,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe money (key terms, the evolution of money, functions and monetary policies)",
+          "text": "Discuss the factors influencing 'Describe money (key terms, the evolution of money, functions and monetary policies)'.",
+          "competence": "Describe money (key terms, the evolution of money, functions"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of economic analysis",
+          "text": "Explain the relationship between 'Demonstrate mastery of economic analysis' and its environment.",
+          "competence": "Demonstrate mastery of economic analysis"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Demonstrate mastery of economic analysis",
+          "text": "Discuss the factors influencing 'Demonstrate mastery of economic analysis'. - with diagram",
+          "competence": "Demonstrate mastery of economic analysis"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate mastery of economic analysis",
+          "text": "Explain the relationship between 'Demonstrate mastery of economic analysis' and its environment. - with diagram",
+          "competence": "Demonstrate mastery of economic analysis"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Demonstrate mastery of economic analysis",
+          "text": "Define 'Demonstrate mastery of economic analysis' and discuss its importance in everyday life.",
+          "competence": "Demonstrate mastery of economic analysis"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe money (key terms, the evolution of money, functions and monetary policies)",
+          "text": "Examine the advantages and disadvantages of 'Describe money (key terms, the evolution of money, functions and monetary policies)'. - with example",
+          "competence": "Describe money (key terms, the evolution of money, functions"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate mastery of economic analysis",
+          "text": "Compare and contrast 'Demonstrate mastery of economic analysis' with related concepts. - locally",
+          "competence": "Demonstrate mastery of economic analysis"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate mastery of economic analysis",
+          "text": "With examples, illustrate how 'Demonstrate mastery of economic analysis' is applied in the community. - with example",
+          "competence": "Demonstrate mastery of economic analysis"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Demonstrate mastery of economic analysis",
+          "text": "What are the characteristics of 'Demonstrate mastery of economic analysis'? - locally",
+          "competence": "Demonstrate mastery of economic analysis"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe money (key terms, the evolution of money, functions and monetary policies)",
+          "text": "Evaluate the role of 'Describe money (key terms, the evolution of money, functions and monetary policies)' in national development. - with diagram",
+          "competence": "Describe money (key terms, the evolution of money, functions"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe money (key terms, the evolution of money, functions and monetary policies)",
+    "Demonstrate mastery of economic analysis"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

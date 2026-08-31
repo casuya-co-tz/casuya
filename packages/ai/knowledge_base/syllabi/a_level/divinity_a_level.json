@@ -1,0 +1,323 @@
+{
+  "subject_code": "015",
+  "subject_name": "Divinity",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the concepts of governance, courage and decision making as depicted in the Old Testament",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the concept and practice of governance as revealed in the books of Judges, Samuel and Kings",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "DIV-FV-U1-L1",
+              "title": "Explain the concept of Divinity",
+              "markdown_content": "## a) Explain the concept of Divinity",
+              "periods": "10",
+              "page": 13
+            },
+            {
+              "lesson_id": "DIV-FV-U1-L2",
+              "title": "Use the books of Judges, Samuel and Kings to discuss the concept and practice of governance",
+              "markdown_content": "## b) Use the books of Judges, Samuel and Kings to discuss the concept and practice of governance",
+              "periods": "",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the concept of courage and decision making as revealed in the ministries of Prophets Elijah and Elisha",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "DIV-FV-U1-L3",
+              "title": "Use the ministries of Elijah and Elisha to discuss the concept of courage",
+              "markdown_content": "## a) Use the ministries of Elijah and Elisha to discuss the concept of courage",
+              "periods": "14",
+              "page": 13
+            },
+            {
+              "lesson_id": "DIV-FV-U1-L4",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 14
+            },
+            {
+              "lesson_id": "DIV-FV-U1-L5",
+              "title": "Use the ministries of Elijah and Elisha to discuss the importance of making the right decisions at the right time",
+              "markdown_content": "## b) Use the ministries of Elijah and Elisha to discuss the importance of making the right decisions at the right time",
+              "periods": "",
+              "page": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Demonstrate mastery of the works of selected prophets and their relevance in daily life",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the teachings of Prophet Isaiah",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "DIV-FV-U2-L6",
+              "title": "Discuss the main ideas contained in the Book of Isaiah (Chapter 1-12)",
+              "markdown_content": "## a) Discuss the main ideas contained in the Book of Isaiah (Chapter 1-12)",
+              "periods": "18",
+              "page": 14
+            },
+            {
+              "lesson_id": "DIV-FV-U2-L7",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 15
+            },
+            {
+              "lesson_id": "DIV-FV-U2-L8",
+              "title": "Discuss the main ideas contained in the Book of Isaiah (Chapters 40- 45)",
+              "markdown_content": "## b) Discuss the main ideas contained in the Book of Isaiah (Chapters 40- 45)",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "DIV-FV-U2-L9",
+              "title": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+              "markdown_content": "## c) Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "DIV-FV-U2-L10",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the concepts of social justice, compassion and forgiveness as depicted in the books of prophets Amos and Hosea",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "DIV-FV-U2-L11",
+              "title": "Use the Book of Amos to discuss the concept of social justice and violation of community rights",
+              "markdown_content": "## a) Use the Book of Amos to discuss the concept of social justice and violation of community rights",
+              "periods": "14",
+              "page": 16
+            },
+            {
+              "lesson_id": "DIV-FV-U2-L12",
+              "title": "Use the Book of Hosea to understand God’s compassion, mercy and the importance of forgiveness",
+              "markdown_content": "## b) Use the Book of Hosea to understand God’s compassion, mercy and the importance of forgiveness",
+              "periods": "",
+              "page": 16
+            },
+            {
+              "lesson_id": "DIV-FV-U2-L13",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 17
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the importance of responsibility as depicted in the books of prophets Haggai and Zechariah",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "DIV-FV-U2-L14",
+              "title": "Use the books of Haggai and Zechariah to discuss the importance of responsibility",
+              "markdown_content": "## a) Use the books of Haggai and Zechariah to discuss the importance of responsibility",
+              "periods": "7",
+              "page": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Conduct a Project in Divinity",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Content pending",
+          "competence_code": "3.0",
+          "lessons": []
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Demonstrate mastery of selected works from the New Testament",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Demonstrate an understanding of the Gospel according to Matthew",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "DIV-FVI-U3-L15",
+              "title": "Use the writings of Matthew to discuss the concept of the Gospel",
+              "markdown_content": "## a) Use the writings of Matthew to discuss the concept of the Gospel",
+              "periods": "16",
+              "page": 18
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L16",
+              "title": "Discuss the ministry of Jesus as portrayed in the Gospel according to Matthew",
+              "markdown_content": "## b) Discuss the ministry of Jesus as portrayed in the Gospel according to Matthew",
+              "periods": "",
+              "page": 18
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L17",
+              "title": "Discuss the role of women in the Gospel according to Matthew",
+              "markdown_content": "## c) Discuss the role of women in the Gospel according to Matthew",
+              "periods": "",
+              "page": 18
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L18",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 19
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the Gospel according to John",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "DIV-FVI-U3-L19",
+              "title": "Use the writings of John to discuss the concept of the Gospel",
+              "markdown_content": "## a) Use the writings of John to discuss the concept of the Gospel",
+              "periods": "15",
+              "page": 19
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L20",
+              "title": "Discuss the love of Jesus as portrayed in the Gospel according to John",
+              "markdown_content": "## b) Discuss the love of Jesus as portrayed in the Gospel according to John",
+              "periods": "",
+              "page": 19
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L21",
+              "title": "Discuss the love of God to others as portrayed in the Gospel according to John",
+              "markdown_content": "## c) Discuss the love of God to others as portrayed in the Gospel according to John",
+              "periods": "",
+              "page": 19
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L22",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the Epistle of Paul to the Romans",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "DIV-FVI-U3-L23",
+              "title": "Discuss the reasons behind the Epistle of Paul to the Romans",
+              "markdown_content": "## a) Discuss the reasons behind the Epistle of Paul to the Romans",
+              "periods": "12",
+              "page": 20
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L24",
+              "title": "Discuss the rights and obligations of rulers and their subjects as portrayed in the Epistle of Paul to the Romans",
+              "markdown_content": "## b) Discuss the rights and obligations of rulers and their subjects as portrayed in the Epistle of Paul to the Romans",
+              "periods": "",
+              "page": 20
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L25",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Demonstrate an understanding of the Epistle of James",
+          "competence_code": "3.4",
+          "lessons": [
+            {
+              "lesson_id": "DIV-FVI-U3-L26",
+              "title": "Discuss the reasons behind the Epistle of James",
+              "markdown_content": "## a) Discuss the reasons behind the Epistle of James",
+              "periods": "20",
+              "page": 21
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L27",
+              "title": "Discuss the various methods of maintaining communication, cooperation and good relations in society as expounded in the Epistle of James",
+              "markdown_content": "## b) Discuss the various methods of maintaining communication, cooperation and good relations in society as expounded in the Epistle of James",
+              "periods": "",
+              "page": 21
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L28",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 22
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L29",
+              "title": "Discuss the importance of living the Faith in action as expounded in the Epistle of James",
+              "markdown_content": "## c) Discuss the importance of living the Faith in action as expounded in the Epistle of James",
+              "periods": "",
+              "page": 22
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L30",
+              "title": "Use Epistle of James to discuss the evils of prejudice in society",
+              "markdown_content": "## d) Use Epistle of James to discuss the evils of prejudice in society",
+              "periods": "",
+              "page": 22
+            },
+            {
+              "lesson_id": "DIV-FVI-U3-L31",
+              "title": "Learning activities",
+              "markdown_content": "## a) Learning activities",
+              "periods": "Number of periods",
+              "page": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Conduct a Project in Divinity",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Content pending",
+          "competence_code": "5.0",
+          "lessons": []
+        }
+      ]
+    }
+  ]
+}

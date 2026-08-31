@@ -1,0 +1,62 @@
+{
+  "code": "031",
+  "subject": "Physics",
+  "level": "Form 3-4 (CSEE Pilot)",
+  "template_file": "exam_formats/templates/PHYSICS_CSEE_PILOT_2026.html",
+  "source_html": "C:/Users/Admin/Downloads/gemini-code-1788177292119.html",
+  "duration": "3:00 Hours",
+  "year": "2025/2026",
+  "structure": {
+    "total_questions": 11,
+    "total_marks": 100,
+    "sections": [
+      {
+        "name": "A",
+        "marks": 16,
+        "questions": [
+          1,
+          2
+        ],
+        "description": "Q1 MCQ i-x 10 marks (Vernier, transformer 200/50 240V, thermionic, n-type, half-life 80g 4h, refraction 1.5 30°, IR, gas pressure, neutral point, power 50N) + Q2 Matching wave phenomena 6 marks (diffraction/refraction/interference/dispersion/reflection/polarization)"
+      },
+      {
+        "name": "B",
+        "marks": 54,
+        "questions": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "description": "Q3 Ohm's law parallel 3Ω 6Ω 12V, Q4 transverse/longitudinal + wavelength 100MHz, Q5 transformer principle losses, Q6 thermionic CRT 2.5kV, Q7 p-n junction bridge rectifier, Q8 half-life nuclear equations"
+      },
+      {
+        "name": "C",
+        "marks": 30,
+        "questions": [
+          9,
+          10,
+          11
+        ],
+        "description": "Choose 2x15: Q9 Archimedes block 700kg/m3 0.05m3, Q10 greenhouse Jovian/Terrestrial P/S waves, Q11 Newton 5kg 75N free-body + braking 1000kg 20m/s 40m"
+      }
+    ],
+    "instructions": [
+      "This paper consists of sections A, B, and C with a total of eleven (11) questions.",
+      "Answer ALL questions in sections A and B, and TWO (2) questions from section C.",
+      "Cellular phones and any unauthorized materials are NOT allowed in the examination room.",
+      "Non-programmable calculators and mathematical tables may be used.",
+      "Where necessary, use g=10 m/s2, c=3.0x10^8 m/s, e=1.6x10^-19 C, ρw=1000 kg/m3."
+    ],
+    "layout_features": [
+      "A4 4 pages, header 031 PHYSICS, meta bar Time/Year, instructions block, section heads underlined, SVG transformer/bridge/pyramid/force diagrams, MathJax, footer 031 PHYSICS Page X of 4"
+    ]
+  },
+  "applied_to": [
+    "form3",
+    "form4"
+  ],
+  "internal_exams_generated": 40
+}

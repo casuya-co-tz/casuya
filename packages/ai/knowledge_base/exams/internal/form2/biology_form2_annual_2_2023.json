@@ -1,0 +1,289 @@
+{
+  "filename": "biology_form2_annual_2_2023.json",
+  "subject": "Biology",
+  "subject_slug": "biology",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2023",
+  "time": "3:00 Hours",
+  "title": "Biology - Annual Exam 2 (FORM2 2023)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 136,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Prepare and present a report on cell and photosynthesis investigations",
+          "text": "Describe the main features of 'Prepare and present a report on cell and photosynthesis investigations'. - with diagram",
+          "competence": "Prepare and present a report on cell and photosynthesis inve"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe a cell (meaning,types, structures and function",
+          "text": "Define 'Describe a cell (meaning,types, structures and function' and discuss its importance in everyday life.",
+          "competence": "Describe a cell (meaning,types, structures and function"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Learning activities",
+          "text": "With examples, illustrate how 'Learning activities' is applied in the community. - with diagram",
+          "competence": "Learning activities"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Conduct a project in Biology",
+          "text": "Compare and contrast 'Conduct a project in Biology' with related concepts. - with example",
+          "competence": "Conduct a project in Biology"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Develop and carry out a simple research project in Biology",
+          "text": "Explain the concept of 'Develop and carry out a simple research project in Biology' with examples relevant to Tanzania. - with example",
+          "competence": "Develop and carry out a simple research project in Biology"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+          "text": "Examine the advantages and disadvantages of 'Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )'. - with diagram",
+          "competence": "Prepare and present a report of a biological investigation o"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+          "text": "Analyse the causes and effects of 'Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio'.",
+          "competence": "Describe the mechanisms of growth in mammals and flowering p"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+          "text": "Evaluate the role of 'Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio' in national development. - with example",
+          "competence": "Describe reproduction in plants (concept of reproduction in "
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+          "text": "Define 'Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the mechanism of reproduction in animals (gametogen"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
+          "text": "Evaluate the role of 'Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement' in national development. - with example",
+          "competence": "Describe nutrition in plants (photosynthesis, leaf structure"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)",
+          "text": "With examples, illustrate how 'Describe principles of inheritance in living organisms (hereditary materials, DNA replication, protein synthesis and dihybrid inheritance)' is applied in the community. - with diagram",
+          "competence": "Describe principles of inheritance in living organisms (here"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis",
+          "text": "Discuss the challenges facing 'Design and carry out anatomical and physiological investigations related to digestive and excretory systems, photosynthesis' in Tanzania and propose solutions. - with example",
+          "competence": "Design and carry out anatomical and physiological investigat"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
+          "text": "Discuss the challenges facing 'Investigate growth in flowering plants (hypogeal and epigeal germinatio' in Tanzania and propose solutions. - with diagram",
+          "competence": "Investigate growth in flowering plants (hypogeal and epigeal"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Investigate food nutrients in various food samples",
+          "text": "Analyse the causes and effects of 'Investigate food nutrients in various food samples'. - with example",
+          "competence": "Investigate food nutrients in various food samples"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution",
+          "text": "Explain the concept of 'Describe theories and mechanism underlying evolution (theories of origin of life, organic evolution' with examples relevant to Tanzania. - with example",
+          "competence": "Describe theories and mechanism underlying evolution (theori"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio",
+          "text": "Describe the main features of 'Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio'. - with example",
+          "competence": "Describe the mechanism of regulation in the human body (temp"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain growth process in animals (growth patterns and metamorphosis)",
+          "text": "Discuss the challenges facing 'Explain growth process in animals (growth patterns and metamorphosis)' in Tanzania and propose solutions. - with example",
+          "competence": "Explain growth process in animals (growth patterns and metam"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an advanced understanding of concepts, theories and principles in Biology",
+          "text": "Discuss the challenges facing 'Demonstrate an advanced understanding of concepts, theories and principles in Biology' in Tanzania and propose solutions. - with example",
+          "competence": "Demonstrate an advanced understanding of concepts, theories "
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)",
+          "text": "Analyse the causes and effects of 'Explain the concept of regulation in mammals (feedback mechanisms, urine formation and osmoregulation)'. - with diagram",
+          "competence": "Explain the concept of regulation in mammals (feedback mecha"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Carry out experiments to determine the pulse rate in human",
+          "text": "Evaluate the role of 'Carry out experiments to determine the pulse rate in human' in national development. - with example",
+          "competence": "Carry out experiments to determine the pulse rate in human"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+          "text": "Discuss the challenges facing 'Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the mechanism of transportation of materials in the"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio",
+          "text": "Define 'Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio' and discuss its importance in everyday life. - with diagram",
+          "competence": "Describe the mechanisms of gaseous exchange and respiration "
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
+          "text": "Examine the advantages and disadvantages of 'Carry out investigation related to reproduction in flowering plants (flower structure and embry'. - with diagram",
+          "competence": "Carry out investigation related to reproduction in flowering"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)",
+          "text": "Outline the procedures involved in 'Describe the mechanism of blood circulation in vertebrates (single, double and maternal- foetal circulation)'. - with diagram",
+          "competence": "Describe the mechanism of blood circulation in vertebrates ("
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate mastery of scientific biological terminologies",
+          "text": "Compare and contrast 'Demonstrate mastery of scientific biological terminologies' with related concepts. - with diagram",
+          "competence": "Demonstrate mastery of scientific biological terminologies"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 8,
+          "topic": "and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+          "text": "Evaluate the role of 'and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste' in national development.",
+          "competence": "and animals (nervous coordination in human, structure of neu"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Investigate the process of nervous coordination (reflex arc and knee jer",
+          "text": "Describe the main features of 'Investigate the process of nervous coordination (reflex arc and knee jer'. - with example",
+          "competence": "Investigate the process of nervous coordination (reflex arc "
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+          "text": "Examine the advantages and disadvantages of 'Describe nutrition in human and ruminants (nutrients, digestive system and processe'.",
+          "competence": "Describe nutrition in human and ruminants (nutrients, digest"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 10,
+          "topic": "and gas exchange in living organisms",
+          "text": "With examples, illustrate how 'and gas exchange in living organisms' is applied in the community.",
+          "competence": "and gas exchange in living organisms"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
+          "text": "Describe the main features of 'Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse'.",
+          "competence": "Describe the major groups of organisms: (Monera, Protista, F"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Prepare and present a report on cell and photosynthesis investigations",
+    "Describe a cell (meaning,types, structures and function",
+    "Learning activities",
+    "Conduct a project in Biology",
+    "Develop and carry out a simple research project in Biology",
+    "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+    "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+    "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+    "Describe the mechanism of reproduction in animals (gametogenesis, fertilisation and hormonal control of menstrual cycle, oestrus cycle and pregnancy)",
+    "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,289 @@
+{
+  "filename": "chemistry_form4_annual_2_2023.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "annual",
+  "term": "Annual",
+  "year": "2023",
+  "time": "3:00 Hours",
+  "title": "Chemistry - Annual Exam 2 (FORM4 2023)",
+  "total_questions": 30,
+  "question_count": 30,
+  "total_marks": 130,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+          "text": "Analyse the causes and effects of 'Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons'. - with diagram",
+          "competence": "Apply IUPAC rules in naming of aromatic hydrocarbons, halohy"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
+          "text": "Compare and contrast 'Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols' with related concepts. - with diagram",
+          "competence": "Demonstrate the local and industrial preparations of aliphat"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+          "text": "Examine the advantages and disadvantages of 'Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture'. - with example",
+          "competence": "Describe the applications of volumetric analysis in real lif"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+          "text": "With examples, illustrate how 'Use the concept of atomic structure to determine the atomic and mass numbers of an element' is applied in the community.",
+          "competence": "Use the concept of atomic structure to determine the atomic "
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+          "text": "Explain the concept of 'Describe the concept of electrochemistry (electrochemical cells and electrode potentials)' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the concept of electrochemistry (electrochemical ce"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "Define 'Perform experiments on separation of different mixtures using different methods' and discuss its importance in everyday life. - with example",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept of electronic arrangements",
+          "text": "Analyse the causes and effects of 'Describe the concept of electronic arrangements'. - with diagram",
+          "competence": "Describe the concept of electronic arrangements"
+        },
+        {
+          "number": "8",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+          "text": "Outline the procedures involved in 'Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)'.",
+          "competence": "Analyse the uses of transition elements and complex compound"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+          "text": "Analyse the causes and effects of 'Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons'. - with diagram",
+          "competence": "Appreciate the applications of gas laws in daily life such a"
+        },
+        {
+          "number": "10",
+          "type": "mcq",
+          "marks": 2,
+          "topic": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "text": "Compare and contrast '. Demonstrate mastery of concepts, theories and principles in Chemistry' with related concepts.",
+          "competence": ". Demonstrate mastery of concepts, theories and principles i"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Discuss the contribution of Chemistry in the development of modern society",
+          "text": "With examples, illustrate how 'Discuss the contribution of Chemistry in the development of modern society' is applied in the community.",
+          "competence": "Discuss the contribution of Chemistry in the development of "
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)",
+          "text": "Discuss the challenges facing 'Assess the applications of chemical equilibria in industries and daily life (manufacture of H SO , fertilizers, 2 4 photochromic lenses and, acids, bases and salts in food industries)' in Tanzania and propose solutions. - with example",
+          "competence": "Assess the applications of chemical equilibria in industries"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
+          "text": "Outline the procedures involved in 'Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal'. - with diagram",
+          "competence": "Describe the preparation and properties of various compounds"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber",
+          "text": "Describe the main features of 'Examine reactions of haloalkanes, amines and polymers for preparation of useful organic products like plastics, dyes, detergents and rubber'.",
+          "competence": "Examine reactions of haloalkanes, amines and polymers for pr"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
+          "text": "Define 'Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance' and discuss its importance in everyday life.",
+          "competence": "Describe the mole concept (comparison of the mole with other"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
+          "text": "Explain the concept of 'Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid' with examples relevant to Tanzania.",
+          "competence": "Describe the oxidizing and displacement properties of non-me"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
+          "text": "Outline the procedures involved in 'Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species'. - with example",
+          "competence": "Use the International Union of Pure and Applied Chemistry no"
+        },
+        {
+          "number": "18",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Design and carry-out a simple research project in Chemistry",
+          "text": "Explain the concept of 'Design and carry-out a simple research project in Chemistry' with examples relevant to Tanzania. - with example",
+          "competence": "Design and carry-out a simple research project in Chemistry"
+        },
+        {
+          "number": "19",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the concept of chemical bonding (covalent and electrovalent bondin",
+          "text": "Explain the concept of 'Describe the concept of chemical bonding (covalent and electrovalent bondin' with examples relevant to Tanzania. - with diagram",
+          "competence": "Describe the concept of chemical bonding (covalent and elect"
+        },
+        {
+          "number": "20",
+          "type": "structured",
+          "marks": 6,
+          "topic": "phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines",
+          "text": "Outline the procedures involved in 'phenols, carbonyl compounds, carboxylic acids and their derivatives, and amines'.",
+          "competence": "phenols, carbonyl compounds, carboxylic acids and their deri"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the concept of matter (physical and chemical changes of matte",
+          "text": "With examples, illustrate how 'Describe the concept of matter (physical and chemical changes of matte' is applied in the community.",
+          "competence": "Describe the concept of matter (physical and chemical change"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
+          "text": "Explain the concept of 'Use the prepared indicators to test acidity and alkalinity of substances found in the locality' with examples relevant to Tanzania. - with diagram",
+          "competence": "Use the prepared indicators to test acidity and alkalinity o"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu",
+          "text": "Discuss the challenges facing 'Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu' in Tanzania and propose solutions. - with example",
+          "competence": "Describe basic Chemistry laboratory skills (chemistry labora"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
+          "text": "Describe the main features of 'Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms'.",
+          "competence": "Relate the types of chemical reactions with common processes"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
+          "text": "Analyse the causes and effects of 'Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate'. - with diagram",
+          "competence": "Prepare various compounds of metals (oxides, hydroxides, car"
+        },
+        {
+          "number": "26",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Evaluate the role of 'Design and carry out a project in Chemistry' in national development.",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "27",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)",
+          "text": "Evaluate the role of 'Describe the concept of the atom (Dalton’s atomic theory, Bohr’s atomic theory, atomic mass and quantum theory)' in national development. - with example",
+          "competence": "Describe the concept of the atom (Dalton’s atomic theory, Bo"
+        },
+        {
+          "number": "28",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)",
+          "text": "Describe the main features of 'Describe the concept of two component liquid systems (immiscible liquid, completely miscible liquid and the distribution law)'.",
+          "competence": "Describe the concept of two component liquid systems (immisc"
+        },
+        {
+          "number": "29",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+          "text": "Analyse the causes and effects of 'Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)'.",
+          "competence": "Perform experiments involving chemical equilibria and report"
+        },
+        {
+          "number": "30",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+          "text": "Define 'Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms' and discuss its importance in everyday life. - with example",
+          "competence": "Use Chemistry software to draw organic structures of hydroca"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Apply IUPAC rules in naming of aromatic hydrocarbons, halohydrocarbons",
+    "Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
+    "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
+    "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
+    "Describe the concept of electrochemistry (electrochemical cells and electrode potentials)",
+    "Perform experiments on separation of different mixtures using different methods",
+    "Describe the concept of electronic arrangements",
+    "Analyse the uses of transition elements and complex compounds in industries (as conductors, catalysts, alloys and ornaments)",
+    "Appreciate the applications of gas laws in daily life such as in fire extinguishers, aerosols, inflating tyres, bakery, liquefaction of gases and helium balloons",
+    ". Demonstrate mastery of concepts, theories and principles in Chemistry"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Tanzania Knowledge Base API",
+  "version": "2.0",
+  "description": "Optimized for AI API key, <10ms retrieval, RAG-ready",
+  "endpoints": {
+    "syllabi": "/api/v1/syllabi/{code}",
+    "exams": "/api/v1/exams/{level}/{form}/{subject}/{year}",
+    "search": "/api/v1/search?q=&form=&subject=&code=",
+    "chat": "/api/v1/chat/completions"
+  },
+  "counts": {
+    "syllabi": 31,
+    "exams": 2398,
+    "templates": 28,
+    "marking_schemes": 14
+  },
+  "performance": {
+    "full_scan": "0.56s for 2609 files",
+    "db_query": "<1ms via knowledge.db PK",
+    "rag_chunks": "<10ms for 3 chunks"
+  },
+  "auth": "X-API-Key header, rate_limit 100/min",
+  "cache": "redis 10s TTL, memory hot 100"
+}

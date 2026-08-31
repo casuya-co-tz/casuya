@@ -1,0 +1,209 @@
+{
+  "filename": "basic_mathematics_form4_midterm2_3_2024.json",
+  "subject": "Basic Mathematics",
+  "subject_slug": "basic_mathematics",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Basic Mathematics - Midterm 2 Exam 3 (FORM4 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 84,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain sets",
+          "text": "Discuss the challenges facing 'Explain sets' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain sets"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain fractions",
+          "text": "Outline the procedures involved in 'Explain fractions'. - with example",
+          "competence": "Explain fractions"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain percentages",
+          "text": "Examine the advantages and disadvantages of 'Explain percentages'. - with diagram",
+          "competence": "Explain percentages"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Data Collection",
+          "text": "Outline the procedures involved in 'Data Collection'.",
+          "competence": "Data Collection"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain algebraic expressions",
+          "text": "Discuss the challenges facing 'Explain algebraic expressions' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain algebraic expressions"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain inequations",
+          "text": "Explain the concept of 'Explain inequations' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain inequations"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Decimals",
+          "text": "With examples, illustrate how 'Decimals' is applied in the community.",
+          "competence": "Decimals"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Mensuration",
+          "text": "Define 'Mensuration' and discuss its importance in everyday life. - with diagram",
+          "competence": "Mensuration"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Equations",
+          "text": "Evaluate the role of 'Equations' in national development. - with example",
+          "competence": "Equations"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Percentages",
+          "text": "Discuss the challenges facing 'Percentages' in Tanzania and propose solutions. - with example",
+          "competence": "Percentages"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain mensuration",
+          "text": "Discuss the challenges facing 'Explain mensuration' in Tanzania and propose solutions. - with example",
+          "competence": "Explain mensuration"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Circles",
+          "text": "Discuss the challenges facing 'Circles' in Tanzania and propose solutions. - with diagram",
+          "competence": "Circles"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Fractions",
+          "text": "Discuss the challenges facing 'Fractions' in Tanzania and propose solutions. - with example",
+          "competence": "Fractions"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Triangles",
+          "text": "Define 'Triangles' and discuss its importance in everyday life. - with diagram",
+          "competence": "Triangles"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain probability",
+          "text": "Evaluate the role of 'Explain probability' in national development. - with example",
+          "competence": "Explain probability"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Whole Numbers",
+          "text": "Evaluate the role of 'Whole Numbers' in national development.",
+          "competence": "Whole Numbers"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain data collection",
+          "text": "Describe the main features of 'Explain data collection'.",
+          "competence": "Explain data collection"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain equations",
+          "text": "With examples, illustrate how 'Explain equations' is applied in the community. - with example",
+          "competence": "Explain equations"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Angles",
+          "text": "Evaluate the role of 'Angles' in national development. - with diagram",
+          "competence": "Angles"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain decimals",
+          "text": "Explain the concept of 'Explain decimals' with examples relevant to Tanzania.",
+          "competence": "Explain decimals"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain sets",
+    "Explain fractions",
+    "Explain percentages",
+    "Data Collection",
+    "Explain algebraic expressions",
+    "Explain inequations",
+    "Decimals",
+    "Mensuration",
+    "Equations",
+    "Percentages"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

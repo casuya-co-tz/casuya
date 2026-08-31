@@ -1,0 +1,121 @@
+{
+  "filename": "bible_knowledge_form4_topical_5_2023.json",
+  "subject": "Bible Knowledge",
+  "subject_slug": "bible_knowledge",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Bible Knowledge - Topical Test 5 (FORM4 2023): Classify the books in the Bible",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Classify the books in the Bible",
+          "text": "Outline the procedures involved in 'Classify the books in the Bible'.",
+          "competence": "Classify the books in the Bible"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Classify the books in the Bible",
+          "text": "Evaluate the role of 'Classify the books in the Bible' in national development. - locally",
+          "competence": "Classify the books in the Bible"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Identify the methods used by Jesus in his Ministry (parables and miracle",
+          "text": "Examine the advantages and disadvantages of 'Identify the methods used by Jesus in his Ministry (parables and miracle'. - with example",
+          "competence": "Identify the methods used by Jesus in his Ministry (parables"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Classify the books in the Bible",
+          "text": "Compare and contrast 'Classify the books in the Bible' with related concepts. - with diagram",
+          "competence": "Classify the books in the Bible"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Classify the books in the Bible",
+          "text": "Compare and contrast 'Classify the books in the Bible' with related concepts. - with example",
+          "competence": "Classify the books in the Bible"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Classify the books in the Bible",
+          "text": "Discuss the factors influencing 'Classify the books in the Bible'. - with example",
+          "competence": "Classify the books in the Bible"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Identify the methods used by Jesus in his Ministry (parables and miracle",
+          "text": "Discuss the challenges facing 'Identify the methods used by Jesus in his Ministry (parables and miracle' in Tanzania and propose solutions. - locally",
+          "competence": "Identify the methods used by Jesus in his Ministry (parables"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Identify the methods used by Jesus in his Ministry (parables and miracle",
+          "text": "Assess the impact of 'Identify the methods used by Jesus in his Ministry (parables and miracle' on society.",
+          "competence": "Identify the methods used by Jesus in his Ministry (parables"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Identify the methods used by Jesus in his Ministry (parables and miracle",
+          "text": "Compare and contrast 'Identify the methods used by Jesus in his Ministry (parables and miracle' with related concepts. - locally",
+          "competence": "Identify the methods used by Jesus in his Ministry (parables"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Classify the books in the Bible",
+          "text": "Discuss the factors influencing 'Classify the books in the Bible'.",
+          "competence": "Classify the books in the Bible"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Classify the books in the Bible",
+    "Identify the methods used by Jesus in his Ministry (parables and miracle"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

@@ -1,0 +1,209 @@
+{
+  "filename": "basic_applied_mathematics_form6_midterm2_1_2024.json",
+  "subject": "Basic Applied Mathematics",
+  "subject_slug": "basic_applied_mathematics",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2024",
+  "time": "2:00 Hours",
+  "title": "Basic Applied Mathematics - Midterm 2 Exam 1 (FORM6 2024)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 81,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore some advanced tenets of coordinate geometry (area of a triangle, angle between two lines and perpendicular distance from a point to a line)",
+          "text": "What are the characteristics of 'Explore some advanced tenets of coordinate geometry (area of a triangle, angle between two lines and perpendicular distance from a point to a line)'?",
+          "competence": "Explore some advanced tenets of coordinate geometry (area of"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore some advanced tenets of functions (Properties, Domain and Range and graphs of cubic functions, rational functions with a constant numerator and a linear equation in the denominator, logarithmic, and exponential functions)",
+          "text": "Explain the concept of 'Explore some advanced tenets of functions (Properties, Domain and Range and graphs of cubic functions, rational functions with a constant numerator and a linear equation in the denominator, logarithmic, and exponential functions)' with examples relevant to Tanzania.",
+          "competence": "Explore some advanced tenets of functions (Properties, Domai"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "product, cross product, angle between two vectors and work done by a constant force, derivative and integration of vector functions)",
+          "text": "Describe the main features of 'product, cross product, angle between two vectors and work done by a constant force, derivative and integration of vector functions)'. - with diagram",
+          "competence": "product, cross product, angle between two vectors and work d"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore some advanced tenets of vectors (unit vector, scalar",
+          "text": "Discuss the factors influencing 'Explore some advanced tenets of vectors (unit vector, scalar'.",
+          "competence": "Explore some advanced tenets of vectors (unit vector, scalar"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts",
+          "text": "Compare and contrast 'Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts' with related concepts.",
+          "competence": "Use some advanced skills in geometry, trigonometry, and vect"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "graphically, graphs of direct and inverse variation)",
+          "text": "Outline the procedures involved in 'graphically, graphs of direct and inverse variation)'. - with diagram",
+          "competence": "graphically, graphs of direct and inverse variation)"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use set theory and logic in argumentation and decision making",
+          "text": "Analyse the causes and effects of 'Use set theory and logic in argumentation and decision making'.",
+          "competence": "Use set theory and logic in argumentation and decision makin"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Use logic to analyse validity of arguments",
+          "text": "Describe the main features of 'Use logic to analyse validity of arguments'. - locally",
+          "competence": "Use logic to analyse validity of arguments"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Use differentiation methods to solve real life problems (maximum and minimum, curve sketching, rate of change",
+          "text": "Define 'Use differentiation methods to solve real life problems (maximum and minimum, curve sketching, rate of change' and discuss its importance in everyday life. - with diagram",
+          "competence": "Use differentiation methods to solve real life problems (max"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "marginal cost and marginal revenue functions)",
+          "text": "Compare and contrast 'marginal cost and marginal revenue functions)' with related concepts. - with diagram",
+          "competence": "marginal cost and marginal revenue functions)"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Apply knowledge of algebra and number theory in different contexts",
+          "text": "Propose measures to improve 'Apply knowledge of algebra and number theory in different contexts' in schools. - locally",
+          "competence": "Apply knowledge of algebra and number theory in different co"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic tenets of logic (statements, connectives, truth table, arguments involving three propositions, electrical networks involving three propositions)",
+          "text": "Analyse the causes and effects of 'Explore the basic tenets of logic (statements, connectives, truth table, arguments involving three propositions, electrical networks involving three propositions)'. - with diagram",
+          "competence": "Explore the basic tenets of logic (statements, connectives, "
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Apply knowledge of sequences and series in different contexts",
+          "text": "What are the characteristics of 'Apply knowledge of sequences and series in different contexts'?",
+          "competence": "Apply knowledge of sequences and series in different context"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 5,
+          "topic": "calculate mean by the coding method, variance, standard deviation, quartiles, and percentiles)",
+          "text": "Examine the advantages and disadvantages of 'calculate mean by the coding method, variance, standard deviation, quartiles, and percentiles)'. - locally",
+          "competence": "calculate mean by the coding method, variance, standard devi"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)",
+          "text": "Discuss the factors influencing 'Use integration methods to solve real life problems (area under the curve, volume of solid of revolution, cost and revenue functions)'. - with diagram",
+          "competence": "Use integration methods to solve real life problems (area un"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use sequences and series to determine simple and compound interest",
+          "text": "Describe the process of 'Use sequences and series to determine simple and compound interest' step by step.",
+          "competence": "Use sequences and series to determine simple and compound in"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explore the basic tenets of calculus (Differentiation: first principles, power rule, chain rule, product rule, and quotient rule, Integration: substitution method)",
+          "text": "Propose measures to improve 'Explore the basic tenets of calculus (Differentiation: first principles, power rule, chain rule, product rule, and quotient rule, Integration: substitution method)' in schools. - with diagram",
+          "competence": "Explore the basic tenets of calculus (Differentiation: first"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": ". Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts",
+          "text": "What are the characteristics of '. Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts'?",
+          "competence": ". Use some advanced skills in geometry, trigonometry, and ve"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use functions and calculus to solve problems in different contexts",
+          "text": "Discuss the factors influencing 'Use functions and calculus to solve problems in different contexts'. - locally",
+          "competence": "Use functions and calculus to solve problems in different co"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use statistics to solve problems in different contexts",
+          "text": "What are the characteristics of 'Use statistics to solve problems in different contexts'?",
+          "competence": "Use statistics to solve problems in different contexts"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore some advanced tenets of coordinate geometry (area of a triangle, angle between two lines and perpendicular distance from a point to a line)",
+    "Explore some advanced tenets of functions (Properties, Domain and Range and graphs of cubic functions, rational functions with a constant numerator and a linear equation in the denominator, logarithmic, and exponential functions)",
+    "product, cross product, angle between two vectors and work done by a constant force, derivative and integration of vector functions)",
+    "Explore some advanced tenets of vectors (unit vector, scalar",
+    "Use some advanced skills in geometry, trigonometry, and vectors to solve problems in different contexts",
+    "graphically, graphs of direct and inverse variation)",
+    "Use set theory and logic in argumentation and decision making",
+    "Use logic to analyse validity of arguments",
+    "Use differentiation methods to solve real life problems (maximum and minimum, curve sketching, rate of change",
+    "marginal cost and marginal revenue functions)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

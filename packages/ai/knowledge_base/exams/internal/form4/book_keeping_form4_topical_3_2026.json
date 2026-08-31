@@ -1,0 +1,121 @@
+{
+  "filename": "book_keeping_form4_topical_3_2026.json",
+  "subject": "Book Keeping",
+  "subject_slug": "book_keeping",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Book Keeping - Topical Test 3 (FORM4 2026): Receipts and Payments",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 41,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Receipts and Payments",
+          "text": "Explain the concept of 'Receipts and Payments' with examples relevant to Tanzania.",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Income and Expenditure",
+          "text": "Compare and contrast 'Income and Expenditure' with related concepts. - with example",
+          "competence": "Income and Expenditure"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Receipts and Payments",
+          "text": "Explain the concept of 'Receipts and Payments' with examples relevant to Tanzania. - with diagram",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Receipts and Payments",
+          "text": "Evaluate the role of 'Receipts and Payments' in national development.",
+          "competence": "Receipts and Payments"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Receipts and Payments",
+          "text": "Describe the main features of 'Receipts and Payments'.",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Income and Expenditure",
+          "text": "Describe the main features of 'Income and Expenditure'. - with diagram",
+          "competence": "Income and Expenditure"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Income and Expenditure",
+          "text": "Outline the procedures involved in 'Income and Expenditure'. - with diagram",
+          "competence": "Income and Expenditure"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Receipts and Payments",
+          "text": "Explain the concept of 'Receipts and Payments' with examples relevant to Tanzania.",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Receipts and Payments",
+          "text": "Describe the main features of 'Receipts and Payments'. - with diagram",
+          "competence": "Receipts and Payments"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Income and Expenditure",
+          "text": "Discuss the challenges facing 'Income and Expenditure' in Tanzania and propose solutions. - with diagram",
+          "competence": "Income and Expenditure"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Receipts and Payments",
+    "Income and Expenditure"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

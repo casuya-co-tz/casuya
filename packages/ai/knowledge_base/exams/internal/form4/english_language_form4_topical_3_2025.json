@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form4_topical_3_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 3 (FORM4 2025): Make inferences about a variety of ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Answer questions based on information from presentations/tasks",
+          "text": "Evaluate the role of 'Answer questions based on information from presentations/tasks' in national development. - with example",
+          "competence": "Answer questions based on information from presentations/tas"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Answer questions based on information from presentations/tasks",
+          "text": "Outline the procedures involved in 'Answer questions based on information from presentations/tasks'.",
+          "competence": "Answer questions based on information from presentations/tas"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Make inferences about a variety of texts",
+          "text": "With examples, illustrate how 'Make inferences about a variety of texts' is applied in the community. - with diagram",
+          "competence": "Make inferences about a variety of texts"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Make inferences about a variety of texts",
+          "text": "With examples, illustrate how 'Make inferences about a variety of texts' is applied in the community. - locally",
+          "competence": "Make inferences about a variety of texts"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Make inferences about a variety of texts",
+          "text": "Outline the procedures involved in 'Make inferences about a variety of texts'.",
+          "competence": "Make inferences about a variety of texts"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Make inferences about a variety of texts",
+          "text": "How does 'Make inferences about a variety of texts' relate to sustainable development? - with example",
+          "competence": "Make inferences about a variety of texts"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Make inferences about a variety of texts",
+          "text": "Discuss the factors influencing 'Make inferences about a variety of texts'. - locally",
+          "competence": "Make inferences about a variety of texts"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Answer questions based on information from presentations/tasks",
+          "text": "Analyse the causes and effects of 'Answer questions based on information from presentations/tasks'.",
+          "competence": "Answer questions based on information from presentations/tas"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Answer questions based on information from presentations/tasks",
+          "text": "Propose measures to improve 'Answer questions based on information from presentations/tasks' in schools. - with diagram",
+          "competence": "Answer questions based on information from presentations/tas"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Answer questions based on information from presentations/tasks",
+          "text": "Define 'Answer questions based on information from presentations/tasks' and discuss its importance in everyday life.",
+          "competence": "Answer questions based on information from presentations/tas"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Answer questions based on information from presentations/tasks",
+    "Make inferences about a variety of texts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

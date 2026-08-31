@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form6_topical_6_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 6 (FORM6 2025): and their applications in daily lif",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 39,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "and their applications in daily life",
+          "text": "Compare and contrast 'and their applications in daily life' with related concepts.",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+          "text": "Explain the concept of 'Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the concept of colligative properties in understand"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "and their applications in daily life",
+          "text": "Analyse the causes and effects of 'and their applications in daily life'. - with example",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "and their applications in daily life",
+          "text": "Compare and contrast 'and their applications in daily life' with related concepts. - with diagram",
+          "competence": "and their applications in daily life"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+          "text": "Analyse the causes and effects of 'Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)'. - with diagram",
+          "competence": "Describe the concept of colligative properties in understand"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "and their applications in daily life",
+          "text": "Evaluate the role of 'and their applications in daily life' in national development.",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "and their applications in daily life",
+          "text": "Define 'and their applications in daily life' and discuss its importance in everyday life. - with example",
+          "competence": "and their applications in daily life"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "and their applications in daily life",
+          "text": "Discuss the challenges facing 'and their applications in daily life' in Tanzania and propose solutions. - with example",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "and their applications in daily life",
+          "text": "With examples, illustrate how 'and their applications in daily life' is applied in the community. - with diagram",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)",
+          "text": "Discuss the challenges facing 'Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)' in Tanzania and propose solutions. - with diagram",
+          "competence": "Describe the concept of colligative properties in understand"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "and their applications in daily life",
+    "Describe the concept of colligative properties in understanding responses of the system towards changes in the environment (boiling point elevation, freezing point depression, osmotic pressure, relative lowering of vapour pressure and Raoult’s law)"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

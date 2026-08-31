@@ -1,0 +1,249 @@
+{
+  "filename": "kiswahili_form3_terminal_1_2026.json",
+  "subject": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2026",
+  "time": "2:30 Hours",
+  "title": "Kiswahili - Terminal Exam 1 (FORM3 2026)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 108,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kutambua nadharia ya fasihi",
+          "text": "With examples, illustrate how 'Kutambua nadharia ya fasihi' is applied in the community. - with example",
+          "competence": "Kutambua nadharia ya fasihi"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kutathmini matini zilizotafsiriwa",
+          "text": "Describe the process of 'Kutathmini matini zilizotafsiriwa' step by step. - locally",
+          "competence": "Kutathmini matini zilizotafsiriwa"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kutathmini maendeleo ya fasihi",
+          "text": "Define 'Kutathmini maendeleo ya fasihi' and discuss its importance in everyday life.",
+          "competence": "Kutathmini maendeleo ya fasihi"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kuchambua vipashio vinavyojenga neno na dhima zake",
+          "text": "Examine the advantages and disadvantages of 'Kuchambua vipashio vinavyojenga neno na dhima zake'. - with example",
+          "competence": "Kuchambua vipashio vinavyojenga neno na dhima zake"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kufafanua aina za ukalimani",
+          "text": "Define 'Kufafanua aina za ukalimani' and discuss its importance in everyday life.",
+          "competence": "Kufafanua aina za ukalimani"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujumbe katika usomaji wa matini fupi changamani",
+          "text": "Analyse the causes and effects of 'Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujumbe katika usomaji wa matini fupi changamani'.",
+          "competence": "Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujum"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kuhakiki fani na maudhui katika mashairi andishi",
+          "text": "Compare and contrast 'Kuhakiki fani na maudhui katika mashairi andishi' with related concepts. - with diagram",
+          "competence": "Kuhakiki fani na maudhui katika mashairi andishi"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa maneno (nomino, vivumishi, vielezi, viwakilishi, vitenzi, vihisishi, vihusishi na viunganish",
+          "text": "Examine the advantages and disadvantages of 'Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa maneno (nomino, vivumishi, vielezi, viwakilishi, vitenzi, vihisishi, vihusishi na viunganish'.",
+          "competence": "Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Kujadili kukua na kuenea kwa Kiswahili kutokana na maendeleo ya sayansi na teknolojia",
+          "text": "Outline the procedures involved in 'Kujadili kukua na kuenea kwa Kiswahili kutokana na maendeleo ya sayansi na teknolojia'. - locally",
+          "competence": "Kujadili kukua na kuenea kwa Kiswahili kutokana na maendeleo"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kutathmini matini za kawaida zilizohaririwa na wengine",
+          "text": "Discuss the factors influencing 'Kutathmini matini za kawaida zilizohaririwa na wengine'. - locally",
+          "competence": "Kutathmini matini za kawaida zilizohaririwa na wengine"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali",
+          "text": "Describe the main features of 'Kubaini maneno yenye maana za msingi na za ziada katika matini mbalimbali'.",
+          "competence": "Kubaini maneno yenye maana za msingi na za ziada katika mati"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sambamba",
+          "text": "Explain the concept of 'Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sambamba' with examples relevant to Tanzania. - with diagram",
+          "competence": "Kutatua changamoto zinazojitokeza katika ukalimani sawia/ sa"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kusikiliza habari changamani kitunduizi na kuchangia au kutoa maoni mwafaka",
+          "text": "With examples, illustrate how 'Kusikiliza habari changamani kitunduizi na kuchangia au kutoa maoni mwafaka' is applied in the community.",
+          "competence": "Kusikiliza habari changamani kitunduizi na kuchangia au kuto"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kufafanua vipashio vinavyojenga neno (mofu na alomofu)",
+          "text": "Outline the procedures involved in 'Kufafanua vipashio vinavyojenga neno (mofu na alomofu)'.",
+          "competence": "Kufafanua vipashio vinavyojenga neno (mofu na alomofu)"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Kutumia TEHAMA kutafuta maana ya maneno mapya kutoka katika matini aliyoisoma",
+          "text": "Define 'Kutumia TEHAMA kutafuta maana ya maneno mapya kutoka katika matini aliyoisoma' and discuss its importance in everyday life. - with diagram",
+          "competence": "Kutumia TEHAMA kutafuta maana ya maneno mapya kutoka katika "
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Kufafanua uhusiano wa kimaana wa maneno (mfano: antonimia, homonimia, sinonimia, na polisemia)",
+          "text": "Describe the main features of 'Kufafanua uhusiano wa kimaana wa maneno (mfano: antonimia, homonimia, sinonimia, na polisemia)'.",
+          "competence": "Kufafanua uhusiano wa kimaana wa maneno (mfano: antonimia, h"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Kutafsiri matini mbalimbali",
+          "text": "Discuss the factors influencing 'Kutafsiri matini mbalimbali'. - with diagram",
+          "competence": "Kutafsiri matini mbalimbali"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kutumia Kiswahili katika mijadala mbalimbali kwa kuzingatia utamaduni wa Mtanzania (mf. matumizi ya tafsida na uteuzi wa maneno kulingana na mila na desturi za Mtanzani",
+          "text": "How does 'Kutumia Kiswahili katika mijadala mbalimbali kwa kuzingatia utamaduni wa Mtanzania (mf. matumizi ya tafsida na uteuzi wa maneno kulingana na mila na desturi za Mtanzani' relate to sustainable development? - with diagram",
+          "competence": "Kutumia Kiswahili katika mijadala mbalimbali kwa kuzingatia "
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kubaini msamiati mpya kutoka katika mazungumzo changamani na kawaida katika miktadha anuai",
+          "text": "With examples, illustrate how 'Kubaini msamiati mpya kutoka katika mazungumzo changamani na kawaida katika miktadha anuai' is applied in the community. - locally",
+          "competence": "Kubaini msamiati mpya kutoka katika mazungumzo changamani na"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali",
+          "text": "Analyse the causes and effects of 'Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali'.",
+          "competence": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kufafanua dhana ya fasihi na fasihi ya Kiswahili (maana, aina na dhim",
+          "text": "How does 'Kufafanua dhana ya fasihi na fasihi ya Kiswahili (maana, aina na dhim' relate to sustainable development?",
+          "competence": "Kufafanua dhana ya fasihi na fasihi ya Kiswahili (maana, ain"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Kusanifu matini mbalimbali za kisanaa",
+          "text": "Compare and contrast 'Kusanifu matini mbalimbali za kisanaa' with related concepts.",
+          "competence": "Kusanifu matini mbalimbali za kisanaa"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Kusoma matini kwa ufasaha na ufahamu",
+          "text": "With examples, illustrate how 'Kusoma matini kwa ufasaha na ufahamu' is applied in the community.",
+          "competence": "Kusoma matini kwa ufasaha na ufahamu"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Kutathmini matini mbalimbali zilizotafsiriwa",
+          "text": "Discuss the challenges facing 'Kutathmini matini mbalimbali zilizotafsiriwa' in Tanzania and propose solutions. - with diagram",
+          "competence": "Kutathmini matini mbalimbali zilizotafsiriwa"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Kuunda maneno kwa njia mbalimbali kutokana na habari alizozisoma au kuzisikiliza (mf. utohoaji, uradidi, uhulutishaj",
+          "text": "Explain the relationship between 'Kuunda maneno kwa njia mbalimbali kutokana na habari alizozisoma au kuzisikiliza (mf. utohoaji, uradidi, uhulutishaj' and its environment.",
+          "competence": "Kuunda maneno kwa njia mbalimbali kutokana na habari alizozi"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Kutambua nadharia ya fasihi",
+    "Kutathmini matini zilizotafsiriwa",
+    "Kutathmini maendeleo ya fasihi",
+    "Kuchambua vipashio vinavyojenga neno na dhima zake",
+    "Kufafanua aina za ukalimani",
+    "Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujumbe katika usomaji wa matini fupi changamani",
+    "Kuhakiki fani na maudhui katika mashairi andishi",
+    "Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa maneno (nomino, vivumishi, vielezi, viwakilishi, vitenzi, vihisishi, vihusishi na viunganish",
+    "Kujadili kukua na kuenea kwa Kiswahili kutokana na maendeleo ya sayansi na teknolojia",
+    "Kutathmini matini za kawaida zilizohaririwa na wengine"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

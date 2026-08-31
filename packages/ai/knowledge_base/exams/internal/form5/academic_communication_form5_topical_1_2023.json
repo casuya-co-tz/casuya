@@ -1,0 +1,121 @@
+{
+  "filename": "academic_communication_form5_topical_1_2023.json",
+  "subject": "Academic Communication",
+  "subject_slug": "academic_communication",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Academic Communication - Topical Test 1 (FORM5 2023): Make classroom presentations",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 33,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Write project proposals and project reports",
+          "text": "Explain the relationship between 'Write project proposals and project reports' and its environment. - locally",
+          "competence": "Write project proposals and project reports"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Write project proposals and project reports",
+          "text": "Outline the procedures involved in 'Write project proposals and project reports'.",
+          "competence": "Write project proposals and project reports"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Make classroom presentations",
+          "text": "Outline the procedures involved in 'Make classroom presentations'.",
+          "competence": "Make classroom presentations"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Write project proposals and project reports",
+          "text": "With examples, illustrate how 'Write project proposals and project reports' is applied in the community.",
+          "competence": "Write project proposals and project reports"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Make classroom presentations",
+          "text": "Assess the impact of 'Make classroom presentations' on society. - with diagram",
+          "competence": "Make classroom presentations"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Make classroom presentations",
+          "text": "Describe the process of 'Make classroom presentations' step by step.",
+          "competence": "Make classroom presentations"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Write project proposals and project reports",
+          "text": "Describe the process of 'Write project proposals and project reports' step by step. - with diagram",
+          "competence": "Write project proposals and project reports"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Make classroom presentations",
+          "text": "Discuss the challenges facing 'Make classroom presentations' in Tanzania and propose solutions.",
+          "competence": "Make classroom presentations"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Make classroom presentations",
+          "text": "Propose measures to improve 'Make classroom presentations' in schools. - locally",
+          "competence": "Make classroom presentations"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Write project proposals and project reports",
+          "text": "Describe the main features of 'Write project proposals and project reports'.",
+          "competence": "Write project proposals and project reports"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Write project proposals and project reports",
+    "Make classroom presentations"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

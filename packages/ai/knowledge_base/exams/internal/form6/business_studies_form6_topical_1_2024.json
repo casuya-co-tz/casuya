@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form6_topical_1_2024.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 1 (FORM6 2024): Describe the basic principles of co",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 48,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Examine the advantages and disadvantages of 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc'. - locally",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Propose measures to improve 'Describe the basic principles of communication and networking for small businesses' in schools.",
+          "competence": "Describe the basic principles of communication and networkin"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Define 'Describe the basic principles of communication and networking for small businesses' and discuss its importance in everyday life. - with example",
+          "competence": "Describe the basic principles of communication and networkin"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+          "text": "Explain the relationship between 'Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc' and its environment. - with example",
+          "competence": "Describe the concept and theories of entrepreneurship (meani"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Outline the procedures involved in 'Describe the basic principles of communication and networking for small businesses'.",
+          "competence": "Describe the basic principles of communication and networkin"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Analyse the causes and effects of 'Describe the basic principles of communication and networking for small businesses'. - locally",
+          "competence": "Describe the basic principles of communication and networkin"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Explain the relationship between 'Describe the basic principles of communication and networking for small businesses' and its environment. - with example",
+          "competence": "Describe the basic principles of communication and networkin"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Examine the advantages and disadvantages of 'Describe the basic principles of communication and networking for small businesses'.",
+          "competence": "Describe the basic principles of communication and networkin"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Evaluate the role of 'Describe the basic principles of communication and networking for small businesses' in national development. - with example",
+          "competence": "Describe the basic principles of communication and networkin"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Define 'Describe the basic principles of communication and networking for small businesses' and discuss its importance in everyday life. - locally",
+          "competence": "Describe the basic principles of communication and networkin"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importanc",
+    "Describe the basic principles of communication and networking for small businesses"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

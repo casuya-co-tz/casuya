@@ -1,0 +1,249 @@
+{
+  "filename": "civics_form3_terminal_1_2026.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2026",
+  "time": "2:30 Hours",
+  "title": "Civics - Terminal Exam 1 (FORM3 2026)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 110,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain concept of human rights",
+          "text": "Evaluate the role of 'Explain concept of human rights' in national development. - with diagram",
+          "competence": "Explain concept of human rights"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Elections",
+          "text": "Outline the procedures involved in 'Elections'. - with diagram",
+          "competence": "Elections"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Child Rights",
+          "text": "Explain the concept of 'Child Rights' with examples relevant to Tanzania. - with diagram",
+          "competence": "Child Rights"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Globalization",
+          "text": "Evaluate the role of 'Globalization' in national development.",
+          "competence": "Globalization"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "National Unity",
+          "text": "Explain the concept of 'National Unity' with examples relevant to Tanzania. - with example",
+          "competence": "National Unity"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Gender",
+          "text": "Analyse the causes and effects of 'Gender'.",
+          "competence": "Gender"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain national unity",
+          "text": "Define 'Explain national unity' and discuss its importance in everyday life.",
+          "competence": "Explain national unity"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Democracy",
+          "text": "Describe the main features of 'Democracy'.",
+          "competence": "Democracy"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Constitution",
+          "text": "Evaluate the role of 'Constitution' in national development. - with example",
+          "competence": "Constitution"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Life Skills",
+          "text": "Outline the procedures involved in 'Life Skills'. - with diagram",
+          "competence": "Life Skills"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain constitution",
+          "text": "Analyse the causes and effects of 'Explain constitution'. - with diagram",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain concept of nation",
+          "text": "Describe the main features of 'Explain concept of nation'. - with diagram",
+          "competence": "Explain concept of nation"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Culture and Tradition",
+          "text": "Evaluate the role of 'Culture and Tradition' in national development. - with example",
+          "competence": "Culture and Tradition"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Local Government",
+          "text": "Outline the procedures involved in 'Local Government'.",
+          "competence": "Local Government"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Concept of Human Rights",
+          "text": "Analyse the causes and effects of 'Concept of Human Rights'. - with diagram",
+          "competence": "Concept of Human Rights"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain national symbols",
+          "text": "Outline the procedures involved in 'Explain national symbols'. - with diagram",
+          "competence": "Explain national symbols"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Interpersonal Relationships",
+          "text": "Define 'Interpersonal Relationships' and discuss its importance in everyday life. - with diagram",
+          "competence": "Interpersonal Relationships"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain culture and tradition",
+          "text": "Define 'Explain culture and tradition' and discuss its importance in everyday life. - with example",
+          "competence": "Explain culture and tradition"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain globalization",
+          "text": "Compare and contrast 'Explain globalization' with related concepts. - with example",
+          "competence": "Explain globalization"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain central government",
+          "text": "Define 'Explain central government' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain central government"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain citizenship",
+          "text": "Analyse the causes and effects of 'Explain citizenship'. - with example",
+          "competence": "Explain citizenship"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Concept of Nation",
+          "text": "Explain the concept of 'Concept of Nation' with examples relevant to Tanzania.",
+          "competence": "Concept of Nation"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain gender",
+          "text": "Discuss the challenges facing 'Explain gender' in Tanzania and propose solutions. - with example",
+          "competence": "Explain gender"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Citizenship",
+          "text": "Discuss the challenges facing 'Citizenship' in Tanzania and propose solutions. - with example",
+          "competence": "Citizenship"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain interpersonal relationships",
+          "text": "Examine the advantages and disadvantages of 'Explain interpersonal relationships'. - with example",
+          "competence": "Explain interpersonal relationships"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain concept of human rights",
+    "Elections",
+    "Child Rights",
+    "Globalization",
+    "National Unity",
+    "Gender",
+    "Explain national unity",
+    "Democracy",
+    "Constitution",
+    "Life Skills"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

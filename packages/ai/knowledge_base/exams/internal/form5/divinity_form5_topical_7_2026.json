@@ -1,0 +1,121 @@
+{
+  "filename": "divinity_form5_topical_7_2026.json",
+  "subject": "Divinity",
+  "subject_slug": "divinity",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Divinity - Topical Test 7 (FORM5 2026): Use the books of Haggai and Zechari",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 44,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+          "text": "What are the characteristics of 'Use the Book of Isaiah to discuss the importance of repentance and living a holy life'? - with diagram",
+          "competence": "Use the Book of Isaiah to discuss the importance of repentan"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use the books of Haggai and Zechariah to discuss the importance of responsibility",
+          "text": "Outline the procedures involved in 'Use the books of Haggai and Zechariah to discuss the importance of responsibility'.",
+          "competence": "Use the books of Haggai and Zechariah to discuss the importa"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Use the books of Haggai and Zechariah to discuss the importance of responsibility",
+          "text": "Compare and contrast 'Use the books of Haggai and Zechariah to discuss the importance of responsibility' with related concepts.",
+          "competence": "Use the books of Haggai and Zechariah to discuss the importa"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Use the books of Haggai and Zechariah to discuss the importance of responsibility",
+          "text": "Discuss the factors influencing 'Use the books of Haggai and Zechariah to discuss the importance of responsibility'. - with diagram",
+          "competence": "Use the books of Haggai and Zechariah to discuss the importa"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use the books of Haggai and Zechariah to discuss the importance of responsibility",
+          "text": "Examine the advantages and disadvantages of 'Use the books of Haggai and Zechariah to discuss the importance of responsibility'.",
+          "competence": "Use the books of Haggai and Zechariah to discuss the importa"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+          "text": "Outline the procedures involved in 'Use the Book of Isaiah to discuss the importance of repentance and living a holy life'. - with diagram",
+          "competence": "Use the Book of Isaiah to discuss the importance of repentan"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use the books of Haggai and Zechariah to discuss the importance of responsibility",
+          "text": "Discuss the challenges facing 'Use the books of Haggai and Zechariah to discuss the importance of responsibility' in Tanzania and propose solutions.",
+          "competence": "Use the books of Haggai and Zechariah to discuss the importa"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Use the books of Haggai and Zechariah to discuss the importance of responsibility",
+          "text": "Assess the impact of 'Use the books of Haggai and Zechariah to discuss the importance of responsibility' on society. - with example",
+          "competence": "Use the books of Haggai and Zechariah to discuss the importa"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Use the books of Haggai and Zechariah to discuss the importance of responsibility",
+          "text": "Analyse the causes and effects of 'Use the books of Haggai and Zechariah to discuss the importance of responsibility'.",
+          "competence": "Use the books of Haggai and Zechariah to discuss the importa"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+          "text": "Discuss the challenges facing 'Use the Book of Isaiah to discuss the importance of repentance and living a holy life' in Tanzania and propose solutions.",
+          "competence": "Use the Book of Isaiah to discuss the importance of repentan"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use the Book of Isaiah to discuss the importance of repentance and living a holy life",
+    "Use the books of Haggai and Zechariah to discuss the importance of responsibility"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

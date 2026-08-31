@@ -1,0 +1,209 @@
+{
+  "filename": "geography_form1_midterm2_3_2023.json",
+  "subject": "Geography",
+  "subject_slug": "geography",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2023",
+  "time": "2:00 Hours",
+  "title": "Geography - Midterm 2 Exam 3 (FORM1 2023)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 86,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Demonstrate an understanding of the basic techniques of map and photograph interpretation",
+          "text": "Propose measures to improve 'Demonstrate an understanding of the basic techniques of map and photograph interpretation' in schools. - locally",
+          "competence": "Demonstrate an understanding of the basic techniques of map "
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Demonstrate mastery of some advanced skills in land surveying",
+          "text": "Define 'Demonstrate mastery of some advanced skills in land surveying' and discuss its importance in everyday life.",
+          "competence": "Demonstrate mastery of some advanced skills in land surveyin"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Reading and interpreting various type of maps and their importance (topographical and statistical ma",
+          "text": "Discuss the challenges facing 'Reading and interpreting various type of maps and their importance (topographical and statistical ma' in Tanzania and propose solutions. - with example",
+          "competence": "Reading and interpreting various type of maps and their impo"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+          "text": "Explain the concept of 'Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher' with examples relevant to Tanzania. - with example",
+          "competence": "Describe the main external Earth systems (Hydrosphere, Atmos"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Carry out simple tape/chain surveying",
+          "text": "Outline the procedures involved in 'Carry out simple tape/chain surveying'.",
+          "competence": "Carry out simple tape/chain surveying"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen",
+          "text": "Analyse the causes and effects of 'Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen'. - with diagram",
+          "competence": "Describe the basic principles of photograph interpretation ("
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+          "text": "Assess the impact of 'Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation' on society.",
+          "competence": "Describe the relationship between major features of the Eart"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes",
+          "text": "What are the characteristics of 'Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes'? - with example",
+          "competence": "Describe the internal forces responsible for the formation o"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)",
+          "text": "Examine the advantages and disadvantages of 'Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)'. - with example",
+          "competence": "Describe the theories (continental drift, Isostacy and plate"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
+          "text": "Evaluate the role of 'Demonstrate an understanding of the origin and the structure of the Earth and earth systems' in national development. - with example",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of rocks and the rock cycle",
+          "text": "What are the characteristics of 'Demonstrate an understanding of rocks and the rock cycle'?",
+          "competence": "Demonstrate an understanding of rocks and the rock cycle"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an Advanced understanding of concepts and theories explaining the structure of the Earth and the interactions of earth systems",
+          "text": "Evaluate the role of 'Demonstrate an Advanced understanding of concepts and theories explaining the structure of the Earth and the interactions of earth systems' in national development. - locally",
+          "competence": "Demonstrate an Advanced understanding of concepts and theori"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate an understanding of the basic techniques in land surveying",
+          "text": "Propose measures to improve 'Demonstrate an understanding of the basic techniques in land surveying' in schools.",
+          "competence": "Demonstrate an understanding of the basic techniques in land"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)",
+          "text": "Compare and contrast 'Describe the interactions among the major earth systems (atmosphere, biosphere, hydrosphere, geosphere)' with related concepts. - with example",
+          "competence": "Describe the interactions among the major earth systems (atm"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Identify a geographical challenge in society and design a project to address it",
+          "text": "With examples, illustrate how 'Identify a geographical challenge in society and design a project to address it' is applied in the community. - with example",
+          "competence": "Identify a geographical challenge in society and design a pr"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Demonstrate an understanding of the origin and the structure of the Earth and Earth systems",
+          "text": "Assess the impact of 'Demonstrate an understanding of the origin and the structure of the Earth and Earth systems' on society. - locally",
+          "competence": "Demonstrate an understanding of the origin and the structure"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Demonstrate an understanding of the major features of the Earth surface",
+          "text": "Analyse the causes and effects of 'Demonstrate an understanding of the major features of the Earth surface'. - locally",
+          "competence": "Demonstrate an understanding of the major features of the Ea"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl",
+          "text": "Propose measures to improve 'Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl' in schools.",
+          "competence": "Describe the geographical factors that influence the spatial"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
+          "text": "Analyse the causes and effects of 'Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone'.",
+          "competence": "Describe major features of the Earth’s surface (continents, "
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Demonstrate an understanding of the relationship between geography, environmental health, human settlements and economic activities",
+          "text": "With examples, illustrate how 'Demonstrate an understanding of the relationship between geography, environmental health, human settlements and economic activities' is applied in the community. - with diagram",
+          "competence": "Demonstrate an understanding of the relationship between geo"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Demonstrate an understanding of the basic techniques of map and photograph interpretation",
+    "Demonstrate mastery of some advanced skills in land surveying",
+    "Reading and interpreting various type of maps and their importance (topographical and statistical ma",
+    "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
+    "Carry out simple tape/chain surveying",
+    "Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen",
+    "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
+    "Describe the internal forces responsible for the formation of the Earth’s major relief features (volcanoes, block mountains, fold mountains, faults, rift valleys, depressions/basin) and earthquakes",
+    "Describe the theories (continental drift, Isostacy and plate tectonics) that explain the gross structure of the earth’s surface (continents, oceans, seas, ocean ridges, ocean trenches, Islands etc.)",
+    "Demonstrate an understanding of the origin and the structure of the Earth and earth systems"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

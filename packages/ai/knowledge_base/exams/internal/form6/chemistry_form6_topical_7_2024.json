@@ -1,0 +1,121 @@
+{
+  "filename": "chemistry_form6_topical_7_2024.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form6",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Chemistry - Topical Test 7 (FORM6 2024): Examine the applications of colliga",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 45,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Evaluate the role of 'Analyse the periodic trends of elements in relation to their physical and chemical properties' in national development. - with example",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+          "text": "Discuss the challenges facing 'Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants' in Tanzania and propose solutions.",
+          "competence": "Examine the applications of colligative properties in the pu"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Compare and contrast 'Analyse the periodic trends of elements in relation to their physical and chemical properties' with related concepts. - with diagram",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Describe the main features of 'Analyse the periodic trends of elements in relation to their physical and chemical properties'.",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+          "text": "Define 'Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants' and discuss its importance in everyday life. - with diagram",
+          "competence": "Examine the applications of colligative properties in the pu"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+          "text": "Analyse the causes and effects of 'Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants'.",
+          "competence": "Examine the applications of colligative properties in the pu"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+          "text": "Describe the main features of 'Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants'. - with diagram",
+          "competence": "Examine the applications of colligative properties in the pu"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+          "text": "Analyse the causes and effects of 'Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants'. - with diagram",
+          "competence": "Examine the applications of colligative properties in the pu"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants",
+          "text": "Compare and contrast 'Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants' with related concepts.",
+          "competence": "Examine the applications of colligative properties in the pu"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Analyse the causes and effects of 'Analyse the periodic trends of elements in relation to their physical and chemical properties'. - with example",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+    "Examine the applications of colligative properties in the purification of water, dialysis, preservation of food and in antifreeze and coolants"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

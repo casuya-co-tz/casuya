@@ -1,0 +1,209 @@
+{
+  "filename": "chemistry_form2_midterm1_1_2025.json",
+  "subject": "Chemistry",
+  "subject_slug": "chemistry",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Chemistry - Midterm 1 Exam 1 (FORM2 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 76,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use appropriate software to sketch the set-ups of experiments",
+          "text": "With examples, illustrate how 'Use appropriate software to sketch the set-ups of experiments' is applied in the community. - with diagram",
+          "competence": "Use appropriate software to sketch the set-ups of experiment"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Perform experiments on separation of different mixtures using different methods",
+          "text": "Analyse the causes and effects of 'Perform experiments on separation of different mixtures using different methods'. - with diagram",
+          "competence": "Perform experiments on separation of different mixtures usin"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+          "text": "Describe the main features of 'Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides'. - with diagram",
+          "competence": "Examine reactions of aromatic hydrocarbons, phenols, carbony"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+          "text": "Analyse the causes and effects of 'Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures'.",
+          "competence": "Describe the chemical reactions of aliphatic hydrocarbons an"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Design and carry out a project in Chemistry",
+          "text": "Discuss the challenges facing 'Design and carry out a project in Chemistry' in Tanzania and propose solutions. - with diagram",
+          "competence": "Design and carry out a project in Chemistry"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "and their applications in daily life",
+          "text": "Examine the advantages and disadvantages of 'and their applications in daily life'. - with diagram",
+          "competence": "and their applications in daily life"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+          "text": "Evaluate the role of 'Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)' in national development.",
+          "competence": "Explore the periodic trends of elements in the modern period"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use different atomic theories to determine the electronic configuration of elements with different properties",
+          "text": "Compare and contrast 'Use different atomic theories to determine the electronic configuration of elements with different properties' with related concepts.",
+          "competence": "Use different atomic theories to determine the electronic co"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+          "text": "Evaluate the role of 'Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software' in national development.",
+          "competence": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Analyse the periodic trends of elements in relation to their physical and chemical properties",
+          "text": "Evaluate the role of 'Analyse the periodic trends of elements in relation to their physical and chemical properties' in national development.",
+          "competence": "Analyse the periodic trends of elements in relation to their"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)",
+          "text": "Compare and contrast 'Describe the concept of energetics (Heat/enthalpy of reactions and Hess’s law)' with related concepts. - with diagram",
+          "competence": "Describe the concept of energetics (Heat/enthalpy of reactio"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)",
+          "text": "Describe the main features of 'Investigate the applications of electrochemistry in industries and real life situation (corrosion inhibition, purification of metals and batteries productions)'. - with example",
+          "competence": "Investigate the applications of electrochemistry in industri"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry",
+          "text": "Evaluate the role of 'Demonstrate an advanced understanding of the concepts, theories and principles in Chemistry' in national development. - with diagram",
+          "competence": "Demonstrate an advanced understanding of the concepts, theor"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Prepare acid- base indicators using locally available materials",
+          "text": "Examine the advantages and disadvantages of 'Prepare acid- base indicators using locally available materials'.",
+          "competence": "Prepare acid- base indicators using locally available materi"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
+          "text": "Analyse the causes and effects of 'Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction'.",
+          "competence": "Describe the concept of chemical reactions (chemical equatio"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
+          "text": "Discuss the challenges facing 'Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal' in Tanzania and propose solutions.",
+          "competence": "Explain the concept of the periodic table (1st 20 elements i"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)",
+          "text": "Compare and contrast 'Perform experiments involving chemical equilibria and report the experimental results scientifically (preparation of buffer solutions and acid-base titrations)' with related concepts. - with diagram",
+          "competence": "Perform experiments involving chemical equilibria and report"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+          "text": "Describe the main features of 'Describe the extraction of iron from its ore (ores, stages, and methods of extractio'. - with example",
+          "competence": "Describe the extraction of iron from its ore (ores, stages, "
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
+          "text": "Analyse the causes and effects of 'Explain the changes in the physical and chemical properties of elements across and down the periodic table'.",
+          "competence": "Explain the changes in the physical and chemical properties "
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Prepare sulphuric acid from sulphur dioxide",
+          "text": "Outline the procedures involved in 'Prepare sulphuric acid from sulphur dioxide'. - with diagram",
+          "competence": "Prepare sulphuric acid from sulphur dioxide"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Use appropriate software to sketch the set-ups of experiments",
+    "Perform experiments on separation of different mixtures using different methods",
+    "Examine reactions of aromatic hydrocarbons, phenols, carbonyl compounds, and carboxylic acids and their derivatives for preparation of useful organic products like soaps, perfumes and pesticides",
+    "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+    "Design and carry out a project in Chemistry",
+    "and their applications in daily life",
+    "Explore the periodic trends of elements in the modern periodic table (Electronegativity, ionisation energy, electron affinity, atomic radius, melting point, and metallic character)",
+    "Use different atomic theories to determine the electronic configuration of elements with different properties",
+    "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+    "Analyse the periodic trends of elements in relation to their physical and chemical properties"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

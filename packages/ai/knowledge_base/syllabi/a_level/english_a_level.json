@@ -1,0 +1,670 @@
+{
+  "subject_code": "022",
+  "subject_name": "English Language",
+  "level": "Form V-VI",
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the advanced English language skills",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Automate the production of oral descriptions and conversations using standard pronunciation (e.g., phonemes, syllables, stress and intonation)",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U1-L1",
+              "title": "Articulate sentences in connected speech with standard pronunciation (e.g., phonemes, syllables, stress and intonation)",
+              "markdown_content": "## a) Articulate sentences in connected speech with standard pronunciation (e.g., phonemes, syllables, stress and intonation)",
+              "periods": "30",
+              "page": 15
+            },
+            {
+              "lesson_id": "ENG-FV-U1-L2",
+              "title": "Describe objects, events and situations with appropriate English expressions (e.g., level of formality, pre-supposition, time, audience and topics)",
+              "markdown_content": "## b) Describe objects, events and situations with appropriate English expressions (e.g., level of formality, pre-supposition, time, audience and topics)",
+              "periods": "",
+              "page": 15
+            },
+            {
+              "lesson_id": "ENG-FV-U1-L3",
+              "title": "Participate in discussions on various topical issues (e.g., entrepreneurship, corruption, taxation, child right and security, gender education, cyber security education, disaster management, health and productive education, drug abuse, life skills, financial management education and taxation) with a standard pronunciation",
+              "markdown_content": "## c) Participate in discussions on various topical issues (e.g., entrepreneurship, corruption, taxation, child right and security, gender education, cyber security education, disaster management, health and productive education, drug abuse, life skills, financial management education and taxation) with a standard pronunciation",
+              "periods": "",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Develop vocabulary from conversations and written texts",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U1-L4",
+              "title": "Write unfamiliar vocabulary from given complex oral and written texts",
+              "markdown_content": "## a) Write unfamiliar vocabulary from given complex oral and written texts",
+              "periods": "20",
+              "page": 17
+            },
+            {
+              "lesson_id": "ENG-FV-U1-L5",
+              "title": "Discover the meanings of vocabulary using context, technical dictionary, thesaurus and encyclopaedia",
+              "markdown_content": "## b) Discover the meanings of vocabulary using context, technical dictionary, thesaurus and encyclopaedia",
+              "periods": "",
+              "page": 17
+            },
+            {
+              "lesson_id": "ENG-FV-U1-L6",
+              "title": "Form new words through word formation processes (e.g., compounding, blending, clipping)",
+              "markdown_content": "## c) Form new words through word formation processes (e.g., compounding, blending, clipping)",
+              "periods": "",
+              "page": 17
+            }
+          ]
+        },
+        {
+          "topic_name": "Use correct grammar and vocabulary in oral and written language tasks",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U1-L7",
+              "title": "Use the synonyms and antonyms of given words to compose a variety of texts",
+              "markdown_content": "## a) Use the synonyms and antonyms of given words to compose a variety of texts",
+              "periods": "30",
+              "page": 18
+            },
+            {
+              "lesson_id": "ENG-FV-U1-L8",
+              "title": "Use advanced vocabulary and grammar (e.g., tenses and subject- verb agreement) to describe events, objects and situations",
+              "markdown_content": "## b) Use advanced vocabulary and grammar (e.g., tenses and subject- verb agreement) to describe events, objects and situations",
+              "periods": "",
+              "page": 18
+            },
+            {
+              "lesson_id": "ENG-FV-U1-L9",
+              "title": "Prepare and deliver complex speeches on various topics including cross-cutting issues using appropriate vocabulary and grammar (e.g., tenses and cohesive devices)",
+              "markdown_content": "## c) Prepare and deliver complex speeches on various topics including cross-cutting issues using appropriate vocabulary and grammar (e.g., tenses and cohesive devices)",
+              "periods": "",
+              "page": 19
+            },
+            {
+              "lesson_id": "ENG-FV-U1-L10",
+              "title": "Write articles (e.g., newspaper articles, magazine articles and journal articles) about events, objects and situations using advanced vocabulary and grammar",
+              "markdown_content": "## d) Write articles (e.g., newspaper articles, magazine articles and journal articles) about events, objects and situations using advanced vocabulary and grammar",
+              "periods": "",
+              "page": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Comprehend oral and written information",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Comprehend oral messages with confidence and autonomy",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U2-L11",
+              "title": "Explain different types of meanings from oral information (e.g., denotative, connotative and figurative)",
+              "markdown_content": "## a) Explain different types of meanings from oral information (e.g., denotative, connotative and figurative)",
+              "periods": "28",
+              "page": 20
+            },
+            {
+              "lesson_id": "ENG-FV-U2-L12",
+              "title": "Explain meanings of oral texts derived from different registers (e.g., journalism, law, medicine and religion)",
+              "markdown_content": "## b) Explain meanings of oral texts derived from different registers (e.g., journalism, law, medicine and religion)",
+              "periods": "",
+              "page": 20
+            },
+            {
+              "lesson_id": "ENG-FV-U2-L13",
+              "title": "Describe rhetorical and implied meanings derived from conversations",
+              "markdown_content": "## c) Describe rhetorical and implied meanings derived from conversations",
+              "periods": "",
+              "page": 20
+            },
+            {
+              "lesson_id": "ENG-FV-U2-L14",
+              "title": "Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)",
+              "markdown_content": "## d) Respond to oral messages with confidence and autonomy (e.g., seeking clarifications, adding comments, arguing and summarising)",
+              "periods": "",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Construct complex and stylistic meanings from diverse and multiple texts",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U2-L15",
+              "title": "Use complex stylistic features (e.g., dialects, registers and figures of speech) obtained from written texts to convey meanings",
+              "markdown_content": "## a) Use complex stylistic features (e.g., dialects, registers and figures of speech) obtained from written texts to convey meanings",
+              "periods": "30",
+              "page": 21
+            },
+            {
+              "lesson_id": "ENG-FV-U2-L16",
+              "title": "Explain meaning of written texts derived from different registers (journalism, medicine and religion)",
+              "markdown_content": "## b) Explain meaning of written texts derived from different registers (journalism, medicine and religion)",
+              "periods": "",
+              "page": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Communicate effectively in different contexts",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Manage conversations with a good command of pronunciation",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U3-L17",
+              "title": "Interpret information from spontaneous and non-spontaneous conversations",
+              "markdown_content": "## a) Interpret information from spontaneous and non-spontaneous conversations",
+              "periods": "30",
+              "page": 22
+            },
+            {
+              "lesson_id": "ENG-FV-U3-L18",
+              "title": "Apply pronunciation techniques in spontaneous and non-spontaneous conversations",
+              "markdown_content": "## b) Apply pronunciation techniques in spontaneous and non-spontaneous conversations",
+              "periods": "",
+              "page": 22
+            },
+            {
+              "lesson_id": "ENG-FV-U3-L19",
+              "title": "Participate in spontaneous and non-spontaneous conversations with people using different dialects of the English language",
+              "markdown_content": "## c) Participate in spontaneous and non-spontaneous conversations with people using different dialects of the English language",
+              "periods": "",
+              "page": 23
+            }
+          ]
+        },
+        {
+          "topic_name": "Create a variety of complex oral and written texts for different communicative purposes",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U3-L20",
+              "title": "Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts",
+              "markdown_content": "## a) Compare a variety of complex oral texts with appropriate prosodic features and correct grammar in different contexts",
+              "periods": "30",
+              "page": 23
+            },
+            {
+              "lesson_id": "ENG-FV-U3-L21",
+              "title": "Compose a variety of complex texts (e.g., investigative reports, academic reports, contracts, wills and complex instructional manuals) with appropriate punctuation and style",
+              "markdown_content": "## b) Compose a variety of complex texts (e.g., investigative reports, academic reports, contracts, wills and complex instructional manuals) with appropriate punctuation and style",
+              "periods": "",
+              "page": 24
+            },
+            {
+              "lesson_id": "ENG-FV-U3-L22",
+              "title": "Use prosodic features, punctuation and correct register to create a variety of complex oral and written texts for different communicative purposes",
+              "markdown_content": "## c) Use prosodic features, punctuation and correct register to create a variety of complex oral and written texts for different communicative purposes",
+              "periods": "",
+              "page": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Provide advanced English language services to the community",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Apply principles of interpretation to provide complex and authentic interpretations",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U4-L23",
+              "title": "Differentiate intralingua, interlingua and sign language interpretations",
+              "markdown_content": "## a) Differentiate intralingua, interlingua and sign language interpretations",
+              "periods": "25",
+              "page": 25
+            },
+            {
+              "lesson_id": "ENG-FV-U4-L24",
+              "title": "Analyse theories and principles of interpretation",
+              "markdown_content": "## b) Analyse theories and principles of interpretation",
+              "periods": "",
+              "page": 25
+            },
+            {
+              "lesson_id": "ENG-FV-U4-L25",
+              "title": "Discuss the ethics of interpretation",
+              "markdown_content": "## c) Discuss the ethics of interpretation",
+              "periods": "",
+              "page": 25
+            },
+            {
+              "lesson_id": "ENG-FV-U4-L26",
+              "title": "Interpret conversations in a variety of settings",
+              "markdown_content": "## d) Interpret conversations in a variety of settings",
+              "periods": "",
+              "page": 26
+            }
+          ]
+        },
+        {
+          "topic_name": "Apply principles of translation to produce. complex authentic translation",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U4-L27",
+              "title": "Analyse theories and principles of translation",
+              "markdown_content": "## a) Analyse theories and principles of translation",
+              "periods": "20",
+              "page": 26
+            },
+            {
+              "lesson_id": "ENG-FV-U4-L28",
+              "title": "Discuss the ethics of translation as a career",
+              "markdown_content": "## b) Discuss the ethics of translation as a career",
+              "periods": "",
+              "page": 26
+            },
+            {
+              "lesson_id": "ENG-FV-U4-L29",
+              "title": "Translate a variety of general texts using Computer- Assisted Translation (CAT) tools",
+              "markdown_content": "## c) Translate a variety of general texts using Computer- Assisted Translation (CAT) tools",
+              "periods": "",
+              "page": 27
+            }
+          ]
+        },
+        {
+          "topic_name": "Apply principles of editing and proofreading a variety of texts",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U4-L30",
+              "title": "Analyse the theories and principles of editing and proofreading",
+              "markdown_content": "## a) Analyse the theories and principles of editing and proofreading",
+              "periods": "30",
+              "page": 27
+            },
+            {
+              "lesson_id": "ENG-FV-U4-L31",
+              "title": "Edit and proofread a variety of complex texts",
+              "markdown_content": "## b) Edit and proofread a variety of complex texts",
+              "periods": "",
+              "page": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "Appreciate and create literary works",
+      "form": "V",
+      "topics": [
+        {
+          "topic_name": "Appreciate the aesthetic and value of literature",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U5-L32",
+              "title": "Assess the contribution of elements of form (e.g., plot, language and style) in shaping meanings of any literary work",
+              "markdown_content": "## a) Assess the contribution of elements of form (e.g., plot, language and style) in shaping meanings of any literary work",
+              "periods": "32",
+              "page": 28
+            },
+            {
+              "lesson_id": "ENG-FV-U5-L33",
+              "title": "Relate the lesson from literary work to real life situations",
+              "markdown_content": "## b) Relate the lesson from literary work to real life situations",
+              "periods": "",
+              "page": 28
+            },
+            {
+              "lesson_id": "ENG-FV-U5-L34",
+              "title": "Assess the contribution of Tanzanian literature in moulding a civilized society",
+              "markdown_content": "## c) Assess the contribution of Tanzanian literature in moulding a civilized society",
+              "periods": "",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "topic_name": "Analyse the genres of literature and appreciate their conventions",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FV-U5-L35",
+              "title": "Explain the distinctive features of different genres of literature",
+              "markdown_content": "## a) Explain the distinctive features of different genres of literature",
+              "periods": "35",
+              "page": 29
+            },
+            {
+              "lesson_id": "ENG-FV-U5-L36",
+              "title": "Apply the theories of literature in critiquing literary works",
+              "markdown_content": "## b) Apply the theories of literature in critiquing literary works",
+              "periods": "",
+              "page": 29
+            },
+            {
+              "lesson_id": "ENG-FV-U5-L37",
+              "title": "Express a personal point of view after reading a literary work",
+              "markdown_content": "## c) Express a personal point of view after reading a literary work",
+              "periods": "",
+              "page": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 1,
+      "unit_title": "Demonstrate mastery of the advanced English language skills",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Automate the production of oral descriptions and conversations using standard pronunciation",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U1-L38",
+              "title": "Participate in oral conversations in advanced settings (e.g., airports, migration, diplomacy and diplomatic protocols etc)",
+              "markdown_content": "## a) Participate in oral conversations in advanced settings (e.g., airports, migration, diplomacy and diplomatic protocols etc)",
+              "periods": "30",
+              "page": 31
+            },
+            {
+              "lesson_id": "ENG-FVI-U1-L39",
+              "title": "Narrate documentaries of events, and situations with a standard pronunciation in different contexts (e.g., history, religion and, medicine)",
+              "markdown_content": "## b) Narrate documentaries of events, and situations with a standard pronunciation in different contexts (e.g., history, religion and, medicine)",
+              "periods": "",
+              "page": 31
+            },
+            {
+              "lesson_id": "ENG-FVI-U1-L40",
+              "title": "Participate in dialogues, debates and meetings on topical and cross- cutting issues (e.g. debate, meeting, and presentations) with a standard pronunciation",
+              "markdown_content": "## c) Participate in dialogues, debates and meetings on topical and cross- cutting issues (e.g. debate, meeting, and presentations) with a standard pronunciation",
+              "periods": "",
+              "page": 32
+            }
+          ]
+        },
+        {
+          "topic_name": "Use correct grammar and vocabulary in oral and written language tasks",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U1-L41",
+              "title": "Use advanced vocabulary and grammar (e.g., adverbs, prepositions and conjunctions) to describe field specific past, present and future events",
+              "markdown_content": "## a) Use advanced vocabulary and grammar (e.g., adverbs, prepositions and conjunctions) to describe field specific past, present and future events",
+              "periods": "",
+              "page": 32
+            },
+            {
+              "lesson_id": "ENG-FVI-U1-L42",
+              "title": "Compose field specific texts using advanced vocabulary and grammar (e.g., therein, thereof, besides, in addition, although, and however) in different contexts",
+              "markdown_content": "## b) Compose field specific texts using advanced vocabulary and grammar (e.g., therein, thereof, besides, in addition, although, and however) in different contexts",
+              "periods": "",
+              "page": 33
+            },
+            {
+              "lesson_id": "ENG-FVI-U1-L43",
+              "title": "Evaluate the appropriateness of grammar and vocabulary used in speech and written texts in field specific contexts",
+              "markdown_content": "## c) Evaluate the appropriateness of grammar and vocabulary used in speech and written texts in field specific contexts",
+              "periods": "",
+              "page": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Comprehend oral and written information",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Demonstrate advanced oral and written proficiency in a variety of communicative contexts",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U2-L44",
+              "title": "Participate in complex conversations (e.g., death, violence, discrimination, accidents and poor results)",
+              "markdown_content": "## a) Participate in complex conversations (e.g., death, violence, discrimination, accidents and poor results)",
+              "periods": "25",
+              "page": 34
+            },
+            {
+              "lesson_id": "ENG-FVI-U2-L45",
+              "title": "Respond to conversations using rhetorical devices",
+              "markdown_content": "## b) Respond to conversations using rhetorical devices",
+              "periods": "",
+              "page": 34
+            },
+            {
+              "lesson_id": "ENG-FVI-U2-L46",
+              "title": "Employ paralinguistic features to communicate information in a variety of settings",
+              "markdown_content": "## c) Employ paralinguistic features to communicate information in a variety of settings",
+              "periods": "",
+              "page": 35
+            }
+          ]
+        },
+        {
+          "topic_name": "Read texts critically to recognise potential implications beyond the author’s explicit meaning",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U2-L47",
+              "title": "Read a variety of texts and identifying the contextual clues (e.g., general context, co-text, punctuations) for understanding implied meanings",
+              "markdown_content": "## a) Read a variety of texts and identifying the contextual clues (e.g., general context, co-text, punctuations) for understanding implied meanings",
+              "periods": "25",
+              "page": 35
+            },
+            {
+              "lesson_id": "ENG-FVI-U2-L48",
+              "title": "Read a variety of texts (e.g., letters, articles and newspapers) to obtain implied meanings",
+              "markdown_content": "## b) Read a variety of texts (e.g., letters, articles and newspapers) to obtain implied meanings",
+              "periods": "",
+              "page": 36
+            },
+            {
+              "lesson_id": "ENG-FVI-U2-L49",
+              "title": "Read a variety of texts and comment on the implied meanings from the author’s point of view",
+              "markdown_content": "## c) Read a variety of texts and comment on the implied meanings from the author’s point of view",
+              "periods": "",
+              "page": 36
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Communicate effectively in different contexts",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Develop advanced socio- cultural analysis of functional texts",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U3-L50",
+              "title": "Assess the appropriateness of the language and style used in functional texts",
+              "markdown_content": "## a) Assess the appropriateness of the language and style used in functional texts",
+              "periods": "35",
+              "page": 36
+            },
+            {
+              "lesson_id": "ENG-FVI-U3-L51",
+              "title": "Differentiate the structure and style of different functional texts",
+              "markdown_content": "## b) Differentiate the structure and style of different functional texts",
+              "periods": "",
+              "page": 37
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Provide advanced English language services to the community",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Apply principles of interpretation to provide complex and authentic interpretations",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U4-L52",
+              "title": "Interpret conversations in field specific settings (e.g., legal, medicine, religion, science and technology)",
+              "markdown_content": "## a) Interpret conversations in field specific settings (e.g., legal, medicine, religion, science and technology)",
+              "periods": "35",
+              "page": 37
+            },
+            {
+              "lesson_id": "ENG-FVI-U4-L53",
+              "title": "Solve the challenges that may arise when interpreting field specific conversations",
+              "markdown_content": "## b) Solve the challenges that may arise when interpreting field specific conversations",
+              "periods": "",
+              "page": 37
+            }
+          ]
+        },
+        {
+          "topic_name": "Apply principles of translation to produce complex authentic translation",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U4-L54",
+              "title": "Translate a variety of complex technical texts using Computer – Assisted Translation (CAT) tools",
+              "markdown_content": "## a) Translate a variety of complex technical texts using Computer – Assisted Translation (CAT) tools",
+              "periods": "35",
+              "page": 38
+            },
+            {
+              "lesson_id": "ENG-FVI-U4-L55",
+              "title": "Address challenges that may arise during translation of technical texts",
+              "markdown_content": "## b) Address challenges that may arise during translation of technical texts",
+              "periods": "",
+              "page": 38
+            }
+          ]
+        },
+        {
+          "topic_name": "Apply principles of editing and proofreading a variety of texts",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U4-L56",
+              "title": "Edit and proofread complex field specific texts",
+              "markdown_content": "## a) Edit and proofread complex field specific texts",
+              "periods": "30",
+              "page": 38
+            },
+            {
+              "lesson_id": "ENG-FVI-U4-L57",
+              "title": "Evaluate edited field specific texts with an editorial perspective",
+              "markdown_content": "## b) Evaluate edited field specific texts with an editorial perspective",
+              "periods": "",
+              "page": 39
+            }
+          ]
+        },
+        {
+          "topic_name": "Manage complex translation and edit projects using Computer- Assisted tools",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U4-L58",
+              "title": "Explain the qualities of a translation project manager",
+              "markdown_content": "## a) Explain the qualities of a translation project manager",
+              "periods": "30",
+              "page": 39
+            },
+            {
+              "lesson_id": "ENG-FVI-U4-L59",
+              "title": "Use Computer- Assisted Translation (CAT) tools to manage translation projects (e.g., writing quotations, invoices and contracts)",
+              "markdown_content": "## b) Use Computer- Assisted Translation (CAT) tools to manage translation projects (e.g., writing quotations, invoices and contracts)",
+              "periods": "",
+              "page": 39
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "Appreciate and createliterary works",
+      "form": "VI",
+      "topics": [
+        {
+          "topic_name": "Evaluate the context in which literary texts are written, read and understood",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U5-L60",
+              "title": "Analyse the settings of literary texts to show their contributions to the content",
+              "markdown_content": "## a) Analyse the settings of literary texts to show their contributions to the content",
+              "periods": "35",
+              "page": 40
+            },
+            {
+              "lesson_id": "ENG-FVI-U5-L61",
+              "title": "Relate the content of literary works to real life situations",
+              "markdown_content": "## b) Relate the content of literary works to real life situations",
+              "periods": "",
+              "page": 40
+            },
+            {
+              "lesson_id": "ENG-FVI-U5-L62",
+              "title": "Infer moral lessons from a variety of literary works",
+              "markdown_content": "## c) Infer moral lessons from a variety of literary works",
+              "periods": "",
+              "page": 40
+            }
+          ]
+        },
+        {
+          "topic_name": "Create complex literary works",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "ENG-FVI-U5-L63",
+              "title": "Formulate an idea for composing literary work of literature",
+              "markdown_content": "## a) Formulate an idea for composing literary work of literature",
+              "periods": "35",
+              "page": 41
+            },
+            {
+              "lesson_id": "ENG-FVI-U5-L64",
+              "title": "Develop plans of writing literary works (e.g., characters, themes, setting and plot)",
+              "markdown_content": "## b) Develop plans of writing literary works (e.g., characters, themes, setting and plot)",
+              "periods": "",
+              "page": 41
+            },
+            {
+              "lesson_id": "ENG-FVI-U5-L65",
+              "title": "Apply literary skills in developing literary works",
+              "markdown_content": "## c) Apply literary skills in developing literary works",
+              "periods": "",
+              "page": 41
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

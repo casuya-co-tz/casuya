@@ -1,0 +1,121 @@
+{
+  "filename": "english_language_form5_topical_7_2025.json",
+  "subject": "English Language",
+  "subject_slug": "english_language",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2025",
+  "time": "1:30 Hours",
+  "title": "English Language - Topical Test 7 (FORM5 2025): Create a variety of complex oral an",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 44,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Translate a variety of general texts using Computer- Assisted Translation (CAT) tools",
+          "text": "Discuss the factors influencing 'Translate a variety of general texts using Computer- Assisted Translation (CAT) tools'. - with diagram",
+          "competence": "Translate a variety of general texts using Computer- Assiste"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Translate a variety of general texts using Computer- Assisted Translation (CAT) tools",
+          "text": "Discuss the challenges facing 'Translate a variety of general texts using Computer- Assisted Translation (CAT) tools' in Tanzania and propose solutions.",
+          "competence": "Translate a variety of general texts using Computer- Assiste"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Create a variety of complex oral and written texts for different communicative purposes",
+          "text": "Assess the impact of 'Create a variety of complex oral and written texts for different communicative purposes' on society. - locally",
+          "competence": "Create a variety of complex oral and written texts for diffe"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Translate a variety of general texts using Computer- Assisted Translation (CAT) tools",
+          "text": "Discuss the challenges facing 'Translate a variety of general texts using Computer- Assisted Translation (CAT) tools' in Tanzania and propose solutions.",
+          "competence": "Translate a variety of general texts using Computer- Assiste"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Create a variety of complex oral and written texts for different communicative purposes",
+          "text": "How does 'Create a variety of complex oral and written texts for different communicative purposes' relate to sustainable development?",
+          "competence": "Create a variety of complex oral and written texts for diffe"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Translate a variety of general texts using Computer- Assisted Translation (CAT) tools",
+          "text": "Define 'Translate a variety of general texts using Computer- Assisted Translation (CAT) tools' and discuss its importance in everyday life.",
+          "competence": "Translate a variety of general texts using Computer- Assiste"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Create a variety of complex oral and written texts for different communicative purposes",
+          "text": "Define 'Create a variety of complex oral and written texts for different communicative purposes' and discuss its importance in everyday life. - with example",
+          "competence": "Create a variety of complex oral and written texts for diffe"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Create a variety of complex oral and written texts for different communicative purposes",
+          "text": "Describe the process of 'Create a variety of complex oral and written texts for different communicative purposes' step by step. - with diagram",
+          "competence": "Create a variety of complex oral and written texts for diffe"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Create a variety of complex oral and written texts for different communicative purposes",
+          "text": "Assess the impact of 'Create a variety of complex oral and written texts for different communicative purposes' on society. - with example",
+          "competence": "Create a variety of complex oral and written texts for diffe"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Translate a variety of general texts using Computer- Assisted Translation (CAT) tools",
+          "text": "Discuss the challenges facing 'Translate a variety of general texts using Computer- Assisted Translation (CAT) tools' in Tanzania and propose solutions.",
+          "competence": "Translate a variety of general texts using Computer- Assiste"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Translate a variety of general texts using Computer- Assisted Translation (CAT) tools",
+    "Create a variety of complex oral and written texts for different communicative purposes"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

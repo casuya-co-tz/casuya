@@ -1,0 +1,121 @@
+{
+  "filename": "business_studies_form1_topical_3_2026.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2026",
+  "time": "1:30 Hours",
+  "title": "Business Studies - Topical Test 3 (FORM1 2026): Describe sources of capital for sma",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 38,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "Discuss the challenges facing 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+          "text": "Examine the advantages and disadvantages of 'Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend'. - with diagram",
+          "competence": "Describe sources of capital for small businesses (loans, sav"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "Describe the main features of 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract'. - locally",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "What are the characteristics of 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract'?",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+          "text": "Evaluate the role of 'Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend' in national development. - with diagram",
+          "competence": "Describe sources of capital for small businesses (loans, sav"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+          "text": "Compare and contrast 'Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend' with related concepts.",
+          "competence": "Describe sources of capital for small businesses (loans, sav"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "Analyse the causes and effects of 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract'. - with example",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+          "text": "Discuss the challenges facing 'Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend' in Tanzania and propose solutions.",
+          "competence": "Describe sources of capital for small businesses (loans, sav"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend",
+          "text": "Explain the concept of 'Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend' with examples relevant to Tanzania.",
+          "competence": "Describe sources of capital for small businesses (loans, sav"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+          "text": "Discuss the challenges facing 'Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract' in Tanzania and propose solutions. - locally",
+          "competence": "Explore the basic aspects of law of contract (nature of cont"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explore the basic aspects of law of contract (nature of contractual obligations, elements of a contract",
+    "Describe sources of capital for small businesses (loans, savings, deferred payments, funds from family and friend"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

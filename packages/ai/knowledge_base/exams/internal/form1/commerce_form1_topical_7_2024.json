@@ -1,0 +1,121 @@
+{
+  "filename": "commerce_form1_topical_7_2024.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2024",
+  "time": "1:30 Hours",
+  "title": "Commerce - Topical Test 7 (FORM1 2024): Stock Control",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 50,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain marketing mix",
+          "text": "Examine the advantages and disadvantages of 'Explain marketing mix'. - with example",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain marketing mix",
+          "text": "Compare and contrast 'Explain marketing mix' with related concepts. - with example",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Stock Control",
+          "text": "Outline the procedures involved in 'Stock Control'. - with diagram",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Stock Control",
+          "text": "Examine the advantages and disadvantages of 'Stock Control'. - with example",
+          "competence": "Stock Control"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain marketing mix",
+          "text": "Analyse the causes and effects of 'Explain marketing mix'.",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Stock Control",
+          "text": "Evaluate the role of 'Stock Control' in national development. - with example",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Explain marketing mix",
+          "text": "Describe the main features of 'Explain marketing mix'. - with diagram",
+          "competence": "Explain marketing mix"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Stock Control",
+          "text": "Compare and contrast 'Stock Control' with related concepts. - with example",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Stock Control",
+          "text": "Describe the main features of 'Stock Control'.",
+          "competence": "Stock Control"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Explain marketing mix",
+          "text": "Outline the procedures involved in 'Explain marketing mix'. - with example",
+          "competence": "Explain marketing mix"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain marketing mix",
+    "Stock Control"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

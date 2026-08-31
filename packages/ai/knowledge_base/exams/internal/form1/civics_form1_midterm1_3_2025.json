@@ -1,0 +1,209 @@
+{
+  "filename": "civics_form1_midterm1_3_2025.json",
+  "subject": "Civics",
+  "subject_slug": "civics",
+  "level": "internal",
+  "form": "form1",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Civics - Midterm 1 Exam 3 (FORM1 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 77,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain democracy",
+          "text": "Compare and contrast 'Explain democracy' with related concepts.",
+          "competence": "Explain democracy"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Citizenship",
+          "text": "Discuss the challenges facing 'Citizenship' in Tanzania and propose solutions. - with example",
+          "competence": "Citizenship"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain national symbols",
+          "text": "With examples, illustrate how 'Explain national symbols' is applied in the community.",
+          "competence": "Explain national symbols"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain culture and tradition",
+          "text": "Discuss the challenges facing 'Explain culture and tradition' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain culture and tradition"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Elections",
+          "text": "Discuss the challenges facing 'Elections' in Tanzania and propose solutions.",
+          "competence": "Elections"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "National Unity",
+          "text": "With examples, illustrate how 'National Unity' is applied in the community.",
+          "competence": "National Unity"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain globalization",
+          "text": "Define 'Explain globalization' and discuss its importance in everyday life.",
+          "competence": "Explain globalization"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Local Government",
+          "text": "With examples, illustrate how 'Local Government' is applied in the community. - with diagram",
+          "competence": "Local Government"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain national unity",
+          "text": "With examples, illustrate how 'Explain national unity' is applied in the community. - with diagram",
+          "competence": "Explain national unity"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Globalization",
+          "text": "Discuss the challenges facing 'Globalization' in Tanzania and propose solutions. - with diagram",
+          "competence": "Globalization"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain concept of nation",
+          "text": "Outline the procedures involved in 'Explain concept of nation'. - with diagram",
+          "competence": "Explain concept of nation"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain constitution",
+          "text": "Outline the procedures involved in 'Explain constitution'.",
+          "competence": "Explain constitution"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Explain concept of human rights",
+          "text": "Compare and contrast 'Explain concept of human rights' with related concepts. - with diagram",
+          "competence": "Explain concept of human rights"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Interpersonal Relationships",
+          "text": "With examples, illustrate how 'Interpersonal Relationships' is applied in the community.",
+          "competence": "Interpersonal Relationships"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain life skills",
+          "text": "Analyse the causes and effects of 'Explain life skills'.",
+          "competence": "Explain life skills"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Central Government",
+          "text": "Outline the procedures involved in 'Central Government'. - with diagram",
+          "competence": "Central Government"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain citizenship",
+          "text": "Outline the procedures involved in 'Explain citizenship'. - with diagram",
+          "competence": "Explain citizenship"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "National Symbols",
+          "text": "Compare and contrast 'National Symbols' with related concepts. - with example",
+          "competence": "National Symbols"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain gender",
+          "text": "Outline the procedures involved in 'Explain gender'. - with diagram",
+          "competence": "Explain gender"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain central government",
+          "text": "Define 'Explain central government' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain central government"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain democracy",
+    "Citizenship",
+    "Explain national symbols",
+    "Explain culture and tradition",
+    "Elections",
+    "National Unity",
+    "Explain globalization",
+    "Local Government",
+    "Explain national unity",
+    "Globalization"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

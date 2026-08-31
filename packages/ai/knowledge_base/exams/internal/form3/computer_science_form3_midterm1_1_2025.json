@@ -1,0 +1,209 @@
+{
+  "filename": "computer_science_form3_midterm1_1_2025.json",
+  "subject": "Computer Science",
+  "subject_slug": "computer_science",
+  "level": "internal",
+  "form": "form3",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Computer Science - Midterm 1 Exam 1 (FORM3 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 84,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain algorithm and flowchart",
+          "text": "Explain the concept of 'Explain algorithm and flowchart' with examples relevant to Tanzania. - with diagram",
+          "competence": "Explain algorithm and flowchart"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Computer Networks",
+          "text": "Evaluate the role of 'Computer Networks' in national development. - with diagram",
+          "competence": "Computer Networks"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain data processing",
+          "text": "Define 'Explain data processing' and discuss its importance in everyday life. - with diagram",
+          "competence": "Explain data processing"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain computer hardware",
+          "text": "Examine the advantages and disadvantages of 'Explain computer hardware'. - with diagram",
+          "competence": "Explain computer hardware"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Computer Hardware",
+          "text": "Outline the procedures involved in 'Computer Hardware'. - with example",
+          "competence": "Computer Hardware"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain document creation",
+          "text": "Explain the concept of 'Explain document creation' with examples relevant to Tanzania.",
+          "competence": "Explain document creation"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Document Creation",
+          "text": "Outline the procedures involved in 'Document Creation'. - with example",
+          "competence": "Document Creation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain spreadsheet concepts",
+          "text": "Describe the main features of 'Explain spreadsheet concepts'. - with diagram",
+          "competence": "Explain spreadsheet concepts"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Explain word processing concepts",
+          "text": "Evaluate the role of 'Explain word processing concepts' in national development. - with example",
+          "competence": "Explain word processing concepts"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Spreadsheet Concepts",
+          "text": "Examine the advantages and disadvantages of 'Spreadsheet Concepts'.",
+          "competence": "Spreadsheet Concepts"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Introduction to Programming",
+          "text": "Examine the advantages and disadvantages of 'Introduction to Programming'. - with diagram",
+          "competence": "Introduction to Programming"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Computer Basics",
+          "text": "Explain the concept of 'Computer Basics' with examples relevant to Tanzania.",
+          "competence": "Computer Basics"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain introduction to programming",
+          "text": "Outline the procedures involved in 'Explain introduction to programming'.",
+          "competence": "Explain introduction to programming"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Computer Software",
+          "text": "Examine the advantages and disadvantages of 'Computer Software'. - with example",
+          "competence": "Computer Software"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Data Processing",
+          "text": "Describe the main features of 'Data Processing'.",
+          "competence": "Data Processing"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explain computer basics",
+          "text": "Describe the main features of 'Explain computer basics'. - with diagram",
+          "competence": "Explain computer basics"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain database concepts",
+          "text": "Outline the procedures involved in 'Explain database concepts'. - with diagram",
+          "competence": "Explain database concepts"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain computer software",
+          "text": "Examine the advantages and disadvantages of 'Explain computer software'. - with diagram",
+          "competence": "Explain computer software"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Algorithm and Flowchart",
+          "text": "Define 'Algorithm and Flowchart' and discuss its importance in everyday life. - with diagram",
+          "competence": "Algorithm and Flowchart"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain computer security",
+          "text": "With examples, illustrate how 'Explain computer security' is applied in the community. - with example",
+          "competence": "Explain computer security"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain algorithm and flowchart",
+    "Computer Networks",
+    "Explain data processing",
+    "Explain computer hardware",
+    "Computer Hardware",
+    "Explain document creation",
+    "Document Creation",
+    "Explain spreadsheet concepts",
+    "Explain word processing concepts",
+    "Spreadsheet Concepts"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

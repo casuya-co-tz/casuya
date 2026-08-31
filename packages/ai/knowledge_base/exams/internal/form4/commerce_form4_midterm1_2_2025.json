@@ -1,0 +1,209 @@
+{
+  "filename": "commerce_form4_midterm1_2_2025.json",
+  "subject": "Commerce",
+  "subject_slug": "commerce",
+  "level": "internal",
+  "form": "form4",
+  "exam_type": "midterm1",
+  "term": "Midterm 1",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Commerce - Midterm 1 Exam 2 (FORM4 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 88,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain sources of business finance",
+          "text": "Describe the main features of 'Explain sources of business finance'. - with example",
+          "competence": "Explain sources of business finance"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explain insurance",
+          "text": "Compare and contrast 'Explain insurance' with related concepts. - with example",
+          "competence": "Explain insurance"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Cooperative",
+          "text": "Compare and contrast 'Cooperative' with related concepts. - with example",
+          "competence": "Cooperative"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Warehousing",
+          "text": "Analyse the causes and effects of 'Warehousing'. - with example",
+          "competence": "Warehousing"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain partnership",
+          "text": "Discuss the challenges facing 'Explain partnership' in Tanzania and propose solutions. - with example",
+          "competence": "Explain partnership"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explain transport",
+          "text": "Define 'Explain transport' and discuss its importance in everyday life. - with example",
+          "competence": "Explain transport"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explain taxation",
+          "text": "Describe the main features of 'Explain taxation'.",
+          "competence": "Explain taxation"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Transport",
+          "text": "Evaluate the role of 'Transport' in national development. - with diagram",
+          "competence": "Transport"
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Documentation",
+          "text": "Analyse the causes and effects of 'Documentation'. - with example",
+          "competence": "Documentation"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain aids to trade",
+          "text": "Analyse the causes and effects of 'Explain aids to trade'.",
+          "competence": "Explain aids to trade"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain production",
+          "text": "Evaluate the role of 'Explain production' in national development. - with example",
+          "competence": "Explain production"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 10,
+          "topic": "Companies",
+          "text": "Analyse the causes and effects of 'Companies'.",
+          "competence": "Companies"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explain marketing mix",
+          "text": "Evaluate the role of 'Explain marketing mix' in national development. - with example",
+          "competence": "Explain marketing mix"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 3,
+          "topic": "Explain sole proprietorship",
+          "text": "With examples, illustrate how 'Explain sole proprietorship' is applied in the community. - with diagram",
+          "competence": "Explain sole proprietorship"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Advertisement",
+          "text": "Compare and contrast 'Advertisement' with related concepts.",
+          "competence": "Advertisement"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Marketing Mix",
+          "text": "Describe the main features of 'Marketing Mix'.",
+          "competence": "Marketing Mix"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Explain companies",
+          "text": "Describe the main features of 'Explain companies'.",
+          "competence": "Explain companies"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain documentation",
+          "text": "With examples, illustrate how 'Explain documentation' is applied in the community.",
+          "competence": "Explain documentation"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Explain warehousing",
+          "text": "Examine the advantages and disadvantages of 'Explain warehousing'. - with diagram",
+          "competence": "Explain warehousing"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Insurance",
+          "text": "Define 'Insurance' and discuss its importance in everyday life. - with example",
+          "competence": "Insurance"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain sources of business finance",
+    "Explain insurance",
+    "Cooperative",
+    "Warehousing",
+    "Explain partnership",
+    "Explain transport",
+    "Explain taxation",
+    "Transport",
+    "Documentation",
+    "Explain aids to trade"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

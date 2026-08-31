@@ -1,0 +1,121 @@
+{
+  "filename": "physics_form5_topical_8_2023.json",
+  "subject": "Physics",
+  "subject_slug": "physics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "topical",
+  "term": "Topical",
+  "year": "2023",
+  "time": "1:30 Hours",
+  "title": "Physics - Topical Test 8 (FORM5 2023): trace the passage of light through ",
+  "total_questions": 10,
+  "question_count": 10,
+  "total_marks": 47,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Thermal Expansion of Solids",
+          "text": "Evaluate the role of 'Thermal Expansion of Solids' in national development.",
+          "competence": "Thermal Expansion of Solids"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 2,
+          "topic": "trace the passage of light through a rectangular prism",
+          "text": "Discuss the challenges facing 'trace the passage of light through a rectangular prism' in Tanzania and propose solutions. - locally",
+          "competence": "trace the passage of light through a rectangular prism"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Thermal Expansion of Solids",
+          "text": "Analyse the causes and effects of 'Thermal Expansion of Solids'.",
+          "competence": "Thermal Expansion of Solids"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Thermal Expansion of Solids",
+          "text": "How does 'Thermal Expansion of Solids' relate to sustainable development?",
+          "competence": "Thermal Expansion of Solids"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "5",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Thermal Expansion of Solids",
+          "text": "Explain the relationship between 'Thermal Expansion of Solids' and its environment.",
+          "competence": "Thermal Expansion of Solids"
+        },
+        {
+          "number": "6",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Thermal Expansion of Solids",
+          "text": "Outline the procedures involved in 'Thermal Expansion of Solids'. - locally",
+          "competence": "Thermal Expansion of Solids"
+        },
+        {
+          "number": "7",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Thermal Expansion of Solids",
+          "text": "Compare and contrast 'Thermal Expansion of Solids' with related concepts.",
+          "competence": "Thermal Expansion of Solids"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Thermal Expansion of Solids",
+          "text": "Assess the impact of 'Thermal Expansion of Solids' on society.",
+          "competence": "Thermal Expansion of Solids"
+        },
+        {
+          "number": "9",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Thermal Expansion of Solids",
+          "text": "Compare and contrast 'Thermal Expansion of Solids' with related concepts.",
+          "competence": "Thermal Expansion of Solids"
+        },
+        {
+          "number": "10",
+          "type": "essay",
+          "marks": 4,
+          "topic": "trace the passage of light through a rectangular prism",
+          "text": "Propose measures to improve 'trace the passage of light through a rectangular prism' in schools.",
+          "competence": "trace the passage of light through a rectangular prism"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Thermal Expansion of Solids",
+    "trace the passage of light through a rectangular prism"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

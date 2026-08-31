@@ -1,0 +1,209 @@
+{
+  "filename": "mathematics_form5_midterm2_4_2025.json",
+  "subject": "Mathematics",
+  "subject_slug": "mathematics",
+  "level": "internal",
+  "form": "form5",
+  "exam_type": "midterm2",
+  "term": "Midterm 2",
+  "year": "2025",
+  "time": "2:00 Hours",
+  "title": "Mathematics - Midterm 2 Exam 4 (FORM5 2025)",
+  "total_questions": 20,
+  "question_count": 20,
+  "total_marks": 90,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Explain the concept of rational, irrational, and real numbers",
+          "text": "What are the characteristics of 'Explain the concept of rational, irrational, and real numbers'? - locally",
+          "competence": "Explain the concept of rational, irrational, and real number"
+        },
+        {
+          "number": "2",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Draw graphs of relations and functions",
+          "text": "Describe the main features of 'Draw graphs of relations and functions'.",
+          "competence": "Draw graphs of relations and functions"
+        },
+        {
+          "number": "3",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Use geometry, approximations, relations and functions in various contexts",
+          "text": "Discuss the challenges facing 'Use geometry, approximations, relations and functions in various contexts' in Tanzania and propose solutions. - with diagram",
+          "competence": "Use geometry, approximations, relations and functions in var"
+        },
+        {
+          "number": "4",
+          "type": "mcq",
+          "marks": 2,
+          "topic": "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+          "text": "Discuss the factors influencing 'Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc'. - with diagram",
+          "competence": "Determine the area enclosed by a curve, volume of a solid of"
+        },
+        {
+          "number": "5",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "two sources and three destinations)",
+          "text": "Define 'two sources and three destinations)' and discuss its importance in everyday life. - with example",
+          "competence": "two sources and three destinations)"
+        },
+        {
+          "number": "6",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+          "text": "What are the characteristics of 'Explore advanced tenets of set theory (operations, expressions, and cardinality)'? - locally",
+          "competence": "Explore advanced tenets of set theory (operations, expressio"
+        },
+        {
+          "number": "7",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+          "text": "Propose measures to improve 'Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)' in schools. - with example",
+          "competence": "Explore advanced tenets of trigonometry (ratios, small angle"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "8",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+          "text": "Examine the advantages and disadvantages of 'Explore basic tenets of integration (by parts, substitution method, and partial fractions)'. - with diagram",
+          "competence": "Explore basic tenets of integration (by parts, substitution "
+        },
+        {
+          "number": "9",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+          "text": "Describe the main features of 'Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors'.",
+          "competence": "Use vectors to solve problems related to displacement, veloc"
+        },
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 4,
+          "topic": "Demonstrate an advanced understanding of algebra",
+          "text": "Explain the relationship between 'Demonstrate an advanced understanding of algebra' and its environment. - with diagram",
+          "competence": "Demonstrate an advanced understanding of algebra"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
+          "text": "Explain the relationship between 'Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation' and its environment.",
+          "competence": "Explore the basic tenets of matrices ( 2×2 matrices: operati"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use numerical skills in different contexts",
+          "text": "Analyse the causes and effects of 'Use numerical skills in different contexts'. - with example",
+          "competence": "Use numerical skills in different contexts"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
+          "text": "Discuss the challenges facing 'Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic' in Tanzania and propose solutions. - with diagram",
+          "competence": "Explain the basic concepts of Mathematics (Meaning of mathem"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Describe the concepts of relations and functions (linear and quadrati",
+          "text": "What are the characteristics of 'Describe the concepts of relations and functions (linear and quadrati'? - locally",
+          "competence": "Describe the concepts of relations and functions (linear and"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "15",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Explain the concept of ratios and proportions",
+          "text": "Describe the main features of 'Explain the concept of ratios and proportions'. - with example",
+          "competence": "Explain the concept of ratios and proportions"
+        },
+        {
+          "number": "16",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)",
+          "text": "Describe the main features of 'Explore advanced tenets of coordinate geometry (parabola, ellipse, hyperbola, and polar coordinates)'. - locally",
+          "competence": "Explore advanced tenets of coordinate geometry (parabola, el"
+        },
+        {
+          "number": "17",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Use statistics in problem solving",
+          "text": "Assess the impact of 'Use statistics in problem solving' on society. - with diagram",
+          "competence": "Use statistics in problem solving"
+        },
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul",
+          "text": "Assess the impact of 'Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul' on society.",
+          "competence": "Apply matrices to solve simultaneous equations of two unknow"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
+          "text": "Examine the advantages and disadvantages of 'Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde'.",
+          "competence": "Identify and use laws of exponents involving positive, negat"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)",
+          "text": "Assess the impact of 'Explore advanced tenets of vectors (ratio theorems, dot product, cross product, vector differentiation, and vector integration)' on society.",
+          "competence": "Explore advanced tenets of vectors (ratio theorems, dot prod"
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Explain the concept of rational, irrational, and real numbers",
+    "Draw graphs of relations and functions",
+    "Use geometry, approximations, relations and functions in various contexts",
+    "Determine the area enclosed by a curve, volume of a solid of revolution, and length of an arc",
+    "two sources and three destinations)",
+    "Explore advanced tenets of set theory (operations, expressions, and cardinality)",
+    "Explore advanced tenets of trigonometry (ratios, small angles, compound angles and factor formulae, trigonometric functions, trigonometric equations, inverse trigonometric functions, graphs of inverse trigonometric functions, domain, and range)",
+    "Explore basic tenets of integration (by parts, substitution method, and partial fractions)",
+    "Use vectors to solve problems related to displacement, velocity, and acceleration of a particle, work done by forces, and projection of vectors",
+    "Demonstrate an advanced understanding of algebra"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}

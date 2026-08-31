@@ -1,0 +1,249 @@
+{
+  "filename": "business_studies_form2_terminal_1_2025.json",
+  "subject": "Business Studies",
+  "subject_slug": "business_studies",
+  "level": "internal",
+  "form": "form2",
+  "exam_type": "terminal",
+  "term": "Terminal",
+  "year": "2025",
+  "time": "2:30 Hours",
+  "title": "Business Studies - Terminal Exam 1 (FORM2 2025)",
+  "total_questions": 25,
+  "question_count": 25,
+  "total_marks": 115,
+  "sections": [
+    {
+      "name": "Section A",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "1",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+          "text": "Discuss the factors influencing 'Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)'. - locally",
+          "competence": "Describe some advanced aspects of the business units (size c"
+        },
+        {
+          "number": "2",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Demonstrate an understanding of the policies and laws governing medium scale businesses",
+          "text": "Explain the concept of 'Demonstrate an understanding of the policies and laws governing medium scale businesses' with examples relevant to Tanzania. - with diagram",
+          "competence": "Demonstrate an understanding of the policies and laws govern"
+        },
+        {
+          "number": "3",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the basic aspects of management for small businesses (meaning, financial and other records keeping, calculation of profit and loss, budgeting and control and administratio",
+          "text": "Explain the concept of 'Describe the basic aspects of management for small businesses (meaning, financial and other records keeping, calculation of profit and loss, budgeting and control and administratio' with examples relevant to Tanzania.",
+          "competence": "Describe the basic aspects of management for small businesse"
+        },
+        {
+          "number": "4",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio",
+          "text": "With examples, illustrate how 'Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio' is applied in the community. - with diagram",
+          "competence": "Describe business partnerships (meaning, types, features, ad"
+        },
+        {
+          "number": "5",
+          "type": "essay",
+          "marks": 1,
+          "topic": "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+          "text": "With examples, illustrate how 'Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function' is applied in the community.",
+          "competence": "Describe the basic aspects of warehousing and inventorying f"
+        },
+        {
+          "number": "6",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe procedures for registering medium businesses in Tanzania (types of licences, importance of registration and sanctions for non- compliance)",
+          "text": "Examine the advantages and disadvantages of 'Describe procedures for registering medium businesses in Tanzania (types of licences, importance of registration and sanctions for non- compliance)'.",
+          "competence": "Describe procedures for registering medium businesses in Tan"
+        },
+        {
+          "number": "7",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Describe taxes and levies associated with small businesses in Tanzania (meaning, types, importance, and sanctions for non- complianc",
+          "text": "Define 'Describe taxes and levies associated with small businesses in Tanzania (meaning, types, importance, and sanctions for non- complianc' and discuss its importance in everyday life.",
+          "competence": "Describe taxes and levies associated with small businesses i"
+        },
+        {
+          "number": "8",
+          "type": "essay",
+          "marks": 2,
+          "topic": "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+          "text": "Define 'Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi' and discuss its importance in everyday life.",
+          "competence": "Describe the basic aspects of e-marketing for small business"
+        },
+        {
+          "number": "9",
+          "type": "mcq",
+          "marks": 1,
+          "topic": "Explore the basic aspects of the policy and regulatory environment governing medium businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-laws)",
+          "text": "Discuss the factors influencing 'Explore the basic aspects of the policy and regulatory environment governing medium businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-laws)'.",
+          "competence": "Explore the basic aspects of the policy and regulatory envir"
+        }
+      ]
+    },
+    {
+      "name": "Section B",
+      "instructions": "Answer all questions.",
+      "questions": [
+        {
+          "number": "10",
+          "type": "structured",
+          "marks": 6,
+          "topic": "Identify business opportunities available in the local environment",
+          "text": "Outline the procedures involved in 'Identify business opportunities available in the local environment'. - with example",
+          "competence": "Identify business opportunities available in the local envir"
+        },
+        {
+          "number": "11",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Demonstrate an understanding of the policies and laws governing medium scale business",
+          "text": "Evaluate the role of 'Demonstrate an understanding of the policies and laws governing medium scale business' in national development.",
+          "competence": "Demonstrate an understanding of the policies and laws govern"
+        },
+        {
+          "number": "12",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio",
+          "text": "Propose measures to improve 'Describe the basic aspects of marketing for small businesses (meaning and importance, product, price, place/ distribution, promotio' in schools. - locally",
+          "competence": "Describe the basic aspects of marketing for small businesses"
+        },
+        {
+          "number": "13",
+          "type": "structured",
+          "marks": 5,
+          "topic": "Use appropriate selling methods and techniques (branding, logos, packaging, after sales services, barcoding, direct mail and internet auction",
+          "text": "How does 'Use appropriate selling methods and techniques (branding, logos, packaging, after sales services, barcoding, direct mail and internet auction' relate to sustainable development? - locally",
+          "competence": "Use appropriate selling methods and techniques (branding, lo"
+        },
+        {
+          "number": "14",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Prepare a medium scale business plan",
+          "text": "Assess the impact of 'Prepare a medium scale business plan' on society. - with example",
+          "competence": "Prepare a medium scale business plan"
+        },
+        {
+          "number": "15",
+          "type": "structured",
+          "marks": 6,
+          "topic": "formation of a contract, types of misrepresentation, forms and consequences of breach of contract and remedies for breach)",
+          "text": "Compare and contrast 'formation of a contract, types of misrepresentation, forms and consequences of breach of contract and remedies for breach)' with related concepts. - with diagram",
+          "competence": "formation of a contract, types of misrepresentation, forms a"
+        },
+        {
+          "number": "16",
+          "type": "structured",
+          "marks": 5,
+          "topic": "to facilitate trade",
+          "text": "Compare and contrast 'to facilitate trade' with related concepts. - with example",
+          "competence": "to facilitate trade"
+        },
+        {
+          "number": "17",
+          "type": "structured",
+          "marks": 8,
+          "topic": "Demonstrate mastery of the basic skills of operating a small-scale business",
+          "text": "Propose measures to improve 'Demonstrate mastery of the basic skills of operating a small-scale business' in schools.",
+          "competence": "Demonstrate mastery of the basic skills of operating a small"
+        }
+      ]
+    },
+    {
+      "name": "Section C",
+      "instructions": "Answer two questions.",
+      "questions": [
+        {
+          "number": "18",
+          "type": "essay",
+          "marks": 6,
+          "topic": "Describe the role of microfinancing and cooperatives in facilitating business formation and operations",
+          "text": "Explain the relationship between 'Describe the role of microfinancing and cooperatives in facilitating business formation and operations' and its environment. - locally",
+          "competence": "Describe the role of microfinancing and cooperatives in faci"
+        },
+        {
+          "number": "19",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Describe the basic principles of communication and networking for small businesses",
+          "text": "Examine the advantages and disadvantages of 'Describe the basic principles of communication and networking for small businesses'.",
+          "competence": "Describe the basic principles of communication and networkin"
+        },
+        {
+          "number": "20",
+          "type": "essay",
+          "marks": 8,
+          "topic": "Identify an appropriate business opportunity and develop its business plan",
+          "text": "Discuss the challenges facing 'Identify an appropriate business opportunity and develop its business plan' in Tanzania and propose solutions. - with example",
+          "competence": "Identify an appropriate business opportunity and develop its"
+        },
+        {
+          "number": "21",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Demonstrate an advanced understanding of the principles of business",
+          "text": "Propose measures to improve 'Demonstrate an advanced understanding of the principles of business' in schools.",
+          "competence": "Demonstrate an advanced understanding of the principles of b"
+        },
+        {
+          "number": "22",
+          "type": "essay",
+          "marks": 3,
+          "topic": "Use pricing techniques to determine appropriate prices of products",
+          "text": "Analyse the causes and effects of 'Use pricing techniques to determine appropriate prices of products'.",
+          "competence": "Use pricing techniques to determine appropriate prices of pr"
+        },
+        {
+          "number": "23",
+          "type": "essay",
+          "marks": 10,
+          "topic": "Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures",
+          "text": "Discuss the challenges facing 'Describe some advanced aspects of financing medium businesses (internal and external sources: retained earnings, sale and leaseback of non-current assets, share capital, venture capital, overdrafts, loans, debentures' in Tanzania and propose solutions.",
+          "competence": "Describe some advanced aspects of financing medium businesse"
+        },
+        {
+          "number": "24",
+          "type": "essay",
+          "marks": 5,
+          "topic": "Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)",
+          "text": "Describe the process of 'Describe the basic aspects of business environment (stakeholders in business and agents supporting business start-ups)' step by step.",
+          "competence": "Describe the basic aspects of business environment (stakehol"
+        },
+        {
+          "number": "25",
+          "type": "essay",
+          "marks": 4,
+          "topic": "Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim",
+          "text": "What are the characteristics of 'Explain the basic aspects of insurance for small businesses (meaning, principles, importance, choice of appropriate insurance plan and procedures of filing insurance claim'? - with diagram",
+          "competence": "Explain the basic aspects of insurance for small businesses "
+        }
+      ]
+    }
+  ],
+  "syllabus_topics_covered": [
+    "Describe some advanced aspects of the business units (size classification, company and company’s management, franchise, joint ventures and cooperatives, formation and dissolution)",
+    "Demonstrate an understanding of the policies and laws governing medium scale businesses",
+    "Describe the basic aspects of management for small businesses (meaning, financial and other records keeping, calculation of profit and loss, budgeting and control and administratio",
+    "Describe business partnerships (meaning, types, features, advantages and disadvantages, formation and dissolutio",
+    "Describe the basic aspects of warehousing and inventorying for small businesses (meaning and function",
+    "Describe procedures for registering medium businesses in Tanzania (types of licences, importance of registration and sanctions for non- compliance)",
+    "Describe taxes and levies associated with small businesses in Tanzania (meaning, types, importance, and sanctions for non- complianc",
+    "Describe the basic aspects of e-marketing for small businesses (upload business biography in social medi",
+    "Explore the basic aspects of the policy and regulatory environment governing medium businesses in Tanzania (roles of government and non- governmental agencies, policies, laws and by-laws)",
+    "Identify business opportunities available in the local environment"
+  ],
+  "source": "generated-internal",
+  "curriculum": "TIE 2023-2025"
+}
