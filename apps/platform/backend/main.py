@@ -92,6 +92,17 @@ async def lifespan(app: FastAPI):
 
         await asyncio.to_thread(rehydrate_storage)
 
+        # Deploy Cloudflare cache rules on startup (P3-1)
+        # Safe no-op when Cloudflare credentials are not configured.
+        try:
+            from integrations.cloudflare import deploy_cache_rules
+
+            rules_result = await asyncio.to_thread(deploy_cache_rules)
+            if rules_result.get("status") == "success":
+                print(f"Cloudflare cache rules {rules_result.get('action')}: {rules_result.get('rules_count')} rules")
+        except Exception as cf_exc:
+            print(f"Cloudflare rules deployment skipped: {cf_exc}")
+
     except Exception as exc:  # noqa: BLE001
         # Tolerate an unreachable/unconfigured database in local dev so the
         # API still serves health/readiness and static routes.

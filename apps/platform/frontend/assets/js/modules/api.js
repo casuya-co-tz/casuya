@@ -599,3 +599,53 @@ function _quizTriggerDownload(blob, filename) {
   document.body.removeChild(a);
   setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
 }
+
+/* ── SSE Streaming Helper (P3-4) ─────────────────────────────────────── */
+function streamTutorResponse(payload, onChunk, onDone, onError) {
+  var token = localStorage.getItem("casuya_token");
+  var headers = { "Content-Type": "application/json" };
+  if (token) headers["Authorization"] = "Bearer " + token;
+
+  var controller = new AbortController();
+
+  fetch(API_BASE + "/ai/tutoring/stream", {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(payload),
+    signal: controller.signal,
+  }).then(function(resp) {
+    if (!resp.ok) throw new Error("Stream failed");
+    var reader = resp.body.getReader();
+    var decoder = new TextDecoder();
+    var buffer = "";
+
+    function read() {
+      reader.read().then(function(result) {
+        if (result.done) {
+          if (onDone) onDone();
+          return;
+        }
+        buffer += decoder.decode(result.value, { stream: true });
+        var lines = buffer.split("\n");
+        buffer = lines.pop();
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i].trim();
+          if (!line.startsWith("data: ")) continue;
+          try {
+            var data = JSON.parse(line.substring(6));
+            if (data.chunk) onChunk(data.chunk);
+            if (data.done) { if (onDone) onDone(); return; }
+          } catch (e) {}
+        }
+        read();
+      }).catch(function(err) {
+        if (err.name !== "AbortError" && onError) onError(err);
+      });
+    }
+    read();
+  }).catch(function(err) {
+    if (err.name !== "AbortError" && onError) onError(err);
+  });
+
+  return controller;
+}

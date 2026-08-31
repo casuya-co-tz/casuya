@@ -29,11 +29,20 @@
     return resolveBase() + "/auth/oauth/" + encodeURIComponent(provider);
   };
 
-  // Register the offline/performance service worker (same-origin only; safe no-op
-  // on browsers without support or on insecure origins).
+  // Register the offline/performance service worker ONLY after auth is established.
+  // On the login/register pages (no token), skip SW registration to avoid caching
+  // auth-critical requests before the session is established.
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
-      navigator.serviceWorker.register("/sw.js").catch(function () {});
+      var path = window.location.pathname;
+      var isAuthPage = /\/(?:login|register|forgot-password|reset-password|index)\.html?$/.test(path) || path === "/";
+      var hasToken = !!localStorage.getItem("casuya_token");
+
+      // Register SW only on authenticated portal pages (student/teacher/admin)
+      // OR on public pages where the user already has a token
+      if (!isAuthPage || hasToken) {
+        navigator.serviceWorker.register("/sw.js").catch(function () {});
+      }
     });
   }
 })();

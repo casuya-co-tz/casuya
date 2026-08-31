@@ -2,7 +2,12 @@
 
 from __future__ import annotations
 
+import asyncio
+import json
+import re
+
 from fastapi import APIRouter, Depends
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
 from backend.middleware.auth import get_current_user
@@ -82,3 +87,70 @@ async def api_moderate(req: ModerateRequest, _user=Depends(get_current_user)):
 async def api_translate(req: TranslateRequest, _user=Depends(get_current_user)):
     translated = await translate_content(req.text, req.target_language)
     return {"translated": translated}
+
+
+# ── SSE Streaming for AI Tutoring (P3-4) ──────────────────────────────────
+
+
+async def _stream_tutoring_response(
+    question: str,
+    lesson_context: str,
+    subject_slug: str | None,
+    form_level: int | None,
+):
+    """Generator that yields SSE events for the tutoring response.
+
+    Splits the AI response into sentence-sized chunks and streams them
+    via Server-Sent Events so the student sees text appear progressively
+    instead of waiting for the full response.
+    """
+    try:
+        response = await get_tutoring_response(
+            question, lesson_context,
+            subject_slug=subject_slug, form_level=form_level,
+        )
+    except Exception:
+        yield f"data: {json.dumps({'chunk': 'The AI tutor is temporarily unavailable.', 'done': True})}\n\n"
+        return
+
+    if not response:
+        yield f"data: {json.dumps({'chunk': '', 'done': True})}\n\n"
+        return
+
+    # Split into sentence-sized chunks for progressive rendering
+    # Sentences end with . ! ? or newlines
+    chunks = re.split(r'(?<=[.!?])\s+|\n{2,}', response)
+
+    for chunk in chunks:
+        chunk = chunk.strip()
+        if not chunk:
+            continue
+        yield f"data: {json.dumps({'chunk': chunk + ' '})}\n\n"
+        # Small delay between chunks so the frontend can render
+        await asyncio.sleep(0.05)
+
+    yield f"data: {json.dumps({'chunk': '', 'done': True})}\n\n"
+
+
+@router.post("/tutoring/stream")
+async def api_tutoring_stream(req: TutoringRequest, _user=Depends(get_current_user)):
+    """Stream AI tutoring response via Server-Sent Events.
+
+    The frontend connects with EventSource and receives sentence-sized
+    chunks progressively, giving students instant feedback on 2G/3G
+    instead of waiting 5-10s for the full response.
+    """
+    return StreamingResponse(
+        _stream_tutoring_response(
+            req.question,
+            req.lesson_context,
+            req.subject_slug,
+            req.form_level,
+        ),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
