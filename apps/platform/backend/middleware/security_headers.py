@@ -50,9 +50,13 @@ class SecurityHeadersMiddleware:
                     or path.startswith("/css/")
                     or path.startswith("/js/")
                     or path.startswith("/fonts/")
-                    or path.startswith("/branding/")
                 ):
                     headers["Cache-Control"] = "public, max-age=31536000, immutable"
+                # /branding responses carry security (CSP/CORS) headers, so keep a
+                # short TTL — a 1-year immutable cache made misleading/stale CSP
+                # headers persist after deploys.
+                elif path.startswith("/branding/"):
+                    headers["Cache-Control"] = "public, max-age=3600"
                 elif path in ("/health", "/readyz") or method in ("POST", "PUT", "DELETE", "PATCH"):
                     headers["Cache-Control"] = "no-store"
                 elif (
