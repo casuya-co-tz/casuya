@@ -16,7 +16,8 @@
  * Run: node scripts/build-kb.mjs
  */
 
-import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, rmSync, existsSync, statSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
@@ -454,6 +455,14 @@ function writeOutput() {
   const json = JSON.stringify(out);
   writeFileSync(outPath, json, 'utf8');
   console.error(`Wrote ${outPath} (${(json.length / 1024 / 1024).toFixed(2)} MB)`);
+
+  // Ship the raw KB as a single tarball: Docker's build context hits a
+  // file-count limit with the 2,600+ file knowledge_base/ tree, so the
+  // runtime image consumes one archive instead (see Dockerfile).
+  const tarPath = join(OUT_DIR, 'knowledge.tar.gz');
+  if (existsSync(tarPath)) rmSync(tarPath);
+  execFileSync('tar', ['-czf', tarPath, '-C', KB_ROOT, '.']);
+  console.error(`Wrote ${tarPath} (${(statSync(tarPath).size / 1024 / 1024).toFixed(2)} MB)`);
 }
 
 build();

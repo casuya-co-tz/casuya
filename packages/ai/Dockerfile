@@ -11,8 +11,6 @@ COPY tsconfig.json ./
 COPY tsconfig.server.json ./
 COPY src/ src/
 COPY server.ts ./
-COPY kb-data/ kb-data/
-COPY knowledge_base/ knowledge_base/
 
 RUN npx tsc -p tsconfig.server.json
 
@@ -24,8 +22,11 @@ ENV NODE_ENV=production
 COPY --from=builder /app/dist/ dist/
 COPY --from=builder /app/node_modules/ node_modules/
 COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/kb-data/ kb-data/
-COPY --from=builder /app/knowledge_base/ knowledge_base/
+
+# Knowledge base ships as a single tarball to avoid Docker's context file-count
+# limit (the raw KB is 2,600+ files). Extract it at /app/knowledge_base.
+COPY kb-data/ kb-data/
+RUN mkdir -p /app/knowledge_base && tar -xzf /app/kb-data/knowledge.tar.gz -C /app/knowledge_base && rm /app/kb-data/knowledge.tar.gz
 
 EXPOSE 3000
 
