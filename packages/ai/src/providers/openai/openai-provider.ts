@@ -14,7 +14,7 @@ import { Logger } from '../../utilities/logger';
 const OPENAI_BASE_URL = 'https://api.openai.com/v1';
 
 interface OpenAIChoice {
-  message?: { content?: string };
+  message?: { content?: string; reasoning_content?: string };
   delta?: { content?: string };
   finish_reason?: string;
 }
@@ -87,7 +87,7 @@ export class OpenAIProvider extends BaseProvider {
       return {
         id: result.id,
         model: result.model,
-        content: result.choices[0]?.message?.content ?? '',
+        content: result.choices[0]?.message?.content ?? result.choices[0]?.message?.reasoning_content ?? '',
         usage: {
           promptTokens: result.usage?.prompt_tokens ?? 0,
           completionTokens: result.usage?.completion_tokens ?? 0,
