@@ -78,21 +78,34 @@ def get_platform_overview() -> dict:
     gen = get_db()
     db: Session = next(gen)
     try:
-        total_students = db.query(Student).count()
-        total_teachers = db.query(Teacher).count()
-        total_lessons = db.query(Lesson).filter(Lesson.status == "published").count()
-        total_subjects = db.query(Subject).count()
-        total_quizzes = db.query(Quiz).count()
-        total_sessions = db.query(ProgressRecord).count()
-        avg_completion = db.query(func.avg(ProgressRecord.completion_percentage)).scalar() or 0.0
+        # Use scalar subqueries to get all counts in a single round-trip
+        # instead of 7 separate COUNT queries
+        student_count = db.query(func.count(Student.id)).scalar_subquery()
+        teacher_count = db.query(func.count(Teacher.id)).scalar_subquery()
+        lesson_count = db.query(func.count(Lesson.id)).filter(Lesson.status == "published").scalar_subquery()
+        subject_count = db.query(func.count(Subject.id)).scalar_subquery()
+        quiz_count = db.query(func.count(Quiz.id)).scalar_subquery()
+        session_count = db.query(func.count(ProgressRecord.id)).scalar_subquery()
+        avg_completion = db.query(func.avg(ProgressRecord.completion_percentage)).scalar_subquery()
+
+        row = db.query(
+            student_count,
+            teacher_count,
+            lesson_count,
+            subject_count,
+            quiz_count,
+            session_count,
+            avg_completion,
+        ).first()
+
         return {
-            "total_students": total_students,
-            "total_teachers": total_teachers,
-            "total_lessons": total_lessons,
-            "total_subjects": total_subjects,
-            "total_quizzes": total_quizzes,
-            "total_sessions": total_sessions,
-            "avg_completion_rate": round(float(avg_completion), 2),
+            "total_students": row[0] if row else 0,
+            "total_teachers": row[1] if row else 0,
+            "total_lessons": row[2] if row else 0,
+            "total_subjects": row[3] if row else 0,
+            "total_quizzes": row[4] if row else 0,
+            "total_sessions": row[5] if row else 0,
+            "avg_completion_rate": round(float(row[6] or 0), 2) if row else 0.0,
         }
     finally:
         gen.close()

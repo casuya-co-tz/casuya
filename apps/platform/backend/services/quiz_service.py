@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Optional
 
 from sqlalchemy import func
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
 from backend.config.settings import get_settings
 from backend.models.quiz import Quiz, QuizOption, QuizQuestion
@@ -72,31 +72,16 @@ def list_quizzes(
 
 
 def get_quiz(db: Session, quiz_id: str) -> dict | None:
-    quiz = db.query(Quiz).filter(Quiz.id == quiz_id).first()
+    quiz = (
+        db.query(Quiz)
+        .options(
+            joinedload(Quiz.quiz_questions).joinedload(QuizQuestion.quiz_options)
+        )
+        .filter(Quiz.id == quiz_id)
+        .first()
+    )
     if not quiz:
         return None
-
-    questions = db.query(QuizQuestion).filter(QuizQuestion.quiz_id == quiz.id).all()
-
-    if not questions:
-        return {
-            "id": quiz.id,
-            "lesson_id": quiz.lesson_id,
-            "title": quiz.title,
-            "slug": quiz.slug,
-            "content_hash": quiz.content_hash,
-            "status": quiz.status,
-            "questions": [],
-        }
-
-    question_ids = [q.id for q in questions]
-    all_options = db.query(QuizOption).filter(QuizOption.question_id.in_(question_ids)).all()
-
-    options_map: dict[str, list] = {}
-    for opt in all_options:
-        if opt.question_id not in options_map:
-            options_map[opt.question_id] = []
-        options_map[opt.question_id].append({"id": opt.id, "text": opt.text})
 
     return {
         "id": quiz.id,
@@ -109,36 +94,27 @@ def get_quiz(db: Session, quiz_id: str) -> dict | None:
             {
                 "id": q.id,
                 "prompt": q.prompt,
-                "options": options_map.get(q.id, []),
+                "options": [
+                    {"id": o.id, "text": o.text}
+                    for o in q.quiz_options
+                ],
             }
-            for q in questions
+            for q in quiz.quiz_questions
         ],
     }
 
 
 def get_quiz_for_lesson(db: Session, lesson_id: str) -> dict | None:
-    quiz = db.query(Quiz).filter(Quiz.lesson_id == lesson_id).first()
+    quiz = (
+        db.query(Quiz)
+        .options(
+            joinedload(Quiz.quiz_questions).joinedload(QuizQuestion.quiz_options)
+        )
+        .filter(Quiz.lesson_id == lesson_id)
+        .first()
+    )
     if not quiz:
         return None
-
-    questions = db.query(QuizQuestion).filter(QuizQuestion.quiz_id == quiz.id).all()
-
-    if not questions:
-        return {
-            "id": quiz.id,
-            "lesson_id": quiz.lesson_id,
-            "title": quiz.title,
-            "questions": [],
-        }
-
-    question_ids = [q.id for q in questions]
-    all_options = db.query(QuizOption).filter(QuizOption.question_id.in_(question_ids)).all()
-
-    options_map: dict[str, list] = {}
-    for opt in all_options:
-        if opt.question_id not in options_map:
-            options_map[opt.question_id] = []
-        options_map[opt.question_id].append({"id": opt.id, "text": opt.text})
 
     return {
         "id": quiz.id,
@@ -148,9 +124,12 @@ def get_quiz_for_lesson(db: Session, lesson_id: str) -> dict | None:
             {
                 "id": q.id,
                 "prompt": q.prompt,
-                "options": options_map.get(q.id, []),
+                "options": [
+                    {"id": o.id, "text": o.text}
+                    for o in q.quiz_options
+                ],
             }
-            for q in questions
+            for q in quiz.quiz_questions
         ],
     }
 
@@ -206,22 +185,23 @@ def update_quiz(db: Session, quiz_id: str, title: str | None = None, html: str |
 
 
 def grade_attempt(db: Session, quiz_id: str, answers: dict, work: dict | None = None) -> dict:
-    questions = db.query(QuizQuestion).filter(QuizQuestion.quiz_id == quiz_id).all()
+    questions = (
+        db.query(QuizQuestion)
+        .options(joinedload(QuizQuestion.quiz_options))
+        .filter(QuizQuestion.quiz_id == quiz_id)
+        .all()
+    )
 
     if not questions:
         return {"quiz_id": quiz_id, "score": 0, "total": 0, "percentage": 0}
 
-    question_ids = [q.id for q in questions]
-    correct_options = (
-        db.query(QuizOption)
-        .filter(
-            QuizOption.question_id.in_(question_ids),
-            QuizOption.is_correct.is_(True),
-        )
-        .all()
-    )
-
-    correct_map = {opt.question_id: opt.id for opt in correct_options}
+    # Build correct answer map from eagerly-loaded options
+    correct_map = {}
+    for q in questions:
+        for opt in q.quiz_options:
+            if opt.is_correct:
+                correct_map[q.id] = opt.id
+                break
 
     total = len(questions)
     correct = 0

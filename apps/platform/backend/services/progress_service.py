@@ -55,8 +55,20 @@ def get_student_progress(student_id: str) -> list[dict]:
     gen = get_db()
     db: Session = next(gen)
     try:
+        # Select only the columns we need instead of full ORM objects
+        # to reduce data transfer and memory usage
         rows = (
-            db.query(ProgressRecord, Lesson.title, Subject.name.label("subject_name"))
+            db.query(
+                ProgressRecord.id,
+                ProgressRecord.lesson_id,
+                ProgressRecord.session_id,
+                ProgressRecord.elapsed_ms,
+                ProgressRecord.completion_percentage,
+                ProgressRecord.score_percentage,
+                ProgressRecord.synced_at,
+                Lesson.title,
+                Subject.name.label("subject_name"),
+            )
             .join(Lesson, ProgressRecord.lesson_id == Lesson.id, isouter=True)
             .join(Subtopic, Lesson.subtopic_id == Subtopic.id, isouter=True)
             .join(Topic, Subtopic.topic_id == Topic.id, isouter=True)
@@ -68,26 +80,26 @@ def get_student_progress(student_id: str) -> list[dict]:
         # Deduplicate by lesson_id — keep only the most recent record per lesson
         by_lesson = {}
         for r in rows:
-            lid = r.ProgressRecord.lesson_id
+            lid = r.lesson_id
             existing = by_lesson.get(lid)
             if not existing or (
-                r.ProgressRecord.synced_at
-                and existing.ProgressRecord.synced_at
-                and r.ProgressRecord.synced_at > existing.ProgressRecord.synced_at
+                r.synced_at
+                and existing.synced_at
+                and r.synced_at > existing.synced_at
             ):
                 by_lesson[lid] = r
 
         return [
             {
-                "id": r.ProgressRecord.id,
-                "lesson_id": r.ProgressRecord.lesson_id,
+                "id": r.id,
+                "lesson_id": r.lesson_id,
                 "lesson_title": r.title or "Unknown",
                 "subject_name": r.subject_name or "General",
-                "session_id": r.ProgressRecord.session_id,
-                "elapsed_ms": r.ProgressRecord.elapsed_ms,
-                "completion_percentage": r.ProgressRecord.completion_percentage,
-                "score_percentage": r.ProgressRecord.score_percentage,
-                "synced_at": r.ProgressRecord.synced_at.isoformat() if r.ProgressRecord.synced_at else None,
+                "session_id": r.session_id,
+                "elapsed_ms": r.elapsed_ms,
+                "completion_percentage": r.completion_percentage,
+                "score_percentage": r.score_percentage,
+                "synced_at": r.synced_at.isoformat() if r.synced_at else None,
             }
             for r in by_lesson.values()
         ]
