@@ -110,14 +110,6 @@ function readBody(req: http.IncomingMessage): Promise<any> {
   });
 }
 
-function safe(fn: () => unknown, fallback: unknown): unknown {
-  try {
-    return fn();
-  } catch {
-    return fallback;
-  }
-}
-
 async function safeAsync(fn: () => Promise<unknown>, fallback: unknown): Promise<unknown> {
   try {
     return await fn();
@@ -213,9 +205,9 @@ function buildGroundedFallback(question: string, ragDocs: { title: string; kind:
 
 function cleanThink(text: string): string {
   let msg = text;
-  const thinkMatch = msg.match(/ thinking[\s\S]*?<\/think>/);
-  if (thinkMatch) msg = msg.replace(thinkMatch[0], '').trim();
-  return msg;
+  msg = msg.replace(/<thinking>[\s\S]*?<\/thinking>/gi, '');
+  msg = msg.replace(/\s*thinking[\s\S]*?<\/think>/i, '');
+  return msg.trim();
 }
 
 async function start() {
@@ -255,7 +247,7 @@ async function start() {
     async function dispatch(): Promise<unknown> {
       switch (url) {
         case '/api/questions/generate': {
-          const { content, count = 5, topic: rawTopic, subject_slug, form_level } = body;
+          const { content, count = 5, topic: rawTopic, subject_slug } = body;
           const topic = (rawTopic || content || 'lesson content').slice(0, 80);
           const subjectKey = (subject_slug || '').toLowerCase() as keyof typeof TutoringSubject;
           const subjectValue = TutoringSubject[subjectKey] || TutoringSubject.GENERAL;
@@ -330,6 +322,17 @@ async function start() {
             });
             response = cleanThink(result.message);
             sourced = !!ragText;
+            if (!response.trim()) {
+              console.error(
+                '[explain] tutor returned empty output',
+                JSON.stringify({
+                  messageLen: result.message?.length,
+                  confidence: result.confidence,
+                  completionTokens: result.usage?.completionTokens,
+                }),
+              );
+              response = buildGroundedFallback(String(question || 'your question'), ragDocs);
+            }
           } catch (err) {
             console.error('[explain] tutor failed, using KB-grounded fallback:', err);
             response = buildGroundedFallback(String(question || 'your question'), ragDocs);
