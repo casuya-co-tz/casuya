@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from sqlalchemy import Boolean, ForeignKey, String, Text
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from backend.config.database import Base
 from backend.models.user import _uuid
@@ -20,6 +20,8 @@ class Quiz(Base):
     content_hash: Mapped[str | None] = mapped_column(String, nullable=True)
     status: Mapped[str] = mapped_column(String, default="draft")
 
+    quiz_questions = relationship("QuizQuestion", lazy="select", backref="quiz", order_by="QuizQuestion.id")
+
 
 class QuizQuestion(Base):
     __tablename__ = "quiz_questions"
@@ -27,6 +29,8 @@ class QuizQuestion(Base):
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
     quiz_id: Mapped[str] = mapped_column(ForeignKey("quizzes.id"), nullable=False)
     prompt: Mapped[str] = mapped_column(String, nullable=False)
+
+    quiz_options = relationship("QuizOption", lazy="select", backref="question", order_by="QuizOption.id")
 
 
 class QuizOption(Base):

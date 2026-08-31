@@ -32,13 +32,13 @@ class SecurityHeadersMiddleware:
                 )
 
                 # ── Smart Cache-Control ───────────────────────────────────
-                # Static assets (fonts, CSS, JS) → immutable long cache.
-                # API data → private, revalidate so conditional requests work.
-                # Health / auth / writes → never cache.
-                status = message.get("status", 200)
-                content_type = headers.get("content-type", "")
-
-                if (
+                # Only set Cache-Control if the endpoint hasn't already set one.
+                # Endpoints like lesson content set their own headers (e.g.
+                # max-age=3600) and we must NOT override those with a 5-second TTL.
+                existing_cc = headers.get("cache-control")
+                if existing_cc:
+                    pass  # endpoint set its own; leave it alone
+                elif (
                     path.startswith("/static/")
                     or path.startswith("/assets/")
                     or path.startswith("/css/")
@@ -55,10 +55,8 @@ class SecurityHeadersMiddleware:
                     or path.startswith("/subjects")
                     or path.startswith("/topics")
                 ):
-                    # API reads: allow stale-while-revalidate for fast repeat loads.
-                    headers["Cache-Control"] = "private, max-age=5, stale-while-revalidate=30"
+                    headers["Cache-Control"] = "private, max-age=0, must-revalidate"
                 else:
-                    # HTML pages: short cache + revalidate.
                     headers["Cache-Control"] = "private, max-age=60, must-revalidate"
 
             await send(message)

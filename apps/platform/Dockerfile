@@ -5,6 +5,11 @@ ENV PYTHONUNBUFFERED=1 \
 
 WORKDIR /app
 
+# Install ffmpeg for HLS video transcoding (P1-5)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends ffmpeg && \
+    rm -rf /var/lib/apt/lists/*
+
 # Install Python dependencies first (better layer caching)
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -16,7 +21,7 @@ COPY database/ database/
 COPY storage/ storage/
 
 # Ensure storage mount points exist (lesson-packages etc. are .gitignored locally)
-RUN mkdir -p storage/lesson-packages storage/quiz-packages storage/game-packages storage/backups
+RUN mkdir -p storage/lesson-packages storage/quiz-packages storage/game-packages storage/backups storage/hls
 
 # Static frontend is served by FastAPI on the same origin
 COPY frontend/ frontend/

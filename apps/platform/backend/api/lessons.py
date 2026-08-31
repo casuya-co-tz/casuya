@@ -8,20 +8,17 @@ from backend.middleware.auth import get_current_user
 from backend.middleware.cache import cache_get, cache_invalidate, cache_set, etag_for
 from backend.middleware.permissions import require_role
 from backend.schemas.lessons import LessonCreate, LessonResponse, LessonUpdate
-from backend.services.bookmark_service import is_bookmarked
-from backend.services.game_service import get_games_for_lesson
 from backend.services.lesson_service import (
     create_lesson_from_html,
     delete_lesson,
     get_lesson,
+    get_lesson_package,
     get_package_path,
     list_lessons,
     publish_lesson,
     read_lesson_content,
     update_lesson,
 )
-from backend.services.note_service import get_note
-from backend.services.quiz_service import get_quiz_for_lesson
 from integrations.cloudflare import purge_cache_tags
 
 router = APIRouter(prefix="/lessons", tags=["lessons"])
@@ -96,18 +93,13 @@ def get_lesson_package_route(
     metadata into a single round-trip (P2-3). The heavy HTML *content* is
     deliberately kept on its own cached/prefetched endpoint so it stays
     edge-cacheable and is not duplicated inside this JSON.
+
+    Uses optimized get_lesson_package() which fires only 3 DB queries instead of 7.
     """
-    lesson = get_lesson(lesson_id)
-    if not lesson:
+    pkg = get_lesson_package(lesson_id, current_user["sub"], db)
+    if not pkg:
         raise HTTPException(status_code=404, detail="Lesson not found")
-    user_sub = current_user["sub"]
-    return {
-        "lesson": lesson,
-        "bookmark_status": {"bookmarked": is_bookmarked(db, user_sub, lesson_id)},
-        "note": get_note(user_sub, lesson_id, db),
-        "quiz": get_quiz_for_lesson(db, lesson_id),
-        "games": get_games_for_lesson(db, lesson_id),
-    }
+    return pkg
 
 
 @router.post("", response_model=dict, dependencies=[Depends(require_role("admin"))])

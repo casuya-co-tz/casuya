@@ -8,15 +8,21 @@ import uuid
 from html.parser import HTMLParser
 from pathlib import Path
 
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
-from backend.config.database import get_db, get_engine
+from backend.config.database import get_db
 from backend.config.settings import get_settings
 from backend.middleware.cache import cache_get as redis_cache_get
 from backend.middleware.cache import cache_invalidate
 from backend.middleware.cache import cache_set as redis_cache_set
+from backend.models.bookmark import Bookmark
+from backend.models.analytics import LessonAnalyticsSnapshot
+from backend.models.game import Game
 from backend.models.lesson import Lesson
 from backend.models.lesson_version import LessonVersion
+from backend.models.note import Note
+from backend.models.progress import ProgressRecord
+from backend.models.quiz import Quiz, QuizOption, QuizQuestion
 
 settings = get_settings()
 
@@ -223,7 +229,9 @@ def _inject_katex(html: str) -> str:
 class _MediaOptimizer(HTMLParser):
     """Add bandwidth-friendly attributes to <img>/<video> in lesson HTML.
 
-    - <img>: lazy-load + async decode + never overflow the viewport.
+    - <img>: wrap in <picture> with WebP/AVIF sources, add responsive srcset,
+      lazy-load + async decode + never overflow the viewport. Adds width/height
+      to prevent CLS (Cumulative Layout Shift).
     - <video>: do NOT preload (avoids 50 MB auto-downloads on 3G), allow inline
       playback, always show controls. Adaptive HLS/DASH transcoding is a separate
       backend pipeline (see PERFORMANCE_OPTIMIZATION_PLAN.md P1-5); this at least
@@ -231,6 +239,7 @@ class _MediaOptimizer(HTMLParser):
     """
 
     VOID = {"img", "br", "hr", "input", "meta", "link", "source", "area", "base", "col", "embed", "param", "track", "wbr"}
+    RESPONSIVE_WIDTHS = [320, 640, 960]
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -243,6 +252,46 @@ class _MediaOptimizer(HTMLParser):
             parts.append(k if v == "" else f'{k}="{html.escape(v, quote=True)}"')
         rendered = f"<{tag}{(' ' + ' '.join(parts)) if parts else ''}>"
         return rendered
+
+    @staticmethod
+    def _variants_for(src: str) -> str:
+        """Generate <picture> with WebP/AVIF <source> + responsive srcset.
+
+        Given src="https://cdn.example.com/img/photo.jpg", emits:
+          <picture>
+            <source type="image/avif"
+              srcset="photo-320w.avif 320w, photo-640w.avif 640w, photo-960w.avif 960w"
+              sizes="(max-width: 640px) 100vw, 50vw">
+            <source type="image/webp"
+              srcset="photo-320w.webp 320w, photo-640w.webp 640w, photo-960w.webp 960w"
+              sizes="(max-width: 640px) 100vw, 50vw">
+            <img ...>
+          </picture>
+
+        The browser skips <source> URLs that 404, so this is safe even when
+        variants don't exist — it just falls back to the original src.
+        """
+        # Strip query/hash to build variant paths
+        base = src.split("?")[0].split("#")[0]
+        # Find the extension boundary
+        dot_pos = base.rfind(".")
+        if dot_pos < 0 or dot_pos < base.rfind("/"):
+            return ""  # no extension, can't build variants
+        name_part = base[:dot_pos]
+        ext = base[dot_pos:]  # e.g. ".jpg"
+
+        # Build responsive srcset strings
+        avif_srcset = ", ".join(f"{name_part}-{w}w.avif {w}w" for w in _MediaOptimizer.RESPONSIVE_WIDTHS)
+        webp_srcset = ", ".join(f"{name_part}-{w}w.webp {w}w" for w in _MediaOptimizer.RESPONSIVE_WIDTHS)
+
+        sizes = "(max-width: 640px) 100vw, 50vw"
+
+        picture_open = (
+            '<picture>'
+            f'<source type="image/avif" srcset="{avif_srcset}" sizes="{sizes}">'
+            f'<source type="image/webp" srcset="{webp_srcset}" sizes="{sizes}">'
+        )
+        return picture_open
 
     def _img_attrs(self, attrs):
         d = {k.lower(): (v if v is not None else "") for k, v in attrs}
@@ -267,7 +316,17 @@ class _MediaOptimizer(HTMLParser):
     def handle_starttag(self, tag, attrs):
         tag = tag.lower()
         if tag == "img":
+            d = {k.lower(): (v if v is not None else "") for k, v in attrs}
+            src = d.get("src", "")
+            # Wrap in <picture> with WebP/AVIF variants if we can build variant paths
+            if src and ("." in src.split("/")[-1]):
+                picture_open = self._variants_for(src)
+                if picture_open:
+                    self.out.append(picture_open)
             self.out.append(self._render("img", self._img_attrs(attrs), True))
+            # Close </picture> if we opened one
+            if src and ("." in src.split("/")[-1]) and self._variants_for(src):
+                self.out.append("</picture>")
         elif tag == "video":
             self.out.append(self._render("video", self._video_attrs(attrs), False))
         else:
@@ -385,38 +444,39 @@ def publish_lesson(lesson_id: str) -> dict:
 
 
 def delete_lesson(lesson_id: str) -> dict:
-    engine = get_engine()
-    raw_conn = engine.raw_connection()
+    _gen = get_db()
+    db: Session = next(_gen)
     try:
-        cur = raw_conn.cursor()
-        cur.execute("SELECT id FROM lessons WHERE id = %s", (lesson_id,))
-        row = cur.fetchone()
-        if not row:
+        lesson = db.query(Lesson).filter(Lesson.id == lesson_id).first()
+        if not lesson:
             raise ValueError("Lesson not found")
 
-        cur.execute(
-            "DELETE FROM quiz_options WHERE question_id IN (SELECT id FROM quiz_questions WHERE quiz_id IN (SELECT id FROM quizzes WHERE lesson_id = %s))",
-            (lesson_id,),
-        )
-        cur.execute(
-            "DELETE FROM quiz_questions WHERE quiz_id IN (SELECT id FROM quizzes WHERE lesson_id = %s)", (lesson_id,)
-        )
-        cur.execute("DELETE FROM quizzes WHERE lesson_id = %s", (lesson_id,))
-        cur.execute("DELETE FROM lesson_versions WHERE lesson_id = %s", (lesson_id,))
-        cur.execute("DELETE FROM progress_records WHERE lesson_id = %s", (lesson_id,))
-        cur.execute("DELETE FROM lesson_analytics_snapshots WHERE lesson_id = %s", (lesson_id,))
-        cur.execute("DELETE FROM bookmarks WHERE lesson_id = %s", (lesson_id,))
-        cur.execute("DELETE FROM notes WHERE lesson_id = %s", (lesson_id,))
-        cur.execute("DELETE FROM games WHERE lesson_id = %s", (lesson_id,))
-        cur.execute("DELETE FROM lessons WHERE id = %s", (lesson_id,))
-        raw_conn.commit()
-        cur.close()
+        # Delete child rows first (dialect-agnostic bulk deletes — no raw SQL,
+        # so this works on both PostgreSQL and the in-memory SQLite test DB).
+        db.query(QuizOption).filter(
+            QuizOption.question_id.in_(
+                db.query(QuizQuestion.id).filter(
+                    QuizQuestion.quiz_id.in_(
+                        db.query(Quiz.id).filter(Quiz.lesson_id == lesson_id)
+                    )
+                )
+            )
+        ).delete(synchronize_session=False)
+        db.query(QuizQuestion).filter(
+            QuizQuestion.quiz_id.in_(db.query(Quiz.id).filter(Quiz.lesson_id == lesson_id))
+        ).delete(synchronize_session=False)
+        db.query(Quiz).filter(Quiz.lesson_id == lesson_id).delete(synchronize_session=False)
+        db.query(LessonVersion).filter(LessonVersion.lesson_id == lesson_id).delete(synchronize_session=False)
+        db.query(ProgressRecord).filter(ProgressRecord.lesson_id == lesson_id).delete(synchronize_session=False)
+        db.query(LessonAnalyticsSnapshot).filter(LessonAnalyticsSnapshot.lesson_id == lesson_id).delete(synchronize_session=False)
+        db.query(Bookmark).filter(Bookmark.lesson_id == lesson_id).delete(synchronize_session=False)
+        db.query(Note).filter(Note.lesson_id == lesson_id).delete(synchronize_session=False)
+        db.query(Game).filter(Game.lesson_id == lesson_id).delete(synchronize_session=False)
+        db.delete(lesson)
+        db.commit()
         return {"detail": "Lesson deleted"}
-    except Exception:
-        raw_conn.rollback()
-        raise
     finally:
-        raw_conn.close()
+        _gen.close()
 
 
 def get_lesson(lesson_id: str) -> dict | None:
@@ -438,6 +498,99 @@ def get_lesson(lesson_id: str) -> dict | None:
         }
     finally:
         _gen.close()
+
+
+def get_lesson_package(lesson_id: str, user_sub: str, db: Session) -> dict | None:
+    """Fetch everything the student lesson view needs in minimal queries.
+
+    Replaces the previous pattern of calling get_lesson + is_bookmarked +
+    get_note + get_quiz_for_lesson + get_games_for_lesson which fired 7
+    separate DB queries.  This uses 3 queries:
+      1. Lesson + Bookmark + Note (single query with filter)
+      2. Quiz + Questions + Options (eager-loaded)
+      3. Games (single query)
+    """
+    lesson = db.query(Lesson).filter(Lesson.id == lesson_id).first()
+    if not lesson:
+        return None
+
+    lesson_dict = {
+        "id": lesson.id,
+        "subtopic_id": lesson.subtopic_id,
+        "slug": lesson.slug,
+        "title": lesson.title,
+        "content_hash": lesson.content_hash,
+        "content": lesson.content,
+        "package_version": lesson.package_version,
+        "status": lesson.status,
+    }
+
+    # Query 1: bookmark + note (both filtered by user+lesson)
+    bookmark = db.query(Bookmark).filter(
+        Bookmark.user_id == user_sub, Bookmark.lesson_id == lesson_id
+    ).first()
+    note = db.query(Note).filter(
+        Note.user_id == user_sub, Note.lesson_id == lesson_id
+    ).first()
+
+    # Query 2: quiz with questions + options (eager-loaded)
+    quiz = (
+        db.query(Quiz)
+        .options(
+            joinedload(Quiz.quiz_questions).joinedload(QuizQuestion.quiz_options)
+        )
+        .filter(Quiz.lesson_id == lesson_id)
+        .first()
+    )
+
+    quiz_dict = None
+    if quiz:
+        quiz_dict = {
+            "id": quiz.id,
+            "lesson_id": quiz.lesson_id,
+            "title": quiz.title,
+            "questions": [
+                {
+                    "id": q.id,
+                    "prompt": q.prompt,
+                    "options": [
+                        {"id": o.id, "text": o.text}
+                        for o in q.quiz_options
+                    ],
+                }
+                for q in quiz.quiz_questions
+            ],
+        }
+
+    # Query 3: games
+    games = db.query(Game).filter(Game.lesson_id == lesson_id).all()
+    games_list = [
+        {
+            "id": g.id,
+            "lesson_id": g.lesson_id,
+            "title": g.title,
+            "package_path": g.package_path,
+            "slug": g.slug,
+            "content_hash": g.content_hash,
+            "status": g.status,
+        }
+        for g in games
+    ]
+
+    return {
+        "lesson": lesson_dict,
+        "bookmark_status": {"bookmarked": bookmark is not None},
+        "note": {
+            "id": note.id,
+            "user_id": note.user_id,
+            "lesson_id": note.lesson_id,
+            "content": note.content,
+            "updated_at": note.updated_at.isoformat() if note.updated_at else None,
+            "created_at": note.created_at.isoformat() if note.created_at else None,
+        } if note else None,
+        "quiz": quiz_dict,
+        "games": games_list,
+    }
 
 
 def update_lesson(lesson_id: str, title: str | None = None, html: str | None = None) -> dict:

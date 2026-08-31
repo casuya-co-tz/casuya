@@ -43,6 +43,7 @@ from backend.api import (
     syllabus,
     teachers,
     topics,
+    transcode,
     uploads,
     users,
 )
@@ -146,6 +147,7 @@ for router_module in (
     search,
     services_bridge,
     uploads,
+    transcode,
     bookmarks,
     note,
     metrics,
@@ -171,6 +173,11 @@ app.mount("/static/lessons", StaticFiles(directory=str(pkg_dir)), name="lesson-p
 lib_dir = Path(settings.storage_root) / "lib"
 lib_dir.mkdir(parents=True, exist_ok=True)
 app.mount("/static/lib", StaticFiles(directory=str(lib_dir)), name="shared-lib")
+
+# Mount HLS transcoded videos for adaptive streaming (360p/480p/720p renditions)
+hls_dir = Path(settings.storage_root) / "hls"
+hls_dir.mkdir(parents=True, exist_ok=True)
+app.mount("/uploads/hls", StaticFiles(directory=str(hls_dir)), name="hls-videos")
 
 # Mount built client-side Casuya packages so the web app can load them directly.
 # These point at the monorepo package dist folders; when absent they are skipped.
