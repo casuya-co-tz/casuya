@@ -160,7 +160,7 @@ function renderScheme(data: any): string {
     for (const row of rows.slice(0, 60)) lines.push(`- ${row}`);
   }
   if (lines.length <= 3) {
-    return JSON.stringify(data).replace(/[{}\[\],"]/g, ' ').replace(/\s+/g, ' ').trim();
+      return JSON.stringify(data).replace(/[{}[\],"]/g, ' ').replace(/\s+/g, ' ').trim();
   }
   return lines.filter(Boolean).join('\n');
 }
@@ -217,7 +217,7 @@ export function renderDoc(kind: string, data: any): string {
     case 'reference':
       return renderReferences(data);
     default:
-      return JSON.stringify(data).replace(/[{}\[\],"]/g, ' ').replace(/\s+/g, ' ').trim();
+    return JSON.stringify(data).replace(/[{}[\],"]/g, ' ').replace(/\s+/g, ' ').trim();
   }
 }
 
