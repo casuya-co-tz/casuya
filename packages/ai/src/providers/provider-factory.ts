@@ -6,15 +6,26 @@ import { GeminiProvider } from './gemini/gemini-provider';
 import { AnthropicProvider } from './anthropic/anthropic-provider';
 import { LocalProvider } from './local-models/local-provider';
 
+const OPENAI_COMPAT: ProviderType[] = [
+  ProviderType.OPENAI,
+  ProviderType.GROQ,
+  ProviderType.GROK,
+  ProviderType.MISTRAL,
+  ProviderType.NVIDIA,
+  ProviderType.OPENROUTER,
+];
+
 export class ProviderFactory {
   private static providers: Map<string, BaseProvider> = new Map();
   private static logger = new Logger({ prefix: '[ProviderFactory]' });
 
   static createProvider(config: ProviderConfig): BaseProvider {
+    if (OPENAI_COMPAT.includes(config.type)) {
+      return new OpenAIProvider(config);
+    }
     switch (config.type) {
-      case ProviderType.OPENAI:
-        return new OpenAIProvider(config);
       case ProviderType.GEMINI:
+      case ProviderType.GOOGLE:
         return new GeminiProvider(config);
       case ProviderType.ANTHROPIC:
         return new AnthropicProvider(config);
@@ -39,6 +50,9 @@ export class ProviderFactory {
 
   static async initializeProviders(configs: Map<string, ProviderConfig>): Promise<void> {
     for (const [name, config] of configs) {
+      if (ProviderFactory.providers.has(name)) {
+        continue;
+      }
       try {
         const provider = ProviderFactory.createProvider(config);
         await provider.initialize();

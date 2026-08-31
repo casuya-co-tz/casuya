@@ -13,7 +13,7 @@ import * as http from 'http';
 import * as path from 'path';
 import dotenv from 'dotenv';
 import { CasuyaAI } from './src/casuya-ai';
-import { ProviderType } from './src/types/providers';
+import { buildFreeProviderSpecs, specsToConfigMap } from './src/providers/free-chain';
 import { getKnowledgeBase } from './src/kb';
 import {
   QuestionType,
@@ -28,67 +28,6 @@ import {
 dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env') });
 
 const PORT = parseInt(process.env.CASUYA_AI_PORT || process.env.PORT || '3000', 10);
-
-function buildProviders(): { providers: Map<string, any>; default: string } {
-  const GROQ_API_KEY = process.env.GROQ_API_KEY;
-  const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-  const NVIDIA_API_KEY = process.env.NVIDIA_API_KEY;
-  const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-
-  const providers = new Map<string, any>();
-
-  if (GROQ_API_KEY) {
-    providers.set('groq', {
-      type: ProviderType.OPENAI,
-      apiKey: GROQ_API_KEY,
-      endpoint: 'https://api.groq.com/openai/v1',
-      model: process.env.GROQ_MODEL || 'llama-3.1-8b-instant',
-    });
-  }
-
-  if (GEMINI_API_KEY) {
-    providers.set('gemini', {
-      type: ProviderType.GEMINI,
-      apiKey: GEMINI_API_KEY,
-      model: process.env.GEMINI_MODEL || 'gemini-1.5-flash',
-    });
-  }
-
-  if (NVIDIA_API_KEY) {
-    providers.set('nvidia', {
-      type: ProviderType.OPENAI,
-      apiKey: NVIDIA_API_KEY,
-      endpoint: 'https://integrate.api.nvidia.com/v1',
-      model: process.env.NVIDIA_MODEL || 'qwen/qwen2.5-72b-instruct',
-    });
-  }
-
-  if (OPENROUTER_API_KEY) {
-    providers.set('openrouter', {
-      type: ProviderType.OPENAI,
-      apiKey: OPENROUTER_API_KEY,
-      endpoint: 'https://openrouter.ai/api/v1',
-      model: process.env.OPENROUTER_MODEL || 'openai/gpt-4o',
-      options: {
-        defaultHeaders: {
-          'HTTP-Referer': process.env.SITE_URL || 'https://casuya.co.tz',
-          'X-Title': process.env.SITE_NAME || 'Casuya',
-        },
-      },
-    });
-  }
-
-  providers.set('local', { type: ProviderType.LOCAL, model: 'llama3.2' });
-
-  const defaultProvider =
-    (GROQ_API_KEY && 'groq') ||
-    (GEMINI_API_KEY && 'gemini') ||
-    (NVIDIA_API_KEY && 'nvidia') ||
-    (OPENROUTER_API_KEY && 'openrouter') ||
-    'local';
-
-  return { providers, default: defaultProvider };
-}
 
 function send(res: http.ServerResponse, status: number, data: unknown) {
   const body = JSON.stringify(data);
@@ -193,14 +132,22 @@ function buildGroundedMessage(opts: {
   return lines.join('\n');
 }
 
-/** Meaningful, KB-grounded fallback when the model provider fails. */
-function buildGroundedFallback(question: string, ragDocs: { title: string; kind: string }[]): string {
+/** Meaningful, KB-grounded fallback when every model provider fails. */
+function buildGroundedFallback(
+  question: string,
+  ragDocs: { title: string; kind: string; snippet?: string }[],
+): string {
   const cleanQ = question.replace(/^(explain|describe|define|what is|what are|how does|how do|why is|why do|state|list|outline|distinguish|compare)\b[\s:]*/i, '').trim() || question.trim();
   if (ragDocs.length) {
-    const refs = ragDocs.map((d) => `- ${d.title}`).join('\n');
-    return `I couldn't reach the AI model right now, but here is what the NECTA/TIE knowledge base says is relevant to your question, so you can keep studying:\n\n${refs}\n\n_(Ask again in a moment and I'll give a full explanation — or read the lesson text above and the referenced material to understand "${cleanQ}".)_`;
+    const refs = ragDocs
+      .map((d) => {
+        const snip = d.snippet ? `\n  ${d.snippet}` : '';
+        return `- ${d.title}${snip}`;
+      })
+      .join('\n');
+    return `I couldn't reach an AI model just now, so here is the closest NECTA/TIE material for "${cleanQ}":\n\n${refs}\n\nRead that with your lesson text, then ask again — the next attempt will try Groq, Google, Mistral, and Grok in turn.`;
   }
-  return `I couldn't reach the AI model right now. Please re-ask your question shortly — I'll then give a full explanation of: ${cleanQ}`;
+  return `I couldn't reach Groq, Google, Mistral, or Grok just now. Please ask "${cleanQ}" again in a moment.`;
 }
 
 function cleanThink(text: string): string {
@@ -211,8 +158,10 @@ function cleanThink(text: string): string {
 }
 
 async function start() {
-  const { providers, default: defaultProvider } = buildProviders();
-  console.log(`[casuya-ai] Active provider: ${defaultProvider}`);
+  const { specs, chain } = buildFreeProviderSpecs();
+  const providers = specsToConfigMap(specs);
+  const defaultProvider = chain[0] || 'local';
+  console.log(`[casuya-ai] Provider chain: ${chain.join(' → ')}`);
 
   const kb = getKnowledgeBase();
   if (kb.ready) {
@@ -224,7 +173,7 @@ async function start() {
   }
 
   const ai = new CasuyaAI({ providers, defaultProvider });
-  await ai.initializeProviders(providers, defaultProvider);
+  await ai.initializeProviders(providers, defaultProvider, chain);
 
   const server = http.createServer(async (req, res) => {
     const url = (req.url || '').split('?')[0];
@@ -234,7 +183,8 @@ async function start() {
         status: 'ok',
         service: 'casuya-ai',
         version: '1.0.0',
-        provider: defaultProvider,
+        provider: 'failover',
+        chain,
       });
     }
 
@@ -277,7 +227,7 @@ async function start() {
           // RAG retrieval scoped to the user's subject + class, with a graceful
           // fallback to unscoped retrieval so the answer is never left empty.
           let ragText = '';
-          let ragDocs: { title: string; kind: string; subject: string }[] = [];
+          let ragDocs: { title: string; kind: string; subject: string; snippet?: string }[] = [];
           if (kb.ready) {
             let rag = kb.buildRagContext(
               query,
@@ -291,7 +241,12 @@ async function start() {
                 Number(process.env.KB_RAG_MAX_CHARS) || 6000,
               );
             }
-            ragDocs = rag.docs.map((d) => ({ title: d.title, kind: d.kind, subject: d.subject }));
+            ragDocs = rag.docs.map((d) => ({
+              title: d.title,
+              kind: d.kind,
+              subject: d.subject,
+              snippet: kb.renderSnippet(d.id, 240) || undefined,
+            }));
             if (rag.docs.length && rag.text) {
               ragText = `\n\n# REFERENCE MATERIAL (from NECTA/TIE knowledge base)\nUse only what is relevant here to ground your answer. If the material doesn't answer the question, say so honestly rather than guessing.\n\n${rag.text}\n# END REFERENCE MATERIAL`;
             }

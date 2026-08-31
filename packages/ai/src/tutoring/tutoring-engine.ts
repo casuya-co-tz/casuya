@@ -50,9 +50,9 @@ export class TutoringEngine {
   async tutor(request: TutoringRequest): Promise<TutoringResponse> {
     this.validateRequest(request);
 
-    const cacheKey = `tutoring:${request.studentId}:${request.topic}:${request.mode}`;
+    const cacheKey = `tutoring:${request.studentId}:${request.topic}:${request.mode}:${request.message.slice(0, 120)}`;
     const cached = this.cache.get<TutoringResponse>(cacheKey);
-    if (cached) return cached;
+    if (cached?.message?.trim()) return cached;
 
     const systemPrompt = await this.buildSystemPrompt(request);
     const userPrompt = this.buildUserPrompt(request);
@@ -76,7 +76,7 @@ export class TutoringEngine {
     const tutoringResponse: TutoringResponse = {
       message,
       mode: request.mode,
-      suggestions: this.extractSuggestions(response.content),
+      suggestions: this.extractSuggestions(message),
       concepts: [],
       confidence: this.calculateConfidence(response),
       usage: {
@@ -87,7 +87,9 @@ export class TutoringEngine {
     };
 
     this.updateSession(request);
-    this.cache.set(cacheKey, tutoringResponse, 60 * 1000);
+    if (message.trim()) {
+      this.cache.set(cacheKey, tutoringResponse, 60 * 1000);
+    }
 
     return tutoringResponse;
   }
@@ -188,11 +190,11 @@ export class TutoringEngine {
 
   private getMaxTokens(mode: TutoringMode): number {
     switch (mode) {
-      case TutoringMode.EXPLAIN: return 1024;
-      case TutoringMode.SOCRATIC: return 512;
-      case TutoringMode.PRACTICE: return 1024;
-      case TutoringMode.REVIEW: return 768;
-      case TutoringMode.ASSESS: return 512;
+      case TutoringMode.EXPLAIN: return 2048;
+      case TutoringMode.SOCRATIC: return 1024;
+      case TutoringMode.PRACTICE: return 1536;
+      case TutoringMode.REVIEW: return 1024;
+      case TutoringMode.ASSESS: return 768;
     }
   }
 
@@ -205,7 +207,7 @@ export class TutoringEngine {
       if (/suggestions|you could|try|practice|next/i.test(line) && line.includes(':')) {
         inSuggestions = true;
       }
-      if (inSuggestions && line.trim().startsWith('-') || line.trim().startsWith('*') || /^\d+\./.test(line.trim())) {
+      if (inSuggestions && (line.trim().startsWith('-') || line.trim().startsWith('*') || /^\d+\./.test(line.trim()))) {
         suggestions.push(line.trim().replace(/^[-*\d.]+/, '').trim());
       }
     }

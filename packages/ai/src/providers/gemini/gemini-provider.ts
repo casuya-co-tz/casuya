@@ -10,6 +10,7 @@ import {
 } from '../../types';
 import { CasuyaAIError, ErrorCode, withRetry } from '../../utilities';
 import { Logger } from '../../utilities/logger';
+import { extractGeminiText } from '../chat-text';
 
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta';
 
@@ -67,7 +68,7 @@ export class GeminiProvider extends BaseProvider {
 
     return withRetry(async () => {
       const { result, latency } = await this.measureLatency(async () => {
-        const model = request.model ?? this.config.model ?? 'gemini-1.5-flash';
+        const model = request.model ?? this.config.model ?? 'gemini-2.0-flash';
         const url = `${this.baseUrl}/models/${model}:generateContent?key=${this.config.apiKey}`;
 
         const { systemInstruction, contents } = this.convertMessages(request.messages);
@@ -90,6 +91,7 @@ export class GeminiProvider extends BaseProvider {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(body),
+          signal: AbortSignal.timeout(this.config.timeout ?? 25000),
         });
 
         if (!response.ok) {
@@ -99,9 +101,9 @@ export class GeminiProvider extends BaseProvider {
         return (await response.json()) as GeminiCompletionResult;
       });
 
-      const modelName = request.model ?? this.config.model ?? 'gemini-1.5-pro';
+      const modelName = request.model ?? this.config.model ?? 'gemini-2.0-flash';
       const candidate = result.candidates?.[0];
-      const content = candidate?.content?.parts?.[0]?.text ?? '';
+      const content = extractGeminiText(candidate);
       const finishReason = candidate?.finishReason ?? 'STOP';
 
       return {
@@ -120,7 +122,7 @@ export class GeminiProvider extends BaseProvider {
   }
 
   async *chatCompletionStream(request: ChatCompletionRequest): AsyncIterable<StreamChunk> {
-    const model = request.model ?? this.config.model ?? 'gemini-1.5-flash';
+    const model = request.model ?? this.config.model ?? 'gemini-2.0-flash';
     const url = `${this.baseUrl}/models/${model}:streamGenerateContent?key=${this.config.apiKey}`;
 
     const { systemInstruction, contents } = this.convertMessages(request.messages);
@@ -171,7 +173,7 @@ export class GeminiProvider extends BaseProvider {
         if (!trimmed) continue;
         try {
           const data = JSON.parse(trimmed) as GeminiCompletionResult;
-          const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
+          const text = extractGeminiText(data.candidates?.[0]);
           if (text) {
             yield { content: text, done: false };
           }

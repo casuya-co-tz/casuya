@@ -21,6 +21,8 @@ import {
 } from './types';
 import { Logger } from './utilities/logger';
 import { ProviderFactory } from './providers/provider-factory';
+import { FailoverProvider } from './providers/failover-provider';
+import { BaseProvider } from './providers/base-provider';
 import { PromptManager } from './prompts/prompt-manager';
 import { DEFAULT_TEMPLATES } from './prompts/template-library';
 import { TutoringEngine } from './tutoring/tutoring-engine';
@@ -41,6 +43,7 @@ import { NECTA_TEMPLATES } from './prompts/necta-templates';
 export interface CasuyaAIConfig {
   providers: Map<string, ProviderConfig>;
   defaultProvider: string;
+  failoverChain?: string[];
   syllabus?: SyllabusAdapterConfig;
   logging?: {
     level?: string;
@@ -70,6 +73,7 @@ export class CasuyaAI {
 
   private logger: Logger;
   private initialized: boolean = false;
+  private failoverChain: string[];
 
   constructor(config?: Partial<CasuyaAIConfig>) {
     this.logger = new Logger({
@@ -104,27 +108,45 @@ export class CasuyaAI {
     this.summarizer = new Summarizer(defaultProvider, this.prompts);
     this.translator = new Translator(defaultProvider, this.prompts);
     this.moderation = new ContentModerator(defaultProvider, this.prompts);
-
-    if (config?.providers && config.defaultProvider) {
-      this.initializeProviders(config.providers, config.defaultProvider);
-    }
+    this.failoverChain = config?.failoverChain ?? (config?.defaultProvider ? [config.defaultProvider] : ['local']);
   }
 
-  async initializeProviders(providerConfigs: Map<string, ProviderConfig>, defaultProvider: string): Promise<void> {
+  async initializeProviders(
+    providerConfigs: Map<string, ProviderConfig>,
+    defaultProvider: string,
+    failoverChain?: string[],
+  ): Promise<void> {
+    if (failoverChain?.length) {
+      this.failoverChain = failoverChain;
+    }
     await ProviderFactory.initializeProviders(providerConfigs);
-    this.providerAdapter.setDefaultProvider(defaultProvider);
 
-    const provider = ProviderFactory.getProvider(defaultProvider);
-    if (provider) {
-      this.tutoring = new TutoringEngine(provider, this.prompts, undefined, this.syllabus ?? undefined);
-      this.questionGenerator = new QuestionGenerator(provider, this.prompts, undefined, this.syllabus ?? undefined);
-      this.summarizer = new Summarizer(provider, this.prompts);
-      this.translator = new Translator(provider, this.prompts);
-      this.moderation = new ContentModerator(provider, this.prompts);
+    const names = (this.failoverChain.length ? this.failoverChain : [defaultProvider])
+      .filter((name) => ProviderFactory.getProvider(name));
+    const live = names
+      .map((name) => ({ name, provider: ProviderFactory.getProvider(name) }))
+      .filter((entry): entry is { name: string; provider: BaseProvider } => !!entry.provider);
+
+    const active = live.length
+      ? new FailoverProvider(live.map((e) => e.provider), live.map((e) => e.name))
+      : ProviderFactory.getProvider(defaultProvider);
+
+    if (!active) {
+      this.logger.warn('No providers available after initialize');
+      this.initialized = true;
+      return;
     }
 
+    ProviderFactory.registerProvider('failover', active);
+    this.providerAdapter.setDefaultProvider('failover');
+    this.tutoring = new TutoringEngine(active, this.prompts, undefined, this.syllabus ?? undefined);
+    this.questionGenerator = new QuestionGenerator(active, this.prompts, undefined, this.syllabus ?? undefined);
+    this.summarizer = new Summarizer(active, this.prompts);
+    this.translator = new Translator(active, this.prompts);
+    this.moderation = new ContentModerator(active, this.prompts);
+
     this.initialized = true;
-    this.logger.info('CasuyaAI fully initialized');
+    this.logger.info(`CasuyaAI fully initialized (chain: ${live.map((e) => e.name).join(' → ') || defaultProvider})`);
   }
 
   async tutor(request: TutoringRequest): Promise<TutoringResponse> {

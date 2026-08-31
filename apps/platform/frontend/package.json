@@ -6,7 +6,7 @@
     "build:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.min.css --minify",
     "watch:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.min.css --watch",
     "bundle:js": "node build-js.mjs",
-    "minify:js": "npm run bundle:js && npx terser assets/js/student.bundle.js -o assets/js/student.bundle.js -c -m && npx terser assets/js/teacher.bundle.js -o assets/js/teacher.bundle.js -c -m && npx terser assets/js/admin.bundle.js -o assets/js/admin.bundle.js -c -m",
+    "minify:js": "npm run bundle:js && npx terser assets/js/student.bundle.js -o assets/js/student.bundle.js -c -m && npx terser assets/js/teacher.bundle.js -o assets/js/teacher.bundle.js -c -m && npx terser assets/js/admin.bundle.js -o assets/js/admin.bundle.js -c -m && node build-js.mjs --gzip-only",
     "minify:vendor": "npx terser assets/js/vendor-blackboard.js -o assets/js/vendor-blackboard.min.js -c -m",
     "minify:css": "npx clean-css-cli -o assets/css/main.min.css assets/css/main.css",
     "build:js": "npm run bundle:js",

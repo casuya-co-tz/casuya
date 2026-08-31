@@ -68,14 +68,23 @@ const roles = {
   ],
 };
 
-for (const [role, files] of Object.entries(roles)) {
-  const parts = [...core, ...files].map((f) => stripEsm(readFileSync(join(jsDir, f), "utf8")));
-  const out = parts.join("\n;\n");
-  const outPath = join(jsDir, `${role}.bundle.js`);
-  writeFileSync(outPath, out);
-  // Pre-compressed copy so nginx `gzip_static on;` can serve it without
-  // spending CPU compressing on every request (P0-4). Cloudflare still applies
-  // Brotli at the edge; this only helps the origin hop / direct visitors.
-  writeFileSync(`${outPath}.gz`, gzipSync(Buffer.from(out), { level: 9 }));
-  console.log(`wrote assets/js/${role}.bundle.js (${parts.length} source files) + .gz`);
+function gzipBundles() {
+  for (const role of Object.keys(roles)) {
+    const outPath = join(jsDir, `${role}.bundle.js`);
+    const out = readFileSync(outPath);
+    writeFileSync(`${outPath}.gz`, gzipSync(out, { level: 9 }));
+    console.log(`wrote assets/js/${role}.bundle.js.gz`);
+  }
+}
+
+if (process.argv.includes("--gzip-only")) {
+  gzipBundles();
+} else {
+  for (const [role, files] of Object.entries(roles)) {
+    const parts = [...core, ...files].map((f) => stripEsm(readFileSync(join(jsDir, f), "utf8")));
+    const out = parts.join("\n;\n");
+    const outPath = join(jsDir, `${role}.bundle.js`);
+    writeFileSync(outPath, out);
+  }
+  console.log(`wrote ${Object.keys(roles).length} role bundles (run --gzip-only after minify)`);
 }

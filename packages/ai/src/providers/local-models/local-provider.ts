@@ -62,6 +62,7 @@ export class LocalProvider extends BaseProvider {
             stop: request.stop,
           },
         }),
+        signal: AbortSignal.timeout(this.config.timeout ?? 8000),
       });
 
       if (!response.ok) {

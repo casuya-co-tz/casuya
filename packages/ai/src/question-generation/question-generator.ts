@@ -84,10 +84,13 @@ export class QuestionGenerator {
         { role: 'user', content: promptResult.content },
       ],
       temperature: 0.7,
-      maxTokens: 2048,
+      maxTokens: Math.min(4096, Math.max(1024, request.count * 280)),
     });
 
     const questions = this.parseQuestions(response.content, request);
+    if (!questions.length) {
+      return [];
+    }
 
     for (const q of questions) {
       this.addToBank(q);
@@ -145,7 +148,20 @@ export class QuestionGenerator {
         return parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
       }
     } catch {
-      // Not JSON, fall through
+      // Not JSON, try to extract an array from mixed model output
+    }
+
+    const start = cleaned.indexOf('[');
+    const end = cleaned.lastIndexOf(']');
+    if (start >= 0 && end > start) {
+      try {
+        const parsed = JSON.parse(cleaned.slice(start, end + 1));
+        if (Array.isArray(parsed)) {
+          return parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
+        }
+      } catch {
+        // fall through
+      }
     }
 
     return this.extractQuestionsFromText(response, request);

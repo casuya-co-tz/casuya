@@ -10,12 +10,13 @@ import {
 } from '../../types';
 import { CasuyaAIError, ErrorCode, withRetry } from '../../utilities';
 import { Logger } from '../../utilities/logger';
+import { extractChoiceText } from '../chat-text';
 
 const OPENAI_BASE_URL = 'https://api.openai.com/v1';
 
 interface OpenAIChoice {
-  message?: { content?: string; reasoning_content?: string };
-  delta?: { content?: string };
+  message?: Record<string, unknown>;
+  delta?: Record<string, unknown>;
   finish_reason?: string;
 }
 
@@ -41,7 +42,7 @@ export class OpenAIProvider extends BaseProvider {
   }
 
   get type(): string {
-    return 'openai';
+    return this.config.type || 'openai';
   }
 
   get supportedCapabilities(): ModelCapability[] {
@@ -75,6 +76,7 @@ export class OpenAIProvider extends BaseProvider {
             presence_penalty: request.presencePenalty,
             stop: request.stop,
           }),
+          signal: AbortSignal.timeout(this.config.timeout ?? 25000),
         });
 
         if (!response.ok) {
@@ -87,7 +89,7 @@ export class OpenAIProvider extends BaseProvider {
       return {
         id: result.id,
         model: result.model,
-        content: result.choices[0]?.message?.content ?? result.choices[0]?.message?.reasoning_content ?? '',
+        content: extractChoiceText(result.choices[0]),
         usage: {
           promptTokens: result.usage?.prompt_tokens ?? 0,
           completionTokens: result.usage?.completion_tokens ?? 0,
@@ -112,6 +114,7 @@ export class OpenAIProvider extends BaseProvider {
         max_tokens: request.maxTokens,
         stream: true,
       }),
+      signal: AbortSignal.timeout(this.config.timeout ?? 25000),
     });
 
     if (!response.ok) {
@@ -144,7 +147,7 @@ export class OpenAIProvider extends BaseProvider {
         }
         try {
           const data = JSON.parse(jsonStr) as OpenAICompletionResult;
-          const content = data.choices?.[0]?.delta?.content ?? '';
+          const content = extractChoiceText(data.choices?.[0]);
           if (content) {
             yield { content, done: false };
           }

@@ -3,7 +3,13 @@ import { JsonValue } from './common';
 export enum ProviderType {
   OPENAI = 'openai',
   GEMINI = 'gemini',
+  GOOGLE = 'google',
   ANTHROPIC = 'anthropic',
+  GROQ = 'groq',
+  GROK = 'grok',
+  MISTRAL = 'mistral',
+  NVIDIA = 'nvidia',
+  OPENROUTER = 'openrouter',
   LOCAL = 'local',
 }
 
