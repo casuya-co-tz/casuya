@@ -78,6 +78,17 @@ class SafeRedis:
         except RedisError:
             return None
 
+    def pipeline(self) -> Any:
+        """Return a real Redis pipeline, or fail so callers fall back.
+
+        Raises when Redis is unreachable so rate-limiting / cache code that
+        catches exceptions gracefully degrades to its in-memory fallback.
+        """
+        client = self._get()
+        if client is None:
+            raise RedisError("Redis unavailable")
+        return client.pipeline()
+
     def keys(self, *args: Any, **kwargs: Any) -> Any:
         client = self._get()
         if client is None:
