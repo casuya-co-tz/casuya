@@ -142,29 +142,59 @@ export class QuestionGenerator {
       cleaned = fenceMatch[1].trim();
     }
 
+    let questions: GeneratedQuestion[] = [];
     try {
       const parsed = JSON.parse(cleaned);
       if (Array.isArray(parsed)) {
-        return parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
+        questions = parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
       }
     } catch {
       // Not JSON, try to extract an array from mixed model output
     }
 
-    const start = cleaned.indexOf('[');
-    const end = cleaned.lastIndexOf(']');
-    if (start >= 0 && end > start) {
-      try {
-        const parsed = JSON.parse(cleaned.slice(start, end + 1));
-        if (Array.isArray(parsed)) {
-          return parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
+    if (!questions.length) {
+      const start = cleaned.indexOf('[');
+      const end = cleaned.lastIndexOf(']');
+      if (start >= 0 && end > start) {
+        try {
+          const parsed = JSON.parse(cleaned.slice(start, end + 1));
+          if (Array.isArray(parsed)) {
+            questions = parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
+          }
+        } catch {
+          // fall through
         }
-      } catch {
-        // fall through
       }
     }
 
-    return this.extractQuestionsFromText(response, request);
+    if (!questions.length) {
+      questions = this.extractQuestionsFromText(response, request);
+    }
+
+    return this.validateQuestions(questions, request);
+  }
+
+  private validateQuestions(questions: GeneratedQuestion[], request: QuestionGenerationRequest): GeneratedQuestion[] {
+    const uncertaintyPatterns = [
+      /\bwait\b/i,
+      /\bactually\b.*\bshould\b/i,
+      /\bcorrect answer should\b/i,
+      /\bthis question demonstrates the importance\b/i,
+      /\bhmm\b/i,
+      /\blet me\b/i,
+      /\bperhaps\b/i,
+      /\bmaybe\b/i,
+      /\bprobably not\b/i,
+    ];
+    const validated: GeneratedQuestion[] = [];
+    for (const q of questions) {
+      if (!q.text.trim() || !q.correctAnswer) continue;
+      if (!q.options || q.options.length < 2) continue;
+      const expl = (q.explanation ?? '').toLowerCase();
+      if (uncertaintyPatterns.some((p) => p.test(expl))) continue;
+      validated.push(q);
+    }
+    return validated.slice(0, request.count);
   }
 
   private normalizeQuestion(raw: Record<string, unknown>, index: number, request: QuestionGenerationRequest): GeneratedQuestion {
