@@ -11,6 +11,8 @@ COPY tsconfig.json ./
 COPY tsconfig.server.json ./
 COPY src/ src/
 COPY server.ts ./
+COPY kb-data/ kb-data/
+COPY knowledge_base/ knowledge_base/
 
 RUN npx tsc -p tsconfig.server.json
 
@@ -22,6 +24,8 @@ ENV NODE_ENV=production
 COPY --from=builder /app/dist/ dist/
 COPY --from=builder /app/node_modules/ node_modules/
 COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/kb-data/ kb-data/
+COPY --from=builder /app/knowledge_base/ knowledge_base/
 
 EXPOSE 3000
 
