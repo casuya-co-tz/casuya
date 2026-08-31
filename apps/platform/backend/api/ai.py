@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 
+from backend.middleware.auth import get_current_user
 from backend.services.ai_service import (
     analyze_content,
     generate_quiz_questions,
@@ -44,7 +45,7 @@ class TranslateRequest(BaseModel):
 
 
 @router.post("/questions/generate")
-async def api_generate_questions(req: QuestionRequest):
+async def api_generate_questions(req: QuestionRequest, _user=Depends(get_current_user)):
     questions = await generate_quiz_questions(
         req.lesson_html,
         req.count,
@@ -55,7 +56,7 @@ async def api_generate_questions(req: QuestionRequest):
 
 
 @router.post("/tutoring/explain")
-async def api_tutoring(req: TutoringRequest):
+async def api_tutoring(req: TutoringRequest, _user=Depends(get_current_user)):
     response = await get_tutoring_response(
         req.question,
         req.lesson_context,
@@ -66,18 +67,18 @@ async def api_tutoring(req: TutoringRequest):
 
 
 @router.post("/content/analyze")
-async def api_analyze(req: AnalyzeRequest):
+async def api_analyze(req: AnalyzeRequest, _user=Depends(get_current_user)):
     result = await analyze_content(req.html_content)
     return result
 
 
 @router.post("/content/moderate")
-async def api_moderate(req: ModerateRequest):
+async def api_moderate(req: ModerateRequest, _user=Depends(get_current_user)):
     result = await moderate_content(req.text)
     return result
 
 
 @router.post("/content/translate")
-async def api_translate(req: TranslateRequest):
+async def api_translate(req: TranslateRequest, _user=Depends(get_current_user)):
     translated = await translate_content(req.text, req.target_language)
     return {"translated": translated}

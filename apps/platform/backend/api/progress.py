@@ -10,12 +10,31 @@ from backend.config.database import get_db
 from backend.middleware.auth import bridge_auth, get_current_user
 from backend.models.activity import RecentActivity
 from backend.models.progress import ProgressRecord
+from backend.models.student import Student
 from backend.schemas.progress import ProgressSyncPayload
 from backend.services.progress_service import apply_progress_sync, get_student_progress
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/progress", tags=["progress"])
+
+
+def _resolve_student_id(current_user: dict, requested: str) -> str:
+    """Resolve the student_id a caller is allowed to act on.
+
+    Students may only act on their own record; admins/teachers may act on any.
+    """
+    role = current_user.get("role", "")
+    if role in ("admin", "teacher"):
+        return requested
+    db: Session = next(get_db())
+    try:
+        student = db.query(Student).filter(Student.user_id == current_user["sub"]).first()
+        if not student:
+            raise HTTPException(status_code=404, detail="Student profile not found")
+        return student.id
+    finally:
+        db.close()
 
 
 # --- Activity recording (merged from activity.py) ---
@@ -29,12 +48,13 @@ class ActivityPayload(BaseModel):
 
 @router.post("/activity")
 @router.post("/activity/")
-def record_activity(body: ActivityPayload, _current_user=Depends(get_current_user)):
+def record_activity(body: ActivityPayload, current_user=Depends(get_current_user)):
     """Record that a student viewed a lesson (server-side, replaces localStorage)."""
+    student_id = _resolve_student_id(current_user, body.student_id)
     db: Session = next(get_db())
     try:
         record = RecentActivity(
-            student_id=body.student_id,
+            student_id=student_id,
             lesson_id=body.lesson_id,
             lesson_title=body.lesson_title,
             viewed_at=datetime.now(timezone.utc),
@@ -62,14 +82,24 @@ def _do_sync(student_id: str, payload: dict):
 @router.post("/sync", response_model=dict)
 @router.post("/sync/", response_model=dict)
 def sync_progress(body: ProgressSyncPayload, background_tasks: BackgroundTasks, current_user=Depends(bridge_auth)):
-    background_tasks.add_task(_do_sync, student_id=body.student_id, payload=body.model_dump())
-    return {"status": "queued", "student_id": body.student_id, "lesson_id": body.lesson_id}
+    role = current_user.get("role", "")
+    student_id = body.student_id
+    if role != "bridge":
+        # JWT-authenticated users may only sync their own progress.
+        student_id = _resolve_student_id(current_user, student_id)
+    background_tasks.add_task(_do_sync, student_id=student_id, payload=body.model_dump())
+    return {"status": "queued", "student_id": student_id, "lesson_id": body.lesson_id}
 
 
 @router.get("/{student_id}/stats")
 @router.get("/{student_id}/stats/")
-def get_student_stats(student_id: str, _current_user=Depends(get_current_user)):
+def get_student_stats(student_id: str, current_user=Depends(get_current_user)):
     """Return server-side streak, lessons viewed count, average score, and recent lessons."""
+    role = current_user.get("role", "")
+    if role not in ("admin", "teacher"):
+        owned = _resolve_student_id(current_user, "")  # throws if caller has no student profile
+        if owned != student_id:
+            raise HTTPException(status_code=403, detail="Not authorized to view this student's data")
     db: Session = next(get_db())
     try:
         now = datetime.now(timezone.utc)
@@ -148,4 +178,9 @@ def get_student_stats(student_id: str, _current_user=Depends(get_current_user)):
 @router.get("/{student_id}", response_model=list[dict])
 @router.get("/{student_id}/", response_model=list[dict])
 def get_student_progress_route(student_id: str, current_user=Depends(get_current_user)):
+    role = current_user.get("role", "")
+    if role not in ("admin", "teacher"):
+        owned = _resolve_student_id(current_user, "")
+        if owned != student_id:
+            raise HTTPException(status_code=403, detail="Not authorized to view this student's data")
     return get_student_progress(student_id)

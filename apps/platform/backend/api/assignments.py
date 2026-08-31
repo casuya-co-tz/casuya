@@ -1,8 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 
+from sqlalchemy.orm import Session
+
+from backend.config.database import get_db
 from backend.middleware.auth import get_current_user
 from backend.middleware.permissions import require_role
+from backend.models.student import Student
 from backend.services.assignment_service import (
     create_assignment,
     delete_assignment,
@@ -70,15 +74,24 @@ def submit_assignment_route(
     assignment_id: str,
     body: SubmitAssignmentRequest,
     current_user=Depends(get_current_user),
+    db: Session = Depends(get_db),
 ):
+    role = current_user.get("role", "")
+    student_id = body.student_id
+    if role == "student":
+        # Students may only submit as themselves.
+        student = db.query(Student).filter(Student.user_id == current_user["sub"]).first()
+        if not student:
+            raise HTTPException(status_code=404, detail="Student profile not found")
+        student_id = student.id
     return submit_assignment(
         assignment_id=assignment_id,
-        student_id=body.student_id,
+        student_id=student_id,
         elements_json=body.elements_json,
     )
 
 
-@router.get("/{assignment_id}/submissions", response_model=list[dict])
-@router.get("/{assignment_id}/submissions/", response_model=list[dict])
+@router.get("/{assignment_id}/submissions", response_model=list[dict], dependencies=[Depends(require_role("admin", "teacher"))])
+@router.get("/{assignment_id}/submissions/", response_model=list[dict], dependencies=[Depends(require_role("admin", "teacher"))])
 def list_submissions_route(assignment_id: str, current_user=Depends(get_current_user)):
     return list_submissions(assignment_id)

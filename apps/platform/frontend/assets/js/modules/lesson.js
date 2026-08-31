@@ -58,11 +58,8 @@ async function viewLessonContent(containerId, lessonId, backFn) {
 
     if (isStudent) {
       try {
-        const students = await request("/students");
-        if (Array.isArray(students)) {
-          const my = students.find(s => s.user_id === payload.sub || s.id === payload.sub);
-          if (my) studentId = my.id || my.user_id;
-        }
+        const me = await request("/students/me");
+        if (me && me.id) studentId = me.id;
       } catch(e) {}
     }
 

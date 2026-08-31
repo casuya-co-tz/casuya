@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
 from backend.middleware.auth import get_current_user
+from backend.middleware.permissions import require_role
 from backend.models.teacher import Teacher
 from backend.models.user import User
 
@@ -30,8 +31,8 @@ def _get_current_teacher(current_user: dict, db: Session) -> Teacher:
     return teacher
 
 
-@router.get("")
-@router.get("/")
+@router.get("", dependencies=[Depends(require_role("admin", "teacher"))])
+@router.get("/", dependencies=[Depends(require_role("admin", "teacher"))])
 def list_teachers(current_user=Depends(get_current_user)):
     _gen = get_db()
     db: Session = next(_gen)
@@ -112,6 +113,9 @@ def get_teacher(teacher_id: str, current_user=Depends(get_current_user)):
         teacher = db.query(Teacher).filter(Teacher.id == teacher_id).first()
         if not teacher:
             return {"error": "not_found"}
+        role = current_user.get("role", "")
+        if role not in ("admin", "teacher") and not (role == "teacher" and teacher.user_id == current_user["sub"]):
+            raise HTTPException(status_code=403, detail="Not authorized to view this teacher")
         email = db.query(User.email).filter(User.id == teacher.user_id).scalar()
         return {
             "id": teacher.id,

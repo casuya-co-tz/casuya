@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 
+from backend.middleware.auth import get_current_user
 from backend.services.ai_service import (
     convert_units,
     generate_math_steps,
@@ -37,24 +38,24 @@ class PhysicsProblemRequest(BaseModel):
 
 
 @router.post("/solve")
-async def api_solve(req: SolveRequest):
+async def api_solve(req: SolveRequest, _user=Depends(get_current_user)):
     result = await solve_equation(req.formula, req.variables)
     return result
 
 
 @router.post("/steps")
-async def api_steps(req: StepsRequest):
+async def api_steps(req: StepsRequest, _user=Depends(get_current_user)):
     steps = await generate_math_steps(req.expression, req.target)
     return {"steps": steps}
 
 
 @router.post("/convert")
-async def api_convert(req: ConvertRequest):
+async def api_convert(req: ConvertRequest, _user=Depends(get_current_user)):
     result = await convert_units(req.value, req.from_unit, req.to_unit)
     return result
 
 
 @router.post("/physics-problem")
-async def api_physics_problem(req: PhysicsProblemRequest):
+async def api_physics_problem(req: PhysicsProblemRequest, _user=Depends(get_current_user)):
     result = await generate_physics_problem(req.topic, req.difficulty)
     return result

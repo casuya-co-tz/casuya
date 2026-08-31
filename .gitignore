@@ -13,5 +13,6 @@ __pycache__/
 .turbo/
 tunnel*.err
 *.db
+storage/
 
 .vercel

@@ -16,9 +16,10 @@
       try {
         var payload = JSON.parse(atob(token.split(".")[1]));
         var role = payload.role;
-        if (!role || role !== "student") {
+        var isStudentRole = role === "student" || role === "special_needs";
+        if (!role || !isStudentRole) {
           localStorage.removeItem("casuya_token"); localStorage.removeItem("casuya_role"); localStorage.removeItem("casuya_refresh_token"); localStorage.removeItem("casuya_user_id");
-          if (role && {admin:"/admin/",teacher:"/teacher/",student:"/student/"}[role]) { window.location.replace({admin:"/admin/",teacher:"/teacher/",student:"/student/"}[role]); }
+          if (role && {admin:"/admin/",teacher:"/teacher/",student:"/student/",special_needs:"/student/"}[role]) { window.location.replace({admin:"/admin/",teacher:"/teacher/",student:"/student/",special_needs:"/student/"}[role]); }
           else { window.location.replace("/login.html"); }
           return;
         }

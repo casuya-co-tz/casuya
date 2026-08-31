@@ -74,6 +74,9 @@ class Settings(BaseSettings):
     azampay_x_api_key: str | None = None
     azampay_sandbox: bool = True
     azampay_mock: bool = False  # dev only: simulate successful AzamPay responses
+    # Dedicated secret used to verify AzamPay webhook callbacks (HMAC-SHA256
+    # over the raw body). Falls back to azampay_client_secret when unset.
+    azampay_webhook_secret: str | None = None
     africastalking_username: str | None = None
     africastalking_api_key: str | None = None
 

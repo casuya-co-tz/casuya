@@ -1061,11 +1061,8 @@
         let studentId = null;
         let sessionId = Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
         try {
-          const students = await request("/students");
-          if (Array.isArray(students)) {
-            const my = students.find(s => s.user_id === studentTokenPayload.sub || s.id === studentTokenPayload.sub);
-            if (my) studentId = my.id || my.user_id;
-          }
+          const me = await request("/students/me");
+          if (me && me.id) studentId = me.id;
         } catch(e) {}
         const onMessage = (e) => {
           if (e.data?.type === "casuya-quiz" && e.data.score != null && e.data.total > 0) {

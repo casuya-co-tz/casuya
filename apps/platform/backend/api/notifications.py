@@ -62,7 +62,9 @@ def send_bulk_notification_route(body: SendNotificationRequest, db: Session = De
 @router.post("/{notification_id}/read")
 @router.post("/{notification_id}/read/")
 def mark_read_route(notification_id: str, db: Session = Depends(get_db), current_user=Depends(get_current_user)):
+    role = current_user.get("role", "")
+    user_id = None if role == "admin" else current_user["sub"]
     try:
-        return mark_notification_read(db, notification_id)
+        return mark_notification_read(db, notification_id, user_id=user_id)
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))

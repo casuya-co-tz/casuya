@@ -138,12 +138,13 @@ class PaymentsClient:
             },
         )
 
-    def cancel_subscription(self, subscription_id: str, immediate: bool = False) -> dict:
+    def cancel_subscription(self, subscription_id: str, immediate: bool = False, user_id: str | None = None) -> dict:
+        json_body: dict = {"immediate": immediate}
+        if user_id:
+            json_body["user_id"] = user_id
         return self._post(
             f"/subscriptions/{subscription_id}/cancel",
-            json={
-                "immediate": immediate,
-            },
+            json=json_body,
         )
 
     def pause_subscription(self, subscription_id: str) -> dict:
@@ -162,8 +163,11 @@ class PaymentsClient:
             params["status"] = status
         return self._get("/invoices", params=params)
 
-    def get_invoice(self, invoice_id: str) -> dict:
-        return self._get(f"/invoices/{invoice_id}")
+    def get_invoice(self, invoice_id: str, user_id: str | None = None) -> dict:
+        params: dict = {}
+        if user_id:
+            params["user_id"] = user_id
+        return self._get(f"/invoices/{invoice_id}", params=params)
 
     def create_invoice(
         self,
@@ -188,8 +192,11 @@ class PaymentsClient:
             },
         )
 
-    def pay_invoice(self, invoice_id: str) -> dict:
-        return self._post(f"/invoices/{invoice_id}/pay")
+    def pay_invoice(self, invoice_id: str, user_id: str | None = None) -> dict:
+        json_body: dict = {}
+        if user_id:
+            json_body["user_id"] = user_id
+        return self._post(f"/invoices/{invoice_id}/pay", json=json_body)
 
     # ── Refunds ───────────────────────────────────────────────────────────
 

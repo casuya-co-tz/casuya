@@ -75,8 +75,11 @@ def list_notifications(
     ]
 
 
-def mark_notification_read(db: Session, notification_id: str) -> dict:
-    notification = db.query(Notification).filter(Notification.id == notification_id).first()
+def mark_notification_read(db: Session, notification_id: str, user_id: str | None = None) -> dict:
+    query = db.query(Notification).filter(Notification.id == notification_id)
+    if user_id is not None:
+        query = query.filter(Notification.user_id == user_id)
+    notification = query.first()
     if not notification:
         raise ValueError("Notification not found")
     notification.is_read = True

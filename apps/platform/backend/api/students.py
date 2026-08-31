@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
 from backend.middleware.auth import get_current_user
+from backend.middleware.permissions import require_role
 from backend.models.student import Student
 from backend.models.user import User
 
@@ -42,28 +43,47 @@ def _get_current_student(current_user: dict, db: Session) -> Student:
     return student
 
 
-@router.get("")
-@router.get("/")
+@router.get("", dependencies=[Depends(require_role("student", "teacher", "admin"))])
+@router.get("/", dependencies=[Depends(require_role("student", "teacher", "admin"))])
 def list_students(current_user=Depends(get_current_user)):
     _gen = get_db()
     db: Session = next(_gen)
     try:
-        students = (
-            db.query(Student, User.email)
-            .outerjoin(User, Student.user_id == User.id)
-            .all()
-        )
-        return [
-            {
-                "id": s.id,
-                "user_id": s.user_id,
-                "email": email,
-                "full_name": s.full_name,
-                "form_level": s.form_level,
-                "school_code": s.school_code,
-            }
-            for s, email in students
-        ]
+        role = current_user.get("role", "")
+        students = []
+        if role == "student":
+            # Students may only read their own record; return it alone.
+            student = db.query(Student).filter(Student.user_id == current_user["sub"]).first()
+            if student:
+                email = db.query(User.email).filter(User.id == student.user_id).scalar()
+                students = [
+                    {
+                        "id": student.id,
+                        "user_id": student.user_id,
+                        "email": email,
+                        "full_name": student.full_name,
+                        "form_level": student.form_level,
+                        "school_code": student.school_code,
+                    }
+                ]
+        else:
+            rows = (
+                db.query(Student, User.email)
+                .outerjoin(User, Student.user_id == User.id)
+                .all()
+            )
+            students = [
+                {
+                    "id": s.id,
+                    "user_id": s.user_id,
+                    "email": email,
+                    "full_name": s.full_name,
+                    "form_level": s.form_level,
+                    "school_code": s.school_code,
+                }
+                for s, email in rows
+            ]
+        return students
     finally:
         _gen.close()
 
@@ -124,6 +144,9 @@ def get_student(student_id: str, current_user=Depends(get_current_user)):
         student = db.query(Student).filter(Student.id == student_id).first()
         if not student:
             return {"error": "not_found"}
+        role = current_user.get("role", "")
+        if role not in ("admin", "teacher") and not (role == "student" and student.user_id == current_user["sub"]):
+            raise HTTPException(status_code=403, detail="Not authorized to view this student")
         email = db.query(User.email).filter(User.id == student.user_id).scalar()
         return {
             "id": student.id,

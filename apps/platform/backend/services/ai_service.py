@@ -7,7 +7,10 @@ generation when the AI service is unavailable.
 
 from __future__ import annotations
 
+import ast
 import logging
+import math
+import operator
 import os
 import re
 
@@ -256,6 +259,123 @@ async def translate_content(text: str, target_language: str) -> str:
 # ---------- Math/STEM ----------
 
 
+_SAFE_BIN_OPS = {
+    ast.Add: operator.add,
+    ast.Sub: operator.sub,
+    ast.Mult: operator.mul,
+    ast.Div: operator.truediv,
+    ast.FloorDiv: operator.floordiv,
+    ast.Mod: operator.mod,
+    ast.Pow: operator.pow,
+    ast.BitXor: operator.xor,
+    ast.BitAnd: operator.and_,
+    ast.BitOr: operator.or_,
+    ast.LShift: operator.lshift,
+    ast.RShift: operator.rshift,
+}
+
+_SAFE_UNARY_OPS = {
+    ast.UAdd: operator.pos,
+    ast.USub: operator.neg,
+    ast.Not: operator.not_,
+    ast.Invert: operator.invert,
+}
+
+_SAFE_CONSTS = {"e": math.e, "pi": math.pi, "tau": math.tau}
+
+
+def _safe_eval(expr: str, context: dict) -> float:
+    """Evaluate an arithmetic expression safely using only an AST whitelist.
+
+    No arbitrary code execution: only numbers, arithmetic operators, and a
+    small set of whitelisted names/functions are permitted. Anything else
+    raises ValueError.
+    """
+    node = ast.parse(expr, mode="eval").body
+    names = {k: v for k, v in _SAFE_CONSTS.items()}
+    names.update(context)
+
+    _allowed_fns = {
+        "sin": math.sin,
+        "cos": math.cos,
+        "tan": math.tan,
+        "asin": math.asin,
+        "acos": math.acos,
+        "atan": math.atan,
+        "sqrt": math.sqrt,
+        "log": math.log,
+        "log10": math.log10,
+        "exp": math.exp,
+        "abs": abs,
+        "floor": math.floor,
+        "ceil": math.ceil,
+        "min": min,
+        "max": max,
+        "pow": math.pow,
+        "round": round,
+    }
+
+    def eval_node(n: ast.AST):
+        if isinstance(n, ast.Expression):
+            return eval_node(n.body)
+        if isinstance(n, ast.Constant):
+            if isinstance(n.value, (int, float, bool)) or n.value is None:
+                return n.value
+            raise ValueError("Unsupported constant")
+        if isinstance(n, ast.Name):
+            if n.id in names:
+                return names[n.id]
+            raise ValueError(f"Unknown name: {n.id}")
+        if isinstance(n, ast.BinOp):
+            op = _SAFE_BIN_OPS.get(type(n.op))
+            if op is None:
+                raise ValueError("Unsupported binary operator")
+            return op(eval_node(n.left), eval_node(n.right))
+        if isinstance(n, ast.UnaryOp):
+            op = _SAFE_UNARY_OPS.get(type(n.op))
+            if op is None:
+                raise ValueError("Unsupported unary operator")
+            return op(eval_node(n.operand))
+        if isinstance(n, ast.BoolOp):
+            if isinstance(n.op, ast.And):
+                return all(eval_node(v) for v in n.values)
+            if isinstance(n.op, ast.Or):
+                return any(eval_node(v) for v in n.values)
+        if isinstance(n, ast.Call):
+            if not isinstance(n.func, ast.Name):
+                raise ValueError("Unsupported function call")
+            fn = _allowed_fns.get(n.func.id)
+            if fn is None:
+                raise ValueError(f"Unknown function: {n.func.id}")
+            args = [eval_node(a) for a in n.args]
+            if n.keywords:
+                raise ValueError("Keyword arguments not allowed")
+            return fn(*args)
+        if isinstance(n, ast.Compare):
+            # Support a single comparison for simple boolean results.
+            if len(n.ops) == 1 and len(n.comparators) == 1:
+                op_map = {
+                    ast.Lt: operator.lt,
+                    ast.LtE: operator.le,
+                    ast.Gt: operator.gt,
+                    ast.GtE: operator.ge,
+                    ast.Eq: operator.eq,
+                    ast.NotEq: operator.ne,
+                }
+                op = op_map.get(type(n.ops[0]))
+                if op is not None:
+                    return op(eval_node(n.left), eval_node(n.comparators[0]))
+            raise ValueError("Unsupported comparison")
+        if isinstance(n, ast.IfExp):
+            return eval_node(n.body) if eval_node(n.test) else eval_node(n.orelse)
+        raise ValueError("Unsupported expression")
+
+    result = eval_node(node)
+    if not isinstance(result, (int, float)):
+        raise ValueError("Expression is not numeric")
+    return float(result)
+
+
 async def solve_equation(formula: str, variables: dict) -> dict:
     """Solve a physics/math equation given variable values."""
     result = await _call_ai_service(
@@ -268,14 +388,20 @@ async def solve_equation(formula: str, variables: dict) -> dict:
     if result:
         return result
 
-    # Fallback: basic evaluation
+    # Fallback: safe local evaluation (AST whitelist — no eval/exec of user input).
     try:
         expr = formula
+        context: dict = {}
         for name, val in variables.items():
             if isinstance(val, dict) and "value" in val and val["value"] is not None:
-                expr = expr.replace(name, str(val["value"]))
-        result_val = eval(expr, {"__builtins__": {}}, {})
-        return {"result": float(result_val), "formula": formula}
+                try:
+                    context[name] = float(val["value"])
+                except (TypeError, ValueError):
+                    continue
+            elif isinstance(val, (int, float)):
+                context[name] = float(val)
+        result_val = _safe_eval(expr, context)
+        return {"result": result_val, "formula": formula}
     except Exception:
         return {"error": "Could not solve equation", "formula": formula}
 

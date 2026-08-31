@@ -1,6 +1,9 @@
+import json
+
 from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel
 
+from backend.config.settings import get_settings
 from backend.middleware.auth import get_current_user
 from backend.middleware.permissions import require_role
 from backend.schemas.payments import (
@@ -170,7 +173,43 @@ def checkout_plan(
 @router.post("/webhook")
 @router.post("/webhook/")
 async def azampay_webhook(request: Request):
-    payload = await request.json()
+    """Handle an AzamPay payment callback.
+
+    The raw body is verified against AzamPay's signature before any state
+    change is applied, so an unauthenticated caller cannot forge payment
+    success/failure. In dev mock mode (azampay_mock=True) verification is
+    skipped because mock callbacks are not signed.
+    """
+    body_bytes = await request.body()
+    settings = get_settings()
+
+    if not getattr(settings, "azampay_mock", False):
+        secret = settings.azampay_webhook_secret or settings.azampay_client_secret
+        signature = (
+            request.headers.get("X-Signature")
+            or request.headers.get("X-AzamPay-Signature")
+            or request.headers.get("X-Callback-Signature")
+        )
+        if not secret:
+            raise HTTPException(status_code=503, detail="Webhook signature secret not configured")
+        if not signature:
+            raise HTTPException(status_code=401, detail="Missing webhook signature")
+
+        import hashlib
+        import hmac as hmac_mod
+
+        expected = hmac_mod.new(str(secret).encode(), body_bytes, hashlib.sha256).hexdigest()
+        # Accept SHA-256; some AzamPay callbacks echo a SHA-512 digest too.
+        expected_sha512 = hmac_mod.new(str(secret).encode(), body_bytes, hashlib.sha512).hexdigest()
+        provided = signature.strip()
+        if not (hmac_mod.compare_digest(provided, expected) or hmac_mod.compare_digest(provided, expected_sha512)):
+            raise HTTPException(status_code=401, detail="Invalid webhook signature")
+
+    try:
+        payload = json.loads(body_bytes.decode("utf-8"))
+    except (ValueError, UnicodeDecodeError):
+        raise HTTPException(status_code=400, detail="Invalid JSON body")
+
     try:
         return handle_webhook_payload(payload)
     except HTTPException:
@@ -247,7 +286,9 @@ def create_sub(body: SubscriptionRequest, current_user=Depends(get_current_user)
 @router.post("/subscriptions/{subscription_id}/cancel/")
 def cancel_sub(subscription_id: str, immediate: bool = False, current_user=Depends(get_current_user)):
     try:
-        return cancel_subscription(subscription_id, immediate)
+        role = current_user.get("role", "student")
+        user_id = None if role == "admin" else current_user["sub"]
+        return cancel_subscription(subscription_id, immediate, user_id=user_id)
     except HTTPException:
         raise
     except ConnectionError:
@@ -277,7 +318,9 @@ def list_invoices(status: str | None = None, current_user=Depends(get_current_us
 @router.get("/invoices/{invoice_id}/")
 def get_inv(invoice_id: str, current_user=Depends(get_current_user)):
     try:
-        return get_invoice(invoice_id)
+        role = current_user.get("role", "student")
+        user_id = None if role == "admin" else current_user["sub"]
+        return get_invoice(invoice_id, user_id=user_id)
     except HTTPException:
         raise
     except ConnectionError:
@@ -290,7 +333,9 @@ def get_inv(invoice_id: str, current_user=Depends(get_current_user)):
 @router.post("/invoices/{invoice_id}/pay/")
 def pay_inv(invoice_id: str, current_user=Depends(get_current_user)):
     try:
-        return pay_invoice(invoice_id)
+        role = current_user.get("role", "student")
+        user_id = None if role == "admin" else current_user["sub"]
+        return pay_invoice(invoice_id, user_id=user_id)
     except HTTPException:
         raise
     except ConnectionError:

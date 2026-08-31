@@ -235,9 +235,9 @@ def create_subscription(user_id: str, plan_id: str, amount: float) -> dict:
     return result
 
 
-def cancel_subscription(subscription_id: str, immediate: bool = False) -> dict:
+def cancel_subscription(subscription_id: str, immediate: bool = False, user_id: str | None = None) -> dict:
     client = get_payments_client()
-    result = client.cancel_subscription(subscription_id=subscription_id, immediate=immediate)
+    result = client.cancel_subscription(subscription_id=subscription_id, immediate=immediate, user_id=user_id)
     payment_cache.invalidate()
     return result
 
@@ -249,14 +249,14 @@ def list_user_invoices(user_id: str) -> list[dict]:
     return payment_cache.get_invoices(user_id=user_id)
 
 
-def get_invoice(invoice_id: str) -> dict:
+def get_invoice(invoice_id: str, user_id: str | None = None) -> dict:
     client = get_payments_client()
-    return client.get_invoice(invoice_id=invoice_id)
+    return client.get_invoice(invoice_id=invoice_id, user_id=user_id)
 
 
-def pay_invoice(invoice_id: str) -> dict:
+def pay_invoice(invoice_id: str, user_id: str | None = None) -> dict:
     client = get_payments_client()
-    result = client.pay_invoice(invoice_id=invoice_id)
+    result = client.pay_invoice(invoice_id=invoice_id, user_id=user_id)
     payment_cache.invalidate()
     return result
 
