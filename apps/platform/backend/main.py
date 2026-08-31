@@ -12,6 +12,7 @@ from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from backend.middleware.static_precompressed import PrecompressedStaticFiles
 
 from backend.api import (
     ai,
@@ -65,6 +66,11 @@ async def lifespan(app: FastAPI):
     from backend.services.email_service import smtp_configured
 
     print(f"SMTP {'configured' if smtp_configured() else 'NOT configured (email resets disabled)'}")
+    from backend.config.database import acquire_startup_lock, release_startup_lock
+
+    # Only one worker runs the DDL/migration/rehydrate sequence; the others
+    # skip it once the lock is held by the leader (enables multi-worker boots).
+    acquired = await asyncio.to_thread(acquire_startup_lock)
     try:
         await asyncio.to_thread(init_db)
 
@@ -89,6 +95,9 @@ async def lifespan(app: FastAPI):
         # Tolerate an unreachable/unconfigured database in local dev so the
         # API still serves health/readiness and static routes.
         print(f"WARNING: init_db failed, continuing without DB: {exc}")
+    finally:
+        if acquired:
+            await asyncio.to_thread(release_startup_lock)
 
     from backend.services.payment_cache import start_cache_sync, stop_cache_sync
 
@@ -236,4 +245,7 @@ def readiness_check():
 # This makes the API and the web app share one origin (no CORS, works on Koyeb).
 _FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
 if _FRONTEND_DIR.is_dir():
-    app.mount("/", StaticFiles(directory=str(_FRONTEND_DIR), html=True), name="frontend")
+    # PrecompressedStaticFiles serves existing `.gz` assets with
+    # Content-Encoding: gzip when the client supports it, plus sane cache
+    # headers, so large bundles transfer 60-80% smaller on 2G/3G.
+    app.mount("/", PrecompressedStaticFiles(directory=str(_FRONTEND_DIR), html=True), name="frontend")

@@ -38,7 +38,14 @@ class SecurityHeadersMiddleware:
                 status = message.get("status", 200)
                 content_type = headers.get("content-type", "")
 
-                if path.startswith("/static/") or path.startswith("/fonts/"):
+                if (
+                    path.startswith("/static/")
+                    or path.startswith("/assets/")
+                    or path.startswith("/css/")
+                    or path.startswith("/js/")
+                    or path.startswith("/fonts/")
+                    or path.startswith("/branding/")
+                ):
                     headers["Cache-Control"] = "public, max-age=31536000, immutable"
                 elif path in ("/health", "/readyz") or method in ("POST", "PUT", "DELETE", "PATCH"):
                     headers["Cache-Control"] = "no-store"

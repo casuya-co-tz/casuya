@@ -24,5 +24,8 @@ COPY frontend/ frontend/
 EXPOSE 8000
 
 # Railway injects $PORT; default to 8000 locally.
-# Single worker so init_db (create_all + idempotent ALTERs) never races.
-CMD ["sh", "-c", "gunicorn backend.main:app -w 1 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:${PORT:-8000} --forwarded-allow-ips='*'"]
+# Multiple workers scale concurrency; a Redis startup lock prevents the DDL
+# reconciliation in init_db from racing across workers (see backend/config/database.py).
+# Tune WEB_CONCURRENCY per instance (2-4 typically; with sync workers each also
+# handles many I/O-bound requests via worker threads).
+CMD ["sh", "-c", "gunicorn backend.main:app -w ${WEB_CONCURRENCY:-2} -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:${PORT:-8000} --forwarded-allow-ips='*'"]

@@ -36,6 +36,8 @@ def list_lessons_route(
     limit: int = 100,
     current_user=Depends(get_current_user),
 ):
+    skip = max(0, skip)
+    limit = min(max(1, limit), 200)  # cap so a single request can't pull the whole table
     cache_key = f"lessons:list:{subtopic_id or ''}:{status or ''}:{skip}:{limit}"
     cached = cache_get(cache_key, ttl_seconds=120)
     if cached is not None:

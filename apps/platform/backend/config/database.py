@@ -112,6 +112,32 @@ def get_read_db() -> Generator[Session, None, None]:
     yield from get_db()
 
 
+# Lock so that when multiple gunicorn workers start simultaneously, only one
+# process runs the DDL reconciliation in init_db. Without this, concurrent
+# create_all/ALTER could race. Falls back to "proceed" when Redis is down (dev).
+_STARTUP_LOCK_KEY = "startup:init_db"
+
+
+def acquire_startup_lock(ttl: int = 300) -> bool:
+    """Return True if this process owns the DB-init lock (Redis SET NX EX)."""
+    try:
+        result = redis_client.set(_STARTUP_LOCK_KEY, "1", nx=True, ex=ttl)
+        if result is not None:
+            return bool(result)
+        if not redis_client.available:
+            return True  # Redis unreachable: allow init (single-worker / degraded).
+        return False
+    except Exception:
+        return True
+
+
+def release_startup_lock() -> None:
+    try:
+        redis_client.delete(_STARTUP_LOCK_KEY)
+    except Exception:
+        pass
+
+
 def init_db() -> None:
     from backend.models import (  # noqa: F401
         activity,
@@ -216,6 +242,14 @@ def init_db() -> None:
             "CREATE INDEX IF NOT EXISTS ix_game_lesson_id ON games(lesson_id)",
             "CREATE INDEX IF NOT EXISTS ix_payment_user_id ON payments(user_id)",
             "CREATE INDEX IF NOT EXISTS ix_assignment_lesson_id ON assignments(lesson_id)",
+            # Full-text search: functional GIN index over to_tsvector(title).
+            # Postgres-only (SQLite tests fall back to LIKE in search_service).
+            (
+                "CREATE INDEX IF NOT EXISTS ix_lessons_title_fts "
+                "ON lessons USING gin (to_tsvector('english', title))"
+                if is_postgres
+                else "-- noop"
+            ),
             "ALTER TABLE games ADD COLUMN IF NOT EXISTS package_html TEXT",
             "ALTER TABLE quizzes ADD COLUMN IF NOT EXISTS package_html TEXT",
             "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_html TEXT",
