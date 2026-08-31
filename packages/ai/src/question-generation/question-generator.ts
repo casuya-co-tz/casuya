@@ -194,7 +194,12 @@ export class QuestionGenerator {
       if (uncertaintyPatterns.some((p) => p.test(expl))) continue;
       validated.push(q);
     }
-    return validated.slice(0, request.count);
+    const result = validated.slice(0, request.count);
+    if (!result.length) {
+      this.logger?.warn('validateQuestions filtered all generated questions; returning original set as fallback');
+      return questions.slice(0, request.count);
+    }
+    return result;
   }
 
   private normalizeQuestion(raw: Record<string, unknown>, index: number, request: QuestionGenerationRequest): GeneratedQuestion {
