@@ -1,6 +1,6 @@
 {
+  "installCommand": "corepack enable && npm install",
   "buildCommand": "npm run build",
-  "installCommand": "npm install",
   "outputDirectory": ".",
   "framework": null,
   "headers": [

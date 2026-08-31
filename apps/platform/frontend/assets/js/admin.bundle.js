@@ -1,1 +1,5145 @@
-!function(){var e=window.location.hostname||"";"localhost"===e||"127.0.0.1"===e||"[::1]"===e||"::1"===e||(window.CASUYA_API_URL="https://casuya-platform-production.up.railway.app")}(),function(){function e(){if(window.CASUYA_API_URL)return String(window.CASUYA_API_URL).replace(/\/+$/,"");var e=window.location.hostname||"localhost",t="http:"===window.location.protocol||"https:"===window.location.protocol?window.location.protocol:"http:",a=window.location.port;return"8765"===a||""===a||"443"===a||"80"===a?window.location.origin:t+"//"+e+":8765"}window.casuyaApiBase=function(){return e()},window.casuyaOAuthUrl=function(t){return e()+"/auth/oauth/"+encodeURIComponent(t)},"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})})}();const API_HOST=window.location.hostname||"localhost",API_PROTOCOL="http:"===window.location.protocol||"https:"===window.location.protocol?window.location.protocol:"http:",API_BASE=window.casuyaApiBase?window.casuyaApiBase():"8765"===window.location.port||""===window.location.port||"443"===window.location.port||"80"===window.location.port?window.location.origin:`${API_PROTOCOL}//${API_HOST}:8765`;function decodeToken(e){try{return JSON.parse(atob(e.split(".")[1]))}catch{return{}}}window.API_HOST=API_HOST,window.API_PROTOCOL=API_PROTOCOL,window.API_BASE=API_BASE;const requestCache=new Map,inFlight=new Map,CACHE_TTL=3e4;async function request(e,t={}){const a=(t.method||"GET").toUpperCase(),n=`${a}:${e}`;if("GET"===a){const e=requestCache.get(n);if(e&&Date.now()-e.timestamp<3e4)return e.data;if(inFlight.has(n))return inFlight.get(n)}else requestCache.clear();const i=(async()=>{const i=localStorage.getItem("casuya_token"),s={"Content-Type":"application/json",...t.headers};let o;i&&(s.Authorization=`Bearer ${i}`);for(let i=0;i<3;i++){i>0&&await new Promise(e=>setTimeout(e,1e3*i));try{let o=`${API_BASE}${e}`;const r=await fetch(o,{...t,headers:s});if(401===r.status){if(!t._retried)try{const e=await refreshAuthToken();s.Authorization=`Bearer ${e}`;const i=await fetch(o,{...t,headers:s,_retried:!0});if(401===i.status)throw new Error("Session expired. Please sign in again.");if(!i.ok){const e=await i.json().catch(()=>({detail:i.statusText}));throw new Error(e.detail||"Request failed")}const r=await i.json();return"GET"===a&&requestCache.set(n,{data:r,timestamp:Date.now()}),r}catch(e){return localStorage.removeItem("casuya_token"),localStorage.removeItem("casuya_refresh_token"),renderLogin(),null}return localStorage.removeItem("casuya_token"),localStorage.removeItem("casuya_refresh_token"),renderLogin(),null}if(!r.ok){const e=await r.json().catch(()=>({detail:r.statusText}));if(r.status>=500&&i<2)continue;throw new Error(e.detail||"Request failed")}const l=await r.json();return"GET"===a&&requestCache.set(n,{data:l,timestamp:Date.now()}),l}catch(e){if(o=e,"TypeError"!==e.name&&"SyntaxError"!==e.name||i>=2)break}}throw o})().finally(()=>inFlight.delete(n));return"GET"===a&&inFlight.set(n,i),i}async function refreshAuthToken(){const e=localStorage.getItem("casuya_refresh_token");if(!e)throw new Error("No refresh token");const t=await fetch(`${API_BASE}/auth/refresh`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({refresh_token:e})});if(!t.ok)throw new Error("Refresh failed");const a=await t.json();return a.access_token&&localStorage.setItem("casuya_token",a.access_token),a.refresh_token&&localStorage.setItem("casuya_refresh_token",a.refresh_token),a.access_token}let _globalAbort=null;function render(e,t){const a="string"==typeof e?document.querySelector(e):e;if(a){if(_globalAbort){const e=_globalAbort;Promise.resolve().then(()=>e.abort())}_globalAbort=new AbortController,a.innerHTML=t}}function escapeHtml(e){if(null==e)return"";const t=document.createElement("div");return t.textContent=String(e),t.innerHTML}function timeAgo(e){const t=Math.floor((Date.now()-e)/1e3);if(t<60)return"Just now";const a=Math.floor(t/60);if(a<60)return a+"m ago";const n=Math.floor(a/60);if(n<24)return n+"h ago";const i=Math.floor(n/24);return i<7?i+"d ago":new Date(e).toLocaleDateString()}function showToast(e){let t=document.getElementById("global-toast");t||(t=document.createElement("div"),t.id="global-toast",t.style.cssText="position:fixed;bottom:1.5rem;right:1.5rem;padding:0.6rem 1.2rem;background:var(--color-success);color:#fff;border-radius:var(--radius);font-size:0.85rem;z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none",document.body.appendChild(t)),t.textContent=e,t.style.opacity="1",clearTimeout(t._hide),t._hide=setTimeout(()=>{t.style.opacity="0"},2500)}function confirmDelete(e){return confirm(`Delete "${e}"? This cannot be undone.`)}function deleteBtn(e,t,a,n){return`<button class="btn btn-danger btn-sm" data-delete="${e}" data-label="${escapeHtml(t)}" data-endpoint="${a}">Delete</button>`}function initDeleteButtons(){document.querySelectorAll("[data-delete]").forEach(e=>{e.addEventListener("click",async t=>{t.stopPropagation();const a=e.dataset.delete,n=e.dataset.label,i=e.dataset.endpoint;if(confirmDelete(n))try{await request(`${i}/${a}`,{method:"DELETE"}),showToast("Deleted!"),e.closest(".card")?.remove()}catch(e){showToast(e.message||"Delete failed")}})})}function renderTutorMarkdown(e){if(!e)return"";let t=e;t=t.replace(/<think>[\s\S]*?<\/think>/gi,"").trim(),t=t.replace(/```(\w*)\n([\s\S]*?)```/g,(e,t,a)=>`<div class="tutor-code-block"><pre><code>${escapeHtml(a.trimEnd())}</code></pre></div>`),t=t.replace(/^(\|.+\|)\n(\|[\s:|-]+\|)\n((?:\|.+\|\n?)*)/gm,(e,t,a,n)=>{const i=t.split("|").filter(e=>e.trim()),s=n.trim().split("\n").map(e=>e.split("|").filter(e=>e.trim()));let o="<table>";return o+="<thead><tr>"+i.map(e=>`<th>${e.trim()}</th>`).join("")+"</tr></thead>",o+="<tbody>"+s.map(e=>"<tr>"+e.map((e,t)=>`<td data-label="${escapeHtml(i[t]||"")}">${e.trim()}</td>`).join("")+"</tr>").join("")+"</tbody></table>",o}),t=t.replace(/^(.*💡\s*(?:NECTA\s+(?:Examination\s+)?Tip|Mtihani).*)\n((?:(?!\*\*\*).+\n?)*)/gim,(e,t,a)=>`<div class="tutor-necta-tip"><div class="tutor-necta-tip-label">💡 NECTA Examination Tip</div><p>${a.trim().replace(/\n/g,"<br>")}</p></div>`),t=t.replace(/^>\s*(.+)$/gm,(e,t)=>`<div class="tutor-context-blockquote"><div class="tutor-context-badge">${/tanzan|serengeti|kilimanjaro|lake victoria|dodoma|dar|kenya|uganda|east africa|africa|mwanza|arusha|mbeya|ruaha|rufiji/i.test(t)?"🌍 Tanzania Context":"📖 Context"}</div><p>${t}</p></div>`),t=t.replace(/(<div class="tutor-context-blockquote">[\s\S]*?<\/div>\n?)+/g,e=>e),t=t.replace(/^\*\*\*\s*$/gm,"<hr>"),t=t.replace(/^#### (.+)$/gm,"<h4>$1</h4>"),t=t.replace(/^### (.+)$/gm,"<h3>$1</h3>"),t=t.replace(/^## (.+)$/gm,"<h2>$1</h2>"),t=t.replace(/^# (.+)$/gm,"<h1>$1</h1>"),t=t.replace(/\*\*\*(.+?)\*\*\*/g,"<strong><em>$1</em></strong>"),t=t.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>"),t=t.replace(/\*(.+?)\*/g,"<em>$1</em>"),t=t.replace(/`([^`]+)`/g,"<code>$1</code>"),t=t.replace(/^(?:- (.+)\n?)+/gm,e=>`<ul>${e.trim().split("\n").map(e=>`<li>${e.replace(/^- /,"")}</li>`).join("")}</ul>`),t=t.replace(/^(?:\d+\. (.+)\n?)+/gm,e=>`<ol>${e.trim().split("\n").map(e=>`<li>${e.replace(/^\d+\. /,"")}</li>`).join("")}</ol>`),t=t.replace(/\n{2,}/g,"\n\n");const a=t.split("\n\n");return t=a.map(e=>(e=e.trim())?/^<(div|table|ul|ol|h[1-6]|hr|pre)/.test(e)?e:`<p>${e.replace(/\n/g,"<br>")}</p>`:"").join("\n"),t}function renderQuizQuestions(e,t={}){if(!Array.isArray(e)||!e.length)return'<p style="color:var(--color-text-muted)">No questions generated.</p>';const a=t.subject||"General",n=t.formLevel||"",i=t.topic||"",s=[{mathematics:"Mathematics",biology:"Biology",chemistry:"Chemistry",physics:"Physics",english:"English",kiswahili:"Kiswahili",geography:"Geography",history:"History",civics:"Civics",computing:"Computing"}[a]||a,n?`Form ${["I","II","III","IV"][Number(n)-1]||n}`:""].filter(Boolean).join(" • "),o="quiz-"+Date.now();let r=`<div class="quiz-container" id="${o}">`;return r+=`<div class="quiz-header">\n    <span class="quiz-badge">${escapeHtml(s)}</span>\n    <span class="quiz-counter">Question 1 of ${e.length}</span>\n    ${i?`<div class="quiz-topic">Topic: ${escapeHtml(i)}</div>`:""}\n  </div>`,r+='<div class="quiz-card">',e.forEach((e,t)=>{const a=["A","B","C","D"],n=e.options||[],i=(e.correctAnswer||"").trim().toUpperCase(),s=e.explanation||"";r+=`<div class="quiz-question" data-index="${t}" data-correct="${escapeHtml(i)}">`,r+=`<div class="quiz-question-num">Question ${t+1}</div>`,r+=`<div class="quiz-question-text">${escapeHtml(e.text||"")}</div>`,r+='<div class="quiz-options">',n.forEach((e,n)=>{const i=a[n]||String.fromCharCode(65+n),s="string"==typeof e?e:e.text||String(e);r+=`<label class="quiz-option" data-letter="${i}">\n        <input type="radio" name="${o}-q${t}" value="${i}">\n        <span class="quiz-option-label">${i}.</span>\n        <span>${escapeHtml(s)}</span>\n      </label>`}),r+="</div>",s&&(r+=`<div class="quiz-explanation" id="${o}-exp-${t}">\n        <strong>Explanation:</strong> ${escapeHtml(s)}\n      </div>`),r+="</div>"}),r+=`<div class="quiz-btn-row">\n    <button class="btn btn-primary quiz-submit-all" onclick="window._quizSubmit('${o}', ${e.length})">Submit Answers</button>\n    <button class="btn quiz-download-btn" onclick="window._quizDownloadWord('${o}')">📄 Word</button>\n    <button class="btn quiz-download-btn" onclick="window._quizDownloadPdf('${o}')">📋 PDF</button>\n  </div>`,r+=`<div class="quiz-score" id="${o}-score">\n    <div class="quiz-score-num" id="${o}-score-num"></div>\n    <div class="quiz-score-label" id="${o}-score-label"></div>\n  </div>`,r+="</div></div>",r}function _tutorWrongQuestions(e,t,a){var n=_quizExtractData(e);if(n&&n.questions&&a.length){var i="",s="",o=(n.meta||"").match(/^([A-Za-z ]+)\s*(\u2022)?\s*Form\s*([IVX]+)/i);if(o){var r={mathematics:"mathematics",math:"mathematics",biology:"biology",chemistry:"chemistry",physics:"physics",english:"english",kiswahili:"kiswahili",geography:"geography",history:"history",civics:"civics",computing:"computing"}[o[1].trim().toLowerCase()];r&&(i=r);var l=o[3];s="I"===l?"1":"II"===l?"2":"III"===l?"3":"4"}var d=[];a.forEach(function(e){var t=n.questions[e];if(t){var a=null;t.options&&t.options.forEach(function(e){e.letter===t.correct&&(a=e.text)});var i=a||"(question left unanswered)";d.push("QUESTION "+(e+1)+": "+(t.text||"")+"\n- Options: "+(t.options||[]).map(function(e){return e.letter+") "+e.text}).join("; ")+"\n- The student answered: "+i+"\n- The correct answer is: "+t.correct)}});var c="A student answered the following questions incorrectly. Please explain, in simple step-by-step language a secondary school student will understand, EXACTLY how to arrive at the correct answer for each one. Do not just repeat the correct letter — show the working/method step by step, call out any common mistake the student likely made, and keep the tone encouraging.\n\n"+d.join("\n\n"),m=document.getElementById(e+"-score");if(m){var u='<div class="quiz-tutor" id="'+e+'-tutor"><div class="quiz-tutor-header"><span class="quiz-tutor-icon">🎓</span><div><div class="quiz-tutor-title">Let’s Learn: Step-by-Step</div><div class="quiz-tutor-sub">The AI tutor will show you exactly how to solve the '+a.length+" question"+(a.length>1?"s":"")+' you got wrong.</div></div></div><div class="quiz-tutor-body"><div class="tutor-loading"><span class="spinner"></span> Explaining the correct method…</div></div></div>';if(m.insertAdjacentHTML)m.insertAdjacentHTML("afterend",u);else if(m.parentNode){var p=document.createElement("div");for(p.innerHTML=u;p.firstChild;)m.parentNode.insertBefore(p.firstChild,m.nextSibling)}var g=document.getElementById(e+"-tutor").querySelector(".quiz-tutor-body"),y={question:c,lesson_context:n.topic?"Topic: "+n.topic:n.meta?"Subject: "+n.meta:"",subject_slug:i||void 0,form_level:s?Number(s):void 0};request("/ai/tutoring/explain",{method:"POST",body:JSON.stringify(y)}).then(function(e){var t=e&&e.response?e.response:"";g.innerHTML=t?'<div class="tutor-response">'+renderTutorMarkdown(t)+"</div>":'<div class="tutor-fallback">The AI tutor is temporarily unavailable. Please review the explanations above or ask your teacher for help.</div>'}).catch(function(){g.innerHTML='<div class="tutor-fallback">The AI tutor could not be reached. Please review the explanations above or ask your teacher for help.</div>'})}}}function _quizExtractData(e){var t=document.getElementById(e);if(!t)return null;var a,n,i,s,o,r,l,d,c=t.querySelector(".quiz-badge"),m=t.querySelector(".quiz-topic"),u=c?c.textContent.trim():"",p=m?m.textContent.replace("Topic:","").trim():"",g=[],y=t.querySelectorAll(".quiz-question");for(a=0;a<y.length;a++){i=(n=y[a]).querySelector(".quiz-question-text"),s=n.querySelectorAll(".quiz-option");var v=[];for(o=0;o<s.length;o++)l=(r=s[o]).getAttribute("data-letter"),d=r.querySelector("span:last-child"),v.push({letter:l,text:d?d.textContent.trim():""});var h=n.querySelector(".quiz-explanation"),f=h?h.textContent.replace("Explanation:","").trim():"";g.push({num:a+1,text:i?i.textContent.trim():"",options:v,correct:n.getAttribute("data-correct")||"",explanation:f})}return{meta:u,topic:p,questions:g}}function _quizTriggerDownload(e,t){var a=URL.createObjectURL(e),n=document.createElement("a");n.href=a,n.download=t,document.body.appendChild(n),n.click(),document.body.removeChild(n),setTimeout(function(){URL.revokeObjectURL(a)},1e3)}function renderLogin(){render("#app",'\n    <div class="page login-page">\n      <div class="login-card">\n        <h1>Casuya Platform</h1>\n        <p>Sign in to continue</p>\n        <form id="login-form">\n          <input type="text" id="email" placeholder="Email" required />\n          <input type="password" id="password" placeholder="Password" required />\n          <button type="submit">Sign In</button>\n          <p class="error" id="login-error" style="display:none"></p>\n        </form>\n      </div>\n    </div>\n  '),document.getElementById("login-form").addEventListener("submit",handleLogin)}async function handleLogin(e){e.preventDefault();const t=document.getElementById("login-error");t.style.display="none";const a=document.getElementById("email").value,n=document.getElementById("password").value;try{const e=await request("/auth/login",{method:"POST",body:JSON.stringify({email:a,password:n})});e&&e.access_token?(localStorage.setItem("casuya_token",e.access_token),e.refresh_token&&localStorage.setItem("casuya_refresh_token",e.refresh_token),e.role&&localStorage.setItem("casuya_role",e.role),renderApp()):(t.textContent=e?.detail||"Login failed",t.style.display="block")}catch(e){t.textContent=e.message,t.style.display="block"}}function handleLogout(){localStorage.removeItem("casuya_token"),window.location.href="/index.html#features"}function renderApp(){const e=decodeToken(localStorage.getItem("casuya_token")).role||"student";"admin"===e?renderAdminDashboard():"student"===e?renderStudentDashboard():"teacher"===e?renderTeacherDashboard():render("#app",`\n      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem;text-align:center">\n        <h2 style="margin-bottom:0.5rem">Access Not Available</h2>\n        <p style="color:var(--color-text-muted);margin-bottom:1.5rem">Your account role ("<strong>${escapeHtml(e||"unknown")}</strong>") does not have a dashboard yet.</p>\n        <button class="btn btn-primary" onclick="localStorage.removeItem('casuya_token');window.location.href='/login.html'">Log Out</button>\n      </div>\n    `)}window._quizSubmit=function(e,t){var a,n,i,s,o,r,l,d,c,m,u,p,g=0,y=[];for(a=0;a<t;a++)if(n=document.querySelector("#"+e+' .quiz-question[data-index="'+a+'"]')){i=n.getAttribute("data-correct"),o=(s=document.querySelector('input[name="'+e+"-q"+a+'"]:checked'))?s.value:null;var v,h,f,b=n.querySelectorAll(".quiz-option");for(v=0;v<b.length;v++)f=(h=b[v]).getAttribute("data-letter"),h.style.pointerEvents="none",f===i?h.classList.add("correct"):f===o&&f!==i&&h.classList.add("incorrect");o===i&&g++,o!==i&&y.push(a),(r=document.getElementById(e+"-exp-"+a))&&r.classList.add("visible")}l=document.getElementById(e+"-score"),d=document.getElementById(e+"-score-num"),c=document.getElementById(e+"-score-label"),l&&d&&c&&(d.textContent=g+" / "+t,u=(m=Math.round(g/t*100))>=80?"Excellent! Keep it up!":m>=50?"Good effort! Review the explanations.":"Keep practicing. Review the explanations below.",c.textContent=m+"% — "+u,l.classList.add("visible")),(p=document.querySelector("#"+e+" .quiz-submit-all"))&&(p.style.display="none"),y.length&&_tutorWrongQuestions(e,t,y)},window._quizDownloadWord=function(e){var t=_quizExtractData(e);if(t&&t.questions.length){var a,n,i,s,o="<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>";for(o+="<head><meta charset='utf-8'><title>Quiz</title>",o+="<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.6}h1{color:#1e3a8a;font-size:20px}h2{color:#333;font-size:15px;margin-top:24px}.q{margin-bottom:16px}.q-text{font-weight:bold;font-size:13px}.opt{margin:4px 0 4px 20px;font-size:12px}.correct{color:#16a34a;font-weight:bold}.exp{color:#555;font-size:11px;margin-left:20px;border-left:3px solid #16a34a;padding-left:8px;margin-top:4px}.meta{color:#666;font-size:12px;margin-bottom:16px}</style></head><body>",o+="<h1>Quiz Questions</h1>",o+="<div class='meta'>"+t.meta,t.topic&&(o+=" &bull; Topic: "+t.topic),o+="</div>",a=0;a<t.questions.length;a++){for(o+="<div class='q'>",o+="<div class='q-text'>"+(n=t.questions[a]).num+". "+n.text+"</div>",i=0;i<n.options.length;i++)o+="<div class='opt'>"+(s=n.options[i]).letter+". "+s.text+"</div>";o+="<div class='exp'><strong>Answer:</strong> "+n.correct+"</div>",n.explanation&&(o+="<div class='exp'>"+n.explanation+"</div>"),o+="</div>"}o+="</body></html>",_quizTriggerDownload(new Blob(["\ufeff"+o],{type:"application/msword"}),"quiz-questions.doc")}},window._quizDownloadPdf=function(e){var t=_quizExtractData(e);if(t&&t.questions.length){var a,n,i,s,o="<!DOCTYPE html><html><head><meta charset='utf-8'><title>Quiz</title>";for(o+="<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.5;color:#111}h1{color:#1e3a8a;font-size:22px;border-bottom:2px solid #1e3a8a;padding-bottom:8px}h2{color:#333;font-size:14px;margin-top:20px}.meta{color:#555;font-size:12px;margin-bottom:16px;padding:8px;background:#f3f4f6;border-radius:6px}.q{margin-bottom:20px;page-break-inside:avoid}.q-text{font-weight:bold;font-size:13px;margin-bottom:4px}.opt{margin:3px 0 3px 24px;font-size:12px}.correct{color:#16a34a;font-weight:bold}.exp{color:#444;font-size:11px;margin-left:24px;border-left:3px solid #16a34a;padding-left:8px;margin-top:4px}@media print{body{margin:20px}.q{page-break-inside:avoid}}</style></head><body>",o+="<h1>Quiz Questions</h1>",o+="<div class='meta'>"+t.meta,t.topic&&(o+=" &bull; Topic: "+t.topic),o+="</div>",a=0;a<t.questions.length;a++){for(o+="<div class='q'>",o+="<div class='q-text'>"+(n=t.questions[a]).num+". "+n.text+"</div>",i=0;i<n.options.length;i++)o+="<div class='opt'>"+(s=n.options[i]).letter+". "+s.text+"</div>";o+="<div class='exp'><strong>Answer:</strong> "+n.correct+"</div>",n.explanation&&(o+="<div class='exp'>"+n.explanation+"</div>"),o+="</div>"}o+="</body></html>";var r=window.open("","_blank");r&&(r.document.write(o),r.document.close(),setTimeout(function(){r.print()},400))}};const THEME_KEY="casuya_theme",FONT_KEY="casuya_font_scale";function applyAppearance(){const e=localStorage.getItem(THEME_KEY)||"light",t=parseFloat(localStorage.getItem(FONT_KEY)||"100")/100||1;document.documentElement.setAttribute("data-theme",e),document.documentElement.style.setProperty("--app-font-scale",String(t))}function appearancePanelHTML(){const e=localStorage.getItem(THEME_KEY)||"light",t=parseInt(localStorage.getItem(FONT_KEY)||"100",10),a=(t,a)=>`<button type="button" class="btn appearance-theme-btn" data-theme-val="${t}" style="flex:1${e===t?";background:var(--color-primary);color:#fff":""}">${a}</button>`;return`\n    <div class="card" style="padding:1.5rem">\n      <h3 style="margin-bottom:0.75rem">Appearance</h3>\n      <div style="display:flex;flex-direction:column;gap:1.25rem">\n        <div>\n          <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.5rem">Theme</label>\n          <div style="display:flex;gap:0.5rem">\n            ${a("light","☀️ Light")}\n            ${a("dark","🌙 Dark")}\n            ${a("black","⚫ Black")}\n          </div>\n        </div>\n        <div>\n          <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.5rem">Font Size: <span id="font-scale-val">${t}%</span></label>\n          <input id="font-scale-slider" type="range" min="80" max="150" step="5" value="${t}" style="width:100%">\n          <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.4rem">Drag to make text larger or smaller across the app.</p>\n        </div>\n      </div>\n      <p id="appearance-msg" style="font-size:0.85rem;margin-top:1rem;display:none"></p>\n    </div>\n  `}function setupAppearanceControls(){const e=document.getElementById("appearance-msg");document.querySelectorAll(".appearance-theme-btn").forEach(t=>{t.addEventListener("click",()=>{const a=t.dataset.themeVal;localStorage.setItem(THEME_KEY,a),applyAppearance(),document.querySelectorAll(".appearance-theme-btn").forEach(e=>{e.style.background="",e.style.color=""}),t.style.background="var(--color-primary)",t.style.color="#fff",e&&(e.textContent="✅ Theme updated",e.style.color="var(--color-success)",e.style.display="block",setTimeout(()=>e.style.display="none",2e3))})});const t=document.getElementById("font-scale-slider"),a=document.getElementById("font-scale-val");t&&(t.addEventListener("input",()=>{const e=t.value;localStorage.setItem(FONT_KEY,e),applyAppearance(),a&&(a.textContent=e+"%")}),t.addEventListener("change",()=>{e&&(e.textContent="✅ Font size saved",e.style.color="var(--color-success)",e.style.display="block",setTimeout(()=>e.style.display="none",2e3))}))}const lessonContentCache=new Map;async function viewLessonContent(e,t,a){const n=document.querySelector(e);if(!n)return;let i;n.innerHTML='<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>',lessonContentCache.has(t)&&(i=lessonContentCache.get(t));try{let r={};try{r=await request(`/lessons/${t}`)}catch(L){}const l=r.title||"Lesson";try{const B=JSON.parse(localStorage.getItem("casuya_recently_viewed")||"[]"),H=B.findIndex(e=>e.id===t);H>=0&&(B[H].title=l,localStorage.setItem("casuya_recently_viewed",JSON.stringify(B)))}catch(j){}if(!i){const C=await fetch(`${API_BASE}/lessons/${t}/content`,{headers:{Authorization:`Bearer ${localStorage.getItem("casuya_token")}`}});if(404===C.status){const M=JSON.parse(localStorage.getItem("casuya_recently_viewed")||"[]").filter(e=>e.id!==t);return localStorage.setItem("casuya_recently_viewed",JSON.stringify(M)),void(n.innerHTML='<div class="empty-state"><p>This lesson is no longer available.</p></div>')}if(!C.ok)throw new Error("Failed to load lesson");if(i=await C.text(),lessonContentCache.set(t,i),lessonContentCache.size>50){const P=lessonContentCache.keys().next().value;lessonContentCache.delete(P)}}const d=decodeToken(localStorage.getItem("casuya_token")),c="student"===d?.role,m=c||"teacher"===d?.role,u=Date.now();let p=null,g=Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10),y=!1,v=-1,h=-1,f=null;if(c)try{const O=await request("/students/me");O&&O.id&&(p=O.id)}catch(D){}function s(e){let t=n.querySelector(".lesson-toast");t||(t=document.createElement("div"),t.className="lesson-toast",t.style.cssText="position:sticky;bottom:0;padding:0.5rem 1rem;background:var(--color-success);color:#fff;text-align:center;font-size:0.85rem;transition:opacity 0.3s;z-index:10",n.appendChild(t)),t.textContent=e,t.style.opacity="1",clearTimeout(t._hide),t._hide=setTimeout(()=>{t.style.opacity="0"},2500)}function o(e,a){c&&p&&(e<=v&&(null==a||a<=h)||(v=Math.max(v,e),null!=a&&(h=Math.max(h,a)),f&&clearTimeout(f),f=setTimeout(()=>{const e=Date.now()-u;request("/progress/sync",{method:"POST",body:JSON.stringify({student_id:p,lesson_id:t,session_id:g,elapsed_ms:e,completion_percentage:v,score_percentage:h>=0?h:null})}).then(()=>s("Progress saved")).catch(()=>{})},2e3)))}const b="\n<script>\n(function(){\n  var scoreReported = false;\n  window.casuya = window.casuya || {};\n  window.casuya.reportScore = function(score, total) {\n    parent.postMessage({type:'casuya-quiz', score:score, total:total}, '*');\n    scoreReported = true;\n  };\n  window.casuya.reportProgress = function(pct) {\n    parent.postMessage({type:'casuya-progress', percent:pct}, '*');\n  };\n  function detectScore() {\n    if (scoreReported) return;\n    var candidates = document.querySelectorAll('.score-big, .quiz-score, .final-score, .result-score, [class*=score]');\n    for (var i = 0; i < candidates.length; i++) {\n      var text = (candidates[i].textContent || '').trim();\n      var m = text.match(/(d+)s*/s*(d+)/);\n      if (m) {\n        var s = parseInt(m[1]), t = parseInt(m[2]);\n        if (t > 0 && s <= t) {\n          parent.postMessage({type:'casuya-quiz', score:s, total:t}, '*');\n          scoreReported = true;\n          return;\n        }\n      }\n    }\n  }\n  function upgradeAdaptiveVideos(root) {\n    var videos = root.querySelectorAll('video');\n    for (var i = 0; i < videos.length; i++) {\n      (function (v) {\n        var src = v.getAttribute('src') || '';\n        // Only act on HLS manifests; plain mp4/webm stay as-is (P1-5).\n        if (!/.m3u8(?|$)/.test(src)) return;\n        if (v.dataset.casuyaHls) return;\n        v.dataset.casuyaHls = '1';\n        v.setAttribute('preload', v.getAttribute('preload') || 'none');\n        // Native HLS (Safari / iOS) needs no library.\n        if (v.canPlayType('application/vnd.apple.mpegurl')) return;\n        function attach(Hls) {\n          if (!Hls || !Hls.isSupported()) return;\n          var hls = new Hls({ maxBufferLength: 10, capLevelToPlayerSize: true, startLevel: -1 });\n          hls.loadSource(src);\n          hls.attachMedia(v);\n        }\n        if (window.Hls) { attach(window.Hls); return; }\n        // Lazy-load the vendored hls.js only when actually needed (no-op if absent).\n        var s = document.createElement('script');\n        s.src = '/static/lib/hls.min.js';\n        s.onload = function () { attach(window.Hls); };\n        document.head.appendChild(s);\n      })(videos[i]);\n    }\n  }\n  function trackVideos(root) {\n    var videos = root.querySelectorAll('video');\n    for (var i = 0; i < videos.length; i++) {\n      (function(v) {\n        if (v.dataset.casuyaTracked) return;\n        v.dataset.casuyaTracked = '1';\n        var maxPct = 0;\n        v.addEventListener('timeupdate', function() {\n          if (v.duration) { var pct = Math.round((v.currentTime / v.duration) * 100); if (pct > maxPct) maxPct = pct; }\n        });\n        v.addEventListener('ended', function() { parent.postMessage({type:'casuya-video', percent:100}, '*'); });\n        setInterval(function() { if (maxPct > 0) parent.postMessage({type:'casuya-progress', percent:Math.min(maxPct + 10, 100)}, '*'); }, 5000);\n      })(videos[i]);\n    }\n  }\n  function initBridge() {\n    if (!document.body) { setTimeout(initBridge, 100); return; }\n    upgradeAdaptiveVideos(document.body);\n    trackVideos(document.body);\n    detectScore();\n    var obs = new MutationObserver(function() { detectScore(); upgradeAdaptiveVideos(document.body); trackVideos(document.body); });\n    obs.observe(document.body, {childList:true, subtree:true});\n  }\n  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initBridge);\n  else initBridge();\n})();\n<\/script>",w=i.lastIndexOf("</body>");i=-1!==w?i.slice(0,w)+b+i.slice(w):i.replace("</html>",b+"</html>");let k=!1,x=null,_=[],E={content:""};if(m)try{const N=await request(`/lessons/${t}/package`);k=N.bookmark_status?.bookmarked||!1,x=c?N.quiz:null,_=c&&N.games||[],E=c&&N.note||{content:""}}catch(F){}const z=()=>x&&x.questions&&0!==x.questions.length?`\n        <div class="card" style="margin-top:1rem;padding:1rem">\n          <h3 style="margin:0 0 0.75rem">${escapeHtml(x.title||"Quiz")}</h3>\n          <form id="quiz-form">\n            ${x.questions.map((e,a)=>`\n              <div style="margin-bottom:1rem">\n                <p style="font-weight:600;margin:0 0 0.5rem">${a+1}. ${escapeHtml(e.prompt)}</p>\n                ${e.options.map(t=>`\n                  <label style="display:block;padding:0.3rem 0.5rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius);margin-bottom:0.25rem">\n                    <input type="radio" name="q_${escapeHtml(e.id)}" value="${escapeHtml(t.id)}" required> ${escapeHtml(t.text)}\n                  </label>\n                `).join("")}\n                <details style="margin-top:0.5rem">\n                  <summary style="cursor:pointer;font-size:0.85rem;color:var(--color-text-muted)">Show your work</summary>\n                  <div data-blackboard data-lesson-id="${escapeHtml(t)}-${escapeHtml(e.id)}" data-quiz-question="${escapeHtml(e.id)}" style="width:100%;height:250px;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;margin-top:0.5rem"></div>\n                </details>\n              </div>\n            `).join("")}\n            <button type="submit" class="btn btn-primary" id="quiz-submit-btn">Submit Quiz</button>\n          </form>\n          <div id="quiz-result" style="display:none;margin-top:0.75rem"></div>\n        </div>\n      `:"",S=()=>Array.isArray(_)&&0!==_.length?`\n        <div class="card" style="margin-top:1rem;padding:1rem">\n          <h3 style="margin:0 0 0.5rem">Games & Activities</h3>\n          ${_.map(e=>`\n            <div class="game-item" data-game-id="${escapeHtml(e.id)}" style="padding:0.5rem 0;border-bottom:1px solid var(--color-border);cursor:pointer">\n              <span style="color:var(--color-primary)">${escapeHtml(e.title||"Game")}</span>\n              <span style="color:var(--color-text-muted);font-size:0.8rem;margin-left:0.5rem">${escapeHtml(e.status||"draft")}</span>\n            </div>\n          `).join("")}\n          <div id="game-content-area" style="margin-top:1rem"></div>\n        </div>\n      `:"";n.innerHTML=`\n      <div class="content" style="max-width:100%;padding:0">\n        <div style="padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;background:var(--color-surface);border-bottom:1px solid var(--color-border);flex-wrap:wrap">\n          <button class="btn btn-primary lesson-back-btn" style="margin-bottom:0">&larr; Back</button>\n          <span style="flex:1;font-weight:600;font-size:0.95rem">${escapeHtml(l)}</span>\n          ${m?`\n            <button class="btn btn-sm lesson-bookmark-btn" style="${k?"background:var(--color-warning);color:#fff":""};margin-bottom:0">${k?"★":"☆"}</button>\n          `:""}\n          ${c?'\n            <button class="btn btn-success btn-sm lesson-complete-btn" style="margin-bottom:0">Mark Complete</button>\n          ':""}\n        </div>\n        <div style="width:100%">\n          <iframe class="lesson-iframe" style="width:100%;border:none;display:block"></iframe>\n        </div>\n        ${c?`\n          <div style="padding:0 1rem">\n            <details style="margin-top:0.75rem">\n              <summary style="cursor:pointer;font-weight:600;font-size:0.9rem;color:var(--color-text-muted)">📝 My Notes</summary>\n              <div style="margin-top:0.5rem">\n                <textarea id="lesson-notes" rows="4" style="width:100%;padding:0.5rem;border:1px solid var(--color-border);border-radius:var(--radius);font-size:0.85rem">${escapeHtml(E?.content||"")}</textarea>\n                <button class="btn btn-sm btn-primary" id="notes-save-btn" style="margin-top:0.35rem">Save Notes</button>\n                <span id="notes-status" style="font-size:0.8rem;color:var(--color-text-muted);margin-left:0.5rem"></span>\n              </div>\n            </details>\n            ${z()}\n            ${S()}\n            <div class="card" style="margin-top:0.75rem;padding:1rem">\n              <h3 style="margin:0 0 0.5rem">✏️ Practice Blackboard</h3>\n              <p style="font-size:0.85rem;color:var(--color-text-muted);margin:0 0 0.5rem">Work out the steps below. Your progress is saved automatically.</p>\n              <div data-blackboard data-lesson-id="${escapeHtml(t)}" style="width:100%;height:420px;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden"></div>\n            </div>\n          </div>\n        `:""}\n      </div>\n    `;const $=n.querySelector(".lesson-iframe");$.srcdoc=i.replace("<head>",`<head><base href="${API_BASE}/">`);let A=!1;const q=()=>{if(!A)try{const e=$.contentWindow?.document;e&&($.style.height=Math.max(e.documentElement?.scrollHeight||0,e.body?.scrollHeight||0,300)+"px",A=!0)}catch(e){}};$.addEventListener("load",q);const I=setInterval(()=>{q(),A&&clearInterval(I)},300);setTimeout(()=>{clearInterval(I),A||($.style.height="800px")},1e4);const T=e=>{if("casuya-quiz"===e.data?.type&&null!=e.data.score&&e.data.total>0){y=!0;o(100,Math.round(e.data.score/e.data.total*100))}else"casuya-progress"===e.data?.type&&null!=e.data.percent&&o(e.data.percent,null)};if(window.addEventListener("message",T),c){const U=n.querySelector(".lesson-complete-btn");U&&U.addEventListener("click",()=>{o(100,null),U.textContent="✓ Complete!",U.disabled=!0,U.style.opacity="0.6"});const R=n.querySelector(".lesson-bookmark-btn");R&&R.addEventListener("click",async()=>{try{k?(await request(`/bookmarks/${t}`,{method:"DELETE"}),k=!1,R.textContent="☆",R.style.background="",s("Bookmark removed")):(await request(`/bookmarks/${t}`,{method:"POST"}),k=!0,R.textContent="★",R.style.background="var(--color-warning)",R.style.color="#fff",s("Bookmarked!"))}catch(e){s("Failed to update bookmark")}}),document.getElementById("notes-save-btn")?.addEventListener("click",async()=>{const e=document.getElementById("lesson-notes")?.value||"",a=document.getElementById("notes-status");try{await request(`/notes/${t}`,{method:"PUT",body:JSON.stringify({content:e})}),a.textContent="Saved ✓",setTimeout(()=>a.textContent="",2e3)}catch(e){a.textContent="Failed to save"}}),document.getElementById("quiz-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=document.getElementById("quiz-submit-btn");t.disabled=!0,t.textContent="Submitting...";const a={};x&&x.questions&&x.questions.forEach(e=>{const t=document.querySelector(`input[name="q_${e.id}"]:checked`);t&&(a[e.id]=t.value)});let n=null;try{window.CasuyaBlackboardEmbed&&window.CasuyaBlackboardEmbed.collectWorkMap?n=window.CasuyaBlackboardEmbed.collectWorkMap("[data-quiz-question]"):(n={},document.querySelectorAll("[data-quiz-question]").forEach(e=>{const t=e.dataset.quizQuestion,a=e._casuyaBlackboard;if(a&&a.getWorkSnapshot)n[t]=a.getWorkSnapshot();else if(a&&a.getElements){const e=a.getElements();n[t]={elements:e,hasWork:e.length>0,recognizedLatex:e.length>0?"__drawing__":""}}})),n&&0===Object.keys(n).length&&(n=null)}catch{}try{const e=n?{answers:a,work:n}:{answers:a},t=await request(`/quizzes/${x.id}/submit`,{method:"POST",body:JSON.stringify(e)}),i=document.getElementById("quiz-result");i.style.display="block";const s=null!=t.combined_percentage?t.combined_percentage:t.percentage,r=null!=t.work_score;i.innerHTML=`\n            <p style="font-weight:600">Score: ${t.score} / ${t.total} (${Math.round(t.percentage)}%)</p>\n            ${r?`<p style="font-size:0.85rem;color:var(--color-text-muted)">Work: ${t.work_score}/${t.work_total} (${Math.round(t.work_percentage)}%) · Combined (70% answer + 30% work): <strong>${Math.round(s)}%</strong></p>`:""}\n            ${s>=50?'<p style="color:var(--color-success)">✅ Passed!</p>':'<p style="color:red">❌ Try again</p>'}\n            ${r&&t.work_score<t.work_total?'<p style="font-size:0.8rem;color:var(--color-text-muted)">Tip: open "Show your work" on each question to earn work credit.</p>':""}\n          `,o(100,s),y=!0}catch(e){document.getElementById("quiz-result").style.display="block",document.getElementById("quiz-result").innerHTML=`<p style="color:red">Error: ${escapeHtml(e.message)}</p>`}t.disabled=!1,t.textContent="Submit Quiz"})}window.CasuyaBlackboardEmbed&&window.CasuyaBlackboardEmbed.autoMount(),document.querySelectorAll(".game-item").forEach(e=>{e.addEventListener("click",async()=>{const t=e.dataset.gameId,a=document.getElementById("game-content-area");if(a){a.innerHTML='<div class="loading-state"><div class="spinner"></div><p>Loading game...</p></div>';try{const e=await fetch(`/games/${t}/content`,{headers:{Authorization:`Bearer ${localStorage.getItem("casuya_token")}`}});if(!e.ok)throw new Error("Failed to load game content");const n=await e.text();a.innerHTML=`<iframe style="width:100%;min-height:400px;border:none;border-radius:var(--radius)" srcdoc="${escapeHtml(n)}"></iframe>`}catch(e){a.innerHTML=`<p style="color:var(--color-danger)">Error loading game: ${escapeHtml(e.message)}</p>`}}})});n.querySelector(".lesson-back-btn").addEventListener("click",()=>{c&&!y&&o(80,null),window.removeEventListener("message",T),a()})}catch(K){n.innerHTML=`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(K.message)}</p></div>`}}!function(){"use strict";var e="casuya_lang",t={"nav.features":"Vipengele","nav.subjects":"Masomo","nav.about":"Kuhusu","nav.login":"Ingia","nav.get_started":"Anza Sasa","nav.start":"Anza","nav.create_account":"Fungua Akaunti","nav.users":"Watumiaji","a11y.skip":"Ruka hadi kwenye maudhui makuu","a11y.region":"Chaguzi za ufikiaji","a11y.open":"Fungua mipangilio ya ufikiaji","a11y.panel":"Jopo la mipangilio ya ufikiaji","a11y.settings":"Mipangilio ya Ufikiaji","a11y.dyslexia":"Maandishi ya Wenye Changamoto ya Kusoma (Dyslexia)","a11y.toggle_dyslexia":"Washa/zima font ya wenye changamoto ya kusoma","a11y.high_contrast":"Ung'avu wa Juu","a11y.toggle_contrast":"Washa/zima hali ya ung'avu wa juu","a11y.large_text":"Maandishi Makubwa","a11y.toggle_large_text":"Washa/zima hali ya maandishi makubwa","a11y.wide_spacing":"Nafasi Kubwa Kati ya Maandishi","a11y.toggle_wide_spacing":"Washa/zima nafasi kubwa kati ya mistari na maandishi","a11y.size":"Ukubwa","a11y.fontsize_pct":"Asilimia ya ukubwa wa fonti","a11y.tts":"Kusoma kwa Sauti","a11y.toggle_tts":"Washa/zima usomaji kwa sauti","a11y.speech_rate":"Kasi ya usomaji","a11y.play":"Cheza usomaji","a11y.pause":"Simamisha usomaji","a11y.stop":"Acha usomaji","a11y.ready":"Tayari","hero.badge":"Kwa wanafunzi na walimu wa Tanzania","hero.title1":"Shule unayotamani kuwa nayo —<br>kwenye simu inayoshirikiwa.","hero.title2":"Fundisha Bora.","hero.title3":"Jenga Mustakabali.","hero.clarity":"Masomo, majaribio na matokeo — yaliyojengwa kwa mtaala wa kidato cha kwanza hadi cha sita.","hero.desc":"Casuya hukuletea kujifunza nyumbani: nje ya mtandao, kwa Kiswahili na Kiingereza, kwenye simu ambazo Watanzania wanatumia.","hero.off_excuse":"Jifunze ulipo — hata mtandao usipokuwapo.","hero.start":"Karibu — ingia kufungulia wiki yako","hero.demo":"Twende — angalia jinsi inavyofanya kazi",hero_week_sub:"wiki yako ya kujifunza",hero_week_greet:"Habari za asubuhi 👋",hero_week_streak:"Mfuatano wa kujifunza",hero_week_day0:"Siku 0",hero_week_streakline:"Anza mfuatano wako — somo moja kwa siku, hata mtandao usipokuwepo.",hero_week_lesson:"Somo la leo",hero_week_continue:"Endelea →",hero_week_offline:"Imehifadhiwa nje ya mtandao",hero_week_offlineline:"Jiunge kupakua masomo na kujifunza mahali ambapo mtandao haufiki.",hero_week_unlock:"Ingia kufungulia wiki yako",hero_week_honest:"Bure kuanza · Inafanya kazi kwenye simu ya RAM ya GB 2 · Inahifadhi kazi yako hata mtandao usipokuwepo.","hero.today_lesson":"Masomo ya Leo","hero.dive_into":'"Zama katika mazoezi ya kushirikiana yenye maswali na ufuatiliaji wa maendeleo kwa wakati halisi."',"hero.class_sync":"Usawazishaji wa Darasa","hero.offline_ready":"Tayari Kwa Mtandao 100%","hero.avg_score":"Wastani wa Alama","hero.progress":"+18% Maendeleo","trusted.title":"Imejengwa hapa, kwa hapa","trust.t2gb":"Inafanya kazi kwenye simu ya RAM ya GB 2","trust.offline":"Inafanya kazi nje ya mtandao","trust.curriculum":"Imetengenezwa kwa mtaala wa Tanzania · Kidato cha 1 hadi 6","trust.free":"Bure kuanza — hakuna kadi inayohitajika","trust.lang":"Jifunze kwa Kiingereza na Kiswahili","trust.data":"Alama na data zako zinabaki kuwa zako salama","features.badge":"Casuya hufanya nini siku ya kawaida","features.title":"Zana ndogo, siku za kweli","features.desc":"Hakuna mambo ya sifa tu — ni vitu vinavyorahisisha maisha ya shule, hata kama simu ni ya zamani na mtandao ni dhaifu.","feature.interactiveLessons.title":"Masomo Shirikishi","feature.interactiveLessons.blurb":"Masomo yenye mvuto kama mchezo — chemsha bongo na mazoezi yanayojisahihisha yenyewe unapofanya. Unaweza kurudia mada mpaka uelewe vizuri.","feature.offlineLearning.title":"Kujifunza Nje ya Mtandao","feature.offlineLearning.blurb":"Umeme umekatika? Safari ndefu ya daladala? Pakua mada mara moja kukiwa na mtandao mzuri, kisha soma popote — hata mahali ambapo hakuna mawimbi kabisa.","feature.aiAssistant.title":"Msaidizi wa Walimu wa AI","feature.aiAssistant.blurb":"Unaandaa chemsha bongo usiku wa manane? Mwombe Casuya aiandae kwa dakika chache — kwa Kiingereza au Kiswahili. Msaidizi wa ziada kwa walimu wenye majukumu mengi.","feature.analytics.title":"Maendeleo Yanayoonekana","feature.analytics.blurb":"Kwa mtazamo mmoja tu, ona mada inayowatatiza wanafunzi darasani — hakuna haja ya kupekua rundo la karatasi zilizosahihishwa mwisho wa muhula.","feature.assessments.title":"Tathmini na Mitihani","feature.assessments.blurb":"Andaa chemsha bongo, hojaji na kazi za masomo kwa dakika chache — zilizoundwa kuendana na jinsi masomo yanavyofundishwa darasani.","feature.cloudSync.title":"Uhifadhi wa Kidijitali (Cloud)","feature.cloudSync.blurb":"Alama na maendeleo yako yanahifadhiwa salama, na yanasawazishwa mara tu mtandao unapopatikana. Hakuna kinachopotea simu ikizima.","feature.digitalExaminations.title":"Mitihani ya Kidijitali","feature.digitalExaminations.blurb":"Endesha mitihani salama kwenye kivinjari inayojisahihisha na kutunza matokeo salama — kukiwa na usahihishaji wa papo hapo na matokeo ya uaminifu.","feature.aiLessonCreation.title":"Maandalizi ya Masomo kwa AI","feature.aiLessonCreation.blurb":"Tengeneza muhtasari wa masomo, chemsha bongo na vifaa vya kujifunzia kwa dakika chache — msaidizi imara pale siku ya shule inapokuwa ndefu.","subjects.badge":"Kidato cha 1–6 · Mtalaa wa Tanzania","subjects.title":"Masomo unayofanya — yote mahali pamoja","subjects.desc":"Kuanzia Kiswahili na Civics hadi Hisabati na Sayansi — masomo yale yale unayofanya darasani, tayari kwa kidato cha kwanza hadi cha sita.","subjects.kiswahili":"Kiswahili","subjects.english":"English / Kiingereza","subjects.maths":"Hisabati","subjects.civics":"Uraia na Maadili","subjects.history":"Historia","subjects.geography":"Jiografia","subjects.physics":"Fizikia","subjects.chemistry":"Kemia","subjects.biology":"Biolojia","subjects.mathematics":"Hisabati za Msingi","subjects.more":"... na zaidi kwenye mtaala. Jifunze kidogo kila siku, uweke darasa zima live, na uikabili Mitihani ya Taifa kwa imani — si kwa hofu.","audiences.badge":"Watu halisi, siku halisi","audiences.title":"Imetengenezwa kwa madarasa kama yako","audiences.desc":"Mwalimu, wanafunzi na baba — watu wa kawaida ambao Casuya imewajengewa. Kama inafanya kazi kwa simu ya kushirikiwa kijijini, inafanya kazi kwako.","people.cosmas":"Cosmas Dismas","people.cosmas_role":"Mwalimu · Geita","people.cosmas_story":"Cosmas husahihisha karatasi hamsini au sitini za Kidato cha Tatu baada ya shule, mara nyingi kwa taa ya mafuta umeme unapokatika. Kwa Casuya anaanzisha majaribio mara moja na yanajisahihisha yenyewe — ili aokoe muda jioni wa kuwasaidia wanafunzi wanaomhitaji.","people.bahati":"Bahati Abeld Chusi","people.bahati_role":"Mwanafunzi · Iringa","people.bahati_story":"Bahati anashiriki simu. Anapakua maelezo yake ya Civics Kidato cha Pili kwenye mtandao mzuri wa shule, kisha anasoma akirudi nyumbani kwa daladala — bila mtandao, bila shida.","people.nickson":"Nickson Kasmir Tlanka","people.nickson_role":"Mwanafunzi · Karatu","people.nickson_story":"Nickson anaona masomo mengine ni magumu kufuata darasani kukiwa na wanafunzi wengi. Masomo shirikishi ya Casuya yanamruhusu kurudi nyuma na kujifunza kwa kasi yake, mara kwa mara, mpaka aelewe.","people.shedrack":"Shedrack Peam Laurent","people.shedrack_role":"Mwanafunzi · Arusha","people.shedrack_story":"Shedrack anataka kufuatilia maendeleo yake, somo kwa somo, bila kusubiri mwisho wa muhula. Casuya inamuonyesha anapokua kila wiki.","people.eliya":"Eliya Kikoti","people.eliya_role":"Baba · Iringa","people.eliya_story":"Eliya anataka kujua kama mtoto wake anajifunza kweli, si tu 'kupita.' Kwa Casuya anaweza kuona maendeleo halisi — jaribio kwa jaribio, somo kwa somo — hata kwenye simu ya kushirikiwa ya mtoto wake.","reask.title":"Anza mfuatano wako leo — siku ya kwanza ni bure","reask.desc":"Somo moja kwa siku linatosha kuanza. Maendeleo yako yanahifadhiwa papo hapo unapojiunga.","reask.cta":"Anza bure →","cta.letterlabel":"Neno kutoka Casuya","cta.letter":'"Casuya ilijengwa kwa watu halisi kama <strong>Cosmas</strong>, mwalimu; <strong>Bahati</strong>, <strong>Nickson</strong> na <strong>Shedrack</strong>, wanafunzi; na <strong>Eliya</strong>, baba — watu wanaoshiriki simu, wanaosoma wakati umeme ukipita, na ambao daima waliweza zaidi ya hali zao zilivyoruhusu.<br><br>Shule hii ni yako. Ni nyepesi kwa simu uliyo nayo, na inafanya kazi hata mahali mtandao usipofika — ili kizuizi pekee cha mafanikio yako kiondoke. Karibu — sasa wewe ni sehemu ya Casuya."',"cta.how":"Karibu — angalia jinsi inavyofanya kazi","demo.step1":"Hatua ya 1 — Ingia","demo.step2":"Hatua ya 2 — Umesahau Nenosiri","demo.step3":"Hatua ya 3 — Jisajili","demo.step4":"Hatua ya 4 — Dashibodi","demo.welcome_back":"Karibu Tena","demo.sign_in_continue":"Ingia ili kuendelea na safari yako ya kujifunza","demo.email":"Barua Pepe","demo.password":"Nenosiri","demo.forgot_password":"Umesahau nenosiri?","demo.remember_me":"Nikumbuke","demo.sign_in":"Ingia","demo.no_account":"Huna akaunti?","demo.sign_up_free":"Jisajili bure","demo.forgot_title":"Umesahau Nenosiri?","demo.forgot_desc":"Weka barua pepe yako na tutakutumia kiungo cha kurejesha.","demo.send_reset":"Tuma Kiungo cha Kurejesha","demo.link_sent":"Kiungo Kimetumwa!","demo.check_email":"Angalia barua pepe yako kwa kiungo.","demo.remember_password":"Unakumbuka nenosiri lako?","demo.create_account_title":"Fungua akaunti yako","demo.join_desc":"Jiunge na Casuya na uanze kujifunza leo.","demo.full_name":"Jina Kamili","demo.role":"Jukumu","demo.student":"Mwanafunzi","demo.phone":"Simu","demo.confirm_password":"Thibitisha Nenosiri","demo.create_btn":"Fungua Akaunti","demo.create_account":"Fungua Akaunti","demo.create_account_desc":"Jiunge na Casuya na uanze kujifunza leo.","demo.has_account":"Tayari una akaunti? ","demo.sign_in_desc":"Ingia kuendelea na safari yako ya kujifunza","demo.progress":"65% Imekamilika","demo.chem_organic":"Kemia - Misombo ya Kikaboni","demo.chapter_time":"Sura ya 3 • Dakika 45","demo.subject_chem":"Kemia","demo.subject_bio":"Biolojia","demo.subject_math":"Hisabati","demo.already_account":"Tayari una akaunti?","demo.sign_in_link":"Ingia","demo.welcome":"Karibu tena","demo.ready_continue":"Tayari kuendelea na safari yako ya kujifunza?","demo.lessons":"Masomo","demo.avg_score":"Wastani wa Alama","demo.streak":"Mfuatano","demo.my_subjects":"Masomo Yangu","footer.platform":"Jukwaa","footer.features":"Vipengele","footer.docs":"Nyaraka","footer.subjects":"Masomo","footer.support":"Msaada","footer.help":"Kituo cha Msaada","footer.contact":"Wasiliana Nasi","footer.whatsapp":"WhatsApp","footer.legal":"Kisheria","footer.privacy":"Sera ya Faragha","footer.terms":"Masharti ya Huduma","footer.links":"Viungo","footer.github":"Mitandao ya GitHub","footer.copyright":"© 2026 Jukwaa la Casuya. Haki zote zimehifadhiwa.","footer.built":"Imetengenezwa kwa upendo kwa ajili ya shule za Tanzania","footer.chat":"Ongea nasi kupitia WhatsApp","login.title":"Karibu Tena","login.desc":"Ingia ili kuendelea na safari yako ya kujifunza","login.email_label":"Barua Pepe","login.email_placeholder":"Weka barua pepe yako","login.password_label":"Nenosiri","login.password_placeholder":"Weka nenosiri lako","login.show_password":"Onyesha nenosiri","login.hide_password":"Ficha nenosiri","login.forgot":"Umesahau nenosiri?","login.remember":"Nikumbuke barua pepe yangu","login.remember_desc":"Nibaki nimeingia kwa siku 30","login.or":"AU","login.google":"Ingia na Google","login.facebook":"Ingia na Facebook","login.submit":"Ingia kwenye akaunti yako ya Casuya","login.no_account":"Huna akaunti?","login.signup_free":"Jisajili bure","login.signing_in":"Inaingia...","login.success":"Umeingia kwa mafanikio. Inaelekeza...","register.title":"Fungua akaunti yako","register.desc":"Jiunge na Casuya na endelea na lango lako la mwanafunzi au mwalimu.","register.fullname_label":"Jina Kamili","register.fullname_placeholder":"Weka jina lako kamili","register.email_label":"Barua Pepe","register.email_placeholder":"mfano@barua pepe.com","register.phone_label":"Nambari ya Simu","register.phone_placeholder":"+255...","register.account_type":"Aina ya Akaunti","register.student":"Mwanafunzi","register.teacher":"Mwalimu","register.special_needs":"Mahitaji Maalum / Msomaji Mwengine","register.account_type_desc":"Chagua aina ya akaunti inayoelezea vyema.","register.accessibility":"Mapendeleo ya Upatikanaji","register.accessibility_desc":"Chagua kitakachokusaidia kujifunza vizuri. Unaweza kubadilisha hii wakati wowote kwenye Mipangilio.","register.reading_support":"Msaada wa Kusoma","register.dyslexia_font":"Fonti rafiki kwa wasomaji","register.larger_text":"Ukubwa mkubwa wa maandishi","register.listening_support":"Msaada wa Kusikiliza","register.tts_enabled":"Uwezeshaji wa maandishi kuwa sauti","register.visual_support":"Msaada wa Kuona","register.high_contrast":"Hali ya tofauti kubwa","register.password_label":"Nenosiri","register.password_placeholder":"Herufi 8 au zaidi","register.strength":"Nguvu ya nenosiri","register.req_8char":"Herufi 8+","register.req_upper":"Herufi kubwa","register.req_lower":"Herufi ndogo","register.req_number":"Nambari","register.req_special":"Herufi maalum","register.confirm_label":"Thibitisha Nenosiri","register.confirm_placeholder":"Weka nenosiri lako tena","register.terms_prefix":"Ninakubali","register.terms_link":"Masharti ya Huduma","register.privacy_link":"Sera ya Faragha","register.terms_summary":"Soma kwa lugha rahisi","register.what_collect":"Tunachokusanya:","register.collect_desc":"Jina lako, barua pepe, simu (hiari), na maendeleo ya kujifunza.","register.how_use":"Tunavyotumia:","register.use_desc":"Kufuatilia masomo yako, maswali, na kutoa kujifunza kwa kibinafsi.","register.your_data":"Data yako:","register.data_desc":"Unaweza kuomba tufute akaunti yako na data yako wakati wowote.","register.payments":"Malipo:","register.payments_desc":"Hatuwezi kuhifadhi kadi yako. Malipo yanashughulikiwa na watoa huduma wa kuaminika.","register.safety":"Usalama:","register.safety_desc":"Tunafuata sheria za ulinzi wa data za Tanzania na kuhifadhi data yako salama.","register.submit":"Fungua akaunti yako ya Casuya","register.has_account":"Tayari una akaunti?","register.signin_link":"Ingia kwenye akaunti yako","register.creating":"Inaunda akaunti...","register.success":"Akaunti imeundwa kwa mafanikio. Inaelekeza...","forgot.title":"Umesahau Nenosiri?","forgot.desc":"Weka barua pepe au nambari ya simu na tutakusaidia kurejesha nenosiri lako.","forgot.tab_email":"Barua Pepe","forgot.tab_phone":"Nambari ya Simu","forgot.email_label":"Barua Pepe","forgot.email_placeholder":"mfano@barua pepe.com","forgot.phone_label":"Nambari ya Simu","forgot.phone_placeholder":"+255 7XX XXX XXX","forgot.submit_email":"Nitumie kiungo cha kurejesha nenosiri","forgot.submit_phone":"Tuma nambari ya kurejesha kupitia SMS","forgot.link_sent":"Kiungo Kimetumwa!","forgot.check_email":"Angalia barua pepe yako kwa kiungo. Inaweza kuchukua dakika chache kufika.","forgot.next_steps":"Nini cha kufanya baadae:","forgot.step1":"Fungua kisanduku chako cha barua pepe","forgot.step2":"Pata barua pepe kutoka Jukwaa la Casuya","forgot.step3":'Bofya kiungo la "Kurejesha Nenosiri" kwenye barua pepe',"forgot.step4":"Fungua nenosiri lako jipya","forgot.spam":"Hujapokea? Angalia folda yako ya au jaribu tena.","forgot.return":"Rudi kwenye Uingizaji","forgot.remember":"Unakumbuka nenosiri lako?","forgot.signin":"Ingia kwenye akaunti yako","a11y.title":"Mipangilio ya Upatikanaji","a11y.dyslexia":"Fonti ya Wasomaji","a11y.contrast":"Tofauti Kubwa","a11y.large_text":"Maandishi Makubwa","a11y.wide_spacing":"Nafasi Pana","a11y.size":"Ukubwa","a11y.tts":"Maandishi kuwa Sauti","a11y.ready":"Tayari","a11y.speaking":"Inasema...","a11y.done":"Imekamilika","a11y.error":"Hitilafu","a11y.paused":"Imesimamishwa","a11y.stopped":"Imesimama","strength.weak":"Dhaifu","strength.fair":"Wastani","strength.good":"Nzuri","strength.strong":"Imara","strength.very_strong":"Imara Sana","error.fullname_required":"Jina kamili linahitajika.","error.email_required":"Barua pepe inahitajika.","error.email_invalid":"Tafadhali weka barua pepe sahihi.","error.phone_invalid":"Tafadhali weka nambari ya simu sahihi.","error.password_required":"Nenosiri linahitajika.","error.password_min8":"Nenosiri lazima liwe na herufi 8 au zaidi.","error.password_strong":"Tafadhali chagua nenosiri dhabihu.","error.password_mismatch":"Nenosiri hazifanani.","error.terms_required":"Lazima ukubali Masharti ya Huduma na Sera ya Faragha.","error.server":"Haiwezi kufikia seva. Tafadhali jaribu tena baadaye.","error.phone_required":"Nambari ya simu inahitajika.","error.phone_format":"Tafadhali weka nambari ya simu sahihi (herufi 10-15).","error.something_wrong":"Kuna kitu kimeenda vibaya.","skip.main_content":"Ruka hadi maandishi makuu","skip.login_form":"Ruka hadi fomu ya kuingia","skip.register_form":"Ruka hadi fomu ya usajili","skip.forgot_form":"Ruka hadi fomu ya kusahau nenosiri"};function a(){return localStorage.getItem(e)||"en"}function n(t){localStorage.setItem(e,t),document.documentElement.lang="sw"===t?"sw":"en",i(t),s(t)}function i(e){for(var a=document.querySelectorAll("[data-i18n]"),n=0;n<a.length;n++){var i=a[n],s=i.getAttribute("data-i18n");if(i.getAttribute("data-i18n-en")||i.setAttribute("data-i18n-en",i.textContent),"sw"===e&&t[s])i.textContent=t[s];else{var o=i.getAttribute("data-i18n-en");o&&(i.textContent=o)}}for(var r=document.querySelectorAll("[data-i18n-html]"),l=0;l<r.length;l++){var d=r[l],c=d.getAttribute("data-i18n-html");if(d.getAttribute("data-i18n-html-en")||d.setAttribute("data-i18n-html-en",d.innerHTML),"sw"===e&&t[c])d.innerHTML=t[c];else{var m=d.getAttribute("data-i18n-html-en");m&&(d.innerHTML=m)}}for(var u=document.querySelectorAll("[data-i18n-ph]"),p=0;p<u.length;p++){var g=u[p],y=g.getAttribute("data-i18n-ph");if(g.getAttribute("data-i18n-ph-en")||g.setAttribute("data-i18n-ph-en",g.placeholder||""),"sw"===e&&t[y])g.placeholder=t[y];else{var v=g.getAttribute("data-i18n-ph-en");null!==v&&(g.placeholder=v)}}for(var h=document.querySelectorAll("[data-i18n-aria]"),f=0;f<h.length;f++){var b=h[f],w=b.getAttribute("data-i18n-aria");if(b.getAttribute("data-i18n-aria-en")||b.setAttribute("data-i18n-aria-en",b.getAttribute("aria-label")||""),"sw"===e&&t[w])b.setAttribute("aria-label",t[w]);else{var k=b.getAttribute("data-i18n-aria-en");k&&b.setAttribute("aria-label",k)}}}function s(e){for(var t=document.querySelectorAll("[data-lang-toggle]"),a=0;a<t.length;a++){var n=t[a];"sw"===e?(n.textContent="EN",n.title="Switch to English",n.setAttribute("aria-label","Switch to English")):(n.textContent="SW",n.title="Badilisha Kiswahili",n.setAttribute("aria-label","Badilisha Kiswahili"))}}function o(){n("en"===a()?"sw":"en")}function r(){var e=a();document.documentElement.lang="sw"===e?"sw":"en",i(e),s(e);for(var t=document.querySelectorAll("[data-lang-toggle]"),n=0;n<t.length;n++)t[n].addEventListener("click",o)}window.CasuyaI18n={t:function(e){return"sw"===a()&&t[e]?t[e]:null},getLang:a,setLang:n,toggle:o,apply:function(){i(a()),s(a())}},"loading"===document.readyState?document.addEventListener("DOMContentLoaded",r):r()}();const FEATURES={interactiveLessons:{enabled:!0,icon:"📚",title:"Interactive Lessons",blurb:"Lessons that feel more like a game — quizzes and activities that mark themselves as you go. You can re-read a topic until it truly sticks.",hero:!0,trusted:!1},offlineLearning:{enabled:!0,icon:"📶",title:"Offline Learning",blurb:"Power cut? Long daladala ride? Download a topic once when the network is good, then study it anywhere — even where the signal never reaches.",hero:!0,trusted:!0},aiAssistant:{enabled:!0,icon:"🤖",title:"AI Teacher Assistant",blurb:"Preparing a quiz late at night? Ask Casuya to draft it in minutes — in English or Kiswahili. A second pair of hands for busy teachers.",hero:!0,trusted:!1},analytics:{enabled:!0,icon:"📊",title:"Progress You Can See",blurb:"At a glance, see which topic the class is struggling with — no digging through stacks of marked papers at the end of term.",hero:!0,trusted:!1},assessments:{enabled:!0,icon:"📝",title:"Assessments",blurb:"Set quizzes, questionnaires and modular assignments in a couple of minutes — built to fit how lessons actually run in class.",hero:!1,trusted:!1},cloudSync:{enabled:!0,icon:"☁️",title:"Cloud Sync",blurb:"Your marks and progress are kept safe, and sync the moment a connection appears. Nothing is lost when the phone restarts.",hero:!1,trusted:!0},digitalExaminations:{enabled:!0,icon:"🧪",title:"Digital Examinations",blurb:"Run secure, browser-based exams that grade themselves and keep results safe — with automatic marking and instant, honest results.",hero:!1,trusted:!0},aiLessonCreation:{enabled:!0,icon:"✨",title:"AI Lesson Creation",blurb:"Generate lesson outlines, quizzes and study materials in minutes — a steady helper when the school day has already been long.",hero:!1,trusted:!0}},PERSONAS=[{icon:"👨‍🏫",title:"Teachers",points:["Create rich digital content","Coordinate modular cohorts","Evaluate metrics streams"]},{icon:"👩‍🎓",title:"Students",points:["Study from any location","Interact with tests offline","Monitor learning records"]},{icon:"👨‍👩‍👧",title:"Parents",points:["Observe progress trackers","View localized updates"]},{icon:"🏫",title:"Schools",points:["Optimize staff delegation","Export complex analytical datasets"]}];function enabledFeatures(){return Object.values(FEATURES).filter(e=>e.enabled)}const PORTAL_LABELS={admin:"Admin Dashboard",teacher:"Teacher Portal",student:"Student Portal"};function decodeTokenRole(e){try{return JSON.parse(atob(e.split(".")[1])).role||null}catch{return null}}function isAuthenticated(){const e=getStoredAuth();return!(!e.accessToken||!e.role)&&null!==decodeTokenRole(e.accessToken)}function redirectIfAuthed(){const e=getStoredAuth();if(e.accessToken&&e.role){const t=decodeTokenRole(e.accessToken);if(t)return window.location.replace(getPortalPath(t)),!0;clearAuth()}return!1}function applyAuthChrome(e){if(!e)return;const t=getStoredAuth();if(t.accessToken&&t.role){const a=PORTAL_LABELS[t.role]||"Dashboard";e.innerHTML=`\n      <a href="${getPortalPath(t.role)}" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">${a}</a>\n      <button type="button" id="auth-logout-btn" class="bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-slate-100 transition-all hover:-translate-y-0.5">Log out</button>\n    `,e.querySelector("#auth-logout-btn")?.addEventListener("click",()=>{clearAuth(),window.location.replace("/index.html#features")})}else e.innerHTML='\n      <a href="/login.html" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Login</a>\n      <a href="/register.html" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-100 transition-all hover:-translate-y-0.5">Get Started</a>\n    '}function resolveApiBase(){return"undefined"!=typeof window&&window.API_BASE?window.API_BASE:"undefined"!=typeof window&&window.casuyaApiBase?window.casuyaApiBase():window.location.origin}const STORAGE_KEYS={accessToken:"casuya_token",refreshToken:"casuya_refresh_token",userId:"casuya_user_id",role:"casuya_role"};function safeJsonParse(e){if(!e)return null;try{return JSON.parse(e)}catch{return null}}function buildApiUrl(e,t="GET"){const a=e.startsWith("/")?e:`/${e}`,[n,i=""]=a.split("?");return`${resolveApiBase()}${n}${i?`?${i}`:""}`}function getAuthHeaders(e={},t=!0){const a={...e},n=getAccessToken();return t&&!a["Content-Type"]&&(a["Content-Type"]="application/json"),n&&!a.Authorization&&(a.Authorization=`Bearer ${n}`),a}function getApiBase(){return resolveApiBase()}function getPortalPath(e){return"admin"===e?"/admin/":"teacher"===e?"/teacher/":"/student/"}function getStoredAuth(){return{accessToken:localStorage.getItem(STORAGE_KEYS.accessToken),refreshToken:localStorage.getItem(STORAGE_KEYS.refreshToken),userId:localStorage.getItem(STORAGE_KEYS.userId),role:localStorage.getItem(STORAGE_KEYS.role)}}function getAccessToken(){return localStorage.getItem(STORAGE_KEYS.accessToken)}function getRefreshToken(){return localStorage.getItem(STORAGE_KEYS.refreshToken)}function persistAuth(e){e.access_token&&localStorage.setItem(STORAGE_KEYS.accessToken,e.access_token),e.refresh_token&&localStorage.setItem(STORAGE_KEYS.refreshToken,e.refresh_token),e.user_id&&localStorage.setItem(STORAGE_KEYS.userId,e.user_id),e.role&&localStorage.setItem(STORAGE_KEYS.role,e.role),e.accessibility_prefs&&localStorage.setItem("casuya_accessibility_prefs",JSON.stringify(e.accessibility_prefs))}function clearAuth(){Object.values(STORAGE_KEYS).forEach(e=>localStorage.removeItem(e))}function redirectToPortal(e){window.location.replace(getPortalPath(e))}function redirectToLogin(){window.location.replace("/login.html")}async function refreshAccessToken(){const e=getRefreshToken();if(!e)throw new Error("No refresh token available");const t=await fetch(buildApiUrl("/auth/refresh","POST"),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({refresh_token:e})}),a=safeJsonParse(await t.text())||{};if(!t.ok||!a.access_token)throw clearAuth(),new Error(a.detail||"Session expired. Please sign in again.");return persistAuth(a),a.access_token}async function apiRequest(e,t={}){const a=(t.method||"GET").toUpperCase(),n="undefined"!=typeof FormData&&t.body instanceof FormData,i=getAuthHeaders(t.headers,!n),s=await fetch(buildApiUrl(e,a),{...t,method:a,headers:i});if(401===s.status&&!1!==t.retryOnAuthFailure&&getRefreshToken())try{return await refreshAccessToken(),apiRequest(e,{...t,retryOnAuthFailure:!1})}catch(e){throw clearAuth(),e}const o=await s.text(),r=safeJsonParse(o);if(!s.ok){if(401===s.status)throw clearAuth(),new Error(r?.detail||"Session expired. Please sign in again.");throw new Error(r?.detail||s.statusText||"Request failed")}return r??o}async function login({email:e,password:t}){const a=await apiRequest("/auth/login",{method:"POST",body:JSON.stringify({email:e,password:t}),retryOnAuthFailure:!1});return persistAuth(a),a}function requireRole(e){const t=getStoredAuth();return t.accessToken&&t.role?e&&t.role!==e?(redirectToPortal(t.role),null):t:(clearAuth(),redirectToLogin(),null)}const ROLE_PORTALS={admin:"/admin/",teacher:"/teacher/",student:"/student/"},AUTH_STORAGE_KEYS=["casuya_token","casuya_refresh_token","casuya_user_id","casuya_role"];function decodeTokenRole(e){try{return JSON.parse(atob(e.split(".")[1])).role||null}catch{return null}}function clearAuthData(){AUTH_STORAGE_KEYS.forEach(e=>localStorage.removeItem(e))}function guardPortal(e){const t=localStorage.getItem("casuya_token");if(!t)return clearAuthData(),window.location.replace("/login.html"),!1;const a=decodeTokenRole(t);if(!a)return clearAuthData(),window.location.replace("/login.html"),!1;if(a!==e){clearAuthData();const e=ROLE_PORTALS[a]||"/login.html";return window.location.replace(e),!1}return!0}async function renderAdminDashboard(){const e=decodeToken(localStorage.getItem("casuya_token"));render("#app",`\n    <div class="sidebar-layout">\n      <aside id="admin-sidebar" class="sidebar">\n        <div class="sidebar-header">\n          <h2>Casuya Admin</h2>\n          <p>${escapeHtml(e.full_name||e.email||"Admin")}</p>\n        </div>\n        <nav class="sidebar-nav" id="admin-nav">\n          <div class="sidebar-nav-item active" data-view="dashboard">📊 Dashboard</div>\n          <div class="sidebar-nav-item" data-view="subjects">📚 Subjects</div>\n          <div class="sidebar-nav-item" data-view="topics">📁 Topics</div>\n          <div class="sidebar-nav-item" data-view="subtopics">📂 Subtopics</div>\n          <div class="sidebar-nav-item" data-view="lessons">📝 Lessons</div>\n          <div class="sidebar-nav-item" data-view="quizzes">❓ Quizzes</div>\n          <div class="sidebar-nav-item" data-view="games">🎮 Games</div>\n          <div class="sidebar-nav-item" data-view="users">👥 Users</div>\n          <div class="sidebar-nav-item" data-view="progress">📈 Progress</div>\n          <div class="sidebar-nav-item" data-view="analytics">📉 Analytics</div>\n          <div class="sidebar-nav-item" data-view="payments">💳 Payments</div>\n          <div class="sidebar-nav-item" data-view="notifications">🔔 Notifications</div>\n          <div class="sidebar-nav-item" data-view="uploads">📤 Uploads</div>\n          <div class="sidebar-nav-item" data-view="branding">🎨 Branding</div>\n          <div class="sidebar-nav-item" data-view="settings">⚙️ Settings</div>\n        </nav>\n        <div class="sidebar-footer">\n          <button id="admin-logout" class="btn btn-danger" style="width:100%;font-size:0.85rem">Sign Out</button>\n        </div>\n      </aside>\n      <main class="main-content">\n        <header class="main-header">\n          <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button>\n          <div style="position:relative;flex:1;max-width:360px">\n            <input id="admin-search" type="search" class="input" placeholder="Search users, lessons..." style="padding:0.4rem 0.75rem;font-size:0.85rem">\n            <div id="admin-search-results" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);z-index:100;max-height:300px;overflow-y:auto"></div>\n          </div>\n        </header>\n        <div id="admin-content" class="main-body"></div>\n      </main>\n    </div>\n  `),document.getElementById("admin-logout").addEventListener("click",handleLogout),document.getElementById("sidebar-toggle")?.addEventListener("click",()=>{document.getElementById("admin-sidebar").classList.toggle("open")}),document.addEventListener("click",e=>{e.target.closest("#admin-sidebar")||e.target.closest("#sidebar-toggle")||document.getElementById("admin-sidebar")?.classList.remove("open")},{signal:_globalAbort.signal});const t=document.getElementById("admin-search"),a=document.getElementById("admin-search-results");let n;function i(e){document.querySelectorAll("#admin-nav .sidebar-nav-item").forEach(t=>{t.classList.toggle("active",t.dataset.view===e)})}function s(e){const t=document.getElementById("admin-content");t&&(t.innerHTML=e)}t.addEventListener("input",()=>{clearTimeout(n);const e=t.value.trim();e.length<2?a.style.display="none":n=setTimeout(async()=>{try{const n=await request(`/search/?q=${encodeURIComponent(e)}`);Array.isArray(n)&&0!==n.length?(a.innerHTML=n.map(e=>`\n            <div class="admin-search-item" data-id="${escapeHtml(e.id)}" data-type="${escapeHtml(e.type)}" style="padding:0.5rem;cursor:pointer;border-bottom:1px solid var(--color-border);display:flex;justify-content:space-between">\n              <span>${escapeHtml(e.title||e.email)}</span>\n              <span style="color:var(--color-text-muted);font-size:0.8rem">${escapeHtml(e.type)}</span>\n            </div>\n          `).join(""),a.querySelectorAll(".admin-search-item").forEach(e=>{e.addEventListener("click",()=>{a.style.display="none",t.value="","student"===e.dataset.type||"teacher"===e.dataset.type?f():"lesson"===e.dataset.type?u():l()})})):a.innerHTML='<div style="padding:0.5rem;color:var(--color-text-muted)">No results</div>',a.style.display="block"}catch(e){a.style.display="none"}},300)}),document.addEventListener("click",e=>{e.target.closest("#admin-search")||e.target.closest("#admin-search-results")||(a.style.display="none")},{signal:_globalAbort.signal});const o={dashboard:()=>{i("dashboard"),r()},subjects:()=>{i("subjects"),l()},topics:()=>{i("topics"),d()},subtopics:()=>{i("subtopics"),c()},lessons:()=>{i("lessons"),u()},quizzes:()=>{i("quizzes"),g()},games:()=>{i("games"),v()},users:()=>{i("users"),f()},progress:()=>{i("progress"),async function(){s('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');try{const[e,t,a,n]=await Promise.all([request("/students"),request("/teachers"),request("/subjects"),request("/analytics/lesson-distribution")]),i=Array.isArray(n)?n:[],o=i.length;s(`\n        <div class="content">\n          <h2>Platform Progress</h2>\n          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem;margin-top:0.5rem">\n            <div class="card" style="padding:0.75rem"><h4>Students</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(e)?e.length:0}</p></div>\n            <div class="card" style="padding:0.75rem"><h4>Teachers</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(t)?t.length:0}</p></div>\n            <div class="card" style="padding:0.75rem"><h4>Lessons</h4><p style="font-size:1.6rem;font-weight:700">${o}</p></div>\n            <div class="card" style="padding:0.75rem"><h4>Subjects</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(a)?a.length:0}</p></div>\n          </div>\n          ${i.length>0?`\n            <h3 style="margin-top:1.5rem">Lesson Distribution</h3>\n            <div style="margin-top:0.5rem">\n              ${i.map(e=>`\n                <div style="margin-bottom:0.5rem">\n                  <div style="display:flex;justify-content:space-between;margin-bottom:0.25rem">\n                    <span style="font-size:0.85rem">${escapeHtml(e.lesson_title)}</span>\n                    <span style="font-size:0.85rem;color:var(--color-text-muted)">${e.avg_completion_percentage}% (${e.session_count} sessions)</span>\n                  </div>\n                  <div class="progress-bar">\n                    <div class="progress-bar-fill" style="width:${e.avg_completion_percentage}%"></div>\n                  </div>\n                </div>\n              `).join("")}\n            </div>\n          `:'<div class="empty-state" style="margin-top:1rem"><p>No lesson progress data yet. Have students started lessons?</p></div>'}\n        </div>\n      `)}catch(e){s(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(e.message)}</p></div>`)}}()},analytics:()=>{i("analytics"),async function(){s('<div class="loading-state"><div class="spinner"></div><p>Loading analytics...</p></div>');try{const[e,t]=await Promise.all([request("/analytics/overview"),request("/analytics/lesson-distribution").catch(()=>[])]),a=await request("/lessons").catch(()=>[]),n=Array.isArray(a)?a:[],i=[];for(const e of n.slice(0,10))try{const t=await request(`/analytics/lessons/${e.id}`);t&&i.push({...t,title:e.title})}catch(e){}s(`\n        <div class="content">\n          <h2>Analytics</h2>\n          <div class="stat-grid" style="margin:1rem 0">\n            <div class="stat-card"><div class="stat-value">${e?.total_students??0}</div><div class="stat-label">Students</div></div>\n            <div class="stat-card"><div class="stat-value">${e?.total_lessons??0}</div><div class="stat-label">Lessons</div></div>\n            <div class="stat-card"><div class="stat-value">${e?.total_sessions??0}</div><div class="stat-label">Sessions</div></div>\n            <div class="stat-card"><div class="stat-value">${e?.avg_completion_rate??0}%</div><div class="stat-label">Avg Completion</div></div>\n          </div>\n          ${Array.isArray(t)&&t.length>0?`\n            <h3 style="margin:1.5rem 0 0.75rem">Lesson Distribution</h3>\n            <div class="card-grid">\n              ${t.map(e=>`\n                <div class="card" style="padding:1rem">\n                  <h4 style="margin:0 0 0.25rem">${escapeHtml(e.lesson_title||"Untitled Lesson")}</h4>\n                  <p style="color:var(--color-text-muted);font-size:0.85rem">${e.session_count??0} sessions · ${e.avg_completion_percentage??0}% completion</p>\n                </div>\n              `).join("")}\n            </div>\n          `:""}\n          ${i.length>0?`\n            <h3 style="margin:1.5rem 0 0.75rem">Per-Lesson Analytics</h3>\n            <div class="card-grid">\n              ${i.map(e=>`\n                <div class="card" style="padding:1rem">\n                  <h4 style="margin:0 0 0.25rem">${escapeHtml(e.title)}</h4>\n                  <p style="color:var(--color-text-muted);font-size:0.85rem">Sessions: ${e.session_count??0} | Avg Completion: ${e.avg_completion_percentage??0}% | Avg Score: ${e.avg_score_percentage??0}%</p>\n                </div>\n              `).join("")}\n            </div>\n          `:""}\n        </div>\n      `)}catch(e){s('<div class="empty-state"><p>Error loading analytics</p></div>')}}()},payments:()=>{i("payments"),b()},notifications:()=>{i("notifications"),w()},uploads:()=>{i("uploads"),k()},branding:()=>{i("branding"),x()},settings:()=>{i("settings"),async function(){s('<div class="loading-state"><div class="spinner"></div><p>Loading settings...</p></div>');try{const[t,a,n]=await Promise.all([request("/users/me").catch(()=>({})),request("/branding/logo").catch(()=>null),request("/settings/platform-status").catch(()=>null)]),i=localStorage.getItem("admin_settings_tab")||"profile";function e(e){localStorage.setItem("admin_settings_tab",e),document.querySelectorAll(".settings-tab-btn").forEach(t=>t.classList.toggle("active",t.dataset.tab===e));const i=document.getElementById("settings-panel");if(i)if("profile"===e)i.innerHTML=`\n            <div class="card" style="padding:1.5rem">\n              <h3 style="margin-bottom:0.75rem">Admin Profile</h3>\n              <form id="admin-profile-form" style="display:flex;flex-direction:column;gap:0.75rem">\n                <div>\n                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Full Name</label>\n                  <input class="input" name="full_name" value="${escapeHtml(t.full_name||"")}" placeholder="Your name">\n                </div>\n                <div>\n                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Email</label>\n                  <input class="input" value="${escapeHtml(t.email||"")}" disabled style="opacity:0.6">\n                  <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.25rem">Email cannot be changed here</p>\n                </div>\n                <div>\n                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Phone</label>\n                  <input class="input" name="phone" value="${escapeHtml(t.phone||"")}" placeholder="Phone number">\n                </div>\n                <div style="display:flex;gap:0.5rem;align-items:center">\n                  <button class="btn btn-primary" type="submit">💾 Save Profile</button>\n                  <span id="admin-profile-msg" style="font-size:0.85rem;display:none"></span>\n                </div>\n              </form>\n            </div>\n          `,document.getElementById("admin-profile-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),a=document.getElementById("admin-profile-msg");try{await request("/users/me",{method:"PATCH",body:JSON.stringify({full_name:t.get("full_name"),phone:t.get("phone")})}),a.textContent="✅ Profile updated!",a.style.color="var(--color-success)",a.style.display="inline",setTimeout(()=>a.style.display="none",3e3)}catch(e){a.textContent="❌ "+e.message,a.style.color="var(--color-danger)",a.style.display="inline"}});else if("security"===e)i.innerHTML=`\n            <div class="card" style="padding:1.5rem">\n              <h3 style="margin-bottom:0.75rem">Change Password</h3>\n              <form id="admin-pw-form" style="display:flex;flex-direction:column;gap:0.75rem;max-width:400px">\n                <div>\n                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Current Password</label>\n                  <input class="input" name="current_password" type="password" required>\n                </div>\n                <div>\n                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">New Password</label>\n                  <input class="input" name="new_password" type="password" required minlength="8">\n                </div>\n                <div>\n                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Confirm New Password</label>\n                  <input class="input" name="confirm_password" type="password" required>\n                </div>\n                <div style="display:flex;gap:0.5rem;align-items:center">\n                  <button class="btn btn-primary btn-pattern" type="submit">🔐 Update Password</button>\n                  <span id="admin-pw-msg" style="font-size:0.85rem;display:none"></span>\n                </div>\n              </form>\n            </div>\n            <div class="card" style="padding:1.5rem;margin-top:1rem">\n              <h3 style="margin-bottom:0.75rem">Active Sessions</h3>\n              <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Manage your login sessions</p>\n              <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">\n                <div>\n                  <p style="font-weight:500;margin:0;font-size:0.9rem">Current Session</p>\n                  <p style="font-size:0.75rem;color:var(--color-text-muted);margin:0.15rem 0 0">Now · ${navigator.userAgent.slice(0,60)}...</p>\n                </div>\n                <span style="color:var(--color-success);font-size:0.8rem;font-weight:600">🟢 Active</span>\n              </div>\n            </div>\n          `,document.getElementById("admin-pw-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),a=document.getElementById("admin-pw-msg");if(t.get("new_password")!==t.get("confirm_password"))return a.textContent="❌ Passwords do not match",a.style.color="var(--color-danger)",void(a.style.display="inline");try{await request("/auth/change-password",{method:"POST",body:JSON.stringify({current_password:t.get("current_password"),new_password:t.get("new_password")})}),a.textContent="✅ Password updated!",a.style.color="var(--color-success)",a.style.display="inline",e.target.reset(),setTimeout(()=>a.style.display="none",3e3)}catch(e){a.textContent="❌ "+e.message,a.style.color="var(--color-danger)",a.style.display="inline"}});else if("notifications"===e)i.innerHTML='\n            <div class="card" style="padding:1.5rem">\n              <h3 style="margin-bottom:0.75rem">Notification Preferences</h3>\n              <form id="admin-notif-prefs-form" style="display:flex;flex-direction:column;gap:0.75rem">\n                <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;cursor:pointer">\n                  <input type="checkbox" name="email_notifs" checked> Email notifications for new users\n                </label>\n                <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;cursor:pointer">\n                  <input type="checkbox" name="payment_notifs" checked> Payment confirmations\n                </label>\n                <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;cursor:pointer">\n                  <input type="checkbox" name="system_notifs" checked> System alerts and errors\n                </label>\n                <button class="btn btn-primary btn-pattern" type="submit" style="align-self:flex-start">💾 Save Preferences</button>\n              </form>\n            </div>\n            <div class="card" style="padding:1.5rem;margin-top:1rem">\n              <h3 style="margin-bottom:0.75rem">Send Bulk Notification</h3>\n              <form id="settings-notify-form" style="display:flex;flex-direction:column;gap:0.5rem">\n                <select class="input" name="target" required>\n                  <option value="all">All Users</option>\n                  <option value="students">All Students</option>\n                  <option value="teachers">All Teachers</option>\n                </select>\n                <textarea class="input" name="message" rows="3" placeholder="Notification message..." required></textarea>\n                <button class="btn btn-primary btn-pattern" type="submit">📤 Send</button>\n              </form>\n              <div id="settings-notify-result" style="margin-top:0.5rem;font-size:0.85rem"></div>\n            </div>\n          ',document.getElementById("settings-notify-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),a=t.get("target"),n=t.get("message");try{"all"===a?(await request("/notifications/bulk",{method:"POST",body:JSON.stringify({role:"student",message:n})}),await request("/notifications/bulk",{method:"POST",body:JSON.stringify({role:"teacher",message:n})})):await request("/notifications/bulk",{method:"POST",body:JSON.stringify({role:"students"===a?"student":"teacher",message:n})}),document.getElementById("settings-notify-result").innerHTML='<span style="color:var(--color-success)">Notification sent!</span>',e.target.reset()}catch(e){document.getElementById("settings-notify-result").innerHTML=`<span style="color:var(--color-danger)">${escapeHtml(e.message)}</span>`}});else if("platform"===e){var s=n||null;function o(e,t,a){return e?'<span style="font-size:0.8rem;font-weight:600;color:var(--color-success)">● '+t+"</span>":'<span style="font-size:0.8rem;font-weight:600;color:var(--color-danger)">● '+a+"</span>"}function r(e){return"env"===e?'<span style="font-size:0.7rem;padding:0.1rem 0.4rem;border-radius:999px;background:var(--color-surface-2,#eef2f7);color:var(--color-text-muted)">env</span>':'<span style="font-size:0.7rem;padding:0.1rem 0.4rem;border-radius:999px;border:1px solid var(--color-border);color:var(--color-text-muted)">default</span>'}var l="";s&&s.runtime&&(l='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.75rem;margin:1rem 0 1.25rem">'+(l=[["Database",s.runtime.database],["Redis",s.runtime.redis],["SMTP/Email",s.runtime.smtp]].map(function(e){return'<div style="border:1px solid var(--color-border);border-radius:var(--radius);padding:0.75rem;text-align:center"><div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem">'+e[0]+"</div>"+o(!!e[1],"Healthy","Down")+"</div>"}).join(""))+"</div>");var d="";if(s&&Array.isArray(s.backend)&&s.backend.length){var c={};s.backend.forEach(function(e){(c[e.group]=c[e.group]||[]).push(e)}),d=Object.keys(c).map(function(e){var t=c[e].map(function(e){return'<div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0.55rem 0;border-bottom:1px solid var(--color-border)"><div style="min-width:0"><div style="font-size:0.9rem">'+escapeHtml(e.label)+'</div><div style="font-size:0.72rem;font-family:monospace;color:var(--color-text-muted)">'+escapeHtml(e.name)+'</div></div><div style="display:flex;align-items:center;gap:0.5rem;flex-shrink:0"><span style="font-size:0.8rem;color:var(--color-text-muted)">'+escapeHtml(e.value)+"</span>"+r(e.source)+(e.configured?'<span style="color:var(--color-success);font-size:0.9rem">✓</span>':'<span style="color:var(--color-danger);font-size:0.9rem">—</span>')+"</div></div>"}).join("");return'<div style="margin:0 0 0.25rem"><div style="font-weight:600;font-size:0.85rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.04em;padding:0.6rem 0 0.25rem">'+escapeHtml(e)+"</div>"+t+"</div>"}).join("")}else d='<p style="font-size:0.85rem;color:var(--color-text-muted)">Platform status unavailable.</p>';var m=window.CasuyaI18n&&"function"==typeof window.CasuyaI18n.getLang?window.CasuyaI18n.getLang():"en",u=[["API Base",window.API_BASE||""],["API Host",window.API_HOST||""],["API Protocol",window.API_PROTOCOL||""],["CASUYA_API_URL",window.CASUYA_API_URL||""],["UI Language",m]].map(function(e){var t=!!e[1];return'<div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0.55rem 0;border-bottom:1px solid var(--color-border)"><div style="font-size:0.9rem">'+escapeHtml(e[0])+'</div><div style="display:flex;align-items:center;gap:0.5rem"><span style="font-size:0.8rem;font-family:monospace;color:var(--color-text-muted)">'+escapeHtml(String(e[1]||"(unset)"))+"</span>"+(t?'<span style="color:var(--color-success);font-size:0.9rem">✓</span>':'<span style="color:var(--color-danger);font-size:0.9rem">—</span>')+"</div></div>"}).join("");i.innerHTML=`\n            <div class="card" style="padding:1.5rem">\n              <h3 style="margin-bottom:0.5rem">Platform Information</h3>\n              <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--color-border)">\n                <span style="color:var(--color-text-muted);font-size:0.9rem">Environment</span>\n                <strong style="font-size:0.9rem">${escapeHtml(s&&s.environment||(window.API_BASE?"production":"development"))}</strong>\n              </div>\n              <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--color-border)">\n                <span style="color:var(--color-text-muted);font-size:0.9rem">API Base</span>\n                <strong style="font-size:0.9rem">${escapeHtml(API_BASE)}</strong>\n              </div>\n              <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--color-border)">\n                <span style="color:var(--color-text-muted);font-size:0.9rem">Logo</span>\n                <strong style="font-size:0.9rem">${a?"Custom":"Default"}</strong>\n              </div>\n              <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--color-border)">\n                <span style="color:var(--color-text-muted);font-size:0.9rem">Version</span>\n                <strong style="font-size:0.9rem">1.0.0</strong>\n              </div>\n              <div style="display:flex;justify-content:space-between;padding:0.6rem 0">\n                <span style="color:var(--color-text-muted);font-size:0.9rem">Status</span>\n                <span style="font-size:0.9rem;color:var(--color-success);font-weight:600">● Online</span>\n              </div>\n\n              <h3 style="margin:1.5rem 0 0.25rem">Runtime Health</h3>\n              <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0">Live connectivity checks against the services the platform depends on.</p>\n              ${l}\n\n              <h3 style="margin:1.75rem 0 0.5rem">Backend Environment Variables</h3>\n              <p style="font-size:0.85rem;color:var(--color-text-muted)">Configured status of every backend setting, drawn from environment variables. Secret values are masked. <span style="font-size:0.8rem">env = set in the environment · default = using the bundled default.</span></p>\n              ${d}\n\n              <h3 style="margin:1.75rem 0 0.5rem">Frontend Environment</h3>\n              <p style="font-size:0.85rem;color:var(--color-text-muted)">Values resolved in the browser from the served frontend.</p>\n              ${u}\n            </div>\n            <div class="card" style="padding:1.5rem;margin-top:1rem" id="module-visibility-card">\n              <h3 style="margin-bottom:0.25rem">Module Visibility</h3>\n              <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:1rem">Toggle which sidebar modules are visible to students and teachers. Hidden modules can be re-enabled anytime.</p>\n              <div id="module-vis-loading" style="text-align:center;padding:1rem;color:var(--color-text-muted);font-size:0.85rem">Loading...</div>\n            </div>\n            <div class="card" style="padding:1.5rem;margin-top:1rem">\n              <h3 style="margin-bottom:0.75rem">⚠️ Danger Zone</h3>\n              <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Irreversible actions</p>\n              <div style="display:flex;gap:0.5rem;flex-wrap:wrap">\n                <button class="btn btn-danger btn-sm btn-pattern" id="clear-cache-btn">🗑️ Clear Cache</button>\n                <button class="btn btn-outline-danger btn-sm" id="export-data-btn">📦 Export All Data</button>\n              </div>\n              <div id="danger-msg" style="font-size:0.85rem;margin-top:0.5rem"></div>\n            </div>\n          `,document.getElementById("clear-cache-btn")?.addEventListener("click",()=>{requestCache.clear();const e=document.getElementById("danger-msg");e.textContent="In-memory cache cleared",e.style.color="var(--color-success)"}),document.getElementById("export-data-btn")?.addEventListener("click",async()=>{const e=document.getElementById("danger-msg");try{const[t,a,n,i]=await Promise.all([request("/students"),request("/teachers"),request("/subjects"),request("/lessons")]),s={students:t,teachers:a,subjects:n,lessons:i,exported_at:(new Date).toISOString()},o=new Blob([JSON.stringify(s,null,2)],{type:"application/json"}),r=URL.createObjectURL(o),l=document.createElement("a");l.href=r,l.download="casuya-export.json",l.click(),URL.revokeObjectURL(r),e.textContent="Data exported",e.style.color="var(--color-success)"}catch(t){e.textContent=t.message,e.style.color="var(--color-danger)"}}),async function(){var e=document.getElementById("module-vis-loading");if(e)try{var t=await request("/settings/modules"),a=t.student||{},n=t.teacher||{},i={dashboard:"Dashboard",subjects:"Subjects",progress:"Progress",bookmarks:"Bookmarks",assignments:"Assignments",games:"Games",downloads:"Downloads",exams:"Exams",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"},s={overview:"Overview",students:"Students",lessons:"Lessons",assignments:"Assignments",reports:"Reports","ai-assistant":"AI Assistant",bookmarks:"Bookmarks",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"};function o(e,t,a){for(var n='<div style="margin-bottom:1rem"><div style="font-weight:600;font-size:0.9rem;margin-bottom:0.5rem">'+e+"</div>",i=Object.keys(a),s=0;s<i.length;s++){var o=i[s],r=!1!==t[o];n+='<label style="display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0;border-bottom:1px solid var(--color-border);cursor:pointer;font-size:0.85rem">',n+='<input type="checkbox" data-role="'+e.toLowerCase()+'" data-mod="'+o+'"'+(r?" checked":"")+' style="accent-color:var(--color-primary);width:16px;height:16px">',n+="<span>"+a[o]+"</span>",n+="</label>"}return n+="</div>"}e.outerHTML=o("Student",a,i)+o("Teacher",n,s)+'<p id="module-vis-msg" style="font-size:0.8rem;color:var(--color-text-muted);margin-top:0.5rem"></p>',document.querySelectorAll("#module-visibility-card input[type=checkbox]").forEach(function(e){e.addEventListener("change",async function(){var e=document.getElementById("module-vis-msg"),t={},a={};document.querySelectorAll("#module-visibility-card input[type=checkbox]").forEach(function(e){var n=e.getAttribute("data-role"),i=e.getAttribute("data-mod");"student"===n?t[i]=e.checked:a[i]=e.checked});try{await request("/settings/modules",{method:"PUT",body:JSON.stringify({student:t,teacher:a})}),e.textContent="Saved",e.style.color="var(--color-success)",setTimeout(function(){e.textContent=""},2e3)}catch(t){e.textContent="Error: "+t.message,e.style.color="var(--color-danger)"}})})}catch(r){e.outerHTML='<p style="color:var(--color-danger);font-size:0.85rem">Failed to load module settings</p>'}}()}else"appearance"===e&&(i.innerHTML=appearancePanelHTML(),setupAppearanceControls())}s(`\n        <div class="content">\n          <h2>Settings</h2>\n          <div class="tab-bar">\n            <button class="tab-btn settings-tab-btn${"profile"===i?" active":""}" data-tab="profile">👤 Profile</button>\n            <button class="tab-btn settings-tab-btn${"security"===i?" active":""}" data-tab="security">🔒 Security</button>\n            <button class="tab-btn settings-tab-btn${"notifications"===i?" active":""}" data-tab="notifications">🔔 Notifications</button>\n            <button class="tab-btn settings-tab-btn${"platform"===i?" active":""}" data-tab="platform">⚙️ Platform</button>\n            <button class="tab-btn settings-tab-btn${"appearance"===i?" active":""}" data-tab="appearance">🎨 Appearance</button>\n          </div>\n          <div id="settings-panel"></div>\n        </div>\n      `),document.querySelectorAll(".settings-tab-btn").forEach(t=>{t.addEventListener("click",()=>e(t.dataset.tab))}),e(i)}catch(o){s('<div class="empty-state"><p>Error loading settings</p></div>')}}()}};async function r(){s('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');try{const t=await request("/analytics/overview"),a=e.full_name||e.email||"Admin",n=(new Date).getHours();let i="Good morning";n>=12&&n<17?i="Good afternoon":n>=17&&(i="Good evening"),s(`\n        <div class="content" style="max-width:960px">\n          \x3c!-- Welcome Banner --\x3e\n          <div class="welcome-banner">\n            <small>${i}</small>\n            <h2>Welcome, ${escapeHtml(a)}</h2>\n            <p>Here's your platform overview at a glance.</p>\n          </div>\n\n          \x3c!-- Stats --\x3e\n          <div class="stat-grid">\n            <div class="stat-card">\n              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">👥</div>\n              <div class="stat-value">${t?.total_students??0}</div>\n              <div class="stat-label">Students</div>\n            </div>\n            <div class="stat-card">\n              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">👩‍🏫</div>\n              <div class="stat-value">${t?.total_teachers??0}</div>\n              <div class="stat-label">Teachers</div>\n            </div>\n            <div class="stat-card">\n              <div class="stat-icon" style="background:#fef3c7;color:#d97706">📝</div>\n              <div class="stat-value">${t?.total_lessons??0}</div>\n              <div class="stat-label">Lessons</div>\n            </div>\n            <div class="stat-card">\n              <div class="stat-icon" style="background:#fce7f3;color:#db2777">❓</div>\n              <div class="stat-value">${t?.total_quizzes??0}</div>\n              <div class="stat-label">Quizzes</div>\n            </div>\n          </div>\n\n          \x3c!-- Quick Actions --\x3e\n          <div class="section-header">\n            <h3>Quick Actions</h3>\n          </div>\n          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.75rem">\n            <div class="recent-lesson-card" data-nav="subjects" style="text-align:center">\n              <div style="font-size:1.5rem;margin-bottom:0.25rem">📚</div>\n              <h4 style="margin:0">Manage Subjects</h4>\n            </div>\n            <div class="recent-lesson-card" data-nav="lessons" style="text-align:center">\n              <div style="font-size:1.5rem;margin-bottom:0.25rem">📝</div>\n              <h4 style="margin:0">Manage Lessons</h4>\n            </div>\n            <div class="recent-lesson-card" data-nav="users" style="text-align:center">\n              <div style="font-size:1.5rem;margin-bottom:0.25rem">👥</div>\n              <h4 style="margin:0">Manage Users</h4>\n            </div>\n            <div class="recent-lesson-card" data-nav="progress" style="text-align:center">\n              <div style="font-size:1.5rem;margin-bottom:0.25rem">📈</div>\n              <h4 style="margin:0">View Progress</h4>\n            </div>\n          </div>\n        </div>\n      `),document.querySelectorAll("#admin-content .recent-lesson-card[data-nav]").forEach(e=>{e.addEventListener("click",()=>{const t=e.dataset.nav;o[t]&&o[t]()})})}catch(e){s(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(e.message)}</p></div>`)}}async function l(){s('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');try{const e=await request("/subjects"),t=Array.isArray(e)?e:[];s(`\n        <div class="content">\n          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">\n            <h2>Subjects</h2>\n            <button class="btn btn-primary" id="add-subject-btn">+ Add Subject</button>\n          </div>\n          <div id="form-area"></div>\n          <div class="card-grid">\n            ${0===t.length?'<div class="empty-state"><p>No subjects yet</p></div>':t.map(e=>`\n                <div class="card" style="cursor:pointer" data-id="${escapeHtml(e.id)}" data-name="${escapeHtml(e.name)}">\n                  <div style="display:flex;justify-content:space-between;align-items:start">\n                    <div>\n                      <h3>${escapeHtml(e.name)}</h3>\n                      <p style="color:var(--color-text-muted);font-size:0.85rem">${escapeHtml(e.slug||"")}</p>\n                    </div>\n                    ${deleteBtn(e.id,e.name,"/subjects")}\n                  </div>\n                </div>\n              `).join("")}\n          </div>\n        </div>\n      `),document.getElementById("add-subject-btn")?.addEventListener("click",()=>{document.getElementById("form-area").innerHTML='\n          <div class="card" style="margin-bottom:1rem">\n            <h3>New Subject</h3>\n            <form id="create-subject-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">\n              <input class="input" name="name" placeholder="Subject name (e.g. Mathematics)" required>\n              <input class="input" name="slug" placeholder="Slug (e.g. mathematics)" required>\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-primary" type="submit">Save</button>\n                <button class="btn" type="button" id="cancel-btn">Cancel</button>\n              </div>\n            </form>\n          </div>\n        ',document.getElementById("cancel-btn").addEventListener("click",()=>document.getElementById("form-area").innerHTML=""),document.getElementById("create-subject-form").addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target);try{await request("/subjects",{method:"POST",body:JSON.stringify({name:t.get("name"),slug:t.get("slug")})}),l()}catch(e){showToast("Error: "+e.message)}})}),document.querySelectorAll("#admin-content .card[data-id]").forEach(e=>{e.addEventListener("click",t=>{t.target.closest("[data-delete]")||d(e.dataset.id,e.dataset.name)})}),initDeleteButtons()}catch(e){s('<div class="empty-state"><h2>Error</h2><p>'+escapeHtml(e.message)+"</p></div>")}}async function d(e,t){s('<div class="loading-state"><div class="spinner"></div><p>Loading topics...</p></div>');try{const a=await request("/topics/"+(e?"?subject_id="+e:"")),n=Array.isArray(a)?a:[];s(`\n        <div class="content">\n          ${e?'<button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>':""}\n          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">\n            <h2>${e?escapeHtml(t)+" — ":""}Topics</h2>\n            <button class="btn btn-primary" id="add-topic-btn">+ Add Topic</button>\n          </div>\n          <div id="form-area"></div>\n          <div class="card-grid">\n            ${0===n.length?'<div class="empty-state"><p>No topics yet</p></div>':n.map(e=>`\n                <div class="card" style="cursor:pointer" data-id="${escapeHtml(e.id)}" data-title="${escapeHtml(e.title)}">\n                  <div style="display:flex;justify-content:space-between;align-items:start">\n                    <div>\n                      <h3>${escapeHtml(e.title)}</h3>\n                      <p style="color:var(--color-text-muted);font-size:0.85rem">Form ${escapeHtml(e.form_level||"")}</p>\n                    </div>\n                    ${deleteBtn(e.id,e.title,"/topics")}\n                  </div>\n                </div>\n              `).join("")}\n          </div>\n        </div>\n      `),e&&document.getElementById("back-btn")?.addEventListener("click",l),document.getElementById("add-topic-btn")?.addEventListener("click",()=>{document.getElementById("form-area").innerHTML=`\n          <div class="card" style="margin-bottom:1rem">\n            <h3>New Topic</h3>\n            <form id="create-topic-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">\n              ${e?"":'<select class="input" name="subject_id" required><option value="">Select subject...</option></select>'}\n              <input class="input" name="title" placeholder="Topic title" required>\n              <select class="input" name="form_level">\n                <option value="">Select form level...</option>\n                ${["Form I","Form II","Form III","Form IV","Form V","Form VI"].map(e=>'<option value="'+e+'">'+e+"</option>").join("")}\n              </select>\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-primary" type="submit">Save</button>\n                <button class="btn" type="button" id="cancel-btn">Cancel</button>\n              </div>\n            </form>\n          </div>\n        `,e||request("/subjects").then(e=>{const t=document.querySelector('[name="subject_id"]');t&&Array.isArray(e)&&e.forEach(e=>{const a=document.createElement("option");a.value=e.id,a.textContent=e.name,t.appendChild(a)})}),document.getElementById("cancel-btn").addEventListener("click",()=>document.getElementById("form-area").innerHTML=""),document.getElementById("create-topic-form").addEventListener("submit",async a=>{a.preventDefault();const n=new FormData(a.target),i=n.get("title"),s=e||n.get("subject_id");if(i&&s)try{await request("/topics",{method:"POST",body:JSON.stringify({title:i,subject_id:s,form_level:n.get("form_level")||""})}),d(e,t)}catch(e){showToast("Error: "+e.message)}else showToast("Title and subject are required")})}),document.querySelectorAll("#admin-content .card[data-id]").forEach(a=>{a.addEventListener("click",n=>{n.target.closest("[data-delete]")||c(a.dataset.id,a.dataset.title,d.bind(null,e,t))})}),initDeleteButtons()}catch(e){s('<div class="empty-state"><h2>Error</h2><p>'+escapeHtml(e.message)+"</p></div>")}}async function c(e,t,a){s('<div class="loading-state"><div class="spinner"></div><p>Loading subtopics...</p></div>');try{const n=await request("/subtopics/"+(e?"?topic_id="+e:"")),i=Array.isArray(n)?n:[];s(`\n        <div class="content">\n          ${e?'<button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>':""}\n          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">\n            <h2>${e?escapeHtml(t)+" — ":""}Subtopics</h2>\n            <button class="btn btn-primary" id="add-subtopic-btn">+ Add Subtopic</button>\n          </div>\n          <div id="form-area"></div>\n          <div class="card-grid">\n            ${0===i.length?'<div class="empty-state"><p>No subtopics yet</p></div>':i.map(e=>`\n                <div class="card" style="cursor:pointer" data-id="${escapeHtml(e.id)}" data-title="${escapeHtml(e.title)}">\n                  <div style="display:flex;justify-content:space-between;align-items:start">\n                    <h3>${escapeHtml(e.title)}</h3>\n                    ${deleteBtn(e.id,e.title,"/subtopics")}\n                  </div>\n                </div>\n              `).join("")}\n          </div>\n        </div>\n      `),e&&document.getElementById("back-btn")?.addEventListener("click",a),document.getElementById("add-subtopic-btn")?.addEventListener("click",()=>{document.getElementById("form-area").innerHTML=`\n          <div class="card" style="margin-bottom:1rem">\n            <h3>New Subtopic</h3>\n            <form id="create-subtopic-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">\n              ${e?"":'<select class="input" name="topic_id" required><option value="">Select topic...</option></select>'}\n              <input class="input" name="title" placeholder="Subtopic title" required>\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-primary" type="submit">Save</button>\n                <button class="btn" type="button" id="cancel-btn">Cancel</button>\n              </div>\n            </form>\n          </div>\n        `,e||request("/topics").then(e=>{const t=document.querySelector('[name="topic_id"]');t&&Array.isArray(e)&&e.forEach(e=>{const a=document.createElement("option");a.value=e.id,a.textContent=e.title,t.appendChild(a)})}),document.getElementById("cancel-btn").addEventListener("click",()=>document.getElementById("form-area").innerHTML=""),document.getElementById("create-subtopic-form").addEventListener("submit",async n=>{n.preventDefault();const i=new FormData(n.target),s=i.get("title"),o=e||i.get("topic_id");if(s&&o)try{await request("/subtopics",{method:"POST",body:JSON.stringify({title:s,topic_id:o})}),c(e,t,a)}catch(e){showToast("Error: "+e.message)}else showToast("Title and topic are required")})}),document.querySelectorAll("#admin-content .card[data-id]").forEach(n=>{n.addEventListener("click",i=>{i.target.closest("[data-delete]")||m(n.dataset.id,n.dataset.title,c.bind(null,e,t,a))})}),initDeleteButtons()}catch(e){s('<div class="empty-state"><h2>Error</h2><p>'+escapeHtml(e.message)+"</p></div>")}}async function m(e,t,a){s('<div class="loading-state"><div class="spinner"></div><p>Loading lessons...</p></div>');try{const n=await request(`/lessons/?subtopic_id=${e}&status=published`),i=Array.isArray(n)?n:[];s(`\n        <div class="content">\n          <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>\n          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">\n            <h2>${escapeHtml(t)} — Lessons</h2>\n            <button class="btn btn-primary" id="add-lesson-btn">+ Add Lesson</button>\n          </div>\n          <div id="form-area"></div>\n          <div class="card-grid">\n            ${0===i.length?'<div class="empty-state"><p>No lessons yet</p></div>':i.map(e=>`\n                <div class="card" style="cursor:pointer" data-id="${escapeHtml(e.id)}">\n                  <h3>${escapeHtml(e.title)}</h3>\n                  <p style="color:var(--color-text-muted);font-size:0.85rem">${escapeHtml(e.status)}</p>\n                </div>\n              `).join("")}\n          </div>\n        </div>\n      `),document.getElementById("back-btn")?.addEventListener("click",a),document.getElementById("add-lesson-btn")?.addEventListener("click",()=>{document.getElementById("form-area").innerHTML='\n          <div class="card" style="margin-bottom:1rem">\n            <h3>New Lesson</h3>\n            <form id="create-lesson-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">\n              <input class="input" name="title" placeholder="Lesson title" required>\n              <textarea class="input" name="content" rows="6" placeholder="Lesson content (HTML supported)"></textarea>\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-primary" type="submit">Save</button>\n                <button class="btn" type="button" id="cancel-btn">Cancel</button>\n              </div>\n            </form>\n          </div>\n        ',document.getElementById("cancel-btn").addEventListener("click",()=>document.getElementById("form-area").innerHTML=""),document.getElementById("create-lesson-form").addEventListener("submit",async n=>{n.preventDefault();const i=new FormData(n.target),s=i.get("title"),o=s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");try{await request("/lessons",{method:"POST",body:JSON.stringify({title:s,slug:o,html_content:i.get("content"),subtopic_id:e})}),m(e,t,a)}catch(e){showToast("Error: "+e.message)}})}),document.querySelectorAll("#admin-content .card[data-id]").forEach(n=>{n.addEventListener("click",()=>viewLessonContent("#admin-content",n.dataset.id,m.bind(null,e,t,a)))})}catch(e){s('<div class="empty-state"><h2>Error</h2><p>'+escapeHtml(e.message)+"</p></div>")}}async function u(){s('<div class="loading-state"><div class="spinner"></div><p>Loading lessons...</p></div>');try{const e=await request("/lessons/"),t=Array.isArray(e)?e:[];s(`\n        <div class="content">\n          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">\n            <h2>Lessons</h2>\n            <div style="display:flex;gap:0.5rem">\n              <button class="btn btn-primary" id="ai-generate-questions-btn">🤖 AI Generate Questions</button>\n              <button class="btn btn-primary" id="add-lesson-btn">+ Add Lesson</button>\n            </div>\n          </div>\n          <div id="form-area"></div>\n          <div id="ai-form-area"></div>\n          <div class="card-grid">\n            ${0===t.length?'<div class="empty-state"><p>No lessons</p></div>':t.map(e=>`\n                <div class="card" style="cursor:pointer" data-id="${escapeHtml(e.id)}" data-title="${escapeHtml(e.title)}">\n                  <div style="display:flex;justify-content:space-between;align-items:start">\n                    <div>\n                      <h3>${escapeHtml(e.title)}</h3>\n                      <p style="color:var(--color-text-muted);font-size:0.85rem">${escapeHtml(e.status||"")}</p>\n                    </div>\n                    ${deleteBtn(e.id,e.title,"/lessons")}\n                  </div>\n                </div>\n              `).join("")}\n          </div>\n        </div>\n      `),document.querySelectorAll("#admin-content .card[data-id]").forEach(e=>{e.addEventListener("click",t=>{t.target.closest("[data-delete]")||p(e.dataset.id,e.dataset.title)})}),initDeleteButtons(),document.getElementById("add-lesson-btn")?.addEventListener("click",()=>{document.getElementById("form-area").innerHTML='\n          <div class="card" style="margin-bottom:1rem">\n            <h3>New Lesson</h3>\n            <form id="create-lesson-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">\n              <select class="input" name="subtopic_id" required><option value="">Select subtopic...</option></select>\n              <input class="input" name="title" placeholder="Lesson title" required>\n              <textarea class="input" name="content" rows="6" placeholder="Lesson content (HTML supported)"></textarea>\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-primary" type="submit">Save</button>\n                <button class="btn" type="button" id="cancel-btn">Cancel</button>\n              </div>\n            </form>\n          </div>\n        ',request("/subtopics").then(e=>{const t=document.querySelector('[name="subtopic_id"]');t&&Array.isArray(e)&&e.forEach(e=>{const a=document.createElement("option");a.value=e.id,a.textContent=e.title,t.appendChild(a)})}),document.getElementById("cancel-btn").addEventListener("click",()=>document.getElementById("form-area").innerHTML=""),document.getElementById("create-lesson-form").addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),a=t.get("title"),n=a.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");try{await request("/lessons",{method:"POST",body:JSON.stringify({title:a,slug:n,html_content:t.get("content"),subtopic_id:t.get("subtopic_id")})}),u()}catch(e){showToast("Error: "+e.message)}})}),document.getElementById("ai-generate-questions-btn")?.addEventListener("click",()=>{document.getElementById("ai-form-area").innerHTML='\n          <div class="card" style="padding:1.5rem">\n            <h3 style="margin-bottom:0.75rem">Generate Quiz Questions</h3>\n            <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Auto-generate quiz questions from lesson content.</p>\n            <form id="ai-gen-form" style="display:flex;flex-direction:column;gap:0.5rem">\n              <div style="display:flex;gap:0.5rem">\n                <select class="input" name="subject_slug" style="flex:1">\n                  <option value="mathematics">Mathematics</option>\n                  <option value="biology">Biology</option>\n                  <option value="chemistry">Chemistry</option>\n                  <option value="physics">Physics</option>\n                  <option value="english">English</option>\n                  <option value="kiswahili">Kiswahili</option>\n                  <option value="geography">Geography</option>\n                  <option value="history">History</option>\n                  <option value="civics">Civics</option>\n                  <option value="computing">Computing</option>\n                </select>\n                <select class="input" name="form_level" style="flex:0.5">\n                  <option value="1">Form I</option>\n                  <option value="2">Form II</option>\n                  <option value="3">Form III</option>\n                  <option value="4">Form IV</option>\n                </select>\n              </div>\n              <textarea class="input" name="lesson_html" rows="5" placeholder="Paste lesson content..." required></textarea>\n              <div style="display:flex;gap:0.5rem;align-items:center">\n                <label style="font-size:0.85rem;color:var(--color-text-muted)">Number of questions:</label>\n                <input class="input" type="number" name="count" value="5" min="1" max="20" style="width:80px">\n              </div>\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-primary" type="submit">Generate Questions</button>\n                <button class="btn" type="button" id="cancel-ai-gen">Cancel</button>\n              </div>\n            </form>\n            <div id="ai-gen-result" style="margin-top:1rem;display:none">\n              <div id="ai-gen-text"></div>\n            </div>\n          </div>\n        ',document.getElementById("cancel-ai-gen").addEventListener("click",()=>document.getElementById("ai-form-area").innerHTML=""),document.getElementById("ai-gen-form").addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),a=document.getElementById("ai-gen-result"),n=document.getElementById("ai-gen-text");a.style.display="block",n.innerHTML='<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating...</div>';try{const e=await request("/ai/questions/generate",{method:"POST",body:JSON.stringify({lesson_html:t.get("lesson_html"),count:parseInt(t.get("count"))||5,subject_slug:t.get("subject_slug"),form_level:parseInt(t.get("form_level"))||2})}),a=e?.questions||e;Array.isArray(a)&&a.length?n.innerHTML=renderQuizQuestions(a,{subject:t.get("subject_slug"),formLevel:t.get("form_level"),topic:a[0]?.topic||""}):n.innerHTML='<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>'}catch(e){n.innerHTML=`<p style="color:var(--color-danger)">Error: ${escapeHtml(e.message)}</p>`}})})}catch(e){s('<div class="empty-state"><p>Error loading lessons</p></div>')}}async function p(e,t){s('<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>');try{const a=await request(`/lessons/${e}`);if(!a)return;s(`\n        <div class="content">\n          <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>\n          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">\n            <h2>${escapeHtml(a.title||t)}</h2>\n            <div style="display:flex;gap:0.5rem;align-items:center">\n              <span class="badge" style="background:var(--color-${"published"===a.status?"success":"warning"});color:#fff;padding:0.2rem 0.6rem;border-radius:var(--radius);font-size:0.8rem">${escapeHtml(a.status)}</span>\n              ${"published"!==a.status?'<button class="btn btn-primary" id="publish-btn">Publish</button>':""}\n              <button class="btn" id="edit-btn">Edit</button>\n            </div>\n          </div>\n          <div class="card" style="padding:0;overflow:hidden">\n            <iframe id="lesson-frame" style="width:100%;border:none;display:block;min-height:500px"></iframe>\n          </div>\n        </div>\n      `),document.getElementById("back-btn")?.addEventListener("click",u),document.getElementById("publish-btn")?.addEventListener("click",async()=>{try{await request(`/lessons/${e}/publish`,{method:"POST"}),showToast("Lesson published!"),p(e,t)}catch(e){showToast("Error: "+e.message)}}),document.getElementById("edit-btn")?.addEventListener("click",async()=>{let n="";try{const t=await fetch(`${API_BASE}/lessons/${e}/content`,{headers:{Authorization:`Bearer ${localStorage.getItem("casuya_token")||""}`}});t.ok&&(n=await t.text())}catch(e){}s(`\n          <div class="content">\n            <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>\n            <h2>Edit Lesson</h2>\n            <div class="card" style="margin-top:1rem">\n              <form id="edit-lesson-form" style="display:flex;flex-direction:column;gap:0.5rem">\n                <input class="input" name="title" value="${escapeHtml(a.title||"")}" required>\n                <textarea class="input" name="content" rows="14" style="font-family:monospace">${escapeHtml(n)}</textarea>\n                <div style="display:flex;gap:0.5rem">\n                  <button class="btn btn-primary" type="submit">Save Changes</button>\n                  <button class="btn" type="button" id="cancel-btn">Cancel</button>\n                </div>\n              </form>\n            </div>\n          </div>\n        `),document.getElementById("back-btn")?.addEventListener("click",()=>p(e,t)),document.getElementById("cancel-btn")?.addEventListener("click",()=>p(e,t)),document.getElementById("edit-lesson-form").addEventListener("submit",async a=>{a.preventDefault();const n=new FormData(a.target);try{await request(`/lessons/${e}`,{method:"PUT",body:JSON.stringify({title:n.get("title"),html_content:n.get("content")})}),showToast("Lesson updated!"),p(e,t)}catch(e){showToast("Error: "+e.message)}})});try{const t=await fetch(`${API_BASE}/lessons/${e}/content`,{headers:{Authorization:`Bearer ${localStorage.getItem("casuya_token")||""}`}});if(t.ok){const e=await t.text(),a=document.getElementById("lesson-frame");a.srcdoc=e.replace("<head>",`<head><base href="${API_BASE}/">`),a.onload=()=>{try{a.style.height=Math.max(a.contentDocument.documentElement.scrollHeight,400)+"px"}catch(e){}}}}catch(e){}}catch(e){s('<div class="empty-state"><p>Error loading lesson</p></div>')}}async function g(){s('<div class="loading-state"><div class="spinner"></div><p>Loading quizzes...</p></div>');try{const e=await request("/quizzes/"),t=Array.isArray(e)?e:[],a=await request("/lessons/"),n=Array.isArray(a)?a:[],i={};n.forEach(e=>i[e.id]=e.title),s(`\n        <div class="content">\n          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">\n            <h2>Quizzes</h2>\n            <div style="display:flex;gap:0.5rem">\n              <button class="btn btn-primary" id="add-quiz-html-btn">+ HTML Quiz</button>\n              <button class="btn btn-primary" id="add-quiz-btn">+ Builder Quiz</button>\n            </div>\n          </div>\n          <div id="form-area"></div>\n          <div class="card-grid">\n            ${0===t.length?'<div class="empty-state"><p>No quizzes yet</p></div>':t.map(e=>`\n                <div class="card" style="cursor:pointer" data-id="${escapeHtml(e.id)}" data-title="${escapeHtml(e.title)}">\n                  <div style="display:flex;justify-content:space-between;align-items:start">\n                    <div style="flex:1">\n                      <div style="display:flex;justify-content:space-between;align-items:center">\n                        <h3>${escapeHtml(e.title)}</h3>\n                        <span class="badge" style="background:var(--color-${"published"===e.status?"success":"warning"});color:#fff;padding:0.15rem 0.5rem;border-radius:var(--radius);font-size:0.75rem">${escapeHtml(e.status)}</span>\n                      </div>\n                      <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">${escapeHtml(i[e.lesson_id]||"Standalone")}</p>\n                      <p style="color:var(--color-text-muted);font-size:0.85rem">${e.slug?"HTML Quiz":"Structured Quiz"}</p>\n                    </div>\n                    ${deleteBtn(e.id,e.title,"/quizzes")}\n                  </div>\n                </div>\n              `).join("")}\n          </div>\n        </div>\n      `),document.querySelectorAll("#admin-content .card[data-id]").forEach(e=>{e.addEventListener("click",t=>{t.target.closest("[data-delete]")||y(e.dataset.id,e.dataset.title)})}),initDeleteButtons(),document.getElementById("add-quiz-html-btn")?.addEventListener("click",()=>{document.getElementById("form-area").innerHTML='\n          <div class="card" style="margin-bottom:1rem">\n            <h3>New HTML Quiz</h3>\n            <form id="create-quiz-html-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">\n              <select class="input" name="lesson_id"><option value="">Select lesson (optional)...</option></select>\n              <input class="input" name="title" placeholder="Quiz title" required>\n              <textarea class="input" name="html_content" rows="8" placeholder="Paste or write full HTML quiz content..." required></textarea>\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-primary" type="submit">Save</button>\n                <button class="btn" type="button" id="cancel-btn">Cancel</button>\n              </div>\n            </form>\n          </div>\n        ',request("/lessons/").then(e=>{const t=document.querySelector('[name="lesson_id"]');t&&Array.isArray(e)&&e.forEach(e=>{const a=document.createElement("option");a.value=e.id,a.textContent=e.title,t.appendChild(a)})}),document.getElementById("cancel-btn").addEventListener("click",()=>document.getElementById("form-area").innerHTML=""),document.getElementById("create-quiz-html-form").addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target);if(t.get("title")&&t.get("html_content"))try{await request("/quizzes/from-html",{method:"POST",body:JSON.stringify({lesson_id:t.get("lesson_id")||null,title:t.get("title"),html_content:t.get("html_content")})}),showToast("Quiz created!"),g()}catch(e){showToast("Error: "+e.message)}else showToast("Title and content are required")})}),document.getElementById("add-quiz-btn")?.addEventListener("click",()=>{document.getElementById("form-area").innerHTML='\n          <div class="card" style="margin-bottom:1rem">\n            <h3>New Builder Quiz</h3>\n            <form id="create-quiz-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">\n              <select class="input" name="lesson_id"><option value="">Select lesson (optional)...</option></select>\n              <input class="input" name="title" placeholder="Quiz title" required>\n              <div id="questions-area"></div>\n              <button class="btn" type="button" id="add-question-btn" style="align-self:flex-start">+ Add Question</button>\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-primary" type="submit">Save Quiz</button>\n                <button class="btn" type="button" id="cancel-btn">Cancel</button>\n              </div>\n            </form>\n          </div>\n        ',request("/lessons/").then(e=>{const t=document.querySelector('[name="lesson_id"]');t&&Array.isArray(e)&&e.forEach(e=>{const a=document.createElement("option");a.value=e.id,a.textContent=e.title,t.appendChild(a)})});let e=0;function t(){const t=document.getElementById("questions-area"),a=e++,n=document.createElement("div");n.className="card",n.style.cssText="padding:0.75rem;margin-bottom:0.5rem",n.innerHTML=`\n            <input class="input" name="q_text_${a}" placeholder="Question text" required style="margin-bottom:0.5rem">\n            <input class="input" name="q_a_${a}" placeholder="Option A" required style="margin-bottom:0.25rem">\n            <input class="input" name="q_b_${a}" placeholder="Option B" required style="margin-bottom:0.25rem">\n            <input class="input" name="q_c_${a}" placeholder="Option C" style="margin-bottom:0.25rem">\n            <input class="input" name="q_d_${a}" placeholder="Option D" style="margin-bottom:0.25rem">\n            <select class="input" name="q_answer_${a}">\n              <option value="A">Correct: A</option>\n              <option value="B">Correct: B</option>\n              <option value="C">Correct: C</option>\n              <option value="D">Correct: D</option>\n            </select>\n          `,t.appendChild(n)}t(),document.getElementById("add-question-btn").addEventListener("click",t),document.getElementById("cancel-btn").addEventListener("click",()=>document.getElementById("form-area").innerHTML=""),document.getElementById("create-quiz-form").addEventListener("submit",async t=>{t.preventDefault();const a=new FormData(t.target),n=[];for(let t=0;t<e;t++){const e=a.get(`q_text_${t}`);e&&n.push({prompt:e,options:[{text:a.get(`q_a_${t}`)||"",is_correct:"A"===a.get(`q_answer_${t}`)},{text:a.get(`q_b_${t}`)||"",is_correct:"B"===a.get(`q_answer_${t}`)},{text:a.get(`q_c_${t}`)||"",is_correct:"C"===a.get(`q_answer_${t}`)},{text:a.get(`q_d_${t}`)||"",is_correct:"D"===a.get(`q_answer_${t}`)}]})}if(a.get("title"))try{await request("/quizzes",{method:"POST",body:JSON.stringify({lesson_id:a.get("lesson_id")||null,title:a.get("title"),questions:n})}),showToast("Quiz created!"),g()}catch(e){showToast("Error: "+e.message)}else showToast("Title is required")})})}catch(e){s('<div class="empty-state"><p>Error loading quizzes</p></div>')}}async function y(e,t){s('<div class="loading-state"><div class="spinner"></div><p>Loading quiz...</p></div>');try{const a=await request(`/quizzes/${e}`);if(!a)return;let n="";if(a.slug)try{const t=await fetch(`${API_BASE}/quizzes/${e}/content`,{headers:{Authorization:`Bearer ${localStorage.getItem("casuya_token")||""}`}});t.ok&&(n=await t.text())}catch(e){}let i="";if(!a.slug){const e=await request(`/quizzes/by-lesson/${a.lesson_id}`).catch(()=>null);e&&Array.isArray(e.questions)&&(i=e.questions.map((e,t)=>`\n            <div class="card" style="padding:0.75rem;margin-bottom:0.5rem">\n              <p style="font-weight:600;margin-bottom:0.5rem">${t+1}. ${escapeHtml(e.prompt)}</p>\n              ${e.options.map(e=>`<p style="font-size:0.85rem;margin:0.15rem 0;padding-left:1rem">• ${escapeHtml(e.text)}</p>`).join("")}\n            </div>\n          `).join(""))}if(s(`\n        <div class="content">\n          <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>\n          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">\n            <h2>${escapeHtml(a.title||t)}</h2>\n            <div style="display:flex;gap:0.5rem;align-items:center">\n              <span class="badge" style="background:var(--color-${"published"===a.status?"success":"warning"});color:#fff;padding:0.2rem 0.6rem;border-radius:var(--radius);font-size:0.8rem">${escapeHtml(a.status)}</span>\n              ${"published"!==a.status?'<button class="btn btn-primary" id="publish-btn">Publish</button>':""}\n              <button class="btn" id="edit-btn">Edit</button>\n            </div>\n          </div>\n          ${n?'<div class="card" style="padding:0;overflow:hidden"><iframe id="quiz-frame" style="width:100%;border:none;display:block;min-height:500px"></iframe></div>':i?`<div>${i}</div>`:'<div class="empty-state"><p>No quiz content</p></div>'}\n        </div>\n      `),document.getElementById("back-btn")?.addEventListener("click",g),document.getElementById("publish-btn")?.addEventListener("click",async()=>{try{await request(`/quizzes/${e}/publish`,{method:"POST"}),showToast("Quiz published!"),y(e,t)}catch(e){showToast("Error: "+e.message)}}),document.getElementById("edit-btn")?.addEventListener("click",()=>{s(`\n          <div class="content">\n            <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>\n            <h2>Edit Quiz</h2>\n            <div class="card" style="margin-top:1rem">\n              <form id="edit-quiz-form" style="display:flex;flex-direction:column;gap:0.5rem">\n                <input class="input" name="title" value="${escapeHtml(a.title||"")}" required>\n                <textarea class="input" name="content" rows="14" style="font-family:monospace">${escapeHtml(n)}</textarea>\n                <div style="display:flex;gap:0.5rem">\n                  <button class="btn btn-primary" type="submit">Save Changes</button>\n                  <button class="btn" type="button" id="cancel-btn">Cancel</button>\n                </div>\n              </form>\n            </div>\n          </div>\n        `),document.getElementById("back-btn")?.addEventListener("click",()=>y(e,t)),document.getElementById("cancel-btn")?.addEventListener("click",()=>y(e,t)),document.getElementById("edit-quiz-form").addEventListener("submit",async a=>{a.preventDefault();const n=new FormData(a.target);try{await request(`/quizzes/${e}`,{method:"PUT",body:JSON.stringify({title:n.get("title"),html_content:n.get("content")})}),showToast("Quiz updated!"),y(e,t)}catch(e){showToast("Error: "+e.message)}})}),n){const e=document.getElementById("quiz-frame");e.srcdoc=n,e.onload=()=>{try{e.style.height=Math.max(e.contentDocument.documentElement.scrollHeight,400)+"px"}catch(e){}}}}catch(e){s('<div class="empty-state"><p>Error loading quiz</p></div>')}}async function v(){s('<div class="loading-state"><div class="spinner"></div><p>Loading games...</p></div>');try{const e=await request("/games/"),t=Array.isArray(e)?e:[],a=await request("/lessons/"),n=Array.isArray(a)?a:[],i={};n.forEach(e=>i[e.id]=e.title),s(`\n        <div class="content">\n          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">\n            <h2>Games</h2>\n            <div style="display:flex;gap:0.5rem">\n              <button class="btn btn-primary" id="add-game-html-btn">+ HTML Game</button>\n              <button class="btn btn-primary" id="add-game-btn">+ Builder Game</button>\n            </div>\n          </div>\n          <div id="form-area"></div>\n          <div class="card-grid">\n            ${0===t.length?'<div class="empty-state"><p>No games yet</p></div>':t.map(e=>`\n                <div class="card" style="cursor:pointer" data-id="${escapeHtml(e.id)}" data-title="${escapeHtml(e.title)}">\n                  <div style="display:flex;justify-content:space-between;align-items:start">\n                    <div style="flex:1">\n                      <div style="display:flex;justify-content:space-between;align-items:center">\n                        <h3>${escapeHtml(e.title)}</h3>\n                        <span class="badge" style="background:var(--color-${"published"===e.status?"success":"warning"});color:#fff;padding:0.15rem 0.5rem;border-radius:var(--radius);font-size:0.75rem">${escapeHtml(e.status)}</span>\n                      </div>\n                      <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">${escapeHtml(i[e.lesson_id]||"Standalone")}</p>\n                      <p style="color:var(--color-text-muted);font-size:0.85rem">${e.slug?"HTML Game":"Structured Game"}</p>\n                    </div>\n                    ${deleteBtn(e.id,e.title,"/games")}\n                  </div>\n                </div>\n              `).join("")}\n          </div>\n        </div>\n      `),document.querySelectorAll("#admin-content .card[data-id]").forEach(e=>{e.addEventListener("click",t=>{t.target.closest("[data-delete]")||h(e.dataset.id,e.dataset.title)})}),initDeleteButtons(),document.getElementById("add-game-html-btn")?.addEventListener("click",()=>{document.getElementById("form-area").innerHTML='\n          <div class="card" style="margin-bottom:1rem">\n            <h3>New HTML Game</h3>\n            <form id="create-game-html-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">\n              <select class="input" name="lesson_id"><option value="">Select lesson (optional)...</option></select>\n              <input class="input" name="title" placeholder="Game title" required>\n              <textarea class="input" name="html_content" rows="8" placeholder="Paste or write full HTML game content..." required></textarea>\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-primary" type="submit">Save</button>\n                <button class="btn" type="button" id="cancel-btn">Cancel</button>\n              </div>\n            </form>\n          </div>\n        ',request("/lessons/").then(e=>{const t=document.querySelector('[name="lesson_id"]');t&&Array.isArray(e)&&e.forEach(e=>{const a=document.createElement("option");a.value=e.id,a.textContent=e.title,t.appendChild(a)})}),document.getElementById("cancel-btn").addEventListener("click",()=>document.getElementById("form-area").innerHTML=""),document.getElementById("create-game-html-form").addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target);if(t.get("title")&&t.get("html_content"))try{await request("/games/from-html",{method:"POST",body:JSON.stringify({lesson_id:t.get("lesson_id")||null,title:t.get("title"),html_content:t.get("html_content")})}),showToast("Game created!"),v()}catch(e){showToast("Error: "+e.message)}else showToast("Title and content are required")})}),document.getElementById("add-game-btn")?.addEventListener("click",()=>{document.getElementById("form-area").innerHTML='\n          <div class="card" style="margin-bottom:1rem">\n            <h3>New Builder Game</h3>\n            <form id="create-game-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">\n              <select class="input" name="lesson_id"><option value="">Select lesson (optional)...</option></select>\n              <input class="input" name="title" placeholder="Game title" required>\n              <div id="builder-questions">\n                <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.5rem">Questions (add at least one)</p>\n                <div class="builder-question" style="border:1px solid var(--color-border);border-radius:var(--radius);padding:0.75rem;margin-bottom:0.5rem">\n                  <input class="input" name="q_prompt_0" placeholder="Question text" required style="margin-bottom:0.5rem">\n                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem">\n                    <input class="input" name="q_opt0_0" placeholder="Option A" required>\n                    <input class="input" name="q_opt1_0" placeholder="Option B" required>\n                    <input class="input" name="q_opt2_0" placeholder="Option C" required>\n                    <input class="input" name="q_opt3_0" placeholder="Option D" required>\n                  </div>\n                  <select class="input" name="q_correct_0" style="margin-top:0.35rem">\n                    <option value="0">Correct: Option A</option>\n                    <option value="1">Correct: Option B</option>\n                    <option value="2">Correct: Option C</option>\n                    <option value="3">Correct: Option D</option>\n                  </select>\n                </div>\n              </div>\n              <button type="button" class="btn btn-sm" id="add-question-btn">+ Add Question</button>\n              <div style="display:flex;gap:0.5rem;margin-top:0.5rem">\n                <button class="btn btn-primary" type="submit">Save</button>\n                <button class="btn" type="button" id="cancel-btn">Cancel</button>\n              </div>\n            </form>\n          </div>\n        ',request("/lessons/").then(e=>{const t=document.querySelector('[name="lesson_id"]');t&&Array.isArray(e)&&e.forEach(e=>{const a=document.createElement("option");a.value=e.id,a.textContent=e.title,t.appendChild(a)})});let e=1;document.getElementById("add-question-btn").addEventListener("click",()=>{const t=e++,a=document.createElement("div");a.className="builder-question",a.style.cssText="border:1px solid var(--color-border);border-radius:var(--radius);padding:0.75rem;margin-bottom:0.5rem",a.innerHTML=`\n            <input class="input" name="q_prompt_${t}" placeholder="Question text" required style="margin-bottom:0.5rem">\n            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem">\n              <input class="input" name="q_opt0_${t}" placeholder="Option A" required>\n              <input class="input" name="q_opt1_${t}" placeholder="Option B" required>\n              <input class="input" name="q_opt2_${t}" placeholder="Option C" required>\n              <input class="input" name="q_opt3_${t}" placeholder="Option D" required>\n            </div>\n            <select class="input" name="q_correct_${t}" style="margin-top:0.35rem">\n              <option value="0">Correct: Option A</option>\n              <option value="1">Correct: Option B</option>\n              <option value="2">Correct: Option C</option>\n              <option value="3">Correct: Option D</option>\n            </select>\n          `,document.getElementById("builder-questions").appendChild(a)}),document.getElementById("cancel-btn").addEventListener("click",()=>document.getElementById("form-area").innerHTML=""),document.getElementById("create-game-form").addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),a=t.get("title");if(!a)return void showToast("Title is required");const n=[];if(document.querySelectorAll(".builder-question").forEach((e,a)=>{const i=t.get(`q_prompt_${a}`);if(!i)return;const s=[{text:t.get(`q_opt0_${a}`),is_correct:0===parseInt(t.get(`q_correct_${a}`))},{text:t.get(`q_opt1_${a}`),is_correct:1===parseInt(t.get(`q_correct_${a}`))},{text:t.get(`q_opt2_${a}`),is_correct:2===parseInt(t.get(`q_correct_${a}`))},{text:t.get(`q_opt3_${a}`),is_correct:3===parseInt(t.get(`q_correct_${a}`))}];n.push({prompt:i,options:s})}),0!==n.length)try{await request("/games",{method:"POST",body:JSON.stringify({lesson_id:t.get("lesson_id")||null,title:a,questions:n})}),showToast("Game created!"),v()}catch(e){showToast("Error: "+e.message)}else showToast("Add at least one question")})})}catch(e){s('<div class="empty-state"><p>Error loading games</p></div>')}}async function h(e,t){s('<div class="loading-state"><div class="spinner"></div><p>Loading game...</p></div>');try{const a=await request(`/games/${e}`);if(!a)return;let n="";if(a.slug)try{const t=await fetch(`${API_BASE}/games/${e}/content`,{headers:{Authorization:`Bearer ${localStorage.getItem("casuya_token")||""}`}});t.ok&&(n=await t.text())}catch(e){}if(s(`\n        <div class="content">\n          <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>\n          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">\n            <h2>${escapeHtml(a.title||t)}</h2>\n            <div style="display:flex;gap:0.5rem;align-items:center">\n              <span class="badge" style="background:var(--color-${"published"===a.status?"success":"warning"});color:#fff;padding:0.2rem 0.6rem;border-radius:var(--radius);font-size:0.8rem">${escapeHtml(a.status)}</span>\n              ${"published"!==a.status?'<button class="btn btn-primary" id="publish-btn">Publish</button>':""}\n              <button class="btn" id="edit-btn">Edit</button>\n            </div>\n          </div>\n          ${n?'<div class="card" style="padding:0;overflow:hidden"><iframe id="game-frame" style="width:100%;border:none;display:block;min-height:500px"></iframe></div>':'<div class="empty-state"><p>No game content</p></div>'}\n        </div>\n      `),document.getElementById("back-btn")?.addEventListener("click",v),document.getElementById("publish-btn")?.addEventListener("click",async()=>{try{await request(`/games/${e}/publish`,{method:"POST"}),showToast("Game published!"),h(e,t)}catch(e){showToast("Error: "+e.message)}}),document.getElementById("edit-btn")?.addEventListener("click",()=>{s(`\n          <div class="content">\n            <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>\n            <h2>Edit Game</h2>\n            <div class="card" style="margin-top:1rem">\n              <form id="edit-game-form" style="display:flex;flex-direction:column;gap:0.5rem">\n                <input class="input" name="title" value="${escapeHtml(a.title||"")}" required>\n                <textarea class="input" name="content" rows="14" style="font-family:monospace">${escapeHtml(n)}</textarea>\n                <div style="display:flex;gap:0.5rem">\n                  <button class="btn btn-primary" type="submit">Save Changes</button>\n                  <button class="btn" type="button" id="cancel-btn">Cancel</button>\n                </div>\n              </form>\n            </div>\n          </div>\n        `),document.getElementById("back-btn")?.addEventListener("click",()=>h(e,t)),document.getElementById("cancel-btn")?.addEventListener("click",()=>h(e,t)),document.getElementById("edit-game-form").addEventListener("submit",async a=>{a.preventDefault();const n=new FormData(a.target);try{await request(`/games/${e}`,{method:"PUT",body:JSON.stringify({title:n.get("title"),html_content:n.get("content")})}),showToast("Game updated!"),h(e,t)}catch(e){showToast("Error: "+e.message)}})}),n){const e=document.getElementById("game-frame");e.srcdoc=n,e.onload=()=>{try{e.style.height=Math.max(e.contentDocument.documentElement.scrollHeight,400)+"px"}catch(e){}}}}catch(e){s('<div class="empty-state"><p>Error loading game</p></div>')}}async function f(){s('<div class="loading-state"><div class="spinner"></div><p>Loading users...</p></div>');try{const[e,t]=await Promise.all([request("/students"),request("/teachers")]),a=Array.isArray(e)?e:[],n=Array.isArray(t)?t:[];s(`\n        <div class="content" style="max-width:960px">\n          <div style="display:flex;justify-content:space-between;align-items:center">\n            <h2>Users</h2>\n            <button class="btn btn-primary" id="register-user-btn">+ Register User</button>\n          </div>\n          <div id="user-form-area"></div>\n\n          <div class="section-header" style="margin-top:1.5rem">\n            <h3>Students (${a.length})</h3>\n          </div>\n          <div class="card-grid">\n            ${0===a.length?'<div class="empty-state" style="padding:2rem"><p>No students registered</p></div>':a.map(e=>`\n                <div class="card user-card" data-id="${escapeHtml(e.id||e.user_id)}" data-type="student" data-name="${escapeHtml(e.full_name||"")}" style="cursor:pointer">\n                  <div style="display:flex;align-items:center;gap:0.75rem">\n                    <div style="width:36px;height:36px;border-radius:50%;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">${escapeHtml((e.full_name||"S").charAt(0).toUpperCase())}</div>\n                    <div style="flex:1;min-width:0">\n                      <h4 style="margin:0;font-size:0.9rem">${escapeHtml(e.full_name||"Unnamed")}</h4>\n                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(e.email||"")} ${e.form_level?"· "+escapeHtml(e.form_level):""}</p>\n                    </div>\n                  </div>\n                </div>\n              `).join("")}\n          </div>\n\n          <div class="section-header" style="margin-top:1.5rem">\n            <h3>Teachers (${n.length})</h3>\n          </div>\n          <div class="card-grid">\n            ${0===n.length?'<div class="empty-state" style="padding:2rem"><p>No teachers registered</p></div>':n.map(e=>`\n                <div class="card user-card" data-id="${escapeHtml(e.id||e.user_id)}" data-type="teacher" data-name="${escapeHtml(e.full_name||"")}" style="cursor:pointer">\n                  <div style="display:flex;align-items:center;gap:0.75rem">\n                    <div style="width:36px;height:36px;border-radius:50%;background:#f0fdf4;color:#16a34a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">${escapeHtml((e.full_name||"T").charAt(0).toUpperCase())}</div>\n                    <div style="flex:1;min-width:0">\n                      <h4 style="margin:0;font-size:0.9rem">${escapeHtml(e.full_name||"Unnamed")}</h4>\n                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(e.email||"")} ${e.subjects?"· "+escapeHtml(e.subjects):""}</p>\n                    </div>\n                  </div>\n                </div>\n              `).join("")}\n          </div>\n        </div>\n      `),document.querySelectorAll("#admin-content .user-card").forEach(e=>{e.addEventListener("click",()=>async function(e,t,a){s('<div class="loading-state"><div class="spinner"></div><p>Loading user...</p></div>');try{let n=null,i=[];"student"===t?[n,i]=await Promise.all([request(`/students/${e}`).catch(()=>null),request(`/progress/${e}`).catch(()=>[])]):n=await request(`/teachers/${e}`).catch(()=>null);const o=Array.isArray(i)?i:[],r=o.filter(e=>e.completion_percentage>=100).length,l=o.filter(e=>null!=e.score_percentage&&e.score_percentage>0),d=l.length>0?Math.round(l.reduce((e,t)=>e+t.score_percentage,0)/l.length):0;s(`\n        <div class="content" style="max-width:960px">\n          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">\n            <button class="btn" id="back-btn">← Back</button>\n            <h2>${escapeHtml(a)}</h2>\n            <span style="font-size:0.75rem;padding:0.2rem 0.6rem;background:${"student"===t?"#eff6ff":"#f0fdf4"};color:${"student"===t?"#2563eb":"#16a34a"};border-radius:var(--radius);font-weight:600">${"student"===t?"Student":"Teacher"}</span>\n          </div>\n\n          <div class="card" style="margin-bottom:1rem">\n            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem">\n              <div>\n                <div style="font-size:0.75rem;color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Name</div>\n                <div style="font-size:0.9rem">${escapeHtml(n?.full_name||"N/A")}</div>\n              </div>\n              <div>\n                <div style="font-size:0.75rem;color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Email</div>\n                <div style="font-size:0.9rem">${escapeHtml(n?.email||"N/A")}</div>\n              </div>\n              ${n?.phone?`<div>\n                <div style="font-size:0.75rem;color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Phone</div>\n                <div style="font-size:0.9rem">${escapeHtml(n.phone)}</div>\n              </div>`:""}\n              ${n?.form_level?`<div>\n                <div style="font-size:0.75rem;color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Form Level</div>\n                <div style="font-size:0.9rem">${escapeHtml(n.form_level)}</div>\n              </div>`:""}\n              ${n?.subjects?`<div>\n                <div style="font-size:0.75rem;color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Subjects</div>\n                <div style="font-size:0.9rem">${escapeHtml(n.subjects)}</div>\n              </div>`:""}\n            </div>\n          </div>\n\n          ${"student"===t&&o.length>0?`\n            <div class="stat-grid">\n              <div class="stat-card">\n                <div class="stat-icon" style="background:#eff6ff;color:#2563eb">📚</div>\n                <div class="stat-value">${o.length}</div>\n                <div class="stat-label">Lessons Attempted</div>\n              </div>\n              <div class="stat-card">\n                <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">✅</div>\n                <div class="stat-value">${r}</div>\n                <div class="stat-label">Completed</div>\n              </div>\n              <div class="stat-card">\n                <div class="stat-icon" style="background:#fef3c7;color:#d97706">📈</div>\n                <div class="stat-value">${null!=d?d+"%":"0%"}</div>\n                <div class="stat-label">Avg Score</div>\n              </div>\n            </div>\n\n            <div class="section-header">\n              <h3>Progress by Subject</h3>\n            </div>\n            ${(()=>{const e={};return o.forEach(t=>{const a=t.subject_name||"General";e[a]||(e[a]={total:0,completed:0}),e[a].total++,t.completion_percentage>=100&&e[a].completed++}),Object.entries(e).map(([e,t])=>{const a=t.total>0?Math.round(t.completed/t.total*100):0;return`\n                  <div class="card" style="margin-bottom:0.75rem">\n                    <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem">\n                      <strong>${escapeHtml(e)}</strong>\n                      <span style="font-size:0.85rem;color:var(--color-text-muted)">${t.completed}/${t.total} · ${a}%</span>\n                    </div>\n                    <div class="progress-bar">\n                      <div class="progress-bar-fill" style="width:${a}%"></div>\n                    </div>\n                  </div>\n                `}).join("")})()}\n          `:"student"===t?'\n            <div class="empty-state" style="padding:2rem"><p>No progress data yet</p></div>\n          ':""}\n\n          ${"teacher"===t?'\n            <div class="section-header" style="margin-top:1rem">\n              <h3>Teacher Actions</h3>\n            </div>\n            <div class="card" style="padding:1rem">\n              <p style="color:var(--color-text-muted);font-size:0.85rem">Teacher progress and class analytics are available in the teacher portal.</p>\n            </div>\n          ':""}\n        </div>\n      `),document.getElementById("back-btn")?.addEventListener("click",f)}catch(e){s('<div class="empty-state"><p>Error loading user details</p><button class="btn" id="back-btn">← Back</button></div>'),document.getElementById("back-btn")?.addEventListener("click",f)}}(e.dataset.id,e.dataset.type,e.dataset.name))}),document.getElementById("register-user-btn")?.addEventListener("click",()=>{document.getElementById("user-form-area").innerHTML='\n          <div class="card" style="margin-top:1rem;padding:1.5rem">\n            <h3 style="margin-bottom:0.75rem">Register New User</h3>\n            <form id="register-user-form" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Full Name</label>\n                <input class="input" name="full_name" placeholder="John Doe" required>\n              </div>\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Email</label>\n                <input class="input" type="email" name="email" placeholder="john@example.com" required>\n              </div>\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Password</label>\n                <input class="input" type="password" name="password" placeholder="Min 6 characters" required minlength="6">\n              </div>\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Phone</label>\n                <input class="input" name="phone" placeholder="+255...">\n              </div>\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Role</label>\n                <select class="input" name="role" required>\n                  <option value="student">Student</option>\n                  <option value="teacher">Teacher</option>\n                </select>\n              </div>\n              <div>\n                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Form Level (Students)</label>\n                <select class="input" name="form_level">\n                  <option value="">N/A</option>\n                  <option value="Form I">Form I</option>\n                  <option value="Form II">Form II</option>\n                  <option value="Form III">Form III</option>\n                  <option value="Form IV">Form IV</option>\n                  <option value="Form V">Form V</option>\n                  <option value="Form VI">Form VI</option>\n                </select>\n              </div>\n              <div style="grid-column:1/-1;display:flex;gap:0.5rem">\n                <button class="btn btn-success" type="submit">Register</button>\n                <button class="btn" type="button" id="cancel-register">Cancel</button>\n              </div>\n            </form>\n            <div id="register-user-result" style="margin-top:0.75rem;font-size:0.85rem"></div>\n          </div>\n        ',document.getElementById("cancel-register").addEventListener("click",()=>document.getElementById("user-form-area").innerHTML=""),document.getElementById("register-user-form").addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target);try{await request("/auth/register",{method:"POST",body:JSON.stringify({full_name:t.get("full_name"),email:t.get("email"),password:t.get("password"),phone:t.get("phone")||null,role:t.get("role"),form_level:t.get("form_level")||null})}),document.getElementById("register-user-result").innerHTML='<span style="color:var(--color-success)">User registered!</span>',setTimeout(()=>f(),1e3)}catch(e){document.getElementById("register-user-result").innerHTML=`<span style="color:var(--color-danger)">${escapeHtml(e.message)}</span>`}})})}catch(e){s('<div class="empty-state"><p>Error loading users</p></div>')}}async function b(){s('<div class="loading-state"><div class="spinner"></div><p>Loading payments...</p></div>');try{const t=await request("/payments/transactions").catch(()=>[]),a=Array.isArray(t)?t:[],n=a.filter(e=>"completed"===e.status).reduce((e,t)=>e+(t.amount_tzs||0),0),i=a.filter(e=>"completed"===e.status).length,o=a.filter(e=>"pending"===e.status).length;s(`\n        <div class="content">\n          <h2>Payments</h2>\n          <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">AzamPay mobile money integration</p>\n\n          <div class="stat-grid" style="margin-top:1rem">\n            <div class="stat-card">\n              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">💰</div>\n              <div class="stat-value">${n.toLocaleString()}</div>\n              <div class="stat-label">Total Revenue (TZS)</div>\n            </div>\n            <div class="stat-card">\n              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">✅</div>\n              <div class="stat-value">${i}</div>\n              <div class="stat-label">Completed</div>\n            </div>\n            <div class="stat-card">\n              <div class="stat-icon" style="background:#fef3c7;color:#d97706">⏳</div>\n              <div class="stat-value">${o}</div>\n              <div class="stat-label">Pending</div>\n            </div>\n          </div>\n\n          <div class="card" style="padding:1.5rem;margin-top:1rem">\n            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">\n              <h3>Payment Plans</h3>\n              <button class="btn btn-sm btn-primary" id="admin-add-plan-btn">+ New Plan</button>\n            </div>\n            <div id="admin-plan-form-wrap" style="display:none;margin-bottom:1rem">\n              <form id="admin-plan-form" class="checkout-body">\n                <div style="display:flex;gap:0.5rem;flex-wrap:wrap">\n                  <div style="flex:1;min-width:160px"><label class="field-label">Name</label><input class="input" name="name" required></div>\n                  <div style="flex:1;min-width:160px"><label class="field-label">Description</label><input class="input" name="description"></div>\n                </div>\n                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem">\n                  <div style="min-width:130px"><label class="field-label">Amount (TZS)</label><input class="input" name="amount_tzs" type="number" min="100" required></div>\n                  <div style="min-width:130px"><label class="field-label">Audience</label><select class="input" name="audience"><option value="both">Both</option><option value="student">Student</option><option value="teacher">Teacher</option></select></div>\n                  <div style="min-width:130px"><label class="field-label">Active</label><select class="input" name="is_active"><option value="true">Yes</option><option value="false">No</option></select></div>\n                </div>\n                <div style="margin-top:0.75rem">\n                  <button class="btn btn-success" type="submit" id="admin-plan-submit">Save Plan</button>\n                  <button class="btn btn-ghost" type="button" id="admin-plan-cancel">Cancel</button>\n                </div>\n              </form>\n              <div id="admin-plan-result" style="margin-top:0.5rem"></div>\n            </div>\n            <div id="admin-plans-list"><div class="loading-state"><div class="spinner"></div></div></div>\n          </div>\n\n          <div class="card" style="padding:0;max-width:560px;margin-top:1rem;overflow:hidden">\n              <div class="checkout-header">\n                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>\n                <h3>Initiate Checkout</h3>\n              </div>\n              <form id="payment-form" class="checkout-body">\n                <div>\n                  <label class="field-label">Mobile Number</label>\n                  <div class="input-icon-wrap">\n                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>\n                    <input class="input" name="mobile_number" placeholder="0712345678" required>\n                  </div>\n                </div>\n                <div>\n                  <label class="field-label">Amount (TZS)</label>\n                  <div class="input-icon-wrap">\n                    <span class="input-currency-prefix">TZS</span>\n                    <input class="input" name="amount_tzs" type="number" placeholder="5,000" required min="100">\n                  </div>\n                </div>\n                <div>\n                  <label class="field-label">Provider</label>\n                  <div class="provider-grid">\n                    <label class="provider-card">\n                      <input type="radio" name="provider" value="m-pesa" required>\n                      <span class="provider-dot" style="background:#16a34a"></span>\n                      <span>M-Pesa</span>\n                    </label>\n                    <label class="provider-card">\n                      <input type="radio" name="provider" value="tigo-pesa">\n                      <span class="provider-dot" style="background:#2563eb"></span>\n                      <span>Tigo Pesa</span>\n                    </label>\n                    <label class="provider-card">\n                      <input type="radio" name="provider" value="halopesa">\n                      <span class="provider-dot" style="background:#d97706"></span>\n                      <span>HaloPesa</span>\n                    </label>\n                    <label class="provider-card">\n                      <input type="radio" name="provider" value="azampay">\n                      <span class="provider-dot" style="background:#8b5cf6"></span>\n                      <span>AzamPay</span>\n                    </label>\n                  </div>\n                </div>\n                <button class="btn btn-success btn-block" type="submit" id="payment-submit-btn">Initiate Payment</button>\n              </form>\n              <div id="payment-result" style="padding:0 1.5rem 1.5rem"></div>\n            </div>\n\n          <div class="card" style="padding:1.5rem;margin-top:1rem">\n            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">\n              <h3>Transaction History</h3>\n              <button class="btn btn-sm" id="refresh-tx-btn">Refresh</button>\n            </div>\n            ${0===a.length?'<div class="empty-state" style="padding:2rem"><p>No transactions yet</p></div>':`<div style="overflow-x:auto">\n                  <table class="tx-table" style="width:100%;border-collapse:collapse;font-size:0.85rem">\n                    <thead>\n                      <tr style="border-bottom:2px solid var(--color-border)">\n                        <th style="padding:0.6rem;text-align:left;font-weight:600">Date</th>\n                         <th style="padding:0.6rem;text-align:left;font-weight:600">Phone</th>\n                         <th style="padding:0.6rem;text-align:left;font-weight:600">Provider</th>\n                         <th style="padding:0.6rem;text-align:left;font-weight:600">Plan</th>\n                         <th style="padding:0.6rem;text-align:right;font-weight:600">Amount</th>\n                        <th style="padding:0.6rem;text-align:center;font-weight:600">Status</th>\n                      </tr>\n                    </thead>\n                    <tbody>\n                      ${a.map(e=>`\n                        <tr style="border-bottom:1px solid var(--color-border)">\n                          <td style="padding:0.6rem;color:var(--color-text-muted)">${e.created_at?new Date(e.created_at).toLocaleDateString():"—"}</td>\n                           <td style="padding:0.6rem;font-weight:500">${escapeHtml(e.mobile_number||"—")}</td>\n                           <td style="padding:0.6rem">${escapeHtml(e.provider||"—")}</td>\n                           <td style="padding:0.6rem">${escapeHtml(e.plan_name||"—")}</td>\n                           <td style="padding:0.6rem;text-align:right;font-weight:600">${(e.amount_tzs||0).toLocaleString()} TZS</td>\n                          <td style="padding:0.6rem;text-align:center"><span class="badge badge-${e.status||"pending"}">${escapeHtml(e.status||"unknown")}</span></td>\n                        </tr>\n                      `).join("")}\n                    </tbody>\n                  </table>\n                </div>`}\n          </div>\n        </div>\n      `);let r=!1;document.getElementById("payment-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=document.getElementById("payment-submit-btn");if(r)return;r=!0,t.innerHTML='<span class="btn-spinner"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10" stroke-dasharray="31.4 31.4" stroke-linecap="round"/></svg> Processing...</span>',t.disabled=!0;const a=new FormData(e.target);try{const e=await request("/payments/checkout",{method:"POST",body:JSON.stringify({mobile_number:a.get("mobile_number"),amount_tzs:parseInt(a.get("amount_tzs"),10),provider:a.get("provider"),idempotency_key:crypto.randomUUID?crypto.randomUUID():Date.now().toString()})});if(null===e)return;document.getElementById("payment-result").innerHTML=`<div class="payment-result success"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><strong>Payment initiated!</strong><br><span style="opacity:0.8;font-size:0.8rem">${escapeHtml(e.external_transaction_id||e.id||"")}</span></div></div>`,b()}catch(e){document.getElementById("payment-result").innerHTML=`<div class="payment-result error"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div>${escapeHtml(e.message)}</div></div>`}r=!1,t.innerHTML="Initiate Payment",t.disabled=!1}),document.getElementById("refresh-tx-btn")?.addEventListener("click",b);let l=null;const d=document.getElementById("admin-plan-form-wrap"),c=document.getElementById("admin-plan-form");async function e(){const t=document.getElementById("admin-plans-list");if(t)try{const a=await request("/payments/plans/all").catch(()=>[]);if(!Array.isArray(a)||0===a.length)return void(t.innerHTML='<div class="empty-state" style="padding:1.5rem"><p>No plans created yet.</p></div>');t.innerHTML=a.map(e=>`\n            <div class="plan-card" style="border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem;margin-top:0.75rem;display:flex;justify-content:space-between;align-items:center;gap:0.5rem">\n              <div>\n                <div style="font-weight:600">${escapeHtml(e.name)} ${e.is_active?"":'<span class="badge badge-pending">inactive</span>'}</div>\n                <div style="font-size:0.8rem;color:var(--color-text-muted)">${escapeHtml(e.description||"")}</div>\n                <div style="font-weight:700;margin-top:0.25rem">${Number(e.amount_tzs).toLocaleString()} ${escapeHtml(e.currency||"TZS")} · <span style="text-transform:capitalize">${escapeHtml(e.audience)}</span></div>\n              </div>\n              <div style="display:flex;gap:0.4rem">\n                <button class="btn btn-sm admin-edit-plan" data-id="${e.id}">Edit</button>\n                <button class="btn btn-sm btn-danger admin-delete-plan" data-id="${e.id}">Delete</button>\n              </div>\n            </div>\n          `).join(""),document.querySelectorAll(".admin-edit-plan").forEach(e=>e.addEventListener("click",()=>{const t=e.getAttribute("data-id"),n=a.find(e=>e.id===t);n&&(l=t,c.name.value=n.name,c.description.value=n.description||"",c.amount_tzs.value=n.amount_tzs,c.audience.value=n.audience,c.is_active.value=String(n.is_active),d.style.display="block",document.getElementById("admin-plan-result").innerHTML="",c.scrollIntoView({behavior:"smooth"}))})),document.querySelectorAll(".admin-delete-plan").forEach(t=>t.addEventListener("click",async()=>{if(confirm("Delete this plan?"))try{await request(`/payments/plans/${t.getAttribute("data-id")}`,{method:"DELETE"}),e()}catch(e){alert(escapeHtml(e.message))}}))}catch(e){t.innerHTML='<div class="empty-state" style="padding:1.5rem"><p>Could not load plans.</p></div>'}}document.getElementById("admin-add-plan-btn")?.addEventListener("click",()=>{l=null,c.reset(),d.style.display=(d.style.display,"block"),document.getElementById("admin-plan-result").innerHTML=""}),document.getElementById("admin-plan-cancel")?.addEventListener("click",()=>{d.style.display="none",l=null}),c?.addEventListener("submit",async t=>{t.preventDefault();const a=document.getElementById("admin-plan-submit"),n=document.getElementById("admin-plan-result"),i=new FormData(t.target),s={name:i.get("name"),description:i.get("description")||null,amount_tzs:parseFloat(i.get("amount_tzs")),audience:i.get("audience"),is_active:"true"===i.get("is_active")};a.disabled=!0,a.textContent="Saving...";try{l?await request(`/payments/plans/${l}`,{method:"PUT",body:JSON.stringify(s)}):await request("/payments/plans",{method:"POST",body:JSON.stringify(s)}),n.innerHTML='<div class="payment-result success">Plan saved.</div>',d.style.display="none",l=null,e()}catch(e){n.innerHTML=`<div class="payment-result error">${escapeHtml(e.message)}</div>`}finally{a.disabled=!1,a.textContent="Save Plan"}}),e()}catch(m){s('<div class="empty-state"><p>Error loading payments: '+escapeHtml(m.message)+"</p></div>")}}async function w(){s('<div class="loading-state"><div class="spinner"></div><p>Loading notifications...</p></div>');try{const[t,a]=await Promise.all([request("/notifications"),request("/users")]),n=Array.isArray(t)?t:[],i=Array.isArray(a)?a:[];let o="all",r="";const l=15;let d=1;function e(){const t=function(){let e=n;if("unread"===o?e=e.filter(e=>!e.is_read):"read"===o&&(e=e.filter(e=>e.is_read)),r){const t=r.toLowerCase();e=e.filter(e=>(e.message||"").toLowerCase().includes(t))}return e}(),a=Math.max(1,Math.ceil(t.length/l));d>a&&(d=a);const i=(d-1)*l,s=t.slice(i,i+l),c=n.filter(e=>!e.is_read).length;document.getElementById("notif-stats").innerHTML=`\n          <div style="display:flex;gap:0.5rem;flex-wrap:wrap">\n            <span style="font-size:0.8rem;padding:0.25rem 0.6rem;border-radius:var(--radius);background:var(--color-bg);border:1px solid var(--color-border)">Total: ${n.length}</span>\n            <span style="font-size:0.8rem;padding:0.25rem 0.6rem;border-radius:var(--radius);background:#fef3c7;border:1px solid #fde68a">Unread: ${c}</span>\n            <span style="font-size:0.8rem;padding:0.25rem 0.6rem;border-radius:var(--radius);background:var(--color-bg);border:1px solid var(--color-border)">Showing: ${t.length}</span>\n          </div>\n        `;const m=document.getElementById("notif-list");0===s.length?m.innerHTML='<div class="empty-state" style="padding:2rem"><p>No notifications match your filter</p></div>':m.innerHTML=s.map(e=>`\n            <div class="card" style="padding:0.75rem 1rem;margin-bottom:0.5rem;${e.is_read?"opacity:0.7":"border-left:3px solid var(--color-primary)"}">\n              <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">\n                <div style="flex:1;min-width:0">\n                  <p style="margin:0;font-size:0.875rem;${e.is_read?"":"font-weight:600"}">${escapeHtml(e.message)}</p>\n                  <p style="margin:0.25rem 0 0;font-size:0.75rem;color:var(--color-text-muted)">${e.created_at?new Date(e.created_at).toLocaleString():""} · ${e.is_read?"Read":"Unread"}</p>\n                </div>\n                <div style="display:flex;gap:0.25rem;flex-shrink:0">\n                  ${e.is_read?"":`<button class="btn btn-primary btn-xs notif-mark-read" data-id="${e.id}">✓ Read</button>`}\n                </div>\n              </div>\n            </div>\n          `).join("");const u=document.getElementById("notif-pagination");a<=1?u.innerHTML="":(u.innerHTML=`\n          <div style="display:flex;align-items:center;gap:0.5rem;justify-content:center;margin-top:1rem">\n            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${d-1}" ${d<=1?"disabled":""}>← Prev</button>\n            <span style="font-size:0.85rem;color:var(--color-text-muted)">Page ${d} of ${a}</span>\n            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${d+1}" ${d>=a?"disabled":""}>Next →</button>\n          </div>\n        `,document.querySelectorAll(".notif-page-btn").forEach(t=>{t.addEventListener("click",()=>{d=parseInt(t.dataset.page),e()})}),document.querySelectorAll(".notif-mark-read").forEach(t=>{t.addEventListener("click",async()=>{await request(`/notifications/${t.dataset.id}/read`,{method:"POST"});const a=n.find(e=>e.id===t.dataset.id);a&&(a.is_read=!0),e()})}))}s(`\n        <div class="content">\n          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem">\n            <h2>🔔 Notifications</h2>\n            <button class="btn btn-primary btn-pattern" id="notif-send-btn">✉️ Send Notification</button>\n          </div>\n          <div class="card" style="margin-top:1rem;display:none" id="notif-send-form-area">\n            <h3 style="margin-bottom:0.75rem">Send Notification</h3>\n            <form id="send-notif-form" style="display:flex;flex-direction:column;gap:0.5rem">\n              <label style="font-size:0.85rem;font-weight:500">Recipient</label>\n              <select class="input" name="recipient_type" id="notif-recipient-type" required>\n                <option value="role_student">All Students</option>\n                <option value="role_teacher">All Teachers</option>\n                <option value="specific">Specific User...</option>\n              </select>\n              <div id="notif-specific-user" style="display:none">\n                <select class="input" name="user_id" id="notif-user-select">\n                  <option value="">Select user...</option>\n                  ${i.map(e=>`<option value="${escapeHtml(e.id)}">${escapeHtml(e.email)} (${escapeHtml(e.role)})</option>`).join("")}\n                </select>\n              </div>\n              <label style="font-size:0.85rem;font-weight:500">Message</label>\n              <textarea class="input" name="message" rows="3" placeholder="Write your notification message..." required></textarea>\n              <div style="display:flex;gap:0.5rem;align-items:center">\n                <button class="btn btn-success btn-pattern" type="submit">📤 Send Notification</button>\n                <button class="btn btn-ghost" type="button" id="notif-cancel-send">Cancel</button>\n                <p id="notif-send-status" style="font-size:0.85rem;display:none;margin:0"></p>\n              </div>\n            </form>\n          </div>\n          <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">\n            <button class="btn-filter notif-filter-btn active" data-filter="all">All</button>\n            <button class="btn-filter notif-filter-btn" data-filter="unread">🔴 Unread</button>\n            <button class="btn-filter notif-filter-btn" data-filter="read">✅ Read</button>\n            <input type="search" class="input" id="notif-search" placeholder="Search notifications..." style="max-width:240px;padding:0.35rem 0.6rem;font-size:0.85rem">\n            <button class="btn btn-ghost btn-sm" id="notif-mark-all" style="margin-left:auto">✓ Mark All Read</button>\n          </div>\n          <div id="notif-stats" style="margin-top:0.75rem"></div>\n          <div style="margin-top:0.5rem" id="notif-list"></div>\n          <div id="notif-pagination"></div>\n        </div>\n      `),document.getElementById("notif-send-btn")?.addEventListener("click",()=>{const e=document.getElementById("notif-send-form-area");e.style.display="none"===e.style.display?"block":"none"}),document.getElementById("notif-cancel-send")?.addEventListener("click",()=>{document.getElementById("notif-send-form-area").style.display="none"}),document.getElementById("notif-recipient-type")?.addEventListener("change",e=>{document.getElementById("notif-specific-user").style.display="specific"===e.target.value?"block":"none"}),document.getElementById("send-notif-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=new FormData(e.target),a=t.get("recipient_type"),n=t.get("message"),i=document.getElementById("notif-send-status");try{let s={message:n};if("role_student"===a?s.role="student":"role_teacher"===a?s.role="teacher":s.user_id=t.get("user_id"),!s.role&&!s.user_id)return i.textContent="Please select a user",i.style.color="var(--color-danger)",void(i.style.display="inline");const o=await request("/notifications",{method:"POST",body:JSON.stringify(s)});i.textContent=`Sent to ${o.sent} user(s)`,i.style.color="var(--color-success)",i.style.display="inline",e.target.reset(),document.getElementById("notif-specific-user").style.display="none",w()}catch(e){i.textContent="Error: "+e.message,i.style.color="var(--color-danger)",i.style.display="inline"}}),document.querySelectorAll(".notif-filter-btn").forEach(t=>{t.addEventListener("click",()=>{o=t.dataset.filter,d=1,document.querySelectorAll(".notif-filter-btn").forEach(e=>e.classList.toggle("active",e.dataset.filter===o)),e()})}),document.getElementById("notif-search")?.addEventListener("input",t=>{r=t.target.value,d=1,e()}),document.getElementById("notif-mark-all")?.addEventListener("click",async()=>{const t=n.filter(e=>!e.is_read);if(0!==t.length){for(const e of t)try{await request(`/notifications/${e.id}/read`,{method:"POST"}),e.is_read=!0}catch(e){}e()}}),e()}catch(c){s('<div class="empty-state"><p>Error loading notifications</p></div>')}}async function k(){s('<div class="loading-state"><div class="spinner"></div><p>Loading uploads...</p></div>');try{const t=await request("/uploads").catch(()=>[]),a=Array.isArray(t)?t:[],n=a.filter(e=>/\.(png|jpg|jpeg|gif|svg|webp)$/i.test(e.filename||e.path||"")),i=a.filter(e=>/\.(pdf|doc|docx|txt)$/i.test(e.filename||e.path||"")),o=a.filter(e=>/\.(mp4|webm|mp3|wav|ogg)$/i.test(e.filename||e.path||""));let r="all";function e(){let e=a;"images"===r?e=n:"documents"===r?e=i:"media"===r&&(e=o);const t=document.getElementById("uploads-grid");t&&(0!==e.length?(t.innerHTML=e.map(e=>{const t=e.filename||e.path||"unknown",a=e.display_name||t,n=!1!==e.is_visible,i=/\.(png|jpg|jpeg|gif|svg|webp)$/i.test(t),s=/\.(mp4|webm)$/i.test(t),o=/\.(mp3|wav|ogg)$/i.test(t),r=i?"🖼️":s?"🎬":o?"🎵":"📄";return`\n            <div class="card upload-card" style="padding:0.75rem;cursor:pointer" data-filename="${escapeHtml(t)}">\n              <div style="display:flex;align-items:center;gap:0.75rem">\n                <div style="font-size:1.5rem;flex-shrink:0">${r}</div>\n                <div style="flex:1;min-width:0">\n                  <p style="margin:0;font-size:0.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" class="upload-display-name">${escapeHtml(a)}</p>\n                  <p style="margin:0.15rem 0 0;font-size:0.7rem;color:var(--color-text-muted)">${e.size?(e.size/1024).toFixed(1)+" KB":""} · ${e.uploaded_at?new Date(e.uploaded_at).toLocaleDateString():""}</p>\n                  ${n?"":'<span style="display:inline-block;margin-top:0.25rem;font-size:0.65rem;padding:0.1rem 0.4rem;background:#fee2e2;color:#dc2626;border-radius:4px">Hidden</span>'}\n                </div>\n                <div style="display:flex;flex-direction:column;gap:0.25rem;flex-shrink:0">\n                   <button class="btn btn-xs upload-rename-btn" data-filename="${escapeHtml(t)}" data-display="${escapeHtml(a)}" title="Rename">✏️</button>\n                   <button class="btn btn-xs upload-vis-btn" data-filename="${escapeHtml(t)}" data-visible="${n}" title="${n?"Hide from students & teachers":"Show to students & teachers"}">${n?"👁️":"🚫"}</button>\n                   <button class="btn btn-outline-danger btn-xs upload-delete-btn" data-filename="${escapeHtml(t)}" title="Delete file">✕</button>\n                </div>\n              </div>\n            </div>\n          `}).join(""),document.querySelectorAll(".upload-rename-btn").forEach(e=>{e.addEventListener("click",async t=>{t.stopPropagation();const a=e.dataset.display,n=prompt("Rename file:",a);if(n&&n!==a)try{await request(`/uploads/${encodeURIComponent(e.dataset.filename)}`,{method:"PATCH",body:JSON.stringify({display_name:n})}),showToast("File renamed"),k()}catch(e){showToast(e.message||"Rename failed")}})}),document.querySelectorAll(".upload-vis-btn").forEach(e=>{e.addEventListener("click",async t=>{t.stopPropagation();const a="true"===e.dataset.visible;try{await request(`/uploads/${encodeURIComponent(e.dataset.filename)}`,{method:"PATCH",body:JSON.stringify({is_visible:!a})}),showToast(a?"File hidden from students & teachers":"File now visible to students & teachers"),k()}catch(e){showToast(e.message||"Update failed")}})}),document.querySelectorAll(".upload-delete-btn").forEach(e=>{e.addEventListener("click",async t=>{if(t.stopPropagation(),confirmDelete(e.dataset.filename))try{await request(`/uploads/${encodeURIComponent(e.dataset.filename)}`,{method:"DELETE"}),showToast("File deleted"),k()}catch(e){showToast(e.message||"Delete failed")}})}),document.querySelectorAll("#uploads-grid .card[data-filename]").forEach(e=>{e.querySelector(".upload-delete-btn")&&e.addEventListener("click",t=>{t.target.closest(".upload-delete-btn")||t.target.closest(".upload-rename-btn")||t.target.closest(".upload-vis-btn")||window.open(`${API_BASE}/uploads/${encodeURIComponent(e.dataset.filename)}`,"_blank")})})):t.innerHTML='<div class="empty-state" style="padding:2rem"><p>No files uploaded yet</p></div>')}s(`\n        <div class="content">\n          <h2>📁 Uploads</h2>\n          <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Manage uploaded files. Control visibility for students and teachers.</p>\n\n          <div class="card" style="margin-top:1rem;padding:1.5rem">\n            <h3 style="margin-bottom:0.75rem">📤 Upload New File</h3>\n            <form id="upload-form" style="display:flex;flex-direction:column;gap:0.5rem">\n              <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0">Supports images (png, jpg, gif, svg, webp), documents (pdf, doc), videos (mp4, webm), audio (mp3, wav, ogg)</p>\n              <input class="input" type="file" id="upload-file" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" required>\n              <div style="display:flex;gap:0.5rem;align-items:center">\n                <button class="btn btn-success btn-pattern" type="submit" id="upload-submit-btn" style="width:100%">📤 Upload File</button>\n              </div>\n            </form>\n            <div id="upload-result" style="margin-top:0.5rem"></div>\n          </div>\n\n          <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">\n            <button class="btn-filter upload-filter-btn active" data-filter="all">All <span class="filter-count">${a.length}</span></button>\n            <button class="btn-filter upload-filter-btn" data-filter="images">🖼️ Images <span class="filter-count">${n.length}</span></button>\n            <button class="btn-filter upload-filter-btn" data-filter="documents">📄 Documents <span class="filter-count">${i.length}</span></button>\n            <button class="btn-filter upload-filter-btn" data-filter="media">🎬 Media <span class="filter-count">${o.length}</span></button>\n          </div>\n          <div id="uploads-grid" style="margin-top:0.75rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.5rem"></div>\n        </div>\n      `),document.querySelectorAll(".upload-filter-btn").forEach(t=>{t.addEventListener("click",()=>{r=t.dataset.filter,document.querySelectorAll(".upload-filter-btn").forEach(e=>e.classList.toggle("active",e.dataset.filter===r)),e()})});let l=!1;document.getElementById("upload-form")?.addEventListener("submit",async e=>{e.preventDefault();const t=document.getElementById("upload-file"),a=t?.files?.[0];if(!a||l)return;const n=document.getElementById("upload-submit-btn");l=!0,n.textContent="Uploading...",n.disabled=!0,n.style.opacity="0.7";const i=localStorage.getItem("casuya_token"),s=new FormData;s.append("file",a);try{const e=await fetch(`${API_BASE}/uploads/`,{method:"POST",headers:i?{Authorization:`Bearer ${i}`}:{},body:s}),t=await e.json();e.ok?(document.getElementById("upload-result").innerHTML=`<div style="padding:0.5rem;background:#dcfce7;border-radius:var(--radius);font-size:0.85rem;color:var(--color-success)">Uploaded: ${escapeHtml(t.filename||a.name)}</div>`,k()):document.getElementById("upload-result").innerHTML=`<div style="padding:0.5rem;background:#fee2e2;border-radius:var(--radius);font-size:0.85rem;color:var(--color-danger)">${escapeHtml(t.detail||"Upload failed")}</div>`}catch(e){document.getElementById("upload-result").innerHTML=`<div style="padding:0.5rem;background:#fee2e2;border-radius:var(--radius);font-size:0.85rem;color:var(--color-danger)">${escapeHtml(e.message)}</div>`}l=!1,n.textContent="Upload File",n.disabled=!1,n.style.opacity="1"}),e()}catch(d){s('<div class="empty-state"><p>Error loading uploads</p></div>')}}async function x(){const e=window.casuyaApiBase?window.casuyaApiBase():"8765"===window.location.port||""===window.location.port||"443"===window.location.port||"80"===window.location.port?window.location.origin:`${window.location.protocol}//${window.location.hostname}:8765`,t=localStorage.getItem("casuya_token"),a=t?{Authorization:`Bearer ${t}`}:{};let n=!1,i=!1;try{n=(await fetch(`${e}/branding/logo`)).ok}catch{}try{i=(await fetch(`${e}/branding/favicon`)).ok}catch{}s(`\n      <div class="content">\n        <h2>🎨 Site Branding</h2>\n        <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:1.5rem">Upload your logo and favicon. These appear across the entire platform.</p>\n\n        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">\n          \x3c!-- Logo --\x3e\n          <div class="card" style="padding:1.5rem">\n            <h3 style="margin-bottom:0.75rem">🖼️ Logo</h3>\n            <div style="text-align:center;margin-bottom:1rem">\n              ${n?`<img src="${e}/branding/logo" alt="Current logo" style="max-width:120px;max-height:120px;border-radius:12px;border:1px solid var(--color-border)">`:'<div style="width:120px;height:120px;margin:0 auto;background:linear-gradient(135deg,var(--color-primary),#7c3aed);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem;font-weight:800">C</div>'}\n              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${n?"✅ Custom logo active":"Using default"}</p>\n            </div>\n            <form id="logo-upload-form" style="display:flex;flex-direction:column;gap:0.5rem">\n              <input class="input" type="file" id="logo-file" accept="image/*" required />\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${n?"🔄 Replace":"📤 Upload"}</button>\n                ${n?'<button class="btn btn-outline-danger btn-sm" type="button" id="logo-delete">🗑️ Delete</button>':""}\n              </div>\n            </form>\n            <div id="logo-result" style="margin-top:0.5rem;font-size:0.8rem"></div>\n          </div>\n\n          \x3c!-- Favicon --\x3e\n          <div class="card" style="padding:1.5rem">\n            <h3 style="margin-bottom:0.75rem">🏷️ Favicon</h3>\n            <div style="text-align:center;margin-bottom:1rem">\n              ${i?`<img src="${e}/branding/favicon" alt="Current favicon" style="width:64px;height:64px;border-radius:8px;border:1px solid var(--color-border)">`:'<div style="width:64px;height:64px;margin:0 auto;background:linear-gradient(135deg,var(--color-primary),#7c3aed);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;font-weight:800">C</div>'}\n              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${i?"✅ Custom favicon active":"Using default"}</p>\n            </div>\n            <form id="favicon-upload-form" style="display:flex;flex-direction:column;gap:0.5rem">\n              <input class="input" type="file" id="favicon-file" accept="image/*" required />\n              <div style="display:flex;gap:0.5rem">\n                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${i?"🔄 Replace":"📤 Upload"}</button>\n                ${i?'<button class="btn btn-outline-danger btn-sm" type="button" id="favicon-delete">🗑️ Delete</button>':""}\n              </div>\n            </form>\n            <div id="favicon-result" style="margin-top:0.5rem;font-size:0.8rem"></div>\n          </div>\n        </div>\n      </div>\n    `),document.getElementById("logo-upload-form")?.addEventListener("submit",async t=>{t.preventDefault();const n=document.getElementById("logo-file")?.files?.[0];if(!n)return;const i=new FormData;i.append("file",n);try{const t=await fetch(`${e}/branding/logo`,{method:"POST",headers:a,body:i}),n=await t.json();t.ok?(document.getElementById("logo-result").innerHTML='<span style="color:var(--color-success)">Logo uploaded!</span>',localStorage.removeItem("casuya_brand_logo"),x()):document.getElementById("logo-result").innerHTML=`<span style="color:var(--color-danger)">${escapeHtml(n.detail||"Failed")}</span>`}catch(e){document.getElementById("logo-result").innerHTML=`<span style="color:var(--color-danger)">${escapeHtml(e.message)}</span>`}}),document.getElementById("logo-delete")?.addEventListener("click",async()=>{try{await fetch(`${e}/branding/logo`,{method:"DELETE",headers:a}),localStorage.removeItem("casuya_brand_logo"),x()}catch{}}),document.getElementById("favicon-upload-form")?.addEventListener("submit",async t=>{t.preventDefault();const n=document.getElementById("favicon-file")?.files?.[0];if(!n)return;const i=new FormData;i.append("file",n);try{const t=await fetch(`${e}/branding/favicon`,{method:"POST",headers:a,body:i}),n=await t.json();t.ok?(document.getElementById("favicon-result").innerHTML='<span style="color:var(--color-success)">Favicon uploaded!</span>',localStorage.removeItem("casuya_brand_favicon"),x()):document.getElementById("favicon-result").innerHTML=`<span style="color:var(--color-danger)">${escapeHtml(n.detail||"Failed")}</span>`}catch(e){document.getElementById("favicon-result").innerHTML=`<span style="color:var(--color-danger)">${escapeHtml(e.message)}</span>`}}),document.getElementById("favicon-delete")?.addEventListener("click",async()=>{try{await fetch(`${e}/branding/favicon`,{method:"DELETE",headers:a}),localStorage.removeItem("casuya_brand_favicon"),x()}catch{}})}document.querySelectorAll("#admin-nav .sidebar-nav-item").forEach(e=>{e.addEventListener("click",t=>{var a;t.preventDefault(),document.getElementById("admin-sidebar")?.classList.remove("open"),a=e.dataset.view,o[a]&&(location.hash=a,o[a]())})}),window.addEventListener("hashchange",()=>{const e=location.hash.slice(1)||"dashboard";o[e]&&o[e]()});const _=location.hash.slice(1)||"dashboard";o[_]?o[_]():r()}!function(){var e={dyslexia:!1,highContrast:!1,largeText:!1,wideSpacing:!1,tts:!1,speechRate:.9,fontSize:100};try{var t=JSON.parse(localStorage.getItem("casuya_a11y"));t&&Object.assign(e,t)}catch(e){}function a(){try{localStorage.setItem("casuya_a11y",JSON.stringify(e))}catch(e){}}function n(){document.body.classList.toggle("dyslexia-mode",e.dyslexia),document.body.classList.toggle("high-contrast",e.highContrast),document.body.classList.toggle("large-text",e.largeText),document.body.classList.toggle("extra-large-text",e.fontSize>=150&&e.fontSize<200),document.body.classList.toggle("max-text",e.fontSize>=200),document.body.classList.toggle("wide-spacing",e.wideSpacing),document.querySelectorAll(".a11y-toggle-btn").forEach(function(t,a){var n=[e.dyslexia,e.highContrast,e.largeText,e.wideSpacing,e.tts];t.classList.toggle("active",n[a])});var t=["dyslexia","highContrast","largeText","wideSpacing","tts"];["a11y-dyslexia","a11y-contrast","a11y-large-text","a11y-wide-spacing","a11y-tts"].forEach(function(a,n){var i=document.getElementById(a);i&&i.setAttribute("aria-pressed",e[t[n]])});var n=document.getElementById("a11y-speed-row"),i=document.getElementById("speech-controls");n&&(n.style.display=e.tts?"flex":"none"),i&&(i.style.display=e.tts?"flex":"none");var s=document.getElementById("a11y-fontsize"),o=document.getElementById("a11y-fontsize-label");s&&o&&(s.value=e.fontSize,o.textContent=e.fontSize+"%"),a()}n();var i=document.getElementById("a11y-toggle-btn"),s=document.getElementById("a11y-panel");i&&s&&(i.addEventListener("click",function(e){e.stopPropagation();var t=s.classList.toggle("open");i.setAttribute("aria-expanded",t)}),document.addEventListener("click",function(e){s.contains(e.target)||i.contains(e.target)||(s.classList.remove("open"),i.setAttribute("aria-expanded","false"))}),document.addEventListener("keydown",function(e){"Escape"===e.key&&s.classList.contains("open")&&(s.classList.remove("open"),i.setAttribute("aria-expanded","false"),i.focus())}));var o={"a11y-dyslexia":"dyslexia","a11y-contrast":"highContrast","a11y-large-text":"largeText","a11y-wide-spacing":"wideSpacing"};Object.keys(o).forEach(function(t){var a=document.getElementById(t);a&&a.addEventListener("click",function(){e[o[t]]=!e[o[t]],n()})});var r=document.getElementById("a11y-tts");r&&r.addEventListener("click",function(){e.tts=!e.tts,n(),!e.tts&&window.speechSynthesis&&window.speechSynthesis.cancel()});var l=document.getElementById("a11y-fontsize");l&&l.addEventListener("input",function(){e.fontSize=parseInt(this.value),n()}),document.querySelectorAll(".a11y-option").forEach(function(e){e.addEventListener("keydown",function(t){"Enter"!==t.key&&" "!==t.key||(t.preventDefault(),e.click())})});var d=document.getElementById("a11y-speed"),c=document.getElementById("a11y-speed-label");function m(){for(var e=window.speechSynthesis.getVoices(),t=["en-TZ","en-KE","en-UG","en-GH","en-ZA","en-GB","en-US"],a=0;a<t.length;a++){var n=e.filter(function(e){return e.lang===t[a]});if(n.length)return n[0]}for(var i=0;i<e.length;i++)if(0===e[i].lang.indexOf("en"))return e[i];return null}function u(t){window.speechSynthesis.cancel();var a=new SpeechSynthesisUtterance(t),n=m();n?(a.voice=n,a.lang=n.lang):a.lang="en-TZ",a.rate=e.speechRate||.9,a.pitch=1,a.volume=1;var i=document.getElementById("speech-status");a.onstart=function(){i&&(i.textContent="Speaking...")},a.onend=function(){i&&(i.textContent="Done")},a.onerror=function(){i&&(i.textContent="Error")},window.speechSynthesis.speak(a)}d&&d.addEventListener("input",function(){e.speechRate=parseFloat(this.value),c&&(c.textContent=e.speechRate.toFixed(1)+"x"),a()});var p=document.getElementById("speech-play"),g=document.getElementById("speech-pause"),y=document.getElementById("speech-stop");p&&p.addEventListener("click",function(){var e;window.speechSynthesis.paused?window.speechSynthesis.resume():u((e=window.getSelection())&&e.toString().trim()?e.toString().trim():document.body.textContent.substring(0,2e3))}),g&&g.addEventListener("click",function(){window.speechSynthesis.pause()}),y&&y.addEventListener("click",function(){window.speechSynthesis.cancel()}),document.addEventListener("keydown",function(e){e.ctrlKey&&"u"===e.key&&i&&(e.preventDefault(),i.click())}),window.speechSynthesis&&(window.speechSynthesis.onvoiceschanged=function(){},window.speechSynthesis.getVoices()),window.__casuyaA11y={state:e,speak:u,findVoice:m}}(),document.addEventListener("DOMContentLoaded",()=>{applyAppearance();localStorage.getItem("casuya_token")?renderApp():renderLogin()});
+// casuya-env.js — environment-aware API URL resolution.
+//
+// In production (Vercel / custom domain) we point the frontend at the Render
+// backend. On localhost we intentionally leave CASUYA_API_URL UNSET so that
+// config.js falls back to the local API (http://localhost:8765), keeping
+// local development fully local and free of production coupling.
+(function () {
+  var host = window.location.hostname || "";
+  var isLocal =
+    host === "localhost" ||
+    host === "127.0.0.1" ||
+    host === "[::1]" ||
+    host === "::1";
+  if (!isLocal) {
+    window.CASUYA_API_URL = "https://casuya-platform-production.up.railway.app";
+  }
+})();
+
+;
+(function () {
+  // casuya-config.js — central API base resolution for the static frontend.
+  //
+  // In production, point the frontend at your Render backend by setting the
+  // global CASUYA_API_URL (e.g. https://casuya-platform-production.up.railway.app) in a small
+  // inline <script> that runs BEFORE this file, or via Vercel env substitution.
+  //
+  // In development it targets the local API on port 8765 (same-origin when the
+  // frontend is served from the API host).
+
+  function resolveBase() {
+    if (window.CASUYA_API_URL) {
+      return String(window.CASUYA_API_URL).replace(/\/+$/, "");
+    }
+    var hostname = window.location.hostname || "localhost";
+    var protocol = (window.location.protocol === "http:" || window.location.protocol === "https:")
+      ? window.location.protocol
+      : "http:";
+    var port = window.location.port;
+    var isSameOrigin = port === "8765" || port === "" || port === "443" || port === "80";
+    return isSameOrigin ? window.location.origin : protocol + "//" + hostname + ":8765";
+  }
+
+  window.casuyaApiBase = function () {
+    return resolveBase();
+  };
+
+  window.casuyaOAuthUrl = function (provider) {
+    return resolveBase() + "/auth/oauth/" + encodeURIComponent(provider);
+  };
+
+  // Register the offline/performance service worker ONLY after auth is established.
+  // On the login/register pages (no token), skip SW registration to avoid caching
+  // auth-critical requests before the session is established.
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      var path = window.location.pathname;
+      var isAuthPage = /\/(?:login|register|forgot-password|reset-password|index)\.html?$/.test(path) || path === "/";
+      var hasToken = !!localStorage.getItem("casuya_token");
+
+      // Register SW only on authenticated portal pages (student/teacher/admin)
+      // OR on public pages where the user already has a token
+      if (!isAuthPage || hasToken) {
+        navigator.serviceWorker.register("/sw.js").catch(function () {});
+      }
+    });
+  }
+})();
+
+;
+// modules/api.js — extracted from main.js (classic script, shared global scope)
+const API_HOST = window.location.hostname || "localhost";
+
+const API_PROTOCOL = (window.location.protocol === "http:" || window.location.protocol === "https:")
+  ? window.location.protocol
+  : "http:";
+
+const API_BASE = window.casuyaApiBase ? window.casuyaApiBase()
+  : (window.location.port === "8765" || window.location.port === "" || window.location.port === "443" || window.location.port === "80")
+    ? window.location.origin
+    : `${API_PROTOCOL}//${API_HOST}:8765`;
+
+// Expose on window so ES modules (auth-guard.js loaded via <script type="module">)
+// can also reach these when they import functions from auth-client.js.
+window.API_HOST = API_HOST;
+window.API_PROTOCOL = API_PROTOCOL;
+window.API_BASE = API_BASE;
+
+function decodeToken(token) {
+  try {
+    return JSON.parse(atob(token.split(".")[1]));
+  } catch {
+    return {};
+  }
+}
+
+const requestCache = new Map();
+
+const inFlight = new Map();
+
+const CACHE_TTL = 30000;
+
+async function request(path, options = {}) {
+  const method = (options.method || "GET").toUpperCase();
+  const cacheKey = `${method}:${path}`;
+
+  if (method === "GET") {
+    const cached = requestCache.get(cacheKey);
+    if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
+      return cached.data;
+    }
+    if (inFlight.has(cacheKey)) {
+      return inFlight.get(cacheKey);
+    }
+  } else {
+    requestCache.clear();
+  }
+
+  const doFetch = async () => {
+    const token = localStorage.getItem("casuya_token");
+    const headers = { "Content-Type": "application/json", ...options.headers };
+    if (token) headers["Authorization"] = `Bearer ${token}`;
+
+    let lastErr;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      if (attempt > 0) {
+        await new Promise(r => setTimeout(r, 1000 * attempt));
+      }
+      try {
+        let fetchUrl = `${API_BASE}${path}`;
+        const resp = await fetch(fetchUrl, { ...options, headers });
+        if (resp.status === 401) {
+          if (!options._retried) {
+            try {
+              const newToken = await refreshAuthToken();
+              headers["Authorization"] = `Bearer ${newToken}`;
+              const retryResp = await fetch(fetchUrl, { ...options, headers, _retried: true });
+              if (retryResp.status === 401) throw new Error("Session expired. Please sign in again.");
+              if (!retryResp.ok) {
+                const err = await retryResp.json().catch(() => ({ detail: retryResp.statusText }));
+                throw new Error(err.detail || "Request failed");
+              }
+              const retryData = await retryResp.json();
+              if (method === "GET") requestCache.set(cacheKey, { data: retryData, timestamp: Date.now() });
+              return retryData;
+            } catch (refreshErr) {
+              localStorage.removeItem("casuya_token");
+              localStorage.removeItem("casuya_refresh_token");
+              renderLogin();
+              return null;
+            }
+          }
+          localStorage.removeItem("casuya_token");
+          localStorage.removeItem("casuya_refresh_token");
+          renderLogin();
+          return null;
+        }
+        if (!resp.ok) {
+          const err = await resp.json().catch(() => ({ detail: resp.statusText }));
+          if (resp.status >= 500 && attempt < 2) continue;
+          throw new Error(err.detail || "Request failed");
+        }
+        const data = await resp.json();
+        if (method === "GET") {
+          requestCache.set(cacheKey, { data, timestamp: Date.now() });
+        }
+        return data;
+      } catch (err) {
+        lastErr = err;
+        if ((err.name !== "TypeError" && err.name !== "SyntaxError") || attempt >= 2) break;
+      }
+    }
+    throw lastErr;
+  };
+
+  const promise = doFetch().finally(() => inFlight.delete(cacheKey));
+  if (method === "GET") {
+    inFlight.set(cacheKey, promise);
+  }
+  return promise;
+}
+
+async function refreshAuthToken() {
+  const refreshToken = localStorage.getItem("casuya_refresh_token");
+  if (!refreshToken) throw new Error("No refresh token");
+  const resp = await fetch(`${API_BASE}/auth/refresh`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ refresh_token: refreshToken }),
+  });
+  if (!resp.ok) throw new Error("Refresh failed");
+  const data = await resp.json();
+  if (data.access_token) localStorage.setItem("casuya_token", data.access_token);
+  if (data.refresh_token) localStorage.setItem("casuya_refresh_token", data.refresh_token);
+  return data.access_token;
+}
+
+let _globalAbort = null;
+
+function render(container, html) {
+  const el = typeof container === "string" ? document.querySelector(container) : container;
+  if (!el) return;
+  if (_globalAbort) {
+    const old = _globalAbort;
+    Promise.resolve().then(() => old.abort());
+  }
+  _globalAbort = new AbortController();
+  el.innerHTML = html;
+}
+
+function escapeHtml(str) {
+  if (str == null) return "";
+  const div = document.createElement("div");
+  div.textContent = String(str);
+  return div.innerHTML;
+}
+
+function timeAgo(timestamp) {
+  const seconds = Math.floor((Date.now() - timestamp) / 1000);
+  if (seconds < 60) return "Just now";
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return minutes + "m ago";
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return hours + "h ago";
+  const days = Math.floor(hours / 24);
+  if (days < 7) return days + "d ago";
+  return new Date(timestamp).toLocaleDateString();
+}
+
+function showToast(msg) {
+  let t = document.getElementById("global-toast");
+  if (!t) {
+    t = document.createElement("div");
+    t.id = "global-toast";
+    t.style.cssText = "position:fixed;bottom:1.5rem;right:1.5rem;padding:0.6rem 1.2rem;background:var(--color-success);color:#fff;border-radius:var(--radius);font-size:0.85rem;z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none";
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = "1";
+  clearTimeout(t._hide);
+  t._hide = setTimeout(() => { t.style.opacity = "0"; }, 2500);
+}
+
+function confirmDelete(label) {
+  return confirm(`Delete "${label}"? This cannot be undone.`);
+}
+
+function deleteBtn(id, label, endpoint, onDone) {
+  return `<button class="btn btn-danger btn-sm" data-delete="${id}" data-label="${escapeHtml(label)}" data-endpoint="${endpoint}">Delete</button>`;
+}
+
+function initDeleteButtons() {
+  document.querySelectorAll("[data-delete]").forEach(btn => {
+    btn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const id = btn.dataset.delete;
+      const label = btn.dataset.label;
+      const endpoint = btn.dataset.endpoint;
+      if (!confirmDelete(label)) return;
+      try {
+        await request(`${endpoint}/${id}`, { method: "DELETE" });
+        showToast("Deleted!");
+        btn.closest(".card")?.remove();
+      } catch(err) { showToast(err.message || "Delete failed"); }
+    });
+  });
+}
+
+/* ── Tutoring Markdown Renderer ─────────────────────────────────────── */
+function renderTutorMarkdown(raw) {
+  if (!raw) return "";
+  let text = raw;
+
+  // Strip <think>...</think> tags (some models leak these)
+  text = text.replace(/<think>[\s\S]*?<\/think>/gi, "").trim();
+
+  // Fences ``` ... ``` → scrollable code block
+  text = text.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
+    return `<div class="tutor-code-block"><pre><code>${escapeHtml(code.trimEnd())}</code></pre></div>`;
+  });
+
+  // Tables: detect markdown tables and convert
+  text = text.replace(/^(\|.+\|)\n(\|[\s:|-]+\|)\n((?:\|.+\|\n?)*)/gm, (_, headerRow, _sep, bodyRows) => {
+    const headers = headerRow.split("|").filter(c => c.trim());
+    const rows = bodyRows.trim().split("\n").map(r => r.split("|").filter(c => c.trim()));
+    let html = "<table>";
+    html += "<thead><tr>" + headers.map(h => `<th>${h.trim()}</th>`).join("") + "</tr></thead>";
+    html += "<tbody>" + rows.map(r =>
+      "<tr>" + r.map((c, i) => `<td data-label="${escapeHtml(headers[i] || "")}">${c.trim()}</td>`).join("") + "</tr>"
+    ).join("") + "</tbody></table>";
+    return html;
+  });
+
+  // NECTA Exam Tip blocks (💡 line followed by content until *** or blank line)
+  text = text.replace(/^(.*💡\s*(?:NECTA\s+(?:Examination\s+)?Tip|Mtihani).*)\n((?:(?!\*\*\*).+\n?)*)/gim, (_, tipLine, body) => {
+    const cleanBody = body.trim().replace(/\n/g, "<br>");
+    return `<div class="tutor-necta-tip"><div class="tutor-necta-tip-label">💡 NECTA Examination Tip</div><p>${cleanBody}</p></div>`;
+  });
+
+  // Blockquotes > ... → context blockquote
+  text = text.replace(/^>\s*(.+)$/gm, (_, content) => {
+    // Check if it looks like a Tanzania/local context
+    const isLocal = /tanzan|serengeti|kilimanjaro|lake victoria|dodoma|dar|kenya|uganda|east africa|africa|mwanza|arusha|mbeya|ruaha|rufiji/i.test(content);
+    const badge = isLocal ? "🌍 Tanzania Context" : "📖 Context";
+    return `<div class="tutor-context-blockquote"><div class="tutor-context-badge">${badge}</div><p>${content}</p></div>`;
+  });
+  // Remove duplicate blockquote wrappers (if multiple > lines were wrapped individually)
+  text = text.replace(/(<div class="tutor-context-blockquote">[\s\S]*?<\/div>\n?)+/g, (match) => {
+    // Keep as-is, each > line is its own block
+    return match;
+  });
+
+  // Horizontal rules ***
+  text = text.replace(/^\*\*\*\s*$/gm, "<hr>");
+
+  // Headers
+  text = text.replace(/^#### (.+)$/gm, "<h4>$1</h4>");
+  text = text.replace(/^### (.+)$/gm, "<h3>$1</h3>");
+  text = text.replace(/^## (.+)$/gm, "<h2>$1</h2>");
+  text = text.replace(/^# (.+)$/gm, "<h1>$1</h1>");
+
+  // Bold + italic
+  text = text.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
+  text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  text = text.replace(/\*(.+?)\*/g, "<em>$1</em>");
+
+  // Inline code (but not inside code blocks)
+  text = text.replace(/`([^`]+)`/g, "<code>$1</code>");
+
+  // Unordered lists
+  text = text.replace(/^(?:- (.+)\n?)+/gm, (match) => {
+    const items = match.trim().split("\n").map(l => `<li>${l.replace(/^- /, "")}</li>`).join("");
+    return `<ul>${items}</ul>`;
+  });
+
+  // Ordered lists
+  text = text.replace(/^(?:\d+\. (.+)\n?)+/gm, (match) => {
+    const items = match.trim().split("\n").map(l => `<li>${l.replace(/^\d+\. /, "")}</li>`).join("");
+    return `<ol>${items}</ol>`;
+  });
+
+  // Paragraphs: double newline → paragraph break
+  text = text.replace(/\n{2,}/g, "\n\n");
+  const paragraphs = text.split("\n\n");
+  text = paragraphs.map(p => {
+    p = p.trim();
+    if (!p) return "";
+    // Don't wrap if it's already an HTML block
+    if (/^<(div|table|ul|ol|h[1-6]|hr|pre)/.test(p)) return p;
+    // Wrap plain text in paragraphs, converting single newlines to <br>
+    return `<p>${p.replace(/\n/g, "<br>")}</p>`;
+  }).join("\n");
+
+  return text;
+}
+
+/* ── Quiz Questions Renderer ───────────────────────────────────────── */
+function renderQuizQuestions(questions, meta = {}) {
+  if (!Array.isArray(questions) || !questions.length) {
+    return '<p style="color:var(--color-text-muted)">No questions generated.</p>';
+  }
+  const subject = meta.subject || "General";
+  const formLevel = meta.formLevel || "";
+  const topic = meta.topic || "";
+  const subjectLabels = { mathematics:"Mathematics", biology:"Biology", chemistry:"Chemistry", physics:"Physics", english:"English", kiswahili:"Kiswahili", geography:"Geography", history:"History", civics:"Civics", computing:"Computing" };
+  const subjectLabel = subjectLabels[subject] || subject;
+  const formLabel = formLevel ? `Form ${["I","II","III","IV"][Number(formLevel)-1] || formLevel}` : "";
+  const badgeParts = [subjectLabel, formLabel].filter(Boolean).join(" \u2022 ");
+  const quizId = "quiz-" + Date.now();
+
+  let html = `<div class="quiz-container" id="${quizId}">`;
+
+  // Header
+  html += `<div class="quiz-header">
+    <span class="quiz-badge">${escapeHtml(badgeParts)}</span>
+    <span class="quiz-counter">Question 1 of ${questions.length}</span>
+    ${topic ? `<div class="quiz-topic">Topic: ${escapeHtml(topic)}</div>` : ""}
+  </div>`;
+
+  // Question cards
+  html += '<div class="quiz-card">';
+  questions.forEach((q, i) => {
+    const letters = ["A","B","C","D"];
+    const options = q.options || [];
+    const correctAnswer = (q.correctAnswer || "").trim().toUpperCase();
+    const explanation = q.explanation || "";
+
+    html += `<div class="quiz-question" data-index="${i}" data-correct="${escapeHtml(correctAnswer)}">`;
+    html += `<div class="quiz-question-num">Question ${i+1}</div>`;
+    html += `<div class="quiz-question-text">${escapeHtml(q.text || "")}</div>`;
+    html += '<div class="quiz-options">';
+    options.forEach((opt, j) => {
+      const letter = letters[j] || String.fromCharCode(65+j);
+      const optText = typeof opt === "string" ? opt : (opt.text || String(opt));
+      html += `<label class="quiz-option" data-letter="${letter}">
+        <input type="radio" name="${quizId}-q${i}" value="${letter}">
+        <span class="quiz-option-label">${letter}.</span>
+        <span>${escapeHtml(optText)}</span>
+      </label>`;
+    });
+    html += '</div>';
+
+    // Explanation (hidden until submit)
+    if (explanation) {
+      html += `<div class="quiz-explanation" id="${quizId}-exp-${i}">
+        <strong>Explanation:</strong> ${escapeHtml(explanation)}
+      </div>`;
+    }
+    html += '</div>';
+  });
+
+  // Submit + Download buttons
+  html += `<div class="quiz-btn-row">
+    <button class="btn btn-primary quiz-submit-all" onclick="window._quizSubmit('${quizId}', ${questions.length})">Submit Answers</button>
+    <button class="btn quiz-download-btn" onclick="window._quizDownloadWord('${quizId}')">📄 Word</button>
+    <button class="btn quiz-download-btn" onclick="window._quizDownloadPdf('${quizId}')">📋 PDF</button>
+  </div>`;
+
+  // Score banner
+  html += `<div class="quiz-score" id="${quizId}-score">
+    <div class="quiz-score-num" id="${quizId}-score-num"></div>
+    <div class="quiz-score-label" id="${quizId}-score-label"></div>
+  </div>`;
+
+  html += '</div></div>';
+  return html;
+}
+
+window._quizSubmit = function(quizId, total) {
+  var correct = 0;
+  var i, container, correctAnswer, selected, selectedVal, exp;
+  var scoreEl, scoreNum, scoreLabel, pct, msg, btn;
+  var wrong = [];
+
+  for (i = 0; i < total; i++) {
+    container = document.querySelector("#" + quizId + " .quiz-question[data-index=\"" + i + "\"]");
+    if (!container) continue;
+    correctAnswer = container.getAttribute("data-correct");
+    selected = document.querySelector("input[name=\"" + quizId + "-q" + i + "\"]:checked");
+    selectedVal = selected ? selected.value : null;
+
+    var options = container.querySelectorAll(".quiz-option");
+    var j, opt, letter;
+    for (j = 0; j < options.length; j++) {
+      opt = options[j];
+      letter = opt.getAttribute("data-letter");
+      opt.style.pointerEvents = "none";
+      if (letter === correctAnswer) {
+        opt.classList.add("correct");
+      } else if (letter === selectedVal && letter !== correctAnswer) {
+        opt.classList.add("incorrect");
+      }
+    }
+
+    if (selectedVal === correctAnswer) correct++;
+
+    // Track wrong/blank questions for the AI tutor
+    if (selectedVal !== correctAnswer) {
+      wrong.push(i);
+    }
+
+    exp = document.getElementById(quizId + "-exp-" + i);
+    if (exp) exp.classList.add("visible");
+  }
+
+  scoreEl = document.getElementById(quizId + "-score");
+  scoreNum = document.getElementById(quizId + "-score-num");
+  scoreLabel = document.getElementById(quizId + "-score-label");
+  if (scoreEl && scoreNum && scoreLabel) {
+    scoreNum.textContent = correct + " / " + total;
+    pct = Math.round((correct / total) * 100);
+    msg = pct >= 80 ? "Excellent! Keep it up!" : pct >= 50 ? "Good effort! Review the explanations." : "Keep practicing. Review the explanations below.";
+    scoreLabel.textContent = pct + "% \u2014 " + msg;
+    scoreEl.classList.add("visible");
+  }
+
+  btn = document.querySelector("#" + quizId + " .quiz-submit-all");
+  if (btn) btn.style.display = "none";
+
+  // AI step-by-step tutor for any wrong/blank answers
+  if (wrong.length) {
+    _tutorWrongQuestions(quizId, total, wrong);
+  }
+};
+
+/* ── AI Step-by-Step Tutor (on wrong answers) ───────────────────────── */
+function _tutorWrongQuestions(quizId, total, wrongIndexes) {
+  var data = _quizExtractData(quizId);
+  if (!data || !data.questions || !wrongIndexes.length) return;
+
+  var subjectSlug = "";
+  var formLevel = "";
+  var slugMap = { mathematics:"mathematics", math:"mathematics", biology:"biology", chemistry:"chemistry", physics:"physics", english:"english", kiswahili:"kiswahili", geography:"geography", history:"history", civics:"civics", computing:"computing" };
+  var m = (data.meta || "").match(/^([A-Za-z ]+)\s*(\u2022)?\s*Form\s*([IVX]+)/i);
+  if (m) {
+    var label = slugMap[m[1].trim().toLowerCase()];
+    if (label) subjectSlug = label;
+    var roman = m[3];
+    formLevel = (roman === "I") ? "1" : (roman === "II") ? "2" : (roman === "III") ? "3" : "4";
+  }
+
+  // Build a compact markdown prompt describing each wrong question
+  var parts = [];
+  wrongIndexes.forEach(function(idx) {
+    var q = data.questions[idx];
+    if (!q) return;
+    var chosen = null;
+    if (q.options) {
+      q.options.forEach(function(o) { if (o.letter === q.correct) chosen = o.text; });
+    }
+    var chosenText = chosen ? chosen : "(question left unanswered)";
+    parts.push(
+      "QUESTION " + (idx + 1) + ": " + (q.text || "")
+      + "\n- Options: " + (q.options || []).map(function(o){ return o.letter + ") " + o.text; }).join("; ")
+      + "\n- The student answered: " + chosenText
+      + "\n- The correct answer is: " + q.correct
+    );
+  });
+
+  var question = "A student answered the following questions incorrectly. Please explain, "
+    + "in simple step-by-step language a secondary school student will understand, EXACTLY how to arrive at the correct answer for each one. "
+    + "Do not just repeat the correct letter \u2014 show the working/method step by step, call out any common mistake the student likely made, and keep the tone encouraging.\n\n"
+    + parts.join("\n\n");
+
+  // Build the tutor card
+  var wrap = document.getElementById(quizId + "-score");
+  if (!wrap) return;
+  var tutorHtml = '<div class="quiz-tutor" id="' + quizId + '-tutor">'
+    + '<div class="quiz-tutor-header"><span class="quiz-tutor-icon">\uD83C\uDF93</span>'
+    + '<div><div class="quiz-tutor-title">Let\u2019s Learn: Step-by-Step</div>'
+    + '<div class="quiz-tutor-sub">The AI tutor will show you exactly how to solve the ' + wrongIndexes.length + ' question'
+    + (wrongIndexes.length > 1 ? "s" : "") + ' you got wrong.</div></div></div>'
+    + '<div class="quiz-tutor-body"><div class="tutor-loading"><span class="spinner"></span> Explaining the correct method\u2026</div></div>'
+    + '</div>';
+  if (wrap.insertAdjacentHTML) {
+    wrap.insertAdjacentHTML("afterend", tutorHtml);
+  } else if (wrap.parentNode) {
+    var tmp = document.createElement("div");
+    tmp.innerHTML = tutorHtml;
+    while (tmp.firstChild) wrap.parentNode.insertBefore(tmp.firstChild, wrap.nextSibling);
+  }
+
+  var body = document.getElementById(quizId + "-tutor").querySelector(".quiz-tutor-body");
+
+  var payload = {
+    question: question,
+    lesson_context: data.topic
+      ? "Topic: " + data.topic
+      : (data.meta ? "Subject: " + data.meta : ""),
+    subject_slug: subjectSlug || undefined,
+    form_level: formLevel ? Number(formLevel) : undefined
+  };
+
+  request("/ai/tutoring/explain", {
+    method: "POST",
+    body: JSON.stringify(payload)
+  }).then(function(result) {
+    var response = (result && result.response) ? result.response : "";
+    if (!response) {
+      body.innerHTML = '<div class="tutor-fallback">The AI tutor is temporarily unavailable. Please review the explanations above or ask your teacher for help.</div>';
+      return;
+    }
+    body.innerHTML = '<div class="tutor-response">' + renderTutorMarkdown(response) + '</div>';
+  }).catch(function() {
+    body.innerHTML = '<div class="tutor-fallback">The AI tutor could not be reached. Please review the explanations above or ask your teacher for help.</div>';
+  });
+}
+
+function _quizExtractData(quizId) {
+  var container = document.getElementById(quizId);
+  if (!container) return null;
+  var badge = container.querySelector(".quiz-badge");
+  var topic = container.querySelector(".quiz-topic");
+  var meta = badge ? badge.textContent.trim() : "";
+  var topicText = topic ? topic.textContent.replace("Topic:", "").trim() : "";
+  var questions = [];
+  var qEls = container.querySelectorAll(".quiz-question");
+  var i, qEl, qText, opts, j, optEl, letter, optText;
+  for (i = 0; i < qEls.length; i++) {
+    qEl = qEls[i];
+    qText = qEl.querySelector(".quiz-question-text");
+    opts = qEl.querySelectorAll(".quiz-option");
+    var options = [];
+    for (j = 0; j < opts.length; j++) {
+      optEl = opts[j];
+      letter = optEl.getAttribute("data-letter");
+      optText = optEl.querySelector("span:last-child");
+      options.push({ letter: letter, text: optText ? optText.textContent.trim() : "" });
+    }
+    var expEl = qEl.querySelector(".quiz-explanation");
+    var expText = expEl ? expEl.textContent.replace("Explanation:", "").trim() : "";
+    questions.push({
+      num: i + 1,
+      text: qText ? qText.textContent.trim() : "",
+      options: options,
+      correct: qEl.getAttribute("data-correct") || "",
+      explanation: expText
+    });
+  }
+  return { meta: meta, topic: topicText, questions: questions };
+}
+
+window._quizDownloadWord = function(quizId) {
+  var data = _quizExtractData(quizId);
+  if (!data || !data.questions.length) return;
+  var html = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>";
+  html += "<head><meta charset='utf-8'><title>Quiz</title>";
+  html += "<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.6}h1{color:#1e3a8a;font-size:20px}h2{color:#333;font-size:15px;margin-top:24px}.q{margin-bottom:16px}.q-text{font-weight:bold;font-size:13px}.opt{margin:4px 0 4px 20px;font-size:12px}.correct{color:#16a34a;font-weight:bold}.exp{color:#555;font-size:11px;margin-left:20px;border-left:3px solid #16a34a;padding-left:8px;margin-top:4px}.meta{color:#666;font-size:12px;margin-bottom:16px}</style></head><body>";
+  html += "<h1>Quiz Questions</h1>";
+  html += "<div class='meta'>" + data.meta;
+  if (data.topic) html += " &bull; Topic: " + data.topic;
+  html += "</div>";
+  var i, q, j, opt;
+  for (i = 0; i < data.questions.length; i++) {
+    q = data.questions[i];
+    html += "<div class='q'>";
+    html += "<div class='q-text'>" + q.num + ". " + q.text + "</div>";
+    for (j = 0; j < q.options.length; j++) {
+      opt = q.options[j];
+      html += "<div class='opt'>" + opt.letter + ". " + opt.text + "</div>";
+    }
+    html += "<div class='exp'><strong>Answer:</strong> " + q.correct + "</div>";
+    if (q.explanation) html += "<div class='exp'>" + q.explanation + "</div>";
+    html += "</div>";
+  }
+  html += "</body></html>";
+  var blob = new Blob(["\ufeff" + html], { type: "application/msword" });
+  _quizTriggerDownload(blob, "quiz-questions.doc");
+};
+
+window._quizDownloadPdf = function(quizId) {
+  var data = _quizExtractData(quizId);
+  if (!data || !data.questions.length) return;
+  var html = "<!DOCTYPE html><html><head><meta charset='utf-8'><title>Quiz</title>";
+  html += "<style>body{font-family:Arial,sans-serif;margin:40px;line-height:1.5;color:#111}h1{color:#1e3a8a;font-size:22px;border-bottom:2px solid #1e3a8a;padding-bottom:8px}h2{color:#333;font-size:14px;margin-top:20px}.meta{color:#555;font-size:12px;margin-bottom:16px;padding:8px;background:#f3f4f6;border-radius:6px}.q{margin-bottom:20px;page-break-inside:avoid}.q-text{font-weight:bold;font-size:13px;margin-bottom:4px}.opt{margin:3px 0 3px 24px;font-size:12px}.correct{color:#16a34a;font-weight:bold}.exp{color:#444;font-size:11px;margin-left:24px;border-left:3px solid #16a34a;padding-left:8px;margin-top:4px}@media print{body{margin:20px}.q{page-break-inside:avoid}}</style></head><body>";
+  html += "<h1>Quiz Questions</h1>";
+  html += "<div class='meta'>" + data.meta;
+  if (data.topic) html += " &bull; Topic: " + data.topic;
+  html += "</div>";
+  var i, q, j, opt;
+  for (i = 0; i < data.questions.length; i++) {
+    q = data.questions[i];
+    html += "<div class='q'>";
+    html += "<div class='q-text'>" + q.num + ". " + q.text + "</div>";
+    for (j = 0; j < q.options.length; j++) {
+      opt = q.options[j];
+      html += "<div class='opt'>" + opt.letter + ". " + opt.text + "</div>";
+    }
+    html += "<div class='exp'><strong>Answer:</strong> " + q.correct + "</div>";
+    if (q.explanation) html += "<div class='exp'>" + q.explanation + "</div>";
+    html += "</div>";
+  }
+  html += "</body></html>";
+  var win = window.open("", "_blank");
+  if (win) {
+    win.document.write(html);
+    win.document.close();
+    setTimeout(function() { win.print(); }, 400);
+  }
+};
+
+function _quizTriggerDownload(blob, filename) {
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+}
+
+/* ── SSE Streaming Helper (P3-4) ─────────────────────────────────────── */
+function streamTutorResponse(payload, onChunk, onDone, onError) {
+  var token = localStorage.getItem("casuya_token");
+  var headers = { "Content-Type": "application/json" };
+  if (token) headers["Authorization"] = "Bearer " + token;
+
+  var controller = new AbortController();
+
+  fetch(API_BASE + "/ai/tutoring/stream", {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(payload),
+    signal: controller.signal,
+  }).then(function(resp) {
+    if (!resp.ok) throw new Error("Stream failed");
+    var reader = resp.body.getReader();
+    var decoder = new TextDecoder();
+    var buffer = "";
+
+    function read() {
+      reader.read().then(function(result) {
+        if (result.done) {
+          if (onDone) onDone();
+          return;
+        }
+        buffer += decoder.decode(result.value, { stream: true });
+        var lines = buffer.split("\n");
+        buffer = lines.pop();
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i].trim();
+          if (!line.startsWith("data: ")) continue;
+          try {
+            var data = JSON.parse(line.substring(6));
+            if (data.chunk) onChunk(data.chunk);
+            if (data.done) { if (onDone) onDone(); return; }
+          } catch (e) {}
+        }
+        read();
+      }).catch(function(err) {
+        if (err.name !== "AbortError" && onError) onError(err);
+      });
+    }
+    read();
+  }).catch(function(err) {
+    if (err.name !== "AbortError" && onError) onError(err);
+  });
+
+  return controller;
+}
+
+;
+// modules/auth.js — extracted from main.js (classic script, shared global scope)
+function renderLogin() {
+  render("#app", `
+    <div class="page login-page">
+      <div class="login-card">
+        <h1>Casuya Platform</h1>
+        <p>Sign in to continue</p>
+        <form id="login-form">
+          <input type="text" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <button type="submit">Sign In</button>
+          <p class="error" id="login-error" style="display:none"></p>
+        </form>
+      </div>
+    </div>
+  `);
+  document.getElementById("login-form").addEventListener("submit", handleLogin);
+}
+
+async function handleLogin(e) {
+  e.preventDefault();
+  const errorEl = document.getElementById("login-error");
+  errorEl.style.display = "none";
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  try {
+    const data = await request("/auth/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+    });
+    if (data && data.access_token) {
+      localStorage.setItem("casuya_token", data.access_token);
+      if (data.refresh_token) localStorage.setItem("casuya_refresh_token", data.refresh_token);
+      if (data.role) localStorage.setItem("casuya_role", data.role);
+      renderApp();
+    } else {
+      errorEl.textContent = data?.detail || "Login failed";
+      errorEl.style.display = "block";
+    }
+  } catch (err) {
+    errorEl.textContent = err.message;
+    errorEl.style.display = "block";
+  }
+}
+
+function handleLogout() {
+  localStorage.removeItem("casuya_token");
+  window.location.href = "/index.html#features";
+}
+
+;
+// modules/dashboards.js — extracted from main.js (classic script, shared global scope)
+function renderApp() {
+  const token = localStorage.getItem("casuya_token");
+  const payload = decodeToken(token);
+  const role = payload.role || "student";
+  if (role === "admin") {
+    renderAdminDashboard();
+  } else if (role === "student") {
+    renderStudentDashboard();
+  } else if (role === "teacher") {
+    renderTeacherDashboard();
+  } else {
+    render("#app", `
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem;text-align:center">
+        <h2 style="margin-bottom:0.5rem">Access Not Available</h2>
+        <p style="color:var(--color-text-muted);margin-bottom:1.5rem">Your account role ("<strong>${escapeHtml(role || "unknown")}</strong>") does not have a dashboard yet.</p>
+        <button class="btn btn-primary" onclick="localStorage.removeItem('casuya_token');window.location.href='/login.html'">Log Out</button>
+      </div>
+    `);
+  }
+}
+
+;
+// modules/appearance.js — extracted from main.js (classic script, shared global scope)
+const THEME_KEY = "casuya_theme";
+
+const FONT_KEY = "casuya_font_scale";
+
+function applyAppearance() {
+  const theme = localStorage.getItem(THEME_KEY) || "light";
+  const scale = (parseFloat(localStorage.getItem(FONT_KEY) || "100") / 100) || 1;
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.style.setProperty("--app-font-scale", String(scale));
+}
+
+function appearancePanelHTML() {
+  const theme = localStorage.getItem(THEME_KEY) || "light";
+  const scale = parseInt(localStorage.getItem(FONT_KEY) || "100", 10);
+  const themeBtn = (val, label) =>
+    `<button type="button" class="btn appearance-theme-btn" data-theme-val="${val}" style="flex:1${theme === val ? ";background:var(--color-primary);color:#fff" : ""}">${label}</button>`;
+  return `
+    <div class="card" style="padding:1.5rem">
+      <h3 style="margin-bottom:0.75rem">Appearance</h3>
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div>
+          <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.5rem">Theme</label>
+          <div style="display:flex;gap:0.5rem">
+            ${themeBtn("light", "☀️ Light")}
+            ${themeBtn("dark", "🌙 Dark")}
+            ${themeBtn("black", "⚫ Black")}
+          </div>
+        </div>
+        <div>
+          <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.5rem">Font Size: <span id="font-scale-val">${scale}%</span></label>
+          <input id="font-scale-slider" type="range" min="80" max="150" step="5" value="${scale}" style="width:100%">
+          <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.4rem">Drag to make text larger or smaller across the app.</p>
+        </div>
+      </div>
+      <p id="appearance-msg" style="font-size:0.85rem;margin-top:1rem;display:none"></p>
+    </div>
+  `;
+}
+
+function setupAppearanceControls() {
+  const msg = document.getElementById("appearance-msg");
+  document.querySelectorAll(".appearance-theme-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const val = btn.dataset.themeVal;
+      localStorage.setItem(THEME_KEY, val);
+      applyAppearance();
+      document.querySelectorAll(".appearance-theme-btn").forEach(b => { b.style.background = ""; b.style.color = ""; });
+      btn.style.background = "var(--color-primary)";
+      btn.style.color = "#fff";
+      if (msg) { msg.textContent = "✅ Theme updated"; msg.style.color = "var(--color-success)"; msg.style.display = "block"; setTimeout(() => msg.style.display = "none", 2000); }
+    });
+  });
+  const slider = document.getElementById("font-scale-slider");
+  const valLabel = document.getElementById("font-scale-val");
+  if (slider) {
+    slider.addEventListener("input", () => {
+      const v = slider.value;
+      localStorage.setItem(FONT_KEY, v);
+      applyAppearance();
+      if (valLabel) valLabel.textContent = v + "%";
+    });
+    slider.addEventListener("change", () => {
+      if (msg) { msg.textContent = "✅ Font size saved"; msg.style.color = "var(--color-success)"; msg.style.display = "block"; setTimeout(() => msg.style.display = "none", 2000); }
+    });
+  }
+}
+
+;
+// modules/lesson.js — extracted from main.js (classic script, shared global scope)
+const lessonContentCache = new Map();
+
+async function viewLessonContent(containerId, lessonId, backFn) {
+  const container = document.querySelector(containerId);
+  if (!container) return;
+  container.innerHTML = `<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>`;
+
+  let html;
+  if (lessonContentCache.has(lessonId)) {
+    html = lessonContentCache.get(lessonId);
+  }
+
+    const token = localStorage.getItem("casuya_token");
+    const payload = decodeToken(token);
+    const isStudent = payload?.role === "student";
+    const canBookmark = isStudent || payload?.role === "teacher";
+
+    // Fetch lesson metadata + bookmark/quiz/games in ONE call (P2-3 aggregated endpoint)
+    let lessonMeta = {};
+    let pkgData = null;
+    try {
+      if (canBookmark) {
+        pkgData = await request(`/lessons/${lessonId}/package`);
+        lessonMeta = pkgData.lesson || {};
+      } else {
+        lessonMeta = await request(`/lessons/${lessonId}`);
+      }
+    } catch(e) {}
+    const lessonTitle = lessonMeta.title || "Lesson";
+
+    // Update recently viewed title
+    try {
+      const recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
+      const idx = recent.findIndex(r => r.id === lessonId);
+      if (idx >= 0) { recent[idx].title = lessonTitle; localStorage.setItem("casuya_recently_viewed", JSON.stringify(recent)); }
+    } catch(e) {}
+
+    if (!html) {
+      const resp = await fetch(`${API_BASE}/lessons/${lessonId}/content`, {
+        headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
+      });
+      if (resp.status === 404) {
+        const recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
+        const filtered = recent.filter(r => r.id !== lessonId);
+        localStorage.setItem("casuya_recently_viewed", JSON.stringify(filtered));
+        container.innerHTML = '<div class="empty-state"><p>This lesson is no longer available.</p></div>';
+        return;
+      }
+      if (!resp.ok) throw new Error("Failed to load lesson");
+      html = await resp.text();
+      lessonContentCache.set(lessonId, html);
+      if (lessonContentCache.size > 50) {
+        const key = lessonContentCache.keys().next().value;
+        lessonContentCache.delete(key);
+      }
+    }
+
+    const lessonStart = Date.now();
+    let studentId = null;
+    let sessionId = Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+    let quizScoreSent = false;
+    let lastSentCompletion = -1;
+    let lastSentScore = -1;
+    let progressTimer = null;
+
+    if (isStudent) {
+      try {
+        const me = await request("/students/me");
+        if (me && me.id) studentId = me.id;
+      } catch(e) {}
+    }
+
+    function showToast(msg) {
+      let t = container.querySelector(".lesson-toast");
+      if (!t) { t = document.createElement("div"); t.className = "lesson-toast"; t.style.cssText = "position:sticky;bottom:0;padding:0.5rem 1rem;background:var(--color-success);color:#fff;text-align:center;font-size:0.85rem;transition:opacity 0.3s;z-index:10"; container.appendChild(t); }
+      t.textContent = msg; t.style.opacity = "1";
+      clearTimeout(t._hide); t._hide = setTimeout(() => { t.style.opacity = "0"; }, 2500);
+    }
+
+    function sendProgress(completionPct, scorePct) {
+      if (!isStudent || !studentId) return;
+      if (completionPct <= lastSentCompletion && (scorePct == null || scorePct <= lastSentScore)) return;
+      lastSentCompletion = Math.max(lastSentCompletion, completionPct);
+      if (scorePct != null) lastSentScore = Math.max(lastSentScore, scorePct);
+      if (progressTimer) clearTimeout(progressTimer);
+      progressTimer = setTimeout(() => {
+        const elapsed = Date.now() - lessonStart;
+        request("/progress/sync", {
+          method: "POST",
+          body: JSON.stringify({
+            student_id: studentId,
+            lesson_id: lessonId,
+            session_id: sessionId,
+            elapsed_ms: elapsed,
+            completion_percentage: lastSentCompletion,
+            score_percentage: lastSentScore >= 0 ? lastSentScore : null,
+          }),
+        }).then(() => showToast("Progress saved")).catch(() => {});
+      }, 2000);
+    }
+
+    // Inject bridge script
+    const bridgeScript = `
+<script>
+(function(){
+  var scoreReported = false;
+  window.casuya = window.casuya || {};
+  window.casuya.reportScore = function(score, total) {
+    parent.postMessage({type:'casuya-quiz', score:score, total:total}, '*');
+    scoreReported = true;
+  };
+  window.casuya.reportProgress = function(pct) {
+    parent.postMessage({type:'casuya-progress', percent:pct}, '*');
+  };
+  function detectScore() {
+    if (scoreReported) return;
+    var candidates = document.querySelectorAll('.score-big, .quiz-score, .final-score, .result-score, [class*=score]');
+    for (var i = 0; i < candidates.length; i++) {
+      var text = (candidates[i].textContent || '').trim();
+      var m = text.match(/(\d+)\s*\/\s*(\d+)/);
+      if (m) {
+        var s = parseInt(m[1]), t = parseInt(m[2]);
+        if (t > 0 && s <= t) {
+          parent.postMessage({type:'casuya-quiz', score:s, total:t}, '*');
+          scoreReported = true;
+          return;
+        }
+      }
+    }
+  }
+  function upgradeAdaptiveVideos(root) {
+    var videos = root.querySelectorAll('video');
+    for (var i = 0; i < videos.length; i++) {
+      (function (v) {
+        var src = v.getAttribute('src') || '';
+        // Only act on HLS manifests; plain mp4/webm stay as-is (P1-5).
+        if (!/\.m3u8(\?|$)/.test(src)) return;
+        if (v.dataset.casuyaHls) return;
+        v.dataset.casuyaHls = '1';
+        v.setAttribute('preload', v.getAttribute('preload') || 'none');
+        // Native HLS (Safari / iOS) needs no library.
+        if (v.canPlayType('application/vnd.apple.mpegurl')) return;
+        function attach(Hls) {
+          if (!Hls || !Hls.isSupported()) return;
+          var hls = new Hls({ maxBufferLength: 10, capLevelToPlayerSize: true, startLevel: -1 });
+          hls.loadSource(src);
+          hls.attachMedia(v);
+        }
+        if (window.Hls) { attach(window.Hls); return; }
+        // Lazy-load the vendored hls.js only when actually needed (no-op if absent).
+        var s = document.createElement('script');
+        s.src = '/static/lib/hls.min.js';
+        s.onload = function () { attach(window.Hls); };
+        document.head.appendChild(s);
+      })(videos[i]);
+    }
+  }
+  function trackVideos(root) {
+    var videos = root.querySelectorAll('video');
+    for (var i = 0; i < videos.length; i++) {
+      (function(v) {
+        if (v.dataset.casuyaTracked) return;
+        v.dataset.casuyaTracked = '1';
+        var maxPct = 0;
+        v.addEventListener('timeupdate', function() {
+          if (v.duration) { var pct = Math.round((v.currentTime / v.duration) * 100); if (pct > maxPct) maxPct = pct; }
+        });
+        v.addEventListener('ended', function() { parent.postMessage({type:'casuya-video', percent:100}, '*'); });
+        setInterval(function() { if (maxPct > 0) parent.postMessage({type:'casuya-progress', percent:Math.min(maxPct + 10, 100)}, '*'); }, 5000);
+      })(videos[i]);
+    }
+  }
+  function initBridge() {
+    if (!document.body) { setTimeout(initBridge, 100); return; }
+    upgradeAdaptiveVideos(document.body);
+    trackVideos(document.body);
+    detectScore();
+    var obs = new MutationObserver(function() { detectScore(); upgradeAdaptiveVideos(document.body); trackVideos(document.body); });
+    obs.observe(document.body, {childList:true, subtree:true});
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initBridge);
+  else initBridge();
+})();
+<\/script>`;
+    const bodyIdx = html.lastIndexOf("</body>");
+    if (bodyIdx !== -1) {
+      html = html.slice(0, bodyIdx) + bridgeScript + html.slice(bodyIdx);
+    } else {
+      html = html.replace("</html>", bridgeScript + "</html>");
+    }
+
+    // Use pkgData from the earlier aggregated call (P2-3) — no second request needed.
+    let bookmarked = false;
+    let quizData = null;
+    let gamesData = [];
+    let noteData = { content: "" };
+    if (pkgData) {
+      bookmarked = pkgData.bookmark_status?.bookmarked || false;
+      quizData = isStudent ? pkgData.quiz : null;
+      gamesData = isStudent ? (pkgData.games || []) : [];
+      noteData = isStudent ? (pkgData.note || { content: "" }) : { content: "" };
+    }
+
+    const renderQuiz = () => {
+      if (!quizData || !quizData.questions || quizData.questions.length === 0) return "";
+      return `
+        <div class="card" style="margin-top:1rem;padding:1rem">
+          <h3 style="margin:0 0 0.75rem">${escapeHtml(quizData.title || "Quiz")}</h3>
+          <form id="quiz-form">
+            ${quizData.questions.map((q, qi) => `
+              <div style="margin-bottom:1rem">
+                <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)}</p>
+                ${q.options.map(o => `
+                  <label style="display:block;padding:0.3rem 0.5rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius);margin-bottom:0.25rem">
+                    <input type="radio" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.id)}" required> ${escapeHtml(o.text)}
+                  </label>
+                `).join("")}
+                <details style="margin-top:0.5rem">
+                  <summary style="cursor:pointer;font-size:0.85rem;color:var(--color-text-muted)">Show your work</summary>
+                  <div data-blackboard data-lesson-id="${escapeHtml(lessonId)}-${escapeHtml(q.id)}" data-quiz-question="${escapeHtml(q.id)}" style="width:100%;height:250px;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;margin-top:0.5rem"></div>
+                </details>
+              </div>
+            `).join("")}
+            <button type="submit" class="btn btn-primary" id="quiz-submit-btn">Submit Quiz</button>
+          </form>
+          <div id="quiz-result" style="display:none;margin-top:0.75rem"></div>
+        </div>
+      `;
+    };
+
+    const renderGames = () => {
+      if (!Array.isArray(gamesData) || gamesData.length === 0) return "";
+      return `
+        <div class="card" style="margin-top:1rem;padding:1rem">
+          <h3 style="margin:0 0 0.5rem">Games & Activities</h3>
+          ${gamesData.map(g => `
+            <div class="game-item" data-game-id="${escapeHtml(g.id)}" style="padding:0.5rem 0;border-bottom:1px solid var(--color-border);cursor:pointer">
+              <span style="color:var(--color-primary)">${escapeHtml(g.title || "Game")}</span>
+              <span style="color:var(--color-text-muted);font-size:0.8rem;margin-left:0.5rem">${escapeHtml(g.status || "draft")}</span>
+            </div>
+          `).join("")}
+          <div id="game-content-area" style="margin-top:1rem"></div>
+        </div>
+      `;
+    };
+
+    container.innerHTML = `
+      <div class="content" style="max-width:100%;padding:0">
+        <div style="padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;background:var(--color-surface);border-bottom:1px solid var(--color-border);flex-wrap:wrap">
+          <button class="btn btn-primary lesson-back-btn" style="margin-bottom:0">&larr; Back</button>
+          <span style="flex:1;font-weight:600;font-size:0.95rem">${escapeHtml(lessonTitle)}</span>
+          ${canBookmark ? `
+            <button class="btn btn-sm lesson-bookmark-btn" style="${bookmarked ? 'background:var(--color-warning);color:#fff' : ''};margin-bottom:0">${bookmarked ? "★" : "☆"}</button>
+          ` : ""}
+          ${isStudent ? `
+            <button class="btn btn-success btn-sm lesson-complete-btn" style="margin-bottom:0">Mark Complete</button>
+          ` : ""}
+        </div>
+        <div style="width:100%">
+          <iframe class="lesson-iframe" style="width:100%;border:none;display:block"></iframe>
+        </div>
+        ${isStudent ? `
+          <div style="padding:0 1rem">
+            <details style="margin-top:0.75rem">
+              <summary style="cursor:pointer;font-weight:600;font-size:0.9rem;color:var(--color-text-muted)">📝 My Notes</summary>
+              <div style="margin-top:0.5rem">
+                <textarea id="lesson-notes" rows="4" style="width:100%;padding:0.5rem;border:1px solid var(--color-border);border-radius:var(--radius);font-size:0.85rem">${escapeHtml(noteData?.content || "")}</textarea>
+                <button class="btn btn-sm btn-primary" id="notes-save-btn" style="margin-top:0.35rem">Save Notes</button>
+                <span id="notes-status" style="font-size:0.8rem;color:var(--color-text-muted);margin-left:0.5rem"></span>
+              </div>
+            </details>
+            ${renderQuiz()}
+            ${renderGames()}
+            <div class="card" style="margin-top:0.75rem;padding:1rem">
+              <h3 style="margin:0 0 0.5rem">✏️ Practice Blackboard</h3>
+              <p style="font-size:0.85rem;color:var(--color-text-muted);margin:0 0 0.5rem">Work out the steps below. Your progress is saved automatically.</p>
+              <div data-blackboard data-lesson-id="${escapeHtml(lessonId)}" style="width:100%;height:420px;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden"></div>
+            </div>
+          </div>
+        ` : ""}
+      </div>
+    `;
+
+    const iframe = container.querySelector(".lesson-iframe");
+    iframe.srcdoc = html.replace("<head>", `<head><base href="${API_BASE}/">`);
+    let heightSet = false;
+    const setHeight = () => {
+      if (heightSet) return;
+      try {
+        const doc = iframe.contentWindow?.document;
+        if (doc) {
+          iframe.style.height = Math.max(doc.documentElement?.scrollHeight || 0, doc.body?.scrollHeight || 0, 300) + "px";
+          heightSet = true;
+        }
+      } catch(e) {}
+    };
+    iframe.addEventListener("load", setHeight);
+    const poll = setInterval(() => { setHeight(); if (heightSet) clearInterval(poll); }, 300);
+    setTimeout(() => { clearInterval(poll); if (!heightSet) iframe.style.height = "800px"; }, 10000);
+
+    const onMessage = (e) => {
+      if (e.data?.type === "casuya-quiz" && e.data.score != null && e.data.total > 0) {
+        quizScoreSent = true;
+        const pct = Math.round((e.data.score / e.data.total) * 100);
+        sendProgress(100, pct);
+      } else if (e.data?.type === "casuya-progress" && e.data.percent != null) {
+        sendProgress(e.data.percent, null);
+      }
+    };
+    window.addEventListener("message", onMessage);
+
+    if (isStudent) {
+      const completeBtn = container.querySelector(".lesson-complete-btn");
+      if (completeBtn) {
+        completeBtn.addEventListener("click", () => {
+          sendProgress(100, null);
+          completeBtn.textContent = "✓ Complete!";
+          completeBtn.disabled = true;
+          completeBtn.style.opacity = "0.6";
+        });
+      }
+
+      // Bookmark toggle
+      const bmBtn = container.querySelector(".lesson-bookmark-btn");
+      if (bmBtn) {
+        bmBtn.addEventListener("click", async () => {
+          try {
+            if (bookmarked) {
+              await request(`/bookmarks/${lessonId}`, { method: "DELETE" });
+              bookmarked = false; bmBtn.textContent = "☆"; bmBtn.style.background = "";
+              showToast("Bookmark removed");
+            } else {
+              await request(`/bookmarks/${lessonId}`, { method: "POST" });
+              bookmarked = true; bmBtn.textContent = "★"; bmBtn.style.background = "var(--color-warning)"; bmBtn.style.color = "#fff";
+              showToast("Bookmarked!");
+            }
+          } catch(e) { showToast("Failed to update bookmark"); }
+        });
+      }
+
+      // Notes save
+      document.getElementById("notes-save-btn")?.addEventListener("click", async () => {
+        const content = document.getElementById("lesson-notes")?.value || "";
+        const status = document.getElementById("notes-status");
+        try {
+          await request(`/notes/${lessonId}`, { method: "PUT", body: JSON.stringify({ content }) });
+          status.textContent = "Saved ✓";
+          setTimeout(() => status.textContent = "", 2000);
+        } catch(e) { status.textContent = "Failed to save"; }
+      });
+
+      // Quiz submission — now wired to Show your work blackboards
+      document.getElementById("quiz-form")?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById("quiz-submit-btn");
+        btn.disabled = true; btn.textContent = "Submitting...";
+        const answers = {};
+        if (quizData && quizData.questions) {
+          quizData.questions.forEach(q => {
+            const sel = document.querySelector(`input[name="q_${q.id}"]:checked`);
+            if (sel) answers[q.id] = sel.value;
+          });
+        }
+        // Collect Show your work snapshots per question
+        let work = null;
+        try {
+          if (window.CasuyaBlackboardEmbed && window.CasuyaBlackboardEmbed.collectWorkMap) {
+            work = window.CasuyaBlackboardEmbed.collectWorkMap("[data-quiz-question]");
+          } else {
+            work = {};
+            document.querySelectorAll("[data-quiz-question]").forEach(el => {
+              const qid = el.dataset.quizQuestion;
+              const bb = el._casuyaBlackboard;
+              if (bb && bb.getWorkSnapshot) work[qid] = bb.getWorkSnapshot();
+              else if (bb && bb.getElements) { const els = bb.getElements(); work[qid] = { elements: els, hasWork: els.length>0, recognizedLatex: els.length>0?"__drawing__":"" }; }
+            });
+          }
+          if (work && Object.keys(work).length === 0) work = null;
+        } catch {}
+        try {
+          const body = work ? { answers, work } : { answers };
+          const result = await request(`/quizzes/${quizData.id}/submit`, {
+            method: "POST", body: JSON.stringify(body),
+          });
+          const el = document.getElementById("quiz-result");
+          el.style.display = "block";
+          const pct = result.combined_percentage != null ? result.combined_percentage : result.percentage;
+          const hasWork = result.work_score != null;
+          el.innerHTML = `
+            <p style="font-weight:600">Score: ${result.score} / ${result.total} (${Math.round(result.percentage)}%)</p>
+            ${hasWork ? `<p style="font-size:0.85rem;color:var(--color-text-muted)">Work: ${result.work_score}/${result.work_total} (${Math.round(result.work_percentage)}%) · Combined (70% answer + 30% work): <strong>${Math.round(pct)}%</strong></p>` : ``}
+            ${pct >= 50 ? '<p style="color:var(--color-success)">✅ Passed!</p>' : '<p style="color:red">❌ Try again</p>'}
+            ${hasWork && result.work_score < result.work_total ? '<p style="font-size:0.8rem;color:var(--color-text-muted)">Tip: open "Show your work" on each question to earn work credit.</p>' : ''}
+          `;
+          sendProgress(100, pct);
+          quizScoreSent = true;
+        } catch(err) {
+          document.getElementById("quiz-result").style.display = "block";
+          document.getElementById("quiz-result").innerHTML = `<p style="color:red">Error: ${escapeHtml(err.message)}</p>`;
+        }
+        btn.disabled = false; btn.textContent = "Submit Quiz";
+      });
+    }
+
+    // Mount blackboard (if embed script is present)
+    if (window.CasuyaBlackboardEmbed) {
+      window.CasuyaBlackboardEmbed.autoMount();
+    }
+
+    document.querySelectorAll(".game-item").forEach(item => {
+      item.addEventListener("click", async () => {
+        const gameId = item.dataset.gameId;
+        const area = document.getElementById("game-content-area");
+        if (!area) return;
+        area.innerHTML = '<div class="loading-state"><div class="spinner"></div><p>Loading game...</p></div>';
+        try {
+          const resp = await fetch(`/games/${gameId}/content`, {
+            headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
+          });
+          if (!resp.ok) throw new Error("Failed to load game content");
+          const html = await resp.text();
+          area.innerHTML = `<iframe style="width:100%;min-height:400px;border:none;border-radius:var(--radius)" srcdoc="${escapeHtml(html)}"></iframe>`;
+        } catch(err) {
+          area.innerHTML = `<p style="color:var(--color-danger)">Error loading game: ${escapeHtml(err.message)}</p>`;
+        }
+      });
+    });
+
+    const backBtn = container.querySelector(".lesson-back-btn");
+    backBtn.addEventListener("click", () => {
+      if (isStudent && !quizScoreSent) sendProgress(80, null);
+      window.removeEventListener("message", onMessage);
+      backFn();
+    });
+  } catch (err) {
+    container.innerHTML = `<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`;
+  }
+}
+
+;
+// i18n.js — English/Swahili translation system for Casuya Platform.
+// Uses data-i18n attributes on HTML elements. Toggle stores preference in localStorage.
+
+(function () {
+  "use strict";
+
+  var STORAGE_KEY = "casuya_lang";
+
+  // ── Swahili translations ──────────────────────────────────────────────
+  // Real Swahili used in Tanzanian educational context.
+  var SW = {
+    // Navigation
+    "nav.features": "Vipengele",
+    "nav.subjects": "Masomo",
+    "nav.about": "Kuhusu",
+    "nav.login": "Ingia",
+    "nav.get_started": "Anza Sasa",
+    "nav.start": "Anza",
+    "nav.create_account": "Fungua Akaunti",
+    "nav.users": "Watumiaji",
+
+    // Accessibility toolbar
+    "a11y.skip": "Ruka hadi kwenye maudhui makuu",
+    "a11y.region": "Chaguzi za ufikiaji",
+    "a11y.open": "Fungua mipangilio ya ufikiaji",
+    "a11y.panel": "Jopo la mipangilio ya ufikiaji",
+    "a11y.settings": "Mipangilio ya Ufikiaji",
+    "a11y.dyslexia": "Maandishi ya Wenye Changamoto ya Kusoma (Dyslexia)",
+    "a11y.toggle_dyslexia": "Washa/zima font ya wenye changamoto ya kusoma",
+    "a11y.high_contrast": "Ung'avu wa Juu",
+    "a11y.toggle_contrast": "Washa/zima hali ya ung'avu wa juu",
+    "a11y.large_text": "Maandishi Makubwa",
+    "a11y.toggle_large_text": "Washa/zima hali ya maandishi makubwa",
+    "a11y.wide_spacing": "Nafasi Kubwa Kati ya Maandishi",
+    "a11y.toggle_wide_spacing": "Washa/zima nafasi kubwa kati ya mistari na maandishi",
+    "a11y.size": "Ukubwa",
+    "a11y.fontsize_pct": "Asilimia ya ukubwa wa fonti",
+    "a11y.tts": "Kusoma kwa Sauti",
+    "a11y.toggle_tts": "Washa/zima usomaji kwa sauti",
+    "a11y.speech_rate": "Kasi ya usomaji",
+    "a11y.play": "Cheza usomaji",
+    "a11y.pause": "Simamisha usomaji",
+    "a11y.stop": "Acha usomaji",
+    "a11y.ready": "Tayari",
+
+    // Hero
+    "hero.badge": "Kwa wanafunzi na walimu wa Tanzania",
+    "hero.title1": "Shule unayotamani kuwa nayo —<br>kwenye simu inayoshirikiwa.",
+    "hero.title2": "Fundisha Bora.",
+    "hero.title3": "Jenga Mustakabali.",
+    "hero.clarity": "Masomo, majaribio na matokeo — yaliyojengwa kwa mtaala wa kidato cha kwanza hadi cha sita.",
+    "hero.desc": "Casuya hukuletea kujifunza nyumbani: nje ya mtandao, kwa Kiswahili na Kiingereza, kwenye simu ambazo Watanzania wanatumia.",
+    "hero.off_excuse": "Jifunze ulipo — hata mtandao usipokuwapo.",
+    "hero.start": "Karibu — ingia kufungulia wiki yako",
+    "hero.demo": "Twende — angalia jinsi inavyofanya kazi",
+
+    // Hero "your week" card
+    "hero_week_sub": "wiki yako ya kujifunza",
+    "hero_week_greet": "Habari za asubuhi 👋",
+    "hero_week_streak": "Mfuatano wa kujifunza",
+    "hero_week_day0": "Siku 0",
+    "hero_week_streakline": "Anza mfuatano wako — somo moja kwa siku, hata mtandao usipokuwepo.",
+    "hero_week_lesson": "Somo la leo",
+    "hero_week_continue": "Endelea →",
+    "hero_week_offline": "Imehifadhiwa nje ya mtandao",
+    "hero_week_offlineline": "Jiunge kupakua masomo na kujifunza mahali ambapo mtandao haufiki.",
+    "hero_week_unlock": "Ingia kufungulia wiki yako",
+    "hero_week_honest": "Bure kuanza · Inafanya kazi kwenye simu ya RAM ya GB 2 · Inahifadhi kazi yako hata mtandao usipokuwepo.",
+
+    // Hero mock UI
+    "hero.today_lesson": "Masomo ya Leo",
+    "hero.dive_into": "\"Zama katika mazoezi ya kushirikiana yenye maswali na ufuatiliaji wa maendeleo kwa wakati halisi.\"",
+    "hero.class_sync": "Usawazishaji wa Darasa",
+    "hero.offline_ready": "Tayari Kwa Mtandao 100%",
+    "hero.avg_score": "Wastani wa Alama",
+    "hero.progress": "+18% Maendeleo",
+
+    // Trusted
+    "trusted.title": "Imejengwa hapa, kwa hapa",
+    "trust.t2gb": "Inafanya kazi kwenye simu ya RAM ya GB 2",
+    "trust.offline": "Inafanya kazi nje ya mtandao",
+    "trust.curriculum": "Imetengenezwa kwa mtaala wa Tanzania · Kidato cha 1 hadi 6",
+    "trust.free": "Bure kuanza — hakuna kadi inayohitajika",
+    "trust.lang": "Jifunze kwa Kiingereza na Kiswahili",
+    "trust.data": "Alama na data zako zinabaki kuwa zako salama",
+
+    // Features
+    "features.badge": "Casuya hufanya nini siku ya kawaida",
+    "features.title": "Zana ndogo, siku za kweli",
+    "features.desc": "Hakuna mambo ya sifa tu — ni vitu vinavyorahisisha maisha ya shule, hata kama simu ni ya zamani na mtandao ni dhaifu.",
+    "feature.interactiveLessons.title": "Masomo Shirikishi",
+    "feature.interactiveLessons.blurb": "Masomo yenye mvuto kama mchezo — chemsha bongo na mazoezi yanayojisahihisha yenyewe unapofanya. Unaweza kurudia mada mpaka uelewe vizuri.",
+    "feature.offlineLearning.title": "Kujifunza Nje ya Mtandao",
+    "feature.offlineLearning.blurb": "Umeme umekatika? Safari ndefu ya daladala? Pakua mada mara moja kukiwa na mtandao mzuri, kisha soma popote — hata mahali ambapo hakuna mawimbi kabisa.",
+    "feature.aiAssistant.title": "Msaidizi wa Walimu wa AI",
+    "feature.aiAssistant.blurb": "Unaandaa chemsha bongo usiku wa manane? Mwombe Casuya aiandae kwa dakika chache — kwa Kiingereza au Kiswahili. Msaidizi wa ziada kwa walimu wenye majukumu mengi.",
+    "feature.analytics.title": "Maendeleo Yanayoonekana",
+    "feature.analytics.blurb": "Kwa mtazamo mmoja tu, ona mada inayowatatiza wanafunzi darasani — hakuna haja ya kupekua rundo la karatasi zilizosahihishwa mwisho wa muhula.",
+    "feature.assessments.title": "Tathmini na Mitihani",
+    "feature.assessments.blurb": "Andaa chemsha bongo, hojaji na kazi za masomo kwa dakika chache — zilizoundwa kuendana na jinsi masomo yanavyofundishwa darasani.",
+    "feature.cloudSync.title": "Uhifadhi wa Kidijitali (Cloud)",
+    "feature.cloudSync.blurb": "Alama na maendeleo yako yanahifadhiwa salama, na yanasawazishwa mara tu mtandao unapopatikana. Hakuna kinachopotea simu ikizima.",
+    "feature.digitalExaminations.title": "Mitihani ya Kidijitali",
+    "feature.digitalExaminations.blurb": "Endesha mitihani salama kwenye kivinjari inayojisahihisha na kutunza matokeo salama — kukiwa na usahihishaji wa papo hapo na matokeo ya uaminifu.",
+    "feature.aiLessonCreation.title": "Maandalizi ya Masomo kwa AI",
+    "feature.aiLessonCreation.blurb": "Tengeneza muhtasari wa masomo, chemsha bongo na vifaa vya kujifunzia kwa dakika chache — msaidizi imara pale siku ya shule inapokuwa ndefu.",
+
+    // Subjects
+    "subjects.badge": "Kidato cha 1–6 · Mtalaa wa Tanzania",
+    "subjects.title": "Masomo unayofanya — yote mahali pamoja",
+    "subjects.desc": "Kuanzia Kiswahili na Civics hadi Hisabati na Sayansi — masomo yale yale unayofanya darasani, tayari kwa kidato cha kwanza hadi cha sita.",
+    "subjects.kiswahili": "Kiswahili",
+    "subjects.english": "English / Kiingereza",
+    "subjects.maths": "Hisabati",
+    "subjects.civics": "Uraia na Maadili",
+    "subjects.history": "Historia",
+    "subjects.geography": "Jiografia",
+    "subjects.physics": "Fizikia",
+    "subjects.chemistry": "Kemia",
+    "subjects.biology": "Biolojia",
+    "subjects.mathematics": "Hisabati za Msingi",
+    "subjects.more": "... na zaidi kwenye mtaala. Jifunze kidogo kila siku, uweke darasa zima live, na uikabili Mitihani ya Taifa kwa imani — si kwa hofu.",
+
+    // Audiences
+    "audiences.badge": "Watu halisi, siku halisi",
+    "audiences.title": "Imetengenezwa kwa madarasa kama yako",
+    "audiences.desc": "Mwalimu, wanafunzi na baba — watu wa kawaida ambao Casuya imewajengewa. Kama inafanya kazi kwa simu ya kushirikiwa kijijini, inafanya kazi kwako.",
+
+    // People (users of Casuya, not builders)
+    "people.cosmas": "Cosmas Dismas",
+    "people.cosmas_role": "Mwalimu · Geita",
+    "people.cosmas_story": "Cosmas husahihisha karatasi hamsini au sitini za Kidato cha Tatu baada ya shule, mara nyingi kwa taa ya mafuta umeme unapokatika. Kwa Casuya anaanzisha majaribio mara moja na yanajisahihisha yenyewe — ili aokoe muda jioni wa kuwasaidia wanafunzi wanaomhitaji.",
+    "people.bahati": "Bahati Abeld Chusi",
+    "people.bahati_role": "Mwanafunzi · Iringa",
+    "people.bahati_story": "Bahati anashiriki simu. Anapakua maelezo yake ya Civics Kidato cha Pili kwenye mtandao mzuri wa shule, kisha anasoma akirudi nyumbani kwa daladala — bila mtandao, bila shida.",
+    "people.nickson": "Nickson Kasmir Tlanka",
+    "people.nickson_role": "Mwanafunzi · Karatu",
+    "people.nickson_story": "Nickson anaona masomo mengine ni magumu kufuata darasani kukiwa na wanafunzi wengi. Masomo shirikishi ya Casuya yanamruhusu kurudi nyuma na kujifunza kwa kasi yake, mara kwa mara, mpaka aelewe.",
+    "people.shedrack": "Shedrack Peam Laurent",
+    "people.shedrack_role": "Mwanafunzi · Arusha",
+    "people.shedrack_story": "Shedrack anataka kufuatilia maendeleo yake, somo kwa somo, bila kusubiri mwisho wa muhula. Casuya inamuonyesha anapokua kila wiki.",
+    "people.eliya": "Eliya Kikoti",
+    "people.eliya_role": "Baba · Iringa",
+    "people.eliya_story": "Eliya anataka kujua kama mtoto wake anajifunza kweli, si tu 'kupita.' Kwa Casuya anaweza kuona maendeleo halisi — jaribio kwa jaribio, somo kwa somo — hata kwenye simu ya kushirikiwa ya mtoto wake.",
+
+    // Mid-page re-ask
+    "reask.title": "Anza mfuatano wako leo — siku ya kwanza ni bure",
+    "reask.desc": "Somo moja kwa siku linatosha kuanza. Maendeleo yako yanahifadhiwa papo hapo unapojiunga.",
+    "reask.cta": "Anza bure →",
+
+    // CTA
+    "cta.letterlabel": "Neno kutoka Casuya",
+    "cta.letter": "\"Casuya ilijengwa kwa watu halisi kama <strong>Cosmas</strong>, mwalimu; <strong>Bahati</strong>, <strong>Nickson</strong> na <strong>Shedrack</strong>, wanafunzi; na <strong>Eliya</strong>, baba — watu wanaoshiriki simu, wanaosoma wakati umeme ukipita, na ambao daima waliweza zaidi ya hali zao zilivyoruhusu.<br><br>Shule hii ni yako. Ni nyepesi kwa simu uliyo nayo, na inafanya kazi hata mahali mtandao usipofika — ili kizuizi pekee cha mafanikio yako kiondoke. Karibu — sasa wewe ni sehemu ya Casuya.\"",
+    "cta.how": "Karibu — angalia jinsi inavyofanya kazi",
+
+    // Demo modal
+    "demo.step1": "Hatua ya 1 — Ingia",
+    "demo.step2": "Hatua ya 2 — Umesahau Nenosiri",
+    "demo.step3": "Hatua ya 3 — Jisajili",
+    "demo.step4": "Hatua ya 4 — Dashibodi",
+    "demo.welcome_back": "Karibu Tena",
+    "demo.sign_in_continue": "Ingia ili kuendelea na safari yako ya kujifunza",
+    "demo.email": "Barua Pepe",
+    "demo.password": "Nenosiri",
+    "demo.forgot_password": "Umesahau nenosiri?",
+    "demo.remember_me": "Nikumbuke",
+    "demo.sign_in": "Ingia",
+    "demo.no_account": "Huna akaunti?",
+    "demo.sign_up_free": "Jisajili bure",
+    "demo.forgot_title": "Umesahau Nenosiri?",
+    "demo.forgot_desc": "Weka barua pepe yako na tutakutumia kiungo cha kurejesha.",
+    "demo.send_reset": "Tuma Kiungo cha Kurejesha",
+    "demo.link_sent": "Kiungo Kimetumwa!",
+    "demo.check_email": "Angalia barua pepe yako kwa kiungo.",
+    "demo.remember_password": "Unakumbuka nenosiri lako?",
+    "demo.create_account_title": "Fungua akaunti yako",
+    "demo.join_desc": "Jiunge na Casuya na uanze kujifunza leo.",
+    "demo.full_name": "Jina Kamili",
+    "demo.role": "Jukumu",
+    "demo.student": "Mwanafunzi",
+    "demo.phone": "Simu",
+    "demo.confirm_password": "Thibitisha Nenosiri",
+    "demo.create_btn": "Fungua Akaunti",
+    "demo.create_account": "Fungua Akaunti",
+    "demo.create_account_desc": "Jiunge na Casuya na uanze kujifunza leo.",
+    "demo.has_account": "Tayari una akaunti? ",
+    "demo.sign_in_desc": "Ingia kuendelea na safari yako ya kujifunza",
+    "demo.progress": "65% Imekamilika",
+    "demo.chem_organic": "Kemia - Misombo ya Kikaboni",
+    "demo.chapter_time": "Sura ya 3 • Dakika 45",
+    "demo.subject_chem": "Kemia",
+    "demo.subject_bio": "Biolojia",
+    "demo.subject_math": "Hisabati",
+    "demo.already_account": "Tayari una akaunti?",
+    "demo.sign_in_link": "Ingia",
+    "demo.welcome": "Karibu tena",
+    "demo.ready_continue": "Tayari kuendelea na safari yako ya kujifunza?",
+    "demo.lessons": "Masomo",
+    "demo.avg_score": "Wastani wa Alama",
+    "demo.streak": "Mfuatano",
+    "demo.my_subjects": "Masomo Yangu",
+
+    // Footer
+    "footer.platform": "Jukwaa",
+    "footer.features": "Vipengele",
+    "footer.docs": "Nyaraka",
+    "footer.subjects": "Masomo",
+    "footer.support": "Msaada",
+    "footer.help": "Kituo cha Msaada",
+    "footer.contact": "Wasiliana Nasi",
+    "footer.whatsapp": "WhatsApp",
+    "footer.legal": "Kisheria",
+    "footer.privacy": "Sera ya Faragha",
+    "footer.terms": "Masharti ya Huduma",
+    "footer.links": "Viungo",
+    "footer.github": "Mitandao ya GitHub",
+    "footer.copyright": "© 2026 Jukwaa la Casuya. Haki zote zimehifadhiwa.",
+    "footer.built": "Imetengenezwa kwa upendo kwa ajili ya shule za Tanzania",
+    "footer.chat": "Ongea nasi kupitia WhatsApp",
+
+    // Login
+    "login.title": "Karibu Tena",
+    "login.desc": "Ingia ili kuendelea na safari yako ya kujifunza",
+    "login.email_label": "Barua Pepe",
+    "login.email_placeholder": "Weka barua pepe yako",
+    "login.password_label": "Nenosiri",
+    "login.password_placeholder": "Weka nenosiri lako",
+    "login.show_password": "Onyesha nenosiri",
+    "login.hide_password": "Ficha nenosiri",
+    "login.forgot": "Umesahau nenosiri?",
+    "login.remember": "Nikumbuke barua pepe yangu",
+    "login.remember_desc": "Nibaki nimeingia kwa siku 30",
+    "login.or": "AU",
+    "login.google": "Ingia na Google",
+    "login.facebook": "Ingia na Facebook",
+    "login.submit": "Ingia kwenye akaunti yako ya Casuya",
+    "login.no_account": "Huna akaunti?",
+    "login.signup_free": "Jisajili bure",
+    "login.signing_in": "Inaingia...",
+    "login.success": "Umeingia kwa mafanikio. Inaelekeza...",
+
+    // Register
+    "register.title": "Fungua akaunti yako",
+    "register.desc": "Jiunge na Casuya na endelea na lango lako la mwanafunzi au mwalimu.",
+    "register.fullname_label": "Jina Kamili",
+    "register.fullname_placeholder": "Weka jina lako kamili",
+    "register.email_label": "Barua Pepe",
+    "register.email_placeholder": "mfano@barua pepe.com",
+    "register.phone_label": "Nambari ya Simu",
+    "register.phone_placeholder": "+255...",
+    "register.account_type": "Aina ya Akaunti",
+    "register.student": "Mwanafunzi",
+    "register.teacher": "Mwalimu",
+    "register.special_needs": "Mahitaji Maalum / Msomaji Mwengine",
+    "register.account_type_desc": "Chagua aina ya akaunti inayoelezea vyema.",
+    "register.accessibility": "Mapendeleo ya Upatikanaji",
+    "register.accessibility_desc": "Chagua kitakachokusaidia kujifunza vizuri. Unaweza kubadilisha hii wakati wowote kwenye Mipangilio.",
+    "register.reading_support": "Msaada wa Kusoma",
+    "register.dyslexia_font": "Fonti rafiki kwa wasomaji",
+    "register.larger_text": "Ukubwa mkubwa wa maandishi",
+    "register.listening_support": "Msaada wa Kusikiliza",
+    "register.tts_enabled": "Uwezeshaji wa maandishi kuwa sauti",
+    "register.visual_support": "Msaada wa Kuona",
+    "register.high_contrast": "Hali ya tofauti kubwa",
+    "register.password_label": "Nenosiri",
+    "register.password_placeholder": "Herufi 8 au zaidi",
+    "register.strength": "Nguvu ya nenosiri",
+    "register.req_8char": "Herufi 8+",
+    "register.req_upper": "Herufi kubwa",
+    "register.req_lower": "Herufi ndogo",
+    "register.req_number": "Nambari",
+    "register.req_special": "Herufi maalum",
+    "register.confirm_label": "Thibitisha Nenosiri",
+    "register.confirm_placeholder": "Weka nenosiri lako tena",
+    "register.terms_prefix": "Ninakubali",
+    "register.terms_link": "Masharti ya Huduma",
+    "register.privacy_link": "Sera ya Faragha",
+    "register.terms_summary": "Soma kwa lugha rahisi",
+    "register.what_collect": "Tunachokusanya:",
+    "register.collect_desc": "Jina lako, barua pepe, simu (hiari), na maendeleo ya kujifunza.",
+    "register.how_use": "Tunavyotumia:",
+    "register.use_desc": "Kufuatilia masomo yako, maswali, na kutoa kujifunza kwa kibinafsi.",
+    "register.your_data": "Data yako:",
+    "register.data_desc": "Unaweza kuomba tufute akaunti yako na data yako wakati wowote.",
+    "register.payments": "Malipo:",
+    "register.payments_desc": "Hatuwezi kuhifadhi kadi yako. Malipo yanashughulikiwa na watoa huduma wa kuaminika.",
+    "register.safety": "Usalama:",
+    "register.safety_desc": "Tunafuata sheria za ulinzi wa data za Tanzania na kuhifadhi data yako salama.",
+    "register.submit": "Fungua akaunti yako ya Casuya",
+    "register.has_account": "Tayari una akaunti?",
+    "register.signin_link": "Ingia kwenye akaunti yako",
+    "register.creating": "Inaunda akaunti...",
+    "register.success": "Akaunti imeundwa kwa mafanikio. Inaelekeza...",
+
+    // Forgot password
+    "forgot.title": "Umesahau Nenosiri?",
+    "forgot.desc": "Weka barua pepe au nambari ya simu na tutakusaidia kurejesha nenosiri lako.",
+    "forgot.tab_email": "Barua Pepe",
+    "forgot.tab_phone": "Nambari ya Simu",
+    "forgot.email_label": "Barua Pepe",
+    "forgot.email_placeholder": "mfano@barua pepe.com",
+    "forgot.phone_label": "Nambari ya Simu",
+    "forgot.phone_placeholder": "+255 7XX XXX XXX",
+    "forgot.submit_email": "Nitumie kiungo cha kurejesha nenosiri",
+    "forgot.submit_phone": "Tuma nambari ya kurejesha kupitia SMS",
+    "forgot.link_sent": "Kiungo Kimetumwa!",
+    "forgot.check_email": "Angalia barua pepe yako kwa kiungo. Inaweza kuchukua dakika chache kufika.",
+    "forgot.next_steps": "Nini cha kufanya baadae:",
+    "forgot.step1": "Fungua kisanduku chako cha barua pepe",
+    "forgot.step2": "Pata barua pepe kutoka Jukwaa la Casuya",
+    "forgot.step3": "Bofya kiungo la \"Kurejesha Nenosiri\" kwenye barua pepe",
+    "forgot.step4": "Fungua nenosiri lako jipya",
+    "forgot.spam": "Hujapokea? Angalia folda yako ya au jaribu tena.",
+    "forgot.return": "Rudi kwenye Uingizaji",
+    "forgot.remember": "Unakumbuka nenosiri lako?",
+    "forgot.signin": "Ingia kwenye akaunti yako",
+
+    // Accessibility
+    "a11y.title": "Mipangilio ya Upatikanaji",
+    "a11y.dyslexia": "Fonti ya Wasomaji",
+    "a11y.contrast": "Tofauti Kubwa",
+    "a11y.large_text": "Maandishi Makubwa",
+    "a11y.wide_spacing": "Nafasi Pana",
+    "a11y.size": "Ukubwa",
+    "a11y.tts": "Maandishi kuwa Sauti",
+    "a11y.ready": "Tayari",
+    "a11y.speaking": "Inasema...",
+    "a11y.done": "Imekamilika",
+    "a11y.error": "Hitilafu",
+    "a11y.paused": "Imesimamishwa",
+    "a11y.stopped": "Imesimama",
+
+    // Password strength
+    "strength.weak": "Dhaifu",
+    "strength.fair": "Wastani",
+    "strength.good": "Nzuri",
+    "strength.strong": "Imara",
+    "strength.very_strong": "Imara Sana",
+
+    // Validation errors
+    "error.fullname_required": "Jina kamili linahitajika.",
+    "error.email_required": "Barua pepe inahitajika.",
+    "error.email_invalid": "Tafadhali weka barua pepe sahihi.",
+    "error.phone_invalid": "Tafadhali weka nambari ya simu sahihi.",
+    "error.password_required": "Nenosiri linahitajika.",
+    "error.password_min8": "Nenosiri lazima liwe na herufi 8 au zaidi.",
+    "error.password_strong": "Tafadhali chagua nenosiri dhabihu.",
+    "error.password_mismatch": "Nenosiri hazifanani.",
+    "error.terms_required": "Lazima ukubali Masharti ya Huduma na Sera ya Faragha.",
+    "error.server": "Haiwezi kufikia seva. Tafadhali jaribu tena baadaye.",
+    "error.phone_required": "Nambari ya simu inahitajika.",
+    "error.phone_format": "Tafadhali weka nambari ya simu sahihi (herufi 10-15).",
+    "error.something_wrong": "Kuna kitu kimeenda vibaya.",
+
+    // Misc
+    "skip.main_content": "Ruka hadi maandishi makuu",
+    "skip.login_form": "Ruka hadi fomu ya kuingia",
+    "skip.register_form": "Ruka hadi fomu ya usajili",
+    "skip.forgot_form": "Ruka hadi fomu ya kusahau nenosiri",
+  };
+
+  // ── Init ──────────────────────────────────────────────────────────────
+
+  function getLang() {
+    return localStorage.getItem(STORAGE_KEY) || "en";
+  }
+
+  function setLang(lang) {
+    localStorage.setItem(STORAGE_KEY, lang);
+    document.documentElement.lang = lang === "sw" ? "sw" : "en";
+    applyTranslations(lang);
+    updateToggleButtons(lang);
+  }
+
+  function t(key) {
+    var lang = getLang();
+    if (lang === "sw" && SW[key]) return SW[key];
+    // Fallback: return the element's original English text (stored as data-i18n-en)
+    return null;
+  }
+
+  // ── Apply translations ────────────────────────────────────────────────
+
+  function applyTranslations(lang) {
+    var els = document.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var key = el.getAttribute("data-i18n");
+
+      // Store original English text on first run
+      if (!el.getAttribute("data-i18n-en")) {
+        el.setAttribute("data-i18n-en", el.textContent);
+      }
+
+      if (lang === "sw" && SW[key]) {
+        el.textContent = SW[key];
+      } else {
+        // Restore English
+        var en = el.getAttribute("data-i18n-en");
+        if (en) el.textContent = en;
+      }
+    }
+
+    // HTML content (data-i18n-html)
+    var htmlEls = document.querySelectorAll("[data-i18n-html]");
+    for (var ih = 0; ih < htmlEls.length; ih++) {
+      var htmlEl = htmlEls[ih];
+      var htmlKey = htmlEl.getAttribute("data-i18n-html");
+      if (!htmlEl.getAttribute("data-i18n-html-en")) {
+        htmlEl.setAttribute("data-i18n-html-en", htmlEl.innerHTML);
+      }
+      if (lang === "sw" && SW[htmlKey]) {
+        htmlEl.innerHTML = SW[htmlKey];
+      } else {
+        var htmlEn = htmlEl.getAttribute("data-i18n-html-en");
+        if (htmlEn) htmlEl.innerHTML = htmlEn;
+      }
+    }
+
+    // Placeholders
+    var phEls = document.querySelectorAll("[data-i18n-ph]");
+    for (var j = 0; j < phEls.length; j++) {
+      var phEl = phEls[j];
+      var phKey = phEl.getAttribute("data-i18n-ph");
+      if (!phEl.getAttribute("data-i18n-ph-en")) {
+        phEl.setAttribute("data-i18n-ph-en", phEl.placeholder || "");
+      }
+      if (lang === "sw" && SW[phKey]) {
+        phEl.placeholder = SW[phKey];
+      } else {
+        var phEn = phEl.getAttribute("data-i18n-ph-en");
+        if (phEn !== null) phEl.placeholder = phEn;
+      }
+    }
+
+    // aria-labels
+    var ariaEls = document.querySelectorAll("[data-i18n-aria]");
+    for (var k = 0; k < ariaEls.length; k++) {
+      var ariaEl = ariaEls[k];
+      var ariaKey = ariaEl.getAttribute("data-i18n-aria");
+      if (!ariaEl.getAttribute("data-i18n-aria-en")) {
+        ariaEl.setAttribute("data-i18n-aria-en", ariaEl.getAttribute("aria-label") || "");
+      }
+      if (lang === "sw" && SW[ariaKey]) {
+        ariaEl.setAttribute("aria-label", SW[ariaKey]);
+      } else {
+        var ariaEn = ariaEl.getAttribute("data-i18n-aria-en");
+        if (ariaEn) ariaEl.setAttribute("aria-label", ariaEn);
+      }
+    }
+  }
+
+  // ── Toggle buttons ────────────────────────────────────────────────────
+
+  function updateToggleButtons(lang) {
+    var btns = document.querySelectorAll("[data-lang-toggle]");
+    for (var i = 0; i < btns.length; i++) {
+      var btn = btns[i];
+      if (lang === "sw") {
+        btn.textContent = "EN";
+        btn.title = "Switch to English";
+        btn.setAttribute("aria-label", "Switch to English");
+      } else {
+        btn.textContent = "SW";
+        btn.title="Badilisha Kiswahili";
+        btn.setAttribute("aria-label", "Badilisha Kiswahili");
+      }
+    }
+  }
+
+  function toggleLang() {
+    var current = getLang();
+    setLang(current === "en" ? "sw" : "en");
+  }
+
+  // ── Expose globals ────────────────────────────────────────────────────
+  window.CasuyaI18n = {
+    t: t,
+    getLang: getLang,
+    setLang: setLang,
+    toggle: toggleLang,
+    apply: function () {
+      applyTranslations(getLang());
+      updateToggleButtons(getLang());
+    },
+  };
+
+  // ── Init ──────────────────────────────────────────────────────────────
+
+  function init() {
+    var lang = getLang();
+    document.documentElement.lang = lang === "sw" ? "sw" : "en";
+    applyTranslations(lang);
+    updateToggleButtons(lang);
+
+    // Bind all toggle buttons
+    var btns = document.querySelectorAll("[data-lang-toggle]");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", toggleLang);
+    }
+  }
+
+  // Run immediately if DOM is already ready (script loaded late), otherwise wait.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+
+;
+// Single source of truth for which capabilities the Casuya platform actually
+// exposes. The homepage renders from this so a feature is only shown when the
+// system genuinely provides it — no marketing claims for un-wired features.
+//
+// `enabled: true` means a corresponding backend router/endpoint exists.
+// `aiAssistant` is enabled — the AI service is available and mounted.
+
+const FEATURES = {
+  interactiveLessons: {
+    enabled: true,
+    icon: "📚",
+    title: "Interactive Lessons",
+    blurb: "Lessons that feel more like a game — quizzes and activities that mark themselves as you go. You can re-read a topic until it truly sticks.",
+    hero: true,
+    trusted: false,
+  },
+  offlineLearning: {
+    enabled: true,
+    icon: "📶",
+    title: "Offline Learning",
+    blurb: "Power cut? Long daladala ride? Download a topic once when the network is good, then study it anywhere — even where the signal never reaches.",
+    hero: true,
+    trusted: true,
+  },
+  aiAssistant: {
+    enabled: true,
+    icon: "🤖",
+    title: "AI Teacher Assistant",
+    blurb: "Preparing a quiz late at night? Ask Casuya to draft it in minutes — in English or Kiswahili. A second pair of hands for busy teachers.",
+    hero: true,
+    trusted: false,
+  },
+  analytics: {
+    enabled: true,
+    icon: "📊",
+    title: "Progress You Can See",
+    blurb: "At a glance, see which topic the class is struggling with — no digging through stacks of marked papers at the end of term.",
+    hero: true,
+    trusted: false,
+  },
+  assessments: {
+    enabled: true,
+    icon: "📝",
+    title: "Assessments",
+    blurb: "Set quizzes, questionnaires and modular assignments in a couple of minutes — built to fit how lessons actually run in class.",
+    hero: false,
+    trusted: false,
+  },
+  cloudSync: {
+    enabled: true,
+    icon: "☁️",
+    title: "Cloud Sync",
+    blurb: "Your marks and progress are kept safe, and sync the moment a connection appears. Nothing is lost when the phone restarts.",
+    hero: false,
+    trusted: true,
+  },
+  digitalExaminations: {
+    enabled: true,
+    icon: "🧪",
+    title: "Digital Examinations",
+    blurb: "Run secure, browser-based exams that grade themselves and keep results safe — with automatic marking and instant, honest results.",
+    hero: false,
+    trusted: true,
+  },
+  aiLessonCreation: {
+    enabled: true,
+    icon: "✨",
+    title: "AI Lesson Creation",
+    blurb: "Generate lesson outlines, quizzes and study materials in minutes — a steady helper when the school day has already been long.",
+    hero: false,
+    trusted: true,
+  },
+};
+
+// Personas shown in the "Tailored Experiences" section. Parents/Schools are
+// served through the student/teacher experience, not separate account roles.
+const PERSONAS = [
+  { icon: "👨‍🏫", title: "Teachers", points: ["Create rich digital content", "Coordinate modular cohorts", "Evaluate metrics streams"] },
+  { icon: "👩‍🎓", title: "Students", points: ["Study from any location", "Interact with tests offline", "Monitor learning records"] },
+  { icon: "👨‍👩‍👧", title: "Parents", points: ["Observe progress trackers", "View localized updates"] },
+  { icon: "🏫", title: "Schools", points: ["Optimize staff delegation", "Export complex analytical datasets"] },
+];
+
+function enabledFeatures() {
+  return Object.values(FEATURES).filter((f) => f.enabled);
+}
+
+;
+// Shared auth UI helpers for the marketing/auth pages (index, login, register).
+// Single source of truth so the entry-point experience never contradicts
+// the role-based portals (which live under /admin, /teacher, /student and
+// enforce their own guards).
+
+const PORTAL_LABELS = {
+  admin: "Admin Dashboard",
+  teacher: "Teacher Portal",
+  student: "Student Portal",
+};
+
+function decodeTokenRole(token) {
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    return payload.role || null;
+  } catch {
+    return null;
+  }
+}
+
+function isAuthenticated() {
+  const auth = getStoredAuth();
+  if (!auth.accessToken || !auth.role) return false;
+  return decodeTokenRole(auth.accessToken) !== null;
+}
+
+// If the visitor is already signed in, send them straight to their portal.
+// Used by login/register so an authenticated user never sees the auth form.
+function redirectIfAuthed() {
+  const auth = getStoredAuth();
+  if (auth.accessToken && auth.role) {
+    const decodedRole = decodeTokenRole(auth.accessToken);
+    if (decodedRole) {
+      window.location.replace(getPortalPath(decodedRole));
+      return true;
+    }
+    clearAuth();
+  }
+  return false;
+}
+
+// Render auth-aware navigation buttons into the given container element.
+// When signed in: a "Dashboard" button (role-specific) + "Log out".
+// When signed out: "Login" + "Get Started".
+function applyAuthChrome(container) {
+  if (!container) return;
+  const auth = getStoredAuth();
+  if (auth.accessToken && auth.role) {
+    const label = PORTAL_LABELS[auth.role] || "Dashboard";
+    container.innerHTML = `
+      <a href="${getPortalPath(auth.role)}" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">${label}</a>
+      <button type="button" id="auth-logout-btn" class="bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-slate-100 transition-all hover:-translate-y-0.5">Log out</button>
+    `;
+    container.querySelector("#auth-logout-btn")?.addEventListener("click", () => {
+      clearAuth();
+      window.location.replace("/index.html#features");
+    });
+  } else {
+    container.innerHTML = `
+      <a href="/login.html" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Login</a>
+      <a href="/register.html" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-100 transition-all hover:-translate-y-0.5">Get Started</a>
+    `;
+  }
+}
+
+;
+// API_HOST / API_PROTOCOL / API_BASE are declared once in modules/api.js and
+// shared as globals when this file is concatenated into a classic-script bundle.
+// When loaded directly as an ES module (login.html, register.html, …) those
+// globals are not present, so resolve the base from the central config resolver.
+
+function resolveApiBase() {
+  if (typeof window !== "undefined" && window.API_BASE) return window.API_BASE;
+  if (typeof window !== "undefined" && window.casuyaApiBase) return window.casuyaApiBase();
+  return window.location.origin;
+}
+
+const STORAGE_KEYS = {
+  accessToken: "casuya_token",
+  refreshToken: "casuya_refresh_token",
+  userId: "casuya_user_id",
+  role: "casuya_role",
+};
+
+function safeJsonParse(text) {
+  if (!text) return null;
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
+}
+
+function buildApiUrl(path, method = "GET") {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  const [pathname, search = ""] = normalizedPath.split("?");
+  return `${resolveApiBase()}${pathname}${search ? `?${search}` : ""}`;
+}
+
+function getAuthHeaders(headers = {}, includeJson = true) {
+  const nextHeaders = { ...headers };
+  const accessToken = getAccessToken();
+
+  if (includeJson && !nextHeaders["Content-Type"]) {
+    nextHeaders["Content-Type"] = "application/json";
+  }
+
+  if (accessToken && !nextHeaders.Authorization) {
+    nextHeaders.Authorization = `Bearer ${accessToken}`;
+  }
+
+  return nextHeaders;
+}
+
+function getApiBase() {
+  return resolveApiBase();
+}
+
+function getPortalPath(role) {
+  if (role === "admin") return "/admin/";
+  if (role === "teacher") return "/teacher/";
+  return "/student/";
+}
+
+function getStoredAuth() {
+  return {
+    accessToken: localStorage.getItem(STORAGE_KEYS.accessToken),
+    refreshToken: localStorage.getItem(STORAGE_KEYS.refreshToken),
+    userId: localStorage.getItem(STORAGE_KEYS.userId),
+    role: localStorage.getItem(STORAGE_KEYS.role),
+  };
+}
+
+function getAccessToken() {
+  return localStorage.getItem(STORAGE_KEYS.accessToken);
+}
+
+function getRefreshToken() {
+  return localStorage.getItem(STORAGE_KEYS.refreshToken);
+}
+
+function persistAuth(data) {
+  if (data.access_token) {
+    localStorage.setItem(STORAGE_KEYS.accessToken, data.access_token);
+  }
+  if (data.refresh_token) {
+    localStorage.setItem(STORAGE_KEYS.refreshToken, data.refresh_token);
+  }
+  if (data.user_id) {
+    localStorage.setItem(STORAGE_KEYS.userId, data.user_id);
+  }
+  if (data.role) {
+    localStorage.setItem(STORAGE_KEYS.role, data.role);
+  }
+  if (data.accessibility_prefs) {
+    localStorage.setItem("casuya_accessibility_prefs", JSON.stringify(data.accessibility_prefs));
+  }
+}
+
+function clearAuth() {
+  Object.values(STORAGE_KEYS).forEach((key) => localStorage.removeItem(key));
+}
+
+function redirectToPortal(role) {
+  window.location.replace(getPortalPath(role));
+}
+
+function redirectToLogin() {
+  window.location.replace("/login.html");
+}
+
+async function refreshAccessToken() {
+  const refreshToken = getRefreshToken();
+  if (!refreshToken) {
+    throw new Error("No refresh token available");
+  }
+
+  const response = await fetch(buildApiUrl("/auth/refresh", "POST"), {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ refresh_token: refreshToken }),
+  });
+
+  const data = safeJsonParse(await response.text()) || {};
+
+  if (!response.ok || !data.access_token) {
+    clearAuth();
+    throw new Error(data.detail || "Session expired. Please sign in again.");
+  }
+
+  persistAuth(data);
+  return data.access_token;
+}
+
+async function apiRequest(path, options = {}) {
+  const method = (options.method || "GET").toUpperCase();
+  const isFormData = typeof FormData !== "undefined" && options.body instanceof FormData;
+  const headers = getAuthHeaders(options.headers, !isFormData);
+
+  const response = await fetch(buildApiUrl(path, method), {
+    ...options,
+    method,
+    headers,
+  });
+
+  if (response.status === 401 && options.retryOnAuthFailure !== false && getRefreshToken()) {
+    try {
+      await refreshAccessToken();
+      return apiRequest(path, { ...options, retryOnAuthFailure: false });
+    } catch (error) {
+      clearAuth();
+      throw error;
+    }
+  }
+
+  const text = await response.text();
+  const data = safeJsonParse(text);
+
+  if (!response.ok) {
+    if (response.status === 401) {
+      clearAuth();
+      throw new Error(data?.detail || "Session expired. Please sign in again.");
+    }
+    throw new Error(data?.detail || response.statusText || "Request failed");
+  }
+
+  return data ?? text;
+}
+
+async function login({ email, password, keep_logged_in = false }) {
+  const data = await apiRequest("/auth/login", {
+    method: "POST",
+    body: JSON.stringify({ email, password, keep_logged_in }),
+    retryOnAuthFailure: false,
+  });
+
+  persistAuth(data);
+  return data;
+}
+
+function requireRole(expectedRole) {
+  const auth = getStoredAuth();
+
+  if (!auth.accessToken || !auth.role) {
+    clearAuth();
+    redirectToLogin();
+    return null;
+  }
+
+  if (expectedRole && auth.role !== expectedRole) {
+    redirectToPortal(auth.role);
+    return null;
+  }
+
+  return auth;
+}
+
+;
+// Shared client-side role guard for the role-specific portals.
+// Redirects unauthenticated users to login and users with the wrong role
+// to their own portal, then signals the host page that the guard passed.
+
+const ROLE_PORTALS = {
+  admin: "/admin/",
+  teacher: "/teacher/",
+  student: "/student/",
+};
+
+const AUTH_STORAGE_KEYS = [
+  "casuya_token",
+  "casuya_refresh_token",
+  "casuya_user_id",
+  "casuya_role",
+];
+
+function decodeTokenRole(token) {
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    return payload.role || null;
+  } catch {
+    return null;
+  }
+}
+
+function clearAuthData() {
+  AUTH_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
+}
+
+function guardPortal(expectedRole) {
+  const token = localStorage.getItem("casuya_token");
+  if (!token) {
+    clearAuthData();
+    window.location.replace("/login.html");
+    return false;
+  }
+  const role = decodeTokenRole(token);
+  if (!role) {
+    clearAuthData();
+    window.location.replace("/login.html");
+    return false;
+  }
+  if (role !== expectedRole) {
+    clearAuthData();
+    const target = ROLE_PORTALS[role] || "/login.html";
+    window.location.replace(target);
+    return false;
+  }
+  return true;
+}
+
+;
+// Shared accessibility toolbar — load after DOM ready
+// Provides: dyslexia font, high contrast, large text, wide spacing, TTS, font size
+(function () {
+  var state = {
+    dyslexia: false,
+    highContrast: false,
+    largeText: false,
+    wideSpacing: false,
+    tts: false,
+    speechRate: 0.9,
+    fontSize: 100
+  };
+
+  try {
+    var saved = JSON.parse(localStorage.getItem('casuya_a11y'));
+    if (saved) Object.assign(state, saved);
+  } catch (e) {}
+
+  function saveState() {
+    try { localStorage.setItem('casuya_a11y', JSON.stringify(state)); } catch (e) {}
+  }
+
+  function applyState() {
+    document.body.classList.toggle('dyslexia-mode', state.dyslexia);
+    document.body.classList.toggle('high-contrast', state.highContrast);
+    document.body.classList.toggle('large-text', state.largeText);
+    document.body.classList.toggle('extra-large-text', state.fontSize >= 150 && state.fontSize < 200);
+    document.body.classList.toggle('max-text', state.fontSize >= 200);
+    document.body.classList.toggle('wide-spacing', state.wideSpacing);
+
+    document.querySelectorAll('.a11y-toggle-btn').forEach(function (btn, i) {
+      var vals = [state.dyslexia, state.highContrast, state.largeText, state.wideSpacing, state.tts];
+      btn.classList.toggle('active', vals[i]);
+    });
+
+    var ids = ['a11y-dyslexia', 'a11y-contrast', 'a11y-large-text', 'a11y-wide-spacing', 'a11y-tts'];
+    var keys = ['dyslexia', 'highContrast', 'largeText', 'wideSpacing', 'tts'];
+    ids.forEach(function (id, i) {
+      var el = document.getElementById(id);
+      if (el) el.setAttribute('aria-pressed', state[keys[i]]);
+    });
+
+    var speedRow = document.getElementById('a11y-speed-row');
+    var speechCtrl = document.getElementById('speech-controls');
+    if (speedRow) speedRow.style.display = state.tts ? 'flex' : 'none';
+    if (speechCtrl) speechCtrl.style.display = state.tts ? 'flex' : 'none';
+
+    var fontSlider = document.getElementById('a11y-fontsize');
+    var fontLabel = document.getElementById('a11y-fontsize-label');
+    if (fontSlider && fontLabel) {
+      fontSlider.value = state.fontSize;
+      fontLabel.textContent = state.fontSize + '%';
+    }
+
+    saveState();
+  }
+
+  applyState();
+
+  var toggleBtn = document.getElementById('a11y-toggle-btn');
+  var panel = document.getElementById('a11y-panel');
+
+  if (toggleBtn && panel) {
+    toggleBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = panel.classList.toggle('open');
+      toggleBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!panel.contains(e.target) && !toggleBtn.contains(e.target)) {
+        panel.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) {
+        panel.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.focus();
+      }
+    });
+  }
+
+  // Toggle handlers
+  var toggleMap = {
+    'a11y-dyslexia': 'dyslexia',
+    'a11y-contrast': 'highContrast',
+    'a11y-large-text': 'largeText',
+    'a11y-wide-spacing': 'wideSpacing'
+  };
+  Object.keys(toggleMap).forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('click', function () {
+      state[toggleMap[id]] = !state[toggleMap[id]];
+      applyState();
+    });
+  });
+
+  var ttsBtn = document.getElementById('a11y-tts');
+  if (ttsBtn) {
+    ttsBtn.addEventListener('click', function () {
+      state.tts = !state.tts;
+      applyState();
+      if (!state.tts && window.speechSynthesis) window.speechSynthesis.cancel();
+    });
+  }
+
+  // Font size slider
+  var fontSlider = document.getElementById('a11y-fontsize');
+  if (fontSlider) {
+    fontSlider.addEventListener('input', function () {
+      state.fontSize = parseInt(this.value);
+      applyState();
+    });
+  }
+
+  // Keyboard support
+  document.querySelectorAll('.a11y-option').forEach(function (el) {
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+    });
+  });
+
+  // Speech rate slider
+  var speedSlider = document.getElementById('a11y-speed');
+  var speedLabel = document.getElementById('a11y-speed-label');
+  if (speedSlider) {
+    speedSlider.addEventListener('input', function () {
+      state.speechRate = parseFloat(this.value);
+      if (speedLabel) speedLabel.textContent = state.speechRate.toFixed(1) + 'x';
+      saveState();
+    });
+  }
+
+  // Voice selection — prefer East African English
+  function findVoice() {
+    var voices = window.speechSynthesis.getVoices();
+    var preferred = ['en-TZ', 'en-KE', 'en-UG', 'en-GH', 'en-ZA', 'en-GB', 'en-US'];
+    for (var i = 0; i < preferred.length; i++) {
+      var match = voices.filter(function (v) { return v.lang === preferred[i]; });
+      if (match.length) return match[0];
+    }
+    for (var j = 0; j < voices.length; j++) {
+      if (voices[j].lang.indexOf('en') === 0) return voices[j];
+    }
+    return null;
+  }
+
+  function getSelectedText() {
+    var sel = window.getSelection();
+    if (sel && sel.toString().trim()) return sel.toString().trim();
+    return document.body.textContent.substring(0, 2000);
+  }
+
+  function speak(text) {
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    var voice = findVoice();
+    if (voice) { u.voice = voice; u.lang = voice.lang; } else { u.lang = 'en-TZ'; }
+    u.rate = state.speechRate || 0.9;
+    u.pitch = 1.0;
+    u.volume = 1.0;
+    var speechStatus = document.getElementById('speech-status');
+    u.onstart = function () { if (speechStatus) speechStatus.textContent = 'Speaking...'; };
+    u.onend = function () { if (speechStatus) speechStatus.textContent = 'Done'; };
+    u.onerror = function () { if (speechStatus) speechStatus.textContent = 'Error'; };
+    window.speechSynthesis.speak(u);
+  }
+
+  // Speech controls
+  var speechPlay = document.getElementById('speech-play');
+  var speechPause = document.getElementById('speech-pause');
+  var speechStop = document.getElementById('speech-stop');
+  if (speechPlay) {
+    speechPlay.addEventListener('click', function () {
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+      } else {
+        speak(getSelectedText());
+      }
+    });
+  }
+  if (speechPause) {
+    speechPause.addEventListener('click', function () {
+      window.speechSynthesis.pause();
+    });
+  }
+  if (speechStop) {
+    speechStop.addEventListener('click', function () {
+      window.speechSynthesis.cancel();
+    });
+  }
+
+  // Ctrl+U shortcut
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && e.key === 'u' && toggleBtn) {
+      e.preventDefault();
+      toggleBtn.click();
+    }
+  });
+
+  // Preload voices
+  if (window.speechSynthesis) {
+    window.speechSynthesis.onvoiceschanged = function () {};
+    window.speechSynthesis.getVoices();
+  }
+
+  // Expose for other scripts
+  window.__casuyaA11y = { state: state, speak: speak, findVoice: findVoice };
+})();
+
+;
+// modules/admin-dashboard.js — extracted from main.js (classic script, shared global scope)
+async function renderAdminDashboard() {
+  const token = localStorage.getItem("casuya_token");
+  const payload = decodeToken(token);
+
+  render("#app", `
+    <div class="sidebar-layout">
+      <aside id="admin-sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <h2>Casuya Admin</h2>
+          <p>${escapeHtml(payload.full_name || payload.email || "Admin")}</p>
+        </div>
+        <nav class="sidebar-nav" id="admin-nav">
+          <div class="sidebar-nav-item active" data-view="dashboard">📊 Dashboard</div>
+          <div class="sidebar-nav-item" data-view="subjects">📚 Subjects</div>
+          <div class="sidebar-nav-item" data-view="topics">📁 Topics</div>
+          <div class="sidebar-nav-item" data-view="subtopics">📂 Subtopics</div>
+          <div class="sidebar-nav-item" data-view="lessons">📝 Lessons</div>
+          <div class="sidebar-nav-item" data-view="quizzes">❓ Quizzes</div>
+          <div class="sidebar-nav-item" data-view="games">🎮 Games</div>
+          <div class="sidebar-nav-item" data-view="users">👥 Users</div>
+          <div class="sidebar-nav-item" data-view="progress">📈 Progress</div>
+          <div class="sidebar-nav-item" data-view="analytics">📉 Analytics</div>
+          <div class="sidebar-nav-item" data-view="payments">💳 Payments</div>
+          <div class="sidebar-nav-item" data-view="notifications">🔔 Notifications</div>
+          <div class="sidebar-nav-item" data-view="uploads">📤 Uploads</div>
+          <div class="sidebar-nav-item" data-view="branding">🎨 Branding</div>
+          <div class="sidebar-nav-item" data-view="settings">⚙️ Settings</div>
+        </nav>
+        <div class="sidebar-footer">
+          <button id="admin-logout" class="btn btn-danger" style="width:100%;font-size:0.85rem">Sign Out</button>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="main-header">
+          <button id="sidebar-toggle" class="sidebar-toggle-btn">&#9776;</button>
+          <div style="position:relative;flex:1;max-width:360px">
+            <input id="admin-search" type="search" class="input" placeholder="Search users, lessons..." style="padding:0.4rem 0.75rem;font-size:0.85rem">
+            <div id="admin-search-results" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);z-index:100;max-height:300px;overflow-y:auto"></div>
+          </div>
+        </header>
+        <div id="admin-content" class="main-body"></div>
+      </main>
+    </div>
+  `);
+
+  document.getElementById("admin-logout").addEventListener("click", handleLogout);
+
+  // Sidebar toggle (mobile)
+  document.getElementById("sidebar-toggle")?.addEventListener("click", () => {
+    document.getElementById("admin-sidebar").classList.toggle("open");
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#admin-sidebar") && !e.target.closest("#sidebar-toggle")) {
+      document.getElementById("admin-sidebar")?.classList.remove("open");
+    }
+  }, { signal: _globalAbort.signal });
+
+  // Admin search
+  const adminSearchInput = document.getElementById("admin-search");
+  const adminSearchResults = document.getElementById("admin-search-results");
+  let searchTimer;
+
+  adminSearchInput.addEventListener("input", () => {
+    clearTimeout(searchTimer);
+    const q = adminSearchInput.value.trim();
+    if (q.length < 2) { adminSearchResults.style.display = "none"; return; }
+    searchTimer = setTimeout(async () => {
+      try {
+        const results = await request(`/search/?q=${encodeURIComponent(q)}`);
+        if (!Array.isArray(results) || results.length === 0) {
+          adminSearchResults.innerHTML = '<div style="padding:0.5rem;color:var(--color-text-muted)">No results</div>';
+        } else {
+          adminSearchResults.innerHTML = results.map(u => `
+            <div class="admin-search-item" data-id="${escapeHtml(u.id)}" data-type="${escapeHtml(u.type)}" style="padding:0.5rem;cursor:pointer;border-bottom:1px solid var(--color-border);display:flex;justify-content:space-between">
+              <span>${escapeHtml(u.title || u.email)}</span>
+              <span style="color:var(--color-text-muted);font-size:0.8rem">${escapeHtml(u.type)}</span>
+            </div>
+          `).join("");
+          adminSearchResults.querySelectorAll(".admin-search-item").forEach(el => {
+            el.addEventListener("click", () => {
+              adminSearchResults.style.display = "none";
+              adminSearchInput.value = "";
+              if (el.dataset.type === "student" || el.dataset.type === "teacher") loadAdminUsers();
+              else if (el.dataset.type === "lesson") loadAdminLessons();
+              else loadAdminSubjects();
+            });
+          });
+        }
+        adminSearchResults.style.display = "block";
+      } catch(e) { adminSearchResults.style.display = "none"; }
+    }, 300);
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("#admin-search") && !e.target.closest("#admin-search-results")) adminSearchResults.style.display = "none";
+  }, { signal: _globalAbort.signal });
+
+  // Navigation
+  function setActiveNav(viewId) {
+    document.querySelectorAll("#admin-nav .sidebar-nav-item").forEach(el => {
+      el.classList.toggle("active", el.dataset.view === viewId);
+    });
+  }
+
+  function showAdminView(content) {
+    const el = document.getElementById("admin-content");
+    if (!el) return;
+    el.innerHTML = content;
+  }
+
+  const navHandlers = {
+    dashboard: () => { setActiveNav("dashboard"); loadAdminOverview(); },
+    subjects: () => { setActiveNav("subjects"); loadAdminSubjects(); },
+    topics: () => { setActiveNav("topics"); loadAdminTopics(); },
+    subtopics: () => { setActiveNav("subtopics"); loadAdminSubtopics(); },
+    lessons: () => { setActiveNav("lessons"); loadAdminLessons(); },
+    quizzes: () => { setActiveNav("quizzes"); loadAdminQuizzes(); },
+    games: () => { setActiveNav("games"); loadAdminGames(); },
+    users: () => { setActiveNav("users"); loadAdminUsers(); },
+    progress: () => { setActiveNav("progress"); loadAdminProgress(); },
+    analytics: () => { setActiveNav("analytics"); loadAdminAnalytics(); },
+    payments: () => { setActiveNav("payments"); loadAdminPayments(); },
+    notifications: () => { setActiveNav("notifications"); loadAdminNotifications(); },
+    uploads: () => { setActiveNav("uploads"); loadAdminUploads(); },
+    branding: () => { setActiveNav("branding"); loadAdminBranding(); },
+    settings: () => { setActiveNav("settings"); loadAdminSettings(); },
+  };
+
+  function navigateTo(view) {
+    if (navHandlers[view]) {
+      location.hash = view;
+      navHandlers[view]();
+    }
+  }
+
+  document.querySelectorAll("#admin-nav .sidebar-nav-item").forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById("admin-sidebar")?.classList.remove("open");
+      navigateTo(el.dataset.view);
+    });
+  });
+
+  window.addEventListener("hashchange", () => {
+    const view = location.hash.slice(1) || "dashboard";
+    if (navHandlers[view]) navHandlers[view]();
+  });
+
+
+;
+  async function loadAdminOverview() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
+    try {
+      const overview = await request("/analytics/overview");
+      const name = payload.full_name || payload.email || "Admin";
+
+      // Greeting based on time
+      const hour = new Date().getHours();
+      let greeting = "Good morning";
+      if (hour >= 12 && hour < 17) greeting = "Good afternoon";
+      else if (hour >= 17) greeting = "Good evening";
+
+      showAdminView(`
+        <div class="content" style="max-width:960px">
+          <!-- Welcome Banner -->
+          <div class="welcome-banner">
+            <small>${greeting}</small>
+            <h2>Welcome, ${escapeHtml(name)}</h2>
+            <p>Here's your platform overview at a glance.</p>
+          </div>
+
+          <!-- Stats -->
+          <div class="stat-grid">
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">👥</div>
+              <div class="stat-value">${overview?.total_students ?? 0}</div>
+              <div class="stat-label">Students</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">👩‍🏫</div>
+              <div class="stat-value">${overview?.total_teachers ?? 0}</div>
+              <div class="stat-label">Teachers</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#fef3c7;color:#d97706">📝</div>
+              <div class="stat-value">${overview?.total_lessons ?? 0}</div>
+              <div class="stat-label">Lessons</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#fce7f3;color:#db2777">❓</div>
+              <div class="stat-value">${overview?.total_quizzes ?? 0}</div>
+              <div class="stat-label">Quizzes</div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="section-header">
+            <h3>Quick Actions</h3>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.75rem">
+            <div class="recent-lesson-card" data-nav="subjects" style="text-align:center">
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">📚</div>
+              <h4 style="margin:0">Manage Subjects</h4>
+            </div>
+            <div class="recent-lesson-card" data-nav="lessons" style="text-align:center">
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">📝</div>
+              <h4 style="margin:0">Manage Lessons</h4>
+            </div>
+            <div class="recent-lesson-card" data-nav="users" style="text-align:center">
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">👥</div>
+              <h4 style="margin:0">Manage Users</h4>
+            </div>
+            <div class="recent-lesson-card" data-nav="progress" style="text-align:center">
+              <div style="font-size:1.5rem;margin-bottom:0.25rem">📈</div>
+              <h4 style="margin:0">View Progress</h4>
+            </div>
+          </div>
+        </div>
+      `);
+
+      // Wire up quick action clicks
+      document.querySelectorAll("#admin-content .recent-lesson-card[data-nav]").forEach(el => {
+        el.addEventListener("click", () => {
+          const view = el.dataset.nav;
+          if (navHandlers[view]) navHandlers[view]();
+        });
+      });
+    } catch (err) {
+      showAdminView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`);
+    }
+  }
+
+  async function loadAdminSubjects() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
+    try {
+      const subjects = await request("/subjects");
+      const list = Array.isArray(subjects) ? subjects : [];
+      showAdminView(`
+        <div class="content">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h2>Subjects</h2>
+            <button class="btn btn-primary" id="add-subject-btn">+ Add Subject</button>
+          </div>
+          <div id="form-area"></div>
+          <div class="card-grid">
+            ${list.length === 0 ? '<div class="empty-state"><p>No subjects yet</p></div>' :
+              list.map(s => `
+                <div class="card" style="cursor:pointer" data-id="${escapeHtml(s.id)}" data-name="${escapeHtml(s.name)}">
+                  <div style="display:flex;justify-content:space-between;align-items:start">
+                    <div>
+                      <h3>${escapeHtml(s.name)}</h3>
+                      <p style="color:var(--color-text-muted);font-size:0.85rem">${escapeHtml(s.slug || "")}</p>
+                    </div>
+                    ${deleteBtn(s.id, s.name, "/subjects")}
+                  </div>
+                </div>
+              `).join("")}
+          </div>
+        </div>
+      `);
+      document.getElementById("add-subject-btn")?.addEventListener("click", () => {
+        document.getElementById("form-area").innerHTML = `
+          <div class="card" style="margin-bottom:1rem">
+            <h3>New Subject</h3>
+            <form id="create-subject-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
+              <input class="input" name="name" placeholder="Subject name (e.g. Mathematics)" required>
+              <input class="input" name="slug" placeholder="Slug (e.g. mathematics)" required>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        `;
+        document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
+        document.getElementById("create-subject-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          try {
+            await request("/subjects", { method: "POST", body: JSON.stringify({ name: fd.get("name"), slug: fd.get("slug") }) });
+            loadAdminSubjects();
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+      document.querySelectorAll("#admin-content .card[data-id]").forEach(card => {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("[data-delete]")) return;
+          loadAdminTopics(card.dataset.id, card.dataset.name);
+        });
+      });
+      initDeleteButtons();
+    } catch (err) {
+      showAdminView('<div class="empty-state"><h2>Error</h2><p>' + escapeHtml(err.message) + '</p></div>');
+    }
+  }
+
+  async function loadAdminTopics(subjectId, subjectName) {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading topics...</p></div>');
+    try {
+      const topics = await request(`/topics/${subjectId ? "?subject_id=" + subjectId : ""}`);
+      const list = Array.isArray(topics) ? topics : [];
+      showAdminView(`
+        <div class="content">
+          ${subjectId ? '<button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>' : ""}
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h2>${subjectId ? escapeHtml(subjectName) + " — " : ""}Topics</h2>
+            <button class="btn btn-primary" id="add-topic-btn">+ Add Topic</button>
+          </div>
+          <div id="form-area"></div>
+          <div class="card-grid">
+            ${list.length === 0 ? '<div class="empty-state"><p>No topics yet</p></div>' :
+              list.map(t => `
+                <div class="card" style="cursor:pointer" data-id="${escapeHtml(t.id)}" data-title="${escapeHtml(t.title)}">
+                  <div style="display:flex;justify-content:space-between;align-items:start">
+                    <div>
+                      <h3>${escapeHtml(t.title)}</h3>
+                      <p style="color:var(--color-text-muted);font-size:0.85rem">Form ${escapeHtml(t.form_level || "")}</p>
+                    </div>
+                    ${deleteBtn(t.id, t.title, "/topics")}
+                  </div>
+                </div>
+              `).join("")}
+          </div>
+        </div>
+      `);
+      if (subjectId) document.getElementById("back-btn")?.addEventListener("click", loadAdminSubjects);
+      document.getElementById("add-topic-btn")?.addEventListener("click", () => {
+        document.getElementById("form-area").innerHTML = `
+          <div class="card" style="margin-bottom:1rem">
+            <h3>New Topic</h3>
+            <form id="create-topic-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
+              ${!subjectId ? '<select class="input" name="subject_id" required><option value="">Select subject...</option></select>' : ""}
+              <input class="input" name="title" placeholder="Topic title" required>
+              <select class="input" name="form_level">
+                <option value="">Select form level...</option>
+                ${["Form I","Form II","Form III","Form IV","Form V","Form VI"].map(f => '<option value="'+f+'">'+f+'</option>').join("")}
+              </select>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        `;
+        if (!subjectId) {
+          request("/subjects").then(subs => {
+            const sel = document.querySelector('[name="subject_id"]');
+            if (sel && Array.isArray(subs)) subs.forEach(s => { const o = document.createElement("option"); o.value = s.id; o.textContent = s.name; sel.appendChild(o); });
+          });
+        }
+        document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
+        document.getElementById("create-topic-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const title = fd.get("title");
+          const sid = subjectId || fd.get("subject_id");
+          if (!title || !sid) { showToast("Title and subject are required"); return; }
+          try {
+            await request("/topics", { method: "POST", body: JSON.stringify({ title, subject_id: sid, form_level: fd.get("form_level") || "" }) });
+            loadAdminTopics(subjectId, subjectName);
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+      document.querySelectorAll("#admin-content .card[data-id]").forEach(card => {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("[data-delete]")) return;
+          loadAdminSubtopics(card.dataset.id, card.dataset.title, loadAdminTopics.bind(null, subjectId, subjectName));
+        });
+      });
+      initDeleteButtons();
+    } catch (err) {
+      showAdminView('<div class="empty-state"><h2>Error</h2><p>' + escapeHtml(err.message) + '</p></div>');
+    }
+  }
+
+  async function loadAdminSubtopics(topicId, topicTitle, backFn) {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading subtopics...</p></div>');
+    try {
+      const subtopics = await request(`/subtopics/${topicId ? "?topic_id=" + topicId : ""}`);
+      const list = Array.isArray(subtopics) ? subtopics : [];
+      showAdminView(`
+        <div class="content">
+          ${topicId ? '<button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>' : ""}
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h2>${topicId ? escapeHtml(topicTitle) + " — " : ""}Subtopics</h2>
+            <button class="btn btn-primary" id="add-subtopic-btn">+ Add Subtopic</button>
+          </div>
+          <div id="form-area"></div>
+          <div class="card-grid">
+            ${list.length === 0 ? '<div class="empty-state"><p>No subtopics yet</p></div>' :
+              list.map(st => `
+                <div class="card" style="cursor:pointer" data-id="${escapeHtml(st.id)}" data-title="${escapeHtml(st.title)}">
+                  <div style="display:flex;justify-content:space-between;align-items:start">
+                    <h3>${escapeHtml(st.title)}</h3>
+                    ${deleteBtn(st.id, st.title, "/subtopics")}
+                  </div>
+                </div>
+              `).join("")}
+          </div>
+        </div>
+      `);
+      if (topicId) document.getElementById("back-btn")?.addEventListener("click", backFn);
+      document.getElementById("add-subtopic-btn")?.addEventListener("click", () => {
+        document.getElementById("form-area").innerHTML = `
+          <div class="card" style="margin-bottom:1rem">
+            <h3>New Subtopic</h3>
+            <form id="create-subtopic-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
+              ${!topicId ? '<select class="input" name="topic_id" required><option value="">Select topic...</option></select>' : ""}
+              <input class="input" name="title" placeholder="Subtopic title" required>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        `;
+        if (!topicId) {
+          request("/topics").then(tpcs => {
+            const sel = document.querySelector('[name="topic_id"]');
+            if (sel && Array.isArray(tpcs)) tpcs.forEach(t => { const o = document.createElement("option"); o.value = t.id; o.textContent = t.title; sel.appendChild(o); });
+          });
+        }
+        document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
+        document.getElementById("create-subtopic-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const title = fd.get("title");
+          const tid = topicId || fd.get("topic_id");
+          if (!title || !tid) { showToast("Title and topic are required"); return; }
+          try {
+            await request("/subtopics", { method: "POST", body: JSON.stringify({ title, topic_id: tid }) });
+            loadAdminSubtopics(topicId, topicTitle, backFn);
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+      document.querySelectorAll("#admin-content .card[data-id]").forEach(card => {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("[data-delete]")) return;
+          loadAdminLessonsList(card.dataset.id, card.dataset.title, loadAdminSubtopics.bind(null, topicId, topicTitle, backFn));
+        });
+      });
+      initDeleteButtons();
+    } catch (err) {
+      showAdminView('<div class="empty-state"><h2>Error</h2><p>' + escapeHtml(err.message) + '</p></div>');
+    }
+  }
+
+  async function loadAdminLessonsList(subtopicId, subtopicTitle, backFn) {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading lessons...</p></div>');
+    try {
+      const lessons = await request(`/lessons/?subtopic_id=${subtopicId}&status=published`);
+      const list = Array.isArray(lessons) ? lessons : [];
+      showAdminView(`
+        <div class="content">
+          <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h2>${escapeHtml(subtopicTitle)} — Lessons</h2>
+            <button class="btn btn-primary" id="add-lesson-btn">+ Add Lesson</button>
+          </div>
+          <div id="form-area"></div>
+          <div class="card-grid">
+            ${list.length === 0 ? '<div class="empty-state"><p>No lessons yet</p></div>' :
+              list.map(l => `
+                <div class="card" style="cursor:pointer" data-id="${escapeHtml(l.id)}">
+                  <h3>${escapeHtml(l.title)}</h3>
+                  <p style="color:var(--color-text-muted);font-size:0.85rem">${escapeHtml(l.status)}</p>
+                </div>
+              `).join("")}
+          </div>
+        </div>
+      `);
+      document.getElementById("back-btn")?.addEventListener("click", backFn);
+      document.getElementById("add-lesson-btn")?.addEventListener("click", () => {
+        document.getElementById("form-area").innerHTML = `
+          <div class="card" style="margin-bottom:1rem">
+            <h3>New Lesson</h3>
+            <form id="create-lesson-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
+              <input class="input" name="title" placeholder="Lesson title" required>
+              <textarea class="input" name="content" rows="6" placeholder="Lesson content (HTML supported)"></textarea>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        `;
+        document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
+        document.getElementById("create-lesson-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const title = fd.get("title");
+          const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+          try {
+            await request("/lessons", { method: "POST", body: JSON.stringify({ title, slug, html_content: fd.get("content"), subtopic_id: subtopicId }) });
+            loadAdminLessonsList(subtopicId, subtopicTitle, backFn);
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+      document.querySelectorAll("#admin-content .card[data-id]").forEach(card => {
+        card.addEventListener("click", () => viewLessonContent("#admin-content", card.dataset.id, loadAdminLessonsList.bind(null, subtopicId, subtopicTitle, backFn)));
+      });
+    } catch (err) {
+      showAdminView('<div class="empty-state"><h2>Error</h2><p>' + escapeHtml(err.message) + '</p></div>');
+    }
+  }
+
+
+;
+  async function loadAdminProgress() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
+    try {
+      const [students, teachers, subjects, distribution] = await Promise.all([
+        request("/students"),
+        request("/teachers"),
+        request("/subjects"),
+        request("/analytics/lesson-distribution"),
+      ]);
+
+      const dist = Array.isArray(distribution) ? distribution : [];
+      const lessonCount = dist.length;
+
+      showAdminView(`
+        <div class="content">
+          <h2>Platform Progress</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem;margin-top:0.5rem">
+            <div class="card" style="padding:0.75rem"><h4>Students</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(students) ? students.length : 0}</p></div>
+            <div class="card" style="padding:0.75rem"><h4>Teachers</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(teachers) ? teachers.length : 0}</p></div>
+            <div class="card" style="padding:0.75rem"><h4>Lessons</h4><p style="font-size:1.6rem;font-weight:700">${lessonCount}</p></div>
+            <div class="card" style="padding:0.75rem"><h4>Subjects</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(subjects) ? subjects.length : 0}</p></div>
+          </div>
+          ${dist.length > 0 ? `
+            <h3 style="margin-top:1.5rem">Lesson Distribution</h3>
+            <div style="margin-top:0.5rem">
+              ${dist.map(d => `
+                <div style="margin-bottom:0.5rem">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:0.25rem">
+                    <span style="font-size:0.85rem">${escapeHtml(d.lesson_title)}</span>
+                    <span style="font-size:0.85rem;color:var(--color-text-muted)">${d.avg_completion_percentage}% (${d.session_count} sessions)</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar-fill" style="width:${d.avg_completion_percentage}%"></div>
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          ` : '<div class="empty-state" style="margin-top:1rem"><p>No lesson progress data yet. Have students started lessons?</p></div>'}
+        </div>
+      `);
+    } catch (err) {
+      showAdminView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`);
+    }
+  }
+
+  async function loadAdminLessons() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading lessons...</p></div>');
+    try {
+      const lessons = await request("/lessons/");
+      const list = Array.isArray(lessons) ? lessons : [];
+      showAdminView(`
+        <div class="content">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h2>Lessons</h2>
+            <div style="display:flex;gap:0.5rem">
+              <button class="btn btn-primary" id="ai-generate-questions-btn">🤖 AI Generate Questions</button>
+              <button class="btn btn-primary" id="add-lesson-btn">+ Add Lesson</button>
+            </div>
+          </div>
+          <div id="form-area"></div>
+          <div id="ai-form-area"></div>
+          <div class="card-grid">
+            ${list.length === 0 ? '<div class="empty-state"><p>No lessons</p></div>' :
+              list.map(l => `
+                <div class="card" style="cursor:pointer" data-id="${escapeHtml(l.id)}" data-title="${escapeHtml(l.title)}">
+                  <div style="display:flex;justify-content:space-between;align-items:start">
+                    <div>
+                      <h3>${escapeHtml(l.title)}</h3>
+                      <p style="color:var(--color-text-muted);font-size:0.85rem">${escapeHtml(l.status||"")}</p>
+                    </div>
+                    ${deleteBtn(l.id, l.title, "/lessons")}
+                  </div>
+                </div>
+              `).join("")}
+          </div>
+        </div>
+      `);
+      document.querySelectorAll("#admin-content .card[data-id]").forEach(card => {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("[data-delete]")) return;
+          viewAdminLesson(card.dataset.id, card.dataset.title);
+        });
+      });
+      initDeleteButtons();
+      document.getElementById("add-lesson-btn")?.addEventListener("click", () => {
+        document.getElementById("form-area").innerHTML = `
+          <div class="card" style="margin-bottom:1rem">
+            <h3>New Lesson</h3>
+            <form id="create-lesson-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
+              <select class="input" name="subtopic_id" required><option value="">Select subtopic...</option></select>
+              <input class="input" name="title" placeholder="Lesson title" required>
+              <textarea class="input" name="content" rows="6" placeholder="Lesson content (HTML supported)"></textarea>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        `;
+        request("/subtopics").then(subs => {
+          const sel = document.querySelector('[name="subtopic_id"]');
+          if (sel && Array.isArray(subs)) subs.forEach(s => { const o = document.createElement("option"); o.value = s.id; o.textContent = s.title; sel.appendChild(o); });
+        });
+        document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
+        document.getElementById("create-lesson-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const title = fd.get("title");
+          const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+          try {
+            await request("/lessons", { method: "POST", body: JSON.stringify({ title, slug, html_content: fd.get("content"), subtopic_id: fd.get("subtopic_id") }) });
+            loadAdminLessons();
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+      document.getElementById("ai-generate-questions-btn")?.addEventListener("click", () => {
+        document.getElementById("ai-form-area").innerHTML = `
+          <div class="card" style="padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem">Generate Quiz Questions</h3>
+            <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.75rem">Auto-generate quiz questions from lesson content.</p>
+            <form id="ai-gen-form" style="display:flex;flex-direction:column;gap:0.5rem">
+              <div style="display:flex;gap:0.5rem">
+                <select class="input" name="subject_slug" style="flex:1">
+                  <option value="mathematics">Mathematics</option>
+                  <option value="biology">Biology</option>
+                  <option value="chemistry">Chemistry</option>
+                  <option value="physics">Physics</option>
+                  <option value="english">English</option>
+                  <option value="kiswahili">Kiswahili</option>
+                  <option value="geography">Geography</option>
+                  <option value="history">History</option>
+                  <option value="civics">Civics</option>
+                  <option value="computing">Computing</option>
+                </select>
+                <select class="input" name="form_level" style="flex:0.5">
+                  <option value="1">Form I</option>
+                  <option value="2">Form II</option>
+                  <option value="3">Form III</option>
+                  <option value="4">Form IV</option>
+                </select>
+              </div>
+              <textarea class="input" name="lesson_html" rows="5" placeholder="Paste lesson content..." required></textarea>
+              <div style="display:flex;gap:0.5rem;align-items:center">
+                <label style="font-size:0.85rem;color:var(--color-text-muted)">Number of questions:</label>
+                <input class="input" type="number" name="count" value="5" min="1" max="20" style="width:80px">
+              </div>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-primary" type="submit">Generate Questions</button>
+                <button class="btn" type="button" id="cancel-ai-gen">Cancel</button>
+              </div>
+            </form>
+            <div id="ai-gen-result" style="margin-top:1rem;display:none">
+              <div id="ai-gen-text"></div>
+            </div>
+          </div>
+        `;
+        document.getElementById("cancel-ai-gen").addEventListener("click", () => document.getElementById("ai-form-area").innerHTML = "");
+        document.getElementById("ai-gen-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const resultDiv = document.getElementById("ai-gen-result");
+          const textDiv = document.getElementById("ai-gen-text");
+          resultDiv.style.display = "block";
+          textDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating...</div>';
+          try {
+            const result = await request("/ai/questions/generate", {
+              method: "POST",
+              body: JSON.stringify({
+                lesson_html: fd.get("lesson_html"),
+                count: parseInt(fd.get("count")) || 5,
+                subject_slug: fd.get("subject_slug"),
+                form_level: parseInt(fd.get("form_level")) || 2,
+              }),
+            });
+            const questions = result?.questions || result;
+            if (Array.isArray(questions) && questions.length) {
+              textDiv.innerHTML = renderQuizQuestions(questions, {
+                subject: fd.get("subject_slug"),
+                formLevel: fd.get("form_level"),
+                topic: questions[0]?.topic || "",
+              });
+            } else {
+              textDiv.innerHTML = '<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>';
+            }
+          } catch(err) { textDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
+        });
+      });
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading lessons</p></div>'); }
+  }
+
+  async function viewAdminLesson(lessonId, lessonTitle) {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>');
+    try {
+      const lesson = await request(`/lessons/${lessonId}`);
+      if (!lesson) return;
+      showAdminView(`
+        <div class="content">
+          <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h2>${escapeHtml(lesson.title || lessonTitle)}</h2>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <span class="badge" style="background:var(--color-${lesson.status === "published" ? "success" : "warning"});color:#fff;padding:0.2rem 0.6rem;border-radius:var(--radius);font-size:0.8rem">${escapeHtml(lesson.status)}</span>
+              ${lesson.status !== "published" ? `<button class="btn btn-primary" id="publish-btn">Publish</button>` : ""}
+              <button class="btn" id="edit-btn">Edit</button>
+            </div>
+          </div>
+          <div class="card" style="padding:0;overflow:hidden">
+            <iframe id="lesson-frame" style="width:100%;border:none;display:block;min-height:500px"></iframe>
+          </div>
+        </div>
+      `);
+      document.getElementById("back-btn")?.addEventListener("click", loadAdminLessons);
+      document.getElementById("publish-btn")?.addEventListener("click", async () => {
+        try {
+          await request(`/lessons/${lessonId}/publish`, { method: "POST" });
+          showToast("Lesson published!");
+          viewAdminLesson(lessonId, lessonTitle);
+        } catch(err) { showToast("Error: " + err.message); }
+      });
+      document.getElementById("edit-btn")?.addEventListener("click", async () => {
+        let currentHtml = "";
+        try {
+          const resp = await fetch(`${API_BASE}/lessons/${lessonId}/content`, { headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token") || ""}` } });
+          if (resp.ok) currentHtml = await resp.text();
+        } catch(e) {}
+        showAdminView(`
+          <div class="content">
+            <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>
+            <h2>Edit Lesson</h2>
+            <div class="card" style="margin-top:1rem">
+              <form id="edit-lesson-form" style="display:flex;flex-direction:column;gap:0.5rem">
+                <input class="input" name="title" value="${escapeHtml(lesson.title || "")}" required>
+                <textarea class="input" name="content" rows="14" style="font-family:monospace">${escapeHtml(currentHtml)}</textarea>
+                <div style="display:flex;gap:0.5rem">
+                  <button class="btn btn-primary" type="submit">Save Changes</button>
+                  <button class="btn" type="button" id="cancel-btn">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        `);
+        document.getElementById("back-btn")?.addEventListener("click", () => viewAdminLesson(lessonId, lessonTitle));
+        document.getElementById("cancel-btn")?.addEventListener("click", () => viewAdminLesson(lessonId, lessonTitle));
+        document.getElementById("edit-lesson-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          try {
+            await request(`/lessons/${lessonId}`, { method: "PUT", body: JSON.stringify({ title: fd.get("title"), html_content: fd.get("content") }) });
+            showToast("Lesson updated!");
+            viewAdminLesson(lessonId, lessonTitle);
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+      try {
+        const resp = await fetch(`${API_BASE}/lessons/${lessonId}/content`, { headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token") || ""}` } });
+        if (resp.ok) {
+          const html = await resp.text();
+          const iframe = document.getElementById("lesson-frame");
+          iframe.srcdoc = html.replace("<head>", `<head><base href="${API_BASE}/">`);
+          iframe.onload = () => {
+            try { iframe.style.height = Math.max(iframe.contentDocument.documentElement.scrollHeight, 400) + "px"; } catch(e) {}
+          };
+        }
+      } catch(e) {}
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading lesson</p></div>'); }
+  }
+
+  async function loadAdminQuizzes() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading quizzes...</p></div>');
+    try {
+      const quizzes = await request("/quizzes/");
+      const list = Array.isArray(quizzes) ? quizzes : [];
+      const lessons = await request("/lessons/");
+      const lessonList = Array.isArray(lessons) ? lessons : [];
+      const lessonMap = {};
+      lessonList.forEach(l => lessonMap[l.id] = l.title);
+      showAdminView(`
+        <div class="content">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h2>Quizzes</h2>
+            <div style="display:flex;gap:0.5rem">
+              <button class="btn btn-primary" id="add-quiz-html-btn">+ HTML Quiz</button>
+              <button class="btn btn-primary" id="add-quiz-btn">+ Builder Quiz</button>
+            </div>
+          </div>
+          <div id="form-area"></div>
+          <div class="card-grid">
+            ${list.length === 0 ? '<div class="empty-state"><p>No quizzes yet</p></div>' :
+              list.map(q => `
+                <div class="card" style="cursor:pointer" data-id="${escapeHtml(q.id)}" data-title="${escapeHtml(q.title)}">
+                  <div style="display:flex;justify-content:space-between;align-items:start">
+                    <div style="flex:1">
+                      <div style="display:flex;justify-content:space-between;align-items:center">
+                        <h3>${escapeHtml(q.title)}</h3>
+                        <span class="badge" style="background:var(--color-${q.status === "published" ? "success" : "warning"});color:#fff;padding:0.15rem 0.5rem;border-radius:var(--radius);font-size:0.75rem">${escapeHtml(q.status)}</span>
+                      </div>
+                      <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">${escapeHtml(lessonMap[q.lesson_id] || "Standalone")}</p>
+                      <p style="color:var(--color-text-muted);font-size:0.85rem">${q.slug ? "HTML Quiz" : "Structured Quiz"}</p>
+                    </div>
+                    ${deleteBtn(q.id, q.title, "/quizzes")}
+                  </div>
+                </div>
+              `).join("")}
+          </div>
+        </div>
+      `);
+      document.querySelectorAll("#admin-content .card[data-id]").forEach(card => {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("[data-delete]")) return;
+          viewAdminQuiz(card.dataset.id, card.dataset.title);
+        });
+      });
+      initDeleteButtons();
+      document.getElementById("add-quiz-html-btn")?.addEventListener("click", () => {
+        document.getElementById("form-area").innerHTML = `
+          <div class="card" style="margin-bottom:1rem">
+            <h3>New HTML Quiz</h3>
+            <form id="create-quiz-html-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
+              <select class="input" name="lesson_id"><option value="">Select lesson (optional)...</option></select>
+              <input class="input" name="title" placeholder="Quiz title" required>
+              <textarea class="input" name="html_content" rows="8" placeholder="Paste or write full HTML quiz content..." required></textarea>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        `;
+        request("/lessons/").then(ls => {
+          const sel = document.querySelector('[name="lesson_id"]');
+          if (sel && Array.isArray(ls)) ls.forEach(l => { const o = document.createElement("option"); o.value = l.id; o.textContent = l.title; sel.appendChild(o); });
+        });
+        document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
+        document.getElementById("create-quiz-html-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          if (!fd.get("title") || !fd.get("html_content")) { showToast("Title and content are required"); return; }
+          try {
+            await request("/quizzes/from-html", { method: "POST", body: JSON.stringify({ lesson_id: fd.get("lesson_id") || null, title: fd.get("title"), html_content: fd.get("html_content") }) });
+            showToast("Quiz created!");
+            loadAdminQuizzes();
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+      document.getElementById("add-quiz-btn")?.addEventListener("click", () => {
+        document.getElementById("form-area").innerHTML = `
+          <div class="card" style="margin-bottom:1rem">
+            <h3>New Builder Quiz</h3>
+            <form id="create-quiz-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
+              <select class="input" name="lesson_id"><option value="">Select lesson (optional)...</option></select>
+              <input class="input" name="title" placeholder="Quiz title" required>
+              <div id="questions-area"></div>
+              <button class="btn" type="button" id="add-question-btn" style="align-self:flex-start">+ Add Question</button>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-primary" type="submit">Save Quiz</button>
+                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        `;
+        request("/lessons/").then(ls => {
+          const sel = document.querySelector('[name="lesson_id"]');
+          if (sel && Array.isArray(ls)) ls.forEach(l => { const o = document.createElement("option"); o.value = l.id; o.textContent = l.title; sel.appendChild(o); });
+        });
+        let qIdx = 0;
+        function addQuestion() {
+          const area = document.getElementById("questions-area");
+          const i = qIdx++;
+          const div = document.createElement("div");
+          div.className = "card";
+          div.style.cssText = "padding:0.75rem;margin-bottom:0.5rem";
+          div.innerHTML = `
+            <input class="input" name="q_text_${i}" placeholder="Question text" required style="margin-bottom:0.5rem">
+            <input class="input" name="q_a_${i}" placeholder="Option A" required style="margin-bottom:0.25rem">
+            <input class="input" name="q_b_${i}" placeholder="Option B" required style="margin-bottom:0.25rem">
+            <input class="input" name="q_c_${i}" placeholder="Option C" style="margin-bottom:0.25rem">
+            <input class="input" name="q_d_${i}" placeholder="Option D" style="margin-bottom:0.25rem">
+            <select class="input" name="q_answer_${i}">
+              <option value="A">Correct: A</option>
+              <option value="B">Correct: B</option>
+              <option value="C">Correct: C</option>
+              <option value="D">Correct: D</option>
+            </select>
+          `;
+          area.appendChild(div);
+        }
+        addQuestion();
+        document.getElementById("add-question-btn").addEventListener("click", addQuestion);
+        document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
+        document.getElementById("create-quiz-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const questions = [];
+          for (let i = 0; i < qIdx; i++) {
+            const text = fd.get(`q_text_${i}`);
+            if (!text) continue;
+            questions.push({
+              prompt: text,
+              options: [
+                { text: fd.get(`q_a_${i}`) || "", is_correct: fd.get(`q_answer_${i}`) === "A" },
+                { text: fd.get(`q_b_${i}`) || "", is_correct: fd.get(`q_answer_${i}`) === "B" },
+                { text: fd.get(`q_c_${i}`) || "", is_correct: fd.get(`q_answer_${i}`) === "C" },
+                { text: fd.get(`q_d_${i}`) || "", is_correct: fd.get(`q_answer_${i}`) === "D" },
+              ]
+            });
+          }
+          if (!fd.get("title")) { showToast("Title is required"); return; }
+          try {
+            await request("/quizzes", { method: "POST", body: JSON.stringify({ lesson_id: fd.get("lesson_id") || null, title: fd.get("title"), questions }) });
+            showToast("Quiz created!");
+            loadAdminQuizzes();
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading quizzes</p></div>'); }
+  }
+
+  async function viewAdminQuiz(quizId, quizTitle) {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading quiz...</p></div>');
+    try {
+      const quiz = await request(`/quizzes/${quizId}`);
+      if (!quiz) return;
+      let htmlContent = "";
+      if (quiz.slug) {
+        try {
+          const resp = await fetch(`${API_BASE}/quizzes/${quizId}/content`, { headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token") || ""}` } });
+          if (resp.ok) htmlContent = await resp.text();
+        } catch(e) {}
+      }
+      let questionsHtml = "";
+      if (!quiz.slug) {
+        const fullQuiz = await request(`/quizzes/by-lesson/${quiz.lesson_id}`).catch(() => null);
+        if (fullQuiz && Array.isArray(fullQuiz.questions)) {
+          questionsHtml = fullQuiz.questions.map((q, i) => `
+            <div class="card" style="padding:0.75rem;margin-bottom:0.5rem">
+              <p style="font-weight:600;margin-bottom:0.5rem">${i + 1}. ${escapeHtml(q.prompt)}</p>
+              ${q.options.map(o => `<p style="font-size:0.85rem;margin:0.15rem 0;padding-left:1rem">• ${escapeHtml(o.text)}</p>`).join("")}
+            </div>
+          `).join("");
+        }
+      }
+      showAdminView(`
+        <div class="content">
+          <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h2>${escapeHtml(quiz.title || quizTitle)}</h2>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <span class="badge" style="background:var(--color-${quiz.status === "published" ? "success" : "warning"});color:#fff;padding:0.2rem 0.6rem;border-radius:var(--radius);font-size:0.8rem">${escapeHtml(quiz.status)}</span>
+              ${quiz.status !== "published" ? `<button class="btn btn-primary" id="publish-btn">Publish</button>` : ""}
+              <button class="btn" id="edit-btn">Edit</button>
+            </div>
+          </div>
+          ${htmlContent ?
+            `<div class="card" style="padding:0;overflow:hidden"><iframe id="quiz-frame" style="width:100%;border:none;display:block;min-height:500px"></iframe></div>` :
+            questionsHtml ?
+              `<div>${questionsHtml}</div>` :
+              '<div class="empty-state"><p>No quiz content</p></div>'
+          }
+        </div>
+      `);
+      document.getElementById("back-btn")?.addEventListener("click", loadAdminQuizzes);
+      document.getElementById("publish-btn")?.addEventListener("click", async () => {
+        try {
+          await request(`/quizzes/${quizId}/publish`, { method: "POST" });
+          showToast("Quiz published!");
+          viewAdminQuiz(quizId, quizTitle);
+        } catch(err) { showToast("Error: " + err.message); }
+      });
+      document.getElementById("edit-btn")?.addEventListener("click", () => {
+        showAdminView(`
+          <div class="content">
+            <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>
+            <h2>Edit Quiz</h2>
+            <div class="card" style="margin-top:1rem">
+              <form id="edit-quiz-form" style="display:flex;flex-direction:column;gap:0.5rem">
+                <input class="input" name="title" value="${escapeHtml(quiz.title || "")}" required>
+                <textarea class="input" name="content" rows="14" style="font-family:monospace">${escapeHtml(htmlContent)}</textarea>
+                <div style="display:flex;gap:0.5rem">
+                  <button class="btn btn-primary" type="submit">Save Changes</button>
+                  <button class="btn" type="button" id="cancel-btn">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        `);
+        document.getElementById("back-btn")?.addEventListener("click", () => viewAdminQuiz(quizId, quizTitle));
+        document.getElementById("cancel-btn")?.addEventListener("click", () => viewAdminQuiz(quizId, quizTitle));
+        document.getElementById("edit-quiz-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          try {
+            await request(`/quizzes/${quizId}`, { method: "PUT", body: JSON.stringify({ title: fd.get("title"), html_content: fd.get("content") }) });
+            showToast("Quiz updated!");
+            viewAdminQuiz(quizId, quizTitle);
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+      if (htmlContent) {
+        const iframe = document.getElementById("quiz-frame");
+        iframe.srcdoc = htmlContent;
+        iframe.onload = () => {
+          try { iframe.style.height = Math.max(iframe.contentDocument.documentElement.scrollHeight, 400) + "px"; } catch(e) {}
+        };
+      }
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading quiz</p></div>'); }
+  }
+
+
+;
+  async function loadAdminGames() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading games...</p></div>');
+    try {
+      const games = await request("/games/");
+      const list = Array.isArray(games) ? games : [];
+      const lessons = await request("/lessons/");
+      const lessonList = Array.isArray(lessons) ? lessons : [];
+      const lessonMap = {};
+      lessonList.forEach(l => lessonMap[l.id] = l.title);
+      showAdminView(`
+        <div class="content">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h2>Games</h2>
+            <div style="display:flex;gap:0.5rem">
+              <button class="btn btn-primary" id="add-game-html-btn">+ HTML Game</button>
+              <button class="btn btn-primary" id="add-game-btn">+ Builder Game</button>
+            </div>
+          </div>
+          <div id="form-area"></div>
+          <div class="card-grid">
+            ${list.length === 0 ? '<div class="empty-state"><p>No games yet</p></div>' :
+              list.map(g => `
+                <div class="card" style="cursor:pointer" data-id="${escapeHtml(g.id)}" data-title="${escapeHtml(g.title)}">
+                  <div style="display:flex;justify-content:space-between;align-items:start">
+                    <div style="flex:1">
+                      <div style="display:flex;justify-content:space-between;align-items:center">
+                        <h3>${escapeHtml(g.title)}</h3>
+                        <span class="badge" style="background:var(--color-${g.status === "published" ? "success" : "warning"});color:#fff;padding:0.15rem 0.5rem;border-radius:var(--radius);font-size:0.75rem">${escapeHtml(g.status)}</span>
+                      </div>
+                      <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">${escapeHtml(lessonMap[g.lesson_id] || "Standalone")}</p>
+                      <p style="color:var(--color-text-muted);font-size:0.85rem">${g.slug ? "HTML Game" : "Structured Game"}</p>
+                    </div>
+                    ${deleteBtn(g.id, g.title, "/games")}
+                  </div>
+                </div>
+              `).join("")}
+          </div>
+        </div>
+      `);
+      document.querySelectorAll("#admin-content .card[data-id]").forEach(card => {
+        card.addEventListener("click", (e) => {
+          if (e.target.closest("[data-delete]")) return;
+          viewAdminGame(card.dataset.id, card.dataset.title);
+        });
+      });
+      initDeleteButtons();
+      document.getElementById("add-game-html-btn")?.addEventListener("click", () => {
+        document.getElementById("form-area").innerHTML = `
+          <div class="card" style="margin-bottom:1rem">
+            <h3>New HTML Game</h3>
+            <form id="create-game-html-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
+              <select class="input" name="lesson_id"><option value="">Select lesson (optional)...</option></select>
+              <input class="input" name="title" placeholder="Game title" required>
+              <textarea class="input" name="html_content" rows="8" placeholder="Paste or write full HTML game content..." required></textarea>
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        `;
+        request("/lessons/").then(ls => {
+          const sel = document.querySelector('[name="lesson_id"]');
+          if (sel && Array.isArray(ls)) ls.forEach(l => { const o = document.createElement("option"); o.value = l.id; o.textContent = l.title; sel.appendChild(o); });
+        });
+        document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
+        document.getElementById("create-game-html-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          if (!fd.get("title") || !fd.get("html_content")) { showToast("Title and content are required"); return; }
+          try {
+            await request("/games/from-html", { method: "POST", body: JSON.stringify({ lesson_id: fd.get("lesson_id") || null, title: fd.get("title"), html_content: fd.get("html_content") }) });
+            showToast("Game created!");
+            loadAdminGames();
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+      document.getElementById("add-game-btn")?.addEventListener("click", () => {
+        document.getElementById("form-area").innerHTML = `
+          <div class="card" style="margin-bottom:1rem">
+            <h3>New Builder Game</h3>
+            <form id="create-game-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
+              <select class="input" name="lesson_id"><option value="">Select lesson (optional)...</option></select>
+              <input class="input" name="title" placeholder="Game title" required>
+              <div id="builder-questions">
+                <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.5rem">Questions (add at least one)</p>
+                <div class="builder-question" style="border:1px solid var(--color-border);border-radius:var(--radius);padding:0.75rem;margin-bottom:0.5rem">
+                  <input class="input" name="q_prompt_0" placeholder="Question text" required style="margin-bottom:0.5rem">
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem">
+                    <input class="input" name="q_opt0_0" placeholder="Option A" required>
+                    <input class="input" name="q_opt1_0" placeholder="Option B" required>
+                    <input class="input" name="q_opt2_0" placeholder="Option C" required>
+                    <input class="input" name="q_opt3_0" placeholder="Option D" required>
+                  </div>
+                  <select class="input" name="q_correct_0" style="margin-top:0.35rem">
+                    <option value="0">Correct: Option A</option>
+                    <option value="1">Correct: Option B</option>
+                    <option value="2">Correct: Option C</option>
+                    <option value="3">Correct: Option D</option>
+                  </select>
+                </div>
+              </div>
+              <button type="button" class="btn btn-sm" id="add-question-btn">+ Add Question</button>
+              <div style="display:flex;gap:0.5rem;margin-top:0.5rem">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+              </div>
+            </form>
+          </div>
+        `;
+        request("/lessons/").then(ls => {
+          const sel = document.querySelector('[name="lesson_id"]');
+          if (sel && Array.isArray(ls)) ls.forEach(l => { const o = document.createElement("option"); o.value = l.id; o.textContent = l.title; sel.appendChild(o); });
+        });
+        let qIdx = 1;
+        document.getElementById("add-question-btn").addEventListener("click", () => {
+          const i = qIdx++;
+          const div = document.createElement("div");
+          div.className = "builder-question";
+          div.style.cssText = "border:1px solid var(--color-border);border-radius:var(--radius);padding:0.75rem;margin-bottom:0.5rem";
+          div.innerHTML = `
+            <input class="input" name="q_prompt_${i}" placeholder="Question text" required style="margin-bottom:0.5rem">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem">
+              <input class="input" name="q_opt0_${i}" placeholder="Option A" required>
+              <input class="input" name="q_opt1_${i}" placeholder="Option B" required>
+              <input class="input" name="q_opt2_${i}" placeholder="Option C" required>
+              <input class="input" name="q_opt3_${i}" placeholder="Option D" required>
+            </div>
+            <select class="input" name="q_correct_${i}" style="margin-top:0.35rem">
+              <option value="0">Correct: Option A</option>
+              <option value="1">Correct: Option B</option>
+              <option value="2">Correct: Option C</option>
+              <option value="3">Correct: Option D</option>
+            </select>
+          `;
+          document.getElementById("builder-questions").appendChild(div);
+        });
+        document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
+        document.getElementById("create-game-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          const title = fd.get("title");
+          if (!title) { showToast("Title is required"); return; }
+          const questions = [];
+          document.querySelectorAll(".builder-question").forEach((_, idx) => {
+            const prompt = fd.get(`q_prompt_${idx}`);
+            if (!prompt) return;
+            const options = [
+              { text: fd.get(`q_opt0_${idx}`), is_correct: parseInt(fd.get(`q_correct_${idx}`)) === 0 },
+              { text: fd.get(`q_opt1_${idx}`), is_correct: parseInt(fd.get(`q_correct_${idx}`)) === 1 },
+              { text: fd.get(`q_opt2_${idx}`), is_correct: parseInt(fd.get(`q_correct_${idx}`)) === 2 },
+              { text: fd.get(`q_opt3_${idx}`), is_correct: parseInt(fd.get(`q_correct_${idx}`)) === 3 },
+            ];
+            questions.push({ prompt, options });
+          });
+          if (questions.length === 0) { showToast("Add at least one question"); return; }
+          try {
+            await request("/games", { method: "POST", body: JSON.stringify({ lesson_id: fd.get("lesson_id") || null, title, questions }) });
+            showToast("Game created!");
+            loadAdminGames();
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading games</p></div>'); }
+  }
+
+  async function viewAdminGame(gameId, gameTitle) {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading game...</p></div>');
+    try {
+      const game = await request(`/games/${gameId}`);
+      if (!game) return;
+      let htmlContent = "";
+      if (game.slug) {
+        try {
+          const resp = await fetch(`${API_BASE}/games/${gameId}/content`, { headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token") || ""}` } });
+          if (resp.ok) htmlContent = await resp.text();
+        } catch(e) {}
+      }
+      showAdminView(`
+        <div class="content">
+          <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <h2>${escapeHtml(game.title || gameTitle)}</h2>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <span class="badge" style="background:var(--color-${game.status === "published" ? "success" : "warning"});color:#fff;padding:0.2rem 0.6rem;border-radius:var(--radius);font-size:0.8rem">${escapeHtml(game.status)}</span>
+              ${game.status !== "published" ? `<button class="btn btn-primary" id="publish-btn">Publish</button>` : ""}
+              <button class="btn" id="edit-btn">Edit</button>
+            </div>
+          </div>
+          ${htmlContent ?
+            `<div class="card" style="padding:0;overflow:hidden"><iframe id="game-frame" style="width:100%;border:none;display:block;min-height:500px"></iframe></div>` :
+            '<div class="empty-state"><p>No game content</p></div>'
+          }
+        </div>
+      `);
+      document.getElementById("back-btn")?.addEventListener("click", loadAdminGames);
+      document.getElementById("publish-btn")?.addEventListener("click", async () => {
+        try {
+          await request(`/games/${gameId}/publish`, { method: "POST" });
+          showToast("Game published!");
+          viewAdminGame(gameId, gameTitle);
+        } catch(err) { showToast("Error: " + err.message); }
+      });
+      document.getElementById("edit-btn")?.addEventListener("click", () => {
+        showAdminView(`
+          <div class="content">
+            <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>
+            <h2>Edit Game</h2>
+            <div class="card" style="margin-top:1rem">
+              <form id="edit-game-form" style="display:flex;flex-direction:column;gap:0.5rem">
+                <input class="input" name="title" value="${escapeHtml(game.title || "")}" required>
+                <textarea class="input" name="content" rows="14" style="font-family:monospace">${escapeHtml(htmlContent)}</textarea>
+                <div style="display:flex;gap:0.5rem">
+                  <button class="btn btn-primary" type="submit">Save Changes</button>
+                  <button class="btn" type="button" id="cancel-btn">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        `);
+        document.getElementById("back-btn")?.addEventListener("click", () => viewAdminGame(gameId, gameTitle));
+        document.getElementById("cancel-btn")?.addEventListener("click", () => viewAdminGame(gameId, gameTitle));
+        document.getElementById("edit-game-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          try {
+            await request(`/games/${gameId}`, { method: "PUT", body: JSON.stringify({ title: fd.get("title"), html_content: fd.get("content") }) });
+            showToast("Game updated!");
+            viewAdminGame(gameId, gameTitle);
+          } catch(err) { showToast("Error: " + err.message); }
+        });
+      });
+      if (htmlContent) {
+        const iframe = document.getElementById("game-frame");
+        iframe.srcdoc = htmlContent;
+        iframe.onload = () => {
+          try { iframe.style.height = Math.max(iframe.contentDocument.documentElement.scrollHeight, 400) + "px"; } catch(e) {}
+        };
+      }
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading game</p></div>'); }
+  }
+
+  async function loadAdminUsers() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading users...</p></div>');
+    try {
+      const [students, teachers] = await Promise.all([request("/students"), request("/teachers")]);
+      const sList = Array.isArray(students) ? students : [];
+      const tList = Array.isArray(teachers) ? teachers : [];
+      showAdminView(`
+        <div class="content" style="max-width:960px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h2>Users</h2>
+            <button class="btn btn-primary" id="register-user-btn">+ Register User</button>
+          </div>
+          <div id="user-form-area"></div>
+
+          <div class="section-header" style="margin-top:1.5rem">
+            <h3>Students (${sList.length})</h3>
+          </div>
+          <div class="card-grid">
+            ${sList.length === 0 ? '<div class="empty-state" style="padding:2rem"><p>No students registered</p></div>' :
+              sList.map(s => `
+                <div class="card user-card" data-id="${escapeHtml(s.id || s.user_id)}" data-type="student" data-name="${escapeHtml(s.full_name || '')}" style="cursor:pointer">
+                  <div style="display:flex;align-items:center;gap:0.75rem">
+                    <div style="width:36px;height:36px;border-radius:50%;background:#eff6ff;color:#2563eb;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">${escapeHtml((s.full_name || "S").charAt(0).toUpperCase())}</div>
+                    <div style="flex:1;min-width:0">
+                      <h4 style="margin:0;font-size:0.9rem">${escapeHtml(s.full_name || "Unnamed")}</h4>
+                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(s.email || "")} ${s.form_level ? "· " + escapeHtml(s.form_level) : ""}</p>
+                    </div>
+                  </div>
+                </div>
+              `).join("")}
+          </div>
+
+          <div class="section-header" style="margin-top:1.5rem">
+            <h3>Teachers (${tList.length})</h3>
+          </div>
+          <div class="card-grid">
+            ${tList.length === 0 ? '<div class="empty-state" style="padding:2rem"><p>No teachers registered</p></div>' :
+              tList.map(t => `
+                <div class="card user-card" data-id="${escapeHtml(t.id || t.user_id)}" data-type="teacher" data-name="${escapeHtml(t.full_name || '')}" style="cursor:pointer">
+                  <div style="display:flex;align-items:center;gap:0.75rem">
+                    <div style="width:36px;height:36px;border-radius:50%;background:#f0fdf4;color:#16a34a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0">${escapeHtml((t.full_name || "T").charAt(0).toUpperCase())}</div>
+                    <div style="flex:1;min-width:0">
+                      <h4 style="margin:0;font-size:0.9rem">${escapeHtml(t.full_name || "Unnamed")}</h4>
+                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.75rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(t.email || "")} ${t.subjects ? "· " + escapeHtml(t.subjects) : ""}</p>
+                    </div>
+                  </div>
+                </div>
+              `).join("")}
+          </div>
+        </div>
+      `);
+      document.querySelectorAll("#admin-content .user-card").forEach(card => {
+        card.addEventListener("click", () => viewAdminUser(card.dataset.id, card.dataset.type, card.dataset.name));
+      });
+      document.getElementById("register-user-btn")?.addEventListener("click", () => {
+        document.getElementById("user-form-area").innerHTML = `
+          <div class="card" style="margin-top:1rem;padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem">Register New User</h3>
+            <form id="register-user-form" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Full Name</label>
+                <input class="input" name="full_name" placeholder="John Doe" required>
+              </div>
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Email</label>
+                <input class="input" type="email" name="email" placeholder="john@example.com" required>
+              </div>
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Password</label>
+                <input class="input" type="password" name="password" placeholder="Min 6 characters" required minlength="6">
+              </div>
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Phone</label>
+                <input class="input" name="phone" placeholder="+255...">
+              </div>
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Role</label>
+                <select class="input" name="role" required>
+                  <option value="student">Student</option>
+                  <option value="teacher">Teacher</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Form Level (Students)</label>
+                <select class="input" name="form_level">
+                  <option value="">N/A</option>
+                  <option value="Form I">Form I</option>
+                  <option value="Form II">Form II</option>
+                  <option value="Form III">Form III</option>
+                  <option value="Form IV">Form IV</option>
+                  <option value="Form V">Form V</option>
+                  <option value="Form VI">Form VI</option>
+                </select>
+              </div>
+              <div style="grid-column:1/-1;display:flex;gap:0.5rem">
+                <button class="btn btn-success" type="submit">Register</button>
+                <button class="btn" type="button" id="cancel-register">Cancel</button>
+              </div>
+            </form>
+            <div id="register-user-result" style="margin-top:0.75rem;font-size:0.85rem"></div>
+          </div>
+        `;
+        document.getElementById("cancel-register").addEventListener("click", () => document.getElementById("user-form-area").innerHTML = "");
+        document.getElementById("register-user-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          try {
+            await request("/auth/register", {
+              method: "POST",
+              body: JSON.stringify({
+                full_name: fd.get("full_name"),
+                email: fd.get("email"),
+                password: fd.get("password"),
+                phone: fd.get("phone") || null,
+                role: fd.get("role"),
+                form_level: fd.get("form_level") || null,
+              }),
+            });
+            document.getElementById("register-user-result").innerHTML = '<span style="color:var(--color-success)">User registered!</span>';
+            setTimeout(() => loadAdminUsers(), 1000);
+          } catch(err) {
+            document.getElementById("register-user-result").innerHTML = `<span style="color:var(--color-danger)">${escapeHtml(err.message)}</span>`;
+          }
+        });
+      });
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading users</p></div>'); }
+  }
+
+  async function viewAdminUser(userId, userType, userName) {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading user...</p></div>');
+    try {
+      let userData = null;
+      let progressData = [];
+      if (userType === "student") {
+        [userData, progressData] = await Promise.all([
+          request(`/students/${userId}`).catch(() => null),
+          request(`/progress/${userId}`).catch(() => []),
+        ]);
+      } else {
+        userData = await request(`/teachers/${userId}`).catch(() => null);
+      }
+
+      const progressList = Array.isArray(progressData) ? progressData : [];
+      const totalCompleted = progressList.filter(p => p.completion_percentage >= 100).length;
+      const scores = progressList.filter(p => p.score_percentage != null && p.score_percentage > 0);
+      const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b.score_percentage, 0) / scores.length) : 0;
+
+      showAdminView(`
+        <div class="content" style="max-width:960px">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">
+            <button class="btn" id="back-btn">← Back</button>
+            <h2>${escapeHtml(userName)}</h2>
+            <span style="font-size:0.75rem;padding:0.2rem 0.6rem;background:${userType === "student" ? "#eff6ff" : "#f0fdf4"};color:${userType === "student" ? "#2563eb" : "#16a34a"};border-radius:var(--radius);font-weight:600">${userType === "student" ? "Student" : "Teacher"}</span>
+          </div>
+
+          <div class="card" style="margin-bottom:1rem">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem">
+              <div>
+                <div style="font-size:0.75rem;color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Name</div>
+                <div style="font-size:0.9rem">${escapeHtml(userData?.full_name || "N/A")}</div>
+              </div>
+              <div>
+                <div style="font-size:0.75rem;color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Email</div>
+                <div style="font-size:0.9rem">${escapeHtml(userData?.email || "N/A")}</div>
+              </div>
+              ${userData?.phone ? `<div>
+                <div style="font-size:0.75rem;color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Phone</div>
+                <div style="font-size:0.9rem">${escapeHtml(userData.phone)}</div>
+              </div>` : ""}
+              ${userData?.form_level ? `<div>
+                <div style="font-size:0.75rem;color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Form Level</div>
+                <div style="font-size:0.9rem">${escapeHtml(userData.form_level)}</div>
+              </div>` : ""}
+              ${userData?.subjects ? `<div>
+                <div style="font-size:0.75rem;color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Subjects</div>
+                <div style="font-size:0.9rem">${escapeHtml(userData.subjects)}</div>
+              </div>` : ""}
+            </div>
+          </div>
+
+          ${userType === "student" && progressList.length > 0 ? `
+            <div class="stat-grid">
+              <div class="stat-card">
+                <div class="stat-icon" style="background:#eff6ff;color:#2563eb">📚</div>
+                <div class="stat-value">${progressList.length}</div>
+                <div class="stat-label">Lessons Attempted</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">✅</div>
+                <div class="stat-value">${totalCompleted}</div>
+                <div class="stat-label">Completed</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon" style="background:#fef3c7;color:#d97706">📈</div>
+                <div class="stat-value">${avgScore != null ? avgScore + "%" : "0%"}</div>
+                <div class="stat-label">Avg Score</div>
+              </div>
+            </div>
+
+            <div class="section-header">
+              <h3>Progress by Subject</h3>
+            </div>
+            ${(() => {
+              const bySubject = {};
+              progressList.forEach(p => {
+                const subj = p.subject_name || "General";
+                if (!bySubject[subj]) bySubject[subj] = { total: 0, completed: 0 };
+                bySubject[subj].total++;
+                if (p.completion_percentage >= 100) bySubject[subj].completed++;
+              });
+              return Object.entries(bySubject).map(([name, data]) => {
+                const pct = data.total > 0 ? Math.round((data.completed / data.total) * 100) : 0;
+                return `
+                  <div class="card" style="margin-bottom:0.75rem">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem">
+                      <strong>${escapeHtml(name)}</strong>
+                      <span style="font-size:0.85rem;color:var(--color-text-muted)">${data.completed}/${data.total} · ${pct}%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div class="progress-bar-fill" style="width:${pct}%"></div>
+                    </div>
+                  </div>
+                `;
+              }).join("");
+            })()}
+          ` : userType === "student" ? `
+            <div class="empty-state" style="padding:2rem"><p>No progress data yet</p></div>
+          ` : ""}
+
+          ${userType === "teacher" ? `
+            <div class="section-header" style="margin-top:1rem">
+              <h3>Teacher Actions</h3>
+            </div>
+            <div class="card" style="padding:1rem">
+              <p style="color:var(--color-text-muted);font-size:0.85rem">Teacher progress and class analytics are available in the teacher portal.</p>
+            </div>
+          ` : ""}
+        </div>
+      `);
+
+      document.getElementById("back-btn")?.addEventListener("click", loadAdminUsers);
+    } catch (err) {
+      showAdminView(`<div class="empty-state"><p>Error loading user details</p><button class="btn" id="back-btn">← Back</button></div>`);
+      document.getElementById("back-btn")?.addEventListener("click", loadAdminUsers);
+    }
+  }
+
+
+;
+  async function loadAdminPayments() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading payments...</p></div>');
+    try {
+      const transactions = await request("/payments/transactions").catch(() => []);
+      const txList = Array.isArray(transactions) ? transactions : [];
+      const totalRevenue = txList.filter(t => t.status === "completed").reduce((s, t) => s + (t.amount_tzs || 0), 0);
+      const completedCount = txList.filter(t => t.status === "completed").length;
+      const pendingCount = txList.filter(t => t.status === "pending").length;
+
+      showAdminView(`
+        <div class="content">
+          <h2>Payments</h2>
+          <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">AzamPay mobile money integration</p>
+
+          <div class="stat-grid" style="margin-top:1rem">
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">💰</div>
+              <div class="stat-value">${totalRevenue.toLocaleString()}</div>
+              <div class="stat-label">Total Revenue (TZS)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#eff6ff;color:#2563eb">✅</div>
+              <div class="stat-value">${completedCount}</div>
+              <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#fef3c7;color:#d97706">⏳</div>
+              <div class="stat-value">${pendingCount}</div>
+              <div class="stat-label">Pending</div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:1.5rem;margin-top:1rem">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
+              <h3>Payment Plans</h3>
+              <button class="btn btn-sm btn-primary" id="admin-add-plan-btn">+ New Plan</button>
+            </div>
+            <div id="admin-plan-form-wrap" style="display:none;margin-bottom:1rem">
+              <form id="admin-plan-form" class="checkout-body">
+                <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+                  <div style="flex:1;min-width:160px"><label class="field-label">Name</label><input class="input" name="name" required></div>
+                  <div style="flex:1;min-width:160px"><label class="field-label">Description</label><input class="input" name="description"></div>
+                </div>
+                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem">
+                  <div style="min-width:130px"><label class="field-label">Amount (TZS)</label><input class="input" name="amount_tzs" type="number" min="100" required></div>
+                  <div style="min-width:130px"><label class="field-label">Audience</label><select class="input" name="audience"><option value="both">Both</option><option value="student">Student</option><option value="teacher">Teacher</option></select></div>
+                  <div style="min-width:130px"><label class="field-label">Active</label><select class="input" name="is_active"><option value="true">Yes</option><option value="false">No</option></select></div>
+                </div>
+                <div style="margin-top:0.75rem">
+                  <button class="btn btn-success" type="submit" id="admin-plan-submit">Save Plan</button>
+                  <button class="btn btn-ghost" type="button" id="admin-plan-cancel">Cancel</button>
+                </div>
+              </form>
+              <div id="admin-plan-result" style="margin-top:0.5rem"></div>
+            </div>
+            <div id="admin-plans-list"><div class="loading-state"><div class="spinner"></div></div></div>
+          </div>
+
+          <div class="card" style="padding:0;max-width:560px;margin-top:1rem;overflow:hidden">
+              <div class="checkout-header">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                <h3>Initiate Checkout</h3>
+              </div>
+              <form id="payment-form" class="checkout-body">
+                <div>
+                  <label class="field-label">Mobile Number</label>
+                  <div class="input-icon-wrap">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    <input class="input" name="mobile_number" placeholder="0712345678" required>
+                  </div>
+                </div>
+                <div>
+                  <label class="field-label">Amount (TZS)</label>
+                  <div class="input-icon-wrap">
+                    <span class="input-currency-prefix">TZS</span>
+                    <input class="input" name="amount_tzs" type="number" placeholder="5,000" required min="100">
+                  </div>
+                </div>
+                <div>
+                  <label class="field-label">Provider</label>
+                  <div class="provider-grid">
+                    <label class="provider-card">
+                      <input type="radio" name="provider" value="m-pesa" required>
+                      <span class="provider-dot" style="background:#16a34a"></span>
+                      <span>M-Pesa</span>
+                    </label>
+                    <label class="provider-card">
+                      <input type="radio" name="provider" value="tigo-pesa">
+                      <span class="provider-dot" style="background:#2563eb"></span>
+                      <span>Tigo Pesa</span>
+                    </label>
+                    <label class="provider-card">
+                      <input type="radio" name="provider" value="halopesa">
+                      <span class="provider-dot" style="background:#d97706"></span>
+                      <span>HaloPesa</span>
+                    </label>
+                    <label class="provider-card">
+                      <input type="radio" name="provider" value="azampay">
+                      <span class="provider-dot" style="background:#8b5cf6"></span>
+                      <span>AzamPay</span>
+                    </label>
+                  </div>
+                </div>
+                <button class="btn btn-success btn-block" type="submit" id="payment-submit-btn">Initiate Payment</button>
+              </form>
+              <div id="payment-result" style="padding:0 1.5rem 1.5rem"></div>
+            </div>
+
+          <div class="card" style="padding:1.5rem;margin-top:1rem">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
+              <h3>Transaction History</h3>
+              <button class="btn btn-sm" id="refresh-tx-btn">Refresh</button>
+            </div>
+            ${txList.length === 0
+              ? '<div class="empty-state" style="padding:2rem"><p>No transactions yet</p></div>'
+              : `<div style="overflow-x:auto">
+                  <table class="tx-table" style="width:100%;border-collapse:collapse;font-size:0.85rem">
+                    <thead>
+                      <tr style="border-bottom:2px solid var(--color-border)">
+                        <th style="padding:0.6rem;text-align:left;font-weight:600">Date</th>
+                         <th style="padding:0.6rem;text-align:left;font-weight:600">Phone</th>
+                         <th style="padding:0.6rem;text-align:left;font-weight:600">Provider</th>
+                         <th style="padding:0.6rem;text-align:left;font-weight:600">Plan</th>
+                         <th style="padding:0.6rem;text-align:right;font-weight:600">Amount</th>
+                        <th style="padding:0.6rem;text-align:center;font-weight:600">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${txList.map(t => `
+                        <tr style="border-bottom:1px solid var(--color-border)">
+                          <td style="padding:0.6rem;color:var(--color-text-muted)">${t.created_at ? new Date(t.created_at).toLocaleDateString() : "\u2014"}</td>
+                           <td style="padding:0.6rem;font-weight:500">${escapeHtml(t.mobile_number || "\u2014")}</td>
+                           <td style="padding:0.6rem">${escapeHtml(t.provider || "\u2014")}</td>
+                           <td style="padding:0.6rem">${escapeHtml(t.plan_name || "\u2014")}</td>
+                           <td style="padding:0.6rem;text-align:right;font-weight:600">${(t.amount_tzs || 0).toLocaleString()} TZS</td>
+                          <td style="padding:0.6rem;text-align:center"><span class="badge badge-${t.status || 'pending'}">${escapeHtml(t.status || "unknown")}</span></td>
+                        </tr>
+                      `).join("")}
+                    </tbody>
+                  </table>
+                </div>`
+            }
+          </div>
+        </div>
+      `);
+
+      let paymentInProgress = false;
+      document.getElementById("payment-form")?.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const btn = document.getElementById("payment-submit-btn");
+        if (paymentInProgress) return;
+        paymentInProgress = true;
+        btn.innerHTML = '<span class="btn-spinner"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="10" stroke-dasharray="31.4 31.4" stroke-linecap="round"/></svg> Processing...</span>';
+        btn.disabled = true;
+        const fd = new FormData(ev.target);
+        try {
+          const data = await request("/payments/checkout", {
+            method: "POST",
+            body: JSON.stringify({
+              mobile_number: fd.get("mobile_number"),
+              amount_tzs: parseInt(fd.get("amount_tzs"), 10),
+              provider: fd.get("provider"),
+              idempotency_key: crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(),
+            }),
+          });
+          if (data === null) return;
+          document.getElementById("payment-result").innerHTML = `<div class="payment-result success"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div><strong>Payment initiated!</strong><br><span style="opacity:0.8;font-size:0.8rem">${escapeHtml(data.external_transaction_id || data.id || "")}</span></div></div>`;
+          loadAdminPayments();
+        } catch (err) {
+          document.getElementById("payment-result").innerHTML = `<div class="payment-result error"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div>${escapeHtml(err.message)}</div></div>`;
+        }
+        paymentInProgress = false;
+        btn.innerHTML = 'Initiate Payment';
+        btn.disabled = false;
+      });
+
+      document.getElementById("refresh-tx-btn")?.addEventListener("click", loadAdminPayments);
+
+      // ── Payment Plans management ───────────────────────────────────────
+      let _adminEditingPlanId = null;
+      const planFormWrap = document.getElementById("admin-plan-form-wrap");
+      const planForm = document.getElementById("admin-plan-form");
+
+      document.getElementById("admin-add-plan-btn")?.addEventListener("click", () => {
+        _adminEditingPlanId = null;
+        planForm.reset();
+        planFormWrap.style.display = planFormWrap.style.display === "none" ? "block" : "block";
+        document.getElementById("admin-plan-result").innerHTML = "";
+      });
+      document.getElementById("admin-plan-cancel")?.addEventListener("click", () => {
+        planFormWrap.style.display = "none";
+        _adminEditingPlanId = null;
+      });
+
+      planForm?.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const btn = document.getElementById("admin-plan-submit");
+        const resultEl = document.getElementById("admin-plan-result");
+        const fd = new FormData(ev.target);
+        const payload = {
+          name: fd.get("name"),
+          description: fd.get("description") || null,
+          amount_tzs: parseFloat(fd.get("amount_tzs")),
+          audience: fd.get("audience"),
+          is_active: fd.get("is_active") === "true",
+        };
+        btn.disabled = true; btn.textContent = "Saving...";
+        try {
+          if (_adminEditingPlanId) {
+            await request(`/payments/plans/${_adminEditingPlanId}`, { method: "PUT", body: JSON.stringify(payload) });
+          } else {
+            await request("/payments/plans", { method: "POST", body: JSON.stringify(payload) });
+          }
+          resultEl.innerHTML = '<div class="payment-result success">Plan saved.</div>';
+          planFormWrap.style.display = "none";
+          _adminEditingPlanId = null;
+          loadAdminPlans();
+        } catch (err) {
+          resultEl.innerHTML = `<div class="payment-result error">${escapeHtml(err.message)}</div>`;
+        } finally {
+          btn.disabled = false; btn.textContent = "Save Plan";
+        }
+      });
+
+      async function loadAdminPlans() {
+        const el = document.getElementById("admin-plans-list");
+        if (!el) return;
+        try {
+          const plans = await request("/payments/plans/all").catch(() => []);
+          if (!Array.isArray(plans) || plans.length === 0) {
+            el.innerHTML = '<div class="empty-state" style="padding:1.5rem"><p>No plans created yet.</p></div>';
+            return;
+          }
+          el.innerHTML = plans.map(p => `
+            <div class="plan-card" style="border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem;margin-top:0.75rem;display:flex;justify-content:space-between;align-items:center;gap:0.5rem">
+              <div>
+                <div style="font-weight:600">${escapeHtml(p.name)} ${p.is_active ? '' : '<span class="badge badge-pending">inactive</span>'}</div>
+                <div style="font-size:0.8rem;color:var(--color-text-muted)">${escapeHtml(p.description || "")}</div>
+                <div style="font-weight:700;margin-top:0.25rem">${Number(p.amount_tzs).toLocaleString()} ${escapeHtml(p.currency || "TZS")} · <span style="text-transform:capitalize">${escapeHtml(p.audience)}</span></div>
+              </div>
+              <div style="display:flex;gap:0.4rem">
+                <button class="btn btn-sm admin-edit-plan" data-id="${p.id}">Edit</button>
+                <button class="btn btn-sm btn-danger admin-delete-plan" data-id="${p.id}">Delete</button>
+              </div>
+            </div>
+          `).join("");
+          document.querySelectorAll(".admin-edit-plan").forEach(b => b.addEventListener("click", () => {
+            const id = b.getAttribute("data-id");
+            const plan = plans.find(x => x.id === id);
+            if (!plan) return;
+            _adminEditingPlanId = id;
+            planForm.name.value = plan.name;
+            planForm.description.value = plan.description || "";
+            planForm.amount_tzs.value = plan.amount_tzs;
+            planForm.audience.value = plan.audience;
+            planForm.is_active.value = String(plan.is_active);
+            planFormWrap.style.display = "block";
+            document.getElementById("admin-plan-result").innerHTML = "";
+            planForm.scrollIntoView({ behavior: "smooth" });
+          }));
+          document.querySelectorAll(".admin-delete-plan").forEach(b => b.addEventListener("click", async () => {
+            if (!confirm("Delete this plan?")) return;
+            try {
+              await request(`/payments/plans/${b.getAttribute("data-id")}`, { method: "DELETE" });
+              loadAdminPlans();
+            } catch (err) {
+              alert(escapeHtml(err.message));
+            }
+          }));
+        } catch (e) {
+          el.innerHTML = '<div class="empty-state" style="padding:1.5rem"><p>Could not load plans.</p></div>';
+        }
+      }
+      loadAdminPlans();
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading payments: ' + escapeHtml(e.message) + '</p></div>'); }
+  }
+
+  async function loadAdminNotifications() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading notifications...</p></div>');
+    try {
+      const [data, users] = await Promise.all([
+        request("/notifications"),
+        request("/users"),
+      ]);
+      const allNotifs = Array.isArray(data) ? data : [];
+      const userList = Array.isArray(users) ? users : [];
+      let currentFilter = "all";
+      let searchQuery = "";
+      const PAGE_SIZE = 15;
+      let currentPage = 1;
+
+      function getFiltered() {
+        let list = allNotifs;
+        if (currentFilter === "unread") list = list.filter(n => !n.is_read);
+        else if (currentFilter === "read") list = list.filter(n => n.is_read);
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          list = list.filter(n => (n.message || "").toLowerCase().includes(q));
+        }
+        return list;
+      }
+
+      function renderNotifHistory() {
+        const filtered = getFiltered();
+        const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+        if (currentPage > totalPages) currentPage = totalPages;
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const page = filtered.slice(start, start + PAGE_SIZE);
+        const unreadCount = allNotifs.filter(n => !n.is_read).length;
+
+        document.getElementById("notif-stats").innerHTML = `
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+            <span style="font-size:0.8rem;padding:0.25rem 0.6rem;border-radius:var(--radius);background:var(--color-bg);border:1px solid var(--color-border)">Total: ${allNotifs.length}</span>
+            <span style="font-size:0.8rem;padding:0.25rem 0.6rem;border-radius:var(--radius);background:#fef3c7;border:1px solid #fde68a">Unread: ${unreadCount}</span>
+            <span style="font-size:0.8rem;padding:0.25rem 0.6rem;border-radius:var(--radius);background:var(--color-bg);border:1px solid var(--color-border)">Showing: ${filtered.length}</span>
+          </div>
+        `;
+
+        const notifList = document.getElementById("notif-list");
+        if (page.length === 0) {
+          notifList.innerHTML = '<div class="empty-state" style="padding:2rem"><p>No notifications match your filter</p></div>';
+        } else {
+          notifList.innerHTML = page.map(n => `
+            <div class="card" style="padding:0.75rem 1rem;margin-bottom:0.5rem;${n.is_read ? "opacity:0.7" : "border-left:3px solid var(--color-primary)"}">
+              <div style="display:flex;justify-content:space-between;align-items:start;gap:0.5rem">
+                <div style="flex:1;min-width:0">
+                  <p style="margin:0;font-size:0.875rem;${n.is_read ? "" : "font-weight:600"}">${escapeHtml(n.message)}</p>
+                  <p style="margin:0.25rem 0 0;font-size:0.75rem;color:var(--color-text-muted)">${n.created_at ? new Date(n.created_at).toLocaleString() : ""} · ${n.is_read ? "Read" : "Unread"}</p>
+                </div>
+                <div style="display:flex;gap:0.25rem;flex-shrink:0">
+                  ${!n.is_read ? `<button class="btn btn-primary btn-xs notif-mark-read" data-id="${n.id}">✓ Read</button>` : ""}
+                </div>
+              </div>
+            </div>
+          `).join("");
+        }
+
+        const pag = document.getElementById("notif-pagination");
+        if (totalPages <= 1) { pag.innerHTML = ""; return; }
+        pag.innerHTML = `
+          <div style="display:flex;align-items:center;gap:0.5rem;justify-content:center;margin-top:1rem">
+            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${currentPage - 1}" ${currentPage <= 1 ? "disabled" : ""}>← Prev</button>
+            <span style="font-size:0.85rem;color:var(--color-text-muted)">Page ${currentPage} of ${totalPages}</span>
+            <button class="btn btn-ghost btn-sm notif-page-btn" data-page="${currentPage + 1}" ${currentPage >= totalPages ? "disabled" : ""}>Next →</button>
+          </div>
+        `;
+        document.querySelectorAll(".notif-page-btn").forEach(btn => {
+          btn.addEventListener("click", () => { currentPage = parseInt(btn.dataset.page); renderNotifHistory(); });
+        });
+        document.querySelectorAll(".notif-mark-read").forEach(btn => {
+          btn.addEventListener("click", async () => {
+            await request(`/notifications/${btn.dataset.id}/read`, { method: "POST" });
+            const n = allNotifs.find(x => x.id === btn.dataset.id);
+            if (n) n.is_read = true;
+            renderNotifHistory();
+          });
+        });
+      }
+
+      showAdminView(`
+        <div class="content">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem">
+            <h2>🔔 Notifications</h2>
+            <button class="btn btn-primary btn-pattern" id="notif-send-btn">✉️ Send Notification</button>
+          </div>
+          <div class="card" style="margin-top:1rem;display:none" id="notif-send-form-area">
+            <h3 style="margin-bottom:0.75rem">Send Notification</h3>
+            <form id="send-notif-form" style="display:flex;flex-direction:column;gap:0.5rem">
+              <label style="font-size:0.85rem;font-weight:500">Recipient</label>
+              <select class="input" name="recipient_type" id="notif-recipient-type" required>
+                <option value="role_student">All Students</option>
+                <option value="role_teacher">All Teachers</option>
+                <option value="specific">Specific User...</option>
+              </select>
+              <div id="notif-specific-user" style="display:none">
+                <select class="input" name="user_id" id="notif-user-select">
+                  <option value="">Select user...</option>
+                  ${userList.map(u => `<option value="${escapeHtml(u.id)}">${escapeHtml(u.email)} (${escapeHtml(u.role)})</option>`).join("")}
+                </select>
+              </div>
+              <label style="font-size:0.85rem;font-weight:500">Message</label>
+              <textarea class="input" name="message" rows="3" placeholder="Write your notification message..." required></textarea>
+              <div style="display:flex;gap:0.5rem;align-items:center">
+                <button class="btn btn-success btn-pattern" type="submit">📤 Send Notification</button>
+                <button class="btn btn-ghost" type="button" id="notif-cancel-send">Cancel</button>
+                <p id="notif-send-status" style="font-size:0.85rem;display:none;margin:0"></p>
+              </div>
+            </form>
+          </div>
+          <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
+            <button class="btn-filter notif-filter-btn active" data-filter="all">All</button>
+            <button class="btn-filter notif-filter-btn" data-filter="unread">🔴 Unread</button>
+            <button class="btn-filter notif-filter-btn" data-filter="read">✅ Read</button>
+            <input type="search" class="input" id="notif-search" placeholder="Search notifications..." style="max-width:240px;padding:0.35rem 0.6rem;font-size:0.85rem">
+            <button class="btn btn-ghost btn-sm" id="notif-mark-all" style="margin-left:auto">✓ Mark All Read</button>
+          </div>
+          <div id="notif-stats" style="margin-top:0.75rem"></div>
+          <div style="margin-top:0.5rem" id="notif-list"></div>
+          <div id="notif-pagination"></div>
+        </div>
+      `);
+
+      document.getElementById("notif-send-btn")?.addEventListener("click", () => {
+        const area = document.getElementById("notif-send-form-area");
+        area.style.display = area.style.display === "none" ? "block" : "none";
+      });
+      document.getElementById("notif-cancel-send")?.addEventListener("click", () => {
+        document.getElementById("notif-send-form-area").style.display = "none";
+      });
+      document.getElementById("notif-recipient-type")?.addEventListener("change", (e) => {
+        document.getElementById("notif-specific-user").style.display = e.target.value === "specific" ? "block" : "none";
+      });
+      document.getElementById("send-notif-form")?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const type = fd.get("recipient_type");
+        const message = fd.get("message");
+        const statusEl = document.getElementById("notif-send-status");
+        try {
+          let body = { message };
+          if (type === "role_student") body.role = "student";
+          else if (type === "role_teacher") body.role = "teacher";
+          else body.user_id = fd.get("user_id");
+          if (!body.role && !body.user_id) {
+            statusEl.textContent = "Please select a user"; statusEl.style.color = "var(--color-danger)"; statusEl.style.display = "inline";
+            return;
+          }
+          const result = await request("/notifications", { method: "POST", body: JSON.stringify(body) });
+          statusEl.textContent = `Sent to ${result.sent} user(s)`; statusEl.style.color = "var(--color-success)"; statusEl.style.display = "inline";
+          e.target.reset();
+          document.getElementById("notif-specific-user").style.display = "none";
+          loadAdminNotifications();
+        } catch(err) {
+          statusEl.textContent = "Error: " + err.message; statusEl.style.color = "var(--color-danger)"; statusEl.style.display = "inline";
+        }
+      });
+
+      document.querySelectorAll(".notif-filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          currentFilter = btn.dataset.filter; currentPage = 1;
+          document.querySelectorAll(".notif-filter-btn").forEach(b => b.classList.toggle("active", b.dataset.filter === currentFilter));
+          renderNotifHistory();
+        });
+      });
+      document.getElementById("notif-search")?.addEventListener("input", (e) => {
+        searchQuery = e.target.value; currentPage = 1; renderNotifHistory();
+      });
+      document.getElementById("notif-mark-all")?.addEventListener("click", async () => {
+        const unread = allNotifs.filter(n => !n.is_read);
+        if (unread.length === 0) return;
+        for (const n of unread) {
+          try { await request(`/notifications/${n.id}/read`, { method: "POST" }); n.is_read = true; } catch(e) {}
+        }
+        renderNotifHistory();
+      });
+
+      renderNotifHistory();
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading notifications</p></div>'); }
+  }
+
+  async function loadAdminUploads() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading uploads...</p></div>');
+    try {
+      const files = await request("/uploads").catch(() => []);
+      const fileList = Array.isArray(files) ? files : [];
+      const imageFiles = fileList.filter(f => /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(f.filename || f.path || ""));
+      const docFiles = fileList.filter(f => /\.(pdf|doc|docx|txt)$/i.test(f.filename || f.path || ""));
+      const mediaFiles = fileList.filter(f => /\.(mp4|webm|mp3|wav|ogg)$/i.test(f.filename || f.path || ""));
+      let activeFilter = "all";
+
+      function renderFiles() {
+        let filtered = fileList;
+        if (activeFilter === "images") filtered = imageFiles;
+        else if (activeFilter === "documents") filtered = docFiles;
+        else if (activeFilter === "media") filtered = mediaFiles;
+
+        const grid = document.getElementById("uploads-grid");
+        if (!grid) return;
+        if (filtered.length === 0) {
+          grid.innerHTML = '<div class="empty-state" style="padding:2rem"><p>No files uploaded yet</p></div>';
+          return;
+        }
+        grid.innerHTML = filtered.map(f => {
+          const name = f.filename || f.path || "unknown";
+          const displayName = f.display_name || name;
+          const isVisible = f.is_visible !== false;
+          const isImage = /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(name);
+          const isVideo = /\.(mp4|webm)$/i.test(name);
+          const isAudio = /\.(mp3|wav|ogg)$/i.test(name);
+          const icon = isImage ? "🖼️" : isVideo ? "🎬" : isAudio ? "🎵" : "📄";
+          return `
+            <div class="card upload-card" style="padding:0.75rem;cursor:pointer" data-filename="${escapeHtml(name)}">
+              <div style="display:flex;align-items:center;gap:0.75rem">
+                <div style="font-size:1.5rem;flex-shrink:0">${icon}</div>
+                <div style="flex:1;min-width:0">
+                  <p style="margin:0;font-size:0.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" class="upload-display-name">${escapeHtml(displayName)}</p>
+                  <p style="margin:0.15rem 0 0;font-size:0.7rem;color:var(--color-text-muted)">${f.size ? (f.size / 1024).toFixed(1) + " KB" : ""} · ${f.uploaded_at ? new Date(f.uploaded_at).toLocaleDateString() : ""}</p>
+                  ${!isVisible ? '<span style="display:inline-block;margin-top:0.25rem;font-size:0.65rem;padding:0.1rem 0.4rem;background:#fee2e2;color:#dc2626;border-radius:4px">Hidden</span>' : ""}
+                </div>
+                <div style="display:flex;flex-direction:column;gap:0.25rem;flex-shrink:0">
+                   <button class="btn btn-xs upload-rename-btn" data-filename="${escapeHtml(name)}" data-display="${escapeHtml(displayName)}" title="Rename">✏️</button>
+                   <button class="btn btn-xs upload-vis-btn" data-filename="${escapeHtml(name)}" data-visible="${isVisible}" title="${isVisible ? 'Hide from students & teachers' : 'Show to students & teachers'}">${isVisible ? "👁️" : "🚫"}</button>
+                   <button class="btn btn-outline-danger btn-xs upload-delete-btn" data-filename="${escapeHtml(name)}" title="Delete file">✕</button>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        document.querySelectorAll(".upload-rename-btn").forEach(btn => {
+          btn.addEventListener("click", async (e) => {
+            e.stopPropagation();
+            const oldName = btn.dataset.display;
+            const newName = prompt("Rename file:", oldName);
+            if (newName && newName !== oldName) {
+              try {
+                await request(`/uploads/${encodeURIComponent(btn.dataset.filename)}`, {
+                  method: "PATCH",
+                  body: JSON.stringify({ display_name: newName }),
+                });
+                showToast("File renamed");
+                loadAdminUploads();
+              } catch(err) { showToast(err.message || "Rename failed"); }
+            }
+          });
+        });
+
+        document.querySelectorAll(".upload-vis-btn").forEach(btn => {
+          btn.addEventListener("click", async (e) => {
+            e.stopPropagation();
+            const currentVisible = btn.dataset.visible === "true";
+            try {
+              await request(`/uploads/${encodeURIComponent(btn.dataset.filename)}`, {
+                method: "PATCH",
+                body: JSON.stringify({ is_visible: !currentVisible }),
+              });
+              showToast(currentVisible ? "File hidden from students & teachers" : "File now visible to students & teachers");
+              loadAdminUploads();
+            } catch(err) { showToast(err.message || "Update failed"); }
+          });
+        });
+
+        document.querySelectorAll(".upload-delete-btn").forEach(btn => {
+          btn.addEventListener("click", async (e) => {
+            e.stopPropagation();
+            if (!confirmDelete(btn.dataset.filename)) return;
+            try {
+              await request(`/uploads/${encodeURIComponent(btn.dataset.filename)}`, { method: "DELETE" });
+              showToast("File deleted");
+              loadAdminUploads();
+            } catch(err) { showToast(err.message || "Delete failed"); }
+          });
+        });
+        document.querySelectorAll("#uploads-grid .card[data-filename]").forEach(card => {
+          if (card.querySelector(".upload-delete-btn")) {
+            card.addEventListener("click", (e) => {
+              if (e.target.closest(".upload-delete-btn") || e.target.closest(".upload-rename-btn") || e.target.closest(".upload-vis-btn")) return;
+              window.open(`${API_BASE}/uploads/${encodeURIComponent(card.dataset.filename)}`, "_blank");
+            });
+          }
+        });
+      }
+
+      showAdminView(`
+        <div class="content">
+          <h2>📁 Uploads</h2>
+          <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Manage uploaded files. Control visibility for students and teachers.</p>
+
+          <div class="card" style="margin-top:1rem;padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem">📤 Upload New File</h3>
+            <form id="upload-form" style="display:flex;flex-direction:column;gap:0.5rem">
+              <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0">Supports images (png, jpg, gif, svg, webp), documents (pdf, doc), videos (mp4, webm), audio (mp3, wav, ogg)</p>
+              <input class="input" type="file" id="upload-file" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" required>
+              <div style="display:flex;gap:0.5rem;align-items:center">
+                <button class="btn btn-success btn-pattern" type="submit" id="upload-submit-btn" style="width:100%">📤 Upload File</button>
+              </div>
+            </form>
+            <div id="upload-result" style="margin-top:0.5rem"></div>
+          </div>
+
+          <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
+            <button class="btn-filter upload-filter-btn active" data-filter="all">All <span class="filter-count">${fileList.length}</span></button>
+            <button class="btn-filter upload-filter-btn" data-filter="images">🖼️ Images <span class="filter-count">${imageFiles.length}</span></button>
+            <button class="btn-filter upload-filter-btn" data-filter="documents">📄 Documents <span class="filter-count">${docFiles.length}</span></button>
+            <button class="btn-filter upload-filter-btn" data-filter="media">🎬 Media <span class="filter-count">${mediaFiles.length}</span></button>
+          </div>
+          <div id="uploads-grid" style="margin-top:0.75rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.5rem"></div>
+        </div>
+      `);
+
+      document.querySelectorAll(".upload-filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          activeFilter = btn.dataset.filter;
+          document.querySelectorAll(".upload-filter-btn").forEach(b => b.classList.toggle("active", b.dataset.filter === activeFilter));
+          renderFiles();
+        });
+      });
+
+      let uploading = false;
+      document.getElementById("upload-form")?.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const fileInput = document.getElementById("upload-file");
+        const file = fileInput?.files?.[0];
+        if (!file || uploading) return;
+        const btn = document.getElementById("upload-submit-btn");
+        uploading = true;
+        btn.textContent = "Uploading..."; btn.disabled = true; btn.style.opacity = "0.7";
+        const token = localStorage.getItem("casuya_token");
+        const formData = new FormData();
+        formData.append("file", file);
+        try {
+          const resp = await fetch(`${API_BASE}/uploads/`, {
+            method: "POST",
+            headers: token ? { "Authorization": `Bearer ${token}` } : {},
+            body: formData,
+          });
+          const data = await resp.json();
+          if (resp.ok) {
+            document.getElementById("upload-result").innerHTML = `<div style="padding:0.5rem;background:#dcfce7;border-radius:var(--radius);font-size:0.85rem;color:var(--color-success)">Uploaded: ${escapeHtml(data.filename || file.name)}</div>`;
+            loadAdminUploads();
+          } else {
+            document.getElementById("upload-result").innerHTML = `<div style="padding:0.5rem;background:#fee2e2;border-radius:var(--radius);font-size:0.85rem;color:var(--color-danger)">${escapeHtml(data.detail || "Upload failed")}</div>`;
+          }
+        } catch (err) {
+          document.getElementById("upload-result").innerHTML = `<div style="padding:0.5rem;background:#fee2e2;border-radius:var(--radius);font-size:0.85rem;color:var(--color-danger)">${escapeHtml(err.message)}</div>`;
+        }
+        uploading = false;
+        btn.textContent = "Upload File"; btn.disabled = false; btn.style.opacity = "1";
+      });
+
+      renderFiles();
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading uploads</p></div>'); }
+  }
+
+
+;
+  async function loadAdminBranding() {
+    const API = window.casuyaApiBase ? window.casuyaApiBase() : ((window.location.port === "8765" || window.location.port === "" || window.location.port === "443" || window.location.port === "80") ? window.location.origin : `${window.location.protocol}//${window.location.hostname}:8765`);
+    const token = localStorage.getItem("casuya_token");
+    const headers = token ? { "Authorization": `Bearer ${token}` } : {};
+
+    // Check what's currently uploaded
+    let logoExists = false, faviconExists = false;
+    try {
+      const lr = await fetch(`${API}/branding/logo`);
+      logoExists = lr.ok;
+    } catch {}
+    try {
+      const fr = await fetch(`${API}/branding/favicon`);
+      faviconExists = fr.ok;
+    } catch {}
+
+    showAdminView(`
+      <div class="content">
+        <h2>🎨 Site Branding</h2>
+        <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:1.5rem">Upload your logo and favicon. These appear across the entire platform.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+          <!-- Logo -->
+          <div class="card" style="padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem">🖼️ Logo</h3>
+            <div style="text-align:center;margin-bottom:1rem">
+              ${logoExists
+                ? `<img src="${API}/branding/logo" alt="Current logo" style="max-width:120px;max-height:120px;border-radius:12px;border:1px solid var(--color-border)">`
+                : `<div style="width:120px;height:120px;margin:0 auto;background:linear-gradient(135deg,var(--color-primary),#7c3aed);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem;font-weight:800">C</div>`
+              }
+              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${logoExists ? "✅ Custom logo active" : "Using default"}</p>
+            </div>
+            <form id="logo-upload-form" style="display:flex;flex-direction:column;gap:0.5rem">
+              <input class="input" type="file" id="logo-file" accept="image/*" required />
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${logoExists ? "🔄 Replace" : "📤 Upload"}</button>
+                ${logoExists ? '<button class="btn btn-outline-danger btn-sm" type="button" id="logo-delete">🗑️ Delete</button>' : ''}
+              </div>
+            </form>
+            <div id="logo-result" style="margin-top:0.5rem;font-size:0.8rem"></div>
+          </div>
+
+          <!-- Favicon -->
+          <div class="card" style="padding:1.5rem">
+            <h3 style="margin-bottom:0.75rem">🏷️ Favicon</h3>
+            <div style="text-align:center;margin-bottom:1rem">
+              ${faviconExists
+                ? `<img src="${API}/branding/favicon" alt="Current favicon" style="width:64px;height:64px;border-radius:8px;border:1px solid var(--color-border)">`
+                : `<div style="width:64px;height:64px;margin:0 auto;background:linear-gradient(135deg,var(--color-primary),#7c3aed);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;font-weight:800">C</div>`
+              }
+              <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">${faviconExists ? "✅ Custom favicon active" : "Using default"}</p>
+            </div>
+            <form id="favicon-upload-form" style="display:flex;flex-direction:column;gap:0.5rem">
+              <input class="input" type="file" id="favicon-file" accept="image/*" required />
+              <div style="display:flex;gap:0.5rem">
+                <button class="btn btn-success btn-pattern" type="submit" style="flex:1">${faviconExists ? "🔄 Replace" : "📤 Upload"}</button>
+                ${faviconExists ? '<button class="btn btn-outline-danger btn-sm" type="button" id="favicon-delete">🗑️ Delete</button>' : ''}
+              </div>
+            </form>
+            <div id="favicon-result" style="margin-top:0.5rem;font-size:0.8rem"></div>
+          </div>
+        </div>
+      </div>
+    `);
+
+    // Logo upload
+    document.getElementById("logo-upload-form")?.addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      const file = document.getElementById("logo-file")?.files?.[0];
+      if (!file) return;
+      const fd = new FormData();
+      fd.append("file", file);
+      try {
+        const r = await fetch(`${API}/branding/logo`, { method: "POST", headers, body: fd });
+        const d = await r.json();
+        if (r.ok) {
+          document.getElementById("logo-result").innerHTML = '<span style="color:var(--color-success)">Logo uploaded!</span>';
+          localStorage.removeItem("casuya_brand_logo");
+          loadAdminBranding();
+        } else {
+          document.getElementById("logo-result").innerHTML = `<span style="color:var(--color-danger)">${escapeHtml(d.detail || "Failed")}</span>`;
+        }
+      } catch (e) {
+        document.getElementById("logo-result").innerHTML = `<span style="color:var(--color-danger)">${escapeHtml(e.message)}</span>`;
+      }
+    });
+
+    // Logo delete
+    document.getElementById("logo-delete")?.addEventListener("click", async () => {
+      try {
+        await fetch(`${API}/branding/logo`, { method: "DELETE", headers });
+        localStorage.removeItem("casuya_brand_logo");
+        loadAdminBranding();
+      } catch {}
+    });
+
+    // Favicon upload
+    document.getElementById("favicon-upload-form")?.addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      const file = document.getElementById("favicon-file")?.files?.[0];
+      if (!file) return;
+      const fd = new FormData();
+      fd.append("file", file);
+      try {
+        const r = await fetch(`${API}/branding/favicon`, { method: "POST", headers, body: fd });
+        const d = await r.json();
+        if (r.ok) {
+          document.getElementById("favicon-result").innerHTML = '<span style="color:var(--color-success)">Favicon uploaded!</span>';
+          localStorage.removeItem("casuya_brand_favicon");
+          loadAdminBranding();
+        } else {
+          document.getElementById("favicon-result").innerHTML = `<span style="color:var(--color-danger)">${escapeHtml(d.detail || "Failed")}</span>`;
+        }
+      } catch (e) {
+        document.getElementById("favicon-result").innerHTML = `<span style="color:var(--color-danger)">${escapeHtml(e.message)}</span>`;
+      }
+    });
+
+    // Favicon delete
+    document.getElementById("favicon-delete")?.addEventListener("click", async () => {
+      try {
+        await fetch(`${API}/branding/favicon`, { method: "DELETE", headers });
+        localStorage.removeItem("casuya_brand_favicon");
+        loadAdminBranding();
+      } catch {}
+    });
+  }
+
+  async function loadAdminAnalytics() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading analytics...</p></div>');
+    try {
+      const [overview, distribution] = await Promise.all([
+        request("/analytics/overview"),
+        request("/analytics/lesson-distribution").catch(() => []),
+      ]);
+      const lessons = await request("/lessons").catch(() => []);
+      const lessonList = Array.isArray(lessons) ? lessons : [];
+      const lessonAnalytics = [];
+      for (const l of lessonList.slice(0, 10)) {
+        try {
+          const a = await request(`/analytics/lessons/${l.id}`);
+          if (a) lessonAnalytics.push({ ...a, title: l.title });
+        } catch(e) {}
+      }
+      showAdminView(`
+        <div class="content">
+          <h2>Analytics</h2>
+          <div class="stat-grid" style="margin:1rem 0">
+            <div class="stat-card"><div class="stat-value">${overview?.total_students ?? 0}</div><div class="stat-label">Students</div></div>
+            <div class="stat-card"><div class="stat-value">${overview?.total_lessons ?? 0}</div><div class="stat-label">Lessons</div></div>
+            <div class="stat-card"><div class="stat-value">${overview?.total_sessions ?? 0}</div><div class="stat-label">Sessions</div></div>
+            <div class="stat-card"><div class="stat-value">${overview?.avg_completion_rate ?? 0}%</div><div class="stat-label">Avg Completion</div></div>
+          </div>
+          ${Array.isArray(distribution) && distribution.length > 0 ? `
+            <h3 style="margin:1.5rem 0 0.75rem">Lesson Distribution</h3>
+            <div class="card-grid">
+              ${distribution.map(d => `
+                <div class="card" style="padding:1rem">
+                  <h4 style="margin:0 0 0.25rem">${escapeHtml(d.lesson_title || "Untitled Lesson")}</h4>
+                  <p style="color:var(--color-text-muted);font-size:0.85rem">${d.session_count ?? 0} sessions · ${d.avg_completion_percentage ?? 0}% completion</p>
+                </div>
+              `).join("")}
+            </div>
+          ` : ''}
+          ${lessonAnalytics.length > 0 ? `
+            <h3 style="margin:1.5rem 0 0.75rem">Per-Lesson Analytics</h3>
+            <div class="card-grid">
+              ${lessonAnalytics.map(a => `
+                <div class="card" style="padding:1rem">
+                  <h4 style="margin:0 0 0.25rem">${escapeHtml(a.title)}</h4>
+                  <p style="color:var(--color-text-muted);font-size:0.85rem">Sessions: ${a.session_count ?? 0} | Avg Completion: ${a.avg_completion_percentage ?? 0}% | Avg Score: ${a.avg_score_percentage ?? 0}%</p>
+                </div>
+              `).join("")}
+            </div>
+          ` : ''}
+        </div>
+      `);
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading analytics</p></div>'); }
+  }
+
+  async function loadAdminSettings() {
+    showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading settings...</p></div>');
+    try {
+      const [profile, branding, platformStatus] = await Promise.all([
+        request("/users/me").catch(() => ({})),
+        request("/branding/logo").catch(() => null),
+        request("/settings/platform-status").catch(() => null),
+      ]);
+      const activeTab = localStorage.getItem("admin_settings_tab") || "profile";
+
+      function renderTab(tab) {
+        localStorage.setItem("admin_settings_tab", tab);
+        document.querySelectorAll(".settings-tab-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
+        const panel = document.getElementById("settings-panel");
+        if (!panel) return;
+
+        if (tab === "profile") {
+          panel.innerHTML = `
+            <div class="card" style="padding:1.5rem">
+              <h3 style="margin-bottom:0.75rem">Admin Profile</h3>
+              <form id="admin-profile-form" style="display:flex;flex-direction:column;gap:0.75rem">
+                <div>
+                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Full Name</label>
+                  <input class="input" name="full_name" value="${escapeHtml(profile.full_name || "")}" placeholder="Your name">
+                </div>
+                <div>
+                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Email</label>
+                  <input class="input" value="${escapeHtml(profile.email || "")}" disabled style="opacity:0.6">
+                  <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.25rem">Email cannot be changed here</p>
+                </div>
+                <div>
+                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Phone</label>
+                  <input class="input" name="phone" value="${escapeHtml(profile.phone || "")}" placeholder="Phone number">
+                </div>
+                <div style="display:flex;gap:0.5rem;align-items:center">
+                  <button class="btn btn-primary" type="submit">💾 Save Profile</button>
+                  <span id="admin-profile-msg" style="font-size:0.85rem;display:none"></span>
+                </div>
+              </form>
+            </div>
+          `;
+          document.getElementById("admin-profile-form")?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const fd = new FormData(e.target);
+            const msg = document.getElementById("admin-profile-msg");
+            try {
+              await request("/users/me", { method: "PATCH", body: JSON.stringify({ full_name: fd.get("full_name"), phone: fd.get("phone") }) });
+              msg.textContent = "✅ Profile updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "inline";
+              setTimeout(() => msg.style.display = "none", 3000);
+            } catch(err) { msg.textContent = "❌ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
+          });
+        } else if (tab === "security") {
+          panel.innerHTML = `
+            <div class="card" style="padding:1.5rem">
+              <h3 style="margin-bottom:0.75rem">Change Password</h3>
+              <form id="admin-pw-form" style="display:flex;flex-direction:column;gap:0.75rem;max-width:400px">
+                <div>
+                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Current Password</label>
+                  <input class="input" name="current_password" type="password" required>
+                </div>
+                <div>
+                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">New Password</label>
+                  <input class="input" name="new_password" type="password" required minlength="8">
+                </div>
+                <div>
+                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Confirm New Password</label>
+                  <input class="input" name="confirm_password" type="password" required>
+                </div>
+                <div style="display:flex;gap:0.5rem;align-items:center">
+                  <button class="btn btn-primary btn-pattern" type="submit">🔐 Update Password</button>
+                  <span id="admin-pw-msg" style="font-size:0.85rem;display:none"></span>
+                </div>
+              </form>
+            </div>
+            <div class="card" style="padding:1.5rem;margin-top:1rem">
+              <h3 style="margin-bottom:0.75rem">Active Sessions</h3>
+              <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Manage your login sessions</p>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;border:1px solid var(--color-border);border-radius:var(--radius)">
+                <div>
+                  <p style="font-weight:500;margin:0;font-size:0.9rem">Current Session</p>
+                  <p style="font-size:0.75rem;color:var(--color-text-muted);margin:0.15rem 0 0">Now · ${navigator.userAgent.slice(0, 60)}...</p>
+                </div>
+                <span style="color:var(--color-success);font-size:0.8rem;font-weight:600">🟢 Active</span>
+              </div>
+            </div>
+          `;
+          document.getElementById("admin-pw-form")?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const fd = new FormData(e.target);
+            const msg = document.getElementById("admin-pw-msg");
+            if (fd.get("new_password") !== fd.get("confirm_password")) {
+              msg.textContent = "❌ Passwords do not match"; msg.style.color = "var(--color-danger)"; msg.style.display = "inline";
+              return;
+            }
+            try {
+              await request("/auth/change-password", { method: "POST", body: JSON.stringify({ current_password: fd.get("current_password"), new_password: fd.get("new_password") }) });
+              msg.textContent = "✅ Password updated!"; msg.style.color = "var(--color-success)"; msg.style.display = "inline";
+              e.target.reset();
+              setTimeout(() => msg.style.display = "none", 3000);
+            } catch(err) { msg.textContent = "❌ " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
+          });
+        } else if (tab === "notifications") {
+          panel.innerHTML = `
+            <div class="card" style="padding:1.5rem">
+              <h3 style="margin-bottom:0.75rem">Notification Preferences</h3>
+              <form id="admin-notif-prefs-form" style="display:flex;flex-direction:column;gap:0.75rem">
+                <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;cursor:pointer">
+                  <input type="checkbox" name="email_notifs" checked> Email notifications for new users
+                </label>
+                <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;cursor:pointer">
+                  <input type="checkbox" name="payment_notifs" checked> Payment confirmations
+                </label>
+                <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;cursor:pointer">
+                  <input type="checkbox" name="system_notifs" checked> System alerts and errors
+                </label>
+                <button class="btn btn-primary btn-pattern" type="submit" style="align-self:flex-start">💾 Save Preferences</button>
+              </form>
+            </div>
+            <div class="card" style="padding:1.5rem;margin-top:1rem">
+              <h3 style="margin-bottom:0.75rem">Send Bulk Notification</h3>
+              <form id="settings-notify-form" style="display:flex;flex-direction:column;gap:0.5rem">
+                <select class="input" name="target" required>
+                  <option value="all">All Users</option>
+                  <option value="students">All Students</option>
+                  <option value="teachers">All Teachers</option>
+                </select>
+                <textarea class="input" name="message" rows="3" placeholder="Notification message..." required></textarea>
+                <button class="btn btn-primary btn-pattern" type="submit">📤 Send</button>
+              </form>
+              <div id="settings-notify-result" style="margin-top:0.5rem;font-size:0.85rem"></div>
+            </div>
+          `;
+          document.getElementById("settings-notify-form")?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const fd = new FormData(e.target);
+            const target = fd.get("target");
+            const message = fd.get("message");
+            try {
+              if (target === "all") {
+                await request("/notifications/bulk", { method: "POST", body: JSON.stringify({ role: "student", message }) });
+                await request("/notifications/bulk", { method: "POST", body: JSON.stringify({ role: "teacher", message }) });
+              } else {
+                await request("/notifications/bulk", { method: "POST", body: JSON.stringify({ role: target === "students" ? "student" : "teacher", message }) });
+              }
+              document.getElementById("settings-notify-result").innerHTML = '<span style="color:var(--color-success)">Notification sent!</span>';
+              e.target.reset();
+            } catch(err) {
+              document.getElementById("settings-notify-result").innerHTML = `<span style="color:var(--color-danger)">${escapeHtml(err.message)}</span>`;
+            }
+          });
+        } else if (tab === "platform") {
+          var ps = platformStatus || null;
+          function _statusBadge(ok, okText, noText) {
+            return ok
+              ? '<span style="font-size:0.8rem;font-weight:600;color:var(--color-success)">● ' + okText + '</span>'
+              : '<span style="font-size:0.8rem;font-weight:600;color:var(--color-danger)">● ' + noText + '</span>';
+          }
+          function _sourceBadge(src) {
+            return src === "env"
+              ? '<span style="font-size:0.7rem;padding:0.1rem 0.4rem;border-radius:999px;background:var(--color-surface-2,#eef2f7);color:var(--color-text-muted)">env</span>'
+              : '<span style="font-size:0.7rem;padding:0.1rem 0.4rem;border-radius:999px;border:1px solid var(--color-border);color:var(--color-text-muted)">default</span>';
+          }
+          var runtimeHtml = '';
+          if (ps && ps.runtime) {
+            runtimeHtml = [
+              ["Database", ps.runtime.database],
+              ["Redis", ps.runtime.redis],
+              ["SMTP/Email", ps.runtime.smtp],
+            ].map(function (kv) {
+              return '<div style="border:1px solid var(--color-border);border-radius:var(--radius);padding:0.75rem;text-align:center">'
+                + '<div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem">' + kv[0] + '</div>'
+                + _statusBadge(!!kv[1], "Healthy", "Down") + '</div>';
+            }).join('');
+            runtimeHtml = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.75rem;margin:1rem 0 1.25rem">' + runtimeHtml + '</div>';
+          }
+          var backendHtml = '';
+          if (ps && Array.isArray(ps.backend) && ps.backend.length) {
+            var groups = {};
+            ps.backend.forEach(function (v) { (groups[v.group] = groups[v.group] || []).push(v); });
+            backendHtml = Object.keys(groups).map(function (g) {
+              var rows = groups[g].map(function (v) {
+                return '<div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0.55rem 0;border-bottom:1px solid var(--color-border)">'
+                  + '<div style="min-width:0">'
+                  + '<div style="font-size:0.9rem">' + escapeHtml(v.label) + '</div>'
+                  + '<div style="font-size:0.72rem;font-family:monospace;color:var(--color-text-muted)">' + escapeHtml(v.name) + '</div>'
+                  + '</div>'
+                  + '<div style="display:flex;align-items:center;gap:0.5rem;flex-shrink:0">'
+                  + '<span style="font-size:0.8rem;color:var(--color-text-muted)">' + escapeHtml(v.value) + '</span>'
+                  + _sourceBadge(v.source)
+                  + (v.configured ? '<span style="color:var(--color-success);font-size:0.9rem">✓</span>' : '<span style="color:var(--color-danger);font-size:0.9rem">—</span>')
+                  + '</div></div>';
+              }).join('');
+              return '<div style="margin:0 0 0.25rem">'
+                + '<div style="font-weight:600;font-size:0.85rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.04em;padding:0.6rem 0 0.25rem">' + escapeHtml(g) + '</div>'
+                + rows + '</div>';
+            }).join('');
+          } else {
+            backendHtml = '<p style="font-size:0.85rem;color:var(--color-text-muted)">Platform status unavailable.</p>';
+          }
+          var uiLang = (window.CasuyaI18n && typeof window.CasuyaI18n.getLang === "function") ? window.CasuyaI18n.getLang() : "en";
+          var feVars = [
+            ["API Base", window.API_BASE || ""],
+            ["API Host", window.API_HOST || ""],
+            ["API Protocol", window.API_PROTOCOL || ""],
+            ["CASUYA_API_URL", window.CASUYA_API_URL || ""],
+            ["UI Language", uiLang],
+          ];
+          var frontendHtml = feVars.map(function (v) {
+            var set = !!v[1];
+            return '<div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0.55rem 0;border-bottom:1px solid var(--color-border)">'
+              + '<div style="font-size:0.9rem">' + escapeHtml(v[0]) + '</div>'
+              + '<div style="display:flex;align-items:center;gap:0.5rem">'
+              + '<span style="font-size:0.8rem;font-family:monospace;color:var(--color-text-muted)">' + escapeHtml(String(v[1] || "(unset)")) + '</span>'
+              + (set ? '<span style="color:var(--color-success);font-size:0.9rem">✓</span>' : '<span style="color:var(--color-danger);font-size:0.9rem">—</span>')
+              + '</div></div>';
+          }).join('');
+
+          panel.innerHTML = `
+            <div class="card" style="padding:1.5rem">
+              <h3 style="margin-bottom:0.5rem">Platform Information</h3>
+              <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--color-border)">
+                <span style="color:var(--color-text-muted);font-size:0.9rem">Environment</span>
+                <strong style="font-size:0.9rem">${escapeHtml((ps && ps.environment) || (window.API_BASE ? "production" : "development"))}</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--color-border)">
+                <span style="color:var(--color-text-muted);font-size:0.9rem">API Base</span>
+                <strong style="font-size:0.9rem">${escapeHtml(API_BASE)}</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--color-border)">
+                <span style="color:var(--color-text-muted);font-size:0.9rem">Logo</span>
+                <strong style="font-size:0.9rem">${branding ? "Custom" : "Default"}</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--color-border)">
+                <span style="color:var(--color-text-muted);font-size:0.9rem">Version</span>
+                <strong style="font-size:0.9rem">1.0.0</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:0.6rem 0">
+                <span style="color:var(--color-text-muted);font-size:0.9rem">Status</span>
+                <span style="font-size:0.9rem;color:var(--color-success);font-weight:600">● Online</span>
+              </div>
+
+              <h3 style="margin:1.5rem 0 0.25rem">Runtime Health</h3>
+              <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0">Live connectivity checks against the services the platform depends on.</p>
+              ${runtimeHtml}
+
+              <h3 style="margin:1.75rem 0 0.5rem">Backend Environment Variables</h3>
+              <p style="font-size:0.85rem;color:var(--color-text-muted)">Configured status of every backend setting, drawn from environment variables. Secret values are masked. <span style="font-size:0.8rem">env = set in the environment · default = using the bundled default.</span></p>
+              ${backendHtml}
+
+              <h3 style="margin:1.75rem 0 0.5rem">Frontend Environment</h3>
+              <p style="font-size:0.85rem;color:var(--color-text-muted)">Values resolved in the browser from the served frontend.</p>
+              ${frontendHtml}
+            </div>
+            <div class="card" style="padding:1.5rem;margin-top:1rem" id="module-visibility-card">
+              <h3 style="margin-bottom:0.25rem">Module Visibility</h3>
+              <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:1rem">Toggle which sidebar modules are visible to students and teachers. Hidden modules can be re-enabled anytime.</p>
+              <div id="module-vis-loading" style="text-align:center;padding:1rem;color:var(--color-text-muted);font-size:0.85rem">Loading...</div>
+            </div>
+            <div class="card" style="padding:1.5rem;margin-top:1rem">
+              <h3 style="margin-bottom:0.75rem">⚠️ Danger Zone</h3>
+              <p style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Irreversible actions</p>
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+                <button class="btn btn-danger btn-sm btn-pattern" id="clear-cache-btn">🗑️ Clear Cache</button>
+                <button class="btn btn-outline-danger btn-sm" id="export-data-btn">📦 Export All Data</button>
+              </div>
+              <div id="danger-msg" style="font-size:0.85rem;margin-top:0.5rem"></div>
+            </div>
+          `;
+          document.getElementById("clear-cache-btn")?.addEventListener("click", () => {
+            requestCache.clear();
+            const msg = document.getElementById("danger-msg");
+            msg.textContent = "In-memory cache cleared"; msg.style.color = "var(--color-success)";
+          });
+          document.getElementById("export-data-btn")?.addEventListener("click", async () => {
+            const msg = document.getElementById("danger-msg");
+            try {
+              const [students, teachers, subjects, lessons] = await Promise.all([
+                request("/students"), request("/teachers"), request("/subjects"), request("/lessons"),
+              ]);
+              const data = { students, teachers, subjects, lessons, exported_at: new Date().toISOString() };
+              const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement("a"); a.href = url; a.download = "casuya-export.json"; a.click();
+              URL.revokeObjectURL(url);
+              msg.textContent = "Data exported"; msg.style.color = "var(--color-success)";
+            } catch(err) { msg.textContent = err.message; msg.style.color = "var(--color-danger)"; }
+          });
+          (async function() {
+            var loading = document.getElementById("module-vis-loading");
+            if (!loading) return;
+            try {
+              var vis = await request("/settings/modules");
+              var studentMods = vis.student || {};
+              var teacherMods = vis.teacher || {};
+              var studentLabels = {dashboard:"Dashboard",subjects:"Subjects",progress:"Progress",bookmarks:"Bookmarks",assignments:"Assignments",games:"Games",downloads:"Downloads",exams:"Exams",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"};
+              var teacherLabels = {overview:"Overview",students:"Students",lessons:"Lessons",assignments:"Assignments",reports:"Reports","ai-assistant":"AI Assistant",bookmarks:"Bookmarks",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"};
+              function buildSection(title, mods, labels) {
+                var html = '<div style="margin-bottom:1rem"><div style="font-weight:600;font-size:0.9rem;margin-bottom:0.5rem">' + title + '</div>';
+                var keys = Object.keys(labels);
+                for (var k = 0; k < keys.length; k++) {
+                  var key = keys[k];
+                  var enabled = mods[key] !== false;
+                  html += '<label style="display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0;border-bottom:1px solid var(--color-border);cursor:pointer;font-size:0.85rem">';
+                  html += '<input type="checkbox" data-role="' + title.toLowerCase() + '" data-mod="' + key + '"' + (enabled ? ' checked' : '') + ' style="accent-color:var(--color-primary);width:16px;height:16px">';
+                  html += '<span>' + labels[key] + '</span>';
+                  html += '</label>';
+                }
+                html += '</div>';
+                return html;
+              }
+              loading.outerHTML = buildSection("Student", studentMods, studentLabels) + buildSection("Teacher", teacherMods, teacherLabels) + '<p id="module-vis-msg" style="font-size:0.8rem;color:var(--color-text-muted);margin-top:0.5rem"></p>';
+              document.querySelectorAll("#module-visibility-card input[type=checkbox]").forEach(function(cb) {
+                cb.addEventListener("change", async function() {
+                  var msg = document.getElementById("module-vis-msg");
+                  var studentData = {};
+                  var teacherData = {};
+                  document.querySelectorAll("#module-visibility-card input[type=checkbox]").forEach(function(c) {
+                    var role = c.getAttribute("data-role");
+                    var mod = c.getAttribute("data-mod");
+                    if (role === "student") studentData[mod] = c.checked;
+                    else teacherData[mod] = c.checked;
+                  });
+                  try {
+                    await request("/settings/modules", { method: "PUT", body: JSON.stringify({ student: studentData, teacher: teacherData }) });
+                    msg.textContent = "Saved"; msg.style.color = "var(--color-success)";
+                    setTimeout(function() { msg.textContent = ""; }, 2000);
+                  } catch(e) {
+                    msg.textContent = "Error: " + e.message; msg.style.color = "var(--color-danger)";
+                  }
+                });
+              });
+            } catch(e) {
+              loading.outerHTML = '<p style="color:var(--color-danger);font-size:0.85rem">Failed to load module settings</p>';
+            }
+          })();
+        } else if (tab === "appearance") {
+          panel.innerHTML = appearancePanelHTML();
+          setupAppearanceControls();
+        }
+      }
+
+      showAdminView(`
+        <div class="content">
+          <h2>Settings</h2>
+          <div class="tab-bar">
+            <button class="tab-btn settings-tab-btn${activeTab === "profile" ? " active" : ""}" data-tab="profile">👤 Profile</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "security" ? " active" : ""}" data-tab="security">🔒 Security</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "notifications" ? " active" : ""}" data-tab="notifications">🔔 Notifications</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "platform" ? " active" : ""}" data-tab="platform">⚙️ Platform</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "appearance" ? " active" : ""}" data-tab="appearance">🎨 Appearance</button>
+          </div>
+          <div id="settings-panel"></div>
+        </div>
+      `);
+
+      document.querySelectorAll(".settings-tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => renderTab(btn.dataset.tab));
+      });
+      renderTab(activeTab);
+    } catch(e) { showAdminView('<div class="empty-state"><p>Error loading settings</p></div>'); }
+  }
+
+  // Load initial view from URL hash, fallback to dashboard
+  const initialView = location.hash.slice(1) || "dashboard";
+  if (navHandlers[initialView]) {
+    navHandlers[initialView]();
+  } else {
+    loadAdminOverview();
+  }
+}
+
+;
+// main.js — bootstrap/glue. Loaded AFTER modules/*.js (classic scripts, shared global scope).
+// Derive the API base the same way auth-client.js does: when the page is
+// served from the API host (port 8765) use same-origin, otherwise assume the
+// backend runs on :8765. This keeps dev (separate frontend port) and a
+// reverse-proxied production deploy behaviour consistent.
+// --- Login ---
+// --- App Router ---
+// --- Student Dashboard ---
+// --- Admin Dashboard ---
+// --- Teacher Dashboard ---
+document.addEventListener("DOMContentLoaded", () => {
+  applyAppearance();
+  const token = localStorage.getItem("casuya_token");
+  if (token) {
+    renderApp();
+  } else {
+    renderLogin();
+  }
+});

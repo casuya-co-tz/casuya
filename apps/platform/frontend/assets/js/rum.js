@@ -2,13 +2,22 @@
 // real devices so we optimize for actual Tanzanian 3G, not localhost. Loaded on
 // every dashboard page; the endpoint (/metrics/rum) is public + anonymous.
 (function () {
+  function apiBase() {
+    if (window.casuyaApiBase) return window.casuyaApiBase();
+    var host = window.location.hostname || "";
+    var isLocal = host === "localhost" || host === "127.0.0.1";
+    if (isLocal) return "";
+    return "https://casuya-platform-production.up.railway.app";
+  }
+
   function send(ev) {
     try {
+      var url = apiBase() + "/metrics/rum";
       var body = JSON.stringify(ev);
       if (navigator.sendBeacon) {
-        navigator.sendBeacon("/metrics/rum", new Blob([body], { type: "application/json" }));
+        navigator.sendBeacon(url, new Blob([body], { type: "application/json" }));
       } else {
-        fetch("/metrics/rum", {
+        fetch(url, {
           method: "POST",
           body: body,
           headers: { "Content-Type": "application/json" },

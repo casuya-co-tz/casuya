@@ -1,6 +1,7 @@
 {
-  "installCommand": "pnpm install --no-frozen-lockfile",
+  "installCommand": "echo 'pre-built — build locally with pnpm build then deploy dist/'",
   "buildCommand": null,
-  "outputDirectory": "dist",
-  "framework": null
+  "outputDirectory": ".",
+  "framework": null,
+  "note": "ds-playground uses workspace:* deps, so must be built locally: pnpm --filter @casuya/playground build && vercel deploy from dist/"
 }

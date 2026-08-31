@@ -1,5 +1,6 @@
 {
-  "buildCommand": "pnpm --filter casuya-runtime build",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
   "outputDirectory": ".",
   "framework": null
 }
