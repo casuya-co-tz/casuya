@@ -10,6 +10,7 @@ async function viewLessonContent(containerId, lessonId, backFn) {
   if (lessonContentCache.has(lessonId)) {
     html = lessonContentCache.get(lessonId);
   }
+  try {
 
     const token = localStorage.getItem("casuya_token");
     const payload = decodeToken(token);
