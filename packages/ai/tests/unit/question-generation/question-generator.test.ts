@@ -71,4 +71,54 @@ describe('QuestionGenerator', () => {
       difficulty: Difficulty.BEGINNER,
     })).rejects.toThrow();
   });
+
+  it('should parse JSON with broken LaTeX backslash escapes instead of dumping raw text', async () => {
+    const latexProvider = new (class extends BaseProvider {
+      get type(): string { return 'latex'; }
+      get supportedCapabilities(): ModelCapability[] { return [ModelCapability.CHAT]; }
+      async chatCompletion(): Promise<ChatCompletionResponse> {
+        return {
+          id: 'm', model: 'm',
+          content: '```json\n[ { "question": "Solve f(x) = \\,\\ln(x)", "options": { "A": "1", "B": "2", "C": "3", "D": "4" }, "correctAnswer": "B", "explanation": "Use the natural log." } ]\n```',
+          usage: { promptTokens: 0, completionTokens: 0, totalTokens: 0 }, finishReason: 'stop', latency: 0,
+        };
+      }
+      async *chatCompletionStream(): AsyncIterable<StreamChunk> { yield { content: '', done: true }; }
+      async generateEmbeddings(): Promise<EmbeddingResponse> { throw new Error('fail'); }
+    })({ type: ProviderType.LOCAL });
+    const latexGenerator = new QuestionGenerator(latexProvider, promptManager);
+    const questions = await latexGenerator.generateQuestions({
+      subject: 'Mathematics', topic: 'Logs', count: 1,
+      questionType: QuestionType.MULTIPLE_CHOICE,
+      category: QuestionCategory.RECALL,
+      difficulty: Difficulty.BEGINNER,
+    });
+    expect(questions).toHaveLength(1);
+    expect(questions[0].text).toContain('ln');
+    expect(questions[0].correctAnswer).toBe('B');
+  });
+
+  it('should not return raw JSON text as a question when parsing fails', async () => {
+    const junkProvider = new (class extends BaseProvider {
+      get type(): string { return 'junk'; }
+      get supportedCapabilities(): ModelCapability[] { return [ModelCapability.CHAT]; }
+      async chatCompletion(): Promise<ChatCompletionResponse> {
+        return {
+          id: 'm', model: 'm',
+          content: 'The questions are: [{"question":"Broken" "options":{"A":"1","B":"2"} "correctAnswer":"A"}] sorted by difficulty',
+          usage: { promptTokens: 0, completionTokens: 0, totalTokens: 0 }, finishReason: 'stop', latency: 0,
+        };
+      }
+      async *chatCompletionStream(): AsyncIterable<StreamChunk> { yield { content: '', done: true }; }
+      async generateEmbeddings(): Promise<EmbeddingResponse> { throw new Error('fail'); }
+    })({ type: ProviderType.LOCAL });
+    const junkGenerator = new QuestionGenerator(junkProvider, promptManager);
+    const questions = await junkGenerator.generateQuestions({
+      subject: 'Mathematics', topic: 'Broken', count: 1,
+      questionType: QuestionType.MULTIPLE_CHOICE,
+      category: QuestionCategory.RECALL,
+      difficulty: Difficulty.BEGINNER,
+    });
+    expect(questions).toHaveLength(0);
+  });
 });

@@ -142,36 +142,56 @@ export class QuestionGenerator {
       cleaned = fenceMatch[1].trim();
     }
 
-    let questions: GeneratedQuestion[] = [];
+    let questions = this.tryParseArray(cleaned, request);
+
+    if (!questions.length) {
+      // Tolerate invalid JSON escapes (e.g. LaTeX `\,` / `\ln`) models often emit
+      const sanitized = this.sanitizeJsonEscapes(cleaned);
+      if (sanitized !== cleaned) {
+        questions = this.tryParseArray(sanitized, request);
+      }
+    }
+
+    if (!questions.length) {
+      // If the model clearly returned (broken) JSON, never render raw text as a question
+      if (/\{?\s*"question"|"correctAnswer"|"options"/.test(response)) {
+        this.logger?.warn('could not parse question JSON; returning no questions instead of raw text');
+        return [];
+      }
+      questions = this.extractQuestionsFromText(response, request);
+    }
+
+    return this.validateQuestions(questions, request);
+  }
+
+  private tryParseArray(text: string, request: QuestionGenerationRequest): GeneratedQuestion[] {
     try {
-      const parsed = JSON.parse(cleaned);
+      const parsed = JSON.parse(text);
       if (Array.isArray(parsed)) {
-        questions = parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
+        return parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
       }
     } catch {
       // Not JSON, try to extract an array from mixed model output
     }
 
-    if (!questions.length) {
-      const start = cleaned.indexOf('[');
-      const end = cleaned.lastIndexOf(']');
-      if (start >= 0 && end > start) {
-        try {
-          const parsed = JSON.parse(cleaned.slice(start, end + 1));
-          if (Array.isArray(parsed)) {
-            questions = parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
-          }
-        } catch {
-          // fall through
+    const start = text.indexOf('[');
+    const end = text.lastIndexOf(']');
+    if (start >= 0 && end > start) {
+      try {
+        const parsed = JSON.parse(text.slice(start, end + 1));
+        if (Array.isArray(parsed)) {
+          return parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
         }
+      } catch {
+        // fall through
       }
     }
+    return [];
+  }
 
-    if (!questions.length) {
-      questions = this.extractQuestionsFromText(response, request);
-    }
-
-    return this.validateQuestions(questions, request);
+  private sanitizeJsonEscapes(text: string): string {
+    // Double any backslash that is not part of a valid JSON escape (\" \\ \/ \b \f \n \r \t \uXXXX)
+    return text.replace(/\\(?!["\\/bfnrt]|u[0-9a-fA-F]{4})/g, '\\\\');
   }
 
   private validateQuestions(questions: GeneratedQuestion[], request: QuestionGenerationRequest): GeneratedQuestion[] {
