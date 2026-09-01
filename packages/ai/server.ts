@@ -245,7 +245,7 @@ async function start() {
               title: d.title,
               kind: d.kind,
               subject: d.subject,
-              snippet: kb.renderSnippet(d.id, 240) || undefined,
+              snippet: kb.renderSnippet(d.docId, 240) || undefined,
             }));
             if (rag.docs.length && rag.text) {
               ragText = `\n\n# REFERENCE MATERIAL (from NECTA/TIE knowledge base)\nUse only what is relevant here to ground your answer. If the material doesn't answer the question, say so honestly rather than guessing.\n\n${rag.text}\n# END REFERENCE MATERIAL`;
