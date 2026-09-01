@@ -55,7 +55,8 @@ def search_content(query: str) -> list[dict]:
 
 
 def _fts_search(db: Session, model, q: str, results: list[dict], kind: str):
-    ts = func.to_tsvector(_FTS_BOOKSTOP, model.title)
+    col = getattr(model, "name") if model is Subject else getattr(model, "title")
+    ts = func.to_tsvector(_FTS_BOOKSTOP, col)
     rows = (
         db.query(model)
         .filter(ts.op("@@")(func.websearch_to_tsquery(_FTS_BOOKSTOP, q)))
@@ -63,4 +64,5 @@ def _fts_search(db: Session, model, q: str, results: list[dict], kind: str):
         .all()
     )
     for r in rows:
-        results.append({"id": r.id, "type": kind, "title": r.title, "match": r.title})
+        title = getattr(r, "name", None) or getattr(r, "title", "")
+        results.append({"id": r.id, "type": kind, "title": title, "match": title})
