@@ -356,6 +356,28 @@ function renderQuizQuestions(questions, meta = {}) {
   return html;
 }
 
+/* ── Math (KaTeX) Rendering ───────────────────────────────────────── */
+// Render any LaTeX inside an element with KaTeX auto-render when available.
+// Safe no-op if KaTeX is not loaded (e.g. offline before first successful
+// contact with /static/lib/katex). Primarily used for AI-generated quizzes,
+// which contain math the raw-text renderer would otherwise show as source.
+window.renderMath = function (el) {
+  if (!el || typeof window.renderMathInElement !== "function") return;
+  try {
+    window.renderMathInElement(el, {
+      delimiters: [
+        { left: "\\[", right: "\\]", display: true },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      throwOnError: false,
+    });
+  } catch (e) {
+    // Never let a math failure break the page.
+  }
+};
+
 window._quizSubmit = function(quizId, total) {
   var correct = 0;
   var i, container, correctAnswer, selected, selectedVal, exp;

@@ -954,6 +954,7 @@ async function renderTeacherDashboard() {
             formLevel: fd.get("form_level"),
             topic: questions[0]?.topic || "",
           });
+          window.renderMath(textDiv);
         } else {
           textDiv.innerHTML = '<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>';
         }
