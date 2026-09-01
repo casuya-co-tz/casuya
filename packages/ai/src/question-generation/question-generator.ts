@@ -43,7 +43,7 @@ export class QuestionGenerator {
   async generateQuestions(request: QuestionGenerationRequest): Promise<GeneratedQuestion[]> {
     this.validateRequest(request);
 
-    const cacheKey = `qgen:${request.subject}:${request.topic}:${request.difficulty}:${request.count}`;
+    const cacheKey = `qgen:${request.subject}:${request.topic}:${request.difficulty}:${request.count}:${(request.context ?? '').slice(0, 120)}`;
     const cached = this.cache.get<GeneratedQuestion[]>(cacheKey);
     if (cached) return cached;
 

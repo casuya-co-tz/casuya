@@ -74,6 +74,7 @@ export class CasuyaAI {
   private logger: Logger;
   private initialized: boolean = false;
   private failoverChain: string[];
+  private defaultProvider: BaseProvider;
 
   constructor(config?: Partial<CasuyaAIConfig>) {
     this.logger = new Logger({
@@ -99,6 +100,7 @@ export class CasuyaAI {
         model: 'llama3.2',
       },
     );
+    this.defaultProvider = defaultProvider;
 
     this.tutoring = new TutoringEngine(defaultProvider, this.prompts, undefined, this.syllabus ?? undefined);
     this.recommendations = new RecommendationEngine();
@@ -213,6 +215,13 @@ export class CasuyaAI {
 
   async shutdown(): Promise<void> {
     await ProviderFactory.shutdownAll();
+    if (this.defaultProvider && ProviderFactory.getProvider('failover') !== this.defaultProvider) {
+      try {
+        await this.defaultProvider.shutdown();
+      } catch {
+        // ignore shutdown errors on the fallback provider
+      }
+    }
     this.analytics.destroy();
     this.cache.destroy();
     this.initialized = false;

@@ -45,7 +45,7 @@ export function buildFreeProviderSpecs(): { specs: FreeProviderSpec[]; chain: st
         type: ProviderType.GROQ,
         apiKey: groqKey,
         endpoint: 'https://api.groq.com/openai/v1',
-        model: env('GROQ_MODEL') || 'llama-3.1-8b-instant',
+        model: env('GROQ_MODEL') || 'openai/gpt-oss-20b',
         maxRetries: 1,
         timeout: 20000,
       },

@@ -81,21 +81,15 @@ export class FailoverProvider extends BaseProvider {
 
     for (let i = 0; i < this.providers.length; i++) {
       const name = this.names[i] ?? this.providers[i].type;
-      const chunks: StreamChunk[] = [];
+      let streamed = false;
       try {
         for await (const chunk of this.providers[i].chatCompletionStream(request)) {
-          chunks.push(chunk);
-        }
-        const text = chunks.map((c) => c.content).join('').trim();
-        if (text) {
-          for (const chunk of chunks) {
-            yield chunk;
+          if (!chunk.done && chunk.content) {
+            streamed = true;
           }
-          if (!chunks.some((c) => c.done)) {
-            yield { content: '', done: true };
-          }
-          return;
+          yield chunk;
         }
+        if (streamed) return;
         errors.push(`${name}: empty stream`);
         this.logger.warn(`Provider ${name} streamed empty content, trying next`);
       } catch (error) {
