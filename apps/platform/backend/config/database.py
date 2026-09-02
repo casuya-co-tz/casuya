@@ -191,6 +191,7 @@ def init_db() -> None:
         assignment,
         audit_log,
         bookmark,
+        classroom,
         file_record,
         game,
         lesson,
@@ -207,13 +208,17 @@ def init_db() -> None:
         student,
         syllabus,
         teacher,
+        teacher_plan,
         user,
     )
 
     try:
         engine = get_engine()
         Base.metadata.create_all(bind=engine)
-        with engine.connect() as conn:
+        # engine.begin() auto-commits the transaction when the block exits,
+        # which reliably persists DDL (ALTER/INDEX) that connection reuse in
+        # the pooled SQLAlchemy 2.0 connection otherwise leaves uncommitted.
+        with engine.begin() as conn:
             from sqlalchemy import inspect, text
 
             # create_all never adds columns to an existing table. Reconcile
@@ -304,6 +309,10 @@ def init_db() -> None:
             "CREATE INDEX IF NOT EXISTS ix_notification_user_unread ON notifications(user_id, is_read)",
             "CREATE INDEX IF NOT EXISTS ix_assignment_submission_student ON assignment_submissions(student_id)",
             "CREATE INDEX IF NOT EXISTS ix_payment_status ON payments(status)",
+            "CREATE INDEX IF NOT EXISTS ix_classroom_teacher_id ON classrooms(teacher_id)",
+            "CREATE INDEX IF NOT EXISTS ix_classroom_code ON classrooms(code)",
+            "CREATE INDEX IF NOT EXISTS ix_enrollment_classroom ON classroom_enrollments(classroom_id)",
+            "CREATE INDEX IF NOT EXISTS ix_enrollment_student ON classroom_enrollments(student_id)",
             "CREATE INDEX IF NOT EXISTS ix_file_record_kind ON file_records(kind)",
             # Full-text search: functional GIN index over to_tsvector(title).
             # Postgres-only (SQLite tests fall back to LIKE in search_service).
@@ -317,6 +326,9 @@ def init_db() -> None:
             "ALTER TABLE quizzes ADD COLUMN IF NOT EXISTS package_html TEXT",
             "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_html TEXT",
             "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_filename VARCHAR",
+            "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS created_by VARCHAR",
+            "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS slug VARCHAR",
+            "ALTER TABLE lessons ADD COLUMN IF NOT EXISTS package_version VARCHAR",
             "ALTER TABLE file_records ADD COLUMN IF NOT EXISTS data BYTEA",
                 plan_id_alter,
                 plan_name_alter,
@@ -332,6 +344,5 @@ def init_db() -> None:
                         conn.execute(text(stmt))
                 except Exception as exc:
                     logger.warning("init_db: statement failed (%s...): %s", stmt.splitlines()[0][:80], exc)
-        conn.commit()
     except SQLAlchemyError as exc:
         logger.warning("init_db failed, continuing without DB: %s", exc)

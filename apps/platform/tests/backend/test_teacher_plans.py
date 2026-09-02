@@ -1,0 +1,189 @@
+"""Tests for teacher plan (lesson plan / scheme of work) generation and CRUD."""
+
+import json
+import uuid
+
+from fastapi.testclient import TestClient
+
+from backend.main import app
+from backend.services.auth_service import register_user
+from backend.services.teacher_plan_service import (
+    _build_lesson_plan_offline,
+    _build_scheme_offline,
+    _lang_label,
+    render_lesson_plan_html,
+    render_scheme_of_work_html,
+)
+
+client = TestClient(app)
+
+
+def _register(role: str):
+    email = f"plan-{role}-{uuid.uuid4().hex[:8]}@test.com"
+    result = register_user(email, "test123", role.title(), role)
+    return {"Authorization": f"Bearer {result['access_token']}"}, result
+
+
+# ── Service: language mapping ──────────────────────────────────────────────
+
+
+def test_language_mapping():
+    assert _lang_label("kiswahili") == "sw"
+    assert _lang_label("historia-ya-tanzania-na-maadili") == "sw"
+    assert _lang_label("mathematics") == "en"
+    assert _lang_label("biology") == "en"
+
+
+# ── Service: offline generators + renderers ───────────────────────────────
+
+
+def test_lesson_plan_offline_render_english():
+    plan = _build_lesson_plan_offline(
+        subject_slug="mathematics", subject_label="Mathematics", form_level=2,
+        topic="Algebra", subtopic="Linear Equations", school_name="Mwanza Sec",
+        teacher_name="Mr J", number_of_students=42, duration_minutes=40,
+        period="Period 3", lang="en",
+    )
+    assert plan["header"]["school_name"] == "Mwanza Sec"
+    assert plan["header"]["class_name"] == "Form 2"
+    assert len(plan["teaching_activities"]) == 3
+
+    html = render_lesson_plan_html(plan)
+    assert "Linear Equations" in html
+    assert "Form 2" in html
+    assert "Teaching and Learning Activities" in html
+    assert "downloadAsWord" in html
+    assert "window.print()" in html
+
+
+def test_lesson_plan_offline_render_kiswahili():
+    plan = _build_lesson_plan_offline(
+        subject_slug="kiswahili", subject_label="Kiswahili", form_level=1,
+        topic="Fasihi", subtopic="Methali", school_name="Shule", teacher_name="Bw J",
+        number_of_students=30, duration_minutes=40, period="Kipindi 1", lang="sw",
+    )
+    html = render_lesson_plan_html(plan)
+    assert "Methali" in html
+    assert "Mshughulikia" in html or "Shughuli" in html
+    assert "Kipindi" in html
+
+
+def test_scheme_of_work_offline_render():
+    plan = _build_scheme_offline(
+        subject_slug="biology", subject_label="Biology", form_level=3,
+        term="Term 1", academic_year="2026", school_name="School",
+        teacher_name="Teacher", topics=["Cell Biology", "Genetics"], lang="en",
+    )
+    assert len(plan["weeks"]) >= 8
+    html = render_scheme_of_work_html(plan)
+    assert "Cell Biology" in html
+    assert "Term 1" in html
+    assert "downloadAsWord" in html
+
+
+# ── API: save / list / get / delete ───────────────────────────────────────
+
+
+def _save_plan(headers, plan_type="lesson_plan"):
+    return client.post("/teacher-plans/save", headers=headers, json={
+        "plan_type": plan_type,
+        "title": "Algebra Test",
+        "subject_slug": "mathematics",
+        "subject_name": "Mathematics",
+        "form_level": 2,
+        "topic": "Algebra",
+        "subtopic": "Logic",
+        "plan_data": json.dumps({"header": {"topic": "Algebra"}}),
+        "html_render": "<h1>Plan</h1>",
+        "language": "en",
+    })
+
+
+def test_teacher_can_save_plan():
+    headers, _ = _register("teacher")
+    resp = _save_plan(headers)
+    assert resp.status_code == 200, resp.text
+    data = resp.json()
+    assert data["plan_type"] == "lesson_plan"
+    assert data["id"]
+
+
+def test_teacher_lists_only_own_plans():
+    headers_a, _ = _register("teacher")
+    headers_b, _ = _register("teacher")
+    _save_plan(headers_a)
+    _save_plan(headers_a, "scheme_of_work")
+    _save_plan(headers_b)
+
+    resp = client.get("/teacher-plans/list", headers=headers_a)
+    assert resp.status_code == 200
+    assert len(resp.json()) == 2
+
+    resp_type = client.get("/teacher-plans/list?plan_type=scheme_of_work", headers=headers_a)
+    assert resp_type.status_code == 200
+    assert len(resp_type.json()) == 1
+    assert resp_type.json()[0]["plan_type"] == "scheme_of_work"
+
+
+def test_teacher_can_get_detail_and_export():
+    headers, _ = _register("teacher")
+    plan_id = _save_plan(headers).json()["id"]
+
+    detail = client.get(f"/teacher-plans/{plan_id}", headers=headers)
+    assert detail.status_code == 200
+    assert "plan_data" in detail.json()
+    assert "html_render" in detail.json()
+
+    export = client.get(f"/teacher-plans/{plan_id}/export", headers=headers)
+    assert export.status_code == 200
+    assert "<h1>Plan</h1>" in export.text
+
+
+def test_teacher_can_delete_plan():
+    headers, _ = _register("teacher")
+    plan_id = _save_plan(headers).json()["id"]
+
+    resp = client.delete(f"/teacher-plans/{plan_id}", headers=headers)
+    assert resp.status_code == 200
+
+    gone = client.get(f"/teacher-plans/{plan_id}", headers=headers)
+    assert gone.status_code == 404
+
+
+def test_plan_requires_teacher_role():
+    headers_student, _ = _register("student")
+    resp = _save_plan(headers_student)
+    assert resp.status_code in (403, 404)
+
+
+def test_export_regenerates_html_when_not_stored():
+    headers, _ = _register("teacher")
+    # Save a lesson plan with an EMPTY html_render; export must read the
+    # stored plan_data and regenerate a full document.
+    resp = client.post("/teacher-plans/save", headers=headers, json={
+        "plan_type": "lesson_plan",
+        "title": "Regen",
+        "subject_slug": "biology",
+        "subject_name": "Biology",
+        "form_level": 3,
+        "topic": "Cell Biology",
+        "subtopic": "The Cell",
+        "plan_data": json.dumps({
+            "header": {
+                "school_name": "School", "teacher_name": "T",
+                "class_name": "Form 3", "subject": "Biology",
+                "topic": "Cell Biology", "subtopic": "The Cell",
+            },
+            "competences": ["Comp"], "specific_objectives": ["Obj"],
+            "teaching_aids": ["Book"], "references": ["TIE"],
+            "teaching_activities": [], "general_objectives": [], "remarks": "",
+        }),
+        "html_render": None,
+        "language": "en",
+    })
+    plan_id = resp.json()["id"]
+
+    export = client.get(f"/teacher-plans/{plan_id}/export", headers=headers)
+    assert export.status_code == 200
+    assert "<!DOCTYPE html" in export.text
+    assert "Cell Biology" in export.text

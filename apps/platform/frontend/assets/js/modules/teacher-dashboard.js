@@ -12,11 +12,13 @@ async function renderTeacherDashboard() {
         </div>
         <nav class="sidebar-nav" id="teacher-nav">
           <div class="sidebar-nav-item active" data-view="overview">📊 Overview</div>
+          <div class="sidebar-nav-item" data-view="class">🏫 My Class</div>
           <div class="sidebar-nav-item" data-view="students">👥 Students</div>
           <div class="sidebar-nav-item" data-view="lessons">📝 Lessons</div>
           <div class="sidebar-nav-item" data-view="assignments">📋 Assignments</div>
           <div class="sidebar-nav-item" data-view="reports">📈 Reports</div>
           <div class="sidebar-nav-item" data-view="ai-assistant">🤖 AI Assistant</div>
+          <div class="sidebar-nav-item" data-view="teaching-docs">📚 Teaching Docs</div>
           <div class="sidebar-nav-item" data-view="bookmarks">🔖 Bookmarks</div>
           <div class="sidebar-nav-item" data-view="files">📁 Files</div>
           <div class="sidebar-nav-item" data-view="payments">💳 Payments</div>
@@ -176,11 +178,13 @@ async function renderTeacherDashboard() {
   const navHandlers = {
     overview: () => { setActiveNav("overview"); loadTeacherOverview(); },
     dashboard: () => { setActiveNav("overview"); loadTeacherOverview(); },
+    class: () => { setActiveNav("class"); loadTeacherClass(); },
     students: () => { setActiveNav("students"); loadTeacherStudents(); },
     lessons: () => { setActiveNav("lessons"); loadTeacherLessons(); },
     assignments: () => { setActiveNav("assignments"); loadTeacherAssignments(); },
     reports: () => { setActiveNav("reports"); loadTeacherReports(); },
     "ai-assistant": () => { setActiveNav("ai-assistant"); loadTeacherAIAssistant(); },
+    "teaching-docs": () => { setActiveNav("teaching-docs"); loadTeacherTeachingDocs(); },
     bookmarks: () => { setActiveNav("bookmarks"); loadTeacherBookmarks(); },
     files: () => { setActiveNav("files"); loadTeacherFiles(); },
     payments: () => { setActiveNav("payments"); loadTeacherPayments(); },
@@ -282,11 +286,14 @@ async function renderTeacherDashboard() {
   async function loadTeacherOverview() {
     showTeacherView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
     try {
-      const [overview, lessons] = await Promise.all([
+      const [overview, lessons, classroomRes] = await Promise.all([
         request("/analytics/overview"),
         request("/lessons/?status=published"),
+        request("/classrooms/me/students").catch(() => null),
       ]);
       const name = payload.full_name || payload.email || "Teacher";
+      const classCode = classroomRes?.classroom?.code || "";
+      const connectedCount = classroomRes?.total ?? 0;
 
       // Greeting based on time
       const hour = new Date().getHours();
@@ -311,12 +318,30 @@ async function renderTeacherDashboard() {
             <p>Here's what's happening in your classes today.</p>
           </div>
 
+          <!-- Class Connection Code Banner -->
+          <div class="card" style="margin-bottom:1.25rem;padding:1.25rem;background:linear-gradient(135deg,#eff6ff,#ede9fe);border:1px solid #dbeafe;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+            <div>
+              <div style="font-size:0.8rem;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:0.04em">Connect your students</div>
+              <p style="margin:0.35rem 0 0;font-size:0.9rem;color:var(--color-text-muted);max-width:420px">
+                Students join your class by pasting your code below into <b>Connect to Teacher</b>. Then you can see their progress and assign lessons.
+              </p>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem">Class Code</div>
+              <div id="teacher-class-code" style="font-size:1.8rem;font-weight:800;letter-spacing:0.3em;color:#1e40af;font-family:monospace;cursor:pointer" title="Click to copy">${escapeHtml(classCode || "—")}</div>
+              <div style="display:flex;gap:0.5rem;margin-top:0.5rem;justify-content:center">
+                <button class="btn btn-sm" id="copy-class-code" ${classCode ? "" : "disabled"}>Copy Code</button>
+                <button class="btn btn-sm" id="manage-class">Manage Class</button>
+              </div>
+            </div>
+          </div>
+
           <!-- Stats -->
           <div class="stat-grid">
             <div class="stat-card">
               <div class="stat-icon" style="background:#eff6ff;color:#2563eb">👥</div>
-              <div class="stat-value">${overview?.total_students ?? 0}</div>
-              <div class="stat-label">Students</div>
+              <div class="stat-value">${connectedCount}</div>
+              <div class="stat-label">Connected Students</div>
             </div>
             <div class="stat-card">
               <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">📝</div>
@@ -370,6 +395,99 @@ async function renderTeacherDashboard() {
       document.querySelectorAll("#teacher-content .recent-lesson-card").forEach(el => {
         el.addEventListener("click", () => viewLessonContent("#teacher-content", el.dataset.id, loadTeacherOverview));
       });
+      document.getElementById("copy-class-code")?.addEventListener("click", (ev) => {
+        ev.stopPropagation();
+        const codeEl = document.getElementById("teacher-class-code");
+        if (!codeEl || codeEl.textContent === "—") return;
+        const code = codeEl.textContent;
+        const done = () => {
+          const btn = document.getElementById("copy-class-code");
+          if (btn) { const t = btn.textContent; btn.textContent = "Copied ✓"; setTimeout(() => btn.textContent = t, 1500); }
+        };
+        if (navigator.clipboard?.writeText) { navigator.clipboard.writeText(code).then(done).catch(done); }
+        else { done(); }
+      });
+      document.getElementById("manage-class")?.addEventListener("click", () => loadTeacherClass());
+    } catch (err) {
+      showTeacherView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`);
+    }
+  }
+
+  async function loadTeacherClass() {
+    showTeacherView('<div class="loading-state"><div class="spinner"></div><p>Loading your class...</p></div>');
+    try {
+      const res = await request("/classrooms/me/students?_t=" + Date.now()).catch(() => null);
+      const classroom = res?.classroom || await request("/classrooms/me?_t=" + Date.now());
+      const students = Array.isArray(res?.students) ? res.students : [];
+      const code = classroom?.code || "";
+      const limit = classroom?.lesson_limit ?? 2;
+      const teacherLessons = await request("/lessons").catch(() => []);
+      const pubCount = Array.isArray(teacherLessons) ? teacherLessons.filter(l => l.status === "published").length : 0;
+
+      showTeacherView(`
+        <div class="content" style="max-width:960px">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">
+            <button class="btn" id="back-btn">← Back</button>
+            <h2>My Class</h2>
+          </div>
+
+          <div class="card" style="margin-bottom:1.25rem;padding:1.5rem;background:linear-gradient(135deg,#eff6ff,#ede9fe);border:1px solid #dbeafe;text-align:center">
+            <div style="font-size:0.8rem;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:0.04em">Share this code with your students</div>
+            <p style="margin:0.4rem auto 0;font-size:0.9rem;color:var(--color-text-muted);max-width:460px">
+              Tell students to open <b>Connect to Teacher</b> on their dashboard, paste this code, and save it.
+            </p>
+            <div id="manage-class-code" style="font-size:3rem;font-weight:800;letter-spacing:0.35em;color:#1e40af;font-family:monospace;margin:0.75rem 0" >${escapeHtml(code)}</div>
+            <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap">
+              <button class="btn" id="copy-manage-code">Copy Code</button>
+              <button class="btn" id="regenerate-code">↻ Regenerate Code</button>
+            </div>
+            <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.5rem">Lesson allowance: <b>${pubCount}/${limit}</b> published</p>
+          </div>
+
+          <div class="section-header">
+            <h3>Connected Students (${students.length})</h3>
+            <button class="btn btn-sm" id="refresh-students">↻ Refresh</button>
+          </div>
+          ${students.length === 0 ? `
+            <div class="empty-state" style="padding:2rem">
+              <p>No students connected yet.</p>
+              <p style="font-size:0.85rem;color:var(--color-text-muted)">Share your class code with students — once they paste and save it, they will appear here.</p>
+            </div>` :
+            `<div class="card-grid">
+              ${students.map(s => `
+                <div class="card student-card" data-id="${escapeHtml(s.id)}" data-name="${escapeHtml(s.full_name || s.email || "Student")}" style="cursor:pointer">
+                  <div style="display:flex;align-items:center;gap:0.75rem">
+                    <div style="width:40px;height:40px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0">${escapeHtml((s.full_name || "S").charAt(0).toUpperCase())}</div>
+                    <div style="flex:1;min-width:0">
+                      <h3 style="margin:0;font-size:0.95rem">${escapeHtml(s.full_name || s.email || "Student")}</h3>
+                      <p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.8rem">${escapeHtml(s.email || "")} ${s.form_level ? "— " + escapeHtml(s.form_level) : ""}</p>
+                      ${s.joined_at ? `<p style="margin:0.15rem 0 0;color:var(--color-text-muted);font-size:0.7rem">Joined ${new Date(s.joined_at).toLocaleDateString()}</p>` : ""}
+                    </div>
+                    <span style="color:var(--color-text-muted);font-size:0.8rem">→</span>
+                  </div>
+                </div>
+              `).join("")}
+            </div>`}
+        </div>
+      `);
+      document.getElementById("back-btn").addEventListener("click", loadTeacherOverview);
+      document.getElementById("copy-manage-code").addEventListener("click", () => {
+        const code = document.getElementById("manage-class-code").textContent;
+        const done = () => { const b = document.getElementById("copy-manage-code"); if (b) { const t=b.textContent; b.textContent="Copied ✓"; setTimeout(()=>b.textContent=t,1500);} };
+        if (navigator.clipboard?.writeText) { navigator.clipboard.writeText(code).then(done).catch(done); } else done();
+      });
+      document.getElementById("regenerate-code").addEventListener("click", async () => {
+        if (!confirm("Regenerate your class code? Students using the old code will need the new one.")) return;
+        try {
+          const res = await request("/classrooms/me/code/regenerate", { method: "POST", body: "{}" });
+          const el = document.getElementById("manage-class-code");
+          if (el && res?.code) el.textContent = res.code;
+        } catch(e) { alert("Failed to regenerate code: " + e.message); }
+      });
+      document.getElementById("refresh-students")?.addEventListener("click", loadTeacherClass);
+      document.querySelectorAll("#teacher-content .student-card").forEach(card => {
+        card.addEventListener("click", () => viewTeacherStudent(card.dataset.id, card.dataset.name));
+      });
     } catch (err) {
       showTeacherView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`);
     }
@@ -378,13 +496,26 @@ async function renderTeacherDashboard() {
   async function loadTeacherStudents() {
     showTeacherView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
     try {
-      const students = await request("/students");
-      const sList = Array.isArray(students?.items) ? students.items : [];
+      const [studentsRes, classroom] = await Promise.all([
+        request("/students"),
+        request("/classrooms/me").catch(() => null),
+      ]);
+      const students = studentsRes?.items;
+      const sList = Array.isArray(students) ? students : [];
+      const code = classroom?.code || "";
       showTeacherView(`
         <div class="content" style="max-width:960px">
           <h2>Students</h2>
+          ${code ? `
+            <div class="card" style="margin:1rem 0;padding:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;background:#eff6ff;border:1px solid #dbeafe">
+              <div>
+                <strong style="color:#1e40af">Class Code:</strong>
+                <span style="font-family:monospace;font-weight:800;letter-spacing:0.2em;font-size:1.1rem">${escapeHtml(code)}</span>
+              </div>
+              <button class="btn btn-sm" id="students-copy-code">Copy Code</button>
+            </div>` : ""}
           <div class="card-grid" style="margin-top:1rem">
-            ${sList.length === 0 ? '<div class="empty-state"><p>No students enrolled</p></div>' :
+            ${sList.length === 0 ? '<div class="empty-state"><p>No students connected yet. Share your class code so students can join.</p></div>' :
               sList.map(s => `
                 <div class="card student-card" data-id="${escapeHtml(s.id || s.user_id)}" data-name="${escapeHtml(s.full_name || s.user_id)}" style="cursor:pointer">
                   <div style="display:flex;align-items:center;gap:0.75rem">
@@ -400,6 +531,10 @@ async function renderTeacherDashboard() {
           </div>
         </div>
       `);
+      document.getElementById("students-copy-code")?.addEventListener("click", () => {
+        const done = () => { const b = document.getElementById("students-copy-code"); if (b) { const t=b.textContent; b.textContent="Copied ✓"; setTimeout(()=>b.textContent=t,1500);} };
+        if (navigator.clipboard?.writeText) navigator.clipboard.writeText(code).then(done).catch(done); else done();
+      });
       document.querySelectorAll("#teacher-content .student-card").forEach(card => {
         card.addEventListener("click", () => viewTeacherStudent(card.dataset.id, card.dataset.name));
       });
@@ -499,16 +634,27 @@ async function renderTeacherDashboard() {
   async function loadTeacherLessons() {
     showTeacherView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
     try {
-      const lessons = await request("/lessons");
+      const [lessons, classroom] = await Promise.all([
+        request("/lessons"),
+        request("/classrooms/me").catch(() => null),
+      ]);
       let drafts = [];
       try { drafts = JSON.parse(localStorage.getItem("casuya_teacher_drafts") || "[]"); } catch(e) {}
+      const pubLessons = (Array.isArray(lessons) ? lessons : []).filter(l => l.status === "published");
+      const lessonLimit = classroom?.lesson_limit ?? 2;
+      const lessonLimitLine = `Published lessons: <b>${pubLessons.length}/${lessonLimit}</b>${pubLessons.length >= lessonLimit ? ' — limit reached. Ask an administrator to raise your allocation.' : ''}`;
       showTeacherView(`
         <div class="content">
-          <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem">
             <h2>Lessons</h2>
-            <button class="btn btn-primary" id="create-draft-btn">+ Create Draft</button>
+            <div style="display:flex;gap:0.5rem">
+              <button class="btn btn-primary" id="publish-lesson-btn">＋ Publish Lesson</button>
+              <button class="btn btn-sm" id="create-draft-btn">Create Draft</button>
+            </div>
           </div>
+          <div id="lesson-form-area"></div>
           <div id="draft-form-area"></div>
+          ${lessonLimitLine ? `<p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.5rem 0 0">${lessonLimitLine}</p>` : ""}
           ${drafts.length > 0 ? `
             <h3 style="margin:1.5rem 0 0.75rem">Your Drafts (${drafts.length})</h3>
             <div class="card-grid">
@@ -576,6 +722,105 @@ async function renderTeacherDashboard() {
           localStorage.setItem("casuya_teacher_drafts", JSON.stringify(drafts));
           loadTeacherLessons();
         });
+      });
+      document.getElementById("publish-lesson-btn")?.addEventListener("click", async () => {
+        if (pubLessons.length >= lessonLimit) {
+          alert("You have reached your limit of " + lessonLimit + " published lessons. Ask an administrator to increase your allocation.");
+          return;
+        }
+        try {
+          const subjects = await request("/subjects");
+          const subjList = Array.isArray(subjects) ? subjects : [];
+          document.getElementById("lesson-form-area").innerHTML = `
+            <div class="card" style="margin-top:1rem;padding:1.5rem">
+              <h3 style="margin-bottom:0.5rem">Publish a Lesson</h3>
+              <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0 0 1rem">
+                This lesson is published instantly to your connected students. Remaining allowance: <b>${lessonLimit - pubLessons.length}</b>.
+              </p>
+              <form id="publish-form" style="display:flex;flex-direction:column;gap:0.75rem">
+                <div>
+                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>
+                  <input class="input" name="title" placeholder="e.g. Introduction to Algebra" required>
+                </div>
+                <div>
+                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Subject</label>
+                  <select class="input" id="pub-subject" required>
+                    <option value="">Select subject...</option>
+                    ${subjList.map(s => `<option value="${escapeHtml(s.id)}">${escapeHtml(s.name)}</option>`).join("")}
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Topic</label>
+                  <select class="input" id="pub-topic" required><option value="">Select subject first...</option></select>
+                </div>
+                <div>
+                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Subtopic</label>
+                  <select class="input" id="pub-subtopic" required><option value="">Select topic first...</option></select>
+                </div>
+                <div>
+                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Lesson Content (HTML)</label>
+                  <textarea class="input" name="html_content" rows="12" placeholder="Write lesson content in HTML..." required style="font-family:monospace;font-size:0.85rem"></textarea>
+                </div>
+                <div style="display:flex;gap:0.5rem">
+                  <button class="btn btn-success" type="submit" id="publish-submit">Publish Lesson</button>
+                  <button class="btn" type="button" id="cancel-publish">Cancel</button>
+                </div>
+                <p id="publish-status" style="display:none;font-size:0.85rem;margin:0"></p>
+              </form>
+            </div>
+          `;
+          document.getElementById("cancel-publish").addEventListener("click", () => document.getElementById("lesson-form-area").innerHTML = "");
+          const subjSel = document.getElementById("pub-subject");
+          const topicSel = document.getElementById("pub-topic");
+          const subtopicSel = document.getElementById("pub-subtopic");
+          subjSel.addEventListener("change", async () => {
+            topicSel.innerHTML = '<option value="">Loading...</option>';
+            subtopicSel.innerHTML = '<option value="">Select topic first...</option>';
+            if (!subjSel.value) { topicSel.innerHTML = '<option value="">Select subject first...</option>'; return; }
+            try {
+              const topics = await request(`/topics/?subject_id=${encodeURIComponent(subjSel.value)}`);
+              const tList = Array.isArray(topics) ? topics : [];
+              topicSel.innerHTML = '<option value="">Select topic...</option>' + tList.map(t => `<option value="${escapeHtml(t.id)}">${escapeHtml(t.title)}</option>`).join("");
+            } catch(e) { topicSel.innerHTML = '<option value="">No topics found</option>'; }
+          });
+          topicSel.addEventListener("change", async () => {
+            subtopicSel.innerHTML = '<option value="">Loading...</option>';
+            if (!topicSel.value) { subtopicSel.innerHTML = '<option value="">Select topic first...</option>'; return; }
+            try {
+              const subs = await request(`/subtopics/?topic_id=${encodeURIComponent(topicSel.value)}`);
+              const sList = Array.isArray(subs) ? subs : [];
+              subtopicSel.innerHTML = '<option value="">Select subtopic...</option>' + sList.map(s => `<option value="${escapeHtml(s.id)}">${escapeHtml(s.title)}</option>`).join("");
+            } catch(e) { subtopicSel.innerHTML = '<option value="">No subtopics found</option>'; }
+          });
+          document.getElementById("publish-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const fd = new FormData(e.target);
+            const status = document.getElementById("publish-status");
+            status.style.display = "block";
+            status.style.color = "var(--color-text-muted)";
+            status.textContent = "Publishing lesson...";
+            document.getElementById("publish-submit").disabled = true;
+            try {
+              await request("/lessons", {
+                method: "POST",
+                body: JSON.stringify({
+                  subtopic_id: subtopicSel.value,
+                  title: fd.get("title"),
+                  html_content: fd.get("html_content"),
+                }),
+              });
+              status.style.color = "var(--color-success)";
+              status.textContent = "Lesson published successfully!";
+              setTimeout(() => loadTeacherLessons(), 1200);
+            } catch(err) {
+              status.style.color = "red";
+              status.textContent = "Failed: " + err.message;
+              document.getElementById("publish-submit").disabled = false;
+            }
+          });
+        } catch(e) {
+          alert("Could not load subjects: " + e.message);
+        }
       });
       document.querySelectorAll("[data-view-draft]").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -1122,6 +1367,438 @@ async function renderTeacherDashboard() {
     } catch(e) {
       showTeacherView('<div class="content"><h2>Reports</h2><div class="empty-state"><p>Error loading reports</p></div></div>');
     }
+  }
+
+  async function loadTeacherTeachingDocs() {
+    const SUBJECTS = [
+      { slug: "mathematics", name: "Mathematics", sw: false },
+      { slug: "biology", name: "Biology", sw: false },
+      { slug: "chemistry", name: "Chemistry", sw: false },
+      { slug: "physics", name: "Physics", sw: false },
+      { slug: "english", name: "English", sw: false },
+      { slug: "kiswahili", name: "Kiswahili", sw: true },
+      { slug: "geography", name: "Geography", sw: false },
+      { slug: "history", name: "History", sw: false },
+      { slug: "civics", name: "Civics", sw: true },
+      { slug: "computing", name: "Computing & ICT", sw: false },
+      { slug: "historia-ya-tanzania-na-maadili", name: "Historia ya Tanzania na Maadili", sw: true },
+    ];
+    const ROMAN = { 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI" };
+    const termNames = { "Term 1": "Term I", "Term 2": "Term II", "Term 3": "Term III" };
+    const termNamesSw = {
+      "Term 1": "Muhtasari wa Kwanza",
+      "Term 2": "Muhtasari wa Pili",
+      "Term 3": "Muhtasari wa Tatu",
+    };
+    let savedPlans = [];
+    let activeSubTab = "lesson";
+
+    const subjectOpts = () =>
+      SUBJECTS.map(
+        (s) => `<option value="${s.slug}">${escapeHtml(s.name)}${s.sw ? " (Kiswahili)" : ""}</option>`
+      ).join("");
+
+    function isSwSubj(slug) { return SUBJECTS.find((s) => s.slug === slug)?.sw || false; }
+
+    async function loadSaved() {
+      try {
+        savedPlans = await request("/teacher-plans/list?_t=" + Date.now()).catch(() => []);
+      } catch (e) { savedPlans = []; }
+    }
+
+    function planLabel(p) {
+      if (p.plan_type === "scheme_of_work") {
+        const tn = p.language === "sw" ? (termNamesSw[p.term] || p.term) : (termNames[p.term] || p.term);
+        return `${p.title}`;
+      }
+      return p.title;
+    }
+
+    function renderSavedList() {
+      const listDiv = document.getElementById("tdocs-saved-list");
+      if (!listDiv) return;
+      if (!savedPlans.length) {
+        listDiv.innerHTML = '<div class="empty-state" style="padding:1.5rem"><p>No saved documents yet. Generate one above.</p></div>';
+        return;
+      }
+      listDiv.innerHTML = savedPlans.map((p) => {
+        const isSw = p.language === "sw";
+        const typeLabel = p.plan_type === "scheme_of_work"
+          ? (isSw ? "Mpango wa Kazi" : "Scheme of Work")
+          : (isSw ? "Mpango wa Somo" : "Lesson Plan");
+        const f = p.form_level ? ("Form " + (ROMAN[p.form_level] || p.form_level)) : "";
+        return `
+          <div class="card" style="padding:1rem;margin-bottom:0.75rem">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
+              <div style="flex:1;min-width:0">
+                <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+                  <span class="badge badge-${p.plan_type === 'scheme_of_work' ? 'info' : 'success'}">${escapeHtml(typeLabel)}</span>
+                  ${f ? `<span class="badge" style="background:var(--color-bg);color:var(--color-text-muted)">${escapeHtml(f)}</span>` : ""}
+                  ${isSw ? '<span style="font-size:0.7rem;color:var(--color-text-muted)">Kiswahili</span>' : ""}
+                </div>
+                <h4 style="margin:0.35rem 0 0">${escapeHtml(planLabel(p))}</h4>
+                <p style="margin:0.15rem 0 0;font-size:0.75rem;color:var(--color-text-muted)">
+                  ${escapeHtml(p.subject_name || p.subject_slug || "")} • ${escapeHtml(p.created_at ? new Date(p.created_at).toLocaleDateString() : "")}
+                </p>
+              </div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap">
+                <button class="btn btn-sm btn-outline" data-view="${p.id}">${isSw ? "Onyesha" : "View"}</button>
+                <button class="btn btn-sm btn-outline" data-print="${p.id}">${isSw ? "Chapisha / PDF" : "Print / PDF"}</button>
+                <button class="btn btn-sm btn-outline" data-doc="${p.id}">Word</button>
+                <button class="btn btn-sm btn-danger" data-del="${p.id}">${isSw ? "Futa" : "Delete"}</button>
+              </div>
+            </div>
+          </div>`;
+      }).join("");
+    }
+
+    function renderSubTabs() {
+      const ss = document.querySelector("#tdoc-ss")?.value || "mathematics";
+      const sw = isSwSubj(ss);
+      const labels = {
+        lesson: sw ? "Mpango wa Somo" : "Lesson Plan",
+        scheme: "Scheme of Work",
+        saved: savedPlans.length ? `Saved (${savedPlans.length})` : (sw ? "Hati Zilizohifadhiwa" : "Saved Documents"),
+      };
+      const tabHtml = (["lesson", "scheme", "saved"]).map((key) =>
+        `<button class="btn btn-sm ${activeSubTab === key ? "btn-primary" : "btn-outline"}" data-panel="${key}" style="flex:1">${escapeHtml(labels[key])}</button>`
+      ).join("");
+      const el = document.getElementById("tdocs-tabs");
+      if (el) el.innerHTML = tabHtml;
+    }
+
+    function showPanel(panel) {
+      document.querySelectorAll("#tdocs-panel").forEach(()=>{});
+      document.getElementById("tdocs-lesson-panel").style.display = panel === "lesson" ? "" : "none";
+      document.getElementById("tdocs-scheme-panel").style.display = panel === "scheme" ? "" : "none";
+      document.getElementById("tdocs-saved-panel").style.display = panel === "saved" ? "" : "none";
+    }
+
+    async function viewPlan(id) {
+      const detail = await request(`/teacher-plans/${id}?_t=${Date.now()}`).catch(() => null);
+      if (!detail) { alert("Could not load document"); return; }
+      const win = window.open("", "_blank", "width=1000,height=700");
+      if (win) { win.document.write(detail.html_render || "<p>No preview</p>"); win.document.close(); }
+      else { alert("Popup blocked. Please allow popups to preview."); }
+    }
+
+    async function printPlan(id) {
+      const detail = await request(`/teacher-plans/${id}?_t=${Date.now()}`).catch(() => null);
+      if (!detail) { alert("Could not load document"); return; }
+      const win = window.open("", "_blank", "width=1000,height=700");
+      if (win) { win.document.write(detail.html_render || "<p>No preview</p>"); win.document.close(); win.focus(); setTimeout(()=>win.print(), 400); }
+      else { alert("Popup blocked. Please allow popups."); }
+    }
+
+    showTeacherView(`
+      <div class="content">
+        <h2>📚 Teaching Documents</h2>
+        <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">
+          Generate official TIE Competence-Based Lesson Plans and Schemes of Work, then save, print, or export as PDF/Word.
+          ${"Generated in Kiswahili for Kiswahili-medium subjects and English for all others."}
+        </p>
+        <div style="display:flex;gap:0.5rem;margin-top:1.25rem" id="tdocs-tabs"></div>
+        <div style="margin-top:1.25rem">
+          <div id="tdocs-lesson-panel">
+            <div class="card" style="padding:1.5rem">
+              <h3 style="margin-bottom:0.75rem">Lesson Plan Generator</h3>
+              <form id="tdoc-lesson-form" style="display:grid;gap:0.75rem">
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+                  <label style="flex:1;min-width:200px">Subject
+                    <select class="input" name="subject_slug" id="tdoc-ss">${subjectOpts()}</select>
+                  </label>
+                  <label style="flex:0.5;min-width:110px">Form Level
+                    <select class="input" name="form_level">
+                      <option value="1">Form I</option>
+                      <option value="2" selected>Form II</option>
+                      <option value="3">Form III</option>
+                      <option value="4">Form IV</option>
+                    </select>
+                  </label>
+                </div>
+                <label>Topic / Mada
+                  <input class="input" name="topic" placeholder="e.g. Linear Equations / Milinganyo" required>
+                </label>
+                <label>Subtopic / Sehemu ya Mada (optional)
+                  <input class="input" name="subtopic" placeholder="e.g. Solving for x">
+                </label>
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+                  <label style="flex:1;min-width:150px">School / Shule
+                    <input class="input" name="school_name" placeholder="School name">
+                  </label>
+                  <label style="flex:1;min-width:150px">Teacher / Mwalimu
+                    <input class="input" name="teacher_name" placeholder="Teacher name">
+                  </label>
+                </div>
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+                  <label style="flex:0.4;min-width:120px">No. of Students
+                    <input class="input" type="number" name="number_of_students" value="40" min="1">
+                  </label>
+                  <label style="flex:0.4;min-width:95px">Duration (min)
+                    <input class="input" type="number" name="duration_minutes" value="40" min="10" max="120">
+                  </label>
+                  <label style="flex:0.4;min-width:100px">Period / Kipindi
+                    <input class="input" name="period" placeholder="Period 1">
+                  </label>
+                </div>
+                <div style="display:flex;gap:0.75rem;align-items:center">
+                  <button class="btn btn-primary" type="submit">Generate Lesson Plan</button>
+                  <button class="btn btn-outline" type="button" id="tdoc-lesson-seed" style="font-size:0.8rem">Autofill sample topic</button>
+                </div>
+              </form>
+              <div id="tdoc-lesson-result" style="margin-top:1.25rem;display:none"></div>
+            </div>
+          </div>
+
+          <div id="tdocs-scheme-panel" style="display:none">
+            <div class="card" style="padding:1.5rem">
+              <h3 style="margin-bottom:0.75rem">Scheme of Work Generator</h3>
+              <form id="tdoc-scheme-form" style="display:grid;gap:0.75rem">
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+                  <label style="flex:1;min-width:200px">Subject
+                    <select class="input" name="subject_slug">${subjectOpts()}</select>
+                  </label>
+                  <label style="flex:0.5;min-width:110px">Form Level
+                    <select class="input" name="form_level">
+                      <option value="1">Form I</option>
+                      <option value="2" selected>Form II</option>
+                      <option value="3">Form III</option>
+                      <option value="4">Form IV</option>
+                    </select>
+                  </label>
+                </div>
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+                  <label style="flex:0.5;min-width:150px">Term
+                    <select class="input" name="term">
+                      <option value="Term 1" selected>Term I</option>
+                      <option value="Term 2">Term II</option>
+                      <option value="Term 3">Term III</option>
+                    </select>
+                  </label>
+                  <label style="flex:0.5;min-width:130px">Academic Year
+                    <input class="input" name="academic_year" placeholder="2026">
+                  </label>
+                </div>
+                <label>Topics to cover (comma-separated, optional — uses curriculum if blank)
+                  <input class="input" name="topics" placeholder="e.g. Algebraic Expressions, Linear Equations, Inequalities">
+                </label>
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+                  <label style="flex:1;min-width:150px">School / Shule
+                    <input class="input" name="school_name" placeholder="School name">
+                  </label>
+                  <label style="flex:1;min-width:150px">Teacher / Mwalimu
+                    <input class="input" name="teacher_name" placeholder="Teacher name">
+                  </label>
+                </div>
+                <div style="display:flex;gap:0.75rem;align-items:center">
+                  <button class="btn btn-primary" type="submit">Generate Scheme of Work</button>
+                </div>
+              </form>
+              <div id="tdoc-scheme-result" style="margin-top:1.25rem;display:none"></div>
+            </div>
+          </div>
+
+          <div id="tdocs-saved-panel" style="display:none">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+              <h3 style="margin:0">Saved Documents</h3>
+              <button class="btn btn-sm btn-outline" id="tdoc-refresh">Refresh</button>
+            </div>
+            <div id="tdocs-saved-list"></div>
+          </div>
+        </div>
+      </div>
+    `);
+
+    (async function initDocs() {
+      await loadSaved();
+      renderSubTabs();
+      showPanel(activeSubTab);
+      renderSavedList();
+
+      document.getElementById("tdocs-tabs")?.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-panel]");
+        if (!btn) return;
+        activeSubTab = btn.dataset.panel;
+        renderSubTabs();
+        showPanel(activeSubTab);
+        if (activeSubTab === "saved") renderSavedList();
+      });
+      document.getElementById("tdoc-refresh")?.addEventListener("click", async () => {
+        await loadSaved();
+        renderSubTabs();
+        renderSavedList();
+      });
+      document.getElementById("tdoc-lesson-seed")?.addEventListener("click", () => {
+        const ss = document.getElementById("tdoc-ss")?.value || "mathematics";
+        const form = document.querySelector("#tdoc-lesson-form");
+        if (form) {
+          if (isSwSubj(ss)) {
+            form.topic.value = "Fasihi Simulizi";
+            form.subtopic.value = "Methali";
+          } else {
+            form.topic.value = "Linear Equations";
+            form.subtopic.value = "Solving Linear Equations";
+          }
+        }
+      });
+
+      document.getElementById("tdoc-lesson-form")?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const fd = new FormData(form);
+        const resultDiv = document.getElementById("tdoc-lesson-result");
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating lesson plan...</div>';
+        try {
+          const res = await request("/teacher-plans/generate/lesson-plan", {
+            method: "POST",
+            body: JSON.stringify({
+              subject_slug: fd.get("subject_slug"),
+              form_level: parseInt(fd.get("form_level")) || 2,
+              topic: fd.get("topic"),
+              subtopic: fd.get("subtopic") || null,
+              school_name: fd.get("school_name") || null,
+              teacher_name: fd.get("teacher_name") || null,
+              number_of_students: parseInt(fd.get("number_of_students")) || 40,
+              duration_minutes: parseInt(fd.get("duration_minutes")) || 40,
+              period: fd.get("period") || null,
+            }),
+          });
+          await saveGenerated(form, res, "lesson_plan");
+          resultDiv.innerHTML = renderGenerated(res, "lesson_plan");
+          fillGenFrame();
+          window.renderMath?.(resultDiv);
+        } catch (err) {
+          resultDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`;
+        }
+      });
+
+      document.getElementById("tdoc-scheme-form")?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const fd = new FormData(form);
+        const resultDiv = document.getElementById("tdoc-scheme-result");
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating scheme of work...</div>';
+        try {
+          const topicsRaw = (fd.get("topics") || "").split(",").map((t) => t.trim()).filter(Boolean);
+          const res = await request("/teacher-plans/generate/scheme-of-work", {
+            method: "POST",
+            body: JSON.stringify({
+              subject_slug: fd.get("subject_slug"),
+              form_level: parseInt(fd.get("form_level")) || 2,
+              term: fd.get("term"),
+              academic_year: fd.get("academic_year") || null,
+              school_name: fd.get("school_name") || null,
+              teacher_name: fd.get("teacher_name") || null,
+              topics: topicsRaw.length ? topicsRaw : null,
+            }),
+          });
+          await saveGenerated(form, res, "scheme_of_work");
+          resultDiv.innerHTML = renderGenerated(res, "scheme_of_work");
+          fillGenFrame();
+          window.renderMath?.(resultDiv);
+        } catch (err) {
+          resultDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`;
+        }
+      });
+
+      function saveGenerated(form, res, planType) {
+        const fd = new FormData(form);
+        const ss = fd.get("subject_slug");
+        const isSw = isSwSubj(ss);
+        const subjectName = SUBJECTS.find((s) => s.slug === ss)?.name || ss;
+        return request("/teacher-plans/save", {
+          method: "POST",
+          body: JSON.stringify({
+            plan_type: planType,
+            title: res.title,
+            subject_slug: ss,
+            subject_name: subjectName,
+            form_level: parseInt(fd.get("form_level")) || 2,
+            topic: fd.get("topic") || res.title,
+            subtopic: fd.get("subtopic") || null,
+            term: fd.get("term") || null,
+            plan_data: JSON.stringify(res.plan_data),
+            html_render: res.html_render,
+            language: isSw ? "sw" : "en",
+          }),
+        });
+      }
+
+      let lastGenHtml = "";
+
+      function renderGenerated(res, planType) {
+        lastGenHtml = res.html_render || "";
+        const isSw = res.plan_data?.header
+          && (res.plan_data.header.topic + " " + res.plan_data.header.subject).toLowerCase().search(/historia|maadili|kiswahili|uraia/) !== -1;
+        const viewLabel = isSw ? "Onyesha (Dirisha)" : "View (New Window)";
+        const printLabel = isSw ? "Chapisha / PDF" : "Print / PDF";
+        const wordLabel = isSw ? "Pakua Word" : "Download Word";
+        return `
+          <div class="card" style="background:var(--color-bg);padding:1.25rem;border-radius:12px;border:1px solid var(--color-border)">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
+              <button class="btn btn-sm btn-primary" id="gen-view">${escapeHtml(viewLabel)}</button>
+              <button class="btn btn-sm btn-outline" id="gen-print">${escapeHtml(printLabel)}</button>
+              <button class="btn btn-sm btn-outline" id="gen-doc">${escapeHtml(wordLabel)}</button>
+            </div>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin-bottom:0.5rem">
+              ${escapeHtml(isSw ? "Hati imepangwa kwa umbizo rasmi la TIE. Tuma nakala yako kwenye hati iliyofunguliwa." : "Document rendered in official TIE format. Use the buttons inside the opened window (or here) to print to PDF or download as Word.")}
+            </p>
+            <iframe id="gen-frame" style="width:100%;height:520px;border:1px solid var(--color-border);border-radius:8px;background:#fff"></iframe>
+          </div>`;
+      }
+
+      function openLastGen() {
+        if (!lastGenHtml) return;
+        const win = window.open("", "_blank", "width=1100,height=750");
+        if (win) { win.document.write(lastGenHtml); win.document.close(); }
+        else { alert("Popup blocked. Allow popups to preview/export."); }
+      }
+
+      function fillGenFrame() {
+        const frame = document.getElementById("gen-frame");
+        if (frame && lastGenHtml) {
+          frame.srcdoc = lastGenHtml;
+        }
+      }
+
+      document.addEventListener("click", async (ev) => {
+        const viewBtn = ev.target.closest("#gen-view");
+        const printBtn = ev.target.closest("#gen-print");
+        const docBtn = ev.target.closest("#gen-doc");
+        if (viewBtn) { ev.preventDefault(); openLastGen(); }
+        else if (docBtn) { ev.preventDefault(); openLastGen(); }
+        else if (printBtn) {
+          ev.preventDefault();
+          if (lastGenHtml) {
+            const win = window.open("", "_blank", "width=1100,height=750");
+            if (win) { win.document.write(lastGenHtml); win.document.close(); win.focus(); setTimeout(() => win.print(), 500); }
+            else { alert("Popup blocked. Allow popups to print."); }
+          }
+        }
+      });
+
+      // Delegate saved-list actions
+      document.getElementById("tdocs-saved-list")?.addEventListener("click", async (ev) => {
+        const viewBtn = ev.target.closest("[data-view]");
+        const printBtn = ev.target.closest("[data-print]");
+        const docBtn = ev.target.closest("[data-doc]");
+        const delBtn = ev.target.closest("[data-del]");
+        if (viewBtn) { ev.preventDefault(); await viewPlan(viewBtn.dataset.view); }
+        else if (printBtn) { ev.preventDefault(); await printPlan(printBtn.dataset.print); }
+        else if (docBtn) { ev.preventDefault(); await viewPlan(docBtn.dataset.doc); }
+        else if (delBtn) {
+          ev.preventDefault();
+          if (confirm("Delete this document?")) {
+            await request(`/teacher-plans/${delBtn.dataset.del}`, { method: "DELETE" }).catch(()=>{});
+            await loadSaved();
+            renderSubTabs();
+            renderSavedList();
+          }
+        }
+      });
+    })();
   }
 
   async function loadTeacherAIAssistant() {

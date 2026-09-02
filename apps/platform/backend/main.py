@@ -22,6 +22,7 @@ from backend.api import (
     bookmarks,
     branding,
     casuya_api_proxy,
+    classrooms,
     core,
     games,
     lessons,
@@ -42,6 +43,7 @@ from backend.api import (
     subtopics,
     syllabus,
     teachers,
+    teacher_plans,
     topics,
     transcode,
     uploads,
@@ -143,6 +145,7 @@ for router_module in (
     users,
     students,
     teachers,
+    classrooms,
     lessons,
     subjects,
     topics,
@@ -167,6 +170,7 @@ for router_module in (
     math,
     assignments,
     settings_api,
+    teacher_plans,
     # casuya_api_proxy MUST be last — catch-all /{path:path}
     casuya_api_proxy,
 ):
