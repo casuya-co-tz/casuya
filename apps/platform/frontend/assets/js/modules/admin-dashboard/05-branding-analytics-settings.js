@@ -474,7 +474,7 @@
               var studentMods = vis.student || {};
               var teacherMods = vis.teacher || {};
               var studentLabels = {dashboard:"Dashboard",subjects:"Subjects",progress:"Progress",bookmarks:"Bookmarks",assignments:"Assignments",games:"Games",downloads:"Downloads",exams:"Exams",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"};
-              var teacherLabels = {overview:"Overview",students:"Students",lessons:"Lessons",assignments:"Assignments",reports:"Reports","ai-assistant":"AI Assistant",bookmarks:"Bookmarks",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"};
+              var teacherLabels = {overview:"Overview",class:"My Class",students:"Students",lessons:"Lessons",assignments:"Assignments",reports:"Reports","ai-assistant":"AI Assistant","teaching-docs":"Teaching Docs",bookmarks:"Bookmarks",files:"Files",payments:"Payments",notifications:"Notifications",settings:"Settings"};
               function buildSection(title, mods, labels) {
                 var html = '<div style="margin-bottom:1rem"><div style="font-weight:600;font-size:0.9rem;margin-bottom:0.5rem">' + title + '</div>';
                 var keys = Object.keys(labels);

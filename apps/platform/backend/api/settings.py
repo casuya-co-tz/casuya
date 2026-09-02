@@ -30,10 +30,10 @@ DEFAULT_MODULES = {
         "payments": True, "notifications": True, "settings": True,
     },
     "teacher": {
-        "overview": True, "students": True, "lessons": True,
+        "overview": True, "class": True, "students": True, "lessons": True,
         "assignments": True, "reports": True, "ai-assistant": True,
-        "bookmarks": True, "files": True, "payments": True,
-        "notifications": True, "settings": True,
+        "teaching-docs": True, "bookmarks": True, "files": True,
+        "payments": True, "notifications": True, "settings": True,
     },
 }
 

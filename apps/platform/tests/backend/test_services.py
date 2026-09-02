@@ -63,10 +63,10 @@ def test_quiz_flow():
     assert quiz is not None
     questions = quiz["questions"]
     if questions:
-        correct_id = None
-        for opt in questions[0]["options"]:
-            if correct_id is None:
-                correct_id = opt["id"]
+        correct_id = next(
+            (o["id"] for o in questions[0]["options"] if o["text"] == "Mass x Acceleration"),
+            None,
+        )
         if correct_id:
             result = grade_attempt(db, quiz["id"], {questions[0]["id"]: correct_id})
             assert result["score"] == 1
