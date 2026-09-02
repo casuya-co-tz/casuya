@@ -29,16 +29,19 @@ jobs:
         run: pnpm --filter @casuya/editor run build:demo
 
       - name: Deploy ds-playground
+        continue-on-error: true
         run: |
           vercel build --yes --prod --cwd apps/ds-playground --project=ds-playground --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --prod --cwd apps/ds-playground --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy editor
+        continue-on-error: true
         run: |
           vercel build --yes --prod --cwd packages/editor --project=editor --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --prod --cwd packages/editor --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy runtime
+        continue-on-error: true
         run: |
           vercel build --yes --prod --cwd packages/runtime --project=runtime --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
           vercel deploy --prebuilt --yes --prod --cwd packages/runtime --scope=casuya-codes --token=${{ secrets.VERCEL_TOKEN }}
