@@ -24,6 +24,26 @@ from integrations.cloudflare import purge_cache_tags
 router = APIRouter(prefix="/lessons", tags=["lessons"])
 
 
+def _teacher_lesson_limit(user_id: str) -> int:
+    """Return the teacher's lesson allocation (default 2)."""
+    from backend.config.database import get_db as _get_db
+    from backend.models.classroom import Classroom
+    from backend.models.teacher import Teacher
+
+    _gen = _get_db()
+    db: Session = next(_gen)
+    try:
+        teacher = db.query(Teacher).filter(Teacher.user_id == user_id).first()
+        if not teacher:
+            return 2
+        classroom = db.query(Classroom).filter(Classroom.teacher_id == teacher.id).first()
+        if classroom and classroom.lesson_limit:
+            return classroom.lesson_limit
+        return 2
+    finally:
+        _gen.close()
+
+
 @router.get("")
 @router.get("/")
 def list_lessons_route(
@@ -35,11 +55,18 @@ def list_lessons_route(
 ):
     skip = max(0, skip)
     limit = min(max(1, limit), 200)  # cap so a single request can't pull the whole table
-    cache_key = f"lessons:list:{subtopic_id or ''}:{status or ''}:{skip}:{limit}"
+    created_by = None
+    role = current_user.get("role", "")
+    if role == "teacher":
+        # Teachers only ever see lessons they created themselves.
+        created_by = current_user["sub"]
+    cache_key = f"lessons:list:{subtopic_id or ''}:{status or ''}:{skip}:{limit}:{created_by or ''}"
     cached = cache_get(cache_key, ttl_seconds=120)
     if cached is not None:
         return cached
-    result = list_lessons(subtopic_id=subtopic_id, status=status, skip=skip, limit=limit)
+    result = list_lessons(
+        subtopic_id=subtopic_id, status=status, skip=skip, limit=limit, created_by=created_by
+    )
     cache_set(cache_key, result, ttl=120)
     return result
 
@@ -102,15 +129,35 @@ def get_lesson_package_route(
     return pkg
 
 
-@router.post("", response_model=dict, dependencies=[Depends(require_role("admin"))])
-@router.post("/", response_model=dict, dependencies=[Depends(require_role("admin"))])
-def create_lesson_route(body: LessonCreate):
+@router.post("", response_model=dict, dependencies=[Depends(require_role("admin", "teacher"))])
+@router.post("/", response_model=dict, dependencies=[Depends(require_role("admin", "teacher"))])
+def create_lesson_route(body: LessonCreate, current_user=Depends(get_current_user)):
     try:
-        result = create_lesson_from_html(
-            subtopic_id=body.subtopic_id,
-            title=body.title,
-            html=body.html_content,
-        )
+        role = current_user.get("role", "")
+        if role == "teacher":
+            # Enforce a per-teacher limit on their own lessons (default 2).
+            teacher_lesson_limit = _teacher_lesson_limit(current_user["sub"])
+            teacher_lessons = list_lessons(created_by=current_user["sub"])
+            if len(teacher_lessons) >= teacher_lesson_limit:
+                raise HTTPException(
+                    status_code=403,
+                    detail=f"You have reached your limit of {teacher_lesson_limit} lessons. Contact an administrator to increase your allocation.",
+                )
+            result = create_lesson_from_html(
+                subtopic_id=body.subtopic_id,
+                title=body.title,
+                html=body.html_content,
+                created_by=current_user["sub"],
+                status="published",
+            )
+        else:
+            result = create_lesson_from_html(
+                subtopic_id=body.subtopic_id,
+                title=body.title,
+                html=body.html_content,
+                created_by=current_user["sub"],
+                status="draft",
+            )
         cache_invalidate("lessons:")
         purge_cache_tags(["lesson-content"])
         return result
@@ -118,10 +165,24 @@ def create_lesson_route(body: LessonCreate):
         raise HTTPException(status_code=400, detail=str(e))
 
 
-@router.post("/{lesson_id}/publish", response_model=dict, dependencies=[Depends(require_role("admin"))])
-@router.post("/{lesson_id}/publish/", response_model=dict, dependencies=[Depends(require_role("admin"))])
-def publish_lesson_route(lesson_id: str):
+@router.post("/{lesson_id}/publish", response_model=dict, dependencies=[Depends(require_role("admin", "teacher"))])
+@router.post("/{lesson_id}/publish/", response_model=dict, dependencies=[Depends(require_role("admin", "teacher"))])
+def publish_lesson_route(lesson_id: str, current_user=Depends(get_current_user)):
     try:
+        role = current_user.get("role", "")
+        if role == "teacher":
+            lesson = get_lesson(lesson_id)
+            if not lesson:
+                raise HTTPException(status_code=404, detail="Lesson not found")
+            if lesson.get("created_by") != current_user["sub"]:
+                raise HTTPException(status_code=403, detail="You can only publish lessons you created")
+            teacher_lesson_limit = _teacher_lesson_limit(current_user["sub"])
+            teacher_lessons = list_lessons(created_by=current_user["sub"], status="published")
+            if lesson["status"] != "published" and len(teacher_lessons) >= teacher_lesson_limit:
+                raise HTTPException(
+                    status_code=403,
+                    detail=f"You have reached your limit of {teacher_lesson_limit} published lessons. Contact an administrator to increase your allocation.",
+                )
         result = publish_lesson(lesson_id)
         cache_invalidate("lessons:")
         purge_cache_tags(["lesson-content"])
@@ -130,10 +191,17 @@ def publish_lesson_route(lesson_id: str):
         raise HTTPException(status_code=404, detail=str(e))
 
 
-@router.delete("/{lesson_id}", dependencies=[Depends(require_role("admin"))])
-@router.delete("/{lesson_id}/", dependencies=[Depends(require_role("admin"))])
-def delete_lesson_route(lesson_id: str):
+@router.delete("/{lesson_id}", dependencies=[Depends(require_role("admin", "teacher"))])
+@router.delete("/{lesson_id}/", dependencies=[Depends(require_role("admin", "teacher"))])
+def delete_lesson_route(lesson_id: str, current_user=Depends(get_current_user)):
     try:
+        role = current_user.get("role", "")
+        if role == "teacher":
+            lesson = get_lesson(lesson_id)
+            if not lesson:
+                raise HTTPException(status_code=404, detail="Lesson not found")
+            if lesson.get("created_by") != current_user["sub"]:
+                raise HTTPException(status_code=403, detail="You can only delete lessons you created")
         result = delete_lesson(lesson_id)
         cache_invalidate("lessons:")
         purge_cache_tags(["lesson-content"])

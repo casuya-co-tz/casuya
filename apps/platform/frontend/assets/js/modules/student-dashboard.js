@@ -48,6 +48,7 @@
         </div>
         <nav class="sidebar-nav" id="student-nav">
           <div class="sidebar-nav-item active" data-view="dashboard">🏠 Dashboard</div>
+          <div class="sidebar-nav-item" data-view="class">🏫 My Class</div>
           <div class="sidebar-nav-item" data-view="subjects">📚 Subjects</div>
           <div class="sidebar-nav-item" data-view="progress">📊 Progress</div>
           <div class="sidebar-nav-item" data-view="bookmarks">🔖 Bookmarks</div>
@@ -227,6 +228,7 @@
 
   const navHandlers = {
     dashboard: () => { setActiveNav("dashboard"); loadStudentOverview(); },
+    class: () => { setActiveNav("class"); loadStudentClass(); },
     subjects: () => { setActiveNav("subjects"); loadStudentSubjects(); },
     progress: () => { setActiveNav("progress"); loadStudentProgress(); },
     bookmarks: () => { setActiveNav("bookmarks"); loadStudentBookmarks(); },
@@ -280,14 +282,98 @@
     if (navHandlers[view]) navHandlers[view]();
   });
 
+  async function loadStudentClass() {
+    showStudentView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
+    try {
+      const res = await request("/classrooms/me?_t=" + Date.now()).catch(() => null);
+      const classroom = res?.classroom || null;
+      const teacher = res?.teacher || null;
+
+      showStudentView(`
+        <div class="content" style="max-width:720px">
+          <h2>My Class</h2>
+
+          ${classroom ? `
+            <div class="card" style="margin:1rem 0;padding:1.5rem;background:linear-gradient(135deg,#eff6ff,#ede9fe);border:1px solid #dbeafe;text-align:center">
+              <div style="font-size:2rem">🎓</div>
+              <h3 style="margin:0.5rem 0 0.25rem">You're connected!</h3>
+              <p style="margin:0 0 0.5rem;color:var(--color-text-muted);font-size:0.9rem">
+                ${teacher?.name ? "Your teacher: <b>" + escapeHtml(teacher.name) + "</b>" : "Connected to your teacher's class."}
+              </p>
+              <div style="font-size:0.75rem;color:var(--color-text-muted);margin:0.5rem 0 0.25rem">Class Code</div>
+              <div style="font-family:monospace;font-weight:800;letter-spacing:0.3em;font-size:1.6rem;color:#1e40af">${escapeHtml(classroom.code)}</div>
+              <button class="btn btn-danger" id="leave-class" style="margin-top:1rem">Leave Class</button>
+            </div>
+          ` : `
+            <div class="card" style="margin:1rem 0;padding:1.5rem">
+              <div style="font-size:2rem;text-align:center">🏫</div>
+              <h3 style="text-align:center;margin:0.5rem 0">Connect to your teacher</h3>
+              <p style="text-align:center;color:var(--color-text-muted);font-size:0.9rem;max-width:440px;margin:0 auto 1.25rem">
+                Your teacher will give you a <b>class code</b>. Enter it below and press <b>Save</b> to join their class — then they can see your progress, publish lessons and assign work to you.
+              </p>
+              <form id="class-join-form" style="display:flex;flex-direction:column;gap:0.75rem;max-width:360px;margin:0 auto">
+                <div>
+                  <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Class Code</label>
+                  <input class="input" id="class-code-input" placeholder="e.g. XK7P2M" maxlength="12" style="text-align:center;font-family:monospace;font-weight:700;letter-spacing:0.2em;text-transform:uppercase" required>
+                </div>
+                <button class="btn btn-primary" type="submit">Save & Connect</button>
+                <p id="class-join-status" style="display:none;font-size:0.85rem;margin:0;text-align:center"></p>
+              </form>
+            </div>
+          `}
+        </div>
+      `);
+
+      if (classroom) {
+        document.getElementById("leave-class")?.addEventListener("click", async () => {
+          if (!confirm("Leave your teacher's class? You will need a new code to reconnect.")) return;
+          try {
+            await request("/classrooms/leave", { method: "POST", body: "{}" });
+            loadStudentClass();
+          } catch(e) { alert("Failed to leave: " + e.message); }
+        });
+      } else {
+        const form = document.getElementById("class-join-form");
+        form?.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const status = document.getElementById("class-join-status");
+          const input = document.getElementById("class-code-input");
+          const code = (input.value || "").trim().toUpperCase();
+          if (!code) { status.style.display = "block"; status.style.color = "red"; status.textContent = "Please enter your class code."; return; }
+          status.style.display = "block";
+          status.style.color = "var(--color-text-muted)";
+          status.textContent = "Connecting...";
+          try {
+            const res = await request("/classrooms/join", {
+              method: "POST",
+              body: JSON.stringify({ code }),
+            });
+            status.style.color = "var(--color-success)";
+            status.textContent = res?.message || "Connected!";
+            setTimeout(() => loadStudentClass(), 1000);
+          } catch(err) {
+            status.style.color = "red";
+            status.textContent = err.message || "Could not connect. Check the code and try again.";
+          }
+        });
+      }
+    } catch (err) {
+      showStudentView(`<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`);
+    }
+  }
+
   // Load dashboard overview
   async function loadStudentOverview() {
     showStudentView('<div class="loading-state"><div class="spinner"></div><p>Loading dashboard...</p></div>');
     try {
-      const [subjects, profile] = await Promise.all([
+      const [subjects, profile, classRes] = await Promise.all([
         request("/subjects"),
         request("/students/me").catch(() => null),
+        request("/classrooms/me").catch(() => null),
       ]);
+
+      const isConnected = !!(classRes && classRes.classroom);
+      const classTeacher = classRes?.teacher?.name || "";
 
       const name = profile?.full_name || payload.full_name || payload.email || "Student";
       const formLevel = profile?.form_level || "";
@@ -374,6 +460,25 @@
             <h2>Welcome, ${escapeHtml(name)}${formLevel ? " — " + escapeHtml(formLevel) : ""}</h2>
             <p>Ready to continue your learning journey?</p>
           </div>
+
+          <!-- Class connection status -->
+          ${isConnected ? `
+            <div class="card" style="margin-bottom:1.25rem;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;background:#f0fdf4;border:1px solid #bbf7d0">
+              <div>
+                <strong style="color:#15803d">🎓 Connected to your class</strong>
+                <p style="margin:0.15rem 0 0;font-size:0.85rem;color:var(--color-text-muted)">${classTeacher ? "Teacher: " + escapeHtml(classTeacher) : "Your teacher can now see your progress and assign lessons."}</p>
+              </div>
+              <button class="btn btn-sm" id="ov-view-class">View My Class</button>
+            </div>
+          ` : `
+            <div class="card" style="margin-bottom:1.25rem;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;background:#eff6ff;border:1px solid #dbeafe">
+              <div>
+                <strong style="color:#1e40af">🔗 Connect to your teacher</strong>
+                <p style="margin:0.15rem 0 0;font-size:0.85rem;color:var(--color-text-muted)">Enter your teacher's class code so they can see your progress and share lessons.</p>
+              </div>
+              <button class="btn btn-primary btn-sm" id="ov-connect-class">Enter Code</button>
+            </div>
+          `}
 
           <!-- Stats -->
           <div class="stat-grid">
@@ -473,6 +578,15 @@
       document.getElementById("view-all-recent")?.addEventListener("click", () => {
         setActiveNav("subjects");
         loadStudentSubjects();
+      });
+
+      document.getElementById("ov-view-class")?.addEventListener("click", () => {
+        setActiveNav("class");
+        loadStudentClass();
+      });
+      document.getElementById("ov-connect-class")?.addEventListener("click", () => {
+        setActiveNav("class");
+        loadStudentClass();
       });
 
     } catch(e) {

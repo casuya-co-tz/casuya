@@ -344,7 +344,9 @@ def read_lesson_content(slug: str) -> str | None:
     return html
 
 
-def create_lesson_from_html(subtopic_id: str, title: str, html: str) -> dict:
+def create_lesson_from_html(
+    subtopic_id: str, title: str, html: str, created_by: str | None = None, status: str = "draft"
+) -> dict:
     _gen = get_db()
     db: Session = next(_gen)
     try:
@@ -356,6 +358,8 @@ def create_lesson_from_html(subtopic_id: str, title: str, html: str) -> dict:
             title=title,
             content_hash=content_hash,
             content=html,
+            created_by=created_by,
+            status=status,
         )
         db.add(lesson)
         db.flush()
@@ -443,6 +447,7 @@ def get_lesson(lesson_id: str) -> dict | None:
             "content": lesson.content,
             "package_version": lesson.package_version,
             "status": lesson.status,
+            "created_by": lesson.created_by,
         }
     finally:
         _gen.close()
@@ -471,6 +476,7 @@ def get_lesson_package(lesson_id: str, user_sub: str, db: Session) -> dict | Non
         "content": lesson.content,
         "package_version": lesson.package_version,
         "status": lesson.status,
+        "created_by": lesson.created_by,
     }
 
     # Query 1: bookmark + note (both filtered by user+lesson)
@@ -570,7 +576,11 @@ def update_lesson(lesson_id: str, title: str | None = None, html: str | None = N
 
 
 def list_lessons(
-    subtopic_id: str | None = None, status: str | None = None, skip: int = 0, limit: int = 100
+    subtopic_id: str | None = None,
+    status: str | None = None,
+    skip: int = 0,
+    limit: int = 100,
+    created_by: str | None = None,
 ) -> list[dict]:
     _gen = get_db()
     db: Session = next(_gen)
@@ -580,6 +590,8 @@ def list_lessons(
             query = query.filter(Lesson.subtopic_id == subtopic_id)
         if status:
             query = query.filter(Lesson.status == status)
+        if created_by:
+            query = query.filter(Lesson.created_by == created_by)
         lessons = query.offset(skip).limit(limit).all()
         return [
             {
@@ -588,6 +600,7 @@ def list_lessons(
                 "slug": l.slug,
                 "title": l.title,
                 "status": l.status,
+                "created_by": l.created_by,
             }
             for l in lessons
         ]

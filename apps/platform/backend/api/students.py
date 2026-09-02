@@ -70,6 +70,53 @@ def list_students(
             "offset": 0,
             "limit": 1,
         }
+    if role == "teacher":
+        # Teachers may only see students connected to them via their class code.
+        from backend.models.classroom import Classroom, ClassroomEnrollment
+        from backend.models.teacher import Teacher
+
+        teacher = db.query(Teacher).filter(Teacher.user_id == current_user["sub"]).first()
+        if not teacher:
+            return {"items": [], "total": 0, "offset": 0, "limit": limit}
+        classroom = db.query(Classroom).filter(Classroom.teacher_id == teacher.id).first()
+        if not classroom:
+            return {"items": [], "total": 0, "offset": 0, "limit": limit}
+        rows = (
+            db.query(Student, User.email)
+            .join(ClassroomEnrollment, ClassroomEnrollment.student_id == Student.id)
+            .outerjoin(User, Student.user_id == User.id)
+            .filter(
+                ClassroomEnrollment.classroom_id == classroom.id,
+                ClassroomEnrollment.status == "active",
+            )
+            .offset(offset)
+            .limit(limit)
+            .all()
+        )
+        total = (
+            db.query(ClassroomEnrollment)
+            .filter(
+                ClassroomEnrollment.classroom_id == classroom.id,
+                ClassroomEnrollment.status == "active",
+            )
+            .count()
+        )
+        return {
+            "items": [
+                {
+                    "id": s.id,
+                    "user_id": s.user_id,
+                    "email": email,
+                    "full_name": s.full_name,
+                    "form_level": s.form_level,
+                    "school_code": s.school_code,
+                }
+                for s, email in rows
+            ],
+            "total": total,
+            "offset": offset,
+            "limit": limit,
+        }
     total = db.query(Student).count()
     rows = (
         db.query(Student, User.email)

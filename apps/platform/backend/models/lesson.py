@@ -53,3 +53,4 @@ class Lesson(Base):
     package_filename: Mapped[str | None] = mapped_column(String, nullable=True)
     package_version: Mapped[str | None] = mapped_column(String, nullable=True)
     status: Mapped[str] = mapped_column(String, default="draft")
+    created_by: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True)

@@ -4,7 +4,7 @@ from pydantic import BaseModel
 class LessonCreate(BaseModel):
     subtopic_id: str
     title: str
-    slug: str
+    slug: str | None = None
     html_content: str
 
 
