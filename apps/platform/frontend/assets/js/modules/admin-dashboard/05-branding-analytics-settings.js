@@ -181,10 +181,11 @@
   async function loadAdminSettings() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading settings...</p></div>');
     try {
-      const [profile, branding, platformStatus] = await Promise.all([
+      const [profile, branding, platformStatus, maintenance] = await Promise.all([
         request("/users/me").catch(() => ({})),
         request("/branding/logo").catch(() => null),
         request("/settings/platform-status").catch(() => null),
+        request("/settings/maintenance").catch(() => null),
       ]);
       const activeTab = localStorage.getItem("admin_settings_tab") || "profile";
 
@@ -516,6 +517,69 @@
         } else if (tab === "appearance") {
           panel.innerHTML = appearancePanelHTML();
           setupAppearanceControls();
+        } else if (tab === "maintenance") {
+          var maint = maintenance || { enabled: false, title: "", message: "", until: null };
+          var maintUntil = maint.until ? maint.until.slice(0, 16) : "";
+          var maintIsOn = !!maint.enabled;
+          panel.innerHTML = `
+            <div class="card" style="padding:1.5rem">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:0.5rem">
+                <div>
+                  <h3 style="margin:0">Maintenance Mode</h3>
+                  <p style="font-size:0.85rem;color:var(--color-text-muted);margin:0.25rem 0 0">While enabled, students and teachers can still sign up and sign in, but they'll see a friendly "we'll be back soon" page after login. You keep full access.</p>
+                </div>
+                <label style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.9rem;font-weight:600;cursor:pointer;flex-shrink:0">
+                  <input type="checkbox" id="maint-enabled"${maintIsOn ? " checked" : ""}>
+                  <span style="color:${maintIsOn ? "var(--color-danger)" : "var(--color-text-muted)"}">${maintIsOn ? "Maintenance is ON" : "Maintenance is OFF"}</span>
+                </label>
+              </div>
+              <div id="maint-body" style="${maintIsOn ? "" : "opacity:0.45;pointer-events:none"}">
+                <div style="margin-top:1rem">
+                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Headline</label>
+                  <input class="input" id="maint-title" value="${escapeHtml(maint.title || "We'll Be Back Soon")}" placeholder="We'll Be Back Soon" maxlength="60">
+                </div>
+                <div style="margin-top:0.75rem">
+                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Message</label>
+                  <textarea class="input" id="maint-message" rows="4" placeholder="A warm, reassuring note for your users...">${escapeHtml(maint.message || "")}</textarea>
+                  <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.25rem">Keep it warm and hopeful. This is shown on the maintenance page.</p>
+                </div>
+                <div style="margin-top:0.75rem">
+                  <label style="font-size:0.85rem;font-weight:500;display:block;margin-bottom:0.25rem">Available again at</label>
+                  <input class="input" type="datetime-local" id="maint-until" value="${escapeHtml(maintUntil)}">
+                  <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.25rem">The date and time users should expect to get back in. Optional.</p>
+                </div>
+                <div style="display:flex;gap:0.5rem;align-items:center;margin-top:1rem">
+                  <button class="btn btn-primary" type="button" id="maint-save">Save Maintenance Settings</button>
+                  <span id="maint-msg" style="font-size:0.85rem;display:none"></span>
+                </div>
+              </div>
+            </div>
+          `;
+          var enabledInput = document.getElementById("maint-enabled");
+          enabledInput.addEventListener("change", function () {
+            var body = document.getElementById("maint-body");
+            body.style.opacity = enabledInput.checked ? "" : "0.45";
+            body.style.pointerEvents = enabledInput.checked ? "" : "none";
+            document.getElementById("maint-enabled").parentElement.querySelector("span").style.color = enabledInput.checked ? "var(--color-danger)" : "var(--color-text-muted)";
+            document.getElementById("maint-enabled").parentElement.querySelector("span").textContent = enabledInput.checked ? "Maintenance is ON" : "Maintenance is OFF";
+          });
+          document.getElementById("maint-save").addEventListener("click", async function () {
+            var msg = document.getElementById("maint-msg");
+            var until = document.getElementById("maint-until").value;
+            try {
+              await request("/settings/maintenance", {
+                method: "PUT",
+                body: JSON.stringify({
+                  enabled: enabledInput.checked,
+                  title: document.getElementById("maint-title").value,
+                  message: document.getElementById("maint-message").value,
+                  until: until ? new Date(until).toISOString() : null,
+                }),
+              });
+              msg.textContent = "Saved. Maintenance " + (enabledInput.checked ? "is now ON." : "is now OFF."); msg.style.color = "var(--color-success)"; msg.style.display = "inline";
+              setTimeout(function () { msg.style.display = "none"; }, 3500);
+            } catch(err) { msg.textContent = "Error: " + err.message; msg.style.color = "var(--color-danger)"; msg.style.display = "inline"; }
+          });
         }
       }
 
@@ -528,6 +592,7 @@
             <button class="tab-btn settings-tab-btn${activeTab === "notifications" ? " active" : ""}" data-tab="notifications">🔔 Notifications</button>
             <button class="tab-btn settings-tab-btn${activeTab === "platform" ? " active" : ""}" data-tab="platform">⚙️ Platform</button>
             <button class="tab-btn settings-tab-btn${activeTab === "appearance" ? " active" : ""}" data-tab="appearance">🎨 Appearance</button>
+            <button class="tab-btn settings-tab-btn${activeTab === "maintenance" ? " active" : ""}" data-tab="maintenance">🛠️ Maintenance</button>
           </div>
           <div id="settings-panel"></div>
         </div>

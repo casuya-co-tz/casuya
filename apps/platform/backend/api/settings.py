@@ -110,6 +110,97 @@ def get_my_module_visibility(
     return all_vis.get(role, DEFAULT_MODULES.get(role, {}))
 
 
+# --- Maintenance mode -------------------------------------------------------
+#
+# Lets an admin put the platform into a warm "under maintenance" state. Login,
+# registration and account access still work normally, but students and
+# teachers are shown a dignified maintenance screen (with the estimated return
+# time) after they sign in. Admins are never blocked so they can turn it off.
+
+MAINTENANCE_KEY = "maintenance"
+
+DEFAULT_MAINTENANCE = {
+    "enabled": False,
+    "title": "We'll Be Back Soon",
+    "message": (
+        "We're making a few careful improvements to Casuya to serve you even "
+        "better. Your learning progress is safe with us. Hang tight — we're "
+        "almost ready to welcome you back."
+    ),
+    "until": None,  # ISO 8601 datetime string; when the platform returns
+}
+
+
+def _load_maintenance(db: Session) -> dict:
+    row = db.query(Setting).filter(Setting.key == MAINTENANCE_KEY).first()
+    if not row:
+        return dict(DEFAULT_MAINTENANCE)
+    try:
+        data = json.loads(row.value)
+    except (json.JSONDecodeError, TypeError):
+        return dict(DEFAULT_MAINTENANCE)
+    merged = dict(DEFAULT_MAINTENANCE)
+    if isinstance(data, dict):
+        merged.update(data)
+    return merged
+
+
+def _save_maintenance(db: Session, data: dict) -> None:
+    row = db.query(Setting).filter(Setting.key == MAINTENANCE_KEY).first()
+    value = json.dumps(data)
+    if row:
+        row.value = value
+    else:
+        db.add(Setting(key=MAINTENANCE_KEY, value=value))
+    db.commit()
+
+
+class MaintenancePayload(BaseModel):
+    enabled: bool | None = None
+    title: str | None = None
+    message: str | None = None
+    until: str | None = None
+
+
+@router.get("/maintenance")
+def get_maintenance(db: Session = Depends(get_db)):
+    """Public maintenance status. Unauthenticated so portal pages can gate on it
+    before the app boots. Only `enabled` + messaging is exposed regardless of
+    who asks; admins manage it through the admin settings screen."""
+    data = _load_maintenance(db)
+    return {
+        "enabled": bool(data["enabled"]),
+        "title": data["title"],
+        "message": data["message"],
+        "until": data["until"],
+    }
+
+
+@router.put("/maintenance")
+def update_maintenance(
+    payload: MaintenancePayload,
+    _admin=Depends(require_role("admin")),
+    db: Session = Depends(get_db),
+):
+    """Update maintenance mode (admin only)."""
+    current = _load_maintenance(db)
+    if payload.enabled is not None:
+        current["enabled"] = bool(payload.enabled)
+    if payload.title is not None:
+        current["title"] = (payload.title or "").strip() or DEFAULT_MAINTENANCE["title"]
+    if payload.message is not None:
+        current["message"] = (payload.message or "").strip() or DEFAULT_MAINTENANCE["message"]
+    if payload.until is not None:
+        current["until"] = payload.until.strip() if payload.until.strip() else None
+    _save_maintenance(db, current)
+    return {
+        "enabled": bool(current["enabled"]),
+        "title": current["title"],
+        "message": current["message"],
+        "until": current["until"],
+    }
+
+
 # --- Platform Information / environment-variable health status --------------
 #
 # Reports the configured/healthy status of every backend setting (drawn from
