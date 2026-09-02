@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from collections.abc import Generator
 
 from sqlalchemy import create_engine
@@ -8,6 +9,8 @@ from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from .redis import SafeRedis
 from .settings import get_settings
+
+logger = logging.getLogger(__name__)
 
 settings = get_settings()
 
@@ -235,10 +238,15 @@ def init_db() -> None:
                                         f"{col.type.compile(engine.dialect)}"
                                     )
                                 )
-                        except Exception:
-                            pass
-            except Exception:
-                pass
+                        except Exception as exc:
+                            logger.warning(
+                                "init_db: failed to add column %s.%s: %s",
+                                table.name,
+                                col.name,
+                                exc,
+                            )
+            except Exception as exc:
+                logger.exception("init_db: column reconciliation loop failed: %s", exc)
 
             is_postgres = engine.dialect.name == "postgresql"
             plan_id_alter = (
@@ -322,8 +330,8 @@ def init_db() -> None:
                 try:
                     with conn.begin_nested():
                         conn.execute(text(stmt))
-                except Exception:
-                    pass
+                except Exception as exc:
+                    logger.warning("init_db: statement failed (%s...): %s", stmt.splitlines()[0][:80], exc)
         conn.commit()
     except SQLAlchemyError as exc:
-        print(f"WARNING: init_db failed, continuing without DB: {exc}")
+        logger.warning("init_db failed, continuing without DB: %s", exc)
