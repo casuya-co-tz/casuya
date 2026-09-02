@@ -548,10 +548,10 @@
                   <input class="input" type="datetime-local" id="maint-until" value="${escapeHtml(maintUntil)}">
                   <p style="font-size:0.75rem;color:var(--color-text-muted);margin-top:0.25rem">The date and time users should expect to get back in. Optional.</p>
                 </div>
-                <div style="display:flex;gap:0.5rem;align-items:center;margin-top:1rem">
-                  <button class="btn btn-primary" type="button" id="maint-save">Save Maintenance Settings</button>
-                  <span id="maint-msg" style="font-size:0.85rem;display:none"></span>
-                </div>
+              </div>
+              <div style="display:flex;gap:0.5rem;align-items:center;margin-top:1rem">
+                <button class="btn btn-primary" type="button" id="maint-save">Save Maintenance Settings</button>
+                <span id="maint-msg" style="font-size:0.85rem;display:none"></span>
               </div>
             </div>
           `;
