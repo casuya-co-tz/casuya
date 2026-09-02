@@ -206,9 +206,12 @@ def grade_attempt(db: Session, quiz_id: str, answers: dict, work: dict | None = 
 
     total = len(questions)
     correct = 0
+    # Answers arrive from the client keyed and valued as strings, while the
+    # DB returns UUID objects. Normalize both sides so grading is reliable.
+    str_answers = {str(k): str(v) for k, v in (answers or {}).items()}
     for q in questions:
         correct_option_id = correct_map.get(q.id)
-        if correct_option_id and answers.get(q.id) == correct_option_id:
+        if correct_option_id and str_answers.get(str(q.id)) == str(correct_option_id):
             correct += 1
 
     percentage = (correct / total * 100) if total > 0 else 0
