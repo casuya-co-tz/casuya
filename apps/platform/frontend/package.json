@@ -10,7 +10,7 @@
     "minify:vendor": "npx terser assets/js/vendor-blackboard.js -o assets/js/vendor-blackboard.min.js -c -m",
     "minify:css": "npx clean-css-cli -o assets/css/main.min.css assets/css/main.css",
     "build:js": "npm run bundle:js",
-    "build": "npm run build:css && npm run build:js && npm run minify:css",
+    "build": "npm run build:css && npm run minify:js && npm run minify:css",
     "dev": "npm run watch:css"
   },
   "devDependencies": {
