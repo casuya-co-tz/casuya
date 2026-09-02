@@ -21,7 +21,7 @@ class GameUpdate(BaseModel):
 
 
 class GameCreate(BaseModel):
-    lesson_id: str
+    lesson_id: str | None = None
     title: str
     questions: list[dict] = []
     options: list[dict] = []

@@ -220,7 +220,7 @@ def init_db() -> None:
             try:
                 insp = inspect(engine)
                 db_cols = {t: {c["name"] for c in insp.get_columns(t)} for t in insp.get_table_names()}
-                for table in Base.metadata.sorted_tables:
+                for table in Base.metadata.tables.values():
                     if table.name not in db_cols:
                         continue
                     for col in table.columns:

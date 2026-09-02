@@ -33,7 +33,11 @@ def _parse_allowed_origins(v):
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+    # enable_decoding=False keeps pydantic-settings from json.loads-ing complex
+    # fields (e.g. allowed_origins) before our BeforeValidator runs. The env
+    # may hold either a JSON array or a comma-separated string, both of which
+    # _parse_allowed_origins understands.
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore", enable_decoding=False)
 
     app_name: str = "Casuya Platform"
     environment: str = "development"  # development | staging | production

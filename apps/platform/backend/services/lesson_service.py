@@ -23,6 +23,7 @@ from backend.models.lesson_version import LessonVersion
 from backend.models.note import Note
 from backend.models.progress import ProgressRecord
 from backend.models.quiz import Quiz, QuizOption, QuizQuestion
+from backend.services.html_assets import rewrite_external_assets
 
 settings = get_settings()
 
@@ -338,6 +339,7 @@ def read_lesson_content(slug: str) -> str | None:
 
     html = _inject_katex(html)
     html = optimize_media(html)
+    html = rewrite_external_assets(html)
     _cache_set(slug, html)
     return html
 

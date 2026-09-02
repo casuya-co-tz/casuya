@@ -1,6 +1,13 @@
 from starlette.datastructures import MutableHeaders
 from starlette.types import ASGIApp, Receive, Scope, Send
 
+try:
+    from backend.services.html_assets import cdn_hosts_for_csp
+
+    _CDN_HOSTS = cdn_hosts_for_csp()
+except Exception:
+    _CDN_HOSTS = []
+
 
 class SecurityHeadersMiddleware:
     def __init__(self, app: ASGIApp) -> None:
@@ -27,14 +34,26 @@ class SecurityHeadersMiddleware:
                 # in the source list makes 'unsafe-inline' ignored, which would
                 # break the static frontend's inline styles and dynamically
                 # injected content (no server-side nonce injection available).
+                #
+                # Most pasted/uploaded HTML (games, quizzes, lessons) is rendered
+                # via iframe.srcdoc where this CSP does not apply. Those page's
+                # external resources are rewritten to vendored 'self' paths first
+                # (services/html_assets.rewrite_external_assets). Well-known public
+                # CDN hosts are additionally allowed below as a fallback so such
+                # content also keeps working when opened directly.
+                try:
+                    _cdn = _CDN_HOSTS
+                except Exception:
+                    _cdn = []
+                _cdn_src = " ".join(_cdn)
                 headers["Content-Security-Policy"] = (
-                    "default-src 'self'; "
-                    "script-src 'self' 'unsafe-inline'; "
-                    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com https://p.typekit.net; "
-                    "font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com https://p.typekit.net https://use.typekit.net; "
-                    "img-src 'self' data: blob:; "
-                    "frame-src 'self'; "
-                    "connect-src 'self'"
+                    f"default-src 'self'; "
+                    f"script-src 'self' 'unsafe-inline' {_cdn_src}; "
+                    f"style-src 'self' 'unsafe-inline' {_cdn_src} https://fonts.googleapis.com https://fonts.cdnfonts.com https://p.typekit.net; "
+                    f"font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com https://p.typekit.net https://use.typekit.net; "
+                    f"img-src 'self' data: blob: https:; "
+                    f"frame-src 'self' https:; "
+                    f"connect-src 'self'"
                 )
 
                 # ── Smart Cache-Control ───────────────────────────────────

@@ -14,6 +14,10 @@ __pycache__/
 tunnel*.err
 *.db
 storage/
+!apps/platform/storage/
+!apps/platform/storage/lib/
+!apps/platform/storage/lib/three/
+!apps/platform/storage/lib/three/three.min.js
 *.egg-info/
 
 .vercel

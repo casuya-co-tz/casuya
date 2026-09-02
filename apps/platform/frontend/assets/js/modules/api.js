@@ -145,6 +145,35 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+// Inject <base href> into pasted/uploaded HTML before it is shown through
+// iframe.srcdoc so absolute asset paths (/static/lib/...) and relative links
+// resolve against the backend origin regardless of where the frontend is
+// served from or how the document is written (head present or not).
+function injectNodeBase(html) {
+  if (!html) return html;
+  const base = API_BASE + "/";
+  const headMatch = /<head[^>]*>/i.exec(html);
+  if (headMatch) {
+    return html.slice(0, headMatch.index + headMatch[0].length)
+      + `<base href="${base}">`
+      + html.slice(headMatch.index + headMatch[0].length);
+  }
+  const htmlMatch = /<html[^>]*>/i.exec(html);
+  if (htmlMatch) {
+    return html.slice(0, htmlMatch.index + htmlMatch[0].length)
+      + `<head><base href="${base}"></head>`
+      + html.slice(htmlMatch.index + htmlMatch[0].length);
+  }
+  const doctypeMatch = /^\s*<!DOCTYPE html[^>]*>/i.exec(html);
+  if (doctypeMatch) {
+    return html.slice(0, doctypeMatch[0].length)
+      + `<head><base href="${base}"></head>`
+      + html.slice(doctypeMatch[0].length);
+  }
+  return `<head><base href="${base}"></head>` + html;
+}
+window.injectNodeBase = injectNodeBase;
+
 function timeAgo(timestamp) {
   const seconds = Math.floor((Date.now() - timestamp) / 1000);
   if (seconds < 60) return "Just now";

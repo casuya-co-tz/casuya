@@ -2,7 +2,7 @@
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading games...</p></div>');
     try {
       const games = await request("/games/");
-      const list = Array.isArray(games) ? games : [];
+      const list = Array.isArray(games?.items) ? games.items : [];
       const lessons = await request("/lessons/");
       const lessonList = Array.isArray(lessons) ? lessons : [];
       const lessonMap = {};
@@ -232,7 +232,7 @@
       });
       if (htmlContent) {
         const iframe = document.getElementById("game-frame");
-        iframe.srcdoc = htmlContent;
+        iframe.srcdoc = injectNodeBase(htmlContent);
         iframe.onload = () => {
           try { iframe.style.height = Math.max(iframe.contentDocument.documentElement.scrollHeight, 400) + "px"; } catch(e) {}
         };
@@ -244,8 +244,8 @@
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading users...</p></div>');
     try {
       const [students, teachers] = await Promise.all([request("/students"), request("/teachers")]);
-      const sList = Array.isArray(students) ? students : [];
-      const tList = Array.isArray(teachers) ? teachers : [];
+      const sList = Array.isArray(students?.items) ? students.items : [];
+      const tList = Array.isArray(teachers?.items) ? teachers.items : [];
       showAdminView(`
         <div class="content" style="max-width:960px">
           <div style="display:flex;justify-content:space-between;align-items:center">

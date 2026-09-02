@@ -703,6 +703,7 @@
                   <div>
                     <h4 style="margin:0">${escapeHtml(a.title)}</h4>
                     <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">Due: ${a.due_date ? new Date(a.due_date).toLocaleDateString() : "No due date"} | ${a.status}</p>
+                    ${a.paper_summary ? `<p style="color:var(--color-accent);font-size:0.78rem;margin-top:0.15rem">📄 ${examPaperMetaLine(a.paper_summary)}</p>` : ""}
                     ${a.notes ? `<p style="color:var(--color-text-muted);font-size:0.8rem;margin-top:0.15rem">${escapeHtml(a.notes)}</p>` : ""}
                   </div>
                   <span class="btn btn-sm btn-primary">Open</span>
@@ -734,6 +735,15 @@
           <button class="btn btn-primary" id="submit-assignment-btn">Submit Work</button>
         </div>
         ${assignment.notes ? `<p style="color:var(--color-text-muted);margin-bottom:1rem">${escapeHtml(assignment.notes)}</p>` : ""}
+        ${assignment.paper ? `
+          <div style="margin-bottom:0.75rem;display:flex;gap:0.5rem;align-items:center">
+            <button class="btn btn-sm" id="toggle-paper-btn">Hide exam paper</button>
+            <span style="font-size:0.8rem;color:var(--color-text-muted)">Objective (multiple-choice) questions are auto-checked — structured and essay questions are answered on the blackboard below.</span>
+          </div>
+          <div id="exam-paper-box-${escapeHtml(assignment.id)}" style="margin-bottom:1rem">
+            ${renderExamPaper(assignment.paper, { mode: "student", ns: "std-assignment-" + escapeHtml(assignment.id) })}
+          </div>
+        ` : ""}
         <div class="card" style="padding:1rem">
           <h3 style="margin:0 0 0.5rem">✏️ Complete on Blackboard</h3>
           <p style="font-size:0.85rem;color:var(--color-text-muted);margin:0 0 0.5rem">Show your working below, then click Submit Work when done.</p>
@@ -741,6 +751,18 @@
         </div>
         <div id="assignment-result" style="margin-top:0.75rem"></div>
       `);
+      if (assignment.paper) {
+        const paperBox = document.getElementById("exam-paper-box-" + assignment.id);
+        if (paperBox) {
+          bindExamScore(paperBox, assignment.paper);
+          const toggle = document.getElementById("toggle-paper-btn");
+          toggle.addEventListener("click", () => {
+            const hidden = paperBox.style.display === "none";
+            paperBox.style.display = hidden ? "" : "none";
+            toggle.textContent = hidden ? "Hide exam paper" : "Show exam paper";
+          });
+        }
+      }
       if (window.CasuyaBlackboardEmbed) { window.CasuyaBlackboardEmbed.autoMount(); }
       document.getElementById("back-btn").addEventListener("click", loadStudentAssignments);
       document.getElementById("submit-assignment-btn").addEventListener("click", async () => {
@@ -779,7 +801,7 @@
     showStudentView('<div class="loading-state"><div class="spinner"></div><p>Loading games...</p></div>');
     try {
       const games = await request("/games");
-      const gameList = Array.isArray(games) ? games : [];
+      const gameList = Array.isArray(games?.items) ? games.items : [];
 
       // Recently viewed from localStorage
       let recent = [];
@@ -855,7 +877,7 @@
 
       const iframe = document.querySelector("#student-content .lesson-iframe");
       if (iframe && contentResp) {
-        iframe.srcdoc = contentResp.replace("<head>", `<head><base href="${API_BASE}/">`);
+        iframe.srcdoc = injectNodeBase(contentResp);
         let heightSet = false;
         const setHeight = () => {
           if (heightSet) return;
@@ -1040,7 +1062,7 @@
       // Render lesson content in iframe
       const iframe = document.querySelector("#student-content .lesson-iframe");
       if (iframe) {
-        iframe.srcdoc = lessonContent.replace("<head>", `<head><base href="${API_BASE}/">`);
+        iframe.srcdoc = injectNodeBase(lessonContent);
         let heightSet = false;
         const setHeight = () => {
           if (heightSet) return;
@@ -1212,7 +1234,7 @@
             if (resp.ok) {
               const html = await resp.text();
               area.innerHTML = `
-                <iframe style="width:100%;border:none;min-height:300px" srcdoc="${escapeHtml(html)}"></iframe>
+                <iframe style="width:100%;border:none;min-height:300px" srcdoc="${escapeHtml(injectNodeBase(html))}"></iframe>
                 <div style="margin-top:0.75rem">
                   <details>
                     <summary style="cursor:pointer;font-size:0.85rem;color:var(--color-text-muted)">✏️ Scratch Pad</summary>

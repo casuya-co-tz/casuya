@@ -46,6 +46,7 @@ const core = [
   "modules/dashboards.js",
   "modules/appearance.js",
   "modules/lesson.js",
+  "modules/exams.js",
   "i18n.js",
   "site-features.js",
   "auth-ui.js",

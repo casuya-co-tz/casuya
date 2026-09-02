@@ -18,6 +18,7 @@ class Assignment(Base):
     lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id"), nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    paper_json: Mapped[str | None] = mapped_column(Text, nullable=True)
     due_date: Mapped[str | None] = mapped_column(String, nullable=True)
     created_by: Mapped[str] = mapped_column(ForeignKey("users.id"), nullable=False)
     status: Mapped[str] = mapped_column(String, default="active")

@@ -10,14 +10,15 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run build:server",
+    "build:server": "tsc server.ts --outDir dist --module commonjs --target ES2022 --moduleResolution node --esModuleInterop --skipLibCheck --strict --declaration false --sourceMap false",
     "clean": "rimraf dist",
     "lint": "eslint src/ tests/ --ext .ts",
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
     "test": "jest --config jest.config.js",
     "test:unit": "jest --config jest.config.js --testPathPattern='tests/unit'",
     "test:integration": "jest --config jest.config.js --testPathPattern='tests/integration'",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc --noEmit server.ts --module commonjs --target ES2022 --moduleResolution node --esModuleInterop --skipLibCheck --strict",
     "test:watch": "jest --config jest.config.js --watch",
     "test:coverage": "jest --config jest.config.js --coverage",
     "prepublishOnly": "npm run clean && npm run build && npm run test"

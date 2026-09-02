@@ -15,8 +15,8 @@
         <div class="content">
           <h2>Platform Progress</h2>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem;margin-top:0.5rem">
-            <div class="card" style="padding:0.75rem"><h4>Students</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(students) ? students.length : 0}</p></div>
-            <div class="card" style="padding:0.75rem"><h4>Teachers</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(teachers) ? teachers.length : 0}</p></div>
+            <div class="card" style="padding:0.75rem"><h4>Students</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(students?.items) ? students.items.length : 0}</p></div>
+            <div class="card" style="padding:0.75rem"><h4>Teachers</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(teachers?.items) ? teachers.items.length : 0}</p></div>
             <div class="card" style="padding:0.75rem"><h4>Lessons</h4><p style="font-size:1.6rem;font-weight:700">${lessonCount}</p></div>
             <div class="card" style="padding:0.75rem"><h4>Subjects</h4><p style="font-size:1.6rem;font-weight:700">${Array.isArray(subjects) ? subjects.length : 0}</p></div>
           </div>
@@ -257,7 +257,7 @@
         if (resp.ok) {
           const html = await resp.text();
           const iframe = document.getElementById("lesson-frame");
-          iframe.srcdoc = html.replace("<head>", `<head><base href="${API_BASE}/">`);
+          iframe.srcdoc = injectNodeBase(html);
           iframe.onload = () => {
             try { iframe.style.height = Math.max(iframe.contentDocument.documentElement.scrollHeight, 400) + "px"; } catch(e) {}
           };
@@ -498,7 +498,7 @@
       });
       if (htmlContent) {
         const iframe = document.getElementById("quiz-frame");
-        iframe.srcdoc = htmlContent;
+        iframe.srcdoc = injectNodeBase(htmlContent);
         iframe.onload = () => {
           try { iframe.style.height = Math.max(iframe.contentDocument.documentElement.scrollHeight, 400) + "px"; } catch(e) {}
         };

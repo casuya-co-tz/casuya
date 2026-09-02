@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session, joinedload
 
 from backend.config.settings import get_settings
 from backend.models.quiz import Quiz, QuizOption, QuizQuestion
+from backend.services.html_assets import rewrite_external_assets
 
 settings = get_settings()
 
@@ -137,10 +138,10 @@ def get_quiz_for_lesson(db: Session, lesson_id: str) -> dict | None:
 def read_quiz_content(db: Session, slug: str) -> str | None:
     quiz = db.query(Quiz).filter(Quiz.slug == slug).first()
     if quiz and quiz.package_html:
-        return quiz.package_html
+        return rewrite_external_assets(quiz.package_html)
     pkg_path = _get_quiz_pkg_path(slug)
     if pkg_path.exists():
-        return pkg_path.read_text(encoding="utf-8")
+        return rewrite_external_assets(pkg_path.read_text(encoding="utf-8"))
     return None
 
 

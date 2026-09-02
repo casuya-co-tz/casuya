@@ -379,7 +379,7 @@ async function renderTeacherDashboard() {
     showTeacherView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
     try {
       const students = await request("/students");
-      const sList = Array.isArray(students) ? students : [];
+      const sList = Array.isArray(students?.items) ? students.items : [];
       showTeacherView(`
         <div class="content" style="max-width:960px">
           <h2>Students</h2>
@@ -646,7 +646,7 @@ async function renderTeacherDashboard() {
         request("/assignments").catch(() => []),
       ]);
       const lessonList = Array.isArray(lessons) ? lessons : [];
-      const studentList = Array.isArray(students) ? students : [];
+      const studentList = Array.isArray(students?.items) ? students.items : [];
       const assignmentList = Array.isArray(assignments) ? assignments : [];
 
       showTeacherView(`
@@ -661,12 +661,18 @@ async function renderTeacherDashboard() {
               assignmentList.map((a, i) => `
                 <div class="card" style="padding:1rem;margin-bottom:0.5rem">
                   <div style="display:flex;justify-content:space-between;align-items:start">
-                    <div>
+                    <div style="flex:1;min-width:0">
                       <h4 style="margin:0">${escapeHtml(a.title)}</h4>
                       <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">${escapeHtml((a.lesson_title || a.lesson_id || "Unknown lesson"))}</p>
                       <p style="color:var(--color-text-muted);font-size:0.75rem;margin-top:0.15rem">Due: ${a.due_date ? new Date(a.due_date).toLocaleDateString() : "No due date"} | ${a.status}</p>
+                      ${a.paper_summary ? `<p style="color:var(--color-accent);font-size:0.78rem;margin-top:0.15rem">📄 ${examPaperMetaLine(a.paper_summary)}</p>` : ""}
                     </div>
-                    <button class="btn btn-sm btn-danger" data-delete-assignment="${a.id}">Remove</button>
+                    <div style="display:flex;gap:0.35rem;flex-shrink:0;margin-left:0.5rem">
+                      <button class="btn btn-sm" data-open-assignment="${a.id}" title="View exam paper">Open</button>
+                      <button class="btn btn-sm" data-edit-assignment="${a.id}" title="Edit assignment">Edit</button>
+                      <button class="btn btn-sm" data-subs-assignment="${a.id}" title="View submissions">Submissions</button>
+                      <button class="btn btn-sm btn-danger" data-delete-assignment="${a.id}" title="Delete assignment">Remove</button>
+                    </div>
                   </div>
                 </div>
               `).join("")}
@@ -676,17 +682,28 @@ async function renderTeacherDashboard() {
       document.getElementById("new-assignment-btn")?.addEventListener("click", () => {
         document.getElementById("assignment-form-area").innerHTML = `
           <div class="card" style="margin-top:1rem;padding:1.5rem">
-            <h3 style="margin-bottom:0.75rem">New Assignment</h3>
+            <h3 style="margin-bottom:0.5rem">Create a New Assignment</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-muted);margin:0 0 0.9rem">
+              Use the <b>AI exam generator</b> to create a NECTA / internal-format paper for a lesson, preview it, then assign it to students.
+            </p>
             <form id="assignment-form" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
               <div style="grid-column:1/-1">
                 <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>
-                <input class="input" name="title" placeholder="Assignment title" required>
+                <input class="input" name="title" id="exam-title" placeholder="e.g. Form Two Chemistry - Mid-Term Examination">
               </div>
               <div>
                 <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Lesson</label>
-                <select class="input" name="lesson_id" required>
+                <select class="input" name="lesson_id" id="exam-lesson" required>
                   <option value="">Select lesson...</option>
                   ${lessonList.map(l => `<option value="${l.id}">${escapeHtml(l.title)}</option>`).join("")}
+                </select>
+              </div>
+              <div>
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Exam Type</label>
+                <select class="input" name="kind" id="exam-kind">
+                  <option value="necta">NECTA Style (FTNA/CSEE)</option>
+                  <option value="internal">Internal Examination</option>
+                  <option value="exercise">Class Exercise</option>
                 </select>
               </div>
               <div>
@@ -694,29 +711,133 @@ async function renderTeacherDashboard() {
                 <input class="input" type="date" name="due_date">
               </div>
               <div>
-                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Notes</label>
-                <input class="input" name="notes" placeholder="Optional instructions">
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Time Allowed</label>
+                <input class="input" name="duration" id="exam-duration" placeholder="2 Hours">
               </div>
-              <div style="grid-column:1/-1;display:flex;gap:0.5rem">
-                <button class="btn btn-success" type="submit">Create</button>
-                <button class="btn" type="button" id="cancel-assignment">Cancel</button>
+              <div style="grid-column:1/-1">
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Notes (optional)</label>
+                <input class="input" name="notes" placeholder="Optional instructions for students">
+              </div>
+              <div style="grid-column:1/-1">
+                <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Exam Structure — adjust question counts & marks per section</label>
+                <div id="exam-sections"></div>
+              </div>
+              <div style="grid-column:1/-1;display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap">
+                <button class="btn btn-primary" type="button" id="exam-generate">✨ Generate Exam with AI</button>
+                <span id="exam-generate-status" style="font-size:0.8rem;color:var(--color-text-muted)"></span>
+                <button class="btn" type="button" id="cancel-assignment" style="margin-left:auto">Cancel</button>
               </div>
             </form>
+            <div id="exam-preview-area" style="margin-top:1rem"></div>
           </div>
         `;
         document.getElementById("cancel-assignment").addEventListener("click", () => document.getElementById("assignment-form-area").innerHTML = "");
-        document.getElementById("assignment-form").addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const fd = new FormData(e.target);
+
+        const sectionsByKind = () => {
+          const out = [];
+          document.querySelectorAll("#exam-sections [data-sec-row]").forEach(row => {
+            out.push({
+              id: row.dataset.secRow,
+              count: parseInt(row.querySelector('[data-field="count"]').value, 10) || 1,
+              marks_per_question: parseInt(row.querySelector('[data-field="marks_per_question"]').value, 10) || 1,
+            });
+          });
+          return out;
+        };
+        const updateExamTotal = () => {
+          const line = document.getElementById("exam-total-line");
+          if (!line) return;
+          const secs = sectionsByKind();
+          const total = secs.reduce((s, x) => s + x.count * x.marks_per_question, 0);
+          line.innerHTML = `Total: <b>${total} marks</b> (${secs.length} sections)`;
+        };
+        const loadSectionEditor = async () => {
+          const kind = document.getElementById("exam-kind").value;
           try {
-            await request("/assignments?" + new URLSearchParams({
-              lesson_id: fd.get("lesson_id"),
-              title: fd.get("title"),
-              due_date: fd.get("due_date") || "",
-              notes: fd.get("notes") || "",
-            }), { method: "POST" });
-            loadTeacherAssignments();
-          } catch(err) { alert("Failed to create assignment: " + err.message); }
+            const presets = await request("/assignments/exam-presets");
+            const cfg = presets && presets[kind];
+            if (!cfg) return;
+            const dur = document.getElementById("exam-duration");
+            if (!dur.value) dur.value = cfg.duration || "";
+            const total = cfg.sections.reduce((s, x) => s + x.count * x.marks_per_question, 0);
+            document.getElementById("exam-sections").innerHTML =
+              cfg.sections.map(sec => `
+                <div data-sec-row="${escapeHtml(sec.id)}" style="display:flex;align-items:center;gap:0.5rem;padding:0.35rem 0;border-bottom:1px dashed var(--color-border)">
+                  <span style="width:1.7rem;font-weight:700">${escapeHtml(sec.id)}</span>
+                  <span style="flex:1;font-size:0.85rem">${escapeHtml(sec.title)}</span>
+                  <label style="font-size:0.75rem;color:var(--color-text-muted)">Questions <input class="input" style="width:4.5rem" type="number" min="1" max="40" data-field="count" value="${sec.count}"></label>
+                  <label style="font-size:0.75rem;color:var(--color-text-muted)">Marks each <input class="input" style="width:4.5rem" type="number" min="1" max="50" data-field="marks_per_question" value="${sec.marks_per_question}"></label>
+                </div>
+              `).join("") +
+              `<div style="margin-top:0.4rem;font-size:0.8rem;color:var(--color-text-muted)" id="exam-total-line">Total: <b>${total} marks</b> (${cfg.sections.length} sections)</div>`;
+            document.querySelectorAll("#exam-sections input").forEach(inp => inp.addEventListener("input", updateExamTotal));
+          } catch(e) { /* presets unavailable */ }
+        };
+        document.getElementById("exam-kind").addEventListener("change", loadSectionEditor);
+        loadSectionEditor();
+
+        document.getElementById("exam-generate").addEventListener("click", async () => {
+          const lessonId = document.getElementById("exam-lesson").value;
+          if (!lessonId) { alert("Select a lesson first"); return; }
+          const btn = document.getElementById("exam-generate");
+          const status = document.getElementById("exam-generate-status");
+          const titleEl = document.getElementById("exam-title");
+          const kind = document.getElementById("exam-kind").value;
+          btn.disabled = true;
+          status.textContent = "Generating exam paper...";
+          try {
+            const res = await request("/assignments/generate-paper", {
+              method: "POST",
+              body: JSON.stringify({
+                lesson_id: lessonId,
+                kind,
+                duration: document.getElementById("exam-duration").value || "",
+                sections: sectionsByKind(),
+              }),
+            });
+            const paper = res && res.paper;
+            if (!paper) throw new Error("No paper returned");
+            if (!titleEl.value.trim()) {
+              const h = paper.header || {};
+              const label = paper.kind === "necta" ? "NECTA-Style Exam" : paper.kind === "exercise" ? "Class Exercise" : "Internal Exam";
+              titleEl.value = [h.subject, h.form_label, label].filter(Boolean).join(" — ");
+            }
+            document.getElementById("exam-preview-area").innerHTML = `
+              <div class="card" style="padding:1rem">
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+                  <h4 style="margin:0">Exam Preview</h4>
+                  <div style="display:flex;gap:0.5rem">
+                    <button class="btn btn-sm" id="exam-regenerate">↻ Regenerate</button>
+                    <button class="btn btn-sm btn-success" id="exam-assign">Assign Exam to Students</button>
+                  </div>
+                </div>
+                ${res.generator === "local" ? '<p style="font-size:0.8rem;color:var(--color-warning);margin:0 0 0.5rem">⚠ AI service unavailable — a valid paper was generated offline from the lesson content.</p>' : ""}
+                ${renderExamPaper(paper, { mode: "preview", ns: "preview-" + (paper.header?.form_level || 0) })}
+              </div>
+            `;
+            document.getElementById("exam-regenerate").addEventListener("click", () => {
+              document.getElementById("exam-generate").click();
+            });
+            document.getElementById("exam-assign").addEventListener("click", async () => {
+              const fd = new FormData(document.getElementById("assignment-form"));
+              try {
+                await request("/assignments?" + new URLSearchParams({
+                  lesson_id: lessonId,
+                  title: titleEl.value.trim() || fd.get("title") || "Assignment",
+                  due_date: fd.get("due_date") || "",
+                  notes: fd.get("notes") || "",
+                  paper: JSON.stringify(paper),
+                }), { method: "POST" });
+                loadTeacherAssignments();
+              } catch(err) { alert("Failed to create assignment: " + err.message); }
+            });
+            status.textContent = res.generator === "casuya-ai" ? "Generated by AI ✓ — review and assign." : "Generated offline ✓ — review and assign.";
+          } catch(err) {
+            status.textContent = "";
+            alert("Failed to generate exam: " + err.message);
+          } finally {
+            btn.disabled = false;
+          }
         });
       });
       document.querySelectorAll("[data-delete-assignment]").forEach(btn => {
@@ -726,6 +847,198 @@ async function renderTeacherDashboard() {
             await request(`/assignments/${id}`, { method: "DELETE" });
             loadTeacherAssignments();
           } catch(err) { alert("Failed to delete assignment"); }
+        });
+      });
+      document.querySelectorAll("[data-open-assignment]").forEach(btn => {
+        btn.addEventListener("click", async () => {
+          const id = btn.dataset.openAssignment;
+          try {
+            const a = await request(`/assignments/${id}`);
+            if (!a || !a.paper) { alert("This assignment has no exam paper attached."); return; }
+            showTeacherView(`
+              <div class="content">
+                <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap">
+                  <button class="btn" id="back-to-list">← Back to Assignments</button>
+                  <h2 style="flex:1">${escapeHtml(a.title)}</h2>
+                </div>
+                <p style="color:var(--color-text-muted);font-size:0.85rem;margin-bottom:0.5rem">
+                  ${escapeHtml(a.lesson_title || "")} | Due: ${a.due_date ? new Date(a.due_date).toLocaleDateString() : "No due date"} | ${a.status}
+                </p>
+                ${renderExamPaper(a.paper, { mode: "preview", ns: "open-" + (a.paper.header?.form_level || 0) })}
+              </div>
+            `);
+            document.getElementById("back-to-list").addEventListener("click", loadTeacherAssignments);
+          } catch(err) { alert("Failed to load assignment: " + err.message); }
+        });
+      });
+      document.querySelectorAll("[data-edit-assignment]").forEach(btn => {
+        btn.addEventListener("click", async () => {
+          const id = btn.dataset.editAssignment;
+          try {
+            const a = await request(`/assignments/${id}`);
+            if (!a) { alert("Assignment not found."); return; }
+            document.getElementById("assignment-form-area").innerHTML = `
+              <div class="card" style="margin-top:1rem;padding:1.5rem">
+                <h3 style="margin-bottom:0.5rem">Edit Assignment</h3>
+                <form id="edit-assignment-form" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+                  <div style="grid-column:1/-1">
+                    <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Title</label>
+                    <input class="input" name="title" id="edit-title" value="${escapeHtml(a.title)}" required>
+                  </div>
+                  <div>
+                    <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Lesson</label>
+                    <select class="input" name="lesson_id" id="edit-lesson">
+                      ${lessonList.map(l => `<option value="${l.id}" ${l.id === a.lesson_id ? "selected" : ""}>${escapeHtml(l.title)}</option>`).join("")}
+                    </select>
+                  </div>
+                  <div>
+                    <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Due Date</label>
+                    <input class="input" type="date" name="due_date" value="${a.due_date ? a.due_date.split("T")[0] : ""}">
+                  </div>
+                  <div style="grid-column:1/-1">
+                    <label style="font-size:0.8rem;color:var(--color-text-muted);display:block;margin-bottom:0.25rem">Notes</label>
+                    <input class="input" name="notes" value="${escapeHtml(a.notes || "")}">
+                  </div>
+                  <div style="grid-column:1/-1;display:flex;gap:0.5rem;align-items:center">
+                    <button class="btn btn-success" type="submit">Save Changes</button>
+                    <button class="btn" type="button" id="cancel-edit">Cancel</button>
+                    <span id="edit-status" style="font-size:0.8rem;color:var(--color-text-muted)"></span>
+                  </div>
+                </form>
+              </div>
+            `;
+            document.getElementById("cancel-edit").addEventListener("click", () => document.getElementById("assignment-form-area").innerHTML = "");
+            document.getElementById("edit-assignment-form").addEventListener("submit", async (e) => {
+              e.preventDefault();
+              const fd = new FormData(e.target);
+              const status = document.getElementById("edit-status");
+              status.textContent = "Saving...";
+              try {
+                await request(`/assignments/${id}?` + new URLSearchParams({
+                  title: fd.get("title"),
+                  lesson_id: fd.get("lesson_id"),
+                  due_date: fd.get("due_date") || "",
+                  notes: fd.get("notes") || "",
+                }), { method: "PUT" });
+                document.getElementById("assignment-form-area").innerHTML = "";
+                loadTeacherAssignments();
+              } catch(err) { status.textContent = "Failed: " + err.message; }
+            });
+          } catch(err) { alert("Failed to load assignment: " + err.message); }
+        });
+      });
+      document.querySelectorAll("[data-subs-assignment]").forEach(btn => {
+        btn.addEventListener("click", async () => {
+          const id = btn.dataset.subsAssignment;
+          try {
+            const [a, subs] = await Promise.all([
+              request(`/assignments/${id}`),
+              request(`/assignments/${id}/submissions`),
+            ]);
+            const subList = Array.isArray(subs) ? subs : [];
+            showTeacherView(`
+              <div class="content">
+                <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap">
+                  <button class="btn" id="back-to-list">← Back to Assignments</button>
+                  <h2 style="flex:1">Submissions: ${escapeHtml(a.title)}</h2>
+                </div>
+                ${subList.length === 0 ?
+                  '<div class="empty-state"><p>No submissions yet. Students haven\'t submitted their work for this assignment.</p></div>' :
+                  `<div style="margin-bottom:1rem"><p style="color:var(--color-text-muted);font-size:0.85rem">${subList.length} submission(s) received — click to view</p></div>
+                   <div style="display:grid;gap:0.5rem">
+                     ${subList.map(s => `
+                       <div class="card" style="padding:0.75rem 1rem;cursor:pointer;transition:box-shadow 0.15s" data-view-submission="${s.id}" data-sub-assignment="${id}">
+                         <div style="display:flex;justify-content:space-between;align-items:center">
+                           <div>
+                             <span style="font-weight:600">${escapeHtml(s.student_id)}</span>
+                             <span style="color:var(--color-text-muted);font-size:0.8rem;margin-left:0.5rem">${s.status}</span>
+                           </div>
+                           <span style="font-size:0.8rem;color:var(--color-text-muted)">${s.submitted_at ? new Date(s.submitted_at).toLocaleString() : ""}</span>
+                         </div>
+                       </div>
+                     `).join("")}
+                   </div>`
+                }
+                <div id="submission-detail" style="margin-top:1rem"></div>
+              </div>
+            `);
+            document.getElementById("back-to-list").addEventListener("click", loadTeacherAssignments);
+            document.querySelectorAll("[data-view-submission]").forEach(card => {
+              card.addEventListener("mouseenter", () => card.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)");
+              card.addEventListener("mouseleave", () => card.style.boxShadow = "none");
+              card.addEventListener("click", async () => {
+                const subId = card.dataset.viewSubmission;
+                const assignId = card.dataset.subAssignment;
+                const detail = document.getElementById("submission-detail");
+                detail.innerHTML = '<div style="padding:1rem;color:var(--color-text-muted)">Loading submission...</div>';
+                try {
+                  const [subData, assignData] = await Promise.all([
+                    request(`/assignments/${assignId}/submissions`),
+                    request(`/assignments/${assignId}`),
+                  ]);
+                  const sub = (Array.isArray(subData) ? subData : []).find(s => s.id === subId);
+                  if (!sub) { detail.innerHTML = '<div style="padding:1rem;color:var(--color-error)">Submission not found</div>'; return; }
+                  let elements = [];
+                  try { elements = JSON.parse(sub.elements_json || "[]"); } catch {}
+                  const paper = assignData && assignData.paper;
+                  let html = `
+                    <div class="card" style="padding:1.25rem">
+                      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem">
+                        <h3 style="margin:0">Student: ${escapeHtml(sub.student_id)}</h3>
+                        <span style="font-size:0.8rem;color:var(--color-text-muted)">Submitted: ${sub.submitted_at ? new Date(sub.submitted_at).toLocaleString() : "N/A"} | ${sub.status}</span>
+                      </div>
+                  `;
+                  if (paper && paper.sections) {
+                    html += '<div style="margin-bottom:1rem"><h4 style="margin:0 0 0.5rem">Exam Paper Answers</h4>';
+                    paper.sections.forEach(sec => {
+                      if (sec.question_type !== "mcq") return;
+                      (sec.questions || []).forEach(q => {
+                        const ans = elements.find(el => el.questionId === q.number || (el.question_number && parseInt(el.question_number) === q.number));
+                        const chosen = ans && ans.selected_option != null ? parseInt(ans.selected_option) : -1;
+                        const correct = q.answer;
+                        const isCorrect = chosen === correct;
+                        const opts = (q.options || []).map((o, i) => {
+                          const sel = i === chosen;
+                          const cor = i === correct;
+                          let style = "padding:0.15rem 0.4rem;border-radius:3px;margin:0.1rem 0;display:block;font-size:0.85rem;";
+                          if (cor) style += "background:#dcfce7;font-weight:600;";
+                          else if (sel && !cor) style += "background:#fee2e2;text-decoration:line-through;";
+                          return `<span style="${style}">${escapeHtml(o)}</span>`;
+                        }).join("");
+                        html += `<div style="margin-bottom:0.5rem;padding:0.4rem;border-left:3px solid ${isCorrect ? "#16a34a" : "#dc2626"};padding-left:0.6rem">
+                          <span style="font-weight:600;font-size:0.85rem">Q${q.number}.</span> <span style="font-size:0.85rem">${escapeHtml(q.text).slice(0, 80)}</span>
+                          <div style="margin-top:0.2rem">${opts}</div>
+                          <span style="font-size:0.75rem;color:${isCorrect ? "#16a34a" : "#dc2626"};font-weight:600">${isCorrect ? "Correct" : "Wrong"} (${q.marks} mark${q.marks > 1 ? "s" : ""})</span>
+                        </div>`;
+                      });
+                    });
+                    html += '</div>';
+                  }
+                  if (elements.length > 0) {
+                    html += '<div style="margin-bottom:0.5rem"><h4 style="margin:0 0 0.5rem">Blackboard Work</h4><div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:0.75rem;max-height:300px;overflow-y:auto;">';
+                    elements.forEach((el, i) => {
+                      if (el.tool === "text" || el.tool === "katex") {
+                        const content = el.content || el.latex || "";
+                        if (content.trim()) html += `<div style="margin-bottom:0.3rem;font-size:0.85rem;padding:0.2rem 0;border-bottom:1px solid #f3f4f6">📝 ${escapeHtml(content)}</div>`;
+                      } else if (el.tool === "pen" || el.tool === "highlighter") {
+                        html += `<div style="margin-bottom:0.3rem;font-size:0.85rem;padding:0.2rem 0;border-bottom:1px solid #f3f4f6">✏️ Drawing stroke (${el.points ? el.points.length : "?"} points)</div>`;
+                      } else if (el.tool === "eraser") {
+                        html += `<div style="margin-bottom:0.3rem;font-size:0.85rem;padding:0.2rem 0;border-bottom:1px solid #f3f4f6">🗑️ Eraser</div>`;
+                      } else {
+                        html += `<div style="margin-bottom:0.3rem;font-size:0.85rem;padding:0.2rem 0;border-bottom:1px solid #f3f4f6">📎 ${escapeHtml(el.tool || "element")}</div>`;
+                      }
+                    });
+                    html += '</div></div>';
+                  } else if (!paper) {
+                    html += '<div style="color:var(--color-text-muted);font-size:0.85rem;padding:1rem">No work submitted yet.</div>';
+                  }
+                  html += '</div>';
+                  detail.innerHTML = html;
+                  card.scrollIntoView({ behavior: "smooth", block: "start" });
+                } catch(err) { detail.innerHTML = '<div style="padding:1rem;color:var(--color-error)">Failed to load submission: ' + escapeHtml(err.message) + '</div>'; }
+              });
+            });
+          } catch(err) { alert("Failed to load submissions: " + err.message); }
         });
       });
     } catch(e) {
@@ -740,7 +1053,7 @@ async function renderTeacherDashboard() {
         request("/students"),
         request("/lessons"),
       ]);
-      const studentList = Array.isArray(students) ? students : [];
+      const studentList = Array.isArray(students?.items) ? students.items : [];
       const lessonList = Array.isArray(lessons) ? lessons : [];
 
       const studentProgress = [];

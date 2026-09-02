@@ -284,7 +284,7 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     `;
 
     const iframe = container.querySelector(".lesson-iframe");
-    iframe.srcdoc = html.replace("<head>", `<head><base href="${API_BASE}/">`);
+    iframe.srcdoc = injectNodeBase(html);
     let heightSet = false;
     const setHeight = () => {
       if (heightSet) return;
@@ -421,7 +421,7 @@ async function viewLessonContent(containerId, lessonId, backFn) {
           });
           if (!resp.ok) throw new Error("Failed to load game content");
           const html = await resp.text();
-          area.innerHTML = `<iframe style="width:100%;min-height:400px;border:none;border-radius:var(--radius)" srcdoc="${escapeHtml(html)}"></iframe>`;
+          area.innerHTML = `<iframe style="width:100%;min-height:400px;border:none;border-radius:var(--radius)" srcdoc="${escapeHtml(injectNodeBase(html))}"></iframe>`;
         } catch(err) {
           area.innerHTML = `<p style="color:var(--color-danger)">Error loading game: ${escapeHtml(err.message)}</p>`;
         }
