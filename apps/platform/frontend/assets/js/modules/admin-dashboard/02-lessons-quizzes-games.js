@@ -7,7 +7,11 @@
         request("/subjects"),
         request("/analytics/lesson-distribution"),
       ]);
-
+      if (!students || !Array.isArray(students?.items)) {
+        showAdminView('<div class="content"><h2>Platform Progress</h2><div class="empty-state"><p>Unable to load progress data. Your session may have expired. <a href="#" id="reload-link">Click here to reload</a>.</p></div></div>');
+        document.getElementById("reload-link")?.addEventListener("click", (e) => { e.preventDefault(); loadAdminProgress(); });
+        return;
+      }
       const dist = Array.isArray(distribution) ? distribution : [];
       const lessonCount = dist.length;
 

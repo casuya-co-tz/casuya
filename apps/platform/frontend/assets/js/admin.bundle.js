@@ -3234,7 +3234,11 @@ async function renderAdminDashboard() {
         request("/subjects"),
         request("/analytics/lesson-distribution"),
       ]);
-
+      if (!students || !Array.isArray(students?.items)) {
+        showAdminView('<div class="content"><h2>Platform Progress</h2><div class="empty-state"><p>Unable to load progress data. Your session may have expired. <a href="#" id="reload-link">Click here to reload</a>.</p></div></div>');
+        document.getElementById("reload-link")?.addEventListener("click", (e) => { e.preventDefault(); loadAdminProgress(); });
+        return;
+      }
       const dist = Array.isArray(distribution) ? distribution : [];
       const lessonCount = dist.length;
 
@@ -3981,7 +3985,12 @@ async function renderAdminDashboard() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading users...</p></div>');
     try {
       const [students, teachers] = await Promise.all([request("/students"), request("/teachers")]);
-      const sList = Array.isArray(students?.items) ? students.items : [];
+      if (!students || !Array.isArray(students?.items)) {
+        showAdminView('<div class="content"><h2>Users</h2><div class="empty-state"><p>Unable to load users. Your session may have expired. <a href="#" id="reload-link">Click here to reload</a>.</p></div></div>');
+        document.getElementById("reload-link")?.addEventListener("click", (e) => { e.preventDefault(); loadAdminUsers(); });
+        return;
+      }
+      const sList = students.items;
       const tList = Array.isArray(teachers?.items) ? teachers.items : [];
       showAdminView(`
         <div class="content" style="max-width:960px">
