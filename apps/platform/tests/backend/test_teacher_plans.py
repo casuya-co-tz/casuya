@@ -1,7 +1,9 @@
 """Tests for teacher plan (lesson plan / scheme of work) generation and CRUD."""
 
 import json
+import sys
 import uuid
+from pathlib import Path
 
 from fastapi.testclient import TestClient
 
@@ -16,6 +18,68 @@ from backend.services.teacher_plan_service import (
 )
 
 client = TestClient(app)
+
+
+def _seed_subject_dict(slug: str, form_level: int) -> dict:
+    """Build a service-shape subject dict from the real NECTA_SYLLABUS seed.
+
+    Mirrors the DB->dict conversion in syllabus_service (_topic_to_dict /
+    _subtopic_to_dict): period totals map to estimated_periods and the seed's
+    (description, cognitive_level, order) outcome tuples become dicts. Lets the
+    offline scheme/lesson generators be tested against the authentic TIE data
+    that seed_necta_syllabus.run() inserts rather than synthetic mocks.
+    """
+    seed_dir = Path(__file__).resolve().parents[2] / "database" / "seeds"
+    if str(seed_dir) not in sys.path:
+        sys.path.insert(0, str(seed_dir))
+    from seed_necta_syllabus import NECTA_SYLLABUS
+
+    subject = next(s for s in NECTA_SYLLABUS if s["slug"] == slug)
+    topics = []
+    for t in sorted(
+        (x for x in subject["topics"] if x["form_level"] == form_level),
+        key=lambda x: x.get("order", 0),
+    ):
+        subtopics = []
+        for sp in t.get("subtopics", []):
+            outcomes = []
+            for i, o in enumerate(sp.get("outcomes", []), start=1):
+                if isinstance(o, (list, tuple)):
+                    desc, cog, order = o
+                    outcomes.append({
+                        "description": desc,
+                        "cognitive_level": cog,
+                        "order_index": order if order else i,
+                    })
+                else:
+                    outcomes.append({
+                        "description": o.get("description", ""),
+                        "cognitive_level": o.get("cognitive_level", "comprehension"),
+                        "order_index": i,
+                    })
+            outcomes.sort(key=lambda x: x["order_index"])
+            subtopics.append({
+                "title": sp["title"],
+                "code": sp.get("code"),
+                "order_index": sp.get("order", 0),
+                "estimated_periods": sp.get("periods") or 0,
+                "outcomes": outcomes,
+            })
+        topics.append({
+            "title": t["title"],
+            "code": t.get("code"),
+            "order_index": t.get("order", 0),
+            "estimated_periods": t.get("periods") or 0,
+            "form_level": form_level,
+            "subtopics": subtopics,
+        })
+    return {
+        "topics": topics,
+        "name": subject["name"],
+        "code": subject["code"],
+        "slug": subject["slug"],
+        "necta_code": subject["necta_code"],
+    }
 
 
 def _register(role: str):
@@ -211,6 +275,70 @@ def test_scheme_of_work_rejects_third_term():
     SchemeOfWorkGenerateRequest(subject_slug="mathematics", form_level=2, term="Term 2")
     with pytest.raises(ValueError):
         SchemeOfWorkGenerateRequest(subject_slug="mathematics", form_level=2, term="Term 3")
+
+
+# ── Service: generators consume the real enriched TIE syllabus ────────────
+
+
+def test_scheme_of_work_uses_real_enriched_syllabus(monkeypatch):
+    # Physics O-Level was rebuilt from the authentic TIE knowledge base, so the
+    # offline scheme generator must surface its real topics/subtopics/outcomes
+    # (not synthetic fallbacks) when fed the seeded syllabus data.
+    from backend.services.teacher_plan_service import get_subject_with_form as _orig  # noqa: F401
+
+    form_data = _seed_subject_dict("physics", 1)
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_subject_with_form",
+        lambda slug, form: form_data,
+    )
+
+    plan = _build_scheme_offline(
+        subject_slug="physics", subject_label="Physics", form_level=1,
+        term="Term 1", academic_year="2026", school_name="School",
+        teacher_name="Teacher", topics=["INTRODUCTION TO LABORATORY PRACTICE"],
+        lang="en",
+    )
+    assert len(plan["weeks"]) > 0
+    first = plan["weeks"][0]
+    # Authentic TIE topic + subtopic titles/codes from the seed.
+    assert first["topic"] == "INTRODUCTION TO LABORATORY PRACTICE"
+    assert first["main_competence"] == "1.0 INTRODUCTION TO LABORATORY PRACTICE"
+    assert first["specific_competence"].startswith("1.1 ")
+    # The authentic KB outcomes become the weekly learning activities.
+    assert first["learning_activities"], "weekly learning activities must be populated"
+    # Term I only spans months January..May (4 weeks per month).
+    assert {w["month"] for w in plan["weeks"]} <= {
+        "January", "February", "March", "April", "May",
+    }
+    # Real subtopic period totals (not 0).
+    assert all(w["periods"] > 0 for w in plan["weeks"])
+
+
+def test_lesson_plan_uses_real_enriched_syllabus(monkeypatch):
+    form_data = _seed_subject_dict("physics", 2)
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_subject_with_form",
+        lambda slug, form: form_data,
+    )
+
+    # Find a real topic/subtopic pair with outcomes in Form 2 Physics seed.
+    topic = next(t for t in form_data["topics"] if t["subtopics"])
+    subtopic = topic["subtopics"][0]
+    plan = _build_lesson_plan_offline(
+        subject_slug="physics", subject_label="Physics", form_level=2,
+        topic=topic["title"], subtopic=subtopic["title"], school_name="School",
+        teacher_name="Teacher", number_of_students=40, duration_minutes=40,
+        period="Period 1", lang="en",
+    )
+    ca = plan["competence_architecture"]
+    # Authentic competences derived from the real seed codes/titles.
+    assert ca["main_competence"] == f"{topic['code']} {topic['title']}"
+    assert ca["specific_competence"] == f"{subtopic['code']} {subtopic['title']}"
+    # An authentic TIE outcome is reflected in the Realizations learner activity.
+    assert any(
+        ca["specific_learning_activity"]
+        for _ in [plan["progression_matrix"][3]["learner_activity"]]
+    )
 
 
 # ── API: save / list / get / delete ───────────────────────────────────────
