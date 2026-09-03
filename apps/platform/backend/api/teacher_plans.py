@@ -39,6 +39,8 @@ class LessonPlanGenerateRequest(BaseModel):
     school_name: str | None = None
     teacher_name: str | None = None
     number_of_students: int | None = None
+    students_boys: int | None = None
+    students_girls: int | None = None
     duration_minutes: int = 40
     period: str | None = None
 
@@ -84,6 +86,8 @@ async def api_generate_lesson_plan(
         school_name=req.school_name,
         teacher_name=req.teacher_name,
         number_of_students=req.number_of_students,
+        students_boys=req.students_boys,
+        students_girls=req.students_girls,
         duration_minutes=req.duration_minutes,
         period=req.period,
     )

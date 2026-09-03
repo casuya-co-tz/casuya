@@ -1534,6 +1534,12 @@ async function renderTeacherDashboard() {
                   <label style="flex:0.4;min-width:120px">No. of Students
                     <input class="input" type="number" name="number_of_students" value="40" min="1">
                   </label>
+                  <label style="flex:0.4;min-width:110px">Boys / Wavulana
+                    <input class="input" type="number" name="students_boys" min="0" placeholder="auto">
+                  </label>
+                  <label style="flex:0.4;min-width:110px">Girls / Wasichana
+                    <input class="input" type="number" name="students_girls" min="0" placeholder="auto">
+                  </label>
                   <label style="flex:0.4;min-width:95px">Duration (min)
                     <input class="input" type="number" name="duration_minutes" value="40" min="10" max="120">
                   </label>
@@ -1639,6 +1645,11 @@ async function renderTeacherDashboard() {
             form.topic.value = "Linear Equations";
             form.subtopic.value = "Solving Linear Equations";
           }
+          if (form.period) form.period.value = "Period 1";
+          if (form.number_of_students) form.number_of_students.value = "40";
+          if (form.students_boys) form.students_boys.value = "20";
+          if (form.students_girls) form.students_girls.value = "20";
+          if (form.duration_minutes) form.duration_minutes.value = "40";
         }
       });
 
@@ -1660,6 +1671,8 @@ async function renderTeacherDashboard() {
               school_name: fd.get("school_name") || null,
               teacher_name: fd.get("teacher_name") || null,
               number_of_students: parseInt(fd.get("number_of_students")) || 40,
+              students_boys: fd.get("students_boys") ? parseInt(fd.get("students_boys")) : null,
+              students_girls: fd.get("students_girls") ? parseInt(fd.get("students_girls")) : null,
               duration_minutes: parseInt(fd.get("duration_minutes")) || 40,
               period: fd.get("period") || null,
             }),

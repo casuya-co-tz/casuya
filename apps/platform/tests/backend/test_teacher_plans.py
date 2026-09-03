@@ -46,12 +46,30 @@ def test_lesson_plan_offline_render_english():
     )
     assert plan["header"]["school_name"] == "Mwanza Sec"
     assert plan["header"]["class_name"] == "Form 2"
-    assert len(plan["teaching_activities"]) == 3
+    assert plan["header"]["students_registered"]["total"] == 42
+    assert plan["header"]["students_registered"]["boys"] + plan["header"]["students_registered"]["girls"] == 42
+    assert len(plan["progression_matrix"]) == 4
+    assert plan["progression_matrix"][0]["stage"] == "Introduction"
+    assert [r["stage"] for r in plan["progression_matrix"]] == [
+        "Introduction", "Competence Development", "Design", "Realisation",
+    ]
+    assert "main_competence" in plan["competence_architecture"]
+    assert plan["competence_architecture"]["specific_learning_activity"].startswith("Within 40 minutes")
+    # stage times must sum to the duration
+    total_time = sum(int(r["time"].split()[0]) for r in plan["progression_matrix"])
+    assert total_time == 40
 
     html = render_lesson_plan_html(plan)
     assert "Linear Equations" in html
     assert "Form 2" in html
-    assert "Teaching and Learning Activities" in html
+    assert "UNITED REPUBLIC OF TANZANIA" in html
+    assert "TANZANIA INSTITUTE OF EDUCATION" in html
+    assert "TEACHER" in html
+    assert "Competence Development" in html
+    assert "Design" in html
+    assert "Realisation" in html
+    assert "Assessment Criteria" in html
+    assert "REMARKS / EVALUATION" in html
     assert "downloadAsWord" in html
     assert "window.print()" in html
 
@@ -62,10 +80,15 @@ def test_lesson_plan_offline_render_kiswahili():
         topic="Fasihi", subtopic="Methali", school_name="Shule", teacher_name="Bw J",
         number_of_students=30, duration_minutes=40, period="Kipindi 1", lang="sw",
     )
+    assert len(plan["progression_matrix"]) == 4
+    assert plan["progression_matrix"][0]["stage"] == "Utangulizi"
+    assert "Ndani ya dakika" in plan["competence_architecture"]["specific_learning_activity"]
     html = render_lesson_plan_html(plan)
     assert "Methali" in html
-    assert "Mshughulikia" in html or "Shughuli" in html
-    assert "Kipindi" in html
+    assert "JAMHURI YA MUUNGANO WA TANZANIA" in html
+    assert "MPANGO WA SOMO LA MWALIMU" in html
+    assert "Ukuzaji wa Ujuzi" in html or "Kigezo cha Tathmini" in html
+    assert "Kigezo cha Tathmini" in html or "Mpango wa Somo" in html
 
 
 def test_scheme_of_work_offline_render():

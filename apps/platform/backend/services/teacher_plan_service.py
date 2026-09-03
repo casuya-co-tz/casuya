@@ -76,6 +76,8 @@ async def generate_lesson_plan(
     school_name: str | None = None,
     teacher_name: str | None = None,
     number_of_students: int | None = None,
+    students_boys: int | None = None,
+    students_girls: int | None = None,
     duration_minutes: int = 40,
     period: str | None = None,
 ) -> dict:
@@ -93,6 +95,8 @@ async def generate_lesson_plan(
         school_name=school_name or "School Name",
         teacher_name=teacher_name or "Teacher Name",
         number_of_students=number_of_students or 40,
+        students_boys=students_boys,
+        students_girls=students_girls,
         duration_minutes=duration_minutes,
         period=period or "Period 1",
     )
@@ -119,6 +123,8 @@ async def generate_lesson_plan(
         school_name=school_name or "School Name",
         teacher_name=teacher_name or "Teacher Name",
         number_of_students=number_of_students or 40,
+        students_boys=students_boys,
+        students_girls=students_girls,
         duration_minutes=duration_minutes,
         period=period or "Period 1",
         lang=lang,
@@ -179,12 +185,23 @@ async def generate_scheme_of_work(
 
 def _build_lesson_plan_prompt(
     *, lang, curriculum_ctx, subject_label, form_level, topic, subtopic,
-    school_name, teacher_name, number_of_students, duration_minutes, period,
+    school_name, teacher_name, number_of_students, students_boys=None, students_girls=None,
+    duration_minutes, period,
 ) -> str:
     today = datetime.now(timezone.utc).strftime("%d/%m/%Y")
     time_to = _time_to(duration_minutes)
     subtopic_display = subtopic or ("General Overview" if lang == "en" else "Mawazo ya Jumla")
     class_name = f"Form {form_level}" if lang == "en" else f"Kidato {form_level}"
+
+    students_total = number_of_students
+    if students_boys is not None or students_girls is not None:
+        boys = students_boys if students_boys is not None else students_total - (students_girls or 0)
+        girls = students_girls if students_girls is not None else students_total - boys
+        students_total = boys + girls
+    else:
+        half = students_total // 2
+        boys = students_total - half
+        girls = half
 
     json_schema = {
         "header": {
@@ -198,34 +215,55 @@ def _build_lesson_plan_prompt(
             "time_from": "08:00",
             "time_to": time_to,
             "period": period,
-            "number_of_students": number_of_students,
+            "number_of_students": students_total,
+            "students_registered": {"boys": boys, "girls": girls, "total": students_total},
+            "students_present": {"boys": "", "girls": "", "total": ""},
         },
-        "competences": ["Competence 1", "Competence 2"],
-        "specific_objectives": ["Objective 1", "Objective 2"],
-        "teaching_aids": ["Aid 1", "Aid 2"],
-        "references": ["TIE Syllabus", "Textbook"],
-        "teaching_activities": [
-            {"phase": "Introduction", "time": "10 min", "teacher_activity": "...",
-             "student_activity": "...", "teaching_aids": "...", "remarks_assessment": "..."},
-            {"phase": "Main Lesson", "time": "25 min", "teacher_activity": "...",
-             "student_activity": "...", "teaching_aids": "...", "remarks_assessment": "..."},
-            {"phase": "Conclusion", "time": "5 min", "teacher_activity": "...",
-             "student_activity": "...", "teaching_aids": "...", "remarks_assessment": "..."},
+        "competence_architecture": {
+            "main_competence": "Statement of the overarching competence",
+            "specific_competence": "Specific, assessable competence",
+            "main_learning_activity": "Broad learning activity for the topic",
+            "specific_learning_activity": (
+                f"Within {duration_minutes} minutes, learners should be able to ..."
+            ),
+        },
+        "resources_strategies": {
+            "teaching_learning_resources": [
+                f"{subject_label} TIE Textbook", "Manila charts"
+            ],
+            "references": ["Tanzania Institute of Education (TIE) Syllabus"],
+            "learning_environment": "Collaborative group layout with accessible learning materials",
+        },
+        "progression_matrix": [
+            {"stage": "Introduction", "time": "5 min", "teacher_activity": "...",
+             "learner_activity": "...", "assessment_criteria": "..."},
+            {"stage": "Competence Development", "time": "15 min", "teacher_activity": "...",
+             "learner_activity": "...", "assessment_criteria": "..."},
+            {"stage": "Design", "time": "12 min", "teacher_activity": "...",
+             "learner_activity": "...", "assessment_criteria": "..."},
+            {"stage": "Realisation", "time": "8 min", "teacher_activity": "...",
+             "learner_activity": "...", "assessment_criteria": "..."},
         ],
-        "general_objectives": ["General objective 1"],
         "remarks": "Additional notes",
     }
 
     if lang == "sw":
         return (
             "Unatengeneza Mpango wa Somo rasmi wa TIE (Taasisi ya Elimu Tanzania) "
-            "kwa Misingumo ya Ujuzi.\n"
+            "kwa Misingumo ya Ujuzi (Competence-Based Curriculum).\n"
             "MUHIMU SANA: Toa JSON SAHIHI pekee — bila markdown, maelezo, au vizuizi vya msimbo.\n\n"
             f"MISEMBO:\n{json.dumps(json_schema, indent=2, ensure_ascii=False)}\n\n"
             f"CONTEXTO YA MPANGO:\n{curriculum_ctx}\n\n"
-            "Vifaa vya ufundishaji na marejeo lazima vitoke kutoka kwenye misingumo hapo juu.\n"
-            "Kila shughuli lazima iwe na maelezo kamili — si tu majina ya awamu.\n"
-            "Lengo la jumla lazima liunganishwe na malengo mahususi.\n"
+            "Muundo lazima ufuate umbizo rasmi la TIE: Taarifa za Awali, Maelezo ya Ujuzi, "
+            "Rasilimali za Kufundisha na Kujifunza, na Mchakato wa Kufundisha na Kujifunza "
+            "kwa HATUA 4 haswa: Utangulizi, Ukuzaji wa Ujuzi, Usanifu, na Utambuzi "
+            "(nyakati takriban 5/15/12/8 dakika), kila hatua ikiwa na Shughuli ya "
+            "Ufundishaji, Shughuli ya Kujifunza, na Kigezo cha Tathmini.\n"
+            "Vifaa vya ufundishaji, marejeo, na mazingira ya kujifunzia lazima vitoke kutoka "
+            "kwenye misingumo hapo juu.\n"
+            "Kila shughuli lazima iwe na maelezo kamili — si tu majina ya hatua.\n"
+            "Umahiri mahususi wa kujifunzia lazima uwe maalum na wenye muda dhahiri "
+            f"(ndani ya dakika {duration_minutes}).\n"
             f"Lugha: Kiswahili"
         )
 
@@ -235,9 +273,16 @@ def _build_lesson_plan_prompt(
         "CRITICAL: Output ONLY valid JSON matching this schema — no markdown, no explanations.\n\n"
         f"JSON SCHEMA:\n{json.dumps(json_schema, indent=2)}\n\n"
         f"CURRICULUM CONTEXT:\n{curriculum_ctx}\n\n"
-        "Teaching aids and references MUST come from the curriculum context above.\n"
-        "Each activity must have FULL descriptions — not just phase names.\n"
-        "General objectives must connect to specific learning outcomes.\n"
+        "Follow the official TIE 4-block lesson plan format: Preliminary Information, "
+        "Competence Information, Teaching & Learning Resources, and the Teaching & "
+        "Learning Process with exactly 4 stages: Introduction, Competence Development, "
+        "Design, and Realisation (times roughly 5/15/12/8 min), each with a Teaching "
+        "Activity, a Learning Activity, and an Assessment Criterion.\n"
+        "Teaching & learning resources, references, and the learning environment MUST come "
+        "from the curriculum context above.\n"
+        "Each stage activity must have FULL descriptions — not just stage names.\n"
+        "The specific learning activity must be time-bound and measurable "
+        f"(e.g. Within {duration_minutes} minutes, learners should be able to ...).\n"
         f"Language: English"
     )
 
@@ -301,60 +346,134 @@ def _build_scheme_prompt(
 
 def _build_lesson_plan_offline(
     *, subject_slug, subject_label, form_level, topic, subtopic,
-    school_name, teacher_name, number_of_students, duration_minutes, period, lang,
+    school_name, teacher_name, number_of_students, students_boys=None, students_girls=None,
+    duration_minutes, period, lang,
 ) -> dict:
-    intro_time = max(5, duration_minutes // 8)
-    conc_time = max(5, duration_minutes // 8)
-    main_time = duration_minutes - intro_time - conc_time
+    # TIE 4-stage progression time allocation (Introduction/Competence
+    # Development/Design/Realisation), scaled to the total duration.
+    weights = [5, 15, 12, 8]
+    total_w = sum(weights)
+    times = [
+        max(2, round(duration_minutes * w / total_w)) for w in weights
+    ]
+    # Absorb rounding drift into the Competence Development (longest) stage.
+    drift = duration_minutes - sum(times)
+    times[1] += drift
     today = datetime.now(timezone.utc).strftime("%d/%m/%Y")
     time_to = _time_to(duration_minutes)
     subtopic_display = subtopic or ("General Overview" if lang == "en" else "Mawazo ya Jumla")
     class_name = f"Form {form_level}" if lang == "en" else f"Kidato {form_level}"
 
-    if lang == "sw":
-        phases = [
-            {"phase": "Uanzishaji", "time": f"dakika {intro_time}",
-             "teacher_activity": f"Anawataka wanafunzi kukumbuka somo la awali kuhusu {topic}. Anaweka maswali ya kuchochea fikira.",
-             "student_activity": "Wanasoma na kujibu maswali ya mwalimu.",
-             "teaching_aids": "Bao, ramani", "remarks_assessment": "Kagua uelewa wa somo la awali"},
-            {"phase": "Somo Kuu", "time": f"dakika {main_time}",
-             "teacher_activity": f"Anafundisha {subtopic_display} kwa undani. Anatumia mifano na mazoezi.",
-             "student_activity": "Wanasoma, kuchukua noti, na kushiriki mazoezi.",
-             "teaching_aids": "Kitabu cha somo, mifano", "remarks_assessment": "Ufuatiliaji wa mazoezi"},
-            {"phase": "Hitimisho", "time": f"dakika {conc_time}",
-             "teacher_activity": "Anafanya muhtasari wa somo lote na kuweka maswali ya kufikiria.",
-             "student_activity": "Wajibu maswali na kuuliza maswali ya ziada.",
-             "teaching_aids": "Muhtasari wa bao", "remarks_assessment": "Kagua kama lengo limefikiwa"},
-        ]
-        objectives = [
-            f"Mwanafunzi ataweza kueleza {subtopic_display}",
-            f"Mwanafunzi ataweza kutumia ujuzi wa {subtopic_display}",
-        ]
-        competences = [f"Ujuzi wa {subject_label}", f"Ujuzi wa {topic}"]
-        aids = ["Kitabu cha somo", "Ramani / michoro"]
-        general_obj = [f"Kuelewa na kutumia maarifa ya {topic} kwa maisha ya kila siku"]
+    if students_boys is not None or students_girls is not None:
+        half = number_of_students
+        boys = students_boys if students_boys is not None else half - (students_girls or 0)
+        girls = students_girls if students_girls is not None else half - boys
+        total = boys + girls
     else:
-        phases = [
-            {"phase": "Introduction", "time": f"{intro_time} min",
-             "teacher_activity": f"Greet students and review the previous lesson on {topic}. Pose questions to stimulate thinking.",
-             "student_activity": "Listen, respond to teacher's questions, and recall prior knowledge.",
-             "teaching_aids": "Chart, previous lesson notes", "remarks_assessment": "Check prior knowledge"},
-            {"phase": "Main Lesson", "time": f"{main_time} min",
-             "teacher_activity": f"Teach {subtopic_display} in detail. Use examples, diagrams, and guided practice.",
-             "student_activity": "Take notes, participate in exercises, and discuss with peers.",
-             "teaching_aids": "Textbook, diagrams, worksheets", "remarks_assessment": "Monitor exercises"},
-            {"phase": "Conclusion", "time": f"{conc_time} min",
-             "teacher_activity": "Summarise key points. Assign follow-up work or pose reflective questions.",
-             "student_activity": "Ask questions, summarise what they learned.",
-             "teaching_aids": "Board summary", "remarks_assessment": "Final comprehension check"},
+        half = number_of_students // 2
+        boys = number_of_students - half
+        girls = half
+        total = number_of_students
+
+    if lang == "sw":
+        stage_names = [
+            "Utangulizi",
+            "Ukuzaji wa Ujuzi",
+            "Usanifu",
+            "Utambuzi",
         ]
-        objectives = [
-            f"The student will be able to describe {subtopic_display}",
-            f"The student will be able to apply knowledge of {subtopic_display}",
+        teacher_acts = [
+            f"Anawaonyesha wanafunzi hali/kauli rahisi kuhusu {topic} na kuwauliza kubainisha thamani zisizojulikana kwa kutumia viambishi/herufi.",
+            f"Anawaongoza wanafunzi katika makundi kusoma muktadha wa {subtopic_display}, kuunda kauli za aljebra na kutatua hatua kwa hatua.",
+            f"Anawapa wanafunzi matatizo ya muktadha na kuwaomba kuunda matatizo yao wenyewe ya {subtopic_display} ili kubadilishana na mwenzao.",
+            f"Anawaongoza wanafunzi kufupisha kanuni kuu za {subtopic_display}, kutoa maswali ya kujiondoa (exit ticket) na kugawa kazi ya nyumbani.",
         ]
-        competences = [f"Competence in {subject_label}", f"Competence in {topic}"]
-        aids = ["Textbook", "Charts / diagrams"]
-        general_obj = [f"Understand and apply knowledge of {topic} in daily life"]
+        learner_acts = [
+            "Hutazama kadi za maneno, hujibu maswali ya mdomo na kutambua kiasi kisichojulikana kinachowakilishwa na viambishi.",
+            "Katika makundi madogo, hujadili muktadha, hubadilisha maneno kuwa milinganyo na kukokotoa thamani ya kigezo kisichojulikana.",
+            "Huunda matatizo binafsi, hubadilishana madaftari na wanafunzi wenzao na kutatua milinganyo zilizoundwa na wenzao.",
+            "Hutaja mambo muhimu aliyojifunza, hukamilisha maswali ya kujiondoa binafsi na kuandika kazi ya nyumbani.",
+        ]
+        assessment = [
+            "Wanafunzi hutambua vigezo visivyojulikana kwa usahihi kutoka kwenye kauli zilizopewa.",
+            "Milinganyo huundwa na kutatuliwa kwa usahihi katika kazi za kikundi.",
+            "Milinganyo iliyoundwa na wanafunzi wenzao imewekwa kwa usahihi na kuhesabiwa kwa usahihi.",
+            "Maswali ya kujiondoa yamekamilishwa kwa usahihi kuonyesha umilisi wa dhana.",
+        ]
+        resources = [f"Kitabu cha somo cha {subject_label} (TIE)", "Ramani / michoro"]
+        references = ["Misingumo ya TIE (Tanzania Institute of Education)"]
+        environment = "Mpangilio wa makundi ya ushirikiano na vifaa vya kujifunzia vinavyofikiwa kwa urahisi"
+        main_comp = f"Kuonyesha ustadi wa lugha ya hisabati na dhana za {topic}"
+        spec_comp = f"Kutumia misemo ya aljebra na {subtopic_display} katika miktadha mbalimbali"
+        main_act = f"Kuunda na kutatua {subtopic_display} kutokana na matatizo halisi ya maisha."
+        spec_act = (
+            f"Ndani ya dakika {duration_minutes}, wanafunzi wanaweza kutatua "
+            f"{subtopic_display} kwa usahihi kupitia mbinu za kusawazisha."
+        )
+        fields = {
+            "phase": "Hatua", "time": "Muda", "teacher_act": "Shughuli ya Mwalimu",
+            "student_act": "Shughuli ya Mwanafunzi", "competency": "Ujuzi mkuu wa Karne ya 21",
+            "assessment": "Kigezo cha Tathmini",
+        }
+    else:
+        stage_names = [
+            "Introduction",
+            "Competence Development",
+            "Design",
+            "Realisation",
+        ]
+        teacher_acts = [
+            f"Displays word cards with simple arithmetic scenarios and prompts students to identify the unknown values using letters/variables.",
+            f"Guides students in small groups to read given word scenarios on {subtopic_display}, form algebraic statements, and solve step-by-step on flip charts.",
+            "Assigns individual contextual math problems and asks students to formulate their own word problems to exchange with a peer.",
+            f"Guides students to summarise key rules of {subtopic_display}, provides exit ticket questions, and assigns homework exercises.",
+        ]
+        learner_acts = [
+            "Observe the word cards, answer oral questions, and identify unknown quantities represented by variables.",
+            "In small groups, discuss scenario cards, convert words into equations, and calculate the value of the unknown variable.",
+            "Formulate individual word problems, exchange exercise books with peers, and solve peer-generated equations.",
+            "State key learnings, complete exit ticket questions individually, and write down assigned homework.",
+        ]
+        assessment = [
+            "Students identify unknown variables correctly from given statements.",
+            "Equations correctly formulated and solved in group tasks.",
+            "Peer-generated equations are correctly set up and accurately calculated.",
+            "Exit tickets accurately completed showing mastery of the concept.",
+        ]
+        resources = [
+            f"Flashcards with word problems on {topic}",
+            "Realia (coins/market items)",
+            f"Chart illustrating steps of {subtopic_display}",
+            "Mathematics exercise books",
+        ]
+        references = [
+            f"Tanzania Institute of Education (TIE). (2023). "
+            f"Mathematics for Secondary Schools Student's Book {class_name}. "
+            "TIE, Dar es Salaam."
+        ]
+        environment = "Collaborative group layout with accessible learning materials"
+        main_comp = "Demonstrate mastery of algebraic concepts and logical reasoning in real-life problem solving"
+        spec_comp = "Apply linear equations in one variable to solve everyday contextual problems"
+        main_act = "Formulate and solve simple linear equations from contextual word problems"
+        spec_act = (
+            f"Within {duration_minutes} minutes, students should be able to formulate "
+            "linear equations from real-life scenarios and solve for the unknown variable correctly."
+        )
+        fields = {
+            "phase": "Stage / Time", "time": "Time", "teacher_act": "Teacher Activity",
+            "student_act": "Learner Activity", "competency": "21st-Century Core Competency",
+            "assessment": "Assessment Criteria",
+        }
+
+    progression = []
+    for i, label in enumerate(stage_names):
+        progression.append({
+            "stage": label,
+            "time": f"{times[i]} min" if lang != "sw" else f"dakika {times[i]}",
+            "teacher_activity": teacher_acts[i],
+            "learner_activity": learner_acts[i],
+            "assessment_criteria": assessment[i],
+        })
 
     return {
         "header": {
@@ -362,14 +481,23 @@ def _build_lesson_plan_offline(
             "class_name": class_name, "subject": subject_label,
             "topic": topic, "subtopic": subtopic_display,
             "date": today, "time_from": "08:00", "time_to": time_to,
-            "period": period, "number_of_students": number_of_students,
+            "period": period, "number_of_students": total,
+            "students_registered": {"boys": boys, "girls": girls, "total": total},
+            "students_present": {"boys": "", "girls": "", "total": ""},
         },
-        "competences": competences,
-        "specific_objectives": objectives,
-        "teaching_aids": aids,
-        "references": ["TIE Syllabus", f"{subject_label} Textbook"],
-        "teaching_activities": phases,
-        "general_objectives": general_obj,
+        "competence_architecture": {
+            "main_competence": main_comp,
+            "specific_competence": spec_comp,
+            "main_learning_activity": main_act,
+            "specific_learning_activity": spec_act,
+        },
+        "resources_strategies": {
+            "teaching_learning_resources": resources,
+            "references": references,
+            "learning_environment": environment,
+        },
+        "progression_matrix": progression,
+        "fields": fields,
         "remarks": "",
     }
 
@@ -417,165 +545,314 @@ def _build_scheme_offline(
 
 def render_lesson_plan_html(plan: dict) -> str:
     h = plan.get("header", {})
-    activities = plan.get("teaching_activities", [])
     is_sw = any(
         w in (h.get("topic", "") + h.get("subject", "")).lower()
         for w in ["historia", "maadili", "kiswahili", "uraia"]
     )
 
-    labels = {
-        "school": "School Name" if not is_sw else "Jina la Shule",
-        "teacher": "Teacher" if not is_sw else "Mwalimu",
-        "class": "Class" if not is_sw else "Darasa",
-        "subject": "Subject" if not is_sw else "Somo",
-        "topic": "Topic" if not is_sw else "Mada",
-        "subtopic": "Subtopic" if not is_sw else "Sehemu ya Mada",
-        "date": "Date" if not is_sw else "Tarehe",
-        "time": "Time" if not is_sw else "Muda",
-        "period": "Period" if not is_sw else "Kipindi",
-        "students": "No. of Students" if not is_sw else "Idadi ya Wanafunzi",
-        "competences": "Core Competences" if not is_sw else "Ujuzi Mkuu",
-        "objectives": "Specific Objectives" if not is_sw else "Malengo Mahususi",
-        "general_obj": "General Objectives" if not is_sw else "Malengo ya Jumla",
-        "aids": "Teaching & Learning Aids" if not is_sw else "Zana za Kufundisha na Kujifunza",
-        "references": "References" if not is_sw else "Marejeo",
-        "activities": "Teaching and Learning Activities" if not is_sw else "Shughuli za Kufundisha na Kujifunza",
-        "phase": "Phase" if not is_sw else "Awamu",
-        "time_col": "Time" if not is_sw else "Muda",
-        "teacher_act": "Teacher Activity" if not is_sw else "Shughuli ya Mwalimu",
-        "student_act": "Student Activity" if not is_sw else "Shughuli ya Mwanafunzi",
-        "aids_col": "Teaching Aids" if not is_sw else "Zana za Kufundisha",
-        "remarks": "Remarks / Assessment" if not is_sw else "Mrejesho / Tathmini",
-        "remarks_note": "Remarks" if not is_sw else "Maelezo",
-    }
+    LST = lambda en, sw: sw if is_sw else en
+    _school = LST("School Name", "Jina la Shule")
+    _teacher = LST("Teacher's Name", "Jina la Mwalimu")
+    _class = LST("Class/Form", "Darasa/Kidato")
+    _subject = LST("Subject", "Somo")
+    _date = LST("Date", "Tarehe")
+    _time = LST("Time", "Muda")
+    _students = LST("Number of Pupils / Students", "Idadi ya Wanafunzi")
+    _registered = LST("Registered", "Walioandikishwa")
+    _present = LST("Present", "Waliohudhuria")
+    _boys = LST("Boys", "Wavulana")
+    _girls = LST("Girls", "Wasichana")
+    _total = LST("Total", "Jumla")
+    _main_comp = LST("Main Competence", "Ujuzi Mkuu")
+    _specific_comp = LST("Specific Competence", "Ujuzi Mahususi")
+    _main_act = LST("Main Activity", "Shughuli Kuu")
+    _specific_act = LST("Specific Activity", "Shughuli Mahususi")
+    _tlr = LST("Teaching & Learning Resources", "Rasilimali za Kufundisha na Kujifunza")
+    _references = LST("References", "Marejeo")
+    _stages = LST("Stages", "Hatua")
+    _time_min = LST("Time (Min)", "Muda (Dakika)")
+    _teaching_act = LST("Teaching Activities", "Shughuli za Ufundishaji")
+    _learning_act = LST("Learning Activities", "Shughuli za Kujifunza")
+    _assessment = LST("Assessment Criteria", "Kigezo cha Tathmini")
+    _remarks_eval = LST("REMARKS / EVALUATION", "MAONI / TATHMINI")
+    _teacher_eval = LST("Teacher's Evaluation / Self-Reflection", "Tathmini ya Mwalimu / Kujitathmini")
+    _teacher_eval_hint = LST(
+        "(Indicate the percentage of students who achieved the specific competence, effectiveness of teaching methods/resources, and required remediation.)",
+        "(Onyesha asilimia ya wanafunzi waliofikia ujuzi mahususi, ufanisi wa mbinu/rasilimali za kufundisha, na marekebisho yanayohitajika.)",
+    )
+    _head_remarks = LST("Head of Subject / Academic Master Remarks", "Maoni ya Mkuu wa Somo / Mwalimu Mkuu")
+    _comments = LST("Comments", "Maoni")
+    _signature = LST("Signature", "Sahihi")
+    _country = LST("UNITED REPUBLIC OF TANZANIA", "JAMHURI YA MUUNGANO WA TANZANIA")
+    _tie = LST("TANZANIA INSTITUTE OF EDUCATION", "TAASISI YA ELIMU TANZANIA")
+    _title = LST("TEACHER'S LESSON PLAN", "MPANGO WA SOMO LA MWALIMU")
+
+    sreg = h.get("students_registered", {}) or {}
+    spres = h.get("students_present", {}) or {}
+    ca = plan.get("competence_architecture", {}) or {}
+    rs = plan.get("resources_strategies", {}) or {}
+    matrix = plan.get("progression_matrix", []) or []
+    activities = plan.get("teaching_activities", [])
+    remarks = plan.get("remarks", "")
+
+    def _e(s):
+        from html import escape
+        return escape(str(s))
 
     def _li(items):
         if not items:
             return ""
         if isinstance(items, str):
             items = [items]
-        return "".join(f"<li>{_e(str(i))}</li>" for i in items)
+        return " · ".join(str(i) for i in items)
 
-    def _e(s):
-        from html import escape
-        return escape(str(s))
+    class_name = h.get("class_name", "")
+    # Convert "Form 2" → "Form Two" for the TIE label
+    _num_words = {"1":"One","2":"Two","3":"Three","4":"Four","5":"Five","6":"Six",
+                  "7":"Seven","8":"Eight","9":"Nine","10":"Ten"}
+    if class_name.startswith("Form ") and class_name.split()[-1] in _num_words:
+        class_name = "Form " + _num_words[class_name.split()[-1]]
+    subject = h.get("subject", "")
+    school_name = _e(h.get("school_name", ""))
+    teacher_name = _e(h.get("teacher_name", ""))
+    date = _e(h.get("date", ""))
+    time_from = h.get("time_from", "")
+    time_to = h.get("time_to", "")
+    # Convert 24h to 12h AM/PM (e.g. "08:00" → "08:00 AM")
+    def _ampm(t: str) -> str:
+        try:
+            parts = t.split(":")
+            h24 = int(parts[0])
+            m = parts[1]
+            suffix = "AM" if h24 < 12 else "PM"
+            h12 = h24 % 12 or 12
+            return f"{h12}:{m} {suffix}"
+        except Exception:
+            return t
+    time_from_fmt = _ampm(time_from)
+    time_to_fmt = _ampm(time_to)
+    duration = int(h.get("duration_minutes") or 40)
+    number_total = sreg.get("total", h.get("number_of_students", ""))
+    tp = _e(h.get("topic", ""))
 
-    acts_rows = ""
-    for a in activities:
-        acts_rows += f"""<tr>
-            <td>{_e(a.get('phase', ''))}</td>
-            <td>{_e(a.get('time', ''))}</td>
-            <td>{_e(a.get('teacher_activity', ''))}</td>
-            <td>{_e(a.get('student_activity', ''))}</td>
-            <td>{_e(a.get('teaching_aids', ''))}</td>
-            <td>{_e(a.get('remarks_assessment', ''))}</td>
-        </tr>"""
+    # ── Stage rows (TIE 4 stages or fallback) ─────────────────────────────
+    stages_rows = ""
+    if matrix:
+        for idx, a in enumerate(matrix, start=1):
+            stages_rows += f"""<tr>
+                <td class="bold">{_e(a.get('stage', ''))}</td>
+                <td class="text-center">{_e(str(a.get('time')).split()[0])}</td>
+                <td>{_e(a.get('teacher_activity', ''))}</td>
+                <td>{_e(a.get('learner_activity', a.get('student_activity', '')))}</td>
+                <td>{_e(a.get('assessment_criteria', ''))}</td>
+            </tr>"""
+    else:
+        for idx, a in enumerate(activities, start=1):
+            stages_rows += f"""<tr>
+                <td class="bold">{idx}. {_e(a.get('phase', ''))}</td>
+                <td class="text-center">{_e(str(a.get('time', '')).split()[0])}</td>
+                <td>{_e(a.get('teacher_activity', ''))}</td>
+                <td>{_e(a.get('student_activity', ''))}</td>
+                <td>{_e(a.get('remarks_assessment', ''))}</td>
+            </tr>"""
+
+    # ── Competence & resources rows ───────────────────────────────────────
+    comp_rows = ""
+    comp_rows += f'<tr><td class="bold">{_e(_main_comp)}:</td><td>{_e(ca.get("main_competence", ""))}</td></tr>'
+    comp_rows += f'<tr><td class="bold">{_e(_specific_comp)}:</td><td>{_e(ca.get("specific_competence", ""))}</td></tr>'
+    if ca.get("main_learning_activity") or ca.get("main_activity"):
+        comp_rows += f'<tr><td class="bold">{_e(_main_act)}:</td><td>{_e(ca.get("main_learning_activity", ca.get("main_activity", "")))}</td></tr>'
+    if ca.get("specific_learning_activity") or ca.get("specific_activity"):
+        comp_rows += f'<tr><td class="bold">{_e(_specific_act)}:</td><td>{_e(ca.get("specific_learning_activity", ca.get("specific_activity", "")))}</td></tr>'
+    tlr_val = rs.get("teaching_learning_resources") if "teaching_learning_resources" in rs else plan.get("teaching_aids", [])
+    if not tlr_val:
+        tlr_val = plan.get("teaching_aids", [])
+    if tlr_val:
+        comp_rows += f'<tr><td class="bold">{_e(_tlr)}:</td><td>{_e(_li(tlr_val))}</td></tr>'
+    refs = rs.get("references", plan.get("references", []))
+    if refs:
+        comp_rows += f'<tr><td class="bold">{_e(_references)}:</td><td>{_e(_li(refs))}</td></tr>'
 
     return f"""<!DOCTYPE html>
 <html lang="{'sw' if is_sw else 'en'}">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{_e(h.get('topic', 'Lesson Plan'))}</title>
-<style>
-  @media print {{
-    body {{ margin: 0.5cm; font-size: 11pt; }}
-    .no-print {{ display: none !important; }}
-    @page {{ margin: 1cm; size: A4 landscape; }}
-  }}
-  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-  body {{ font-family: 'Times New Roman', Times, serif; color: #000; background: #fff; padding: 20px; }}
-  .title-block {{ text-align: center; border: 2px solid #000; padding: 12px; margin-bottom: 16px; }}
-  .title-block h1 {{ font-size: 18pt; text-transform: uppercase; letter-spacing: 1px; }}
-  .meta-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; border: 1px solid #000; margin-bottom: 16px; font-size: 10.5pt; }}
-  .meta-grid .field {{ padding: 5px 8px; border-bottom: 1px solid #ccc; display: flex; gap: 6px; }}
-  .meta-grid .label {{ font-weight: bold; white-space: nowrap; min-width: 120px; }}
-  .section {{ margin-bottom: 12px; }}
-  .section h3 {{ font-size: 11pt; border-bottom: 1.5px solid #000; padding-bottom: 3px; margin-bottom: 6px; text-transform: uppercase; }}
-  .section ul {{ margin-left: 18px; font-size: 10.5pt; }}
-  .section ul li {{ margin-bottom: 3px; }}
-  table {{ width: 100%; border-collapse: collapse; font-size: 10pt; margin-bottom: 12px; }}
-  th, td {{ border: 1px solid #000; padding: 5px 6px; text-align: left; vertical-align: top; }}
-  th {{ background: #f0f0f0; font-weight: bold; text-transform: uppercase; font-size: 9.5pt; }}
-  .footer-note {{ font-size: 9pt; color: #555; margin-top: 16px; border-top: 1px solid #ccc; padding-top: 6px; }}
-  .actions {{ text-align: center; margin: 16px 0; }}
-  .actions button {{ padding: 8px 20px; margin: 0 6px; cursor: pointer; font-size: 11pt; border: 1px solid #333; border-radius: 4px; background: #fff; }}
-  .actions button:hover {{ background: #f5f5f5; }}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official TIE CBC Lesson Plan Format - Tanzania</title>
+    <style>
+        body {{
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+            color: #000;
+            background-color: #fff;
+            line-height: 1.3;
+        }}
+        .lesson-container {{
+            max-width: 950px;
+            margin: 0 auto;
+            border: 2px solid #000;
+            padding: 25px;
+        }}
+        .header {{
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }}
+        .header h2, .header h3, .header h4 {{
+            margin: 3px 0;
+            text-transform: uppercase;
+        }}
+        .header h2 {{ font-size: 16pt; }}
+        .header h3 {{ font-size: 14pt; }}
+        .header h4 {{ font-size: 13pt; text-decoration: underline; }}
+        .header .title-line {{ font-size: 13pt; text-decoration: underline; text-transform: uppercase; }}
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+        }}
+        th, td {{
+            border: 1px solid #000;
+            padding: 6px 8px;
+            font-size: 11pt;
+            vertical-align: top;
+        }}
+        .bg-head {{
+            background-color: #f2f2f2;
+            font-weight: bold;
+            text-align: center;
+        }}
+        .text-center {{ text-align: center; }}
+        .bold {{ font-weight: bold; }}
+        @media print {{
+            body {{ margin: 0; }}
+            .lesson-container {{ border: none; padding: 0; }}
+            .no-print {{ display: none; }}
+        }}
+        .btn-print {{
+            display: block;
+            margin: 0 auto 15px auto;
+            padding: 8px 20px;
+            background: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }}
+        .btn-word {{
+            display: block;
+            margin: 0 auto 10px auto;
+            padding: 8px 20px;
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
+            cursor: pointer;
+            font-weight: bold;
+        }}
+    </style>
 </head>
 <body>
-<div class="actions no-print">
-  <button onclick="window.print()">Print / Save as PDF</button>
-  <button onclick="downloadAsWord()">Download as Word</button>
-</div>
 
-<div class="title-block">
-  <h1>{_e(h.get('school_name', 'School Name'))}</h1>
-  <p style="font-size:12pt; margin-top:4px;">{labels['topic']}: {_e(h.get('topic', ''))}</p>
-</div>
+<button class="btn-print no-print" onclick="window.print()">PRINT LESSON PLAN</button>
+<button class="btn-word no-print" onclick="downloadAsWord()">DOWNLOAD AS WORD</button>
 
-<div class="meta-grid">
-  <div class="field"><span class="label">{labels['school']}:</span> {_e(h.get('school_name', ''))}</div>
-  <div class="field"><span class="label">{labels['teacher']}:</span> {_e(h.get('teacher_name', ''))}</div>
-  <div class="field"><span class="label">{labels['class']}:</span> {_e(h.get('class_name', ''))}</div>
-  <div class="field"><span class="label">{labels['subject']}:</span> {_e(h.get('subject', ''))}</div>
-  <div class="field"><span class="label">{labels['topic']}:</span> {_e(h.get('topic', ''))}</div>
-  <div class="field"><span class="label">{labels['subtopic']}:</span> {_e(h.get('subtopic', ''))}</div>
-  <div class="field"><span class="label">{labels['date']}:</span> {_e(h.get('date', ''))}</div>
-  <div class="field"><span class="label">{labels['time']}:</span> {_e(h.get('time_from', ''))} - {_e(h.get('time_to', ''))}</div>
-  <div class="field"><span class="label">{labels['period']}:</span> {_e(h.get('period', ''))}</div>
-  <div class="field"><span class="label">{labels['students']}:</span> {_e(h.get('number_of_students', ''))}</div>
-</div>
+<div class="lesson-container">
+    <div class="header">
+        <h2>{_e(_country)}</h2>
+        <h3>{_e(_tie)}</h3>
+        <h4>{_e(_title)}</h4>
+    </div>
 
-<div class="section">
-  <h3>{labels['competences']}</h3>
-  <ul>{_li(plan.get('competences', []))}</ul>
-</div>
+    <table>
+        <tr>
+            <td style="width: 50%;"><strong>{_e(_school)}:</strong> {school_name}</td>
+            <td style="width: 50%;"><strong>{_e(_teacher)}:</strong> {teacher_name}</td>
+        </tr>
+        <tr>
+            <td><strong>{_e(_class)}:</strong> {_e(class_name)}</td>
+            <td><strong>{_e(_subject)}:</strong> {_e(subject)}</td>
+        </tr>
+        <tr>
+            <td><strong>{_e(_date)}:</strong> {date}</td>
+            <td><strong>{_e(_time)}:</strong> {time_from_fmt} - {time_to_fmt} ({_e(str(duration))} Mins)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>{_e(LST('Topic', 'Mada'))}:</strong> {tp}</td>
+        </tr>
+    </table>
 
-<div class="section">
-  <h3>{labels['general_obj']}</h3>
-  <ul>{_li(plan.get('general_objectives', []))}</ul>
-</div>
+    <table>
+        <tr class="bg-head">
+            <td rowspan="2" style="vertical-align: middle; width: 20%;">{_e(_students)}</td>
+            <td colspan="3">{_e(_registered)}</td>
+            <td colspan="3">{_e(_present)}</td>
+        </tr>
+        <tr class="bg-head">
+            <td style="width: 13%;">{_e(_boys)}</td>
+            <td style="width: 13%;">{_e(_girls)}</td>
+            <td style="width: 14%;">{_e(_total)}</td>
+            <td style="width: 13%;">{_e(_boys)}</td>
+            <td style="width: 13%;">{_e(_girls)}</td>
+            <td style="width: 14%;">{_e(_total)}</td>
+        </tr>
+        <tr class="text-center">
+            <td class="bold">{_e(LST('Number', 'Idadi'))}</td>
+            <td>{_e(sreg.get('boys', '') or '____')}</td>
+            <td>{_e(sreg.get('girls', '') or '____')}</td>
+            <td>{_e(sreg.get('total', '') or '____')}</td>
+            <td>{_e(spres.get('boys', '') or '____')}</td>
+            <td>{_e(spres.get('girls', '') or '____')}</td>
+            <td>{_e(spres.get('total', '') or '____')}</td>
+        </tr>
+    </table>
 
-<div class="section">
-  <h3>{labels['objectives']}</h3>
-  <ul>{_li(plan.get('specific_objectives', []))}</ul>
-</div>
+    <table>
+        {comp_rows}
+    </table>
 
-<div class="section">
-  <h3>{labels['activities']}</h3>
-  <table>
-    <thead>
-      <tr>
-        <th style="width:12%">{labels['phase']}</th>
-        <th style="width:9%">{labels['time_col']}</th>
-        <th style="width:25%">{labels['teacher_act']}</th>
-        <th style="width:25%">{labels['student_act']}</th>
-        <th style="width:14%">{labels['aids_col']}</th>
-        <th style="width:15%">{labels['remarks']}</th>
-      </tr>
-    </thead>
-    <tbody>{acts_rows}</tbody>
-  </table>
-</div>
+    <table>
+        <thead>
+            <tr class="bg-head">
+                <td style="width: 16%;">{_e(_stages)}</td>
+                <td style="width: 11%;">{_e(_time_min)}</td>
+                <td style="width: 27%;">{_e(_teaching_act)}</td>
+                <td style="width: 27%;">{_e(_learning_act)}</td>
+                <td style="width: 19%;">{_e(_assessment)}</td>
+            </tr>
+        </thead>
+        <tbody>
+        {stages_rows}
+        </tbody>
+    </table>
 
-<div class="section">
-  <h3>{labels['aids']}</h3>
-  <ul>{_li(plan.get('teaching_aids', []))}</ul>
+    <table>
+        <tr class="bg-head">
+            <td colspan="2">{_e(_remarks_eval)}</td>
+        </tr>
+        {remarks and f'''<tr>
+            <td colspan="2">{_e(remarks)}</td>
+        </tr>'''}
+        <tr>
+            <td style="width: 50%;">
+                <strong>{_e(_teacher_eval)}:</strong><br><br>
+                <em>{_e(_teacher_eval_hint)}</em>
+                <br><br><br><br>
+                {_e(_signature)}: ______________________      {_e(_date)}: ____/____/______
+            </td>
+            <td style="width: 50%;">
+                <strong>{_e(_head_remarks)}:</strong><br><br>
+                {_e(_comments)}: __________________________________________________<br><br><br>
+                {_e(_signature)}: ______________________      {_e(_date)}: ____/____/______
+            </td>
+        </tr>
+    </table>
 </div>
-
-<div class="section">
-  <h3>{labels['references']}</h3>
-  <ul>{_li(plan.get('references', []))}</ul>
-</div>
-
-{_e(plan.get('remarks', '')) and f'<div class="footer-note">{_e(plan.get("remarks", ""))}</div>'}
 
 <script>
 function downloadAsWord() {{
   var html = document.documentElement.outerHTML;
   var blob = new Blob(
-    ['<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:word" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View></w:WordDocument></xml><![endif]--><style>body {{ font-family: "Times New Roman", serif; }} table {{ border-collapse: collapse; }} th, td {{ border: 1px solid #000; padding: 5px; }} th {{ background: #f0f0f0; }}</style></head><body>' + html + '</body></html>'],
+    ['<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:word" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View></w:WordDocument></xml><![endif]--><style>body {{ font-family: "Times New Roman", serif; }} table {{ border-collapse: collapse; }} td {{ border: 1px solid #000; padding: 6px; }} .bg-head {{ background: #f2f2f2; font-weight: bold; }}</style></head><body>' + html + '</body></html>'],
     {{ type: 'application/msword' }}
   );
   var url = URL.createObjectURL(blob);
@@ -588,8 +865,6 @@ function downloadAsWord() {{
 </script>
 </body>
 </html>"""
-
-
 def render_scheme_of_work_html(plan: dict) -> str:
     h = plan.get("header", {})
     weeks = plan.get("weeks", [])
