@@ -695,7 +695,7 @@ a:focus:not(:focus-visible) {
 }
 
 /* ── Responsive Buttons ───────────────────────────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .btn { padding: 0.55rem 1rem; font-size: 0.85rem; min-height: 44px; }
   .btn-sm { padding: 0.45rem 0.85rem; font-size: 0.8rem; min-height: 44px; }
   .btn-lg { padding: 0.65rem 1.25rem; font-size: 0.95rem; }
@@ -969,7 +969,7 @@ a:focus:not(:focus-visible) {
   background: var(--color-bg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .sidebar {
     position: fixed;
     z-index: 200;
@@ -1230,7 +1230,7 @@ a:focus:not(:focus-visible) {
 
 .lesson-iframe { width: 100%; border: none; display: block; min-height: 400px; }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   html { font-size: calc(15px * var(--app-font-scale, 1)); }
   .topbar { flex-wrap: wrap; gap: 0.5rem; padding: 0.5rem 0.75rem; }
   .topbar h1 { font-size: 1rem; width: 100%; }

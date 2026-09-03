@@ -1534,19 +1534,19 @@ async function renderTeacherDashboard() {
                   </label>
                 </div>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label style="flex:0.4;min-width:120px">No. of Students
+                  <label style="flex:0.4;min-width:0">No. of Students
                     <input class="input" type="number" name="number_of_students" value="40" min="1">
                   </label>
-                  <label style="flex:0.4;min-width:110px">Boys / Wavulana
+                  <label style="flex:0.4;min-width:0">Boys / Wavulana
                     <input class="input" type="number" name="students_boys" min="0" placeholder="auto">
                   </label>
-                  <label style="flex:0.4;min-width:110px">Girls / Wasichana
+                  <label style="flex:0.4;min-width:0">Girls / Wasichana
                     <input class="input" type="number" name="students_girls" min="0" placeholder="auto">
                   </label>
-                  <label style="flex:0.4;min-width:95px">Duration (min)
+                  <label style="flex:0.4;min-width:0">Duration (min)
                     <input class="input" type="number" name="duration_minutes" value="40" min="10" max="120">
                   </label>
-                  <label style="flex:0.4;min-width:100px">Period / Kipindi
+                  <label style="flex:0.4;min-width:0">Period / Kipindi
                     <input class="input" name="period" placeholder="Period 1">
                   </label>
                 </div>
@@ -1564,10 +1564,10 @@ async function renderTeacherDashboard() {
               <h3 style="margin-bottom:0.75rem">Scheme of Work Generator</h3>
               <form id="tdoc-scheme-form" style="display:grid;gap:0.75rem">
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label style="flex:1;min-width:200px">Subject
+                  <label style="flex:1;min-width:0">Subject
                     <select class="input" name="subject_slug">${subjectOpts()}</select>
                   </label>
-                  <label style="flex:0.5;min-width:110px">Form Level
+                  <label style="flex:0.5;min-width:0">Form Level
                     <select class="input" name="form_level">
                       <option value="1">Form I</option>
                       <option value="2" selected>Form II</option>
@@ -1577,13 +1577,13 @@ async function renderTeacherDashboard() {
                   </label>
                 </div>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label style="flex:0.5;min-width:150px">Term
+                  <label style="flex:0.5;min-width:0">Term
                     <select class="input" name="term">
                       <option value="Term 1" selected>Term I</option>
                       <option value="Term 2">Term II</option>
                     </select>
                   </label>
-                  <label style="flex:0.5;min-width:130px">Academic Year
+                  <label style="flex:0.5;min-width:0">Academic Year
                     <input class="input" name="academic_year" placeholder="2026">
                   </label>
                 </div>
@@ -1591,10 +1591,10 @@ async function renderTeacherDashboard() {
                   <input class="input" name="topics" placeholder="e.g. Algebraic Expressions, Linear Equations, Inequalities">
                 </label>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label style="flex:1;min-width:150px">School / Shule
+                  <label style="flex:1;min-width:0">School / Shule
                     <input class="input" name="school_name" placeholder="School name">
                   </label>
-                  <label style="flex:1;min-width:150px">Teacher / Mwalimu
+                  <label style="flex:1;min-width:0">Teacher / Mwalimu
                     <input class="input" name="teacher_name" placeholder="Teacher name">
                   </label>
                 </div>

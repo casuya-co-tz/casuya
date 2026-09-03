@@ -38,13 +38,13 @@
             <div id="admin-plan-form-wrap" style="display:none;margin-bottom:1rem">
               <form id="admin-plan-form" class="checkout-body">
                 <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
-                  <div style="flex:1;min-width:160px"><label class="field-label">Name</label><input class="input" name="name" required></div>
-                  <div style="flex:1;min-width:160px"><label class="field-label">Description</label><input class="input" name="description"></div>
+                  <div style="flex:1;min-width:0"><label class="field-label">Name</label><input class="input" name="name" required></div>
+                  <div style="flex:1;min-width:0"><label class="field-label">Description</label><input class="input" name="description"></div>
                 </div>
                 <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem">
-                  <div style="min-width:130px"><label class="field-label">Amount (TZS)</label><input class="input" name="amount_tzs" type="number" min="100" required></div>
-                  <div style="min-width:130px"><label class="field-label">Audience</label><select class="input" name="audience"><option value="both">Both</option><option value="student">Student</option><option value="teacher">Teacher</option></select></div>
-                  <div style="min-width:130px"><label class="field-label">Active</label><select class="input" name="is_active"><option value="true">Yes</option><option value="false">No</option></select></div>
+                  <div style="min-width:0"><label class="field-label">Amount (TZS)</label><input class="input" name="amount_tzs" type="number" min="100" required></div>
+                  <div style="min-width:0"><label class="field-label">Audience</label><select class="input" name="audience"><option value="both">Both</option><option value="student">Student</option><option value="teacher">Teacher</option></select></div>
+                  <div style="min-width:0"><label class="field-label">Active</label><select class="input" name="is_active"><option value="true">Yes</option><option value="false">No</option></select></div>
                 </div>
                 <div style="margin-top:0.75rem">
                   <button class="btn btn-success" type="submit" id="admin-plan-submit">Save Plan</button>
@@ -391,7 +391,7 @@
             <button class="btn-filter notif-filter-btn active" data-filter="all">All</button>
             <button class="btn-filter notif-filter-btn" data-filter="unread">🔴 Unread</button>
             <button class="btn-filter notif-filter-btn" data-filter="read">✅ Read</button>
-            <input type="search" class="input" id="notif-search" placeholder="Search notifications..." style="max-width:240px;padding:0.35rem 0.6rem;font-size:0.85rem">
+            <input type="search" class="input" id="notif-search" placeholder="Search..." style="flex:1;min-width:120px;padding:0.35rem 0.6rem;font-size:0.85rem">
             <button class="btn btn-ghost btn-sm" id="notif-mark-all" style="margin-left:auto">✓ Mark All Read</button>
           </div>
           <div id="notif-stats" style="margin-top:0.75rem"></div>

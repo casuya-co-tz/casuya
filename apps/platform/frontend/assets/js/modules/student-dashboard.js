@@ -94,7 +94,7 @@
   if (!document.getElementById("sidebar-styles")) {
     const style = document.createElement("style");
     style.id = "sidebar-styles";
-    style.textContent = `@media(max-width:768px){.sidebar{position:fixed;z-index:200;left:-260px;transition:left .25s ease;height:100vh}.sidebar.open{left:0;box-shadow:4px 0 20px rgba(0,0,0,.15)}.sidebar-toggle-btn{display:block!important}}`;
+    style.textContent = `@media(max-width:1024px){.sidebar{position:fixed;z-index:200;left:-260px;transition:left .25s ease;height:100vh}.sidebar.open{left:0;box-shadow:4px 0 20px rgba(0,0,0,.15)}.sidebar-toggle-btn{display:block!important}}`;
     document.head.appendChild(style);
   }
 
