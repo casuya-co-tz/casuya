@@ -6,6 +6,7 @@ const ROLE_PORTALS = {
   admin: "/admin/",
   teacher: "/teacher/",
   student: "/student/",
+  pending: "/select-role.html",
 };
 
 const AUTH_STORAGE_KEYS = [

@@ -326,7 +326,12 @@ def oauth_login_or_register(
 
 
 def complete_registration(user_id: str, role: str) -> dict:
-    """Set the role for a newly-registered OAuth user who chose student/teacher."""
+    """Set the role for a newly-registered OAuth user who chose student/teacher.
+
+    When role='teacher', creates a Teacher profile and removes the Student
+    profile that was auto-created during OAuth registration. When role='student',
+    keeps the existing Student profile.
+    """
     if role not in ("student", "teacher"):
         raise ValueError("Role must be 'student' or 'teacher'")
 
@@ -349,6 +354,18 @@ def complete_registration(user_id: str, role: str) -> dict:
             }
 
         user.role = role
+
+        # If switching to teacher, create Teacher profile from the Student profile
+        # that was auto-created during OAuth registration.
+        if role == "teacher":
+            student = db.query(Student).filter(Student.user_id == user.id).first()
+            full_name = student.full_name if student else ""
+            teacher = Teacher(user_id=user.id, full_name=full_name)
+            db.add(teacher)
+            # Remove the auto-created Student profile
+            if student:
+                db.delete(student)
+
         db.commit()
 
         access_token = create_access_token(user.id, extra_claims={"role": role})

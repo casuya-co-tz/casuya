@@ -30,7 +30,11 @@
     (function() {
       var t = localStorage.getItem("casuya_token");
       var r = localStorage.getItem("casuya_role");
-      if (t && r && r !== "pending") {
+      if (t && r) {
+        if (r === "pending") {
+          window.location.replace("/select-role.html");
+          return;
+        }
         try {
           var payload = JSON.parse(atob(t.split(".")[1]));
           if (payload.role && payload.role !== "pending") {

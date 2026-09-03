@@ -1,5 +1,6 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 
+from backend.middleware.auth import get_current_user
 from backend.schemas.auth import (
     AuthResponse,
     CompleteRegistrationRequest,
@@ -85,7 +86,16 @@ def reset_password_endpoint(body: ResetPasswordRequest):
 
 @router.post("/complete-registration", response_model=AuthResponse)
 @router.post("/complete-registration/", response_model=AuthResponse)
-def complete_registration_endpoint(body: CompleteRegistrationRequest):
+def complete_registration_endpoint(
+    body: CompleteRegistrationRequest,
+    current_user: dict = Depends(get_current_user),
+):
+    # Verify the caller is completing their own registration
+    if current_user.get("sub") != body.user_id:
+        raise HTTPException(status_code=403, detail="Cannot complete registration for another user")
+    # Only pending users should use this endpoint
+    if current_user.get("role") not in ("pending", None):
+        raise HTTPException(status_code=400, detail="Registration already completed")
     try:
         return complete_registration(user_id=body.user_id, role=body.role)
     except ValueError as e:

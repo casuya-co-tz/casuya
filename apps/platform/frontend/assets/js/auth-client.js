@@ -53,6 +53,7 @@ export function getApiBase() {
 export function getPortalPath(role) {
   if (role === "admin") return "/admin/";
   if (role === "teacher") return "/teacher/";
+  if (role === "pending") return "/select-role.html";
   return "/student/";
 }
 

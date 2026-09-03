@@ -177,6 +177,16 @@
       var errorEl = document.getElementById("role-error");
       var errorText = document.getElementById("role-error-text");
 
+      // If no token or userId, session expired — redirect to login
+      if (!token || !userId) {
+        localStorage.removeItem("casuya_token");
+        localStorage.removeItem("casuya_refresh_token");
+        localStorage.removeItem("casuya_role");
+        localStorage.removeItem("casuya_user_id");
+        window.location.replace("/login.html");
+        return;
+      }
+
       function selectCard(card) {
         cards.forEach(function(c) {
           c.classList.remove("selected");
@@ -224,8 +234,17 @@
             window.location.replace(data.role === "teacher" ? "/teacher/" : "/student/");
           })
           .catch(function(err) {
-            errorText.textContent = err.message || "Something went wrong. Please try again.";
-            errorEl.classList.remove("hidden");
+            var msg = err.message || "Something went wrong. Please try again.";
+            // Distinguish permanent errors from retryable ones
+            if (msg.includes("not found") || msg.includes("already completed") || msg.includes("Invalid")) {
+              msg += " Please sign in again.";
+              errorText.textContent = msg;
+              errorEl.classList.remove("hidden");
+              setTimeout(function() { window.location.replace("/login.html"); }, 3000);
+            } else {
+              errorText.textContent = msg;
+              errorEl.classList.remove("hidden");
+            }
             confirmBtn.disabled = false;
             confirmBtn.textContent = "Continue";
             document.getElementById("confirm-status").textContent = "";
