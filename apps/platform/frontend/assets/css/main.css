@@ -282,6 +282,18 @@ a:hover { text-decoration: underline; }
   color: var(--color-primary);
 }
 
+/* Outline (default) */
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-border);
+}
+.btn-outline:hover:not(:disabled) {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
 /* Outline variants */
 .btn-outline-primary {
   background: transparent;

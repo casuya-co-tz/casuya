@@ -1579,8 +1579,8 @@ async function renderTeacherDashboard() {
           : (isSw ? "Mpango wa Somo" : "Lesson Plan");
         const f = p.form_level ? ("Form " + (ROMAN[p.form_level] || p.form_level)) : "";
         return `
-          <div class="card" style="padding:1rem;margin-bottom:0.75rem">
-            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem">
+          <div class="card tdocs-doc-card" style="padding:1rem;margin-bottom:0.75rem">
+            <div class="tdocs-doc-row">
               <div style="flex:1;min-width:0">
                 <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
                   <span class="badge badge-${p.plan_type === 'scheme_of_work' ? 'info' : 'success'}">${escapeHtml(typeLabel)}</span>
@@ -1592,7 +1592,7 @@ async function renderTeacherDashboard() {
                   ${escapeHtml(p.subject_name || p.subject_slug || "")} • ${escapeHtml(p.created_at ? new Date(p.created_at).toLocaleDateString() : "")}
                 </p>
               </div>
-              <div style="display:flex;gap:0.4rem;flex-wrap:wrap">
+              <div class="tdocs-actions">
                 <button class="btn btn-sm btn-outline" data-view="${p.id}">${isSw ? "Onyesha" : "View"}</button>
                 <button class="btn btn-sm btn-outline" data-print="${p.id}">${isSw ? "Chapisha / PDF" : "Print / PDF"}</button>
                 <button class="btn btn-sm btn-outline" data-doc="${p.id}">Word</button>
@@ -1612,7 +1612,7 @@ async function renderTeacherDashboard() {
         saved: savedPlans.length ? `Saved (${savedPlans.length})` : (sw ? "Hati Zilizohifadhiwa" : "Saved Documents"),
       };
       const tabHtml = (["lesson", "scheme", "saved"]).map((key) =>
-        `<button class="btn btn-sm ${activeSubTab === key ? "btn-primary" : "btn-outline"}" data-panel="${key}" style="flex:1">${escapeHtml(labels[key])}</button>`
+        `<button class="btn btn-sm tdocs-tab ${activeSubTab === key ? "btn-primary" : "btn-outline"}" data-panel="${key}" style="flex:1 1 auto;min-width:0">${escapeHtml(labels[key])}</button>`
       ).join("");
       const el = document.getElementById("tdocs-tabs");
       if (el) el.innerHTML = tabHtml;
@@ -1648,7 +1648,7 @@ async function renderTeacherDashboard() {
           Generate official TIE Competence-Based Lesson Plans and Schemes of Work, then save, print, or export as PDF/Word.
           ${"Generated in Kiswahili for Kiswahili-medium subjects and English for all others."}
         </p>
-        <div style="display:flex;gap:0.5rem;margin-top:1.25rem" id="tdocs-tabs"></div>
+        <div class="tdocs-tabs" id="tdocs-tabs"></div>
         <div style="margin-top:1.25rem">
           <div id="tdocs-lesson-panel">
             <div class="card" style="padding:1.5rem">
@@ -1686,25 +1686,25 @@ async function renderTeacherDashboard() {
                   </label>
                 </div>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label style="flex:0.4;min-width:0">No. of Students
+                  <label class="tdocs-field">No. of Students
                     <input class="input" type="number" name="number_of_students" value="40" min="1">
                   </label>
-                  <label style="flex:0.4;min-width:0">Boys / Wavulana
+                  <label class="tdocs-field">Boys / Wavulana
                     <input class="input" type="number" name="students_boys" min="0" placeholder="auto">
                   </label>
-                  <label style="flex:0.4;min-width:0">Girls / Wasichana
+                  <label class="tdocs-field">Girls / Wasichana
                     <input class="input" type="number" name="students_girls" min="0" placeholder="auto">
                   </label>
-                  <label style="flex:0.4;min-width:0">Duration (min)
+                  <label class="tdocs-field">Duration (min)
                     <input class="input" type="number" name="duration_minutes" value="40" min="10" max="120">
                   </label>
-                  <label style="flex:0.4;min-width:0">Period / Kipindi
+                  <label class="tdocs-field">Period / Kipindi
                     <input class="input" name="period" placeholder="Period 1">
                   </label>
                 </div>
-                <div style="display:flex;gap:0.75rem;align-items:center">
-                  <button class="btn btn-primary" type="submit">Generate Lesson Plan</button>
-                  <button class="btn btn-outline" type="button" id="tdoc-lesson-seed" style="font-size:0.8rem">Autofill sample topic</button>
+                <div class="tdocs-form-actions">
+                  <button class="btn btn-primary" type="submit" style="flex:1 1 auto">Generate Lesson Plan</button>
+                  <button class="btn btn-outline" type="button" id="tdoc-lesson-seed" style="font-size:0.8rem;flex:1 1 auto">Autofill sample topic</button>
                 </div>
               </form>
               <div id="tdoc-lesson-result" style="margin-top:1.25rem;display:none"></div>
@@ -1716,10 +1716,10 @@ async function renderTeacherDashboard() {
               <h3 style="margin-bottom:0.75rem">Scheme of Work Generator</h3>
               <form id="tdoc-scheme-form" style="display:grid;gap:0.75rem">
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label style="flex:1;min-width:0">Subject
+                  <label class="tdocs-field tdocs-field-grow">Subject
                     <select class="input" name="subject_slug">${subjectOpts()}</select>
                   </label>
-                  <label style="flex:0.5;min-width:0">Form Level
+                  <label class="tdocs-field">Form Level
                     <select class="input" name="form_level">
                       <option value="1">Form I</option>
                       <option value="2" selected>Form II</option>
@@ -1729,13 +1729,13 @@ async function renderTeacherDashboard() {
                   </label>
                 </div>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label style="flex:0.5;min-width:0">Term
+                  <label class="tdocs-field">Term
                     <select class="input" name="term">
                       <option value="Term 1" selected>Term I</option>
                       <option value="Term 2">Term II</option>
                     </select>
                   </label>
-                  <label style="flex:0.5;min-width:0">Academic Year
+                  <label class="tdocs-field">Academic Year
                     <input class="input" name="academic_year" placeholder="2026">
                   </label>
                 </div>
@@ -1743,15 +1743,15 @@ async function renderTeacherDashboard() {
                   <input class="input" name="topics" placeholder="e.g. Algebraic Expressions, Linear Equations, Inequalities">
                 </label>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label style="flex:1;min-width:0">School / Shule
+                  <label class="tdocs-field tdocs-field-grow">School / Shule
                     <input class="input" name="school_name" placeholder="School name">
                   </label>
-                  <label style="flex:1;min-width:0">Teacher / Mwalimu
+                  <label class="tdocs-field tdocs-field-grow">Teacher / Mwalimu
                     <input class="input" name="teacher_name" placeholder="Teacher name">
                   </label>
                 </div>
-                <div style="display:flex;gap:0.75rem;align-items:center">
-                  <button class="btn btn-primary" type="submit">Generate Scheme of Work</button>
+                <div class="tdocs-form-actions">
+                  <button class="btn btn-primary" type="submit" style="flex:1 1 auto">Generate Scheme of Work</button>
                 </div>
               </form>
               <div id="tdoc-scheme-result" style="margin-top:1.25rem;display:none"></div>

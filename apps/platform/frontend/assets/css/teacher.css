@@ -1,5 +1,46 @@
 @import "main.css";
 
+/* ---- Teaching Docs responsive layout ---- */
+
+.tdocs-tabs { display: flex; gap: 0.5rem; margin-top: 1.25rem; flex-wrap: nowrap; }
+.tdocs-tab { white-space: normal; }
+
+.tdocs-doc-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+
+/* Saved-document action buttons */
+.tdocs-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.tdocs-actions .btn { white-space: normal; }
+
+/* Form action rows (Generate / Autofill / etc.) */
+.tdocs-form-actions { display: flex; gap: 0.75rem; align-items: stretch; flex-wrap: wrap; }
+.tdocs-form-actions .btn { white-space: normal; }
+
+/* Form fields that should wrap into even columns instead of shrinking */
+.tdocs-field { flex: 1 1 150px; min-width: 130px; }
+
+/* ---- Tablet & phone ---- */
+@media (max-width: 1024px) {
+  .tdocs-tabs { flex-wrap: wrap; }
+}
+
+@media (max-width: 768px) {
+  .tdocs-tabs { flex-wrap: wrap; }
+  .tdocs-doc-row { align-items: flex-start; }
+  .tdocs-actions { width: 100%; }
+  .tdocs-actions .btn { flex: 1 1 auto; }
+  .tdocs-form-actions .btn { flex: 1 1 auto; }
+}
+
+@media (max-width: 480px) {
+  .tdocs-tabs { gap: 0.4rem; }
+  .tdocs-tab { flex-basis: 100%; }
+  .tdocs-actions { flex-direction: column; }
+  .tdocs-actions .btn { width: 100%; }
+  .tdocs-form-actions { flex-direction: column; }
+  .tdocs-form-actions .btn { width: 100%; }
+  .tdocs-field { flex-basis: 100%; min-width: 0; }
+}
+
 @media (max-width: 768px) {
   .stat-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
   .stat-card { padding: 1rem; }
