@@ -748,9 +748,6 @@ def render_lesson_plan_html(plan: dict) -> str:
 </head>
 <body>
 
-<button class="btn-print no-print" onclick="window.print()">PRINT LESSON PLAN</button>
-<button class="btn-word no-print" onclick="downloadAsWord()">DOWNLOAD AS WORD</button>
-
 <div class="lesson-container">
     <table>
         <tr>
@@ -832,21 +829,6 @@ def render_lesson_plan_html(plan: dict) -> str:
     </table>
 </div>
 
-<script>
-function downloadAsWord() {{
-  var html = document.documentElement.outerHTML;
-  var blob = new Blob(
-    ['<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:word" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View></w:WordDocument></xml><![endif]--><style>body {{ font-family: "Times New Roman", serif; }} table {{ border-collapse: collapse; }} td {{ border: 1px solid #000; padding: 6px; }} .bg-head {{ background: #f2f2f2; font-weight: bold; }}</style></head><body>' + html + '</body></html>'],
-    {{ type: 'application/msword' }}
-  );
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.href = url;
-  a.download = 'lesson_plan_' + (document.title || 'document').replace(/[^a-z0-9]/gi, '_') + '.doc';
-  a.click();
-  URL.revokeObjectURL(url);
-}}
-</script>
 </body>
 </html>"""
 def render_scheme_of_work_html(plan: dict) -> str:

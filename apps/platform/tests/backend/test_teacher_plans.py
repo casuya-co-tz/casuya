@@ -69,8 +69,8 @@ def test_lesson_plan_offline_render_english():
     assert "Realisation" in html
     assert "Assessment Criteria" in html
     assert "REMARKS / EVALUATION" in html
-    assert "downloadAsWord" in html
-    assert "window.print()" in html
+    assert "downloadAsWord" not in html
+    assert "window.print()" not in html
 
 
 def test_lesson_plan_offline_render_kiswahili():
