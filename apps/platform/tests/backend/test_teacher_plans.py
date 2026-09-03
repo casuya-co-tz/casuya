@@ -12,7 +12,9 @@ from backend.services.auth_service import register_user
 from backend.services.teacher_plan_service import (
     _build_lesson_plan_offline,
     _build_scheme_offline,
+    _distribute_periods,
     _lang_label,
+    plan_lessons_for_subtopic,
     render_lesson_plan_html,
     render_scheme_of_work_html,
 )
@@ -358,6 +360,109 @@ def test_lesson_plan_uses_real_enriched_syllabus(monkeypatch):
         ca["specific_learning_activity"]
         for _ in [plan["progression_matrix"][3]["learner_activity"]]
     )
+
+
+# ── Service: period-weighted lesson plans ──────────────────────────────────
+
+
+def test_distribute_periods_sums_to_total():
+    schedule = _distribute_periods(["a", "b", "c"], 5)
+    assert sum(e["periods"] for e in schedule) == 5
+    assert {e["activity"] for e in schedule} == {"a", "b", "c"}
+
+
+def test_plan_lessons_for_subtopic_count_matches_periods(monkeypatch):
+    """The number of lesson plans equals the subtopic's total allocated periods:
+    each learning activity with N periods produces N lessons (1 lesson/period)."""
+    form_data = _seed_subject_dict("physics", 1)
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_subject_with_form",
+        lambda slug, form: form_data,
+    )
+
+    topic = next(t for t in form_data["topics"] if t["subtopics"])
+    for subtopic in topic["subtopics"]:
+        spec_periods = subtopic.get("estimated_periods") or 0
+        if spec_periods <= 0:
+            continue
+        lessons = plan_lessons_for_subtopic(
+            subject_slug="physics", form_level=1,
+            topic=topic["title"], subtopic=subtopic["title"],
+            school_name="School", teacher_name="Teacher",
+            number_of_students=40, duration_minutes=40, period="Period",
+        )
+        # One lesson per allocated period => count == subtopic periods.
+        assert len(lessons) == spec_periods, (
+            f"{subtopic['title']}: expected {spec_periods} lessons, got {len(lessons)}"
+        )
+        # Every lesson is a distinct, renderable plan focused on an activity.
+        for lesson in lessons:
+            assert lesson["header"]["subtopic"]
+            assert len(lesson["progression_matrix"]) == 4
+            assert render_lesson_plan_html(lesson)
+
+
+def test_plan_lessons_grouped_by_learning_activity(monkeypatch):
+    """Lessons for the same learning activity carry a per-activity focus and a
+    sequential (n/total) period label matching the scheme's period distribution."""
+    form_data = _seed_subject_dict("physics", 1)
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_subject_with_form",
+        lambda slug, form: form_data,
+    )
+
+    topic = next(t for t in form_data["topics"] if t["subtopics"])
+    subtopic = next(
+        s for s in topic["subtopics"] if (s.get("estimated_periods") or 0) >= 2
+    )
+    spec_periods = subtopic["estimated_periods"]
+
+    lessons = plan_lessons_for_subtopic(
+        subject_slug="physics", form_level=1,
+        topic=topic["title"], subtopic=subtopic["title"],
+        school_name="School", teacher_name="Teacher",
+        number_of_students=40, duration_minutes=40, period="Period",
+    )
+    assert len(lessons) == spec_periods
+    # The first lesson targets the first learning activity; its period label
+    # reflects the lesson's position within that activity's period group (weight).
+    assert subtopic["title"] in lessons[0]["header"]["subtopic"]
+    first_weight = next(
+        e["periods"] for e in _distribute_periods(
+            [o["description"] for o in subtopic.get("outcomes", [])]
+            or [subtopic["title"]],
+            spec_periods,
+        )
+    )
+    assert f"(1/{first_weight})" in lessons[0]["header"]["period"]
+
+
+def test_plan_lessons_for_subtopic_english_and_kiswahili(monkeypatch):
+    form_data = _seed_subject_dict("physics", 1)
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_subject_with_form",
+        lambda slug, form: form_data,
+    )
+
+    topic = next(t for t in form_data["topics"] if t["subtopics"])
+    subtopic = next(
+        s for s in topic["subtopics"] if (s.get("estimated_periods") or 0) >= 1
+    )
+    en = plan_lessons_for_subtopic(
+        subject_slug="physics", form_level=1,
+        topic=topic["title"], subtopic=subtopic["title"],
+        school_name="School", teacher_name="Teacher",
+        number_of_students=40, duration_minutes=40, period="Period",
+    )
+    sw = plan_lessons_for_subtopic(
+        subject_slug="kiswahili", form_level=1,
+        topic=topic["title"], subtopic=subtopic["title"],
+        school_name="School", teacher_name="Teacher",
+        number_of_students=40, duration_minutes=40, period="Kipindi",
+    )
+    assert len(en) == len(sw) == (subtopic["estimated_periods"] or 1)
+    assert en[0]["header"]["class_name"] == "Form 1"
+    assert sw[0]["header"]["class_name"] == "Kidato 1"
 
 
 # ── Service: midterm weeks + period integrity ─────────────────────────────

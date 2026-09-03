@@ -16,6 +16,7 @@ from backend.models.teacher_plan import TeacherPlan
 from backend.services.teacher_plan_service import (
     generate_lesson_plan,
     generate_scheme_of_work,
+    plan_lessons_for_subtopic,
     render_lesson_plan_html,
     render_scheme_of_work_html,
 )
@@ -32,6 +33,20 @@ def _get_teacher_id(user: dict, db: Session) -> str:
 
 
 class LessonPlanGenerateRequest(BaseModel):
+    subject_slug: str
+    form_level: int
+    topic: str
+    subtopic: str | None = None
+    school_name: str | None = None
+    teacher_name: str | None = None
+    number_of_students: int | None = None
+    students_boys: int | None = None
+    students_girls: int | None = None
+    duration_minutes: int = 40
+    period: str | None = None
+
+
+class LessonPlansGenerateRequest(BaseModel):
     subject_slug: str
     form_level: int
     topic: str
@@ -105,6 +120,37 @@ async def api_generate_lesson_plan(
         "html_render": html,
         "title": title,
         "plan_type": "lesson_plan",
+    }
+
+
+@router.post("/generate/lesson-plans")
+async def api_generate_lesson_plans(
+    req: LessonPlansGenerateRequest,
+    user=Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    plans = plan_lessons_for_subtopic(
+        subject_slug=req.subject_slug,
+        form_level=req.form_level,
+        topic=req.topic,
+        subtopic=req.subtopic or "",
+        school_name=req.school_name,
+        teacher_name=req.teacher_name,
+        number_of_students=req.number_of_students,
+        students_boys=req.students_boys,
+        students_girls=req.students_girls,
+        duration_minutes=req.duration_minutes,
+        period=req.period,
+    )
+    rendered = [render_lesson_plan_html(p) for p in plans]
+    subject_label = req.subject_slug.replace("-", " ").title()
+    title = f"{subject_label} — {req.topic}" + (f" — {req.subtopic}" if req.subtopic else "")
+    return {
+        "plans_data": plans,
+        "html_renders": rendered,
+        "count": len(plans),
+        "title": title,
+        "plan_type": "lesson_plans",
     }
 
 

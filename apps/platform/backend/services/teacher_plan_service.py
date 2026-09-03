@@ -131,6 +131,104 @@ async def generate_lesson_plan(
     )
 
 
+def plan_lessons_for_subtopic(
+    *,
+    subject_slug: str,
+    form_level: int,
+    topic: str,
+    subtopic: str,
+    school_name: str | None = None,
+    teacher_name: str | None = None,
+    number_of_students: int | None = None,
+    students_boys: int | None = None,
+    students_girls: int | None = None,
+    duration_minutes: int = 40,
+    period: str | None = None,
+) -> list[dict]:
+    """Generate one lesson plan per teaching period for a subtopic.
+
+    The number of lesson plans is determined by the subtopic's period weight,
+    distributed across its specific learning activities exactly as the scheme of
+    work does via ``_distribute_periods``.  Each learning activity that is
+    allocated *N* periods produces *N* individual lessons, each focused on that
+    specific learning activity, so the total number of lessons equals the
+    subtopic's total allocated periods.
+    """
+    lang = _lang_label(subject_slug)
+    subject_label = subject_slug.replace("-", " ").title()
+
+    # Resolve the topic + subtopic in the authentic syllabus so the schedule and
+    # lesson content match the honest per-period allocation from the scheme.
+    outcomes: list[str] = []
+    spec_periods = 0
+    try:
+        subject_data = get_subject_with_form(subject_slug, form_level)
+    except Exception:
+        subject_data = None
+
+    if subject_data and subject_data.get("topics"):
+        t = (topic or "").strip().lower()
+        for tp in subject_data["topics"]:
+            title = (tp.get("title") or "").strip().lower()
+            code = (tp.get("code") or "").strip().lower()
+            if t and (t in title or title in t or t == code):
+                subtopic_list = tp.get("subtopics") or []
+                st = (subtopic or "").strip().lower()
+                for sp in subtopic_list:
+                    s_title = (sp.get("title") or "").strip().lower()
+                    s_code = (sp.get("code") or "").strip().lower()
+                    if st and (st in s_title or s_title in st or st == s_code):
+                        outcomes = [
+                            o.get("description", "").strip()
+                            for o in (sp.get("outcomes") or [])
+                            if o.get("description", "").strip()
+                        ]
+                        spec_periods = sp.get("estimated_periods") or 0
+                        break
+                break
+
+    if spec_periods <= 0:
+        spec_periods = 1
+    if not outcomes:
+        outcomes = [
+            f"Explain the basic concepts of {subtopic or topic}",
+            f"Apply {subtopic or topic} in different contexts",
+        ]
+        if lang == "sw":
+            outcomes = [
+                f"Eleza dhana za msingi za {subtopic or topic}",
+                f"Tumia {subtopic or topic} katika miktadha mbalimbali",
+            ]
+
+    schedule = _distribute_periods(outcomes, spec_periods)
+
+    lessons: list[dict] = []
+    for entry in schedule:
+        activity = entry["activity"]
+        periods = entry["periods"]
+        for idx in range(1, periods + 1):
+            lessons.append(_build_lesson_plan_offline(
+                subject_slug=subject_slug,
+                subject_label=subject_label,
+                form_level=form_level,
+                topic=topic,
+                subtopic=subtopic,
+                school_name=school_name or "School Name",
+                teacher_name=teacher_name or "Teacher Name",
+                number_of_students=number_of_students or 40,
+                students_boys=students_boys,
+                students_girls=students_girls,
+                duration_minutes=duration_minutes,
+                period=period or "Period",
+                lang=lang,
+                learning_activity=activity,
+                lesson_number=idx,
+                lesson_total=periods,
+            ))
+
+    return lessons
+
+
 async def generate_scheme_of_work(
     *,
     subject_slug: str,
@@ -451,6 +549,7 @@ def _build_lesson_plan_offline(
     *, subject_slug, subject_label, form_level, topic, subtopic,
     school_name, teacher_name, number_of_students, students_boys=None, students_girls=None,
     duration_minutes, period, lang,
+    learning_activity=None, lesson_number=None, lesson_total=None,
 ) -> dict:
     # TIE 4-stage progression time allocation (Introduction/Competence
     # Development/Design/Realisation), scaled to the total duration.
@@ -588,6 +687,29 @@ def _build_lesson_plan_offline(
             learner_acts[3] = kb_plan["realization"]["learner_activity"]
             assessment[3] = kb_plan["realization"]["assessment"]
 
+    # When generating one lesson per period (period-weighted lesson plans), focus
+    # this individual lesson on a single specific learning activity.
+    if learning_activity:
+        focus = learning_activity.strip()
+        if lang == "sw":
+            spec_comp = f"{subtopic_display}: {focus}"
+            spec_act = (f"Ndani ya dakika {duration_minutes}, wanafunzi wanaweza "
+                        f"{focus}.")
+            teacher_acts[1] = (f"Anawaongoza wanafunzi kutimiza shughuli: {focus} "
+                               f"kwa muktadha wa {subtopic_display}.")
+            learner_acts[1] = f"Wanafunzi wanafanya shughuli: {focus}."
+            assessment[3] = (f"Wanafunzi wanatimiza {focus} kwa usahihi kuonyesha "
+                             f"umilisi wa {subtopic_display}.")
+        else:
+            spec_comp = f"{subtopic_display}: {focus}"
+            spec_act = (f"Within {duration_minutes} minutes, students should be able to "
+                        f"{focus}.")
+            teacher_acts[1] = (f"Guides students to accomplish the learning activity: {focus} "
+                               f"within the context of {subtopic_display}.")
+            learner_acts[1] = f"Students carry out the learning activity: {focus}."
+            assessment[3] = (f"Students successfully accomplish {focus}, demonstrating mastery "
+                             f"of {subtopic_display}.")
+
     progression = []
     for i, label in enumerate(stage_names):
         progression.append({
@@ -598,13 +720,23 @@ def _build_lesson_plan_offline(
             "assessment_criteria": assessment[i],
         })
 
+    header_subtopic = subtopic_display
+    if learning_activity:
+        header_subtopic = f"{subtopic_display} — {learning_activity}".strip(" —")
+    header_period = period
+    if lesson_number is not None:
+        if lesson_total:
+            header_period = f"{period} ({lesson_number}/{lesson_total})"
+        else:
+            header_period = f"{period} · {lesson_number}"
+
     return {
         "header": {
             "school_name": school_name, "teacher_name": teacher_name,
             "class_name": class_name, "subject": subject_label,
-            "topic": topic, "subtopic": subtopic_display,
+            "topic": topic, "subtopic": header_subtopic,
             "date": today, "time_from": "08:00", "time_to": time_to,
-            "period": period, "number_of_students": total,
+            "period": header_period, "number_of_students": total,
             "students_registered": {"boys": boys, "girls": girls, "total": total},
             "students_present": {"boys": "", "girls": "", "total": ""},
         },
