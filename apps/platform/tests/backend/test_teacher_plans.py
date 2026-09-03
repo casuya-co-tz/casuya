@@ -109,6 +109,15 @@ def test_scheme_of_work_offline_render():
     assert "Cell Biology" in html
     assert "Term 1" in html
     assert "downloadAsWord" in html
+    assert "ORIENTATION COURSE" in html
+    assert "Main competence" in html
+    assert "Specific competence" in html
+    assert "Learning Activities" in html
+    assert "Specific activities" in html
+    assert "Month" in html
+    assert "Assessment tools" in html
+    assert "Teaching and learning methods" in html
+    assert "Teaching and learning resources" in html
 
 
 # ── API: save / list / get / delete ───────────────────────────────────────

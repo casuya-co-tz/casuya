@@ -305,16 +305,18 @@ def _build_scheme_prompt(
         },
         "weeks": [
             {
-                "week_number": 1,
-                "topic": "Topic Title",
-                "subtopic": "Subtopic",
-                "competences": ["Competence 1"],
-                "objectives": ["Objective 1"],
-                "periods": 4,
-                "teaching_aids": ["Aid 1"],
-                "references": ["TIE Syllabus"],
-                "assessment": "Assessment method",
-                "remarks": "Notes",
+                "main_competence": "Main competence (e.g. 1.0 Demonstrate mastery...)",
+                "specific_competence": "Specific competence (e.g. 1.1 Use numerical skills...)",
+                "learning_activities": ["Learning activity (a), (b), ..."],
+                "specific_activities": "Specific activity description",
+                "month": "Month (e.g. February)",
+                "week": "Week (e.g. Week 4)",
+                "periods": 2,
+                "reference": "Reference (e.g. TIE (2023) textbook, Dar es Salaam)",
+                "teaching_methods": ["Jigsaw puzzle", "Brainstorming", "Group discussion"],
+                "teaching_resources": ["Charts", "Real life objects", "Math Games"],
+                "assessment_tools": "Assessment tools (e.g. Quizzes, questions and answers)",
+                "remarks": "Remarks",
             }
         ],
     }
@@ -327,6 +329,9 @@ def _build_scheme_prompt(
             f"MISEMBO YA MPANGO:\n{curriculum_ctx}\n\n"
             f"MADA ZINAZOHITAJIKA:\n{topic_list}\n\n"
             f"Tengeneza wiki zinazoshughulikia mada zote hapo juu. Kila wiki 3-5 vipindi.\n"
+            "Kila wiki lazima iwe na: Ujuzi Mkuu, Ujuzi Mahususi, Shughuli za Kujifunza "
+            "(a),(b),(c)...), Shughuli Mahususi, Mwezi, Wiki, Vipindi, Marejeo, Mbinu za "
+            "Kufundisha na Kujifunza, Rasilimali za Kufundisha na Kujifunza, Zana za Tathmini, na Maelezo.\n"
             f"Lugha: Kiswahili"
         )
 
@@ -337,6 +342,9 @@ def _build_scheme_prompt(
         f"CURRICULUM CONTEXT:\n{curriculum_ctx}\n\n"
         f"TOPICS TO COVER:\n{topic_list}\n\n"
         "Generate weeks covering ALL topics listed above. Each week: 3-5 periods, one subtopic.\n"
+        "Each week MUST include: Main competence, Specific competence, Learning activities "
+        "((a),(b),(c)...), Specific activities, Month, Week, Periods, Reference, Teaching and "
+        "learning methods, Teaching and learning resources, Assessment tools, and Remarks.\n"
         f"Language: English"
     )
 
@@ -509,26 +517,51 @@ def _build_scheme_offline(
     class_name = f"Form {form_level}" if lang == "en" else f"Kidato {form_level}"
     num_weeks = 12 if "1" in term else (12 if "2" in term else 8)
     weeks = []
+    months_en = ["January", "February", "March", "April", "May", "June",
+                 "July", "August", "September", "October", "November", "December"]
+    months_sw = ["Januari", "Februari", "Machi", "Aprili", "Mei", "Juni",
+                 "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"]
+    methods_en = ["Jigsaw puzzle", "Brainstorming", "Problem solving", "Group discussion",
+                  "Collaborative learning", "Think-Ink pair-share", "Visual presentations"]
+    methods_sw = ["Maswali ya Jigsaw", "Kuchangia mawazo", "Utatuzi wa matatizo", "Mjadala wa kikundi",
+                  "Kujifunza kwa ushirikiano", "Jozi za kujadiliana", "Maonyesho ya kuona"]
+    months = months_en if lang == "en" else months_sw
+    methods = methods_en if lang == "en" else methods_sw
 
     for i in range(1, num_weeks + 1):
         topic_title = topics[i - 1] if i <= len(topics) else f"Topic {i}"
+        month = months[(i - 1) % len(months)]
         if lang == "sw":
             weeks.append({
                 "week_number": i, "topic": topic_title, "subtopic": f"Sehemu ya {i}",
-                "competences": [f"Ujuzi wa {topic_title}"],
-                "objectives": [f"Mwanafunzi ataweza kueleza {topic_title}"],
-                "periods": 4, "teaching_aids": ["Kitabu", "Ramani"],
-                "references": ["Misingumo ya TIE"],
-                "assessment": "Mazoezi na maswali", "remarks": "",
+                "main_competence": f"Kuonyesha ustadi wa lugha ya hisabati na dhana za {topic_title}",
+                "specific_competence": f"Kutumia ustadi wa namba katika muktadha wa {topic_title}",
+                "learning_activities": [f"Eleza dhana za msingi za {topic_title}", f"Kokotoa kwa kutumia {topic_title}"],
+                "specific_activities": f"Eleza {topic_title} na matumizi yake katika maisha halisi",
+                "month": month, "week": f"Wiki {i}", "periods": 4,
+                "reference": "TIE (2023) Kitabu cha Hisabati cha Kidato cha Kwanza, Dar es Salaam",
+                "teaching_methods": methods,
+                "teaching_resources": ["Chati za uhusiano", "Vitu halisi", "Michezo ya Hisabati", "Vituo vya elimu"],
+                "assessment_tools": "Maswali na majibu, class presentation, majaribio na kazi ya nyumbani",
+                "remarks": "Remarks Written here", "teaching_aids": ["Kitabu", "Ramani"],
+                "competences": [f"Ujuzi wa {topic_title}"], "objectives": [f"Mwanafunzi ataweza kueleza {topic_title}"],
+                "references": ["Misingumo ya TIE"], "assessment": "Mazoezi na maswali",
             })
         else:
             weeks.append({
                 "week_number": i, "topic": topic_title, "subtopic": f"Part {i}",
-                "competences": [f"Competence in {topic_title}"],
-                "objectives": [f"Student will understand {topic_title}"],
-                "periods": 4, "teaching_aids": ["Textbook", "Charts"],
-                "references": ["TIE Syllabus"],
-                "assessment": "Exercises and Q&A", "remarks": "",
+                "main_competence": f"Demonstrate mastery of mathematical language and concepts of {topic_title}",
+                "specific_competence": f"Use numerical skills to solve problems related to {topic_title}",
+                "learning_activities": [f"Explain the basic concepts of {topic_title}", f"Apply {topic_title} in different contexts"],
+                "specific_activities": f"Define and apply {topic_title} in oral and written communication",
+                "month": month, "week": f"Week {i}", "periods": 4,
+                "reference": f"TIE (2023) Basic Mathematics Students Book for {class_name}, Dar es Salaam",
+                "teaching_methods": methods,
+                "teaching_resources": ["Charts of relationships", "Real life objects", "Math Games and Apps", "Educational channels"],
+                "assessment_tools": "Quizzes, questions and answers, class presentation, tests and group discussion",
+                "remarks": "Remarks Written here", "teaching_aids": ["Textbook", "Charts"],
+                "competences": [f"Competence in {topic_title}"], "objectives": [f"Student will understand {topic_title}"],
+                "references": ["TIE Syllabus"], "assessment": "Exercises and Q&A",
             })
 
     return {
@@ -862,15 +895,17 @@ def render_scheme_of_work_html(plan: dict) -> str:
         "class": "Class" if not is_sw else "Darasa",
         "term": "Term" if not is_sw else "Muhtasari",
         "year": "Academic Year" if not is_sw else "Mwaka wa Masomo",
+        "main_comp": "Main competence" if not is_sw else "Ujuzi Mkuu",
+        "spec_comp": "Specific competence" if not is_sw else "Ujuzi Mahususi",
+        "learn_act": "Learning Activities" if not is_sw else "Shughuli za Kujifunza",
+        "spec_act": "Specific activities" if not is_sw else "Shughuli Mahususi",
+        "month": "Month" if not is_sw else "Mwezi",
         "wk": "Week" if not is_sw else "Wiki",
-        "topic": "Topic" if not is_sw else "Mada",
-        "subtopic": "Subtopic" if not is_sw else "Sehemu ya Mada",
-        "comps": "Competences" if not is_sw else "Ujuzi",
-        "objs": "Objectives" if not is_sw else "Malengo",
         "periods": "Periods" if not is_sw else "Vipindi",
-        "aids": "Teaching Aids" if not is_sw else "Zana za Kufundisha",
-        "refs": "References" if not is_sw else "Marejeo",
-        "assess": "Assessment" if not is_sw else "Tathmini",
+        "reference": "Reference" if not is_sw else "Marejeo",
+        "methods": "Teaching and learning methods" if not is_sw else "Mbinu za Kufundisha na Kujifunza",
+        "resources": "Teaching and learning resources" if not is_sw else "Rasilimali za Kufundisha na Kujifunza",
+        "assess": "Assessment tools" if not is_sw else "Zana za Tathmini",
         "rem": "Remarks" if not is_sw else "Maelezo",
     }
 
@@ -887,17 +922,39 @@ def render_scheme_of_work_html(plan: dict) -> str:
 
     rows = ""
     for w in weeks:
+        main_comp = _e(w.get('main_competence') or w.get('competences', w.get('topic', '')))
+        if isinstance(w.get('main_competence'), list):
+            main_comp = _li(w.get('main_competence'))
+        spec_comp = _e(w.get('specific_competence',''))
+        if isinstance(w.get('specific_competence'), list):
+            spec_comp = _li(w.get('specific_competence'))
+        learn_act = _e(w.get('learning_activities') or w.get('objectives', ''))
+        if isinstance(w.get('learning_activities'), list):
+            learn_act = _li(w.get('learning_activities'))
+        spec_act = _e(w.get('specific_activities') or w.get('subtopic', ''))
+        if isinstance(w.get('specific_activities'), list):
+            spec_act = _li(w.get('specific_activities'))
+        month = _e(w.get('month', ''))
+        week = _e(w.get('week') or w.get('week_number', ''))
+        periods = _e(w.get('periods', ''))
+        reference = _e(w.get('reference') or _li(w.get('references', [])))
+        methods = _li(w.get('teaching_methods', [])) or _e(w.get('methods', ''))
+        resources = _li(w.get('teaching_resources', w.get('teaching_aids', [])))
+        assess = _e(w.get('assessment_tools') or w.get('assessment', ''))
+        remarks = _e(w.get('remarks', ''))
         rows += f"""<tr>
-            <td style="text-align:center">{w.get('week_number', '')}</td>
-            <td>{_e(w.get('topic', ''))}</td>
-            <td>{_e(w.get('subtopic', ''))}</td>
-            <td>{_li(w.get('competences', []))}</td>
-            <td>{_li(w.get('objectives', []))}</td>
-            <td style="text-align:center">{w.get('periods', '')}</td>
-            <td>{_li(w.get('teaching_aids', []))}</td>
-            <td>{_li(w.get('references', []))}</td>
-            <td>{_e(w.get('assessment', ''))}</td>
-            <td>{_e(w.get('remarks', ''))}</td>
+            <td>{main_comp}</td>
+            <td>{spec_comp}</td>
+            <td>{learn_act}</td>
+            <td>{spec_act}</td>
+            <td style="text-align:center">{month}</td>
+            <td style="text-align:center">{week}</td>
+            <td style="text-align:center">{periods}</td>
+            <td>{reference}</td>
+            <td>{methods}</td>
+            <td>{resources}</td>
+            <td>{assess}</td>
+            <td>{remarks}</td>
         </tr>"""
 
     return f"""<!DOCTYPE html>
@@ -919,12 +976,16 @@ def render_scheme_of_work_html(plan: dict) -> str:
   .meta-row {{ display: flex; justify-content: space-between; font-size: 10.5pt; margin-bottom: 12px; padding: 6px 0; border-bottom: 1px solid #000; flex-wrap: wrap; gap: 4px 20px; }}
   .meta-row span {{ white-space: nowrap; }}
   .meta-row strong {{ font-weight: bold; }}
-  table {{ width: 100%; border-collapse: collapse; font-size: 8.5pt; }}
-  th, td {{ border: 1px solid #000; padding: 4px 5px; text-align: left; vertical-align: top; }}
-  th {{ background: #f0f0f0; font-weight: bold; text-transform: uppercase; font-size: 8pt; }}
+  table {{ width: 100%; border-collapse: collapse; font-size: 8.5pt; table-layout: fixed; }}
+  th, td {{ border: 1px solid #000; padding: 4px 5px; text-align: left; vertical-align: top; word-wrap: break-word; overflow-wrap: break-word; }}
+  th {{ background: #f0f0f0; font-weight: bold; text-transform: uppercase; font-size: 8pt; text-align: center; }}
+  thead {{ display: table-header-group; }}
+  tbody tr {{ page-break-inside: avoid; }}
+  td.c {{ text-align: center; }}
   .actions {{ text-align: center; margin: 12px 0; }}
   .actions button {{ padding: 8px 20px; margin: 0 6px; cursor: pointer; font-size: 11pt; border: 1px solid #333; border-radius: 4px; background: #fff; }}
   .actions button:hover {{ background: #f5f5f5; }}
+  .course-banner {{ border: 1px solid #000; border-bottom: none; font-weight: bold; text-align: left; padding: 6px 8px; font-size: 10pt; text-transform: uppercase; }}
 </style>
 </head>
 <body>
@@ -946,19 +1007,25 @@ def render_scheme_of_work_html(plan: dict) -> str:
   <span><strong>{labels['year']}:</strong> {_e(h.get('academic_year', ''))}</span>
 </div>
 
+<div class="course-banner">
+  <strong>{_e(h.get('class_name', ''))} ORIENTATION COURSE</strong>
+</div>
+
 <table>
 <thead>
 <tr>
+  <th style="width:9%">{labels['main_comp']}</th>
+  <th style="width:9%">{labels['spec_comp']}</th>
+  <th style="width:10%">{labels['learn_act']}</th>
+  <th style="width:9%">{labels['spec_act']}</th>
+  <th style="width:6%">{labels['month']}</th>
   <th style="width:5%">{labels['wk']}</th>
-  <th style="width:14%">{labels['topic']}</th>
-  <th style="width:12%">{labels['subtopic']}</th>
-  <th style="width:14%">{labels['comps']}</th>
-  <th style="width:14%">{labels['objs']}</th>
-  <th style="width:6%">{labels['periods']}</th>
-  <th style="width:12%">{labels['aids']}</th>
-  <th style="width:10%">{labels['refs']}</th>
-  <th style="width:10%">{labels['assess']}</th>
-  <th style="width:8%">{labels['rem']}</th>
+  <th style="width:5%">{labels['periods']}</th>
+  <th style="width:10%">{labels['reference']}</th>
+  <th style="width:12%">{labels['methods']}</th>
+  <th style="width:11%">{labels['resources']}</th>
+  <th style="width:9%">{labels['assess']}</th>
+  <th style="width:5%">{labels['rem']}</th>
 </tr>
 </thead>
 <tbody>{rows}</tbody>
