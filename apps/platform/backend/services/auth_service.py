@@ -269,8 +269,13 @@ def oauth_login_or_register(
     email: str,
     full_name: str,
     avatar: str = "",
+    role: str = "pending",
 ) -> dict:
-    """Find or create a user from an OAuth provider and return JWT tokens."""
+    """Find or create a user from an OAuth provider and return JWT tokens.
+
+    New users default to role ``"pending"`` so the frontend can prompt them
+    to choose between student and teacher before completing registration.
+    """
     _gen = get_db()
     db: Session = next(_gen)
     try:
@@ -288,11 +293,11 @@ def oauth_login_or_register(
                 "role": user.role,
             }
 
-        # New user — create account with student role by default
+        # New user — create account with pending role (user selects later)
         user = User(
             email=email,
             hashed_password=hash_password(secrets.token_urlsafe(32)),  # random password
-            role="student",
+            role=role,
         )
         db.add(user)
         db.flush()
@@ -301,20 +306,59 @@ def oauth_login_or_register(
         db.add(profile)
         db.commit()
 
-        access_token = create_access_token(user.id, extra_claims={"role": "student"})
-        refresh_token = create_refresh_token(user.id, role="student")
+        access_token = create_access_token(user.id, extra_claims={"role": role})
+        refresh_token = create_refresh_token(user.id, role=role)
         return {
             "access_token": access_token,
             "refresh_token": refresh_token,
             "token_type": "bearer",
             "user_id": user.id,
-            "role": "student",
+            "role": role,
         }
     except ValueError:
         raise
     except Exception:
         if settings.environment == "development":
-            return _dev_token_response(email, "student")
+            return _dev_token_response(email, role)
         raise
+    finally:
+        _gen.close()
+
+
+def complete_registration(user_id: str, role: str) -> dict:
+    """Set the role for a newly-registered OAuth user who chose student/teacher."""
+    if role not in ("student", "teacher"):
+        raise ValueError("Role must be 'student' or 'teacher'")
+
+    _gen = get_db()
+    db: Session = next(_gen)
+    try:
+        user = db.query(User).filter(User.id == user_id).first()
+        if not user:
+            raise ValueError("User not found")
+        if user.role != "pending":
+            # Already completed — just return fresh tokens
+            access_token = create_access_token(user.id, extra_claims={"role": user.role})
+            refresh_token = create_refresh_token(user.id, role=user.role)
+            return {
+                "access_token": access_token,
+                "refresh_token": refresh_token,
+                "token_type": "bearer",
+                "user_id": user.id,
+                "role": user.role,
+            }
+
+        user.role = role
+        db.commit()
+
+        access_token = create_access_token(user.id, extra_claims={"role": role})
+        refresh_token = create_refresh_token(user.id, role=role)
+        return {
+            "access_token": access_token,
+            "refresh_token": refresh_token,
+            "token_type": "bearer",
+            "user_id": user.id,
+            "role": role,
+        }
     finally:
         _gen.close()

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casuya — Choose Your Role</title>
+  <meta name="robots" content="noindex">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/casuya-logo.svg">
+  <link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/css/main.min.css">
+  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+  <link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="/assets/js/env.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/brand.js"></script>
+  <script>
+    (function() {
+      // If no pending auth data, redirect to login
+      var token = localStorage.getItem("casuya_token");
+      var role = localStorage.getItem("casuya_role");
+      if (!token || (role && role !== "pending")) {
+        window.location.replace("/login.html");
+      }
+    })();
+  </script>
+  <style>
+    body.dyslexia-mode, body.dyslexia-mode * { font-family: 'OpenDyslexic', cursive !important; letter-spacing: 0.05em; word-spacing: 0.15em; }
+    body.high-contrast { background: #000 !important; color: #fff !important; }
+    body.high-contrast * { border-color: #fff !important; color: #fff !important; background: transparent !important; }
+    body.high-contrast nav { background: #000 !important; }
+    body.high-contrast a { color: #60a5fa !important; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+    a:focus-visible, button:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+    .a11y-mini { position: fixed; bottom: max(16px, env(safe-area-inset-bottom, 16px)); left: max(16px, env(safe-area-inset-left, 16px)); z-index: 9998; display: flex; gap: 6px; flex-wrap: wrap; max-width: calc(100vw - 32px); }
+    .a11y-mini button { width: 36px; height: 36px; min-width: 36px; min-height: 36px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.15s; flex-shrink: 0; }
+    .a11y-mini button:hover { background: #eff6ff; border-color: #2563eb; }
+    .a11y-mini button.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+    .role-card { border: 2px solid #e2e8f0; border-radius: 16px; padding: 32px 24px; text-align: center; cursor: pointer; transition: all 0.2s ease; background: #fff; min-height: 44px; }
+    .role-card:hover { border-color: #2563eb; box-shadow: 0 8px 24px rgba(37,99,235,0.12); transform: translateY(-2px); }
+    .role-card:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+    .role-card.selected { border-color: #2563eb; background: #eff6ff; box-shadow: 0 4px 16px rgba(37,99,235,0.15); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
+</head>
+<body class="bg-[#faf7f2] text-slate-800 antialiased overflow-x-hidden" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
+
+  <!-- Mini Accessibility Toolbar -->
+  <div class="a11y-mini" role="region" aria-label="Quick accessibility toggles">
+    <button id="a11y-dyslexia" aria-label="Toggle dyslexia-friendly font" title="Dyslexia Font">📖</button>
+    <button id="a11y-contrast" aria-label="Toggle high contrast mode" title="High Contrast">🌗</button>
+    <button id="a11y-tts" aria-label="Toggle text-to-speech" title="Text-to-Speech">🔊</button>
+  </div>
+
+  <div id="sr-announcer" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="sticky top-0 z-50 bg-[#faf7f2]/80 backdrop-blur-md border-b border-[#e2e8f0]" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div data-brand-logo data-brand-logo-class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-blue-200" class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-blue-200" aria-hidden="true">C</div>
+        <a href="/index.html" class="text-xl font-extrabold tracking-tight text-slate-900">Casuya</a>
+      </div>
+      <div class="flex items-center gap-3 sm:gap-4" id="auth-buttons">
+        <a href="/login.html" class="min-h-[44px] flex items-center text-sm font-semibold text-blue-600">Login</a>
+        <a href="/register.html" class="min-h-[44px] flex items-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-100 transition-all hover:-translate-y-0.5">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ROLE SELECTION SECTION -->
+  <section class="py-16 sm:py-20" aria-labelledby="role-heading">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-lg mx-auto">
+        <div style="background:#fff;border-radius:24px;box-shadow:0 4px 24px rgba(0,0,0,0.06);padding:40px 32px;border:1px solid #f1f5f9;">
+
+          <!-- Header -->
+          <div class="text-center mb-8">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:linear-gradient(135deg,rgba(37,99,235,0.1),rgba(124,58,237,0.08));border:1px solid rgba(37,99,235,0.15);box-shadow:0 4px 16px rgba(37,99,235,0.08);">
+              <svg class="w-8 h-8" style="color:#2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            </div>
+            <h1 id="role-heading" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2" style="letter-spacing:-0.03em;">Choose Your Role</h1>
+            <p class="text-sm" style="color:#64748b;">Tell us how you'll use Casuya so we can set up the right experience for you.</p>
+          </div>
+
+          <!-- Error message -->
+          <div id="role-error" class="hidden mb-6" role="alert" aria-live="assertive">
+            <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm font-medium flex items-start gap-2">
+              <span aria-hidden="true" class="text-red-500 flex-shrink-0 mt-0.5">⚠</span>
+              <span id="role-error-text"></span>
+            </div>
+          </div>
+
+          <!-- Role Cards -->
+          <div class="space-y-4" role="radiogroup" aria-label="Select your role">
+            <!-- Student -->
+            <button
+              type="button"
+              class="role-card"
+              role="radio"
+              aria-checked="false"
+              data-role="student"
+              id="role-student"
+              tabindex="0"
+            >
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#dbeafe,#ede9fe);">
+                  <svg class="w-7 h-7" style="color:#2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+                </div>
+                <div class="text-left">
+                  <div class="font-bold text-lg text-slate-900">I'm a Student</div>
+                  <div class="text-sm mt-1" style="color:#64748b;">Access lessons, quizzes, and track your learning progress</div>
+                </div>
+              </div>
+            </button>
+
+            <!-- Teacher -->
+            <button
+              type="button"
+              class="role-card"
+              role="radio"
+              aria-checked="false"
+              data-role="teacher"
+              id="role-teacher"
+              tabindex="0"
+            >
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#dcfce7,#dbeafe);">
+                  <svg class="w-7 h-7" style="color:#16a34a;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+                </div>
+                <div class="text-left">
+                  <div class="font-bold text-lg text-slate-900">I'm a Teacher</div>
+                  <div class="text-sm mt-1" style="color:#64748b;">Create lesson plans, schemes of work, and manage your classes</div>
+                </div>
+              </div>
+            </button>
+          </div>
+
+          <!-- Confirm Button -->
+          <button
+            type="button"
+            id="confirm-btn"
+            disabled
+            class="w-full mt-8 py-3.5 px-6 rounded-xl text-base font-bold text-white transition-all"
+            style="background:#2563eb;box-shadow:0 4px 12px rgba(37,99,235,0.25);"
+            onmouseover="if(!this.disabled){this.style.background='#1d4ed8';this.style.transform='translateY(-1px)';}"
+            onmouseout="if(!this.disabled){this.style.background='#2563eb';this.style.transform='translateY(0)';}"
+          >
+            Continue
+          </button>
+          <div id="confirm-status" class="sr-only" aria-live="polite"></div>
+
+          <!-- Back to login -->
+          <div class="mt-6 text-center">
+            <a href="/login.html" class="text-sm font-medium text-slate-500 hover:text-slate-700 transition-colors">← Back to login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-xs py-10 sm:py-14 mt-16" role="contentinfo" style="background:linear-gradient(180deg,#0f172a 0%,#020617 100%);color:#94a3b8;">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="font-bold text-sm mb-3" style="color:#f1f5f9;">Casuya</div>
+      <p>Interactive learning for Tanzanian secondary schools</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var token = localStorage.getItem("casuya_token");
+      var userId = localStorage.getItem("casuya_user_id");
+      var selectedRole = null;
+      var cards = document.querySelectorAll(".role-card");
+      var confirmBtn = document.getElementById("confirm-btn");
+      var errorEl = document.getElementById("role-error");
+      var errorText = document.getElementById("role-error-text");
+
+      function selectCard(card) {
+        cards.forEach(function(c) {
+          c.classList.remove("selected");
+          c.setAttribute("aria-checked", "false");
+        });
+        card.classList.add("selected");
+        card.setAttribute("aria-checked", "true");
+        selectedRole = card.getAttribute("data-role");
+        confirmBtn.disabled = false;
+        errorEl.classList.add("hidden");
+      }
+
+      cards.forEach(function(card) {
+        card.addEventListener("click", function() { selectCard(card); });
+        card.addEventListener("keydown", function(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            selectCard(card);
+          }
+        });
+      });
+
+      confirmBtn.addEventListener("click", function() {
+        if (!selectedRole || !token || !userId) return;
+        confirmBtn.disabled = true;
+        confirmBtn.textContent = "Setting up your account...";
+        document.getElementById("confirm-status").textContent = "Setting up your account...";
+
+        var apiBase = (typeof window !== "undefined" && window.casuyaApiBase) ? window.casuyaApiBase() : window.location.origin;
+
+        fetch(apiBase + "/auth/complete-registration", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ user_id: userId, role: selectedRole }),
+        })
+          .then(function(res) {
+            if (!res.ok) return res.json().then(function(d) { throw new Error(d.detail || "Failed to set role"); });
+            return res.json();
+          })
+          .then(function(data) {
+            localStorage.setItem("casuya_token", data.access_token);
+            localStorage.setItem("casuya_refresh_token", data.refresh_token);
+            localStorage.setItem("casuya_role", data.role);
+            localStorage.setItem("casuya_user_id", data.user_id);
+            window.location.replace(data.role === "teacher" ? "/teacher/" : "/student/");
+          })
+          .catch(function(err) {
+            errorText.textContent = err.message || "Something went wrong. Please try again.";
+            errorEl.classList.remove("hidden");
+            confirmBtn.disabled = false;
+            confirmBtn.textContent = "Continue";
+            document.getElementById("confirm-status").textContent = "";
+          });
+      });
+
+      // Accessibility toolbar
+      var announcer = document.getElementById("sr-announcer");
+      document.getElementById("a11y-dyslexia")?.addEventListener("click", function() {
+        document.body.classList.toggle("dyslexia-mode");
+        this.classList.toggle("active");
+        announcer.textContent = "";
+        requestAnimationFrame(function() { announcer.textContent = document.body.classList.contains("dyslexia-mode") ? "Dyslexia-friendly font enabled" : "Dyslexia-friendly font disabled"; });
+      });
+      document.getElementById("a11y-contrast")?.addEventListener("click", function() {
+        document.body.classList.toggle("high-contrast");
+        this.classList.toggle("active");
+        announcer.textContent = "";
+        requestAnimationFrame(function() { announcer.textContent = document.body.classList.contains("high-contrast") ? "High contrast mode enabled" : "High contrast mode disabled"; });
+      });
+      document.getElementById("a11y-tts")?.addEventListener("click", function() {
+        this.classList.toggle("active");
+        if (this.classList.contains("active") && window.speechSynthesis) {
+          var text = document.querySelector("h1")?.textContent || "Choose your role";
+          var u = new SpeechSynthesisUtterance(text);
+          window.speechSynthesis.speak(u);
+        } else if (window.speechSynthesis) {
+          window.speechSynthesis.cancel();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -30,10 +30,10 @@
     (function() {
       var t = localStorage.getItem("casuya_token");
       var r = localStorage.getItem("casuya_role");
-      if (t && r) {
+      if (t && r && r !== "pending") {
         try {
           var payload = JSON.parse(atob(t.split(".")[1]));
-          if (payload.role) {
+          if (payload.role && payload.role !== "pending") {
             var portals = {admin:"/admin/",teacher:"/teacher/",student:"/student/"};
             window.location.replace(portals[payload.role] || "/student/");
           }
@@ -378,10 +378,15 @@
       const refreshToken = params.get('refresh_token');
       const role = params.get('role');
       const userId = params.get('user_id');
+      const needsRole = params.get('needs_role');
       if (accessToken && role) {
         persistAuth({ access_token: accessToken, refresh_token: refreshToken, role, user_id: userId });
         window.location.hash = '';
-        window.location.replace(getPortalPath(role));
+        if (needsRole === 'true' || role === 'pending') {
+          window.location.replace('/select-role.html');
+        } else {
+          window.location.replace(getPortalPath(role));
+        }
       }
     }
 

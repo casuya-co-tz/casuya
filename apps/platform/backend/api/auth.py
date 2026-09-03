@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 
 from backend.schemas.auth import (
     AuthResponse,
+    CompleteRegistrationRequest,
     ForgotPasswordRequest,
     LoginRequest,
     RefreshTokenRequest,
@@ -10,6 +11,7 @@ from backend.schemas.auth import (
 )
 from backend.services.auth_service import (
     authenticate_user,
+    complete_registration,
     forgot_password,
     refresh_access_token,
     register_user,
@@ -75,6 +77,17 @@ def forgot_password_endpoint(body: ForgotPasswordRequest):
 def reset_password_endpoint(body: ResetPasswordRequest):
     try:
         return reset_password(token=body.token, new_password=body.new_password)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=503, detail=f"Service unavailable: {e}")
+
+
+@router.post("/complete-registration", response_model=AuthResponse)
+@router.post("/complete-registration/", response_model=AuthResponse)
+def complete_registration_endpoint(body: CompleteRegistrationRequest):
+    try:
+        return complete_registration(user_id=body.user_id, role=body.role)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:

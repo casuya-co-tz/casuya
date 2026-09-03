@@ -30,6 +30,11 @@ class ResetPasswordRequest(BaseModel):
     new_password: str
 
 
+class CompleteRegistrationRequest(BaseModel):
+    user_id: str
+    role: str  # "student" or "teacher"
+
+
 class AuthResponse(BaseModel):
     access_token: str
     refresh_token: str

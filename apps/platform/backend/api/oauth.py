@@ -237,12 +237,13 @@ def oauth_callback(provider: str, request: Request):
         return _auth_redirect(f"{settings.frontend_base}/login.html?error=account_creation_failed")
 
     # Redirect to frontend with tokens in the URL fragment
-    fragment = urlencode(
-        {
-            "access_token": result["access_token"],
-            "refresh_token": result["refresh_token"],
-            "role": result["role"],
-            "user_id": result["user_id"],
-        }
-    )
+    fragment_data = {
+        "access_token": result["access_token"],
+        "refresh_token": result["refresh_token"],
+        "role": result["role"],
+        "user_id": result["user_id"],
+    }
+    if result["role"] == "pending":
+        fragment_data["needs_role"] = "true"
+    fragment = urlencode(fragment_data)
     return _auth_redirect(f"{settings.frontend_base}/login.html?oauth=success#{fragment}")
