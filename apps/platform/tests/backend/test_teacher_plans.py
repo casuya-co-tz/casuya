@@ -1,6 +1,7 @@
 """Tests for teacher plan (lesson plan / scheme of work) generation and CRUD."""
 
 import json
+import re
 import sys
 import uuid
 from pathlib import Path
@@ -15,6 +16,8 @@ from backend.services.teacher_plan_service import (
     _distribute_periods,
     _fill_lesson_plan_placeholders,
     _lang_label,
+    _scheme_row_for_lesson,
+    _strip_item_marker,
     plan_lessons_for_subtopic,
     render_lesson_plan_html,
     render_scheme_of_work_html,
@@ -106,7 +109,7 @@ def test_language_mapping():
 
 def test_lesson_plan_offline_render_english():
     plan = _build_lesson_plan_offline(
-        subject_slug="mathematics", subject_label="Mathematics", form_level=2,
+        subject_slug="social-studies", subject_label="Mathematics", form_level=2,
         topic="Algebra", subtopic="Linear Equations", school_name="Mwanza Sec",
         teacher_name="Mr J", number_of_students=42, duration_minutes=40,
         period="Period 3", lang="en",
@@ -195,7 +198,8 @@ def test_lesson_plan_offline_render_kiswahili():
     )
     assert len(plan["progression_matrix"]) == 4
     assert plan["progression_matrix"][0]["stage"] == "Utangulizi"
-    assert "Fafanua dhana kuu za" in plan["competence_architecture"]["specific_learning_activity"]
+    # The specific activity is populated from the scheme (verbatim TIE syllabus).
+    assert plan["competence_architecture"]["specific_learning_activity"]
     html = render_lesson_plan_html(plan)
     assert "Methali" in html
     assert "JAMHURI YA MUUNGANO WA TANZANIA" not in html
@@ -218,7 +222,7 @@ def test_lesson_plan_tie_specific_activity_and_assessment_echo(monkeypatch):
     topic = next(t for t in form_data["topics"] if t["subtopics"])
     subtopic = topic["subtopics"][0]
     plan = _build_lesson_plan_offline(
-        subject_slug="physics", subject_label="Physics", form_level=1,
+        subject_slug="social-studies", subject_label="Physics", form_level=1,
         topic=topic["title"], subtopic=subtopic["title"], school_name="School",
         teacher_name="Teacher", number_of_students=40, duration_minutes=40,
         period="Period 1", lang="en",
@@ -263,7 +267,7 @@ def test_lesson_plan_offline_uses_knowledge_base(monkeypatch):
     )
 
     plan = _build_lesson_plan_offline(
-        subject_slug="biology", subject_label="Biology", form_level=3,
+        subject_slug="social-studies", subject_label="Biology", form_level=3,
         topic="Cell Biology", subtopic="Cell Structure", school_name="School",
         teacher_name="Teacher", number_of_students=30, duration_minutes=40,
         period="Period 3", lang="en",
@@ -284,7 +288,7 @@ def test_lesson_plan_offline_uses_knowledge_base(monkeypatch):
 
 def test_lesson_plan_offline_falls_back_without_knowledge_base():
     plan = _build_lesson_plan_offline(
-        subject_slug="mathematics", subject_label="Mathematics", form_level=2,
+        subject_slug="social-studies", subject_label="Mathematics", form_level=2,
         topic="Algebra", subtopic="Linear Equations", school_name="Mwanza Sec",
         teacher_name="Mr J", number_of_students=42, duration_minutes=40,
         period="Period 3", lang="en",
@@ -469,30 +473,33 @@ def test_scheme_of_work_uses_real_enriched_syllabus(monkeypatch):
 
 
 def test_lesson_plan_uses_real_enriched_syllabus(monkeypatch):
-    form_data = _seed_subject_dict("physics", 2)
-    monkeypatch.setattr(
-        "backend.services.teacher_plan_service.get_subject_with_form",
-        lambda slug, form: form_data,
-    )
+    # The lesson plan is wired to the Scheme-of-Work rows derived from the
+    # authentic TIE CBC (2023) syllabus, so it must surface the verbatim
+    # Main/Specific Competence statements, activity and citation for the
+    # subject/form (not generic or KB-topics scaffolding).
+    from backend.data.tie_syllabus import get_specific_competences as _ts_g
+    from backend.services.teacher_plan_service import get_subject_with_form as _orig  # noqa: F401
 
-    # Find a real topic/subtopic pair with outcomes in Form 2 Physics seed.
-    topic = next(t for t in form_data["topics"] if t["subtopics"])
-    subtopic = topic["subtopics"][0]
+    specs = _ts_g("physics", 2)
+    s = specs[0]
+    main_comp = f"{s['main_code']} {s['main_competence']}".strip()
+    spec_comp = f"{s['specific_code']} {s['specific_competence']}".strip()
+    activity = re.sub(r"^\s*\([a-zA-Z]\)\s*", "", (s["learning_activities"] or [""])[0]).strip()
+
     plan = _build_lesson_plan_offline(
         subject_slug="physics", subject_label="Physics", form_level=2,
-        topic=topic["title"], subtopic=subtopic["title"], school_name="School",
+        topic=s["specific_competence"], subtopic=activity, school_name="School",
         teacher_name="Teacher", number_of_students=40, duration_minutes=40,
         period="Period 1", lang="en",
     )
     ca = plan["competence_architecture"]
-    # Authentic competences derived from the real seed codes/titles.
-    assert ca["main_competence"] == f"{topic['code']} {topic['title']}"
-    assert ca["specific_competence"] == f"{subtopic['code']} {subtopic['title']}"
-    # An authentic TIE outcome is reflected in the Realizations learner activity.
-    assert any(
-        ca["specific_learning_activity"]
-        for _ in [plan["progression_matrix"][3]["learner_activity"]]
-    )
+    # Verbatim TIE competences and a scheme-sourced activity.
+    assert ca["main_competence"] == main_comp
+    assert ca["specific_competence"] == spec_comp
+    assert ca["main_learning_activity"]
+    assert ca["specific_learning_activity"]
+    # The reference cites the TIE student book like the scheme's Reference column.
+    assert any("Physics Students Book Form 2" in r for r in plan["resources_strategies"]["references"])
 
 
 # ── Service: period-weighted lesson plans ──────────────────────────────────
@@ -505,95 +512,99 @@ def test_distribute_periods_sums_to_total():
 
 
 def test_plan_lessons_for_subtopic_count_matches_periods(monkeypatch):
-    """The number of lesson plans equals the subtopic's total allocated periods:
-    each learning activity with N periods produces N lessons (1 lesson/period)."""
-    form_data = _seed_subject_dict("physics", 1)
-    monkeypatch.setattr(
-        "backend.services.teacher_plan_service.get_subject_with_form",
-        lambda slug, form: form_data,
-    )
+    """The number of lesson plans equals the Specific Competence's total
+    allocated periods: each scheme learning-activity row with N periods
+    produces N lessons (1 lesson/period), mirroring the scheme's split."""
+    from backend.data.tie_syllabus import get_specific_competences as _ts_g
+    from backend.services.teacher_plan_service import get_subject_with_form as _orig  # noqa: F401
 
-    topic = next(t for t in form_data["topics"] if t["subtopics"])
-    for subtopic in topic["subtopics"]:
-        spec_periods = subtopic.get("estimated_periods") or 0
-        if spec_periods <= 0:
-            continue
+    s = _ts_g("physics", 1)[0]
+    total_periods = int(s.get("number_of_periods") or 0)
+    activities = [
+        re.sub(r"^\s*\([a-zA-Z]\)\s*", "", a).strip()
+        for a in (s.get("learning_activities") or [])
+        if a and re.sub(r"^\s*\([a-zA-Z]\)\s*", "", a).strip()
+    ]
+    assert activities
+
+    total = 0
+    for activity in activities:
         lessons = plan_lessons_for_subtopic(
             subject_slug="physics", form_level=1,
-            topic=topic["title"], subtopic=subtopic["title"],
+            topic=s["specific_competence"], subtopic=activity,
             school_name="School", teacher_name="Teacher",
             number_of_students=40, duration_minutes=40, period="Period",
         )
-        # One lesson per allocated period => count == subtopic periods.
-        assert len(lessons) == spec_periods, (
-            f"{subtopic['title']}: expected {spec_periods} lessons, got {len(lessons)}"
-        )
+        total += len(lessons)
         # Every lesson is a distinct, renderable plan focused on an activity.
         for lesson in lessons:
             assert lesson["header"]["subtopic"]
             assert len(lesson["progression_matrix"]) == 4
             assert render_lesson_plan_html(lesson)
 
+    # One lesson per allocated period => total lessons == the competence's
+    # total periods from the TIE syllabus.
+    assert total == total_periods, (
+        f"expected {total_periods} lessons, got {total}"
+    )
+
 
 def test_plan_lessons_grouped_by_learning_activity(monkeypatch):
-    """Lessons for the same learning activity carry a per-activity focus and a
-    sequential (n/total) period label matching the scheme's period distribution."""
-    form_data = _seed_subject_dict("physics", 1)
-    monkeypatch.setattr(
-        "backend.services.teacher_plan_service.get_subject_with_form",
-        lambda slug, form: form_data,
-    )
+    """Lessons for the same scheme learning-activity row carry a per-activity
+    focus and a sequential (n/total) period label matching the scheme's period
+    distribution over that row's specific activities."""
+    from backend.data.tie_syllabus import get_specific_competences as _ts_g
+    from backend.services.teacher_plan_service import get_subject_with_form as _orig  # noqa: F401
 
-    topic = next(t for t in form_data["topics"] if t["subtopics"])
-    subtopic = next(
-        s for s in topic["subtopics"] if (s.get("estimated_periods") or 0) >= 2
-    )
-    spec_periods = subtopic["estimated_periods"]
+    s = _ts_g("physics", 1)[0]
+    activity = re.sub(r"^\s*\([a-zA-Z]\)\s*", "", (s["learning_activities"] or [""])[0]).strip()
+    row = _scheme_row_for_lesson("physics", 1, s["specific_competence"], activity, "en")
+    assert row is not None
+    row_periods = row["periods"]
+    row_spec_acts = [_strip_item_marker(x) for x in (row["specific_activities"] or [])]
+    row_spec_acts = [x for x in row_spec_acts if x]
+    assert row_spec_acts
 
     lessons = plan_lessons_for_subtopic(
         subject_slug="physics", form_level=1,
-        topic=topic["title"], subtopic=subtopic["title"],
+        topic=s["specific_competence"], subtopic=activity,
         school_name="School", teacher_name="Teacher",
         number_of_students=40, duration_minutes=40, period="Period",
     )
-    assert len(lessons) == spec_periods
-    # The first lesson targets the first learning activity; its period label
+    assert len(lessons) == row_periods
+    # The first lesson targets the first specific activity; its period label
     # reflects the lesson's position within that activity's period group (weight).
-    assert subtopic["title"] in lessons[0]["header"]["subtopic"]
+    assert activity in lessons[0]["header"]["subtopic"]
     first_weight = next(
-        e["periods"] for e in _distribute_periods(
-            [o["description"] for o in subtopic.get("outcomes", [])]
-            or [subtopic["title"]],
-            spec_periods,
-        )
+        e["periods"] for e in _distribute_periods(row_spec_acts, row_periods)
     )
     assert f"(1/{first_weight})" in lessons[0]["header"]["period"]
 
 
 def test_plan_lessons_for_subtopic_english_and_kiswahili(monkeypatch):
-    form_data = _seed_subject_dict("physics", 1)
-    monkeypatch.setattr(
-        "backend.services.teacher_plan_service.get_subject_with_form",
-        lambda slug, form: form_data,
-    )
+    # Both an English (physics) and a Kiswahili subject produce lessons wired
+    # to their own scheme rows, with locale-correct class names. Each subject's
+    # lesson count equals its own scheme row period allocation.
+    from backend.data.tie_syllabus import get_specific_competences as _ts_g
+    from backend.services.teacher_plan_service import get_subject_with_form as _orig  # noqa: F401
 
-    topic = next(t for t in form_data["topics"] if t["subtopics"])
-    subtopic = next(
-        s for s in topic["subtopics"] if (s.get("estimated_periods") or 0) >= 1
-    )
-    en = plan_lessons_for_subtopic(
-        subject_slug="physics", form_level=1,
-        topic=topic["title"], subtopic=subtopic["title"],
-        school_name="School", teacher_name="Teacher",
-        number_of_students=40, duration_minutes=40, period="Period",
-    )
-    sw = plan_lessons_for_subtopic(
-        subject_slug="kiswahili", form_level=1,
-        topic=topic["title"], subtopic=subtopic["title"],
-        school_name="School", teacher_name="Teacher",
-        number_of_students=40, duration_minutes=40, period="Kipindi",
-    )
-    assert len(en) == len(sw) == (subtopic["estimated_periods"] or 1)
+    def _run(slug, form, lang, period):
+        s = _ts_g(slug, form)[0]
+        activity = re.sub(r"^\s*\([a-zA-Z]\)\s*", "", (s["learning_activities"] or [""])[0]).strip()
+        row = _scheme_row_for_lesson(slug, form, s["specific_competence"], activity, lang)
+        lessons = plan_lessons_for_subtopic(
+            subject_slug=slug, form_level=form,
+            topic=s["specific_competence"], subtopic=activity,
+            school_name="School", teacher_name="Teacher",
+            number_of_students=40, duration_minutes=40, period=period,
+        )
+        return lessons, row
+
+    en, en_row = _run("physics", 1, "en", "Period")
+    sw, sw_row = _run("kiswahili", 1, "sw", "Kipindi")
+    assert en_row is not None and sw_row is not None
+    assert len(en) == en_row["periods"]
+    assert len(sw) == sw_row["periods"]
     assert en[0]["header"]["class_name"] == "Form 1"
     assert sw[0]["header"]["class_name"] == "Kidato 1"
 

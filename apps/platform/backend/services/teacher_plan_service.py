@@ -248,31 +248,45 @@ def plan_lessons_for_subtopic(
     # lesson content match the honest per-period allocation from the scheme.
     outcomes: list[str] = []
     spec_periods = 0
-    try:
-        subject_data = get_subject_with_form(subject_slug, form_level)
-    except Exception:
-        subject_data = None
 
-    if subject_data and subject_data.get("topics"):
-        t = (topic or "").strip().lower()
-        for tp in subject_data["topics"]:
-            title = (tp.get("title") or "").strip().lower()
-            code = (tp.get("code") or "").strip().lower()
-            if t and (t in title or title in t or t == code):
-                subtopic_list = tp.get("subtopics") or []
-                st = (subtopic or "").strip().lower()
-                for sp in subtopic_list:
-                    s_title = (sp.get("title") or "").strip().lower()
-                    s_code = (sp.get("code") or "").strip().lower()
-                    if st and (st in s_title or s_title in st or st == s_code):
-                        outcomes = [
-                            o.get("description", "").strip()
-                            for o in (sp.get("outcomes") or [])
-                            if o.get("description", "").strip()
-                        ]
-                        spec_periods = sp.get("estimated_periods") or 0
-                        break
-                break
+    # Preferred source: the matching Scheme-of-Work teaching row (derived from
+    # the verbatim TIE syllabus). Its derived (i)/(ii)/(iii) specific activities
+    # become the per-period lesson foci and its period split sets the count,
+    # exactly mirroring the scheme the teacher planned.
+    scheme_row = _scheme_row_for_lesson(subject_slug, form_level, topic, subtopic, lang)
+    if scheme_row:
+        spec_periods = scheme_row.get("periods") or 0
+        sas = scheme_row.get("specific_activities") or []
+        outcomes = [_strip_item_marker(s) for s in sas]
+        outcomes = [o for o in outcomes if o]
+        if not outcomes and scheme_row.get("learning_activities"):
+            outcomes = [scheme_row["learning_activities"]]
+    else:
+        try:
+            subject_data = get_subject_with_form(subject_slug, form_level)
+        except Exception:
+            subject_data = None
+
+        if subject_data and subject_data.get("topics"):
+            t = (topic or "").strip().lower()
+            for tp in subject_data["topics"]:
+                title = (tp.get("title") or "").strip().lower()
+                code = (tp.get("code") or "").strip().lower()
+                if t and (t in title or title in t or t == code):
+                    subtopic_list = tp.get("subtopics") or []
+                    st = (subtopic or "").strip().lower()
+                    for sp in subtopic_list:
+                        s_title = (sp.get("title") or "").strip().lower()
+                        s_code = (sp.get("code") or "").strip().lower()
+                        if st and (st in s_title or s_title in st or st == s_code):
+                            outcomes = [
+                                o.get("description", "").strip()
+                                for o in (sp.get("outcomes") or [])
+                                if o.get("description", "").strip()
+                            ]
+                            spec_periods = sp.get("estimated_periods") or 0
+                            break
+                    break
 
     if spec_periods <= 0:
         spec_periods = 1
@@ -1142,25 +1156,42 @@ def _build_lesson_plan_offline(
             "assessment": "Assessment Criteria",
         }
 
-    # Wherever the subject syllabus (knowledge base) contains the chosen topic /
-    # subtopic, replace the generic scaffolding with the real syllabus content so the
-    # offline plan matches what is actually taught. Silently ignored when no DB/match.
-    kb_plan = _lookup_lesson_plan_content(
-        subject_slug, form_level, topic, subtopic, lang, duration_minutes, subtopic_display
-    )
-    if kb_plan:
-        main_comp = kb_plan["main_comp"]
-        spec_comp = kb_plan["spec_comp"]
-        main_act = kb_plan["main_act"]
-        spec_act = kb_plan["spec_act"]
-        if kb_plan["resources"]:
-            resources = kb_plan["resources"]
-        if kb_plan["references"]:
-            references = kb_plan["references"]
-        if kb_plan["realization"]:
-            teacher_acts[3] = kb_plan["realization"]["teacher_activity"]
-            learner_acts[3] = kb_plan["realization"]["learner_activity"]
-            assessment[3] = kb_plan["realization"]["assessment"]
+    # Prefer content sourced from the Scheme-of-Work rows (derived from the
+    # verbatim TIE syllabus): competence, activities, resources and references
+    # all come from the same teaching row the teacher planned. Falls back to
+    # the knowledge-base lookup (then the generic scaffolding) when the
+    # subject/form has no real scheme data or no row matches the topic/subtopic.
+    scheme_row = _scheme_row_for_lesson(subject_slug, form_level, topic, subtopic, lang)
+    if scheme_row:
+        main_comp = scheme_row.get("main_competence") or main_comp
+        spec_comp = scheme_row.get("specific_competence") or spec_comp
+        main_act = scheme_row.get("learning_activities") or main_act
+        sas = scheme_row.get("specific_activities") or []
+        if sas:
+            spec_act = _strip_item_marker(sas[0]) or main_act
+        elif scheme_row.get("learning_activities"):
+            spec_act = scheme_row["learning_activities"]
+        if scheme_row.get("teaching_resources"):
+            resources = list(scheme_row["teaching_resources"])
+        if scheme_row.get("reference"):
+            references = [scheme_row["reference"]]
+    else:
+        kb_plan = _lookup_lesson_plan_content(
+            subject_slug, form_level, topic, subtopic, lang, duration_minutes, subtopic_display
+        )
+        if kb_plan:
+            main_comp = kb_plan["main_comp"]
+            spec_comp = kb_plan["spec_comp"]
+            main_act = kb_plan["main_act"]
+            spec_act = kb_plan["spec_act"]
+            if kb_plan["resources"]:
+                resources = kb_plan["resources"]
+            if kb_plan["references"]:
+                references = kb_plan["references"]
+            if kb_plan["realization"]:
+                teacher_acts[3] = kb_plan["realization"]["teacher_activity"]
+                learner_acts[3] = kb_plan["realization"]["learner_activity"]
+                assessment[3] = kb_plan["realization"]["assessment"]
 
     # Prefer the verbatim TIE CBC (2023) Main/Specific Competence statements
     # for this teaching topic, independent of the knowledge-base lookup.
@@ -1485,6 +1516,56 @@ def _sample_book_reference(subject_label: str, form_level: int, lang: str,
                 f"Kidato cha {form_level}. Dar es Salaam.")
     return (f"T.I.E. ({year}). {subject_label} Students Book "
             f"Form {form_level}. Dar es Salaam.")
+
+
+def _strip_item_marker(text: str) -> str:
+    """Remove a leading '(i)' / '(1)' item marker from a specific activity."""
+    return re.sub(r"^\s*\(\s*[ivxlc\d]+\s*\)\s*", "", (text or "")).strip()
+
+
+def _scheme_row_for_lesson(subject_slug, form_level, topic, subtopic, lang):
+    """Return the Scheme-of-Work teaching row a lesson plan should be built from.
+
+    Builds the syllabus-sourced scheme for the subject/form and keeps only its
+    teaching rows (periods > 0), narrowed to the requested topic via the TIE
+    keyword bridge. Prefers the row whose learning activity or specific
+    activities match the requested subtopic, otherwise returns the first row for
+    the topic. Returns ``None`` when the subject/form has no scheme data so
+    callers can fall back to the knowledge-base / generic path.
+    """
+    try:
+        if not ts_get_specific_competences(subject_slug, form_level):
+            return None
+    except Exception:
+        return None
+    try:
+        scheme = _build_scheme_offline(
+            subject_slug=subject_slug,
+            subject_label=subject_slug.replace("-", " ").title(),
+            form_level=form_level,
+            term="Term 1",
+            academic_year="2026",
+            school_name="",
+            teacher_name="",
+            topics=[topic] if topic else [],
+            lang=lang,
+        )
+    except Exception:
+        return None
+    rows = [w for w in scheme.get("weeks", []) if w.get("periods", 0) > 0]
+    if not rows:
+        return None
+
+    st = (subtopic or "").strip().lower()
+    if st:
+        for r in rows:
+            hay = [
+                str(r.get("learning_activities", "")),
+                str(r.get("subtopic", "")),
+            ] + [str(x) for x in (r.get("specific_activities") or [])]
+            if any(h and (st in h.lower() or h.lower() in st) for h in hay):
+                return r
+    return rows[0]
 
 
 def _build_scheme_offline(
