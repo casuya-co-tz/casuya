@@ -120,7 +120,9 @@ def test_lesson_plan_offline_render_english():
         "Introduction", "Competence Development", "Design", "Realizations",
     ]
     assert "main_competence" in plan["competence_architecture"]
-    assert plan["competence_architecture"]["specific_learning_activity"].startswith("Within 40 minutes")
+    assert plan["competence_architecture"]["specific_learning_activity"].startswith(
+        "Define the key concepts of linear equations"
+    )
     # stage times must sum to the duration
     total_time = sum(int(r["time"].split()[0]) for r in plan["progression_matrix"])
     assert total_time == 40
@@ -155,13 +157,55 @@ def test_lesson_plan_offline_render_kiswahili():
     )
     assert len(plan["progression_matrix"]) == 4
     assert plan["progression_matrix"][0]["stage"] == "Utangulizi"
-    assert "Ndani ya dakika" in plan["competence_architecture"]["specific_learning_activity"]
+    assert "Fafanua dhana kuu za" in plan["competence_architecture"]["specific_learning_activity"]
     html = render_lesson_plan_html(plan)
     assert "Methali" in html
     assert "JAMHURI YA MUUNGANO WA TANZANIA" not in html
     assert "MPANGO WA SOMO LA MWALIMU" not in html
     assert "Ukuzaji wa Ujuzi" in html or "Kigezo cha Tathmini" in html
     assert "Kigezo cha Tathmini" in html or "Mpango wa Somo" in html
+
+
+def test_lesson_plan_tie_specific_activity_and_assessment_echo(monkeypatch):
+    """The offline lesson plan matches the official TIE format: a concise (non
+    time-boxed) specific learning activity, the 4 official stage names ending in
+    'Realizations', and per-stage assessment criteria that echo the specific
+    activity with the fixed TIE verb patterns."""
+    form_data = _seed_subject_dict("physics", 1)
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_subject_with_form",
+        lambda slug, form: form_data,
+    )
+
+    topic = next(t for t in form_data["topics"] if t["subtopics"])
+    subtopic = topic["subtopics"][0]
+    plan = _build_lesson_plan_offline(
+        subject_slug="physics", subject_label="Physics", form_level=1,
+        topic=topic["title"], subtopic=subtopic["title"], school_name="School",
+        teacher_name="Teacher", number_of_students=40, duration_minutes=40,
+        period="Period 1", lang="en",
+    )
+    ca = plan["competence_architecture"]
+    # Competences carry the syllabus codes (TIE "{code} {title}" format).
+    assert ca["main_competence"] == f"{topic['code']} {topic['title']}"
+    assert ca["specific_competence"] == f"{subtopic['code']} {subtopic['title']}"
+    # Specific activity is a concise (non time-boxed) outcome phrase.
+    specific = ca["specific_learning_activity"]
+    assert specific and "minutes" not in specific.lower()
+    # Official stage names, ending in "Realizations".
+    stages = [r["stage"] for r in plan["progression_matrix"]]
+    assert stages == ["Introduction", "Competence Development", "Design", "Realizations"]
+    # Assessments echo the specific activity with the fixed TIE verb patterns.
+    checks = [
+        ("identify prior knowledge related to", 0),
+        ("accurately demonstrate understanding of", 1),
+        ("correctly apply concepts and skills related to", 2),
+        ("confidently justify outcomes related to", 3),
+    ]
+    for phrase, idx in checks:
+        criteria = plan["progression_matrix"][idx]["assessment_criteria"]
+        assert phrase in criteria, criteria
+        assert specific in criteria, criteria
 
 
 def test_lesson_plan_offline_uses_knowledge_base(monkeypatch):

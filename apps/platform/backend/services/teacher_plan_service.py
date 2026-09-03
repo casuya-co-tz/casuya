@@ -291,6 +291,23 @@ def _build_lesson_plan_prompt(
     subtopic_display = subtopic or ("General Overview" if lang == "en" else "Mawazo ya Jumla")
     class_name = f"Form {form_level}" if lang == "en" else f"Kidato {form_level}"
 
+    # Real TIE topic/subtopic codes so competences are prefixed authentically.
+    try:
+        _subj = get_subject_with_form(subject_slug, form_level)
+    except Exception:
+        _subj = None
+    topic_code, subtopic_code, _sp_title = _build_lesson_plan_topic_codes(
+        _subj, topic, subtopic or "", lang
+    )
+    rules = _TIE_LESSON_PLAN_RULES_EN.format(
+        topic_code=topic_code or "#", topic_title=topic,
+        subtopic_code=subtopic_code or "#", subtopic_title=subtopic_display,
+    )
+    rules_sw = _TIE_LESSON_PLAN_RULES_SW.format(
+        topic_code=topic_code or "#", topic_title=topic,
+        subtopic_code=subtopic_code or "#", subtopic_title=subtopic_display,
+    )
+
     students_total = number_of_students
     if students_boys is not None or students_girls is not None:
         boys = students_boys if students_boys is not None else students_total - (students_girls or 0)
@@ -318,11 +335,12 @@ def _build_lesson_plan_prompt(
             "students_present": {"boys": "", "girls": "", "total": ""},
         },
         "competence_architecture": {
-            "main_competence": "Statement of the overarching competence",
-            "specific_competence": "Specific, assessable competence",
+            "main_competence": "{topic_code} {topic_title} — overarching competence",
+            "specific_competence": "{subtopic_code} {subtopic_title} — specific, assessable competence",
             "main_learning_activity": "Broad learning activity for the topic",
             "specific_learning_activity": (
-                f"Within {duration_minutes} minutes, learners should be able to ..."
+                "Single specific learning activity as a concise outcome phrase, "
+                "e.g. Define hyperbolic functions and their properties"
             ),
         },
         "resources_strategies": {
@@ -339,7 +357,7 @@ def _build_lesson_plan_prompt(
              "learner_activity": "...", "assessment_criteria": "..."},
             {"stage": "Design", "time": "12 min", "teacher_activity": "...",
              "learner_activity": "...", "assessment_criteria": "..."},
-            {"stage": "Realisation", "time": "8 min", "teacher_activity": "...",
+            {"stage": "Realizations", "time": "8 min", "teacher_activity": "...",
              "learner_activity": "...", "assessment_criteria": "..."},
         ],
         "remarks": "Additional notes",
@@ -354,14 +372,13 @@ def _build_lesson_plan_prompt(
             f"CONTEXTO YA MPANGO:\n{curriculum_ctx}\n\n"
             "Muundo lazima ufuate umbizo rasmi la TIE: Taarifa za Awali, Maelezo ya Ujuzi, "
             "Rasilimali za Kufundisha na Kujifunza, na Mchakato wa Kufundisha na Kujifunza "
-            "kwa HATUA 4 haswa: Utangulizi, Ukuzaji wa Ujuzi, Usanifu, na Utambuzi "
-            "(nyakati takriban 5/15/12/8 dakika), kila hatua ikiwa na Shughuli ya "
-            "Ufundishaji, Shughuli ya Kujifunza, na Kigezo cha Tathmini.\n"
-            "Vifaa vya ufundishaji, marejeo, na mazingira ya kujifunzia lazima vitoke kutoka "
-            "kwenye misingumo hapo juu.\n"
-            "Kila shughuli lazima iwe na maelezo kamili — si tu majina ya hatua.\n"
-            "Umahiri mahususi wa kujifunzia lazima uwe maalum na wenye muda dhahiri "
-            f"(ndani ya dakika {duration_minutes}).\n"
+            "kwa HATUA 4 haswa: Utangulizi, Ukuzaji wa Ujuzi, Usanifu, na Utambuzi, "
+            "kila hatua ikiwa na Shughuli ya Ufundishaji, Shughuli ya Kujifunza, na "
+            "Kigezo cha Tathmini.\n"
+            f"{rules_sw}\n"
+            f"Urefu wa somo ni dakika {duration_minutes}; gauza hatua nne kwa busara "
+            "ndani ya muda huo (Utangulizi mfupi zaidi, Ukuzaji wa Ujuzi ndio mrefu "
+            "zaidi), si mgawanyo usiobadilika.\n"
             f"Lugha: Kiswahili"
         )
 
@@ -373,16 +390,125 @@ def _build_lesson_plan_prompt(
         f"CURRICULUM CONTEXT:\n{curriculum_ctx}\n\n"
         "Follow the official TIE 4-block lesson plan format: Preliminary Information, "
         "Competence Information, Teaching & Learning Resources, and the Teaching & "
-        "Learning Process with exactly 4 stages: Introduction, Competence Development, "
-        "Design, and Realisation (times roughly 5/15/12/8 min), each with a Teaching "
-        "Activity, a Learning Activity, and an Assessment Criterion.\n"
-        "Teaching & learning resources, references, and the learning environment MUST come "
-        "from the curriculum context above.\n"
-        "Each stage activity must have FULL descriptions — not just stage names.\n"
-        "The specific learning activity must be time-bound and measurable "
-        f"(e.g. Within {duration_minutes} minutes, learners should be able to ...).\n"
-        f"Language: English"
+        "Learning Process.\n"
+        f"{rules}\n"
+        f"The lesson length is {duration_minutes} minutes; allocate the four stages "
+        "sensibly within that total (Introduction shortest, Competence Development the "
+        "longest), rather than forcing a fixed split.\n"
+        "Language: English"
     )
+
+
+# Shared, authoritative rules for producing lesson plans that match the official
+# TIE (Tanzania Institute of Education) competence-based format.
+_TIE_LESSON_PLAN_RULES_EN = (
+    "HARD RULES (must all hold):\n"
+    "1. Competences carry their syllabus codes: main_competence = '{topic_code} {topic_title}', "
+    "specific_competence = '{subtopic_code} {subtopic_title}'. Never omit the codes.\n"
+    "2. main_learning_activity is the topic's broad learning narrative (from the syllabus "
+    "context); specific_learning_activity is the SINGLE specific learning activity/outcome "
+    "focused on this lesson, written as a concise outcome phrase (e.g. \"Define hyperbolic "
+    "functions and their properties\"). It must NOT be a time-boxed sentence such as "
+    "\"Within N minutes...\".\n"
+    "3. Use exactly the four official stage names, in order: Introduction, Competence "
+    "Development, Design, Realizations (always plural \"Realizations\").\n"
+    "4. Each stage's assessment_criteria must echo THIS lesson's specific_learning_activity "
+    "using the fixed TIE verb pattern, ending with the exact activity phrase:\n"
+    "   - Introduction: \"Students identify prior knowledge related to <activity>.\"\n"
+    "   - Competence Development: \"Students accurately demonstrate understanding of <activity>.\"\n"
+    "   - Design: \"Students correctly apply concepts and skills related to <activity>.\"\n"
+    "   - Realizations: \"Students confidently justify outcomes related to <activity>.\"\n"
+    "5. Only use topics/subtopics/outcomes present in the curriculum context. Never invent "
+    "content; if the requested topic/subtopic is absent, say so instead of fabricating.\n"
+    "6. References must cite the real TIE book (subject, year, form); resources and learning "
+    "environment must come from the syllabus context.\n"
+)
+
+
+def _build_lesson_plan_topic_codes(subject_data, topic, subtopic, lang):
+    """Extract the real topic/subtopic codes and titles for a lesson. Falls back
+    to empty codes when the subject or topic is unavailable."""
+    if not subject_data or not subject_data.get("topics"):
+        return "", "", ""
+    t = (topic or "").strip().lower()
+    st = (subtopic or "").strip().lower()
+    for tp in subject_data["topics"]:
+        t_title = (tp.get("title") or "").strip().lower()
+        t_code = (tp.get("code") or "").strip().lower()
+        if t and (t in t_title or t_title in t or t == t_code):
+            for sp in tp.get("subtopics", []):
+                s_title = (sp.get("title") or "").strip().lower()
+                s_code = (sp.get("code") or "").strip().lower()
+                if st and (st in s_title or s_title in st or st == s_code):
+                    return tp.get("code") or "", sp.get("code") or "", sp.get("title") or subtopic
+    return "", "", ""
+
+
+# Kiswahili translation of the shared TIE lesson-plan rules.
+_TIE_LESSON_PLAN_RULES_SW = (
+    "KANUNI ZISIZOBADILISHA (lazima zote zitimie):\n"
+    "1. Ujuzi hubeba misimbo ya misingumo: ujuzi mkuu = '{topic_code} {topic_title}', "
+    "ujuzi mahususi = '{subtopic_code} {subtopic_title}'. Usiachie misimbo.\n"
+    "2. Shughuli kuu ni maelezo mapana ya kujifunza kwa mada (kutoka misingumo); "
+    "shughuli mahususi ni SHUGHULI MAHUSUSI MOJA ya kujifunza inayolenga somo hili, "
+    "ikiandikwa kama kishazi fupi cha matokeo (mf. \"Fafanua sifa za vitendakazi "
+    "hyperbolic\"). INAFAAANA SI kishazi chenye muda kama \"Ndani ya dakika N...\".\n"
+    "3. Tumia haswa majina manne rasmi ya hatua kwa utaratibu: Utangulizi, Ukuzaji wa "
+    "Ujuzi, Usanifu, na Utambuzi.\n"
+    "4. Kigezo cha tathmini cha kila hatua lazima kirejee shughuli mahususi ya somo "
+    "hili kwa mtindo usiobadilika, kikimalizika na kishazi cha shughuli:\n"
+    "   - Utangulizi: \"Wanafunzi hutambua maarifa ya awali yanayohusu <shughuli>.\"\n"
+    "   - Ukuzaji wa Ujuzi: \"Wanafunzi huonyesha kwa usahihi uelewa wa <shughuli>.\"\n"
+    "   - Usanifu: \"Wanafunzi hutumia kwa usahihi dhana na ujuzi unaohusu <shughuli>.\"\n"
+    "   - Utambuzi: \"Wanafunzi wanathibitisha kwa imani matokeo yanayohusu <shughuli>.\"\n"
+    "5. Tumia tu mada/sehemu za mada/matokeo yaliyopo kwenye misingumo. Usibuni "
+    "maudhui; kama mada au sehemu ya mada haipo, sema hivyo badala ya kubuni.\n"
+    "6. Marejeo lazima yanukuu kitabu rasmi cha TIE (somo, mwaka, kidato); rasilimali na "
+    "mazingira ya kujifunzia lazima vitoke kwenye misingumo.\n"
+)
+
+
+# Shared TIE rules for producing an authentic scheme of work.
+_TIE_SCHEME_RULES_EN = (
+    "\nHARD RULES (must all hold):\n"
+    "1. PERIOD INTEGRITY: a topic's total periods MUST equal the sum of its "
+    "subtopics' periods; the subject's total for the class MUST equal the sum of "
+    "all subtopics' periods. Never add to or reduce the periods the syllabus "
+    "allocates — the scheme only decides HOW each allocated period is used.\n"
+    "2. COMPETENCES carry syllabus codes: main = '{topic code} {topic title}', "
+    "specific = '{subtopic code} {subtopic title}'.\n"
+    "3. LEARNING ACTIVITIES: list the exact learning activities (outcomes) from the "
+    "curriculum context for each subtopic; distribute that subtopic's allocated "
+    "periods across them so each activity gets its period weight.\n"
+    "4. CALENDAR: 2 terms — Term I = Jan–May, Term II = Jul–Nov, 4 weeks/month. "
+    "Insert exactly TWO non-teaching weeks at each term's midpoint with periods=0: "
+    "'MIDTERM EXAMINATION' and 'MIDTERM HOLIDAY'. Week numbers stay continuous.\n"
+    "5. AUTHENTICITY: use only topics/subtopics/outcomes present in the curriculum "
+    "context. Never invent topics or period counts. References cite the real TIE "
+    "book (subject, year, form).\n"
+    "6. Output valid JSON matching the schema; no extra prose.\n"
+)
+
+_TIE_SCHEME_RULES_SW = (
+    "\nKANUNI ZISIZOBADILISHA (lazima zote zitimie):\n"
+    "1. UADILIFU WA VIPINDI: jumla ya vipindi vya mada LAZIMA ilingane na jumla "
+    "ya vipindi vya sehemu zake za mada; jumla ya somo kwa kidato LAZIMA ilingane "
+    "na jumla ya vipindi vya sehemu zote za mada. Usiongeze au upunguze vipindi "
+    "alivyotenga misingumo — mpango huamua tu JINSI kila kipindi kinavyotumika.\n"
+    "2. UJUZI hubeba misimbo ya misingumo: mkuu = '{topic code} {topic title}', "
+    "mahususi = '{subtopic code} {subtopic title}'.\n"
+    "3. SHUGHULI ZA KUJIFUNZA: orodhesha shughuli halisi (matokeo) kutoka misingumo "
+    "kwa kila sehemu ya mada; gauza vipindi vilivyotengwa vya sehemu ya mada kati "
+    "yake ili kila shughuli ipate uzito wake wa vipindi.\n"
+    "4. KALENDA: muhula 2 — Muhula wa Kwanza = Jan–Mei, wa Pili = Jul–Nov, wiki 4 "
+    "kwa mwezi. Ingiza haswa wiki MBILI zisizofundisha katikati ya muhula na "
+    "vipindi=0: 'MTIHANI WA MUHULA' na 'LIKIZO LA MUHULA'. Nambari za wiki "
+    "zisalie mfululizo.\n"
+    "5. UHALISI: tumia tu mada/sehemu za mada/matokeo yaliyopo kwenye misingumo. "
+    "Usibuni mada wala hesabu za vipindi. Marejeo yanukuu kitabu rasmi cha TIE "
+    "(somo, mwaka, kidato).\n"
+    "6. Toa JSON SAHIHI inayolingana na muundo; bila maelezo ya ziada.\n"
+)
 
 
 def _build_scheme_prompt(
@@ -430,6 +556,7 @@ def _build_scheme_prompt(
             "Kila wiki lazima iwe na: Ujuzi Mkuu, Ujuzi Mahususi, Shughuli za Kujifunza "
             "(a),(b),(c)...), Shughuli Mahususi, Mwezi, Wiki, Vipindi, Marejeo, Mbinu za "
             "Kufundisha na Kujifunza, Rasilimali za Kufundisha na Kujifunza, Zana za Tathmini, na Maelezo.\n"
+            f"{_TIE_SCHEME_RULES_SW}\n"
             f"Lugha: Kiswahili"
         )
 
@@ -443,6 +570,7 @@ def _build_scheme_prompt(
         "Each week MUST include: Main competence, Specific competence, Learning activities "
         "((a),(b),(c)...), Specific activities, Month, Week, Periods, Reference, Teaching and "
         "learning methods, Teaching and learning resources, Assessment tools, and Remarks.\n"
+        f"{_TIE_SCHEME_RULES_EN}\n"
         f"Language: English"
     )
 
@@ -608,10 +736,7 @@ def _build_lesson_plan_offline(
         main_comp = f"Kuonyesha ustadi wa lugha ya hisabati na dhana za {topic}"
         spec_comp = f"Kutumia misemo ya aljebra na {subtopic_display} katika miktadha mbalimbali"
         main_act = f"Kuunda na kutatua {subtopic_display} kutokana na matatizo halisi ya maisha."
-        spec_act = (
-            f"Ndani ya dakika {duration_minutes}, wanafunzi wanaweza kutatua "
-            f"{subtopic_display} kwa usahihi kupitia mbinu za kusawazisha."
-        )
+        spec_act = f"Fafanua dhana kuu za {subtopic_display} na kuzitumia katika miktadha halisi"
         fields = {
             "phase": "Hatua", "time": "Muda", "teacher_act": "Shughuli ya Mwalimu",
             "student_act": "Shughuli ya Mwanafunzi", "competency": "Ujuzi mkuu wa Karne ya 21",
@@ -657,10 +782,7 @@ def _build_lesson_plan_offline(
         main_comp = "Demonstrate mastery of algebraic concepts and logical reasoning in real-life problem solving"
         spec_comp = "Apply linear equations in one variable to solve everyday contextual problems"
         main_act = "Formulate and solve simple linear equations from contextual word problems"
-        spec_act = (
-            f"Within {duration_minutes} minutes, students should be able to formulate "
-            "linear equations from real-life scenarios and solve for the unknown variable correctly."
-        )
+        spec_act = "Define the key concepts of linear equations and apply them to everyday contextual problems"
         fields = {
             "phase": "Stage / Time", "time": "Time", "teacher_act": "Teacher Activity",
             "student_act": "Learner Activity", "competency": "21st-Century Core Competency",
@@ -689,26 +811,53 @@ def _build_lesson_plan_offline(
 
     # When generating one lesson per period (period-weighted lesson plans), focus
     # this individual lesson on a single specific learning activity.
+    # The lesson's specific activity. In period-weighted lessons this is the
+    # single focused learning activity; otherwise it is the subtopic's specific-
+    # activity text from the syllabus (or the generic short phrase).
     if learning_activity:
         focus = learning_activity.strip()
+        specific_activity = focus
         if lang == "sw":
-            spec_comp = f"{subtopic_display}: {focus}"
-            spec_act = (f"Ndani ya dakika {duration_minutes}, wanafunzi wanaweza "
-                        f"{focus}.")
             teacher_acts[1] = (f"Anawaongoza wanafunzi kutimiza shughuli: {focus} "
                                f"kwa muktadha wa {subtopic_display}.")
             learner_acts[1] = f"Wanafunzi wanafanya shughuli: {focus}."
-            assessment[3] = (f"Wanafunzi wanatimiza {focus} kwa usahihi kuonyesha "
-                             f"umilisi wa {subtopic_display}.")
         else:
-            spec_comp = f"{subtopic_display}: {focus}"
-            spec_act = (f"Within {duration_minutes} minutes, students should be able to "
-                        f"{focus}.")
             teacher_acts[1] = (f"Guides students to accomplish the learning activity: {focus} "
                                f"within the context of {subtopic_display}.")
             learner_acts[1] = f"Students carry out the learning activity: {focus}."
-            assessment[3] = (f"Students successfully accomplish {focus}, demonstrating mastery "
-                             f"of {subtopic_display}.")
+    else:
+        specific_activity = (spec_act or "").strip()
+    # The competence-architecture "specific learning activity" must be this
+    # lesson's single focus activity (a concise TIE outcome phrase).
+    spec_act = specific_activity
+
+    # Prefix competences with the real TIE topic/subtopic codes (TIE format
+    # "{code} {title}"), silently skipped when the syllabus is unavailable.
+    try:
+        _subj = get_subject_with_form(subject_slug, form_level)
+    except Exception:
+        _subj = None
+    t_code, s_code, _sp = _build_lesson_plan_topic_codes(_subj, topic, subtopic, lang)
+    if t_code and not str(main_comp).startswith(str(t_code)):
+        main_comp = f"{t_code} {main_comp}"
+    if s_code and not str(spec_comp).startswith(str(s_code)):
+        spec_comp = f"{s_code} {spec_comp}"
+
+    # TIE assessment criteria echo the specific activity with fixed verb patterns.
+    if lang == "sw":
+        assessment = [
+            f"Wanafunzi hutambua maarifa ya awali yanayohusu {specific_activity}.",
+            f"Wanafunzi huonyesha kwa usahihi uelewa wa {specific_activity}.",
+            f"Wanafunzi hutumia kwa usahihi dhana na ujuzi unaohusu {specific_activity}.",
+            f"Wanafunzi wanathibitisha kwa imani matokeo yanayohusu {specific_activity}.",
+        ]
+    else:
+        assessment = [
+            f"Students identify prior knowledge related to {specific_activity}.",
+            f"Students accurately demonstrate understanding of {specific_activity}.",
+            f"Students correctly apply concepts and skills related to {specific_activity}.",
+            f"Students confidently justify outcomes related to {specific_activity}.",
+        ]
 
     progression = []
     for i, label in enumerate(stage_names):
