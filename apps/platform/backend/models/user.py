@@ -23,6 +23,6 @@ class User(Base):
     full_name: Mapped[str | None] = mapped_column(String, nullable=True)
     phone: Mapped[str | None] = mapped_column(String, unique=True, nullable=True)
     hashed_password: Mapped[str] = mapped_column(String, nullable=False)
-    role: Mapped[str] = mapped_column(String, default="student")  # student | teacher | admin
+    role: Mapped[str] = mapped_column(String, default="student")  # student | teacher | admin | pending
     is_active: Mapped[bool] = mapped_column(default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))

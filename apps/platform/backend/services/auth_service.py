@@ -164,7 +164,12 @@ def refresh_access_token(refresh_token: str) -> dict:
         if not user or not user.is_active:
             raise ValueError("Invalid or deactivated user")
         access_token = create_access_token(user.id, extra_claims={"role": user.role})
-        return {"access_token": access_token, "token_type": "bearer"}
+        return {
+            "access_token": access_token,
+            "token_type": "bearer",
+            "role": user.role,
+            "user_id": user.id,
+        }
     except ValueError:
         raise
     except Exception:
@@ -173,7 +178,12 @@ def refresh_access_token(refresh_token: str) -> dict:
             # so admins/teachers are not downgraded to students on refresh.
             role = payload.get("role") or "student"
             access_token = create_access_token(payload["sub"], extra_claims={"role": role})
-            return {"access_token": access_token, "token_type": "bearer"}
+            return {
+                "access_token": access_token,
+                "token_type": "bearer",
+                "role": role,
+                "user_id": payload["sub"],
+            }
         raise
     finally:
         _gen.close()
@@ -296,14 +306,11 @@ def oauth_login_or_register(
         # New user — create account with pending role (user selects later)
         user = User(
             email=email,
+            full_name=full_name,
             hashed_password=hash_password(secrets.token_urlsafe(32)),  # random password
             role=role,
         )
         db.add(user)
-        db.flush()
-
-        profile = Student(user_id=user.id, full_name=full_name)
-        db.add(profile)
         db.commit()
 
         access_token = create_access_token(user.id, extra_claims={"role": role})
@@ -328,9 +335,8 @@ def oauth_login_or_register(
 def complete_registration(user_id: str, role: str) -> dict:
     """Set the role for a newly-registered OAuth user who chose student/teacher.
 
-    When role='teacher', creates a Teacher profile and removes the Student
-    profile that was auto-created during OAuth registration. When role='student',
-    keeps the existing Student profile.
+    Creates the appropriate profile (Student or Teacher) based on the selected
+    role, using the full_name stored on the User during OAuth registration.
     """
     if role not in ("student", "teacher"):
         raise ValueError("Role must be 'student' or 'teacher'")
@@ -354,17 +360,22 @@ def complete_registration(user_id: str, role: str) -> dict:
             }
 
         user.role = role
+        full_name = user.full_name or ""
 
-        # If switching to teacher, create Teacher profile from the Student profile
-        # that was auto-created during OAuth registration.
+        # Create the appropriate profile for the chosen role
         if role == "teacher":
-            student = db.query(Student).filter(Student.user_id == user.id).first()
-            full_name = student.full_name if student else ""
+            # Remove any existing Student profile
+            existing_student = db.query(Student).filter(Student.user_id == user.id).first()
+            if existing_student:
+                db.delete(existing_student)
             teacher = Teacher(user_id=user.id, full_name=full_name)
             db.add(teacher)
-            # Remove the auto-created Student profile
-            if student:
-                db.delete(student)
+        else:
+            # role == "student" — create Student profile if not present
+            existing_student = db.query(Student).filter(Student.user_id == user.id).first()
+            if not existing_student:
+                student = Student(user_id=user.id, full_name=full_name)
+                db.add(student)
 
         db.commit()
 

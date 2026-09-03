@@ -30,9 +30,13 @@
       var t = localStorage.getItem("casuya_token");
       var r = localStorage.getItem("casuya_role");
       if (t && r) {
+        if (r === "pending") {
+          window.location.replace("/select-role.html");
+          return;
+        }
         try {
           var payload = JSON.parse(atob(t.split(".")[1]));
-          if (payload.role) {
+          if (payload.role && payload.role !== "pending") {
             var portals = {admin:"/admin/",teacher:"/teacher/",student:"/student/"};
             window.location.replace(portals[payload.role] || "/student/");
           }
