@@ -62,9 +62,8 @@ def test_lesson_plan_offline_render_english():
     html = render_lesson_plan_html(plan)
     assert "Linear Equations" in html
     assert "Form 2" in html
-    assert "UNITED REPUBLIC OF TANZANIA" in html
-    assert "TANZANIA INSTITUTE OF EDUCATION" in html
-    assert "TEACHER" in html
+    assert "UNITED REPUBLIC OF TANZANIA" not in html
+    assert "TANZANIA INSTITUTE OF EDUCATION" not in html
     assert "Competence Development" in html
     assert "Design" in html
     assert "Realisation" in html
@@ -85,8 +84,8 @@ def test_lesson_plan_offline_render_kiswahili():
     assert "Ndani ya dakika" in plan["competence_architecture"]["specific_learning_activity"]
     html = render_lesson_plan_html(plan)
     assert "Methali" in html
-    assert "JAMHURI YA MUUNGANO WA TANZANIA" in html
-    assert "MPANGO WA SOMO LA MWALIMU" in html
+    assert "JAMHURI YA MUUNGANO WA TANZANIA" not in html
+    assert "MPANGO WA SOMO LA MWALIMU" not in html
     assert "Ukuzaji wa Ujuzi" in html or "Kigezo cha Tathmini" in html
     assert "Kigezo cha Tathmini" in html or "Mpango wa Somo" in html
 

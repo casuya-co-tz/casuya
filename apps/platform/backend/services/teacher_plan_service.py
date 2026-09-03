@@ -581,9 +581,6 @@ def render_lesson_plan_html(plan: dict) -> str:
         "(Onyesha asilimia ya wanafunzi waliofikia ujuzi mahususi, ufanisi wa mbinu/rasilimali za kufundisha, na marekebisho yanayohitajika.)",
     )
     _signature = LST("Signature", "Sahihi")
-    _country = LST("UNITED REPUBLIC OF TANZANIA", "JAMHURI YA MUUNGANO WA TANZANIA")
-    _tie = LST("TANZANIA INSTITUTE OF EDUCATION", "TAASISI YA ELIMU TANZANIA")
-    _title = LST("TEACHER'S LESSON PLAN", "MPANGO WA SOMO LA MWALIMU")
 
     sreg = h.get("students_registered", {}) or {}
     spres = h.get("students_present", {}) or {}
@@ -755,12 +752,6 @@ def render_lesson_plan_html(plan: dict) -> str:
 <button class="btn-word no-print" onclick="downloadAsWord()">DOWNLOAD AS WORD</button>
 
 <div class="lesson-container">
-    <div class="header">
-        <h2>{_e(_country)}</h2>
-        <h3>{_e(_tie)}</h3>
-        <h4>{_e(_title)}</h4>
-    </div>
-
     <table>
         <tr>
             <td style="width: 50%;"><strong>{_e(_school)}:</strong> {school_name}</td>
