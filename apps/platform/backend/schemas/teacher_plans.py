@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 
 
 class LessonPlanGenerateRequest(BaseModel):
@@ -21,6 +21,13 @@ class SchemeOfWorkGenerateRequest(BaseModel):
     school_name: str | None = None
     teacher_name: str | None = None
     topics: list[str] | None = None
+
+    @field_validator("term")
+    @classmethod
+    def validate_term(cls, v: str) -> str:
+        if v not in ("Term 1", "Term 2"):
+            raise ValueError("Only Term 1 and Term 2 are supported")
+        return v
 
 
 class PlanSaveRequest(BaseModel):

@@ -155,6 +155,16 @@ def test_scheme_of_work_offline_render(monkeypatch):
     assert "Teaching and learning resources" in html
 
 
+def test_scheme_of_work_rejects_third_term():
+    from backend.api.teacher_plans import SchemeOfWorkGenerateRequest
+    import pytest
+
+    SchemeOfWorkGenerateRequest(subject_slug="mathematics", form_level=2, term="Term 1")
+    SchemeOfWorkGenerateRequest(subject_slug="mathematics", form_level=2, term="Term 2")
+    with pytest.raises(ValueError):
+        SchemeOfWorkGenerateRequest(subject_slug="mathematics", form_level=2, term="Term 3")
+
+
 # ── API: save / list / get / delete ───────────────────────────────────────
 
 
