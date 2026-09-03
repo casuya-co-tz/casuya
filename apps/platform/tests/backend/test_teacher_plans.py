@@ -98,6 +98,54 @@ def test_lesson_plan_offline_render_kiswahili():
     assert "Kigezo cha Tathmini" in html or "Mpango wa Somo" in html
 
 
+def test_lesson_plan_offline_uses_knowledge_base(monkeypatch):
+    knowledge_topics = [
+        {
+            "title": "Cell Biology", "code": "1.0", "estimated_periods": 20,
+            "description": "Understand the cell as the basic unit of life",
+            "subtopics": [
+                {"title": "Cell Structure", "code": "1.1", "estimated_periods": 8,
+                 "outcomes": [{"description": "Describe the cell", "cognitive_level": "knowledge"}]},
+            ],
+        },
+    ]
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_subject_with_form",
+        lambda slug, form: {"topics": knowledge_topics},
+    )
+
+    plan = _build_lesson_plan_offline(
+        subject_slug="biology", subject_label="Biology", form_level=3,
+        topic="Cell Biology", subtopic="Cell Structure", school_name="School",
+        teacher_name="Teacher", number_of_students=30, duration_minutes=40,
+        period="Period 3", lang="en",
+    )
+    ca = plan["competence_architecture"]
+    assert ca["main_competence"] == "1.0 Cell Biology"
+    assert ca["specific_competence"] == "1.1 Cell Structure"
+    assert "Understand the cell" in ca["main_learning_activity"]
+    assert "Describe the cell" in ca["specific_learning_activity"]
+    # Realizations stage is populated from the syllabus outcome.
+    assert "Describe the cell" in plan["progression_matrix"][3]["learner_activity"]
+
+    html = render_lesson_plan_html(plan)
+    assert "1.1 Cell Structure" in html
+    assert "Describe the cell" in html
+    assert "Realizations" in html
+
+
+def test_lesson_plan_offline_falls_back_without_knowledge_base():
+    plan = _build_lesson_plan_offline(
+        subject_slug="mathematics", subject_label="Mathematics", form_level=2,
+        topic="Algebra", subtopic="Linear Equations", school_name="Mwanza Sec",
+        teacher_name="Mr J", number_of_students=42, duration_minutes=40,
+        period="Period 3", lang="en",
+    )
+    assert plan["competence_architecture"]["main_competence"].startswith(
+        "Demonstrate mastery of algebraic")
+    assert plan["progression_matrix"][3]["stage"] == "Realizations"
+
+
 def test_scheme_of_work_offline_render(monkeypatch):
     knowledge_topics = [
         {

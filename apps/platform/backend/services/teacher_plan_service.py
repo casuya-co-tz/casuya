@@ -352,6 +352,101 @@ def _build_scheme_prompt(
 # ── Offline fallback generators ────────────────────────────────────────────
 
 
+def _lookup_lesson_plan_content(subject_slug, form_level, topic, subtopic, lang,
+                                duration_minutes, subtopic_display):
+    """Pull real competences/activities for a topic+subtopic from the syllabus KB.
+
+    Returns None when the subject is unknown (e.g. no DB) or the topic/subtopic is
+    not found, so callers gracefully fall back to the generic scaffolding.
+    """
+    try:
+        subject = get_subject_with_form(subject_slug, form_level)
+    except Exception:
+        return None
+    if not subject or not subject.get("topics"):
+        return None
+
+    match_topic = None
+    t = (topic or "").strip().lower()
+    for tp in subject["topics"]:
+        title = (tp.get("title") or "").strip().lower()
+        code = (tp.get("code") or "").strip().lower()
+        if (t and (t in title or title in t or t == code)):
+            match_topic = tp
+            break
+    if not match_topic:
+        return None
+
+    match_subtopic = None
+    st = (subtopic or "").strip().lower()
+    for sp in match_topic.get("subtopics", []):
+        title = (sp.get("title") or "").strip().lower()
+        code = (sp.get("code") or "").strip().lower()
+        if (st and (st in title or title in st or st == code)):
+            match_subtopic = sp
+            break
+
+    topic_title = match_topic.get("title") or topic
+    topic_code = match_topic.get("code") or ""
+    main_comp = (topic_title if lang != "sw" else topic_title)
+    main_comp = f"{topic_code} {topic_title}".strip() if topic_code else topic_title
+
+    if match_subtopic is None:
+        return {
+            "main_comp": main_comp,
+            "spec_comp": main_comp,
+            "main_act": match_topic.get("description") or main_comp,
+            "spec_act": match_topic.get("description") or main_comp,
+            "resources": None,
+            "references": None,
+            "realization": None,
+        }
+
+    sub_title = match_subtopic.get("title") or subtopic_display
+    sub_code = match_subtopic.get("code") or ""
+    spec_comp = f"{sub_code} {sub_title}".strip() if sub_code else sub_title
+    outcomes = [
+        o.get("description", "").strip()
+        for o in match_subtopic.get("outcomes", [])
+        if o.get("description", "").strip()
+    ]
+    if outcomes:
+        spec_act = "; ".join(outcomes)
+    else:
+        spec_act = match_subtopic.get("description") or spec_comp
+
+    learner_act = " | ".join(outcomes) if outcomes else spec_act
+    teacher_act = (f"Guides students as they demonstrate the outcomes for {sub_title}: "
+                   + spec_act) if lang != "sw" else (
+                       f"Anawaongoza wanafunzi kuonyesha matokeo ya {sub_title}: " + spec_act)
+    assessment = (f"Students correctly demonstrate all stated outcomes for {sub_title}; "
+                  + (spec_act if not outcomes else "; ".join(outcomes))) if lang != "sw" else (
+                      f"Wanafunzi wanadhihirisha matokeo yote ya {sub_title} kwa usahihi.")
+
+    resources = [
+        f"TIE {topic_title} reference materials",
+        f"Chosen resources on {sub_title}",
+    ] if lang == "en" else [
+        f"Vifaa vya TIE kuhusu {topic_title}",
+        f"Vifaa vilivyochaguliwa vya {sub_title}",
+    ]
+    references = [f"Tanzania Institute of Education (TIE), {topic_title}."]
+
+    return {
+        "main_comp": main_comp,
+        "spec_comp": spec_comp,
+        "main_act": match_topic.get("description") or main_comp,
+        "spec_act": spec_act,
+        "resources": resources,
+        "references": references,
+        "realization": {
+            "teacher_activity": teacher_act,
+            "learner_activity": learner_act,
+            "assessment": assessment,
+        },
+    }
+
+
 def _build_lesson_plan_offline(
     *, subject_slug, subject_label, form_level, topic, subtopic,
     school_name, teacher_name, number_of_students, students_boys=None, students_girls=None,
@@ -472,6 +567,26 @@ def _build_lesson_plan_offline(
             "student_act": "Learner Activity", "competency": "21st-Century Core Competency",
             "assessment": "Assessment Criteria",
         }
+
+    # Wherever the subject syllabus (knowledge base) contains the chosen topic /
+    # subtopic, replace the generic scaffolding with the real syllabus content so the
+    # offline plan matches what is actually taught. Silently ignored when no DB/match.
+    kb_plan = _lookup_lesson_plan_content(
+        subject_slug, form_level, topic, subtopic, lang, duration_minutes, subtopic_display
+    )
+    if kb_plan:
+        main_comp = kb_plan["main_comp"]
+        spec_comp = kb_plan["spec_comp"]
+        main_act = kb_plan["main_act"]
+        spec_act = kb_plan["spec_act"]
+        if kb_plan["resources"]:
+            resources = kb_plan["resources"]
+        if kb_plan["references"]:
+            references = kb_plan["references"]
+        if kb_plan["realization"]:
+            teacher_acts[3] = kb_plan["realization"]["teacher_activity"]
+            learner_acts[3] = kb_plan["realization"]["learner_activity"]
+            assessment[3] = kb_plan["realization"]["assessment"]
 
     progression = []
     for i, label in enumerate(stage_names):
