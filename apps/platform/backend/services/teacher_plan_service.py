@@ -302,10 +302,12 @@ def _build_lesson_plan_prompt(
     rules = _TIE_LESSON_PLAN_RULES_EN.format(
         topic_code=topic_code or "#", topic_title=topic,
         subtopic_code=subtopic_code or "#", subtopic_title=subtopic_display,
+        duration_minutes=duration_minutes,
     )
     rules_sw = _TIE_LESSON_PLAN_RULES_SW.format(
         topic_code=topic_code or "#", topic_title=topic,
         subtopic_code=subtopic_code or "#", subtopic_title=subtopic_display,
+        duration_minutes=duration_minutes,
     )
 
     students_total = number_of_students
