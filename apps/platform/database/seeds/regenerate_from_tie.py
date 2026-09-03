@@ -79,6 +79,42 @@ KISWAHILI_TOPIC_MAP = {
     "Kufanya ukalimani sahili kwa lugha ya Kiswahili": "Utafsiri na Ukalimani",
 }
 
+# Enrichment maps for the sparser competency-pool subjects (Basic Mathematics,
+# Chemistry, Biology). These keep the richer existing per-form skeleton and
+# inject the authentic KB lessons into matching topics.
+MATHS_TOPIC_MAP = {
+    "Use numerical skills in different contexts": "NUMBERS",
+    "Use ratios and proportions in daily life": "RATIOS, PROPORTIONS AND PERCENTAGES",
+    "Use rates and variations in different contexts": "RATES AND VARIATIONS",
+    "Use geometry, approximations, relations and functions in various contexts": "DECIMALS AND APPROXIMATIONS",
+    "Use algebra and matrices in problem solving": "ALGEBRA",
+    "Use basic coordinate geometry, trigonometry and vectors skills in daily life": "COORDINATE GEOMETRY",
+    "Use basic coordinate geometry, trigonometry, and vectors skills in daily life": "TRIGONOMETRY II",
+    "Use basic skills of circles in daily life": "MENSURATION",
+    "Use sets, sequences and series in problem solving": "SEQUENCES AND SERIES",
+    "Use probability in problem solving": "PROBABILITY",
+    "Use statistics in problem solving": "STATISTICS AND DATA REPRESENTATION",
+}
+
+CHEMISTRY_TOPIC_MAP = {
+    "Demonstrate mastery of concepts, theories and principles in Chemistry": "INTRODUCTION TO CHEMISTRY",
+    ". Demonstrate mastery of concepts, theories and principles in Chemistry": "SALTS",
+    "Demonstrate an understanding of the physical and chemical properties of elements on the basis of their arrangements in the periodic table": "ATOMIC STRUCTURE",
+    "Conduct experiments in Chemistry": "INTRODUCTION TO CHEMISTRY",
+    "Conduct a project in Chemistry": "INTRODUCTION TO CHEMISTRY",
+    "Demonstrate mastery of the principles of extraction of metals": "CHEMICAL REACTIONS",
+    "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species": "ORGANIC CHEMISTRY",
+    "Use chemical symbols, formulae and equations to represent chemical reaction": "CHEMICAL REACTIONS",
+}
+
+BIOLOGY_TOPIC_MAP = {
+    "Describe the physiological, anatomical and ecological processes of living organisms": "BIOLOGY AND ITS APPLICATIONS",
+    "Demonstrate mastery of scientific biological terminologies": "BIOLOGY AND ITS APPLICATIONS",
+    "Demonstrate mastery of basic skills for conducting biological investigations": "BIOLOGY AND ITS APPLICATIONS",
+    "Prepare and present results of biological investigations": "CELL STRUCTURE AND ORGANIZATION",
+    "Carry out a biological project work using biological principles": "BIOLOGY AND ITS APPLICATIONS",
+}
+
 
 def enrich_olevel_topics(topics: list[dict], units: list[dict], comp_map: dict) -> tuple[list[dict], list, list]:
     """Inject authentic KB lessons into a per-form skeleton, preserving structure.
@@ -151,6 +187,9 @@ def enrich_subject(kb_root: str, slug: str, existing_subject: dict) -> dict | No
     comp_map = {
         "english": ENGLISH_TOPIC_MAP,
         "kiswahili": KISWAHILI_TOPIC_MAP,
+        "mathematics": MATHS_TOPIC_MAP,
+        "chemistry": CHEMISTRY_TOPIC_MAP,
+        "biology": BIOLOGY_TOPIC_MAP,
     }.get(slug)
     if comp_map is None:
         return None
