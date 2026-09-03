@@ -1,0 +1,384 @@
+{
+  "subject": "computer_science",
+  "language": "en",
+  "forms": {
+    "1": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of the basic Concepts of Computer Science",
+          "specific_code": "1.1",
+          "specific_competence": "Demonstrate an understanding of the concept of Computer Science",
+          "number_of_periods": "8",
+          "learning_activities": [
+            "(a) Describe the concept of Computer Science (meaning, importance, application)",
+            "(b) Describe fields related to Computer Science (IT, ICT, IS, Computer Engineering)"
+          ],
+          "teaching_methods": [
+            "Brainstorming and Think-Ink-Pair Share (TIPS): Through brainstorming and Think-Ink-Pair Share (TIPS) guide students to describe the concept of Computer Science",
+            "Question and answer, guest speaker; and/or case study: Use question and answer, guest speaker; and case study to guide students to describe fields related to Computer Science"
+          ],
+          "assessment_criteria": [
+            "Confidently describe the concept of Computer Science field",
+            "Confidently describe fields related to Computer Science"
+          ],
+          "resources": [
+            "Handouts with contents of Computer Science concepts",
+            ""
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of the basic Concepts of Computer Science",
+          "specific_code": "1.2",
+          "specific_competence": "Demonstrate an understanding of computer systems",
+          "number_of_periods": "28",
+          "learning_activities": [
+            "(a) Describe computer systems (Meaning, types, functions, and significance)",
+            "(b) Describe computer hardware (meaning, components, functions, computer generation)",
+            "(c) Describe computer software (meaning, types, functions)",
+            "(d) Describe and observe principles of computer system handling (safety measures, management, cleanliness, data backup and utilities)"
+          ],
+          "teaching_methods": [
+            "Questions and answers: Through questions and answers guide students to describe computer system",
+            "Small groups: Guide students in small groups to describe computer hardware. Demonstration: Use demonstration to show different components of computer hardware practical work: Guide students through practical work to connect different parts of computer system",
+            "TIPS and Demonstration: Using TIPS and demonstration to guide students to describe computer software",
+            "Group discussion: Though group discussion students to describe principles of computer handling. Demonstration: Teacher to demonstrate on how to perform computer handling technique Practical work: Students through practical work to practice on computer handling"
+          ],
+          "assessment_criteria": [
+            "Clearly describe computer systems",
+            "Realise parts of computer hardware and their functions",
+            "Realise types of computer software and their functions",
+            "Clearly observe principles of handling the computer system"
+          ],
+          "resources": [
+            "Computer, Hand-out, Flip board and digital podium, electronic blackboard",
+            "Computer, printer, scaner, camera, projector, flashdisk, hard disk memory card, smart phone, tablets and motherboard",
+            "",
+            "Computer, printer, scaner, projector, flashdisk, memory card, smart phone, tablets and hard disk"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of the basic Concepts of Computer Science",
+          "specific_code": "1.3",
+          "specific_competence": "Demonstrate mastery of maintenance and troubleshooting of computer system",
+          "number_of_periods": "6",
+          "learning_activities": [
+            "(a) Install simple computer software",
+            "(b) Organise computer files in different operating systems (windows, Linux, etc)",
+            "(a) Describe the steps in solving a problem using computers",
+            "(b) Demonstrate an understanding of basic principle of algorithms",
+            "(c) Design and present a single algorithm using flow charts and pseudocode"
+          ],
+          "teaching_methods": [
+            "Demonstration Practical Work: Through demonstration guide students to install simple software and students to do Practical work on installation of software",
+            "Demonstration Practical Work: Through demonstration guide students to organise computer files and students to do practical work to organise computer files",
+            "Brainstorming: Through brainstorming guide students to describe",
+            "Brainstorming and Demonstration: Through brainstorming and demonstration guide students to describe the concept of an algorithm",
+            "Demonstration: Guide students through demonstration on how to present algorithms using flow charts and pseudocode"
+          ],
+          "assessment_criteria": [
+            "Can install computer software",
+            "Can use operating systems to organise computer files",
+            "Clearly describe the steps of solving a problem",
+            "Clearly explain how the algorithm can be used to address problems",
+            "Confidently can apply algorithms to present new ways to address problems"
+          ],
+          "resources": [
+            "Computer, CDs with different software, hand out and dard disk",
+            "Computer installed with recommended OSs, hand out, simulated steps videos and smart phone",
+            "Computer, smart phone, hand outs of of the basic principles",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    "2": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of the basic Concepts of Computer Science",
+          "specific_code": "1.5",
+          "specific_competence": "Demonstrate mastery of the Internet, and basics of cyber security",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Describe the concept of internet and cyber security (ethics, security, and privacy)",
+            "(b) Use Internet services (searching information, www, electronic mail)",
+            "(c) Understand cyber security threats and related counter measures",
+            "(d) Evaluate ethical issues, related principles, and practices of cyber security",
+            "(e) Apply basic cyber security measures (passwords, safe browsing, netiquette)"
+          ],
+          "teaching_methods": [
+            "Group discussion and Case study: Through group discussion and case study guide students to describe the concept of cyber security",
+            "Practical work: Through practical work guide students to use Internet service",
+            "TIPS: Through TIPS guide students to elaborate security threats and related counter measures Case Study: Use case study for example to demonstrate threats and counter measures",
+            "Case study: Using case study guide students to evaluate ethical issues and related principles and practices of cyber security",
+            "Case study: Using case studies to guide students to apply basic cyber security measures. Practical work: Students to do practical work to set password"
+          ],
+          "assessment_criteria": [
+            "Clearly explain the concept of cyber security",
+            "Confidently can use Internet service",
+            "Clearly Elaborate security threats and related measures",
+            "Clearly evaluates issues and related policies governing ethics, security and privacy maintenance and troubleshooting of computer system",
+            "Confidently basic cyber security measures"
+          ],
+          "resources": [
+            "Projector, computer, Hand-out, TV, Smart board, digital podium, Internet connectivity",
+            "Computer with internet connectivity",
+            "",
+            "",
+            "Projectors, computers, Internet connectivity"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate mastery of the basic principles of Computer Science",
+          "specific_code": "2.2",
+          "specific_competence": "Demonstrate an understanding of basic principles of computer programming (using an appropriate structured programming language such as C, python, etc.)",
+          "number_of_periods": "50",
+          "learning_activities": [
+            "(a) Describe concept of programming language (categories, paradigm, generic structures)",
+            "(b) Describe programming tools (compiler/ interpreter, text editor, IDE, Debugger)",
+            "(c) Install and configure the selected programming language (compiler/ interpreter, text editor, IDE, Debugger)",
+            "(d) Use programming tools of selected programming language to write a program (compile/run and debug a simple program)",
+            "(e) Use variables, constants, and data types of a selected programming language in a program (operators and expressions)",
+            "(f) Use syntax and constructs of the selected programming language to write programs branching",
+            "(g) Debugging computer programs"
+          ],
+          "teaching_methods": [
+            "TIPS, question and answer, and group discussion: Through TIPS, question and answer, and group discussion guide students to describe computer programming language",
+            "Group discussion: Through group discussion guide students to describe programming tools",
+            "Demonstration and Practical work: Through demonstration and practical work teacher to guide students to install and configure the selected programming language tools",
+            "Practical work: Through practical work teacher to guide student to use program tools of selected programming language to write a simple program",
+            "Practical work: Through practical work teacher to guide students to use variables and data types of a selected programming language",
+            "Practical work: Through practical work teacher to guide students to write a program employing branching",
+            "Demonstration: Guide students through demonstration to debug a program"
+          ],
+          "assessment_criteria": [
+            "Clearly explain the concept of programming language",
+            "Clearly can describe programming tools",
+            "Mastering the environment of the selected program Can install and configure programming tools",
+            "Mastering the of use programming tools of selected programming language",
+            "Can use variable and data type in programming language",
+            "Can use syntax and various constructs to write programs",
+            "Confidently debug the program"
+          ],
+          "resources": [
+            "Computer installed with appropriate programming tools",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    "3": {
+      "specific_competences": [
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate mastery of the basic principles of Computer Science",
+          "specific_code": "2.3",
+          "specific_competence": "Demonstrate an understanding of the basic principles of computer architecture",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Describe the concept of data representation (digital data, number systems, data type, character coding (UNICODE and ASCII)",
+            "(b) Represent numbers in different number systems (binary, octal, decimal, and hexadecimal)",
+            "(c) Convert numbers from one system to another (binary, decimal, and hexadecimal)",
+            "(d) Perform arithmetic operations (addition and subtraction) using binary numbers"
+          ],
+          "teaching_methods": [
+            "Question-and- answer, TIPS, and small group discussion: Through question- and-answer, TIPS, and/or small group discussion guide students to describe the concept of digital data representation",
+            "Demonstration: Through demonstration guide students to represent numbers in different number systems",
+            "Demonstration: Through demonstration guide students to convert numbers from one system to another",
+            "Demonstration: Through demonstration to guide students to perform arithmetic operations"
+          ],
+          "assessment_criteria": [
+            "Explicitly explain the concept of digital data representation",
+            "Confidently represent numbers in different number systems",
+            "Competently convert numbers from one system to another",
+            "Capability to perform arithmetic operations"
+          ],
+          "resources": [
+            "Hand outs standard codes",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate mastery of the basic principles of Computer Science",
+          "specific_code": "2.2",
+          "specific_competence": "Demonstrate an understanding of basic principles of computer programming",
+          "number_of_periods": "30",
+          "learning_activities": [
+            "(a) Use the syntax and constructs of selected programming language to write program",
+            "(iteration, functions, array, and string)",
+            "(b) Use scope of variable in a program",
+            "(c) Text and Debug computer program that employs iteration, array, string, branching and functions",
+            "(d) Appraise the utility of the developed program"
+          ],
+          "teaching_methods": [
+            "Demonstration: Guide students through demonstration to use iteration and functions in a program",
+            "",
+            "Demonstration: Guide students though demonstration to use scope of variables",
+            "Demonstration: Guide students through demonstration to text and debug computer program that employs iteration and functions branching and functions",
+            "Questions and answer: Through questions and answer guide students to appraise the utility of the developed applications"
+          ],
+          "assessment_criteria": [
+            "Confidently use iteration and functions in a program",
+            "",
+            "Confidently describe and use the concept of scope of variable",
+            "Confidently debug computer program that employs iteration and functions branching and functions",
+            "Clearly evaluate the efficacy of the developed application"
+          ],
+          "resources": [
+            "Computer installed with appropriate programming tools",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate mastery of the basic principles of Computer Science",
+          "specific_code": "2.4",
+          "specific_competence": "Demonstrate an understanding of the basics of computer networks",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Describe the concept of computer network) (meaning, mode, media, components, etc.)",
+            "(b) Design a simple computer network involving a typical topology",
+            "(c) Create a computer network involving typical topology"
+          ],
+          "teaching_methods": [
+            "Demonstration: Through brainstorming guide students to describe the concept of computer network",
+            "Demonstration: Through demonstration guide students to design a simple network",
+            "Demonstration: Teacher to demonstrate on how to create a computer network involving typical topology and data transmission mode and media Practical work: Students through practical work to create a computer network"
+          ],
+          "assessment_criteria": [
+            "Can clarify the concept computer network",
+            "Can design a simple computer network of a given topology",
+            "Confidently can use topology, data transmission mode and media to set computer network"
+          ],
+          "resources": [
+            "Computer with installed internet, network cables and network card",
+            "",
+            ""
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Demonstrate mastery of the basic principles of data management",
+          "specific_code": "3.1",
+          "specific_competence": "Demonstrate the mastery of basic principles of databases and database management systems",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Describe the concept of data and information",
+            "(b) Manage simple data (create, store, retrieve, check data quality)",
+            "(c) Describe the concept of database and database management system",
+            "(d) Design a database",
+            "(e) Create a database using selected software (e.g., MS – Access)",
+            "(a) Maintain computer systems – desktop, laptop, tablets, mobile (create, delete/ disable user account, create, modify, and reset password, user support, peripherals)",
+            "(b) Apply troubleshooting tools and techniques",
+            "(c) Use selected OS to Perform system administration tasks",
+            "(a) Describe the background of HTML and selected programming languages (CSS, JavaScript)",
+            "(b) Install and configure the CSS and JavaScript interpreter (e.g., a web browser)",
+            "(c) Create webpages using HTML and CSS, JavaScript",
+            "(d) Publish website",
+            "(e) Appraise the published website"
+          ],
+          "teaching_methods": [
+            "Brainstorming: Through brainstorming to guide students to describe concepts of data and information",
+            "TIPS: Use TIPS to guide students to describe the relationship between data and information",
+            "Brainstorming: Through brainstorming to describe the concepts database and database management system",
+            "Demonstration: Through demonstration teacher to guide students to design a database Practical work: students through practical work to design a database",
+            "Practical work: Through practical work teacher to guide students to create a database using selected software",
+            "TIPS: Through TIPS guide students to explain the roles of system administrator. Practical work: Through practical work students to maintain a computer system",
+            "Demonstration: Through demonstration guide student to apply troubleshooting and maintenance tools",
+            "Demonstration: Through demonstration guide student to use selected OS to perform system administration duty",
+            "Brainstorming or TIPS: Guide student through brainstorming or TIPS to describe the background of HTML and selected programming languages",
+            "Demonstration: Guide student through demonstration to install and configure the CSS and JavaScript interpreter",
+            "Demonstration: Guide students through demonstration to create webpages using HTML, CSS, and JavaScript",
+            "Demonstration: Guide student through demonstration to publish a website",
+            "Demonstration: Through questions and answer to guide student to appraise the published website"
+          ],
+          "assessment_criteria": [
+            "Cleary describe the concepts of data and information",
+            "Successfully manage simple data",
+            "Explicitly elaborate the concept of database and database management system",
+            "Clearly explain the concept of database",
+            "Clearly identify steps of designing and developing a database and step by step create a database",
+            "confidently maintain the computer system",
+            "Clearly identify the roles of system administrator and responsibly troubleshoot a system",
+            "Responsibly administer and maintain a system",
+            "Clearly explain the background of HTML, CSS, and JavaScript",
+            "Mastery the installation and configuration of CSS and JavaScript interpreter",
+            "Successfully create static webpage using HTML, CSS, and JavaScript",
+            "Successfully publish the website",
+            "Can point out the use of developed website"
+          ],
+          "resources": [
+            "Computer installed with appropriate tools for managing data",
+            "",
+            "",
+            "Computer installed with appropriate tools for database design",
+            "",
+            "Projector, Computer (desktop, laptop, tablets, mobile), Internet connectivity",
+            "",
+            "",
+            "Computer installed with appropriate programming tools",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    "4": {
+      "specific_competences": [
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate mastery of the basic principles of Computer Science",
+          "specific_code": "2.6",
+          "specific_competence": "Demonstrate mastery of basic principles of mobile App",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Create mobile App using the syntax of the selected program",
+            "(b) Publish Mobile Apps",
+            "(c) Appraise the efficacy of the published Mobile Apps",
+            "(a) Describe principles of data analysis (data collection, pre- processing, processing, visualization, interpretation)",
+            "(b) Analysis simple data using selected tools (e.g., SPSS, Excel, etc.)"
+          ],
+          "teaching_methods": [
+            "Demonstration: Guide student through demonstration to create mobile app using the syntax of the selected program",
+            "Demonstration: Guide students through demonstration to publish Mobile Apps",
+            "Questions and answer: Through questions and answer to guide students to appraise the efficacy of the published Mobile Apps",
+            "Questions and answer: Through question and answer to guide students to describe principles of data analysis",
+            "Practical work: Through practical work teacher to guide students to analysis simple data using selected tools"
+          ],
+          "assessment_criteria": [
+            "Can read, write, test, and modify JavaScript languages upon creating a mobile App",
+            "Can publish a mobile App",
+            "Can point out the use of developed mobile App",
+            "Can point out the principles of data analysis",
+            "Successfully analysis simple data using selected tools"
+          ],
+          "resources": [
+            "Computer installed with appropriate programming tools for mobole Apps",
+            "",
+            "",
+            "Computer installed with data analysis tools, projector",
+            ""
+          ]
+        }
+      ]
+    }
+  }
+}

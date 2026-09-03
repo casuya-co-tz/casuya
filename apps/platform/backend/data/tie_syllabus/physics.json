@@ -1,0 +1,597 @@
+{
+  "subject": "physics",
+  "language": "en",
+  "forms": {
+    "1": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Apply knowledge of Physics in various contexts",
+          "specific_code": "1.1",
+          "specific_competence": "Demonstrate mastery of basic concepts, theories and principles of Physics",
+          "number_of_periods": "22",
+          "learning_activities": [
+            "(a) Explain the concept of Physics (Meaning, branches and connection with other disciplines)",
+            "(b) Discuss the contribution of Physics to the development of modern society",
+            "(c) Explain concepts of physical quantities (fundamental and derived quantities) and their, SI units",
+            "(d) Describe concepts of linear motion (speed, velocity, acceleration, distance, and displacement)",
+            "(e) Explain the concepts and principles related to force, density, pressure, work, power, energy",
+            "(f) Deduce the relationship between density, sinking and floating",
+            "(g) Describe the mechanical properties of matter in relation to force and energy"
+          ],
+          "teaching_methods": [
+            "Brainstorming: Guide students to brainstorm different physical phenomena (natural and man-made) in their environment in relation to Physics Group discussion: Guide students in manageable groups through the use of ICT to come up with the meaning and branches of Physics Field trip: Organise field trips to help students to explore the applications of Physics in real life experience",
+            "Brainstorming: Guide students to brainstorm on the contributions of Physics in the development of modern society ICT-based learning: Guide the students through different Online sources and web-based information to explore contributions of Physics in the development of modern society",
+            "Brainstorming: Guide students to brainstorm on measurable objects found in their environment Jigsaw: Guide students through Jigsaw method to measure the size of various objects assign the SI Unit of the measured quantities",
+            "Circle the sage: Guide students through circle- the-sage to explore the concept of linear motion Questions and answers: Facilitate the students through questions and answers on the real-life applications of linear motion ICT based learning: Guide students through the use of interactive simulations to visualize the concept of linear motion",
+            "Brainstorming: Guide students to brainstorm on the concepts and principles related to force, density, pressure work, power and energy ICT based learning: Guide students through the use of interactive simulations to visualize the concepts and principles related to force, density, pressure, work, power, energy Questions and answers: Use questions and answers to guide students explaining the principle related to force, density, pressure, power and energy",
+            "Experimentation: Guide the students to perform an experiment to deduce the relationship between density, sinking and floating ICT-based learning: Guide student through the use of different online sources and web-based information to explore principles related to density, sinking and floating",
+            "Think-ink pair share: Guide the students through Think ink pair share to explore the mechanical properties of matter in relation to force and energy Group discussion: Organize students in manageable groups to discuss different terms related to mechanical properties of matter Experimentation: Guide the students through experiment to investigate the relationship between various mechanical properties of matter"
+          ],
+          "assessment_criteria": [
+            "Concept of Physics is clearly explained",
+            "Contributions of Physics to the development of modern society are clearly discussed",
+            "The concepts of physical quantities are clearly explained",
+            "The concepts of linear motion are clearly described",
+            "The concepts and principles related to force, density, pressure, work, power and energy are explained clearly",
+            "The relationship between density, sinking and floating is correctly deduced",
+            "The concepts and principles related to force, density, pressure, power and energy are explained clearly"
+          ],
+          "resources": [
+            "Online resources, multimedia sources",
+            "Balls, conical pendulum, banked road, whirling water in bucket, telescope, solid object, Earth globe, calipers or rulers, jug, F1-10 hydraulics bench and stopwatch",
+            "Tape measure, vernier caliper, stopwatch, protractor, beam balance, magnetic compass and force gauge",
+            "String, bob, fixed point, smooth table surface, single pulley, springs, masses and online resources",
+            "Water tank, basin, different liquids, different solid materials, worksheet, online resources, spring balance and video",
+            "Water tank, sinking objects, worksheets, stone, dry wood, picture of floating and sinking objects and online resources",
+            "Metal rod, wooeden rod, spring and masses, liquid (water), different shapes and sizes conatiner, glass jar with cork and rubber band"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Apply knowledge of Physics in various contexts",
+          "specific_code": "1.2",
+          "specific_competence": "Demonstrate mastery of basic terminologies, measurements and symbols in Physics",
+          "number_of_periods": "11",
+          "learning_activities": [
+            "(a) Describe various instruments used for measurement in Physics",
+            "(b) Relate measuring instruments to physical quantities"
+          ],
+          "teaching_methods": [
+            "Circle-the-sage: Guide students through circle-the- sage strategy to describe various instruments used for measurements in Physics Project work: Facilitate the students to describe various instruments used in Physics measurement Virtual lab experiment: Facilitate the students through the use of Virtual lab to perform experiments to measure various objects",
+            "Practical work and experimentation: Guide the students through practical work and experiment to measure different physical quantities by using appropriate instruments"
+          ],
+          "assessment_criteria": [
+            "Measuring instruments used in Physics measurements are correctly described",
+            "Precision and accuracy of measurements are clearly related"
+          ],
+          "resources": [
+            "Online resources, flow-tube, thermometers, stopwatch, retort stand, vernier calliper and steel balls of varying diameters",
+            "Data and online resources"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Apply knowledge of Physics in various contexts",
+          "specific_code": "1.3",
+          "specific_competence": "Use mathematics to explain physical principles and phenomena",
+          "number_of_periods": "14",
+          "learning_activities": [
+            "(a) Use mathematical knowledge to describe relationship between various physical quantities (force, velocity, acceleration, density, pressure)"
+          ],
+          "teaching_methods": [
+            "Group discussion: Organize students in manageable groups through the use of mathematical knowledge to describe the relationship between various physical quantities Problem solving: Guide the students to use physical principles to solve real life problems"
+          ],
+          "assessment_criteria": [
+            "The mathematical knowledge is used to describe the relationship between various physical quantities"
+          ],
+          "resources": [
+            "Online resources and Physics reference books"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct experiments in Physics",
+          "specific_code": "2.1",
+          "specific_competence": "Demonstrate mastery of basic experimental skills in Physics",
+          "number_of_periods": "16",
+          "learning_activities": [
+            "(a) Conduct experiments related to linear motion, density, force, pressure, work, energy, power and mechanical properties of matter"
+          ],
+          "teaching_methods": [
+            "Experimentation: Guide students through experiments to investigate the relationship between various parameters related to linear motion, density, force, pressure, work, energy, power and mechanical properties of matter ICT based learning: Facilitate the students through the use of virtual lab, to investigate the principles related to linear motion, density, force, pressure, work, energy, power and mechanical properties of matter"
+          ],
+          "assessment_criteria": [
+            "Experiments are properly conducted following the scientific method"
+          ],
+          "resources": [
+            "Online resources, Small masses, meter rule, stop watch, trolley model calipers, wooden and metal rods, balances, string and pulley"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct experiments in Physics",
+          "specific_code": "2.2",
+          "specific_competence": "Demonstrate mastery of data analysis, presentation and report writing in Physics",
+          "number_of_periods": "15",
+          "learning_activities": [
+            "(a) Explain the methods of analysing experimental data in physics (statistical analysis)",
+            "(b) Use analytical methods to manipulate experimental data in physics",
+            "(c) Use graphical method to present experimental results in physics"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide students in groups to investigate various methods used to analyse experimental data in physics (statistical analysis) ICT based approach: Guide students through the use of ICT to investigate the best methods for analysing experimental data in Physics (statistical analysis)",
+            "Brainstorming: Facilitate the students to brainstorm on the analytical methods used to manipulate experimental data in physics ICT based approach: Guide students in utilizing interactive digital simulations to explore the hands-on activities for analytical methods to manipulate experimental data in physics",
+            "Group discussion: Facilitate students through the use of graphical method to present experimental results in physics Use of ICT facility: Guide students in utilizing interactive digital simulations and other software to present the experimental results using graphs"
+          ],
+          "assessment_criteria": [
+            "The methods of analysing experimental data are explained correctly",
+            "Analytical methods to manipulate experimental data in physics are correctly performed",
+            "The graphical method to present experimental results in physics is clearly used"
+          ],
+          "resources": [
+            "Data and Online resources, Physics reference books",
+            "Data and Online resources, Physics reference books",
+            "Data and online resources, Physics reference books and different graph papers"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Evaluate and use information in Physics",
+          "specific_code": "3.1",
+          "specific_competence": "Collect, describe and relate physical data",
+          "number_of_periods": "15",
+          "learning_activities": [
+            "(a) Collect and analyse data to explain various physical quantities (density, force, pressure)",
+            "(b) Collect and analyse data to explain experimental observations related to linear motion, force, density, pressure and mechanical properties of matter"
+          ],
+          "teaching_methods": [
+            "Cooperative learning strategy: Guide students to share their understanding on how to collect and analyse data to explain various physical parameters (density, force, pressure) Project work: Facilitate students to do projects to collect, analyse data and explain various physical parameters (density, force, pressure)",
+            "ICT based approach: Guide students in utilizing interactive digital simulations to collect analyse data and explain experimental observations related to linear motion, force, density, pressure and mechanical properties of matter Experimentation: Guide students in manageable groups to conduct experiments and analyse collected data"
+          ],
+          "assessment_criteria": [
+            "The data used to explain various physical parameters are collected and analysed appropriately",
+            "The physical data to explain experimental observations related to given concepts are appropriately collected and analysed"
+          ],
+          "resources": [
+            "Text books and Online resources",
+            "Online resources"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Evaluate and use information in Physics",
+          "specific_code": "3.2",
+          "specific_competence": "Carry out a project in Physics",
+          "number_of_periods": "16",
+          "learning_activities": [
+            "(a) Develop prototype devices based on the concepts, theories, principles and laws gained from the field of linear motion, force, density, pressure and mechanical properties of matter"
+          ],
+          "teaching_methods": [
+            "Group discussion: Organize students in manageable groups to discuss the procedure for the development of prototype devices based on the concepts, theories, principles and laws gained from the field of linear motion, force, density, pressure and mechanical properties of matter Problem based approach: Guide students to relate the designed prototypes and real life."
+          ],
+          "assessment_criteria": [
+            "Prototypes are developed based on Physics"
+          ],
+          "resources": [
+            ""
+          ]
+        }
+      ]
+    },
+    "2": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Apply knowledge of Physics in various contexts",
+          "specific_code": "1.1",
+          "specific_competence": "Demonstrate mastery of basic concepts, theories and principles of Physics",
+          "number_of_periods": "30",
+          "learning_activities": [
+            "(a) Describe the concept and principles of light (sources of light, propagation and transmission, image formation, colours, optical instruments)",
+            "(b) Describe the concept and principles of magnetism (magnetization and demagnetization, magnetic fields)",
+            "(c) Explain the concept and principles of static electricity (detection of static charges, types of materials, capacitors, charge distributions and lightning conductor)",
+            "(d) Describe the concept and laws of current electricity (electromotive force, potential difference, resistance, effect of electric current, domestic electrical installation)"
+          ],
+          "teaching_methods": [
+            "Brainstorming: Guide students to brainstorm on the concepts and principles of light (sources of light, propagation and transmission, image formation, colours, optical instruments) Group discussion: Guide students in manageable groups to explore the concepts and principles of light Field trip: Organise field trips help students to explore applications of light",
+            "Group discussion: Guide students to discuss the concepts and principles of magnetism through hands-on activities ICT based learning: Guide the students through the use of interactive simulations and animations to visualise magnetic field patterns Project work: Guide students in groups to work on different projects on magnetization and demagnetization of different materials",
+            "Practical Work and Experiment: Guide learners to explore the concepts and principles of static electricity through hands-on activities. Interactive simulations Facilitate students to visualize and understand the concepts and principles of static electricity Brainstorming: Guide students to explore the application of static electricity in their environment",
+            "Group discussion: Guide students in groups to discuss the concept of current electricity Hands-on activity: Guide learners to explore the concept and laws of current electricity through hands-on activities. Interactive simulations: Facilitate students to visualize the flow of charges"
+          ],
+          "assessment_criteria": [
+            "The concepts and principles of light are described correctly",
+            "The concepts and principles of magnetism are described correctly",
+            "The concepts and principles of static electricity are clearly explained",
+            "The concept and laws of current electricity are described correctly"
+          ],
+          "resources": [
+            "Torch, candle, cardboard with slit, light emitting diodes and fluorescent tube",
+            "Different types of magnets, iron fillings, card board, connecting wires and batteries",
+            "Small pieces of paper, plastic comb, polythene rod, capacitor and lighting conductor, rod and wires",
+            "Ammeter, Voltmeter, switch. Meter bridge, resistors, connecting wire and batteries"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Apply knowledge of Physics in various contexts",
+          "specific_code": "1.2",
+          "specific_competence": "Use mathematics to explain physical principles and phenomena",
+          "number_of_periods": "9",
+          "learning_activities": [
+            "(a) Apply mathematical knowledge to describe various relations related to light and current electricity"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide students through manageable groups to apply mathematical knowledge to describe various relations related to light and current electricity Think ink pair share: Guide students through think ink pair share to apply mathematical knowledge to describe various relations related to light and current electricity Problem based learning: Guide students to relate the principles related to light and current electricity with real-life situation."
+          ],
+          "assessment_criteria": [
+            "Mathematical knowledge is applied correctly to describe various relations related to light and current electricity"
+          ],
+          "resources": [
+            "Text books"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct experiments in Physics",
+          "specific_code": "2.1",
+          "specific_competence": "Demonstrate mastery of basic experimental skills in Physics",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Carry out experiments related to light, magnetism, static electricity and current electricity"
+          ],
+          "teaching_methods": [
+            "Practical works: Guide students through hands-on activities to investigate relationship between different parameters related to light, magnetism, static electricity and current electricity ICT based approach: Guide students through interactive simulations to visualize and carry out experiments related to light, magnetism, static electricity, and current electricity"
+          ],
+          "assessment_criteria": [
+            "Experiments related to light, magnetism, static electricity and current electricity are carried out correctly"
+          ],
+          "resources": [
+            "Ammeter, Voltmeter, switch. Meter bridge, resistor, connecting wire, Torch, card board with slits, triangular prism, plane mirrors and curved mirrors"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct experiments in Physics",
+          "specific_code": "2.2",
+          "specific_competence": "Demonstrate mastery of data analysis, presentation and report writing in Physics",
+          "number_of_periods": "28",
+          "learning_activities": [
+            "(a) Use spreadsheet to process experimental data in physics",
+            "(b) Use graphs to analyse and determine mathematical relationships between various variables in Physics",
+            "(c) Communicate experimental results orally"
+          ],
+          "teaching_methods": [
+            "ICT based approach: Guide students through the use of ICT-programs such as spreadsheet to process experimental data in Physics Experimentation: Guide students through experiments to deduce the relationship between various parameters related to light, magnetism, static electricity and current electricity",
+            "ICT based approach: Guide students through interactive simulations to collect and analyse the experimental data using graphs and use the graphs to establish the mathematical relationships between various variables in Physics Group discussion: Facilitate the students through manageable groups to discuss the use of graphs to analyse the experimental data and use it to establish the relationship between the variables in Physics",
+            "Cooperative learning: Guide students to work in pairs or small groups to analyse and interpret graphs Problem-based learning: Guide students with real-world problems that require them to analyse and interpret graphs to determine the mathematical relationship between variables Guided practice approach: Facilitate students with guided practice in analysing and interpreting graphs"
+          ],
+          "assessment_criteria": [
+            "Experimental data are correctily processed using various spread sheet programs",
+            "The graphs are used appropriately to analyse and determine mathematical relationships between various variables in Physics",
+            "The experimental results are communicate orally correctly"
+          ],
+          "resources": [
+            "",
+            "Online resources, graph paper, protractor, ruler, manila, chart other resources",
+            "Variuos graphs based on experimental data and Online resources"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Evaluate and use information in Physics",
+          "specific_code": "3.1",
+          "specific_competence": "Collect, describe and relate physical data",
+          "number_of_periods": "8",
+          "learning_activities": [
+            "(a) Collect and analyse data to explain various physical quantities (light, magnetism, static electricity and current electricity)",
+            "(b) Collect and analyse data to explain experimental observations related to light, magnetism, static electricity and current electricity"
+          ],
+          "teaching_methods": [
+            "Problem-solving approach: Guide students with real-world problems that require them to analyse collected physics data to explain various physical quantities Collaborative learning: Guide the students to work in pairs or small groups to analyse and interpret collected Physics data ICT-based approach: Guide students through the use of technology such as computer software, online tools, and simulations to analyse and interpret collected data to explain various physical quantities",
+            "Experimentation: Guide students to use electrical equipment and light locally available materials to design experiments to investigate the properties of light, magnetism, static electricity and current electricity ICT-based approach: Guide students through the use of technology such as computer software, online tools, and simulations to analyse and interpret collected data to explain various physical quantities"
+          ],
+          "assessment_criteria": [
+            "Collected physics data are correctly analysed to explain various physical quantities",
+            "Collected physics data are correctly analysed to explain experimental observations related to light, magnetism, static electricity and current electricity"
+          ],
+          "resources": [
+            "Online resources, other relevant materials",
+            "Online resources, watch, trolley and model"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Evaluate and use information in Physics",
+          "specific_code": "3.2",
+          "specific_competence": "Carry out a project in Physics",
+          "number_of_periods": "6",
+          "learning_activities": [
+            "(a) Develop prototype devices based on the concepts, theories, principles, and laws gained from the field of light, magnetism, static electricity and current electricity"
+          ],
+          "teaching_methods": [
+            "Inquiry-based approach: Guide the students to develop prototype devices based on the concepts, theories, principles, and laws gained from the field of light, magnetism, static electricity and current electricity Problem-based approach: Guide the students in discussion to present the way the developed prototypes real world problems related to light and electricity"
+          ],
+          "assessment_criteria": [
+            "Appropriate prototype devices are developed based on the concepts, theories, principles, and laws gained from given Physics concepts"
+          ],
+          "resources": [
+            "Online resources"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Apply knowledge of Physics in various contexts",
+          "specific_code": "1.1",
+          "specific_competence": "Demonstrate mastery of basic concepts, theories and principles of Physics",
+          "number_of_periods": "30",
+          "learning_activities": [
+            "(a) Describe the concept of waves and laws of motion (Waves, Newton’s laws of motion and linear momentum)",
+            "(b) Describe the concept and principles of equilibrium (moment of force, centre of gravity and types of equilibrium)",
+            "(c) Explain the concept and laws of friction (types of friction, laws of friction)",
+            "(d) Explain the principles of simple machines (lever, pulley, inclined plane, screw jack, wheel and axle, hydraulic press)"
+          ],
+          "teaching_methods": [
+            "Digital interactive simulations: Facilitate students through interactive simulations to visualize different concepts, theories and laws related to waves and motion Practical Work: Guide students through hands- on activities to explore the concepts of waves and motion Brainstorming: Guide students to brainstorm on the application of the concepts of waves and motion in real life",
+            "Group discussion: Facilitate students through manageable groups to discuss the concept and principles of equilibrium Practical Work: Facilitate the students through hands-on activities to explore the concept and principles of equilibrium",
+            "Practical work: Provide students with hands-on activities that allow them to explore the concepts and laws of friction Interactive simulations: Guide students through PhET interactive simulations to demonstrate the concept and the laws of friction",
+            "Brainstorming: Guide students to brainstorm on different types of simple machines available in their environment Group discussion: Guide students through manageable groups, to discuss the principles of simple machines Practical Work: Provide students with hands- on activities to explore the principles of simple machines"
+          ],
+          "assessment_criteria": [
+            "Concepts of waves and laws of motion are correctly described",
+            "Concepts and principles of equilibrium are described correctly",
+            "Concepts and laws of friction are explained clearly",
+            "Concepts and principles of simple machines are explained correctly"
+          ],
+          "resources": [
+            "Text books, inclined plane and roller Strings, ripple tank, ICT- facilities, stroboscope, tuning forks, pipes, sonometer, resonance tube",
+            "Text books, other relevant materials and knife edge",
+            "Wooden block, rough surface, spring balance and standard masses",
+            "Pulleys, pair of scissors, wheel barrow, Spade and bottle opener"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Apply knowledge of Physics in various contexts",
+          "specific_code": "1.3",
+          "specific_competence": "Use mathematics to explain physical principles and phenomena",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Apply mathematical knowledge to describe various principles and physical phenomena related to waves, Newton’s laws of motion, equilibrium, friction and simple machines)"
+          ],
+          "teaching_methods": [
+            "Think-ink-pair-share: Facilitate Students through think-ink pair share strategy to apply mathematical knowledge to describe various principles and physical phenomena related to Newton’s laws of motion, equilibrium, friction force, simple machines"
+          ],
+          "assessment_criteria": [
+            "Mathematical knowledge to describe various principles and physical phenomena are correctly applied"
+          ],
+          "resources": [
+            "Meter rule, stop watch, spring balance, wooden bar and knife edge"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct experiments in Physics",
+          "specific_code": "2.1",
+          "specific_competence": "Demonstrate mastery of basic experimental skills in Physics",
+          "number_of_periods": "14",
+          "learning_activities": [
+            "(a) Describe types of experimental variables in physics related to motion",
+            "(b) Carry out scientific investigations related to waves, laws of motion, equilibrium, friction and simple machines"
+          ],
+          "teaching_methods": [
+            "Cooperative learning: Facilitate students to work in groups to describe types of experimental variables in Physics",
+            "ICT based approach: Guide students in using multimedia resources such as videos, animations, and interactive simulations to carry out scientific investigations related to waves, laws of motion, equilibrium, friction and simple machines"
+          ],
+          "assessment_criteria": [
+            "Experimental variables are described clearly",
+            "Scientific investigations related to waves, laws of motion, equilibrium, friction and simple machines are carried out"
+          ],
+          "resources": [
+            "Physics Textbook, Online resources",
+            "Text books and charts"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct experiments in Physics",
+          "specific_code": "2.2",
+          "specific_competence": "Demonstrate mastery of data analysis, presentation and report writing in Physics",
+          "number_of_periods": "40",
+          "learning_activities": [
+            "(a) Use scientific report to communicate experimental results in Physics"
+          ],
+          "teaching_methods": [
+            "ICT based learning: Guide students the proper use of online resources in presenting the scientific investigation report"
+          ],
+          "assessment_criteria": [
+            "A scientific report is correctly used to communicate experimental results in Physics"
+          ],
+          "resources": [
+            "Charts and online resources"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Evaluate and use information in Physics",
+          "specific_code": "3.1",
+          "specific_competence": "Collect, describe and relate physical data",
+          "number_of_periods": "30",
+          "learning_activities": [
+            "(a) Collect and analyse data to explain various physical parameters (Waves, Newton’s laws of motion, equilibrium, friction and simple machines)",
+            "(b) Collect and analyse data to explain experimental observations related to Newton’s laws of motion, equilibrium, friction and simple machines"
+          ],
+          "teaching_methods": [
+            "Collaborative learning: Guide students to work in pairs or small groups to analyse and interpret collected physics data Multimedia approach: Guide students in utilizing technology such as computer software, online tools, and simulations to analyze collected data explaining various physical quantities",
+            "Collaborative learning: Guide students to work in pairs or small groups to analyze collected physics data ICT based learning: Guide students through the use of technology such as computer software, online tools, and simulations to analyze collected data explaining various physical quantities"
+          ],
+          "assessment_criteria": [
+            "Collected physical data are correctly analysed to explain various physical parameters",
+            "Collected physics data are correctly analysed to explain various physical quantities"
+          ],
+          "resources": [
+            "Online resources and other relevant materials",
+            "Online resources and other relevant materials stop watch and trolley model"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Evaluate and use information in Physics",
+          "specific_code": "3.2",
+          "specific_competence": "Carry out a project in Physics",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Develop and carry out a research project in Physics"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide students through manageable groups to discuss various procedure for carrying out a project Digital interactive simulation: Facilitate students to use virtual labs to analyse the collected data Experimentation: Guide the students using real lab instruments to perform scientific investigations"
+          ],
+          "assessment_criteria": [
+            "A research project in Physics is developed and carried out correctly"
+          ],
+          "resources": [
+            "Online resources and other relevant materials"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Apply knowledge of Physics in various contexts",
+          "specific_code": "1.1",
+          "specific_competence": "Demonstrate mastery of basic concepts, theories and principles of Physics",
+          "number_of_periods": "40",
+          "learning_activities": [
+            "(a) Explore the basic tenets of heat (measurement of temperature, thermal expansion, thermal energy, transfer of thermal energy, measurement of thermal energy, vapour and humidity in relation to air temperature )",
+            "(b) Explore the basic tenets of the physics of the atom (structure of atom and structure nuclear, radioactivity, nuclear radiations, nuclear processes and thermionic emission)",
+            "(c) Describe the basic principles of electronics (semiconductors, diode, transistor, amplifier)",
+            "(d) Describe the concept of renewable energy (solar, hydropower, wind and geothermal energy)"
+          ],
+          "teaching_methods": [
+            "Brainstorming: Guide students to brainstorm on the concept of heat Experimentation: Guide students in manageable groups to investigate melting and boiling point of different liquids Demostrations: Guide students to show the expansion of solid and transfer of heat ICT based learning: Guide students to use of interactive simulations on the concept of heat",
+            "Brainstorming: Guide students to brainstorm on the concepts of nuclear physics, radioactivity, nuclear radiation and thermionic emission Field trip: Organized a field trip to the nearby industry/ hospital/ airport for student recognize the application of nuclear physics ICT-based learning: Use different Online sources to guide students to analyse concepts related to the physics of the atom",
+            "Brainstorming: Guide students to brainstorm on electronic components in their environment Scenario: Organise students in manageable groups and provide a scenario for them to investigate the conduction of different materials ICT based learning: Guide students with the help of ICT to visualize various electronic components and their functions Experiment: Guide students in manageable groups to investigate the conduction of a semiconductor diode",
+            "Brainstorming: Guide students to brainstorm on the concepts of renewable energy Group discussion: Organize students in manageable groups to discuss various forms of renewable energy ICT-based learning: Guide students through interactive simulations to explore the concept of renewable energy"
+          ],
+          "assessment_criteria": [
+            "Concepts of heat are explored appropriately",
+            "The concepts and principles related to the Physics of the atom are explored appropriately",
+            "The concepts of electronics are described correctly",
+            "The concepts of renewable energy are described appropriately"
+          ],
+          "resources": [
+            "Thermometer, calorimeter, ball and ring, heat source, metal rods and hygrometer",
+            "GM counter, Periodic Table and chart showing radioactive elements",
+            "Periodic Table, online resources, Text books, CRO, Diode, Transistor, AC Voltage Generator and connecting wires",
+            "Solar panel, online resources, Charts, wind mill model, batteries, connecting wires and inverters"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Apply knowledge of Physics in various contexts",
+          "specific_code": "1.2",
+          "specific_competence": "Use mathematics to explain physical principles and phenomena",
+          "number_of_periods": "16",
+          "learning_activities": [
+            "(a) Apply mathematical knowledge to describe various principles and physical phenomena related to heat, physics of the atom, electronics and renewable energy"
+          ],
+          "teaching_methods": [
+            "Group discussion: Facilitate students in groups to apply mathematical knowledge to describe various principles and physical phenomena related to heat, physics of the atom, electronics and renewable energy Problem based learning: Guide students to identify problems related to heat, physics of the atom electronics and renewable energy, and facilitate them to use mathematical knowledge or identified mathematical formula to find the solutions of identified problems"
+          ],
+          "assessment_criteria": [
+            "Mathematical knowledge to describe various principles and physical phenomena are correctly applied"
+          ],
+          "resources": [
+            "Online resources and textbooks"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct experiments in Physics",
+          "specific_code": "2.1",
+          "specific_competence": "Demonstrate mastery of basic experimental skills in Physics",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Carry out scientific investigations related to heat, physics of the atom, electronics and renewable energy"
+          ],
+          "teaching_methods": [
+            "ICT based learning: Use different Online sources to guide students to conduct the scientific investigations on the application of various instruments in electronics, renewable and to investigate the physics of the atom and heat Practical work: Guide the learners through step-wise procedure to use practical work to carried out scientific investigations"
+          ],
+          "assessment_criteria": [
+            "Scientific investigations related to heat, physics of the atom, electronics and renewable energy are analysed appropriately"
+          ],
+          "resources": [
+            "Thermometer, calorimeter, online resources (Simulation) and GM counter"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct experiments in Physics",
+          "specific_code": "2.2",
+          "specific_competence": "Demonstrate mastery of data analysis, presentation and report writing in Physics",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Use scientific report to communicate experimental results in Physics"
+          ],
+          "teaching_methods": [
+            "Cooperative learning: Guide students in the proper use of online resources in presenting a scientific investigation report to communicate experimental results"
+          ],
+          "assessment_criteria": [
+            "A scientific report is correctly used to communicate experimental results in Physics"
+          ],
+          "resources": [
+            "Charts and online resources"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Evaluate and use information in Physics",
+          "specific_code": "3.1",
+          "specific_competence": "Collect, describe and relate physical data",
+          "number_of_periods": "30",
+          "learning_activities": [
+            "(a) Collect and analyse data to explain various physical parameters (heat, physics of atom, electronics and renewable energy)",
+            "(b) Collect and analyse data to explain experimental observations related to heat, physics of atom, electronics and renewable energy"
+          ],
+          "teaching_methods": [
+            "ICT based learning: Use different online sources (virtual lab) and web-based information to guide students to explore different methods of data collection in physics experiments",
+            "Group discussion: Guide students in groups to discuss various methods of data collections Project work: Guide students to conduct mini research work and facilitate them to collect and organize data from the research work ICT-based learning: Use different online sources and web-based information to guide students to visualize and explore different scenarios from variety of sources and present their observations"
+          ],
+          "assessment_criteria": [
+            "Collected physics data are correctly analysed to explain various physical quantities",
+            "Collected physical data are correctly analysed to explain experimental observations related to heat, physics of atom, electronics and renewable energy"
+          ],
+          "resources": [
+            "Online resources",
+            "Online resources and other relevant materials"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Evaluate and use information in Physics",
+          "specific_code": "3.2",
+          "specific_competence": "Carry out a project in Physics",
+          "number_of_periods": "24",
+          "learning_activities": [
+            "(a) Complete and submit a report for the research project started in Form III"
+          ],
+          "teaching_methods": [
+            "Problem-solving approach: Guide students with real- world problems that require them to analyze collected physics data to explain various physical parameters Collaborative Learning: Guide the students to work in pairs or small groups to analyze and interpret collected physics data ICT-based learning: Use different online sources and web-based information to guide to complete and submit project report"
+          ],
+          "assessment_criteria": [
+            "Report for the research project started in Form III is completed and submitted"
+          ],
+          "resources": [
+            "Online resources"
+          ]
+        }
+      ]
+    }
+  }
+}

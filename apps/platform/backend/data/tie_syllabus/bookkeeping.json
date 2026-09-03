@@ -1,0 +1,498 @@
+{
+  "subject": "bookkeeping",
+  "language": "en",
+  "forms": {
+    "1": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": ". Demonstrate mastery of the principles of Book-keeping",
+          "specific_code": "1.1",
+          "specific_competence": ". Demonstrate an understanding of the basic principles and theories of Book-keeping",
+          "number_of_periods": "18",
+          "learning_activities": [
+            "(a) Explain the concept of Book Keeping (origin, meaning, purpose, relationship with other disciplines and basic terms)",
+            "(b) Explain the basis for recording business transactions (accounting assumptions and principles)",
+            "(c) Describe the theory of the double-entry system of Book- keeping(the accounting equation)",
+            "(d) Describe various types of accounts (assets, liabilities, capital, revenue and expenses)"
+          ],
+          "teaching_methods": [
+            "Brainstorming: why and where business owners keep their financial records in community Presentation: discuss and summarize by connecting their views to the books of original entry; meaning and purpose of Book-keeping case study: to lead students to discuss the relationship of Book-keeping and other subjects then conclude the discussion",
+            "Group discussion Provide documents of accounting assumptions and principles for students to discuss aspects that guide the recording of business transactions Presentation: Randomly select students from the groups to present their views in plenary and conclude",
+            "Skills lab: Group Discussion: Organize students to discuss the theory of double-entry system by focusing on the accounting equation Demonstrate: Lead students to demonstrate on how to use accounting equation",
+            "Think-ink-pair-share: meaning of assets, liabilities, capital, revenue and expenses Panel Discussion: discuss types of accounts and conclude"
+          ],
+          "assessment_criteria": [
+            "Concept of Book- keeping is clearly explained",
+            "Accounting assumptions and principles are well explained",
+            "The double entry theory and the accounting equation are well described",
+            "The five key accounts are well described"
+          ],
+          "resources": [
+            "Sample of invoice/ receipt YouTube Channels Interactive Website",
+            "Accounting Forums and Communities Websites Sample of invoice/ receipt",
+            "Sample of ledger Sample of receipts and payments",
+            "Accounting Software Tutorials Interactive Learning Platforms"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": ". Demonstrate mastery of the principles of Book-keeping",
+          "specific_code": "1.2",
+          "specific_competence": "Record business transactions using source documents",
+          "number_of_periods": "27",
+          "learning_activities": [
+            "(a) Identify sources of business transactions (source documents)",
+            "(b) Record business transactions from various source documents",
+            "(c) Post recorded business transactions from books of original entry to ledger accounts and balance off the accounts"
+          ],
+          "teaching_methods": [
+            "Gallery walks: Guide students through gallery walk to identify source documents of business transactions Summarize and conclude the lesson",
+            "Skills lab: Demonstrate: how to record business transactions from various source documents Practice: Guide students individually to practice on how to record business transactions and present their work. Summarize and conclude the lesson",
+            "Skills lab: Demonstrate: on how to post business transactions from the books of original entry to the ledger accounts and balance off the accounts Practice: Guide students individually to practice on how to post business transactions and present their work Summarize and conclude the lesson"
+          ],
+          "assessment_criteria": [
+            "Various sources of business transactions are identified",
+            "Business transactions are correctly recorded",
+            "Posting is correctly done"
+          ],
+          "resources": [
+            "Sample of source documents",
+            "Sample of a day book",
+            "Sample of a ledger Sample of Book of Orginal Entry"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": ". Demonstrate mastery of the principles of Book-keeping",
+          "specific_code": "1.3",
+          "specific_competence": ". Prepare a trial balance",
+          "number_of_periods": "5",
+          "learning_activities": [
+            "(a) Describe the trial balance",
+            "(b) Prepare a trial balance to check the arithmetical accuracy of ledger accounts"
+          ],
+          "teaching_methods": [
+            "Group Discussions: discuss the meaning of trial balance and its importance Demonstrate: on how to prepare the trial balance and let students practice thereafter conclude",
+            "Group Discussion: errors that may happen in the trial balance Skills lab: Demonstrate on how to check errors in ledger accounts through trial balance and to prepare the trial balance to check the arithmetical accuracy of the ledger accounts"
+          ],
+          "assessment_criteria": [
+            "The Trial balance is well described",
+            "Trial balance is prepared correctly"
+          ],
+          "resources": [
+            "Sample of accounts",
+            "Sample of accounts"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Prepare basic financial statements",
+          "specific_code": "2.1",
+          "specific_competence": ". Prepare basic profit or loss statements",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Describe basic financial statements (meaning, types, purpose, content and format)",
+            "(b) Prepare a basic income statement"
+          ],
+          "teaching_methods": [
+            "Brainstorming: financial statements how they look like and then share the meaning, types and purpose of financial statements. Skills lab: Demonstrate by prepare different format of financial statements and show their key contents practice how to prepare formats of financial statements Guide students present their work and conclude",
+            "Demonstrate: how to prepare income statement Practice: Guide students to prepare basic income statement Presentation: Guide students to present their work for conclusion"
+          ],
+          "assessment_criteria": [
+            "Basic financial statements are well described",
+            "Basic income statement is well prepared"
+          ],
+          "resources": [
+            "Sample of financial statements.",
+            "Sample of financial statements"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Prepare basic financial statements",
+          "specific_code": "2.2",
+          "specific_competence": "Prepare basic business financial position statements",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Classify assets and liabilities",
+            "(b) Prepare a basic statement of financial position"
+          ],
+          "teaching_methods": [
+            "Group Discussion Students in groups to discuss the classification of accounts Practice: Guide students to classify assets and liabilities of an enterprise",
+            "Demonstrate: how to prepare basic financial statement Practice: Guide students to prepare basic financial statement Presentation: Guide students to present their work for conclusion"
+          ],
+          "assessment_criteria": [
+            "Assets and liabilities are correctly classified",
+            "Basic statement of financial position correctly prepared"
+          ],
+          "resources": [
+            "Sample of financial statements",
+            "Sample of financial statements"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of the principles of Book- keeping",
+          "specific_code": "1.1",
+          "specific_competence": "Record business transactions using source documents",
+          "number_of_periods": "30",
+          "learning_activities": [
+            "(a) Describe cash and banking transactions (types of cash books)",
+            "(b) Record cash/ bank receipts and payments from various source documents in the Cash Book",
+            "(double column, three-column or petty cash book)"
+          ],
+          "teaching_methods": [
+            "Guest Speaker: Invite an accountant from nearby office to share knowledge and skills about cash and banking transactions by addressing types of cash books Summarize the lesson by linking the guest speaker experience on types of cash books and then let students reflect on the guest speaker",
+            "Skills club: discuss aspects that should be observed when you record cash/bank receipts and payments from various source documents in the cash book and lead them to present.",
+            "Business club: Design a project that will enable students practice to record cash/bank receipts and payments from various source documents. Guide students to present their works and conclude"
+          ],
+          "assessment_criteria": [
+            "Different types of cash books are well described",
+            "Double column, Three- column and Petty cash book are correctly prepared",
+            ""
+          ],
+          "resources": [
+            "Sample of invoice/ receipt",
+            "Sample of invoice/ receipt",
+            ""
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of the principles of Book- keeping",
+          "specific_code": "1.2",
+          "specific_competence": ". Prepare a Trial balance",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Describe errors in the Trial balance (meaning, types, sources and detection)",
+            "(b) Correct errors in the Trial balance by means of journal entries and adjust the trial balance"
+          ],
+          "teaching_methods": [
+            "Group discussion: Lead students to discuss meaning, types, sources and detection of trial balance Summarize and conclude the lesson",
+            "Demonstration: on how to correct errors in the trial balance by using journal entries and adjust the trial balance Practice: guide students to practice on how to correct errors in the trial balance and adjust the trial balance Presentation: Guide students to present their works and conclude"
+          ],
+          "assessment_criteria": [
+            "Errors in the trial balance are well described",
+            "Errors in the trial balance are well corrected"
+          ],
+          "resources": [
+            "Sample of accounts",
+            "Sample of accounts"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate mastery of financial assets control",
+          "specific_code": "2.1",
+          "specific_competence": ". Prepare bank reconciliation statements",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Describe a Bank reconciliation statement (meaning, importance, reasons for inconsistencies, and the key terms used)",
+            "(b) Prepare adjusted cash book and bank reconciliation statement."
+          ],
+          "teaching_methods": [
+            "Guest Speaker: Invite the guest speaker to talk about bank reconciliation statement Skills lab: Guide students to discuss on meaning, importance, reasons for inconsistencies and the key terms used in bank reconciliation statement Demonstrate: Demonstrate on how to prepare bank reconciliation statement Practice: Guide students to prepare bank reconciliation statement and conclude",
+            "Project: Design a project that will enable students to prepare adjusted cash book and bank reconciliation statement Feedback: Make project results feedback that will enable students to reflect on their work"
+          ],
+          "assessment_criteria": [
+            "Bank reconciliation statement is well described",
+            "adjusted cash book and Bank reconciliation statement are correctly prepared"
+          ],
+          "resources": [
+            "Sample of a bank statement",
+            "Sample of a bank statement"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate mastery of financial assets control",
+          "specific_code": "2.2",
+          "specific_competence": ". Prepare a financial budget",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Describe Budgeting and budgetary control process (meaning, importance, approaches, and features of a good budget )",
+            "(b) Prepare a simple cash budget"
+          ],
+          "teaching_methods": [
+            "Think-ink-pair-share: Students to individually think and then share on the term budgeting and budgetary",
+            "Demonstrate: Demonstrate on how to prepare simple cash budget. Practice: Guide students to prepare simple cash budget and conclude"
+          ],
+          "assessment_criteria": [
+            "Budgeting and budgetary control process is well described",
+            "A simple cash budget is correctly prepared"
+          ],
+          "resources": [
+            "Sample of financial Budget",
+            "Sample of cash budget"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of financial assets control",
+          "specific_code": "1.1",
+          "specific_competence": "Prepare a Trial balance",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Describe control accounts",
+            "(b) Prepare Purchases and Sales Ledgers as further controls of the arithmetical accuracy of ledger accounts"
+          ],
+          "teaching_methods": [
+            "Group discussion: In groups students to discuss control accounts Presentation: Guide students to present what they have discussed and conclude",
+            "Demonstrate: Demonstrate on how to prepare purchases and sales ledger control account as a further check of arithmetical accuracy of accounts Practice: Guide students to prepare purchases ledger and sales ledger control account as a further check of arithmetical accuracy of ledger accounts"
+          ],
+          "assessment_criteria": [
+            "Control accounts are well described",
+            "Purchases ledger and sales ledger control accounts are correctly prepared"
+          ],
+          "resources": [
+            "Sample of accounts",
+            "Sample of Purchases and Sales Ledgers"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Prepare basic financial statements",
+          "specific_code": "2.1",
+          "specific_competence": ". Prepare basic profit or loss statements",
+          "number_of_periods": "42",
+          "learning_activities": [
+            "(a) Describe the necessary adjustments needed in the preparation of financial statements (depreciation, bad debts and doubtful debts",
+            "(b) Prepare a comprehensive income statement with adjustments",
+            "(c) Estimate profit or loss for the period from incomplete records"
+          ],
+          "teaching_methods": [
+            "Brainstorm: The need to account for depreciation Library/internet search: Ask students to use accessible resources in order to search depreciation, bad debts, doubtful debts and IAS 16 Practice: Guide students to calculate depreciation of an asset by using different methods Guide students to record depreciation, bad debts and doubtful debts in the respective accounts Group discussion: Guide students to discuss and prepare adjusted financial statements and conclude",
+            "Demostration: Demonstrate on how to prepare a comprensive income statement with adjustments Practice: Guide students to prepare a comprehensive income statement with adjustments and conclude",
+            "Demonstration: By focusing on single entry demonstrate how to estimate profit or loss for the period from incomplete records Practice: Guide students to estimate profit or loss for the period from an incomplete record, and conclude"
+          ],
+          "assessment_criteria": [
+            "Adjustments needed in the preparation of financial statements are correctly illustrated",
+            "Income statement including year end adjustments are correctly prepared",
+            "Profit or loss for the period from an incomplete record is clearly estimated"
+          ],
+          "resources": [
+            "Sample of financial statements",
+            "Sample of Icome statements",
+            "Sample of Icome statements"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Prepare basic financial statements",
+          "specific_code": "2.2",
+          "specific_competence": ". Prepare basic business financial position statements",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Differentiate between capital and revenue expenditures and their effect on financial statements",
+            "(b) Prepare a comprehensive statement of financial position"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide the student to discuss capital and revenue expenditure and how they affect financial statements Practice: Guide students individually to differentiate between capital and revenue expenditure and their effect in financial statements Summarize and conclude the lesson",
+            "Demonstration: Demonstrate how to prepare statement of financial position Practice: Guide students to prepare statement of financial position and conclude"
+          ],
+          "assessment_criteria": [
+            "Capital and revenue expenditure are well distinguished",
+            "A statement of financial position with year end adjustment or from incomplete records is correctly prepared"
+          ],
+          "resources": [
+            "Sample of business financial position statements",
+            "Sample of business financial position statements"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": ". Prepare financial statements for non- commercial institutions",
+          "specific_code": "3.1",
+          "specific_competence": ". Demonstrate an understanding of commercial and non- commerical organisations",
+          "number_of_periods": "8",
+          "learning_activities": [
+            "(a) Describe For- Profit, Not- For Profit and Non-Profit organizations (motive, owners, management, sources of income, accounting etc.)"
+          ],
+          "teaching_methods": [
+            "Group Discussion: In groups students scan in their community the existing organizations and discuss their nature of operations. Plenary: In plenary students to discuss For-Profit, Not- For-Profit and Non-profit organization Guide students to discuss in focus by addressing motive, owners, management, sources of income and accounting then summarize and conclude the lesson"
+          ],
+          "assessment_criteria": [
+            "For-Profit, Not-For Profit and Non-Profit organizations are well described"
+          ],
+          "resources": [
+            "Sample of financial statements of non- commercial organisations"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": ". Prepare financial statements for non- commercial institutions",
+          "specific_code": "3.2",
+          "specific_competence": ". Prepare financial statements of non- commercial organisations",
+          "number_of_periods": "30",
+          "learning_activities": [
+            "(a) Describe important items relating to the accounting of Not-For Profit organizations",
+            "(b) Prepare the relevant accounts for Not-For Profit organizations (receipts and payments accounts, Income and expenditure statements and a statement of financial position)"
+          ],
+          "teaching_methods": [
+            "Project: Design a project that will enable students to explore the important items relating to the accounting for Not- For profit organization Feedback: Prepare a simple presentation that you will use to make feedback and reflection to your students",
+            "Demonstration: Demonstrate on how to prepare the relevant accounts for Not-For Profit organizations Practice: Guide students to prepare relevant accounts for Not- For-Profit organizations Summarise and conclude the lesson"
+          ],
+          "assessment_criteria": [
+            "Important items relating to the accounting for Not-For profit organizations are well illustrated",
+            "Relevant accounts for Not- For Profit organizations are correctly prepared"
+          ],
+          "resources": [
+            "Sample of financial statements of non- commercial organisations",
+            "Sample of financial statements of non- commercial organisations"
+          ]
+        },
+        {
+          "main_code": "4.0",
+          "main_competence": ". Demonstrate mastery of financial assets control",
+          "specific_code": "4.1",
+          "specific_competence": ". Adjust records in financial statements",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Describe the basis of accounting (cash basis and accrual basis)",
+            "(b) Adjust various recorded business transactions in the financial statements based on appropriate accounting basis (accruals and pre-payments)"
+          ],
+          "teaching_methods": [
+            "Group Discussion: In groups students to discuss the basis of accounting Presentation: Guide students to present in plenary and thereafter conclude",
+            "Demonstration: Demonstrate on how to adjust various balance for financial statements based on appropriate accounting basis Practice: Guide students to adjust various balance for financial statements financial statements based on appropriate accounting basis Summarise and conclude the lesson"
+          ],
+          "assessment_criteria": [
+            "Cash basis and accrual basis of accounting are well described",
+            "Various business transactions recorded under accrual basis of accounting are correctly adjusted"
+          ],
+          "resources": [
+            "Sample of financial statements",
+            "Sample of financial statements"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": ". Prepare basic financial statements",
+          "specific_code": "1.1",
+          "specific_competence": ". Prepare basic profit or loss statements",
+          "number_of_periods": "80",
+          "learning_activities": [
+            "(a) Describe various forms of business arrangements (manufacturing firms; consignment arrangement; partnership and joint venture agreement and departmental stores)",
+            "(b) Prepare relevant accounts to determine profit or loss for different forms of business (manufacturing firms;",
+            "partnership firms-admission and retirement of a partner; joint venture; consignments and departmental stores)"
+          ],
+          "teaching_methods": [
+            "Field Visit: Organize field visist in the nearby manufacturing firm. Start with firms operating in a small scale Group discussion: Guide students to discuss various business forms Presentation: Guide students to present their works and conclude",
+            "Demonstration: Demonstrate how to prepare the relevant accounts and statements to determine the profit or loss for different forms of business.",
+            "Practice: Guide students to practice what you have demonstrated Summarise and conclude the lesson"
+          ],
+          "assessment_criteria": [
+            "Various forms of business arrangements are well described",
+            "Relevant accounts to determine the profit or loss for different forms of businesses are correctly prepared",
+            ""
+          ],
+          "resources": [
+            "Sample of financial statements",
+            "Sample of financial statements",
+            ""
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": ". Prepare basic financial statements",
+          "specific_code": "1.2",
+          "specific_competence": "Prepare basic business financial position statements",
+          "number_of_periods": "",
+          "learning_activities": [
+            "(a) Prepare statements of financial position for different forms of business (manufacturing firms; partnership firms-admission and retirement of a partner, and departmental stores"
+          ],
+          "teaching_methods": [
+            "Practice: Guide students to prepare statement of financial position for different forms of business. Then summarise and conclude"
+          ],
+          "assessment_criteria": [
+            "Statements of financial position for different forms of business are correctly prepared"
+          ],
+          "resources": [
+            "Sample of business financial position statements"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": ". Prepare basic financial statements",
+          "specific_code": "1.3",
+          "specific_competence": "Prepare basic Statements of Cash flows",
+          "number_of_periods": "",
+          "learning_activities": [
+            "(a) Describe types of Cash Flows",
+            "(b) Prepare a basic Statements of Cash flows"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide students to mention different payments and receipts of any business and associate them with the types of cash flows",
+            "Illustration Illustrate a typical statement of cash flows and assign stu- dents to enter cash receipts and payments in the state- ment"
+          ],
+          "assessment_criteria": [
+            "Different types of cash flows properly identified",
+            "A statement of cash flows well prepared"
+          ],
+          "resources": [
+            "Copies of financial statements",
+            "Copies of financial statements"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": ". Prepare basic financial statements",
+          "specific_code": "1.4",
+          "specific_competence": "Prepare basic financial statements for audit",
+          "number_of_periods": "",
+          "learning_activities": [
+            "(a) Prepare a basic set of financial statements for financial audit (Income Statement, Statement of Financial Position, Cash Flows and Notes to Financial Statements)"
+          ],
+          "teaching_methods": [
+            "Project: Design a project that will enable students to prepare a complete set of financial statements for financial audit. Feedback Prepare a presentation that will be used as feedback for students’ reflection. Then summarise and conclude"
+          ],
+          "assessment_criteria": [
+            "A complete set of financial statements is correctly prepared"
+          ],
+          "resources": [
+            "Sample of annual financial reports"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": ". Demonstrate mastery of the use of ICT in Book- keeping",
+          "specific_code": "2.1",
+          "specific_competence": "Use basic accounting packages",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Record business transactions by using basic accounting packages",
+            "(b) Analyse simple financial data by using accounting packages",
+            "(c) Apply basic accounting packages to produce financial statements"
+          ],
+          "teaching_methods": [
+            "Group Discussion: Guide student to discuss what is basic accounting package and common basic accounting packages used in their locality Skills lab: Demostration how to use accounting packages to record business transactions Practice: In their group students to practice recording business transactions by using accounting packages Presentation Groups to present their work for feedback and conclusion",
+            "Demonstration Guide students to use accounting packages to produce financial statement, reports and then interpret financial data Practice Organise students in groups and then ask them to practice how to produce financial statement, reports and then interpret financial data, then conclude",
+            "Project Design a project for students to prepare financial statements by using accounting packages Feedback Prepare a presentation that will be used as feedback for students’ reflection. Then summarise and conclude"
+          ],
+          "assessment_criteria": [
+            "Financial data are correctly entered into an application templates",
+            "Financial data are correctly analysed",
+            "Financial information is correctly generated"
+          ],
+          "resources": [
+            "Accounting software",
+            "Accounting software",
+            "Accounting software"
+          ]
+        }
+      ]
+    }
+  }
+}

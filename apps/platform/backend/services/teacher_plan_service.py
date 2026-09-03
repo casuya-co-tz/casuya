@@ -15,6 +15,7 @@ import logging
 import re
 from datetime import datetime, timezone
 
+from backend.data.tie_competences import lookup_competence
 from backend.services.ai_service import _call_ai_service
 from backend.services.syllabus_service import get_curriculum_context, get_subject_with_form
 
@@ -36,6 +37,23 @@ def _is_kiswahili(subject_slug: str) -> bool:
 
 def _lang_label(subject_slug: str) -> str:
     return "sw" if _is_kiswahili(subject_slug) else "en"
+
+
+def _tie_competences(subject_slug: str, form_level: int, topic_title: str, lang: str):
+    """Return (main_competence, specific_competence) verbatim TIE statements.
+
+    Looks up the official TIE CBC (2023) competence for the given subject /
+    form / topic and formats it as "<code> <statement>". Returns (None, None)
+    when the subject or topic is not in the curated mapping so callers can
+    gracefully fall back to their existing behaviour.
+    """
+    rec = lookup_competence(subject_slug, form_level, topic_title)
+    if not rec:
+        return None, None
+    return (
+        f"{rec['main_code']} {rec['main'][lang]}".strip(),
+        f"{rec['specific_code']} {rec['specific'][lang]}".strip(),
+    )
 
 
 def _time_to(duration_minutes: int) -> str:
@@ -65,6 +83,44 @@ def _parse_plan_json(raw: str) -> dict | None:
         except (json.JSONDecodeError, TypeError):
             pass
     return None
+
+
+def _fill_lesson_plan_placeholders(
+    plan: dict,
+    *,
+    topic_code: str,
+    topic_title: str,
+    sub_code: str,
+    sub_title: str,
+    duration_minutes: int,
+) -> dict:
+    """Replace leftover literal '{}' tokens (which the model sometimes copies
+    verbatim from the prompt instead of substituting values) with the real
+    syllabus values. Applied recursively across the whole plan so the stored
+    JSON and its print HTML never leak raw placeholders like '{topic_code}'.
+    """
+    values = {
+        "{topic_code}": topic_code or "",
+        "{topic_title}": topic_title or "",
+        "{subtopic_code}": sub_code or "",
+        "{subtopic_title}": sub_title or "",
+        "{duration}": str(duration_minutes),
+        "{duration_minutes}": str(duration_minutes),
+    }
+
+    def _fill(value):
+        if isinstance(value, str):
+            out = value
+            for k, v in values.items():
+                out = out.replace(k, v)
+            return out
+        if isinstance(value, list):
+            return [_fill(i) for i in value]
+        if isinstance(value, dict):
+            return {k: _fill(v) for k, v in value.items()}
+        return value
+
+    return _fill(plan)
 
 
 async def generate_lesson_plan(
@@ -108,11 +164,40 @@ async def generate_lesson_plan(
         "form_level": form_level,
     })
 
+    # Resolve the real syllabus codes/titles so any leftover '{}' placeholder
+    # tokens in the AI output can be filled with authentic values.
+    topic_code = topic_title = ""
+    sub_code = sub_title = subtopic or ""
+    try:
+        subject_data = get_subject_with_form(subject_slug, form_level)
+        topic_code, sub_code, sub_title = _build_lesson_plan_topic_codes(
+            subject_data, topic, subtopic or "", lang)
+        topic_title = topic
+        for tp in (subject_data or {}).get("topics", []):
+            if (tp.get("title") or "").strip().lower() == (topic or "").strip().lower() or \
+               (tp.get("code") or "").strip().lower() == (topic or "").strip().lower():
+                topic_title = tp.get("title") or topic
+                break
+    except Exception:
+        logger.warning("Could not resolve syllabus codes for placeholder fill", exc_info=True)
+
     if result and "response" in result:
         raw = _strip_think_tags(result["response"])
         plan = _parse_plan_json(raw)
         if plan and "header" in plan:
-            return plan
+            tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
+            if tie_main and tie_spec:
+                ca = plan.setdefault("competence_architecture", {})
+                ca["main_competence"] = tie_main
+                ca["specific_competence"] = tie_spec
+            return _fill_lesson_plan_placeholders(
+                plan,
+                topic_code=topic_code,
+                topic_title=topic_title,
+                sub_code=sub_code,
+                sub_title=sub_title,
+                duration_minutes=duration_minutes,
+            )
 
     return _build_lesson_plan_offline(
         subject_slug=subject_slug,
@@ -339,16 +424,15 @@ def _build_lesson_plan_prompt(
             "students_absent": {"boys": "", "girls": "", "total": ""},
         },
         "competence_architecture": {
-            "main_competence": "{topic_code} {topic_title} — verbatim from TIE syllabus",
-            "specific_competence": "{subtopic_code} {subtopic_title} — verbatim from TIE syllabus",
-            "main_learning_activity": "Verbatim from TIE syllabus — broad topic narrative",
+            "main_competence": "1.1 INDICES AND LOGARITHMS (use the real topic code and title from the curriculum context for THIS lesson)",
+            "specific_competence": "1.1.1 LAWS OF INDICES (use the real subtopic code and title from the curriculum context for THIS lesson)",
+            "main_learning_activity": "Students apply the laws of indices to simplify numerical and algebraic expressions",
             "specific_learning_activity": (
-                "Deconstructed micro-chunk of Main Activity as a concise outcome phrase, "
-                "e.g. Define hyperbolic functions and their properties"
+                "Define the laws of indices and apply them to simplify expressions"
             ),
             "lesson_objective": (
-                "By the end of this {duration}-minute lesson, the learner should be able to "
-                "[SMART ACTION VERB] [specific subject matter] accurately"
+                "By the end of this 40-minute lesson, the learner should be able to "
+                "identify and apply the laws of indices accurately"
             ),
         },
         "resources_strategies": {
@@ -448,11 +532,14 @@ _TIE_LESSON_PLAN_RULES_EN = (
     "8. STUDENT ATTENDANCE MATRIX: Fill students_present with actual numbers (boys, girls, "
     "total). Leave students_absent as the remainder (registered minus present). This creates "
     "the 3-column SQAD attendance table (Registered / Present / Absent).\n"
-    "9. LESSON OBJECTIVE: Write a SMART objective in the format: \"By the end of this "
-    "{duration_minutes}-minute lesson, the learner should be able to [SMART ACTION VERB] "
-    "[specific subject matter] accurately.\" Use measurable verbs: identify, define, "
-    "calculate, construct, explain, demonstrate, classify, analyze. Never use vague verbs "
-    "like 'understand' or 'know'.\n"
+    "9. LESSON OBJECTIVE: Write a SMART objective sentence that starts with \"By the end "
+    "of this {duration_minutes}-minute lesson, the learner should be able to\" followed by a "
+    "measurable action verb (identify, define, calculate, construct, explain, demonstrate, "
+    "classify, analyze) and the lesson's specific subject matter from the curriculum context, "
+    "ending with \"accurately\". For example: \"By the end of this 40-minute lesson, the "
+    "learner should be able to identify and apply the laws of indices accurately.\" "
+    "Fill in the real, specific content — never leave bracketed placeholders in the final "
+    "objective. Never use vague verbs like 'understand' or 'know'.\n"
     "10. CORE CONTENT per stage: Each of the 4 progression stages must include a "
     "core_content field stating the key knowledge/skill addressed in that stage "
     "(e.g. \"Prior knowledge foundation\", \"Core definitions and formulas\", "
@@ -887,6 +974,14 @@ def _lookup_lesson_plan_content(subject_slug, form_level, topic, subtopic, lang,
     sub_title = match_subtopic.get("title") or subtopic_display
     sub_code = match_subtopic.get("code") or ""
     spec_comp = f"{sub_code} {sub_title}".strip() if sub_code else sub_title
+
+    # Prefer the verbatim TIE CBC (2023) Main/Specific Competence statements
+    # for this teaching topic when the curated mapping is available.
+    tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
+    if tie_main and tie_spec:
+        main_comp = tie_main
+        spec_comp = tie_spec
+
     outcomes = [
         o.get("description", "").strip()
         for o in match_subtopic.get("outcomes", [])
@@ -1064,6 +1159,13 @@ def _build_lesson_plan_offline(
             teacher_acts[3] = kb_plan["realization"]["teacher_activity"]
             learner_acts[3] = kb_plan["realization"]["learner_activity"]
             assessment[3] = kb_plan["realization"]["assessment"]
+
+    # Prefer the verbatim TIE CBC (2023) Main/Specific Competence statements
+    # for this teaching topic, independent of the knowledge-base lookup.
+    tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
+    if tie_main and tie_spec:
+        main_comp = tie_main
+        spec_comp = tie_spec
 
     # When generating one lesson per period (period-weighted lesson plans), focus
     # this individual lesson on a single specific learning activity.
@@ -1381,6 +1483,13 @@ def _build_scheme_offline(
                 main_comp = f"{topic_code} {topic_title}" if topic_code else topic_title
                 spec_comp = f"{sub_code} {sub_title}".strip() if sub_code else sub_title
 
+            # Prefer the verbatim TIE CBC (2023) Main/Specific Competence
+            # statements for this teaching topic when the mapping is available.
+            tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic_title, lang)
+            if tie_main and tie_spec:
+                main_comp = tie_main
+                spec_comp = tie_spec
+
             week_row = {
                 "topic": topic_title,
                 "subtopic": sub_title,
@@ -1445,6 +1554,14 @@ def _subject_book(subject_label: str, class_name: str, lang: str) -> str:
 # ── HTML Rendering ─────────────────────────────────────────────────────────
 
 def render_lesson_plan_html(plan: dict) -> str:
+    plan = _fill_lesson_plan_placeholders(
+        plan,
+        topic_code="",
+        topic_title=str(plan.get("header", {}).get("topic", "")),
+        sub_code="",
+        sub_title=str(plan.get("header", {}).get("subtopic", "")),
+        duration_minutes=int(plan.get("header", {}).get("duration_minutes") or 40),
+    )
     h = plan.get("header", {})
     is_sw = any(
         w in (h.get("topic", "") + h.get("subject", "")).lower()
@@ -1697,7 +1814,7 @@ def render_lesson_plan_html(plan: dict) -> str:
         </tr>'''}
         <tr>
             <td><strong>{_e(_subject)}:</strong> {_e(subject)}</td>
-            <td><strong>{_e(LST('Topic', 'Mada'))}:</strong> {tp}</td>
+            <td><strong>{_e(LST('Specific competence', 'Ujuzi mahususi'))}:</strong> {_e(sc or tp)}</td>
             <td></td>
         </tr>
     </table>

@@ -1,0 +1,349 @@
+{
+  "subject": "biology",
+  "language": "en",
+  "forms": {
+    "1": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of the concepts, principles and processes of Biology",
+          "specific_code": "1.1",
+          "specific_competence": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "number_of_periods": "27",
+          "learning_activities": [
+            "(a) Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other disciplines)",
+            "(b) Describe a cell (meaning,types, structures and functions)",
+            "(c) Describe nutrition in plants (photosynthesis, leaf structure and mineral requirements)"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide students in manageable groups to discuss meaning of biology, basic biological terminologies and branches of biology Brainstorming: Guide students to brainstorm on importance of biology in our life Jigsaw: Guide students in manageable groups, to explain the relationship of Biology with other disciplines through jigsaw",
+            "Group Discussion: Guide students in manageable groups to discuss concept of cell ICT-Based learning: Guide students to explain cell structures and cell differentiation through simulation Experimentation: Guide students to prepare microscope slides of a plant and animal cell",
+            "Field visit: Guide students to collect different plant leaves around the school compound to observe and explain the external structure of leaves Group Discussion: Guide students in manageable groups to discuss the concept of nutrition in plants, internal structure of a leaf and how photosynthesis occurs in the leaf Guest speaker: Invite guest speaker (Agricultural extension officer) to share with students on mineral requirements in plants"
+          ],
+          "assessment_criteria": [
+            "The basic concept of Biology are clearly explained",
+            "The concept of cell is described clearly",
+            "Nutrition in plants is described clearly"
+          ],
+          "resources": [
+            "Charts, relevant text, and online resources on basic concept of biology",
+            "Cells charts/ models, light microscope, slide covers, microscope slides, and cells online resources",
+            "Relevant equipment and apparati, heat sources, water, relevant chemicals and reagents, leaves, pond weeds, nutrition in plants models/ charts, and nutrition in plants online resources"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Communicating using scientific biological terminologies",
+          "specific_code": "2.1",
+          "specific_competence": "Demonstrate mastery of scientific biological terminologies",
+          "number_of_periods": "28",
+          "learning_activities": [
+            "(a) Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms,",
+            "artificial and natural classification systems)",
+            "(b) Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruses)"
+          ],
+          "teaching_methods": [
+            "Field visit: Guide students to collect various living things around the school compound and group all the items according to their similarities Brainstorming: Guide students to brainstorm on the concept of",
+            "classification Group Discussion: Guide students in manageable groups to discuss systems of classification and scientific rules of naming organisms Project: Guide students to assign scientific names to organisms and label trees around their school environment",
+            "Field vist: Guide students in groups to collect various living organisms around the school compound which are representatives of the major groups of organisms and classify them Group Discussion: Guide students in manageable groups, to identify the major groups of organisms and viruses, discuss their features and economic importance"
+          ],
+          "assessment_criteria": [
+            "Concept and systems of classification explained clearly",
+            "",
+            "The major groups of organisms and viruses are described clearly"
+          ],
+          "resources": [
+            "Variety of living organisms, classification charts, and classification online resources",
+            "",
+            "Variety of living organisms, preserved specimens, charts on major groups of organisms, and classification online resources"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Conduct biological investigations",
+          "specific_code": "3.1",
+          "specific_competence": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "number_of_periods": "40",
+          "learning_activities": [
+            "(a) Describe the basic skills for conducting biological experiments (observation, measurement and experimentation)",
+            "(b) Carry out microscopic observation of a cell",
+            "(c) Carry out investigations related to photosynthesis (conditions necessary for photosynthesis)"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide students to visit biology laboratory to identify common apparatus and equipment used in biological experiments Experimentation: Guide students to perform activities that involve observation, measurement and experimentation",
+            "Group discussion: Guide students in manageable groups to explore procedures that are required to observe a cell under a microscope Laboratory practical: Guide students to observe cells of living things under light microscope",
+            "Experimentation: Guide students to carry out investigations on the conditions necessary for photosynthesis"
+          ],
+          "assessment_criteria": [
+            "Basic skills for conducting biological experiments are correctly described",
+            "Microscopic observation of a cells carried out correctly",
+            "Investigations related to photosynthesis are carried out correctly"
+          ],
+          "resources": [
+            "Basic skills for conducting biological expeiments online resources, colourful pictures, perfume, hot water, preserved specimen, live plants and animals specimens, thermometer, weighing scales, rulers, boxes, stones, variety of equipment and apparati used in conducting biological experiments",
+            "Light microscope, slide covers, microscope slide, online resources on microscopic observation of a cell and relevant apparati",
+            "Variety of equipment and apparati, live plant specimens, relevant chemicals, reagents and photosynthesis online resources"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Conduct biological investigations",
+          "specific_code": "3.2",
+          "specific_competence": "Prepare and present results of biological investigations",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Prepare and present a report on cell and photosynthesis investigations"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide students in groups to discuss the steps in preparation of biological investigation report Project: Guide students to prepare a report using the steps in preparation of a biological investigation report Presentation: Guide students to present a biological investigation report"
+          ],
+          "assessment_criteria": [
+            "Investigation report on cell and photosynthesis is prepared and presented correctly"
+          ],
+          "resources": [
+            "Relevant text on steps for scientific investigations and report writing, online resources on report writing"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of the concepts, principles and processes of Biology",
+          "specific_code": "1.1",
+          "specific_competence": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "number_of_periods": "64",
+          "learning_activities": [
+            "(a) Describe nutrition in human and ruminants (nutrients, digestive system and processes)",
+            "(b) Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiration)",
+            "(c) Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulation)",
+            "(d) Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiration)",
+            "(e) Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the process)"
+          ],
+          "teaching_methods": [
+            "Brainstorming: Guide students to brainstorm on the concept of nutrition in human and ruminants Jigsaw: Guide students to explore nutrients, nutritional deficiency and disorders through jigsaw ICT-Based learning: Guide student to explain the digestive system, digestion processes in human and ruminants through simulation Group discussion: Guide students in manageable groups to discuss diseases and disorders of human digestive system",
+            "Brainstorming: Guide students to brainstorm on the concept of transportation of materials in flowering plants Group discussion: Guide students in manageable groups to discuss vascular system ICT based learning: Guide students to explain absorption and movement of water and mineral salts in plants and transpiration process through simulation Question and answers: Guide students to explain factors affecting rate of transpiration through questions and answers",
+            "Brainstorming: Guide students to brainstorm on the concept of transportation of materials in human body Field trip: Guide students to visit nearby health facility to learn about blood cells, blood groups, blood pressure and blood transfusion ICT-Based learning: Guide students to explain the structure of the heart and blood circulation in human through simulation Group discussion: Guide students in manageable groups to discuss the importance of blood circulation, diseases and disorders of the human circulatory system",
+            "Brainstorm: Guide students to brainstorm the concept of gaseous exchange and respiration in mammals ICT-based learning: Guide students to explain the mechanism of gaseous exchange and respiration in mammals through simulation/ animation/ video Group discussion: Guide students in manageable groups to discuss on factors affecting the rate of gaseous exchange and respiration in mammals Guest speaker: Invite guest speaker to share with students on various infections and diseases of respiratory system Exploration: Guide students to explore how aerobic and anaerobic respiration are applied in their real life",
+            "Questions and answers: Guide students to explain the concept of gaseous exchange in plants through question and answers ICT based learning: Guide students to explain the mechanism of gaseous exchange in plants through simulation / animation/video"
+          ],
+          "assessment_criteria": [
+            "Nutrition in human and ruminants is described clearly",
+            "Mechanism of transportation of materials in flowering plants is described clearly",
+            "The mechanism of transportation of materials in the human body are described clearly",
+            "The mechanisms of gaseous exchange and respiration in mammals are described clearly",
+            "The mechanism of gaseous exchange in plants is described clearly"
+          ],
+          "resources": [
+            "Variety of food substances, charts/ pictures displaying variety of food nutrients, models/charts of human and ruminant digestive system, dissected mammal specimen displaying digestive system, charts/ photographs showing common disorders and diseases of human digestive system",
+            "Charts/model/ photographs showing transportation of materials in plants, relevant equipment and apparati, stain, potted plants, germinated seeds, and transportation of materials in plants online resources",
+            "Mammalian heart models/ charts/ photographs, blood circulatory system online resources, dissected mammal displaying the heart and major blood vessels and charts showing diseases and disorders of human circulatory system",
+            "Models/ photographs/ charts showing structure of the lungs and alveolus in human, online resources on gaseous exchange and respiration in mammals",
+            "Plant leaves, photographs showing the structure of stomata, potted plants, charts/pictures of gaseous exchange in plants, and gaseous exchange in plants online resources"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct biological investigations",
+          "specific_code": "2.1",
+          "specific_competence": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "number_of_periods": "31",
+          "learning_activities": [
+            "(a) Investigate food nutrients in various food samples",
+            "(b) Investigate processes of transportation of materials in flowering plants",
+            "(c) Carry out experiments to determine the pulse rate in human",
+            "(d) Investigate aerobic and anaerobic respiration in living organisms"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide students in manageable groups to explore the scientific procedures required to conduct food test Laboratory practical: Guide students to investigate food nutrients in various food samples",
+            "Group discussion: Guide students in manageable groups to discuss procedures/ steps for investigating processes of transportation of materials in flowering plants Experimentation: Guide students to investigate processes of transportation of materials in flowering plants",
+            "Experimentation: Guide students to carry out experiment to determine pulse rate among themselves",
+            "Experimentation: Guide students to investigate aerobic and anaerobic respiration in living organisms through experiment"
+          ],
+          "assessment_criteria": [
+            "Food nutrients in various food samples are investigated correctly using the scientific procedures",
+            "Processes of transportation of materials in flowering plants are investigated correctly",
+            "Experiments to determine the pulse rate in human are carried out correctly",
+            "Aerobic and anaerobic respiration in living organisms are investigated correctly"
+          ],
+          "resources": [
+            "Relevant reagents and chemicals, various food samples, apparati and source of heat",
+            "Diagram/ video showing transverse section of living plant tissues, mounted slides of plant tissues, relevant reagents and chemicals, source of heat, plants with variegated leaves, distilled water, ringed plant, charts/ video showing transportation of materials in plants, and online resources on transportation of materials in plants",
+            "Blood pressure machine, smartphone app, digital fitness trackers and exercise machine",
+            "Charts/ diagrams on aerobic and anaerobic respiration of living organisms"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct biological investigations",
+          "specific_code": "2.2",
+          "specific_competence": "Prepare and present results of biological investigations",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "(a) Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )"
+          ],
+          "teaching_methods": [
+            "Project: Guide students to prepare biological investigation report using scientific steps/ procedures Presentation: Guide students to present a biological investigation report"
+          ],
+          "assessment_criteria": [
+            "A biological investigation report is prepared and presented correctly using scientific procedures"
+          ],
+          "resources": [
+            "Steps / procedures for biological investigations online resources"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of the concepts, principles and processes of Biology",
+          "specific_code": "1.1",
+          "specific_competence": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "number_of_periods": "80",
+          "learning_activities": [
+            "(a) Describe coordination in plants (tropic, responses) and animals (nervous coordination in human, structure of neurones, sense organs and endocrine system)",
+            "(b) Describe the mechanism of excretion in the human body (systems: organs, products)",
+            "(c) Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulation)"
+          ],
+          "teaching_methods": [
+            "Brainstorm: Guide students to brainstorm on the concept of coordination in plants and animals Jigsaw: Guide students to discuss types of tropic responses in plants through jigsaw Group discussion: Guide students in manageable groups to discuss nervous coordination in human, structure of neurons, sense organs and endocrine system in human",
+            "Brainstorming: Guide students to brainstorm on the concept of excretion in human Group discussion: Guide students in manageable groups to discuss excretory organs, products and urinary system ICT based learning: Guide students to explain common complications and disorders of human excretory system through simulation/ video",
+            "Question and answers: Guide students to explain the concept of regulation in human body through questions and answers Group discussion: Guide students in manageable groups to discuss mechanism of temperature regulation, blood sugar regulation and osmoregulation ICT based learning: Guide students to demonstrate mechanisms of temperature regulation by using digital simulation or videos"
+          ],
+          "assessment_criteria": [
+            "Coordination in plants and animals described clearly",
+            "The mechanism of excretion in human body is described clearly",
+            "The mechanism of regulation in the human body is described clearly"
+          ],
+          "resources": [
+            "Models/pictures of sense organs, young plants, charts showing plants tropic responses, models/charts/ pictures showing structure of neurones and online resouces on plants and animals coordination",
+            "Models/ charts/ pictures of human urinary system, picture of mammalian kidney, online resources on human excretion and charts illustrating disoders of human excretory system",
+            "Charts on temperature and blood sugar regulation and online resouces of temperature regulation, blood sugar regulation and osmoregulation"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct biological investigations",
+          "specific_code": "2.1",
+          "specific_competence": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "number_of_periods": "40",
+          "learning_activities": [
+            "(a) Investigate the process of nervous coordination (reflex arc and knee jerk)",
+            "(b) Investigate tropic responses in plants"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide students in manageable groups to discuss the processes involved during reflex arc and knee jerk ICT based learning: Guide students to demonstrate the process of nervous coordination by using a digital simulations or videos Experimentation: Guide students to demonstrate a simple experiment on the human nervous coordination that involves knee jerk",
+            "Project : Organize students in groups to perform experiment to investigate tropic responses in plants"
+          ],
+          "assessment_criteria": [
+            "The process of nervous coordination is investigated correctly",
+            "Tropic responses in plants are investigated correctly"
+          ],
+          "resources": [
+            "Sharp objects, hot objects, animal toys models (snake, scorpion), live small animals specimens and nervous coordination online resources",
+            "Variety of plants Seedlings, pots, seeds, soil, water, boxes and online resources/ charts on tropic responses in plants"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct biological investigations",
+          "specific_code": "2.2",
+          "specific_competence": "Carry out a biological project work using biological principles",
+          "number_of_periods": "20",
+          "learning_activities": [
+            "(a) Develop and carry out a simple research project in Biology"
+          ],
+          "teaching_methods": [
+            "Group discussion: Guide students to discuss the principles of carrying out a biological research project Experiment: Guide students to carry out a biological research project using the required principles"
+          ],
+          "assessment_criteria": [
+            "A biological research project work is developed and carried out correctly"
+          ],
+          "resources": [
+            "Text/online resources on principles of biological projects"
+          ]
+        }
+      ]
+    },
+    "4": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate mastery of the concepts, principles and processes of Biology",
+          "specific_code": "1.1",
+          "specific_competence": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "number_of_periods": "86",
+          "learning_activities": [
+            "(a) Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilization)",
+            "(b) Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birth)",
+            "(c) Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germination)",
+            "(d) Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation"
+          ],
+          "teaching_methods": [
+            "Brainstorming: Guide students to brainstorm on the concept of reproduction in plants Group discussion:Guide students in manageable groups to discuss on the asexual and sexual reproduction, pollination and fertilization in plants",
+            "Question and answers: Guide students to explain the concept of reproduction in humans through question and answers: ICT based learning: Guide students to explore mechanism of meiosis through digital simulation Group discussion: Guide students in manageable groups to discuss sexual reproduction, fertilization, pregnancy and child birth in human Guest speaker: Invite guest speaker to share with students on family planning and contraception and disorders of reproductive system",
+            "Brainstorm: Guide students to brainstorm on the concept of growth in flowering plants and mammals ICT based learning: Guide students to explain stages of mitosis, growth and developmental stages in human through digital simulation Group discussion: Guide students in manageable group to discuss growth process in plants and factors affecting growth in plants and animals Project : Guide students in manageable groups to carry out an experiments on growth in plants and small mammals",
+            "Brainstorming: Guide students to brainstorm on the concept of genetics Group discussion: Guide students in manageable groups to discuss genetic materials, principles of inheritance and variation ICT based learning; Guide students to demonstrate Mendelian laws of inheritance and non- Mendelian inheritance through simulation Problem solving: Guide students to apply principles of genetics to solve genetic problems"
+          ],
+          "assessment_criteria": [
+            "Reproduction in plants is described clearly",
+            "Reproduction in humans is described clearly",
+            "The mechanisms of growth in flowering plants and mammals are described clearly",
+            "The basic tenets of genetics are explored clearly"
+          ],
+          "resources": [
+            "Reproduction in plants online resources, potted plants, hibiscus flowers, bean flowers, elephant grass flowers, hand lens, surgical/ razor blade, pictures/ illustration showing reproduction in plants",
+            "Charts/ models of human reproductive system, charts/models/ pictures of meiosis stages, online resources of reproduction in human, and charts of family planning methods",
+            "Photographs/ charts on growth in flowering plants, growth in plants online resources",
+            "Charts/models photographs on basic tenets of genetics and online resources on basic tenets of genetics"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct biological investigations",
+          "specific_code": "2.1",
+          "specific_competence": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "number_of_periods": "18",
+          "learning_activities": [
+            "(a) Carry out investigation related to reproduction in flowering plants (flower structure and embryo)",
+            "(b) Investigate growth in flowering plants (hypogeal and epigeal germination)"
+          ],
+          "teaching_methods": [
+            "Practical work: Guide students to make longitudinal and cross-sections of flower to identify reproductive structures and the embryo ICT based learning: Guide students to investigate the reproductive structure of flowering plants through digital simulation",
+            "Experimentation: Guide students in manageable groups to set up a simple experiment on the investigation of epigeal and hypogeal germination"
+          ],
+          "assessment_criteria": [
+            "Investigation related to reproduction in flowering plants performed correctly",
+            "Growth in flowering plants is investigated correctly"
+          ],
+          "resources": [
+            "Hibiscus flowers, razor blade, forceps, reproduction in plants online resources",
+            "Seeds, pots, water, soil and charts/pictures on growth in plants"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Conduct biological investigations",
+          "specific_code": "2.2",
+          "specific_competence": "Carry out a biological project work using biological principles",
+          "number_of_periods": "18",
+          "learning_activities": [
+            "(a) Complete and submit a report for the research project started in Form Three"
+          ],
+          "teaching_methods": [
+            "Project activity: Guide students to prepare and submit report of a research project"
+          ],
+          "assessment_criteria": [
+            "Research project report are completed and timely submitted"
+          ],
+          "resources": [
+            "Relevant text on biology research project and online resources on research projects"
+          ]
+        }
+      ]
+    }
+  }
+}

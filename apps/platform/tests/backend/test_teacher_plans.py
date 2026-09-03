@@ -13,6 +13,7 @@ from backend.services.teacher_plan_service import (
     _build_lesson_plan_offline,
     _build_scheme_offline,
     _distribute_periods,
+    _fill_lesson_plan_placeholders,
     _lang_label,
     plan_lessons_for_subtopic,
     render_lesson_plan_html,
@@ -149,6 +150,43 @@ def test_lesson_plan_offline_render_english():
     assert "window.print()" not in html
 
 
+def test_fill_lesson_plan_placeholders_replaces_literal_tokens():
+    plan = {
+        "header": {"topic": "INDICES AND LOGARITHMS", "duration_minutes": 40},
+        "competence_architecture": {
+            "main_competence": "{topic_code} {topic_title}",
+            "specific_competence": "{subtopic_code} {subtopic_title}",
+            "lesson_objective": "By the end of this {duration}-minute lesson, the learner should be able to identify {topic_title} accurately.",
+        },
+        "resources_strategies": {
+            "references": ["TIE (2026). {topic_title} for Secondary Schools Form 2, pp. 45-48. Dar es Salaam: TIE."]
+        },
+        "progression_matrix": [
+            {"stage": "Introduction", "assessment_criteria": "Students identify prior knowledge related to {subtopic_title}."},
+        ],
+    }
+    filled = _fill_lesson_plan_placeholders(
+        plan,
+        topic_code="1.1",
+        topic_title="INDICES AND LOGARITHMS",
+        sub_code="1.1.2",
+        sub_title="Laws of Indices",
+        duration_minutes=40,
+    )
+    assert filled["competence_architecture"]["main_competence"] == "1.1 INDICES AND LOGARITHMS"
+    assert filled["competence_architecture"]["specific_competence"] == "1.1.2 Laws of Indices"
+    assert "{topic_code}" not in filled["competence_architecture"]["main_competence"]
+    assert "40-minute" in filled["competence_architecture"]["lesson_objective"]
+    assert "{duration" not in filled["competence_architecture"]["lesson_objective"]
+    assert "INDICES AND LOGARITHMS" in filled["resources_strategies"]["references"][0]
+    assert filled["progression_matrix"][0]["assessment_criteria"].endswith(
+        "related to Laws of Indices."
+    )
+    assert "{" not in filled["competence_architecture"]["main_competence"]
+    assert "{" not in filled["competence_architecture"]["specific_competence"]
+    assert "{" not in filled["competence_architecture"]["lesson_objective"]
+
+
 def test_lesson_plan_offline_render_kiswahili():
     plan = _build_lesson_plan_offline(
         subject_slug="kiswahili", subject_label="Kiswahili", form_level=1,
@@ -254,6 +292,57 @@ def test_lesson_plan_offline_falls_back_without_knowledge_base():
     assert plan["competence_architecture"]["main_competence"].startswith(
         "Demonstrate mastery of algebraic")
     assert plan["progression_matrix"][3]["stage"] == "Realizations"
+
+
+def test_lesson_plan_uses_verbatim_tie_competence():
+    """The offline lesson plan surfaces the official TIE CBC (2023) Main and
+    Specific Competence statements instead of the bare code + topic title."""
+    for lang in ("en", "sw"):
+        plan = _build_lesson_plan_offline(
+            subject_slug="mathematics", subject_label="Basic Mathematics",
+            form_level=2, topic="INDICES AND LOGARITHMS", subtopic="Laws of Indices",
+            school_name="School", teacher_name="Teacher", number_of_students=40,
+            duration_minutes=40, period="Period 1", lang=lang,
+        )
+        ca = plan["competence_architecture"]
+        expected_main = (
+            "2.0 Demonstrate mastery of basic concepts in geometry and algebra"
+            if lang == "en" else
+            "2.0 Kuonyesha ustadi wa dhana za msingi za jiometri na algebra"
+        )
+        expected_spec = (
+            "2.2 Use algebra and matrices in problem solving"
+            if lang == "en" else
+            "2.2 Kutumia algebra na matriksi katika kutatua matatizo"
+        )
+        assert ca["main_competence"] == expected_main
+        assert ca["specific_competence"] == expected_spec
+
+    # HTML must show the verbatim competence and must NOT show a 'Topic:'/'Subtopic:' label.
+    plan = _build_lesson_plan_offline(
+        subject_slug="mathematics", subject_label="Basic Mathematics",
+        form_level=2, topic="INDICES AND LOGARITHMS", subtopic="Laws of Indices",
+        school_name="School", teacher_name="Teacher", number_of_students=40,
+        duration_minutes=40, period="Period 1", lang="en",
+    )
+    html = render_lesson_plan_html(plan)
+    assert "2.0 Demonstrate mastery of basic concepts in geometry and algebra" in html
+    assert "2.2 Use algebra and matrices in problem solving" in html
+    assert ">Topic:" not in html
+    assert ">Subtopic:" not in html
+    assert ">Topic</" not in html
+
+
+def test_scheme_of_work_uses_verbatim_tie_competence():
+    """The scheme-of-work week rows surface the verbatim TIE CBC competences."""
+    plan = _build_scheme_offline(
+        subject_slug="mathematics", subject_label="Basic Mathematics", form_level=2,
+        term="Term 1", academic_year="2026", school_name="School",
+        teacher_name="Teacher", topics=["INDICES AND LOGARITHMS"], lang="en",
+    )
+    row = next(w for w in plan["weeks"] if w["topic"] == "INDICES AND LOGARITHMS")
+    assert row["main_competence"] == "2.0 Demonstrate mastery of basic concepts in geometry and algebra"
+    assert row["specific_competence"] == "2.2 Use algebra and matrices in problem solving"
 
 
 def test_scheme_of_work_offline_render(monkeypatch):

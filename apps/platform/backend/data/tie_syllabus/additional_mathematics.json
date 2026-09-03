@@ -1,0 +1,199 @@
+{
+  "subject": "additional_mathematics",
+  "language": "en",
+  "forms": {
+    "1": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Use advanced mathematical knowledge and skills in everyday life",
+          "specific_code": "1.1",
+          "specific_competence": "Demonstrate mastery of logic in decision making",
+          "number_of_periods": "18",
+          "learning_activities": [
+            "Explore the basic tenets of logic (logical statements/ propositions, connectives, arguments, validity of an argument, truth tables and simple circuits)"
+          ],
+          "teaching_methods": [
+            "Group discussion: Allow students in their groups to use visual representations, games, and puzzles to explore basic tenets of logic and its applications in real world"
+          ],
+          "assessment_criteria": [
+            "The basic tenets of logic are explored adequately"
+          ],
+          "resources": [
+            "Books, Excerpts of logical arguments, circuit simulations, animations"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate mastery of some advanced concepts in Algebra and Calculus in problem solving",
+          "specific_code": "2.1",
+          "specific_competence": "Use Algebra and Calculus to solve problems in different contexts",
+          "number_of_periods": "106",
+          "learning_activities": [
+            "(a) Explore the basic tenets of Algebra (sum and product of roots of a quadratic equation, solve algebraically and graphically",
+            "linear and one quadratic equation, use the remainder theorem to find a remainder of a polynomial function of up to third degree) simultaneous equations involving one",
+            "(b) Explore the basic tenets of Rational Functions (properties, asymptotes, domain and range, graphs)",
+            "(c) Explore the basic tenets of Differentiation (derivatives of polynomial and trigonometric functions: firstprinciples, power rule, chain rule,",
+            "product rule and quotient rule)",
+            "(d) Apply differentiation to determine rates of change of quantities, maxima and minima of functions, turning points, points of inflection and curve sketching",
+            "(e) Determine indefinite and definite integrals of polynomial expressions and simple trigonometric functions",
+            "(f) Apply Integration to determine area under a curve and volume of a solid of revolution of a simple curve about an axis"
+          ],
+          "teaching_methods": [
+            "Exploration: Allow students to work individually or in groups to explore tenets of Algebra through Graphical tools, Equation",
+            "Scenario: Share with students the real- world scenarios related to Algebra and guide them to create similar scenarios through puzzles, games and other ICT tools and solve them collaboratively and individually simulation, books and other related resources",
+            "Virtual representations: Engage students actively through interactive simulations, virtual graphs, demonstrations, diagrams and charts to explore basic tenets of rational functions Hands-on activities: Engage students through demonstrations to model real- world problems related to rational functions and finding their solutions",
+            "Demonstrations: Use step-by- step approach to demonstrate to students how to use different techniques in finding derivatives of polynomials",
+            "and trigonometric functions",
+            "Project-based learning: Guide students through individual and group project works to explore, model, and solve real world problems related to differentiation",
+            "Think-Ink-Pair- Share: Guide students individually and in groups to discover, explore and share ways of obtaining anti-derivatives of polynomials and simple trigonometric functions",
+            "Problem-based learning: Guide students individually and in groups to explore, model scenarios and solve real world problems related to finding area under a curve and volume of solids of revolution of simple functions by using Integration"
+          ],
+          "assessment_criteria": [
+            "The basic tenets of Algebra are explored adequately",
+            "",
+            "The basic tenets of Rational Functions are explored appropriately",
+            "The basic tenets of Differentiation are explored adequately",
+            "",
+            "Differentiation is appropriately applied to determine rates of change of quantities, relative maximum and minimum of functions, turning points, points of inflection, and curve sketching",
+            "Indefinite and definite integrals of polynomials and simple trigonometric functions are adequately determined",
+            "Area under a curve and volume of solid of revolution of simple curves about the axes are determined correctly"
+          ],
+          "resources": [
+            "Books, Algebra packages, Graphing calculators, graph papers, rulers, pencils",
+            "",
+            "Graphing calculators, Graph papers, relevant books, AI tools",
+            "Graphing calculators, differentiation applications, differentiation games, Mathematical software sucha as GeoGebra",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate mastery of some advanced concepts in Algebra and Calculus in problem solving",
+          "specific_code": "2.2",
+          "specific_competence": "Apply sets theory skills in decision making",
+          "number_of_periods": "16",
+          "learning_activities": [
+            "(a) Explore the basic tenets of set theory (operation on three sets, Venn diagrams, cardinality of a set, set properties and De Morgan’s laws)"
+          ],
+          "teaching_methods": [
+            "Exploration: Individually or groups, allow students to explore through various books, set simulations, and other ICT toolsto explore the basic tenets of set theory Problem-based learning: Guide students to formulate and solve scenarios and real-world problems related to basic tenets of sets"
+          ],
+          "assessment_criteria": [
+            "The basic tenets of Set Theory are adequately explored"
+          ],
+          "resources": [
+            "Real objects, set simulations, charts of different sets, playing cards, manila papers, marker pens, colored chalks"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "specific_competences": [
+        {
+          "main_code": "1.0",
+          "main_competence": "Use advanced mathematical knowledge and skills in daily life",
+          "specific_code": "1.1",
+          "specific_competence": "Use some advanced skills in coordinate geometry, Trigonometry and Vectors in daily life",
+          "number_of_periods": "90",
+          "learning_activities": [
+            "(a) Explore the basic tenets of coordinate geometry (ratio theorem, perpendicular distance, angle between two intersecting lines, equation of a circle, locus of a moving point equidistant from a fixed point on a plane, locus of a moving point equidistant from two fixed points and locus of a moving point at a fixed distance from a fixed line on a plane)",
+            "(b) Explore the basic tenets of trigonometry (trigonometric identities, double angle and compound angle formulae and solving trigonometric equations)",
+            "(c) Explore the basic tenets of vectors in three dimensional space (components, representations, dot and cross products of two vectors)",
+            "(d) Apply the dot product of vectors to solve problems involving angles between two vectors and work done by a force on an object",
+            "(e) Apply the cross product of vectors to find a unit vector normal to a given plane and to find area of a plane figure"
+          ],
+          "teaching_methods": [
+            "Simulations Provide students with various resources such as simulations, graphs and ICT tools to explore basic tenets of coordinate geometry",
+            "Heuristic methods: Lead students individually or in groups through questions to explore, discover and apply the basic tenets of trigonometry",
+            "Jigsaw: Guide students through home and expert groups to explore and make presentations on the concepts of vectors in 3D planes through vector simulations, books, visual representations such as graphs and diagrams and make presentations",
+            "Group Discussion: Guide students in groups to use books, animations, and AI tools to explore and solve problems related to the applications of dot product of vectors",
+            "Problem-based learning: Allow students individually or in groups to use relevant books, animations, graphs, and AI tools to explore and find solutions to scenarios and real-life problems related to concept of cross product of vectors"
+          ],
+          "assessment_criteria": [
+            "The basic tenets of coordinate geometry are explored appropriately",
+            "The basic tenets of trigonometry are explored appropriately",
+            "The basic tenets of vectors in three- dimensional plane are described appropriately",
+            "Dot product of vectors is adequately applied to solve problems involving angle between two vectors and work done by force on an object",
+            "Cross product of vectors is used correctly to find unit vector normal to a given plane and areas of a plane figure"
+          ],
+          "resources": [
+            "Graph papers, geometrical models, shape and angles animations, Geoboards, AI tools, Mathematical software sucha as Maple, GeoGebra, MATLAB, and Mathematica",
+            "",
+            "Scientific calculators, Mathematical software sucha as Maple, Geogebra, MATLAB, Mathematica, and AI tools",
+            "Vector animations, Mathematical software sucha as GeoGebra, MATLAB",
+            ""
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Use advanced mathematical knowledge and skills in daily life",
+          "specific_code": "1.2",
+          "specific_competence": "Apply statistical skills in the fields of business and economics",
+          "number_of_periods": "10",
+          "learning_activities": [
+            "Explore the basic tenets of statistics (measures of dispersion: range, variance and standard deviation)"
+          ],
+          "teaching_methods": [
+            "Exploration: Give students opportunities either individually or in groups to explore through books, statistical packages and AI tools the basic tenets of measures of dispersion and make presentations Project: Guide Students individually or in groups to conduct simple research project through field visit to collect, analyse and report findings of data from business, economics and other fields"
+          ],
+          "assessment_criteria": [
+            "The basic tenets of statistics are explored appropriately"
+          ],
+          "resources": [
+            "Statistical packages, Statistics books, AI tools, collected data, graph papers, statistical graph charts"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Use advanced mathematical knowledge and skills in daily life",
+          "specific_code": "1.3",
+          "specific_competence": "Apply the basic skills of probability in daily life",
+          "number_of_periods": "40",
+          "learning_activities": [
+            "(a) Explore the basic tenets of counting techniques (fundamental principle of counting, permutations, and combinations)",
+            "(b) Explore the basic tenets of probability (independent events and conditional probability)"
+          ],
+          "teaching_methods": [
+            "Researching: Organize students in groups or individually to explore and make summary of basic concepts of counting techniques through relevant books, demonstrations through real world scenarios and animations",
+            "Experiments: Guide students in teams or individually to carry out random experiments in exploring the probability related problems using dice, deck of cards and other resources"
+          ],
+          "assessment_criteria": [
+            "The basic tenets of counting techniques are explored appropriately",
+            "The basic tenets of probability are explored adequately"
+          ],
+          "resources": [
+            "Counting simulations, Real objects, abacus",
+            "Counting simulations, Real objects, abacus, dice, coins, deck of cards"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate mastery of some advanced concepts in Algebra and Calculus in problem solving",
+          "specific_code": "2.1",
+          "specific_competence": "Use Algebra and Calculus to solve problems in different contexts",
+          "number_of_periods": "",
+          "learning_activities": [
+            "(a) Explore the basic tenets of 3×3 matrices (operations, determinant, and inverse)",
+            "(b) Use 3×3 matrices to solve systems of linear simultaneous equations with three unknowns"
+          ],
+          "teaching_methods": [
+            "Heuristic method: Lead students individually or in groups through questions, ICT tools, puzzles and games to explore, discover and solve problems of the basic tenets of 3×3 matrices",
+            "Problem-based learning: Organize students to work individually or in groups to formulate scenarios and find real world problems related to simultaneous equations, model them using 3×3 matrices and find their solutions"
+          ],
+          "assessment_criteria": [
+            "The basic tenets of 3×3 matrices are explored adequately",
+            "3×3 matrices are used appropriately in solving systems of linear simultaneous equations with three unknowns"
+          ],
+          "resources": [
+            "Scientific calculators, Mathematical software sucha as Maple, GeoGebra, MATLAB, and AI tools",
+            ""
+          ]
+        }
+      ]
+    }
+  }
+}
