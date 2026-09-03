@@ -1,16 +1,19 @@
 # Casuya AI — Dockerfile
 # Builds the TypeScript library + HTTP server (server.ts → dist/server.js)
+#
+# IMPORTANT: Railway uses the monorepo root as the Docker build context.
+# All COPY paths below are relative to the repo root (casuya/).
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY packages/ai/package.json packages/ai/package-lock.json ./
 RUN npm install
 
-COPY tsconfig.json ./
-COPY tsconfig.server.json ./
-COPY src/ src/
-COPY server.ts ./
+COPY packages/ai/tsconfig.json ./
+COPY packages/ai/tsconfig.server.json ./
+COPY packages/ai/src/ src/
+COPY packages/ai/server.ts ./
 
 RUN npx tsc -p tsconfig.server.json
 
@@ -25,7 +28,7 @@ COPY --from=builder /app/package.json ./package.json
 
 # Knowledge base ships as a single tarball to avoid Docker's context file-count
 # limit (the raw KB is 2,600+ files). Extract it at /app/knowledge_base.
-COPY kb-data/ kb-data/
+COPY packages/ai/kb-data/ kb-data/
 RUN mkdir -p /app/knowledge_base && tar -xzf /app/kb-data/knowledge.tar.gz -C /app/knowledge_base && rm /app/kb-data/knowledge.tar.gz
 
 EXPOSE 3000
