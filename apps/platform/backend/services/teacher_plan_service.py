@@ -330,37 +330,54 @@ def _build_lesson_plan_prompt(
             "time_from": "08:00",
             "time_to": time_to,
             "period": period,
+            "duration_minutes": duration_minutes,
             "number_of_students": students_total,
             "students_registered": {"boys": boys, "girls": girls, "total": students_total},
             "students_present": {"boys": "", "girls": "", "total": ""},
+            "students_absent": {"boys": "", "girls": "", "total": ""},
         },
         "competence_architecture": {
-            "main_competence": "{topic_code} {topic_title} — overarching competence",
-            "specific_competence": "{subtopic_code} {subtopic_title} — specific, assessable competence",
-            "main_learning_activity": "Broad learning activity for the topic",
+            "main_competence": "{topic_code} {topic_title} — verbatim from TIE syllabus",
+            "specific_competence": "{subtopic_code} {subtopic_title} — verbatim from TIE syllabus",
+            "main_learning_activity": "Verbatim from TIE syllabus — broad topic narrative",
             "specific_learning_activity": (
-                "Single specific learning activity as a concise outcome phrase, "
+                "Deconstructed micro-chunk of Main Activity as a concise outcome phrase, "
                 "e.g. Define hyperbolic functions and their properties"
+            ),
+            "lesson_objective": (
+                "By the end of this {duration}-minute lesson, the learner should be able to "
+                "[SMART ACTION VERB] [specific subject matter] accurately"
             ),
         },
         "resources_strategies": {
             "teaching_learning_resources": [
-                f"{subject_label} TIE Textbook", "Manila charts"
+                f"TIE {subject_label} Textbook Form {form_level}, pp. XX-YY", "Specific chart/material"
             ],
-            "references": ["Tanzania Institute of Education (TIE) Syllabus"],
+            "references": [
+                f"TIE ({datetime.now(timezone.utc).year}). {subject_label} for Secondary Schools "
+                f"Student's Book Form {form_level}, pp. XX-YY. Dar es Salaam: TIE."
+            ],
             "learning_environment": "Collaborative group layout with accessible learning materials",
         },
         "progression_matrix": [
-            {"stage": "Introduction", "time": "5 min", "teacher_activity": "...",
-             "learner_activity": "...", "assessment_criteria": "..."},
-            {"stage": "Competence Development", "time": "15 min", "teacher_activity": "...",
-             "learner_activity": "...", "assessment_criteria": "..."},
-            {"stage": "Design", "time": "12 min", "teacher_activity": "...",
-             "learner_activity": "...", "assessment_criteria": "..."},
-            {"stage": "Realizations", "time": "8 min", "teacher_activity": "...",
-             "learner_activity": "...", "assessment_criteria": "..."},
+            {"stage": "Introduction", "time": "10 min", "core_content": "Prior knowledge foundation",
+             "teacher_activity": "...", "learner_activity": "...", "assessment_criteria": "..."},
+            {"stage": "Competence Development", "time": "30 min", "core_content": "Core concepts and definitions",
+             "teacher_activity": "...", "learner_activity": "...", "assessment_criteria": "..."},
+            {"stage": "Design", "time": "20 min", "core_content": "Practical application and synthesis",
+             "teacher_activity": "...", "learner_activity": "...", "assessment_criteria": "..."},
+            {"stage": "Realizations", "time": "20 min", "core_content": "Presentation and consolidation",
+             "teacher_activity": "...", "learner_activity": "...", "assessment_criteria": "..."},
         ],
-        "remarks": "Additional notes",
+        "evaluation_learners": (
+            "[To be completed after lesson: e.g., 38 out of 45 students successfully "
+            "modeled the concept. 7 students struggled with application.]"
+        ),
+        "evaluation_teacher": (
+            "[To be completed after lesson: e.g., Group work in Competence Development "
+            "was effective. Design phase required extra 5 minutes.]"
+        ),
+        "remarks": "",
     }
 
     if lang == "sw":
@@ -422,34 +439,65 @@ _TIE_LESSON_PLAN_RULES_EN = (
     "content; if the requested topic/subtopic is absent, say so instead of fabricating.\n"
     "6. References must cite the real TIE book (subject, year, form); resources and learning "
     "environment must come from the syllabus context.\n\n"
+    "SQAD AUDIT COMPLIANCE — 100% QUALITY FOR MINISTRY OF EDUCATION INSPECTION:\n"
+    "7. CURRICULUM AUTHENTICITY: Main Competence, Specific Competence, and Main Learning "
+    "Activity must be VERBATIM from the TIE syllabus — word-for-word, not paraphrased. "
+    "The Specific Learning Activity must be a deconstructed micro-chunk of the Main Activity.\n"
+    "8. STUDENT ATTENDANCE MATRIX: Fill students_present with actual numbers (boys, girls, "
+    "total). Leave students_absent as the remainder (registered minus present). This creates "
+    "the 3-column SQAD attendance table (Registered / Present / Absent).\n"
+    "9. LESSON OBJECTIVE: Write a SMART objective in the format: \"By the end of this "
+    "{duration_minutes}-minute lesson, the learner should be able to [SMART ACTION VERB] "
+    "[specific subject matter] accurately.\" Use measurable verbs: identify, define, "
+    "calculate, construct, explain, demonstrate, classify, analyze. Never use vague verbs "
+    "like 'understand' or 'know'.\n"
+    "10. CORE CONTENT per stage: Each of the 4 progression stages must include a "
+    "core_content field stating the key knowledge/skill addressed in that stage "
+    "(e.g. \"Prior knowledge foundation\", \"Core definitions and formulas\", "
+    "\"Practical application\", \"Presentation and consolidation\").\n"
+    "11. OPERATIONAL SOURCING: Resources must be SPECIFIC — cite exact textbook titles "
+    "with form level (e.g. \"TIE Mathematics for Secondary Schools Form 2, pp. 45-48\"), "
+    "actual tools (rulers, calculators, specimens), actual materials (charts, worksheets, "
+    "lab equipment). Never list generic placeholders like \"Chalk and Blackboard\" or "
+    "\"various resources\".\n"
+    "12. REFERENCES FORMAT: Must follow academic citation: Author (Year). Title. City: "
+    "Publisher, Pages. Example: \"TIE (2023). Mathematics for Secondary Schools "
+    "Student's Book Form 2, pp. 45-48. Dar es Salaam: TIE.\"\n\n"
     "CONTENT QUALITY — YOU ARE AN EXPERT CURRICULUM WRITER, NOT A DATA COPIER:\n"
-    "7. NEVER copy-paste raw syllabus bullet points into activities. TRANSFORM them into "
-    "complete, professional sentences that a real teacher would write. Each activity "
+    "13. NEVER copy-paste raw syllabus bullet points into activities. TRANSFORM them "
+    "into complete, professional sentences that a real teacher would write. Each activity "
     "description must be a full, grammatically correct sentence with proper subject-verb "
     "agreement, punctuation, and professional tone.\n"
-    "8. Teacher activities must describe CONCRETE ACTIONS the teacher performs: "
+    "14. Teacher activities must describe CONCRETE ACTIONS the teacher performs: "
     "\"Guides students through...\", \"Demonstrates...\", \"Facilitates group work on...\", "
     "\"Assigns individual practice...\", \"Collects and reviews...\". Avoid vague phrases "
     "like \"Teaches about...\" or \"Covers the topic of...\".\n"
-    "9. Learner activities must describe CONCRETE ACTIONS the student performs: "
+    "15. Learner activities must describe CONCRETE ACTIONS the student performs: "
     "\"Identifies...\", \"Discusses in pairs...\", \"Completes...\", \"Writes...\", "
     "\"Presents findings...\". Avoid passive or vague phrases like \"Learns about...\".\n"
-    "10. Resources must be SPECIFIC and RELEVANT: list actual textbooks (with title and "
-    "form level), actual tools (rulers, calculators, specimens), actual materials "
-    "(charts, worksheets, lab equipment). Never list generic placeholders like "
-    "\"various resources\" or \"teaching materials\".\n"
-    "11. Grammar and spelling: every sentence must be grammatically correct, properly "
+    "16. Grammar and spelling: every sentence must be grammatically correct, properly "
     "punctuated, and free of spelling errors. Use formal academic English. Avoid "
     "contractions (don't → do not, can't → cannot). Use consistent terminology "
     "throughout (don't switch between 'students', 'learners', 'pupils' randomly).\n"
-    "12. Before outputting the JSON, silently evaluate your work against these checks:\n"
-    "    a. Are all 4 competences present and non-empty?\n"
+    "17. EVALUATION SECTION: Include an evaluation field with two parts left as "
+    "placeholders for handwritten completion after teaching:\n"
+    "    - evaluation_learners: \"[To be completed after lesson: e.g., 38 out of 45 "
+    "students successfully modeled the concept. 7 students struggled with application "
+    "due to computation errors.]\"\n"
+    "    - evaluation_teacher: \"[To be completed after lesson: e.g., Group work in "
+    "Competence Development was effective. Design phase required extra 5 minutes. "
+    "Future sessions will feature tighter task transitions.]\"\n"
+    "18. Before outputting the JSON, silently evaluate your work against these checks:\n"
+    "    a. Are all 4 competences present, non-empty, and verbatim from syllabus?\n"
     "    b. Does specific_learning_activity contain a real, concise outcome (not generic)?\n"
-    "    c. Do all 4 assessment criteria echo the specific activity correctly?\n"
-    "    d. Are teacher and learner activities concrete and different from each other?\n"
-    "    e. Are resources specific (not placeholders)?\n"
-    "    f. Is every sentence grammatically correct and professionally written?\n"
-    "    g. Does the content align with what is actually taught in this TIE topic?\n"
+    "    c. Is lesson_objective a SMART sentence with a measurable verb?\n"
+    "    d. Do all 4 assessment criteria echo the specific activity correctly?\n"
+    "    e. Does each stage have a core_content field?\n"
+    "    f. Are teacher and learner activities concrete and different from each other?\n"
+    "    g. Are resources specific with textbook pages (not placeholders)?\n"
+    "    h. Are references in academic citation format (Author, Year, Title, City, Pages)?\n"
+    "    i. Is evaluation_learners and evaluation_teacher present as placeholders?\n"
+    "    j. Is every sentence grammatically correct and professionally written?\n"
     "   If any check fails, FIX the issue before outputting. Do NOT output incomplete "
     "or low-quality content.\n"
 )
@@ -495,38 +543,69 @@ _TIE_LESSON_PLAN_RULES_SW = (
     "maudhui; kama mada au sehemu ya mada haipo, sema hivyo badala ya kubuni.\n"
     "6. Marejeo lazima yanukuu kitabu rasmi cha TIE (somo, mwaka, kidato); rasilimali na "
     "mazingira ya kujifunzia lazima vitoke kwenye misingumo.\n\n"
+    "UFUATILIAJI WA UKAGUZI WA SQAD — UBORA WA 100% KWA UKAGUZI WA WIZARA YA ELIMU:\n"
+    "7. UHALISI WA MTAALA: Ujuzi Mkuu, Ujuzi Mahususi, na Shughuli Kuu lazima ziwe "
+    "KAMILI KWA MANENO kutoka misingumo ya TIE — maneno kwa maneno, si kwa maelezo. "
+    "Shughuli Mahususi lazima iwe kichwa kidogo kilichogawanywa kutoka Shughuli Kuu.\n"
+    "8. ODHOSHA YA WAFUATILIAJI: Jaza students_present kwa nambari halisi (wavulana, "
+    "wasichana, jumla). Acha students_absent kama zilizoachwa (zilizosajiliwa "
+    "kuzidisha zilizopo). Hii inaunda meza ya 3 kolamu ya SQAD (Zilizosajiliwa / "
+    "Zilizopo / Zilizokosekana).\n"
+    "9. LENGO LA SOMO: Andika lengo la SMART kwa muundo: \"Mwisho wa somo hili la "
+    "dakika {duration_minutes}, mwanafunzi anapaswa kuwa na uwezo wa [KITENDO CHA "
+    "SMART] [mada mahususi] kwa usahihi.\" Tumia vitendo vinavyoweza kupimika: "
+    "tambua, fafanua, hesabu, jenga, eleza, onyesha, mgawanyiko, uchambuzi. Usitumie "
+    "maneno ya kawaida kama \"elewa\" au \"jua\".\n"
+    "10. MWALIMU WA KILA HATUA: Kila hatua ya mchakato wa hatua 4 lazima iwe na "
+    "sehemu ya core_content inayoeleza ujuzi mkuu/ujuzi unaoshughulikiwa katika "
+    "hatua hiyo (mf. \"Maarifa ya awali\", \"Dhana na vipengele vya msingi\", "
+    "\"Matumizi ya vitendo\", \"Uonyeshaji na ukomavu\").\n"
+    "11. VIFAA VYA KUTUMIA: Rasilimali lazima ziwe MAHALUSI — nachukua vitabu halisi "
+    "vyenye jina la somo na kidato (mf. \"TIE Hisabati kwa Shule za Sekondari "
+    "Kidato 2, uk. 45-48\"), vifaa halisi (vipimo, kompyuta, samani za maabara), "
+    "na vifaa halisi (chanti, karatazi za kazi, vifaa vya maabara). Usiorodheshe "
+    "sehemu za kujaza kama \"Bao na Ubao\" au \"asilimia mbalimbali\".\n"
+    "12. MUUNDO WA MAREJEO: Lazima ufuate muundo wa kitaaluma: Mwandishi (Mwaka). "
+    "Kichwa. Jiji: Mchapishaji, Ukurasa. Mfano: \"TIE (2023). Hisabati kwa Shule "
+    "za Sekondari Kitabu cha Mwanafunzi Kidato 2, uk. 45-48. Dar es Salaam: TIE.\"\n\n"
     "UBORA WA MAUDHUI — Wewe ni MWANDISHI wa mtaalamu wa mtaala, SI NAKALA YA DATA:\n"
-    "7. USINAKILI pointi ghafi za misingumo moja kwa moja kwenye shughuli. ZIBADILISHE "
+    "13. USINAKILI pointi ghafi za misingumo moja kwa moja kwenye shughuli. ZIBADILISHE "
     "kuwa sentensi kamili, za kitaalamu ambazo mwalimu halisi angeschandikwa. Kila "
     "maelezo ya shughuli lazima yawe sentensi yenye kiini chake, miliya sahihi, na "
     "mtindo wa kitaalamu.\n"
-    "8. Shughuli za mwalimu lazima zieleze HATUA ZA WATENDAJI ambazo mwalimu anafanya: "
+    "14. Shughuli za mwalimu lazima zieleze HATUA ZA WATENDAJI ambazo mwalimu anafanya: "
     "\"Anaongoza wanafunzi kupitia...\", \"Anaonyesha...\", \"Anarahisisha kazi ya "
     "vikundi kuhusu...\", \"Anawapa kazi ya kujifunza peke yao...\", \"Anakusanya na "
     "kukagua...\". Epuka maneno ya kawaida kama \"Anafundisha kuhusu...\" au \"Anashughulikia "
     "mada ya...\".\n"
-    "9. Shughuli za mwanafunzi lazima zieleze HATUA ZA WATENDAJI ambazo mwanafunzi "
+    "15. Shughuli za mwanafunzi lazima zieleze HATUA ZA WATENDAJI ambazo mwanafunzi "
     "anafanya: \"Anatambua...\", \"Anajadiliana na rafiki yake...\", \"Anakamilisha...\", "
     "\"Anaandika...\", \"Anaonyesha matokeo...\". Epuka maneno ya kawaida kama \"Anajifunza "
     "kuhusu...\".\n"
-    "10. Rasilimali lazima ziwe MAHALUSI NA ZINAZOFAA: orodhesha vitabu halisi (jina na "
-    "kidato), vifaa halisi (vipimo, kompyuta, samani za maabara), na vifaa halisi "
-    "(chanti, karatazi za kazi, vifaa vya maabara). Usiorodheshe sehemu za kujaza "
-    "kama \"asilimia mbalimbali\" au \"vifaa vya kufundisha\".\n"
-    "11. Lugha na uandishi: kila sentensi lazima iwe sahihi kwa sarufi, yenye alama "
+    "16. Lugha na uandishi: kila sentensi lazima iwe sahihi kwa sarufi, yenye alama "
     "sahihi, na bila makosa ya herufi. Tumia Kiswahili rasmi, cha kitaalamu. Epuka "
-    "vipindi (si → si, havija → havija). Tumia maneno sawia kote (usibadilishe "
-    "kati ya \"wanafunzi\", \"wanafunzi\", \"watu\" bila mpango).\n"
-    "12. Kabla ya kutoa JSON, fanya ukaguzi wa kimyakimya dhidi ya ukaguzi huu:\n"
-    "    a. Je, ujuzi wote 4 upo na haujaa?\n"
+    "vipindi (si → si, havija → havija). Tumia maneno sawia kote.\n"
+    "17. SEHEMU YA TATHMINI: Jumuishisha sehemu ya evaluation yenye sehemu mbili "
+    "zilizoachwa kwa uandishi wa mkono baada ya somo:\n"
+    "    - evaluation_learners: \"[Itakamilishwa baada ya somo: mf., Wanafunzi 38 "
+    "kati ya 45 walifanikiwa kuunda dhana. Wanafunzi 7 walipata matatizo.]\"\n"
+    "    - evaluation_teacher: \"[Itakamilishwa baada ya somo: mf., Kazi ya vikundi "
+    "katika Ukuzaji wa Ujuzi ilikuwa nzuri. Hatua ya Usanifu ilihitaji dakika 5 "
+    "za ziada.]\"\n"
+    "18. Kabla ya kutoa JSON, fanya ukaguzi wa kimyakimya dhidi ya ukaguzi huu:\n"
+    "    a. Je, ujuzi wote 4 upo, haujaa, na ni kamili kwa maneno kutoka misingumo?\n"
     "    b. Je, shughuli mahususi ina matokeo halisi, fupi (si ya kawaida)?\n"
-    "    c. Je, vigezo vya tathmini vya hatua zote 4 vinaerejea shughuli mahususi "
+    "    c. Je, lenjo la somo ni sentensi yenye kitendo kinachoweza kupimika?\n"
+    "    d. Je, vigezo vya tathmini vya hatua zote 4 vinaerejea shughuli mahususi "
     "kwa usahihi?\n"
-    "    d. Je, shughuli za mwalimu na mwanafunzi ni za vitendo na tofauti kwa "
+    "    e. Je, kila hatua ina sehemu ya core_content?\n"
+    "    f. Je, shughuli za mwalimu na mwanafunzi ni za vitendo na tofauti kwa "
     "mwendo?\n"
-    "    e. Je, rasilimali ni mahalusi (si sehemu za kujaza)?\n"
-    "    f. Je, kila sentensi ni sahihi kwa sarufi na imeandikwa kitaalamu?\n"
-    "    g. Je, maudhui yalingana na yaliyofundishwa katika mada hii ya TIE?\n"
+    "    g. Je, rasilimali ni mahalusi na zina ukurasa wa kitabu (si sehemu za kujaza)?\n"
+    "    h. Je, marejeo ni kwa muundo wa kitaaluma (Mwandishi, Mwaka, Kichwa, "
+    "Jiji, Ukurasa)?\n"
+    "    i. Je, evaluation_learners na evaluation_teacher zipo kama sehemu za kujaza?\n"
+    "    j. Je, kila sentensi ni sahihi kwa sarufi na imeandikwa kitaalamu?\n"
     "   Kama ukaguzi yoyote unashindwa, SAHISHA tatizo kabla ya kutoa. USITOE "
     "maudhui yasiyo kamili au ya ubora wa chini.\n"
 )
@@ -551,30 +630,57 @@ _TIE_SCHEME_RULES_EN = (
     "context. Never invent topics or period counts. References cite the real TIE "
     "book (subject, year, form).\n"
     "6. Output valid JSON matching the schema; no extra prose.\n\n"
+    "SQAD AUDIT COMPLIANCE — 100% QUALITY FOR MINISTRY OF EDUCATION INSPECTION:\n"
+    "7. 12-COLUMN FORMAT: The scheme must contain exactly 12 columns in this order: "
+    "Month, Week, Main Competence, Specific Competence, Main Learning Activity, "
+    "Specific Learning Activity, Number of Periods, Teaching & Learning Activities, "
+    "Assessment Criteria, Teaching & Learning Resources, References, Remarks.\n"
+    "8. CURRICULUM AUTHENTICITY: Main Competence, Specific Competence, and Main "
+    "Learning Activity must be VERBATIM from the TIE syllabus — word-for-word, not "
+    "paraphrased. The Specific Learning Activity must be a deconstructed micro-chunk "
+    "of the Main Activity.\n"
+    "9. COGNITIVE HIERARCHY: Learning objectives must progress from simple tasks in "
+    "early weeks to complex competencies in later weeks within a topic. Week 1 of a "
+    "topic should cover foundational knowledge; later weeks build toward application "
+    "and analysis.\n"
+    "10. TEACHING & LEARNING ACTIVITIES: This column must contain SEPARATE actions "
+    "for Teacher and Learner — not combined. Format: \"Teacher: [action]. Learner: "
+    "[action].\" Never merge them into a single statement.\n"
+    "11. REFERENCES FORMAT: Must follow academic citation: Author (Year). Title. "
+    "City: Publisher, Pages. Example: \"TIE (2023). Mathematics for Secondary "
+    "Schools Student's Book Form 2, pp. 45-48. Dar es Salaam: TIE.\"\n"
+    "12. REMARKS: Leave this field as an empty string. It must be handwritten after "
+    "teaching with factual statistics (e.g., 'Out of 45 students, 40 performed "
+    "successfully. 5 students will receive remedial instruction on 14/02/2026.').\n\n"
     "CONTENT QUALITY — YOU ARE AN EXPERT CURRICULUM PLANNER, NOT A DATA COPIER:\n"
-    "7. NEVER copy-paste raw syllabus bullets into learning_activities. TRANSFORM "
+    "13. NEVER copy-paste raw syllabus bullets into learning_activities. TRANSFORM "
     "them into clear, professional outcome statements that a real teacher would "
     "recognise. Each activity must be a complete phrase with proper terminology.\n"
-    "8. Teaching methods must be SPECIFIC and PEDAGOGICALLY SOUND: list actual "
+    "14. Teaching methods must be SPECIFIC and PEDAGOGICALLY SOUND: list actual "
     "methods (Group discussion, Problem solving, Demonstration, Think-pair-share, "
     "Laboratory work, Project-based learning). Never list generic placeholders "
     "like 'various methods' or 'mixed approaches'.\n"
-    "9. Teaching resources must be SPECIFIC and RELEVANT: list actual textbooks "
-    "(title + form), actual tools (rulers, calculators, specimens), actual "
+    "15. Teaching resources must be SPECIFIC and RELEVANT: list actual textbooks "
+    "(title + form + pages), actual tools (rulers, calculators, specimens), actual "
     "materials (charts, worksheets, lab equipment). Never list 'various resources'.\n"
-    "10. Assessment tools must be CONCRETE: 'Quizzes, oral questions, written tests, "
+    "16. Assessment tools must be CONCRETE: 'Quizzes, oral questions, written tests, "
     "group presentations, practical demonstrations'. Never list 'various assessments'.\n"
-    "11. Grammar and spelling: every sentence must be grammatically correct, properly "
+    "17. Grammar and spelling: every sentence must be grammatically correct, properly "
     "punctuated, and free of spelling errors. Use formal academic English. Avoid "
     "contractions (don't → do not, can't → cannot). Use consistent terminology.\n"
-    "12. Before outputting the JSON, silently evaluate your work against these checks:\n"
+    "18. Before outputting the JSON, silently evaluate your work against these checks:\n"
     "    a. Do all topic/subtopic period totals add up correctly?\n"
-    "    b. Are all competences present with codes and non-empty?\n"
+    "    b. Are all competences present with codes, non-empty, and verbatim from TIE?\n"
     "    c. Are learning activities real outcomes (not fabricated)?\n"
-    "    d. Are teaching methods specific (not generic placeholders)?\n"
-    "    e. Are resources specific (not placeholders)?\n"
-    "    f. Is every field grammatically correct and professionally written?\n"
-    "    g. Does the content align with what is actually taught in this TIE topic?\n"
+    "    d. Is each row's Main Activity verbatim from TIE and Specific Activity a "
+    "deconstructed micro-chunk?\n"
+    "    e. Are Teaching & Learning Activities split into separate Teacher/Learner actions?\n"
+    "    f. Are teaching methods specific (not generic placeholders)?\n"
+    "    g. Are resources specific with textbook pages (not placeholders)?\n"
+    "    h. Are references in academic citation format (Author, Year, Title, City, Pages)?\n"
+    "    i. Is Remarks field empty (for handwritten entry after teaching)?\n"
+    "    j. Does cognitive complexity increase across weeks within each topic?\n"
+    "    k. Is every field grammatically correct and professionally written?\n"
     "   If any check fails, FIX the issue before outputting. Do NOT output incomplete "
     "or low-quality content.\n"
 )
@@ -598,33 +704,62 @@ _TIE_SCHEME_RULES_SW = (
     "Usibuni mada wala hesabu za vipindi. Marejeo yanukuu kitabu rasmi cha TIE "
     "(somo, mwaka, kidato).\n"
     "6. Toa JSON SAHIHI inayolingana na muundo; bila maelezo ya ziada.\n\n"
+    "UFUATILIAJI WA UKAGUZI WA SQAD — UBORA WA 100% KWA UKAGUZI WA WIZARA YA ELIMU:\n"
+    "7. MUUNDO WA KOLAMU 12: Mpango lazima uwe na kolamu 12 kwa utaratibu huu: "
+    "Mwezi, Wiki, Ujuzi Mkuu, Ujuzi Mahususi, Shughuli Kuu ya Kujifunza, Shughuli "
+    "Mahususi ya Kujifunza, Idadi ya Vipindi, Shughuli za Kufundisha na Kujifunza, "
+    "Vigezo vya Tathmini, Rasilimali za Kufundisha na Kujifunza, Marejeo, Maelezo.\n"
+    "8. UHALISI WA MTAALA: Ujuzi Mkuu, Ujuzi Mahususi, na Shughuli Kuu ya Kujifunza "
+    "lazima ziwe KAMILI KWA MANENO kutoka misingumo ya TIE — maneno kwa maneno, si "
+    "kwa maelezo. Shughuli Mahususi lazima iwe kichwa kidogo kilichogawanywa kutoka "
+    "Shughuli Kuu.\n"
+    "9. UBORA WA KOGNITIVI: Lengo la kujifunza lazima lianze na kazi rahisi katika "
+    "wiki za kwanza na liendelee hadi ujuzi changamano katika wiki za baadaye ndani "
+    "ya mada. Wiki ya 1 ya mada lazima ifunike maarifa ya msingi; wiki za baadaye "
+    "zijenge hadi matumizi na uchambuzi.\n"
+    "10. SHUGHULI ZA KUFUNDISHA NA KUJIFUNZA: Kolamu hii lazima iwe na HATUA ZA "
+    "TOFAUTI kwa Mwalimu na Mwanafunzi — si pamoja. Muundo: \"Mwalimu: [hatua]. "
+    "Mwanafunzi: [hatua].\" Usiwaunganishe kwa sentensi moja.\n"
+    "11. MUUNDO WA MAREJEO: Lazima ufuate muundo wa kitaaluma: Mwandishi (Mwaka). "
+    "Kichwa. Jiji: Mchapishaji, Ukurasa. Mfano: \"TIE (2023). Hisabati kwa Shule "
+    "za Sekondari Kitabu cha Mwanafunzi Kidato 2, uk. 45-48. Dar es Salaam: TIE.\"\n"
+    "12. MAELEZO: Acha sehemu hii kuwa tupu. Lazima iandikwe kwa mkono baada ya "
+    "kufundisha na takwima halisi (mf., 'Kati ya wanafunzi 45, 40 walifanikiwa. "
+    "Wanafunzi 5 watapata msaada wa ziada tarehe 14/02/2026.').\n\n"
     "UBORA WA MAUDHUI — Wewe ni MTAALAMU wa kupanga mtaala, SI NAKALA YA DATA:\n"
-    "7. USINAKILI pointi ghafi za misingumo moja kwa moja kwenye shughuli za "
+    "13. USINAKILI pointi ghafi za misingumo moja kwa moja kwenye shughuli za "
     "kujifunza. ZIBADILISHE kuwa taarifa wazi, za kitaalamu ambazo mwalimu halisi "
     "angetambua. Kila shughuli lazima iwe kifaa kamili chenye istilahi sahihi.\n"
-    "8. Mbinu za kufundisha lazima ziwe MAHALUSI NA ZA PEDAGOJIA: orodhesha mbinu "
+    "14. Mbinu za kufundisha lazima ziwe MAHALUSI NA ZA PEDAGOJIA: orodhesha mbinu "
     "halisi (Mjadala wa kikundi, Utatuzi wa matatizo, Uonyeshaji, Kazi ya vitanda, "
     "Kazi ya maabara, Kujifunza kwa mradi). Epuka sehemu za kujaza kama "
     "\"mbalimbali\" au \"mchanganyiko wa mbinu\".\n"
-    "9. Rasilimali lazima ziwe MAHALUSI NA ZINAZOFAA: orodhesha vitabu halisi "
-    "(jina + kidato), vifaa halisi (vipimo, kompyuta, samani za maabara), na "
-    "vifaa halisi (chanti, karatazi za kazi, vifaa vya maabara). Usiorodheshe "
+    "15. Rasilimali lazima ziwe MAHALUSI NA ZINAZOFAA: orodhesha vitabu halisi "
+    "(jina + kidato + ukurasa), vifaa halisi (vipimo, kompyuta, samani za maabara), "
+    "na vifaa halisi (chanti, karatazi za kazi, vifaa vya maabara). Usiorodheshe "
     "\"asilimia mbalimbali\".\n"
-    "10. Zana za tathmini lazima ziwe ZA KIVITENDO: 'Maswali ya mtihani, maswali "
+    "16. Zana za tathmini lazima ziwe ZA KIVITENDO: 'Maswali ya mtihani, maswali "
     "ya mdomo, mitihani ya maandishi, maonyesho ya vikundi, uthibitisho wa "
     "vifaa'. Epuka sehemu za kujaza kama \"zana mbalimbali\".\n"
-    "11. Lugha na uandishi: kila sentensi lazima iwe sahihi kwa sarufi, yenye "
+    "17. Lugha na uandishi: kila sentensi lazima iwe sahihi kwa sarufi, yenye "
     "alama sahihi, na bila makosa ya herufi. Tumia Kiswahili rasmi, cha "
     "kitaalamu. Epuka vipindi (si → si, havija → havija). Tumia maneno "
     "sawia kote.\n"
-    "12. Kabla ya kutoa JSON, fanya ukaguzi wa kimyakimya dhidi ya ukaguzi huu:\n"
+    "18. Kabla ya kutoa JSON, fanya ukaguzi wa kimyakimya dhidi ya ukaguzi huu:\n"
     "    a. Je, jumla ya vipindi ya mada na sehemu za mada zinaongea?\n"
-    "    b. Je, ujuzi wote una misimbo na haunjaa?\n"
+    "    b. Je, ujuzi wote una misimbo, haunjaa, na ni kamili kwa maneno kutoka TIE?\n"
     "    c. Je, shughuli za kujifunza ni matokeo halisi (si ya kubuni)?\n"
-    "    d. Je, mbinu ni mahalusi (si sehemu za kujaza)?\n"
-    "    e. Je, rasilimali ni mahalusi (si sehemu za kujaza)?\n"
-    "    f. Je, kila sehemu ni sahihi kwa sarufi na imeandikwa kitaalamu?\n"
-    "    g. Je, maudhui yalingana na yaliyofundishwa katika mada hii ya TIE?\n"
+    "    d. Je, Shughuli Kuu katika kila safu ni kamili kutoka TIE na Shughuli "
+    "Mahususi ni kichwa kidogo kilichogawanywa?\n"
+    "    e. Je, Shughuli za Kufundisha na Kujifunza zimegawanywa kwa hatua za "
+    "Tofauti za Mwalimu na Mwanafunzi?\n"
+    "    f. Je, mbinu ni mahalusi (si sehemu za kujaza)?\n"
+    "    g. Je, rasilimali ni mahalusi na zina ukurasa wa kitabu (si sehemu za kujaza)?\n"
+    "    h. Je, marejeo ni kwa muundo wa kitaaluma (Mwandishi, Mwaka, Kichwa, "
+    "Jiji, Ukurasa)?\n"
+    "    i. Je, sehemu ya Maelezo ni tupu (kwa uandishi wa mkono baada ya kufundisha)?\n"
+    "    j. Je, ugumu wa kognitivi unakua kwa wiki ndani ya kila mada?\n"
+    "    k. Je, kila sehemu ni sahihi kwa sarufi na imeandikwa kitaalamu?\n"
     "   Kama ukaguzi yoyote unashindwa, SAHISHA tatizo kabla ya kutoa. USITOE "
     "maudhui yasiyo kamili au ya ubora wa chini.\n"
 )
@@ -979,10 +1114,17 @@ def _build_lesson_plan_offline(
         ]
 
     progression = []
+    core_contents = [
+        "Prior knowledge foundation" if lang == "en" else "Maarifa ya awali",
+        "Core concepts and definitions" if lang == "en" else "Dhana na vipengele vya msingi",
+        "Practical application and synthesis" if lang == "en" else "Matumizi ya vitendo na ujumuishaji",
+        "Presentation and consolidation" if lang == "en" else "Uonyeshaji na ukomavu",
+    ]
     for i, label in enumerate(stage_names):
         progression.append({
             "stage": label,
             "time": f"{times[i]} min" if lang != "sw" else f"dakika {times[i]}",
+            "core_content": core_contents[i],
             "teacher_activity": teacher_acts[i],
             "learner_activity": learner_acts[i],
             "assessment_criteria": assessment[i],
@@ -1007,12 +1149,21 @@ def _build_lesson_plan_offline(
             "period": header_period, "number_of_students": total,
             "students_registered": {"boys": boys, "girls": girls, "total": total},
             "students_present": {"boys": "", "girls": "", "total": ""},
+            "students_absent": {"boys": "", "girls": "", "total": ""},
         },
         "competence_architecture": {
             "main_competence": main_comp,
             "specific_competence": spec_comp,
             "main_learning_activity": main_act,
             "specific_learning_activity": spec_act,
+            "lesson_objective": (
+                f"By the end of this {duration_minutes}-minute lesson, "
+                f"the learner should be able to demonstrate {specific_activity}"
+                if lang == "en"
+                else
+                f"Mwisho wa somo hili la dakika {duration_minutes}, "
+                f"mwanafunzi anapaswa kuwa na uwezo wa kuonyesha {specific_activity}"
+            ),
         },
         "resources_strategies": {
             "teaching_learning_resources": resources,
@@ -1021,6 +1172,8 @@ def _build_lesson_plan_offline(
         },
         "progression_matrix": progression,
         "fields": fields,
+        "evaluation_learners": "",
+        "evaluation_teacher": "",
         "remarks": "",
     }
 
@@ -1320,6 +1473,11 @@ def render_lesson_plan_html(plan: dict) -> str:
     _teaching_act = LST("Teacher's Activities", "Shughuli za Mwalimu")
     _learning_act = LST("Learners' Activities", "Shughuli za Wanafunzi")
     _assessment = LST("Assessment Criteria", "Kigezo cha Tathmini")
+    _core_content = LST("Core Content", "Kiwango cha Maudhui")
+    _absent = LST("ABSENT", "WALIOKUWA HAWAPO")
+    _lesson_objective = LST("LESSON OBJECTIVE", "LENGO LA SOMO")
+    _eval_learners = LST("Learner Evaluation", "Tathmini ya Wanafunzi")
+    _eval_teacher = LST("Teacher Evaluation", "Tathmini ya Mwalimu")
     _remarks_eval = LST("REMARKS :", "MAONI :")
     _teacher_eval = LST("Teacher's Evaluation / Self-Reflection", "Tathmini ya Mwalimu / Kujitathmini")
     _teacher_eval_hint = LST(
@@ -1330,11 +1488,14 @@ def render_lesson_plan_html(plan: dict) -> str:
 
     sreg = h.get("students_registered", {}) or {}
     spres = h.get("students_present", {}) or {}
+    sabse = h.get("students_absent", {}) or {}
     ca = plan.get("competence_architecture", {}) or {}
     rs = plan.get("resources_strategies", {}) or {}
     matrix = plan.get("progression_matrix", []) or []
     activities = plan.get("teaching_activities", [])
     remarks = plan.get("remarks", "")
+    eval_learners = plan.get("evaluation_learners", "")
+    eval_teacher = plan.get("evaluation_teacher", "")
 
     def _e(s):
         from html import escape
@@ -1383,6 +1544,7 @@ def render_lesson_plan_html(plan: dict) -> str:
             stages_rows += f"""<tr>
                 <td class="bold">{_e(a.get('stage', ''))}</td>
                 <td class="text-center">{_e(str(a.get('time')).split()[0])}</td>
+                <td>{_e(a.get('core_content', ''))}</td>
                 <td>{_e(a.get('teacher_activity', ''))}</td>
                 <td>{_e(a.get('learner_activity', a.get('student_activity', '')))}</td>
                 <td>{_e(a.get('assessment_criteria', ''))}</td>
@@ -1392,6 +1554,7 @@ def render_lesson_plan_html(plan: dict) -> str:
             stages_rows += f"""<tr>
                 <td class="bold">{idx}. {_e(a.get('phase', ''))}</td>
                 <td class="text-center">{_e(str(a.get('time', '')).split()[0])}</td>
+                <td>{_e(a.get('core_content', ''))}</td>
                 <td>{_e(a.get('teacher_activity', ''))}</td>
                 <td>{_e(a.get('student_activity', ''))}</td>
                 <td>{_e(a.get('remarks_assessment', ''))}</td>
@@ -1543,14 +1706,18 @@ def render_lesson_plan_html(plan: dict) -> str:
             <td rowspan="2" style="vertical-align: middle; width: 20%;">{_e(_students)}</td>
             <td colspan="3">{_e(_registered)}</td>
             <td colspan="3">{_e(_present)}</td>
+            <td colspan="3">{_e(_absent)}</td>
         </tr>
         <tr class="bg-head">
-            <td style="width: 13%;">{_e(_girls)}</td>
-            <td style="width: 13%;">{_e(_boys)}</td>
-            <td style="width: 14%;">{_e(_total)}</td>
-            <td style="width: 13%;">{_e(_girls)}</td>
-            <td style="width: 13%;">{_e(_boys)}</td>
-            <td style="width: 14%;">{_e(_total)}</td>
+            <td style="width: 11%;">{_e(_girls)}</td>
+            <td style="width: 11%;">{_e(_boys)}</td>
+            <td style="width: 11%;">{_e(_total)}</td>
+            <td style="width: 11%;">{_e(_girls)}</td>
+            <td style="width: 11%;">{_e(_boys)}</td>
+            <td style="width: 11%;">{_e(_total)}</td>
+            <td style="width: 11%;">{_e(_girls)}</td>
+            <td style="width: 11%;">{_e(_boys)}</td>
+            <td style="width: 12%;">{_e(_total)}</td>
         </tr>
         <tr class="text-center">
             <td class="bold">{_e(LST('Number', 'Idadi'))}</td>
@@ -1560,25 +1727,45 @@ def render_lesson_plan_html(plan: dict) -> str:
             <td>{_e(spres.get('girls', '') or '.')}</td>
             <td>{_e(spres.get('boys', '') or '.')}</td>
             <td>{_e(spres.get('total', '') or '.')}</td>
+            <td>{_e(sabse.get('girls', '') or '.')}</td>
+            <td>{_e(sabse.get('boys', '') or '.')}</td>
+            <td>{_e(sabse.get('total', '') or '.')}</td>
         </tr>
     </table>
 
     {comp_sections}
 
+    <div class="sec-title">{_e(_lesson_objective)}</div>
+    <div style="margin: 4px 0 12px 12px; border: 1px solid #ccc; padding: 8px;">
+        {_e(ca.get('lesson_objective', LST('To be completed by the teacher before the lesson.', 'Mwalimu aikamilishe kabla ya somo.')))}
+    </div>
+
     <div class="sec-title">TEACHING AND LEARNING PROCESS</div>
     <table>
         <thead>
             <tr class="bg-head">
-                <td style="width: 16%;">{_e(_stages)}</td>
-                <td style="width: 11%;">{_e(_time_min)}</td>
-                <td style="width: 27%;">{_e(_teaching_act)}</td>
-                <td style="width: 27%;">{_e(_learning_act)}</td>
-                <td style="width: 19%;">{_e(_assessment)}</td>
+                <td style="width: 14%;">{_e(_stages)}</td>
+                <td style="width: 9%;">{_e(_time_min)}</td>
+                <td style="width: 18%;">{_e(_core_content)}</td>
+                <td style="width: 22%;">{_e(_teaching_act)}</td>
+                <td style="width: 22%;">{_e(_learning_act)}</td>
+                <td style="width: 15%;">{_e(_assessment)}</td>
             </tr>
         </thead>
         <tbody>
         {stages_rows}
         </tbody>
+    </table>
+
+    <table>
+        <tr class="bg-head">
+            <td style="width: 50%;">{_e(_eval_learners)}</td>
+            <td style="width: 50%;">{_e(_eval_teacher)}</td>
+        </tr>
+        <tr>
+            <td style="height: 60px; vertical-align: top;">{_e(eval_learners) if eval_learners else _e(LST('-- TO BE COMPLETED AFTER LESSON --', '-- ITAKAMILISHWA BAADA YA SOMO --'))}</td>
+            <td style="height: 60px; vertical-align: top;">{_e(eval_teacher) if eval_teacher else _e(LST('-- TO BE COMPLETED AFTER LESSON --', '-- ITAKAMILISHWA BAADA YA SOMO --'))}</td>
+        </tr>
     </table>
 
     <table>
