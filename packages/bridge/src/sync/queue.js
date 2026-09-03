@@ -33,7 +33,8 @@ export class SyncQueue {
   }
 
   async size() {
-    return (await this.all()).length;
+    const keys = await this._db.keys(STORES.QUEUE);
+    return Array.isArray(keys) ? keys.length : 0;
   }
 
   async clear() {

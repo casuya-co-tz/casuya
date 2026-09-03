@@ -234,11 +234,8 @@ def _find_user_by_phone(db: Session, phone: str) -> User | None:
     elif not e164.startswith("255"):
         e164 = "255" + e164
     candidates = [clean, e164, "+" + e164, "+" + clean]
-    for cand in dict.fromkeys(candidates):
-        user = db.query(User).filter(User.phone == cand).first()
-        if user:
-            return user
-    return None
+    uniq = list(dict.fromkeys(candidates))
+    return db.query(User).filter(User.phone.in_(uniq)).first()
 
 
 def reset_password(token: str, new_password: str) -> dict:

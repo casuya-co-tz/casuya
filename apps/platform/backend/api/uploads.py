@@ -96,13 +96,14 @@ def _scan_files() -> list[dict]:
             continue
         for f in kind_dir.iterdir():
             if f.is_file() and not f.name.startswith("."):
+                st = f.stat()
                 files.append(
                     {
                         "filename": f.name,
                         "path": f"{kind_dir.name}/{f.name}",
                         "kind": kind_dir.name,
-                        "size": f.stat().st_size,
-                        "uploaded_at": f.stat().st_mtime,
+                        "size": st.st_size,
+                        "uploaded_at": st.st_mtime,
                     }
                 )
     files.sort(key=lambda x: x.get("uploaded_at") or 0, reverse=True)
@@ -219,15 +220,18 @@ async def update_file(filename: str, body: FileUpdateRequest, current_user=Depen
     try:
         record = db.query(FileRecord).filter(FileRecord.filename == filename).first()
         if not record:
-            record = FileRecord(
-                filename=filename,
-                display_name=filename,
-                kind="documents",
-                size=0,
-                is_visible=True,
+            # Do not create phantom DB records for files that don't exist.
+            root = Path(get_settings().storage_root)
+            found = any(
+                (d / filename).is_file()
+                for d in root.iterdir()
+                if d.is_dir() and not d.name.startswith(".")
             )
-            db.add(record)
+            if not found:
+                raise HTTPException(status_code=404, detail="File not found")
+            db.add(FileRecord(filename=filename, display_name=filename, kind="documents", size=0, is_visible=True))
             db.flush()
+            record = db.query(FileRecord).filter(FileRecord.filename == filename).first()
         if body.display_name is not None:
             record.display_name = body.display_name
         if body.is_visible is not None:

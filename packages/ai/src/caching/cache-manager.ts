@@ -113,13 +113,19 @@ export class CacheManager {
   }
 
   private evict(): void {
-    const entries = [...this.store.entries()]
-      .filter(([, entry]) => Date.now() < entry.expiresAt)
-      .sort((a, b) => a[1].hits - b[1].hits);
+    const now = Date.now();
+    for (const [key, entry] of this.store) {
+      if (now >= entry.expiresAt) {
+        this.store.delete(key);
+      }
+    }
+    if (this.store.size < this.config.maxEntries) return;
 
     const toRemove = Math.ceil(this.config.maxEntries * 0.2);
-    for (let i = 0; i < toRemove && i < entries.length; i++) {
-      this.store.delete(entries[i][0]);
+    const valid = [...this.store.entries()]
+      .sort((a, b) => a[1].hits - b[1].hits);
+    for (let i = 0; i < toRemove && i < valid.length && this.store.size >= this.config.maxEntries; i++) {
+      this.store.delete(valid[i][0]);
     }
   }
 

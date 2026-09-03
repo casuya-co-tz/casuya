@@ -28,6 +28,12 @@ const requestCache = new Map();
 
 const inFlight = new Map();
 
+function clearRequestCaches() {
+  requestCache.clear();
+  inFlight.clear();
+}
+window.clearRequestCaches = clearRequestCaches;
+
 const CACHE_TTL = 30000;
 
 async function request(path, options = {}) {
@@ -76,12 +82,14 @@ async function request(path, options = {}) {
             } catch (refreshErr) {
               localStorage.removeItem("casuya_token");
               localStorage.removeItem("casuya_refresh_token");
+              clearRequestCaches();
               renderLogin();
               return null;
             }
           }
           localStorage.removeItem("casuya_token");
           localStorage.removeItem("casuya_refresh_token");
+          clearRequestCaches();
           renderLogin();
           return null;
         }

@@ -135,13 +135,15 @@
       ]);
       const lessons = await request("/lessons").catch(() => []);
       const lessonList = Array.isArray(lessons) ? lessons : [];
-      const lessonAnalytics = [];
-      for (const l of lessonList.slice(0, 10)) {
-        try {
-          const a = await request(`/analytics/lessons/${l.id}`);
-          if (a) lessonAnalytics.push({ ...a, title: l.title });
-        } catch(e) {}
-      }
+      const perLesson = await Promise.all(
+        lessonList.slice(0, 10).map(async (l) => {
+          try {
+            const a = await request(`/analytics/lessons/${l.id}`);
+            return a ? { ...a, title: l.title } : null;
+          } catch (e) { return null; }
+        })
+      );
+      const lessonAnalytics = perLesson.filter(Boolean);
       showAdminView(`
         <div class="content">
           <h2>Analytics</h2>

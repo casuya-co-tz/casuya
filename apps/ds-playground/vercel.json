@@ -1,7 +1,6 @@
 {
-  "installCommand": "echo 'pre-built — build locally with pnpm build then deploy dist/'",
+  "installCommand": "echo prebuilt",
   "buildCommand": null,
-  "outputDirectory": ".",
-  "framework": null,
-  "note": "ds-playground uses workspace:* deps, so must be built locally: pnpm --filter @casuya/playground build && vercel deploy from dist/"
+  "outputDirectory": "dist",
+  "framework": null
 }

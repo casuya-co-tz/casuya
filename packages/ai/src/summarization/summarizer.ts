@@ -140,7 +140,7 @@ export class Summarizer {
     return sentences.map((text, i) => {
       let score = 0;
 
-      score += 1.0 - Math.abs(i - center) / center;
+      score += center > 0 ? 1.0 - Math.abs(i - center) / center : 0;
       score += text.length > 40 ? 0.3 : 0;
       score += text.length > 100 ? 0.2 : 0;
 

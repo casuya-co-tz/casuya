@@ -126,14 +126,17 @@
   const searchInput = document.getElementById("student-search");
   const searchResults = document.getElementById("student-search-results");
   let searchTimer;
+  let searchSeq = 0;
 
   searchInput.addEventListener("input", () => {
     clearTimeout(searchTimer);
     const q = searchInput.value.trim();
     if (q.length < 2) { searchResults.style.display = "none"; return; }
+    const mySeq = ++searchSeq;
     searchTimer = setTimeout(async () => {
       try {
         const results = await request(`/search/?q=${encodeURIComponent(q)}`);
+        if (mySeq !== searchSeq) return; // stale response, discard
         if (!Array.isArray(results) || results.length === 0) {
           searchResults.innerHTML = '<div style="padding:0.5rem;color:var(--color-text-muted)">No results</div>';
         } else {
@@ -1268,6 +1271,7 @@
       // Save note
       let noteTimer;
       document.getElementById("save-note").addEventListener("click", async () => {
+        clearTimeout(noteTimer);
         const content = document.getElementById("lesson-note").value;
         await request(`/notes/${lessonId}`, { method: "PUT", body: JSON.stringify({ content }) });
         showToast("Note saved");

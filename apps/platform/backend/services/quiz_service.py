@@ -53,7 +53,7 @@ def list_quizzes(
     offset: int = 0,
     limit: int = 50,
     max_limit: int = 100,
-) -> dict:
+) -> list[dict]:
     limit = min(limit, max_limit)
     total = db.query(func.count(Quiz.id)).scalar()
     quizzes = db.query(Quiz).offset(offset).limit(limit).all()

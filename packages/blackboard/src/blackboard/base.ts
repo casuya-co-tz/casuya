@@ -659,7 +659,8 @@ onPointerMove = (e: PointerEvent): void => {
         }
       }
       if (toRemove.length > 0) {
-        this.elements = this.elements.filter(e => !toRemove.includes(e.id));
+        const kill = new Set(toRemove);
+        this.elements = this.elements.filter(e => !kill.has(e.id));
         this.renderStatic();
         this.emit('change');
       }

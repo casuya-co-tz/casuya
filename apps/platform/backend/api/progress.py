@@ -125,11 +125,15 @@ def get_student_stats(student_id: str, db: Session = Depends(get_db), current_us
 
     # --- Streak: count consecutive days with activity going back from today ---
     streak = 0
-    if recent_rows:
-        activity_dates = set()
-        for r in recent_rows:
-            activity_dates.add(r.viewed_at.date())
-
+    recent_dates = (
+        db.query(func.date(RecentActivity.viewed_at))
+        .filter(RecentActivity.student_id == student_id)
+        .filter(RecentActivity.viewed_at >= now - timedelta(days=365))
+        .distinct()
+        .all()
+    )
+    if recent_dates:
+        activity_dates = {d[0] for d in recent_dates}
         check_date = now.date()
         for _ in range(365):
             if check_date in activity_dates:

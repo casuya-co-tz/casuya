@@ -60,14 +60,17 @@ async function renderAdminDashboard() {
   const adminSearchInput = document.getElementById("admin-search");
   const adminSearchResults = document.getElementById("admin-search-results");
   let searchTimer;
+  let searchSeq = 0;
 
   adminSearchInput.addEventListener("input", () => {
     clearTimeout(searchTimer);
     const q = adminSearchInput.value.trim();
     if (q.length < 2) { adminSearchResults.style.display = "none"; return; }
+    const mySeq = ++searchSeq;
     searchTimer = setTimeout(async () => {
       try {
         const results = await request(`/search/?q=${encodeURIComponent(q)}`);
+        if (mySeq !== searchSeq) return; // stale response, discard
         if (!Array.isArray(results) || results.length === 0) {
           adminSearchResults.innerHTML = '<div style="padding:0.5rem;color:var(--color-text-muted)">No results</div>';
         } else {

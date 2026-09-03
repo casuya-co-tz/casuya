@@ -9,7 +9,8 @@ export interface SwitchProps extends Omit<React.InputHTMLAttributes<HTMLInputEle
 export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
   ({ label, className, id, checked, ...props }, ref) => {
     const autoId = useId();
-    const switchId = id || (label ? label.toLowerCase().replace(/\s+/g, '-') : `switch-${autoId}`);
+    const slug = label ? label.toLowerCase().replace(/\s+/g, '-') : '';
+    const switchId = id || (slug ? `${autoId}-${slug}` : autoId);
 
     return (
       <div className={cx('flex items-center gap-3', className)}>

@@ -378,7 +378,7 @@ def create_lesson_from_html(
             "title": title,
             "content_hash": content_hash,
             "package_version": "1.0.0",
-            "status": "draft",
+            "status": status,
         }
     finally:
         _gen.close()
