@@ -5,7 +5,6 @@ Design decisions and architectural notes for the Casuya platform.
 ## Key Files
 
 - `apps/platform/README.md` — Full architecture overview and architectural contract
-- `apps/platform/PERFORMANCE.md` — Performance optimization plan
 - `packages/blackboard/PLAN.md` — Blackboard integration plan
 
 ## Architecture Rules
