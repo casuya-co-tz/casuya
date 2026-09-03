@@ -723,6 +723,26 @@ def _midterm_weeks(lang: str) -> list[dict]:
     ]
 
 
+def _distribute_periods(activities: list[str], total: int) -> list[dict]:
+    """Distribute *total* periods across *activities* as evenly as possible.
+
+    Returns a list of ``{"activity": str, "periods": int}`` dicts whose
+    period values sum to exactly *total*.  When *activities* is empty a
+    single placeholder row is returned.
+    """
+    if not activities:
+        return [{"activity": "", "periods": total}]
+    n = len(activities)
+    if total <= 0:
+        return [{"activity": a, "periods": 0} for a in activities]
+    base = total // n
+    extra = total - base * n          # first *extra* activities get +1
+    return [
+        {"activity": a, "periods": base + (1 if i < extra else 0)}
+        for i, a in enumerate(activities)
+    ]
+
+
 def _build_scheme_offline(
     *, subject_slug, subject_label, form_level, term, academic_year,
     school_name, teacher_name, topics, lang,
@@ -832,6 +852,7 @@ def _build_scheme_offline(
                 "teaching_aids": ["Textbook", "Charts"] if lang == "en" else ["Kitabu", "Ramani"],
                 "competences": [main_comp],
                 "objectives": learning_activities,
+                "learning_activity_schedule": _distribute_periods(learning_activities, spec_periods),
                 "references": [f"TIE Syllabus"],
                 "assessment": "Exercises and Q&A" if lang == "en" else "Mazoezi na maswali",
             }
@@ -1221,7 +1242,13 @@ def render_scheme_of_work_html(plan: dict) -> str:
         if isinstance(w.get('specific_competence'), list):
             spec_comp = _li(w.get('specific_competence'))
         learn_act = _e(w.get('learning_activities') or w.get('objectives', ''))
-        if isinstance(w.get('learning_activities'), list):
+        schedule = w.get('learning_activity_schedule')
+        if schedule:
+            learn_act = ", ".join(
+                f"{_e(s['activity'])} ({s['periods']} {'period' if s['periods'] == 1 else 'periods'})"
+                for s in schedule if s.get('activity')
+            ) or learn_act
+        elif isinstance(w.get('learning_activities'), list):
             learn_act = _li(w.get('learning_activities'))
         spec_act = _e(w.get('specific_activities') or w.get('subtopic', ''))
         if isinstance(w.get('specific_activities'), list):
