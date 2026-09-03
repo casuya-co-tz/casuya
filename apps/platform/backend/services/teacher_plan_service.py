@@ -580,8 +580,6 @@ def render_lesson_plan_html(plan: dict) -> str:
         "(Indicate the percentage of students who achieved the specific competence, effectiveness of teaching methods/resources, and required remediation.)",
         "(Onyesha asilimia ya wanafunzi waliofikia ujuzi mahususi, ufanisi wa mbinu/rasilimali za kufundisha, na marekebisho yanayohitajika.)",
     )
-    _head_remarks = LST("Head of Subject / Academic Master Remarks", "Maoni ya Mkuu wa Somo / Mwalimu Mkuu")
-    _comments = LST("Comments", "Maoni")
     _signature = LST("Signature", "Sahihi")
     _country = LST("UNITED REPUBLIC OF TANZANIA", "JAMHURI YA MUUNGANO WA TANZANIA")
     _tie = LST("TANZANIA INSTITUTE OF EDUCATION", "TAASISI YA ELIMU TANZANIA")
@@ -833,15 +831,10 @@ def render_lesson_plan_html(plan: dict) -> str:
             <td colspan="2">{_e(remarks)}</td>
         </tr>'''}
         <tr>
-            <td style="width: 50%;">
+            <td>
                 <strong>{_e(_teacher_eval)}:</strong><br><br>
                 <em>{_e(_teacher_eval_hint)}</em>
                 <br><br><br><br>
-                {_e(_signature)}: ______________________      {_e(_date)}: ____/____/______
-            </td>
-            <td style="width: 50%;">
-                <strong>{_e(_head_remarks)}:</strong><br><br>
-                {_e(_comments)}: __________________________________________________<br><br><br>
                 {_e(_signature)}: ______________________      {_e(_date)}: ____/____/______
             </td>
         </tr>
