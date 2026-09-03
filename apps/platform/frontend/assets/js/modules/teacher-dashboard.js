@@ -1224,7 +1224,19 @@ async function renderTeacherDashboard() {
                   const sub = (Array.isArray(subData) ? subData : []).find(s => s.id === subId);
                   if (!sub) { detail.innerHTML = '<div style="padding:1rem;color:var(--color-error)">Submission not found</div>'; return; }
                   let elements = [];
-                  try { elements = JSON.parse(sub.elements_json || "[]"); } catch {}
+                  let mcqAnswers = {};
+                  let structuredAnswers = {};
+                  try {
+                    const parsed = JSON.parse(sub.elements_json || "{}");
+                    // Handle both old format (array) and new format (object with elements/mcq_answers/structured_answers)
+                    if (Array.isArray(parsed)) {
+                      elements = parsed;
+                    } else {
+                      elements = parsed.elements || [];
+                      mcqAnswers = parsed.mcq_answers || {};
+                      structuredAnswers = parsed.structured_answers || {};
+                    }
+                  } catch {}
                   const paper = assignData && assignData.paper;
                   let html = `
                     <div class="card" style="padding:1.25rem">
@@ -1233,13 +1245,13 @@ async function renderTeacherDashboard() {
                         <span style="font-size:0.8rem;color:var(--color-text-muted)">Submitted: ${sub.submitted_at ? new Date(sub.submitted_at).toLocaleString() : "N/A"} | ${sub.status}</span>
                       </div>
                   `;
+                  // Show MCQ answers with auto-grading
                   if (paper && paper.sections) {
-                    html += '<div style="margin-bottom:1rem"><h4 style="margin:0 0 0.5rem">Exam Paper Answers</h4>';
+                    html += '<div style="margin-bottom:1rem"><h4 style="margin:0 0 0.5rem">Multiple Choice Answers</h4>';
                     paper.sections.forEach(sec => {
                       if (sec.question_type !== "mcq") return;
                       (sec.questions || []).forEach(q => {
-                        const ans = elements.find(el => el.questionId === q.number || (el.question_number && parseInt(el.question_number) === q.number));
-                        const chosen = ans && ans.selected_option != null ? parseInt(ans.selected_option) : -1;
+                        const chosen = mcqAnswers[q.number] != null ? mcqAnswers[q.number] : -1;
                         const correct = q.answer;
                         const isCorrect = chosen === correct;
                         const opts = (q.options || []).map((o, i) => {
@@ -1248,15 +1260,34 @@ async function renderTeacherDashboard() {
                           let style = "padding:0.15rem 0.4rem;border-radius:3px;margin:0.1rem 0;display:block;font-size:0.85rem;";
                           if (cor) style += "background:#dcfce7;font-weight:600;";
                           else if (sel && !cor) style += "background:#fee2e2;text-decoration:line-through;";
-                          return `<span style="${style}">${escapeHtml(o)}</span>`;
+                          return `<span style="${style}">${i + 1}. ${escapeHtml(o)}</span>`;
                         }).join("");
                         html += `<div style="margin-bottom:0.5rem;padding:0.4rem;border-left:3px solid ${isCorrect ? "#16a34a" : "#dc2626"};padding-left:0.6rem">
                           <span style="font-weight:600;font-size:0.85rem">Q${q.number}.</span> <span style="font-size:0.85rem">${escapeHtml(q.text).slice(0, 80)}</span>
                           <div style="margin-top:0.2rem">${opts}</div>
-                          <span style="font-size:0.75rem;color:${isCorrect ? "#16a34a" : "#dc2626"};font-weight:600">${isCorrect ? "Correct" : "Wrong"} (${q.marks} mark${q.marks > 1 ? "s" : ""})</span>
+                          <span style="font-size:0.75rem;color:${isCorrect ? "#16a34a" : "#dc2626"};font-weight:600">${chosen >= 0 ? (isCorrect ? "Correct" : "Wrong") : "No answer"} (${q.marks} mark${q.marks > 1 ? "s" : ""})</span>
                         </div>`;
                       });
                     });
+                    // Show structured/essay answers per question
+                    const hasStructured = Object.keys(structuredAnswers).length > 0;
+                    if (hasStructured) {
+                      html += '<h4 style="margin:1rem 0 0.5rem">Structured / Essay Answers</h4>';
+                      paper.sections.forEach(sec => {
+                        if (sec.question_type === "mcq") return;
+                        (sec.questions || []).forEach(q => {
+                          const answer = structuredAnswers[q.number] || "";
+                          html += `<div style="margin-bottom:0.75rem;padding:0.5rem;border-left:3px solid #2563eb;padding-left:0.6rem;background:#f8fafc;border-radius:0 6px 6px 0">
+                            <div style="font-weight:600;font-size:0.85rem;margin-bottom:0.25rem">Q${q.number}. ${escapeHtml(q.text).slice(0, 100)}</div>
+                            <div style="font-size:0.75rem;color:var(--color-text-muted);margin-bottom:0.25rem">(${q.marks} mark${q.marks > 1 ? "s" : ""})</div>
+                            ${answer
+                              ? `<div style="background:#fff;padding:0.5rem;border:1px solid #e5e7eb;border-radius:4px;font-size:0.9rem;white-space:pre-wrap">${escapeHtml(answer)}</div>`
+                              : '<div style="color:#dc2626;font-size:0.85rem;font-style:italic">No answer submitted</div>'
+                            }
+                          </div>`;
+                        });
+                      });
+                    }
                     html += '</div>';
                   }
                   if (elements.length > 0) {

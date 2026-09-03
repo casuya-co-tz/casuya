@@ -123,7 +123,11 @@ function renderExamQuestion(q, type, ctx) {
         "</div>";
     }
   } else {
-    html += '<div class="exam-answer-line"></div>';
+    if (ctx.mode === "student") {
+      html += '<textarea class="exam-structured-answer" data-question="' + escapeHtml(q.number) + '" placeholder="Write your answer here..." style="width:100%;min-height:80px;padding:0.5rem;border:1px solid #d1d5db;border-radius:6px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-top:0.4rem"></textarea>';
+    } else {
+      html += '<div class="exam-answer-line"></div>';
+    }
   }
   html += "</div>";
   return html;

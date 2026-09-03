@@ -889,12 +889,33 @@
         const btn = document.getElementById("submit-assignment-btn");
         btn.disabled = true; btn.textContent = "Submitting...";
         try {
+          // Collect blackboard elements
           const elements = bb.getElements ? bb.getElements() : [];
+          // Collect MCQ radio answers
+          const mcqAnswers = {};
+          document.querySelectorAll('.exam-paper input[type="radio"]:checked').forEach(radio => {
+            const name = radio.getAttribute("name");
+            const qNum = name ? name.replace(/^.*-/, "") : null;
+            if (qNum) mcqAnswers[qNum] = parseInt(radio.value);
+          });
+          // Collect structured/essay textarea answers
+          const structuredAnswers = {};
+          document.querySelectorAll('.exam-structured-answer').forEach(ta => {
+            const qNum = ta.getAttribute("data-question");
+            const text = ta.value.trim();
+            if (qNum && text) structuredAnswers[qNum] = text;
+          });
+          // Combine into a single submission object
+          const submission = {
+            elements: elements,
+            mcq_answers: mcqAnswers,
+            structured_answers: structuredAnswers,
+          };
           await request(`/assignments/${assignmentId}/submit`, {
             method: "POST",
             body: JSON.stringify({
               student_id: studentId || "anonymous",
-              elements_json: JSON.stringify(elements),
+              elements_json: JSON.stringify(submission),
             }),
           });
           document.getElementById("assignment-result").innerHTML = `
