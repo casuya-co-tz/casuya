@@ -420,7 +420,7 @@ def _build_lesson_plan_offline(
             "Introduction",
             "Competence Development",
             "Design",
-            "Realisation",
+            "Realizations",
         ]
         teacher_acts = [
             f"Displays word cards with simple arithmetic scenarios and prompts students to identify the unknown values using letters/variables.",
@@ -557,24 +557,24 @@ def render_lesson_plan_html(plan: dict) -> str:
     _subject = LST("Subject", "Somo")
     _date = LST("Date", "Tarehe")
     _time = LST("Time", "Muda")
-    _students = LST("Number of Pupils / Students", "Idadi ya Wanafunzi")
-    _registered = LST("Registered", "Walioandikishwa")
-    _present = LST("Present", "Waliohudhuria")
-    _boys = LST("Boys", "Wavulana")
-    _girls = LST("Girls", "Wasichana")
-    _total = LST("Total", "Jumla")
-    _main_comp = LST("Main Competence", "Ujuzi Mkuu")
-    _specific_comp = LST("Specific Competence", "Ujuzi Mahususi")
-    _main_act = LST("Main Activity", "Shughuli Kuu")
-    _specific_act = LST("Specific Activity", "Shughuli Mahususi")
-    _tlr = LST("Teaching & Learning Resources", "Rasilimali za Kufundisha na Kujifunza")
-    _references = LST("References", "Marejeo")
-    _stages = LST("Stages", "Hatua")
-    _time_min = LST("Time (Min)", "Muda (Dakika)")
-    _teaching_act = LST("Teaching Activities", "Shughuli za Ufundishaji")
-    _learning_act = LST("Learning Activities", "Shughuli za Kujifunza")
+    _students = LST("NUMBER OF STUDENTS", "IDADI YA WANAFUNZI")
+    _registered = LST("REGISTERED", "WALIOANDIKISHWA")
+    _present = LST("PRESENT", "WALIOHUDHURIA")
+    _boys = LST("BOYS", "WAVULANA")
+    _girls = LST("GIRLS", "WASICHANA")
+    _total = LST("TOTAL", "JUMLA")
+    _main_comp = LST("2. MAIN COMPETENCE", "2. UJUZI MKUU")
+    _specific_comp = LST("3. SPECIFIC COMPETENCE", "3. UJUZI MAHUSUSI")
+    _main_act = LST("4. MAIN ACTIVITY", "4. SHUGHULI KUU")
+    _specific_act = LST("5. SPECIFIC ACTIVITY", "5. SHUGHULI MAHUSUSI")
+    _tlr = LST("6. TEACHING/LEARNING RESOURCE", "6. RASILIMALI ZA KUFUNDISHA/KUJIFUNZA")
+    _references = LST("REFERENCES:", "MAREJEO:")
+    _stages = LST("Stage", "Hatua")
+    _time_min = LST("Time", "Muda")
+    _teaching_act = LST("Teacher's Activities", "Shughuli za Mwalimu")
+    _learning_act = LST("Learners' Activities", "Shughuli za Wanafunzi")
     _assessment = LST("Assessment Criteria", "Kigezo cha Tathmini")
-    _remarks_eval = LST("REMARKS / EVALUATION", "MAONI / TATHMINI")
+    _remarks_eval = LST("REMARKS :", "MAONI :")
     _teacher_eval = LST("Teacher's Evaluation / Self-Reflection", "Tathmini ya Mwalimu / Kujitathmini")
     _teacher_eval_hint = LST(
         "(Indicate the percentage of students who achieved the specific competence, effectiveness of teaching methods/resources, and required remediation.)",
@@ -651,22 +651,31 @@ def render_lesson_plan_html(plan: dict) -> str:
                 <td>{_e(a.get('remarks_assessment', ''))}</td>
             </tr>"""
 
-    # ── Competence & resources rows ───────────────────────────────────────
-    comp_rows = ""
-    comp_rows += f'<tr><td class="bold">{_e(_main_comp)}:</td><td>{_e(ca.get("main_competence", ""))}</td></tr>'
-    comp_rows += f'<tr><td class="bold">{_e(_specific_comp)}:</td><td>{_e(ca.get("specific_competence", ""))}</td></tr>'
-    if ca.get("main_learning_activity") or ca.get("main_activity"):
-        comp_rows += f'<tr><td class="bold">{_e(_main_act)}:</td><td>{_e(ca.get("main_learning_activity", ca.get("main_activity", "")))}</td></tr>'
-    if ca.get("specific_learning_activity") or ca.get("specific_activity"):
-        comp_rows += f'<tr><td class="bold">{_e(_specific_act)}:</td><td>{_e(ca.get("specific_learning_activity", ca.get("specific_activity", "")))}</td></tr>'
-    tlr_val = rs.get("teaching_learning_resources") if "teaching_learning_resources" in rs else plan.get("teaching_aids", [])
+    # ── Competence & resources sections ───────────────────────────────────
+    comp_sections = ""
+    mc = ca.get("main_competence", "")
+    sc = ca.get("specific_competence", "")
+    ma = ca.get("main_learning_activity", ca.get("main_activity", ""))
+    sa = ca.get("specific_learning_activity", ca.get("specific_activity", ""))
+    tlr_val = rs.get("teaching_learning_resources") or plan.get("teaching_aids", [])
     if not tlr_val:
         tlr_val = plan.get("teaching_aids", [])
-    if tlr_val:
-        comp_rows += f'<tr><td class="bold">{_e(_tlr)}:</td><td>{_e(_li(tlr_val))}</td></tr>'
     refs = rs.get("references", plan.get("references", []))
-    if refs:
-        comp_rows += f'<tr><td class="bold">{_e(_references)}:</td><td>{_e(_li(refs))}</td></tr>'
+    if mc:
+        comp_sections += f'<div class="sec"><div class="sec-title">{_e(_main_comp)}</div><div class="sec-body">{_e(mc)}</div></div>'
+    if sc:
+        comp_sections += f'<div class="sec"><div class="sec-title">{_e(_specific_comp)}</div><div class="sec-body">{_e(sc)}</div></div>'
+    if ma:
+        comp_sections += f'<div class="sec"><div class="sec-title">{_e(_main_act)}</div><div class="sec-body">{_e(ma)}</div></div>'
+    if sa:
+        comp_sections += f'<div class="sec"><div class="sec-title">{_e(_specific_act)}</div><div class="sec-body">{_e(sa)}</div></div>'
+    if tlr_val:
+        comp_sections += f'<div class="sec"><div class="sec-title">{_e(_tlr)}</div><div class="sec-body">{_e(_li(tlr_val))}</div>'
+        if refs:
+            comp_sections += f'<div class="refs"><strong>{_e(_references)}</strong> {_e(_li(refs))}</div>'
+        comp_sections += "</div>"
+    elif refs:
+        comp_sections += f'<div class="sec"><div class="sec-body"><strong>{_e(_references)}</strong> {_e(_li(refs))}</div></div>'
 
     return f"""<!DOCTYPE html>
 <html lang="{'sw' if is_sw else 'en'}">
@@ -719,6 +728,21 @@ def render_lesson_plan_html(plan: dict) -> str:
         }}
         .text-center {{ text-align: center; }}
         .bold {{ font-weight: bold; }}
+        .sec {{
+            margin-bottom: 12px;
+        }}
+        .sec-title {{
+            font-weight: bold;
+            margin: 14px 0 4px 0;
+            text-decoration: underline;
+        }}
+        .sec-body {{
+            margin-left: 12px;
+        }}
+        .refs {{
+            margin: 4px 0 0 12px;
+            font-style: italic;
+        }}
         @media print {{
             body {{ margin: 0; }}
             .lesson-container {{ border: none; padding: 0; }}
@@ -751,22 +775,23 @@ def render_lesson_plan_html(plan: dict) -> str:
 <div class="lesson-container">
     <table>
         <tr>
-            <td style="width: 50%;"><strong>{_e(_school)}:</strong> {school_name}</td>
-            <td style="width: 50%;"><strong>{_e(_teacher)}:</strong> {teacher_name}</td>
+            <td style="width: 33%;"><strong>LESSON PLAN NO.</strong> ______</td>
+            <td style="width: 34%;"><strong>{_e(_date)}</strong> . . . . . . . . . . . . . . . . . . . .</td>
+            <td style="width: 33%;"><strong>{_e(_time)}</strong> . . . . . . . . . . . . . . . . . . . .</td>
         </tr>
-        <tr>
+        {school_name and f'''<tr>
+            <td><strong>{_e(_school)}:</strong> {school_name}</td>
+            <td><strong>{_e(_teacher)}:</strong> {teacher_name}</td>
             <td><strong>{_e(_class)}:</strong> {_e(class_name)}</td>
+        </tr>'''}
+        <tr>
             <td><strong>{_e(_subject)}:</strong> {_e(subject)}</td>
-        </tr>
-        <tr>
-            <td><strong>{_e(_date)}:</strong> {date}</td>
-            <td><strong>{_e(_time)}:</strong> {time_from_fmt} - {time_to_fmt} ({_e(str(duration))} Mins)</td>
-        </tr>
-        <tr>
-            <td colspan="2"><strong>{_e(LST('Topic', 'Mada'))}:</strong> {tp}</td>
+            <td><strong>{_e(LST('Topic', 'Mada'))}:</strong> {tp}</td>
+            <td></td>
         </tr>
     </table>
 
+    <div class="sec-title">1. CLASS INFORMATION</div>
     <table>
         <tr class="bg-head">
             <td rowspan="2" style="vertical-align: middle; width: 20%;">{_e(_students)}</td>
@@ -774,28 +799,27 @@ def render_lesson_plan_html(plan: dict) -> str:
             <td colspan="3">{_e(_present)}</td>
         </tr>
         <tr class="bg-head">
-            <td style="width: 13%;">{_e(_boys)}</td>
             <td style="width: 13%;">{_e(_girls)}</td>
+            <td style="width: 13%;">{_e(_boys)}</td>
             <td style="width: 14%;">{_e(_total)}</td>
-            <td style="width: 13%;">{_e(_boys)}</td>
             <td style="width: 13%;">{_e(_girls)}</td>
+            <td style="width: 13%;">{_e(_boys)}</td>
             <td style="width: 14%;">{_e(_total)}</td>
         </tr>
         <tr class="text-center">
             <td class="bold">{_e(LST('Number', 'Idadi'))}</td>
-            <td>{_e(sreg.get('boys', '') or '____')}</td>
-            <td>{_e(sreg.get('girls', '') or '____')}</td>
-            <td>{_e(sreg.get('total', '') or '____')}</td>
-            <td>{_e(spres.get('boys', '') or '____')}</td>
-            <td>{_e(spres.get('girls', '') or '____')}</td>
-            <td>{_e(spres.get('total', '') or '____')}</td>
+            <td>{_e(sreg.get('girls', '') or '.')}</td>
+            <td>{_e(sreg.get('boys', '') or '.')}</td>
+            <td>{_e(sreg.get('total', '') or '.')}</td>
+            <td>{_e(spres.get('girls', '') or '.')}</td>
+            <td>{_e(spres.get('boys', '') or '.')}</td>
+            <td>{_e(spres.get('total', '') or '.')}</td>
         </tr>
     </table>
 
-    <table>
-        {comp_rows}
-    </table>
+    {comp_sections}
 
+    <div class="sec-title">TEACHING AND LEARNING PROCESS</div>
     <table>
         <thead>
             <tr class="bg-head">
@@ -813,18 +837,10 @@ def render_lesson_plan_html(plan: dict) -> str:
 
     <table>
         <tr class="bg-head">
-            <td colspan="2">{_e(_remarks_eval)}</td>
+            <td>{_e(_remarks_eval)}</td>
         </tr>
-        {remarks and f'''<tr>
-            <td colspan="2">{_e(remarks)}</td>
-        </tr>'''}
         <tr>
-            <td>
-                <strong>{_e(_teacher_eval)}:</strong><br><br>
-                <em>{_e(_teacher_eval_hint)}</em>
-                <br><br><br><br>
-                {_e(_signature)}: ______________________      {_e(_date)}: ____/____/______
-            </td>
+            <td>{remarks if remarks else _e(LST('--REMARKS TO WRITTEN HERE--', '--MAONI YAANDIKWE HAPA--'))}</td>
         </tr>
     </table>
 </div>

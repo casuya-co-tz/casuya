@@ -51,7 +51,7 @@ def test_lesson_plan_offline_render_english():
     assert len(plan["progression_matrix"]) == 4
     assert plan["progression_matrix"][0]["stage"] == "Introduction"
     assert [r["stage"] for r in plan["progression_matrix"]] == [
-        "Introduction", "Competence Development", "Design", "Realisation",
+        "Introduction", "Competence Development", "Design", "Realizations",
     ]
     assert "main_competence" in plan["competence_architecture"]
     assert plan["competence_architecture"]["specific_learning_activity"].startswith("Within 40 minutes")
@@ -66,9 +66,17 @@ def test_lesson_plan_offline_render_english():
     assert "TANZANIA INSTITUTE OF EDUCATION" not in html
     assert "Competence Development" in html
     assert "Design" in html
-    assert "Realisation" in html
+    assert "Realizations" in html
     assert "Assessment Criteria" in html
-    assert "REMARKS / EVALUATION" in html
+    assert "REMARKS :" in html
+    assert "1. CLASS INFORMATION" in html
+    assert "2. MAIN COMPETENCE" in html
+    assert "3. SPECIFIC COMPETENCE" in html
+    assert "4. MAIN ACTIVITY" in html
+    assert "5. SPECIFIC ACTIVITY" in html
+    assert "6. TEACHING/LEARNING RESOURCE" in html
+    assert "Learners" in html and "Activities" in html
+    assert "LESSON PLAN NO." in html
     assert "downloadAsWord" not in html
     assert "window.print()" not in html
 
