@@ -60,7 +60,7 @@ NECTA_SYLLABUS: list[dict] = [
              'code': '1.0',
              'form_level': 1,
              'order': 1,
-             'periods': 50,
+             'periods': 34,
              'weight': 'high',
              'subtopics': [{'title': 'Base ten numeration',
                             'code': '1.1',

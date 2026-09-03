@@ -241,15 +241,25 @@ def test_scheme_of_work_offline_render(monkeypatch):
         term="Term 1", academic_year="2026", school_name="School",
         teacher_name="Teacher", topics=["Cell Biology", "Genetics"], lang="en",
     )
-    # weeks derived from the knowledge base subtopics (2 topics x 2 subtopics).
+    # weeks: 4 teaching + 2 midterm (exam + holiday) inserted at the midpoint.
     assert [w["specific_competence"] for w in plan["weeks"]] == [
-        "1.1 Cell Structure", "1.2 Cell Division", "2.1 DNA and RNA", "2.2 Mendelian Inheritance",
+        "1.1 Cell Structure", "1.2 Cell Division",
+        "Assess learner mastery of the Term's topics",
+        "Learner break following the midterm examination",
+        "2.1 DNA and RNA", "2.2 Mendelian Inheritance",
     ]
     assert plan["weeks"][0]["main_competence"] == "1.0 Cell Biology"
     assert "Describe the cell" in plan["weeks"][0]["learning_activities"]
     assert plan["weeks"][0]["periods"] == 8
-    # Term I maps the first 4 weeks to January (4 weeks per month).
-    assert all(w["month"] == "January" for w in plan["weeks"])
+    # Midterm weeks have periods=0 (non-teaching).
+    assert plan["weeks"][2]["periods"] == 0
+    assert plan["weeks"][3]["periods"] == 0
+    # Teaching weeks retain authentic periods; midterm weeks do not inflate them.
+    teaching = [w for w in plan["weeks"] if w["periods"] > 0]
+    assert sum(w["periods"] for w in teaching) == 8 + 12 + 10 + 10
+    # Term I: first 4 weeks = January, weeks 5-6 = February (4-week month blocks).
+    assert [w["month"] for w in plan["weeks"][:4]] == ["January"] * 4
+    assert [w["month"] for w in plan["weeks"][4:]] == ["February"] * 2
 
     html = render_scheme_of_work_html(plan)
     assert "Cell Biology" in html
@@ -310,8 +320,17 @@ def test_scheme_of_work_uses_real_enriched_syllabus(monkeypatch):
     assert {w["month"] for w in plan["weeks"]} <= {
         "January", "February", "March", "April", "May",
     }
-    # Real subtopic period totals (not 0).
-    assert all(w["periods"] > 0 for w in plan["weeks"])
+    # Midterm weeks (periods=0) sit at the midpoint; teaching weeks carry
+    # the authentic subtopic period totals and are never 0.
+    teaching = [w for w in plan["weeks"] if w["periods"] > 0]
+    midterm  = [w for w in plan["weeks"] if w["periods"] == 0]
+    assert len(midterm) == 2, "expect exactly midterm exam + midterm holiday"
+    assert all(w["periods"] > 0 for w in teaching)
+    # Teaching period total must equal the sum of all subtopic periods (Physics F1).
+    assert sum(w["periods"] for w in teaching) == sum(
+        sp.get("estimated_periods", 0)
+        for t in form_data["topics"] for sp in t.get("subtopics", [])
+    )
 
 
 def test_lesson_plan_uses_real_enriched_syllabus(monkeypatch):
@@ -339,6 +358,66 @@ def test_lesson_plan_uses_real_enriched_syllabus(monkeypatch):
         ca["specific_learning_activity"]
         for _ in [plan["progression_matrix"][3]["learner_activity"]]
     )
+
+
+# ── Service: midterm weeks + period integrity ─────────────────────────────
+
+
+def test_scheme_of_work_midterm_and_period_integrity(monkeypatch):
+    """Every term gets two non-teaching midterm weeks (exam + holiday) and
+    the teaching-period total is never inflated by their insertion.
+
+    Also asserts the data-integrity rule: every topic's period count must
+    equal the sum of its subtopic periods — enforced at seed level and
+    checked here as a regression guard.
+    """
+    form_data = _seed_subject_dict("physics", 1)
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_subject_with_form",
+        lambda slug, form: form_data,
+    )
+
+    for term in ("Term 1", "Term 2"):
+        plan = _build_scheme_offline(
+            subject_slug="physics", subject_label="Physics", form_level=1,
+            term=term, academic_year="2026", school_name="School",
+            teacher_name="Teacher", topics=[], lang="en",
+        )
+        weeks = plan["weeks"]
+        teaching  = [w for w in weeks if w["periods"] > 0]
+        midterm   = [w for w in weeks if w["periods"] == 0]
+
+        # Exactly two midterm weeks per term.
+        assert len(midterm) == 2, f"{term}: expected 2 midterm weeks, got {len(midterm)}"
+        assert midterm[0]["main_competence"] == "MIDTERM EXAMINATION"
+        assert midterm[1]["main_competence"] == "MIDTERM HOLIDAY"
+
+        # Week numbering must be continuous after midterm insertion.
+        assert [w["week_number"] for w in weeks] == list(range(1, len(weeks) + 1))
+
+        # Teaching-period total must equal the sum of all subtopic periods.
+        sub_total = sum(
+            sp.get("estimated_periods", 0)
+            for t in form_data["topics"]
+            for sp in t.get("subtopics", [])
+        )
+        assert sum(w["periods"] for w in teaching) == sub_total
+
+        # Month assignment: Term 1 = Jan-May, Term 2 = Jul-Nov.
+        valid_months = (
+            {"January", "February", "March", "April", "May"}
+            if term == "Term 1"
+            else {"July", "August", "September", "October", "November"}
+        )
+        assert {w["month"] for w in weeks} <= valid_months
+
+    # Data-integrity rule: topic periods == subtopic sum for every topic.
+    for t in form_data["topics"]:
+        sp_sum = sum(sp.get("estimated_periods", 0) for sp in t.get("subtopics", []))
+        assert t.get("estimated_periods", 0) == sp_sum, (
+            f"topic {t.get('code')} periods={t.get('estimated_periods')} "
+            f"!= subtopic sum={sp_sum}"
+        )
 
 
 # ── API: save / list / get / delete ───────────────────────────────────────

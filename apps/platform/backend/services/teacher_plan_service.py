@@ -625,6 +625,104 @@ def _build_lesson_plan_offline(
     }
 
 
+def _midterm_weeks(lang: str) -> list[dict]:
+    """Two non-teaching scheme weeks inserted at each term's midpoint: the
+    midterm examination and the midterm holiday (per official TIE schemes).
+    periods=0 so they never alter the teaching-period total (which must equal
+    the sum of subtopic periods)."""
+    if lang == "sw":
+        return [
+            {
+                "topic": "MTIHANI WA MUHULA",
+                "subtopic": "Mtihani wa Muhula",
+                "main_competence": "MTIHANI WA MUHULA",
+                "specific_competence": "Kutathmini umahiri wa wanafunzi katika mada za muhula",
+                "learning_activities": [
+                    "Kufanya mtihani wa muhula",
+                    "Kukagua majaribio na kujadili maendeleo ya wanafunzi",
+                ],
+                "specific_activities": "Mtihani wa kati wa muhula",
+                "periods": 0,
+                "reference": "TIE Syllabus",
+                "teaching_methods": ["Mtihani wa mdomo", "Mtihani wa maandishi"],
+                "teaching_resources": ["Karatasi za mitihani", "Vielelezo"],
+                "assessment_tools": "Mtihani wa muhula",
+                "remarks": "Andika maelezo ya utendaji wa wanafunzi",
+                "teaching_aids": ["Kitabu", "Karatasi za mitihani"],
+                "competences": ["MTIHANI WA MUHULA"],
+                "objectives": ["Kufanya mtihani wa muhula"],
+                "references": ["TIE Syllabus"],
+                "assessment": "Mtihani wa muhula",
+            },
+            {
+                "topic": "LIKIZO LA MUHULA",
+                "subtopic": "Likizo ya Muhula",
+                "main_competence": "LIKIZO LA MUHULA",
+                "specific_competence": "Mapumziko ya wanafunzi kutokana na mtihani wa muhula",
+                "learning_activities": [
+                    "Wanafunzi wanapumzika na kufanya masomo ya nje ya darasa",
+                ],
+                "specific_activities": "Likizo ya kati ya muhula",
+                "periods": 0,
+                "reference": "TIE Syllabus",
+                "teaching_methods": ["Kusoma binafsi"],
+                "teaching_resources": ["Vitabu vya masomo"],
+                "assessment_tools": "Hakuna tathmini rasmi",
+                "remarks": "Rudi shuleni kwa muhula wa pili kwa tayari",
+                "teaching_aids": ["Vitabu"],
+                "competences": ["LIKIZO LA MUHULA"],
+                "objectives": ["Likizo ya muhula"],
+                "references": ["TIE Syllabus"],
+                "assessment": "Hakuna",
+            },
+        ]
+    return [
+        {
+            "topic": "MIDTERM EXAMINATION",
+            "subtopic": "Midterm Examination",
+            "main_competence": "MIDTERM EXAMINATION",
+            "specific_competence": "Assess learner mastery of the Term's topics",
+            "learning_activities": [
+                "Sit for the midterm examination",
+                "Review tests and discuss learner progress",
+            ],
+            "specific_activities": "Midterm assessment",
+            "periods": 0,
+            "reference": "TIE Syllabus",
+            "teaching_methods": ["Oral assessment", "Written examination"],
+            "teaching_resources": ["Examination papers", "Marking guides"],
+            "assessment_tools": "Midterm examination",
+            "remarks": "Record learner performance and plan remediation",
+            "teaching_aids": ["Textbook", "Examination papers"],
+            "competences": ["MIDTERM EXAMINATION"],
+            "objectives": ["Sit for the midterm examination"],
+            "references": ["TIE Syllabus"],
+            "assessment": "Midterm examination",
+        },
+        {
+            "topic": "MIDTERM HOLIDAY",
+            "subtopic": "Midterm Holiday",
+            "main_competence": "MIDTERM HOLIDAY",
+            "specific_competence": "Learner break following the midterm examination",
+            "learning_activities": [
+                "Learners rest and undertake self-study during the break",
+            ],
+            "specific_activities": "Midterm break",
+            "periods": 0,
+            "reference": "TIE Syllabus",
+            "teaching_methods": ["Independent study"],
+            "teaching_resources": ["Learner books"],
+            "assessment_tools": "No formal assessment",
+            "remarks": "Resume refreshed for the second half of the term",
+            "teaching_aids": ["Books"],
+            "competences": ["MIDTERM HOLIDAY"],
+            "objectives": ["Midterm holiday"],
+            "references": ["TIE Syllabus"],
+            "assessment": "None",
+        },
+    ]
+
+
 def _build_scheme_offline(
     *, subject_slug, subject_label, form_level, term, academic_year,
     school_name, teacher_name, topics, lang,
@@ -670,8 +768,10 @@ def _build_scheme_offline(
                 "subtopics": [],
             })
 
-    # Flatten subtopics into weekly rows.
-    week_count = 0
+    # Flatten subtopics into teaching-week rows. Week numbers and months are
+    # assigned afterwards so the two midterm weeks (exam + holiday) can be
+    # inserted at the term midpoint and the calendar renumbered coherently.
+    teaching_rows = []
     for row in rows:
         topic_title = row["topic"]
         topic_code = row["topic_code"]
@@ -679,7 +779,7 @@ def _build_scheme_offline(
         if not subs:
             # One week per topic when no subtopic breakdown is available.
             subtopic_list = [{
-                "title": (f"Part {week_count + 1}" if lang == "en" else f"Sehemu ya {week_count + 1}"),
+                "title": (f"Part {len(teaching_rows) + 1}" if lang == "en" else f"Sehemu ya {len(teaching_rows) + 1}"),
                 "code": "", "estimated_periods": 0, "outcomes": [],
             }]
         else:
@@ -691,7 +791,6 @@ def _build_scheme_offline(
             spec_periods = sub.get("estimated_periods") or (
                 (row["periods"] // len(subtopic_list)) if row["periods"] and subtopic_list else 4
             ) or 4
-            week_count += 1
             if lang == "sw":
                 learning_activities = outcomes or [
                     f"Eleza dhana za msingi za {sub_title or topic_title}",
@@ -707,18 +806,13 @@ def _build_scheme_offline(
                 main_comp = f"{topic_code} {topic_title}" if topic_code else topic_title
                 spec_comp = f"{sub_code} {sub_title}".strip() if sub_code else sub_title
 
-            month_idx = term_months[(week_count - 1) // 4] if week_count <= 4 * len(term_months) else term_months[-1]
-            month = months[month_idx]
             week_row = {
-                "week_number": week_count,
                 "topic": topic_title,
                 "subtopic": sub_title,
                 "main_competence": main_comp,
                 "specific_competence": spec_comp,
                 "learning_activities": learning_activities,
                 "specific_activities": sub_title,
-                "month": month,
-                "week": f"Week {week_count}" if lang == "en" else f"Wiki {week_count}",
                 "periods": spec_periods,
                 "reference": (
                     f"TIE (2023) {_subject_book(subject_label, class_name, lang)}"
@@ -741,7 +835,20 @@ def _build_scheme_offline(
                 "references": [f"TIE Syllabus"],
                 "assessment": "Exercises and Q&A" if lang == "en" else "Mazoezi na maswali",
             }
-            weeks.append(week_row)
+            teaching_rows.append(week_row)
+
+    # Insert the two required midterm weeks (examination + holiday) at the
+    # midpoint of the term's teaching weeks, for every term.
+    mid = len(teaching_rows) // 2
+    weeks = list(teaching_rows[:mid]) + _midterm_weeks(lang) + list(teaching_rows[mid:])
+
+    # Assign coherent week numbers and months across the full term.
+    for i, w in enumerate(weeks):
+        wn = i + 1
+        month_idx = term_months[(wn - 1) // 4] if wn <= 4 * len(term_months) else term_months[-1]
+        w["week_number"] = wn
+        w["week"] = f"Week {wn}" if lang == "en" else f"Wiki {wn}"
+        w["month"] = months[month_idx]
 
     return {
         "header": {
