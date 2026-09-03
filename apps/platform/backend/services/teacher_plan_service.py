@@ -527,10 +527,18 @@ def _build_scheme_offline(
                   "Kujifunza kwa ushirikiano", "Jozi za kujadiliana", "Maonyesho ya kuona"]
     months = months_en if lang == "en" else months_sw
     methods = methods_en if lang == "en" else methods_sw
+    # A month contains ~4 weeks. Start month depends on the term.
+    if "3" in term:
+        start_month = 6  # July
+    elif "2" in term:
+        start_month = 3  # April
+    else:
+        start_month = 0  # January
+    weeks_per_month = 4
 
     for i in range(1, num_weeks + 1):
         topic_title = topics[i - 1] if i <= len(topics) else f"Topic {i}"
-        month = months[(i - 1) % len(months)]
+        month = months[min(start_month + (i - 1) // weeks_per_month, len(months) - 1)]
         if lang == "sw":
             weeks.append({
                 "week_number": i, "topic": topic_title, "subtopic": f"Sehemu ya {i}",
