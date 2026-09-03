@@ -5265,2107 +5265,2380 @@ NECTA_SYLLABUS: list[dict] = [
     # ENGLISH LANGUAGE — NECTA Code 011
     # Source: TIE English Language Syllabus Form I-IV
     # ========================================================================
-    {
-        "name": "English Language",
-        "code": "ENG",
-        "slug": "english",
-        "necta_code": "011",
-        "is_core": True,
-        "description": "English Language for Ordinary and Advanced Secondary Education, Form I-VI. Covers grammar, vocabulary, composition, comprehension, literature, translation and advanced linguistics.",
-        "form_start": 1,
-        "form_end": 6,
-        "topics": [
-            {
-                "order": 1,
-                "code": "1.0",
-                "form_level": 1,
-                "title": "Listening and Speaking (Oral Communication)",
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Listen attentively to spoken information and respond appropriately", "comprehension", 1),
-                            ("Express ideas and information clearly in spoken English", "application", 2)
-                        ],
-                        "title": "Expressing Information"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Engage in polite social interactions using appropriate register", "application", 3),
-                            ("Initiate and sustain conversations in familiar contexts", "application", 4)
-                        ],
-                        "title": "Social Interactions"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Identify basic speech sounds and sound patterns in English", "knowledge", 5),
-                            ("Pronounce English phonemes with reasonable accuracy", "application", 6)
-                        ],
-                        "title": "Phonetics Foundations"
-                    }
-                ]
-            },
-            {
-                "order": 2,
-                "code": "2.0",
-                "form_level": 1,
-                "title": "Grammar Patterns (Part I)",
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Identify nouns and pronouns and their functions in sentences", "knowledge", 7),
-                            ("Use nouns and pronouns correctly in writing and speech", "application", 8)
-                        ],
-                        "title": "Nouns and Pronouns"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Recognize main verb forms and tense patterns", "knowledge", 9),
-                            ("Conjugate verbs accurately across basic tenses", "application", 10)
-                        ],
-                        "title": "Verbs and Tenses"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Identify adjectives and prepositions and their uses", "knowledge", 11),
-                            ("Apply adjectives and prepositions appropriately in sentences", "application", 12)
-                        ],
-                        "title": "Adjectives and Prepositions"
-                    }
-                ]
-            },
-            {
-                "order": 3,
-                "code": "3.0",
-                "form_level": 1,
-                "title": "Reading for Comprehension (Part I)",
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Read texts aloud with correct pacing and expression", "application", 13),
-                            ("Demonstrate fluency in oral reading passages", "application", 14)
-                        ],
-                        "title": "Reading aloud and pacing"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Read silently to locate specific details in a text", "comprehension", 15),
-                            ("Answer comprehension questions based on locating details", "comprehension", 16)
-                        ],
-                        "title": "Silent reading and locating details"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Infer the meaning of new words from context", "comprehension", 17),
-                            ("Build a personal vocabulary from reading materials", "application", 18)
-                        ],
-                        "title": "Expanding vocabulary"
-                    }
-                ]
-            },
-            {
-                "order": 4,
-                "code": "4.0",
-                "form_level": 1,
-                "title": "Writing Skills (Part I)",
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Apply basic punctuation marks correctly", "application", 19),
-                            ("Use capitalization and punctuation to clarify meaning", "application", 20)
-                        ],
-                        "title": "Punctuation mechanics"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Construct simple Subject-Verb-Object sentences", "application", 21),
-                            ("Join sentences to form coherent paragraphs", "synthesis", 22)
-                        ],
-                        "title": "Sentence formations (SVO)"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Write functional texts such as letters and invitations", "synthesis", 23),
-                            ("Complete forms with accurate personal information", "application", 24)
-                        ],
-                        "title": "Functional writing (letters, invitations, forms)"
-                    }
-                ]
-            },
-            {
-                "order": 5,
-                "code": "5.0",
-                "form_level": 1,
-                "title": "Vocabulary Building and Expressions",
-                "periods": 20,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Use expressions to state preferences and needs clearly", "application", 25),
-                            ("Respond to expressions of preference and need appropriately", "application", 26)
-                        ],
-                        "title": "Expressions for preferences and needs"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Categorize vocabulary clusters for numbers and time", "application", 27),
-                            ("Use vocabulary related to school and occupations in context", "application", 28)
-                        ],
-                        "title": "Vocabulary clusters (school, occupations, time, numbers)"
-                    }
-                ]
-            },
-            {
-                "order": 6,
-                "code": "6.0",
-                "form_level": 1,
-                "title": "Introduction to Literature",
-                "periods": 16,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 6,
-                        "outcomes": [
-                            ("Define literature and explain its purposes", "knowledge", 29),
-                            ("Discuss the value of literature in society", "comprehension", 30)
-                        ],
-                        "title": "Definition and purpose of literature"
-                    },
-                    {
-                        "periods": 4,
-                        "outcomes": [
-                            ("Distinguish between oral and written literature", "analysis", 31),
-                            ("Give examples of oral and written literary works", "comprehension", 32)
-                        ],
-                        "title": "Oral vs Written literature"
-                    },
-                    {
-                        "periods": 6,
-                        "outcomes": [
-                            ("Identify primary literary genres", "knowledge", 33),
-                            ("Differentiate plays, novels, and poetry", "analysis", 34)
-                        ],
-                        "title": "Primary genres (plays, novels, poetry)"
-                    }
-                ]
-            },
-            {
-                "order": 7,
-                "code": "1.0",
-                "form_level": 2,
-                "title": "Structural Grammar (Part II)",
-                "periods": 26,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Use tenses and modal verbs accurately in context", "application", 35),
-                            ("Distinguish shades of meaning among modals", "analysis", 36)
-                        ],
-                        "title": "Tenses and modals"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Use adverbs and conjunctions to connect ideas", "application", 37),
-                            ("Arrange adverbial and conjunctional structures correctly", "synthesis", 38)
-                        ],
-                        "title": "Adverbs and conjunctions"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Convert direct speech to indirect speech accurately", "application", 38),
-                            ("Apply backshifting rules in reported speech", "application", 39)
-                        ],
-                        "title": "Direct and indirect speech"
-                    }
-                ]
-            },
-            {
-                "order": 8,
-                "code": "2.0",
-                "form_level": 2,
-                "title": "Professional and Academic Writing",
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Write official correspondence following standard formats", "application", 40),
-                            ("Compose formal letters with appropriate tone", "synthesis", 41)
-                        ],
-                        "title": "Official correspondence"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Draft resumes and application letters", "application", 42),
-                            ("Present qualifications and experience effectively", "synthesis", 43)
-                        ],
-                        "title": "Resumes and application letters"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Take notes from spoken and written sources", "application", 44),
-                            ("Organize notes into useful summaries", "application", 45)
-                        ],
-                        "title": "Note-taking"
-                    }
-                ]
-            },
-            {
-                "order": 9,
-                "code": "3.0",
-                "form_level": 2,
-                "title": "Reading for Fluency and Critical Inference",
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Apply skimming and scanning techniques to texts", "application", 46),
-                            ("Locate both general and specific information efficiently", "comprehension", 47)
-                        ],
-                        "title": "Skimming and scanning"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Differentiate fact from opinion in texts", "analysis", 48),
-                            ("Evaluate claims based on textual evidence", "evaluation", 49)
-                        ],
-                        "title": "Fact vs opinion"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Expand vocabulary across specific fields of study", "application", 50),
-                            ("Use field-specific vocabulary in written contexts", "application", 51)
-                        ],
-                        "title": "Vocabulary growth fields"
-                    }
-                ]
-            },
-            {
-                "order": 10,
-                "code": "4.0",
-                "form_level": 2,
-                "title": "Spoken English and Debate Mechanics",
-                "periods": 22,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 6,
-                        "outcomes": [
-                            ("Construct coherent arguments and counterarguments", "synthesis", 52),
-                            ("Support positions with reasons and evidence", "application", 53)
-                        ],
-                        "title": "Arguments and counterarguments"
-                    },
-                    {
-                        "periods": 6,
-                        "outcomes": [
-                            ("Participate in panel debates and presentations", "application", 54),
-                            ("Moderate and follow debate procedures", "application", 55)
-                        ],
-                        "title": "Panel debates and presentations"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Apply word stress patterns in spoken English", "application", 56),
-                            ("Use appropriate telephone etiquette in conversations", "application", 57)
-                        ],
-                        "title": "Word stress and telephone etiquette"
-                    }
-                ]
-            },
-            {
-                "order": 11,
-                "code": "5.0",
-                "form_level": 2,
-                "title": "Introduction to Literary Analysis",
-                "periods": 22,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 12,
-                        "outcomes": [
-                            ("Identify plot, themes, characters, and settings in literary works", "comprehension", 58),
-                            ("Analyze the relationship between literary elements", "analysis", 59)
-                        ],
-                        "title": "Plot, themes, characters, settings"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Analyze short stories for meaning and technique", "analysis", 60),
-                            ("Write short analyses of a story's key elements", "synthesis", 61)
-                        ],
-                        "title": "Analyzing short stories"
-                    }
-                ]
-            },
-            {
-                "order": 12,
-                "code": "6.0",
-                "form_level": 2,
-                "title": "Idiomatic Expressions and Word Combinations",
-                "periods": 18,
-                "weight": "low",
-                "subtopics": [
-                    {
-                        "periods": 6,
-                        "outcomes": [
-                            ("Recognize and explain common idioms", "comprehension", 62),
-                            ("Use idioms appropriately in context", "application", 63)
-                        ],
-                        "title": "Common idioms"
-                    },
-                    {
-                        "periods": 6,
-                        "outcomes": [
-                            ("Identify phrasal verbs and their meanings", "knowledge", 64),
-                            ("Use phrasal verbs correctly in sentences", "application", 65)
-                        ],
-                        "title": "Phrasal verbs"
-                    },
-                    {
-                        "periods": 6,
-                        "outcomes": [
-                            ("Recognize common collocations in English", "comprehension", 66),
-                            ("Produce natural-sounding collocations in writing", "application", 67)
-                        ],
-                        "title": "Collocations"
-                    }
-                ]
-            },
-            {
-                "order": 13,
-                "code": "1.0",
-                "form_level": 3,
-                "title": "Advanced Analytical Grammar",
-                "periods": 26,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Transform active sentences into the passive voice", "application", 68),
-                            ("Explain when the passive voice is appropriate", "analysis", 69)
-                        ],
-                        "title": "The passive voice"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Form conditional sentences of Types 0 to 3", "application", 70),
-                            ("Distinguish the meaning of each conditional type", "analysis", 71)
-                        ],
-                        "title": "Conditional sentences (Type 0-3)"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Use relative clauses to combine and enrich sentences", "application", 72),
-                            ("Distinguish defining and non-defining clauses", "analysis", 73)
-                        ],
-                        "title": "Relative clauses"
-                    }
-                ]
-            },
-            {
-                "order": 14,
-                "code": "2.0",
-                "form_level": 3,
-                "title": "Creative and Digital Writing",
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Write descriptive compositions with vivid detail", "synthesis", 74),
-                            ("Write narrative compositions with coherent plot", "synthesis", 75)
-                        ],
-                        "title": "Descriptive and narrative compositions"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Write effective emails and blog posts", "application", 76),
-                            ("Adapt tone and style for digital audiences", "synthesis", 77)
-                        ],
-                        "title": "Digital communication (emails, blogs)"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Record minutes of meetings in standard format", "application", 78),
-                            ("Summarize deliberations and resolutions accurately", "synthesis", 79)
-                        ],
-                        "title": "Minutes of meetings"
-                    }
-                ]
-            },
-            {
-                "order": 15,
-                "code": "3.0",
-                "form_level": 3,
-                "title": "Literary Critique: Selected Plays",
-                "periods": 28,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Read and understand the two class plays", "comprehension", 80),
-                            ("Summarize the plot of each play", "comprehension", 81)
-                        ],
-                        "title": "Two class plays"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Analyze plots, dramatic irony, and character motivations", "analysis", 82),
-                            ("Evaluate the effectiveness of dramatic techniques", "evaluation", 83)
-                        ],
-                        "title": "Plots, dramatic irony, character motivations"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Examine themes of corruption, class, and gender", "analysis", 84),
-                            ("Relate play themes to contemporary society", "evaluation", 85)
-                        ],
-                        "title": "Core themes (corruption, class, gender)"
-                    }
-                ]
-            },
-            {
-                "order": 16,
-                "code": "4.0",
-                "form_level": 3,
-                "title": "Literary Critique: Selected Novels",
-                "periods": 28,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Read and understand the two class novels", "comprehension", 86),
-                            ("Trace the development of characters across the narrative", "analysis", 87)
-                        ],
-                        "title": "Two novels"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Analyze characterization in the novels", "analysis", 88),
-                            ("Evaluate character development and motivations", "evaluation", 89)
-                        ],
-                        "title": "Characterization"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Identify stylistic devices such as flashbacks and symbolism", "analysis", 90),
-                            ("Analyze the effects of point of view on narrative", "analysis", 91)
-                        ],
-                        "title": "Styles (flashbacks, symbolism, point of view)"
-                    }
-                ]
-            },
-            {
-                "order": 17,
-                "code": "5.0",
-                "form_level": 3,
-                "title": "Complex Reading and Summary Compilations",
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 12,
-                        "outcomes": [
-                            ("Read argumentative texts and identify the main thesis", "comprehension", 92),
-                            ("Critically examine arguments and supporting evidence", "analysis", 93)
-                        ],
-                        "title": "Argumentative text reading"
-                    },
-                    {
-                        "periods": 12,
-                        "outcomes": [
-                            ("Write summaries within a specified word count", "application", 94),
-                            ("Condense texts while preserving key ideas", "synthesis", 95)
-                        ],
-                        "title": "Summary writing within word count"
-                    }
-                ]
-            },
-            {
-                "order": 18,
-                "code": "6.0",
-                "form_level": 3,
-                "title": "Lexical Formations and Syntactic Shifts",
-                "periods": 18,
-                "weight": "low",
-                "subtopics": [
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Identify prefixes and suffixes and their meanings", "knowledge", 96),
-                            ("Form new words through affixation", "application", 97)
-                        ],
-                        "title": "Prefixes and suffixes"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Convert words from one class to another", "application", 98),
-                            ("Explain the effects of word-class conversion", "analysis", 99)
-                        ],
-                        "title": "Word-class conversion"
-                    }
-                ]
-            },
-            {
-                "order": 19,
-                "code": "1.0",
-                "form_level": 4,
-                "title": "Mastery of Structural Syntax",
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 12,
-                        "outcomes": [
-                            ("Refine phonological and syntactic accuracy in production", "application", 100),
-                            ("Analyze complex sentence structures", "analysis", 101)
-                        ],
-                        "title": "Phonological and syntactic refinement"
-                    },
-                    {
-                        "periods": 12,
-                        "outcomes": [
-                            ("Form and respond to tag questions correctly", "application", 102),
-                            ("Use inverted structures for emphasis and questions", "application", 103)
-                        ],
-                        "title": "Tag questions and inverted structures"
-                    }
-                ]
-            },
-            {
-                "order": 20,
-                "code": "2.0",
-                "form_level": 4,
-                "title": "Literary Critique: Selected Poetry",
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 4,
-                        "outcomes": [
-                            ("Read the prescribed poetry books", "comprehension", 104),
-                            ("Identify the poems' subjects and speakers", "comprehension", 105)
-                        ],
-                        "title": "Poetry books"
-                    },
-                    {
-                        "periods": 6,
-                        "outcomes": [
-                            ("Distinguish traditional from free verse", "analysis", 106),
-                            ("Examine the effects of each verse form", "analysis", 107)
-                        ],
-                        "title": "Traditional vs free verse"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Identify poetic devices such as imagery and rhyme", "knowledge", 108),
-                            ("Analyze how poetic devices create meaning", "analysis", 109)
-                        ],
-                        "title": "Poetic devices"
-                    },
-                    {
-                        "periods": 6,
-                        "outcomes": [
-                            ("Interpret the social messages of poems", "comprehension", 110),
-                            ("Evaluate poems' relevance to society", "evaluation", 111)
-                        ],
-                        "title": "Social messages of poems"
-                    }
-                ]
-            },
-            {
-                "order": 21,
-                "code": "3.0",
-                "form_level": 4,
-                "title": "Translation and Interpretation Fundamentals",
-                "periods": 22,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Define translation and interpretation concepts", "knowledge", 112),
-                            ("Distinguish translation from interpretation", "comprehension", 113)
-                        ],
-                        "title": "Concepts of translation and interpretation"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Translate paragraphs between languages with fidelity", "application", 114),
-                            ("Preserve meaning and style in translation", "analysis", 115)
-                        ],
-                        "title": "Translating paragraphs"
-                    },
-                    {
-                        "periods": 6,
-                        "outcomes": [
-                            ("Translate idioms and cultural expressions accurately", "application", 116),
-                            ("Explain cultural challenges in translation", "analysis", 117)
-                        ],
-                        "title": "Idioms and cultural expressions"
-                    }
-                ]
-            },
-            {
-                "order": 22,
-                "code": "4.0",
-                "form_level": 4,
-                "title": "English as an International Language",
-                "periods": 18,
-                "weight": "low",
-                "subtopics": [
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Explain the role of English as a global lingua franca", "comprehension", 118),
-                            ("Discuss the implications of English's global status", "evaluation", 119)
-                        ],
-                        "title": "English as global lingua franca"
-                    },
-                    {
-                        "periods": 8,
-                        "outcomes": [
-                            ("Analyze the relationship between English and Swahili in Tanzania", "analysis", 120),
-                            ("Evaluate language policy and its effects", "evaluation", 121)
-                        ],
-                        "title": "English and Swahili in Tanzania"
-                    }
-                ]
-            },
-            {
-                "order": 23,
-                "code": "5.0",
-                "form_level": 4,
-                "title": "Exam Preparation and Synthesized Production",
-                "periods": 28,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Practice a comprehensive range of exam-style questions", "application", 122),
-                            ("Manage time effectively in examination conditions", "application", 123)
-                        ],
-                        "title": "Comprehensive practice"
-                    },
-                    {
-                        "periods": 18,
-                        "outcomes": [
-                            ("Write structured essays under time constraints", "synthesis", 124),
-                            ("Perform error analysis on written work", "analysis", 125),
-                            ("Produce summaries and literary evaluations", "synthesis", 126)
-                        ],
-                        "title": "Essay, error analysis, summaries, literary evaluation"
-                    }
-                ]
-            },
-            {
-                "order": 24,
-                "code": "1.0",
-                "form_level": 5,
-                "title": "Advanced Phonology and Phonetics (Paper 1)",
-                "periods": 30,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Transcribe English words using the IPA", "application", 127),
-                            ("Interpret phonemic transcription accurately", "comprehension", 128)
-                        ],
-                        "title": "Phonemic transcription and IPA"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Explain articulation of speech sounds", "comprehension", 129),
-                            ("Apply word stress patterns correctly", "application", 130)
-                        ],
-                        "title": "Articulation and word stress"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Describe sentence stress, intonation, and rhythm", "comprehension", 131),
-                            ("Analyze the communicative functions of intonation", "analysis", 132)
-                        ],
-                        "title": "Sentence stress, intonation and rhythm"
-                    }
-                ]
-            },
-            {
-                "order": 25,
-                "code": "2.0",
-                "form_level": 5,
-                "title": "Advanced Morphology and Syntax (Paper 1)",
-                "periods": 30,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Distinguish free from bound morphemes", "analysis", 133),
-                            ("Identify morpheme types in complex words", "analysis", 134)
-                        ],
-                        "title": "Free vs bound morphemes"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Differentiate derivation from inflection", "analysis", 135),
-                            ("Apply morphological processes in word formation", "application", 136)
-                        ],
-                        "title": "Derivation vs inflection"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Parse sentence constituents grammatically", "analysis", 137),
-                            ("Construct tree diagrams for complex sentences", "synthesis", 138)
-                        ],
-                        "title": "Sentence parsing and tree diagrams"
-                    }
-                ]
-            },
-            {
-                "order": 26,
-                "code": "3.0",
-                "form_level": 5,
-                "title": "Rhetoric and Stylistics (Paper 1)",
-                "periods": 28,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 12,
-                        "outcomes": [
-                            ("Identify registers and styles across different contexts", "analysis", 139),
-                            ("Analyze stylistic choices in various text types", "analysis", 140)
-                        ],
-                        "title": "Registers and styles across contexts"
-                    },
-                    {
-                        "periods": 16,
-                        "outcomes": [
-                            ("Write academic essays following scholarly conventions", "synthesis", 141),
-                            ("Conduct and present research writing systematically", "synthesis", 142)
-                        ],
-                        "title": "Academic essays and research writing"
-                    }
-                ]
-            },
-            {
-                "order": 27,
-                "code": "4.0",
-                "form_level": 5,
-                "title": "Theories of Literature and Criticism (Paper 2)",
-                "periods": 32,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 16,
-                        "outcomes": [
-                            ("Explain major literary theories", "comprehension", 143),
-                            ("Apply Marxist and feminist criticism to texts", "analysis", 144),
-                            ("Apply post-colonial, psychoanalytic and structuralist criticism", "analysis", 145)
-                        ],
-                        "title": "Marxist, Feminist, Post-colonial, Psychoanalytic, Structuralism"
-                    }
-                ]
-            },
-            {
-                "order": 28,
-                "code": "5.0",
-                "form_level": 5,
-                "title": "Advanced Drama Evaluation (Paper 2)",
-                "periods": 30,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Analyze complex African and international plays", "analysis", 146),
-                            ("Evaluate plays within their cultural contexts", "evaluation", 147)
-                        ],
-                        "title": "Complex African and international plays"
-                    },
-                    {
-                        "periods": 20,
-                        "outcomes": [
-                            ("Examine tragedy and comedy as dramatic forms", "analysis", 148),
-                            ("Analyze alienation and satire as techniques", "analysis", 149)
-                        ],
-                        "title": "Tragedy, comedy, alienation, satire"
-                    }
-                ]
-            },
-            {
-                "order": 29,
-                "code": "6.0",
-                "form_level": 5,
-                "title": "Advanced African and World Prose (Paper 2)",
-                "periods": 30,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 16,
-                        "outcomes": [
-                            ("Read and analyze heavy selected global works", "comprehension", 150),
-                            ("Critically evaluate themes in world prose", "evaluation", 151)
-                        ],
-                        "title": "Heavy selected global works"
-                    },
-                    {
-                        "periods": 14,
-                        "outcomes": [
-                            ("Analyze stream-of-consciousness narration", "analysis", 152),
-                            ("Evaluate modern stylistic techniques in prose", "evaluation", 153)
-                        ],
-                        "title": "Stream-of-consciousness and modern stylistics"
-                    }
-                ]
-            },
-            {
-                "order": 30,
-                "code": "1.0",
-                "form_level": 6,
-                "title": "Advanced Semantics and Pragmatics (Paper 1)",
-                "periods": 32,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 12,
-                        "outcomes": [
-                            ("Explain theories of meaning and sense relations", "comprehension", 154),
-                            ("Analyze sense relations such as synonymy and antonymy", "analysis", 155)
-                        ],
-                        "title": "Theories of meaning and sense relations"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Identify speech acts and their functions", "comprehension", 156),
-                            ("Analyze illocutionary force in utterances", "analysis", 157)
-                        ],
-                        "title": "Speech acts"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Apply the cooperative principle to discourse", "application", 158),
-                            ("Analyze conversational implicature", "analysis", 159)
-                        ],
-                        "title": "Cooperative principle"
-                    }
-                ]
-            },
-            {
-                "order": 31,
-                "code": "2.0",
-                "form_level": 6,
-                "title": "Sociolinguistics and Historical Tracking (Paper 1)",
-                "periods": 30,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Describe language variation across social factors", "comprehension", 160),
-                            ("Analyze regional and social dialects", "analysis", 161)
-                        ],
-                        "title": "Language variation"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Explain code-switching and code-mixing", "comprehension", 162),
-                            ("Analyze the functions of code choice in discourse", "analysis", 163)
-                        ],
-                        "title": "Code-switching and code-mixing"
-                    },
-                    {
-                        "periods": 10,
-                        "outcomes": [
-                            ("Describe world Englishes and their features", "comprehension", 164),
-                            ("Trace the historical expansion of English", "comprehension", 165)
-                        ],
-                        "title": "World Englishes and historical expansion"
-                    }
-                ]
-            },
-            {
-                "order": 32,
-                "code": "3.0",
-                "form_level": 6,
-                "title": "Advanced Practical Application (Paper 1)",
-                "periods": 28,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 28,
-                        "outcomes": [
-                            ("Translate technical, legal, and political documents accurately", "application", 166),
-                            ("Analyze terminology challenges in specialized translation", "analysis", 167),
-                            ("Produce culturally appropriate translations of complex documents", "synthesis", 168)
-                        ],
-                        "title": "Complex translation of technical, legal and political documents"
-                    }
-                ]
-            },
-            {
-                "order": 33,
-                "code": "4.0",
-                "form_level": 6,
-                "title": "Advanced Poetic Analysis (Paper 2)",
-                "periods": 30,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "periods": 16,
-                        "outcomes": [
-                            ("Trace poetic movements from Romanticism to Modernism", "analysis", 169),
-                            ("Analyze representative poems from each movement", "analysis", 170)
-                        ],
-                        "title": "Romanticism to Modernism"
-                    },
-                    {
-                        "periods": 14,
-                        "outcomes": [
-                            ("Analyze post-colonial African poetry", "analysis", 171),
-                            ("Evaluate themes and techniques in African poetry", "evaluation", 172)
-                        ],
-                        "title": "Post-colonial African poetry"
-                    }
-                ]
-            },
-            {
-                "order": 34,
-                "code": "5.0",
-                "form_level": 6,
-                "title": "Synthesized Creative Production (Paper 2)",
-                "periods": 30,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "periods": 14,
-                        "outcomes": [
-                            ("Write analytical literary essays of depth and rigor", "synthesis", 173),
-                            ("Evaluate critical arguments in essay form", "evaluation", 174)
-                        ],
-                        "title": "Analytical literary essays"
-                    },
-                    {
-                        "periods": 16,
-                        "outcomes": [
-                            ("Compose original creative scripts", "synthesis", 175),
-                            ("Compose original verse demonstrating poetic craft", "synthesis", 176)
-                        ],
-                        "title": "Creative scripts and verse"
-                    }
-                ]
-            }
-        ]
-    },
+    {'name': 'English Language',
+ 'code': 'ENG',
+ 'slug': 'english',
+ 'necta_code': '011',
+ 'is_core': True,
+ 'description': 'English Language for Ordinary and Advanced Secondary Education, Form I-VI. Covers grammar, '
+                'vocabulary, composition, comprehension, literature, translation and advanced linguistics.',
+ 'form_start': 1,
+ 'form_end': 6,
+ 'topics': [{'order': 1,
+             'code': '1.0',
+             'form_level': 1,
+             'title': 'Listening and Speaking (Oral Communication)',
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'periods': 8,
+                            'outcomes': [('Listen attentively to spoken information and respond '
+                                          'appropriately',
+                                          'comprehension',
+                                          1),
+                                         ('Express ideas and information clearly in spoken English',
+                                          'application',
+                                          2),
+                                         ('Answer questions based on information from presentations/tasks',
+                                          'comprehension',
+                                          0),
+                                         ('Reproduce messages from oral presentations', 'comprehension', 0),
+                                         ('Paraphrase various oral messages from different contexts',
+                                          'comprehension',
+                                          0),
+                                         ('Participate in various conversations in different communicative '
+                                          'settings (e.g., peer discussions, storytellin',
+                                          'comprehension',
+                                          0),
+                                         ('Synthesise ideas from a variety of oral sources',
+                                          'comprehension',
+                                          0),
+                                         ('Discuss information from various oral sources',
+                                          'comprehension',
+                                          0),
+                                         ('Deduce the main ideas from an oral presentation or language task',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Expressing Information',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Engage in polite social interactions using appropriate register',
+                                          'application',
+                                          3),
+                                         ('Initiate and sustain conversations in familiar contexts',
+                                          'application',
+                                          4),
+                                         ('Practise pronunciation of words from oral and audio/audio- visual '
+                                          'sources',
+                                          'comprehension',
+                                          0),
+                                         ('Respond to oral messages from different contexts',
+                                          'comprehension',
+                                          0),
+                                         ('Summarise information from oral presentations and audio/audio- '
+                                          'visual sources',
+                                          'comprehension',
+                                          0),
+                                         ('Summarise information from a variety of oral sources',
+                                          'comprehension',
+                                          0),
+                                         ('Respond to various oral messages', 'comprehension', 0),
+                                         ('Examine information from oral sources', 'comprehension', 0)],
+                            'title': 'Social Interactions',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Identify basic speech sounds and sound patterns in English',
+                                          'knowledge',
+                                          5),
+                                         ('Pronounce English phonemes with reasonable accuracy',
+                                          'application',
+                                          6),
+                                         ('Write words heard from oral and audio/audio- visual sources',
+                                          'comprehension',
+                                          0),
+                                         ('Respond to questions about oral messages', 'comprehension', 0),
+                                         ('Paraphrase information presented orally', 'comprehension', 0),
+                                         ('Participate in contextualised oral conversations',
+                                          'comprehension',
+                                          0),
+                                         ('Make comments on oral messages', 'comprehension', 0),
+                                         ('Relate the core messages of an oral presentation to real life '
+                                          'experiences',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Phonetics Foundations',
+                            'order': 0}]},
+            {'order': 2,
+             'code': '2.0',
+             'form_level': 1,
+             'title': 'Grammar Patterns (Part I)',
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'periods': 8,
+                            'outcomes': [('Identify nouns and pronouns and their functions in sentences',
+                                          'knowledge',
+                                          7),
+                                         ('Use nouns and pronouns correctly in writing and speech',
+                                          'application',
+                                          8),
+                                         ('Express ideas or opinions in contextualised oral and written '
+                                          'language tasks using proper grammar and vocabulary (e.g hospital, '
+                                          'market, library, bus stop, sport and game',
+                                          'comprehension',
+                                          0),
+                                         ('Produce contextualised oral and written descriptions based on '
+                                          'personal experience',
+                                          'comprehension',
+                                          0),
+                                         ('Hold conversations about various contexts using appropriate '
+                                          'grammar and vocabulary (structure: tenses, adverbs, adjectives, '
+                                          'active and passive voice, conjunctions, coordinators, preposition',
+                                          'comprehension',
+                                          0),
+                                         ('using correct grammar and vocabulary', 'comprehension', 0),
+                                         ('Prepare and deliver short speeches about common topics (e.g., '
+                                          'entrepreneurship, corruption, child rights and security, gender '
+                                          'education, cyber security education, disaster management, health '
+                                          'and reproductive education, drug abuse, life skills, financial '
+                                          'management education, taxatio',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Nouns and Pronouns',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Recognize main verb forms and tense patterns', 'knowledge', 9),
+                                         ('Conjugate verbs accurately across basic tenses',
+                                          'application',
+                                          10),
+                                         ('Construct sentences using appropriate grammar and vocabulary '
+                                          'relating to a specific context (structure: tenses – simple past, '
+                                          'simple present, articles, present progressive, pronouns, '
+                                          'coordinators, prepositions, adjectives, adverb',
+                                          'comprehension',
+                                          0),
+                                         ('Compose passages on specific contexts (structure: tenses –past '
+                                          'progressive, present perfect, past perfect, present progressive, '
+                                          'adjectives, adverbs, coordinators, prepositions, determiners, '
+                                          'conjunction',
+                                          'comprehension',
+                                          0),
+                                         ('Compose stories using proper grammar and vocabulary (structure: '
+                                          'tenses, adverbs, adjectives, active and passive voice, '
+                                          'conjunctions, coordinators, preposition',
+                                          'comprehension',
+                                          0),
+                                         ('Compose different types of essays (narrative, descriptive, '
+                                          'argumentative and expositor',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Verbs and Tenses',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Identify adjectives and prepositions and their uses',
+                                          'knowledge',
+                                          11),
+                                         ('Apply adjectives and prepositions appropriately in sentences',
+                                          'application',
+                                          12),
+                                         ('Debate on topics using proper grammar and vocabulary',
+                                          'comprehension',
+                                          0),
+                                         ('Present messages in formal discussions on various issues using '
+                                          'correct grammar and vocabulary',
+                                          'comprehension',
+                                          0),
+                                         ('Describe events (e.g., general elections, state funerals, world '
+                                          'cu',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Adjectives and Prepositions',
+                            'order': 0}]},
+            {'order': 3,
+             'code': '3.0',
+             'form_level': 1,
+             'title': 'Reading for Comprehension (Part I)',
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'periods': 8,
+                            'outcomes': [('Read texts aloud with correct pacing and expression',
+                                          'application',
+                                          13),
+                                         ('Demonstrate fluency in oral reading passages', 'application', 14),
+                                         ('Sequence the order of events in stories', 'comprehension', 0),
+                                         ('Express the main ideas from a text', 'comprehension', 0),
+                                         ('Distinguish facts from opinions within a given text',
+                                          'comprehension',
+                                          0),
+                                         ('Discuss the author’s motives in a given text', 'comprehension', 0),
+                                         ('from a text', 'comprehension', 0)],
+                            'title': 'Reading aloud and pacing',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Read silently to locate specific details in a text',
+                                          'comprehension',
+                                          15),
+                                         ('Answer comprehension questions based on locating details',
+                                          'comprehension',
+                                          16),
+                                         ('Make a summary of stories', 'comprehension', 0),
+                                         ('Infer meanings of unfamiliar words and idiomatic expressions from '
+                                          'a given text',
+                                          'comprehension',
+                                          0),
+                                         ('Express connotative meanings of words in relation to a text',
+                                          'comprehension',
+                                          0),
+                                         ('Deliver an oral presentation about the content of a text',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Silent reading and locating details',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Infer the meaning of new words from context', 'comprehension', 17),
+                                         ('Build a personal vocabulary from reading materials',
+                                          'application',
+                                          18),
+                                         ('Retell stories', 'comprehension', 0),
+                                         ('Relate the core messages from a text to real life experiences',
+                                          'comprehension',
+                                          0),
+                                         ('Paraphrase a given text', 'comprehension', 0),
+                                         ('Draw inferences (conclusion', 'comprehension', 0)],
+                            'title': 'Expanding vocabulary',
+                            'order': 0}]},
+            {'order': 4,
+             'code': '4.0',
+             'form_level': 1,
+             'title': 'Writing Skills (Part I)',
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'periods': 8,
+                            'outcomes': [('Apply basic punctuation marks correctly', 'application', 19),
+                                         ('Use capitalization and punctuation to clarify meaning',
+                                          'application',
+                                          20),
+                                         ('Recognise the main stages of writing texts (e.g., pre- writing, '
+                                          'drafting, revising, editin',
+                                          'comprehension',
+                                          0),
+                                         ('Create and express orally daily and weekly timetables for '
+                                          'routines',
+                                          'comprehension',
+                                          0),
+                                         ('Write claim and request letters in different contexts (e.g., '
+                                          'learning facilities, sports gear, result report – Structure: I '
+                                          'would like to bring your kind attention… I am writing to '
+                                          'request…)',
+                                          'comprehension',
+                                          0),
+                                         ('Write a letter to the editor, an order letter and a complaint '
+                                          'letter (structure: Dear editor.., I would like to order…. We are '
+                                          'glad to place our first order…, I am writing to complain about…, '
+                                          'I am writing to bring your attention…, a complaint against…)',
+                                          'comprehension',
+                                          0),
+                                         ('Write application letters for various purposes (e.g., job '
+                                          'application, school admissio',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Punctuation mechanics',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Construct simple Subject-Verb-Object sentences',
+                                          'application',
+                                          21),
+                                         ('Join sentences to form coherent paragraphs', 'synthesis', 22),
+                                         ('Write a variety of friendly letters and invitations (vocabulary: '
+                                          'Dear Father/ Uncle, Dear Mother/Aunt, Mr/Mrs…, Dr./ '
+                                          'Prof./Madam/Ms …)',
+                                          'comprehension',
+                                          0),
+                                         ('Compose E-mails on various issues using appropriate language',
+                                          'comprehension',
+                                          0),
+                                         ('Write reports on various events (e.g., sports, graduation, study '
+                                          'tour',
+                                          'comprehension',
+                                          0),
+                                         ('Write speeches on a variety of topics, including cross- cutting '
+                                          'issues',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Sentence formations (SVO)',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Write functional texts such as letters and invitations',
+                                          'synthesis',
+                                          23),
+                                         ('Complete forms with accurate personal information',
+                                          'application',
+                                          24),
+                                         ('Create dialogues on various topics (e.g., the value of education, '
+                                          'environment, culture, gender equalit',
+                                          'comprehension',
+                                          0),
+                                         ('Create short stories on various topics (structure: once upon a '
+                                          'time …, I wonder…, what if…, back in time…)',
+                                          'comprehension',
+                                          0),
+                                         ('Write biographies (structure: past and present tense, third perso',
+                                          'comprehension',
+                                          0),
+                                         ('Write Curriculum Vitae (CV) for different purposes',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Functional writing (letters, invitations, forms)',
+                            'order': 0}]},
+            {'order': 5,
+             'code': '5.0',
+             'form_level': 1,
+             'title': 'Vocabulary Building and Expressions',
+             'periods': 20,
+             'weight': 'medium',
+             'subtopics': [{'periods': 10,
+                            'outcomes': [('Use expressions to state preferences and needs clearly',
+                                          'application',
+                                          25),
+                                         ('Respond to expressions of preference and need appropriately',
+                                          'application',
+                                          26),
+                                         ('Write new vocabulary from conversations and written texts on '
+                                          'particular topics (e.g., politics, sports, tourism, agricultur',
+                                          'comprehension',
+                                          0),
+                                         ('Play vocabulary building games using digital and non-digital '
+                                          'resources (e.g., word board games, charades, picture games, flash '
+                                          'card',
+                                          'comprehension',
+                                          0),
+                                         ('Recognise words with opposite meanings from conversations and '
+                                          'written texts',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Expressions for preferences and needs',
+                            'order': 0},
+                           {'periods': 10,
+                            'outcomes': [('Categorize vocabulary clusters for numbers and time',
+                                          'application',
+                                          27),
+                                         ('Use vocabulary related to school and occupations in context',
+                                          'application',
+                                          28),
+                                         ('Construct sentences using vocabulary acquired from conversations '
+                                          'and written texts',
+                                          'comprehension',
+                                          0),
+                                         ('Use words from conversations and written texts to produce new '
+                                          'vocabulary by attaching suffixes and prefixes (e.g., kind-unkind; '
+                                          'slow-slowl',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Vocabulary clusters (school, occupations, time, numbers)',
+                            'order': 0}]},
+            {'order': 6,
+             'code': '6.0',
+             'form_level': 1,
+             'title': 'Introduction to Literature',
+             'periods': 16,
+             'weight': 'medium',
+             'subtopics': [{'periods': 6,
+                            'outcomes': [('Define literature and explain its purposes', 'knowledge', 29),
+                                         ('Discuss the value of literature in society', 'comprehension', 30),
+                                         ('Assess the language used in selected poems and plays',
+                                          'comprehension',
+                                          0),
+                                         ('Assess the language used in a selected novella',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Definition and purpose of literature',
+                            'order': 0},
+                           {'periods': 4,
+                            'outcomes': [('Distinguish between oral and written literature', 'analysis', 31),
+                                         ('Give examples of oral and written literary works',
+                                          'comprehension',
+                                          32),
+                                         ('Compare own values and perspectives with those implied in '
+                                          'selected poems and plays',
+                                          'comprehension',
+                                          0),
+                                         ('Compare own values and perspectives with those implied in a '
+                                          'selected novella',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Oral vs Written literature',
+                            'order': 0},
+                           {'periods': 6,
+                            'outcomes': [('Identify primary literary genres', 'knowledge', 33),
+                                         ('Differentiate plays, novels, and poetry', 'analysis', 34),
+                                         ('Dramatise episodes from a selected novella', 'comprehension', 0)],
+                            'title': 'Primary genres (plays, novels, poetry)',
+                            'order': 0}]},
+            {'order': 7,
+             'code': '1.0',
+             'form_level': 2,
+             'title': 'Structural Grammar (Part II)',
+             'periods': 26,
+             'weight': 'high',
+             'subtopics': [{'periods': 10,
+                            'outcomes': [('Use tenses and modal verbs accurately in context',
+                                          'application',
+                                          35),
+                                         ('Distinguish shades of meaning among modals', 'analysis', 36)],
+                            'title': 'Tenses and modals',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Use adverbs and conjunctions to connect ideas', 'application', 37),
+                                         ('Arrange adverbial and conjunctional structures correctly',
+                                          'synthesis',
+                                          38)],
+                            'title': 'Adverbs and conjunctions',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Convert direct speech to indirect speech accurately',
+                                          'application',
+                                          38),
+                                         ('Apply backshifting rules in reported speech', 'application', 39)],
+                            'title': 'Direct and indirect speech',
+                            'order': 0}]},
+            {'order': 8,
+             'code': '2.0',
+             'form_level': 2,
+             'title': 'Professional and Academic Writing',
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'periods': 8,
+                            'outcomes': [('Write official correspondence following standard formats',
+                                          'application',
+                                          40),
+                                         ('Compose formal letters with appropriate tone', 'synthesis', 41),
+                                         ('Analyse different functional texts in terms of purpose, content, '
+                                          'organisation, format and design',
+                                          'comprehension',
+                                          0),
+                                         ('Compose functional texts to serve various purposes',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Official correspondence',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Draft resumes and application letters', 'application', 42),
+                                         ('Present qualifications and experience effectively',
+                                          'synthesis',
+                                          43),
+                                         ('Read a variety of functional texts (e.g., recipes, product '
+                                          'manuals, transport schedules, forms, brochures, and menu',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Resumes and application letters',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Take notes from spoken and written sources', 'application', 44),
+                                         ('Organize notes into useful summaries', 'application', 45),
+                                         ('Comment on the usefulness of different functional texts',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Note-taking',
+                            'order': 0}]},
+            {'order': 9,
+             'code': '3.0',
+             'form_level': 2,
+             'title': 'Reading for Fluency and Critical Inference',
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'periods': 8,
+                            'outcomes': [('Apply skimming and scanning techniques to texts',
+                                          'application',
+                                          46),
+                                         ('Locate both general and specific information efficiently',
+                                          'comprehension',
+                                          47),
+                                         ('Familiarise with various types of search engines (e.g., Google, '
+                                          'Google Scholar, Bin',
+                                          'comprehension',
+                                          0),
+                                         ('Express ideas and opinions in different interpersonal '
+                                          'communication settings (e.g., I think…, I guess…, In my opinion…, '
+                                          'I would say …)',
+                                          'comprehension',
+                                          0),
+                                         ('Use appropriate language and expressions in communicating with '
+                                          'people of different age groups and statuses (e.g., peers, elders, '
+                                          'family members, leader',
+                                          'comprehension',
+                                          0),
+                                         ('Express ideas and opinions in different group communicative '
+                                          'settings (differing, counter-arguing, supporting idea',
+                                          'comprehension',
+                                          0),
+                                         ('Express ideas, opinions and facts in mass communication contexts',
+                                          'comprehension',
+                                          0),
+                                         ('Use appropriate language in public communication settings, (e.g., '
+                                          'interviews, presentation',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Skimming and scanning',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Differentiate fact from opinion in texts', 'analysis', 48),
+                                         ('Evaluate claims based on textual evidence', 'evaluation', 49),
+                                         ('Utilise ICT tools to search for general information (e.g., books, '
+                                          'journal',
+                                          'comprehension',
+                                          0),
+                                         ('Use appropriate non-verbal cues in interpersonal communication',
+                                          'comprehension',
+                                          0),
+                                         ('Use appropriate non-verbal cues in group communication',
+                                          'comprehension',
+                                          0),
+                                         ('Use and interpret appropriate non- verbal cues in mass '
+                                          'communication',
+                                          'comprehension',
+                                          0),
+                                         ('Express appreciation of other people’s ideas in public '
+                                          'communication',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Fact vs opinion',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Expand vocabulary across specific fields of study',
+                                          'application',
+                                          50),
+                                         ('Use field-specific vocabulary in written contexts',
+                                          'application',
+                                          51),
+                                         ('Use proper grammar and vocabulary in different interpersonal '
+                                          'communication contexts (e.g., greetings, biding farewell, '
+                                          'apologisin',
+                                          'comprehension',
+                                          0),
+                                         ('Use appropriate language to respond to messages in online group '
+                                          'communicative contexts (e.g., WhatsApp, Telegra',
+                                          'comprehension',
+                                          0),
+                                         ('Use appropriate language to respond to contextualised public '
+                                          'messages (e.g., responding to criticism, accomplishmen',
+                                          'comprehension',
+                                          0),
+                                         ('Evaluate information received through mass communication',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Vocabulary growth fields',
+                            'order': 0}]},
+            {'order': 10,
+             'code': '4.0',
+             'form_level': 2,
+             'title': 'Spoken English and Debate Mechanics',
+             'periods': 22,
+             'weight': 'medium',
+             'subtopics': [{'periods': 6,
+                            'outcomes': [('Construct coherent arguments and counterarguments',
+                                          'synthesis',
+                                          52),
+                                         ('Support positions with reasons and evidence', 'application', 53),
+                                         ('Distinguish words with minimal sound distinctions that have '
+                                          'different meanings (cut/cat; paper/ pepper; date/deb',
+                                          'comprehension',
+                                          0),
+                                         ('Practise pronunciation of unfamiliar sounds (e.g., through the '
+                                          'use of tongue twisters, songs, poem',
+                                          'comprehension',
+                                          0),
+                                         ('Express daily routines (structure: present simpl',
+                                          'comprehension',
+                                          0),
+                                         ('Express ownership/ possession (structure: have/has in present '
+                                          'simple and had in past simple, apostrophe, possessive pronoun',
+                                          'comprehension',
+                                          0),
+                                         ('Construct sentences with proper intonation', 'comprehension', 0),
+                                         ('Describe various locations (structure: prepositions, adjectives, '
+                                          'adverb',
+                                          'comprehension',
+                                          0),
+                                         ('(Structure: May I…, I would like…, could you …, I offer you…)',
+                                          'comprehension',
+                                          0),
+                                         ('by initiating, intervening, changing a topic, turn-taking and '
+                                          'closing',
+                                          'comprehension',
+                                          0),
+                                         ('Express opinions through debates, dialogues and impromptu '
+                                          'speeches using formulaic language (e.g., In my opinion…, '
+                                          'personally…, I think …, I would say…, In my view…, from my '
+                                          'perspective…, My point is…, It seems to me that…, I believe…)',
+                                          'comprehension',
+                                          0),
+                                         ('Ask and respond to questions in interview sessions (e.g., job '
+                                          'interview, panel interview, TV/radio intervie',
+                                          'comprehension',
+                                          0),
+                                         ('Express feelings and emotions depicted/ portrayed in various '
+                                          'social contexts using appropriate phrases (e.g., I am saddened…, '
+                                          'I am upset…, my condolences… I feel happy… hurray…)',
+                                          'comprehension',
+                                          0),
+                                         ('Negotiate solutions to various problems using appropriate '
+                                          'formalaic language (e.g., Would you mind…, don’t you think…, is '
+                                          'it possible…, if I were you…)',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Arguments and counterarguments',
+                            'order': 0},
+                           {'periods': 6,
+                            'outcomes': [('Participate in panel debates and presentations',
+                                          'application',
+                                          54),
+                                         ('Moderate and follow debate procedures', 'application', 55),
+                                         ('Practise pronunciation with proper word stress assignment',
+                                          'comprehension',
+                                          0),
+                                         ('Practise pronunciation of words with similar sounds that have '
+                                          'different spellings (e.g., one/won, ewe/yo',
+                                          'comprehension',
+                                          0),
+                                         ('Express ongoing activities (structure: present progressiv',
+                                          'comprehension',
+                                          0),
+                                         ('Give directions', 'comprehension', 0),
+                                         ('Use cohesive devices to deliver oral presentations of events '
+                                          '(e.g., first of all, moreover, but, however, yet, in contrast, '
+                                          'although, otherwise, still, on the contrary, on the other han',
+                                          'comprehension',
+                                          0),
+                                         ('Express quality and quantity of objects and living organisms '
+                                          '(structure: adjectives, quantifiers, adverb',
+                                          'comprehension',
+                                          0),
+                                         ('Request for services in different contexts', 'comprehension', 0),
+                                         ('Present facts logically using appropriate formulaic language '
+                                          '(e.g., due to the fact that…, it is true that…, the bottom line '
+                                          'is…, the reality is…, in fact…actually… according to…)',
+                                          'comprehension',
+                                          0),
+                                         ('Describe activities and events of a social or cultural nature '
+                                          '(e.g., celebrations, parades, accidents, elections, funerals, '
+                                          'sport and game',
+                                          'comprehension',
+                                          0),
+                                         ('Deliver different kinds of planned and unplanned speeches (e.g., '
+                                          'informative, persuasive speec',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Panel debates and presentations',
+                            'order': 0},
+                           {'periods': 10,
+                            'outcomes': [('Apply word stress patterns in spoken English', 'application', 56),
+                                         ('Use appropriate telephone etiquette in conversations',
+                                          'application',
+                                          57),
+                                         ('Practise pronunciation of words with short and long vowels (e.g., '
+                                          'sit/seat, hit/ heat, pot/por',
+                                          'comprehension',
+                                          0),
+                                         ('Express family relationship and occupations (structure: present '
+                                          'simple+progressiv',
+                                          'comprehension',
+                                          0),
+                                         ('Negotiate prices using appropriate expressions (e.g., convincing '
+                                          'a customer to buy a product, convincing a seller to lower the '
+                                          'pric',
+                                          'comprehension',
+                                          0),
+                                         ('Participate in various conversations in different contexts (e.g., '
+                                          'discussions, dialogue',
+                                          'comprehension',
+                                          0),
+                                         ('Describe conditions about various situations and circumstances '
+                                          '(structure: conditional sentence',
+                                          'comprehension',
+                                          0),
+                                         ('using different tenses', 'comprehension', 0),
+                                         ('on different topics', 'comprehension', 0)],
+                            'title': 'Word stress and telephone etiquette',
+                            'order': 0}]},
+            {'order': 11,
+             'code': '5.0',
+             'form_level': 2,
+             'title': 'Introduction to Literary Analysis',
+             'periods': 22,
+             'weight': 'medium',
+             'subtopics': [{'periods': 12,
+                            'outcomes': [('Identify plot, themes, characters, and settings in literary works',
+                                          'comprehension',
+                                          58),
+                                         ('Analyze the relationship between literary elements',
+                                          'analysis',
+                                          59),
+                                         ('Assess the socio- political and cultural contexts in which the '
+                                          'selected poems and plays were written',
+                                          'comprehension',
+                                          0),
+                                         ('Relate the context of the story in selected poems and plays with '
+                                          'real life experiences',
+                                          'comprehension',
+                                          0),
+                                         ('Examine the socio-political and cultural issues portrayed in a '
+                                          'selected novella',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Plot, themes, characters, settings',
+                            'order': 0},
+                           {'periods': 10,
+                            'outcomes': [('Analyze short stories for meaning and technique', 'analysis', 60),
+                                         ("Write short analyses of a story's key elements", 'synthesis', 61),
+                                         ('Examine the socio- political, economic and cultural issues '
+                                          'portrayed in selected poems and plays',
+                                          'comprehension',
+                                          0),
+                                         ('Relate the context of the story in a selected novella to real '
+                                          'life experiences',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Analyzing short stories',
+                            'order': 0}]},
+            {'order': 12,
+             'code': '6.0',
+             'form_level': 2,
+             'title': 'Idiomatic Expressions and Word Combinations',
+             'periods': 18,
+             'weight': 'low',
+             'subtopics': [{'periods': 6,
+                            'outcomes': [('Recognize and explain common idioms', 'comprehension', 62),
+                                         ('Use idioms appropriately in context', 'application', 63)],
+                            'title': 'Common idioms',
+                            'order': 0},
+                           {'periods': 6,
+                            'outcomes': [('Identify phrasal verbs and their meanings', 'knowledge', 64),
+                                         ('Use phrasal verbs correctly in sentences', 'application', 65)],
+                            'title': 'Phrasal verbs',
+                            'order': 0},
+                           {'periods': 6,
+                            'outcomes': [('Recognize common collocations in English', 'comprehension', 66),
+                                         ('Produce natural-sounding collocations in writing',
+                                          'application',
+                                          67)],
+                            'title': 'Collocations',
+                            'order': 0}]},
+            {'order': 13,
+             'code': '1.0',
+             'form_level': 3,
+             'title': 'Advanced Analytical Grammar',
+             'periods': 26,
+             'weight': 'high',
+             'subtopics': [{'periods': 10,
+                            'outcomes': [('Transform active sentences into the passive voice',
+                                          'application',
+                                          68),
+                                         ('Explain when the passive voice is appropriate', 'analysis', 69)],
+                            'title': 'The passive voice',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Form conditional sentences of Types 0 to 3', 'application', 70),
+                                         ('Distinguish the meaning of each conditional type',
+                                          'analysis',
+                                          71)],
+                            'title': 'Conditional sentences (Type 0-3)',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Use relative clauses to combine and enrich sentences',
+                                          'application',
+                                          72),
+                                         ('Distinguish defining and non-defining clauses', 'analysis', 73)],
+                            'title': 'Relative clauses',
+                            'order': 0}]},
+            {'order': 14,
+             'code': '2.0',
+             'form_level': 3,
+             'title': 'Creative and Digital Writing',
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'periods': 8,
+                            'outcomes': [('Write descriptive compositions with vivid detail',
+                                          'synthesis',
+                                          74),
+                                         ('Write narrative compositions with coherent plot', 'synthesis', 75),
+                                         ('Compose free verse poems on various topics using literary '
+                                          'language',
+                                          'comprehension',
+                                          0),
+                                         ('Apply literary skills to compose short stories on various topics',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Descriptive and narrative compositions',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Write effective emails and blog posts', 'application', 76),
+                                         ('Adapt tone and style for digital audiences', 'synthesis', 77),
+                                         ('Publish the poems on various platforms (e.g., note boards and '
+                                          'online platform',
+                                          'comprehension',
+                                          0),
+                                         ('Publish the short stories on various platforms (e.g., note boards '
+                                          'and online platform',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Digital communication (emails, blogs)',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Record minutes of meetings in standard format', 'application', 78),
+                                         ('Summarize deliberations and resolutions accurately',
+                                          'synthesis',
+                                          79)],
+                            'title': 'Minutes of meetings',
+                            'order': 0}]},
+            {'order': 15,
+             'code': '3.0',
+             'form_level': 3,
+             'title': 'Literary Critique: Selected Plays',
+             'periods': 28,
+             'weight': 'high',
+             'subtopics': [{'periods': 8,
+                            'outcomes': [('Read and understand the two class plays', 'comprehension', 80),
+                                         ('Summarize the plot of each play', 'comprehension', 81),
+                                         ('Describe different genres of written literature and their '
+                                          'conventions',
+                                          'comprehension',
+                                          0),
+                                         ('Analyse techniques of critiquing literary texts based on their '
+                                          'conventions',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Two class plays',
+                            'order': 0},
+                           {'periods': 10,
+                            'outcomes': [('Analyze plots, dramatic irony, and character motivations',
+                                          'analysis',
+                                          82),
+                                         ('Evaluate the effectiveness of dramatic techniques',
+                                          'evaluation',
+                                          83),
+                                         ('Analyse techniques of critiquing poems and plays based on their '
+                                          'conventions',
+                                          'comprehension',
+                                          0),
+                                         ('Critique a selected novella based on form and content',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Plots, dramatic irony, character motivations',
+                            'order': 0},
+                           {'periods': 10,
+                            'outcomes': [('Examine themes of corruption, class, and gender', 'analysis', 84),
+                                         ('Relate play themes to contemporary society', 'evaluation', 85),
+                                         ('Critique selected poems and plays based on form and content',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Core themes (corruption, class, gender)',
+                            'order': 0}]},
+            {'order': 16,
+             'code': '4.0',
+             'form_level': 3,
+             'title': 'Literary Critique: Selected Novels',
+             'periods': 28,
+             'weight': 'high',
+             'subtopics': [{'periods': 8,
+                            'outcomes': [('Read and understand the two class novels', 'comprehension', 86),
+                                         ('Trace the development of characters across the narrative',
+                                          'analysis',
+                                          87)],
+                            'title': 'Two novels',
+                            'order': 0},
+                           {'periods': 10,
+                            'outcomes': [('Analyze characterization in the novels', 'analysis', 88),
+                                         ('Evaluate character development and motivations',
+                                          'evaluation',
+                                          89)],
+                            'title': 'Characterization',
+                            'order': 0},
+                           {'periods': 10,
+                            'outcomes': [('Identify stylistic devices such as flashbacks and symbolism',
+                                          'analysis',
+                                          90),
+                                         ('Analyze the effects of point of view on narrative',
+                                          'analysis',
+                                          91)],
+                            'title': 'Styles (flashbacks, symbolism, point of view)',
+                            'order': 0}]},
+            {'order': 17,
+             'code': '5.0',
+             'form_level': 3,
+             'title': 'Complex Reading and Summary Compilations',
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'periods': 12,
+                            'outcomes': [('Read argumentative texts and identify the main thesis',
+                                          'comprehension',
+                                          92),
+                                         ('Critically examine arguments and supporting evidence',
+                                          'analysis',
+                                          93),
+                                         ('Identify different ways/strategies for organising information '
+                                          'from various sources',
+                                          'comprehension',
+                                          0),
+                                         ('Compile information searched from various sources',
+                                          'comprehension',
+                                          0),
+                                         ('Compare ideas from various texts', 'comprehension', 0),
+                                         ('Infer meanings of unfamiliar words from a variety of texts',
+                                          'comprehension',
+                                          0),
+                                         ('Explore strategies for deriving meanings of words from given '
+                                          'texts (e.g., contextual guessin',
+                                          'comprehension',
+                                          0),
+                                         ('Write a single text from information and opinions derived from a '
+                                          'variety of texts',
+                                          'comprehension',
+                                          0),
+                                         ('Relate the core messages from multiple and diverse texts to real '
+                                          'life experiences',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Argumentative text reading',
+                            'order': 0},
+                           {'periods': 12,
+                            'outcomes': [('Write summaries within a specified word count', 'application', 94),
+                                         ('Condense texts while preserving key ideas', 'synthesis', 95),
+                                         ('Sort and categorise information obtained from various sources '
+                                          'into related themes',
+                                          'comprehension',
+                                          0),
+                                         ('Read and generate meanings from a variety of texts',
+                                          'comprehension',
+                                          0),
+                                         ('Paraphrase textual information from multiple sources',
+                                          'comprehension',
+                                          0),
+                                         ('Synthesise ideas and draw conclusions from multiple and diverse '
+                                          'texts',
+                                          'comprehension',
+                                          0),
+                                         ('Make inferences about a variety of texts', 'comprehension', 0)],
+                            'title': 'Summary writing within word count',
+                            'order': 0}]},
+            {'order': 18,
+             'code': '6.0',
+             'form_level': 3,
+             'title': 'Lexical Formations and Syntactic Shifts',
+             'periods': 18,
+             'weight': 'low',
+             'subtopics': [{'periods': 10,
+                            'outcomes': [('Identify prefixes and suffixes and their meanings',
+                                          'knowledge',
+                                          96),
+                                         ('Form new words through affixation', 'application', 97)],
+                            'title': 'Prefixes and suffixes',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Convert words from one class to another', 'application', 98),
+                                         ('Explain the effects of word-class conversion', 'analysis', 99)],
+                            'title': 'Word-class conversion',
+                            'order': 0}]},
+            {'order': 19,
+             'code': '1.0',
+             'form_level': 4,
+             'title': 'Mastery of Structural Syntax',
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'periods': 12,
+                            'outcomes': [('Refine phonological and syntactic accuracy in production',
+                                          'application',
+                                          100),
+                                         ('Analyze complex sentence structures', 'analysis', 101)],
+                            'title': 'Phonological and syntactic refinement',
+                            'order': 0},
+                           {'periods': 12,
+                            'outcomes': [('Form and respond to tag questions correctly', 'application', 102),
+                                         ('Use inverted structures for emphasis and questions',
+                                          'application',
+                                          103)],
+                            'title': 'Tag questions and inverted structures',
+                            'order': 0}]},
+            {'order': 20,
+             'code': '2.0',
+             'form_level': 4,
+             'title': 'Literary Critique: Selected Poetry',
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'periods': 4,
+                            'outcomes': [('Read the prescribed poetry books', 'comprehension', 104),
+                                         ("Identify the poems' subjects and speakers", 'comprehension', 105)],
+                            'title': 'Poetry books',
+                            'order': 0},
+                           {'periods': 6,
+                            'outcomes': [('Distinguish traditional from free verse', 'analysis', 106),
+                                         ('Examine the effects of each verse form', 'analysis', 107)],
+                            'title': 'Traditional vs free verse',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Identify poetic devices such as imagery and rhyme',
+                                          'knowledge',
+                                          108),
+                                         ('Analyze how poetic devices create meaning', 'analysis', 109)],
+                            'title': 'Poetic devices',
+                            'order': 0},
+                           {'periods': 6,
+                            'outcomes': [('Interpret the social messages of poems', 'comprehension', 110),
+                                         ("Evaluate poems' relevance to society", 'evaluation', 111)],
+                            'title': 'Social messages of poems',
+                            'order': 0}]},
+            {'order': 21,
+             'code': '3.0',
+             'form_level': 4,
+             'title': 'Translation and Interpretation Fundamentals',
+             'periods': 22,
+             'weight': 'medium',
+             'subtopics': [{'periods': 8,
+                            'outcomes': [('Define translation and interpretation concepts', 'knowledge', 112),
+                                         ('Distinguish translation from interpretation',
+                                          'comprehension',
+                                          113),
+                                         ('Recognise the basic principles of editing and proofreading texts '
+                                          '(e.g., sentence construction, language clarity, grammar, semantic '
+                                          'rules, logical flo',
+                                          'comprehension',
+                                          0),
+                                         ('Use the principles of editing and proofreading to edit and '
+                                          'proofread simple and short texts in a school context (e.g., '
+                                          'laboratory rules, announcement',
+                                          'comprehension',
+                                          0),
+                                         ('Explain the concept of interpretation', 'comprehension', 0),
+                                         ('(English to Kiswahili and vice vers', 'comprehension', 0),
+                                         ('Explain the concept of translation', 'comprehension', 0),
+                                         ('Edit and proofread texts in a school context (e.g., school rules '
+                                          'and regulations, essays/ composition',
+                                          'comprehension',
+                                          0),
+                                         ('Interpret messages in informal contexts (e.g., family '
+                                          'conversations and peer conversation',
+                                          'comprehension',
+                                          0),
+                                         ('Interpret messages in large formal settings (e.g., church, mosque '
+                                          'and meeting',
+                                          'comprehension',
+                                          0),
+                                         ('Translate texts in contexts outside the school (from English to '
+                                          'Kiswahili and vice vers',
+                                          'comprehension',
+                                          0),
+                                         ('Desribe the use of Computer- Assisted Tools in translating and '
+                                          'editing',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Concepts of translation and interpretation',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Translate paragraphs between languages with fidelity',
+                                          'application',
+                                          114),
+                                         ('Preserve meaning and style in translation', 'analysis', 115),
+                                         ('Describe the main steps of editing and proofreading',
+                                          'comprehension',
+                                          0),
+                                         ('Elaborate the principles of interpretation', 'comprehension', 0),
+                                         ('Elaborate the principles of translation', 'comprehension', 0),
+                                         ('Edit and proofread short texts in contexts outside the school '
+                                          '(e.g. posters, flyers, user manual',
+                                          'comprehension',
+                                          0),
+                                         ('(from English to Kiswahili and vice vers', 'comprehension', 0),
+                                         ('Translate a variety of short texts (e.g., advertisements and '
+                                          'functional text',
+                                          'comprehension',
+                                          0),
+                                         ('Use Computer- Assisted Translation Tools to translate and edit '
+                                          'short simple texts',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Translating paragraphs',
+                            'order': 0},
+                           {'periods': 6,
+                            'outcomes': [('Translate idioms and cultural expressions accurately',
+                                          'application',
+                                          116),
+                                         ('Explain cultural challenges in translation', 'analysis', 117),
+                                         ('Describe the basic principles and methods of editing and '
+                                          'proofreading',
+                                          'comprehension',
+                                          0),
+                                         ('Interpret a short simple text in a school context (e.g., '
+                                          'greetings, self introduction',
+                                          'comprehension',
+                                          0),
+                                         ('Translate a simple short text in a school context (e.g., '
+                                          'laboratory rules, timetables, joining instruction',
+                                          'comprehension',
+                                          0),
+                                         ('Interpret messages in small formal settings (e.g., classroom and '
+                                          'subject group discussion',
+                                          'comprehension',
+                                          0),
+                                         ('Translate a variety of long texts (from English to Kiswahili and '
+                                          'vice vers',
+                                          'comprehension',
+                                          0)],
+                            'title': 'Idioms and cultural expressions',
+                            'order': 0}]},
+            {'order': 22,
+             'code': '4.0',
+             'form_level': 4,
+             'title': 'English as an International Language',
+             'periods': 18,
+             'weight': 'low',
+             'subtopics': [{'periods': 10,
+                            'outcomes': [('Explain the role of English as a global lingua franca',
+                                          'comprehension',
+                                          118),
+                                         ("Discuss the implications of English's global status",
+                                          'evaluation',
+                                          119)],
+                            'title': 'English as global lingua franca',
+                            'order': 0},
+                           {'periods': 8,
+                            'outcomes': [('Analyze the relationship between English and Swahili in Tanzania',
+                                          'analysis',
+                                          120),
+                                         ('Evaluate language policy and its effects', 'evaluation', 121)],
+                            'title': 'English and Swahili in Tanzania',
+                            'order': 0}]},
+            {'order': 23,
+             'code': '5.0',
+             'form_level': 4,
+             'title': 'Exam Preparation and Synthesized Production',
+             'periods': 28,
+             'weight': 'high',
+             'subtopics': [{'periods': 10,
+                            'outcomes': [('Practice a comprehensive range of exam-style questions',
+                                          'application',
+                                          122),
+                                         ('Manage time effectively in examination conditions',
+                                          'application',
+                                          123)],
+                            'title': 'Comprehensive practice',
+                            'order': 0},
+                           {'periods': 18,
+                            'outcomes': [('Write structured essays under time constraints', 'synthesis', 124),
+                                         ('Perform error analysis on written work', 'analysis', 125),
+                                         ('Produce summaries and literary evaluations', 'synthesis', 126)],
+                            'title': 'Essay, error analysis, summaries, literary evaluation',
+                            'order': 0}]},
+            {'order': 24,
+             'code': '1.0',
+             'form_level': 5,
+             'title': 'Advanced Phonology and Phonetics (Paper 1)',
+             'periods': 30,
+             'weight': 'high',
+             'subtopics': [{'periods': 10,
+                            'outcomes': [('Transcribe English words using the IPA', 'application', 127),
+                                         ('Interpret phonemic transcription accurately',
+                                          'comprehension',
+                                          128)],
+                            'title': 'Phonemic transcription and IPA'},
+                           {'periods': 10,
+                            'outcomes': [('Explain articulation of speech sounds', 'comprehension', 129),
+                                         ('Apply word stress patterns correctly', 'application', 130)],
+                            'title': 'Articulation and word stress'},
+                           {'periods': 10,
+                            'outcomes': [('Describe sentence stress, intonation, and rhythm',
+                                          'comprehension',
+                                          131),
+                                         ('Analyze the communicative functions of intonation',
+                                          'analysis',
+                                          132)],
+                            'title': 'Sentence stress, intonation and rhythm'}]},
+            {'order': 25,
+             'code': '2.0',
+             'form_level': 5,
+             'title': 'Advanced Morphology and Syntax (Paper 1)',
+             'periods': 30,
+             'weight': 'high',
+             'subtopics': [{'periods': 10,
+                            'outcomes': [('Distinguish free from bound morphemes', 'analysis', 133),
+                                         ('Identify morpheme types in complex words', 'analysis', 134)],
+                            'title': 'Free vs bound morphemes'},
+                           {'periods': 10,
+                            'outcomes': [('Differentiate derivation from inflection', 'analysis', 135),
+                                         ('Apply morphological processes in word formation',
+                                          'application',
+                                          136)],
+                            'title': 'Derivation vs inflection'},
+                           {'periods': 10,
+                            'outcomes': [('Parse sentence constituents grammatically', 'analysis', 137),
+                                         ('Construct tree diagrams for complex sentences', 'synthesis', 138)],
+                            'title': 'Sentence parsing and tree diagrams'}]},
+            {'order': 26,
+             'code': '3.0',
+             'form_level': 5,
+             'title': 'Rhetoric and Stylistics (Paper 1)',
+             'periods': 28,
+             'weight': 'medium',
+             'subtopics': [{'periods': 12,
+                            'outcomes': [('Identify registers and styles across different contexts',
+                                          'analysis',
+                                          139),
+                                         ('Analyze stylistic choices in various text types',
+                                          'analysis',
+                                          140)],
+                            'title': 'Registers and styles across contexts'},
+                           {'periods': 16,
+                            'outcomes': [('Write academic essays following scholarly conventions',
+                                          'synthesis',
+                                          141),
+                                         ('Conduct and present research writing systematically',
+                                          'synthesis',
+                                          142)],
+                            'title': 'Academic essays and research writing'}]},
+            {'order': 27,
+             'code': '4.0',
+             'form_level': 5,
+             'title': 'Theories of Literature and Criticism (Paper 2)',
+             'periods': 32,
+             'weight': 'high',
+             'subtopics': [{'periods': 16,
+                            'outcomes': [('Explain major literary theories', 'comprehension', 143),
+                                         ('Apply Marxist and feminist criticism to texts', 'analysis', 144),
+                                         ('Apply post-colonial, psychoanalytic and structuralist criticism',
+                                          'analysis',
+                                          145)],
+                            'title': 'Marxist, Feminist, Post-colonial, Psychoanalytic, Structuralism'}]},
+            {'order': 28,
+             'code': '5.0',
+             'form_level': 5,
+             'title': 'Advanced Drama Evaluation (Paper 2)',
+             'periods': 30,
+             'weight': 'medium',
+             'subtopics': [{'periods': 10,
+                            'outcomes': [('Analyze complex African and international plays', 'analysis', 146),
+                                         ('Evaluate plays within their cultural contexts',
+                                          'evaluation',
+                                          147)],
+                            'title': 'Complex African and international plays'},
+                           {'periods': 20,
+                            'outcomes': [('Examine tragedy and comedy as dramatic forms', 'analysis', 148),
+                                         ('Analyze alienation and satire as techniques', 'analysis', 149)],
+                            'title': 'Tragedy, comedy, alienation, satire'}]},
+            {'order': 29,
+             'code': '6.0',
+             'form_level': 5,
+             'title': 'Advanced African and World Prose (Paper 2)',
+             'periods': 30,
+             'weight': 'medium',
+             'subtopics': [{'periods': 16,
+                            'outcomes': [('Read and analyze heavy selected global works',
+                                          'comprehension',
+                                          150),
+                                         ('Critically evaluate themes in world prose', 'evaluation', 151)],
+                            'title': 'Heavy selected global works'},
+                           {'periods': 14,
+                            'outcomes': [('Analyze stream-of-consciousness narration', 'analysis', 152),
+                                         ('Evaluate modern stylistic techniques in prose',
+                                          'evaluation',
+                                          153)],
+                            'title': 'Stream-of-consciousness and modern stylistics'}]},
+            {'order': 30,
+             'code': '1.0',
+             'form_level': 6,
+             'title': 'Advanced Semantics and Pragmatics (Paper 1)',
+             'periods': 32,
+             'weight': 'high',
+             'subtopics': [{'periods': 12,
+                            'outcomes': [('Explain theories of meaning and sense relations',
+                                          'comprehension',
+                                          154),
+                                         ('Analyze sense relations such as synonymy and antonymy',
+                                          'analysis',
+                                          155)],
+                            'title': 'Theories of meaning and sense relations'},
+                           {'periods': 10,
+                            'outcomes': [('Identify speech acts and their functions', 'comprehension', 156),
+                                         ('Analyze illocutionary force in utterances', 'analysis', 157)],
+                            'title': 'Speech acts'},
+                           {'periods': 10,
+                            'outcomes': [('Apply the cooperative principle to discourse', 'application', 158),
+                                         ('Analyze conversational implicature', 'analysis', 159)],
+                            'title': 'Cooperative principle'}]},
+            {'order': 31,
+             'code': '2.0',
+             'form_level': 6,
+             'title': 'Sociolinguistics and Historical Tracking (Paper 1)',
+             'periods': 30,
+             'weight': 'medium',
+             'subtopics': [{'periods': 10,
+                            'outcomes': [('Describe language variation across social factors',
+                                          'comprehension',
+                                          160),
+                                         ('Analyze regional and social dialects', 'analysis', 161)],
+                            'title': 'Language variation'},
+                           {'periods': 10,
+                            'outcomes': [('Explain code-switching and code-mixing', 'comprehension', 162),
+                                         ('Analyze the functions of code choice in discourse',
+                                          'analysis',
+                                          163)],
+                            'title': 'Code-switching and code-mixing'},
+                           {'periods': 10,
+                            'outcomes': [('Describe world Englishes and their features',
+                                          'comprehension',
+                                          164),
+                                         ('Trace the historical expansion of English', 'comprehension', 165)],
+                            'title': 'World Englishes and historical expansion'}]},
+            {'order': 32,
+             'code': '3.0',
+             'form_level': 6,
+             'title': 'Advanced Practical Application (Paper 1)',
+             'periods': 28,
+             'weight': 'medium',
+             'subtopics': [{'periods': 28,
+                            'outcomes': [('Translate technical, legal, and political documents accurately',
+                                          'application',
+                                          166),
+                                         ('Analyze terminology challenges in specialized translation',
+                                          'analysis',
+                                          167),
+                                         ('Produce culturally appropriate translations of complex documents',
+                                          'synthesis',
+                                          168)],
+                            'title': 'Complex translation of technical, legal and political documents'}]},
+            {'order': 33,
+             'code': '4.0',
+             'form_level': 6,
+             'title': 'Advanced Poetic Analysis (Paper 2)',
+             'periods': 30,
+             'weight': 'medium',
+             'subtopics': [{'periods': 16,
+                            'outcomes': [('Trace poetic movements from Romanticism to Modernism',
+                                          'analysis',
+                                          169),
+                                         ('Analyze representative poems from each movement',
+                                          'analysis',
+                                          170)],
+                            'title': 'Romanticism to Modernism'},
+                           {'periods': 14,
+                            'outcomes': [('Analyze post-colonial African poetry', 'analysis', 171),
+                                         ('Evaluate themes and techniques in African poetry',
+                                          'evaluation',
+                                          172)],
+                            'title': 'Post-colonial African poetry'}]},
+            {'order': 34,
+             'code': '5.0',
+             'form_level': 6,
+             'title': 'Synthesized Creative Production (Paper 2)',
+             'periods': 30,
+             'weight': 'high',
+             'subtopics': [{'periods': 14,
+                            'outcomes': [('Write analytical literary essays of depth and rigor',
+                                          'synthesis',
+                                          173),
+                                         ('Evaluate critical arguments in essay form', 'evaluation', 174)],
+                            'title': 'Analytical literary essays'},
+                           {'periods': 16,
+                            'outcomes': [('Compose original creative scripts', 'synthesis', 175),
+                                         ('Compose original verse demonstrating poetic craft',
+                                          'synthesis',
+                                          176)],
+                            'title': 'Creative scripts and verse'}]}]},
 
     # ========================================================================
     # KISWAHILI — NECTA Code 012
     # Source: TIE Kiswahili Syllabus Form I-IV
     # ========================================================================
-    {
-        "name": "Kiswahili",
-        "code": "KISW",
-        "slug": "kiswahili",
-        "necta_code": "012",
-        "is_core": True,
-        "description": "Kiswahili kwa elimu ya sekondari, Kidato cha I-VI. Hujumuisha sarufi, fasihi simulizi na andishi, uandishi, utafsiri, na isimu ya Kiswahili.",
-        "form_start": 1,
-        "form_end": 6,
-        "topics": [
-            {
-                "title": "Dhana ya Lugha na Mawasiliano",
-                "code": "1.0",
-                "order": 1,
-                "form_level": 1,
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Maana ya lugha na sifa zake",
-                        "periods": 8,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kufasiri maana ya lugha na kubaini sifa zake msingi", "knowledge", 1),
-                            ("Kutambua umuhimu wa lugha katika maisha ya kila siku", "comprehension", 2),
-                        ]
-                    },
-                    {
-                        "title": "Dhima na kazi za lugha",
-                        "periods": 8,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kujadili dhima ya lugha katika jamii na elimu", "comprehension", 1),
-                            ("Kuchambua kazi za lugha katika mawasiliano", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Mawasiliano (vipengele na vikwazo)",
-                        "periods": 8,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kubaini vipengele vinavyoshiriki katika mawasiliano", "knowledge", 1),
-                            ("Kujadili vikwazo vinavyokwamisha mawasiliano", "analysis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Ustadi wa Kusikiliza na Kuzungumza",
-                "code": "2.0",
-                "order": 2,
-                "form_level": 1,
-                "periods": 20,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Kusikiliza kwa makini",
-                        "periods": 5,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kuonyesha uwezo wa kusikiliza kwa makini na kufahamu ujumbe", "application", 1),
-                        ]
-                    },
-                    {
-                        "title": "Matamshi bora ya sauti za Kiswahili",
-                        "periods": 5,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kutamka sauti za Kiswahili kwa usahihi", "application", 1),
-                            ("Kubaini tofauti za sauti za Kiswahili", "knowledge", 2),
-                        ]
-                    },
-                    {
-                        "title": "Kutoa maelezo na hotuba fupi",
-                        "periods": 5,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kutoa maelezo ya wazi na yenye muundo", "application", 1),
-                            ("Kuandaa na kusimulia hotuba fupi kwa ufasaha", "synthesis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Mifumo ya salamu na adabu",
-                        "periods": 5,
-                        "order": 4,
-                        "outcomes": [
-                            ("Kutumia mifumo ya salamu na adabu katika mawasiliano", "application", 1),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Sarufi ya Kiswahili: Sauti na Maneno",
-                "code": "3.0",
-                "order": 3,
-                "form_level": 1,
-                "periods": 28,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Sauti za Kiswahili (konsonanti na irabu)",
-                        "periods": 14,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini na kutamka konsonanti za Kiswahili", "knowledge", 1),
-                            ("Kueleza jukumu la irabu katika lugha ya Kiswahili", "comprehension", 2),
-                        ]
-                    },
-                    {
-                        "title": "Aina za maneno ngazi ya kwanza (Nomino, Viwakilishi, Vitenzi, Vivumishi)",
-                        "periods": 14,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kutambua na kugawanya maneno kulingana na aina zake", "knowledge", 1),
-                            ("Kutumia aina za maneno katika kuunda sentensi", "application", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Ustadi wa Kusoma",
-                "code": "4.0",
-                "order": 4,
-                "form_level": 1,
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Kusoma kwa sauti na kwa kimya",
-                        "periods": 8,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kusoma kwa sauti kwa ufasaha na usahihi", "application", 1),
-                            ("Kusoma kwa kimya kwa kuzingatia maana", "comprehension", 2),
-                        ]
-                    },
-                    {
-                        "title": "Kusoma kwa ufahamu",
-                        "periods": 8,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kuchambua maana ya maandishi kwa kina", "analysis", 1),
-                            ("Kujibu maswali kuhusu maandishi yaliyosomwa", "comprehension", 2),
-                        ]
-                    },
-                    {
-                        "title": "Kusoma kwa burudani na kupanua msamiati",
-                        "periods": 8,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kusoma kwa kufurahia na kujenga mapendeleo ya kusoma", "comprehension", 1),
-                            ("Kupanua msamiati wa Kiswahili kupitia usomaji", "application", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Ustadi wa Kuandika",
-                "code": "5.0",
-                "order": 5,
-                "form_level": 1,
-                "periods": 20,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Mwandiko nadhifu na alama za uandishi",
-                        "periods": 6,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kutumia mwandiko nadhifu na alama za uandishi kwa usahihi", "application", 1),
-                            ("Kubaini makosa ya kawaida katika uandishi", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Insha za maelezo, masimulizi na hoja",
-                        "periods": 8,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kuandika insha za maelezo kwa mfumo sahihi", "application", 1),
-                            ("Kuandika insha za masimulizi kwa kuwasilisha hadithi", "synthesis", 2),
-                            ("Kuandika insha za hoja kwa kutoa dalili na uthibitisho", "synthesis", 3),
-                        ]
-                    },
-                    {
-                        "title": "Barua za kirafiki na kadi za mialiko",
-                        "periods": 6,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kuandika barua za kirafiki kwa mtindo unaofaa", "application", 1),
-                            ("Kuandika kadi za mialiko kwa muundo wa kawaida", "application", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Utangulizi wa Fasihi na Fasihi Simulizi",
-                "code": "6.0",
-                "order": 6,
-                "form_level": 1,
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Maana ya fasihi na mgawanyo wake",
-                        "periods": 6,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kufasiri maana ya fasihi na kubaini mgawanyo wake", "knowledge", 1),
-                            ("Kutambua tofauti kati ya fasihi simulizi na fasihi andishi", "comprehension", 2),
-                        ]
-                    },
-                    {
-                        "title": "Fasihi Simulizi (maana, sifa, umuhimu)",
-                        "periods": 8,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kueleza maana na sifa za fasihi simulizi", "comprehension", 1),
-                            ("Kujadili umuhimu wa fasihi simulizi katika jamii", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Mighani na tanzu za hadithi (ngano, hekaya, hurafa, kisa)",
-                        "periods": 10,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kubaini mighani mbalimbali ya fasihi simulizi", "knowledge", 1),
-                            ("Kutambua tanzu za hadithi: ngano, hekaya, hurafa, na kisa", "comprehension", 2),
-                            ("Kulinganisha sifa za tanzu tofauti za hadithi", "analysis", 3),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Sarufi: Muundo wa Sentensi na Aina za Maneno (II)",
-                "code": "1.0",
-                "order": 7,
-                "form_level": 2,
-                "periods": 28,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Viunganishi, Viingizi na Viwakilishi",
-                        "periods": 10,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini aina za viunganishi na matumizi yao", "knowledge", 1),
-                            ("Kutumia viingizi na viwakilishi katika sentensi", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Mofimu (huru na tegemezi)",
-                        "periods": 10,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kufasiri dhana ya mofimu huru na tegemezi", "comprehension", 1),
-                            ("Kubaini mofimu huru na tegemezi katika sentensi", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Mnyambuliko wa vitenzi (kauli)",
-                        "periods": 8,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kueleza mfumo wa mnyambuliko wa vitenzi", "comprehension", 1),
-                            ("Kutumia kauli tofauti katika kuunda sentensi", "application", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Uandishi wa Kiofisi na Kitaaluma",
-                "code": "2.0",
-                "order": 8,
-                "form_level": 2,
-                "periods": 20,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Barua za Kiofisi",
-                        "periods": 7,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kueleza miundo na mapokezi ya barua za kiofisi", "comprehension", 1),
-                            ("Kuandika barua za kiofisi kwa mtindo unaokubalika", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Wasifu Kazi (CV) na barua za maombi",
-                        "periods": 7,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kuandika wasifu kazi (CV) kwa muundo wa kisasa", "application", 1),
-                            ("Kuandika barua za maombi ya kazi na elimu", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Kumbukumbu za mikutano",
-                        "periods": 6,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kueleza muundo wa kumbukumbu za mikutano", "comprehension", 1),
-                            ("Kuandika kumbukumbu za mikutano kwa usahihi", "application", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Fasihi Simulizi: Semi na Maigizo",
-                "code": "3.0",
-                "order": 9,
-                "form_level": 2,
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Semi (methali, vitendawili, misemo, nahau, mizungu)",
-                        "periods": 12,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini aina za semi: methali, vitendawili, misemo, nahau, na mizungu", "knowledge", 1),
-                            ("Kutumia semi katika mawasiliano ya kila siku", "application", 2),
-                            ("Kufasiri maana ya semi mbalimbali", "comprehension", 3),
-                        ]
-                    },
-                    {
-                        "title": "Maigizo Simulizi (michezo ya jukwaani, matambiko, ngoma)",
-                        "periods": 12,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kutambua aina za maigizo simulizi", "knowledge", 1),
-                            ("Kueleza sifa na umuhimu wa maigizo simulizi", "comprehension", 2),
-                            ("Kushiriki katika michezo ya jukwaani na matambiko", "application", 3),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Utangulizi wa Fasihi Andishi",
-                "code": "4.0",
-                "order": 10,
-                "form_level": 2,
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Maana na sifa za Fasihi Andishi",
-                        "periods": 8,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kueleza maana na sifa za fasihi andishi", "comprehension", 1),
-                            ("Kulinganisha fasihi andishi na fasihi simulizi", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Tanzu (Riwaya, Tamthilia, Ushairi)",
-                        "periods": 8,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kubaini tanzu tatu za fasihi andishi: riwaya, tamthilia, na ushairi", "knowledge", 1),
-                            ("Kutambua sifa za kila tanzu la fasihi andishi", "comprehension", 2),
-                        ]
-                    },
-                    {
-                        "title": "Vipengele vya uhakiki (Fomu/Dhamira na Fani)",
-                        "periods": 8,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kufasiri dhana za fomu na dhamira katika fasihi", "comprehension", 1),
-                            ("Kubaini vipengele vya fani katika uundaji wa fasihi", "analysis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Sarufi: Ngeli za Nomino na Upatanisho wa Kisarufi",
-                "code": "1.0",
-                "order": 11,
-                "form_level": 3,
-                "periods": 28,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Mfumo wa ngeli za nomino (M-WA, KI-VI, LI-YA, U-I, U-ZI)",
-                        "periods": 16,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini ngeli tano za nomino katika Kiswahili", "knowledge", 1),
-                            ("Kutumia ngeli za nomino katika kuunda sentensi", "application", 2),
-                            ("Kujadili changamoto za upatanisho wa ngeli", "analysis", 3),
-                        ]
-                    },
-                    {
-                        "title": "Upatanisho wa kisarufi",
-                        "periods": 12,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kueleza kanuni za upatanisho wa kisarufi", "comprehension", 1),
-                            ("Kutumia kanuni za upatanisho katika uandishi", "application", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Uandishi wa Ubunifu na Dijitali",
-                "code": "2.0",
-                "order": 12,
-                "form_level": 3,
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Makala ya magazetini na majarida",
-                        "periods": 8,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini sifa za makala ya magazetini na majarida", "knowledge", 1),
-                            ("Kuandika makala kwa mtindo wa magazeti", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Uandishi wa kidijitali (E-mail, mitandao ya kijamii, blogu)",
-                        "periods": 8,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kuandika barua pepe (e-mail) kwa mtindo wa kiofisi", "application", 1),
-                            ("Kutumia mitandao ya kijamii na blogu kwa uandishi bora", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Hotuba rasmi",
-                        "periods": 8,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kueleza vipengele vya hotuba rasmi", "comprehension", 1),
-                            ("Kuandika na kusoma hotuba rasmi kwa ufasaha", "synthesis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Uhakiki wa Vitabu Teule: Riwaya na Tamthilia",
-                "code": "3.0",
-                "order": 13,
-                "form_level": 3,
-                "periods": 30,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Uhakiki wa riwaya mbili",
-                        "periods": 10,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kuchambua mada na viungo vya riwaya mbili zilizoteuliwa", "analysis", 1),
-                            ("Kujadili mitindo ya uandishi ya waandishi", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Uhakiki wa tamthilia mbili",
-                        "periods": 10,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kuchambua migogoro na mada za tamthilia mbili", "analysis", 1),
-                            ("Kujadili majukumu ya wahusika na misingi ya tamthilia", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Uchambuzi wa dhamira na vipengele vya fani",
-                        "periods": 10,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kufasiri dhamira za vitabu vilivyoteuliwa", "comprehension", 1),
-                            ("Kuchambua vipengele vya fani katika vitabu vya fasihi", "analysis", 2),
-                            ("Kutumia nadharia za uhakiki katika uchambuzi wa fasihi", "evaluation", 3),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Fasihi Simulizi: Ushairi Simulizi na Maghani",
-                "code": "4.0",
-                "order": 14,
-                "form_level": 3,
-                "periods": 24,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Maghani na tanzu zake (tongozo, bembeleza, tanzu za sifa)",
-                        "periods": 14,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini aina za maghani na tanzu zake", "knowledge", 1),
-                            ("Kutambua sifa za tongozo, bembeleza, na tanzu za sifa", "comprehension", 2),
-                        ]
-                    },
-                    {
-                        "title": "Nyimbo (za kazi, harusi, kilio)",
-                        "periods": 10,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kubaini aina za nyimbo: za kazi, harusi, na kilio", "knowledge", 1),
-                            ("Kueleza umuhimu wa nyimbo katika jamii ya Kiswahili", "comprehension", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Uundaji wa Maneno na Ukuzaji wa Kamusi",
-                "code": "1.0",
-                "order": 15,
-                "form_level": 4,
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Njia za uundaji wa maneno (kunyambua, kuunganisha, kukopesha, kufupisha)",
-                        "periods": 14,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini njia za uundaji wa maneno katika Kiswahili", "knowledge", 1),
-                            ("Kutumia njia za kunyambua, kuunganisha, kukopesha, na kufupisha", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Ukuzaji na matumizi ya kamusi",
-                        "periods": 10,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kutumia kamusi kwa usahihi katika utafiti", "application", 1),
-                            ("Kujadili changamoto za ukuzaji wa kamusi za Kiswahili", "analysis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Utafsiri na Ukalimani",
-                "code": "2.0",
-                "order": 16,
-                "form_level": 4,
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Dhana ya utafsiri na ukalimani",
-                        "periods": 8,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kufasiri tofauti kati ya utafsiri na ukalimani", "comprehension", 1),
-                            ("Kutambua umuhimu wa utafsiri katika jamii", "comprehension", 2),
-                        ]
-                    },
-                    {
-                        "title": "Misingi na kanuni za utafsiri",
-                        "periods": 8,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kubaini kanuni za utafsiri bora", "knowledge", 1),
-                            ("Kutumia kanuni za utafsiri katika tafsiri ya maandishi", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Changamoto za utafsiri",
-                        "periods": 8,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kujadili changamoto za utafsiri wa lugha na utamaduni", "analysis", 1),
-                            ("Kupendekeza suluhisho la changamoto za utafsiri", "synthesis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Uhakiki wa Ushairi Andishi",
-                "code": "3.0",
-                "order": 17,
-                "form_level": 4,
-                "periods": 30,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Diwani mbili teule",
-                        "periods": 12,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kuchambua mada na dhamira za diwani mbili zilizoteuliwa", "analysis", 1),
-                            ("Kujadili mtindo na lugha ya washairi", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Mashairi ya mapokeo na ya masivina",
-                        "periods": 10,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kulinganisha mashairi ya mapokeo na ya masivina", "analysis", 1),
-                            ("Kujadili mada na mtindo wa mashairi mbalimbali", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Lugha ya ushairi (tamathali, mbinu, ishara)",
-                        "periods": 8,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kubaini tamathali za lugha katika mashairi", "knowledge", 1),
-                            ("Kuchambua mbinu za ushairi: tamathali, mbinu, na ishara", "analysis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Lugha ya Kiswahili katika Maendeleo ya Taifa",
-                "code": "4.0",
-                "order": 18,
-                "form_level": 4,
-                "periods": 20,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Historia ya kuenea kwa Kiswahili",
-                        "periods": 10,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kueleza historia ya kuenea kwa Kiswahili katika Afrika Mashariki", "comprehension", 1),
-                            ("Kujadili majukumu ya Kiswahili katika historia", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Kiswahili kama lugha ya taifa, elimu, ukombozi na diplomasia",
-                        "periods": 10,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kujadili jukumu la Kiswahili katika taifa, elimu, ukombozi na diplomasia", "analysis", 1),
-                            ("Kupendekeza mikakati ya kuendeleza Kiswahili", "synthesis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Fonetiki na Fonolojia ya Kiswahili",
-                "code": "1.0",
-                "order": 19,
-                "form_level": 5,
-                "periods": 32,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Foni na fonimu",
-                        "periods": 8,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kufasiri dhana za foni na fonimu katika Kiswahili", "comprehension", 1),
-                            ("Kubaini tofauti kati ya foni na fonimu", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Ala za sauti",
-                        "periods": 8,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kubaini ala za sauti katika Kiswahili", "knowledge", 1),
-                            ("Kueleza jukumu la ala za sauti katika matamshi", "comprehension", 2),
-                        ]
-                    },
-                    {
-                        "title": "Mahali na namna ya kutamkia",
-                        "periods": 8,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kubaini mahali pa kutamkia sauti", "knowledge", 1),
-                            ("Kueleza namna ya kutamkia sauti mbalimbali", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Mabadiliko ya kifonolojia",
-                        "periods": 8,
-                        "order": 4,
-                        "outcomes": [
-                            ("Kujadili mabadiliko ya kifonolojia katika Kiswahili", "analysis", 1),
-                            ("Kuchambua athari za mabadiliko ya kifonolojia katika lugha", "synthesis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Mofolojia ya Kiswahili (Muundo wa Maneno)",
-                "code": "2.0",
-                "order": 20,
-                "form_level": 5,
-                "periods": 28,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Viambishi (awali na tamati)",
-                        "periods": 10,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini viambishi vya awali na tamati katika Kiswahili", "knowledge", 1),
-                            ("Kueleza jukumu la viambishi katika uundaji wa maneno", "comprehension", 2),
-                        ]
-                    },
-                    {
-                        "title": "Mzizi na shina",
-                        "periods": 9,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kufasiri dhana ya mzizi na shina katika Kiswahili", "comprehension", 1),
-                            ("Kubaini mzizi na shina katika maneno mbalimbali", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Unyambulishaji na unyumbufu",
-                        "periods": 9,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kujadili kanuni za unyambulishaji katika Kiswahili", "analysis", 1),
-                            ("Kutumia kanuni za unyumbufu katika uundaji wa maneno", "application", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Utumizi wa Lugha na Mtindo",
-                "code": "3.0",
-                "order": 21,
-                "form_level": 5,
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Sajili (sheria, biashara, kidini, kitaaluma, michezo)",
-                        "periods": 24,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini tofauti za sajili za Kiswahili: sheria, biashara, kidini, kitaaluma, na michezo", "knowledge", 1),
-                            ("Kutumia sajili mbalimbali kulingana na muktadha", "application", 2),
-                            ("Kujadili umuhimu wa sajili katika mawasiliano ya kitaalamu", "analysis", 3),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Uandishi wa Insha za Kiakademia",
-                "code": "4.0",
-                "order": 22,
-                "form_level": 5,
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Wasifu, insha za kiuhakiki, makala za utafiti",
-                        "periods": 24,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kuandika wasifu wa kielimu kwa mfumo wa kiakademia", "application", 1),
-                            ("Kuandika insha za kiuhakiki kwa msimamo thabiti", "synthesis", 2),
-                            ("Kuandika makala za utafiti kwa kanuni za kiakademia", "synthesis", 3),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Nadharia ya Fasihi",
-                "code": "5.0",
-                "order": 23,
-                "form_level": 5,
-                "periods": 28,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Maana ya sanaa, chimbuko la fasihi, uhusiano wa fasihi na jamii",
-                        "periods": 14,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kufasiri dhana za sanaa na chimbuko la fasihi", "comprehension", 1),
-                            ("Kujadili uhusiano kati ya fasihi na jamii", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Nadharia za uhakiki (Umarx, Ufeministi, Uhalisia, Ushabiki)",
-                        "periods": 14,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kubaini nadharia nne za uhakiki la fasihi", "knowledge", 1),
-                            ("Kulinganisha nadharia za Umarx, Ufeministi, Uhalisia, na Ushabiki", "analysis", 2),
-                            ("Kutumia nadharia za uhakiki katika uchambuzi wa fasihi", "evaluation", 3),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Fasihi Simulizi kwa Kina",
-                "code": "6.0",
-                "order": 24,
-                "form_level": 5,
-                "periods": 28,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Mbinu za utafiti wa nyanjani",
-                        "periods": 10,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini mbinu za utafiti wa nyanjani katika fasihi simulizi", "knowledge", 1),
-                            ("Kutumia mbinu za utafiti wa nyanjani katika ukusanyaji wa data", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Ukusanyaji na uhifadhi wa data",
-                        "periods": 9,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kueleza kanuni za ukusanyaji na uhifadhi wa data", "comprehension", 1),
-                            ("Kutumia kanuni za uhifadhi wa data katika utafiti wa fasihi", "application", 2),
-                        ]
-                    },
-                    {
-                        "title": "Uhakiki wa tanzu za fasihi simulizi",
-                        "periods": 9,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kuchambua tanzu za fasihi simulizi kwa kina", "analysis", 1),
-                            ("Kutumia mbinu za uhakiki katika uchambuzi wa fasihi simulizi", "evaluation", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Uhakiki wa Riwaya (Ngazi ya Juu)",
-                "code": "7.0",
-                "order": 25,
-                "form_level": 5,
-                "periods": 32,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Uhakiki wa riwaya mbili za A-Level kwa nadharia za fasihi",
-                        "periods": 32,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kuchambua riwaya mbili kwa kutumia nadharia za uhakiki", "analysis", 1),
-                            ("Kujadili mada, mhusika, na mtindo wa riwaya", "synthesis", 2),
-                            ("Kutoa ukiri wa fasihi kwa kutumia nadharia za fasihi", "evaluation", 3),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Sintaksia ya Kiswahili (Muundo wa Sentensi)",
-                "code": "1.0",
-                "order": 26,
-                "form_level": 6,
-                "periods": 32,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Kirai, kishazi na sentensi",
-                        "periods": 10,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kubaini dhana za kirai, kishazi, na sentensi", "knowledge", 1),
-                            ("Kuchambua muundo wa kirai na kishazi katika Kiswahili", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Aina za sentensi (sahili, ambatano, changamano)",
-                        "periods": 12,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kubaini aina tatu za sentensi: sahili, ambatano, changamano", "knowledge", 1),
-                            ("Kujadili tofauti kati ya sentensi sahili, ambatano, na changamano", "analysis", 2),
-                            ("Kuunda sentensi za aina mbalimbali kwa usahihi", "application", 3),
-                        ]
-                    },
-                    {
-                        "title": "Uchambuzi wa sentensi kwa mishale/bano",
-                        "periods": 10,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kutumia mishale na bano katika uchambuzi wa sentensi", "application", 1),
-                            ("Kuchambua muundo wa sentensi kwa njia ya mishale na bano", "analysis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Semantiki na Pragmashia",
-                "code": "2.0",
-                "order": 27,
-                "form_level": 6,
-                "periods": 28,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Maana ya maneno (kileksika na muktadha)",
-                        "periods": 10,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kufasiri dhana za kileksika na muktadha katika semantiki", "comprehension", 1),
-                            ("Kujadili jukumu la muktadha katika kubaini maana ya maneno", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Uhusiano wa kimaana (visawe, vinyume, homonimu, polisemia)",
-                        "periods": 10,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kubaini uhusiano wa kimaana: visawe, vinyume, homonimu, polisemia", "knowledge", 1),
-                            ("Kujadili maana za maneno kulingana na muktadha", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Pragmashia na vitendo vya usemi",
-                        "periods": 8,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kufasiri dhana za pragmashia na vitendo vya usemi", "comprehension", 1),
-                            ("Kuchambua matumizi ya lugha katika muktadha wa jamii", "analysis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Maendeleo na Ukuaji wa Kiswahili",
-                "code": "3.0",
-                "order": 28,
-                "form_level": 6,
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "usanifishaji wa Kiswahili 1930",
-                        "periods": 8,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kueleza historia ya usanifishaji wa Kiswahili mwaka 1930", "comprehension", 1),
-                            ("Kujadili athari za usanifishaji wa Kiswahili", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Kamati ya lugha ya Afrika Mashariki",
-                        "periods": 8,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kubaini jukumu la Kamati ya Lugha ya Afrika Mashariki", "knowledge", 1),
-                            ("Kujadili mafanikio ya Kamati katika ukuaji wa Kiswahili", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Changamoto za utandawazi",
-                        "periods": 8,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kujadili changamoto za utandawazi kwa Kiswahili", "analysis", 1),
-                            ("Kupendekeza mikakati ya kukabiliana na changamoto za utandawazi", "synthesis", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Uhakiki wa Tamthilia za Kina",
-                "code": "4.0",
-                "order": 29,
-                "form_level": 6,
-                "periods": 32,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Tamthilia mbili za juu",
-                        "periods": 12,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kuchambua mada na migogoro katika tamthilia mbili", "analysis", 1),
-                            ("Kujadili mtindo wa uandishi wa warembo wa tamthilia", "analysis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Migogoro na falsafa ya mwandishi",
-                        "periods": 10,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kubaini migogoro kuu katika tamthilia zilizoteuliwa", "knowledge", 1),
-                            ("Kujadili falsafa na maono ya mwandishi", "synthesis", 2),
-                        ]
-                    },
-                    {
-                        "title": "Mbinu za kimtindo (rejeshi, kinaya, tanzia, vichekesho)",
-                        "periods": 10,
-                        "order": 3,
-                        "outcomes": [
-                            ("Kubaini mbinu za kimtindo: rejeshi, kinaya, tanzia, na vichekesho", "knowledge", 1),
-                            ("Kuchambua matumizi ya mbinu za kimtindo katika tamthilia", "analysis", 2),
-                            ("Kutumia mbinu za kimtindo katika uchambuzi wa tamthilia", "evaluation", 3),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Uhakiki wa Diwani (Ushairi wa Kina)",
-                "code": "5.0",
-                "order": 30,
-                "form_level": 6,
-                "periods": 30,
-                "weight": "high",
-                "subtopics": [
-                    {
-                        "title": "Diwani mbili (mizani na vina dhidi ya huria)",
-                        "periods": 16,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kuchambua mizani na vina katika diwani mbili zilizoteuliwa", "analysis", 1),
-                            ("Kulinganisha mtindo wa ushairi wa mizani na huria", "analysis", 2),
-                            ("Kujadili lugha na tamathali za ushairi katika diwani", "synthesis", 3),
-                        ]
-                    },
-                    {
-                        "title": "Mgogoro wa wana-mapokeo na wana-kisasa",
-                        "periods": 14,
-                        "order": 2,
-                        "outcomes": [
-                            ("Kujadili mgogoro kati ya wana-mapokeo na wana-kisasa katika ushairi", "analysis", 1),
-                            ("Kutoa maoni ya ukatili kuhusu mapinduzi ya ushairi wa Kiswahili", "evaluation", 2),
-                        ]
-                    },
-                ]
-            },
-            {
-                "title": "Uandishi wa Kifasihi",
-                "code": "6.0",
-                "order": 31,
-                "form_level": 6,
-                "periods": 24,
-                "weight": "medium",
-                "subtopics": [
-                    {
-                        "title": "Kazi za ubunifu (mashairi, michezo, hadithi fupi)",
-                        "periods": 24,
-                        "order": 1,
-                        "outcomes": [
-                            ("Kuandika mashairi kwa kutumia mbinu za ushairi", "synthesis", 1),
-                            ("Kuandika michezo midogo ya jukwaani", "synthesis", 2),
-                            ("Kuandika hadithi fupi kwa mtindo wa kifasihi", "synthesis", 3),
-                        ]
-                    },
-                ]
-            },
-        ]
-    },
+    {'name': 'Kiswahili',
+ 'code': 'KISW',
+ 'slug': 'kiswahili',
+ 'necta_code': '012',
+ 'is_core': True,
+ 'description': 'Kiswahili kwa elimu ya sekondari, Kidato cha I-VI. Hujumuisha sarufi, fasihi simulizi na '
+                'andishi, uandishi, utafsiri, na isimu ya Kiswahili.',
+ 'form_start': 1,
+ 'form_end': 6,
+ 'topics': [{'title': 'Dhana ya Lugha na Mawasiliano',
+             'code': '1.0',
+             'order': 1,
+             'form_level': 1,
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Maana ya lugha na sifa zake',
+                            'periods': 8,
+                            'order': 1,
+                            'outcomes': [('Kufasiri maana ya lugha na kubaini sifa zake msingi',
+                                          'knowledge',
+                                          1),
+                                         ('Kutambua umuhimu wa lugha katika maisha ya kila siku',
+                                          'comprehension',
+                                          2),
+                                         ('Kutumia Kiswahili katika mijadala mbalimbali kwa kuzingatia '
+                                          'utamaduni wa Mtanzania (mf. matumizi ya tafsida na uteuzi wa '
+                                          'maneno kulingana na mila na desturi za Mtanzani',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Dhima na kazi za lugha',
+                            'periods': 8,
+                            'order': 2,
+                            'outcomes': [('Kujadili dhima ya lugha katika jamii na elimu',
+                                          'comprehension',
+                                          1),
+                                         ('Kuchambua kazi za lugha katika mawasiliano', 'analysis', 2)]},
+                           {'title': 'Mawasiliano (vipengele na vikwazo)',
+                            'periods': 8,
+                            'order': 3,
+                            'outcomes': [('Kubaini vipengele vinavyoshiriki katika mawasiliano',
+                                          'knowledge',
+                                          1),
+                                         ('Kujadili vikwazo vinavyokwamisha mawasiliano', 'analysis', 2)]}]},
+            {'title': 'Ustadi wa Kusikiliza na Kuzungumza',
+             'code': '2.0',
+             'order': 2,
+             'form_level': 1,
+             'periods': 20,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Kusikiliza kwa makini',
+                            'periods': 5,
+                            'order': 1,
+                            'outcomes': [('Kuonyesha uwezo wa kusikiliza kwa makini na kufahamu ujumbe',
+                                          'application',
+                                          1),
+                                         ('Kusikiliza mazungumzo changamani na kujibu maswali',
+                                          'comprehension',
+                                          0),
+                                         ('Kuzungumza kwa ufasaha katika miktadha mbalimbali (mf. nyumbani, '
+                                          'shuleni na hospitalin',
+                                          'comprehension',
+                                          0),
+                                         ('Kusikiliza habari changamani kwa umakini, udadisi na kuuliza '
+                                          'maswali',
+                                          'comprehension',
+                                          0),
+                                         ('Kuzungumza kwa kutumia mitindo mbalimbali ya lugha ya mazungumzo '
+                                          'na kwa kuzingatia miktadha, umri, jinsia na uhusiano',
+                                          'comprehension',
+                                          0),
+                                         ('Kusikiliza habari changamani kitunduizi na kuchangia au kutoa '
+                                          'maoni mwafaka',
+                                          'comprehension',
+                                          0),
+                                         ('Kutumia lugha fasaha katika mazungumzo ya hadhara (mf. mikutano '
+                                          'ya hadhara, uwasilishaji mbele ya halaiki na mijadala mbalimbal',
+                                          'comprehension',
+                                          0),
+                                         ('Kuigiza usaili kwa kuzungumza na kuandika', 'comprehension', 0)]},
+                           {'title': 'Matamshi bora ya sauti za Kiswahili',
+                            'periods': 5,
+                            'order': 2,
+                            'outcomes': [('Kutamka sauti za Kiswahili kwa usahihi', 'application', 1),
+                                         ('Kubaini tofauti za sauti za Kiswahili', 'knowledge', 2),
+                                         ('Kueleza kwa muhtasari mazungumzo changamani aliyoyasikiliza',
+                                          'comprehension',
+                                          0),
+                                         ('Kutumia lugha kwa ufasaha katika malumbano ya hoja',
+                                          'comprehension',
+                                          0),
+                                         ('Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo '
+                                          'makuu aliyoyapata kwa kuzingatia uwazi na uwekevu',
+                                          'comprehension',
+                                          0),
+                                         ('Kutumia kwa usahihi ishara zinazoambatana na mazungumzo katika '
+                                          'kuwasiliana',
+                                          'comprehension',
+                                          0),
+                                         ('Kusikiliza habari na kuzielezea kwa maneno yake mwenyewe kwa '
+                                          'kuzingatia stadi za mawasiliano (mf. uwazi, ukamilifu wa hoja, '
+                                          'usahihi, muwala, uwekevu na stah',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Kutoa maelezo na hotuba fupi',
+                            'periods': 5,
+                            'order': 3,
+                            'outcomes': [('Kutoa maelezo ya wazi na yenye muundo', 'application', 1),
+                                         ('Kuandaa na kusimulia hotuba fupi kwa ufasaha', 'synthesis', 2),
+                                         ('Kushiriki katika majadiliano ya masuala mbalimbali kwa kuzingatia '
+                                          'sifa za lugha ya mazungumzo (mf. lugha ya mkato, kupeana nafas',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Mifumo ya salamu na adabu',
+                            'periods': 5,
+                            'order': 4,
+                            'outcomes': [('Kutumia mifumo ya salamu na adabu katika mawasiliano',
+                                          'application',
+                                          1)]}]},
+            {'title': 'Sarufi ya Kiswahili: Sauti na Maneno',
+             'code': '3.0',
+             'order': 3,
+             'form_level': 1,
+             'periods': 28,
+             'weight': 'high',
+             'subtopics': [{'title': 'Sauti za Kiswahili (konsonanti na irabu)',
+                            'periods': 14,
+                            'order': 1,
+                            'outcomes': [('Kubaini na kutamka konsonanti za Kiswahili', 'knowledge', 1),
+                                         ('Kueleza jukumu la irabu katika lugha ya Kiswahili',
+                                          'comprehension',
+                                          2),
+                                         ('Kusimulia habari na matukio kwa kuzingatia kiimbo, mkazo, na '
+                                          'lafudhi pamoja na dhima zake',
+                                          'comprehension',
+                                          0),
+                                         ('katika sentensi', 'comprehension', 0),
+                                         ('Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa '
+                                          'kuzingatia ngeli za nomino na viambishi vya upatanish',
+                                          'comprehension',
+                                          0),
+                                         ('Kuandika matini fupi kwa kutumia miundo changamani ya sentensi',
+                                          'comprehension',
+                                          0),
+                                         ('Kuunda maneno kwa njia mbalimbali kutokana na habari alizozisoma '
+                                          'au kuzisikiliza (mf. utohoaji, uradidi, uhulutishaj',
+                                          'comprehension',
+                                          0),
+                                         ('Kujenga hoja za uga mahususi kwa kutumia miundo mbalimbali ya '
+                                          'sentensi (mf. siasa, uchumi, kilimo na biashar',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Aina za maneno ngazi ya kwanza (Nomino, Viwakilishi, Vitenzi, '
+                                     'Vivumishi)',
+                            'periods': 14,
+                            'order': 2,
+                            'outcomes': [('Kutambua na kugawanya maneno kulingana na aina zake',
+                                          'knowledge',
+                                          1),
+                                         ('Kutumia aina za maneno katika kuunda sentensi', 'application', 2),
+                                         ('Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa '
+                                          'maneno (nomino, vivumishi, vielezi, viwakilishi, vitenzi, '
+                                          'vihisishi, vihusishi na viunganish',
+                                          'comprehension',
+                                          0),
+                                         ('Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa '
+                                          'sentensi katika aya',
+                                          'comprehension',
+                                          0),
+                                         ('Kuzungumza kwa kutumia miundo changamani ya sentensi katika '
+                                          'miktadha mbalimbali (sentensi ambatani na changaman',
+                                          'comprehension',
+                                          0),
+                                         ('Kuandika habari kwa kuzingatia maneno yaliyoundwa kwa njia '
+                                          'mbalimbali',
+                                          'comprehension',
+                                          0),
+                                         ('Kuandika matini ndefu na changamani kwa kutumia miundo mbalimbali '
+                                          'ya sentensi',
+                                          'comprehension',
+                                          0)]}]},
+            {'title': 'Ustadi wa Kusoma',
+             'code': '4.0',
+             'order': 4,
+             'form_level': 1,
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'title': 'Kusoma kwa sauti na kwa kimya',
+                            'periods': 8,
+                            'order': 1,
+                            'outcomes': [('Kusoma kwa sauti kwa ufasaha na usahihi', 'application', 1),
+                                         ('Kusoma kwa kimya kwa kuzingatia maana', 'comprehension', 2),
+                                         ('Kusoma matini fupi changamani kwa kuzingatia alama za uandishi, '
+                                          'kasi sahihi na kiimbo cha tungo',
+                                          'comprehension',
+                                          0),
+                                         ('Kutumia TEHAMA kutafuta maana ya maneno mapya kutoka katika '
+                                          'matini aliyoisoma',
+                                          'comprehension',
+                                          0),
+                                         ('Kusoma matini ndefu changamani kwa kina na utunduizi',
+                                          'comprehension',
+                                          0),
+                                         ('Kusoma matini ndefu changamani na kuelezea kwa maandishi mawazo '
+                                          'makuu yaliyomo kwa kuzingatia stadi za mawasiliano (mf. uwazi, '
+                                          'ukamilifu wa hoja, usahihi, muwala, uwekevu na staha',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Kusoma kwa ufahamu',
+                            'periods': 8,
+                            'order': 2,
+                            'outcomes': [('Kuchambua maana ya maandishi kwa kina', 'analysis', 1),
+                                         ('Kujibu maswali kuhusu maandishi yaliyosomwa', 'comprehension', 2),
+                                         ('Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujumbe '
+                                          'katika usomaji wa matini fupi changamani',
+                                          'comprehension',
+                                          0),
+                                         ('Kusoma matini ndefu changamani, kuandika muhtasari wa hoja kuu '
+                                          'zilizomo na kutoa maoni juu ya hoja hizo',
+                                          'comprehension',
+                                          0),
+                                         ('Kusoma matini ndefu changamani na kutathmini hoja zilizomo',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Kusoma kwa burudani na kupanua msamiati',
+                            'periods': 8,
+                            'order': 3,
+                            'outcomes': [('Kusoma kwa kufurahia na kujenga mapendeleo ya kusoma',
+                                          'comprehension',
+                                          1),
+                                         ('Kupanua msamiati wa Kiswahili kupitia usomaji', 'application', 2),
+                                         ('Kuandika hoja kuu kutoka katika matini fupi changamani '
+                                          'alizozisoma kwa kuzingatia sifa za lugha ya maandishi (mf. alama '
+                                          'za uandishi, miunganiko sahihi ya tungo, usanif',
+                                          'comprehension',
+                                          0)]}]},
+            {'title': 'Ustadi wa Kuandika',
+             'code': '5.0',
+             'order': 5,
+             'form_level': 1,
+             'periods': 20,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Mwandiko nadhifu na alama za uandishi',
+                            'periods': 6,
+                            'order': 1,
+                            'outcomes': [('Kutumia mwandiko nadhifu na alama za uandishi kwa usahihi',
+                                          'application',
+                                          1),
+                                         ('Kubaini makosa ya kawaida katika uandishi', 'analysis', 2),
+                                         ('Kujieleza kwa ufasaha kwa maandishi katika miktadha mbalimbali',
+                                          'comprehension',
+                                          0),
+                                         ('Kuandika insha za wasifu na hoja (za kisanaa na zisizo za kisana',
+                                          'comprehension',
+                                          0),
+                                         ('Kuandika barua na makala za magazetini', 'comprehension', 0),
+                                         ('Kuandika wasifukazi na tawasifu', 'comprehension', 0)]},
+                           {'title': 'Insha za maelezo, masimulizi na hoja',
+                            'periods': 8,
+                            'order': 2,
+                            'outcomes': [('Kuandika insha za maelezo kwa mfumo sahihi', 'application', 1),
+                                         ('Kuandika insha za masimulizi kwa kuwasilisha hadithi',
+                                          'synthesis',
+                                          2),
+                                         ('Kuandika insha za hoja kwa kutoa dalili na uthibitisho',
+                                          'synthesis',
+                                          3),
+                                         ('Kusikiliza hoja na kuandika kumbukumbu', 'comprehension', 0)]},
+                           {'title': 'Barua za kirafiki na kadi za mialiko',
+                            'periods': 6,
+                            'order': 3,
+                            'outcomes': [('Kuandika barua za kirafiki kwa mtindo unaofaa', 'application', 1),
+                                         ('Kuandika kadi za mialiko kwa muundo wa kawaida',
+                                          'application',
+                                          2)]}]},
+            {'title': 'Utangulizi wa Fasihi na Fasihi Simulizi',
+             'code': '6.0',
+             'order': 6,
+             'form_level': 1,
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'title': 'Maana ya fasihi na mgawanyo wake',
+                            'periods': 6,
+                            'order': 1,
+                            'outcomes': [('Kufasiri maana ya fasihi na kubaini mgawanyo wake',
+                                          'knowledge',
+                                          1),
+                                         ('Kutambua tofauti kati ya fasihi simulizi na fasihi andishi',
+                                          'comprehension',
+                                          2),
+                                         ('Kufafanua dhana ya fasihi na fasihi ya Kiswahili (maana, aina na '
+                                          'dhim',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Fasihi Simulizi (maana, sifa, umuhimu)',
+                            'periods': 8,
+                            'order': 2,
+                            'outcomes': [('Kueleza maana na sifa za fasihi simulizi', 'comprehension', 1),
+                                         ('Kujadili umuhimu wa fasihi simulizi katika jamii', 'analysis', 2),
+                                         ('Kuchambua tanzu za fasihi simulizi na andishi',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Mighani na tanzu za hadithi (ngano, hekaya, hurafa, kisa)',
+                            'periods': 10,
+                            'order': 3,
+                            'outcomes': [('Kubaini mighani mbalimbali ya fasihi simulizi', 'knowledge', 1),
+                                         ('Kutambua tanzu za hadithi: ngano, hekaya, hurafa, na kisa',
+                                          'comprehension',
+                                          2),
+                                         ('Kulinganisha sifa za tanzu tofauti za hadithi', 'analysis', 3)]}]},
+            {'title': 'Sarufi: Muundo wa Sentensi na Aina za Maneno (II)',
+             'code': '1.0',
+             'order': 7,
+             'form_level': 2,
+             'periods': 28,
+             'weight': 'high',
+             'subtopics': [{'title': 'Viunganishi, Viingizi na Viwakilishi',
+                            'periods': 10,
+                            'order': 1,
+                            'outcomes': [('Kubaini aina za viunganishi na matumizi yao', 'knowledge', 1),
+                                         ('Kutumia viingizi na viwakilishi katika sentensi',
+                                          'application',
+                                          2)]},
+                           {'title': 'Mofimu (huru na tegemezi)',
+                            'periods': 10,
+                            'order': 2,
+                            'outcomes': [('Kufasiri dhana ya mofimu huru na tegemezi', 'comprehension', 1),
+                                         ('Kubaini mofimu huru na tegemezi katika sentensi', 'analysis', 2)]},
+                           {'title': 'Mnyambuliko wa vitenzi (kauli)',
+                            'periods': 8,
+                            'order': 3,
+                            'outcomes': [('Kueleza mfumo wa mnyambuliko wa vitenzi', 'comprehension', 1),
+                                         ('Kutumia kauli tofauti katika kuunda sentensi',
+                                          'application',
+                                          2)]}]},
+            {'title': 'Uandishi wa Kiofisi na Kitaaluma',
+             'code': '2.0',
+             'order': 8,
+             'form_level': 2,
+             'periods': 20,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Barua za Kiofisi',
+                            'periods': 7,
+                            'order': 1,
+                            'outcomes': [('Kueleza miundo na mapokezi ya barua za kiofisi',
+                                          'comprehension',
+                                          1),
+                                         ('Kuandika barua za kiofisi kwa mtindo unaokubalika',
+                                          'application',
+                                          2)]},
+                           {'title': 'Wasifu Kazi (CV) na barua za maombi',
+                            'periods': 7,
+                            'order': 2,
+                            'outcomes': [('Kuandika wasifu kazi (CV) kwa muundo wa kisasa', 'application', 1),
+                                         ('Kuandika barua za maombi ya kazi na elimu', 'application', 2)]},
+                           {'title': 'Kumbukumbu za mikutano',
+                            'periods': 6,
+                            'order': 3,
+                            'outcomes': [('Kueleza muundo wa kumbukumbu za mikutano', 'comprehension', 1),
+                                         ('Kuandika kumbukumbu za mikutano kwa usahihi',
+                                          'application',
+                                          2)]}]},
+            {'title': 'Fasihi Simulizi: Semi na Maigizo',
+             'code': '3.0',
+             'order': 9,
+             'form_level': 2,
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'title': 'Semi (methali, vitendawili, misemo, nahau, mizungu)',
+                            'periods': 12,
+                            'order': 1,
+                            'outcomes': [('Kubaini aina za semi: methali, vitendawili, misemo, nahau, na '
+                                          'mizungu',
+                                          'knowledge',
+                                          1),
+                                         ('Kutumia semi katika mawasiliano ya kila siku', 'application', 2),
+                                         ('Kufasiri maana ya semi mbalimbali', 'comprehension', 3)]},
+                           {'title': 'Maigizo Simulizi (michezo ya jukwaani, matambiko, ngoma)',
+                            'periods': 12,
+                            'order': 2,
+                            'outcomes': [('Kutambua aina za maigizo simulizi', 'knowledge', 1),
+                                         ('Kueleza sifa na umuhimu wa maigizo simulizi', 'comprehension', 2),
+                                         ('Kushiriki katika michezo ya jukwaani na matambiko',
+                                          'application',
+                                          3)]}]},
+            {'title': 'Utangulizi wa Fasihi Andishi',
+             'code': '4.0',
+             'order': 10,
+             'form_level': 2,
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'title': 'Maana na sifa za Fasihi Andishi',
+                            'periods': 8,
+                            'order': 1,
+                            'outcomes': [('Kueleza maana na sifa za fasihi andishi', 'comprehension', 1),
+                                         ('Kulinganisha fasihi andishi na fasihi simulizi', 'analysis', 2)]},
+                           {'title': 'Tanzu (Riwaya, Tamthilia, Ushairi)',
+                            'periods': 8,
+                            'order': 2,
+                            'outcomes': [('Kubaini tanzu tatu za fasihi andishi: riwaya, tamthilia, na '
+                                          'ushairi',
+                                          'knowledge',
+                                          1),
+                                         ('Kutambua sifa za kila tanzu la fasihi andishi',
+                                          'comprehension',
+                                          2)]},
+                           {'title': 'Vipengele vya uhakiki (Fomu/Dhamira na Fani)',
+                            'periods': 8,
+                            'order': 3,
+                            'outcomes': [('Kufasiri dhana za fomu na dhamira katika fasihi',
+                                          'comprehension',
+                                          1),
+                                         ('Kubaini vipengele vya fani katika uundaji wa fasihi',
+                                          'analysis',
+                                          2)]}]},
+            {'title': 'Sarufi: Ngeli za Nomino na Upatanisho wa Kisarufi',
+             'code': '1.0',
+             'order': 11,
+             'form_level': 3,
+             'periods': 28,
+             'weight': 'high',
+             'subtopics': [{'title': 'Mfumo wa ngeli za nomino (M-WA, KI-VI, LI-YA, U-I, U-ZI)',
+                            'periods': 16,
+                            'order': 1,
+                            'outcomes': [('Kubaini ngeli tano za nomino katika Kiswahili', 'knowledge', 1),
+                                         ('Kutumia ngeli za nomino katika kuunda sentensi', 'application', 2),
+                                         ('Kujadili changamoto za upatanisho wa ngeli', 'analysis', 3)]},
+                           {'title': 'Upatanisho wa kisarufi',
+                            'periods': 12,
+                            'order': 2,
+                            'outcomes': [('Kueleza kanuni za upatanisho wa kisarufi', 'comprehension', 1),
+                                         ('Kutumia kanuni za upatanisho katika uandishi',
+                                          'application',
+                                          2)]}]},
+            {'title': 'Uandishi wa Ubunifu na Dijitali',
+             'code': '2.0',
+             'order': 12,
+             'form_level': 3,
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Makala ya magazetini na majarida',
+                            'periods': 8,
+                            'order': 1,
+                            'outcomes': [('Kubaini sifa za makala ya magazetini na majarida', 'knowledge', 1),
+                                         ('Kuandika makala kwa mtindo wa magazeti', 'application', 2),
+                                         ('Kujadili kanuni za utunzi wa nyimbo, ngonjera na maigizo',
+                                          'comprehension',
+                                          0),
+                                         ('Kuigiza maigizo', 'comprehension', 0),
+                                         ('Kujadili kanuni za utunzi wa hadithi fupi simulizi na andishi',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Uandishi wa kidijitali (E-mail, mitandao ya kijamii, blogu)',
+                            'periods': 8,
+                            'order': 2,
+                            'outcomes': [('Kuandika barua pepe (e-mail) kwa mtindo wa kiofisi',
+                                          'application',
+                                          1),
+                                         ('Kutumia mitandao ya kijamii na blogu kwa uandishi bora',
+                                          'application',
+                                          2),
+                                         ('Kutunga nyimbo, ngonjera na maigizo', 'comprehension', 0),
+                                         ('Kutunga hadithi fupi simulizi na andishi', 'comprehension', 0)]},
+                           {'title': 'Hotuba rasmi',
+                            'periods': 8,
+                            'order': 3,
+                            'outcomes': [('Kueleza vipengele vya hotuba rasmi', 'comprehension', 1),
+                                         ('Kuandika na kusoma hotuba rasmi kwa ufasaha', 'synthesis', 2),
+                                         ('Kuimba nyimbo na kutamba ngonjera', 'comprehension', 0),
+                                         ('Kutamba hadithi', 'comprehension', 0)]}]},
+            {'title': 'Uhakiki wa Vitabu Teule: Riwaya na Tamthilia',
+             'code': '3.0',
+             'order': 13,
+             'form_level': 3,
+             'periods': 30,
+             'weight': 'high',
+             'subtopics': [{'title': 'Uhakiki wa riwaya mbili',
+                            'periods': 10,
+                            'order': 1,
+                            'outcomes': [('Kuchambua mada na viungo vya riwaya mbili zilizoteuliwa',
+                                          'analysis',
+                                          1),
+                                         ('Kujadili mitindo ya uandishi ya waandishi', 'analysis', 2),
+                                         ('Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, '
+                                          'mhakiki na sifa za mhakik',
+                                          'comprehension',
+                                          0),
+                                         ('Kuhakiki fani na maudhui katika tamthiliya', 'comprehension', 0),
+                                         ('Kujadili dhana ya mashairi andishi', 'comprehension', 0),
+                                         ('Kuhusianisha kazi za fasihi na maisha halisi',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Uhakiki wa tamthilia mbili',
+                            'periods': 10,
+                            'order': 2,
+                            'outcomes': [('Kuchambua migogoro na mada za tamthilia mbili', 'analysis', 1),
+                                         ('Kujadili majukumu ya wahusika na misingi ya tamthilia',
+                                          'analysis',
+                                          2),
+                                         ('Kufafanua misingi ya uhakiki wa kazi za fasihi simulizi na fasihi '
+                                          'andishi (vipengele vya fani na maudhu',
+                                          'comprehension',
+                                          0),
+                                         ('Kutathmini namna maudhui ya kazi alizozihakiki yanavyosadifu '
+                                          'jamii inayomzunguka',
+                                          'comprehension',
+                                          0),
+                                         ('Kuhakiki fani na maudhui katika mashairi andishi',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Uchambuzi wa dhamira na vipengele vya fani',
+                            'periods': 10,
+                            'order': 3,
+                            'outcomes': [('Kufasiri dhamira za vitabu vilivyoteuliwa', 'comprehension', 1),
+                                         ('Kuchambua vipengele vya fani katika vitabu vya fasihi',
+                                          'analysis',
+                                          2),
+                                         ('Kutumia nadharia za uhakiki katika uchambuzi wa fasihi',
+                                          'evaluation',
+                                          3),
+                                         ('Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi '
+                                          'na maigiz',
+                                          'comprehension',
+                                          0),
+                                         ('Kuhakiki fani na maudhui katika riwaya', 'comprehension', 0)]}]},
+            {'title': 'Fasihi Simulizi: Ushairi Simulizi na Maghani',
+             'code': '4.0',
+             'order': 14,
+             'form_level': 3,
+             'periods': 24,
+             'weight': 'high',
+             'subtopics': [{'title': 'Maghani na tanzu zake (tongozo, bembeleza, tanzu za sifa)',
+                            'periods': 14,
+                            'order': 1,
+                            'outcomes': [('Kubaini aina za maghani na tanzu zake', 'knowledge', 1),
+                                         ('Kutambua sifa za tongozo, bembeleza, na tanzu za sifa',
+                                          'comprehension',
+                                          2)]},
+                           {'title': 'Nyimbo (za kazi, harusi, kilio)',
+                            'periods': 10,
+                            'order': 2,
+                            'outcomes': [('Kubaini aina za nyimbo: za kazi, harusi, na kilio',
+                                          'knowledge',
+                                          1),
+                                         ('Kueleza umuhimu wa nyimbo katika jamii ya Kiswahili',
+                                          'comprehension',
+                                          2)]}]},
+            {'title': 'Uundaji wa Maneno na Ukuzaji wa Kamusi',
+             'code': '1.0',
+             'order': 15,
+             'form_level': 4,
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Njia za uundaji wa maneno (kunyambua, kuunganisha, kukopesha, '
+                                     'kufupisha)',
+                            'periods': 14,
+                            'order': 1,
+                            'outcomes': [('Kubaini njia za uundaji wa maneno katika Kiswahili',
+                                          'knowledge',
+                                          1),
+                                         ('Kutumia njia za kunyambua, kuunganisha, kukopesha, na kufupisha',
+                                          'application',
+                                          2),
+                                         ('Kutumia msamiati kwa usahihi katika mazungumzo na maandishi',
+                                          'comprehension',
+                                          0)]},
+                           {'title': 'Ukuzaji na matumizi ya kamusi',
+                            'periods': 10,
+                            'order': 2,
+                            'outcomes': [('Kutumia kamusi kwa usahihi katika utafiti', 'application', 1),
+                                         ('Kujadili changamoto za ukuzaji wa kamusi za Kiswahili',
+                                          'analysis',
+                                          2),
+                                         ('Kutumia taarifa mbalimbali za kamusi katika mawasiliano ya '
+                                          'mazungumzo na maandishi',
+                                          'comprehension',
+                                          0)]}]},
+            {'title': 'Utafsiri na Ukalimani',
+             'code': '2.0',
+             'order': 16,
+             'form_level': 4,
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Dhana ya utafsiri na ukalimani',
+                            'periods': 8,
+                            'order': 1,
+                            'outcomes': [('Kufasiri tofauti kati ya utafsiri na ukalimani',
+                                          'comprehension',
+                                          1),
+                                         ('Kutambua umuhimu wa utafsiri katika jamii', 'comprehension', 2),
+                                         ('Kujadili dhana, misingi, kanuni, na hatua za tafsiri',
+                                          'comprehension',
+                                          0),
+                                         ('Kujadili dhana, kanuni na misingi ya uhariri', 'comprehension', 0),
+                                         ('Kutafsiri matini ndefu sahili', 'comprehension', 0),
+                                         ('Kuhariri matini ndefu za Kiswahili', 'comprehension', 0),
+                                         ('Kujadili dhana na misingi ya ukalimani', 'comprehension', 0)]},
+                           {'title': 'Misingi na kanuni za utafsiri',
+                            'periods': 8,
+                            'order': 2,
+                            'outcomes': [('Kubaini kanuni za utafsiri bora', 'knowledge', 1),
+                                         ('Kutumia kanuni za utafsiri katika tafsiri ya maandishi',
+                                          'application',
+                                          2),
+                                         ('Kutafsiri matini fupi sahili', 'comprehension', 0),
+                                         ('Kuhariri matini fupi za Kiswahili', 'comprehension', 0),
+                                         ('Kutathmini matini zilizotafsiriwa', 'comprehension', 0),
+                                         ('Kutathmini matini zilizohaririwa', 'comprehension', 0),
+                                         ('Kueleza stadi muhimu katika ukalimani', 'comprehension', 0)]},
+                           {'title': 'Changamoto za utafsiri',
+                            'periods': 8,
+                            'order': 3,
+                            'outcomes': [('Kujadili changamoto za utafsiri wa lugha na utamaduni',
+                                          'analysis',
+                                          1),
+                                         ('Kupendekeza suluhisho la changamoto za utafsiri', 'synthesis', 2),
+                                         ('Kutatua changamoto zinazojitokeza katika kutafsiri matini',
+                                          'comprehension',
+                                          0),
+                                         ('Kukalimani mazungumzo mafupi na sahili katika miktadha mbalimbali',
+                                          'comprehension',
+                                          0)]}]},
+            {'title': 'Uhakiki wa Ushairi Andishi',
+             'code': '3.0',
+             'order': 17,
+             'form_level': 4,
+             'periods': 30,
+             'weight': 'high',
+             'subtopics': [{'title': 'Diwani mbili teule',
+                            'periods': 12,
+                            'order': 1,
+                            'outcomes': [('Kuchambua mada na dhamira za diwani mbili zilizoteuliwa',
+                                          'analysis',
+                                          1),
+                                         ('Kujadili mtindo na lugha ya washairi', 'analysis', 2)]},
+                           {'title': 'Mashairi ya mapokeo na ya masivina',
+                            'periods': 10,
+                            'order': 2,
+                            'outcomes': [('Kulinganisha mashairi ya mapokeo na ya masivina', 'analysis', 1),
+                                         ('Kujadili mada na mtindo wa mashairi mbalimbali', 'analysis', 2)]},
+                           {'title': 'Lugha ya ushairi (tamathali, mbinu, ishara)',
+                            'periods': 8,
+                            'order': 3,
+                            'outcomes': [('Kubaini tamathali za lugha katika mashairi', 'knowledge', 1),
+                                         ('Kuchambua mbinu za ushairi: tamathali, mbinu, na ishara',
+                                          'analysis',
+                                          2)]}]},
+            {'title': 'Lugha ya Kiswahili katika Maendeleo ya Taifa',
+             'code': '4.0',
+             'order': 18,
+             'form_level': 4,
+             'periods': 20,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Historia ya kuenea kwa Kiswahili',
+                            'periods': 10,
+                            'order': 1,
+                            'outcomes': [('Kueleza historia ya kuenea kwa Kiswahili katika Afrika Mashariki',
+                                          'comprehension',
+                                          1),
+                                         ('Kujadili majukumu ya Kiswahili katika historia', 'analysis', 2)]},
+                           {'title': 'Kiswahili kama lugha ya taifa, elimu, ukombozi na diplomasia',
+                            'periods': 10,
+                            'order': 2,
+                            'outcomes': [('Kujadili jukumu la Kiswahili katika taifa, elimu, ukombozi na '
+                                          'diplomasia',
+                                          'analysis',
+                                          1),
+                                         ('Kupendekeza mikakati ya kuendeleza Kiswahili', 'synthesis', 2)]}]},
+            {'title': 'Fonetiki na Fonolojia ya Kiswahili',
+             'code': '1.0',
+             'order': 19,
+             'form_level': 5,
+             'periods': 32,
+             'weight': 'high',
+             'subtopics': [{'title': 'Foni na fonimu',
+                            'periods': 8,
+                            'order': 1,
+                            'outcomes': [('Kufasiri dhana za foni na fonimu katika Kiswahili',
+                                          'comprehension',
+                                          1),
+                                         ('Kubaini tofauti kati ya foni na fonimu', 'analysis', 2)]},
+                           {'title': 'Ala za sauti',
+                            'periods': 8,
+                            'order': 2,
+                            'outcomes': [('Kubaini ala za sauti katika Kiswahili', 'knowledge', 1),
+                                         ('Kueleza jukumu la ala za sauti katika matamshi',
+                                          'comprehension',
+                                          2)]},
+                           {'title': 'Mahali na namna ya kutamkia',
+                            'periods': 8,
+                            'order': 3,
+                            'outcomes': [('Kubaini mahali pa kutamkia sauti', 'knowledge', 1),
+                                         ('Kueleza namna ya kutamkia sauti mbalimbali', 'application', 2)]},
+                           {'title': 'Mabadiliko ya kifonolojia',
+                            'periods': 8,
+                            'order': 4,
+                            'outcomes': [('Kujadili mabadiliko ya kifonolojia katika Kiswahili',
+                                          'analysis',
+                                          1),
+                                         ('Kuchambua athari za mabadiliko ya kifonolojia katika lugha',
+                                          'synthesis',
+                                          2)]}]},
+            {'title': 'Mofolojia ya Kiswahili (Muundo wa Maneno)',
+             'code': '2.0',
+             'order': 20,
+             'form_level': 5,
+             'periods': 28,
+             'weight': 'high',
+             'subtopics': [{'title': 'Viambishi (awali na tamati)',
+                            'periods': 10,
+                            'order': 1,
+                            'outcomes': [('Kubaini viambishi vya awali na tamati katika Kiswahili',
+                                          'knowledge',
+                                          1),
+                                         ('Kueleza jukumu la viambishi katika uundaji wa maneno',
+                                          'comprehension',
+                                          2)]},
+                           {'title': 'Mzizi na shina',
+                            'periods': 9,
+                            'order': 2,
+                            'outcomes': [('Kufasiri dhana ya mzizi na shina katika Kiswahili',
+                                          'comprehension',
+                                          1),
+                                         ('Kubaini mzizi na shina katika maneno mbalimbali',
+                                          'application',
+                                          2)]},
+                           {'title': 'Unyambulishaji na unyumbufu',
+                            'periods': 9,
+                            'order': 3,
+                            'outcomes': [('Kujadili kanuni za unyambulishaji katika Kiswahili',
+                                          'analysis',
+                                          1),
+                                         ('Kutumia kanuni za unyumbufu katika uundaji wa maneno',
+                                          'application',
+                                          2)]}]},
+            {'title': 'Utumizi wa Lugha na Mtindo',
+             'code': '3.0',
+             'order': 21,
+             'form_level': 5,
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Sajili (sheria, biashara, kidini, kitaaluma, michezo)',
+                            'periods': 24,
+                            'order': 1,
+                            'outcomes': [('Kubaini tofauti za sajili za Kiswahili: sheria, biashara, kidini, '
+                                          'kitaaluma, na michezo',
+                                          'knowledge',
+                                          1),
+                                         ('Kutumia sajili mbalimbali kulingana na muktadha',
+                                          'application',
+                                          2),
+                                         ('Kujadili umuhimu wa sajili katika mawasiliano ya kitaalamu',
+                                          'analysis',
+                                          3)]}]},
+            {'title': 'Uandishi wa Insha za Kiakademia',
+             'code': '4.0',
+             'order': 22,
+             'form_level': 5,
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Wasifu, insha za kiuhakiki, makala za utafiti',
+                            'periods': 24,
+                            'order': 1,
+                            'outcomes': [('Kuandika wasifu wa kielimu kwa mfumo wa kiakademia',
+                                          'application',
+                                          1),
+                                         ('Kuandika insha za kiuhakiki kwa msimamo thabiti', 'synthesis', 2),
+                                         ('Kuandika makala za utafiti kwa kanuni za kiakademia',
+                                          'synthesis',
+                                          3)]}]},
+            {'title': 'Nadharia ya Fasihi',
+             'code': '5.0',
+             'order': 23,
+             'form_level': 5,
+             'periods': 28,
+             'weight': 'high',
+             'subtopics': [{'title': 'Maana ya sanaa, chimbuko la fasihi, uhusiano wa fasihi na jamii',
+                            'periods': 14,
+                            'order': 1,
+                            'outcomes': [('Kufasiri dhana za sanaa na chimbuko la fasihi',
+                                          'comprehension',
+                                          1),
+                                         ('Kujadili uhusiano kati ya fasihi na jamii', 'analysis', 2)]},
+                           {'title': 'Nadharia za uhakiki (Umarx, Ufeministi, Uhalisia, Ushabiki)',
+                            'periods': 14,
+                            'order': 2,
+                            'outcomes': [('Kubaini nadharia nne za uhakiki la fasihi', 'knowledge', 1),
+                                         ('Kulinganisha nadharia za Umarx, Ufeministi, Uhalisia, na Ushabiki',
+                                          'analysis',
+                                          2),
+                                         ('Kutumia nadharia za uhakiki katika uchambuzi wa fasihi',
+                                          'evaluation',
+                                          3)]}]},
+            {'title': 'Fasihi Simulizi kwa Kina',
+             'code': '6.0',
+             'order': 24,
+             'form_level': 5,
+             'periods': 28,
+             'weight': 'high',
+             'subtopics': [{'title': 'Mbinu za utafiti wa nyanjani',
+                            'periods': 10,
+                            'order': 1,
+                            'outcomes': [('Kubaini mbinu za utafiti wa nyanjani katika fasihi simulizi',
+                                          'knowledge',
+                                          1),
+                                         ('Kutumia mbinu za utafiti wa nyanjani katika ukusanyaji wa data',
+                                          'application',
+                                          2)]},
+                           {'title': 'Ukusanyaji na uhifadhi wa data',
+                            'periods': 9,
+                            'order': 2,
+                            'outcomes': [('Kueleza kanuni za ukusanyaji na uhifadhi wa data',
+                                          'comprehension',
+                                          1),
+                                         ('Kutumia kanuni za uhifadhi wa data katika utafiti wa fasihi',
+                                          'application',
+                                          2)]},
+                           {'title': 'Uhakiki wa tanzu za fasihi simulizi',
+                            'periods': 9,
+                            'order': 3,
+                            'outcomes': [('Kuchambua tanzu za fasihi simulizi kwa kina', 'analysis', 1),
+                                         ('Kutumia mbinu za uhakiki katika uchambuzi wa fasihi simulizi',
+                                          'evaluation',
+                                          2)]}]},
+            {'title': 'Uhakiki wa Riwaya (Ngazi ya Juu)',
+             'code': '7.0',
+             'order': 25,
+             'form_level': 5,
+             'periods': 32,
+             'weight': 'high',
+             'subtopics': [{'title': 'Uhakiki wa riwaya mbili za A-Level kwa nadharia za fasihi',
+                            'periods': 32,
+                            'order': 1,
+                            'outcomes': [('Kuchambua riwaya mbili kwa kutumia nadharia za uhakiki',
+                                          'analysis',
+                                          1),
+                                         ('Kujadili mada, mhusika, na mtindo wa riwaya', 'synthesis', 2),
+                                         ('Kutoa ukiri wa fasihi kwa kutumia nadharia za fasihi',
+                                          'evaluation',
+                                          3)]}]},
+            {'title': 'Sintaksia ya Kiswahili (Muundo wa Sentensi)',
+             'code': '1.0',
+             'order': 26,
+             'form_level': 6,
+             'periods': 32,
+             'weight': 'high',
+             'subtopics': [{'title': 'Kirai, kishazi na sentensi',
+                            'periods': 10,
+                            'order': 1,
+                            'outcomes': [('Kubaini dhana za kirai, kishazi, na sentensi', 'knowledge', 1),
+                                         ('Kuchambua muundo wa kirai na kishazi katika Kiswahili',
+                                          'analysis',
+                                          2)]},
+                           {'title': 'Aina za sentensi (sahili, ambatano, changamano)',
+                            'periods': 12,
+                            'order': 2,
+                            'outcomes': [('Kubaini aina tatu za sentensi: sahili, ambatano, changamano',
+                                          'knowledge',
+                                          1),
+                                         ('Kujadili tofauti kati ya sentensi sahili, ambatano, na changamano',
+                                          'analysis',
+                                          2),
+                                         ('Kuunda sentensi za aina mbalimbali kwa usahihi',
+                                          'application',
+                                          3)]},
+                           {'title': 'Uchambuzi wa sentensi kwa mishale/bano',
+                            'periods': 10,
+                            'order': 3,
+                            'outcomes': [('Kutumia mishale na bano katika uchambuzi wa sentensi',
+                                          'application',
+                                          1),
+                                         ('Kuchambua muundo wa sentensi kwa njia ya mishale na bano',
+                                          'analysis',
+                                          2)]}]},
+            {'title': 'Semantiki na Pragmashia',
+             'code': '2.0',
+             'order': 27,
+             'form_level': 6,
+             'periods': 28,
+             'weight': 'high',
+             'subtopics': [{'title': 'Maana ya maneno (kileksika na muktadha)',
+                            'periods': 10,
+                            'order': 1,
+                            'outcomes': [('Kufasiri dhana za kileksika na muktadha katika semantiki',
+                                          'comprehension',
+                                          1),
+                                         ('Kujadili jukumu la muktadha katika kubaini maana ya maneno',
+                                          'analysis',
+                                          2)]},
+                           {'title': 'Uhusiano wa kimaana (visawe, vinyume, homonimu, polisemia)',
+                            'periods': 10,
+                            'order': 2,
+                            'outcomes': [('Kubaini uhusiano wa kimaana: visawe, vinyume, homonimu, polisemia',
+                                          'knowledge',
+                                          1),
+                                         ('Kujadili maana za maneno kulingana na muktadha', 'analysis', 2)]},
+                           {'title': 'Pragmashia na vitendo vya usemi',
+                            'periods': 8,
+                            'order': 3,
+                            'outcomes': [('Kufasiri dhana za pragmashia na vitendo vya usemi',
+                                          'comprehension',
+                                          1),
+                                         ('Kuchambua matumizi ya lugha katika muktadha wa jamii',
+                                          'analysis',
+                                          2)]}]},
+            {'title': 'Maendeleo na Ukuaji wa Kiswahili',
+             'code': '3.0',
+             'order': 28,
+             'form_level': 6,
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'title': 'usanifishaji wa Kiswahili 1930',
+                            'periods': 8,
+                            'order': 1,
+                            'outcomes': [('Kueleza historia ya usanifishaji wa Kiswahili mwaka 1930',
+                                          'comprehension',
+                                          1),
+                                         ('Kujadili athari za usanifishaji wa Kiswahili', 'analysis', 2)]},
+                           {'title': 'Kamati ya lugha ya Afrika Mashariki',
+                            'periods': 8,
+                            'order': 2,
+                            'outcomes': [('Kubaini jukumu la Kamati ya Lugha ya Afrika Mashariki',
+                                          'knowledge',
+                                          1),
+                                         ('Kujadili mafanikio ya Kamati katika ukuaji wa Kiswahili',
+                                          'analysis',
+                                          2)]},
+                           {'title': 'Changamoto za utandawazi',
+                            'periods': 8,
+                            'order': 3,
+                            'outcomes': [('Kujadili changamoto za utandawazi kwa Kiswahili', 'analysis', 1),
+                                         ('Kupendekeza mikakati ya kukabiliana na changamoto za utandawazi',
+                                          'synthesis',
+                                          2)]}]},
+            {'title': 'Uhakiki wa Tamthilia za Kina',
+             'code': '4.0',
+             'order': 29,
+             'form_level': 6,
+             'periods': 32,
+             'weight': 'high',
+             'subtopics': [{'title': 'Tamthilia mbili za juu',
+                            'periods': 12,
+                            'order': 1,
+                            'outcomes': [('Kuchambua mada na migogoro katika tamthilia mbili', 'analysis', 1),
+                                         ('Kujadili mtindo wa uandishi wa warembo wa tamthilia',
+                                          'analysis',
+                                          2)]},
+                           {'title': 'Migogoro na falsafa ya mwandishi',
+                            'periods': 10,
+                            'order': 2,
+                            'outcomes': [('Kubaini migogoro kuu katika tamthilia zilizoteuliwa',
+                                          'knowledge',
+                                          1),
+                                         ('Kujadili falsafa na maono ya mwandishi', 'synthesis', 2)]},
+                           {'title': 'Mbinu za kimtindo (rejeshi, kinaya, tanzia, vichekesho)',
+                            'periods': 10,
+                            'order': 3,
+                            'outcomes': [('Kubaini mbinu za kimtindo: rejeshi, kinaya, tanzia, na vichekesho',
+                                          'knowledge',
+                                          1),
+                                         ('Kuchambua matumizi ya mbinu za kimtindo katika tamthilia',
+                                          'analysis',
+                                          2),
+                                         ('Kutumia mbinu za kimtindo katika uchambuzi wa tamthilia',
+                                          'evaluation',
+                                          3)]}]},
+            {'title': 'Uhakiki wa Diwani (Ushairi wa Kina)',
+             'code': '5.0',
+             'order': 30,
+             'form_level': 6,
+             'periods': 30,
+             'weight': 'high',
+             'subtopics': [{'title': 'Diwani mbili (mizani na vina dhidi ya huria)',
+                            'periods': 16,
+                            'order': 1,
+                            'outcomes': [('Kuchambua mizani na vina katika diwani mbili zilizoteuliwa',
+                                          'analysis',
+                                          1),
+                                         ('Kulinganisha mtindo wa ushairi wa mizani na huria', 'analysis', 2),
+                                         ('Kujadili lugha na tamathali za ushairi katika diwani',
+                                          'synthesis',
+                                          3)]},
+                           {'title': 'Mgogoro wa wana-mapokeo na wana-kisasa',
+                            'periods': 14,
+                            'order': 2,
+                            'outcomes': [('Kujadili mgogoro kati ya wana-mapokeo na wana-kisasa katika '
+                                          'ushairi',
+                                          'analysis',
+                                          1),
+                                         ('Kutoa maoni ya ukatili kuhusu mapinduzi ya ushairi wa Kiswahili',
+                                          'evaluation',
+                                          2)]}]},
+            {'title': 'Uandishi wa Kifasihi',
+             'code': '6.0',
+             'order': 31,
+             'form_level': 6,
+             'periods': 24,
+             'weight': 'medium',
+             'subtopics': [{'title': 'Kazi za ubunifu (mashairi, michezo, hadithi fupi)',
+                            'periods': 24,
+                            'order': 1,
+                            'outcomes': [('Kuandika mashairi kwa kutumia mbinu za ushairi', 'synthesis', 1),
+                                         ('Kuandika michezo midogo ya jukwaani', 'synthesis', 2),
+                                         ('Kuandika hadithi fupi kwa mtindo wa kifasihi',
+                                          'synthesis',
+                                          3)]}]}]},
     # ========================================================================
     # HISTORY — NECTA Code 013
     # Source: TIE History Syllabus Form I-VI

@@ -28,6 +28,151 @@ import re
 from collections import OrderedDict
 from pathlib import Path
 
+# ---------------------------------------------------------------------------
+# Enrichment maps (ENGLISH / KISWAHILI)
+#
+# The KB O-Level JSON for these two subjects collapsed all Forms 1-4 into a
+# single pool of competency units (no per-form signal), so we keep the curated
+# per-form "skeleton" topics (preserving form distribution + period totals) and
+# inject every authentic KB competence lesson into the best-matching seed
+# topic. Keys are the exact _clean()-ed competence (topic_name) from the KB;
+# values are the exact seed topic title to enrich. A-Level is never touched.
+# ---------------------------------------------------------------------------
+ENGLISH_TOPIC_MAP = {
+    "Read texts for comprehension": "Reading for Comprehension (Part I)",
+    "Comprehend oral messages with increasing difficulty": "Listening and Speaking (Oral Communication)",
+    "Respond appropriately in a variety of oral and written communication contexts": "Reading for Fluency and Critical Inference",
+    "Construct meaning from a variety of texts": "Complex Reading and Summary Compilations",
+    "Use ICT tools to search for information from different sources": "Reading for Fluency and Critical Inference",
+    "Organise information obtained from different sources": "Complex Reading and Summary Compilations",
+    ". Develop listening skills": "Listening and Speaking (Oral Communication)",
+    "Develop listening skills": "Listening and Speaking (Oral Communication)",
+    "Produce short and coherent oral messages with intelligible pronunciation and fluency": "Spoken English and Debate Mechanics",
+    "Use appropriate grammar and vocabulary for oral communication in a variety of contexts": "Spoken English and Debate Mechanics",
+    "Use appropriate grammar and vocabulary in oral and in written language tasks": "Grammar Patterns (Part I)",
+    "Develop vocabulary from conversations and written texts": "Vocabulary Building and Expressions",
+    "Create a variety of texts for different communicative purposes using the appropriate tone and register": "Writing Skills (Part I)",
+    "Conduct a socio- cultural analysis of functional texts": "Professional and Academic Writing",
+    "Apply principles of editing and proofreading in a variety of texts": "Translation and Interpretation Fundamentals",
+    "Apply principles of interpretation to provide simple authentic interpretations": "Translation and Interpretation Fundamentals",
+    "Apply principles of translation to produce simple authentic translation": "Translation and Interpretation Fundamentals",
+    "Manage short translation and editing projects using Computer- Assisted Tools": "Translation and Interpretation Fundamentals",
+    "Appreciate the aesthetics and value of literature": "Introduction to Literature",
+    "Evaluate the context in which literary texts are written, read and understood": "Introduction to Literary Analysis",
+    "Analyse genres of literature and appreciate their conventions": "Literary Critique: Selected Plays",
+    "Create simple literary works": "Creative and Digital Writing",
+}
+
+KISWAHILI_TOPIC_MAP = {
+    "Kutambua Kiswahili kama kielelezo cha utaifa na utambulisho wa Mtanzania": "Dhana ya Lugha na Mawasiliano",
+    "Kukuza uelewa wa sarufi ya Kiswahili": "Sarufi ya Kiswahili: Sauti na Maneno",
+    "Kusikiliza na kuelewa mazungumzo": "Ustadi wa Kusikiliza na Kuzungumza",
+    "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo": "Ustadi wa Kusikiliza na Kuzungumza",
+    "Kusoma matini kwa ufasaha na ufahamu": "Ustadi wa Kusoma",
+    "Kutumia kamusi katika miktadha mbalimbali": "Uundaji wa Maneno na Ukuzaji wa Kamusi",
+    "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali": "Ustadi wa Kuandika",
+    "Kukuza uelewa wa misingi ya fasihi ya Kiswahili": "Utangulizi wa Fasihi na Fasihi Simulizi",
+    "Kuhakiki kazi za fasihi ya Kiswahili": "Uhakiki wa Vitabu Teule: Riwaya na Tamthilia",
+    "Kubuni kazi za fasihi ya Kiswahili": "Uandishi wa Ubunifu na Dijitali",
+    "Kufanya tafsiri sahili katika lugha ya Kiswahili": "Utafsiri na Ukalimani",
+    "Kuhariri matini mbalimbali za Kiswahili": "Utafsiri na Ukalimani",
+    "Kufanya ukalimani sahili kwa lugha ya Kiswahili": "Utafsiri na Ukalimani",
+}
+
+
+def enrich_olevel_topics(topics: list[dict], units: list[dict], comp_map: dict) -> tuple[list[dict], list, list]:
+    """Inject authentic KB lessons into a per-form skeleton, preserving structure.
+
+    Keeps every existing topic/subtopic/outcome and appends each competence's
+    distinct lessons (deduped against existing outcome text and within the KB)
+    round-robin across the target topic's subtopics. Returns
+    (enriched_topics, assigned_lessons, unmatched_entries).
+    """
+    # Index target topics by lowercased title (only O-Level; A-Level untouched).
+    by_title: dict[str, list[dict]] = {}
+    order: dict[str, int] = {}
+    for t in topics:
+        if t["form_level"] <= 4 and t.get("title"):
+            by_title.setdefault(t["title"].lower(), []).append(t)
+            order.setdefault(t["title"].lower(), len(order))
+
+    # Collect distinct cleaned lessons per competence and match to a target topic.
+    assigned = []
+    unmatched = []
+    for unit in units:
+        for comp in unit.get("topics", []):
+            c_title = _clean(comp.get("topic_name"))
+            if not c_title or c_title not in comp_map:
+                unmatched.append(c_title)
+                continue
+            target = comp_map[c_title].lower()
+            targets = by_title.get(target)
+            if not targets:
+                unmatched.append(f"{c_title} -> {comp_map[c_title]}")
+                continue
+            lessons = []
+            for l in comp.get("lessons", []):
+                txt = _dedupe_active_verb(_clean(l.get("title") or l.get("markdown_content")))
+                if txt:
+                    lessons.append(txt)
+            lessons = list(OrderedDict.fromkeys(lessons))
+
+            # Distribute round-robin across the target topic's subtopics.
+            for sp_idx, tgt in enumerate(targets):
+                subs = tgt.get("subtopics", [])
+                if not subs:
+                    continue
+                existing = {o[0] for sp in subs for o in sp.get("outcomes", [])
+                            if isinstance(o, dict) and o.get("description")}
+                # Also track tuple-outcome descriptions.
+                for sp in subs:
+                    for o in sp.get("outcomes", []):
+                        if isinstance(o, (list, tuple)) and o:
+                            existing.add(o[0])
+                slot = 0
+                for lesson in lessons:
+                    if lesson in existing:
+                        continue
+                    sp = subs[slot % len(subs)]
+                    sp.setdefault("outcomes", []).append((lesson, "comprehension", 0))
+                    existing.add(lesson)
+                    assigned.append(lesson)
+                    slot += 1
+
+    return topics, assigned, unmatched
+
+
+def enrich_subject(kb_root: str, slug: str, existing_subject: dict) -> dict | None:
+    """Enrich an O-Level per-form skeleton with authentic KB lessons.
+
+    Preserves all existing topics, subtopics, outcomes, period totals, codes and
+    A-Level topics; appends the KB competence lessons into matching topics.
+    """
+    comp_map = {
+        "english": ENGLISH_TOPIC_MAP,
+        "kiswahili": KISWAHILI_TOPIC_MAP,
+    }.get(slug)
+    if comp_map is None:
+        return None
+    data = load_kb_o_level(kb_root, slug)
+    if not data:
+        return None
+    topics = existing_subject.get("topics", [])
+    enriched, assigned, unmatched = enrich_olevel_topics(topics, data["units"], comp_map)
+    subject = dict(existing_subject)
+    subject["topics"] = enriched
+    # Recompute subtopic order indexes after injection.
+    for t in subject["topics"]:
+        if t["form_level"] <= 4:
+            for sp in t.get("subtopics", []):
+                sp["order"] = sp.get("order") or 0
+    return {
+        "subject": subject,
+        "assigned": assigned,
+        "unmatched": unmatched,
+    }
+
+
 # Official NECTA subject codes (authoritative; never overridden by KB JSON).
 OFFICIAL_NECTA_CODE = {
     "mathematics": "021",
