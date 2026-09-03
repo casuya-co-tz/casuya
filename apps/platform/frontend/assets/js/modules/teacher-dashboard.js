@@ -1516,10 +1516,14 @@ async function renderTeacherDashboard() {
                   </label>
                 </div>
                 <label>Topic / Mada
-                  <input class="input" name="topic" placeholder="e.g. Linear Equations / Milinganyo" required>
+                  <select class="input" name="topic" id="tdoc-topic" required>
+                    <option value="">— choose subject & form to load topics —</option>
+                  </select>
                 </label>
-                <label>Subtopic / Sehemu ya Mada (optional)
-                  <input class="input" name="subtopic" placeholder="e.g. Solving for x">
+                <label>Subtopic / Sehemu ya Mada
+                  <select class="input" name="subtopic" id="tdoc-subtopic">
+                    <option value="">— choose a topic first —</option>
+                  </select>
                 </label>
                 <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
                   <label style="flex:1;min-width:150px">School / Shule
@@ -1632,17 +1636,19 @@ async function renderTeacherDashboard() {
         renderSubTabs();
         renderSavedList();
       });
-      document.getElementById("tdoc-lesson-seed")?.addEventListener("click", () => {
-        const ss = document.getElementById("tdoc-ss")?.value || "mathematics";
+      document.getElementById("tdoc-lesson-seed")?.addEventListener("click", async () => {
+        const topicSel = document.getElementById("tdoc-topic");
+        const subSel = document.getElementById("tdoc-subtopic");
         const form = document.querySelector("#tdoc-lesson-form");
+        // Pick the first real topic (and its first subtopic if any) from the
+        // dropdowns, which are populated from the authentic TIE syllabus.
+        if (topicSel && topicSel.options.length > 1) {
+          topicSel.selectedIndex = 1;
+          topicSel.dispatchEvent(new Event("change"));
+          await new Promise((r) => setTimeout(r, 0));
+          if (subSel && subSel.options.length > 1) subSel.selectedIndex = 1;
+        }
         if (form) {
-          if (isSwSubj(ss)) {
-            form.topic.value = "Fasihi Simulizi";
-            form.subtopic.value = "Methali";
-          } else {
-            form.topic.value = "Linear Equations";
-            form.subtopic.value = "Solving Linear Equations";
-          }
           if (form.period) form.period.value = "Period 1";
           if (form.number_of_students) form.number_of_students.value = "40";
           if (form.students_boys) form.students_boys.value = "20";
@@ -1650,6 +1656,63 @@ async function renderTeacherDashboard() {
           if (form.duration_minutes) form.duration_minutes.value = "40";
         }
       });
+
+      async function loadSyllabusTopics() {
+        const ss = document.getElementById("tdoc-ss")?.value;
+        const formLevel = document.querySelector("#tdoc-lesson-form [name=form_level]")?.value;
+        const topicSel = document.getElementById("tdoc-topic");
+        const subSel = document.getElementById("tdoc-subtopic");
+        if (!topicSel) return;
+        topicSel.innerHTML = '<option value="">Loading topics…</option>';
+        subSel.innerHTML = '<option value="">— choose a topic first —</option>';
+        if (!ss || !formLevel) {
+          topicSel.innerHTML = '<option value="">— choose subject & form to load topics —</option>';
+          return;
+        }
+        let topics = [];
+        try {
+          const res = await request(`/syllabus/subjects/${encodeURIComponent(ss)}/forms/${formLevel}?_t=${Date.now()}`);
+          topics = (res && Array.isArray(res.topics)) ? res.topics : [];
+        } catch (e) {
+          topics = [];
+        }
+        if (!topics.length) {
+          topicSel.innerHTML = '<option value="">No syllabus topics found</option>';
+          return;
+        }
+        topicSel.innerHTML =
+          '<option value="">— select a topic —</option>' +
+          topics.map((t) => {
+            const code = t.code ? `${t.code} ` : "";
+            const subs = (t.subtopics || []).map((s) => ({ title: s.title, code: s.code || "" }));
+            const subJson = escapeHtml(JSON.stringify(subs)).replace(/"/g, "&quot;");
+            return `<option value="${escapeHtml(t.title)}" data-subtopics="${subJson}">${escapeHtml(code + t.title)}</option>`;
+          }).join("");
+      }
+
+      function loadSubtopicOptions() {
+        const topicSel = document.getElementById("tdoc-topic");
+        const subSel = document.getElementById("tdoc-subtopic");
+        if (!subSel || !topicSel) return;
+        subSel.innerHTML = '<option value="">— select a topic first —</option>';
+        const chosen = topicSel.value;
+        if (!chosen) return;
+        const option = Array.from(topicSel.options).find((o) => o.value === chosen);
+        const subtopics = option ? (option.dataset.subtopics ? JSON.parse(option.dataset.subtopics) : []) : [];
+        subSel.innerHTML =
+          '<option value="">— select a subtopic —</option>' +
+          subtopics.map((s) => {
+            const code = s.code ? `${s.code} ` : "";
+            return `<option value="${escapeHtml(s.title)}">${escapeHtml(code + s.title)}</option>`;
+          }).join("");
+      }
+
+      const lessonSs = document.getElementById("tdoc-ss");
+      lessonSs?.addEventListener("change", loadSyllabusTopics);
+      const lessonFormLevel = document.querySelector("#tdoc-lesson-form [name=form_level]");
+      lessonFormLevel?.addEventListener("change", loadSyllabusTopics);
+      document.getElementById("tdoc-topic")?.addEventListener("change", loadSubtopicOptions);
+      loadSyllabusTopics();
 
       document.getElementById("tdoc-lesson-form")?.addEventListener("submit", async (e) => {
         e.preventDefault();
