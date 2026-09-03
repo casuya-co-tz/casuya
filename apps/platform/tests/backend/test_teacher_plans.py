@@ -98,15 +98,50 @@ def test_lesson_plan_offline_render_kiswahili():
     assert "Kigezo cha Tathmini" in html or "Mpango wa Somo" in html
 
 
-def test_scheme_of_work_offline_render():
+def test_scheme_of_work_offline_render(monkeypatch):
+    knowledge_topics = [
+        {
+            "title": "Cell Biology", "code": "1.0", "estimated_periods": 20,
+            "subtopics": [
+                {"title": "Cell Structure", "code": "1.1", "estimated_periods": 8,
+                 "outcomes": [{"description": "Describe the cell", "cognitive_level": "knowledge"}]},
+                {"title": "Cell Division", "code": "1.2", "estimated_periods": 12,
+                 "outcomes": [{"description": "Explain mitosis", "cognitive_level": "comprehension"}]},
+            ],
+        },
+        {
+            "title": "Genetics", "code": "2.0", "estimated_periods": 20,
+            "subtopics": [
+                {"title": "DNA and RNA", "code": "2.1", "estimated_periods": 10,
+                 "outcomes": [{"description": "Describe DNA structure", "cognitive_level": "knowledge"}]},
+                {"title": "Mendelian Inheritance", "code": "2.2", "estimated_periods": 10,
+                 "outcomes": [{"description": "Apply Mendel's laws", "cognitive_level": "application"}]},
+            ],
+        },
+    ]
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_subject_with_form",
+        lambda slug, form: {"topics": knowledge_topics},
+    )
+
     plan = _build_scheme_offline(
         subject_slug="biology", subject_label="Biology", form_level=3,
         term="Term 1", academic_year="2026", school_name="School",
         teacher_name="Teacher", topics=["Cell Biology", "Genetics"], lang="en",
     )
-    assert len(plan["weeks"]) >= 8
+    # weeks derived from the knowledge base subtopics (2 topics x 2 subtopics).
+    assert [w["specific_competence"] for w in plan["weeks"]] == [
+        "1.1 Cell Structure", "1.2 Cell Division", "2.1 DNA and RNA", "2.2 Mendelian Inheritance",
+    ]
+    assert plan["weeks"][0]["main_competence"] == "1.0 Cell Biology"
+    assert "Describe the cell" in plan["weeks"][0]["learning_activities"]
+    assert plan["weeks"][0]["periods"] == 8
+    # Term I maps the first 4 weeks to January (4 weeks per month).
+    assert all(w["month"] == "January" for w in plan["weeks"])
+
     html = render_scheme_of_work_html(plan)
     assert "Cell Biology" in html
+    assert "Cell Structure" in html
     assert "Term 1" in html
     assert "downloadAsWord" in html
     assert "ORIENTATION COURSE" in html

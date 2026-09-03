@@ -16,7 +16,7 @@ import re
 from datetime import datetime, timezone
 
 from backend.services.ai_service import _call_ai_service
-from backend.services.syllabus_service import get_curriculum_context
+from backend.services.syllabus_service import get_curriculum_context, get_subject_with_form
 
 logger = logging.getLogger(__name__)
 
@@ -515,7 +515,6 @@ def _build_scheme_offline(
     school_name, teacher_name, topics, lang,
 ) -> dict:
     class_name = f"Form {form_level}" if lang == "en" else f"Kidato {form_level}"
-    num_weeks = 12 if "1" in term else (12 if "2" in term else 8)
     weeks = []
     months_en = ["January", "February", "March", "April", "May", "June",
                  "July", "August", "September", "October", "November", "December"]
@@ -527,50 +526,107 @@ def _build_scheme_offline(
                   "Kujifunza kwa ushirikiano", "Jozi za kujadiliana", "Maonyesho ya kuona"]
     months = months_en if lang == "en" else months_sw
     methods = methods_en if lang == "en" else methods_sw
-    # A month contains ~4 weeks. Start month depends on the term.
-    if "3" in term:
-        start_month = 6  # July
-    elif "2" in term:
-        start_month = 3  # April
-    else:
-        start_month = 0  # January
-    weeks_per_month = 4
 
-    for i in range(1, num_weeks + 1):
-        topic_title = topics[i - 1] if i <= len(topics) else f"Topic {i}"
-        month = months[min(start_month + (i - 1) // weeks_per_month, len(months) - 1)]
-        if lang == "sw":
-            weeks.append({
-                "week_number": i, "topic": topic_title, "subtopic": f"Sehemu ya {i}",
-                "main_competence": f"Kuonyesha ustadi wa lugha ya hisabati na dhana za {topic_title}",
-                "specific_competence": f"Kutumia ustadi wa namba katika muktadha wa {topic_title}",
-                "learning_activities": [f"Eleza dhana za msingi za {topic_title}", f"Kokotoa kwa kutumia {topic_title}"],
-                "specific_activities": f"Eleza {topic_title} na matumizi yake katika maisha halisi",
-                "month": month, "week": f"Wiki {i}", "periods": 4,
-                "reference": "TIE (2023) Kitabu cha Hisabati cha Kidato cha Kwanza, Dar es Salaam",
-                "teaching_methods": methods,
-                "teaching_resources": ["Chati za uhusiano", "Vitu halisi", "Michezo ya Hisabati", "Vituo vya elimu"],
-                "assessment_tools": "Maswali na majibu, class presentation, majaribio na kazi ya nyumbani",
-                "remarks": "Remarks Written here", "teaching_aids": ["Kitabu", "Ramani"],
-                "competences": [f"Ujuzi wa {topic_title}"], "objectives": [f"Mwanafunzi ataweza kueleza {topic_title}"],
-                "references": ["Misingumo ya TIE"], "assessment": "Mazoezi na maswali",
+    # Two-term academic year: Term I = Jan-May, Term II = Jul-Nov (4 weeks/month).
+    term_months = [0, 1, 2, 3, 4] if "1" in term else [6, 7, 8, 9, 10]
+
+    # Pull real syllabus structure from the knowledge base (topics -> subtopics).
+    rows = []
+    try:
+        subject_data = get_subject_with_form(subject_slug, form_level)
+    except Exception:
+        subject_data = None
+
+    if subject_data and subject_data.get("topics"):
+        for topic in subject_data["topics"]:
+            rows.append({
+                "topic": topic.get("title") or "Topic",
+                "topic_code": topic.get("code", ""),
+                "periods": topic.get("estimated_periods") or 0,
+                "subtopics": topic.get("subtopics", []),
             })
+    else:
+        # Fallback: use user-supplied topic titles.
+        for i, t in enumerate(topics or [], start=1):
+            rows.append({
+                "topic": t,
+                "topic_code": "",
+                "periods": 0,
+                "subtopics": [],
+            })
+
+    # Flatten subtopics into weekly rows.
+    week_count = 0
+    for row in rows:
+        topic_title = row["topic"]
+        topic_code = row["topic_code"]
+        subs = row["subtopics"]
+        if not subs:
+            # One week per topic when no subtopic breakdown is available.
+            subtopic_list = [{
+                "title": (f"Part {week_count + 1}" if lang == "en" else f"Sehemu ya {week_count + 1}"),
+                "code": "", "estimated_periods": 0, "outcomes": [],
+            }]
         else:
-            weeks.append({
-                "week_number": i, "topic": topic_title, "subtopic": f"Part {i}",
-                "main_competence": f"Demonstrate mastery of mathematical language and concepts of {topic_title}",
-                "specific_competence": f"Use numerical skills to solve problems related to {topic_title}",
-                "learning_activities": [f"Explain the basic concepts of {topic_title}", f"Apply {topic_title} in different contexts"],
-                "specific_activities": f"Define and apply {topic_title} in oral and written communication",
-                "month": month, "week": f"Week {i}", "periods": 4,
-                "reference": f"TIE (2023) Basic Mathematics Students Book for {class_name}, Dar es Salaam",
+            subtopic_list = subs
+        for sub in subtopic_list:
+            sub_title = sub.get("title") or ""
+            sub_code = sub.get("code", "")
+            outcomes = [o.get("description", "") for o in (sub.get("outcomes") or []) if o.get("description")]
+            spec_periods = sub.get("estimated_periods") or (
+                (row["periods"] // len(subtopic_list)) if row["periods"] and subtopic_list else 4
+            ) or 4
+            week_count += 1
+            if lang == "sw":
+                learning_activities = outcomes or [
+                    f"Eleza dhana za msingi za {sub_title or topic_title}",
+                    f"Tumia {sub_title or topic_title} katika miktadha mbalimbali",
+                ]
+                main_comp = f"{topic_code} {topic_title}" if topic_code else topic_title
+                spec_comp = f"{sub_code} {sub_title}".strip() if sub_code else sub_title
+            else:
+                learning_activities = outcomes or [
+                    f"Explain the basic concepts of {sub_title or topic_title}",
+                    f"Apply {sub_title or topic_title} in different contexts",
+                ]
+                main_comp = f"{topic_code} {topic_title}" if topic_code else topic_title
+                spec_comp = f"{sub_code} {sub_title}".strip() if sub_code else sub_title
+
+            month_idx = term_months[(week_count - 1) // 4] if week_count <= 4 * len(term_months) else term_months[-1]
+            month = months[month_idx]
+            week_row = {
+                "week_number": week_count,
+                "topic": topic_title,
+                "subtopic": sub_title,
+                "main_competence": main_comp,
+                "specific_competence": spec_comp,
+                "learning_activities": learning_activities,
+                "specific_activities": sub_title,
+                "month": month,
+                "week": f"Week {week_count}" if lang == "en" else f"Wiki {week_count}",
+                "periods": spec_periods,
+                "reference": (
+                    f"TIE (2023) {_subject_book(subject_label, class_name, lang)}"
+                ),
                 "teaching_methods": methods,
-                "teaching_resources": ["Charts of relationships", "Real life objects", "Math Games and Apps", "Educational channels"],
-                "assessment_tools": "Quizzes, questions and answers, class presentation, tests and group discussion",
-                "remarks": "Remarks Written here", "teaching_aids": ["Textbook", "Charts"],
-                "competences": [f"Competence in {topic_title}"], "objectives": [f"Student will understand {topic_title}"],
-                "references": ["TIE Syllabus"], "assessment": "Exercises and Q&A",
-            })
+                "teaching_resources": (
+                    ["Chati za uhusiano", "Vitu halisi", "Michezo ya Hisabati", "Vituo vya elimu"]
+                    if lang == "sw"
+                    else ["Charts of relationships", "Real life objects", "Math Games and Apps", "Educational channels"]
+                ),
+                "assessment_tools": (
+                    "Maswali na majibu, class presentation, majaribio na kazi ya nyumbani"
+                    if lang == "sw"
+                    else "Quizzes, questions and answers, class presentation, tests and group discussion"
+                ),
+                "remarks": "Remarks Written here" if lang == "en" else "Maelezo yameandikwa hapa",
+                "teaching_aids": ["Textbook", "Charts"] if lang == "en" else ["Kitabu", "Ramani"],
+                "competences": [main_comp],
+                "objectives": learning_activities,
+                "references": [f"TIE Syllabus"],
+                "assessment": "Exercises and Q&A" if lang == "en" else "Mazoezi na maswali",
+            }
+            weeks.append(week_row)
 
     return {
         "header": {
@@ -580,6 +636,12 @@ def _build_scheme_offline(
         },
         "weeks": weeks,
     }
+
+
+def _subject_book(subject_label: str, class_name: str, lang: str) -> str:
+    if lang == "sw":
+        return f"Kitabu cha somo cha {subject_label} Standard {class_name}, Dar es Salaam"
+    return f"{subject_label} Students Book for {class_name}, Dar es Salaam"
 
 
 # ── HTML Rendering ─────────────────────────────────────────────────────────

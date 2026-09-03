@@ -1384,11 +1384,10 @@ async function renderTeacherDashboard() {
       { slug: "historia-ya-tanzania-na-maadili", name: "Historia ya Tanzania na Maadili", sw: true },
     ];
     const ROMAN = { 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI" };
-    const termNames = { "Term 1": "Term I", "Term 2": "Term II", "Term 3": "Term III" };
+    const termNames = { "Term 1": "Term I", "Term 2": "Term II" };
     const termNamesSw = {
       "Term 1": "Muhtasari wa Kwanza",
       "Term 2": "Muhtasari wa Pili",
-      "Term 3": "Muhtasari wa Tatu",
     };
     let savedPlans = [];
     let activeSubTab = "lesson";
@@ -1578,7 +1577,6 @@ async function renderTeacherDashboard() {
                     <select class="input" name="term">
                       <option value="Term 1" selected>Term I</option>
                       <option value="Term 2">Term II</option>
-                      <option value="Term 3">Term III</option>
                     </select>
                   </label>
                   <label style="flex:0.5;min-width:130px">Academic Year
