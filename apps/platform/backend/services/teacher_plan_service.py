@@ -16,6 +16,8 @@ import re
 from datetime import datetime, timezone
 
 from backend.data.tie_competences import lookup_competence
+from backend.data.tie_syllabus import get_specific_competences as ts_get_specific_competences
+from backend.data.tie_syllabus import find_by_keyword as ts_find_by_keyword
 from backend.services.ai_service import _call_ai_service
 from backend.services.syllabus_service import get_curriculum_context, get_subject_with_form
 
@@ -1400,6 +1402,91 @@ def _distribute_periods(activities: list[str], total: int) -> list[dict]:
     ]
 
 
+_ROMAN = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x",
+          "xi", "xii", "xiii", "xiv", "xv", "xvi", "xvii", "xviii"]
+
+
+def _num(marker: int) -> str:
+    return _ROMAN[marker] if 0 <= marker < len(_ROMAN) else str(marker + 1)
+
+
+def _derive_specific_activities(activity_text: str) -> list[str]:
+    """Break a syllabus learning activity into numbered (i)/(ii)/(iii) items.
+
+    Prefers an explicit ``(i) (ii) ...`` list, then a trailing parenthetical
+    of sub-topics, then sentence/clause boundaries, and finally a single item.
+    """
+    text = re.sub(r"^\s*\([a-zA-Z]\)\s*", "", (activity_text or "").strip())
+    text = re.sub(r"\s+", " ", text).strip()
+    if not text:
+        return []
+
+    # 1. Already a numbered (i)/(ii)/... list
+    if re.search(r"\(\s*i\s*\)", text, re.I):
+        parts = re.split(r"(?i)\s*\(\s*(?=[ivxlc\d]+\))", text)
+        parts = [p.strip().strip(".;,() \t") for p in parts if p.strip()]
+        if len(parts) >= 2:
+            return parts
+
+    # 2. Trailing parenthetical list of sub-topics
+    m = re.search(r"\(([^()]*)\)\s*[.;]?\s*$", text)
+    if m:
+        inner = m.group(1)
+        items = [s.strip() for s in re.split(r";|\u2014|,", inner) if s.strip()]
+        if len(items) >= 2:
+            cleaned = []
+            for it in items:
+                it = re.sub(r"^\s*(?:and|or|&)\s+", "", it).strip()
+                it = re.sub(r"\s+(?:and|or)\s*$", "", it).strip()
+                if it:
+                    cleaned.append(f"({_num(len(cleaned))}) {it[:1].upper()}{it[1:]}")
+            if cleaned:
+                return cleaned
+
+    # 3. Sentence / clause split
+    clauses = [c for c in re.split(r"(?<=[.;:])\s+", text) if c.strip()]
+    if len(clauses) >= 2:
+        return [f"({_num(i)}) {c.strip().strip('.;')}".strip() for i, c in enumerate(clauses)]
+
+    # 4. Single item
+    return [f"(i) {text}"]
+
+
+def _split_periods_total(total: int, n: int) -> list[int]:
+    """Split a specific competence's total periods across *n* rows."""
+    if n <= 0:
+        return []
+    if total <= 0:
+        return [4] * n
+    base = total // n
+    extra = total - base * n
+    return [base + (1 if i < extra else 0) for i in range(n)]
+
+
+def _e_list_item(items, idx, default=""):
+    """Return the *idx*-th item of a list, a joined string, or default."""
+    if not items:
+        return default
+    if isinstance(items, str):
+        return items if idx == 0 else default
+    try:
+        frac = idx / len(items)
+    except ZeroDivisionError:
+        return default
+    if isinstance(items[0], str):
+        return items[idx] if idx < len(items) else default
+    return default
+
+
+def _sample_book_reference(subject_label: str, form_level: int, lang: str,
+                           year: str = "2024") -> str:
+    if lang == "sw":
+        return (f"T.I.E. ({year}). Kitabu cha Wanafunzi cha {subject_label}, "
+                f"Kidato cha {form_level}. Dar es Salaam.")
+    return (f"T.I.E. ({year}). {subject_label} Students Book "
+            f"Form {form_level}. Dar es Salaam.")
+
+
 def _build_scheme_offline(
     *, subject_slug, subject_label, form_level, term, academic_year,
     school_name, teacher_name, topics, lang,
@@ -1420,107 +1507,185 @@ def _build_scheme_offline(
     # Two-term academic year: Term I = Jan-May, Term II = Jul-Nov (4 weeks/month).
     term_months = [0, 1, 2, 3, 4] if "1" in term else [6, 7, 8, 9, 10]
 
-    # Pull real syllabus structure from the knowledge base (topics -> subtopics).
-    rows = []
-    try:
-        subject_data = get_subject_with_form(subject_slug, form_level)
-    except Exception:
-        subject_data = None
-
-    if subject_data and subject_data.get("topics"):
-        for topic in subject_data["topics"]:
-            rows.append({
-                "topic": topic.get("title") or "Topic",
-                "topic_code": topic.get("code", ""),
-                "periods": topic.get("estimated_periods") or 0,
-                "subtopics": topic.get("subtopics", []),
-            })
-    else:
-        # Fallback: use user-supplied topic titles.
-        for i, t in enumerate(topics or [], start=1):
-            rows.append({
-                "topic": t,
-                "topic_code": "",
-                "periods": 0,
-                "subtopics": [],
-            })
-
-    # Flatten subtopics into teaching-week rows. Week numbers and months are
-    # assigned afterwards so the two midterm weeks (exam + holiday) can be
-    # inserted at the term midpoint and the calendar renumbered coherently.
     teaching_rows = []
-    for row in rows:
-        topic_title = row["topic"]
-        topic_code = row["topic_code"]
-        subs = row["subtopics"]
-        if not subs:
-            # One week per topic when no subtopic breakdown is available.
-            subtopic_list = [{
-                "title": (f"Part {len(teaching_rows) + 1}" if lang == "en" else f"Sehemu ya {len(teaching_rows) + 1}"),
-                "code": "", "estimated_periods": 0, "outcomes": [],
-            }]
+
+    # Preferred source: the verbatim TIE CBC (2023) syllabus dataset. Each
+    # Specific Competence is expanded into one scheme row per learning
+    # activity, with the activity's (i)/(ii)/(iii) sub-parts as the row's
+    # "Specific activities" and the competence's total periods split across
+    # those rows.
+    try:
+        specs = ts_get_specific_competences(subject_slug, form_level)
+    except Exception:
+        specs = []
+
+    if specs:
+        # If specific topics were requested, keep only the competences that
+        # best match them; otherwise include the full form syllabus.
+        if topics:
+            kept = []
+            for t in topics or []:
+                rec = ts_find_by_keyword(subject_slug, form_level, t)
+                if rec and rec not in kept:
+                    kept.append(rec)
+            specs = kept or specs
+
+        for spec in specs:
+            acts = spec.get("learning_activities") or []
+            activities = [a for a in acts if (a or "").strip()]
+            if not activities:
+                activities = [spec.get("specific_competence") or "Learning activity"]
+            periods_split = _split_periods_total(
+                int(spec.get("number_of_periods") or 0), len(activities)
+            )
+            main_comp = f"{spec.get('main_code', '')} {spec.get('main_competence', '')}".strip()
+            spec_comp = f"{spec.get('specific_code', '')} {spec.get('specific_competence', '')}".strip()
+            for idx, act in enumerate(activities):
+                act_text = re.sub(r"^\s*\([a-zA-Z]\)\s*", "", act).strip()
+                specific_activities = _derive_specific_activities(act_text)
+                methods_list = spec.get("teaching_methods") or []
+                method = _e_list_item(methods_list, idx) or (
+                    methods[idx % len(methods)] if methods else methods_en
+                )
+                resource_list = spec.get("resources") or []
+                resource = _e_list_item(resource_list, idx) or (
+                    (["Vitu halisi", "Chati", "Michezo ya Hisabati"]
+                     if lang == "sw"
+                     else ["Real life objects", "Charts", "Math games and apps"])
+                )
+                assessment_tools = (
+                    "Mazoezi, kazi ya nyumbani, maswali na majibu"
+                    if lang == "sw"
+                    else "Exercise, Assignment, Quiz"
+                )
+                teaching_rows.append({
+                    "topic": main_comp or (spec.get("specific_competence") or act_text),
+                    "subtopic": spec_comp or act_text,
+                    "main_competence": main_comp,
+                    "specific_competence": spec_comp,
+                    "learning_activities": act_text,
+                    "specific_activities": specific_activities,
+                    "periods": periods_split[idx] if periods_split else 4,
+                    "reference": _sample_book_reference(subject_label, form_level, lang),
+                    "teaching_methods": [method] if method else methods,
+                    "teaching_resources": [resource] if resource else (
+                        ["Vitu halisi", "Chati", "Michezo ya Hisabati"]
+                        if lang == "sw"
+                        else ["Real life objects", "Charts", "Math games and apps"]
+                    ),
+                    "assessment_tools": assessment_tools,
+                    "remarks": "Remarks Written here" if lang == "en" else "Maelezo yameandikwa hapa",
+                    "teaching_aids": ["Textbook", "Charts"] if lang == "en" else ["Kitabu", "Ramani"],
+                    "competences": [main_comp],
+                    "objectives": specific_activities or [act_text],
+                    "learning_activity_schedule": _distribute_periods(
+                        specific_activities or [act_text], periods_split[idx] if periods_split else 4
+                    ),
+                    "references": [_sample_book_reference(subject_label, form_level, lang)],
+                    "assessment": assessment_tools,
+                })
+
+    # Fallback: pull syllabus structure from the knowledge base (topics -> subtopics).
+    if not teaching_rows:
+        rows = []
+        try:
+            subject_data = get_subject_with_form(subject_slug, form_level)
+        except Exception:
+            subject_data = None
+
+        if subject_data and subject_data.get("topics"):
+            for topic in subject_data["topics"]:
+                rows.append({
+                    "topic": topic.get("title") or "Topic",
+                    "topic_code": topic.get("code", ""),
+                    "periods": topic.get("estimated_periods") or 0,
+                    "subtopics": topic.get("subtopics", []),
+                })
         else:
-            subtopic_list = subs
-        for sub in subtopic_list:
-            sub_title = sub.get("title") or ""
-            sub_code = sub.get("code", "")
-            outcomes = [o.get("description", "") for o in (sub.get("outcomes") or []) if o.get("description")]
-            spec_periods = sub.get("estimated_periods") or (
-                (row["periods"] // len(subtopic_list)) if row["periods"] and subtopic_list else 4
-            ) or 4
-            if lang == "sw":
-                learning_activities = outcomes or [
-                    f"Eleza dhana za msingi za {sub_title or topic_title}",
-                    f"Tumia {sub_title or topic_title} katika miktadha mbalimbali",
-                ]
-                main_comp = f"{topic_code} {topic_title}" if topic_code else topic_title
-                spec_comp = f"{sub_code} {sub_title}".strip() if sub_code else sub_title
+            # Fallback: use user-supplied topic titles.
+            for i, t in enumerate(topics or [], start=1):
+                rows.append({
+                    "topic": t,
+                    "topic_code": "",
+                    "periods": 0,
+                    "subtopics": [],
+                })
+
+        # Flatten subtopics into teaching-week rows. Week numbers and months are
+        # assigned afterwards so the two midterm weeks (exam + holiday) can be
+        # inserted at the term midpoint and the calendar renumbered coherently.
+        for row in rows:
+            topic_title = row["topic"]
+            topic_code = row["topic_code"]
+            subs = row["subtopics"]
+            if not subs:
+                # One week per topic when no subtopic breakdown is available.
+                subtopic_list = [{
+                    "title": (f"Part {len(teaching_rows) + 1}" if lang == "en" else f"Sehemu ya {len(teaching_rows) + 1}"),
+                    "code": "", "estimated_periods": 0, "outcomes": [],
+                }]
             else:
-                learning_activities = outcomes or [
-                    f"Explain the basic concepts of {sub_title or topic_title}",
-                    f"Apply {sub_title or topic_title} in different contexts",
-                ]
-                main_comp = f"{topic_code} {topic_title}" if topic_code else topic_title
-                spec_comp = f"{sub_code} {sub_title}".strip() if sub_code else sub_title
+                subtopic_list = subs
+            for sub in subtopic_list:
+                sub_title = sub.get("title") or ""
+                sub_code = sub.get("code", "")
+                outcomes = [o.get("description", "") for o in (sub.get("outcomes") or []) if o.get("description")]
+                spec_periods = sub.get("estimated_periods") or (
+                    (row["periods"] // len(subtopic_list)) if row["periods"] and subtopic_list else 4
+                ) or 4
+                if lang == "sw":
+                    learning_activities = outcomes or [
+                        f"Eleza dhana za msingi za {sub_title or topic_title}",
+                        f"Tumia {sub_title or topic_title} katika miktadha mbalimbali",
+                    ]
+                    main_comp = f"{topic_code} {topic_title}" if topic_code else topic_title
+                    spec_comp = f"{sub_code} {sub_title}".strip() if sub_code else sub_title
+                else:
+                    learning_activities = outcomes or [
+                        f"Explain the basic concepts of {sub_title or topic_title}",
+                        f"Apply {sub_title or topic_title} in different contexts",
+                    ]
+                    main_comp = f"{topic_code} {topic_title}" if topic_code else topic_title
+                    spec_comp = f"{sub_code} {sub_title}".strip() if sub_code else sub_title
 
-            # Prefer the verbatim TIE CBC (2023) Main/Specific Competence
-            # statements for this teaching topic when the mapping is available.
-            tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic_title, lang)
-            if tie_main and tie_spec:
-                main_comp = tie_main
-                spec_comp = tie_spec
+                # Prefer the verbatim TIE CBC (2023) Main/Specific Competence
+                # statements for this teaching topic when the mapping is available.
+                tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic_title, lang)
+                if tie_main and tie_spec:
+                    main_comp = tie_main
+                    spec_comp = tie_spec
 
-            week_row = {
-                "topic": topic_title,
-                "subtopic": sub_title,
-                "main_competence": main_comp,
-                "specific_competence": spec_comp,
-                "learning_activities": learning_activities,
-                "specific_activities": sub_title,
-                "periods": spec_periods,
-                "reference": (
-                    f"TIE (2023) {_subject_book(subject_label, class_name, lang)}"
-                ),
-                "teaching_methods": methods,
-                "teaching_resources": (
-                    ["Chati za uhusiano", "Vitu halisi", "Michezo ya Hisabati", "Vituo vya elimu"]
-                    if lang == "sw"
-                    else ["Charts of relationships", "Real life objects", "Math Games and Apps", "Educational channels"]
-                ),
-                "assessment_tools": (
-                    "Maswali na majibu, class presentation, majaribio na kazi ya nyumbani"
-                    if lang == "sw"
-                    else "Quizzes, questions and answers, class presentation, tests and group discussion"
-                ),
-                "remarks": "Remarks Written here" if lang == "en" else "Maelezo yameandikwa hapa",
-                "teaching_aids": ["Textbook", "Charts"] if lang == "en" else ["Kitabu", "Ramani"],
-                "competences": [main_comp],
-                "objectives": learning_activities,
-                "learning_activity_schedule": _distribute_periods(learning_activities, spec_periods),
-                "references": [f"TIE Syllabus"],
-                "assessment": "Exercises and Q&A" if lang == "en" else "Mazoezi na maswali",
-            }
-            teaching_rows.append(week_row)
+                week_row = {
+                    "topic": topic_title,
+                    "subtopic": sub_title,
+                    "main_competence": main_comp,
+                    "specific_competence": spec_comp,
+                    "learning_activities": learning_activities,
+                    "specific_activities": sub_title,
+                    "periods": spec_periods,
+                    "reference": (
+                        f"TIE (2023) {_subject_book(subject_label, class_name, lang)}"
+                    ),
+                    "teaching_methods": methods,
+                    "teaching_resources": (
+                        ["Chati za uhusiano", "Vitu halisi", "Michezo ya Hisabati", "Vituo vya elimu"]
+                        if lang == "sw"
+                        else ["Charts of relationships", "Real life objects", "Math Games and Apps", "Educational channels"]
+                    ),
+                    "assessment_tools": (
+                        "Maswali na majibu, class presentation, majaribio na kazi ya nyumbani"
+                        if lang == "sw"
+                        else "Quizzes, questions and answers, class presentation, tests and group discussion"
+                    ),
+                    "remarks": "Remarks Written here" if lang == "en" else "Maelezo yameandikwa hapa",
+                    "teaching_aids": ["Textbook", "Charts"] if lang == "en" else ["Kitabu", "Ramani"],
+                    "competences": [main_comp],
+                    "objectives": learning_activities,
+                    "learning_activity_schedule": _distribute_periods(learning_activities, spec_periods),
+                    "references": [f"TIE Syllabus"],
+                    "assessment": "Exercises and Q&A" if lang == "en" else "Mazoezi na maswali",
+                }
+                teaching_rows.append(week_row)
 
     # Insert the two required midterm weeks (examination + holiday) at the
     # midpoint of the term's teaching weeks, for every term.

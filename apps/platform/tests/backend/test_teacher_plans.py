@@ -340,7 +340,9 @@ def test_scheme_of_work_uses_verbatim_tie_competence():
         term="Term 1", academic_year="2026", school_name="School",
         teacher_name="Teacher", topics=["INDICES AND LOGARITHMS"], lang="en",
     )
-    row = next(w for w in plan["weeks"] if w["topic"] == "INDICES AND LOGARITHMS")
+    rows = [w for w in plan["weeks"] if "2.2" in w["specific_competence"]]
+    assert rows
+    row = rows[0]
     assert row["main_competence"] == "2.0 Demonstrate mastery of basic concepts in geometry and algebra"
     assert row["specific_competence"] == "2.2 Use algebra and matrices in problem solving"
 
@@ -372,7 +374,7 @@ def test_scheme_of_work_offline_render(monkeypatch):
     )
 
     plan = _build_scheme_offline(
-        subject_slug="biology", subject_label="Biology", form_level=3,
+        subject_slug="social-studies", subject_label="Social Studies", form_level=3,
         term="Term 1", academic_year="2026", school_name="School",
         teacher_name="Teacher", topics=["Cell Biology", "Genetics"], lang="en",
     )
@@ -426,45 +428,43 @@ def test_scheme_of_work_rejects_third_term():
 
 
 def test_scheme_of_work_uses_real_enriched_syllabus(monkeypatch):
-    # Physics O-Level was rebuilt from the authentic TIE knowledge base, so the
-    # offline scheme generator must surface its real topics/subtopics/outcomes
-    # (not synthetic fallbacks) when fed the seeded syllabus data.
+    # Physics O-Level is seeded from the authentic TIE CBC (2023) syllabus, so
+    # the offline scheme generator must surface its verbatim Main/Specific
+    # Competence statements, per-learning-activity rows and Authentic period
+    # totals (not synthetic fallbacks) when fed the seeded syllabus data.
+    from backend.data.tie_syllabus import get_specific_competences as _ts_g
     from backend.services.teacher_plan_service import get_subject_with_form as _orig  # noqa: F401
 
-    form_data = _seed_subject_dict("physics", 1)
-    monkeypatch.setattr(
-        "backend.services.teacher_plan_service.get_subject_with_form",
-        lambda slug, form: form_data,
-    )
+    specs = _ts_g("physics", 1)
+    assert specs, "physics Form 1 syllabus must be seeded"
 
     plan = _build_scheme_offline(
         subject_slug="physics", subject_label="Physics", form_level=1,
         term="Term 1", academic_year="2026", school_name="School",
-        teacher_name="Teacher", topics=["INTRODUCTION TO LABORATORY PRACTICE"],
-        lang="en",
+        teacher_name="Teacher", topics=[], lang="en",
     )
     assert len(plan["weeks"]) > 0
-    first = plan["weeks"][0]
-    # Authentic TIE topic + subtopic titles/codes from the seed.
-    assert first["topic"] == "INTRODUCTION TO LABORATORY PRACTICE"
-    assert first["main_competence"] == "1.0 INTRODUCTION TO LABORATORY PRACTICE"
-    assert first["specific_competence"].startswith("1.1 ")
-    # The authentic KB outcomes become the weekly learning activities.
-    assert first["learning_activities"], "weekly learning activities must be populated"
+    first_spec = specs[0]
+    main_comp = f"{first_spec['main_code']} {first_spec['main_competence']}".strip()
+    spec_comp = f"{first_spec['specific_code']} {first_spec['specific_competence']}".strip()
+
+    teaching = [w for w in plan["weeks"] if w["periods"] > 0]
+    midterm  = [w for w in plan["weeks"] if w["periods"] == 0]
+    assert teaching[0]["main_competence"] == main_comp
+    assert teaching[0]["specific_competence"] == spec_comp
+    # A learning activity row is populated for the first specific competence.
+    assert teaching[0]["learning_activities"], "weekly learning activities must be populated"
     # Term I only spans months January..May (4 weeks per month).
     assert {w["month"] for w in plan["weeks"]} <= {
         "January", "February", "March", "April", "May",
     }
-    # Midterm weeks (periods=0) sit at the midpoint; teaching weeks carry
-    # the authentic subtopic period totals and are never 0.
-    teaching = [w for w in plan["weeks"] if w["periods"] > 0]
-    midterm  = [w for w in plan["weeks"] if w["periods"] == 0]
+    # Midterm weeks (periods=0) sit at the midpoint; teaching weeks carry the
+    # authentic syllabus period totals and are never 0.
     assert len(midterm) == 2, "expect exactly midterm exam + midterm holiday"
     assert all(w["periods"] > 0 for w in teaching)
-    # Teaching period total must equal the sum of all subtopic periods (Physics F1).
+    # Teaching period total must equal the TIE syllabus period total (Physics F1).
     assert sum(w["periods"] for w in teaching) == sum(
-        sp.get("estimated_periods", 0)
-        for t in form_data["topics"] for sp in t.get("subtopics", [])
+        int(s.get("number_of_periods") or 0) for s in specs
     )
 
 
@@ -633,11 +633,11 @@ def test_scheme_of_work_midterm_and_period_integrity(monkeypatch):
         # Week numbering must be continuous after midterm insertion.
         assert [w["week_number"] for w in weeks] == list(range(1, len(weeks) + 1))
 
-        # Teaching-period total must equal the sum of all subtopic periods.
+        # Teaching-period total must equal the TIE syllabus period total.
+        from backend.data.tie_syllabus import get_specific_competences as _ts_g
         sub_total = sum(
-            sp.get("estimated_periods", 0)
-            for t in form_data["topics"]
-            for sp in t.get("subtopics", [])
+            int(s.get("number_of_periods") or 0)
+            for s in _ts_g("physics", 1)
         )
         assert sum(w["periods"] for w in teaching) == sub_total
 
@@ -648,14 +648,6 @@ def test_scheme_of_work_midterm_and_period_integrity(monkeypatch):
             else {"July", "August", "September", "October", "November"}
         )
         assert {w["month"] for w in weeks} <= valid_months
-
-    # Data-integrity rule: topic periods == subtopic sum for every topic.
-    for t in form_data["topics"]:
-        sp_sum = sum(sp.get("estimated_periods", 0) for sp in t.get("subtopics", []))
-        assert t.get("estimated_periods", 0) == sp_sum, (
-            f"topic {t.get('code')} periods={t.get('estimated_periods')} "
-            f"!= subtopic sum={sp_sum}"
-        )
 
 
 # ── API: save / list / get / delete ───────────────────────────────────────
