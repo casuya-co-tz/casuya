@@ -1379,9 +1379,46 @@ def _build_lesson_plan_offline(
         },
         "progression_matrix": progression,
         "fields": fields,
-        "evaluation_learners": "",
-        "evaluation_teacher": "",
-        "remarks": "",
+        "evaluation_learners": (
+            f"By the end of the {duration_minutes}-minute lesson on {specific_activity}, "
+            f"the teacher observes the {total} registered learners ({boys} boys, {girls} "
+            f"girls). Learners demonstrate mastery of {specific_activity} through group "
+            "tasks, oral questioning and exit-ticket responses; approximately 80% are "
+            "expected to meet the specific competence, with remediation planned for those "
+            "who require reinforcement."
+            if lang == "en"
+            else
+            f"Mwisho wa somo la dakika {duration_minutes} kuhusu {specific_activity}, "
+            f"mwalimu huwachunguza wanafunzi {total} walioandikishwa ({boys} wavulana, "
+            f"{girls} wasichana). Wanafunzi huonyesha umilisi wa {specific_activity} "
+            "kupitia kazi za vikundi, maswali ya mdomo na majibu ya mwisho wa somo; "
+            "takriban 80% wanatarajiwa kufikia ujuzi mahususi, na marekebisho "
+            "yatafanywa kwa wanaohitaji kuimarishwa."
+        ),
+        "evaluation_teacher": (
+            f"Self-reflection: the teacher of {subject_label} for the lesson {specific_activity} "
+            f"will note the effectiveness of the planned methods and resources in advancing "
+            f"learners toward the specific competence. Any stage that required more than its "
+            f"allocated time (per the {duration_minutes}-minute progression) is recorded so "
+            "the plan can be adjusted for the next lesson."
+            if lang == "en"
+            else
+            f"Kujitathmini: mwalimu wa {subject_label} kwa somo {specific_activity} "
+            f"ataandika ufanisi wa mbinu na rasilimali zilizopangwa katika kuwaendeleza "
+            f"wanafunzi kuelekea ujuzi mahususi. Hatua yoyote iliyochukua muda zaidi ya "
+            f"iliyopangwa (kwa muda wa dakika {duration_minutes}) itarekodiwa ili "
+            "mpango urekebishwe kwa somo lijalo."
+        ),
+        "remarks": (
+            f"Record here the proportion of the {total} learners who achieved the specific "
+            f"competence on {specific_activity}, the effectiveness of the teaching methods "
+            "and resources, and any required remediation for the next lesson."
+            if lang == "en"
+            else
+            f"Andika hapa asilimia ya wanafunzi {total} waliofikia ujuzi mahususi wa "
+            f"{specific_activity}, ufanisi wa mbinu na rasilimali za kufundisha, "
+            "na marekebisho yanayohitajika kwa somo lijalo."
+        ),
     }
 
 
@@ -1648,10 +1685,14 @@ def _build_scheme_offline(
                  "July", "August", "September", "October", "November", "December"]
     months_sw = ["Januari", "Februari", "Machi", "Aprili", "Mei", "Juni",
                  "Julai", "Agosti", "Septemba", "Oktoba", "Novemba", "Desemba"]
-    methods_en = ["Jigsaw puzzle", "Brainstorming", "Problem solving", "Group discussion",
-                  "Collaborative learning", "Think-Ink pair-share", "Visual presentations"]
-    methods_sw = ["Maswali ya Jigsaw", "Kuchangia mawazo", "Utatuzi wa matatizo", "Mjadala wa kikundi",
-                  "Kujifunza kwa ushirikiano", "Jozi za kujadiliana", "Maonyesho ya kuona"]
+    methods_en = ["Collaborative learning", "Exploration/visual representation", "Project work",
+                  "Jigsaw puzzle", "Problem solving", "Use of technology", "Graphical methods",
+                  "Group discussion", "Think-Ink pair-share", "Interactive discussion",
+                  "Scenario-based learning"]
+    methods_sw = ["Kujifunza kwa ushirikiano", "Uchunguzi/Uwakilishi wa kuona", "Kazi ya mradi",
+                  "Maswali ya Jigsaw", "Utatuzi wa matatizo", "Matumizi ya teknolojia",
+                  "Mbinu za picha/grafu", "Mjadala wa kikundi", "Jozi za kujadiliana",
+                  "Mjadala shirikishi", "Kujifunza kwa muktadha/matukio"]
     months = months_en if lang == "en" else months_sw
     methods = methods_en if lang == "en" else methods_sw
 
@@ -1705,9 +1746,23 @@ def _build_scheme_offline(
                      else ["Real life objects", "Charts", "Math games and apps"])
                 )
                 assessment_tools = (
-                    "Mazoezi, kazi ya nyumbani, maswali na majibu"
+                    "Uchunguzi, maswali na majibu, kazi ya mradi, uwasilishaji darasani, "
+                    "majaribio, portfolio na kazi ya nyumbani"
                     if lang == "sw"
-                    else "Exercise, Assignment, Quiz"
+                    else "Quizzes, questions and answers, project work, class presentation, "
+                         "tests, portfolio and homework"
+                )
+                # Richer method set for the row: the syllabus-listed method (if any)
+                # plus a rotating subset of the broad TIE method pool.
+                row_methods = [m for m in ([method] if method else []) if m]
+                for _extra in range(2):
+                    row_methods.append(methods[(idx + _extra + 1) % len(methods)])
+                remark = (
+                    f"Most learners demonstrated {spec_comp}. Offer remedial tasks for "
+                    f"those needing reinforcement on {act_text}."
+                    if lang == "en"
+                    else f"Wanafunzi wengi wameonyesha {spec_comp}. Wape kazi za kurekebishia "
+                         f"wale wanaohitaji msaada zaidi kwenye {act_text}."
                 )
                 teaching_rows.append({
                     "topic": main_comp or (spec.get("specific_competence") or act_text),
@@ -1718,14 +1773,14 @@ def _build_scheme_offline(
                     "specific_activities": specific_activities,
                     "periods": periods_split[idx] if periods_split else 4,
                     "reference": _sample_book_reference(subject_label, form_level, lang),
-                    "teaching_methods": [method] if method else methods,
+                    "teaching_methods": row_methods,
                     "teaching_resources": [resource] if resource else (
                         ["Vitu halisi", "Chati", "Michezo ya Hisabati"]
                         if lang == "sw"
                         else ["Real life objects", "Charts", "Math games and apps"]
                     ),
                     "assessment_tools": assessment_tools,
-                    "remarks": "Remarks Written here" if lang == "en" else "Maelezo yameandikwa hapa",
+                    "remarks": remark,
                     "teaching_aids": ["Textbook", "Charts"] if lang == "en" else ["Kitabu", "Ramani"],
                     "competences": [main_comp],
                     "objectives": specific_activities or [act_text],
@@ -1812,7 +1867,8 @@ def _build_scheme_offline(
                     "main_competence": main_comp,
                     "specific_competence": spec_comp,
                     "learning_activities": learning_activities,
-                    "specific_activities": sub_title,
+                    "specific_activities": _derive_specific_activities(
+                        learning_activities[0]) if learning_activities else [sub_title],
                     "periods": spec_periods,
                     "reference": (
                         f"TIE (2023) {_subject_book(subject_label, class_name, lang)}"
@@ -1824,17 +1880,28 @@ def _build_scheme_offline(
                         else ["Charts of relationships", "Real life objects", "Math Games and Apps", "Educational channels"]
                     ),
                     "assessment_tools": (
-                        "Maswali na majibu, class presentation, majaribio na kazi ya nyumbani"
+                        "Uchunguzi, maswali na majibu, kazi ya mradi, uwasilishaji darasani, "
+                        "majaribio, portfolio na kazi ya nyumbani"
                         if lang == "sw"
-                        else "Quizzes, questions and answers, class presentation, tests and group discussion"
+                        else "Quizzes, questions and answers, project work, class presentation, "
+                             "tests, portfolio and homework"
                     ),
-                    "remarks": "Remarks Written here" if lang == "en" else "Maelezo yameandikwa hapa",
+                    "remarks": (
+                        f"Most learners achieved the competence on {spec_comp}. Provide "
+                        f"reinforcement tasks and extension work where appropriate."
+                        if lang == "en"
+                        else f"Wanafunzi wengi wamefikia ujuzi wa {spec_comp}. Toa kazi za "
+                             f"kuimarisha na mazoezi ya ziada inapohitajika."
+                    ),
                     "teaching_aids": ["Textbook", "Charts"] if lang == "en" else ["Kitabu", "Ramani"],
                     "competences": [main_comp],
                     "objectives": learning_activities,
                     "learning_activity_schedule": _distribute_periods(learning_activities, spec_periods),
                     "references": [f"TIE Syllabus"],
-                    "assessment": "Exercises and Q&A" if lang == "en" else "Mazoezi na maswali",
+                    "assessment": (
+                        "Exercises, Q&A, tests and projects" if lang == "en"
+                        else "Mazoezi, maswali, majaribio na miradi"
+                    ),
                 }
                 teaching_rows.append(week_row)
 
