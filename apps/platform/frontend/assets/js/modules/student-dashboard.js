@@ -1087,13 +1087,19 @@
     try {
       let lesson, isBookmarked, noteData, quizData, gamesData, lessonContent;
       try {
-        // P2-3 — one call for the mutable metadata instead of ~5 round-trips.
+        // P2-3 — fetch package + content in parallel instead of sequentially
+        const contentFetch = fetch(`${API_BASE}/lessons/${lessonId}/content`, {
+          headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
+        }).then(r => r.ok ? r.text() : "").catch(() => "");
+
         const pkg = await request(`/lessons/${lessonId}/package`);
         lesson = pkg.lesson;
         isBookmarked = pkg.bookmark_status?.bookmarked || false;
         noteData = pkg.note || { content: "" };
         quizData = pkg.quiz;
         gamesData = pkg.games || [];
+
+        lessonContent = (await contentFetch) || "<p>No content</p>";
       } catch(e) {
         const recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
         const filtered = recent.filter(r => r.id !== lessonId);
@@ -1102,14 +1108,6 @@
         document.getElementById("back-to-overview")?.addEventListener("click", loadStudentOverview);
         return;
       }
-      // Content stays on its own cached/prefetched endpoint (P2-3 / P1-6).
-      let contentResp = "";
-      try {
-        contentResp = await fetch(`${API_BASE}/lessons/${lessonId}/content`, {
-          headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
-        }).then(r => r.ok ? r.text() : "");
-      } catch (_) {}
-      lessonContent = contentResp || "<p>No content</p>";
 
       // Track recently viewed (localStorage + server-side)
       const recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
@@ -2223,9 +2221,10 @@
         });
       });
       document.getElementById("student-mark-all-read")?.addEventListener("click", async () => {
-        for (const n of unread) {
-          try { await request(`/notifications/${n.id}/read`, { method: "POST" }); n.is_read = true; } catch(e) {}
-        }
+        await Promise.all(unread.map(n =>
+          request(`/notifications/${n.id}/read`, { method: "POST" }).catch(() => {})
+        ));
+        unread.forEach(n => n.is_read = true);
         unread.length = 0; read.length = 0; read.push(...allNotifs);
         const badge = document.getElementById("notif-badge");
         if (badge) badge.style.display = "none";

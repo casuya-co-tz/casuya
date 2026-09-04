@@ -546,12 +546,14 @@ async function renderTeacherDashboard() {
   async function loadTeacherClass() {
     showTeacherView('<div class="loading-state"><div class="spinner"></div><p>Loading your class...</p></div>');
     try {
-      const res = await request("/classrooms/me/students?_t=" + Date.now()).catch(() => null);
+      const [res, teacherLessons] = await Promise.all([
+        request("/classrooms/me/students?_t=" + Date.now()).catch(() => null),
+        request("/lessons").catch(() => []),
+      ]);
       const classroom = res?.classroom || await request("/classrooms/me?_t=" + Date.now());
       const students = Array.isArray(res?.students) ? res.students : [];
       const code = classroom?.code || "";
       const limit = classroom?.lesson_limit ?? 2;
-      const teacherLessons = await request("/lessons").catch(() => []);
       const pubCount = Array.isArray(teacherLessons) ? teacherLessons.filter(l => l.status === "published").length : 0;
 
       showTeacherView(`
@@ -2812,9 +2814,10 @@ async function renderTeacherDashboard() {
         });
       });
       document.getElementById("teacher-mark-all-read")?.addEventListener("click", async () => {
-        for (const n of unread) {
-          try { await request(`/notifications/${n.id}/read`, { method: "POST" }); n.is_read = true; } catch(e) {}
-        }
+        await Promise.all(unread.map(n =>
+          request(`/notifications/${n.id}/read`, { method: "POST" }).catch(() => {})
+        ));
+        unread.forEach(n => n.is_read = true);
         unread.length = 0; read.length = 0; read.push(...allNotifs);
         const badge = document.getElementById("notif-badge");
         if (badge) badge.style.display = "none";

@@ -36,29 +36,20 @@ def send_notification_route(body: SendNotificationRequest, db: Session = Depends
     if body.user_id:
         result = send_notification(db, user_id=body.user_id, message=body.message)
         return {"sent": 1, "notifications": [result]}
-    users = db.query(User).filter(User.role == body.role, User.is_active.is_(True)).all()
+    users = db.query(User.id).filter(User.role == body.role, User.is_active.is_(True)).all()
     if not users:
         raise HTTPException(status_code=404, detail=f"No active {body.role}s found")
-    # Batch insert: create all notifications in one commit (P-02)
-    results = []
-    for u in users:
-        results.append({"user_id": u.id, "message": body.message})
     from backend.models.notification import Notification
     from datetime import datetime, timezone
 
+    now = datetime.now(timezone.utc)
     notifications = [
-        Notification(
-            user_id=r["user_id"],
-            channel="in_app",
-            message=r["message"],
-            is_read=False,
-            created_at=datetime.now(timezone.utc),
-        )
-        for r in results
+        Notification(user_id=u.id, channel="in_app", message=body.message, is_read=False, created_at=now)
+        for u in users
     ]
     db.add_all(notifications)
     db.commit()
-    return {"sent": len(notifications), "notifications": [{"id": n.id, "user_id": n.user_id, "message": n.message} for n in notifications]}
+    return {"sent": len(notifications)}
 
 
 @router.post("/bulk", dependencies=[Depends(require_role("admin"))])
@@ -66,23 +57,16 @@ def send_notification_route(body: SendNotificationRequest, db: Session = Depends
 def send_bulk_notification_route(body: SendNotificationRequest, db: Session = Depends(get_db)):
     if not body.role:
         raise HTTPException(status_code=400, detail="Provide role (student|teacher)")
-    users = db.query(User).filter(User.role == body.role, User.is_active.is_(True)).all()
-    if not users:
+    user_ids = [r[0] for r in db.query(User.id).filter(User.role == body.role, User.is_active.is_(True)).all()]
+    if not user_ids:
         raise HTTPException(status_code=404, detail=f"No active {body.role}s found")
-    # Batch insert: single commit for all notifications (P-02)
     from backend.models.notification import Notification
     from datetime import datetime, timezone
 
     now = datetime.now(timezone.utc)
     notifications = [
-        Notification(
-            user_id=u.id,
-            channel="in_app",
-            message=body.message,
-            is_read=False,
-            created_at=now,
-        )
-        for u in users
+        Notification(user_id=uid, channel="in_app", message=body.message, is_read=False, created_at=now)
+        for uid in user_ids
     ]
     db.add_all(notifications)
     db.commit()

@@ -164,7 +164,20 @@ def list_reference_docs(
 
 
 def count_reference_docs(db: Session, **filters) -> int:
-    return len(list_reference_docs(db, limit=100000, offset=0, **filters))
+    q = db.query(ReferenceDoc)
+    if filters.get("doc_type") in ("lesson_plan", "scheme_of_work"):
+        q = q.filter(ReferenceDoc.doc_type == filters["doc_type"])
+    if filters.get("subject_slug"):
+        q = q.filter(ReferenceDoc.subject_slug == filters["subject_slug"])
+    if filters.get("form_level"):
+        q = q.filter(ReferenceDoc.form_level == filters["form_level"])
+    if filters.get("query"):
+        like = f"%{filters['query']}%"
+        q = q.filter(or_(
+            ReferenceDoc.title.ilike(like),
+            ReferenceDoc.subject_name.ilike(like),
+        ))
+    return q.count()
 
 
 def get_reference_doc(db: Session, doc_id: str) -> ReferenceDoc | None:

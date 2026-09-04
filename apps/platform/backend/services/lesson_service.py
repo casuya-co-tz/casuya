@@ -473,7 +473,6 @@ def get_lesson_package(lesson_id: str, user_sub: str, db: Session) -> dict | Non
         "slug": lesson.slug,
         "title": lesson.title,
         "content_hash": lesson.content_hash,
-        "content": lesson.content,
         "package_version": lesson.package_version,
         "status": lesson.status,
         "created_by": lesson.created_by,

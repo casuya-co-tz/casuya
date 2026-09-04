@@ -41,6 +41,7 @@ class Lesson(Base):
     __table_args__ = (
         Index("ix_lesson_subtopic_id", "subtopic_id"),
         Index("ix_lesson_status", "status"),
+        Index("ix_lesson_created_by", "created_by"),
     )
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
