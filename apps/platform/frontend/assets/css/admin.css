@@ -1,8 +1,8 @@
 @import "main.css";
 
 #admin-sidebar {
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-  border-right: 1px solid #0f172a;
+  background: #0f172a;
+  border-right: 1px solid #0c1322;
 }
 
 #admin-sidebar .sidebar-nav-item {
@@ -15,8 +15,8 @@
 }
 
 #admin-sidebar .sidebar-nav-item.active {
-  background: var(--color-primary);
-  color: #fff;
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
 }
 
 #admin-sidebar .sidebar-header {

@@ -819,8 +819,8 @@ a:focus:not(:focus-visible) {
 
 .sidebar {
   width: 240px;
-  background: var(--color-surface);
-  border-right: 1px solid var(--color-border);
+  background: #0f172a;
+  border-right: 1px solid #0c1322;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -829,18 +829,19 @@ a:focus:not(:focus-visible) {
 
 .sidebar-header {
   padding: 1rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sidebar-header h2 {
   margin: 0;
   font-size: 1.1rem;
+  color: #f1f5f9;
 }
 
 .sidebar-header p {
   margin: 0.25rem 0 0;
   font-size: 0.8rem;
-  color: var(--color-text-muted);
+  color: #94a3b8;
 }
 
 .sidebar-nav {
@@ -853,7 +854,7 @@ a:focus:not(:focus-visible) {
   align-items: center;
   gap: 0.5rem;
   padding: 0.65rem 1rem;
-  color: var(--color-text);
+  color: #cbd5e1;
   text-decoration: none;
   font-size: 0.9rem;
   border-left: 3px solid transparent;
@@ -864,19 +865,20 @@ a:focus:not(:focus-visible) {
 }
 
 .sidebar-nav-item:hover {
-  background: var(--color-bg);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f1f5f9;
 }
 
 .sidebar-nav-item.active {
-  background: var(--color-bg);
-  border-left-color: var(--color-primary);
+  background: rgba(37, 99, 235, 0.15);
+  border-left-color: #3b82f6;
   font-weight: 600;
-  color: var(--color-primary);
+  color: #60a5fa;
 }
 
 .sidebar-footer {
   padding: 0.75rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sidebar-footer-row {
