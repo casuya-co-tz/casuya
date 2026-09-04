@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from sqlalchemy import Boolean, DateTime, ForeignKey, String
+from sqlalchemy import Boolean, DateTime, ForeignKey, Index, String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from backend.config.database import Base
@@ -20,3 +20,7 @@ class Notification(Base):
     message: Mapped[str] = mapped_column(String, nullable=False)
     is_read: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+    __table_args__ = (
+        Index("ix_notifications_user_id", "user_id"),
+    )

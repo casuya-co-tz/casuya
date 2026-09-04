@@ -401,7 +401,8 @@ def fetch_reference_grounding(
     try:
         from backend.config.database import get_db
 
-        db = next(get_db())
+        _gen = get_db()
+        db = next(_gen)
     except Exception:
         return None
     try:
@@ -434,7 +435,7 @@ def fetch_reference_grounding(
             "content": content,
         }
     finally:
-        db.close()
+        _gen.close()
 
 
 def _plan_field(content: dict, *keys: str) -> str:

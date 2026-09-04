@@ -36,7 +36,7 @@ def get_current_user(
             user_data = json.loads(cached)
             if not user_data.get("is_active"):
                 raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User inactive or not found")
-            return payload
+            return {**payload, "is_active": user_data.get("is_active", True)}
     except HTTPException:
         raise
     except Exception as exc:
@@ -51,7 +51,7 @@ def get_current_user(
             redis_client.setex(cache_key, USER_CACHE_TTL, json.dumps(user_data).encode("utf-8"))
         except Exception as exc:
             logger.warning("Redis cache write failed for user %s: %s", user_id, exc)
-        return payload
+        return {**payload, "is_active": user.is_active}
     except HTTPException:
         raise
     except Exception as exc:

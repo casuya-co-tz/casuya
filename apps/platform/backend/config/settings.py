@@ -41,7 +41,7 @@ class Settings(BaseSettings):
 
     app_name: str = "Casuya Platform"
     environment: str = "development"  # development | staging | production
-    debug: bool = True
+    debug: bool = False
 
     database_url: str = "postgresql://user:password@localhost:5432/casuya_platform"
     database_replica_url: str | None = None
@@ -128,9 +128,9 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     s = Settings()
-    if s.environment != "development" and not s.jwt_secret:
+    if not s.jwt_secret or len(s.jwt_secret) < 32:
         raise ValueError(
-            "JWT_SECRET environment variable must be set in non-development environments. "
-            "The default empty value is not secure for production."
+            "JWT_SECRET must be set and at least 32 characters. "
+            "Generate one with: python -c \"import secrets; print(secrets.token_urlsafe(48))\""
         )
     return s

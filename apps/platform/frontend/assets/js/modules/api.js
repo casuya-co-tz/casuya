@@ -251,58 +251,56 @@ function renderTutorMarkdown(raw) {
     const headers = headerRow.split("|").filter(c => c.trim());
     const rows = bodyRows.trim().split("\n").map(r => r.split("|").filter(c => c.trim()));
     let html = "<table>";
-    html += "<thead><tr>" + headers.map(h => `<th>${h.trim()}</th>`).join("") + "</tr></thead>";
+    html += "<thead><tr>" + headers.map(h => `<th>${escapeHtml(h.trim())}</th>`).join("") + "</tr></thead>";
     html += "<tbody>" + rows.map(r =>
-      "<tr>" + r.map((c, i) => `<td data-label="${escapeHtml(headers[i] || "")}">${c.trim()}</td>`).join("") + "</tr>"
+      "<tr>" + r.map((c, i) => `<td data-label="${escapeHtml(headers[i] || "")}">${escapeHtml(c.trim())}</td>`).join("") + "</tr>"
     ).join("") + "</tbody></table>";
     return html;
   });
 
   // NECTA Exam Tip blocks (💡 line followed by content until *** or blank line)
   text = text.replace(/^(.*💡\s*(?:NECTA\s+(?:Examination\s+)?Tip|Mtihani).*)\n((?:(?!\*\*\*).+\n?)*)/gim, (_, tipLine, body) => {
-    const cleanBody = body.trim().replace(/\n/g, "<br>");
+    const cleanBody = escapeHtml(body.trim()).replace(/\n/g, "<br>");
     return `<div class="tutor-necta-tip"><div class="tutor-necta-tip-label">💡 NECTA Examination Tip</div><p>${cleanBody}</p></div>`;
   });
 
   // Blockquotes > ... → context blockquote
   text = text.replace(/^>\s*(.+)$/gm, (_, content) => {
-    // Check if it looks like a Tanzania/local context
     const isLocal = /tanzan|serengeti|kilimanjaro|lake victoria|dodoma|dar|kenya|uganda|east africa|africa|mwanza|arusha|mbeya|ruaha|rufiji/i.test(content);
     const badge = isLocal ? "🌍 Tanzania Context" : "📖 Context";
-    return `<div class="tutor-context-blockquote"><div class="tutor-context-badge">${badge}</div><p>${content}</p></div>`;
+    return `<div class="tutor-context-blockquote"><div class="tutor-context-badge">${badge}</div><p>${escapeHtml(content)}</p></div>`;
   });
   // Remove duplicate blockquote wrappers (if multiple > lines were wrapped individually)
   text = text.replace(/(<div class="tutor-context-blockquote">[\s\S]*?<\/div>\n?)+/g, (match) => {
-    // Keep as-is, each > line is its own block
     return match;
   });
 
   // Horizontal rules ***
   text = text.replace(/^\*\*\*\s*$/gm, "<hr>");
 
-  // Headers
-  text = text.replace(/^#### (.+)$/gm, "<h4>$1</h4>");
-  text = text.replace(/^### (.+)$/gm, "<h3>$1</h3>");
-  text = text.replace(/^## (.+)$/gm, "<h2>$1</h2>");
-  text = text.replace(/^# (.+)$/gm, "<h1>$1</h1>");
+  // Headers — escape capture groups
+  text = text.replace(/^#### (.+)$/gm, (_, t) => `<h4>${escapeHtml(t)}</h4>`);
+  text = text.replace(/^### (.+)$/gm, (_, t) => `<h3>${escapeHtml(t)}</h3>`);
+  text = text.replace(/^## (.+)$/gm, (_, t) => `<h2>${escapeHtml(t)}</h2>`);
+  text = text.replace(/^# (.+)$/gm, (_, t) => `<h1>${escapeHtml(t)}</h1>`);
 
-  // Bold + italic
-  text = text.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
-  text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-  text = text.replace(/\*(.+?)\*/g, "<em>$1</em>");
+  // Bold + italic — escape capture groups
+  text = text.replace(/\*\*\*(.+?)\*\*\*/g, (_, t) => `<strong><em>${escapeHtml(t)}</em></strong>`);
+  text = text.replace(/\*\*(.+?)\*\*/g, (_, t) => `<strong>${escapeHtml(t)}</strong>`);
+  text = text.replace(/\*(.+?)\*/g, (_, t) => `<em>${escapeHtml(t)}</em>`);
 
-  // Inline code (but not inside code blocks)
-  text = text.replace(/`([^`]+)`/g, "<code>$1</code>");
+  // Inline code — escape capture group
+  text = text.replace(/`([^`]+)`/g, (_, c) => `<code>${escapeHtml(c)}</code>`);
 
-  // Unordered lists
+  // Unordered lists — escape capture groups
   text = text.replace(/^(?:- (.+)\n?)+/gm, (match) => {
-    const items = match.trim().split("\n").map(l => `<li>${l.replace(/^- /, "")}</li>`).join("");
+    const items = match.trim().split("\n").map(l => `<li>${escapeHtml(l.replace(/^- /, ""))}</li>`).join("");
     return `<ul>${items}</ul>`;
   });
 
-  // Ordered lists
+  // Ordered lists — escape capture groups
   text = text.replace(/^(?:\d+\. (.+)\n?)+/gm, (match) => {
-    const items = match.trim().split("\n").map(l => `<li>${l.replace(/^\d+\. /, "")}</li>`).join("");
+    const items = match.trim().split("\n").map(l => `<li>${escapeHtml(l.replace(/^\d+\. /, ""))}</li>`).join("");
     return `<ol>${items}</ol>`;
   });
 
@@ -312,10 +310,8 @@ function renderTutorMarkdown(raw) {
   text = paragraphs.map(p => {
     p = p.trim();
     if (!p) return "";
-    // Don't wrap if it's already an HTML block
     if (/^<(div|table|ul|ol|h[1-6]|hr|pre)/.test(p)) return p;
-    // Wrap plain text in paragraphs, converting single newlines to <br>
-    return `<p>${p.replace(/\n/g, "<br>")}</p>`;
+    return `<p>${escapeHtml(p).replace(/\n/g, "<br>")}</p>`;
   }).join("\n");
 
   return text;

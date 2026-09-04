@@ -3,7 +3,7 @@ from quizzes — see backend/api/games.py and services/game_service.py)."""
 
 from __future__ import annotations
 
-from sqlalchemy import Boolean, ForeignKey, String, Text
+from sqlalchemy import Boolean, ForeignKey, Index, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 from backend.config.database import Base
@@ -21,3 +21,7 @@ class Game(Base):
     package_html: Mapped[str | None] = mapped_column(Text, nullable=True)
     content_hash: Mapped[str | None] = mapped_column(String, nullable=True)
     status: Mapped[str] = mapped_column(String, default="draft")
+
+    __table_args__ = (
+        Index("ix_games_lesson_id", "lesson_id"),
+    )

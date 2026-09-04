@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from sqlalchemy import DateTime, Float, ForeignKey, String
+from sqlalchemy import DateTime, Float, ForeignKey, Index, String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from backend.config.database import Base
@@ -24,3 +24,7 @@ class Payment(Base):
     idempotency_key: Mapped[str | None] = mapped_column(String, unique=True, nullable=True, index=True)
     status: Mapped[str] = mapped_column(String, default="pending")  # pending|success|failed
     created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+    __table_args__ = (
+        Index("ix_payments_user_id", "user_id"),
+    )

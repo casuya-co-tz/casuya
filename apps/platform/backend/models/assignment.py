@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from sqlalchemy import DateTime, ForeignKey, String, Text
+from sqlalchemy import DateTime, ForeignKey, Index, String, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 from backend.config.database import Base
@@ -24,6 +24,11 @@ class Assignment(Base):
     status: Mapped[str] = mapped_column(String, default="active")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
 
+    __table_args__ = (
+        Index("ix_assignments_lesson_id", "lesson_id"),
+        Index("ix_assignments_created_by", "created_by"),
+    )
+
 
 class AssignmentSubmission(Base):
     __tablename__ = "assignment_submissions"
@@ -35,3 +40,8 @@ class AssignmentSubmission(Base):
     grade_json: Mapped[str | None] = mapped_column(Text, nullable=True)
     status: Mapped[str] = mapped_column(String, default="submitted")
     submitted_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+    __table_args__ = (
+        Index("ix_assignment_submissions_assignment_id", "assignment_id"),
+        Index("ix_assignment_submissions_student_id", "student_id"),
+    )

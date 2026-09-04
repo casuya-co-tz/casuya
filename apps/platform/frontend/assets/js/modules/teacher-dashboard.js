@@ -965,9 +965,17 @@ async function renderTeacherDashboard() {
                 <h2>${escapeHtml(draft.title)}</h2>
                 <span style="font-size:0.75rem;padding:0.2rem 0.6rem;background:#fef3c7;color:#d97706;border-radius:var(--radius);font-weight:600">Draft</span>
               </div>
-              <div class="lesson-viewer">${draft.html_content}</div>
+              <div class="lesson-viewer" id="draft-viewer"></div>
             </div>
           `);
+          const viewer = document.getElementById("draft-viewer");
+          if (viewer) {
+            const iframe = document.createElement("iframe");
+            iframe.style.cssText = "width:100%;min-height:600px;border:1px solid var(--color-border);border-radius:var(--radius);background:#fff";
+            iframe.sandbox = "allow-same-origin";
+            iframe.srcdoc = draft.html_content || "<p>No content</p>";
+            viewer.appendChild(iframe);
+          }
           document.getElementById("back-btn").addEventListener("click", loadTeacherLessons);
         });
       });

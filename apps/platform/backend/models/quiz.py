@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from sqlalchemy import Boolean, ForeignKey, String, Text
+from sqlalchemy import Boolean, ForeignKey, Index, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from backend.config.database import Base
@@ -22,6 +22,10 @@ class Quiz(Base):
 
     quiz_questions = relationship("QuizQuestion", lazy="select", backref="quiz", order_by="QuizQuestion.id")
 
+    __table_args__ = (
+        Index("ix_quizzes_lesson_id", "lesson_id"),
+    )
+
 
 class QuizQuestion(Base):
     __tablename__ = "quiz_questions"
@@ -32,6 +36,10 @@ class QuizQuestion(Base):
 
     quiz_options = relationship("QuizOption", lazy="select", backref="question", order_by="QuizOption.id")
 
+    __table_args__ = (
+        Index("ix_quiz_questions_quiz_id", "quiz_id"),
+    )
+
 
 class QuizOption(Base):
     __tablename__ = "quiz_options"
@@ -40,3 +48,7 @@ class QuizOption(Base):
     question_id: Mapped[str] = mapped_column(ForeignKey("quiz_questions.id"), nullable=False)
     text: Mapped[str] = mapped_column(String, nullable=False)
     is_correct: Mapped[bool] = mapped_column(Boolean, default=False)
+
+    __table_args__ = (
+        Index("ix_quiz_options_question_id", "question_id"),
+    )

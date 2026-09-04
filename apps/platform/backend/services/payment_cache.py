@@ -37,25 +37,23 @@ def _sync_from_microservice() -> None:
     """
     global _stats, _last_sync, _sync_count, _error_count
     client = get_payments_client()
+    # Fetch all data outside the lock to avoid blocking readers during slow I/O
+    payments = client.list_payments()
+    subscriptions = client.list_subscriptions()
+    invoices = client.list_invoices()
+    refunds = client.list_refunds()
+    stats = client.get_stats()
+    # Swap caches atomically under the lock
     with _lock:
-        payments = client.list_payments()
         _payments.clear()
         _payments.extend(payments[-MAX_CACHE_SIZE:])
-
-        subscriptions = client.list_subscriptions()
         _subscriptions.clear()
-        _subscriptions_extend = subscriptions[-MAX_CACHE_SIZE:]
-        _subscriptions.extend(_subscriptions_extend)
-
-        invoices = client.list_invoices()
+        _subscriptions.extend(subscriptions[-MAX_CACHE_SIZE:])
         _invoices.clear()
         _invoices.extend(invoices[-MAX_CACHE_SIZE:])
-
-        refunds = client.list_refunds()
         _refunds.clear()
         _refunds.extend(refunds[-MAX_CACHE_SIZE:])
-
-        _stats = client.get_stats()
+        _stats = stats
         _last_sync = time.monotonic()
         _sync_count += 1
 
