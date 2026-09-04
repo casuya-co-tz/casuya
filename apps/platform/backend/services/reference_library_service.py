@@ -20,7 +20,7 @@ from backend.models.reference_doc import ReferenceDoc
 # Keyword -> Casuya subject_slug mapping (best-effort). Ordered so more
 # specific phrases (e.g. "advanced mathematics") match before generic ones.
 _SUBJECT_RULES: list[tuple[re.Pattern[str], str]] = [
-    (re.compile(r"advanced\s*(mathematics|math)|mathematics\s*form\s*six|additional\s*math"), "additional_mathematics"),
+    (re.compile(r"advanced\s*(mathematics|math)|additional\s*math"), "additional_mathematics"),
     (re.compile(r"basic\s*mathematics|mathematics|mathemat|hisabati|kuhesabu|numeracy|\bmath\b"), "mathematics"),
     (re.compile(r"book[\s-]*keeping|book[\s-]*keeping\b|accountancy|\baccounting|\baccount\b"), "bookkeeping"),
     (re.compile(r"business\s*studies|commerce|\bbiashara\b"), "business_studies"),
