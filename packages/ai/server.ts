@@ -427,6 +427,64 @@ async function generateExamPaper(ai: CasuyaAI, body: any): Promise<any | null> {
   }
 }
 
+/** Tolerantly extract the first JSON object from a model response. */
+function parseJsonObject(content: string): any | null {
+  let text = String(content || '').trim();
+  text = text.replace(/```json/gi, '').replace(/```/g, '');
+  const start = text.indexOf('{');
+  const end = text.lastIndexOf('}');
+  if (start === -1 || end <= start) return null;
+  try {
+    return JSON.parse(text.slice(start, end + 1));
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Generate a TIE lesson-plan / scheme-of-work JSON via the provider chain.
+ *
+ * The platform sends a fully-specified TIE prompt (body.prompt) that already
+ * embeds the exact target JSON schema. We ask the model to fill it and parse
+ * the JSON. On any failure we return a `{ header: {} }` shell, which the
+ * platform's completeness check rejects so the platform falls back to its
+ * reliable offline builder rather than rendering a half-built AI plan.
+ */
+async function generatePlanJson(ai: CasuyaAI, body: any, kind: 'lesson' | 'scheme'): Promise<any> {
+  const sentPrompt = String(body?.prompt || body?.question || '').trim();
+  const userPrompt =
+    sentPrompt ||
+    `Generate an official TIE ${kind === 'lesson' ? 'Lesson Plan' : 'Scheme of Work'} as valid JSON only, ` +
+      `with a "header" object ${
+        kind === 'lesson'
+          ? 'and "competence_architecture", "progression_matrix", "resources_strategies"'
+          : 'and a non-empty "weeks" array'
+      }. Subject: ${String(body?.subject_slug || '')} Form ${body?.form_level || 1}.`;
+
+  const provider = ProviderFactory.getProvider('failover') || ProviderFactory.getProvider('local');
+  if (!provider) return { header: {} };
+
+  try {
+    const result = await provider.chatCompletion({
+      messages: [
+        {
+          role: 'system',
+          content:
+            'You are a Tanzanian TIE curriculum expert. Respond with valid JSON only, matching the exact schema in the prompt.',
+        },
+        { role: 'user', content: userPrompt },
+      ],
+      temperature: 0.6,
+      maxTokens: Math.min(9000, 4000),
+    });
+    const parsed = parseJsonObject(result.content);
+    if (parsed && typeof parsed === 'object' && parsed.header) return parsed;
+  } catch (err) {
+    console.error(`[plans/${kind}] generation failed:`, err);
+  }
+  return { header: {} };
+}
+
 async function start() {
   const { specs, chain } = buildFreeProviderSpecs();
   const providers = specsToConfigMap(specs);
@@ -584,6 +642,14 @@ async function start() {
           }
 
           return { response, sourced, kbHits: ragDocs, questions, max_questions: nQuestions };
+        }
+
+        case '/api/plans/lesson-plan': {
+          return safeAsync(async () => generatePlanJson(ai, body, 'lesson'), { header: {} });
+        }
+
+        case '/api/plans/scheme-of-work': {
+          return safeAsync(async () => generatePlanJson(ai, body, 'scheme'), { header: {} });
         }
 
         case '/api/exams/generate': {

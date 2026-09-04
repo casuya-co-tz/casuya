@@ -87,6 +87,31 @@ def _parse_plan_json(raw: str) -> dict | None:
     return None
 
 
+def _is_complete_lesson_plan(plan) -> bool:
+    """Accept an AI-generated lesson plan only when it has the domain structure
+    the renderer needs. Anything less (e.g. a Headers-only or explanation
+    payload) is rejected so the generator falls back to the offline builder."""
+    if not isinstance(plan, dict):
+        return False
+    if not isinstance(plan.get("header"), dict):
+        return False
+    ca = plan.get("competence_architecture")
+    if not isinstance(ca, dict) or not (ca.get("main_competence") or "").strip():
+        return False
+    if not (ca.get("specific_competence") or "").strip():
+        return False
+    return isinstance(plan.get("progression_matrix"), list) and bool(plan["progression_matrix"])
+
+
+def _is_complete_scheme(plan) -> bool:
+    """Accept an AI-generated scheme of work only when it carries weeks."""
+    if not isinstance(plan, dict):
+        return False
+    if not isinstance(plan.get("header"), dict):
+        return False
+    return isinstance(plan.get("weeks"), list) and bool(plan["weeks"])
+
+
 def _fill_lesson_plan_placeholders(
     plan: dict,
     *,
@@ -159,11 +184,22 @@ async def generate_lesson_plan(
         period=period or "Period 1",
     )
 
-    result = await _call_ai_service("/api/tutoring/explain", {
+    result = await _call_ai_service("/api/plans/lesson-plan", {
         "question": prompt,
+        "prompt": prompt,
         "context": curriculum_ctx,
         "subject_slug": subject_slug,
         "form_level": form_level,
+        "topic": topic,
+        "subtopic": subtopic or "",
+        "school_name": school_name or "School Name",
+        "teacher_name": teacher_name or "Teacher Name",
+        "number_of_students": number_of_students or 40,
+        "students_boys": students_boys,
+        "students_girls": students_girls,
+        "duration_minutes": duration_minutes,
+        "period": period or "Period 1",
+        "lang": lang,
     })
 
     # Resolve the real syllabus codes/titles so any leftover '{}' placeholder
@@ -183,16 +219,26 @@ async def generate_lesson_plan(
     except Exception:
         logger.warning("Could not resolve syllabus codes for placeholder fill", exc_info=True)
 
-    if result and "response" in result:
+    plan = None
+    if isinstance(result, dict) and _is_complete_lesson_plan(result):
+        plan = result
+    elif isinstance(result, dict) and "response" in result:
         raw = _strip_think_tags(result["response"])
-        plan = _parse_plan_json(raw)
-        if plan and "header" in plan:
-            tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
-            if tie_main and tie_spec:
-                ca = plan.setdefault("competence_architecture", {})
-                ca["main_competence"] = tie_main
-                ca["specific_competence"] = tie_spec
-            return _fill_lesson_plan_placeholders(
+        parsed = _parse_plan_json(raw)
+        if _is_complete_lesson_plan(parsed):
+            plan = parsed
+
+    if plan is not None:
+        tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
+        if tie_main and tie_spec:
+            ca = plan.setdefault("competence_architecture", {})
+            ca["main_competence"] = tie_main
+            ca["specific_competence"] = tie_spec
+        plan.setdefault("header", {})
+        plan["header"]["school_name"] = plan["header"].get("school_name") or (school_name or "School Name")
+        plan["header"]["teacher_name"] = plan["header"].get("teacher_name") or (teacher_name or "Teacher Name")
+        plan["header"]["class_name"] = plan["header"].get("class_name") or f"Form {form_level}"
+        return _fill_lesson_plan_placeholders(
                 plan,
                 topic_code=topic_code,
                 topic_title=topic_title,
@@ -356,18 +402,38 @@ async def generate_scheme_of_work(
         topics=topics or [],
     )
 
-    result = await _call_ai_service("/api/tutoring/explain", {
+    result = await _call_ai_service("/api/plans/scheme-of-work", {
         "question": prompt,
+        "prompt": prompt,
         "context": curriculum_ctx,
         "subject_slug": subject_slug,
         "form_level": form_level,
+        "term": term,
+        "academic_year": academic_year or "2026",
+        "school_name": school_name or "School Name",
+        "teacher_name": teacher_name or "Teacher Name",
+        "topics": topics or [],
+        "lang": lang,
     })
 
-    if result and "response" in result:
+    plan = None
+    if isinstance(result, dict) and _is_complete_scheme(result):
+        plan = result
+    elif isinstance(result, dict) and "response" in result:
         raw = _strip_think_tags(result["response"])
-        plan = _parse_plan_json(raw)
-        if plan and "header" in plan:
-            return plan
+        parsed = _parse_plan_json(raw)
+        if _is_complete_scheme(parsed):
+            plan = parsed
+
+    if plan is not None:
+        h = plan.setdefault("header", {})
+        h.setdefault("school_name", school_name or "School Name")
+        h.setdefault("teacher_name", teacher_name or "Teacher Name")
+        h.setdefault("subject", subject_label)
+        h.setdefault("class_name", f"Form {form_level}")
+        h.setdefault("term", term)
+        h.setdefault("academic_year", academic_year or "2026")
+        return plan
 
     return _build_scheme_offline(
         subject_slug=subject_slug,

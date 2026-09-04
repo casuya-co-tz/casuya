@@ -18,6 +18,8 @@ from backend.services.teacher_plan_service import (
     _lang_label,
     _scheme_row_for_lesson,
     _strip_item_marker,
+    generate_lesson_plan,
+    generate_scheme_of_work,
     plan_lessons_for_subtopic,
     render_lesson_plan_html,
     render_scheme_of_work_html,
@@ -665,6 +667,124 @@ def test_scheme_of_work_midterm_and_period_integrity(monkeypatch):
             else {"July", "August", "September", "October", "November"}
         )
         assert {w["month"] for w in weeks} <= valid_months
+
+
+# ── AI wiring: accept complete AI plans, fall back on incomplete ─────────
+
+
+def _run(coro):
+    import asyncio
+
+    return asyncio.run(coro)
+
+
+def _async_return(value):
+    async def _fake(*args, **kwargs):
+        return value
+
+    return _fake
+
+
+def _curriculum_ctx(*args, **kwargs):
+    return "curriculum"
+
+
+def test_lesson_plan_uses_complete_ai_plan(monkeypatch):
+    """A complete AI lesson-plan JSON (dict with header) is used instead of
+    falling back to the offline rule-based builder."""
+    ai_plan = {
+        "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
+        "competence_architecture": {
+            "main_competence": "Main", "specific_competence": "Spec",
+            "main_learning_activity": "MLA", "specific_learning_activity": "SLA",
+            "lesson_objective": "Obj",
+        },
+        "resources_strategies": {"resources": [], "strategies": []},
+        "progression_matrix": [
+            {"stage": "Knowledge", "duration_minutes": 10, "activities": []},
+            {"stage": "Skills", "duration_minutes": 10, "activities": []},
+            {"stage": "Competence", "duration_minutes": 10, "activities": []},
+            {"stage": "Realizations", "duration_minutes": 10, "activities": []},
+        ],
+        "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
+    }
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service._call_ai_service",
+        _async_return(ai_plan),
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_curriculum_context",
+        _curriculum_ctx,
+    )
+    plan = _run(generate_lesson_plan(
+        subject_slug="mathematics", form_level=2, topic="Algebra",
+        subtopic="Linear Equations", school_name="X", teacher_name="Y",
+    ))
+    assert plan["header"]["school_name"] == "AI School"
+    assert plan["progression_matrix"][3]["stage"] == "Realizations"
+    assert plan["competence_architecture"]["main_learning_activity"] == "MLA"
+
+
+def test_lesson_plan_falls_back_on_incomplete_ai(monkeypatch):
+    """An incomplete AI lesson-plan JSON (empty header) is rejected so the
+    generator falls back to the offline builder."""
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service._call_ai_service",
+        _async_return({"header": {}}),
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_curriculum_context",
+        _curriculum_ctx,
+    )
+    plan = _run(generate_lesson_plan(
+        subject_slug="mathematics", form_level=2, topic="Algebra",
+        subtopic="Linear Equations", school_name="X", teacher_name="Y",
+    ))
+    assert "header" in plan
+    assert "progression_matrix" in plan
+
+
+def test_scheme_of_work_uses_complete_ai_plan(monkeypatch):
+    """A complete AI scheme-of-work JSON is used instead of falling back to the
+    offline builder."""
+    ai_scheme = {"header": {"school_name": "AI School", "teacher_name": "AI Teacher"}, "weeks": [
+        {"week": 1, "topic": "Algebra", "main_competence": "Main", "specific_competence": "Spec",
+         "learning_activities": [], "specific_activities": [], "periods": 2,
+         "month": "January", "reference": "R"},
+    ]}
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service._call_ai_service",
+        _async_return(ai_scheme),
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_curriculum_context",
+        _curriculum_ctx,
+    )
+    plan = _run(generate_scheme_of_work(
+        subject_slug="mathematics", form_level=1, term="Term 1",
+        school_name="X", teacher_name="Y", topics=["Algebra"],
+    ))
+    assert plan["header"]["school_name"] == "AI School"
+    assert len(plan["weeks"]) == 1
+
+
+def test_scheme_of_work_falls_back_on_incomplete_ai(monkeypatch):
+    """An incomplete AI scheme JSON (empty header) falls back to the offline
+    builder."""
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service._call_ai_service",
+        _async_return({"header": {}}),
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_curriculum_context",
+        _curriculum_ctx,
+    )
+    plan = _run(generate_scheme_of_work(
+        subject_slug="mathematics", form_level=1, term="Term 1",
+        school_name="X", teacher_name="Y", topics=["Algebra"],
+    ))
+    assert "header" in plan
+    assert len(plan["weeks"]) > 0
 
 
 # ── API: save / list / get / delete ───────────────────────────────────────

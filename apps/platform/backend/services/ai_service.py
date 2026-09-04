@@ -18,7 +18,7 @@ import httpx
 
 logger = logging.getLogger(__name__)
 
-CASUYA_AI_URL = os.getenv("CASUYA_AI_URL", "http://localhost:3000")
+CASUYA_AI_URL = (os.getenv("CASUYA_AI_URL", "http://localhost:3000") or "").rstrip("/")
 
 # Reuse a single async httpx client for connection pooling (P2-9)
 _http_client: httpx.AsyncClient | None = None
