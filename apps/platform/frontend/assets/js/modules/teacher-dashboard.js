@@ -1569,7 +1569,7 @@ async function renderTeacherDashboard() {
       const listDiv = document.getElementById("tdocs-saved-list");
       if (!listDiv) return;
       if (!savedPlans.length) {
-        listDiv.innerHTML = '<div class="empty-state" style="padding:1.5rem"><p>No saved documents yet. Generate one above.</p></div>';
+        listDiv.innerHTML = '<div class="tdocs-empty"><div class="tdocs-empty-icon">📂</div><p>No saved documents yet. Generate one above.</p></div>';
         return;
       }
       listDiv.innerHTML = savedPlans.map((p) => {
@@ -1579,24 +1579,23 @@ async function renderTeacherDashboard() {
           : (isSw ? "Mpango wa Somo" : "Lesson Plan");
         const f = p.form_level ? ("Form " + (ROMAN[p.form_level] || p.form_level)) : "";
         return `
-          <div class="card tdocs-doc-card" style="padding:1rem;margin-bottom:0.75rem">
+          <div class="card tdocs-doc-card" style="padding:1rem 1.15rem;margin-bottom:0.6rem">
             <div class="tdocs-doc-row">
               <div style="flex:1;min-width:0">
-                <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
-                  <span class="badge badge-${p.plan_type === 'scheme_of_work' ? 'info' : 'success'}">${escapeHtml(typeLabel)}</span>
-                  ${f ? `<span class="badge" style="background:var(--color-bg);color:var(--color-text-muted)">${escapeHtml(f)}</span>` : ""}
-                  ${isSw ? '<span style="font-size:0.7rem;color:var(--color-text-muted)">Kiswahili</span>' : ""}
+                <div style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.2rem">
+                  <span class="tdocs-status ${p.plan_type === 'scheme_of_work' ? 'tdocs-status-info' : 'tdocs-status-success'}">${escapeHtml(typeLabel)}</span>
+                  ${f ? `<span class="tdocs-status" style="background:var(--color-bg);color:var(--color-text-muted)">${escapeHtml(f)}</span>` : ""}
                 </div>
-                <h4 style="margin:0.35rem 0 0">${escapeHtml(planLabel(p))}</h4>
-                <p style="margin:0.15rem 0 0;font-size:0.75rem;color:var(--color-text-muted)">
-                  ${escapeHtml(p.subject_name || p.subject_slug || "")} • ${escapeHtml(p.created_at ? new Date(p.created_at).toLocaleDateString() : "")}
+                <h4 style="margin:0;font-size:0.9rem">${escapeHtml(planLabel(p))}</h4>
+                <p style="margin:0.15rem 0 0;font-size:0.72rem;color:var(--color-text-muted)">
+                  ${escapeHtml(p.subject_name || p.subject_slug || "")} &middot; ${escapeHtml(p.created_at ? new Date(p.created_at).toLocaleDateString() : "")}
                 </p>
               </div>
               <div class="tdocs-actions">
-                <button class="btn btn-sm btn-outline" data-view="${p.id}">${isSw ? "Onyesha" : "View"}</button>
-                <button class="btn btn-sm btn-outline" data-print="${p.id}">${isSw ? "Chapisha / PDF" : "Print / PDF"}</button>
-                <button class="btn btn-sm btn-outline" data-doc="${p.id}">Word</button>
-                <button class="btn btn-sm btn-danger" data-del="${p.id}">${isSw ? "Futa" : "Delete"}</button>
+                <button class="btn btn-sm btn-outline" data-view="${p.id}">👁</button>
+                <button class="btn btn-sm btn-outline" data-print="${p.id}">🖨</button>
+                <button class="btn btn-sm btn-outline" data-doc="${p.id}">📥</button>
+                <button class="btn btn-sm btn-danger" data-del="${p.id}">✕</button>
               </div>
             </div>
           </div>`;
@@ -1619,7 +1618,6 @@ async function renderTeacherDashboard() {
     }
 
     function showPanel(panel) {
-      document.querySelectorAll("#tdocs-panel").forEach(()=>{});
       document.getElementById("tdocs-lesson-panel").style.display = panel === "lesson" ? "" : "none";
       document.getElementById("tdocs-scheme-panel").style.display = panel === "scheme" ? "" : "none";
       document.getElementById("tdocs-saved-panel").style.display = panel === "saved" ? "" : "none";
@@ -1628,7 +1626,7 @@ async function renderTeacherDashboard() {
     async function viewPlan(id) {
       const detail = await request(`/teacher-plans/${id}?_t=${Date.now()}`).catch(() => null);
       if (!detail) { alert("Could not load document"); return; }
-      const win = window.open("", "_blank", "width=1000,height=700");
+      const win = window.open("", "_blank", "width=1100,height=750");
       if (win) { win.document.write(detail.html_render || "<p>No preview</p>"); win.document.close(); }
       else { alert("Popup blocked. Please allow popups to preview."); }
     }
@@ -1636,135 +1634,241 @@ async function renderTeacherDashboard() {
     async function printPlan(id) {
       const detail = await request(`/teacher-plans/${id}?_t=${Date.now()}`).catch(() => null);
       if (!detail) { alert("Could not load document"); return; }
-      const win = window.open("", "_blank", "width=1000,height=700");
+      const win = window.open("", "_blank", "width=1100,height=750");
       if (win) { win.document.write(detail.html_render || "<p>No preview</p>"); win.document.close(); win.focus(); setTimeout(()=>win.print(), 400); }
       else { alert("Popup blocked. Please allow popups."); }
     }
 
+    async function downloadWord(id) {
+      const detail = await request(`/teacher-plans/${id}?_t=${Date.now()}`).catch(() => null);
+      if (!detail) { alert("Could not load document"); return; }
+      const win = window.open("", "_blank", "width=1100,height=750");
+      if (win) {
+        const wordHtml = `<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="UTF-8"><style>body{font-family:"Inter","Segoe UI",sans-serif;font-size:10pt}table{border-collapse:collapse}th,td{border:1px solid #e2e8f0;padding:5px 6px}th{background:#f1f5f9;font-weight:600}</style></head><body>${detail.html_render || ""}</body></html>`;
+        win.document.write(wordHtml); win.document.close();
+        setTimeout(() => {
+          try { win.document.execCommand("SaveAs", false, "lesson_plan.doc"); } catch(e) {}
+        }, 500);
+      } else { alert("Popup blocked. Please allow popups."); }
+    }
+
     showTeacherView(`
       <div class="content">
-        <h2>📚 Teaching Documents</h2>
-        <p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.25rem">
+        <h2 class="tdocs-page-title">Teaching Documents</h2>
+        <p class="tdocs-page-desc">
           Generate official TIE Competence-Based Lesson Plans and Schemes of Work, then save, print, or export as PDF/Word.
-          ${"Generated in Kiswahili for Kiswahili-medium subjects and English for all others."}
+          Generated in Kiswahili for Kiswahili-medium subjects and English for all others.
         </p>
         <div class="tdocs-tabs" id="tdocs-tabs"></div>
-        <div style="margin-top:1.25rem">
-          <div id="tdocs-lesson-panel">
-            <div class="card" style="padding:1.5rem">
-              <h3 style="margin-bottom:0.75rem">Lesson Plan Generator</h3>
-              <form id="tdoc-lesson-form" style="display:grid;gap:0.75rem">
-                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label style="flex:1;min-width:200px">Subject
-                    <select class="input" name="subject_slug" id="tdoc-ss">${subjectOpts()}</select>
-                  </label>
-                  <label style="flex:0.5;min-width:110px">Form Level
-                    <select class="input" name="form_level">
-                      <option value="1">Form I</option>
-                      <option value="2" selected>Form II</option>
-                      <option value="3">Form III</option>
-                      <option value="4">Form IV</option>
-                    </select>
-                  </label>
-                </div>
-                <label>Topic / Mada
-                  <select class="input" name="topic" id="tdoc-topic" required>
-                    <option value="">— choose subject & form to load topics —</option>
-                  </select>
-                </label>
-                <label>Subtopic / Sehemu ya Mada
-                  <select class="input" name="subtopic" id="tdoc-subtopic">
-                    <option value="">— choose a topic first —</option>
-                  </select>
-                </label>
-                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label style="flex:1;min-width:150px">School / Shule
-                    <input class="input" name="school_name" placeholder="School name">
-                  </label>
-                  <label style="flex:1;min-width:150px">Teacher / Mwalimu
-                    <input class="input" name="teacher_name" placeholder="Teacher name">
-                  </label>
-                </div>
-                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label class="tdocs-field">No. of Students
-                    <input class="input" type="number" name="number_of_students" value="40" min="1">
-                  </label>
-                  <label class="tdocs-field">Boys / Wavulana
-                    <input class="input" type="number" name="students_boys" min="0" placeholder="auto">
-                  </label>
-                  <label class="tdocs-field">Girls / Wasichana
-                    <input class="input" type="number" name="students_girls" min="0" placeholder="auto">
-                  </label>
-                  <label class="tdocs-field">Duration (min)
-                    <input class="input" type="number" name="duration_minutes" value="40" min="10" max="120">
-                  </label>
-                  <label class="tdocs-field">Period / Kipindi
-                    <input class="input" name="period" placeholder="Period 1">
-                  </label>
-                </div>
-                <div class="tdocs-form-actions">
-                  <button class="btn btn-primary" type="submit" style="flex:1 1 auto">Generate Lesson Plan</button>
-                  <button class="btn btn-outline" type="button" id="tdoc-lesson-seed" style="font-size:0.8rem;flex:1 1 auto">Autofill sample topic</button>
-                </div>
-              </form>
-              <div id="tdoc-lesson-result" style="margin-top:1.25rem;display:none"></div>
-            </div>
-          </div>
 
-          <div id="tdocs-scheme-panel" style="display:none">
-            <div class="card" style="padding:1.5rem">
-              <h3 style="margin-bottom:0.75rem">Scheme of Work Generator</h3>
-              <form id="tdoc-scheme-form" style="display:grid;gap:0.75rem">
-                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label class="tdocs-field tdocs-field-grow">Subject
-                    <select class="input" name="subject_slug">${subjectOpts()}</select>
-                  </label>
-                  <label class="tdocs-field">Form Level
-                    <select class="input" name="form_level">
-                      <option value="1">Form I</option>
-                      <option value="2" selected>Form II</option>
-                      <option value="3">Form III</option>
-                      <option value="4">Form IV</option>
-                    </select>
-                  </label>
-                </div>
-                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label class="tdocs-field">Term
-                    <select class="input" name="term">
-                      <option value="Term 1" selected>Term I</option>
-                      <option value="Term 2">Term II</option>
-                    </select>
-                  </label>
-                  <label class="tdocs-field">Academic Year
-                    <input class="input" name="academic_year" placeholder="2026">
-                  </label>
-                </div>
-                <label>Topics to cover (comma-separated, optional — uses curriculum if blank)
-                  <input class="input" name="topics" placeholder="e.g. Algebraic Expressions, Linear Equations, Inequalities">
-                </label>
-                <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-                  <label class="tdocs-field tdocs-field-grow">School / Shule
-                    <input class="input" name="school_name" placeholder="School name">
-                  </label>
-                  <label class="tdocs-field tdocs-field-grow">Teacher / Mwalimu
-                    <input class="input" name="teacher_name" placeholder="Teacher name">
-                  </label>
-                </div>
-                <div class="tdocs-form-actions">
-                  <button class="btn btn-primary" type="submit" style="flex:1 1 auto">Generate Scheme of Work</button>
-                </div>
-              </form>
-              <div id="tdoc-scheme-result" style="margin-top:1.25rem;display:none"></div>
-            </div>
-          </div>
+        <div id="tdocs-lesson-panel" style="margin-top:1.25rem">
+          <div class="tdocs-layout">
+            <div class="tdocs-form-col">
+              <div class="card" style="padding:1.5rem">
+                <h3 style="margin-bottom:0.6rem;font-size:1rem;font-weight:700">Lesson Plan Generator</h3>
+                <form id="tdoc-lesson-form" style="display:grid;gap:0.6rem">
+                  <div class="tdocs-section">
+                    <div class="tdocs-section-title">Curriculum</div>
+                    <div class="tdocs-field-grid">
+                      <label class="tdocs-field">
+                        <span>Subject</span>
+                        <select class="input" name="subject_slug" id="tdoc-ss">${subjectOpts()}</select>
+                      </label>
+                      <label class="tdocs-field">
+                        <span>Form Level</span>
+                        <select class="input" name="form_level">
+                          <option value="1">Form I</option>
+                          <option value="2" selected>Form II</option>
+                          <option value="3">Form III</option>
+                          <option value="4">Form IV</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="tdocs-field-grid" style="margin-top:0.5rem">
+                      <label class="tdocs-field" style="grid-column:1/-1">
+                        <span>Topic / Mada</span>
+                        <select class="input" name="topic" id="tdoc-topic" required>
+                          <option value="">— choose subject & form to load topics —</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="tdocs-field-grid" style="margin-top:0.5rem">
+                      <label class="tdocs-field" style="grid-column:1/-1">
+                        <span>Subtopic / Sehemu ya Mada</span>
+                        <select class="input" name="subtopic" id="tdoc-subtopic">
+                          <option value="">— choose a topic first —</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
 
-          <div id="tdocs-saved-panel" style="display:none">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
-              <h3 style="margin:0">Saved Documents</h3>
-              <button class="btn btn-sm btn-outline" id="tdoc-refresh">Refresh</button>
+                  <div class="tdocs-section">
+                    <div class="tdocs-section-title">School & Teacher</div>
+                    <div class="tdocs-field-grid">
+                      <label class="tdocs-field">
+                        <span>School / Shule</span>
+                        <input class="input" name="school_name" placeholder="School name">
+                      </label>
+                      <label class="tdocs-field">
+                        <span>Teacher / Mwalimu</span>
+                        <input class="input" name="teacher_name" placeholder="Teacher name">
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="tdocs-section">
+                    <div class="tdocs-section-title">Class Details</div>
+                    <div class="tdocs-field-grid-4">
+                      <label class="tdocs-field">
+                        <span>Total Students</span>
+                        <input class="input" type="number" name="number_of_students" value="40" min="1">
+                      </label>
+                      <label class="tdocs-field">
+                        <span>Boys</span>
+                        <input class="input" type="number" name="students_boys" min="0" placeholder="auto">
+                      </label>
+                      <label class="tdocs-field">
+                        <span>Girls</span>
+                        <input class="input" type="number" name="students_girls" min="0" placeholder="auto">
+                      </label>
+                      <label class="tdocs-field">
+                        <span>Duration (min)</span>
+                        <input class="input" type="number" name="duration_minutes" value="40" min="10" max="120">
+                      </label>
+                    </div>
+                    <div class="tdocs-field-grid" style="margin-top:0.5rem">
+                      <label class="tdocs-field">
+                        <span>Period / Kipindi</span>
+                        <input class="input" name="period" placeholder="Period 1">
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="tdocs-form-actions">
+                    <button class="btn tdocs-generate-btn" type="submit" style="flex:1">✨ Generate Lesson Plan</button>
+                    <button class="btn btn-outline" type="button" id="tdoc-lesson-seed" style="font-size:0.8rem">Autofill</button>
+                  </div>
+                </form>
+              </div>
             </div>
-            <div id="tdocs-saved-list"></div>
+            <div class="tdocs-preview-col">
+              <div class="tdocs-preview-panel" id="tdoc-lesson-preview">
+                <div class="tdocs-preview-header">
+                  <h4>📄 Preview</h4>
+                  <div class="tdocs-preview-actions" id="tdoc-lesson-preview-actions" style="display:none">
+                    <button class="btn btn-sm btn-outline" id="gen-view">👁 View</button>
+                    <button class="btn btn-sm btn-outline" id="gen-print">🖨 Print / PDF</button>
+                    <button class="btn btn-sm btn-outline" id="gen-doc">📥 Word</button>
+                  </div>
+                </div>
+                <div id="tdoc-lesson-result">
+                  <div class="tdocs-empty">
+                    <div class="tdocs-empty-icon">📋</div>
+                    <p>Fill in the form and click <strong>Generate</strong> to create a lesson plan.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div id="tdocs-scheme-panel" style="display:none;margin-top:1.25rem">
+          <div class="tdocs-layout">
+            <div class="tdocs-form-col">
+              <div class="card" style="padding:1.5rem">
+                <h3 style="margin-bottom:0.6rem;font-size:1rem;font-weight:700">Scheme of Work Generator</h3>
+                <form id="tdoc-scheme-form" style="display:grid;gap:0.6rem">
+                  <div class="tdocs-section">
+                    <div class="tdocs-section-title">Curriculum</div>
+                    <div class="tdocs-field-grid">
+                      <label class="tdocs-field">
+                        <span>Subject</span>
+                        <select class="input" name="subject_slug">${subjectOpts()}</select>
+                      </label>
+                      <label class="tdocs-field">
+                        <span>Form Level</span>
+                        <select class="input" name="form_level">
+                          <option value="1">Form I</option>
+                          <option value="2" selected>Form II</option>
+                          <option value="3">Form III</option>
+                          <option value="4">Form IV</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="tdocs-section">
+                    <div class="tdocs-section-title">Term & Year</div>
+                    <div class="tdocs-field-grid">
+                      <label class="tdocs-field">
+                        <span>Term</span>
+                        <select class="input" name="term">
+                          <option value="Term 1" selected>Term I</option>
+                          <option value="Term 2">Term II</option>
+                        </select>
+                      </label>
+                      <label class="tdocs-field">
+                        <span>Academic Year</span>
+                        <input class="input" name="academic_year" placeholder="2026">
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="tdocs-section">
+                    <div class="tdocs-section-title">Topics (Optional)</div>
+                    <label class="tdocs-field">
+                      <span>Topics to cover — comma-separated, or leave blank to use full curriculum</span>
+                      <input class="input" name="topics" placeholder="e.g. Indices and Logarithms, Algebraic Expressions, Equations">
+                    </label>
+                  </div>
+
+                  <div class="tdocs-section">
+                    <div class="tdocs-section-title">School & Teacher</div>
+                    <div class="tdocs-field-grid">
+                      <label class="tdocs-field">
+                        <span>School / Shule</span>
+                        <input class="input" name="school_name" placeholder="School name">
+                      </label>
+                      <label class="tdocs-field">
+                        <span>Teacher / Mwalimu</span>
+                        <input class="input" name="teacher_name" placeholder="Teacher name">
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="tdocs-form-actions">
+                    <button class="btn tdocs-generate-btn" type="submit" style="flex:1">✨ Generate Scheme of Work</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="tdocs-preview-col">
+              <div class="tdocs-preview-panel" id="tdoc-scheme-preview">
+                <div class="tdocs-preview-header">
+                  <h4>📄 Preview</h4>
+                  <div class="tdocs-preview-actions" id="tdoc-scheme-preview-actions" style="display:none">
+                    <button class="btn btn-sm btn-outline" id="scheme-view">👁 View</button>
+                    <button class="btn btn-sm btn-outline" id="scheme-print">🖨 Print / PDF</button>
+                    <button class="btn btn-sm btn-outline" id="scheme-doc">📥 Word</button>
+                  </div>
+                </div>
+                <div id="tdoc-scheme-result">
+                  <div class="tdocs-empty">
+                    <div class="tdocs-empty-icon">📋</div>
+                    <p>Fill in the form and click <strong>Generate</strong> to create a scheme of work.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tdocs-saved-panel" style="display:none;margin-top:1.25rem">
+          <div class="tdocs-saved-header">
+            <h3 style="margin:0">Saved Documents</h3>
+            <button class="btn btn-sm btn-outline" id="tdoc-refresh">↻ Refresh</button>
+          </div>
+          <div id="tdocs-saved-list"></div>
         </div>
       </div>
     `);
@@ -1956,23 +2060,14 @@ async function renderTeacherDashboard() {
 
       function renderGenerated(res, planType) {
         lastGenHtml = res.html_render || "";
-        const isSw = res.plan_data?.header
-          && (res.plan_data.header.topic + " " + res.plan_data.header.subject).toLowerCase().search(/historia|maadili|kiswahili|uraia/) !== -1;
-        const viewLabel = isSw ? "Onyesha (Dirisha)" : "View (New Window)";
-        const printLabel = isSw ? "Chapisha / PDF" : "Print / PDF";
-        const wordLabel = isSw ? "Pakua Word" : "Download Word";
-        return `
-          <div class="card" style="background:var(--color-bg);padding:1.25rem;border-radius:12px;border:1px solid var(--color-border)">
-            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
-              <button class="btn btn-sm btn-primary" id="gen-view">${escapeHtml(viewLabel)}</button>
-              <button class="btn btn-sm btn-outline" id="gen-print">${escapeHtml(printLabel)}</button>
-              <button class="btn btn-sm btn-outline" id="gen-doc">${escapeHtml(wordLabel)}</button>
-            </div>
-            <p style="font-size:0.8rem;color:var(--color-text-muted);margin-bottom:0.5rem">
-              ${escapeHtml(isSw ? "Hati imepangwa kwa umbizo rasmi la TIE. Tuma nakala yako kwenye hati iliyofunguliwa." : "Document rendered in official TIE format. Use the buttons inside the opened window (or here) to print to PDF or download as Word.")}
-            </p>
-            <iframe id="gen-frame" style="width:100%;height:520px;border:1px solid var(--color-border);border-radius:8px;background:#fff"></iframe>
-          </div>`;
+        // Show the preview action buttons
+        const actionsId = planType === "scheme_of_work" ? "tdoc-scheme-preview-actions" : "tdoc-lesson-preview-actions";
+        setTimeout(() => {
+          const actionsEl = document.getElementById(actionsId);
+          if (actionsEl) actionsEl.style.display = "flex";
+        }, 50);
+        // Return iframe that renders the plan
+        return `<iframe class="tdocs-preview-frame" id="gen-frame" style="width:100%;min-height:520px;border:none;background:#fff"></iframe>`;
       }
 
       function openLastGen() {
@@ -1989,21 +2084,28 @@ async function renderTeacherDashboard() {
         }
       }
 
-      document.addEventListener("click", async (ev) => {
-        const viewBtn = ev.target.closest("#gen-view");
-        const printBtn = ev.target.closest("#gen-print");
-        const docBtn = ev.target.closest("#gen-doc");
-        if (viewBtn) { ev.preventDefault(); openLastGen(); }
-        else if (docBtn) { ev.preventDefault(); openLastGen(); }
-        else if (printBtn) {
-          ev.preventDefault();
-          if (lastGenHtml) {
-            const win = window.open("", "_blank", "width=1100,height=750");
-            if (win) { win.document.write(lastGenHtml); win.document.close(); win.focus(); setTimeout(() => win.print(), 500); }
-            else { alert("Popup blocked. Allow popups to print."); }
-          }
-        }
-      });
+      function openPreview() {
+        if (!lastGenHtml) return;
+        const win = window.open("", "_blank", "width=1100,height=750");
+        if (win) { win.document.write(lastGenHtml); win.document.close(); }
+        else { alert("Popup blocked. Allow popups to preview/export."); }
+      }
+
+      function printPreview() {
+        if (!lastGenHtml) return;
+        const win = window.open("", "_blank", "width=1100,height=750");
+        if (win) { win.document.write(lastGenHtml); win.document.close(); win.focus(); setTimeout(() => win.print(), 500); }
+        else { alert("Popup blocked. Allow popups to print."); }
+      }
+
+      // Bind preview action buttons (lesson plan)
+      document.getElementById("gen-view")?.addEventListener("click", (e) => { e.preventDefault(); openPreview(); });
+      document.getElementById("gen-print")?.addEventListener("click", (e) => { e.preventDefault(); printPreview(); });
+      document.getElementById("gen-doc")?.addEventListener("click", (e) => { e.preventDefault(); openPreview(); });
+      // Bind preview action buttons (scheme of work)
+      document.getElementById("scheme-view")?.addEventListener("click", (e) => { e.preventDefault(); openPreview(); });
+      document.getElementById("scheme-print")?.addEventListener("click", (e) => { e.preventDefault(); printPreview(); });
+      document.getElementById("scheme-doc")?.addEventListener("click", (e) => { e.preventDefault(); openPreview(); });
 
       // Delegate saved-list actions
       document.getElementById("tdocs-saved-list")?.addEventListener("click", async (ev) => {
@@ -2013,7 +2115,7 @@ async function renderTeacherDashboard() {
         const delBtn = ev.target.closest("[data-del]");
         if (viewBtn) { ev.preventDefault(); await viewPlan(viewBtn.dataset.view); }
         else if (printBtn) { ev.preventDefault(); await printPlan(printBtn.dataset.print); }
-        else if (docBtn) { ev.preventDefault(); await viewPlan(docBtn.dataset.doc); }
+        else if (docBtn) { ev.preventDefault(); await downloadWord(docBtn.dataset.doc); }
         else if (delBtn) {
           ev.preventDefault();
           if (confirm("Delete this document?")) {

@@ -1259,6 +1259,9 @@ a:focus:not(:focus-visible) {
   .tab-btn { flex-shrink: 0; }
   [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
   [data-blackboard] { height: min(360px, 55vh) !important; min-height: 220px; border-radius: var(--radius) !important; }
+  .main-header { gap: 0.35rem; }
+  .main-header > div { max-width: none !important; flex: 1 1 0; min-width: 0; }
+  .main-header .input { width: 100%; }
 }
 
 @media (max-width: 480px) {

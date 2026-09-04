@@ -1,46 +1,360 @@
 @import "main.css";
 
-/* ---- Teaching Docs responsive layout ---- */
+/* ═══════════════════════════════════════════════════════════════════
+   Teaching Docs — Modern UI
+   ═══════════════════════════════════════════════════════════════════ */
 
-.tdocs-tabs { display: flex; gap: 0.5rem; margin-top: 1.25rem; flex-wrap: nowrap; }
-.tdocs-tab { white-space: normal; }
+/* ── Tab bar ─────────────────────────────────────────────────────── */
+.tdocs-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: nowrap;
+  padding-bottom: 0.15rem;
+}
+.tdocs-tab {
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em;
+}
+.tdocs-tab.btn-primary {
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
+}
 
-.tdocs-doc-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+/* ── Two-column layout ───────────────────────────────────────────── */
+.tdocs-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+.tdocs-form-col { min-width: 0; }
+.tdocs-preview-col {
+  min-width: 0;
+  position: sticky;
+  top: 1rem;
+}
 
-/* Saved-document action buttons */
-.tdocs-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-.tdocs-actions .btn { white-space: normal; }
+/* ── Form sections ───────────────────────────────────────────────── */
+.tdocs-section {
+  margin-bottom: 1.25rem;
+}
+.tdocs-section-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
 
-/* Form action rows (Generate / Autofill / etc.) */
-.tdocs-form-actions { display: flex; gap: 0.75rem; align-items: stretch; flex-wrap: wrap; }
-.tdocs-form-actions .btn { white-space: normal; }
+/* ── Field grids ─────────────────────────────────────────────────── */
+.tdocs-field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+.tdocs-field-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+}
+.tdocs-field-grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.75rem;
+}
 
-/* Form fields that should wrap into even columns instead of shrinking */
-.tdocs-field { flex: 1 1 150px; min-width: 130px; }
+/* ── Field labels ────────────────────────────────────────────────── */
+.tdocs-field label,
+.tdocs-field-grid label,
+.tdocs-field-grid-3 label,
+.tdocs-field-grid-4 label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.tdocs-field label > span,
+.tdocs-field-grid label > span,
+.tdocs-field-grid-3 label > span,
+.tdocs-field-grid-4 label > span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
-/* ---- Tablet & phone ---- */
-@media (max-width: 1024px) {
-  .tdocs-tabs { flex-wrap: wrap; }
+/* ── Form inputs (scoped to tdocs) ───────────────────────────────── */
+.tdocs-field .input,
+.tdocs-field-grid .input,
+.tdocs-field-grid-3 .input,
+.tdocs-field-grid-4 .input {
+  font-size: 0.875rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--color-border);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: var(--color-surface);
+}
+.tdocs-field .input:focus,
+.tdocs-field-grid .input:focus,
+.tdocs-field-grid-3 .input:focus,
+.tdocs-field-grid-4 .input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+.tdocs-field select.input,
+.tdocs-field-grid select.input,
+.tdocs-field-grid-3 select.input,
+.tdocs-field-grid-4 select.input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.65rem center;
+  padding-right: 2rem;
+}
+
+/* ── Form action buttons ─────────────────────────────────────────── */
+.tdocs-form-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+.tdocs-form-actions .btn {
+  white-space: normal;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 10px;
+}
+
+/* ── Generate button highlight ───────────────────────────────────── */
+.tdocs-generate-btn {
+  background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 0.7rem 1.75rem !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+  border-radius: 10px !important;
+}
+.tdocs-generate-btn:hover {
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45) !important;
+  transform: translateY(-1px);
+}
+
+/* ── Preview panel ───────────────────────────────────────────────── */
+.tdocs-preview-panel {
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+.tdocs-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.1rem;
+  background: linear-gradient(135deg, var(--color-bg), #f0f4ff);
+  border-bottom: 1px solid var(--color-border);
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.tdocs-preview-header h4 {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.tdocs-preview-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.tdocs-preview-actions .btn {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 8px;
+}
+.tdocs-preview-frame {
+  width: 100%;
+  min-height: 420px;
+  border: none;
+  display: block;
+}
+
+/* ── Saved document cards ────────────────────────────────────────── */
+.tdocs-doc-card {
+  transition: box-shadow 0.2s, transform 0.2s;
+  border-radius: 12px !important;
+}
+.tdocs-doc-card:hover {
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-1px);
+}
+.tdocs-doc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.tdocs-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.tdocs-actions .btn {
+  white-space: normal;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 8px;
+}
+
+/* ── Saved docs header ───────────────────────────────────────────── */
+.tdocs-saved-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.tdocs-saved-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* ── Empty state ─────────────────────────────────────────────────── */
+.tdocs-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--color-text-muted);
+}
+.tdocs-empty-icon {
+  font-size: 2.75rem;
+  margin-bottom: 0.6rem;
+  opacity: 0.35;
+}
+.tdocs-empty p {
+  font-size: 0.9rem;
+  max-width: 280px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ── Loading animation ───────────────────────────────────────────── */
+.tdocs-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+.tdocs-loading .spinner {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Status badges ───────────────────────────────────────────────── */
+.tdocs-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.tdocs-status-success {
+  background: #dcfce7;
+  color: #166534;
+}
+.tdocs-status-info {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+/* ── Page title area ─────────────────────────────────────────────── */
+.tdocs-page-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+.tdocs-page-desc {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .tdocs-layout { grid-template-columns: 1fr; }
+  .tdocs-preview-col { position: static; }
 }
 
 @media (max-width: 768px) {
-  .tdocs-tabs { flex-wrap: wrap; }
+  .tdocs-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    scrollbar-width: none;
+  }
+  .tdocs-tabs::-webkit-scrollbar { display: none; }
+  .tdocs-tab { flex: 0 0 auto; white-space: nowrap; }
   .tdocs-doc-row { align-items: flex-start; }
   .tdocs-actions { width: 100%; }
   .tdocs-actions .btn { flex: 1 1 auto; }
   .tdocs-form-actions .btn { flex: 1 1 auto; }
+  .tdocs-field-grid { grid-template-columns: 1fr; }
+  .tdocs-field-grid-3 { grid-template-columns: 1fr 1fr; }
+  .tdocs-field-grid-4 { grid-template-columns: 1fr 1fr; }
+  .tdocs-preview-frame { min-height: 320px; }
+  .tdocs-section-title { font-size: 0.65rem; }
+  .tdocs-page-title { font-size: 1.15rem; }
 }
 
 @media (max-width: 480px) {
-  .tdocs-tabs { gap: 0.4rem; }
-  .tdocs-tab { flex-basis: 100%; }
+  .tdocs-tabs { gap: 0.3rem; padding-bottom: 0.25rem; }
+  .tdocs-tab { flex: 0 0 auto; font-size: 0.78rem; padding: 0.35rem 0.65rem; }
   .tdocs-actions { flex-direction: column; }
   .tdocs-actions .btn { width: 100%; }
   .tdocs-form-actions { flex-direction: column; }
   .tdocs-form-actions .btn { width: 100%; }
-  .tdocs-field { flex-basis: 100%; min-width: 0; }
+  .tdocs-field-grid-3, .tdocs-field-grid-4 { grid-template-columns: 1fr; }
+  .tdocs-preview-frame { min-height: 260px; }
+  .tdocs-preview-header { padding: 0.5rem 0.75rem; }
+  .tdocs-preview-actions .btn { font-size: 0.7rem; padding: 0.25rem 0.5rem; }
+  .tdocs-empty { padding: 1.5rem 0.75rem; }
+  .tdocs-empty-icon { font-size: 2rem; }
+  .tdocs-doc-card { margin-bottom: 0.5rem; }
+  .tdocs-saved-header { flex-direction: column; align-items: flex-start; }
+  .tdocs-saved-header .btn { width: 100%; }
+  .tdocs-page-title { font-size: 1.05rem; }
 }
 
+/* ── Stats grid responsive ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .stat-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
   .stat-card { padding: 1rem; }

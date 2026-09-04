@@ -196,3 +196,183 @@ def serialize_doc(doc: ReferenceDoc) -> dict:
         "standard": doc.standard,
         "content": content,
     }
+
+
+def fetch_reference_grounding(
+    subject_slug: str,
+    form_level: int | None,
+    topic: str | None = None,
+    doc_type: str | None = None,
+) -> dict | None:
+    """Return the best-matching reference document content for grounding.
+
+    Opens its own read-only session so offline generators can call it without
+    threading a ``Session`` through. Best-effort and side-effect free: returns
+    ``None`` when no database, table or matching row is available, so callers
+    fall back to their generic content rather than failing.
+    """
+    try:
+        from backend.config.database import get_db
+
+        db = next(get_db())
+    except Exception:
+        return None
+    try:
+        q = db.query(ReferenceDoc).filter(ReferenceDoc.subject_slug == subject_slug)
+        if form_level:
+            q = q.filter(ReferenceDoc.form_level == form_level)
+        if doc_type:
+            q = q.filter(ReferenceDoc.doc_type == doc_type)
+        docs = list(q.all())
+        if not docs:
+            return None
+
+        def _score(doc: ReferenceDoc) -> int:
+            score = 0
+            if topic and topic.lower() in (doc.title or "").lower():
+                score += 3
+            if doc_type and (doc.doc_type or "") == doc_type:
+                score += 1
+            return score
+
+        best = max(docs, key=_score)
+        try:
+            content = json.loads(best.content)
+        except (TypeError, ValueError):
+            content = {}
+        return {
+            "doc_type": best.doc_type,
+            "title": best.title,
+            "standard": best.standard,
+            "content": content,
+        }
+    finally:
+        db.close()
+
+
+def _plan_field(content: dict, *keys: str) -> str:
+    """First non-empty value across any lesson plan_detail for the given keys."""
+    for detail in content.get("plan_details") or []:
+        for key in keys:
+            value = detail.get(key)
+            if value:
+                return value
+    return ""
+
+
+def _split_delimited(value) -> list:
+    """Split a comma-delimited string into clean, de-duplicated items."""
+    items = []
+    for part in (value or "").split(","):
+        item = " ".join(str(part).split()).strip()
+        if item and item not in items:
+            items.append(item)
+    return items
+
+
+def _collapsed(text) -> str:
+    return " ".join(str(text).split()).strip()
+
+
+def _as_citations(value) -> list:
+    """Normalize a plan-detail references value into one or more citation
+    strings. Handles prose strings, dicts, and char/label-split lists."""
+    if not value:
+        return []
+    if isinstance(value, list | tuple):
+        items = [_collapsed(ref.get("name") or ref.get("title") if isinstance(ref, dict) else ref)
+                 for ref in value]
+        items = [i for i in items if i]
+        if items and all(len(i) == 1 for i in items):
+            return [_collapsed("".join(items))]
+        return items
+    return [_collapsed(value)]
+
+
+def lesson_plan_grounding(content: dict) -> dict:
+    """Extract teacher-facing enrichments (comp/activity/resources/references)
+    from a reference lesson-plan payload. Detail values are mostly strings
+    (comma/line-delimited); references are kept whole as citations while
+    resources are split into individual items."""
+    references = []
+    for detail in content.get("plan_details") or []:
+        for ref in _as_citations(detail.get("references")) + _as_citations(detail.get("resource_references")):
+            if ref and ref not in references:
+                references.append(ref)
+    resources_seen = []
+    resources = []
+    for detail in content.get("plan_details") or []:
+        res_value = detail.get("teaching_learning_resources") or detail.get("resources") or ""
+        for item in _split_delimited(res_value):
+            if item not in resources_seen:
+                resources_seen.append(item)
+                resources.append(item)
+    return {
+        "main_competence": _plan_field(content, "main_competence"),
+        "specific_competence": _plan_field(content, "specific_competence"),
+        "main_activity": _plan_field(content, "main_activity"),
+        "specific_activity": _plan_field(content, "specific_activity"),
+        "resources": resources,
+        "references": references,
+    }
+
+
+_SCHEME_HEADER_LABELS = {
+    "main competence", "specific competence", "learning activities",
+    "specific activities", "teaching and learning methods",
+    "teaching and learning resources", "assessment tools", "ref",
+    # Swahili variants of the same column labels
+    "ujuzi mkuu", "ujuzi mahususi", "shughuli za ujifunzaji",
+    "shughuli mahususi", "mbinu za ufundishaji na ujifunzaji",
+    "mbinu za ufundishaji na ujifunzaji na zana", "rasilimali za kufundishia na kujifunzia",
+    "zana za upimaji", "zana za tathmini", "rejea", "maoni",
+}
+
+_HEADER_COLUMNS = ("one", "two", "eight", "nine", "ten", "eleven", "twelve", "thirteen")
+
+
+def _is_scheme_header_row(row: dict) -> bool:
+    # A header row carries the column's own label (English or Swahili) in one or
+    # more of its fields; data rows carry real competence/method content instead.
+    normalized = [str(row.get(col) or "").strip().lower() for col in _HEADER_COLUMNS]
+    return any(v in _SCHEME_HEADER_LABELS for v in normalized)
+
+
+def _scheme_row_value(scheme_details: list, *keys: str) -> str:
+    for row in scheme_details:
+        if _is_scheme_header_row(row):
+            continue
+        for key in keys:
+            value = row.get(key)
+            if isinstance(value, list | tuple):
+                value = ", ".join(str(v) for v in value if v)
+            if value:
+                return str(value).strip()
+    return ""
+
+
+def scheme_of_work_grounding(content: dict) -> dict:
+    """Extract method/assessment/reference enrichments from a reference
+    scheme-of-work payload via its per-row fields. Skips the leading header
+    row (which carries the table's column labels rather than data)."""
+    rows = content.get("scheme_of_work_details") or []
+    data_rows = [r for r in rows if not _is_scheme_header_row(r)]
+    methods = [m for m in (_scheme_row_value(data_rows, "nine", "teaching_and_learning_methods",
+                                             "teaching_methods") or "").split(",") if m.strip()]
+    if not methods:
+        methods = [m for m in (_scheme_row_value(data_rows, "ten") or "").split(",") if m.strip()]
+    assessment = _scheme_row_value(data_rows, "eleven", "assessment_tools", "assessment") or ""
+    resources = [r for r in
+                 (_scheme_row_value(data_rows, "ten", "teaching_and_learning_resources",
+                                    "teaching_resources") or "").split(",") if r.strip()] or \
+                [r for r in (_scheme_row_value(data_rows, "ten") or "").split(",") if r.strip()]
+    references = [r for r in (_scheme_row_value(data_rows, "eight", "reference", "ref") or "").split(",") if r.strip()]
+    competences = _scheme_row_value(data_rows, "one", "two",
+                                    "main_competence", "specific_competence") or ""
+    return {
+        "methods": methods,
+        "assessment": assessment,
+        "resources": resources,
+        "references": references,
+        "competences": competences,
+    }

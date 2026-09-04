@@ -16,9 +16,14 @@ import re
 from datetime import datetime, timezone
 
 from backend.data.tie_competences import lookup_competence
-from backend.data.tie_syllabus import get_specific_competences as ts_get_specific_competences
 from backend.data.tie_syllabus import find_by_keyword as ts_find_by_keyword
+from backend.data.tie_syllabus import get_specific_competences as ts_get_specific_competences
 from backend.services.ai_service import _call_ai_service
+from backend.services.reference_library_service import (
+    fetch_reference_grounding,
+    lesson_plan_grounding,
+    scheme_of_work_grounding,
+)
 from backend.services.syllabus_service import get_curriculum_context, get_subject_with_form
 
 logger = logging.getLogger(__name__)
@@ -1183,7 +1188,7 @@ def _build_lesson_plan_offline(
             "Realizations",
         ]
         teacher_acts = [
-            f"Displays word cards with simple arithmetic scenarios and prompts students to identify the unknown values using letters/variables.",
+            "Displays word cards with simple arithmetic scenarios and prompts students to identify the unknown values using letters/variables.",
             f"Guides students in small groups to read given word scenarios on {subtopic_display}, form algebraic statements, and solve step-by-step on flip charts.",
             "Assigns individual contextual math problems and asks students to formulate their own word problems to exchange with a peer.",
             f"Guides students to summarise key rules of {subtopic_display}, provides exit ticket questions, and assigns homework exercises.",
@@ -1258,6 +1263,34 @@ def _build_lesson_plan_offline(
                 teacher_acts[3] = kb_plan["realization"]["teacher_activity"]
                 learner_acts[3] = kb_plan["realization"]["learner_activity"]
                 assessment[3] = kb_plan["realization"]["assessment"]
+
+    # Ground any still-generic fields with the imported reference library (the
+    # official lessons/schemes from the public platform) so offline output
+    # carries authentic competence, activity, resource and reference text.
+    # Verbatim TIE statements below still take precedence for competences.
+    _ground = fetch_reference_grounding(subject_slug, form_level, topic or subtopic, "lesson_plan")
+    if _ground and not scheme_row:
+        _gl = lesson_plan_grounding(_ground.get("content") or {})
+        if _gl["main_competence"]:
+            main_act = main_act or _gl["main_competence"]
+        if _gl["specific_competence"]:
+            spec_act = spec_act or _gl["specific_competence"]
+        if _gl["specific_activity"]:
+            spec_act = spec_act or _gl["specific_activity"]
+        _generic_resources = {
+            ("Kitabu cha somo la " + subject_label + " (TIE)", "Ramani / michoro"),
+            ("Vitu halisi", "Chati", "Michezo ya Hisabati"),
+            ("Real life objects", "Charts", "Math games and apps"),
+            ("Flashcards with word problems on " + topic,
+             "Realia (coins/market items)",
+             "Chart illustrating steps of " + subtopic_display,
+             "Mathematics exercise books"),
+        }
+        if _gl["resources"] and (tuple(resources) in _generic_resources or not resources):
+            resources = _gl["resources"][:4]
+        for _ref in _gl["references"][:2]:
+            if _ref not in references:
+                references.append(_ref)
 
     # Prefer the verbatim TIE CBC (2023) Main/Specific Competence statements
     # for this teaching topic, independent of the knowledge-base lookup.
@@ -1741,9 +1774,9 @@ def _build_scheme_offline(
                 )
                 resource_list = spec.get("resources") or []
                 resource = _e_list_item(resource_list, idx) or (
-                    (["Vitu halisi", "Chati", "Michezo ya Hisabati"]
+                    ["Vitu halisi", "Chati", "Michezo ya Hisabati"]
                      if lang == "sw"
-                     else ["Real life objects", "Charts", "Math games and apps"])
+                     else ["Real life objects", "Charts", "Math games and apps"]
                 )
                 assessment_tools = (
                     "Uchunguzi, maswali na majibu, kazi ya mradi, uwasilishaji darasani, "
@@ -1820,6 +1853,8 @@ def _build_scheme_offline(
         # Flatten subtopics into teaching-week rows. Week numbers and months are
         # assigned afterwards so the two midterm weeks (exam + holiday) can be
         # inserted at the term midpoint and the calendar renumbered coherently.
+        _sow = fetch_reference_grounding(subject_slug, form_level, None, "scheme_of_work")
+        _sow_box = scheme_of_work_grounding((_sow or {}).get("content") or {}) if _sow else {}
         for row in rows:
             topic_title = row["topic"]
             topic_code = row["topic_code"]
@@ -1873,13 +1908,13 @@ def _build_scheme_offline(
                     "reference": (
                         f"TIE (2023) {_subject_book(subject_label, class_name, lang)}"
                     ),
-                    "teaching_methods": methods,
-                    "teaching_resources": (
+                    "teaching_methods": _sow_box.get("methods") or methods,
+                    "teaching_resources": _sow_box.get("resources") or (
                         ["Chati za uhusiano", "Vitu halisi", "Michezo ya Hisabati", "Vituo vya elimu"]
                         if lang == "sw"
                         else ["Charts of relationships", "Real life objects", "Math Games and Apps", "Educational channels"]
                     ),
-                    "assessment_tools": (
+                    "assessment_tools": _sow_box.get("assessment") or (
                         "Uchunguzi, maswali na majibu, kazi ya mradi, uwasilishaji darasani, "
                         "majaribio, portfolio na kazi ya nyumbani"
                         if lang == "sw"
@@ -1897,7 +1932,7 @@ def _build_scheme_offline(
                     "competences": [main_comp],
                     "objectives": learning_activities,
                     "learning_activity_schedule": _distribute_periods(learning_activities, spec_periods),
-                    "references": [f"TIE Syllabus"],
+                    "references": (["TIE Syllabus"] + (_sow_box.get("references") or []))[:3],
                     "assessment": (
                         "Exercises, Q&A, tests and projects" if lang == "en"
                         else "Mazoezi, maswali, majaribio na miradi"
@@ -2085,114 +2120,166 @@ def render_lesson_plan_html(plan: dict) -> str:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Official TIE CBC Lesson Plan Format - Tanzania</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        * {{ box-sizing: border-box; margin: 0; padding: 0; }}
         body {{
-            font-family: 'Times New Roman', Times, serif;
-            margin: 20px;
-            color: #000;
-            background-color: #fff;
-            line-height: 1.3;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 24px;
+            color: #1e293b;
+            background-color: #f8fafc;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }}
         .lesson-container {{
-            max-width: 950px;
+            max-width: 960px;
             margin: 0 auto;
-            border: 2px solid #000;
-            padding: 25px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 32px;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
         }}
         .header {{
             text-align: center;
-            font-weight: bold;
-            margin-bottom: 20px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #e2e8f0;
         }}
         .header h2, .header h3, .header h4 {{
-            margin: 3px 0;
+            margin: 4px 0;
             text-transform: uppercase;
+            letter-spacing: 0.04em;
         }}
-        .header h2 {{ font-size: 16pt; }}
-        .header h3 {{ font-size: 14pt; }}
-        .header h4 {{ font-size: 13pt; text-decoration: underline; }}
-        .header .title-line {{ font-size: 13pt; text-decoration: underline; text-transform: uppercase; }}
+        .header h2 {{ font-size: 15pt; color: #0f172a; }}
+        .header h3 {{ font-size: 13pt; color: #334155; font-weight: 600; }}
+        .header h4 {{ font-size: 12pt; color: #475569; font-weight: 500; text-decoration: none; border-bottom: 1px dashed #cbd5e1; display: inline-block; padding-bottom: 2px; }}
+        .header .title-line {{ font-size: 12pt; text-transform: uppercase; letter-spacing: 0.03em; color: #334155; }}
+
+        /* Info table: auto-colwidths so cells stretch equally */
+        .info-table {{ table-layout: auto; }}
+        .info-table td {{ padding: 7px 10px; }}
+
         table {{
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }}
         th, td {{
-            border: 1px solid #000;
-            padding: 6px 8px;
-            font-size: 11pt;
+            border: 1px solid #e2e8f0;
+            padding: 8px 10px;
+            font-size: 10pt;
             vertical-align: top;
+            line-height: 1.45;
+        }}
+        th {{
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #334155;
         }}
         .bg-head {{
-            background-color: #f2f2f2;
-            font-weight: bold;
+            background-color: #f1f5f9;
+            font-weight: 600;
             text-align: center;
+            color: #334155;
+            font-size: 9.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
         }}
         .text-center {{ text-align: center; }}
-        .bold {{ font-weight: bold; }}
+        .bold {{ font-weight: 600; color: #0f172a; }}
         .sec {{
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }}
         .sec-title {{
-            font-weight: bold;
-            margin: 14px 0 4px 0;
-            text-decoration: underline;
+            font-weight: 700;
+            margin: 18px 0 6px 0;
+            font-size: 10.5pt;
+            color: #1e40af;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #dbeafe;
         }}
         .sec-body {{
-            margin-left: 12px;
+            margin-left: 14px;
+            color: #334155;
+            line-height: 1.5;
         }}
         .refs {{
-            margin: 4px 0 0 12px;
+            margin: 6px 0 0 14px;
             font-style: italic;
+            color: #64748b;
+            font-size: 9.5pt;
         }}
+
+        /* ── Wide tables: horizontal scroll on small screens ─────── */
+        .table-wrap {{
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }}
+        .table-wrap table {{
+            margin-bottom: 0;
+            min-width: 600px;
+        }}
+
         @media print {{
-            body {{ margin: 0; }}
-            .lesson-container {{ border: none; padding: 0; }}
+            body {{ margin: 0; background: #fff; }}
+            .lesson-container {{ border: none; padding: 0; box-shadow: none; border-radius: 0; }}
             .no-print {{ display: none; }}
+            .table-wrap {{ overflow: visible; border: none; border-radius: 0; }}
+            .table-wrap table {{ min-width: 0; }}
         }}
-        .btn-print {{
-            display: block;
-            margin: 0 auto 15px auto;
-            padding: 8px 20px;
-            background: #000;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }}
-        .btn-word {{
-            display: block;
-            margin: 0 auto 10px auto;
-            padding: 8px 20px;
-            background: #fff;
-            color: #000;
-            border: 2px solid #000;
-            cursor: pointer;
-            font-weight: bold;
+
+        /* ── Small screens ──────────────────────────────────────── */
+        @media (max-width: 640px) {{
+            body {{ margin: 10px; }}
+            .lesson-container {{ padding: 16px; border-radius: 8px; }}
+            .info-table td {{
+                display: block;
+                width: 100% !important;
+                padding: 5px 8px;
+                font-size: 9pt;
+                border-bottom: 1px solid #f1f5f9;
+            }}
+            .info-table tr td:last-child {{ border-bottom: none; }}
+            th, td {{
+                padding: 5px 6px;
+                font-size: 8.5pt;
+            }}
+            .bg-head {{ font-size: 8pt; }}
+            .sec-title {{ font-size: 9.5pt; margin: 14px 0 4px 0; }}
+            .sec-body {{ margin-left: 8px; font-size: 9pt; }}
         }}
     </style>
 </head>
 <body>
 
 <div class="lesson-container">
-    <table>
+    <table class="info-table">
         <tr>
-            <td style="width: 33%;"><strong>LESSON PLAN NO.</strong> ______</td>
-            <td style="width: 34%;"><strong>{_e(_date)}</strong> . . . . . . . . . . . . . . . . . . . .</td>
-            <td style="width: 33%;"><strong>{_e(_time)}</strong> . . . . . . . . . . . . . . . . . . . .</td>
+            <td><strong style="color:#1e40af;font-size:9pt">LESSON PLAN NO.</strong> ______</td>
+            <td><strong style="color:#1e40af;font-size:9pt">{_e(_date)}</strong> . . . . . . . . . . . . . . . . . . . .</td>
+            <td><strong style="color:#1e40af;font-size:9pt">{_e(_time)}</strong> . . . . . . . . . . . . . . . . . . . .</td>
         </tr>
         {school_name and f'''<tr>
-            <td><strong>{_e(_school)}:</strong> {school_name}</td>
-            <td><strong>{_e(_teacher)}:</strong> {teacher_name}</td>
-            <td><strong>{_e(_class)}:</strong> {_e(class_name)}</td>
+            <td><strong style="color:#1e40af;font-size:9pt">{_e(_school)}:</strong> {school_name}</td>
+            <td><strong style="color:#1e40af;font-size:9pt">{_e(_teacher)}:</strong> {teacher_name}</td>
+            <td><strong style="color:#1e40af;font-size:9pt">{_e(_class)}:</strong> {_e(class_name)}</td>
         </tr>'''}
         <tr>
-            <td><strong>{_e(_subject)}:</strong> {_e(subject)}</td>
-            <td><strong>{_e(LST('Specific competence', 'Ujuzi mahususi'))}:</strong> {_e(sc or tp)}</td>
+            <td><strong style="color:#1e40af;font-size:9pt">{_e(_subject)}:</strong> {_e(subject)}</td>
+            <td><strong style="color:#1e40af;font-size:9pt">{_e(LST('Specific competence', 'Ujuzi mahususi'))}:</strong> {_e(sc or tp)}</td>
             <td></td>
         </tr>
     </table>
 
     <div class="sec-title">1. CLASS INFORMATION</div>
+    <div class="table-wrap">
     <table>
         <tr class="bg-head">
             <td rowspan="2" style="vertical-align: middle; width: 20%;">{_e(_students)}</td>
@@ -2224,10 +2311,12 @@ def render_lesson_plan_html(plan: dict) -> str:
             <td>{_e(sabse.get('total', '') or '.')}</td>
         </tr>
     </table>
+    </div>
 
     {comp_sections}
 
     <div class="sec-title">TEACHING AND LEARNING PROCESS</div>
+    <div class="table-wrap">
     <table>
         <thead>
             <tr class="bg-head">
@@ -2242,6 +2331,24 @@ def render_lesson_plan_html(plan: dict) -> str:
         {stages_rows}
         </tbody>
     </table>
+    </div>
+
+    <div class="sec-title">REMARKS</div>
+    <div class="sec" style="margin-bottom:10px">
+        <div class="no-print" style="font-size:9pt;color:#64748b;margin-bottom:4px;font-style:italic">{_e(_teacher_eval_hint)}</div>
+        <div style="min-height:48px;border:1px solid #e2e8f0;border-radius:6px;padding:8px 10px;background:#f8fafc;font-size:9pt">{_e(plan.get('remarks', ''))}</div>
+    </div>
+
+    <div style="display:flex;justify-content:flex-end;align-items:center;gap:24px;margin-top:24px;padding-top:12px;border-top:1px solid #e2e8f0">
+        <div style="text-align:center">
+            <div style="min-width:140px;border-bottom:1px solid #94a3b8;margin-bottom:4px">&nbsp;</div>
+            <div style="font-size:8pt;color:#64748b;text-transform:uppercase;letter-spacing:0.04em">{_e(_signature)}</div>
+        </div>
+        <div style="text-align:center">
+            <div style="min-width:140px;border-bottom:1px solid #94a3b8;margin-bottom:4px">&nbsp;</div>
+            <div style="font-size:8pt;color:#64748b;text-transform:uppercase;letter-spacing:0.04em">{_e(_date)}</div>
+        </div>
+    </div>
 </div>
 
 </body>
@@ -2336,28 +2443,116 @@ def render_scheme_of_work_html(plan: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{_e(h.get('subject', 'Scheme of Work'))}</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
   @media print {{
-    body {{ margin: 0.3cm; font-size: 9pt; }}
+    body {{ margin: 0.3cm; font-size: 8.5pt; }}
     .no-print {{ display: none !important; }}
     @page {{ margin: 0.5cm; size: A4 landscape; }}
+    div[style*="overflow-x"] {{ overflow: visible; border: none; border-radius: 0; }}
+    div[style*="overflow-x"] table {{ min-width: 0; }}
   }}
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-  body {{ font-family: 'Times New Roman', Times, serif; color: #000; background: #fff; padding: 16px; }}
-  .title-block {{ text-align: center; border: 2px solid #000; padding: 10px; margin-bottom: 12px; }}
-  .title-block h1 {{ font-size: 16pt; text-transform: uppercase; }}
-  .meta-row {{ display: flex; justify-content: space-between; font-size: 10.5pt; margin-bottom: 12px; padding: 6px 0; border-bottom: 1px solid #000; flex-wrap: wrap; gap: 4px 20px; }}
-  .meta-row span {{ white-space: nowrap; }}
-  .meta-row strong {{ font-weight: bold; }}
-  table {{ width: 100%; border-collapse: collapse; font-size: 8.5pt; table-layout: fixed; }}
-  th, td {{ border: 1px solid #000; padding: 4px 5px; text-align: left; vertical-align: top; word-wrap: break-word; overflow-wrap: break-word; }}
-  th {{ background: #f0f0f0; font-weight: bold; text-transform: uppercase; font-size: 8pt; text-align: center; }}
+  body {{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1e293b;
+    background: #f8fafc;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+  }}
+  .title-block {{
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+  }}
+  .title-block h1 {{
+    font-size: 15pt;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 800;
+    color: #0f172a;
+  }}
+  .meta-row {{
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+    margin-bottom: 16px;
+    padding: 8px 0;
+    border-bottom: 2px solid #e2e8f0;
+    flex-wrap: wrap;
+    gap: 4px 24px;
+  }}
+  .meta-row span {{ white-space: nowrap; color: #475569; }}
+  .meta-row strong {{ font-weight: 600; color: #1e40af; }}
+  table {{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.5pt;
+    table-layout: fixed;
+  }}
+  th, td {{
+    border: 1px solid #e2e8f0;
+    padding: 5px 6px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+  }}
+  th {{
+    background: linear-gradient(135deg, #f1f5f9, #e8f0fe);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 7.5pt;
+    text-align: center;
+    color: #334155;
+    letter-spacing: 0.04em;
+  }}
   thead {{ display: table-header-group; }}
   tbody tr {{ page-break-inside: avoid; }}
+  tbody tr:nth-child(even) {{ background: #f8fafc; }}
+  tbody tr:hover {{ background: #f1f5f9; }}
   td.c {{ text-align: center; }}
-  .actions {{ text-align: center; margin: 12px 0; }}
-  .actions button {{ padding: 8px 20px; margin: 0 6px; cursor: pointer; font-size: 11pt; border: 1px solid #333; border-radius: 4px; background: #fff; }}
-  .actions button:hover {{ background: #f5f5f5; }}
-  .course-banner {{ border: 1px solid #000; border-bottom: none; font-weight: bold; text-align: left; padding: 6px 8px; font-size: 10pt; text-transform: uppercase; }}
+  .actions {{ text-align: center; margin: 16px 0; }}
+  .actions button {{
+    padding: 8px 20px;
+    margin: 0 6px;
+    cursor: pointer;
+    font-size: 10pt;
+    font-weight: 600;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    background: #fff;
+    color: #334155;
+    transition: all 0.15s;
+    font-family: inherit;
+  }}
+  .actions button:hover {{ background: #f1f5f9; border-color: #cbd5e1; }}
+  .course-banner {{
+    border: 1px solid #e2e8f0;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    font-weight: 700;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 9.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #1e40af;
+    background: #f8fafc;
+  }}
+  @media (max-width: 640px) {{
+    body {{ margin: 10px; padding: 10px; }}
+    .title-block {{ padding: 12px; border-radius: 8px; }}
+    .title-block h1 {{ font-size: 12pt; }}
+    .meta-row {{ font-size: 8.5pt; gap: 2px 12px; padding: 6px 0; }}
+    th, td {{ padding: 3px 4px; font-size: 7.5pt; }}
+    th {{ font-size: 7pt; }}
+    .actions button {{ font-size: 9pt; padding: 6px 14px; }}
+  }}
 </style>
 </head>
 <body>
@@ -2383,6 +2578,7 @@ def render_scheme_of_work_html(plan: dict) -> str:
   <strong>{_e(h.get('class_name', ''))} ORIENTATION COURSE</strong>
 </div>
 
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:16px">
 <table>
 <thead>
 <tr>
@@ -2402,12 +2598,13 @@ def render_scheme_of_work_html(plan: dict) -> str:
 </thead>
 <tbody>{rows}</tbody>
 </table>
+</div>
 
 <script>
 function downloadAsWord() {{
   var html = document.documentElement.outerHTML;
   var blob = new Blob(
-    ['<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:word" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View></w:WordDocument></xml><![endif]--><style>body {{ font-family: "Times New Roman", serif; font-size: 9pt; }} table {{ border-collapse: collapse; }} th, td {{ border: 1px solid #000; padding: 3px 4px; }} th {{ background: #f0f0f0; }}</style></head><body>' + html + '</body></html>'],
+    ['<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View></w:WordDocument></xml><![endif]--><style>body {{ font-family: "Inter", "Segoe UI", sans-serif; font-size: 9pt; }} table {{ border-collapse: collapse; }} th, td {{ border: 1px solid #e2e8f0; padding: 3px 4px; }} th {{ background: #f1f5f9; font-weight: 600; }}</style></head><body>' + html + '</body></html>'],
     {{ type: 'application/msword' }}
   );
   var url = URL.createObjectURL(blob);
