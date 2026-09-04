@@ -31,9 +31,9 @@ _SUBJECT_RULES: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"chemistry|\bkemia\b"), "chemistry"),
     (re.compile(r"physics|\bfizikia\b"), "physics"),
     (re.compile(r"geography|jiografia|mazingira"), "geography"),
-    (re.compile(r"history\s*of?\s*tanzania|historia\s*ya\s*tanzania|historia\s*na\s*maadili"), "history"),
+    (re.compile(r"civics\s*and\s*moral|civics|uraia\s*na\s*maadili|maadili|moral\s*education|historia\s*na\s*maadili"), "history_civics"),
+    (re.compile(r"history\s*of?\s*tanzania|historia\s*ya\s*tanzania"), "history"),
     (re.compile(r"history|\bhistoria\b"), "history"),
-    (re.compile(r"civics\s*and\s*moral|civics|uraia\s*na\s*maadili|maadili|moral\s*education"), "history_civics"),
     (re.compile(r"english\s*language|english|reading|writing|listening\s*and\s*speaking|\bkuandika\b|\bkusoma\b"), "english"),
     (re.compile(r"kiswahili|fasihi|\blugha\b"), "kiswahili"),
 ]
@@ -194,8 +194,167 @@ def serialize_doc(doc: ReferenceDoc) -> dict:
         "subject_slug": doc.subject_slug,
         "form_level": doc.form_level,
         "standard": doc.standard,
+        "visible_to_students": doc.visible_to_students,
         "content": content,
     }
+
+
+# ── HTML Rendering for reference docs ─────────────────────────────────
+
+_SHARED_STYLE = """\
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:20px;color:#1e293b;background:#f8fafc;line-height:1.5;-webkit-font-smoothing:antialiased}
+.container{max-width:960px;margin:0 auto;border:1px solid #e2e8f0;border-radius:12px;padding:28px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04)}
+.title{text-align:center;margin-bottom:20px;padding-bottom:14px;border-bottom:2px solid #e2e8f0}
+.title h1{font-size:14pt;font-weight:800;color:#0f172a;text-transform:uppercase;letter-spacing:.04em}
+.title p{font-size:10pt;color:#64748b;margin-top:4px}
+.header-bar{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:9pt;color:#475569;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+table{width:100%;border-collapse:collapse;margin-bottom:14px}
+th,td{border:1px solid #e2e8f0;padding:7px 9px;font-size:9.5pt;vertical-align:top;line-height:1.4}
+th{background:linear-gradient(135deg,#f1f5f9,#e8f0fe);font-weight:700;color:#334155;text-transform:uppercase;font-size:8pt;letter-spacing:.04em;text-align:center}
+.sec{margin-bottom:14px}
+.sec-title{font-weight:700;margin:16px 0 5px 0;font-size:10pt;color:#1e40af;text-transform:uppercase;letter-spacing:.04em;padding-bottom:3px;border-bottom:2px solid #dbeafe}
+.sec-body{margin-left:12px;color:#334155;line-height:1.5;font-size:9.5pt}
+@media print{body{margin:0;background:#fff}.container{border:none;padding:0;box-shadow:none;border-radius:0}}
+"""
+
+
+def render_reference_lesson_plan_html(content: dict) -> str:
+    """Render a reference lesson plan (plan_details structure) as HTML."""
+    from html import escape as _e
+
+    details = content.get("plan_details") or []
+    if not details:
+        return f"<div class='container'><p style='color:#64748b'>No lesson plan data available.</p></div>"
+
+    d = details[0]
+    header_text = _e(content.get("header") or content.get("title") or "")
+    title = _e(content.get("title") or "Lesson Plan")
+    standard = _e(content.get("standard") or "")
+
+    def _v(val):
+        return _e(str(val)) if val else ""
+
+    # Student matrix
+    reg_girls = d.get("registered_girls", "")
+    reg_boys = d.get("registered_boys", "")
+    reg_total = d.get("total_registered_students", "")
+    pres_girls = d.get("present_girls", "")
+    pres_boys = d.get("present_boys", "")
+    pres_total = d.get("total_present_students", "")
+
+    # Competence sections
+    main_comp = _v(d.get("main_competence"))
+    spec_comp = _v(d.get("specific_competence"))
+    main_act = _v(d.get("main_activity"))
+    spec_act = _v(d.get("specific_activity"))
+    resources = _v(d.get("teaching_learning_resources"))
+    references = _v(d.get("references"))
+    remarks = _v(d.get("remarks"))
+
+    # Teaching structure (TIE stages)
+    stages = d.get("teaching_structure") or []
+    stage_rows = ""
+    for s in stages:
+        stage_rows += f"""<tr>
+            <td style="font-weight:600">{_v(s.get('stage'))}</td>
+            <td style="text-align:center">{_v(s.get('time'))}</td>
+            <td>{_v(s.get('teaching_activities'))}</td>
+            <td>{_v(s.get('learning_activities'))}</td>
+            <td>{_v(s.get('assessment_criteria'))}</td>
+        </tr>"""
+
+    comp_html = ""
+    if main_comp:
+        comp_html += f'<div class="sec"><div class="sec-title">Main Competence</div><div class="sec-body">{main_comp}</div></div>'
+    if spec_comp:
+        comp_html += f'<div class="sec"><div class="sec-title">Specific Competence</div><div class="sec-body">{spec_comp}</div></div>'
+    if main_act:
+        comp_html += f'<div class="sec"><div class="sec-title">Main Activity</div><div class="sec-body">{main_act}</div></div>'
+    if spec_act:
+        comp_html += f'<div class="sec"><div class="sec-title">Specific Activity</div><div class="sec-body">{spec_act}</div></div>'
+    if resources:
+        comp_html += f'<div class="sec"><div class="sec-title">Teaching/Learning Resources</div><div class="sec-body">{resources}</div></div>'
+    if references:
+        comp_html += f'<div class="sec" style="margin-left:12px;font-style:italic;color:#64748b;font-size:9pt"><strong>References:</strong> {references}</div>'
+
+    return f"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>{title}</title>
+<style>{_SHARED_STYLE}</style></head><body>
+<div class="container">
+<div class="title"><h1>{title}</h1>{standard and f'<p>{standard}</p>'}</div>
+{header_text and f'<div class="header-bar">{header_text}</div>'}
+<table>
+<tr><td style="width:33%"><strong style="color:#1e40af;font-size:8pt">REGISTERED GIRLS:</strong> {_v(reg_girls) or '.'}</td>
+    <td style="width:33%"><strong style="color:#1e40af;font-size:8pt">REGISTERED BOYS:</strong> {_v(reg_boys) or '.'}</td>
+    <td style="width:34%"><strong style="color:#1e40af;font-size:8pt">TOTAL:</strong> {_v(reg_total) or '.'}</td></tr>
+<tr><td><strong style="color:#1e40af;font-size:8pt">PRESENT GIRLS:</strong> {_v(pres_girls) or '.'}</td>
+    <td><strong style="color:#1e40af;font-size:8pt">PRESENT BOYS:</strong> {_v(pres_boys) or '.'}</td>
+    <td><strong style="color:#1e40af;font-size:8pt">TOTAL:</strong> {_v(pres_total) or '.'}</td></tr>
+</table>
+{comp_html}
+<div class="sec-title">Teaching and Learning Process</div>
+<table>
+<thead><tr><th>Stage</th><th>Time</th><th>Teacher's Activities</th><th>Learners' Activities</th><th>Assessment</th></tr></thead>
+<tbody>{stage_rows}</tbody>
+</table>
+{remarks and f'<div class="sec"><div class="sec-title">Remarks</div><div class="sec-body">{remarks}</div></div>'}
+</div></body></html>"""
+
+
+def render_reference_scheme_html(content: dict) -> str:
+    """Render a reference scheme of work (scheme_of_work_details structure) as HTML."""
+    from html import escape as _e
+
+    details = content.get("scheme_of_work_details") or []
+    if not details:
+        return "<div class='container'><p style='color:#64748b'>No scheme of work data available.</p></div>"
+
+    title = _e(content.get("title") or "Scheme of Work")
+    standard = _e(content.get("standard") or "")
+
+    def _v(val):
+        return _e(str(val)) if val else ""
+
+    rows = ""
+    for row in details:
+        rows += f"""<tr>
+            <td>{_v(row.get('one'))}</td>
+            <td>{_v(row.get('two'))}</td>
+            <td>{_v(row.get('three'))}</td>
+            <td>{_v(row.get('four'))}</td>
+            <td style="text-align:center">{_v(row.get('five'))}</td>
+            <td style="text-align:center">{_v(row.get('six'))}</td>
+            <td style="text-align:center">{_v(row.get('seven'))}</td>
+            <td>{_v(row.get('eight'))}</td>
+            <td>{_v(row.get('nine'))}</td>
+            <td>{_v(row.get('ten'))}</td>
+            <td>{_v(row.get('eleven'))}</td>
+            <td>{_v(row.get('twelve'))}</td>
+        </tr>"""
+
+    return f"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>{title}</title>
+<style>{_SHARED_STYLE}
+.table-wrap{{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:14px}}
+.table-wrap table{{margin-bottom:0;min-width:700px}}
+th{{font-size:7.5pt}}
+@media print{{.table-wrap{{overflow:visible;border:none;border-radius:0}}.table-wrap table{{min-width:0}}}}
+</style></head><body>
+<div class="container">
+<div class="title"><h1>{title}</h1>{standard and f'<p>{standard}</p>'}</div>
+<div class="table-wrap">
+<table>
+<thead><tr>
+<th>Main Competence</th><th>Specific Competence</th><th>Learning Activities</th><th>Specific Activities</th>
+<th>Month</th><th>Week</th><th>Periods</th><th>Reference</th>
+<th>Methods</th><th>Resources</th><th>Assessment</th><th>Remarks</th>
+</tr></thead>
+<tbody>{rows}</tbody>
+</table>
+</div>
+</div></body></html>"""
 
 
 def fetch_reference_grounding(

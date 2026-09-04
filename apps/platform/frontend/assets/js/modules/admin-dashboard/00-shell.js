@@ -24,6 +24,7 @@ async function renderAdminDashboard() {
           <div class="sidebar-nav-item" data-view="payments">💳 Payments</div>
           <div class="sidebar-nav-item" data-view="notifications">🔔 Notifications</div>
           <div class="sidebar-nav-item" data-view="uploads">📤 Uploads</div>
+          <div class="sidebar-nav-item" data-view="library">📖 Reference Library</div>
           <div class="sidebar-nav-item" data-view="branding">🎨 Branding</div>
           <div class="sidebar-nav-item" data-view="settings">⚙️ Settings</div>
         </nav>
@@ -125,6 +126,7 @@ async function renderAdminDashboard() {
     payments: () => { setActiveNav("payments"); loadAdminPayments(); },
     notifications: () => { setActiveNav("notifications"); loadAdminNotifications(); },
     uploads: () => { setActiveNav("uploads"); loadAdminUploads(); },
+    library: () => { setActiveNav("library"); loadAdminLibrary(); },
     branding: () => { setActiveNav("branding"); loadAdminBranding(); },
     settings: () => { setActiveNav("settings"); loadAdminSettings(); },
   };

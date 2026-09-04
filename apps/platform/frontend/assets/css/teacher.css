@@ -239,6 +239,23 @@
   font-weight: 700;
 }
 
+/* ── Reference Library cards (flat, no 3D) ──────────────────────── */
+.lib-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.lib-card:hover {
+  background: var(--color-bg);
+}
+.lib-card:active {
+  background: #eef2ff;
+}
+
 /* ── Empty state ─────────────────────────────────────────────────── */
 .tdocs-empty {
   text-align: center;
