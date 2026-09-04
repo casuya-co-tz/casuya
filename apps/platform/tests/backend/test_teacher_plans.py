@@ -140,7 +140,13 @@ def test_lesson_plan_offline_render_english():
     assert "Design" in html
     assert "Realizations" in html
     assert "Assessment Criteria" in html
-    assert "REMARKS :" in html
+    # Removed placeholders / sections must not render.
+    assert "REMARKS" not in html
+    assert "LESSON OBJECTIVE" not in html
+    assert "Learner Evaluation" not in html
+    assert "Teacher Evaluation" not in html
+    assert "Core Content" not in html
+    assert "TO BE COMPLETED AFTER LESSON" not in html
     assert "1. CLASS INFORMATION" in html
     assert "2. MAIN COMPETENCE" in html
     assert "3. SPECIFIC COMPETENCE" in html

@@ -1224,15 +1224,19 @@ def _build_lesson_plan_offline(
 
     # Prefix competences with the real TIE topic/subtopic codes (TIE format
     # "{code} {title}"), silently skipped when the syllabus is unavailable.
-    try:
-        _subj = get_subject_with_form(subject_slug, form_level)
-    except Exception:
-        _subj = None
-    t_code, s_code, _sp = _build_lesson_plan_topic_codes(_subj, topic, subtopic, lang)
-    if t_code and not str(main_comp).startswith(str(t_code)):
-        main_comp = f"{t_code} {main_comp}"
-    if s_code and not str(spec_comp).startswith(str(s_code)):
-        spec_comp = f"{s_code} {spec_comp}"
+    # Not applied when the verbatim scheme row is used: its Main/Specific
+    # Competence statements already carry the correct TIE codes, so re-prefixing
+    # here would double the code (e.g. "7.1 2.2 Demonstrate ...").
+    if not scheme_row:
+        try:
+            _subj = get_subject_with_form(subject_slug, form_level)
+        except Exception:
+            _subj = None
+        t_code, s_code, _sp = _build_lesson_plan_topic_codes(_subj, topic, subtopic, lang)
+        if t_code and not str(main_comp).startswith(str(t_code)):
+            main_comp = f"{t_code} {main_comp}"
+        if s_code and not str(spec_comp).startswith(str(s_code)):
+            spec_comp = f"{s_code} {spec_comp}"
 
     # TIE assessment criteria echo the specific activity with fixed verb patterns.
     if lang == "sw":
@@ -1838,12 +1842,7 @@ def render_lesson_plan_html(plan: dict) -> str:
     _teaching_act = LST("Teacher's Activities", "Shughuli za Mwalimu")
     _learning_act = LST("Learners' Activities", "Shughuli za Wanafunzi")
     _assessment = LST("Assessment Criteria", "Kigezo cha Tathmini")
-    _core_content = LST("Core Content", "Kiwango cha Maudhui")
     _absent = LST("ABSENT", "WALIOKUWA HAWAPO")
-    _lesson_objective = LST("LESSON OBJECTIVE", "LENGO LA SOMO")
-    _eval_learners = LST("Learner Evaluation", "Tathmini ya Wanafunzi")
-    _eval_teacher = LST("Teacher Evaluation", "Tathmini ya Mwalimu")
-    _remarks_eval = LST("REMARKS :", "MAONI :")
     _teacher_eval = LST("Teacher's Evaluation / Self-Reflection", "Tathmini ya Mwalimu / Kujitathmini")
     _teacher_eval_hint = LST(
         "(Indicate the percentage of students who achieved the specific competence, effectiveness of teaching methods/resources, and required remediation.)",
@@ -1858,9 +1857,6 @@ def render_lesson_plan_html(plan: dict) -> str:
     rs = plan.get("resources_strategies", {}) or {}
     matrix = plan.get("progression_matrix", []) or []
     activities = plan.get("teaching_activities", [])
-    remarks = plan.get("remarks", "")
-    eval_learners = plan.get("evaluation_learners", "")
-    eval_teacher = plan.get("evaluation_teacher", "")
 
     def _e(s):
         from html import escape
@@ -1909,7 +1905,6 @@ def render_lesson_plan_html(plan: dict) -> str:
             stages_rows += f"""<tr>
                 <td class="bold">{_e(a.get('stage', ''))}</td>
                 <td class="text-center">{_e(str(a.get('time')).split()[0])}</td>
-                <td>{_e(a.get('core_content', ''))}</td>
                 <td>{_e(a.get('teacher_activity', ''))}</td>
                 <td>{_e(a.get('learner_activity', a.get('student_activity', '')))}</td>
                 <td>{_e(a.get('assessment_criteria', ''))}</td>
@@ -1919,7 +1914,6 @@ def render_lesson_plan_html(plan: dict) -> str:
             stages_rows += f"""<tr>
                 <td class="bold">{idx}. {_e(a.get('phase', ''))}</td>
                 <td class="text-center">{_e(str(a.get('time', '')).split()[0])}</td>
-                <td>{_e(a.get('core_content', ''))}</td>
                 <td>{_e(a.get('teacher_activity', ''))}</td>
                 <td>{_e(a.get('student_activity', ''))}</td>
                 <td>{_e(a.get('remarks_assessment', ''))}</td>
@@ -2100,46 +2094,20 @@ def render_lesson_plan_html(plan: dict) -> str:
 
     {comp_sections}
 
-    <div class="sec-title">{_e(_lesson_objective)}</div>
-    <div style="margin: 4px 0 12px 12px; border: 1px solid #ccc; padding: 8px;">
-        {_e(ca.get('lesson_objective', LST('To be completed by the teacher before the lesson.', 'Mwalimu aikamilishe kabla ya somo.')))}
-    </div>
-
     <div class="sec-title">TEACHING AND LEARNING PROCESS</div>
     <table>
         <thead>
             <tr class="bg-head">
-                <td style="width: 14%;">{_e(_stages)}</td>
-                <td style="width: 9%;">{_e(_time_min)}</td>
-                <td style="width: 18%;">{_e(_core_content)}</td>
-                <td style="width: 22%;">{_e(_teaching_act)}</td>
-                <td style="width: 22%;">{_e(_learning_act)}</td>
+                <td style="width: 15%;">{_e(_stages)}</td>
+                <td style="width: 10%;">{_e(_time_min)}</td>
+                <td style="width: 30%;">{_e(_teaching_act)}</td>
+                <td style="width: 30%;">{_e(_learning_act)}</td>
                 <td style="width: 15%;">{_e(_assessment)}</td>
             </tr>
         </thead>
         <tbody>
         {stages_rows}
         </tbody>
-    </table>
-
-    <table>
-        <tr class="bg-head">
-            <td style="width: 50%;">{_e(_eval_learners)}</td>
-            <td style="width: 50%;">{_e(_eval_teacher)}</td>
-        </tr>
-        <tr>
-            <td style="height: 60px; vertical-align: top;">{_e(eval_learners) if eval_learners else _e(LST('-- TO BE COMPLETED AFTER LESSON --', '-- ITAKAMILISHWA BAADA YA SOMO --'))}</td>
-            <td style="height: 60px; vertical-align: top;">{_e(eval_teacher) if eval_teacher else _e(LST('-- TO BE COMPLETED AFTER LESSON --', '-- ITAKAMILISHWA BAADA YA SOMO --'))}</td>
-        </tr>
-    </table>
-
-    <table>
-        <tr class="bg-head">
-            <td>{_e(_remarks_eval)}</td>
-        </tr>
-        <tr>
-            <td>{remarks if remarks else _e(LST('--REMARKS TO WRITTEN HERE--', '--MAONI YAANDIKWE HAPA--'))}</td>
-        </tr>
     </table>
 </div>
 
