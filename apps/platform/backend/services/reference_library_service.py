@@ -241,7 +241,6 @@ def render_reference_lesson_plan_html(content: dict) -> str:
     if not details:
         return f"<div class='container'><p style='color:#64748b'>No lesson plan data available.</p></div>"
 
-    d = details[0]
     header_text = _e(content.get("header") or content.get("title") or "")
     title = _e(content.get("title") or "Lesson Plan")
     standard = _e(content.get("standard") or "")
@@ -249,48 +248,78 @@ def render_reference_lesson_plan_html(content: dict) -> str:
     def _v(val):
         return _e(str(val)) if val else ""
 
-    # Student matrix
-    reg_girls = d.get("registered_girls", "")
-    reg_boys = d.get("registered_boys", "")
-    reg_total = d.get("total_registered_students", "")
-    pres_girls = d.get("present_girls", "")
-    pres_boys = d.get("present_boys", "")
-    pres_total = d.get("total_present_students", "")
+    all_sections_html = ""
+    for idx, d in enumerate(details):
+        reg_girls = d.get("registered_girls", "")
+        reg_boys = d.get("registered_boys", "")
+        reg_total = d.get("total_registered_students", "")
+        pres_girls = d.get("present_girls", "")
+        pres_boys = d.get("present_boys", "")
+        pres_total = d.get("total_present_students", "")
 
-    # Competence sections
-    main_comp = _v(d.get("main_competence"))
-    spec_comp = _v(d.get("specific_competence"))
-    main_act = _v(d.get("main_activity"))
-    spec_act = _v(d.get("specific_activity"))
-    resources = _v(d.get("teaching_learning_resources"))
-    references = _v(d.get("references"))
-    remarks = _v(d.get("remarks"))
+        main_comp = _v(d.get("main_competence"))
+        spec_comp = _v(d.get("specific_competence"))
+        main_act = _v(d.get("main_activity"))
+        spec_act = _v(d.get("specific_activity"))
+        resources = _v(d.get("teaching_learning_resources"))
+        references = _v(d.get("references"))
+        remarks = _v(d.get("remarks"))
+        time_str = _v(d.get("time"))
+        date_str = _v(d.get("date"))
 
-    # Teaching structure (TIE stages)
-    stages = d.get("teaching_structure") or []
-    stage_rows = ""
-    for s in stages:
-        stage_rows += f"""<tr>
-            <td style="font-weight:600">{_v(s.get('stage'))}</td>
-            <td style="text-align:center">{_v(s.get('time'))}</td>
-            <td>{_v(s.get('teaching_activities'))}</td>
-            <td>{_v(s.get('learning_activities'))}</td>
-            <td>{_v(s.get('assessment_criteria'))}</td>
-        </tr>"""
+        stages = d.get("teaching_structure") or []
+        stage_rows = ""
+        for s in stages:
+            stage_rows += f"""<tr>
+                <td style="font-weight:600">{_v(s.get('stage'))}</td>
+                <td style="text-align:center">{_v(s.get('time'))}</td>
+                <td>{_v(s.get('teaching_activities'))}</td>
+                <td>{_v(s.get('learning_activities'))}</td>
+                <td>{_v(s.get('assessment_criteria'))}</td>
+            </tr>"""
 
-    comp_html = ""
-    if main_comp:
-        comp_html += f'<div class="sec"><div class="sec-title">Main Competence</div><div class="sec-body">{main_comp}</div></div>'
-    if spec_comp:
-        comp_html += f'<div class="sec"><div class="sec-title">Specific Competence</div><div class="sec-body">{spec_comp}</div></div>'
-    if main_act:
-        comp_html += f'<div class="sec"><div class="sec-title">Main Activity</div><div class="sec-body">{main_act}</div></div>'
-    if spec_act:
-        comp_html += f'<div class="sec"><div class="sec-title">Specific Activity</div><div class="sec-body">{spec_act}</div></div>'
-    if resources:
-        comp_html += f'<div class="sec"><div class="sec-title">Teaching/Learning Resources</div><div class="sec-body">{resources}</div></div>'
-    if references:
-        comp_html += f'<div class="sec" style="margin-left:12px;font-style:italic;color:#64748b;font-size:9pt"><strong>References:</strong> {references}</div>'
+        comp_html = ""
+        if main_comp:
+            comp_html += f'<div class="sec"><div class="sec-title">Main Competence</div><div class="sec-body">{main_comp}</div></div>'
+        if spec_comp:
+            comp_html += f'<div class="sec"><div class="sec-title">Specific Competence</div><div class="sec-body">{spec_comp}</div></div>'
+        if main_act:
+            comp_html += f'<div class="sec"><div class="sec-title">Main Activity</div><div class="sec-body">{main_act}</div></div>'
+        if spec_act:
+            comp_html += f'<div class="sec"><div class="sec-title">Specific Activity</div><div class="sec-body">{spec_act}</div></div>'
+        if resources:
+            comp_html += f'<div class="sec"><div class="sec-title">Teaching/Learning Resources</div><div class="sec-body">{resources}</div></div>'
+        if references:
+            comp_html += f'<div class="sec" style="margin-left:12px;font-style:italic;color:#64748b;font-size:9pt"><strong>References:</strong> {references}</div>'
+
+        section_label = ""
+        if len(details) > 1:
+            section_label = f'<div class="sec-title" style="margin-top:20px">Section {idx + 1} of {len(details)}'
+            if time_str or date_str:
+                parts = []
+                if date_str: parts.append(f"Date: {date_str}")
+                if time_str: parts.append(f"Time: {time_str}")
+                section_label += f' <span style="font-weight:400;font-size:9pt;color:#64748b">({", ".join(parts)})</span>'
+            section_label += '</div>'
+
+        all_sections_html += f"""
+        {section_label}
+        <table>
+        <tr><td style="width:33%"><strong style="color:#1e40af;font-size:8pt">REGISTERED GIRLS:</strong> {_v(reg_girls) or '.'}</td>
+            <td style="width:33%"><strong style="color:#1e40af;font-size:8pt">REGISTERED BOYS:</strong> {_v(reg_boys) or '.'}</td>
+            <td style="width:34%"><strong style="color:#1e40af;font-size:8pt">TOTAL:</strong> {_v(reg_total) or '.'}</td></tr>
+        <tr><td><strong style="color:#1e40af;font-size:8pt">PRESENT GIRLS:</strong> {_v(pres_girls) or '.'}</td>
+            <td><strong style="color:#1e40af;font-size:8pt">PRESENT BOYS:</strong> {_v(pres_boys) or '.'}</td>
+            <td><strong style="color:#1e40af;font-size:8pt">TOTAL:</strong> {_v(pres_total) or '.'}</td></tr>
+        </table>
+        {comp_html}
+        <div class="sec-title">Teaching and Learning Process</div>
+        <table>
+        <thead><tr><th>Stage</th><th>Time</th><th>Teacher's Activities</th><th>Learners' Activities</th><th>Assessment</th></tr></thead>
+        <tbody>{stage_rows}</tbody>
+        </table>
+        {remarks and f'<div class="sec"><div class="sec-title">Remarks</div><div class="sec-body">{remarks}</div></div>'}
+        """
 
     return f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>{title}</title>
@@ -298,21 +327,7 @@ def render_reference_lesson_plan_html(content: dict) -> str:
 <div class="container">
 <div class="title"><h1>{title}</h1>{standard and f'<p>{standard}</p>'}</div>
 {header_text and f'<div class="header-bar">{header_text}</div>'}
-<table>
-<tr><td style="width:33%"><strong style="color:#1e40af;font-size:8pt">REGISTERED GIRLS:</strong> {_v(reg_girls) or '.'}</td>
-    <td style="width:33%"><strong style="color:#1e40af;font-size:8pt">REGISTERED BOYS:</strong> {_v(reg_boys) or '.'}</td>
-    <td style="width:34%"><strong style="color:#1e40af;font-size:8pt">TOTAL:</strong> {_v(reg_total) or '.'}</td></tr>
-<tr><td><strong style="color:#1e40af;font-size:8pt">PRESENT GIRLS:</strong> {_v(pres_girls) or '.'}</td>
-    <td><strong style="color:#1e40af;font-size:8pt">PRESENT BOYS:</strong> {_v(pres_boys) or '.'}</td>
-    <td><strong style="color:#1e40af;font-size:8pt">TOTAL:</strong> {_v(pres_total) or '.'}</td></tr>
-</table>
-{comp_html}
-<div class="sec-title">Teaching and Learning Process</div>
-<table>
-<thead><tr><th>Stage</th><th>Time</th><th>Teacher's Activities</th><th>Learners' Activities</th><th>Assessment</th></tr></thead>
-<tbody>{stage_rows}</tbody>
-</table>
-{remarks and f'<div class="sec"><div class="sec-title">Remarks</div><div class="sec-body">{remarks}</div></div>'}
+{all_sections_html}
 </div></body></html>"""
 
 
