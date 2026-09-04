@@ -35,6 +35,7 @@ from backend.api import (
     payments,
     progress,
     quizzes,
+    reference_docs,
     search,
     services_bridge,
     settings as settings_api,
@@ -171,6 +172,7 @@ for router_module in (
     assignments,
     settings_api,
     teacher_plans,
+    reference_docs,
     # casuya_api_proxy MUST be last — catch-all /{path:path}
     casuya_api_proxy,
 ):
@@ -228,11 +230,47 @@ if _ds_root.is_dir():
 def health_check():
     from backend.services.email_service import smtp_configured
 
+    ai = _check_casuya_ai()
     return {
         "status": "ok",
         "environment": settings.environment,
         "smtp_configured": smtp_configured(),
+        "casuya_ai": ai,
     }
+
+
+def _check_casuya_ai() -> dict:
+    """Probe the casuya-ai service /health endpoint to report AI connectivity.
+
+    Never raises and never blocks startup: any failure reports the AI service as
+    unreachable so the platform's offline fallbacks (lesson/scheme generation,
+    quiz/tutoring) are still expected to run.
+    """
+    import httpx
+
+    from backend.services.ai_service import CASUYA_AI_URL
+
+    if not CASUYA_AI_URL:
+        return {"configured": False, "reachable": False, "url": ""}
+    try:
+        with httpx.Client(timeout=3.0) as client:
+            resp = client.get(f"{CASUYA_AI_URL}/health")
+            payload = resp.json()
+        return {
+            "configured": True,
+            "url": CASUYA_AI_URL,
+            "reachable": resp.status_code < 400,
+            "service": payload.get("service"),
+            "version": payload.get("version"),
+            "provider": payload.get("provider"),
+        }
+    except Exception as exc:
+        return {
+            "configured": True,
+            "url": CASUYA_AI_URL,
+            "reachable": False,
+            "error": str(exc)[:120],
+        }
 
 
 @app.get("/readyz")

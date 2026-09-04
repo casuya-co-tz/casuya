@@ -203,6 +203,7 @@ def init_db() -> None:
         payment_plan,
         progress,
         quiz,
+        reference_doc,
         role,
         setting,
         student,

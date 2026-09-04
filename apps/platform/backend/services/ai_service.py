@@ -423,55 +423,6 @@ async def translate_content(text: str, target_language: str) -> str:
     return text  # Return original if service unavailable
 
 
-# ---------- Knowledge Base (RAG) ----------
-
-
-async def search_knowledge_base(
-    query: str,
-    subject: str | None = None,
-    form: str | None = None,
-    year: str | None = None,
-    kind: list[str] | None = None,
-    limit: int = 8,
-) -> list[dict]:
-    """Search the NECTA/TIE knowledge base (syllabi, exams, marking schemes).
-
-    Proxies to the casuya-ai service's /api/kb/search endpoint. Returns a list
-    of matching source documents so the platform can surface grounded references.
-    """
-    payload: dict = {"q": query, "limit": limit}
-    if subject:
-        payload["subject"] = subject
-    if form:
-        payload["form"] = form
-    if year:
-        payload["year"] = year
-    if kind:
-        payload["kind"] = kind
-
-    result = await _call_ai_service("/api/kb/search", payload)
-    if result and "hits" in result:
-        return result["hits"]
-    return []
-
-
-async def get_syllabus(code: str) -> dict | None:
-    """Fetch a syllabus from the knowledge base by NECTA subject code."""
-    result = await _call_ai_service(
-        "/api/kb/syllabus",
-        {"code": code},
-    )
-    if result and "syllabus" in result:
-        return result["syllabus"]
-    return None
-
-
-async def get_kb_health() -> dict | None:
-    """Report knowledge-base readiness and corpus stats from the AI service."""
-    result = await _call_ai_service("/api/kb/health", {})
-    return result if result else None
-
-
 # ---------- Math/STEM ----------
 
 
