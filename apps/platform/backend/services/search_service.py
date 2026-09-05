@@ -6,12 +6,17 @@ from backend.models.lesson import Lesson, Subject, Subtopic, Topic
 
 _FTS_BOOKSTOP = "english"
 
+_is_postgres_cache = None
+
 
 def _is_postgres() -> bool:
-    try:
-        return get_engine().dialect.name == "postgresql"
-    except Exception:
-        return False
+    global _is_postgres_cache
+    if _is_postgres_cache is None:
+        try:
+            _is_postgres_cache = get_engine().dialect.name == "postgresql"
+        except Exception:
+            _is_postgres_cache = False
+    return _is_postgres_cache
 
 
 def search_content(query: str) -> list[dict]:

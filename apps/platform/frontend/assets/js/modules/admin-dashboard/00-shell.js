@@ -100,8 +100,9 @@ async function renderAdminDashboard() {
   }, { signal: _globalAbort.signal });
 
   // Navigation
+  const _adminNavItems = document.querySelectorAll("#admin-nav .sidebar-nav-item");
   function setActiveNav(viewId) {
-    document.querySelectorAll("#admin-nav .sidebar-nav-item").forEach(el => {
+    _adminNavItems.forEach(el => {
       el.classList.toggle("active", el.dataset.view === viewId);
     });
   }

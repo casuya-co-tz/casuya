@@ -444,7 +444,6 @@ def get_lesson(lesson_id: str) -> dict | None:
             "slug": lesson.slug,
             "title": lesson.title,
             "content_hash": lesson.content_hash,
-            "content": lesson.content,
             "package_version": lesson.package_version,
             "status": lesson.status,
             "created_by": lesson.created_by,

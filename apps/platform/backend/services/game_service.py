@@ -27,7 +27,6 @@ def get_games_for_lesson(db: Session, lesson_id: str) -> list[dict]:
             "id": g.id,
             "lesson_id": g.lesson_id,
             "title": g.title,
-            "package_path": g.package_path,
             "slug": g.slug,
             "content_hash": g.content_hash,
             "status": g.status,

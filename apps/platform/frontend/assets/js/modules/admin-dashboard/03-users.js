@@ -1,9 +1,11 @@
   async function loadAdminGames() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading games...</p></div>');
     try {
-      const games = await request("/games/");
+      const [games, lessons] = await Promise.all([
+        request("/games/"),
+        request("/lessons/")
+      ]);
       const list = Array.isArray(games?.items) ? games.items : [];
-      const lessons = await request("/lessons/");
       const lessonList = Array.isArray(lessons) ? lessons : [];
       const lessonMap = {};
       lessonList.forEach(l => lessonMap[l.id] = l.title);

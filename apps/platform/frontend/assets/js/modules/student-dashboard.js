@@ -2,6 +2,16 @@
   // Holds the lessons currently shown in a subtopic so we can prefetch the
   // next one's content while the student reads the current lesson (P1-6).
   let _subtopicLessonList = [];
+  let _recentlyViewedCache = null;
+  let _recentlyViewedCacheTs = 0;
+  function getRecentlyViewed() {
+    const now = Date.now();
+    if (_recentlyViewedCache === null || now - _recentlyViewedCacheTs > 5000) {
+      _recentlyViewedCache = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
+      _recentlyViewedCacheTs = now;
+    }
+    return _recentlyViewedCache;
+  }
 
   async function renderStudentDashboard() {
   // Apply stored accessibility preferences (special needs / neurodivergent).
@@ -219,8 +229,9 @@
   });
 
   // Navigation
+  const _studentNavItems = document.querySelectorAll("#student-nav .sidebar-nav-item");
   function setActiveNav(viewId) {
-    document.querySelectorAll("#student-nav .sidebar-nav-item").forEach(el => {
+    _studentNavItems.forEach(el => {
       el.classList.toggle("active", el.dataset.view === viewId);
     });
   }
@@ -429,7 +440,7 @@
 
       // Fallback: if server stats unavailable, use localStorage (legacy)
       if (recent.length === 0) {
-        try { recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]"); } catch(e) {}
+        try { recent = getRecentlyViewed(); } catch(e) {}
         lessonsViewed = recent.length;
         if (streak === 0 && recent.length > 0) {
           const today = new Date();
@@ -945,7 +956,7 @@
 
       // Recently viewed from localStorage
       let recent = [];
-      try { recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]"); } catch(e) {}
+      try { recent = getRecentlyViewed(); } catch(e) {}
 
       if (gameList.length === 0 && recent.length === 0) {
         showStudentView(`
@@ -1101,8 +1112,10 @@
 
         lessonContent = (await contentFetch) || "<p>No content</p>";
       } catch(e) {
-        const recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
+        const recent = getRecentlyViewed();
         const filtered = recent.filter(r => r.id !== lessonId);
+        _recentlyViewedCache = filtered;
+        _recentlyViewedCacheTs = Date.now();
         localStorage.setItem("casuya_recently_viewed", JSON.stringify(filtered));
         showStudentView('<div class="empty-state"><p>This lesson is no longer available.</p><button class="btn btn-primary" id="back-to-overview">← Back to Overview</button></div>');
         document.getElementById("back-to-overview")?.addEventListener("click", loadStudentOverview);
@@ -1110,11 +1123,13 @@
       }
 
       // Track recently viewed (localStorage + server-side)
-      const recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
+      const recent = getRecentlyViewed();
       const exists = recent.findIndex(r => r.id === lessonId);
       if (exists >= 0) recent.splice(exists, 1);
       recent.unshift({ id: lessonId, title: lesson.title, viewedAt: Date.now() });
       if (recent.length > 20) recent.length = 20;
+      _recentlyViewedCache = recent;
+      _recentlyViewedCacheTs = Date.now();
       localStorage.setItem("casuya_recently_viewed", JSON.stringify(recent));
       // Fire-and-forget: record activity server-side for streak/stats
       request("/progress/activity", {

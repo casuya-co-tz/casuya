@@ -30,8 +30,12 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     // Fetch lesson metadata + bookmark/quiz/games in ONE call (P2-3 aggregated endpoint)
     let lessonMeta = {};
     let pkgData = null;
+    let contentFetch = null;
     try {
       if (canBookmark) {
+        contentFetch = fetch(`${API_BASE}/lessons/${lessonId}/content`, {
+          headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
+        });
         pkgData = await request(`/lessons/${lessonId}/package`);
         lessonMeta = pkgData.lesson || {};
       } else {
@@ -41,19 +45,19 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     const lessonTitle = lessonMeta.title || "Lesson";
 
     // Update recently viewed title
+    let _recent = [];
     try {
-      const recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
-      const idx = recent.findIndex(r => r.id === lessonId);
-      if (idx >= 0) { recent[idx].title = lessonTitle; localStorage.setItem("casuya_recently_viewed", JSON.stringify(recent)); }
+      _recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
+      const idx = _recent.findIndex(r => r.id === lessonId);
+      if (idx >= 0) { _recent[idx].title = lessonTitle; localStorage.setItem("casuya_recently_viewed", JSON.stringify(_recent)); }
     } catch(e) {}
 
     if (!html) {
-      const resp = await fetch(`${API_BASE}/lessons/${lessonId}/content`, {
+      const resp = contentFetch ? await contentFetch : await fetch(`${API_BASE}/lessons/${lessonId}/content`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
       });
       if (resp.status === 404) {
-        const recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]");
-        const filtered = recent.filter(r => r.id !== lessonId);
+        const filtered = _recent.filter(r => r.id !== lessonId);
         localStorage.setItem("casuya_recently_viewed", JSON.stringify(filtered));
         container.innerHTML = '<div class="empty-state"><p>This lesson is no longer available.</p></div>';
         return;

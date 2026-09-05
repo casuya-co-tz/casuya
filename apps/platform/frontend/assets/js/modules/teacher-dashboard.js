@@ -165,8 +165,9 @@ async function renderTeacherDashboard() {
   });
 
   // Navigation
+  const _teacherNavItems = document.querySelectorAll("#teacher-nav .sidebar-nav-item");
   function setActiveNav(viewId) {
-    document.querySelectorAll("#teacher-nav .sidebar-nav-item").forEach(el => {
+    _teacherNavItems.forEach(el => {
       el.classList.toggle("active", el.dataset.view === viewId);
     });
   }

@@ -212,7 +212,7 @@ a:hover { text-decoration: underline; }
   font-weight: 600;
   font-family: var(--font);
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   white-space: nowrap;
   user-select: none;
@@ -350,7 +350,7 @@ a:hover { text-decoration: underline; }
   font-weight: 500;
   font-family: var(--font);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   white-space: nowrap;
   text-align: center;
   vertical-align: middle;
@@ -407,7 +407,7 @@ a:hover { text-decoration: underline; }
   font-weight: 500;
   font-family: var(--font);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease, border-bottom-color 0.2s ease;
   white-space: nowrap;
 }
 .tab-btn:hover {
@@ -445,7 +445,7 @@ a:hover { text-decoration: underline; }
   font-weight: 500;
   font-family: var(--font);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .btn-card:hover {
   border-color: var(--color-primary);
@@ -490,7 +490,7 @@ a:hover { text-decoration: underline; }
   font-weight: 500;
   font-family: var(--font);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .btn-upload:hover {
   border-color: var(--color-primary);
@@ -582,7 +582,7 @@ a:hover { text-decoration: underline; }
   border: 2px solid var(--color-border);
   border-radius: var(--radius);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   font-size: 0.875rem;
   font-weight: 500;
   background: var(--color-surface);
@@ -1342,7 +1342,7 @@ a:focus:not(:focus-visible) {
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
   padding: 2rem;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
@@ -1400,7 +1400,7 @@ a:focus:not(:focus-visible) {
   font-weight: 700;
   font-family: var(--font);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(255,255,255,0.18);
   box-shadow: 0 4px 16px rgba(37,99,235,0.30), 0 1px 3px rgba(15,23,42,0.12), inset 0 1px 0 rgba(255,255,255,0.20);
   position: relative;
@@ -1436,7 +1436,7 @@ a:focus:not(:focus-visible) {
   font-weight: 700;
   font-family: var(--font);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 48px;
 }
 .btn-premium-outline:hover {
@@ -1515,7 +1515,7 @@ a:focus:not(:focus-visible) {
   color: #e2e8f0;
   font-size: 0.875rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
 }
 .subject-tag:hover {
@@ -1541,7 +1541,7 @@ a:focus:not(:focus-visible) {
   border-radius: var(--radius-lg);
   padding: 1.5rem;
   box-shadow: var(--shadow-card);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .stat-card-premium:hover {
   box-shadow: var(--shadow-card-hover);
@@ -1560,7 +1560,7 @@ a:focus:not(:focus-visible) {
   min-height: 48px;
   background: #ffffff;
   color: var(--color-text);
-  transition: all 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 1px 3px rgba(15,23,42,0.06);
 }
 .input-premium:hover {
@@ -1632,7 +1632,7 @@ a:focus:not(:focus-visible) {
   font-size: 1.5rem;
   background: rgba(37,99,235,0.06);
   border: 1px solid rgba(37,99,235,0.1);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   flex-shrink: 0;
 }
 .premium-card:hover .feature-icon-premium {
@@ -1738,7 +1738,7 @@ select.input-premium {
   background: transparent;
   color: #64748b;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   min-height: 44px;
 }
 .auth-tab-group button.active,
@@ -1953,7 +1953,7 @@ select.input-premium {
   font-weight: 600;
   color: var(--color-primary);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   min-height: 36px;
   font-family: inherit;
 }
@@ -2004,7 +2004,7 @@ select.input-premium {
   font-weight: 500;
   color: var(--color-text);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   min-height: 44px;
   font-family: inherit;
   white-space: nowrap;

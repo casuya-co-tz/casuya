@@ -5,14 +5,12 @@
 
     // Check what's currently uploaded
     let logoExists = false, faviconExists = false;
-    try {
-      const lr = await fetch(`${API}/branding/logo`);
-      logoExists = lr.ok;
-    } catch {}
-    try {
-      const fr = await fetch(`${API}/branding/favicon`);
-      faviconExists = fr.ok;
-    } catch {}
+    const [lr, fr] = await Promise.all([
+      fetch(`${API}/branding/logo`).catch(() => ({ ok: false })),
+      fetch(`${API}/branding/favicon`).catch(() => ({ ok: false }))
+    ]);
+    logoExists = lr.ok;
+    faviconExists = fr.ok;
 
     showAdminView(`
       <div class="content">

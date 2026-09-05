@@ -71,12 +71,10 @@ def list_assignments() -> list[dict]:
                 "lesson_id": a.lesson_id,
                 "lesson_title": title,
                 "title": a.title,
-                "notes": a.notes,
                 "due_date": a.due_date,
                 "status": a.status,
                 "created_at": a.created_at.isoformat() if a.created_at else None,
                 "has_paper": bool(a.paper_json),
-                "paper_summary": _paper_summary(a.paper_json),
             }
             for a, title in rows
         ]

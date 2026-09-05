@@ -273,9 +273,11 @@
   async function loadAdminQuizzes() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading quizzes...</p></div>');
     try {
-      const quizzes = await request("/quizzes/");
+      const [quizzes, lessons] = await Promise.all([
+        request("/quizzes/"),
+        request("/lessons/")
+      ]);
       const list = Array.isArray(quizzes) ? quizzes : [];
-      const lessons = await request("/lessons/");
       const lessonList = Array.isArray(lessons) ? lessons : [];
       const lessonMap = {};
       lessonList.forEach(l => lessonMap[l.id] = l.title);
@@ -426,23 +428,21 @@
       const quiz = await request(`/quizzes/${quizId}`);
       if (!quiz) return;
       let htmlContent = "";
-      if (quiz.slug) {
-        try {
-          const resp = await fetch(`${API_BASE}/quizzes/${quizId}/content`, { headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token") || ""}` } });
-          if (resp.ok) htmlContent = await resp.text();
-        } catch(e) {}
-      }
       let questionsHtml = "";
-      if (!quiz.slug) {
-        const fullQuiz = await request(`/quizzes/by-lesson/${quiz.lesson_id}`).catch(() => null);
-        if (fullQuiz && Array.isArray(fullQuiz.questions)) {
-          questionsHtml = fullQuiz.questions.map((q, i) => `
-            <div class="card" style="padding:0.75rem;margin-bottom:0.5rem">
-              <p style="font-weight:600;margin-bottom:0.5rem">${i + 1}. ${escapeHtml(q.prompt)}</p>
-              ${q.options.map(o => `<p style="font-size:0.85rem;margin:0.15rem 0;padding-left:1rem">• ${escapeHtml(o.text)}</p>`).join("")}
-            </div>
-          `).join("");
-        }
+      const [resp, fullQuiz] = await Promise.all([
+        fetch(`${API_BASE}/quizzes/${quizId}/content`, { headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token") || ""}` } }).catch(() => null),
+        request(`/quizzes/by-lesson/${quiz.lesson_id}`).catch(() => null)
+      ]);
+      if (quiz.slug && resp && resp.ok) {
+        htmlContent = await resp.text();
+      }
+      if (!quiz.slug && fullQuiz && Array.isArray(fullQuiz.questions)) {
+        questionsHtml = fullQuiz.questions.map((q, i) => `
+          <div class="card" style="padding:0.75rem;margin-bottom:0.5rem">
+            <p style="font-weight:600;margin-bottom:0.5rem">${i + 1}. ${escapeHtml(q.prompt)}</p>
+            ${q.options.map(o => `<p style="font-size:0.85rem;margin:0.15rem 0;padding-left:1rem">• ${escapeHtml(o.text)}</p>`).join("")}
+          </div>
+        `).join("");
       }
       showAdminView(`
         <div class="content">
