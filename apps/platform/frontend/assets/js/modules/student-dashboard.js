@@ -1575,7 +1575,7 @@
       el.innerHTML = '<div class="tdocs-loading"><div class="spinner"></div>Loading document...</div>';
       el.style.display = "block";
       try {
-        const resp = await fetch("/reference-docs/" + id + "/render");
+        const resp = await fetch(`${API_BASE}/reference-docs/${id}/render`);
         const html = await resp.text();
         el.innerHTML = `
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem">
