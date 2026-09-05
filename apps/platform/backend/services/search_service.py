@@ -45,13 +45,13 @@ def search_content(query: str) -> list[dict]:
         else:
             # SQLite fallback: 4 parallel-ish ILIKE queries (still 4 round trips but lightweight)
             pattern = f"%{q}%"
-            for l in db.query(Lesson).filter(Lesson.title.ilike(pattern)).limit(10).all():
+            for l in db.query(Lesson.id, Lesson.title).filter(Lesson.title.ilike(pattern)).limit(10).all():
                 results.append({"id": l.id, "type": "lesson", "title": l.title, "match": l.title})
-            for s in db.query(Subject).filter(Subject.name.ilike(pattern)).limit(5).all():
+            for s in db.query(Subject.id, Subject.name).filter(Subject.name.ilike(pattern)).limit(5).all():
                 results.append({"id": s.id, "type": "subject", "title": s.name, "match": s.name})
-            for t in db.query(Topic).filter(Topic.title.ilike(pattern)).limit(5).all():
+            for t in db.query(Topic.id, Topic.title).filter(Topic.title.ilike(pattern)).limit(5).all():
                 results.append({"id": t.id, "type": "topic", "title": t.title, "match": t.title})
-            for st in db.query(Subtopic).filter(Subtopic.title.ilike(pattern)).limit(5).all():
+            for st in db.query(Subtopic.id, Subtopic.title).filter(Subtopic.title.ilike(pattern)).limit(5).all():
                 results.append({"id": st.id, "type": "subtopic", "title": st.title, "match": st.title})
         return results
     finally:

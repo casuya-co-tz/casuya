@@ -21,8 +21,8 @@ class ProgressRecord(Base):
     )
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    student_id: Mapped[str] = mapped_column(ForeignKey("students.id"), nullable=False)
-    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id"), nullable=False)
+    student_id: Mapped[str] = mapped_column(ForeignKey("students.id", ondelete="CASCADE"), nullable=False)
+    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id", ondelete="CASCADE"), nullable=False)
     session_id: Mapped[str] = mapped_column(String, nullable=False)
     elapsed_ms: Mapped[int] = mapped_column(Integer, default=0)
     completion_percentage: Mapped[float] = mapped_column(Float, default=0.0)

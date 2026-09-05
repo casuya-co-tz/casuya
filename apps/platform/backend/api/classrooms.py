@@ -7,11 +7,12 @@ students; students see their connected teacher.
 
 from __future__ import annotations
 
-import random
+import secrets
 import string
 
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, field_validator
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
@@ -24,16 +25,11 @@ from backend.models.user import User
 
 router = APIRouter(prefix="/classrooms", tags=["classrooms"])
 
-CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"  # no I/O, 0/1 for sharing clarity
-CODE_LENGTH = 6
+_ALPHABET = string.ascii_uppercase + string.digits
 
 
-def _generate_code(exclude: set[str] | None = None) -> str:
-    exclude = exclude or set()
-    while True:
-        code = "".join(random.choices(CODE_ALPHABET, k=CODE_LENGTH))
-        if code not in exclude:
-            return code
+def _generate_code(length: int = 6) -> str:
+    return "".join(secrets.choice(_ALPHABET) for _ in range(length))
 
 
 class JoinClassroomRequest(BaseModel):
@@ -64,15 +60,22 @@ def _get_student(db: Session, user_id: str) -> Student:
 
 
 def _find_or_create_classroom(db: Session, teacher: Teacher) -> Classroom:
-    classroom = db.query(Classroom).filter(Classroom.teacher_id == teacher.id).first()
-    if classroom:
-        return classroom
-    existing_codes = {c[0] for c in db.query(Classroom.code).all()}
-    classroom = Classroom(teacher_id=teacher.id, code=_generate_code(existing_codes))
-    db.add(classroom)
-    db.commit()
-    db.refresh(classroom)
-    return classroom
+    existing = db.query(Classroom).filter(Classroom.teacher_id == teacher.id).first()
+    if existing:
+        return existing
+
+    for _attempt in range(10):
+        code = _generate_code()
+        try:
+            classroom = Classroom(teacher_id=teacher.id, code=code)
+            db.add(classroom)
+            db.commit()
+            db.refresh(classroom)
+            return classroom
+        except IntegrityError:
+            db.rollback()
+            continue
+    raise HTTPException(status_code=500, detail="Could not generate unique classroom code")
 
 
 def _classroom_dict(db: Session, classroom: Classroom, include_students: bool = False) -> dict:
@@ -187,12 +190,17 @@ def get_my_connected_students(current_user=Depends(get_current_user), db: Sessio
 def regenerate_code(current_user=Depends(get_current_user), db: Session = Depends(get_db)):
     teacher = _get_teacher(db, current_user["sub"])
     classroom = _find_or_create_classroom(db, teacher)
-    existing = {c[0] for c in db.query(Classroom.code).all()}
-    existing.discard(classroom.code)
-    classroom.code = _generate_code(existing)
-    db.commit()
-    db.refresh(classroom)
-    return {"code": classroom.code}
+
+    for _attempt in range(10):
+        code = _generate_code()
+        try:
+            classroom.code = code
+            db.commit()
+            return {"code": code}
+        except IntegrityError:
+            db.rollback()
+            continue
+    raise HTTPException(status_code=500, detail="Could not generate unique code")
 
 
 # --- Student routes ---

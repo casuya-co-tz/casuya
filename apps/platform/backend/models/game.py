@@ -14,7 +14,7 @@ class Game(Base):
     __tablename__ = "games"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id"), nullable=True)
+    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id", ondelete="CASCADE"), nullable=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
     slug: Mapped[str | None] = mapped_column(String, nullable=True)
     package_path: Mapped[str | None] = mapped_column(String, nullable=True)

@@ -67,10 +67,19 @@ def api_list_reference_docs(
 @router.get("/stats")
 @router.get("/stats/")
 def api_reference_docs_stats(db: Session = Depends(get_db)):
+    from sqlalchemy import func
+    from backend.models.reference_doc import ReferenceDoc
+
+    rows = (
+        db.query(ReferenceDoc.doc_type, func.count(ReferenceDoc.id))
+        .group_by(ReferenceDoc.doc_type)
+        .all()
+    )
+    counts = {row[0]: row[1] for row in rows}
     return {
-        "lesson_plans": count_reference_docs(db, doc_type="lesson_plan"),
-        "schemes_of_work": count_reference_docs(db, doc_type="scheme_of_work"),
-        "total": count_reference_docs(db),
+        "lesson_plans": counts.get("lesson_plan", 0),
+        "schemes_of_work": counts.get("scheme_of_work", 0),
+        "total": sum(counts.values()),
     }
 
 

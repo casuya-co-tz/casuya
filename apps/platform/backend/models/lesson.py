@@ -22,7 +22,7 @@ class Topic(Base):
     __table_args__ = (Index("ix_topic_subject_id", "subject_id"),)
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    subject_id: Mapped[str] = mapped_column(ForeignKey("subjects.id"), nullable=False)
+    subject_id: Mapped[str] = mapped_column(ForeignKey("subjects.id", ondelete="CASCADE"), nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)
     form_level: Mapped[str] = mapped_column(String, nullable=False)
 
@@ -32,7 +32,7 @@ class Subtopic(Base):
     __table_args__ = (Index("ix_subtopic_topic_id", "topic_id"),)
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    topic_id: Mapped[str] = mapped_column(ForeignKey("topics.id"), nullable=False)
+    topic_id: Mapped[str] = mapped_column(ForeignKey("topics.id", ondelete="CASCADE"), nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)
 
 
@@ -45,7 +45,7 @@ class Lesson(Base):
     )
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    subtopic_id: Mapped[str] = mapped_column(ForeignKey("subtopics.id"), nullable=False)
+    subtopic_id: Mapped[str] = mapped_column(ForeignKey("subtopics.id", ondelete="CASCADE"), nullable=False)
     slug: Mapped[str] = mapped_column(String, unique=True, nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)
     content_hash: Mapped[str | None] = mapped_column(String, nullable=True)
@@ -54,4 +54,4 @@ class Lesson(Base):
     package_filename: Mapped[str | None] = mapped_column(String, nullable=True)
     package_version: Mapped[str | None] = mapped_column(String, nullable=True)
     status: Mapped[str] = mapped_column(String, default="draft")
-    created_by: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True)
+    created_by: Mapped[str | None] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=True)

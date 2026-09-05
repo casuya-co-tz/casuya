@@ -15,7 +15,7 @@ class Notification(Base):
     __tablename__ = "notifications"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), nullable=False)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     channel: Mapped[str] = mapped_column(String, default="in_app")  # in_app | sms
     message: Mapped[str] = mapped_column(String, nullable=False)
     is_read: Mapped[bool] = mapped_column(Boolean, default=False)

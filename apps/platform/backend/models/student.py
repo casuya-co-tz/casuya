@@ -13,7 +13,7 @@ class Student(Base):
     __tablename__ = "students"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), unique=True, nullable=False)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), unique=True, nullable=False)
     full_name: Mapped[str] = mapped_column(String, nullable=False)
     form_level: Mapped[str | None] = mapped_column(String, nullable=True)  # I-VI
     school_code: Mapped[str | None] = mapped_column(String, nullable=True)

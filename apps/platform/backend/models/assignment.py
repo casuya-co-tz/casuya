@@ -15,12 +15,12 @@ class Assignment(Base):
     __tablename__ = "assignments"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id"), nullable=False)
+    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id", ondelete="CASCADE"), nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
     paper_json: Mapped[str | None] = mapped_column(Text, nullable=True)
     due_date: Mapped[str | None] = mapped_column(String, nullable=True)
-    created_by: Mapped[str] = mapped_column(ForeignKey("users.id"), nullable=False)
+    created_by: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     status: Mapped[str] = mapped_column(String, default="active")
     created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
 
@@ -34,8 +34,8 @@ class AssignmentSubmission(Base):
     __tablename__ = "assignment_submissions"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    assignment_id: Mapped[str] = mapped_column(ForeignKey("assignments.id"), nullable=False)
-    student_id: Mapped[str] = mapped_column(ForeignKey("students.id"), nullable=False)
+    assignment_id: Mapped[str] = mapped_column(ForeignKey("assignments.id", ondelete="CASCADE"), nullable=False)
+    student_id: Mapped[str] = mapped_column(ForeignKey("students.id", ondelete="CASCADE"), nullable=False)
     elements_json: Mapped[str | None] = mapped_column(Text, nullable=True)
     grade_json: Mapped[str | None] = mapped_column(Text, nullable=True)
     status: Mapped[str] = mapped_column(String, default="submitted")

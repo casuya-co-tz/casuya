@@ -1,9 +1,19 @@
 // modules/lesson.js — extracted from main.js (classic script, shared global scope)
 const lessonContentCache = new Map();
+let _currentLessonIframe = null;
 
 async function viewLessonContent(containerId, lessonId, backFn) {
   const container = document.querySelector(containerId);
   if (!container) return;
+
+  if (_currentLessonIframe) {
+    try {
+      const prevIvs = _currentLessonIframe.contentWindow?.casuya?._intervals || [];
+      prevIvs.forEach(id => _currentLessonIframe.contentWindow.clearInterval(id));
+    } catch(e) {}
+    _currentLessonIframe = null;
+  }
+
   container.innerHTML = `<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>`;
 
   let html;
@@ -168,7 +178,9 @@ async function viewLessonContent(containerId, lessonId, backFn) {
           if (v.duration) { var pct = Math.round((v.currentTime / v.duration) * 100); if (pct > maxPct) maxPct = pct; }
         });
         v.addEventListener('ended', function() { parent.postMessage({type:'casuya-video', percent:100}, '*'); });
-        setInterval(function() { if (maxPct > 0) parent.postMessage({type:'casuya-progress', percent:Math.min(maxPct + 10, 100)}, '*'); }, 5000);
+        var _iv = setInterval(function() { if (maxPct > 0) parent.postMessage({type:'casuya-progress', percent:Math.min(maxPct + 10, 100)}, '*'); }, 5000);
+        window.casuya._intervals = window.casuya._intervals || [];
+        window.casuya._intervals.push(_iv);
       })(videos[i]);
     }
   }
@@ -284,6 +296,7 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     `;
 
     const iframe = container.querySelector(".lesson-iframe");
+    _currentLessonIframe = iframe;
     iframe.srcdoc = injectNodeBase(html);
     let heightSet = false;
     const setHeight = () => {
@@ -432,6 +445,12 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     backBtn.addEventListener("click", () => {
       if (isStudent && !quizScoreSent) sendProgress(80, null);
       window.removeEventListener("message", onMessage);
+      if (progressTimer) clearTimeout(progressTimer);
+      try {
+        const ivs = iframe.contentWindow?.casuya?._intervals || [];
+        ivs.forEach(id => iframe.contentWindow.clearInterval(id));
+      } catch(e) {}
+      _currentLessonIframe = null;
       backFn();
     });
   } catch (err) {

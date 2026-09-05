@@ -19,7 +19,7 @@ class RecentActivity(Base):
     )
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    student_id: Mapped[str] = mapped_column(ForeignKey("students.id"), nullable=False)
-    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id"), nullable=False)
+    student_id: Mapped[str] = mapped_column(ForeignKey("students.id", ondelete="CASCADE"), nullable=False)
+    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id", ondelete="CASCADE"), nullable=False)
     lesson_title: Mapped[str] = mapped_column(String, default="")
     viewed_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))

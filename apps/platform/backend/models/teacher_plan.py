@@ -20,7 +20,7 @@ class TeacherPlan(Base):
     __table_args__ = (Index("ix_teacher_plan_teacher", "teacher_id"),)
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    teacher_id: Mapped[str] = mapped_column(ForeignKey("teachers.id"), index=True, nullable=False)
+    teacher_id: Mapped[str] = mapped_column(ForeignKey("teachers.id", ondelete="CASCADE"), index=True, nullable=False)
     plan_type: Mapped[str] = mapped_column(String, nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)
     subject_slug: Mapped[str] = mapped_column(String, nullable=False)

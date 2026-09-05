@@ -13,7 +13,7 @@ class Quiz(Base):
     __tablename__ = "quizzes"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id"), nullable=True)
+    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id", ondelete="CASCADE"), nullable=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
     slug: Mapped[str | None] = mapped_column(String, nullable=True)
     package_html: Mapped[str | None] = mapped_column(Text, nullable=True)
@@ -31,7 +31,7 @@ class QuizQuestion(Base):
     __tablename__ = "quiz_questions"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    quiz_id: Mapped[str] = mapped_column(ForeignKey("quizzes.id"), nullable=False)
+    quiz_id: Mapped[str] = mapped_column(ForeignKey("quizzes.id", ondelete="CASCADE"), nullable=False)
     prompt: Mapped[str] = mapped_column(String, nullable=False)
 
     quiz_options = relationship("QuizOption", lazy="select", backref="question", order_by="QuizOption.id")
@@ -45,7 +45,7 @@ class QuizOption(Base):
     __tablename__ = "quiz_options"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    question_id: Mapped[str] = mapped_column(ForeignKey("quiz_questions.id"), nullable=False)
+    question_id: Mapped[str] = mapped_column(ForeignKey("quiz_questions.id", ondelete="CASCADE"), nullable=False)
     text: Mapped[str] = mapped_column(String, nullable=False)
     is_correct: Mapped[bool] = mapped_column(Boolean, default=False)
 

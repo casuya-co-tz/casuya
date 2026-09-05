@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from sqlalchemy import DateTime, ForeignKey, String
+from sqlalchemy import DateTime, ForeignKey, String, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column
 
 from backend.config.database import Base
@@ -21,7 +21,7 @@ class Classroom(Base):
     __tablename__ = "classrooms"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    teacher_id: Mapped[str] = mapped_column(ForeignKey("teachers.id"), unique=True, nullable=False)
+    teacher_id: Mapped[str] = mapped_column(ForeignKey("teachers.id", ondelete="CASCADE"), unique=True, nullable=False)
     code: Mapped[str] = mapped_column(String, unique=True, index=True, nullable=False)
     name: Mapped[str | None] = mapped_column(String, nullable=True)
     lesson_limit: Mapped[int] = mapped_column(default=2)
@@ -29,14 +29,22 @@ class Classroom(Base):
         DateTime, default=lambda: datetime.now(timezone.utc)
     )
 
+    __table_args__ = (
+        UniqueConstraint("code", name="uq_classroom_code"),
+    )
+
 
 class ClassroomEnrollment(Base):
     __tablename__ = "classroom_enrollments"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    classroom_id: Mapped[str] = mapped_column(ForeignKey("classrooms.id"), index=True, nullable=False)
-    student_id: Mapped[str] = mapped_column(ForeignKey("students.id"), index=True, nullable=False)
+    classroom_id: Mapped[str] = mapped_column(ForeignKey("classrooms.id", ondelete="CASCADE"), index=True, nullable=False)
+    student_id: Mapped[str] = mapped_column(ForeignKey("students.id", ondelete="CASCADE"), index=True, nullable=False)
     status: Mapped[str] = mapped_column(String, default="active")
     joined_at: Mapped[datetime] = mapped_column(
         DateTime, default=lambda: datetime.now(timezone.utc)
+    )
+
+    __table_args__ = (
+        UniqueConstraint("classroom_id", "student_id", name="uq_enrollment_class_student"),
     )

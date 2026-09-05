@@ -76,7 +76,7 @@ class SyllabusTopic(Base):
     )
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    subject_id: Mapped[str] = mapped_column(ForeignKey("syllabus_subjects.id"), nullable=False)
+    subject_id: Mapped[str] = mapped_column(ForeignKey("syllabus_subjects.id", ondelete="CASCADE"), nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)  # e.g. "NUMBERS"
     code: Mapped[str | None] = mapped_column(String, nullable=True)  # e.g. "1.0"
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
@@ -112,7 +112,7 @@ class SyllabusSubtopic(Base):
     __table_args__ = (Index("ix_syllabus_subtopic_topic", "topic_id"),)
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    topic_id: Mapped[str] = mapped_column(ForeignKey("syllabus_topics.id"), nullable=False)
+    topic_id: Mapped[str] = mapped_column(ForeignKey("syllabus_topics.id", ondelete="CASCADE"), nullable=False)
     title: Mapped[str] = mapped_column(String, nullable=False)  # e.g. "Base ten numeration"
     code: Mapped[str | None] = mapped_column(String, nullable=True)  # e.g. "1.1"
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
@@ -151,7 +151,7 @@ class LearningOutcome(Base):
     __table_args__ = (Index("ix_learning_outcome_subtopic", "subtopic_id"),)
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    subtopic_id: Mapped[str] = mapped_column(ForeignKey("syllabus_subtopics.id"), nullable=False)
+    subtopic_id: Mapped[str] = mapped_column(ForeignKey("syllabus_subtopics.id", ondelete="CASCADE"), nullable=False)
     description: Mapped[str] = mapped_column(
         Text, nullable=False
     )  # e.g. "Identify the place value of each digit in base ten numeration"

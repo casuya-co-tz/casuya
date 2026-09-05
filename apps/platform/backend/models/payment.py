@@ -15,7 +15,7 @@ class Payment(Base):
     __tablename__ = "payments"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=_uuid)
-    user_id: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True)
+    user_id: Mapped[str | None] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=True)
     amount_tzs: Mapped[float] = mapped_column(Float, nullable=False)
     provider: Mapped[str] = mapped_column(String, default="azampay")
     provider_reference: Mapped[str | None] = mapped_column(String, nullable=True)
