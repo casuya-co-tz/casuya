@@ -1,0 +1,1937 @@
+{
+  "subject_name": "Mathematics",
+  "subject_slug": "mathematics",
+  "form_level": 2,
+  "standard": "Form 2",
+  "tie_reference": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: TIE.",
+  "source_note": "Verified Basic Mathematics Form Two lesson plans (Arusha Catholic Seminary, FR. FRANK MONORUA). Term I lessons 1-26 cover rates, exchange rates, variations, geometric congruence and similarity, binary operations, formula transposition, quadratic expressions/equations, and mid-term/terminal assessments. Term II lessons 27-47 cover exponents, radicals, logarithms, set theory and Venn diagrams, and right-triangle trigonometry, plus mid-term assessments. Content kept verbatim from the educator-verified source for offline and AI generation grounding.",
+  "lessons": [
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 1: EXPLAIN CONCEPT OF RATES",
+      "sr_no": "1",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "1.1 Compute rates and solve related real-life applications",
+      "main_activity": "Explain concept of rates",
+      "specific_activity": "Define rates, calculate unit rates, and solve basic proportional comparisons",
+      "teaching_learning_resources": "Price tags, utility bills, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Introduces everyday examples of rates (e.g., speed, unit pricing) to spark discussion.",
+          "learning_activities": "Discuss common comparisons involving different quantities.",
+          "assessment_criteria": "Understanding of rate concepts."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Defines a rate mathematically as a ratio comparing two quantities with different units, and demonstrates calculating unit rates.",
+          "learning_activities": "Record notes, analyze formula structures, and follow board examples.",
+          "assessment_criteria": "Accuracy in computing basic unit rates."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through practical calculation exercises involving unit pricing and output rates.",
+          "learning_activities": "Work in pairs to solve assigned rate calculation worksheets.",
+          "assessment_criteria": "Correctness of calculated unit rates."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to determine unit rates independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 2: SOLVE DISTANCE-SPEED-TIME APPLICATIONS",
+      "sr_no": "2",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "1.1 Compute rates and solve related real-life applications",
+      "main_activity": "Solve distance-speed-time applications",
+      "specific_activity": "Apply the relationship between distance, speed, and time to solve word problems",
+      "teaching_learning_resources": "Speedometers, travel timetables, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews the fundamental formula connecting speed, distance, and time ($D = S \\times T$).",
+          "learning_activities": "Discuss travel experiences and speed measurements.",
+          "assessment_criteria": "Recall of speed formulas."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates solving multi-step word problems involving average speed, converting units (km/h to m/s), and travel times.",
+          "learning_activities": "Record notes, analyze conversion steps, and observe board workings.",
+          "assessment_criteria": "Accuracy in manipulating distance-speed-time equations."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on solving diverse journey-related word problems.",
+          "learning_activities": "Work in groups to solve assigned distance-speed-time worksheets.",
+          "assessment_criteria": "Correctness of calculated speeds and times."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to solve motion problems."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 3: EXPLAIN CURRENCY CONVERSIONS",
+      "sr_no": "3",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "1.2 Perform currency conversions and exchange rate computations",
+      "main_activity": "Explain currency conversions",
+      "specific_activity": "Define buying and selling exchange rates for international currencies",
+      "teaching_learning_resources": "Bank exchange rate sheets, currency samples, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Introduces the concept of foreign travel and why different countries use different currencies.",
+          "learning_activities": "Discuss international trade and currency values.",
+          "assessment_criteria": "Understanding of currency exchange context."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains buying rates, selling rates, and how to convert local currency to foreign currency and vice versa using proportion.",
+          "learning_activities": "Record notes, analyze exchange rate tables, and follow board examples.",
+          "assessment_criteria": "Accuracy in setting up conversion proportions."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through solving exchange rate conversion word problems.",
+          "learning_activities": "Work in pairs to solve assigned currency conversion tasks.",
+          "assessment_criteria": "Correctness of calculated monetary amounts."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to compute currency conversions independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 4: CALCULATE CROSS-BORDER EXCHANGE RATES",
+      "sr_no": "4",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "1.2 Perform currency conversions and exchange rate computations",
+      "main_activity": "Calculate cross-border exchange rates",
+      "specific_activity": "Solve complex cross-currency conversions involving intermediate currency bridges",
+      "teaching_learning_resources": "Bank bulletin boards, financial tables, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews direct currency conversion from Lesson 3 and introduces multi-currency transactions.",
+          "learning_activities": "Discuss converting Currency A to Currency B via a common reference currency.",
+          "assessment_criteria": "Recall of exchange rate principles."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates calculating cross-rates when direct exchange data is unavailable, using proportional chain rules.",
+          "learning_activities": "Record notes, analyze step-by-step conversion chains, and observe board workings.",
+          "assessment_criteria": "Accuracy in executing multi-step currency conversions."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on solving complex cross-border financial scenarios.",
+          "learning_activities": "Work in groups to solve assigned cross-rate problem sheets.",
+          "assessment_criteria": "Correctness of final converted values."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to perform cross-border calculations."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 5: FORMULATE DIRECT AND INVERSE VARIATIONS",
+      "sr_no": "5",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "1.3 Formulate and solve direct and inverse variation problems",
+      "main_activity": "Formulate direct and inverse variations",
+      "specific_activity": "Define variation constants and set up algebraic equations for direct and inverse proportionalities",
+      "teaching_learning_resources": "Variation charts, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Explores how one quantity changes relative to another (e.g., more workers, less time).",
+          "learning_activities": "Discuss proportional relationships in daily life.",
+          "assessment_criteria": "Understanding of proportional dependence."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Formulates mathematical statements for direct ($y = kx$) and inverse ($y = k/x$) variations, showing how to find the constant of proportionality ($k$).",
+          "learning_activities": "Record notes, analyze algebraic formulations, and follow board examples.",
+          "assessment_criteria": "Accuracy in finding proportionality constants."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through solving direct and inverse variation equation setups.",
+          "learning_activities": "Work in pairs to solve assigned variation formulation tasks.",
+          "assessment_criteria": "Correctness of formulated variation equations."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to set up variation equations independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 6: SOLVE PARTIAL AND JOINT VARIATIONS",
+      "sr_no": "6",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "1.3 Formulate and solve direct and inverse variation problems",
+      "main_activity": "Solve partial and joint variations",
+      "specific_activity": "Formulate and solve complex word problems involving partial and joint variations",
+      "teaching_learning_resources": "Variation problem cards, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews basic direct and inverse variations from Lesson 5.",
+          "learning_activities": "Recall basic variation formulas.",
+          "assessment_criteria": "Recall of variation principles."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates solving joint variations ($z$ varies directly as $x$ and inversely as $y$) and partial variations ($y = k_1 x + k_2$).",
+          "learning_activities": "Record notes, analyze multi-term equations, and observe board workings.",
+          "assessment_criteria": "Accuracy in solving joint and partial variation problems."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on solving challenging partial and joint variation word problems.",
+          "learning_activities": "Work in groups to solve assigned advanced variation problem sheets.",
+          "assessment_criteria": "Correctness of calculated unknown values."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to solve complex variations."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 7: EXPLAIN CONCEPT OF GEOMETRIC CONGRUENCE",
+      "sr_no": "7",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "2.1 Demonstrate understanding of geometric congruence and triangle theorems",
+      "main_activity": "Explain concept of geometric congruence",
+      "specific_activity": "Define congruent figures and establish SSS and SAS triangle congruence conditions",
+      "teaching_learning_resources": "Geometric shape cut-outs, rulers, protractors, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Introduces congruence through overlapping physical objects of identical size and shape.",
+          "learning_activities": "Discuss shapes that match perfectly when superimposed.",
+          "assessment_criteria": "Understanding of geometric congruence."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Defines triangle congruence and demonstrates Side-Side-Side (SSS) and Side-Angle-Side (SAS) criteria using geometric constructions.",
+          "learning_activities": "Record notes, observe model constructions, and follow board examples.",
+          "assessment_criteria": "Recognition of SSS and SAS congruence conditions."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through constructing and verifying congruent triangles using rulers and protractors.",
+          "learning_activities": "Work in pairs to construct triangles satisfying SSS and SAS.",
+          "assessment_criteria": "Accuracy in geometric triangle construction."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student constructions on the board and resolves questions.",
+          "learning_activities": "Present constructions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to identify congruence conditions independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 8: APPLY SSS AND SAS CONGRUENCE CONDITIONS",
+      "sr_no": "8",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "2.1 Demonstrate understanding of geometric congruence and triangle theorems",
+      "main_activity": "Apply SSS and SAS congruence conditions",
+      "specific_activity": "Solve geometric proof problems using SSS and SAS criteria",
+      "teaching_learning_resources": "Geometry sets, proof worksheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews SSS and SAS triangle conditions from Lesson 7.",
+          "learning_activities": "Recall congruence criteria rules.",
+          "assessment_criteria": "Recall of congruence postulates."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates how to write formal proofs showing two triangles are congruent using given side and angle data.",
+          "learning_activities": "Record notes, analyze proof layout steps, and observe board workings.",
+          "assessment_criteria": "Accuracy in constructing logical geometric proofs."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on solving missing angle and side problems in congruent triangles.",
+          "learning_activities": "Work in groups to solve assigned congruence proof exercises.",
+          "assessment_criteria": "Correctness of geometric deductions."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to apply SSS and SAS rules."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 9: PROVE TRIANGLE CONGRUENCE USING ASA",
+      "sr_no": "9",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "2.1 Demonstrate understanding of geometric congruence and triangle theorems",
+      "main_activity": "Prove triangle congruence using ASA",
+      "specific_activity": "Demonstrate and apply Angle-Side-Angle (ASA) congruence theorem in geometric problems",
+      "teaching_learning_resources": "Protractors, rulers, construction paper, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews previous congruence theorems and introduces triangles defined by two angles and an included side.",
+          "learning_activities": "Discuss angle-side relationships in triangles.",
+          "assessment_criteria": "Understanding of ASA criteria."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains the Angle-Side-Angle (ASA) theorem and demonstrates constructing and proving triangle congruence using ASA.",
+          "learning_activities": "Record notes, analyze construction steps, and follow board examples.",
+          "assessment_criteria": "Accuracy in applying ASA proofs."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through construction and proof exercises utilizing the ASA theorem.",
+          "learning_activities": "Work in pairs to solve assigned ASA congruence tasks.",
+          "assessment_criteria": "Correctness of geometric proofs."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to utilize ASA theorem independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 10: APPLY RHS THEOREM VIA CONSTRUCTION",
+      "sr_no": "10",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "2.1 Demonstrate understanding of geometric congruence and triangle theorems",
+      "main_activity": "Apply RHS theorem via construction",
+      "specific_activity": "Prove right-angled triangle congruence using Right-angle-Hypotenuse-Side (RHS) theorem",
+      "teaching_learning_resources": "Set squares, compasses, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews right-angled triangles and introduces special congruence rules applicable to them.",
+          "learning_activities": "Discuss right angles and hypotenuse properties.",
+          "assessment_criteria": "Recognition of right-angled triangles."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates the Right-angle-Hypotenuse-Side (RHS) theorem and guides students through its geometric construction proof.",
+          "learning_activities": "Record notes, analyze RHS proof steps, and observe board workings.",
+          "assessment_criteria": "Accuracy in applying RHS congruence criteria."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on constructing right-angled triangles and solving RHS proof problems.",
+          "learning_activities": "Work in groups to solve assigned RHS proof worksheets.",
+          "assessment_criteria": "Correctness of geometric conclusions."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to apply RHS theorem."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 11: EXPLAIN SIMILAR FIGURES AND SCALE FACTORS",
+      "sr_no": "11",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "2.2 Analyze similar figures and apply similarity theorems",
+      "main_activity": "Explain similar figures and scale factors",
+      "specific_activity": "Define geometric similarity, identify scale factors, and compare proportional dimensions",
+      "teaching_learning_resources": "Scale drawings, maps, models, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Introduces similarity through photographic enlargements and scale models.",
+          "learning_activities": "Discuss shapes that have the same form but different sizes.",
+          "assessment_criteria": "Understanding of geometric similarity."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Defines similar figures, explains linear scale factor ($k$), and demonstrates finding unknown lengths using proportionality.",
+          "learning_activities": "Record notes, analyze scale factor rules, and follow board examples.",
+          "assessment_criteria": "Accuracy in computing scale factors."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through calculating proportional lengths in similar geometric shapes.",
+          "learning_activities": "Work in pairs to solve assigned similarity scaling tasks.",
+          "assessment_criteria": "Correctness of calculated dimension values."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to determine scale factors independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 12: ANALYZE PROPERTIES OF SIMILAR TRIANGLES",
+      "sr_no": "12",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "2.2 Analyze similar figures and apply similarity theorems",
+      "main_activity": "Analyze properties of similar triangles",
+      "specific_activity": "Apply AA (Angle-Angle) similarity criterion to solve triangle problems",
+      "teaching_learning_resources": "Triangle similarity charts, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews scale factors from Lesson 11 and introduces angle conditions in triangles.",
+          "learning_activities": "Discuss corresponding angles in scaled triangles.",
+          "assessment_criteria": "Recall of angle correspondence."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates the Angle-Angle (AA) similarity theorem and how proportional side ratios follow from equal corresponding angles.",
+          "learning_activities": "Record notes, analyze AA proof steps, and observe board workings.",
+          "assessment_criteria": "Accuracy in applying similarity criteria."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on identifying similar triangles and calculating missing side lengths.",
+          "learning_activities": "Work in groups to solve assigned similarity problem worksheets.",
+          "assessment_criteria": "Correctness of computed triangle sides."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to apply similarity properties."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 13: APPLY SIMILARITY THEOREMS TO UNKNOWN LENGTHS",
+      "sr_no": "13",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "2.2 Analyze similar figures and apply similarity theorems",
+      "main_activity": "Apply similarity theorems to unknown lengths",
+      "specific_activity": "Solve complex geometric problems involving intersecting lines and parallel line similarity theorems",
+      "teaching_learning_resources": "Geometric problem cards, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews triangle similarity and introduces intercept theorems for parallel lines.",
+          "learning_activities": "Discuss proportional segments cut by transversals.",
+          "assessment_criteria": "Understanding of parallel line intercepts."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates applying the Basic Proportionality Theorem (Thales' theorem) to calculate unknown lengths in divided triangles.",
+          "learning_activities": "Record notes, analyze theorem applications, and follow board examples.",
+          "assessment_criteria": "Accuracy in solving proportional segment problems."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through solving multi-step length calculation tasks using similarity theorems.",
+          "learning_activities": "Work in pairs to solve assigned similarity length exercises.",
+          "assessment_criteria": "Correctness of final length calculations."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to apply similarity theorems independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 14: CALCULATE AREAS AND VOLUMES OF SIMILAR SHAPES",
+      "sr_no": "14",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of rates, variations, congruence, and similarity",
+      "specific_competence": "2.2 Analyze similar figures and apply similarity theorems",
+      "main_activity": "Calculate areas and volumes of similar shapes",
+      "specific_activity": "Apply area scale factor ($k^2$) and volume scale factor ($k^3$) to solve complex shape problems",
+      "teaching_learning_resources": "3D model shapes, area/volume formula charts, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recalls linear scale factors and asks how scaling affects area and volume.",
+          "learning_activities": "Discuss scaling effects on 2D areas and 3D volumes.",
+          "assessment_criteria": "Comprehension of dimensional scaling."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Derives and explains area scale factor ($k^2$) and volume scale factor ($k^3$), demonstrating calculations for similar figures and solids.",
+          "learning_activities": "Record notes, analyze scaling formulas, and observe board workings.",
+          "assessment_criteria": "Accuracy in applying area and volume scale factors."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on solving area and volume ratio problems for similar objects.",
+          "learning_activities": "Work in groups to solve assigned scaling worksheets.",
+          "assessment_criteria": "Correctness of calculated areas and volumes."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to use area/volume scale factors."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 15: EXPLAIN CUSTOM BINARY OPERATIONS",
+      "sr_no": "15",
+      "time": "40 MIN",
+      "main_competence": "3.0 Demonstrate mastery of algebra, quadratic equations, and binary operations",
+      "specific_competence": "3.1 Evaluate expressions involving custom binary operations",
+      "main_activity": "Explain custom binary operations",
+      "specific_activity": "Define binary operators and evaluate expressions using custom operational rules",
+      "teaching_learning_resources": "Operation definition cards, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Introduces standard operations ($+$, $-$, $\\times$, $\\div$) and presents unfamiliar symbols (e.g., $*$, $\\oplus$, $\\triangle$) as custom rules.",
+          "learning_activities": "Discuss how mathematical rules can be arbitrarily defined.",
+          "assessment_criteria": "Understanding of custom operator concepts."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates substituting numbers into explicitly defined binary operation formulas (e.g., $a * b = a^2 + 2ab - b$).",
+          "learning_activities": "Record notes, analyze substitution steps, and follow board examples.",
+          "assessment_criteria": "Accuracy in evaluating custom binary expressions."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through calculating values of expressions governed by custom operators.",
+          "learning_activities": "Work in pairs to solve assigned binary operation tasks.",
+          "assessment_criteria": "Correctness of evaluated numerical results."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to evaluate binary expressions independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 16: EVALUATE COMPLEX BINARY OPERATION EXPRESSIONS",
+      "sr_no": "16",
+      "time": "40 MIN",
+      "main_competence": "3.0 Demonstrate mastery of algebra, quadratic equations, and binary operations",
+      "specific_competence": "3.1 Evaluate expressions involving custom binary operations",
+      "main_activity": "Evaluate complex binary operation expressions",
+      "specific_activity": "Solve multi-step algebraic equations and identity proofs involving custom binary operators",
+      "teaching_learning_resources": "Operation worksheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews basic binary evaluation from Lesson 15 and introduces properties like commutativity and associativity.",
+          "learning_activities": "Discuss operation properties (e.g., does $a * b = b * a$?).",
+          "assessment_criteria": "Recall of binary operation rules."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates solving equations containing binary operators and testing for commutative and associative properties.",
+          "learning_activities": "Record notes, analyze algebraic proof steps, and observe board workings.",
+          "assessment_criteria": "Accuracy in solving equations with custom operators."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on testing operator properties and solving advanced binary tasks.",
+          "learning_activities": "Work in groups to solve assigned operator worksheets.",
+          "assessment_criteria": "Correctness of algebraic solutions."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to manipulate binary operations."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 17: EXPLAIN TRANSPOSITION OF ALGEBRAIC FORMULAE",
+      "sr_no": "17",
+      "time": "40 MIN",
+      "main_competence": "3.0 Demonstrate mastery of algebra, quadratic equations, and binary operations",
+      "specific_competence": "3.2 Transpose complex algebraic formulae",
+      "main_activity": "Explain transposition of algebraic formulae",
+      "specific_activity": "Rearrange algebraic equations to make a specified variable the subject",
+      "teaching_learning_resources": "Formula cards, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews basic equation balancing and inverse operations (addition/subtraction, multiplication/division).",
+          "learning_activities": "Discuss isolating a target letter in simple formulas.",
+          "assessment_criteria": "Understanding of equation balancing."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates rules for changing the subject of a formula, including handling fractions and negative signs.",
+          "learning_activities": "Record notes, analyze transposition steps, and follow board examples.",
+          "assessment_criteria": "Accuracy in rearranging basic algebraic formulas."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through practicing formula transposition exercises.",
+          "learning_activities": "Work in pairs to solve assigned formula rearrangement tasks.",
+          "assessment_criteria": "Correctness of transposed formulas."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to transpose formulas independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 18: TRANSPOSE COMPLEX ALGEBRAIC FORMULAE",
+      "sr_no": "18",
+      "time": "40 MIN",
+      "main_competence": "3.0 Demonstrate mastery of algebra, quadratic equations, and binary operations",
+      "specific_competence": "3.2 Transpose complex algebraic formulae",
+      "main_activity": "Transpose complex algebraic formulae",
+      "specific_activity": "Rearrange formulas involving square roots, powers, and factoring out common target variables",
+      "teaching_learning_resources": "Advanced formula worksheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews simple transpositions from Lesson 17 and introduces formulas with the target variable appearing multiple times.",
+          "learning_activities": "Discuss factoring techniques when variables repeat.",
+          "assessment_criteria": "Recall of basic transposition rules."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates transposing complex formulas involving radicals, squares, and factoring out target variables from multiple terms.",
+          "learning_activities": "Record notes, analyze factoring steps, and observe board workings.",
+          "assessment_criteria": "Accuracy in rearranging complex algebraic expressions."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on solving challenging formula transposition problems.",
+          "learning_activities": "Work in groups to solve assigned advanced transposition worksheets.",
+          "assessment_criteria": "Correctness of final algebraic subjects."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to transpose complex formulas."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 19: TERM I MID-TERM REVIEW WORKSHOP",
+      "sr_no": "19",
+      "time": "40 MIN",
+      "main_competence": "1.0 & 3.0 Term I Mid-Term Review Workshop",
+      "specific_competence": "1.1, 1.2, 1.3, 2.1, 2.2, 3.1, & 3.2 Comprehensive Mid-Term Revision",
+      "main_activity": "Review Term I core concepts",
+      "specific_activity": "Synthesize rates, variations, congruence, similarity, binary operations, and formula transposition",
+      "teaching_learning_resources": "Mid-term revision worksheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Outlines the scope of the mid-term assessment and highlights key formulas covered so far.",
+          "learning_activities": "Listen and note key revision topics.",
+          "assessment_criteria": "Preparedness for mid-term review."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Summarizes problem-solving techniques for rates, currency, variations, triangle congruence/similarity, and algebra.",
+          "learning_activities": "Record summary notes and observe exemplar problem solutions.",
+          "assessment_criteria": "Conceptual clarity across Term I topics."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through working on mixed revision problem sets.",
+          "learning_activities": "Work in pairs to solve assigned mid-term practice tasks.",
+          "assessment_criteria": "Accuracy in navigating diverse mathematical problems."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and answers clarification questions.",
+          "learning_activities": "Present solutions and ask questions on difficult items.",
+          "assessment_criteria": "Readiness for mid-term assessments."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 20: MID-TERM ASSESSMENT ADMINISTRATION AND FEEDBACK",
+      "sr_no": "20",
+      "time": "40 MIN",
+      "main_competence": "1.0 & 3.0 Mid-Term Assessment Administration & Feedback",
+      "specific_competence": "Mid-Term Examination Evaluation and Correction",
+      "main_activity": "Administer mid-term assessment",
+      "specific_activity": "Supervise mid-term examination and conduct immediate post-test error analysis",
+      "teaching_learning_resources": "Mid-term examination papers, marking guides, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Briefs students on assessment rules, time limits, and question distribution.",
+          "learning_activities": "Receive exam papers and review instructions.",
+          "assessment_criteria": "Adherence to test protocols."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Oversees test administration, monitors class integrity, and provides authorized clarifications.",
+          "learning_activities": "Complete the mid-term Basic Mathematics examination paper.",
+          "assessment_criteria": "Integrity and focus during assessment."
+        },
+        {
+          "stage": "Design",
+          "time": "5 min",
+          "teaching_activities": "Collects examination papers and provides a brief verbal overview of expected solutions.",
+          "learning_activities": "Submit completed answer scripts orderly.",
+          "assessment_criteria": "Proper submission of scripts."
+        },
+        {
+          "stage": "Realization",
+          "time": "5 min",
+          "teaching_activities": "Concludes mid-term session and outlines expectations for post-break lessons.",
+          "learning_activities": "Note closing instructions and transition.",
+          "assessment_criteria": "Orderly conclusion of session."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 21: EXPAND QUADRATIC EXPRESSIONS",
+      "sr_no": "21",
+      "time": "40 MIN",
+      "main_competence": "3.0 Demonstrate mastery of algebra, quadratic equations, and binary operations",
+      "specific_competence": "3.3 Expand and factorise quadratic expressions",
+      "main_activity": "Expand quadratic expressions",
+      "specific_activity": "Multiply binomial expressions and expand quadratic algebraic brackets",
+      "teaching_learning_resources": "Algebra tiles, expansion worksheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews distributive law for algebraic expansion (e.g., $a(b + c)$) and introduces binomial products.",
+          "learning_activities": "Discuss multiplying terms across brackets.",
+          "assessment_criteria": "Understanding of algebraic distribution."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates expanding binomial expressions using the FOIL method (First, Outer, Inner, Last) to form quadratic expressions.",
+          "learning_activities": "Record notes, analyze multiplication steps, and follow board examples.",
+          "assessment_criteria": "Accuracy in expanding quadratic brackets."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through practicing binomial expansion exercises.",
+          "learning_activities": "Work in pairs to solve assigned expansion tasks.",
+          "assessment_criteria": "Correctness of expanded quadratic polynomials."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to expand quadratic expressions independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 22: FACTORISE QUADRATIC EXPRESSIONS USING MIDDLE-TERM SPLITTING",
+      "sr_no": "22",
+      "time": "40 MIN",
+      "main_competence": "3.0 Demonstrate mastery of algebra, quadratic equations, and binary operations",
+      "specific_competence": "3.3 Expand and factorise quadratic expressions",
+      "main_activity": "Factorise quadratic expressions using middle-term splitting",
+      "specific_activity": "Factorise quadratic trinomials by splitting the middle term and grouping",
+      "teaching_learning_resources": "Factorisation worksheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews expansion from Lesson 21 and introduces factorisation as the reverse process.",
+          "learning_activities": "Discuss reversing algebraic expansions.",
+          "assessment_criteria": "Understanding of factorisation concept."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates middle-term splitting method for factorising quadratic expressions ($ax^2 + bx + c$) by finding factor pairs.",
+          "learning_activities": "Record notes, analyze splitting steps, and observe board workings.",
+          "assessment_criteria": "Accuracy in factorising quadratic trinomials."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on factorising diverse quadratic expressions.",
+          "learning_activities": "Work in groups to solve assigned factorisation worksheets.",
+          "assessment_criteria": "Correctness of factored binomial pairs."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to factorise quadratics."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 23: SOLVE QUADRATIC EQUATIONS BY FACTORISATION",
+      "sr_no": "23",
+      "time": "40 MIN",
+      "main_competence": "3.0 Demonstrate mastery of algebra, quadratic equations, and binary operations",
+      "specific_competence": "3.4 Solve quadratic equations by factorisation and formula",
+      "main_activity": "Solve quadratic equations by factorisation",
+      "specific_activity": "Apply the zero-product property to solve factorised quadratic equations",
+      "teaching_learning_resources": "Quadratic equation problem cards, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews middle-term factorisation from Lesson 22 and introduces setting quadratic expressions to zero.",
+          "learning_activities": "Discuss the zero-product property ($ab = 0 \\implies a=0$ or $b=0$).",
+          "assessment_criteria": "Recall of zero-product property."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates solving quadratic equations by factorising the left side and setting each binomial factor to zero.",
+          "learning_activities": "Record notes, analyze solution steps, and follow board examples.",
+          "assessment_criteria": "Accuracy in finding roots of quadratic equations."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through solving quadratic equations by factorisation.",
+          "learning_activities": "Work in pairs to solve assigned quadratic equation worksheets.",
+          "assessment_criteria": "Correctness of calculated equation roots."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to solve quadratic equations by factorisation independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 24: SOLVE QUADRATIC EQUATIONS USING THE QUADRATIC FORMULA",
+      "sr_no": "24",
+      "time": "40 MIN",
+      "main_competence": "3.0 Demonstrate mastery of algebra, quadratic equations, and binary operations",
+      "specific_competence": "3.4 Solve quadratic equations by factorisation and formula",
+      "main_activity": "Solve quadratic equations using the quadratic formula",
+      "specific_activity": "Apply the quadratic formula $x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$ to solve non-factorisable quadratic equations",
+      "teaching_learning_resources": "Formula derivation charts, scientific calculators, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Discusses limitations of factorisation when roots are decimals or surds, introducing the quadratic formula.",
+          "learning_activities": "Discuss scenarios where middle-term splitting fails.",
+          "assessment_criteria": "Understanding of quadratic formula necessity."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Introduces the quadratic formula, defines coefficients $a$, $b$, and $c$, and demonstrates step-by-step substitution and evaluation.",
+          "learning_activities": "Record notes, analyze formula application steps, and observe board workings.",
+          "assessment_criteria": "Accuracy in substituting and computing quadratic formula roots."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on solving complex quadratic equations using the formula.",
+          "learning_activities": "Work in groups to solve assigned quadratic formula worksheets.",
+          "assessment_criteria": "Correctness of calculated root values."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to use the quadratic formula."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 25: TERM I TERMINAL EXAMINATIONS REVISION",
+      "sr_no": "25",
+      "time": "40 MIN",
+      "main_competence": "1.0 & 3.0 Term I Terminal Examinations Revision",
+      "specific_competence": "1.1 to 3.4 Comprehensive Term I Revision",
+      "main_activity": "Execute comprehensive Term I revision",
+      "specific_activity": "Review past paper questions covering rates, variations, congruence, similarity, binary operations, formula transposition, and quadratic equations",
+      "teaching_learning_resources": "Revision past papers, marking schemes, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Outlines the scope of the Term I terminal examinations and highlights key formula connections.",
+          "learning_activities": "Listen and note areas of focus for terminal revision.",
+          "assessment_criteria": "Preparedness for terminal revision."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Highlights key problem-solving techniques across all Term I topics.",
+          "learning_activities": "Record summary notes and observe exemplar problem solutions.",
+          "assessment_criteria": "Conceptual clarity across Term I syllabus."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises a guided class workshop where students tackle mixed past-paper style questions in groups.",
+          "learning_activities": "Work in groups to solve mixed topical revision tasks.",
+          "assessment_criteria": "Accuracy in navigating diverse mathematical problems."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, provides model solutions, and clarifies challenging concepts.",
+          "learning_activities": "Present solutions and ask clarifying questions on difficult items.",
+          "assessment_criteria": "Readiness for terminal examination standards."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 26: TERM I TERMINAL EXAMINATIONS ADMINISTRATION AND CLOSING",
+      "sr_no": "26",
+      "time": "40 MIN",
+      "main_competence": "1.0 & 3.0 Term I Terminal Examinations Administration & Closing",
+      "specific_competence": "Examination Administration and Evaluation (Term I)",
+      "main_activity": "Administer Term I terminal examinations",
+      "specific_activity": "Supervise Term I terminal mathematics examinations and review performance metrics",
+      "teaching_learning_resources": "Examination papers, answer sheets, marking schemes, TIE curriculum guidelines.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Briefs students on examination rules, time allocation, and proper answering formats.",
+          "learning_activities": "Listen to instructions and settle examination materials.",
+          "assessment_criteria": "Adherence to exam protocols."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Oversees exam administration, monitors class integrity, and assists with authorized clarifications.",
+          "learning_activities": "Complete the Term I terminal Basic Mathematics examination paper.",
+          "assessment_criteria": "Integrity and focus during testing."
+        },
+        {
+          "stage": "Design",
+          "time": "5 min",
+          "teaching_activities": "Collects and organizes examination scripts according to institutional protocol.",
+          "learning_activities": "Submit completed answer scripts orderly.",
+          "assessment_criteria": "Proper submission of scripts."
+        },
+        {
+          "stage": "Realization",
+          "time": "5 min",
+          "teaching_activities": "Concludes examination session, provides closing administrative announcements, and dismisses class for break.",
+          "learning_activities": "Note closing instructions and transition.",
+          "assessment_criteria": "Orderly conclusion of session."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 27: APPLY LAWS OF INDICES",
+      "sr_no": "27",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of exponents, radicals, and logarithms",
+      "specific_competence": "5.1 Simplify expressions with exponents and radicals",
+      "main_activity": "Apply laws of indices",
+      "specific_activity": "Simplify exponential equations using index laws",
+      "teaching_learning_resources": "Index law summary charts, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews basic index notation and reviews laws of multiplication and division of powers.",
+          "learning_activities": "Discuss base and exponent concepts from previous classes.",
+          "assessment_criteria": "Recall of index rules."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains and derives the laws of indices (multiplication, division, power of a power, and zero index).",
+          "learning_activities": "Record notes, analyze law derivations, and observe board examples.",
+          "assessment_criteria": "Accuracy in applying index laws to simple expressions."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through practice exercises involving simplification of exponential equations using index laws.",
+          "learning_activities": "Work in pairs to solve assigned index simplification tasks.",
+          "assessment_criteria": "Correctness of student calculations."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to simplify exponential expressions independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 28: SOLVE EXPONENTIAL EQUATIONS",
+      "sr_no": "28",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of exponents, radicals, and logarithms",
+      "specific_competence": "5.1 Simplify expressions with exponents and radicals",
+      "main_activity": "Solve exponential equations",
+      "specific_activity": "Solve exponential equations with unknown variables in indices by equating bases",
+      "teaching_learning_resources": "Exponential worksheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews index laws from Lesson 27 and introduces equations where the unknown is part of the exponent.",
+          "learning_activities": "Discuss equating bases to solve for unknown powers.",
+          "assessment_criteria": "Recall of index rules."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates solving exponential equations by matching bases and equating powers ($a^{f(x)} = a^{g(x)}$).",
+          "learning_activities": "Record notes, analyze solution steps, and follow board examples.",
+          "assessment_criteria": "Accuracy in solving exponential equations."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on solving exponential equation problem sets.",
+          "learning_activities": "Work in groups to solve assigned exponential equation tasks.",
+          "assessment_criteria": "Correctness of calculated variable values."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to solve exponential equations."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 29: MANIPULATE FRACTIONAL INDICES",
+      "sr_no": "29",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of exponents, radicals, and logarithms",
+      "specific_competence": "5.1 Simplify expressions with exponents and radicals",
+      "main_activity": "Manipulate fractional indices",
+      "specific_activity": "Simplify radical expressions involving fractional exponents ($a^{1/n} = \\sqrt[n]{a}$)",
+      "teaching_learning_resources": "Scientific calculators, worksheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recalls integer index laws and introduces roots as fractional powers.",
+          "learning_activities": "Discuss relationships between roots and exponents.",
+          "assessment_criteria": "Understanding of radical notations."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates conversion between radical form and fractional exponent form, and evaluates expressions with rational indices.",
+          "learning_activities": "Record notes, analyze step-by-step conversions, and follow board workings.",
+          "assessment_criteria": "Accuracy in handling fractional exponents and radicals."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through practice exercises on simplifying complex radical and fractional index problems.",
+          "learning_activities": "Work in pairs to solve assigned radical simplification exercises.",
+          "assessment_criteria": "Correctness of simplification steps."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to manipulate fractional indices independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 30: MANIPULATE RADICAL EXPRESSIONS",
+      "sr_no": "30",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of exponents, radicals, and logarithms",
+      "specific_competence": "5.1 Simplify expressions with exponents and radicals",
+      "main_activity": "Manipulate radical expressions",
+      "specific_activity": "Perform addition, subtraction, and multiplication of surds",
+      "teaching_learning_resources": "Surd worksheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews basic radical simplifications from Lesson 29 and defines like and unlike surds.",
+          "learning_activities": "Discuss combining similar radical terms.",
+          "assessment_criteria": "Recall of surd simplification rules."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates simplifying surds into basic forms ($\\sqrt{ab} = \\sqrt{a}\\sqrt{b}$) and combining like surd terms through arithmetic operations.",
+          "learning_activities": "Record notes, analyze combination steps, and observe board examples.",
+          "assessment_criteria": "Accuracy in executing surd arithmetic."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on simplifying and combining surd expressions.",
+          "learning_activities": "Work in groups to solve assigned surd problem sheets.",
+          "assessment_criteria": "Correctness of final simplified surd values."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to manipulate radicals."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 31: RATIONALISE DENOMINATORS",
+      "sr_no": "31",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of exponents, radicals, and logarithms",
+      "specific_competence": "5.1 Simplify expressions with exponents and radicals",
+      "main_activity": "Rationalise denominators",
+      "specific_activity": "Perform denominator rationalisation using conjugates for binomial surds",
+      "teaching_learning_resources": "Mathematical tables, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews properties of surds and denominators containing irrational numbers.",
+          "learning_activities": "Discuss what it means for a denominator to be irrational.",
+          "assessment_criteria": "Recognition of irrational denominators."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates multiplying by conjugates and rationalizing simple and binomial surd denominators.",
+          "learning_activities": "Record notes, analyze conjugate rules, and follow board examples.",
+          "assessment_criteria": "Accuracy in rationalizing denominators."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through exercises on rationalising denominators.",
+          "learning_activities": "Work in pairs to solve assigned rationalisation tasks.",
+          "assessment_criteria": "Correctness of final algebraic fractions."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to rationalise denominators independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 32: PERFORM ROOT EXTRACTION USING CALCULATORS AND TABLES",
+      "sr_no": "32",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of exponents, radicals, and logarithms",
+      "specific_competence": "5.1 Simplify expressions with exponents and radicals",
+      "main_activity": "Perform root extraction using calculators and tables",
+      "specific_activity": "Compute square roots and cube roots using mathematical tables and scientific calculators",
+      "teaching_learning_resources": "Mathematical tables, scientific calculators, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Introduces root tables and explains table lookup structures for square and cube roots.",
+          "learning_activities": "Discuss reading root tables and decimal positioning.",
+          "assessment_criteria": "Understanding of root table layout."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates finding square roots and cube roots of numbers using four-figure tables and calculators.",
+          "learning_activities": "Record notes, track table-reading techniques, and observe board workings.",
+          "assessment_criteria": "Accuracy in root table extractions."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on extracting roots of various numerical values.",
+          "learning_activities": "Work in groups to solve assigned root extraction worksheets.",
+          "assessment_criteria": "Correctness of computed root values."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to extract roots."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 33: EXPRESS NUMBERS IN STANDARD FORM",
+      "sr_no": "33",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of exponents, radicals, and logarithms",
+      "specific_competence": "6.1 Compute values using logarithms and antilogarithms",
+      "main_activity": "Express numbers in standard form",
+      "specific_activity": "Write very large and very small numbers in standard form ($A \\times 10^n$)",
+      "teaching_learning_resources": "Standard form charts, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Introduces writing large numbers (like astronomical distances) compactly using powers of 10.",
+          "learning_activities": "Discuss scientific notation and powers of 10.",
+          "assessment_criteria": "Understanding of standard form concept."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates converting numbers into standard form ($A \\times 10^n$ where $1 \\le A < 10$ and $n$ is an integer) for both large and small numbers.",
+          "learning_activities": "Record notes, analyze decimal movement rules, and follow board examples.",
+          "assessment_criteria": "Accuracy in writing standard form expressions."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through converting numbers to and from standard form.",
+          "learning_activities": "Work in pairs to solve assigned standard form tasks.",
+          "assessment_criteria": "Correctness of standard form conversions."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to handle standard form independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 34: EXPLAIN FUNDAMENTAL CONCEPT OF LOGARITHMS",
+      "sr_no": "34",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of exponents, radicals, and logarithms",
+      "specific_competence": "6.1 Compute values using logarithms and antilogarithms",
+      "main_activity": "Explain fundamental concept of logarithms",
+      "specific_activity": "Convert between exponential and logarithmic forms ($\\log_b x = y \\iff b^y = x$)",
+      "teaching_learning_resources": "Four-figure mathematical tables, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Connects indices from Week 1 to logarithms, explaining that a logarithm is an exponent.",
+          "learning_activities": "Discuss the link between powers and logarithms.",
+          "assessment_criteria": "Understanding of logarithmic definition."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains characteristic and mantissa, demonstrates converting between exponential and logarithmic forms, and shows table reading.",
+          "learning_activities": "Record notes, analyze table reading techniques, and observe board workings.",
+          "assessment_criteria": "Accuracy in reading logarithm tables and converting forms."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on finding logarithms of numbers using four-figure tables.",
+          "learning_activities": "Work in groups to solve assigned log table worksheets.",
+          "assessment_criteria": "Correctness of logarithmic values."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to find log values."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 35: APPLY LOGARITHMIC LAWS",
+      "sr_no": "35",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of exponents, radicals, and logarithms",
+      "specific_competence": "6.1 Compute values using logarithms and antilogarithms",
+      "main_activity": "Apply logarithmic laws",
+      "specific_activity": "Apply multiplication, division, and power laws of logarithms to simplify expressions",
+      "teaching_learning_resources": "Logarithm law summary sheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews logarithm definitions from Lesson 34 and introduces fundamental log laws.",
+          "learning_activities": "Recall log laws corresponding to index laws.",
+          "assessment_criteria": "Recall of logarithm properties."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates log laws: $\\log(xy) = \\log x + \\log y$, $\\log(x/y) = \\log x - \\log y$, and $\\log(x^n) = n \\log x$.",
+          "learning_activities": "Record notes, analyze law applications, and follow board examples.",
+          "assessment_criteria": "Accuracy in applying logarithm laws."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through simplifying and expanding logarithmic expressions.",
+          "learning_activities": "Work in pairs to solve assigned log law tasks.",
+          "assessment_criteria": "Correctness of expanded logarithmic terms."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to apply log laws independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 36: COMPUTE MULTIPLICATION AND DIVISION USING FOUR-FIGURE TABLES",
+      "sr_no": "36",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of exponents, radicals, and logarithms",
+      "specific_competence": "6.1 Compute values using logarithms and antilogarithms",
+      "main_activity": "Compute multiplication and division using four-figure tables",
+      "specific_activity": "Execute multi-step arithmetic computations using logarithm tables and antilogarithms",
+      "teaching_learning_resources": "Four-figure mathematical tables, calculators, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews log laws for multiplication and division from Lesson 35.",
+          "learning_activities": "Discuss tabular layout for logarithmic calculations.",
+          "assessment_criteria": "Recall of computational steps."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates setting up computational tables to compute multiplication, division, powers, and roots using logarithms and antilogarithms.",
+          "learning_activities": "Record notes, analyze table layout rules, and observe board workings.",
+          "assessment_criteria": "Accuracy in executing multi-step log calculations."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on calculating complex numerical expressions using four-figure log tables.",
+          "learning_activities": "Work in groups to solve assigned log computation worksheets.",
+          "assessment_criteria": "Correctness of final evaluated answers."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to perform log computations."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 37: DESCRIBE SETS AND NOTATIONS",
+      "sr_no": "37",
+      "time": "40 MIN",
+      "main_competence": "5.0 Demonstrate mastery of set theory and practical trigonometry",
+      "specific_competence": "7.1 Represent and solve set problems using Venn diagrams",
+      "main_activity": "Describe sets and notations",
+      "specific_activity": "Define sets, roster form, set-builder notation, and basic set terminology",
+      "teaching_learning_resources": "Set concept charts, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Brainstorms collections of objects in the classroom to introduce well-defined sets.",
+          "learning_activities": "Discuss everyday collections and what constitutes a valid set.",
+          "assessment_criteria": "Understanding of set definitions."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains roster listing form, descriptive form, and set-builder notation.",
+          "learning_activities": "Record notes, analyze notation rules, and follow board examples.",
+          "assessment_criteria": "Accuracy in writing sets in different notations."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through converting between set notations.",
+          "learning_activities": "Work in pairs to solve assigned set notation exercises.",
+          "assessment_criteria": "Correctness of notation conversions."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to describe sets independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 38: CLASSIFY TYPES OF SETS",
+      "sr_no": "38",
+      "time": "40 MIN",
+      "main_competence": "5.0 Demonstrate mastery of set theory and practical trigonometry",
+      "specific_competence": "7.1 Represent and solve set problems using Venn diagrams",
+      "main_activity": "Classify types of sets",
+      "specific_activity": "Identify finite, infinite, empty, subsets, power sets, and universal sets",
+      "teaching_learning_resources": "Set classification cards, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews set notation from Lesson 37 and introduces set sizes and types.",
+          "learning_activities": "Discuss countable versus uncountable collections.",
+          "assessment_criteria": "Recall of set description basics."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains finite and infinite sets, empty (null) sets, subsets, power sets, and universal sets with examples.",
+          "learning_activities": "Record notes, analyze definitions, and observe board workings.",
+          "assessment_criteria": "Accuracy in classifying set types."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on identifying set classifications and listing subsets.",
+          "learning_activities": "Work in groups to solve assigned set classification worksheets.",
+          "assessment_criteria": "Correctness of subset listings."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to identify set types."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 39: PERFORM SET OPERATIONS",
+      "sr_no": "39",
+      "time": "40 MIN",
+      "main_competence": "5.0 Demonstrate mastery of set theory and practical trigonometry",
+      "specific_competence": "7.1 Represent and solve set problems using Venn diagrams",
+      "main_activity": "Perform set operations",
+      "specific_activity": "Execute union, intersection, complement, and set difference operations",
+      "teaching_learning_resources": "Colored markers, Venn template sheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Introduces combining and comparing sets using visual ideas.",
+          "learning_activities": "Discuss combining groups of items and finding common elements.",
+          "assessment_criteria": "Understanding of set operations context."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates set operations: Union ($\\cup$), Intersection ($\\cap$), Complement ($'$), and Difference ($\\setminus$), and how to shade corresponding regions.",
+          "learning_activities": "Record notes, analyze operation rules, and follow board examples.",
+          "assessment_criteria": "Accuracy in performing set operations."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through calculating elements resulting from various set operations.",
+          "learning_activities": "Work in pairs to solve assigned set operation tasks.",
+          "assessment_criteria": "Correctness of evaluated set results."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to execute set operations independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 40: SOLVE 2-SET AND 3-SET PROBLEMS USING VENN DIAGRAMS",
+      "sr_no": "40",
+      "time": "40 MIN",
+      "main_competence": "5.0 Demonstrate mastery of set theory and practical trigonometry",
+      "specific_competence": "7.1 Represent and solve set problems using Venn diagrams",
+      "main_activity": "Solve 2-set and 3-set problems using Venn diagrams",
+      "specific_activity": "Construct Venn diagrams and solve word problems involving 2 and 3 intersecting sets",
+      "teaching_learning_resources": "Graph sheets, colored markers, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews set operations from Lesson 39 and introduces visual representation via Venn diagrams.",
+          "learning_activities": "Discuss overlapping regions and universal boundaries.",
+          "assessment_criteria": "Recall of set operations."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates drawing 2-set and 3-set Venn diagrams, placing region data, and solving word problems using subset formulas.",
+          "learning_activities": "Record notes, analyze region placement rules, and observe board workings.",
+          "assessment_criteria": "Accuracy in constructing and interpreting Venn diagrams."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on solving practical word problems using 2-set and 3-set Venn diagrams.",
+          "learning_activities": "Work in groups to solve assigned Venn diagram word problem sheets.",
+          "assessment_criteria": "Correctness of diagrammatic and numerical solutions."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to solve Venn diagram problems."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 41: EXPLAIN TRIGONOMETRIC RATIOS FOR RIGHT-ANGLED TRIANGLES",
+      "sr_no": "41",
+      "time": "40 MIN",
+      "main_competence": "5.0 Demonstrate mastery of set theory and practical trigonometry",
+      "specific_competence": "8.1 Calculate trigonometric ratios and solve real-life problems",
+      "main_activity": "Explain trigonometric ratios for right-angled triangles",
+      "specific_activity": "Define sine, cosine, and tangent ratios (SOH CAH TOA) for right-angled triangles",
+      "teaching_learning_resources": "Right triangle charts, rulers, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Introduces right-angled triangles and labels sides (opposite, adjacent, hypotenuse relative to an angle).",
+          "learning_activities": "Discuss triangle side naming conventions.",
+          "assessment_criteria": "Recognition of triangle sides."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Defines sine, cosine, and tangent ratios using SOH CAH TOA and demonstrates calculating values for given triangle sides.",
+          "learning_activities": "Record notes, analyze ratio definitions, and follow board examples.",
+          "assessment_criteria": "Accuracy in computing basic trigonometric ratios."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through calculating missing side ratios in right-angled triangles.",
+          "learning_activities": "Work in pairs to solve assigned trigonometric ratio tasks.",
+          "assessment_criteria": "Correctness of calculated ratio values."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to compute trig ratios independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 42: DETERMINE TRIG RATIOS FOR SPECIAL AND GENERAL ANGLES",
+      "sr_no": "42",
+      "time": "40 MIN",
+      "main_competence": "5.0 Demonstrate mastery of set theory and practical trigonometry",
+      "specific_competence": "8.1 Calculate trigonometric ratios and solve real-life problems",
+      "main_activity": "Determine trig ratios for special and general angles",
+      "specific_activity": "Find exact trigonometric ratios for special angles ($30^\\circ$, $45^\\circ$, $60^\\circ$) and general angles using tables",
+      "teaching_learning_resources": "Trigonometric tables, scientific calculators, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews right triangle ratios from Lesson 41 and introduces geometric special triangles.",
+          "learning_activities": "Discuss equilateral and isosceles right triangles.",
+          "assessment_criteria": "Recall of triangle ratio basics."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Derives exact ratios for $30^\\circ$, $45^\\circ$, and $60^\\circ$ and demonstrates reading general angle values from trigonometric tables.",
+          "learning_activities": "Record notes, analyze special angle derivations, and observe board workings.",
+          "assessment_criteria": "Accuracy in finding special and general trig values."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on evaluating expressions containing special and table angles.",
+          "learning_activities": "Work in groups to solve assigned trigonometric table worksheets.",
+          "assessment_criteria": "Correctness of evaluated expression results."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to use trig tables."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 43: ANALYZE RELATIONSHIPS BETWEEN TRIGONOMETRIC RATIOS",
+      "sr_no": "43",
+      "time": "40 MIN",
+      "main_competence": "5.0 Demonstrate mastery of set theory and practical trigonometry",
+      "specific_competence": "8.1 Calculate trigonometric ratios and solve real-life problems",
+      "main_activity": "Analyze relationships between trigonometric ratios",
+      "specific_activity": "Apply fundamental identities $\\tan \\theta = \\frac{\\sin \\theta}{\\cos \\theta}$ and $\\sin^2 \\theta + \\cos^2 \\theta = 1$",
+      "teaching_learning_resources": "Trigonometric identity charts, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews basic right triangle ratios to show how sine, cosine, and tangent are connected algebraically.",
+          "learning_activities": "Discuss ratios connecting all three trigonometric functions.",
+          "assessment_criteria": "Recognition of basic trigonometric links."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates fundamental trigonometric identities ($\\tan \\theta = \\frac{\\sin \\theta}{\\cos \\theta}$ and $\\sin^2 \\theta + \\cos^2 \\theta = 1$) using unit triangle coordinates.",
+          "learning_activities": "Record notes, analyze identity proofs, and follow board examples.",
+          "assessment_criteria": "Accuracy in applying trigonometric identities."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through verifying simple trigonometric identities and simplifying expressions.",
+          "learning_activities": "Work in pairs to solve assigned identity verification tasks.",
+          "assessment_criteria": "Correctness of algebraic reductions."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to manipulate trigonometric identities independently."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 44: EVALUATE INVERSE TRIGONOMETRIC FUNCTIONS",
+      "sr_no": "44",
+      "time": "40 MIN",
+      "main_competence": "5.0 Demonstrate mastery of set theory and practical trigonometry",
+      "specific_competence": "8.1 Calculate trigonometric ratios and solve real-life problems",
+      "main_activity": "Evaluate inverse trigonometric functions",
+      "specific_activity": "Find unknown angle measures from given trigonometric ratios using tables and calculators",
+      "teaching_learning_resources": "Trigonometric tables, scientific calculators, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews finding side ratios from angles and asks how to find an angle given a ratio.",
+          "learning_activities": "Discuss reverse lookup concepts in trigonometry.",
+          "assessment_criteria": "Understanding of inverse trigonometric concepts."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains inverse trigonometric functions ($\\arcsin$, $\\arccos$, $\\arctan$) and demonstrates finding angle measures from known side ratios using tables.",
+          "learning_activities": "Record notes, analyze inverse calculation steps, and observe board workings.",
+          "assessment_criteria": "Accuracy in evaluating inverse trigonometric functions."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises group practice on finding unknown angles using tables or calculators.",
+          "learning_activities": "Work in groups to solve assigned inverse ratio worksheets.",
+          "assessment_criteria": "Correctness of angle measure results."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates group findings, writes correct solutions, and conducts an oral check.",
+          "learning_activities": "Present solutions and answer diagnostic questions.",
+          "assessment_criteria": "Individual ability to evaluate inverse ratios."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 45: TERM II MID-TERM REVIEW WORKSHOP",
+      "sr_no": "45",
+      "time": "40 MIN",
+      "main_competence": "4.0 & 5.0 Term II Mid-Term Review Workshop",
+      "specific_competence": "5.1, 6.1, 7.1, & 8.1 Comprehensive Mid-Term Revision (Term II)",
+      "main_activity": "Review Term II core concepts",
+      "specific_activity": "Synthesize exponents, radicals, logarithms, set theory, Venn diagrams, and trigonometric ratios",
+      "teaching_learning_resources": "Mid-term revision worksheets, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Outlines the scope of the Term II mid-term assessment and highlights key formula connections.",
+          "learning_activities": "Listen and note key revision topics.",
+          "assessment_criteria": "Preparedness for mid-term review."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Summarizes problem-solving techniques for indices, logarithm table computations, set region shading, and right-triangle trigonometry.",
+          "learning_activities": "Record summary notes and observe exemplar problem solutions.",
+          "assessment_criteria": "Conceptual clarity across Term II topics."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through working on mixed revision problem sets.",
+          "learning_activities": "Work in pairs to solve assigned mid-term practice tasks.",
+          "assessment_criteria": "Accuracy in navigating diverse mathematical problems."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and answers clarification questions.",
+          "learning_activities": "Present solutions and ask questions on difficult items.",
+          "assessment_criteria": "Readiness for mid-term assessments."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 46: TERM II MID-TERM ASSESSMENT ADMINISTRATION AND FEEDBACK",
+      "sr_no": "46",
+      "time": "40 MIN",
+      "main_competence": "4.0 & 5.0 Term II Mid-Term Assessment Administration & Feedback",
+      "specific_competence": "Mid-Term Examination Evaluation and Correction (Term II)",
+      "main_activity": "Administer Term II mid-term assessment",
+      "specific_activity": "Supervise Term II mid-term examination and conduct immediate post-test error analysis",
+      "teaching_learning_resources": "Mid-term examination papers, marking guides, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Briefs students on assessment rules, time limits, and question distribution.",
+          "learning_activities": "Receive exam papers and review instructions.",
+          "assessment_criteria": "Adherence to test protocols."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Oversees test administration, monitors class integrity, and provides authorized clarifications.",
+          "learning_activities": "Complete the Term II mid-term Basic Mathematics examination paper.",
+          "assessment_criteria": "Integrity and focus during assessment."
+        },
+        {
+          "stage": "Design",
+          "time": "5 min",
+          "teaching_activities": "Collects examination papers and provides a brief verbal overview of expected solutions.",
+          "learning_activities": "Submit completed answer scripts orderly.",
+          "assessment_criteria": "Proper submission of scripts."
+        },
+        {
+          "stage": "Realization",
+          "time": "5 min",
+          "teaching_activities": "Concludes mid-term session and outlines expectations for post-break lessons.",
+          "learning_activities": "Note closing instructions and transition.",
+          "assessment_criteria": "Orderly conclusion of session."
+        }
+      ]
+    },
+    {
+      "title": "BASIC MATHEMATICS FORM TWO LESSON PLAN NO. 47: EXPLAIN ANGLES OF ELEVATION AND DEPRESSION",
+      "sr_no": "47",
+      "time": "40 MIN",
+      "main_competence": "5.0 Demonstrate mastery of set theory and practical trigonometry",
+      "specific_competence": "8.1 Calculate trigonometric ratios and solve real-life problems",
+      "main_activity": "Explain angles of elevation and depression",
+      "specific_activity": "Define angles of elevation and depression using real-world visualization and horizontal lines of sight",
+      "teaching_learning_resources": "Clinometers, tape measures, whiteboard, TIE Form 2 Basic Mathematics Textbook.",
+      "references": "TIE (2026). Basic Mathematics for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Introduces real-world scenarios involving looking up at tall objects or looking down from heights.",
+          "learning_activities": "Discuss practical scenarios involving heights and horizontal lines of sight.",
+          "assessment_criteria": "Understanding of elevation and depression angles."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Defines angles of elevation and depression, demonstrating alternate interior angle properties for parallel horizontal lines.",
+          "learning_activities": "Record notes, analyze angle definitions, and follow board examples.",
+          "assessment_criteria": "Accuracy in identifying elevation and depression angles."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student pairs through sketching and labeling diagrams representing elevation and depression.",
+          "learning_activities": "Work in pairs to solve assigned diagram sketching tasks.",
+          "assessment_criteria": "Correctness of geometric problem setups."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews student solutions on the board and resolves questions.",
+          "learning_activities": "Present solutions and answer diagnostic follow-up questions.",
+          "assessment_criteria": "Ability to sketch elevation/depression scenarios independently."
+        }
+      ]
+    }
+  ]
+}
