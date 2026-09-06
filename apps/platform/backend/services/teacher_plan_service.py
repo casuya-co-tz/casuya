@@ -90,6 +90,55 @@ def _tie_competences(subject_slug: str, form_level: int, topic_title: str, lang:
     )
 
 
+def _reference_lesson_grounding(subject_slug, form_level, topic, subtopic):
+    """Best-matching verified/official reference lesson for a lesson request.
+
+    Returns the ``lesson_plan_grounding`` enrichment (competences, activities,
+    resources, references, per-stage progression) only when the reference
+    library actually contains a lesson that matches the requested topic or
+    subtopic. A chapter-first fallback document that merely shares the subject
+    is NOT trusted, so generation never grounds on the wrong lesson.
+
+    The private ``__bundled`` flag marks educator-verified lessons shipped with
+    the platform (``source_id`` starting ``bundled:``); only those may override
+    TIE syllabus competence statements in generated plans.
+    """
+    match_hint = (subtopic or topic or "").strip()
+    try:
+        ground = fetch_reference_grounding(subject_slug, form_level, match_hint or None, "lesson_plan")
+    except Exception:
+        return None
+    if not ground:
+        return None
+    gl = lesson_plan_grounding(ground.get("content") or {}, match_hint=match_hint)
+    if not gl.get("matched"):
+        return None
+    gl["__bundled"] = str(ground.get("source_id") or "").startswith("bundled:")
+    return gl
+
+
+def _authoritative_competences(subject_slug, form_level, topic_title, lang, ref_gl=None):
+    """Best Main/Specific Competence pair for a lesson plan.
+
+    Precedence: (1) the curated topic-level TIE competence mapping, (2) the
+    matched verified reference lesson's own competences (educator-verified TIE
+    content, e.g. the bundled Geography Form One lessons), (3) the best-effort
+    keyword match over the full TIE syllabus dataset. The reference lesson wins
+    over the keyword fallback because the bundled lessons carry authentic,
+    verified competence statements for their chapters, whereas keyword matching
+    can surface a neighbouring topic's row.
+    """
+    rec = lookup_competence(subject_slug, form_level, topic_title)
+    if rec:
+        return (
+            f"{rec['main_code']} {rec['main'][lang]}".strip(),
+            f"{rec['specific_code']} {rec['specific'][lang]}".strip(),
+        )
+    if ref_gl and ref_gl.get("main_competence") and ref_gl.get("specific_competence"):
+        return ref_gl["main_competence"], ref_gl["specific_competence"]
+    return _tie_syllabus_competence(subject_slug, form_level, topic_title)
+
+
 def _time_to(duration_minutes: int) -> str:
     base = datetime(2026, 1, 1, 8, 0)
     from datetime import timedelta
@@ -303,7 +352,13 @@ async def generate_lesson_plan(
                 lang=lang,
             )
         _normalize_stage_times(plan, duration_minutes)
-        tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
+        _ai_ref_gl = _reference_lesson_grounding(subject_slug, form_level, topic, subtopic or "")
+        # Only bundled, educator-verified reference lessons (e.g. Geography
+        # Form One) get to override competences here: keyed docs are not as
+        # authoritative as the TIE syllabus for competence statements.
+        _ai_verified = _ai_ref_gl if (_ai_ref_gl and _ai_ref_gl.get("__bundled")) else None
+        tie_main, tie_spec = _authoritative_competences(
+            subject_slug, form_level, topic, lang, ref_gl=_ai_verified)
         if tie_main and tie_spec:
             ca = plan.setdefault("competence_architecture", {})
             ca["main_competence"] = tie_main
@@ -559,8 +614,13 @@ def _build_lesson_plan_prompt(
 
     # Resolve the verbatim TIE Main/Specific Competence statements for this
     # lesson so the model copies them word-for-word instead of substituting
-    # the topic/subtopic TITLES into the competence fields.
-    tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
+    # the topic/subtopic TITLES into the competence fields. A matched verified
+    # reference lesson (e.g. the bundled Geography Form One content) outranks
+    # the best-effort keyword fallback for its chapter.
+    ref_gl = _reference_lesson_grounding(subject_slug, form_level, topic, subtopic or "")
+    tie_main, tie_spec = _authoritative_competences(
+        subject_slug, form_level, topic, lang,
+        ref_gl=ref_gl if (ref_gl and ref_gl.get("__bundled")) else None)
     main_comp_hint = tie_main or (
         "the REAL Main Competence statement from the CURRICULUM CONTEXT, verbatim "
         "from the TIE syllabus (e.g. \"1.0 Demonstrate mastery of basic concepts "
@@ -578,6 +638,35 @@ def _build_lesson_plan_prompt(
             f"main_competence and specific_competence):\n"
             f"main_competence = {tie_main}\n"
             f"specific_competence = {tie_spec}\n"
+        )
+
+    # A matched verified reference lesson is the authoritative model for the
+    # plan: its competences, activities, resources/references and per-stage
+    # teacher/learner/assessment content shape the output exactly like the
+    # educator-verified curriculum (e.g. Geography Form One Chapter 1-4).
+    reference_block = ""
+    if ref_gl:
+        progression_text = ""
+        for s in ref_gl.get("progression") or []:
+            progression_text += (
+                f"- {s.get('stage') or 'Stage'} ({s.get('time') or ''}):\n"
+                f"  Teacher: {s.get('teacher_activity') or ''}\n"
+                f"  Learners: {s.get('learner_activity') or ''}\n"
+                f"  Assessment: {s.get('assessment_criteria') or ''}\n"
+            )
+        reference_block = (
+            "VERIFIED REFERENCE LESSON FOR THIS TOPIC (official, educator-verified "
+            "curriculum content - treat it as the authoritative example. Mirror its "
+            "stage-by-stage flow and phrasing; never contradict its facts):\n"
+            f"- main_competence (copy verbatim): {ref_gl.get('main_competence') or ''}\n"
+            f"- specific_competence (copy verbatim): {ref_gl.get('specific_competence') or ''}\n"
+            f"- main_activity: {ref_gl.get('main_activity') or ''}\n"
+            f"- specific_activity: {ref_gl.get('specific_activity') or ''}\n"
+            f"- resources: {', '.join(ref_gl.get('resources') or [])}\n"
+            f"- references: {'; '.join(ref_gl.get('references') or [])}\n"
+            "EXPECTED STAGE-BY-STAGE PROGRESSION (model your progression_matrix on "
+            "it, keeping the 5/15/12/8 minute TIE pacing):\n"
+            f"{progression_text}"
         )
 
     students_total = number_of_students
@@ -665,6 +754,7 @@ def _build_lesson_plan_prompt(
             "Kigezo cha Tathmini.\n"
             f"{rules_sw}\n"
             f"{real_comp_block}\n"
+            f"{reference_block}\n"
             f"Urefu wa somo ni dakika {duration_minutes}; gauza hatua nne kwa busara "
             "ndani ya muda huo (Utangulizi mfupi zaidi, Ukuzaji wa Ujuzi ndio mrefu "
             "zaidi), si mgawanyo usiobadilika.\n"
@@ -682,6 +772,7 @@ def _build_lesson_plan_prompt(
         "Learning Process.\n"
         f"{rules}\n"
         f"{real_comp_block}\n"
+        f"{reference_block}\n"
         f"The lesson length is {duration_minutes} minutes; allocate the four stages "
         "sensibly within that total (Introduction shortest, Competence Development the "
         "longest), rather than forcing a fixed split.\n"
@@ -1690,9 +1781,10 @@ def _build_lesson_plan_offline(
     # official lessons/schemes from the public platform) so offline output
     # carries authentic competence, activity, resource and reference text.
     # Verbatim TIE statements below still take precedence for competences.
+    _ref_gl = _reference_lesson_grounding(subject_slug, form_level, topic, subtopic or "")
     _ground = fetch_reference_grounding(subject_slug, form_level, topic or subtopic, "lesson_plan")
     if _ground and not scheme_row:
-        _gl = lesson_plan_grounding(_ground.get("content") or {})
+        _gl = lesson_plan_grounding(_ground.get("content") or {}, match_hint=subtopic or topic or "")
         if _gl["main_competence"]:
             main_act = main_act or _gl["main_competence"]
         if _gl["specific_competence"]:
@@ -1715,8 +1807,14 @@ def _build_lesson_plan_offline(
                 references.append(_ref)
 
     # Prefer the verbatim TIE CBC (2023) Main/Specific Competence statements
-    # for this teaching topic, independent of the knowledge-base lookup.
-    tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
+    # for this teaching topic, independent of the knowledge-base lookup. A
+    # bundled, educator-verified reference lesson (e.g. the Geography Form One
+    # lessons) carries authentic competences for its own chapter and outranks
+    # the keyword-match fallback, because bundled lessons are verified TIE
+    # content tailored to exactly that subtopic.
+    _verified_comp = _ref_gl if (_ref_gl and _ref_gl.get("__bundled")) else None
+    tie_main, tie_spec = _authoritative_competences(
+        subject_slug, form_level, topic, lang, ref_gl=_verified_comp)
     if tie_main and tie_spec:
         main_comp = tie_main
         spec_comp = tie_spec
@@ -1782,6 +1880,19 @@ def _build_lesson_plan_offline(
             "learner_activity": learner_acts[i],
             "assessment_criteria": assessment[i],
         })
+
+    # When the matched reference lesson carries a complete verified four-stage
+    # progression, its teacher/learner/assessment cells ARE the lesson content:
+    # offline output mirrors the educator-verified plan instead of the generic
+    # scaffold, while keeping this lesson's own period times and core_content.
+    if _ref_gl and _ref_gl.get("matched") and len(_ref_gl.get("progression") or []) == 4:
+        for stage, ref_stage in zip(progression, _ref_gl["progression"]):
+            if ref_stage.get("teacher_activity"):
+                stage["teacher_activity"] = ref_stage["teacher_activity"]
+            if ref_stage.get("learner_activity"):
+                stage["learner_activity"] = ref_stage["learner_activity"]
+            if ref_stage.get("assessment_criteria"):
+                stage["assessment_criteria"] = ref_stage["assessment_criteria"]
 
     # Prefer the reference library's authentic per-stage Assessment Criteria
     # over the stage-derived criteria when a matching topic reference exists.

@@ -15,7 +15,9 @@ from backend.config.database import get_db
 from backend.main import app
 from backend.models.reference_doc import ReferenceDoc
 from backend.services.reference_library_service import (
+    fetch_reference_grounding,
     get_reference_doc,
+    lesson_plan_grounding,
     list_reference_docs,
     map_form_level,
     map_subject_slug,
@@ -123,6 +125,76 @@ def test_service_get_by_source_and_serialize():
         assert payload["content"] == {"plan_details": []}
     finally:
         db.close()
+
+
+# ---------- Bundled (verified) seed + grounding ----------
+
+def test_bundled_seed_is_idempotent():
+    """The bundled verified reference lessons seed idempotently: a re-run
+    inserts and replaces nothing, and the geography Form 1 library is present."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        inserted, replaced = seed_reference_library_local.run(db)
+        assert inserted == 18
+        assert replaced == 0
+        geo = list_reference_docs(db, subject_slug="geography", form_level=1)
+        assert len(geo) == 18
+        assert all(doc.source_id.startswith("bundled:") for doc in geo)
+        again, again_replaced = seed_reference_library_local.run(db)
+        assert again == 0
+        assert again_replaced == 0
+    finally:
+        db.close()
+
+
+def test_fetch_grounding_selects_verified_bundled_lesson():
+    """Grounding for the 'Concept of Geography' topic resolves to the exact
+    bundled lesson 1.1 (title match beats chapter content matches), and its
+    four-stage progression is extracted with a positive match flag."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        seed_reference_library_local.run(db)
+    finally:
+        db.close()
+
+    ground = fetch_reference_grounding("geography", 1, "Concept of Geography", "lesson_plan")
+    assert ground is not None
+    assert "1.1: CONCEPT OF GEOGRAPHY" in ground["title"]
+    assert ground["source_id"].startswith("bundled:")
+
+    gl = lesson_plan_grounding(ground["content"], match_hint="Concept of Geography")
+    assert gl["matched"] is True
+    assert gl["main_competence"] == "1.0 Demonstrate mastery of foundational geographical concepts"
+    assert gl["specific_competence"].startswith("1.1")
+    assert len(gl["progression"]) == 4
+    assert gl["progression"][0]["teacher_activity"].startswith(
+        "Asks learners to describe what they see")
+    assert gl["progression"][0]["learner_activity"].startswith(
+        "List physical features and human activities observed")
+    assert gl["progression"][1]["assessment_criteria"].startswith(
+        "Learners define Geography accurately")
+
+
+def test_fetch_grounding_no_match_stays_negative():
+    """A topic with no bundled geography lesson is not matched, so generators
+    never ground on an unrelated verified lesson."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        seed_reference_library_local.run(db)
+    finally:
+        db.close()
+
+    ground = fetch_reference_grounding("geography", 1, "States of Matter", "lesson_plan")
+    if ground is None:
+        return
+    gl = lesson_plan_grounding(ground["content"], match_hint="States of Matter")
+    assert gl["matched"] is False
 
 
 # ---------- API ----------

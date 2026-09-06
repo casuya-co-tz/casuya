@@ -385,6 +385,54 @@ th{{font-size:7.5pt}}
 </div></body></html>"""
 
 
+def _fetch_grounding_candidates(db, subject_slug, form_level, doc_type) -> list[ReferenceDoc]:
+    q = db.query(ReferenceDoc).filter(ReferenceDoc.subject_slug == subject_slug)
+    if form_level:
+        q = q.filter(ReferenceDoc.form_level == form_level)
+    if doc_type:
+        q = q.filter(ReferenceDoc.doc_type == doc_type)
+    return list(q.all())
+
+
+def _doc_content_text(doc: ReferenceDoc) -> str:
+    """Collapse a reference document's searchable teaching text into one blob.
+
+    Includes competences, activities, per-stage teaching/learning/assessment
+    text, resources and references so topic matching can look inside content,
+    not just the title (e.g. choose the right single-subtopic lesson plan)."""
+    try:
+        content = json.loads(doc.content)
+    except (TypeError, ValueError):
+        content = {}
+    parts = [doc.title or ""]
+
+    def _s(value):
+        if isinstance(value, str):
+            return value
+        if isinstance(value, list | tuple):
+            return " ".join(_s(v) for v in value if v)
+        if isinstance(value, dict):
+            return " ".join(_s(v) for v in value.values() if v)
+        return str(value or "")
+
+    details = content.get("plan_details") or []
+    if not details:
+        details = content.get("scheme_of_work_details") or []
+    for detail in details:
+        if not isinstance(detail, dict):
+            continue
+        for key in ("title", "main_competence", "specific_competence",
+                    "main_activity", "specific_activity",
+                    "teaching_learning_resources", "resources", "references"):
+            parts.append(_s(detail.get(key)))
+        for stage in detail.get("teaching_structure") or []:
+            if isinstance(stage, dict):
+                for key in ("stage", "teaching_activities", "learning_activities",
+                            "assessment_criteria", "time"):
+                    parts.append(_s(stage.get(key)))
+    return " ".join(parts)
+
+
 def fetch_reference_grounding(
     subject_slug: str,
     form_level: int | None,
@@ -397,6 +445,11 @@ def fetch_reference_grounding(
     threading a ``Session`` through. Best-effort and side-effect free: returns
     ``None`` when no database, table or matching row is available, so callers
     fall back to their generic content rather than failing.
+
+    The best document wins an in-memory score: a topic/subtopic appearing in
+    the title scores highest, and the same text appearing anywhere inside the
+    document's teaching content (specific activities, stage cells, etc.) selects
+    the correct single-lesson plan rather than the first row of a chapter.
     """
     try:
         from backend.config.database import get_db
@@ -406,21 +459,24 @@ def fetch_reference_grounding(
     except Exception:
         return None
     try:
-        q = db.query(ReferenceDoc).filter(ReferenceDoc.subject_slug == subject_slug)
-        if form_level:
-            q = q.filter(ReferenceDoc.form_level == form_level)
-        if doc_type:
-            q = q.filter(ReferenceDoc.doc_type == doc_type)
-        docs = list(q.all())
+        docs = _fetch_grounding_candidates(db, subject_slug, form_level, doc_type)
         if not docs:
             return None
 
+        needle = (topic or "").strip().lower()
+        haystacks = {doc.id: _doc_content_text(doc).lower() for doc in docs}
+
         def _score(doc: ReferenceDoc) -> int:
             score = 0
-            if topic and topic.lower() in (doc.title or "").lower():
-                score += 3
             if doc_type and (doc.doc_type or "") == doc_type:
                 score += 1
+            if not needle:
+                return score
+            title = (doc.title or "").lower()
+            if needle in title:
+                return score + 3
+            if needle in haystacks.get(doc.id, ""):
+                score += 2
             return score
 
         best = max(docs, key=_score)
@@ -432,6 +488,7 @@ def fetch_reference_grounding(
             "doc_type": best.doc_type,
             "title": best.title,
             "standard": best.standard,
+            "source_id": best.source_id,
             "content": content,
         }
     finally:
@@ -477,11 +534,44 @@ def _as_citations(value) -> list:
     return [_collapsed(value)]
 
 
-def lesson_plan_grounding(content: dict) -> dict:
-    """Extract teacher-facing enrichments (comp/activity/resources/references)
-    from a reference lesson-plan payload. Detail values are mostly strings
-    (comma/line-delimited); references are kept whole as citations while
-    resources are split into individual items."""
+def _lesson_progression(content: dict) -> list[dict]:
+    """Normalize the first plan detail's teaching structure into the lesson
+    plan schema used by generators: ``[{stage, time, teacher_activity,
+    learner_activity, assessment_criteria}]``. Empty when the payload has no
+    usable per-stage text. Only the first detail is used so chapter bundles
+    (one detail per lesson) expose exactly that lesson's stages."""
+    progression: list[dict] = []
+    details = content.get("plan_details") or []
+    if not details:
+        return progression
+    first = details[0] if isinstance(details[0], dict) else {}
+    for stage in first.get("teaching_structure") or []:
+        if not isinstance(stage, dict):
+            continue
+        teacher = _collapsed(stage.get("teaching_activities"))
+        learner = _collapsed(stage.get("learning_activities"))
+        if not (teacher or learner):
+            continue
+        progression.append({
+            "stage": _collapsed(stage.get("stage")),
+            "time": _collapsed(stage.get("time")),
+            "teacher_activity": teacher,
+            "learner_activity": learner,
+            "assessment_criteria": _collapsed(stage.get("assessment_criteria")),
+        })
+    return progression
+
+
+def lesson_plan_grounding(content: dict, match_hint: str = "") -> dict:
+    """Extract teacher-facing enrichments (comp/activity/resources/references
+    and the per-stage progression) from a reference lesson-plan payload.
+
+    Detail values are mostly strings (comma/line-delimited); references are
+    kept whole as citations while resources are split into individual items.
+    ``match_hint`` (normally the requested topic/subtopic) marks the result
+    ``matched=True`` when it appears in the lesson's own teaching text, letting
+    callers trust the extracted content as the authoritative lesson for that
+    topic rather than a chapter-first fallback."""
     references = []
     for detail in content.get("plan_details") or []:
         for ref in _as_citations(detail.get("references")) + _as_citations(detail.get("resource_references")):
@@ -495,14 +585,27 @@ def lesson_plan_grounding(content: dict) -> dict:
             if item not in resources_seen:
                 resources_seen.append(item)
                 resources.append(item)
-    return {
+    fields = {
         "main_competence": _plan_field(content, "main_competence"),
         "specific_competence": _plan_field(content, "specific_competence"),
         "main_activity": _plan_field(content, "main_activity"),
         "specific_activity": _plan_field(content, "specific_activity"),
         "resources": resources,
         "references": references,
+        "progression": _lesson_progression(content),
     }
+    hint = (match_hint or "").strip().lower()
+    if hint:
+        haystack = " ".join(
+            str(fields[k] or "").lower()
+            for k in ("main_competence", "specific_competence", "main_activity", "specific_activity")
+        ) + " " + " ".join(str(x).lower() for x in resources) + " " + \
+            " ".join(str(p.get("teacher_activity") or "") + " " + str(p.get("learner_activity") or "")
+                     for p in fields["progression"])
+        fields["matched"] = hint in haystack
+    else:
+        fields["matched"] = False
+    return fields
 
 
 _SCHEME_HEADER_LABELS = {

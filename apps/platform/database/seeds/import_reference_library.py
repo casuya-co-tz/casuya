@@ -248,6 +248,22 @@ def run(db, *, limit: int | None = None, cache_dir: str = DEFAULT_CACHE_DIR,
                         f"inserted={inserted} replaced={replaced} skipped={skipped}"))
                     db.expire_all()
 
+    # Seed the educator-verified bundled library (committed lesson content) so
+    # the reference docs are complete even when the live catalog is unreachable
+    # (offline/offline-first deployments). Idempotent and additive.
+    try:
+        from .seed_reference_library_local import run as seed_bundled
+
+        _l_inserted, _l_replaced = seed_bundled(db)
+        if _l_inserted or _l_replaced:
+            logger.info(
+                "bundled reference library: inserted=%d replaced=%d",
+                _l_inserted,
+                _l_replaced,
+            )
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("bundled reference library seed failed: %s", exc)
+
     return inserted, replaced, skipped
 
 
