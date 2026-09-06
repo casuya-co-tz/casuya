@@ -147,6 +147,7 @@ def test_lesson_plan_offline_render_english():
     # Removed placeholders / sections must not render (the REMARKS/evaluation
     # section IS part of the current TIE render and stays).
     assert "REMARKS" in html
+    assert "Indicate the percentage of students" not in html
     assert "LESSON OBJECTIVE" not in html
     assert "Learner Evaluation" not in html
     assert "Teacher Evaluation" not in html

@@ -2077,10 +2077,6 @@ def render_lesson_plan_html(plan: dict) -> str:
     _assessment = LST("Assessment Criteria", "Kigezo cha Tathmini")
     _absent = LST("ABSENT", "WALIOKUWA HAWAPO")
     _teacher_eval = LST("Teacher's Evaluation / Self-Reflection", "Tathmini ya Mwalimu / Kujitathmini")
-    _teacher_eval_hint = LST(
-        "(Indicate the percentage of students who achieved the specific competence, effectiveness of teaching methods/resources, and required remediation.)",
-        "(Onyesha asilimia ya wanafunzi waliofikia ujuzi mahususi, ufanisi wa mbinu/rasilimali za kufundisha, na marekebisho yanayohitajika.)",
-    )
     _signature = LST("Signature", "Sahihi")
 
     sreg = h.get("students_registered", {}) or {}
@@ -2399,7 +2395,6 @@ def render_lesson_plan_html(plan: dict) -> str:
 
     <div class="sec-title">REMARKS</div>
     <div class="sec" style="margin-bottom:10px">
-        <div class="no-print" style="font-size:9pt;color:#64748b;margin-bottom:4px;font-style:italic">{_e(_teacher_eval_hint)}</div>
         <div style="min-height:48px;border:1px solid #e2e8f0;border-radius:6px;padding:8px 10px;background:#f8fafc;font-size:9pt">{_e(plan.get('remarks', ''))}</div>
     </div>
 
