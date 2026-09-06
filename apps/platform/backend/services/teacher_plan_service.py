@@ -139,6 +139,108 @@ def _authoritative_competences(subject_slug, form_level, topic_title, lang, ref_
     return _tie_syllabus_competence(subject_slug, form_level, topic_title)
 
 
+def _reference_scheme_grounding(subject_slug, form_level, term):
+    """Best-matching educator-verified (bundled) reference scheme for a term.
+
+    Returns the ``scheme_of_work_grounding`` enrichment (generic methods,
+    resources, assessment, references plus the normalized per-week ``rows``)
+    only when the reference library has a bundled, verified scheme document for
+    the subject/form/term (e.g. the Geography Form One Term I/II schemes).
+    External (librarian-imported) scheme documents are NOT trusted for this so
+    offline generation never reproduces unverified rows.
+    """
+    term_digit = re.sub(r"[^0-9]", "", str(term or "")) or ""
+    term_label = f"term {term_digit}" if term_digit in ("1", "2") else None
+    try:
+        ground = fetch_reference_grounding(subject_slug, form_level, term_label, "scheme_of_work")
+    except Exception:
+        return None
+    if not ground or not str(ground.get("source_id") or "").startswith("bundled:"):
+        return None
+    gl = scheme_of_work_grounding(ground.get("content") or {})
+    if not gl.get("rows"):
+        return None
+    gl["__bundled"] = True
+    return gl
+
+
+def _scheme_row_requested(topics: list, ref_row: dict) -> bool:
+    """True when a verified scheme row's topic/competence/activity matches any
+    of the requested topic keywords (case-insensitive substring)."""
+    if not topics:
+        return True
+    haystack = " ".join(
+        str(ref_row.get(k) or "") for k in
+        ("topic", "main_competence", "specific_competence", "main_activity")
+    ).lower()
+    return any(t and str(t).lower() in haystack for t in topics)
+
+
+def _verified_scheme_week_row(gl_row, *, lang, subject_label, form_level) -> dict:
+    """Build a scheme week-row (the shape used by the offline scheme generator)
+    from one normalized, verified reference scheme row - competences,
+    activities, strategies, resources, assessment tools and remarks reproduced
+    verbatim from the educator-verified source."""
+    main_comp = gl_row.get("main_competence") or ""
+    spec_comp = gl_row.get("specific_competence") or ""
+    activity = gl_row.get("main_activity") or spec_comp
+    specific_activity = gl_row.get("specific_activity") or activity
+    topic = gl_row.get("topic") or spec_comp
+    reference = gl_row.get("reference") or (
+        f"TIE (2026) {_subject_book(subject_label, f'Form {form_level}', lang)}"
+    )
+    periods = 1
+    try:
+        periods = int(gl_row.get("periods") or 1)
+    except (TypeError, ValueError):
+        periods = 1
+    periods = max(periods, 1)
+    methods = gl_row.get("methods") or (
+        ["Uchunguzi", "Majadiliano", "Kazi ya mradi", "Uwasilishaji"]
+        if lang == "sw"
+        else ["Exploration", "Guided discussion", "Project work", "Presentation"]
+    )
+    resources = gl_row.get("resources") or (
+        ["Vitu halisi", "Chati", "Michezo ya Hisabati"]
+        if lang == "sw"
+        else ["Real life objects", "Charts", "Math games and apps"]
+    )
+    assessment = gl_row.get("assessment") or (
+        "Uchunguzi, maswali na majibu, kazi ya mradi, uwasilishaji darasani, "
+        "majaribio, portfolio na kazi ya nyumbani"
+        if lang == "sw"
+        else "Quizzes, questions and answers, project work, class presentation, "
+             "tests, portfolio and homework"
+    )
+    remark = gl_row.get("remarks") or (
+        f"Most learners achieved the competence on {spec_comp}. Provide "
+        f"reinforcement tasks and extension work where appropriate."
+        if lang == "en"
+        else f"Wanafunzi wengi wamefikia ujuzi wa {spec_comp}. Toa kazi za "
+             f"kuimarisha na mazoezi ya ziada inapohitajika."
+    )
+    return {
+        "topic": topic,
+        "subtopic": activity,
+        "main_competence": main_comp,
+        "specific_competence": spec_comp,
+        "learning_activities": [activity],
+        "specific_activities": [specific_activity],
+        "periods": periods,
+        "reference": reference,
+        "teaching_methods": methods,
+        "teaching_resources": resources,
+        "assessment_tools": assessment,
+        "remarks": remark,
+        "teaching_aids": ["Textbook", "Charts"] if lang == "en" else ["Kitabu", "Ramani"],
+        "competences": [main_comp or topic],
+        "objectives": [specific_activity],
+        "learning_activity_schedule": _distribute_periods([specific_activity], periods),
+        "references": [reference, "TIE Syllabus"],
+        "assessment": assessment,
+    }
+
+
 def _time_to(duration_minutes: int) -> str:
     base = datetime(2026, 1, 1, 8, 0)
     from datetime import timedelta
@@ -529,6 +631,7 @@ async def generate_scheme_of_work(
         lang=lang,
         curriculum_ctx=curriculum_ctx,
         subject_label=subject_label,
+        subject_slug=subject_slug,
         form_level=form_level,
         term=term,
         academic_year=academic_year or "2026",
@@ -1156,11 +1259,37 @@ _TIE_SCHEME_RULES_SW = (
 
 
 def _build_scheme_prompt(
-    *, lang, curriculum_ctx, subject_label, form_level, term, academic_year,
+    *, lang, curriculum_ctx, subject_label, subject_slug, form_level, term, academic_year,
     school_name, teacher_name, topics,
 ) -> str:
     class_name = f"Form {form_level}" if lang == "en" else f"Kidato {form_level}"
     topic_list = "\n".join(f"  - {t}" for t in topics) if topics else "  (Use curriculum context)"
+
+    # A bundled, educator-verified scheme for this subject/form/term is fed to
+    # the model as the authoritative content model (e.g. the Geography Form One
+    # Term I/II schemes), reproduced verbatim rather than invented.
+    scheme_block = ""
+    _ref_scheme = _reference_scheme_grounding(subject_slug, form_level, term) if subject_slug else None
+    if _ref_scheme and _ref_scheme.get("rows"):
+        text_rows = []
+        for r in _ref_scheme.get("rows") or []:
+            if r.get("non_teaching"):
+                continue
+            text_rows.append(
+                f"- {r.get('topic')} | Main comp: {r.get('main_competence')} | "
+                f"Spec comp: {r.get('specific_competence')} | Activities: "
+                f"{r.get('main_activity')} - {r.get('specific_activity')} | "
+                f"Methods: {', '.join(r.get('methods') or [])} | "
+                f"Resources: {', '.join(r.get('resources') or [])} | "
+                f"Assessment: {r.get('assessment')} | Remarks: {r.get('remarks')}"
+            )
+        scheme_block = (
+            "VERIFIED REFERENCE SCHEME OF WORK FOR THIS SUBJECT/FORM/TERM (official, "
+            "educator-verified curriculum content - the authoritative model. Reproduce its "
+            "per-week competences, activities, strategies/methods, resources, assessment "
+            "tools and remarks verbatim; do not invent different ones):\n"
+            + "\n".join(text_rows) + "\n"
+        )
 
     json_schema = {
         "header": {
@@ -1195,6 +1324,7 @@ def _build_scheme_prompt(
             "MUHIMU SANA: Toa JSON SAHIHI pekee — bila markdown, maelezo, au vizuizi vya msimbo.\n\n"
             f"MUUNDO:\n{json.dumps(json_schema, indent=2, ensure_ascii=False)}\n\n"
             f"MISEMBO YA MPANGO:\n{curriculum_ctx}\n\n"
+            f"{scheme_block}\n"
             f"MADA ZINAZOHITAJIKA:\n{topic_list}\n\n"
             f"Tengeneza wiki zinazoshughulikia mada zote hapo juu. Kila wiki 3-5 vipindi.\n"
             "Kila wiki lazima iwe na: Ujuzi Mkuu, Ujuzi Mahususi, Shughuli za Kujifunza "
@@ -1209,6 +1339,7 @@ def _build_scheme_prompt(
         "CRITICAL: Output ONLY valid JSON matching this schema.\n\n"
         f"JSON SCHEMA:\n{json.dumps(json_schema, indent=2)}\n\n"
         f"CURRICULUM CONTEXT:\n{curriculum_ctx}\n\n"
+        f"{scheme_block}\n"
         f"TOPICS TO COVER:\n{topic_list}\n\n"
         "Generate weeks covering ALL topics listed above. Each week: 3-5 periods, one subtopic.\n"
         "Each week MUST include: Main competence, Specific competence, Learning activities "
@@ -2264,17 +2395,36 @@ def _build_scheme_offline(
 
     teaching_rows = []
 
+    # A bundled, educator-verified scheme of work for this subject/form/term is
+    # the authoritative model for offline output: its per-week rows reproduce
+    # the educator-verified competences, activities, strategies, resources and
+    # assessment tools verbatim (e.g. the Geography Form One Term I/II schemes).
+    _ref_rows = []
+    _ref_scheme = _reference_scheme_grounding(subject_slug, form_level, term)
+    if _ref_scheme:
+        for _ref_row in _ref_scheme.get("rows") or []:
+            if _ref_row.get("non_teaching"):
+                continue
+            if topics and not _scheme_row_requested(topics, _ref_row):
+                continue
+            teaching_rows.append(_verified_scheme_week_row(
+                _ref_row, lang=lang, subject_label=subject_label,
+                form_level=form_level,
+            ))
+        _ref_rows = teaching_rows
+
     # Preferred source: the verbatim TIE CBC (2023) syllabus dataset. Each
     # Specific Competence is expanded into one scheme row per learning
     # activity, with the activity's (i)/(ii)/(iii) sub-parts as the row's
     # "Specific activities" and the competence's total periods split across
-    # those rows.
+    # those rows. Skipped when verified reference rows already produced the
+    # full term scheme.
     try:
         specs = ts_get_specific_competences(subject_slug, form_level)
     except Exception:
         specs = []
 
-    if specs:
+    if specs and not _ref_rows:
         # If specific topics were requested, keep only the competences that
         # best match them; otherwise include the full form syllabus.
         if topics:

@@ -22,6 +22,7 @@ from backend.services.reference_library_service import (
     map_form_level,
     map_subject_slug,
     parse_metadata,
+    scheme_of_work_grounding,
     serialize_doc,
 )
 
@@ -130,23 +131,67 @@ def test_service_get_by_source_and_serialize():
 # ---------- Bundled (verified) seed + grounding ----------
 
 def test_bundled_seed_is_idempotent():
-    """The bundled verified reference lessons seed idempotently: a re-run
-    inserts and replaces nothing, and the geography Form 1 library is present."""
+    """The bundled verified reference material seeds idempotently: a re-run
+    inserts and replaces nothing, and the geography Form 1 library is present
+    (18 lesson plans + 2 term schemes)."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
     try:
-        inserted, replaced = seed_reference_library_local.run(db)
+        inserted, replaced, inserted_schemes, replaced_schemes = seed_reference_library_local.run(db)
         assert inserted == 18
         assert replaced == 0
-        geo = list_reference_docs(db, subject_slug="geography", form_level=1)
-        assert len(geo) == 18
-        assert all(doc.source_id.startswith("bundled:") for doc in geo)
-        again, again_replaced = seed_reference_library_local.run(db)
+        assert inserted_schemes == 2
+        assert replaced_schemes == 0
+        geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
+        assert len(geo_lessons) == 18
+        geo_schemes = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="scheme_of_work")
+        assert len(geo_schemes) == 2
+        assert all(doc.source_id.startswith("bundled:") for doc in geo_lessons + geo_schemes)
+        again, again_replaced, again_schemes, again_schemes_replaced = seed_reference_library_local.run(db)
         assert again == 0
         assert again_replaced == 0
+        assert again_schemes == 0
+        assert again_schemes_replaced == 0
     finally:
         db.close()
+
+
+def test_scheme_grounding_selects_verified_term_rows():
+    """Term selection resolves to the right bundled scheme, and its per-week
+    rows carry the verified competences, strategies, resources, assessment
+    tools and non-teaching placeholders in normalized form."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        seed_reference_library_local.run(db)
+    finally:
+        db.close()
+
+    term_one = fetch_reference_grounding("geography", 1, "term 1", "scheme_of_work")
+    assert term_one is not None
+    assert "TERM 1" in term_one["title"]
+    assert term_one["source_id"].startswith("bundled:")
+    gl = scheme_of_work_grounding(term_one["content"])
+    rows = gl["rows"]
+    assert rows
+    first = rows[0]
+    assert first["topic"] == "Introduction to Geography"
+    assert first["main_competence"] == "1.0 Demonstrate mastery of foundational geographical concepts"
+    assert first["main_activity"] == "Explain the concept of Geography"
+    assert "Interactive lecture" in first["methods"]
+    assert first["assessment"] == "Observation, Oral Questions, Portfolio"
+    midterms = [r for r in rows if r["non_teaching"]]
+    assert len(midterms) == 2
+    assert midterms[0]["topic"] == "Mid-Term Assessment"
+
+    term_two = fetch_reference_grounding("geography", 1, "term 2", "scheme_of_work")
+    assert term_two is not None
+    assert "TERM 2" in term_two["title"]
+    gl_two = scheme_of_work_grounding(term_two["content"])
+    assert gl_two["rows"][0]["topic"] == "Weather and Climate"
+    assert gl_two["rows"][0]["specific_competence"].startswith("3.1")
 
 
 def test_fetch_grounding_selects_verified_bundled_lesson():

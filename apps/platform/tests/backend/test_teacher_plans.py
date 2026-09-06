@@ -380,6 +380,62 @@ def test_lesson_plan_offline_uses_verified_geography_reference():
     assert arch["specific_competence"].startswith("1.1 Define Geography")
 
 
+def test_scheme_of_work_offline_uses_verified_geography_reference():
+    """When the bundled educator-verified Geography Form One schemes are
+    seeded, the offline Term I scheme reproduces the verified per-week rows
+    verbatim: competences, strategies, resources and assessment tools."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        seed_reference_library_local.run(db)
+    finally:
+        db.close()
+
+    plan = _build_scheme_offline(
+        subject_slug="geography", subject_label="Geography", form_level=1,
+        term="1", academic_year="2026", school_name="Moshi Sec",
+        teacher_name="Mrs K", topics=[], lang="en",
+    )
+    weeks = plan["weeks"]
+    assert any("MIDTERM EXAMINATION" == w["main_competence"] for w in weeks)
+    week1 = next(w for w in weeks if w["learning_activities"] == ["Explain the concept of Geography"])
+    assert week1["main_competence"] == "1.0 Demonstrate mastery of foundational geographical concepts"
+    assert week1["specific_competence"].startswith("1.1 Define Geography")
+    assert "Interactive lecture" in week1["teaching_methods"]
+    assert any("guided discussion" in m.lower() for m in week1["teaching_methods"])
+    assert week1["assessment_tools"] == "Observation, Oral Questions, Portfolio"
+    assert any("Globe" in r for r in week1["teaching_resources"])
+    assert week1["learning_activities"] == ["Explain the concept of Geography"]
+    assert week1["specific_activities"] == [
+        "Define Geography using Greek origins (Geo and Graphein) and describe its main focus"
+    ]
+
+
+def test_scheme_of_work_offline_term_two_uses_verified_rows():
+    """Term II generation selects the verified Term 2 scheme (not Term 1):
+    rows carry the Weather and Climate / Map Work content."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        seed_reference_library_local.run(db)
+    finally:
+        db.close()
+
+    plan = _build_scheme_offline(
+        subject_slug="geography", subject_label="Geography", form_level=1,
+        term="2", academic_year="2026", school_name="Moshi Sec",
+        teacher_name="Mrs K", topics=[], lang="en",
+    )
+    weeks = plan["weeks"]
+    weather = next(w for w in weeks if "weather" in w["topic"].lower())
+    assert weather["specific_competence"].startswith("3.1 Differentiate weather")
+    assert weather["assessment_tools"] == "T-Chart Evaluation, Oral Questions"
+    assert any("Daily weather observation" in m for m in weather["teaching_methods"])
+    assert any("Map Work" == w["topic"] for w in weeks)
+
+
 def test_lesson_plan_ai_keeps_strong_stage_specific_criteria(monkeypatch):
     """Good, naturally-written AI Assessment Criteria survive: they are not
     clobbered by templates when they already evaluate the stage (actor-named,

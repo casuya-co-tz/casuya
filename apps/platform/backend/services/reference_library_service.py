@@ -421,10 +421,18 @@ def _doc_content_text(doc: ReferenceDoc) -> str:
     for detail in details:
         if not isinstance(detail, dict):
             continue
-        for key in ("title", "main_competence", "specific_competence",
-                    "main_activity", "specific_activity",
-                    "teaching_learning_resources", "resources", "references"):
-            parts.append(_s(detail.get(key)))
+        if "teaching_structure" in detail or any(k in detail for k in
+                ("main_competence", "main_activity", "specific_competence")):
+            for key in ("title", "main_competence", "specific_competence",
+                        "main_activity", "specific_activity",
+                        "teaching_learning_resources", "resources", "references",
+                        "topic"):
+                parts.append(_s(detail.get(key)))
+        else:
+            # scheme rows use the API's one..twelve column keys
+            for key in ("topic", "one", "two", "three", "four", "eight",
+                        "nine", "ten", "eleven", "twelve"):
+                parts.append(_s(detail.get(key)))
         for stage in detail.get("teaching_structure") or []:
             if isinstance(stage, dict):
                 for key in ("stage", "teaching_activities", "learning_activities",
@@ -642,9 +650,28 @@ def _scheme_row_value(scheme_details: list, *keys: str) -> str:
     return ""
 
 
+_NONTEACHING_TOPIC_HINTS = (
+    "mid-term", "midterm", "terminal", "revision", "annual exam",
+    "examination", "closing", "likizo", "mtihani", "break",
+)
+
+
+def _is_non_teaching_scheme_row(row: dict) -> bool:
+    """True when a scheme row is an exam/break/revision placeholder rather than
+    a teaching week. Detected via the explicit ``non_teaching`` flag or the
+    row's topic/competence text."""
+    if row.get("non_teaching"):
+        return True
+    topic = " ".join(str(row.get("topic") or "") + " " + str(row.get("one") or "")).lower()
+    return any(hint in topic for hint in _NONTEACHING_TOPIC_HINTS)
+
+
 def scheme_of_work_grounding(content: dict) -> dict:
     """Extract method/assessment/reference enrichments from a reference
-    scheme-of-work payload via its per-row fields. Skips the leading header
+    scheme-of-work payload via its per-row fields, plus a normalized ``rows``
+    list (one entry per non-header row) carrying the same fields a scheme
+    generator needs: topic, week, competences, activities, strategies/methods,
+    resources, assessment tools and teacher remarks. Skips the leading header
     row (which carries the table's column labels rather than data)."""
     rows = content.get("scheme_of_work_details") or []
     data_rows = [r for r in rows if not _is_scheme_header_row(r)]
@@ -660,10 +687,43 @@ def scheme_of_work_grounding(content: dict) -> dict:
     references = [r for r in (_scheme_row_value(data_rows, "eight", "reference", "ref") or "").split(",") if r.strip()]
     competences = _scheme_row_value(data_rows, "one", "two",
                                     "main_competence", "specific_competence") or ""
+
+    normalized = []
+    for row in data_rows:
+        if not isinstance(row, dict):
+            continue
+        methods_list = [m for m in _split_delimited(row.get("nine"))] or \
+                       [m for m in _split_delimited(row.get("ten"))]
+        resources_list = [r for r in _split_delimited(row.get("ten"))]
+        normalized.append({
+            "topic": _clean_row_value(row.get("topic")),
+            "week": _clean_row_value(row.get("six")),
+            "month": _clean_row_value(row.get("five")),
+            "periods": _clean_row_value(row.get("seven")),
+            "main_competence": _clean_row_value(row.get("one")),
+            "specific_competence": _clean_row_value(row.get("two")),
+            "main_activity": _clean_row_value(row.get("three")),
+            "specific_activity": _clean_row_value(row.get("four")),
+            "reference": _clean_row_value(row.get("eight")),
+            "methods": methods_list,
+            "resources": resources_list,
+            "assessment": _clean_row_value(row.get("eleven")),
+            "remarks": _clean_row_value(row.get("twelve")),
+            "non_teaching": _is_non_teaching_scheme_row(row),
+        })
+
     return {
         "methods": methods,
         "assessment": assessment,
         "resources": resources,
         "references": references,
         "competences": competences,
+        "rows": normalized,
     }
+
+
+def _clean_row_value(value):
+    """Collapse whitespace in a scheme row's text field."""
+    if value is None:
+        return ""
+    return " ".join(str(value).split()).strip()
