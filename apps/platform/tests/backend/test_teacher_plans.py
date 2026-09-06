@@ -436,6 +436,64 @@ def test_scheme_of_work_offline_term_two_uses_verified_rows():
     assert any("Map Work" == w["topic"] for w in weeks)
 
 
+def test_scheme_of_work_offline_uses_verified_geography_form_two_reference():
+    """When the bundled verified Geography Form Two schemes are seeded, the
+    offline Term I scheme reproduces the educator-verified per-week rows
+    verbatim: competences, lesson-load periods, strategies, resources and
+    assessment tools, plus the injected mid-term weeks."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        seed_reference_library_local.run(db)
+    finally:
+        db.close()
+
+    plan = _build_scheme_offline(
+        subject_slug="geography", subject_label="Geography", form_level=2,
+        term="1", academic_year="2026", school_name="Arusha Sec",
+        teacher_name="Mr K", topics=[], lang="en",
+    )
+    weeks = plan["weeks"]
+    assert any("MIDTERM EXAMINATION" == w["main_competence"] for w in weeks)
+    week1 = next(w for w in weeks if w["learning_activities"] == ["Explain the concept of the internal structure of the Earth"])
+    assert week1["main_competence"] == "1.0 Demonstrate mastery of the Earth's internal structure and landform processes"
+    assert week1["specific_competence"] == "1.1 Describe the layers of the Earth's interior and their characteristics"
+    assert week1["periods"] == 3
+    assert week1["specific_activities"] == ["Describe the Crust, Mantle, and Core (3 lessons)"]
+    assert "group reading of TIE textbook" in week1["teaching_methods"]
+    assert "Wall chart of Earth interior" in week1["teaching_resources"]
+    assert week1["assessment_tools"] == "Diagram labeling, Oral questions"
+    weathering = next(w for w in weeks if w["learning_activities"] == ["Explain weathering concepts and types"])
+    assert weathering["periods"] == 4
+    assert "Field walk around school compound to observe weathered rocks/buildings" in weathering["teaching_methods"]
+
+
+def test_scheme_of_work_offline_geography_form_two_term_two_uses_verified_rows():
+    """Form Two Term II generation selects the bundled Term 2 scheme: map and
+    photograph reading rows, with no Term I (Earth structure) content."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        seed_reference_library_local.run(db)
+    finally:
+        db.close()
+
+    plan = _build_scheme_offline(
+        subject_slug="geography", subject_label="Geography", form_level=2,
+        term="2", academic_year="2026", school_name="Arusha Sec",
+        teacher_name="Mr K", topics=[], lang="en",
+    )
+    weeks = plan["weeks"]
+    maps_row = next(w for w in weeks if w["topic"] == "Map Reading and Interpretation")
+    assert maps_row["specific_competence"] == "3.1 Apply essential elements and characteristics of good maps"
+    assert maps_row["assessment_tools"] == "Element audit checklist, Oral quiz"
+    photo = next(w for w in weeks if w["topic"] == "Photograph Reading and Interpretation")
+    assert photo["specific_competence"].startswith("4.1 Classify")
+    assert all("Internal Structure" not in w["topic"] for w in weeks)
+
+
 def test_lesson_plan_ai_keeps_strong_stage_specific_criteria(monkeypatch):
     """Good, naturally-written AI Assessment Criteria survive: they are not
     clobbered by templates when they already evaluate the stage (actor-named,

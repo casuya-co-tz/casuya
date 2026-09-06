@@ -132,8 +132,8 @@ def test_service_get_by_source_and_serialize():
 
 def test_bundled_seed_is_idempotent():
     """The bundled verified reference material seeds idempotently: a re-run
-    inserts and replaces nothing, and the geography Form 1 library is present
-    (18 lesson plans + 2 term schemes)."""
+    inserts and replaces nothing, and the geography library is present
+    (Form 1: 18 lesson plans + 2 term schemes; Form 2: 2 term schemes)."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
@@ -141,14 +141,16 @@ def test_bundled_seed_is_idempotent():
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
         assert inserted == 18
         assert replaced == 0
-        assert inserted_schemes == 2
+        assert inserted_schemes == 4
         assert replaced_schemes == 0
         assert purged == 0
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
         assert len(geo_lessons) == 18
         geo_schemes = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="scheme_of_work")
         assert len(geo_schemes) == 2
-        assert all(doc.source_id.startswith("bundled:") for doc in geo_lessons + geo_schemes)
+        geo_f2_schemes = list_reference_docs(db, subject_slug="geography", form_level=2, doc_type="scheme_of_work")
+        assert len(geo_f2_schemes) == 2
+        assert all(doc.source_id.startswith("bundled:") for doc in geo_lessons + geo_schemes + geo_f2_schemes)
         again, again_replaced, again_schemes, again_schemes_replaced, again_purged = seed_reference_library_local.run(db)
         assert again == 0
         assert again_replaced == 0
@@ -183,11 +185,12 @@ def test_bundled_seed_purges_conflicting_online_duplicates():
         fake("lesson_plan", "174", "LESSON PLAN FOR GEOGRAPHY FORM ONE-2026", "geography", 1, "Form 1")
         fake("lesson_plan", "133", "MPANGO KAZI WA AFYA NA MAZINGIRA DARASA LA KWANZA", "geography", 1, "Standard 1")
         fake("scheme_of_work", "295", "PMO-RALG GEOGRAPHY SCHEME OF WORK-FORM ONE", "geography", 1, "Form 1")
+        fake("scheme_of_work", "555", "GEOGRAPHY SCHEME OF WORK-FORM TWO", "geography", 2, "Form 2")
         fake("scheme_of_work", "999", "KISWAHILI SCHEME FORM TWO", "kiswahili", 2, "Form 2")
         db.commit()
 
         _, _, _, _, purged = seed_reference_library_local.run(db)
-        assert purged == 4  # 3 geography lesson plans + 1 geography scheme
+        assert purged == 5  # 3 geography Form 1 lesson plans + 1 scheme + 1 Form 2 scheme
 
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
         assert len(geo_lessons) == 18
@@ -195,6 +198,9 @@ def test_bundled_seed_purges_conflicting_online_duplicates():
         geo_schemes = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="scheme_of_work")
         assert len(geo_schemes) == 2
         assert all(doc.source_id.startswith("bundled:") for doc in geo_schemes)
+        geo_f2_schemes = list_reference_docs(db, subject_slug="geography", form_level=2, doc_type="scheme_of_work")
+        assert len(geo_f2_schemes) == 2
+        assert all(doc.source_id.startswith("bundled:") for doc in geo_f2_schemes)
 
         sw_twos = list_reference_docs(db, subject_slug="kiswahili", form_level=2, doc_type="scheme_of_work")
         assert any(doc.source_id == "999" for doc in sw_twos)  # other subjects keep their imports
@@ -244,6 +250,53 @@ def test_scheme_grounding_selects_verified_term_rows():
     gl_two = scheme_of_work_grounding(term_two["content"])
     assert gl_two["rows"][0]["topic"] == "Weather and Climate"
     assert gl_two["rows"][0]["specific_competence"].startswith("3.1")
+
+
+def test_scheme_grounding_form_two_selects_verified_term_rows():
+    """Geography Form Two term selection resolves to the bundled verified Term
+    I (internal/external Earth structure) and Term II (map & photograph reading)
+    schemes, with the educator's strategies, resources and assessment tools
+    carried verbatim into the normalized rows."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        seed_reference_library_local.run(db)
+    finally:
+        db.close()
+
+    term_one = fetch_reference_grounding("geography", 2, "term 1", "scheme_of_work")
+    assert term_one is not None
+    assert "TERM 1" in term_one["title"]
+    assert term_one["source_id"].startswith("bundled:")
+    gl = scheme_of_work_grounding(term_one["content"])
+    rows = gl["rows"]
+    assert len(rows) == 19  # 17 teaching + mid-term + terminal
+    first = rows[0]
+    assert first["topic"] == "The Internal Structure of the Earth"
+    assert first["main_competence"] == "1.0 Demonstrate mastery of the Earth's internal structure and landform processes"
+    assert first["specific_competence"].startswith("1.1 Describe the layers")
+    assert first["main_activity"] == "Explain the concept of the internal structure of the Earth"
+    assert first["specific_activity"] == "Describe the Crust, Mantle, and Core (3 lessons)"
+    assert first["periods"] == "3"
+    assert "group reading of TIE textbook" in first["methods"]
+    assert first["assessment"] == "Diagram labeling, Oral questions"
+    assert "globe" in first["resources"]
+    non = [r for r in rows if r["non_teaching"]]
+    assert len(non) == 2
+    assert non[0]["topic"] == "Mid-Term Assessment"
+    assert non[1]["topic"] == "Terminal Examination"
+
+    term_two = fetch_reference_grounding("geography", 2, "term 2", "scheme_of_work")
+    assert term_two is not None
+    assert "TERM 2" in term_two["title"]
+    gl_two = scheme_of_work_grounding(term_two["content"])
+    head = gl_two["rows"][0]
+    assert head["topic"] == "Map Reading and Interpretation"
+    assert head["specific_competence"] == "3.1 Apply essential elements and characteristics of good maps"
+    assert head["assessment"] == "Element audit checklist, Oral quiz"
+    assert any(r["topic"] == "Photograph Reading and Interpretation" for r in gl_two["rows"])
+    assert len([r for r in gl_two["rows"] if r["non_teaching"]]) == 3
 
 
 def test_fetch_grounding_selects_verified_bundled_lesson():
