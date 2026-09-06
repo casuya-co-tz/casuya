@@ -310,6 +310,83 @@ def test_lesson_plan_offline_falls_back_without_knowledge_base():
     assert plan["progression_matrix"][3]["stage"] == "Realizations"
 
 
+def _ref_grounding(*args, **kwargs):
+    return {
+        "doc_type": "lesson_plan",
+        "title": "Algebra Reference",
+        "content": {
+            "plan_details": [{
+                "teaching_structure": [
+                    {"stage": "Introduction", "assessment_criteria": "Students recall algebraic terms from prior knowledge"},
+                    {"stage": "Competence Development", "assessment_criteria": "Students solve linear equations accurately in pairs"},
+                    {"stage": "Design", "assessment_criteria": "Students model word problems as equations with variables"},
+                    {"stage": "Realizations", "assessment_criteria": "Students present and justify their solutions to the class"},
+                ],
+            }]
+        },
+    }
+
+
+def test_lesson_plan_offline_grounds_assessment_with_reference(monkeypatch):
+    """The offline lesson plan's Assessment Criteria column uses the reference
+    library's authentic per-stage text instead of the generic echo phrases."""
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.fetch_reference_grounding",
+        _ref_grounding,
+    )
+    plan = _build_lesson_plan_offline(
+        subject_slug="mathematics", subject_label="Basic Mathematics",
+        form_level=2, topic="INDICES AND LOGARITHMS", subtopic="Laws of Indices",
+        school_name="School", teacher_name="Teacher", number_of_students=40,
+        duration_minutes=40, period="Period 1", lang="en",
+    )
+    matrix = plan["progression_matrix"]
+    assert matrix[0]["assessment_criteria"] == "Students recall algebraic terms from prior knowledge"
+    assert matrix[1]["assessment_criteria"] == "Students solve linear equations accurately in pairs"
+    assert matrix[3]["assessment_criteria"] == "Students present and justify their solutions to the class"
+
+
+def test_lesson_plan_ai_assessment_grounded_by_reference(monkeypatch):
+    """An AI plan's generic Assessment Criteria are replaced with the reference
+    library's per-stage text when a matching topic reference exists."""
+    ai_plan = {
+        "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
+        "competence_architecture": {
+            "main_competence": "Main", "specific_competence": "Spec",
+            "main_learning_activity": "MLA", "specific_learning_activity": "SLA",
+            "lesson_objective": "Obj",
+        },
+        "resources_strategies": {"resources": [], "strategies": []},
+        "progression_matrix": [
+            {"stage": "Introduction", "time": "10 min", "activities": [], "assessment_criteria": "Generic criteria A"},
+            {"stage": "Competence Development", "time": "20 min", "activities": [], "assessment_criteria": "Generic criteria B"},
+            {"stage": "Design", "time": "5 min", "activities": [], "assessment_criteria": "Generic criteria C"},
+            {"stage": "Realizations", "time": "5 min", "activities": [], "assessment_criteria": "Generic criteria D"},
+        ],
+        "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
+    }
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service._call_ai_service",
+        _async_return(ai_plan),
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_curriculum_context",
+        _curriculum_ctx,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.fetch_reference_grounding",
+        _ref_grounding,
+    )
+    plan = _run(generate_lesson_plan(
+        subject_slug="mathematics", form_level=2, topic="Algebra",
+        subtopic="Linear Equations", school_name="X", teacher_name="Y",
+    ))
+    matrix = plan["progression_matrix"]
+    assert matrix[2]["assessment_criteria"] == "Students model word problems as equations with variables"
+    assert matrix[3]["assessment_criteria"] == "Students present and justify their solutions to the class"
+    assert "Generic criteria" not in matrix[0]["assessment_criteria"]
+
+
 def test_lesson_plan_uses_verbatim_tie_competence():
     """The offline lesson plan surfaces the official TIE CBC (2023) Main and
     Specific Competence statements instead of the bare code + topic title."""

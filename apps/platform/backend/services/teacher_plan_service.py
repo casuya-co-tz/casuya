@@ -264,6 +264,11 @@ async def generate_lesson_plan(
             ca = plan.setdefault("competence_architecture", {})
             ca["main_competence"] = tie_main
             ca["specific_competence"] = tie_spec
+        # Ground the Assessment Criteria with the reference library's authentic
+        # per-stage text (teachers find the AI-generated generic criteria
+        # irrelevant; the library's are topic-specific and meaningful).
+        _ground_progression_assessment(
+            plan.get("progression_matrix"), subject_slug, form_level, topic)
         plan.setdefault("header", {})
         plan["header"]["school_name"] = plan["header"].get("school_name") or (school_name or "School Name")
         plan["header"]["teacher_name"] = plan["header"].get("teacher_name") or (teacher_name or "Teacher Name")
@@ -1176,6 +1181,61 @@ def _lookup_lesson_plan_content(subject_slug, form_level, topic, subtopic, lang,
     }
 
 
+def _as_text(value) -> str:
+    """Coerce a possibly list-valued detail into a single clean string."""
+    if isinstance(value, list | tuple):
+        return "; ".join(str(x).strip() for x in value if str(x).strip())
+    return str(value or "").strip()
+
+
+def _reference_stage_assessments(subject_slug, form_level, topic):
+    """Best-effort per-stage Assessment Criteria from the imported reference
+    library for the teaching topic.
+
+    Returns (by_name, by_index): by_name maps a normalized stage name to its
+    assessment text; by_index lists assessments in document order. Empty when
+    the subject/topic has no reference lesson plan.
+    """
+    by_name = {}
+    by_index = []
+    try:
+        ground = fetch_reference_grounding(subject_slug, form_level, topic or None, "lesson_plan")
+    except Exception:
+        return by_name, by_index
+    content = (ground or {}).get("content") or {}
+    for detail in content.get("plan_details") or []:
+        for stage in detail.get("teaching_structure") or []:
+            name = " ".join((stage.get("stage") or "").lower().split())
+            value = _as_text(stage.get("assessment_criteria"))
+            if value:
+                if name:
+                    by_name.setdefault(name, value)
+                by_index.append(value)
+    return by_name, by_index
+
+
+def _ground_progression_assessment(progression, subject_slug, form_level, topic):
+    """Overlay the progression matrix's Assessment Criteria with the reference
+    library's authentic per-stage text when available.
+
+    The AI/offline assessment text is kept only when the reference library has
+    no matching stage - so generated plans carry the meaningful, relevant
+    criteria teachers already trust from the reference library.
+    """
+    by_name, by_index = _reference_stage_assessments(subject_slug, form_level, topic)
+    if not by_name and not by_index:
+        return progression
+    stages = progression or []
+    for i, stage in enumerate(stages):
+        name = " ".join((stage.get("stage") or "").lower().split())
+        replacement = by_name.get(name) if name else None
+        if not replacement and len(by_index) == len(stages):
+            replacement = by_index[i]
+        if replacement:
+            stage["assessment_criteria"] = replacement
+    return progression
+
+
 def _build_lesson_plan_offline(
     *, subject_slug, subject_label, form_level, topic, subtopic,
     school_name, teacher_name, number_of_students, students_boys=None, students_girls=None,
@@ -1434,6 +1494,12 @@ def _build_lesson_plan_offline(
             "learner_activity": learner_acts[i],
             "assessment_criteria": assessment[i],
         })
+
+    # Prefer the reference library's authentic per-stage Assessment Criteria
+    # over the generic echo phrases when a matching topic reference exists.
+    progression = _ground_progression_assessment(
+        progression, subject_slug, form_level, topic
+    )
 
     header_subtopic = subtopic_display
     if learning_activity:
