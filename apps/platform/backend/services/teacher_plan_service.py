@@ -264,11 +264,12 @@ async def generate_lesson_plan(
             ca = plan.setdefault("competence_architecture", {})
             ca["main_competence"] = tie_main
             ca["specific_competence"] = tie_spec
-        # Ground the Assessment Criteria with the reference library's authentic
-        # per-stage text (teachers find the AI-generated generic criteria
-        # irrelevant; the library's are topic-specific and meaningful).
+        # Ground the Assessment Criteria: reference-library per-stage text wins
+        # where a match exists; every other stage is rewritten to explicitly
+        # assess that stage's own Teacher Activity and Learner Activity instead
+        # of the AI's generic phrasing.
         _ground_progression_assessment(
-            plan.get("progression_matrix"), subject_slug, form_level, topic)
+            plan.get("progression_matrix"), subject_slug, form_level, topic, lang)
         plan.setdefault("header", {})
         plan["header"]["school_name"] = plan["header"].get("school_name") or (school_name or "School Name")
         plan["header"]["teacher_name"] = plan["header"].get("teacher_name") or (teacher_name or "Teacher Name")
@@ -1188,6 +1189,61 @@ def _as_text(value) -> str:
     return str(value or "").strip()
 
 
+def _activity_text(value):
+    """Coerce an activity detail (plain string or list of strings/dicts) into a
+    single readable phrase so stage tasks survive in the assessment text."""
+    if isinstance(value, list | tuple):
+        parts = []
+        for item in value:
+            if isinstance(item, dict):
+                item = (item.get("description") or item.get("activity")
+                        or item.get("instruction") or item.get("detail")
+                        or _as_text(item))
+            text = str(item or "").strip()
+            if text:
+                parts.append(text)
+        return "; ".join(parts)
+    return _as_text(value)
+
+
+def _shorten_text(text, limit=72):
+    text = _as_text(text)
+    if len(text) <= limit:
+        return text
+    return text[:limit].rstrip() + "…"
+
+
+def _stage_assessment_criteria(index, teacher_activity, learner_activity, lang):
+    """Build an Assessment Criterion that assesses BOTH the teacher's activity
+    and the learners' activity of a given progression stage.
+
+    Each criterion follows the stage's frame and embeds a short form of the
+    stage's teacher and learner tasks, so the column always evaluates what was
+    actually planned in that particular part of the lesson.
+    """
+    t = _shorten_text(_activity_text(teacher_activity)).rstrip()
+    l = _shorten_text(_activity_text(learner_activity)).rstrip()
+    if t[:1].isupper():
+        t = t[0].lower() + t[1:]
+    if l[:1].isupper():
+        l = l[0].lower() + l[1:]
+    if lang == "sw":
+        frames = (
+            f"Kuangalia shughuli ya mwalimu ({t}), wanafunzi hutathminiwa kama wanafanya '{l}' kwa usahihi.",
+            f"Kutathmini mwongozo wa mwalimu ({t}), angalia kama wanafunzi wanatekeleza '{l}' kwa usahihi.",
+            f"Kutathmini kazi ya mwalimu ({t}), angalia kama wanafunzi wanafanya '{l}' kwa usahihi.",
+            f"Kutathmini shughuli ya kumalizia ya mwalimu ({t}), angalia kama wanafunzi wanakamilisha '{l}' na kuonyesha umilisi.",
+        )
+    else:
+        frames = (
+            f"Watching the teacher's opening activity ({t}), assess whether learners accurately carry out '{l}'.",
+            f"Assessing the teacher's guided activity ({t}), check whether learners correctly carry out '{l}'.",
+            f"Assessing the teacher's assignment ({t}), check whether learners correctly carry out '{l}'.",
+            f"Assessing the teacher's closing activity ({t}), check whether learners carry out '{l}' and show mastery.",
+        )
+    return frames[index]
+
+
 def _reference_stage_assessments(subject_slug, form_level, topic):
     """Best-effort per-stage Assessment Criteria from the imported reference
     library for the teaching topic.
@@ -1214,25 +1270,31 @@ def _reference_stage_assessments(subject_slug, form_level, topic):
     return by_name, by_index
 
 
-def _ground_progression_assessment(progression, subject_slug, form_level, topic):
-    """Overlay the progression matrix's Assessment Criteria with the reference
-    library's authentic per-stage text when available.
+def _ground_progression_assessment(progression, subject_slug, form_level, topic, lang):
+    """Make every stage's Assessment Criteria meaningful and stage-specific.
 
-    The AI/offline assessment text is kept only when the reference library has
-    no matching stage - so generated plans carry the meaningful, relevant
-    criteria teachers already trust from the reference library.
+    Reference text wins when a matching reference-library stage exists; the
+    remaining stages are rewritten as criteria that explicitly assess that
+    stage's own Teacher Activity and Learner Activity, so the column always
+    evaluates what the teacher and learners do in that particular part.
     """
     by_name, by_index = _reference_stage_assessments(subject_slug, form_level, topic)
-    if not by_name and not by_index:
-        return progression
     stages = progression or []
+    has_reference = bool(by_name or by_index)
     for i, stage in enumerate(stages):
         name = " ".join((stage.get("stage") or "").lower().split())
         replacement = by_name.get(name) if name else None
-        if not replacement and len(by_index) == len(stages):
+        if not replacement and has_reference and len(by_index) == len(stages):
             replacement = by_index[i]
         if replacement:
             stage["assessment_criteria"] = replacement
+            continue
+        stage["assessment_criteria"] = _stage_assessment_criteria(
+            i,
+            stage.get("teacher_activity"),
+            stage.get("learner_activity"),
+            lang,
+        )
     return progression
 
 
@@ -1462,21 +1524,12 @@ def _build_lesson_plan_offline(
         if s_code and not str(spec_comp).startswith(str(s_code)):
             spec_comp = f"{s_code} {spec_comp}"
 
-    # TIE assessment criteria echo the specific activity with fixed verb patterns.
-    if lang == "sw":
-        assessment = [
-            f"Wanafunzi hutambua maarifa ya awali yanayohusu {specific_activity}.",
-            f"Wanafunzi huonyesha kwa usahihi uelewa wa {specific_activity}.",
-            f"Wanafunzi hutumia kwa usahihi dhana na ujuzi unaohusu {specific_activity}.",
-            f"Wanafunzi wanathibitisha kwa imani matokeo yanayohusu {specific_activity}.",
-        ]
-    else:
-        assessment = [
-            f"Students identify prior knowledge related to {specific_activity}.",
-            f"Students accurately demonstrate understanding of {specific_activity}.",
-            f"Students correctly apply concepts and skills related to {specific_activity}.",
-            f"Students confidently justify outcomes related to {specific_activity}.",
-        ]
+    # Each stage's Assessment Criteria assess THAT stage's Teacher Activity and
+    # Learner Activity (reference-library criteria still preferred over this).
+    assessment = [
+        _stage_assessment_criteria(i, teacher_acts[i], learner_acts[i], lang)
+        for i in range(4)
+    ]
 
     progression = []
     core_contents = [
@@ -1496,9 +1549,9 @@ def _build_lesson_plan_offline(
         })
 
     # Prefer the reference library's authentic per-stage Assessment Criteria
-    # over the generic echo phrases when a matching topic reference exists.
+    # over the stage-derived criteria when a matching topic reference exists.
     progression = _ground_progression_assessment(
-        progression, subject_slug, form_level, topic
+        progression, subject_slug, form_level, topic, lang
     )
 
     header_subtopic = subtopic_display

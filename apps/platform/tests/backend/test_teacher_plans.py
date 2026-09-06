@@ -223,8 +223,8 @@ def test_lesson_plan_offline_render_kiswahili():
 def test_lesson_plan_tie_specific_activity_and_assessment_echo(monkeypatch):
     """The offline lesson plan matches the official TIE format: a concise (non
     time-boxed) specific learning activity, the 4 official stage names ending in
-    'Realizations', and per-stage assessment criteria that echo the specific
-    activity with the fixed TIE verb patterns."""
+    'Realizations', and per-stage assessment criteria that assess the stage's
+    own Teacher Activity and Learner Activity."""
     form_data = _seed_subject_dict("physics", 1)
     monkeypatch.setattr(
         "backend.services.teacher_plan_service.get_subject_with_form",
@@ -244,22 +244,18 @@ def test_lesson_plan_tie_specific_activity_and_assessment_echo(monkeypatch):
     assert ca["main_competence"] == f"{topic['code']} {topic['title']}"
     assert ca["specific_competence"] == f"{subtopic['code']} {subtopic['title']}"
     # Specific activity is a concise (non time-boxed) outcome phrase.
-    specific = ca["specific_learning_activity"]
-    assert specific and "minutes" not in specific.lower()
+    assert ca["specific_learning_activity"] and "minutes" not in ca["specific_learning_activity"].lower()
     # Official stage names, ending in "Realizations".
     stages = [r["stage"] for r in plan["progression_matrix"]]
     assert stages == ["Introduction", "Competence Development", "Design", "Realizations"]
-    # Assessments echo the specific activity with the fixed TIE verb patterns.
-    checks = [
-        ("identify prior knowledge related to", 0),
-        ("accurately demonstrate understanding of", 1),
-        ("correctly apply concepts and skills related to", 2),
-        ("confidently justify outcomes related to", 3),
-    ]
-    for phrase, idx in checks:
-        criteria = plan["progression_matrix"][idx]["assessment_criteria"]
-        assert phrase in criteria, criteria
-        assert specific in criteria, criteria
+    # Each stage's Assessment Criteria assess that stage's own Teacher
+    # Activity and Learner Activity (both appear in the criterion text).
+    for idx, row in enumerate(plan["progression_matrix"]):
+        criteria = row["assessment_criteria"].lower()
+        t_frag = " ".join(row["teacher_activity"].split()[:6]).lower()
+        l_frag = " ".join(row["learner_activity"].split()[:6]).lower()
+        assert t_frag in criteria, criteria
+        assert l_frag in criteria, criteria
 
 
 def test_lesson_plan_offline_uses_knowledge_base(monkeypatch):
@@ -344,6 +340,67 @@ def test_lesson_plan_offline_grounds_assessment_with_reference(monkeypatch):
     assert matrix[0]["assessment_criteria"] == "Students recall algebraic terms from prior knowledge"
     assert matrix[1]["assessment_criteria"] == "Students solve linear equations accurately in pairs"
     assert matrix[3]["assessment_criteria"] == "Students present and justify their solutions to the class"
+
+
+def test_lesson_plan_ai_generic_criteria_rewritten_to_assess_stage_activities(monkeypatch):
+    """Without a matching reference, an AI plan's generic Assessment Criteria
+    are rewritten to explicitly assess that stage's own Teacher Activity and
+    Learner Activity."""
+    ai_plan = {
+        "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
+        "competence_architecture": {
+            "main_competence": "Main", "specific_competence": "Spec",
+            "main_learning_activity": "MLA", "specific_learning_activity": "SLA",
+            "lesson_objective": "Obj",
+        },
+        "resources_strategies": {"resources": [], "strategies": []},
+        "progression_matrix": [
+            {"stage": "Introduction", "time": "10 min",
+             "teacher_activity": "Shows word cards and asks oral questions about unknown variables.",
+             "learner_activity": "Observe the word cards and answer the oral questions.",
+             "assessment_criteria": "Students will learn something."},
+            {"stage": "Competence Development", "time": "20 min",
+             "teacher_activity": "Guides groups to convert scenarios into equations.",
+             "learner_activity": "In groups, convert scenarios into equations and solve them.",
+             "assessment_criteria": "Students will learn more."},
+            {"stage": "Design", "time": "5 min",
+             "teacher_activity": "Assigns individual contextual problems.",
+             "learner_activity": "Formulate individual word problems for a peer to solve.",
+             "assessment_criteria": "Students will practice."},
+            {"stage": "Realizations", "time": "5 min",
+             "teacher_activity": "Guides summary and gives exit ticket questions.",
+             "learner_activity": "Complete exit ticket questions individually.",
+             "assessment_criteria": "Students will review."},
+        ],
+        "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
+    }
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service._call_ai_service",
+        _async_return(ai_plan),
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_curriculum_context",
+        _curriculum_ctx,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.fetch_reference_grounding",
+        lambda *a, **k: None,
+    )
+    plan = _run(generate_lesson_plan(
+        subject_slug="mathematics", form_level=2, topic="Algebra",
+        subtopic="Linear Equations", school_name="X", teacher_name="Y",
+    ))
+    for row, t_frag, l_frag in (
+        (plan["progression_matrix"][0], "shows word cards", "observe the word cards"),
+        (plan["progression_matrix"][1], "guides groups to convert", "convert scenarios into equations"),
+        (plan["progression_matrix"][2], "assigns individual contextual", "formulate individual word"),
+        (plan["progression_matrix"][3], "guides summary and gives exit", "complete exit ticket"),
+    ):
+        criteria = row["assessment_criteria"].lower()
+        assert t_frag in criteria, criteria
+        assert l_frag in criteria, criteria
+        assert "students will learn" not in criteria, criteria
+    assert plan["progression_matrix"][2]["assessment_criteria"] != plan["progression_matrix"][3]["assessment_criteria"]
 
 
 def test_lesson_plan_ai_assessment_grounded_by_reference(monkeypatch):
