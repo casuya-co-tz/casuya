@@ -76,6 +76,48 @@ def _scheme_content_for(scheme: dict) -> dict:
     }
 
 
+def _purge_conflicting_online_docs(db, doc_type: str, slug: str | None,
+                                   form_level: int) -> int:
+    """Drop non-bundled reference docs that duplicate a verified bundle.
+
+    Once an educator-verified ``bundled:`` document exists for a
+    (doc_type, subject, form), it is the single authoritative record: any
+    online-catalog copies that crept in for the same slot are deleted so the
+    library speaks one language (Geography Form One's noisy online schemes and
+    duplicate lesson plans are the motivating case). Returns the number of
+    rows removed; a no-op for subject/form/type pairs without a bundle.
+    """
+    if not slug or not form_level:
+        return 0
+    from backend.models.reference_doc import ReferenceDoc
+
+    has_bundle = (
+        db.query(ReferenceDoc)
+        .filter(
+            ReferenceDoc.doc_type == doc_type,
+            ReferenceDoc.subject_slug == slug,
+            ReferenceDoc.form_level == form_level,
+            ReferenceDoc.source_id.like(f"{_SOURCE_PREFIX}%"),
+        )
+        .first()
+    )
+    if has_bundle is None:
+        return 0
+    offenders = (
+        db.query(ReferenceDoc)
+        .filter(
+            ReferenceDoc.doc_type == doc_type,
+            ReferenceDoc.subject_slug == slug,
+            ReferenceDoc.form_level == form_level,
+            ReferenceDoc.source_id.notlike(f"{_SOURCE_PREFIX}%"),
+        )
+        .all()
+    )
+    for doc in offenders:
+        db.delete(doc)
+    return len(offenders)
+
+
 def _upsert_doc(db, doc_type: str, source_raw: str, title: str, standard: str,
                 subject_name: str, slug, form_level: int, content: dict,
                 check_existing: bool) -> tuple[int, bool]:
@@ -123,12 +165,14 @@ def _upsert_doc(db, doc_type: str, source_raw: str, title: str, standard: str,
     return 1, True
 
 
-def run(db, *, check_existing: bool = True) -> tuple[int, int, int, int]:
+def run(db, *, check_existing: bool = True) -> tuple[int, int, int, int, int]:
     """Seed every bundled reference document (lessons and schemes).
 
     Returns ``(inserted_lessons, replaced_lessons, inserted_schemes,
-    replaced_schemes)`` so callers can report how much new material each run
-    brought in.
+    replaced_schemes, purged_online)`` so callers can report how much new
+    material each run brought in. ``purged_online`` counts online-catalog
+    duplicates removed because a verified bundle now owns that
+    subject/form/type slot.
     """
     from backend.services.reference_library_service import parse_metadata
 
@@ -180,8 +224,26 @@ def run(db, *, check_existing: bool = True) -> tuple[int, int, int, int]:
                 inserted_schemes += 1
             else:
                 replaced_schemes += 1
+
+    # Keep ONE clean, authoritative source per subject/form/type: every slot
+    # covered by a verified bundle gets its online-catalog duplicates removed.
+    # Derived from the database so re-runs clean up even untouched deployments.
+    # Flush first: sessions with autoflush=False must see this run's inserts.
+    from backend.models.reference_doc import ReferenceDoc
+
+    db.flush()
+    purged = 0
+    slots = (
+        db.query(ReferenceDoc.doc_type, ReferenceDoc.subject_slug, ReferenceDoc.form_level)
+        .filter(ReferenceDoc.source_id.like(f"{_SOURCE_PREFIX}%"))
+        .distinct()
+        .all()
+    )
+    for doc_type, slug, form_level in slots:
+        purged += _purge_conflicting_online_docs(db, doc_type, slug or None, form_level or 0)
+
     db.commit()
-    return inserted, replaced, inserted_schemes, replaced_schemes
+    return inserted, replaced, inserted_schemes, replaced_schemes, purged
 
 
 def _stable_id(title: str) -> str:
@@ -198,12 +260,13 @@ def main() -> None:
     init_db()
     db = next(get_db())
     try:
-        inserted, replaced, inserted_schemes, replaced_schemes = run(db)
+        inserted, replaced, inserted_schemes, replaced_schemes, purged = run(db)
     finally:
         db.close()
     logger.info(
-        "DONE: lessons inserted=%d replaced=%d schemes inserted=%d replaced=%d",
-        inserted, replaced, inserted_schemes, replaced_schemes,
+        "DONE: lessons inserted=%d replaced=%d schemes inserted=%d replaced=%d "
+        "online duplicates purged=%d",
+        inserted, replaced, inserted_schemes, replaced_schemes, purged,
     )
 
 

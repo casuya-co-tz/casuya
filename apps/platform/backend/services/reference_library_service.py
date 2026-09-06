@@ -391,7 +391,15 @@ def _fetch_grounding_candidates(db, subject_slug, form_level, doc_type) -> list[
         q = q.filter(ReferenceDoc.form_level == form_level)
     if doc_type:
         q = q.filter(ReferenceDoc.doc_type == doc_type)
-    return list(q.all())
+    docs = list(q.all())
+    # The verified bundle owns the slot whenever one exists: prefer it so
+    # grounding never mixes online-catalog copies with educator-verified rows
+    # even if a stale duplicate is still sitting in the database.
+    if doc_type in ("lesson_plan", "scheme_of_work"):
+        bundled = [d for d in docs if str(d.source_id or "").startswith("bundled:")]
+        if bundled:
+            return bundled
+    return docs
 
 
 def _doc_content_text(doc: ReferenceDoc) -> str:

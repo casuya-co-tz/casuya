@@ -254,15 +254,16 @@ def run(db, *, limit: int | None = None, cache_dir: str = DEFAULT_CACHE_DIR,
     try:
         from .seed_reference_library_local import run as seed_bundled
 
-        _l_inserted, _l_replaced, _l_schemes, _l_schemes_replaced = seed_bundled(db)
-        if _l_inserted or _l_replaced or _l_schemes or _l_schemes_replaced:
+        _l_inserted, _l_replaced, _l_schemes, _l_schemes_replaced, _l_purged = seed_bundled(db)
+        if _l_inserted or _l_replaced or _l_schemes or _l_schemes_replaced or _l_purged:
             logger.info(
                 "bundled reference library: lessons inserted=%d replaced=%d "
-                "schemes inserted=%d replaced=%d",
+                "schemes inserted=%d replaced=%d online duplicates purged=%d",
                 _l_inserted,
                 _l_replaced,
                 _l_schemes,
                 _l_schemes_replaced,
+                _l_purged,
             )
     except Exception as exc:  # noqa: BLE001
         logger.warning("bundled reference library seed failed: %s", exc)

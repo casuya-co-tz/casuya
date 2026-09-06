@@ -138,21 +138,73 @@ def test_bundled_seed_is_idempotent():
 
     db = next(get_db())
     try:
-        inserted, replaced, inserted_schemes, replaced_schemes = seed_reference_library_local.run(db)
+        inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
         assert inserted == 18
         assert replaced == 0
         assert inserted_schemes == 2
         assert replaced_schemes == 0
+        assert purged == 0
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
         assert len(geo_lessons) == 18
         geo_schemes = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="scheme_of_work")
         assert len(geo_schemes) == 2
         assert all(doc.source_id.startswith("bundled:") for doc in geo_lessons + geo_schemes)
-        again, again_replaced, again_schemes, again_schemes_replaced = seed_reference_library_local.run(db)
+        again, again_replaced, again_schemes, again_schemes_replaced, again_purged = seed_reference_library_local.run(db)
         assert again == 0
         assert again_replaced == 0
         assert again_schemes == 0
         assert again_schemes_replaced == 0
+        assert again_purged == 0
+    finally:
+        db.close()
+
+
+def test_bundled_seed_purges_conflicting_online_duplicates():
+    """When the online catalog has already seeded conflicting Geography Form
+    One copies (duplicate lesson plans 55/174, a noisy RALG scheme 295 and a
+    mislabelled 'Afya na Mazingira' Standard 1 lesson mis-mapped to geography),
+    re-running the bundled seed removes them so the library keeps ONLY the
+    verified bundle for that subject/form/type. Other subjects are untouched."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        from backend.models.reference_doc import ReferenceDoc
+
+        def fake(doc_type, source_id, title, slug, form_level, standard):
+            db.add(ReferenceDoc(
+                doc_type=doc_type, source_id=source_id, source_url=None,
+                title=title, subject_name=slug, subject_slug=slug,
+                form_level=form_level, standard=standard,
+                content=json.dumps({"title": title, "plan_details": [{"main_competence": "x"}]}),
+            ))
+
+        fake("lesson_plan", "55", "LESSON PLAN FOR GEOGRAPHY FORM ONE", "geography", 1, "Form 1")
+        fake("lesson_plan", "174", "LESSON PLAN FOR GEOGRAPHY FORM ONE-2026", "geography", 1, "Form 1")
+        fake("lesson_plan", "133", "MPANGO KAZI WA AFYA NA MAZINGIRA DARASA LA KWANZA", "geography", 1, "Standard 1")
+        fake("scheme_of_work", "295", "PMO-RALG GEOGRAPHY SCHEME OF WORK-FORM ONE", "geography", 1, "Form 1")
+        fake("scheme_of_work", "999", "KISWAHILI SCHEME FORM TWO", "kiswahili", 2, "Form 2")
+        db.commit()
+
+        _, _, _, _, purged = seed_reference_library_local.run(db)
+        assert purged == 4  # 3 geography lesson plans + 1 geography scheme
+
+        geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
+        assert len(geo_lessons) == 18
+        assert all(doc.source_id.startswith("bundled:") for doc in geo_lessons)
+        geo_schemes = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="scheme_of_work")
+        assert len(geo_schemes) == 2
+        assert all(doc.source_id.startswith("bundled:") for doc in geo_schemes)
+
+        sw_twos = list_reference_docs(db, subject_slug="kiswahili", form_level=2, doc_type="scheme_of_work")
+        assert any(doc.source_id == "999" for doc in sw_twos)  # other subjects keep their imports
+
+        # After the purge, grounding sees only bundled candidates (no mixing).
+        ground = fetch_reference_grounding("geography", 1, "LESSON PLAN FOR GEOGRAPHY FORM ONE", "lesson_plan")
+        assert ground["source_id"].startswith("bundled:")
+        again_geo = list_reference_docs(db, subject_slug="geography", form_level=1)
+        assert len(again_geo) == 20
+        assert all(doc.source_id.startswith("bundled:") for doc in again_geo)
     finally:
         db.close()
 
