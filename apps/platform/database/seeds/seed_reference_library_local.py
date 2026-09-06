@@ -118,6 +118,63 @@ def _purge_conflicting_online_docs(db, doc_type: str, slug: str | None,
     return len(offenders)
 
 
+def _normalize_title(title: str) -> str:
+    """Collapse a title to a canonical form for deduplication.
+
+    Strips punctuation, normalises whitespace and removes common cosmetic
+    differences (e.g. ``FORM ONE 2026`` vs ``FORM ONE-2026``) so two titles
+    that refer to the same lesson/scheme are considered equal.
+    """
+    import re as _re
+
+    t = (title or "").lower()
+    # Remove punctuation except alphanumerics and spaces
+    t = _re.sub(r"[^a-z0-9\s]", " ", t)
+    # Collapse whitespace
+    t = " ".join(t.split())
+    return t.strip()
+
+
+def _deduplicate_online_docs(db) -> int:
+    """Remove online-catalog duplicates that share a normalised title.
+
+    Even when no bundled docs exist yet (e.g. the bundled seed failed
+    silently), near-identical online imports like
+    ``LESSON PLAN FOR GEOGRAPHY FORM ONE 2026`` and
+    ``LESSON PLAN FOR GEOGRAPHY FORM ONE-2026`` should collapse to the
+    latest record (highest ``source_id``).  Returns the number of rows
+    removed.
+    """
+    from collections import defaultdict
+
+    from backend.models.reference_doc import ReferenceDoc
+
+    # Group non-bundled docs by (doc_type, subject_slug, form_level, normalised_title)
+    groups: dict[tuple, list[ReferenceDoc]] = defaultdict(list)
+    online_docs = (
+        db.query(ReferenceDoc)
+        .filter(ReferenceDoc.source_id.notlike(f"{_SOURCE_PREFIX}%"))
+        .all()
+    )
+    for doc in online_docs:
+        norm = _normalize_title(doc.title or "")
+        if not norm:
+            continue
+        key = (doc.doc_type, doc.subject_slug, doc.form_level, norm)
+        groups[key].append(doc)
+
+    purged = 0
+    for key, docs in groups.items():
+        if len(docs) <= 1:
+            continue
+        # Keep the doc with the highest source_id (latest import), delete the rest
+        docs.sort(key=lambda d: int(d.source_id) if (d.source_id or "").isdigit() else -1)
+        for doc in docs[:-1]:
+            db.delete(doc)
+            purged += 1
+    return purged
+
+
 def _upsert_doc(db, doc_type: str, source_raw: str, title: str, standard: str,
                 subject_name: str, slug, form_level: int, content: dict,
                 check_existing: bool) -> tuple[int, bool]:
@@ -241,6 +298,15 @@ def run(db, *, check_existing: bool = True) -> tuple[int, int, int, int, int]:
     )
     for doc_type, slug, form_level in slots:
         purged += _purge_conflicting_online_docs(db, doc_type, slug or None, form_level or 0)
+
+    # Flush the bundle-aware deletes so the title-dedup query below doesn't
+    # re-count docs already marked for deletion (critical when autoflush is off).
+    db.flush()
+
+    # Also deduplicate online docs that share a normalised title (e.g.
+    # ``FORM ONE 2026`` vs ``FORM ONE-2026``) even when no bundled docs
+    # exist for that slot — catches the common catalog-duplicate case.
+    purged += _deduplicate_online_docs(db)
 
     db.commit()
     return inserted, replaced, inserted_schemes, replaced_schemes, purged

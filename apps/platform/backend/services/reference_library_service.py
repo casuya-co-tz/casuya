@@ -65,14 +65,30 @@ _ORDINAL = {
 _FORM_INT = re.compile(r"\b(form|std|class|standard|kidato|darasa)\s*(?:cha|la)?\s*(\d{1,2})\b", re.I)
 
 
-def map_subject_slug(raw_subject_name: str | None, title: str) -> str | None:
-    """Best-effort map a raw subject name / reference title to a Casuya slug."""
-    text = " ".join(x for x in [raw_subject_name, title] if x)
+def _rule_match(text: str) -> str | None:
+    """Return the first registered subject slug found anywhere in ``text``."""
     lowered = text.lower()
     for pattern, slug in _SUBJECT_RULES:
         if pattern.search(lowered):
             return slug
     return None
+
+
+def _header(text: str) -> str:
+    """Leading title header (text before the first ':') — where the actual
+    subject normally lives, e.g. 'GEOGRAPHY FORM TWO LESSON PLAN NO. 44'."""
+    return text.split(":", 1)[0]
+
+
+def map_subject_slug(raw_subject_name: str | None, title: str) -> str | None:
+    """Best-effort map a raw subject name / reference title to a Casuya slug.
+
+    A subject keyword in the leading header wins: a title like
+    'GEOGRAPHY ... LESSON PLAN NO. 44: CONCEPT OF AGRICULTURE' is a Geography
+    lesson (header) even though its topic text mentions agriculture. Falls
+    back to scanning the full text when the header carries no subject."""
+    text = " ".join(x for x in [raw_subject_name, title] if x)
+    return _rule_match(_header(text)) or _rule_match(text)
 
 
 def _form_from_standard(standard: str | None) -> int | None:
@@ -116,10 +132,18 @@ def map_form_level(standard: str | None, title: str) -> int | None:
 def _subject_name_from_title(title: str) -> str | None:
     """Strip the leading UPPERCASE header to grab a subject-ish token."""
     lowered = title.lower()
-    for pattern, _ in _SUBJECT_RULES:
-        m = pattern.search(lowered)
-        if m:
-            return title[m.start():m.end()].strip()
+    # Prefer the leading header (text before the first ':'), like the slug
+    # mapper, so topic text mentioning another subject can't hijack the name.
+    candidates = [lowered.split(":", 1)[0], lowered]
+    for text in candidates:
+        for pattern, _ in _SUBJECT_RULES:
+            m = pattern.search(text)
+            if m:
+                # Map back to the original (case-preserved) title text.
+                start = title.lower().find(text[m.start():m.end()])
+                if start >= 0:
+                    return title[start:start + len(text[m.start():m.end()])].strip()
+                return title[m.start():m.end()].strip()
     return None
 
 

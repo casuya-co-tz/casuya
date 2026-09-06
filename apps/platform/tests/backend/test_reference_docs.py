@@ -133,13 +133,14 @@ def test_service_get_by_source_and_serialize():
 def test_bundled_seed_is_idempotent():
     """The bundled verified reference material seeds idempotently: a re-run
     inserts and replaces nothing, and the geography library is present
-    (Form 1: 18 lesson plans + 2 term schemes; Form 2: 2 term schemes)."""
+    (Form 1: 18 lesson plans + 2 term schemes; Form 2: 80 lesson plans +
+    2 term schemes)."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
     try:
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
-        assert inserted == 18
+        assert inserted == 98
         assert replaced == 0
         assert inserted_schemes == 4
         assert replaced_schemes == 0
@@ -148,15 +149,64 @@ def test_bundled_seed_is_idempotent():
         assert len(geo_lessons) == 18
         geo_schemes = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="scheme_of_work")
         assert len(geo_schemes) == 2
+        geo_f2_lessons = list_reference_docs(db, subject_slug="geography", form_level=2, doc_type="lesson_plan", limit=200)
+        assert len(geo_f2_lessons) == 80
         geo_f2_schemes = list_reference_docs(db, subject_slug="geography", form_level=2, doc_type="scheme_of_work")
         assert len(geo_f2_schemes) == 2
-        assert all(doc.source_id.startswith("bundled:") for doc in geo_lessons + geo_schemes + geo_f2_schemes)
+        assert all(doc.source_id.startswith("bundled:") for doc in geo_lessons + geo_schemes + geo_f2_lessons + geo_f2_schemes)
         again, again_replaced, again_schemes, again_schemes_replaced, again_purged = seed_reference_library_local.run(db)
         assert again == 0
         assert again_replaced == 0
         assert again_schemes == 0
         assert again_schemes_replaced == 0
         assert again_purged == 0
+    finally:
+        db.close()
+
+
+def test_title_level_dedup_removes_online_duplicates_without_bundled_docs():
+    """Online catalog duplicates with normalised-title collisions (e.g.
+    ``FORM ONE 2026`` vs ``FORM ONE-2026``) are collapsed to the latest
+    record even when no bundled docs exist for that slot — catches the case
+    where the bundled seed hasn't run yet."""
+    from database.seeds.seed_reference_library_local import _deduplicate_online_docs
+
+    db = next(get_db())
+    try:
+        from backend.models.reference_doc import ReferenceDoc
+
+        def fake(doc_type, source_id, title, slug, form_level, standard):
+            db.add(ReferenceDoc(
+                doc_type=doc_type, source_id=source_id, source_url=None,
+                title=title, subject_name=slug, subject_slug=slug,
+                form_level=form_level, standard=standard,
+                content=json.dumps({"title": title, "plan_details": [{"main_competence": "x"}]}),
+            ))
+
+        # Two near-identical titles — normalise to the same string
+        fake("lesson_plan", "55", "LESSON PLAN FOR GEOGRAPHY FORM ONE 2026", "geography", 1, "Form 1")
+        fake("lesson_plan", "174", "LESSON PLAN FOR GEOGRAPHY FORM ONE-2026", "geography", 1, "Form 1")
+        fake("lesson_plan", "200", "LESSON PLAN FOR GEOGRAPHY FORM ONE 2026", "geography", 1, "Form 1")
+        # A kiswahili pair (should stay untouched — normalised titles differ)
+        fake("lesson_plan", "300", "LESSON PLAN FOR KISWAHILI FORM ONE", "kiswahili", 1, "Form 1")
+        fake("lesson_plan", "301", "LESSON PLAN FOR KISWAHILI FORM ONE 2026", "kiswahili", 1, "Form 1")
+        db.commit()
+
+        purged = _deduplicate_online_docs(db)
+        db.commit()
+
+        # 3 geography duplicates (55, 174, 200) → keep 200, purge 55+174 = 2
+        # kiswahili pair normalise differently ("form one" vs "form one 2026") → 0
+        assert purged == 2
+
+        geo_f1 = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
+        online_f1 = [d for d in geo_f1 if not d.source_id.startswith("bundled:")]
+        assert len(online_f1) == 1
+        assert online_f1[0].source_id == "200"
+        assert "2026" in online_f1[0].title
+
+        sw_f1 = list_reference_docs(db, subject_slug="kiswahili", form_level=1, doc_type="lesson_plan")
+        assert len(sw_f1) == 2  # not deduped — different normalised titles
     finally:
         db.close()
 
@@ -184,13 +234,17 @@ def test_bundled_seed_purges_conflicting_online_duplicates():
         fake("lesson_plan", "55", "LESSON PLAN FOR GEOGRAPHY FORM ONE", "geography", 1, "Form 1")
         fake("lesson_plan", "174", "LESSON PLAN FOR GEOGRAPHY FORM ONE-2026", "geography", 1, "Form 1")
         fake("lesson_plan", "133", "MPANGO KAZI WA AFYA NA MAZINGIRA DARASA LA KWANZA", "geography", 1, "Standard 1")
+        fake("lesson_plan", "557", "LESSON PLAN FOR GEOGRAPHY FORM ONE 2026", "geography", 1, "Form 1")
         fake("scheme_of_work", "295", "PMO-RALG GEOGRAPHY SCHEME OF WORK-FORM ONE", "geography", 1, "Form 1")
         fake("scheme_of_work", "555", "GEOGRAPHY SCHEME OF WORK-FORM TWO", "geography", 2, "Form 2")
+        fake("lesson_plan", "556", "LESSON PLAN FOR GEOGRAPHY FORM TWO-2026", "geography", 2, "Form 2")
         fake("scheme_of_work", "999", "KISWAHILI SCHEME FORM TWO", "kiswahili", 2, "Form 2")
         db.commit()
 
         _, _, _, _, purged = seed_reference_library_local.run(db)
-        assert purged == 5  # 3 geography Form 1 lesson plans + 1 scheme + 1 Form 2 scheme
+        # 4 geography F1 lesson plans (55, 174, 133, 557) + 1 F1 scheme (295)
+        # + 1 F2 scheme (555) + 1 F2 lesson plan (556) = 7
+        assert purged == 7
 
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
         assert len(geo_lessons) == 18
@@ -201,6 +255,9 @@ def test_bundled_seed_purges_conflicting_online_duplicates():
         geo_f2_schemes = list_reference_docs(db, subject_slug="geography", form_level=2, doc_type="scheme_of_work")
         assert len(geo_f2_schemes) == 2
         assert all(doc.source_id.startswith("bundled:") for doc in geo_f2_schemes)
+        geo_f2_lessons = list_reference_docs(db, subject_slug="geography", form_level=2, doc_type="lesson_plan", limit=200)
+        assert len(geo_f2_lessons) == 80
+        assert all(doc.source_id.startswith("bundled:") for doc in geo_f2_lessons)
 
         sw_twos = list_reference_docs(db, subject_slug="kiswahili", form_level=2, doc_type="scheme_of_work")
         assert any(doc.source_id == "999" for doc in sw_twos)  # other subjects keep their imports
@@ -327,6 +384,43 @@ def test_fetch_grounding_selects_verified_bundled_lesson():
         "List physical features and human activities observed")
     assert gl["progression"][1]["assessment_criteria"].startswith(
         "Learners define Geography accurately")
+
+
+def test_fetch_grounding_selects_verified_bundled_form_two_lesson():
+    """Grounding for a Form Two topic resolves to the exact bundled educator
+    lesson (e.g. lesson 1 'Internal Structure of the Earth'), and the review
+    and human-geography lessons (41, 80) are also reachable in the bundle."""
+    from database.seeds import seed_reference_library_local
+
+    db = next(get_db())
+    try:
+        seed_reference_library_local.run(db)
+    finally:
+        db.close()
+
+    ground = fetch_reference_grounding("geography", 2, "Internal Structure of the Earth", "lesson_plan")
+    assert ground is not None
+    assert "NO. 1" in ground["title"]
+    assert ground["source_id"].startswith("bundled:")
+    assert ground["standard"] == "Form 2"
+
+    gl = lesson_plan_grounding(ground["content"], match_hint="Internal Structure of the Earth")
+    assert gl["matched"] is True
+    assert gl["specific_competence"].startswith("1.1")
+    assert len(gl["progression"]) == 4
+    assert gl["progression"][0]["stage"].lower() == "introduction"
+    assert "egg" in gl["progression"][0]["teacher_activity"].lower()
+
+    human = fetch_reference_grounding("geography", 2, "Introduction to Human Activities", "lesson_plan")
+    assert human is not None
+    assert "NO. 41" in human["title"]
+
+    review = fetch_reference_grounding("geography", 2, "Comprehensive Review of Form Two Geography", "lesson_plan")
+    assert review is not None
+    assert "NO. 80" in review["title"]
+    nonmatch = fetch_reference_grounding("geography", 2, "Quantum Mechanics", "lesson_plan")
+    if nonmatch is not None:
+        assert lesson_plan_grounding(nonmatch["content"], match_hint="Quantum Mechanics")["matched"] is False
 
 
 def test_fetch_grounding_no_match_stays_negative():
