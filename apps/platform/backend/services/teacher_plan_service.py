@@ -28,6 +28,9 @@ from backend.services.syllabus_service import get_curriculum_context, get_subjec
 
 logger = logging.getLogger(__name__)
 
+# How many repair rounds the AI gets before the near-zero deterministic recovery.
+MAX_PLAN_REPAIR_ATTEMPTS = 2
+
 KISWAHILI_SUBJECTS = {
     "kiswahili",
     "historia-ya-tanzania-na-maadili",
@@ -259,6 +262,46 @@ async def generate_lesson_plan(
             plan = parsed
 
     if plan is not None:
+        # Quality gate on the progression table: normalize each cell, then give
+        # the AI up to MAX_PLAN_REPAIR_ATTEMPTS rounds to fix its own output
+        # until every cell is a meaningful, grammatical, stage-specific sentence.
+        # The deterministic offline matrix is used ONLY as the final near-zero
+        # recovery when the AI still fails.
+        plan = _polish_progression_cells(plan, lang)
+        for _repair_try in range(MAX_PLAN_REPAIR_ATTEMPTS):
+            issues = _progression_quality_issues(plan, lang)
+            if not issues:
+                break
+            repaired = await _repair_lesson_plan_via_ai(
+                plan,
+                issues,
+                lang=lang,
+                curriculum_ctx=curriculum_ctx,
+                subject_slug=subject_slug,
+                form_level=form_level,
+                topic=topic,
+                subtopic=subtopic or "",
+            )
+            if not repaired:
+                break
+            plan = _polish_progression_cells(repaired, lang)
+        if _progression_quality_issues(plan, lang):
+            plan = _patch_weak_progression_from_offline(
+                plan,
+                subject_slug=subject_slug,
+                subject_label=subject_label,
+                form_level=form_level,
+                topic=topic,
+                subtopic=subtopic or "",
+                school_name=school_name or "School Name",
+                teacher_name=teacher_name or "Teacher Name",
+                number_of_students=number_of_students or 40,
+                students_boys=students_boys,
+                students_girls=students_girls,
+                duration_minutes=duration_minutes,
+                period=period or "Period 1",
+                lang=lang,
+            )
         tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
         if tie_main and tie_spec:
             ca = plan.setdefault("competence_architecture", {})
@@ -666,12 +709,14 @@ _TIE_LESSON_PLAN_RULES_EN = (
     "\"Within N minutes...\".\n"
     "3. Use exactly the four official stage names, in order: Introduction, Competence "
     "Development, Design, Realizations (always plural \"Realizations\").\n"
-    "4. Each stage's assessment_criteria must echo THIS lesson's specific_learning_activity "
-    "using the fixed TIE verb pattern, ending with the exact activity phrase:\n"
-    "   - Introduction: \"Students identify prior knowledge related to <activity>.\"\n"
-    "   - Competence Development: \"Students accurately demonstrate understanding of <activity>.\"\n"
-    "   - Design: \"Students correctly apply concepts and skills related to <activity>.\"\n"
-    "   - Realizations: \"Students confidently justify outcomes related to <activity>.\"\n"
+    "4. Each stage's assessment_criteria must be a UNIQUE, observable evaluation "
+    "of THAT stage: it explicitly checks what the TEACHER does AND what the "
+    "LEARNERS do in that stage, naming actor + action + success condition "
+    "(e.g. \"Assessing the teacher's guided activity (guides groups to convert "
+    "scenarios into equations), check whether learners correctly convert "
+    "scenarios into equations and solve them.\"). Use a distinct sentence per "
+    "stage - never reuse a generic line such as \"Students demonstrate "
+    "understanding of the concept\" or \"Students correctly apply the activity\".\n"
     "5. Only use topics/subtopics/outcomes present in the curriculum context. Never invent "
     "content; if the requested topic/subtopic is absent, say so instead of fabricating.\n"
     "6. References must cite the real TIE book (subject, year, form); resources and learning "
@@ -736,8 +781,10 @@ _TIE_LESSON_PLAN_RULES_EN = (
     "    f. Are teacher and learner activities concrete and different from each other?\n"
     "    g. Are resources specific with textbook pages (not placeholders)?\n"
     "    h. Are references in academic citation format (Author, Year, Title, City, Pages)?\n"
-    "    i. Is evaluation_learners and evaluation_teacher present as placeholders?\n"
+"     i. Is evaluation_learners and evaluation_teacher present as placeholders?\n"
     "    j. Is every sentence grammatically correct and professionally written?\n"
+    "    k. Does each stage's assessment_criteria uniquely evaluate that stage's "
+    "teacher and learner activities (never generic filler)?\n"
     "   If any check fails, FIX the issue before outputting. Do NOT output incomplete "
     "or low-quality content.\n"
 )
@@ -780,12 +827,14 @@ _TIE_LESSON_PLAN_RULES_SW = (
     "hyperbolic\"). INAFAAANA SI kishazi chenye muda kama \"Ndani ya dakika N...\".\n"
     "3. Tumia haswa majina manne rasmi ya hatua kwa utaratibu: Utangulizi, Ukuzaji wa "
     "Ujuzi, Usanifu, na Utambuzi.\n"
-    "4. Kigezo cha tathmini cha kila hatua lazima kirejee shughuli mahususi ya somo "
-    "hili kwa mtindo usiobadilika, kikimalizika na kishazi cha shughuli:\n"
-    "   - Utangulizi: \"Wanafunzi hutambua maarifa ya awali yanayohusu <shughuli>.\"\n"
-    "   - Ukuzaji wa Ujuzi: \"Wanafunzi huonyesha kwa usahihi uelewa wa <shughuli>.\"\n"
-    "   - Usanifu: \"Wanafunzi hutumia kwa usahihi dhana na ujuzi unaohusu <shughuli>.\"\n"
-    "   - Utambuzi: \"Wanafunzi wanathibitisha kwa imani matokeo yanayohusu <shughuli>.\"\n"
+    "4. Kigezo cha tathmini cha kila hatua lazima kiwe TATHMINI MAHUSUSI ya hatua "
+    "hiyo: lazima kikague kwa uwazi kile MWALIMU anachofanya NA kile WANAFUNZI "
+    "wanachofanya katika hatua hiyo, kikitaja kitendo + kitendo cha mwanafunzi + "
+    "hali ya mafanikio (mf. \"Kutathmini shughuli ya mwalimu ya uongozi (anaongoza "
+    "makundi kubadilisha muktadha kuwa milinganyo), angalia kama wanafunzi "
+    "wanabadilisha muktadha kuwa milinganyo na kuitatua kwa usahihi.\"). Tumia "
+    "sentensi tofauti kwa kila hatua - usirudie sentensi ya kawaida kama "
+    "\"Wanafunzi wanaelewa dhana\" au \"Wanafunzi hutumia kwa usahihi shughuli\".\n"
     "5. Tumia tu mada/sehemu za mada/matokeo yaliyopo kwenye misingumo. Usibuni "
     "maudhui; kama mada au sehemu ya mada haipo, sema hivyo badala ya kubuni.\n"
     "6. Marejeo lazima yanukuu kitabu rasmi cha TIE (somo, mwaka, kidato); rasilimali na "
@@ -851,8 +900,10 @@ _TIE_LESSON_PLAN_RULES_SW = (
     "    g. Je, rasilimali ni mahalusi na zina ukurasa wa kitabu (si sehemu za kujaza)?\n"
     "    h. Je, marejeo ni kwa muundo wa kitaaluma (Mwandishi, Mwaka, Kichwa, "
     "Jiji, Ukurasa)?\n"
-    "    i. Je, evaluation_learners na evaluation_teacher zipo kama sehemu za kujaza?\n"
+"     i. Je, evaluation_learners na evaluation_teacher zipo kama sehemu za kujaza?\n"
     "    j. Je, kila sentensi ni sahihi kwa sarufi na imeandikwa kitaalamu?\n"
+    "    k. Je, kigezo cha tathmini cha kila hatua kinatathmini mahususi shughuli za "
+    "mwalimu na mwanafunzi za hatua hiyo (si maneno ya kawaida)?\n"
     "   Kama ukaguzi yoyote unashindwa, SAHISHA tatizo kabla ya kutoa. USITOE "
     "maudhui yasiyo kamili au ya ubora wa chini.\n"
 )
@@ -1296,6 +1347,155 @@ def _ground_progression_assessment(progression, subject_slug, form_level, topic,
             lang,
         )
     return progression
+
+
+_GENERIC_ASSESSMENT_PHRASES = (
+    "students will learn", "students will understand", "understand the concept",
+    "understand the topic", "good understanding", "basic understanding",
+    "demonstrate understanding of the concept", "wanafunzi watajifunza",
+    "wanafunzi wataelewa", "kuelewa dhana", "kuelewa mada",
+)
+
+
+def _polish_progression_cells(plan, lang):
+    """Normalize progression table cells: flatten lists, trim whitespace, drop
+    list markdown, and enforce sentence casing/punctuation. Pure formatting -
+    never introduces content."""
+    for stage in plan.get("progression_matrix") or []:
+        if not isinstance(stage, dict):
+            continue
+        for key in ("stage", "core_content", "teacher_activity", "learner_activity", "assessment_criteria"):
+            if key not in stage:
+                continue
+            text = _activity_text(stage.get(key))
+            text = re.sub(r"[ \t\r\n\f\v]+", " ", text).strip()
+            text = text.lstrip("-•*").strip()
+            if text:
+                if lang == "en" and text[0].islower():
+                    text = text[0].upper() + text[1:]
+                if key not in ("stage", "time") and not text.endswith(("!", ".", "?")):
+                    text += "."
+            stage[key] = text
+    return plan
+
+
+def _progression_quality_issues(plan, lang) -> list[str]:
+    """Return a list of concrete, fixable quality problems in the progression
+    table. Empty when every cell is meaningful, grammatical and stage-specific.
+    The AI is asked to repair exactly these issues."""
+    issues: list[str] = []
+    matrix = plan.get("progression_matrix") or []
+    if len(matrix) != 4:
+        issues.append(f"Progression matrix has {len(matrix)} stages; exactly 4 TIE stages are required.")
+    for i, stage in enumerate(matrix):
+        if not isinstance(stage, dict):
+            issues.append(f"Stage {i + 1} is not an object/provides no table row.")
+            continue
+        stage_name = _as_text(stage.get("stage")).strip() or f"stage {i + 1}"
+        for key in ("teacher_activity", "learner_activity", "assessment_criteria"):
+            text = _as_text(stage.get(key)).strip()
+            label = f"{stage_name} - {key}"
+            if not text:
+                issues.append(f"{label} is missing/empty.")
+                continue
+            word_count = len(re.findall(r"\S+", text))
+            min_words = 5 if key != "assessment_criteria" else 6
+            if word_count < min_words:
+                issues.append(f"{label} is too short ({word_count} words) - it must be a full sentence.")
+            lowered = text.lower()
+            if lowered.strip(" .:;,-\"'") in (stage_name.lower().strip(" ."), key.replace("_", " ")):
+                issues.append(f"{label} merely repeats the cell label instead of describing real work.")
+            if key == "assessment_criteria":
+                if any(p in lowered for p in _GENERIC_ASSESSMENT_PHRASES):
+                    issues.append(f"{label} is generic filler - it must evaluate the stage's teacher and learner activities.")
+                if lang == "sw":
+                    if "wanafunzi" not in lowered and "mwanafunzi" not in lowered:
+                        issues.append(f"{label} does not state what learners must do (who does what).")
+                elif not any(w in lowered for w in ("students", "learners", "learner", "pupils")) and "teacher" not in lowered:
+                    issues.append(f"{label} does not state who does what (learners/teacher).")
+            if "{" in text or "}" in text:
+                issues.append(f"{label} contains unfilled placeholder tokens.")
+    have_assess = [c.strip() for c in (_as_text(s.get("assessment_criteria")) for s in matrix if isinstance(s, dict)) if c]
+    if len(set(have_assess)) != len(have_assess):
+        issues.append("Assessment criteria repeat across different stages - each stage needs a unique criterion.")
+    return issues
+
+
+async def _repair_lesson_plan_via_ai(plan, issues, *, lang, curriculum_ctx,
+                                     subject_slug, form_level, topic, subtopic):
+    """Ask the AI to repair its own lesson plan, fixing exactly the cited cells.
+    Returns the repaired plan or None when repair fails."""
+    issue_text = "\n".join(f"- {i}" for i in issues)
+    repair_prompt = (
+        "You generated the following JSON lesson plan, but the quality checker "
+        "rejected it. Repair ONLY the cited cells.\n\n"
+        f"REJECTION REASONS:\n{issue_text}\n\n"
+        "REQUIREMENTS:\n"
+        "- Keep the exact JSON structure and leave every uncited field untouched.\n"
+        "- Fix each cited cell with a complete, grammatically correct sentence.\n"
+        "- Each assessment_criteria must be a UNIQUE, observable evaluation of THAT "
+        "stage: it checks what the teacher does AND what the learners do in that "
+        "stage, naming actor + action + success condition. Never use generic filler.\n"
+        "- Exactly 4 stages, in order: Introduction, Competence Development, Design, "
+        "Realizations.\n"
+        "- Stay strictly within the curriculum context; never invent content.\n"
+        "CRITICAL: Output ONLY the repaired JSON - no markdown, no explanations.\n\n"
+        f"LANGUAGE: {'Kiswahili' if lang == 'sw' else 'English'}\n"
+        f"CURRICULUM CONTEXT:\n{curriculum_ctx}\n\n"
+        "CURRENT JSON (fix in place):\n"
+        f"{json.dumps(plan, indent=2, ensure_ascii=False)}\n"
+    )
+    try:
+        result = await _call_ai_service("/api/plans/lesson-plan", {
+            "question": repair_prompt,
+            "prompt": repair_prompt,
+            "context": curriculum_ctx,
+            "subject_slug": subject_slug,
+            "form_level": form_level,
+            "topic": topic,
+            "subtopic": subtopic or "",
+            "lang": lang,
+        })
+    except Exception:
+        logger.warning("AI lesson-plan repair attempt failed", exc_info=True)
+        return None
+    if isinstance(result, dict) and _is_complete_lesson_plan(result):
+        return result
+    if isinstance(result, dict) and "response" in result:
+        parsed = _parse_plan_json(_strip_think_tags(result["response"]))
+        if _is_complete_lesson_plan(parsed):
+            return parsed
+    return None
+
+
+def _patch_weak_progression_from_offline(plan, *, subject_slug, subject_label, form_level,
+                                         topic, subtopic, school_name, teacher_name,
+                                         number_of_students, students_boys, students_girls,
+                                         duration_minutes, period, lang):
+    """Last-resort recovery (near-zero, used only after AI repairs are exhausted):
+    rebuild the progression matrix from the deterministic offline builder and keep
+    the rest of the AI plan. Patches nothing when the offline matrix also fails."""
+    try:
+        off = _build_lesson_plan_offline(
+            subject_slug=subject_slug,
+            subject_label=subject_label,
+            form_level=form_level,
+            topic=topic,
+            subtopic=subtopic,
+            school_name=school_name,
+            teacher_name=teacher_name,
+            number_of_students=number_of_students,
+            students_boys=students_boys,
+            students_girls=students_girls,
+            duration_minutes=duration_minutes,
+            period=period,
+            lang=lang,
+        )
+        if not _progression_quality_issues(off, lang):
+            plan["progression_matrix"] = off["progression_matrix"]
+    except Exception:
+        logger.warning("Offline progression recovery failed", exc_info=True)
+    return plan
 
 
 def _build_lesson_plan_offline(

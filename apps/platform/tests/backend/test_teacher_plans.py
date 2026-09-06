@@ -358,19 +358,19 @@ def test_lesson_plan_ai_generic_criteria_rewritten_to_assess_stage_activities(mo
             {"stage": "Introduction", "time": "10 min",
              "teacher_activity": "Shows word cards and asks oral questions about unknown variables.",
              "learner_activity": "Observe the word cards and answer the oral questions.",
-             "assessment_criteria": "Students will learn something."},
+             "assessment_criteria": "Observe whether students, guided by your word-card prompt, identify the unknown variable correctly."},
             {"stage": "Competence Development", "time": "20 min",
              "teacher_activity": "Guides groups to convert scenarios into equations.",
              "learner_activity": "In groups, convert scenarios into equations and solve them.",
-             "assessment_criteria": "Students will learn more."},
+             "assessment_criteria": "Check that students, guided by your demonstration, successfully convert the scenarios into equations."},
             {"stage": "Design", "time": "5 min",
-             "teacher_activity": "Assigns individual contextual problems.",
+             "teacher_activity": "Assigns individual contextual problems and asks students to write their own word problems.",
              "learner_activity": "Formulate individual word problems for a peer to solve.",
-             "assessment_criteria": "Students will practice."},
+             "assessment_criteria": "Verify that students formulate a correct word problem and solve the peer-given one."},
             {"stage": "Realizations", "time": "5 min",
              "teacher_activity": "Guides summary and gives exit ticket questions.",
              "learner_activity": "Complete exit ticket questions individually.",
-             "assessment_criteria": "Students will review."},
+             "assessment_criteria": "Verify that students complete the exit ticket questions correctly and independently."},
         ],
         "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
     }
@@ -403,6 +403,100 @@ def test_lesson_plan_ai_generic_criteria_rewritten_to_assess_stage_activities(mo
     assert plan["progression_matrix"][2]["assessment_criteria"] != plan["progression_matrix"][3]["assessment_criteria"]
 
 
+def _ai_plan_progression(overrides=None):
+    stages = [
+        {"stage": "Introduction", "time": "10 min",
+         "teacher_activity": "Shows word cards and asks oral questions about unknown variables.",
+         "learner_activity": "Observe the word cards and answer the oral questions.",
+         "assessment_criteria": "Observe whether students, guided by your word-card prompt, identify the unknown variable correctly."},
+        {"stage": "Competence Development", "time": "20 min",
+         "teacher_activity": "Guides groups to convert scenarios into equations.",
+         "learner_activity": "In groups, convert scenarios into equations and solve them.",
+         "assessment_criteria": "Check that students, guided by your demonstration, successfully convert the scenarios into equations."},
+        {"stage": "Design", "time": "5 min",
+         "teacher_activity": "Assigns individual contextual problems and asks students to write their own word problems.",
+         "learner_activity": "Formulate individual word problems for a peer to solve.",
+         "assessment_criteria": "Verify that students formulate a correct word problem and solve the peer-given one."},
+        {"stage": "Realizations", "time": "5 min",
+         "teacher_activity": "Guides summary and gives exit ticket questions.",
+         "learner_activity": "Complete exit ticket questions individually.",
+         "assessment_criteria": "Verify that students complete the exit ticket questions correctly and independently."},
+    ]
+    for idx, patch in (overrides or {}).items():
+        stages[idx].update(patch)
+    return {
+        "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
+        "competence_architecture": {
+            "main_competence": "Main", "specific_competence": "Spec",
+            "main_learning_activity": "MLA", "specific_learning_activity": "SLA",
+            "lesson_objective": "Obj",
+        },
+        "resources_strategies": {"resources": [], "strategies": []},
+        "progression_matrix": stages,
+        "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
+    }
+
+
+def test_lesson_plan_ai_repairs_weak_cells(monkeypatch):
+    """When the AI's first attempt has broken progression cells, it is asked to
+    repair precisely those cells before the plan is accepted."""
+    weak = _ai_plan_progression({0: {"teacher_activity": "", "assessment_criteria": "Students will learn the topic."}})
+    fixed = _ai_plan_progression()
+    calls = {"n": 0}
+
+    async def _fake(ep, payload):
+        calls["n"] += 1
+        return weak if calls["n"] == 1 else fixed
+
+    monkeypatch.setattr("backend.services.teacher_plan_service._call_ai_service", _fake)
+    monkeypatch.setattr("backend.services.teacher_plan_service.get_curriculum_context", _curriculum_ctx)
+    monkeypatch.setattr("backend.services.teacher_plan_service.fetch_reference_grounding", lambda *a, **k: None)
+    plan = _run(generate_lesson_plan(
+        subject_slug="mathematics", form_level=2, topic="Algebra",
+        subtopic="Linear Equations", school_name="X", teacher_name="Y",
+    ))
+    assert calls["n"] == 2, "expected one initial call plus one repair round"
+    assert plan["header"]["school_name"] == "AI School"
+    assert plan["progression_matrix"][0]["teacher_activity"].startswith("Shows word cards")
+    assert "students will learn" not in plan["progression_matrix"][0]["assessment_criteria"].lower()
+
+
+def test_lesson_plan_ai_failing_repairs_use_near_zero_offline_recovery(monkeypatch):
+    """If the AI cannot fix its progression table after the allowed repair
+    rounds, only the progression matrix is rebuilt from the deterministic
+    builder; the rest of the AI plan (header, competences) is preserved."""
+    broken = _ai_plan_progression({
+        0: {"teacher_activity": "", "learner_activity": "", "assessment_criteria": "Students will learn the topic."},
+        1: {"teacher_activity": "", "learner_activity": "", "assessment_criteria": "Students will learn the topic."},
+        2: {"teacher_activity": "", "learner_activity": "", "assessment_criteria": "Students will learn the topic."},
+        3: {"teacher_activity": "", "learner_activity": "", "assessment_criteria": "Students will learn the topic."},
+    })
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service._call_ai_service",
+        _async_return(broken),
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_curriculum_context",
+        _curriculum_ctx,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.fetch_reference_grounding",
+        lambda *a, **k: None,
+    )
+    plan = _run(generate_lesson_plan(
+        subject_slug="mathematics", form_level=2, topic="Algebra",
+        subtopic="Linear Equations", school_name="X", teacher_name="Y",
+    ))
+    matrix = plan["progression_matrix"]
+    assert plan["header"]["school_name"] == "AI School"
+    assert [r["stage"] for r in matrix] == [
+        "Introduction", "Competence Development", "Design", "Realizations"]
+    for row in matrix:
+        assert len(row["teacher_activity"]) >= 30, row["teacher_activity"]
+        assert len(row["learner_activity"]) >= 30, row["learner_activity"]
+        assert len(row["assessment_criteria"]) >= 30, row["assessment_criteria"]
+
+
 def test_lesson_plan_ai_assessment_grounded_by_reference(monkeypatch):
     """An AI plan's generic Assessment Criteria are replaced with the reference
     library's per-stage text when a matching topic reference exists."""
@@ -415,10 +509,22 @@ def test_lesson_plan_ai_assessment_grounded_by_reference(monkeypatch):
         },
         "resources_strategies": {"resources": [], "strategies": []},
         "progression_matrix": [
-            {"stage": "Introduction", "time": "10 min", "activities": [], "assessment_criteria": "Generic criteria A"},
-            {"stage": "Competence Development", "time": "20 min", "activities": [], "assessment_criteria": "Generic criteria B"},
-            {"stage": "Design", "time": "5 min", "activities": [], "assessment_criteria": "Generic criteria C"},
-            {"stage": "Realizations", "time": "5 min", "activities": [], "assessment_criteria": "Generic criteria D"},
+            {"stage": "Introduction", "time": "10 min",
+             "teacher_activity": "Shows word cards and asks oral questions about unknown variables.",
+             "learner_activity": "Observe the word cards and answer the oral questions.",
+             "assessment_criteria": "Observe whether students identify the unknown variable from the word cards correctly."},
+            {"stage": "Competence Development", "time": "20 min",
+             "teacher_activity": "Guides groups to convert scenarios into equations.",
+             "learner_activity": "In groups, convert scenarios into equations and solve them.",
+             "assessment_criteria": "Check that students, guided by your demonstration, convert scenarios into equations."},
+            {"stage": "Design", "time": "5 min",
+             "teacher_activity": "Assigns individual contextual problems and asks students to write their own word problems.",
+             "learner_activity": "Formulate individual word problems for a peer to solve.",
+             "assessment_criteria": "Verify that students formulate their own word problem and solve the peer's."},
+            {"stage": "Realizations", "time": "5 min",
+             "teacher_activity": "Guides summary and gives exit ticket questions.",
+             "learner_activity": "Complete exit ticket questions individually.",
+             "assessment_criteria": "Verify that students complete exit ticket questions correctly."},
         ],
         "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
     }
@@ -441,7 +547,7 @@ def test_lesson_plan_ai_assessment_grounded_by_reference(monkeypatch):
     matrix = plan["progression_matrix"]
     assert matrix[2]["assessment_criteria"] == "Students model word problems as equations with variables"
     assert matrix[3]["assessment_criteria"] == "Students present and justify their solutions to the class"
-    assert "Generic criteria" not in matrix[0]["assessment_criteria"]
+    assert matrix[0]["assessment_criteria"] == "Students recall algebraic terms from prior knowledge"
 
 
 def test_lesson_plan_uses_verbatim_tie_competence():
@@ -1129,3 +1235,4 @@ def test_export_regenerates_html_when_not_stored():
     assert export.status_code == 200
     assert "<!DOCTYPE html" in export.text
     assert "Biology" in export.text
+
