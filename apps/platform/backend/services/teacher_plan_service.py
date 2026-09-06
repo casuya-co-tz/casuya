@@ -2129,7 +2129,6 @@ def render_lesson_plan_html(plan: dict) -> str:
     time_to_fmt = _ampm(time_to)
     duration = int(h.get("duration_minutes") or 40)
     number_total = sreg.get("total", h.get("number_of_students", ""))
-    tp = _e(h.get("topic", ""))
 
     # ── Stage rows (TIE 4 stages or fallback) ─────────────────────────────
     stages_rows = ""
@@ -2338,7 +2337,7 @@ def render_lesson_plan_html(plan: dict) -> str:
         </tr>'''}
         <tr>
             <td><strong style="color:#1e40af;font-size:9pt">{_e(_subject)}:</strong> {_e(subject)}</td>
-            <td><strong style="color:#1e40af;font-size:9pt">{_e(LST('Specific competence', 'Ujuzi mahususi'))}:</strong> {_e(sc or tp)}</td>
+            <td></td>
             <td></td>
         </tr>
     </table>

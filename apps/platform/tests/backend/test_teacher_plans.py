@@ -346,6 +346,11 @@ def test_lesson_plan_uses_verbatim_tie_competence():
     assert ">Topic:" not in html
     assert ">Subtopic:" not in html
     assert ">Topic</" not in html
+    # The top info header must not repeat the specific competence; it belongs
+    # only in the numbered "3. SPECIFIC COMPETENCE" section.
+    top = html.split("1. CLASS INFORMATION")[0]
+    assert "Specific competence" not in top
+    assert "2.2 Use algebra and matrices" not in top
 
 
 def test_tie_competences_chemistry_from_tie_syllabus():
@@ -984,4 +989,4 @@ def test_export_regenerates_html_when_not_stored():
     export = client.get(f"/teacher-plans/{plan_id}/export", headers=headers)
     assert export.status_code == 200
     assert "<!DOCTYPE html" in export.text
-    assert "Cell Biology" in export.text
+    assert "Biology" in export.text
