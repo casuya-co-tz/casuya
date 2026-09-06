@@ -1655,17 +1655,62 @@ async function renderTeacherDashboard() {
       else { alert("Popup blocked. Please allow popups."); }
     }
 
+    function buildWordHtml(html) {
+      // html is a complete <!DOCTYPE html> document (render_lesson_plan_html /
+      // render_scheme_of_work_html). Rebuild it as ONE valid, Word-friendly
+      // document: extract the body content and styles into a single wrapper so
+      // Word never sees nested <html>/<head>/<body> (which breaks rendering).
+      let doc = null;
+      try {
+        doc = new DOMParser().parseFromString(html || "", "text/html");
+      } catch (e) { doc = null; }
+      if (!doc || !doc.body || doc.querySelector("parsererror")) return html || "";
+      const body = doc.body.cloneNode(true);
+      body.querySelectorAll("script,iframe,.actions,.no-print").forEach((n) => {
+        if (n.parentNode) n.parentNode.removeChild(n);
+      });
+      let styles = "";
+      doc.querySelectorAll("head style").forEach((s) => {
+        if (s.textContent) styles += s.textContent + "\n";
+      });
+      styles = styles.replace(/@import[^;]+;\s*/g, "");
+      const wordMeta = '<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotExpandShiftReturn/></w:WordDocument></xml><![endif]-->';
+      const wordCss = (styles || "") +
+        'body{margin:14pt 16pt;font-family:"Calibri","Segoe UI",Arial,sans-serif;font-size:9pt;color:#1e293b;line-height:1.4}' +
+        'table{border-collapse:collapse;width:100%}th,td{border:1px solid #e2e8f0;padding:4px 5px;vertical-align:top}' +
+        'th{background:#f1f5f9;font-weight:700}thead{display:table-header-group}tr{page-break-inside:avoid}' +
+        '.actions,.no-print{display:none}@page{size:A4 portrait;margin:12mm 10mm 12mm 10mm}';
+      return '<!DOCTYPE html>\n<html xmlns:o="urn:schemas-microsoft-com:office:office" ' +
+        'xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">\n' +
+        '<head><meta charset="UTF-8">' + wordMeta + '\n' +
+        `<title>${(doc.title || "Casuya Document")}</title>` + '\n' +
+        `<style>${wordCss}</style>\n</head>\n<body>\n${body.innerHTML}\n</body>\n</html>`;
+    }
+
+    function saveWordFile(wordHtml, filename) {
+      const blob = new Blob(["\ufeff" + wordHtml], { type: "application/msword" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 400);
+    }
+
+    function sanitizeName(name) {
+      return String(name || "document").replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/g, "").slice(0, 80);
+    }
+
     async function downloadWord(id) {
       const detail = await request(`/teacher-plans/${id}?_t=${Date.now()}`).catch(() => null);
       if (!detail) { alert("Could not load document"); return; }
-      const win = window.open("", "_blank", "width=1100,height=750");
-      if (win) {
-        const wordHtml = `<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="UTF-8"><style>body{font-family:"Inter","Segoe UI",sans-serif;font-size:10pt}table{border-collapse:collapse}th,td{border:1px solid #e2e8f0;padding:5px 6px}th{background:#f1f5f9;font-weight:600}</style></head><body>${detail.html_render || ""}</body></html>`;
-        win.document.write(wordHtml); win.document.close();
-        setTimeout(() => {
-          try { win.document.execCommand("SaveAs", false, "lesson_plan.doc"); } catch(e) {}
-        }, 500);
-      } else { alert("Popup blocked. Please allow popups."); }
+      saveWordFile(buildWordHtml(detail.html_render || ""), sanitizeName("casuya_" + (detail.title || "document")) + ".doc");
+    }
+
+    function downloadLastGeneratedWord(filename) {
+      if (!lastGenHtml) return;
+      saveWordFile(buildWordHtml(lastGenHtml), sanitizeName(filename || "casuya_document") + ".doc");
     }
 
     showTeacherView(`
@@ -2117,11 +2162,11 @@ async function renderTeacherDashboard() {
       // Bind preview action buttons (lesson plan)
       document.getElementById("gen-view")?.addEventListener("click", (e) => { e.preventDefault(); openPreview(); });
       document.getElementById("gen-print")?.addEventListener("click", (e) => { e.preventDefault(); printPreview(); });
-      document.getElementById("gen-doc")?.addEventListener("click", (e) => { e.preventDefault(); openPreview(); });
+      document.getElementById("gen-doc")?.addEventListener("click", (e) => { e.preventDefault(); downloadLastGeneratedWord("lesson_plan"); });
       // Bind preview action buttons (scheme of work)
       document.getElementById("scheme-view")?.addEventListener("click", (e) => { e.preventDefault(); openPreview(); });
       document.getElementById("scheme-print")?.addEventListener("click", (e) => { e.preventDefault(); printPreview(); });
-      document.getElementById("scheme-doc")?.addEventListener("click", (e) => { e.preventDefault(); openPreview(); });
+      document.getElementById("scheme-doc")?.addEventListener("click", (e) => { e.preventDefault(); downloadLastGeneratedWord("scheme_of_work"); });
 
       // Delegate saved-list actions
       document.getElementById("tdocs-saved-list")?.addEventListener("click", async (ev) => {

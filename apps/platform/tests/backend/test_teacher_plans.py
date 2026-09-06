@@ -483,6 +483,10 @@ def test_scheme_of_work_offline_render(monkeypatch):
     assert "Assessment tools" in html
     assert "Teaching and learning methods" in html
     assert "Teaching and learning resources" in html
+    # The embedded Word exporter must build a single Word-suitable document
+    # (no nested <html>/<body> inside another full document).
+    assert "application/msword" in html
+    assert "document.documentElement.outerHTML" not in html
 
 
 def test_scheme_of_work_rejects_third_term():

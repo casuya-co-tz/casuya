@@ -2293,6 +2293,11 @@ def render_lesson_plan_html(plan: dict) -> str:
             .no-print {{ display: none; }}
             .table-wrap {{ overflow: visible; border: none; border-radius: 0; }}
             .table-wrap table {{ min-width: 0; }}
+            table {{ page-break-inside: auto; }}
+            thead {{ display: table-header-group; }}
+            tr {{ page-break-inside: avoid; }}
+            .sec, .sec-title {{ page-break-inside: avoid; }}
+            @page {{ size: A4 portrait; margin: 10mm 8mm 10mm 8mm; }}
         }}
 
         /* ── Small screens ──────────────────────────────────────── */
@@ -2661,11 +2666,26 @@ def render_scheme_of_work_html(plan: dict) -> str:
 
 <script>
 function downloadAsWord() {{
-  var html = document.documentElement.outerHTML;
-  var blob = new Blob(
-    ['<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View></w:WordDocument></xml><![endif]--><style>body {{ font-family: "Inter", "Segoe UI", sans-serif; font-size: 9pt; }} table {{ border-collapse: collapse; }} th, td {{ border: 1px solid #e2e8f0; padding: 3px 4px; }} th {{ background: #f1f5f9; font-weight: 600; }}</style></head><body>' + html + '</body></html>'],
-    {{ type: 'application/msword' }}
-  );
+  var body = document.createElement('div');
+  body.innerHTML = document.body.innerHTML;
+  [].slice.call(body.querySelectorAll('.actions, script, iframe')).forEach(function (n) {{
+    if (n.parentNode) n.parentNode.removeChild(n);
+  }});
+  var style = '';
+  var styles = document.head ? document.head.querySelectorAll('style') : [];
+  [].forEach.call(styles, function (s) {{ style += (s.textContent || '') + '\n'; }});
+  style = style.replace(/@import[^;]+;\s*/g, '');
+  var wordMeta = '<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml><![endif]-->';
+  var html = '<!DOCTYPE html>' +
+    '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">' +
+    '<head><meta charset="UTF-8">' + wordMeta +
+    '<style>' + style +
+    'body{{margin:14pt 16pt;font-family:"Calibri","Segoe UI",Arial,sans-serif;font-size:9pt;color:#1e293b}}' +
+    'table{{border-collapse:collapse;width:100%}}th,td{{border:1px solid #e2e8f0;padding:4px 5px;vertical-align:top}}' +
+    'th{{background:#f1f5f9;font-weight:700}}thead{{display:table-header-group}}tr{{page-break-inside:avoid}}' +
+    '.actions{{display:none}}@page{{size:A4 landscape;margin:10mm 8mm}}' +
+    '</style></head><body>' + body.innerHTML + '</body></html>';
+  var blob = new Blob(["\ufeff" + html], {{ type: 'application/msword' }});
   var url = URL.createObjectURL(blob);
   var a = document.createElement('a');
   a.href = url;
