@@ -135,8 +135,10 @@ def test_bundled_seed_is_idempotent():
     inserts and replaces nothing, and the geography library is present
     (Form 1: 18 lesson plans + 2 term schemes; Form 2: 80 lesson plans +
     2 term schemes). Form Two also carries verified Mathematics (47 lesson
-    plans + 2 term schemes), Chemistry (24 lesson plans + 2 schemes) and
-    Biology (24 lesson plans + 2 schemes) bundles."""
+    plans + 2 term schemes), Chemistry (24 lesson plans + 2 schemes),
+    Biology (24 lesson plans + 2 schemes), and History / Historia ya
+    Tanzania na Maadili / Business Studies / English / Kiswahili scheme
+    bundles."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
@@ -144,7 +146,7 @@ def test_bundled_seed_is_idempotent():
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
         assert inserted == 193  # 98 geography + 47 mathematics + 24 chemistry + 24 biology lessons
         assert replaced == 0
-        assert inserted_schemes == 10
+        assert inserted_schemes == 19
         assert replaced_schemes == 0
         assert purged == 0
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
@@ -157,6 +159,14 @@ def test_bundled_seed_is_idempotent():
         assert len(geo_f2_schemes) == 2
         assert all(doc.source_id.startswith("bundled:") for doc in geo_lessons + geo_schemes + geo_f2_lessons + geo_f2_schemes)
         for slug in ("mathematics", "chemistry", "biology"):
+            f2_schemes = list_reference_docs(db, subject_slug=slug, form_level=2, doc_type="scheme_of_work")
+            assert len(f2_schemes) == 2, slug
+            assert all(doc.source_id.startswith("bundled:") for doc in f2_schemes)
+        # History: Term I scheme only; others: 2 terms each
+        hist_schemes = list_reference_docs(db, subject_slug="history", form_level=2, doc_type="scheme_of_work")
+        assert len(hist_schemes) == 1
+        assert all(doc.source_id.startswith("bundled:") for doc in hist_schemes)
+        for slug in ("history_civics", "business_studies", "english", "kiswahili"):
             f2_schemes = list_reference_docs(db, subject_slug=slug, form_level=2, doc_type="scheme_of_work")
             assert len(f2_schemes) == 2, slug
             assert all(doc.source_id.startswith("bundled:") for doc in f2_schemes)
@@ -231,7 +241,9 @@ def test_bundled_seed_purges_conflicting_online_duplicates():
     One copies (duplicate lesson plans 55/174, a noisy RALG scheme 295 and a
     mislabelled 'Afya na Mazingira' Standard 1 lesson mis-mapped to geography),
     re-running the bundled seed removes them so the library keeps ONLY the
-    verified bundle for that subject/form/type. Other subjects are untouched."""
+    verified bundle for that subject/form/type. A Kiswahili Form Two scheme
+    imported from the online catalog is also purged now that the bundled
+    Kiswahili scheme owns that slot."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
@@ -258,8 +270,9 @@ def test_bundled_seed_purges_conflicting_online_duplicates():
 
         _, _, _, _, purged = seed_reference_library_local.run(db)
         # 4 geography F1 lesson plans (55, 174, 133, 557) + 1 F1 scheme (295)
-        # + 1 F2 scheme (555) + 1 F2 lesson plan (556) = 7
-        assert purged == 7
+        # + 1 F2 scheme (555) + 1 F2 lesson plan (556) + 1 Kiswahili F2 scheme
+        # (999, now owned by the bundled Kiswahili scheme) = 8
+        assert purged == 8
 
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
         assert len(geo_lessons) == 18
@@ -275,7 +288,7 @@ def test_bundled_seed_purges_conflicting_online_duplicates():
         assert all(doc.source_id.startswith("bundled:") for doc in geo_f2_lessons)
 
         sw_twos = list_reference_docs(db, subject_slug="kiswahili", form_level=2, doc_type="scheme_of_work")
-        assert any(doc.source_id == "999" for doc in sw_twos)  # other subjects keep their imports
+        assert len(sw_twos) == 2 and all(doc.source_id.startswith("bundled:") for doc in sw_twos)
 
         # After the purge, grounding sees only bundled candidates (no mixing).
         ground = fetch_reference_grounding("geography", 1, "LESSON PLAN FOR GEOGRAPHY FORM ONE", "lesson_plan")
