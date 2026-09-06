@@ -5,90 +5,78 @@
   "units": [
     {
       "unit_number": 1,
-      "unit_title": "Kulinda historia ya Tanzania, urithi na maadili ya Taifa",
+      "unit_title": "UTAMBULISHO WA HISTORIA YA TANZANIA NA MAADILI",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Kuelezea chimbuko la jamii za Kitanzania na maadili yake",
+          "topic_name": "Maana na chimbuko la Historia na Maadili",
           "competence_code": "1.1",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U1-L1",
-              "title": "Kueleza asili ya jamii za Kitanzania (Wabantu, Wanilo, Wakushito, Wakichemb",
-              "markdown_content": "## a) Kueleza asili ya jamii za Kitanzania (Wabantu, Wanilo, Wakushito, Wakichemb",
-              "page": 16
+              "lesson_id": "HTM-F1-UN-L1",
+              "title": "Elezea maana ya Historia",
+              "markdown_content": "## Elezea maana ya Historia",
+              "page": 1
             },
             {
-              "lesson_id": "HIS-F1-U1-L2",
-              "title": "Kubaini shughuli mbalimbali za makundi ya asili ya jamii za Kitanzania",
-              "markdown_content": "## b) Kubaini shughuli mbalimbali za makundi ya asili ya jamii za Kitanzania",
-              "page": 17
+              "lesson_id": "HTM-F1-UN-L2",
+              "title": "Elezea chimbuko la Maadili",
+              "markdown_content": "## Elezea chimbuko la Maadili",
+              "page": 1
             },
             {
-              "lesson_id": "HIS-F1-U1-L3",
-              "title": "Kueleza maadili ya jamii za asili ya Kitanzania",
-              "markdown_content": "## c) Kueleza maadili ya jamii za asili ya Kitanzania",
-              "page": 17
+              "lesson_id": "HTM-F1-UN-L3",
+              "title": "Tambua umuhimu wa Historia ya Tanzania na Maadili",
+              "markdown_content": "## Tambua umuhimu wa Historia ya Tanzania na Maadili",
+              "page": 2
             }
           ]
         },
         {
-          "topic_name": "Kumudu maarifa na ujuzi wa maadili na urithi wa jamii za Kitanzania",
+          "topic_name": "Muhimu wa kujifunza Historia ya Tanzania na Maadili",
           "competence_code": "1.2",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U1-L4",
-              "title": "Kuchambua maadili na urithi wa jamii za Kitanzania",
-              "markdown_content": "## a) Kuchambua maadili na urithi wa jamii za Kitanzania",
-              "page": 18
+              "lesson_id": "HTM-F1-UN-L4",
+              "title": "Elezea umuhimu wa kujifunza Historia",
+              "markdown_content": "## Elezea umuhimu wa kujifunza Historia",
+              "page": 2
             },
             {
-              "lesson_id": "HIS-F1-U1-L5",
-              "title": "Kueleza matendo ya msingi yanayokuza na kulinda maadili na urithi wa jamii za Kitanzania",
-              "markdown_content": "## b) Kueleza matendo ya msingi yanayokuza na kulinda maadili na urithi wa jamii za Kitanzania",
-              "page": 19
+              "lesson_id": "HTM-F1-UN-L5",
+              "title": "Tambua faida za kujifunza Maadili",
+              "markdown_content": "## Tambua faida za kujifunza Maadili",
+              "page": 3
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L6",
+              "title": "Jadili umuhimu wa somo hili",
+              "markdown_content": "## Jadili umuhimu wa somo hili",
+              "page": 3
             }
           ]
         },
         {
-          "topic_name": "Kutumia maarifa na ujuzi wa historia na urithi kubuni fursa mbalimbali zilizopo katika jamii za Kitanzania",
+          "topic_name": "Vyanzo vya Taarifa za Historia ya Tanzania",
           "competence_code": "1.3",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U1-L6",
-              "title": "Kubaini fursa mbalimbali zilizopo kwenye urithi wa jamii za Kitanzania",
-              "markdown_content": "## a) Kubaini fursa mbalimbali zilizopo kwenye urithi wa jamii za Kitanzania",
-              "page": 19
+              "lesson_id": "HTM-F1-UN-L7",
+              "title": "Tambua vyanzo vya simulizi",
+              "markdown_content": "## Tambua vyanzo vya simulizi",
+              "page": 4
             },
             {
-              "lesson_id": "HIS-F1-U1-L7",
-              "title": "Kueleza namna fursa zilizopo kwenye urithi wa jamii za Kitanzania zinavyoweza kutumika kukuza uchumi binafsi na jamii",
-              "markdown_content": "## b) Kueleza namna fursa zilizopo kwenye urithi wa jamii za Kitanzania zinavyoweza kutumika kukuza uchumi binafsi na jamii",
-              "page": 20
+              "lesson_id": "HTM-F1-UN-L8",
+              "title": "Tambua vyanzo vya maandishi",
+              "markdown_content": "## Tambua vyanzo vya maandishi",
+              "page": 4
             },
             {
-              "lesson_id": "HIS-F1-U1-L8",
-              "title": "Kueleza njia mbalimbali za kutunza urithi wa jamii za Kitanzania",
-              "markdown_content": "## c) Kueleza njia mbalimbali za kutunza urithi wa jamii za Kitanzania",
-              "page": 21
-            }
-          ]
-        },
-        {
-          "topic_name": "Kubaini fursa mbalimbali za kujenga ushirikiano na kukuza uchumi wa kitaifa",
-          "competence_code": "1.4",
-          "lessons": [
-            {
-              "lesson_id": "HIS-F1-U1-L9",
-              "title": "Kuainisha shughuli mbalimbali za kujenga ushirikiano na kukuza uchumi wa Taifa",
-              "markdown_content": "## a) Kuainisha shughuli mbalimbali za kujenga ushirikiano na kukuza uchumi wa Taifa",
-              "page": 21
-            },
-            {
-              "lesson_id": "HIS-F1-U1-L10",
-              "title": "Kufafanua namna shughuli mbalimbali zinavyochangia kujenga ushirikiano na kukuza uchumi wa Taifa",
-              "markdown_content": "## b) Kufafanua namna shughuli mbalimbali zinavyochangia kujenga ushirikiano na kukuza uchumi wa Taifa",
-              "page": 22
+              "lesson_id": "HTM-F1-UN-L9",
+              "title": "Tambua vyanzo vya akiolojia",
+              "markdown_content": "## Tambua vyanzo vya akiolojia",
+              "page": 5
             }
           ]
         }
@@ -96,71 +84,441 @@
     },
     {
       "unit_number": 2,
-      "unit_title": "Kumudu historia ya Tanzania na maadili kabla ya ukoloni",
+      "unit_title": "JAMII ZA KITANZANIA NA MFUMO WA MAADILI",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Kuchambua mifumo ya kijamii (elimu, afya, utamaduni) iliyokuza na kuendeleza maadili ya jamii za Kitanzania kabla ya ukoloni",
+          "topic_name": "Utamaduni, mila, desturi, na misingi ya maadili",
           "competence_code": "2.1",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U2-L11",
-              "title": "Kubaini mifumo ya kijamii ya Tanzania kabla ya ukoloni",
-              "markdown_content": "## a) Kubaini mifumo ya kijamii ya Tanzania kabla ya ukoloni",
-              "page": 23
+              "lesson_id": "HTM-F1-UN-L10",
+              "title": "Elezea utamaduni wa Kitanzania",
+              "markdown_content": "## Elezea utamaduni wa Kitanzania",
+              "page": 5
             },
             {
-              "lesson_id": "HIS-F1-U2-L12",
-              "title": "Kueleza mifumo ya kijamii ya Tanzania ilivyokuza maadili kabla ya ukoloni",
-              "markdown_content": "## b) Kueleza mifumo ya kijamii ya Tanzania ilivyokuza maadili kabla ya ukoloni",
-              "page": 23
+              "lesson_id": "HTM-F1-UN-L11",
+              "title": "Tambua mila na desturi",
+              "markdown_content": "## Tambua mila na desturi",
+              "page": 6
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L12",
+              "title": "Elezea misingi ya maadili",
+              "markdown_content": "## Elezea misingi ya maadili",
+              "page": 6
             }
           ]
         },
         {
-          "topic_name": "Kuchambua mifumo iliyokuza na kuendeleza uchumi na siasa katika jamiii za Kitanzania kabla ya ukoloni",
+          "topic_name": "Mabadiliko ya kijamii na athari zake",
           "competence_code": "2.2",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U2-L13",
-              "title": "Kubaini mifumo ya kiuchumi na kisiasa katika jamii za Kitanzania kabla ya ukoloni",
-              "markdown_content": "## a) Kubaini mifumo ya kiuchumi na kisiasa katika jamii za Kitanzania kabla ya ukoloni",
+              "lesson_id": "HTM-F1-UN-L13",
+              "title": "Elezea mabadiliko ya kijamii",
+              "markdown_content": "## Elezea mabadiliko ya kijamii",
+              "page": 7
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L14",
+              "title": "Tambua athari za mabadiliko",
+              "markdown_content": "## Tambua athari za mabadiliko",
+              "page": 7
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L15",
+              "title": "Jadili mabadiliko ya maadili",
+              "markdown_content": "## Jadili mabadiliko ya maadili",
+              "page": 8
+            }
+          ]
+        },
+        {
+          "topic_name": "Lugha ya Kiswahili kama nguzo ya utambulisho",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F1-UN-L16",
+              "title": "Elezea umuhimu wa Kiswahili",
+              "markdown_content": "## Elezea umuhimu wa Kiswahili",
+              "page": 8
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L17",
+              "title": "Tambua jinsi Kiswahili inavyounganisha",
+              "markdown_content": "## Tambua jinsi Kiswahili inavyounganisha",
+              "page": 9
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L18",
+              "title": "Jadili Kiswahili kama nguzo ya maadili",
+              "markdown_content": "## Jadili Kiswahili kama nguzo ya maadili",
+              "page": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "UVAMIZI WA KIGENI NA ATHARI ZAKE KWA MAADILI",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Ujio wa wageni wa mapema",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F1-UN-L19",
+              "title": "Elezea ujio wa Waarabu",
+              "markdown_content": "## Elezea ujio wa Waarabu",
+              "page": 10
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L20",
+              "title": "Elezea ujio wa Waproreno",
+              "markdown_content": "## Elezea ujio wa Waproreno",
+              "page": 10
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L21",
+              "title": "Tambua athari za ujio wao",
+              "markdown_content": "## Tambua athari za ujio wao",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Biashara ya Utumwa",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F1-UN-L22",
+              "title": "Elezea biashara ya utumwa",
+              "markdown_content": "## Elezea biashara ya utumwa",
+              "page": 11
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L23",
+              "title": "Tambua athari za utumwa",
+              "markdown_content": "## Tambua athari za utumwa",
+              "page": 12
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L24",
+              "title": "Jadili mabadiliko ya kijamii",
+              "markdown_content": "## Jadili mabadiliko ya kijamii",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Ukoloni wa Mjerumani na Mwingereza",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F1-UN-L25",
+              "title": "Elezea ukoloni wa Mjerumani",
+              "markdown_content": "## Elezea ukoloni wa Mjerumani",
+              "page": 13
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L26",
+              "title": "Elezea ukoloni wa Mwingereza",
+              "markdown_content": "## Elezea ukoloni wa Mwingereza",
+              "page": 13
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L27",
+              "title": "Tambua momonyoko wa maadili",
+              "markdown_content": "## Tambua momonyoko wa maadili",
+              "page": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "HARAKATI ZA KUDAI UHURU NA UJENZI WA TAIFA",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Harakati za kudai uhuru",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F1-UN-L28",
+              "title": "Elezea harakati za kudai uhuru",
+              "markdown_content": "## Elezea harakati za kudai uhuru",
+              "page": 14
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L29",
+              "title": "Tambua viongozi wa harakati",
+              "markdown_content": "## Tambua viongozi wa harakati",
+              "page": 15
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L30",
+              "title": "Jadili mafanikio ya harakati",
+              "markdown_content": "## Jadili mafanikio ya harakati",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Uhuru na Mapinduzi ya Zanzibar",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F1-UN-L31",
+              "title": "Elezea Uhuru wa Tanganyika",
+              "markdown_content": "## Elezea Uhuru wa Tanganyika",
+              "page": 16
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L32",
+              "title": "Elezea Mapinduzi ya Zanzibar",
+              "markdown_content": "## Elezea Mapinduzi ya Zanzibar",
+              "page": 16
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L33",
+              "title": "Tambua Muungano",
+              "markdown_content": "## Tambua Muungano",
+              "page": 17
+            }
+          ]
+        },
+        {
+          "topic_name": "Muungano na Azimio la Arusha",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F1-UN-L34",
+              "title": "Elezea Muungano",
+              "markdown_content": "## Elezea Muungano",
+              "page": 17
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L35",
+              "title": "Elezea Azimio la Arusha",
+              "markdown_content": "## Elezea Azimio la Arusha",
+              "page": 18
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L36",
+              "title": "Tambua misingi ya Ujamaa na Kujitegemea",
+              "markdown_content": "## Tambua misingi ya Ujamaa na Kujitegemea",
+              "page": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "URAYA, UTAWALA BORA, NA HAKI ZA BINADAMU",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Haki, wajibu, na uwajibikaji",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F1-UN-L37",
+              "title": "Elezea haki za raia",
+              "markdown_content": "## Elezea haki za raia",
+              "page": 19
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L38",
+              "title": "Elezea wajibu wa raia",
+              "markdown_content": "## Elezea wajibu wa raia",
+              "page": 19
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L39",
+              "title": "Tambua uwajibikaji",
+              "markdown_content": "## Tambua uwajibikaji",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Uzalendo, amani, na muungano",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F1-UN-L40",
+              "title": "Elezea uzalendo",
+              "markdown_content": "## Elezea uzalendo",
+              "page": 20
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L41",
+              "title": "Elezea amani",
+              "markdown_content": "## Elezea amani",
+              "page": 21
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L42",
+              "title": "Tambua umuhimu wa muungano",
+              "markdown_content": "## Tambua umuhimu wa muungano",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Vita dhidi ya rushwa",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F1-UN-L43",
+              "title": "Elezea vita dhidi ya rushwa",
+              "markdown_content": "## Elezea vita dhidi ya rushwa",
+              "page": 22
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L44",
+              "title": "Tambua mmonyoko wa maadili",
+              "markdown_content": "## Tambua mmonyoko wa maadili",
+              "page": 22
+            },
+            {
+              "lesson_id": "HTM-F1-UN-L45",
+              "title": "Jadili ulinzi wa rasilimali",
+              "markdown_content": "## Jadili ulinzi wa rasilimali",
+              "page": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "UKOLONI KATIKA JAMII ZA KITANZANIA",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Chimbuko na ukuaji wa ukoloni",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L46",
+              "title": "Elezea chimbuko la ukoloni barani Afrika",
+              "markdown_content": "## Elezea chimbuko la ukoloni barani Afrika",
               "page": 24
             },
             {
-              "lesson_id": "HIS-F1-U2-L14",
-              "title": "Kueleza jinsi mifumo ya kisiasa na kiuchumi ilivyokuza na kuendeleza shughuli za kiuchumi na kisiasa kabla ya ukoloni",
-              "markdown_content": "## b) Kueleza jinsi mifumo ya kisiasa na kiuchumi ilivyokuza na kuendeleza shughuli za kiuchumi na kisiasa kabla ya ukoloni",
+              "lesson_id": "HTM-F2-UN-L47",
+              "title": "Fafanua ukuaji wa ukoloni katika jamii za Kitanzania",
+              "markdown_content": "## Fafanua ukuaji wa ukoloni katika jamii za Kitanzania",
+              "page": 24
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L48",
+              "title": "Chambua sababu za uvamizi wa kikoloni",
+              "markdown_content": "## Chambua sababu za uvamizi wa kikoloni",
+              "page": 24
+            }
+          ]
+        },
+        {
+          "topic_name": "Mifumo ya kikoloni ya mataifa yaliyozitawala jamii za Kitanzania",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L49",
+              "title": "Bainisha mataifa yaliyotawala jamii za Kitanzania",
+              "markdown_content": "## Bainisha mataifa yaliyotawala jamii za Kitanzania",
               "page": 25
             },
             {
-              "lesson_id": "HIS-F1-U2-L15",
-              "title": "Kufafanua uhusiano kati ya jamiii za Kitanzania na za Mashariki ya Kati, Mashariki",
-              "markdown_content": "## c) Kufafanua uhusiano kati ya jamiii za Kitanzania na za Mashariki ya Kati, Mashariki",
+              "lesson_id": "HTM-F2-UN-L50",
+              "title": "Elezea mifumo ya utawala wa kikoloni",
+              "markdown_content": "## Elezea mifumo ya utawala wa kikoloni",
               "page": 25
             },
             {
-              "lesson_id": "HIS-F1-U2-L16",
-              "title": "Kutathmini mchango wa mifumo ya kisiasa na kiuchumi katika kukuza maadili ya jamii za Kitanzania kabla ya ukoloni",
-              "markdown_content": "## d) Kutathmini mchango wa mifumo ya kisiasa na kiuchumi katika kukuza maadili ya jamii za Kitanzania kabla ya ukoloni",
+              "lesson_id": "HTM-F2-UN-L51",
+              "title": "Linganisha mifumo ya utawala wa kikoloni",
+              "markdown_content": "## Linganisha mifumo ya utawala wa kikoloni",
+              "page": 25
+            }
+          ]
+        },
+        {
+          "topic_name": "Utawala wa Wajerumani",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L52",
+              "title": "Elezea misingi ya utawala wa Wajerumani",
+              "markdown_content": "## Elezea misingi ya utawala wa Wajerumani",
+              "page": 26
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L53",
+              "title": "Fafanua madhara ya utawala wa Wajerumani",
+              "markdown_content": "## Fafanua madhara ya utawala wa Wajerumani",
+              "page": 26
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L54",
+              "title": "Tathmini athari za utawala wa Wajerumani kwa maadili ya Kitanzania",
+              "markdown_content": "## Tathmini athari za utawala wa Wajerumani kwa maadili ya Kitanzania",
               "page": 26
             }
           ]
         },
         {
-          "topic_name": "Kutathmini vichocheo vya mabadiliko ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni",
-          "competence_code": "2.3",
+          "topic_name": "Utawala wa Waingereza Tanganyika",
+          "competence_code": "1.4",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U2-L17",
-              "title": "Kueleza hali ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni",
-              "markdown_content": "## a) Kueleza hali ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni",
+              "lesson_id": "HTM-F2-UN-L55",
+              "title": "Elezea mfumo wa utawala wa Waingereza Tanganyika",
+              "markdown_content": "## Elezea mfumo wa utawala wa Waingereza Tanganyika",
               "page": 27
             },
             {
-              "lesson_id": "HIS-F1-U2-L18",
-              "title": "Kubaini vichocheo vya mabadiliko ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni",
-              "markdown_content": "## b) Kubaini vichocheo vya mabadiliko ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni",
+              "lesson_id": "HTM-F2-UN-L56",
+              "title": "Fafanua sera iliyotumiwa na utawala wa Waingereza",
+              "markdown_content": "## Fafanua sera iliyotumiwa na utawala wa Waingereza",
+              "page": 27
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L57",
+              "title": "Chambua athari za utawala wa Waingereza katika maadili ya Kitanzania",
+              "markdown_content": "## Chambua athari za utawala wa Waingereza katika maadili ya Kitanzania",
+              "page": 27
+            }
+          ]
+        },
+        {
+          "topic_name": "Utawala wa Waarabu na Zanzibar",
+          "competence_code": "1.5",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L58",
+              "title": "Elezea utawala wa Waarabu Zanzibar",
+              "markdown_content": "## Elezea utawala wa Waarabu Zanzibar",
+              "page": 28
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L59",
+              "title": "Fafanua mfumo wa utawala wa Waarabu Zanzibar",
+              "markdown_content": "## Fafanua mfumo wa utawala wa Waarabu Zanzibar",
+              "page": 28
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L60",
+              "title": "Tathmini athari za utawala wa Waarabu kwa maadili ya Wazanzibari",
+              "markdown_content": "## Tathmini athari za utawala wa Waarabu kwa maadili ya Wazanzibari",
               "page": 28
             }
           ]
@@ -168,368 +526,481 @@
       ]
     },
     {
-      "unit_number": 1,
-      "unit_title": "Kumudu historia ya Tanzania na maadili wakati wa ukoloni, 1890- 1960",
-      "form": 1,
+      "unit_number": 7,
+      "unit_title": "ATHARI ZA UKOLONI KATIKA MAADILI YA KITANZANIA",
+      "form": 2,
       "topics": [
         {
-          "topic_name": "Kutumia maarifa na ujuzi wa chimbuko na ukuaji wa mfumo wa ukoloni kuelewa uhusiano wa kihistoria kati ya Tanzania na mataifa yaliyoitawala",
-          "competence_code": "1.1",
+          "topic_name": "Maadili ya jamii za Kitanzania wakati ukoloni unaingia",
+          "competence_code": "2.1",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U1-L19",
-              "title": "Kuchambua chimbuko la ukoloni",
-              "markdown_content": "## a) Kuchambua chimbuko la ukoloni",
+              "lesson_id": "HTM-F2-UN-L61",
+              "title": "Elezea maadili ya jamii za Kitanzania kabla ya ukoloni",
+              "markdown_content": "## Elezea maadili ya jamii za Kitanzania kabla ya ukoloni",
               "page": 29
             },
             {
-              "lesson_id": "HIS-F1-U1-L20",
-              "title": "Kubainisha mataifa yaliyoitawala Tanzania na mifumo yake ya kikoloni katika uchumi, utawala na utamaduni",
-              "markdown_content": "## b) Kubainisha mataifa yaliyoitawala Tanzania na mifumo yake ya kikoloni katika uchumi, utawala na utamaduni",
+              "lesson_id": "HTM-F2-UN-L62",
+              "title": "Bainisha maadili yanayofundishwa katika jamii asilia",
+              "markdown_content": "## Bainisha maadili yanayofundishwa katika jamii asilia",
+              "page": 29
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L63",
+              "title": "Elezea mfumo wa malezi katika jamii za Kitanzania",
+              "markdown_content": "## Elezea mfumo wa malezi katika jamii za Kitanzania",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "topic_name": "Maadili ya Kitanzania yaliyodumishwa wakati wa ukoloni",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L64",
+              "title": "Bainisha maadili ya Kitanzania yaliyodumishwa wakati wa ukoloni",
+              "markdown_content": "## Bainisha maadili ya Kitanzania yaliyodumishwa wakati wa ukoloni",
               "page": 30
             },
             {
-              "lesson_id": "HIS-F1-U1-L21",
-              "title": "Kujadili mchango wa mifumo ya kikoloni katika uhusiano wa Tanzania na mataifa yaliyoitawala",
-              "markdown_content": "## c) Kujadili mchango wa mifumo ya kikoloni katika uhusiano wa Tanzania na mataifa yaliyoitawala",
+              "lesson_id": "HTM-F2-UN-L65",
+              "title": "Fafanua jinsi maadili ya Kitanzania yalivyodumishwa",
+              "markdown_content": "## Fafanua jinsi maadili ya Kitanzania yalivyodumishwa",
+              "page": 30
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L66",
+              "title": "Chambua umuhimu wa kudumisha maadili ya asili",
+              "markdown_content": "## Chambua umuhimu wa kudumisha maadili ya asili",
               "page": 30
             }
           ]
         },
         {
-          "topic_name": "Kutathmini athari za mfumo wa ukoloni kwenye maadili ya jamii za Kitanzania",
-          "competence_code": "1.2",
+          "topic_name": "Athari za mfumo wa ukoloni katika maadili ya Kitanzania",
+          "competence_code": "2.3",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U1-L22",
-              "title": "Kueleza hali ya maadili ya jamii za Kitanzania kipindi ukoloni unaingia",
-              "markdown_content": "## a) Kueleza hali ya maadili ya jamii za Kitanzania kipindi ukoloni unaingia",
+              "lesson_id": "HTM-F2-UN-L67",
+              "title": "Bainisha athari za ukoloni katika maadili ya Kitanzania",
+              "markdown_content": "## Bainisha athari za ukoloni katika maadili ya Kitanzania",
               "page": 31
             },
             {
-              "lesson_id": "HIS-F1-U1-L23",
-              "title": "Kuchambua athari za mfumo wa ukoloni katika maadili ya jamii za Kitanzania",
-              "markdown_content": "## b) Kuchambua athari za mfumo wa ukoloni katika maadili ya jamii za Kitanzania",
+              "lesson_id": "HTM-F2-UN-L68",
+              "title": "Fafanua namna ukoloni ulivyodhoofisha maadili ya Kitanzania",
+              "markdown_content": "## Fafanua namna ukoloni ulivyodhoofisha maadili ya Kitanzania",
               "page": 31
             },
             {
-              "lesson_id": "HIS-F1-U1-L24",
-              "title": "Kubaini maadili yaliyo- dumishwa na jamii za Kitanzania wakati wa ukoloni",
-              "markdown_content": "## c) Kubaini maadili yaliyo- dumishwa na jamii za Kitanzania wakati wa ukoloni",
+              "lesson_id": "HTM-F2-UN-L69",
+              "title": "Tathmini athari za ukoloni kwenye maadili ya Kitanzania",
+              "markdown_content": "## Tathmini athari za ukoloni kwenye maadili ya Kitanzania",
+              "page": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 8,
+      "unit_title": "MAPAMBANO YA AWALI DHIDI YA UVAMIZI WA KIKOLONI",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Dhana ya uvamizi wa kikoloni",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L70",
+              "title": "Fasiri dhana ya uvamizi wa kikoloni",
+              "markdown_content": "## Fasiri dhana ya uvamizi wa kikoloni",
+              "page": 32
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L71",
+              "title": "Elezea sababu zinazowafanya wakoloni kuivamia Afrika",
+              "markdown_content": "## Elezea sababu zinazowafanya wakoloni kuivamia Afrika",
               "page": 32
             }
           ]
         },
         {
-          "topic_name": "Kuchambua jitihada za jamii za Kitanzania kupinga ukoloni na maadili ya kikoloni",
-          "competence_code": "1.3",
+          "topic_name": "Sababu za kuupinga uvamizi wa kikoloni",
+          "competence_code": "3.2",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U1-L25",
-              "title": "Kubaini sababu za jamii za Kitanzania kupinga uvamizi wa kikoloni, ukoloni na maadili yake",
-              "markdown_content": "## a) Kubaini sababu za jamii za Kitanzania kupinga uvamizi wa kikoloni, ukoloni na maadili yake",
+              "lesson_id": "HTM-F2-UN-L72",
+              "title": "Elezea sababu za kuupinga uvamizi wa kikoloni",
+              "markdown_content": "## Elezea sababu za kuupinga uvamizi wa kikoloni",
               "page": 33
             },
             {
-              "lesson_id": "HIS-F1-U1-L26",
-              "title": "Kujadili njia mbalimbali zilizotumika na jamii za Kitanzania kupinga uvamizi wa kikoloni, ukoloni na maadili yake",
-              "markdown_content": "## b) Kujadili njia mbalimbali zilizotumika na jamii za Kitanzania kupinga uvamizi wa kikoloni, ukoloni na maadili yake",
+              "lesson_id": "HTM-F2-UN-L73",
+              "title": "Fafanua maadili ya jamii zilizopinga uvamizi wa kikoloni",
+              "markdown_content": "## Fafanua maadili ya jamii zilizopinga uvamizi wa kikoloni",
               "page": 33
             },
             {
-              "lesson_id": "HIS-F1-U1-L27",
-              "title": "Kufafanua misingi na mbinu zilizotumika kupigania Uhuru wa Tanganyika na Zanzibar",
-              "markdown_content": "## c) Kufafanua misingi na mbinu zilizotumika kupigania Uhuru wa Tanganyika na Zanzibar",
-              "page": 34
-            },
-            {
-              "lesson_id": "HIS-F1-U1-L28",
-              "title": "Kutathmini mchango wa harakati za kupinga uvamizi na",
-              "markdown_content": "## d) Kutathmini mchango wa harakati za kupinga uvamizi na",
-              "page": 34
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Kumudu historia ya ujenzi wa Taifa na maadili yake katika kipindi cha 1961- 1966",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Kuchambua mifumo ya uchumi, siasa, utamaduni, jamii na maadili iliyojengwa, 1961-1966",
-          "competence_code": "2.1",
-          "lessons": [
-            {
-              "lesson_id": "HIS-F1-U2-L29",
-              "title": "Kueleza hali ya uchumi, siasa, utamaduni, jamii na maadili mara baada ya uhuru",
-              "markdown_content": "## a) Kueleza hali ya uchumi, siasa, utamaduni, jamii na maadili mara baada ya uhuru",
-              "page": 35
-            },
-            {
-              "lesson_id": "HIS-F1-U2-L30",
-              "title": "Kutathmini mikakati na changamoto za ujenzi wa Taifa kiuchumi, kisiasa, kiutamaduni, kijamii na kimaadili kipindi cha 1961-1966",
-              "markdown_content": "## b) Kutathmini mikakati na changamoto za ujenzi wa Taifa kiuchumi, kisiasa, kiutamaduni, kijamii na kimaadili kipindi cha 1961-1966",
-              "page": 36
+              "lesson_id": "HTM-F2-UN-L74",
+              "title": "Chambua nia za kuupinga uvamizi wa kikoloni",
+              "markdown_content": "## Chambua nia za kuupinga uvamizi wa kikoloni",
+              "page": 33
             }
           ]
         },
         {
-          "topic_name": "Kumudu historia ya Mapinduzi Matukufu ya Zanzibar",
-          "competence_code": "2.2",
+          "topic_name": "Upinzani dhidi ya uvamizi wa kikoloni katika jamii za Kitanzania",
+          "competence_code": "3.3",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U2-L31",
-              "title": "Kueleza chimbuko la Mapinduzi Matukufu ya Zanzibar",
-              "markdown_content": "## a) Kueleza chimbuko la Mapinduzi Matukufu ya Zanzibar",
+              "lesson_id": "HTM-F2-UN-L75",
+              "title": "Elezea upinzani dhidi ya uvamizi wa kikoloni",
+              "markdown_content": "## Elezea upinzani dhidi ya uvamizi wa kikoloni",
+              "page": 34
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L76",
+              "title": "Fafanua mashujaa wakubwa wa upinzani katika jamii za Kitanzania",
+              "markdown_content": "## Fafanua mashujaa wakubwa wa upinzani katika jamii za Kitanzania",
+              "page": 34
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L77",
+              "title": "Chambua hatua mbalimbali za upinzani zilizochukuliwa",
+              "markdown_content": "## Chambua hatua mbalimbali za upinzani zilizochukuliwa",
+              "page": 34
+            }
+          ]
+        },
+        {
+          "topic_name": "Changamoto zilizokabili mapambano dhidi ya uvamizi wa kikoloni",
+          "competence_code": "3.4",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L78",
+              "title": "Bainisha changamoto zilizokabili mapambano dhidi ya ukoloni",
+              "markdown_content": "## Bainisha changamoto zilizokabili mapambano dhidi ya ukoloni",
+              "page": 35
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L79",
+              "title": "Fafanua namna changamoto hizi zilivyoshughulikiwa",
+              "markdown_content": "## Fafanua namna changamoto hizi zilivyoshughulikiwa",
+              "page": 35
+            }
+          ]
+        },
+        {
+          "topic_name": "Matokeo ya kupinga uvamizi wa kikoloni",
+          "competence_code": "3.5",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L80",
+              "title": "Elezea matokeo ya kupinga uvamizi wa kikoloni",
+              "markdown_content": "## Elezea matokeo ya kupinga uvamizi wa kikoloni",
               "page": 36
             },
             {
-              "lesson_id": "HIS-F1-U2-L32",
-              "title": "Kubaini mchango wa Mapinduzi Matukufu ya Zanzibar katika kujenga umoja, mshikamano na maadili miongoni mwa Wazanzibari",
-              "markdown_content": "## b) Kubaini mchango wa Mapinduzi Matukufu ya Zanzibar katika kujenga umoja, mshikamano na maadili miongoni mwa Wazanzibari",
+              "lesson_id": "HTM-F2-UN-L81",
+              "title": "Tathmini mafanikio ya mapambano dhidi ya uvamizi wa kikoloni",
+              "markdown_content": "## Tathmini mafanikio ya mapambano dhidi ya uvamizi wa kikoloni",
+              "page": 36
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 9,
+      "unit_title": "HARAKATI ZA KUDAI UHURU WA TANGANYIKA NA ZANZIBAR",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Dhana ya uhuru na harakati za kudai uhuru",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L82",
+              "title": "Fasiri dhana ya uhuru",
+              "markdown_content": "## Fasiri dhana ya uhuru",
+              "page": 37
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L83",
+              "title": "Elezea maana ya harakati za kudai uhuru",
+              "markdown_content": "## Elezea maana ya harakati za kudai uhuru",
+              "page": 37
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L84",
+              "title": "Chambua umuhimu wa uhuru kwa maendeleo ya taifa",
+              "markdown_content": "## Chambua umuhimu wa uhuru kwa maendeleo ya taifa",
               "page": 37
             }
           ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Kumudu historia ya ujenzi wa Taifa na maadili yake katika kipindi cha 1961-1966",
-      "form": 1,
-      "topics": [
+        },
         {
-          "topic_name": "Kumudu historia ya Muungano wa Tanganyika na Zanzibar",
-          "competence_code": "1.1",
+          "topic_name": "Misingi ya kudai uhuru wa Tanganyika na Zanzibar",
+          "competence_code": "4.2",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U1-L33",
-              "title": "Kufafanua chimbuko la Muungano wa Tanganyika na Zanzibar",
-              "markdown_content": "## a) Kufafanua chimbuko la Muungano wa Tanganyika na Zanzibar",
+              "lesson_id": "HTM-F2-UN-L85",
+              "title": "Bainisha misingi ya kudai uhuru wa Tanganyika",
+              "markdown_content": "## Bainisha misingi ya kudai uhuru wa Tanganyika",
               "page": 38
             },
             {
-              "lesson_id": "HIS-F1-U1-L34",
-              "title": "Kueleza muundo na misingi ya Muungano wa Tanganyika na Zanzibar",
-              "markdown_content": "## b) Kueleza muundo na misingi ya Muungano wa Tanganyika na Zanzibar",
+              "lesson_id": "HTM-F2-UN-L86",
+              "title": "Fafanua misingi ya kudai uhuru wa Zanzibar",
+              "markdown_content": "## Fafanua misingi ya kudai uhuru wa Zanzibar",
               "page": 38
             },
             {
-              "lesson_id": "HIS-F1-U1-L35",
-              "title": "Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
-              "markdown_content": "## c) Kutathimini Muungano wa Tanganyika na Zanzibar katika kujenga umoja na maadili ya Kitaifa",
+              "lesson_id": "HTM-F2-UN-L87",
+              "title": "Chambua msimamo wa viongozi mbalimbali katika kudai uhuru",
+              "markdown_content": "## Chambua msimamo wa viongozi mbalimbali katika kudai uhuru",
+              "page": 38
+            }
+          ]
+        },
+        {
+          "topic_name": "Mbinu zilizotumika kudai uhuru wa Tanganyika na Zanzibar",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L88",
+              "title": "Elezea mbinu zilizotumika kudai uhuru wa Tanganyika na Zanzibar",
+              "markdown_content": "## Elezea mbinu zilizotumika kudai uhuru wa Tanganyika na Zanzibar",
               "page": 39
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L89",
+              "title": "Fafanua mchango wa vyama vya siasa katika kudai uhuru",
+              "markdown_content": "## Fafanua mchango wa vyama vya siasa katika kudai uhuru",
+              "page": 39
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L90",
+              "title": "Tathmini mbinu zilizotumika kudai uhuru",
+              "markdown_content": "## Tathmini mbinu zilizotumika kudai uhuru",
+              "page": 39
+            }
+          ]
+        },
+        {
+          "topic_name": "Mchango wa harakati za kupinga uvamizi na ukoloni katika kudai uhuru",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L91",
+              "title": "Bainisha mchango wa harakati za kupinga ukoloni",
+              "markdown_content": "## Bainisha mchango wa harakati za kupinga ukoloni",
+              "page": 40
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L92",
+              "title": "Fafanua jinsi mapambano ya awali yalivyochochea kudai uhuru",
+              "markdown_content": "## Fafanua jinsi mapambano ya awali yalivyochochea kudai uhuru",
+              "page": 40
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L93",
+              "title": "Chambua mchango wa harakati mbalimbali katika kudai uhuru",
+              "markdown_content": "## Chambua mchango wa harakati mbalimbali katika kudai uhuru",
+              "page": 40
             }
           ]
         }
       ]
     },
     {
-      "unit_number": 2,
-      "unit_title": "Kutathmini ujenzi wa Taifa na maadili wakati wa Azimio la Arusha, 1967-1985",
-      "form": 1,
+      "unit_number": 10,
+      "unit_title": "UJENZI WA TAIFA BAADA YA UKOLONI",
+      "form": 2,
       "topics": [
         {
-          "topic_name": "Kuchambua chimbuko la Azimio la Arusha na matokeo yake kiuchumi, kisiasa, kiutamaduni na kimaadili",
-          "competence_code": "2.1",
+          "topic_name": "Dhana ya ujenzi wa taifa",
+          "competence_code": "5.1",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U2-L36",
-              "title": "Kujadili chimbuko la Azimio la Arusha",
-              "markdown_content": "## a) Kujadili chimbuko la Azimio la Arusha",
-              "page": 40
+              "lesson_id": "HTM-F2-UN-L94",
+              "title": "Fasiri dhana ya ujenzi wa taifa",
+              "markdown_content": "## Fasiri dhana ya ujenzi wa taifa",
+              "page": 41
             },
             {
-              "lesson_id": "HIS-F1-U2-L37",
-              "title": "Kufafanua misingi na mchango wa Azimio la Arusha katika ujenzi wa Taifa kiuchumi, kisiasa, kijamii na kimaadili",
-              "markdown_content": "## b) Kufafanua misingi na mchango wa Azimio la Arusha katika ujenzi wa Taifa kiuchumi, kisiasa, kijamii na kimaadili",
-              "page": 40
-            },
-            {
-              "lesson_id": "HIS-F1-U2-L38",
-              "title": "Kutathmini changamoto za Azimio la Arusha kiuchumi, kisiasa, kijamii na kimaadili",
-              "markdown_content": "## c) Kutathmini changamoto za Azimio la Arusha kiuchumi, kisiasa, kijamii na kimaadili",
+              "lesson_id": "HTM-F2-UN-L95",
+              "title": "Elezea maadili yanayohimizwa katika ujenzi wa taifa",
+              "markdown_content": "## Elezea maadili yanayohimizwa katika ujenzi wa taifa",
               "page": 41
             }
           ]
         },
         {
-          "topic_name": "Kueleza nafasi ya Tanzania katika kujenga uhusiano wa kikanda",
-          "competence_code": "2.2",
+          "topic_name": "Mifumo iliyojengwa kati ya mwaka 1961 hadi 1966 ya ujenzi wa taifa",
+          "competence_code": "5.2",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U2-L39",
-              "title": "Kufafanua dhana ya uhusiano wa kikanda na ujenzi wa Taifa",
-              "markdown_content": "## a) Kufafanua dhana ya uhusiano wa kikanda na ujenzi wa Taifa",
+              "lesson_id": "HTM-F2-UN-L96",
+              "title": "Elezea mifumo ya ujenzi wa taifa",
+              "markdown_content": "## Elezea mifumo ya ujenzi wa taifa",
               "page": 42
             },
             {
-              "lesson_id": "HIS-F1-U2-L40",
-              "title": "Kueleza mchango wa Tanzania katika kukuza uhusiano wa kikanda na kujenga utaifa (EAC & SADC)",
-              "markdown_content": "## b) Kueleza mchango wa Tanzania katika kukuza uhusiano wa kikanda na kujenga utaifa (EAC & SADC)",
+              "lesson_id": "HTM-F2-UN-L97",
+              "title": "Fafanua mifumo iliyojengwa kati ya mwaka 1961 hadi 1966",
+              "markdown_content": "## Fafanua mifumo iliyojengwa kati ya mwaka 1961 hadi 1966",
               "page": 42
             },
             {
-              "lesson_id": "HIS-F1-U2-L41",
-              "title": "Kubaini changamoto za uhusiano wa kikanda katika ujenzi wa Taifa",
-              "markdown_content": "## c) Kubaini changamoto za uhusiano wa kikanda katika ujenzi wa Taifa",
+              "lesson_id": "HTM-F2-UN-L98",
+              "title": "Chambua mchango wa mifumo hiyo katika ujenzi wa taifa",
+              "markdown_content": "## Chambua mchango wa mifumo hiyo katika ujenzi wa taifa",
+              "page": 42
+            }
+          ]
+        },
+        {
+          "topic_name": "Mikakati ya ujenzi wa taifa",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L99",
+              "title": "Bainisha mikakati ya ujenzi wa taifa",
+              "markdown_content": "## Bainisha mikakati ya ujenzi wa taifa",
+              "page": 43
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L100",
+              "title": "Fafanua mikakati ya kijamii, kiuchumi na kisiasa ya ujenzi wa taifa",
+              "markdown_content": "## Fafanua mikakati ya kijamii, kiuchumi na kisiasa ya ujenzi wa taifa",
+              "page": 43
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L101",
+              "title": "Tathmini mikakati ya ujenzi wa taifa",
+              "markdown_content": "## Tathmini mikakati ya ujenzi wa taifa",
               "page": 43
             }
           ]
+        },
+        {
+          "topic_name": "Changamoto za ujenzi wa taifa",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L102",
+              "title": "Elezea changamoto za ujenzi wa taifa",
+              "markdown_content": "## Elezea changamoto za ujenzi wa taifa",
+              "page": 44
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L103",
+              "title": "Fafanua namna changamoto hizo zinavyoshughulikiwa",
+              "markdown_content": "## Fafanua namna changamoto hizo zinavyoshughulikiwa",
+              "page": 44
+            }
+          ]
         }
       ]
     },
     {
-      "unit_number": 3,
-      "unit_title": "Kufanya utafiti wa historia na maadili ya Tanzania",
-      "form": 1,
+      "unit_number": 11,
+      "unit_title": "MAPINDUZI MATUKUFU YA ZANZIBAR",
+      "form": 2,
       "topics": [
         {
-          "topic_name": "Kumudu misingi ya utafiti wa kihistoria",
-          "competence_code": "3.1",
+          "topic_name": "Dhana ya mapinduzi",
+          "competence_code": "6.1",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U3-L42",
-              "title": "Kueleza dhana, misingi na maadili ya utafiti wa kihistoria",
-              "markdown_content": "## a) Kueleza dhana, misingi na maadili ya utafiti wa kihistoria",
-              "page": 44
+              "lesson_id": "HTM-F2-UN-L104",
+              "title": "Fasiri dhana ya mapinduzi",
+              "markdown_content": "## Fasiri dhana ya mapinduzi",
+              "page": 45
             },
             {
-              "lesson_id": "HIS-F1-U3-L43",
-              "title": "Kuchambua hatua na mchakato wa utafiti wa kihistoria",
-              "markdown_content": "## b) Kuchambua hatua na mchakato wa utafiti wa kihistoria",
-              "page": 44
+              "lesson_id": "HTM-F2-UN-L105",
+              "title": "Elezea umuhimu wa mapinduzi",
+              "markdown_content": "## Elezea umuhimu wa mapinduzi",
+              "page": 45
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L106",
+              "title": "Chambua tofauti kati ya mapinduzi na makubaliano ya kisiasa",
+              "markdown_content": "## Chambua tofauti kati ya mapinduzi na makubaliano ya kisiasa",
+              "page": 45
             }
           ]
         },
         {
-          "topic_name": "Kutumia misingi ya utafiti wa kihistoria kufanya kazi mradi",
-          "competence_code": "3.2",
-          "lessons": []
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Kutathmini historia ya Tanzania na maadili wakati wa uliberali, 1986 hadi sasa",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Kuchambua chimbuko la uliberali na utandawazi",
-          "competence_code": "1.1",
+          "topic_name": "Chimbuko la Mapinduzi Matukufu ya Zanzibar",
+          "competence_code": "6.2",
           "lessons": [
             {
-              "lesson_id": "HIS-F1-U1-L44",
-              "title": "Kufafanua dhana ya uliberali na utandawazi",
-              "markdown_content": "## a) Kufafanua dhana ya uliberali na utandawazi",
+              "lesson_id": "HTM-F2-UN-L107",
+              "title": "Elezea chimbuko la Mapinduzi Matukufu ya Zanzibar",
+              "markdown_content": "## Elezea chimbuko la Mapinduzi Matukufu ya Zanzibar",
+              "page": 46
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L108",
+              "title": "Fafanua muktadha wa Mapinduzi Matukufu ya Zanzibar",
+              "markdown_content": "## Fafanua muktadha wa Mapinduzi Matukufu ya Zanzibar",
+              "page": 46
+            }
+          ]
+        },
+        {
+          "topic_name": "Sababu za Mapinduzi Matukufu ya Zanzibar",
+          "competence_code": "6.3",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L109",
+              "title": "Bainisha sababu za Mapinduzi Matukufu ya Zanzibar",
+              "markdown_content": "## Bainisha sababu za Mapinduzi Matukufu ya Zanzibar",
               "page": 47
             },
             {
-              "lesson_id": "HIS-F1-U1-L45",
-              "title": "Kubaini vichocheo vilivyo- sababisha Tanzania kuingia katika mfumo wa uliberali na utandawazi",
-              "markdown_content": "## b) Kubaini vichocheo vilivyo- sababisha Tanzania kuingia katika mfumo wa uliberali na utandawazi",
+              "lesson_id": "HTM-F2-UN-L110",
+              "title": "Fafanua sababu za kisiasa, kiuchumi na kijamii za Mapinduzi",
+              "markdown_content": "## Fafanua sababu za kisiasa, kiuchumi na kijamii za Mapinduzi",
               "page": 47
             },
             {
-              "lesson_id": "HIS-F1-U1-L46",
-              "title": "Kueleza athari za uliberali na utandawazi katika mifumo ya uchumi, utamaduni, siasa na maadili",
-              "markdown_content": "## c) Kueleza athari za uliberali na utandawazi katika mifumo ya uchumi, utamaduni, siasa na maadili",
+              "lesson_id": "HTM-F2-UN-L111",
+              "title": "Chambua mchango wa maadili katika Mapinduzi Matukufu ya Zanzibar",
+              "markdown_content": "## Chambua mchango wa maadili katika Mapinduzi Matukufu ya Zanzibar",
+              "page": 47
+            }
+          ]
+        },
+        {
+          "topic_name": "Mchango wa Mapinduzi Matukufu ya Zanzibar",
+          "competence_code": "6.4",
+          "lessons": [
+            {
+              "lesson_id": "HTM-F2-UN-L112",
+              "title": "Elezea mchango wa Mapinduzi Matukufu ya Zanzibar",
+              "markdown_content": "## Elezea mchango wa Mapinduzi Matukufu ya Zanzibar",
               "page": 48
             },
             {
-              "lesson_id": "HIS-F1-U1-L47",
-              "title": "Kubaini jitihada zinazohukuliwa na Tanzania kudhibiti athari mbaya za uliberali na utandawazi",
-              "markdown_content": "## d) Kubaini jitihada zinazohukuliwa na Tanzania kudhibiti athari mbaya za uliberali na utandawazi",
-              "page": 49
+              "lesson_id": "HTM-F2-UN-L113",
+              "title": "Fafanua maadili yaliyolenga kujengwa na Mapinduzi",
+              "markdown_content": "## Fafanua maadili yaliyolenga kujengwa na Mapinduzi",
+              "page": 48
+            },
+            {
+              "lesson_id": "HTM-F2-UN-L114",
+              "title": "Tathmini mchango wa Mapinduzi Matukufu ya Zanzibar",
+              "markdown_content": "## Tathmini mchango wa Mapinduzi Matukufu ya Zanzibar",
+              "page": 48
             }
           ]
-        },
-        {
-          "topic_name": "Kuishi maadili mema ya Kitanzania wakati wa uliberali na utandawazi",
-          "competence_code": "1.2",
-          "lessons": [
-            {
-              "lesson_id": "HIS-F1-U1-L48",
-              "title": "Kujadili matendo ya uadilifu katika muktadha wa uliberali na utandawazi",
-              "markdown_content": "## a) Kujadili matendo ya uadilifu katika muktadha wa uliberali na utandawazi",
-              "page": 49
-            },
-            {
-              "lesson_id": "HIS-F1-U1-L49",
-              "title": "Kujadili mikakati mbalimbali ya kuhamasisha na kuelimisha jamii kuhusu maadili ya Kitanzania",
-              "markdown_content": "## b) Kujadili mikakati mbalimbali ya kuhamasisha na kuelimisha jamii kuhusu maadili ya Kitanzania",
-              "page": 50
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Kumudu muundo na kazi za Serikali ya Jamhuri ya Muungano wa Tanzania",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Kueleza muundo na kazi za Serikali ya Jamhuri ya Muungano wa Tanzania na Serikali ya Mapinduzi ya Zanzibar",
-          "competence_code": "2.1",
-          "lessons": [
-            {
-              "lesson_id": "HIS-F1-U2-L50",
-              "title": "Kuchambua muundo na kazi za mhimili tendaji (Executiv",
-              "markdown_content": "## a) Kuchambua muundo na kazi za mhimili tendaji (Executiv",
-              "page": 50
-            },
-            {
-              "lesson_id": "HIS-F1-U2-L51",
-              "title": "ya Serikali ya Jamhuri ya Muungano wa Tanzania na Serikali ya Mapinduzi Zanzibar",
-              "markdown_content": "## e) ya Serikali ya Jamhuri ya Muungano wa Tanzania na Serikali ya Mapinduzi Zanzibar",
-              "page": 50
-            },
-            {
-              "lesson_id": "HIS-F1-U2-L52",
-              "title": "Kuchambua muundo na kazi za Bunge la Jamhuri na za Baraza la Wawakilishi Zanzibar",
-              "markdown_content": "## b) Kuchambua muundo na kazi za Bunge la Jamhuri na za Baraza la Wawakilishi Zanzibar",
-              "page": 51
-            },
-            {
-              "lesson_id": "HIS-F1-U2-L53",
-              "title": "Kuchambua muundo na kazi za Mahakama katika pande zote za Muungano",
-              "markdown_content": "## c) Kuchambua muundo na kazi za Mahakama katika pande zote za Muungano",
-              "page": 51
-            }
-          ]
-        },
-        {
-          "topic_name": "Kubaini muundo na kazi za Serikali za Mitaa",
-          "competence_code": "2.2",
-          "lessons": [
-            {
-              "lesson_id": "HIS-F1-U2-L54",
-              "title": "Kueleza dhana na chimbuko la serikali za mitaa",
-              "markdown_content": "## a) Kueleza dhana na chimbuko la serikali za mitaa",
-              "page": 52
-            },
-            {
-              "lesson_id": "HIS-F1-U2-L55",
-              "title": "Kuchambua muundo na kazi za serikali za mitaa katika ngazi mbalimbali za Jamhuri ya Muungano",
-              "markdown_content": "## b) Kuchambua muundo na kazi za serikali za mitaa katika ngazi mbalimbali za Jamhuri ya Muungano",
-              "page": 53
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 3,
-      "unit_title": "Kufanya utafiti wa historia ya Tanzania na maadili",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Kutumia misingi ya utafiti wa kihistoria kufanya kazimradi",
-          "competence_code": "3.1",
-          "lessons": []
         }
       ]
     }

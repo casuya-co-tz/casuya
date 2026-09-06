@@ -5,30 +5,78 @@
   "units": [
     {
       "unit_number": 1,
-      "unit_title": "Demonstrate mastery of the concepts, principles and processes of Biology",
+      "unit_title": "INTRODUCTION TO BIOLOGY",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Describe the physiological, anatomical and ecological processes of living organisms",
+          "topic_name": "Basic concepts and terminologies in Biology",
           "competence_code": "1.1",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U1-L1",
-              "title": "Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
-              "markdown_content": "## a) Explain the basic concepts of Biology (meaning, branches, basic terminologies, importance and its relationship with other discipline",
-              "page": 15
+              "lesson_id": "BIO-F1-UN-L01",
+              "title": "Define Biology",
+              "markdown_content": "## Define Biology",
+              "page": 1
             },
             {
-              "lesson_id": "BIO-F1-U1-L2",
-              "title": "Describe a cell (meaning,types, structures and function",
-              "markdown_content": "## b) Describe a cell (meaning,types, structures and function",
-              "page": 16
+              "lesson_id": "BIO-F1-UN-L02",
+              "title": "State basic biological terms",
+              "markdown_content": "## State basic biological terms",
+              "page": 1
             },
             {
-              "lesson_id": "BIO-F1-U1-L3",
-              "title": "Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
-              "markdown_content": "## c) Describe nutrition in plants (photosynthesis, leaf structure and mineral requirement",
-              "page": 16
+              "lesson_id": "BIO-F1-UN-L03",
+              "title": "Identify branches of Biology",
+              "markdown_content": "## Identify branches of Biology",
+              "page": 2
+            }
+          ]
+        },
+        {
+          "topic_name": "Importance of studying Biology",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L04",
+              "title": "Explain the importance of studying Biology",
+              "markdown_content": "## Explain the importance of studying Biology",
+              "page": 2
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L05",
+              "title": "Identify career opportunities in Biology",
+              "markdown_content": "## Identify career opportunities in Biology",
+              "page": 3
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L06",
+              "title": "Discuss the relevance of Biology in everyday life",
+              "markdown_content": "## Discuss the relevance of Biology in everyday life",
+              "page": 3
+            }
+          ]
+        },
+        {
+          "topic_name": "Relationship between Biology and other scientific fields",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L07",
+              "title": "Describe the relationship between Biology and Chemistry",
+              "markdown_content": "## Describe the relationship between Biology and Chemistry",
+              "page": 4
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L08",
+              "title": "Explain how Biology relates to Physics",
+              "markdown_content": "## Explain how Biology relates to Physics",
+              "page": 4
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L09",
+              "title": "Identify connections between Biology and other sciences",
+              "markdown_content": "## Identify connections between Biology and other sciences",
+              "page": 5
             }
           ]
         }
@@ -36,24 +84,102 @@
     },
     {
       "unit_number": 2,
-      "unit_title": "Communicating using scientific biological terminologies",
+      "unit_title": "SCIENTIFIC PROCESSES IN BIOLOGY",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Demonstrate mastery of scientific biological terminologies",
+          "topic_name": "Common Biology Laboratory Apparati, Equipment and Other Resources",
           "competence_code": "2.1",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U2-L4",
-              "title": "Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
-              "markdown_content": "## a) Explain the concept and systems of classification (meaning ,importance of classification, rules of scientific naming of organisms",
-              "page": 17
+              "lesson_id": "BIO-F1-UN-L10",
+              "title": "Identify common Biology laboratory apparatus",
+              "markdown_content": "## Identify common Biology laboratory apparatus",
+              "page": 6
             },
             {
-              "lesson_id": "BIO-F1-U2-L5",
-              "title": "Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
-              "markdown_content": "## b) Describe the major groups of organisms: (Monera, Protista, Fungi, Plantae, Animalia and Viruse",
-              "page": 19
+              "lesson_id": "BIO-F1-UN-L11",
+              "title": "State the uses of each apparatus",
+              "markdown_content": "## State the uses of each apparatus",
+              "page": 6
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L12",
+              "title": "Describe proper care of laboratory equipment",
+              "markdown_content": "## Describe proper care of laboratory equipment",
+              "page": 7
+            }
+          ]
+        },
+        {
+          "topic_name": "Basic Skills in Scientific Studies",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L13",
+              "title": "Describe basic scientific skills",
+              "markdown_content": "## Describe basic scientific skills",
+              "page": 7
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L14",
+              "title": "Explain observation and recording",
+              "markdown_content": "## Explain observation and recording",
+              "page": 8
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L15",
+              "title": "State the importance of accurate measurement",
+              "markdown_content": "## State the importance of accurate measurement",
+              "page": 8
+            }
+          ]
+        },
+        {
+          "topic_name": "Scientific Methods",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L16",
+              "title": "Describe the steps of scientific method",
+              "markdown_content": "## Describe the steps of scientific method",
+              "page": 9
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L17",
+              "title": "Explain hypothesis formulation",
+              "markdown_content": "## Explain hypothesis formulation",
+              "page": 9
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L18",
+              "title": "Describe experimentation and conclusion",
+              "markdown_content": "## Describe experimentation and conclusion",
+              "page": 10
+            }
+          ]
+        },
+        {
+          "topic_name": "Simple Biological Experiments",
+          "competence_code": "2.4",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L19",
+              "title": "Conduct simple biological experiments",
+              "markdown_content": "## Conduct simple biological experiments",
+              "page": 10
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L20",
+              "title": "Record observations accurately",
+              "markdown_content": "## Record observations accurately",
+              "page": 11
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L21",
+              "title": "Draw conclusions from experiments",
+              "markdown_content": "## Draw conclusions from experiments",
+              "page": 11
             }
           ]
         }
@@ -61,41 +187,180 @@
     },
     {
       "unit_number": 3,
-      "unit_title": "Conduct biological investigations",
+      "unit_title": "CELL STRUCTURE AND ORGANIZATION",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Demonstrate mastery of basic skills for conducting biological investigations",
+          "topic_name": "The Cell",
           "competence_code": "3.1",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U3-L6",
-              "title": "Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
-              "markdown_content": "## a) Describe the basic skills for conducting biological experiments (observation, measurement and experimentatio",
+              "lesson_id": "BIO-F1-UN-L22",
+              "title": "Define a cell",
+              "markdown_content": "## Define a cell",
+              "page": 12
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L23",
+              "title": "Describe the structure of a cell",
+              "markdown_content": "## Describe the structure of a cell",
+              "page": 12
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L24",
+              "title": "Identify cell organelles and their functions",
+              "markdown_content": "## Identify cell organelles and their functions",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Types of Cells",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L25",
+              "title": "Distinguish between plant and animal cells",
+              "markdown_content": "## Distinguish between plant and animal cells",
+              "page": 13
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L26",
+              "title": "Identify prokaryotic and eukaryotic cells",
+              "markdown_content": "## Identify prokaryotic and eukaryotic cells",
+              "page": 14
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L27",
+              "title": "Describe characteristics of each cell type",
+              "markdown_content": "## Describe characteristics of each cell type",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Cell Differentiation",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L28",
+              "title": "Explain the concept of cell differentiation",
+              "markdown_content": "## Explain the concept of cell differentiation",
+              "page": 15
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L29",
+              "title": "Describe how cells specialize",
+              "markdown_content": "## Describe how cells specialize",
+              "page": 15
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L30",
+              "title": "Identify tissues formed through cell differentiation",
+              "markdown_content": "## Identify tissues formed through cell differentiation",
+              "page": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "CLASSIFICATION OF LIVING THINGS",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Concept of Classification",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L31",
+              "title": "Define classification",
+              "markdown_content": "## Define classification",
+              "page": 17
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L32",
+              "title": "Explain the importance of classification",
+              "markdown_content": "## Explain the importance of classification",
+              "page": 17
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L33",
+              "title": "State the principles of classification",
+              "markdown_content": "## State the principles of classification",
+              "page": 18
+            }
+          ]
+        },
+        {
+          "topic_name": "Classification Systems",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L34",
+              "title": "Describe the binomial system of classification",
+              "markdown_content": "## Describe the binomial system of classification",
+              "page": 18
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L35",
+              "title": "Explain the hierarchy of classification",
+              "markdown_content": "## Explain the hierarchy of classification",
+              "page": 19
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L36",
+              "title": "Identify the five kingdoms of classification",
+              "markdown_content": "## Identify the five kingdoms of classification",
+              "page": 19
+            }
+          ]
+        },
+        {
+          "topic_name": "Major Groups of Living Things",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L37",
+              "title": "Identify major groups of living things",
+              "markdown_content": "## Identify major groups of living things",
               "page": 20
             },
             {
-              "lesson_id": "BIO-F1-U3-L7",
-              "title": "Carry out microscopic observation of a cell",
-              "markdown_content": "## b) Carry out microscopic observation of a cell",
-              "page": 21
+              "lesson_id": "BIO-F1-UN-L38",
+              "title": "Describe characteristics of each group",
+              "markdown_content": "## Describe characteristics of each group",
+              "page": 20
             },
             {
-              "lesson_id": "BIO-F1-U3-L8",
-              "title": "Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
-              "markdown_content": "## c) Carry out investigations related to photosynthesis (conditions necessary for photosynthesi",
+              "lesson_id": "BIO-F1-UN-L39",
+              "title": "Distinguish between vertebrates and invertebrates",
+              "markdown_content": "## Distinguish between vertebrates and invertebrates",
               "page": 21
             }
           ]
         },
         {
-          "topic_name": "Prepare and present results of biological investigations",
-          "competence_code": "3.2",
+          "topic_name": "Binomial Nomenclature",
+          "competence_code": "4.4",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U3-L9",
-              "title": "Prepare and present a report on cell and photosynthesis investigations",
-              "markdown_content": "## a) Prepare and present a report on cell and photosynthesis investigations",
+              "lesson_id": "BIO-F1-UN-L40",
+              "title": "Explain the rules of binomial nomenclature",
+              "markdown_content": "## Explain the rules of binomial nomenclature",
+              "page": 21
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L41",
+              "title": "Give examples of scientific names",
+              "markdown_content": "## Give examples of scientific names",
+              "page": 22
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L42",
+              "title": "State the importance of scientific naming",
+              "markdown_content": "## State the importance of scientific naming",
               "page": 22
             }
           ]
@@ -103,202 +368,301 @@
       ]
     },
     {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of the concepts, principles and processes of Biology",
+      "unit_number": 5,
+      "unit_title": "VIRUSES AND MAJOR GROUPS OF LIVING THINGS",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Describe the physiological, anatomical and ecological processes of living organisms",
-          "competence_code": "1.1",
+          "topic_name": "Viruses",
+          "competence_code": "5.1",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U1-L10",
-              "title": "Describe nutrition in human and ruminants (nutrients, digestive system and processe",
-              "markdown_content": "## a) Describe nutrition in human and ruminants (nutrients, digestive system and processe",
+              "lesson_id": "BIO-F1-UN-L43",
+              "title": "Describe the structure of viruses",
+              "markdown_content": "## Describe the structure of viruses",
               "page": 23
             },
             {
-              "lesson_id": "BIO-F1-U1-L11",
-              "title": "Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
-              "markdown_content": "## b) Describe the mechanism of transportation of materials in flowering plants (vascular system, absorption and movement of water and mineral salts and transpiratio",
+              "lesson_id": "BIO-F1-UN-L44",
+              "title": "Explain how viruses reproduce",
+              "markdown_content": "## Explain how viruses reproduce",
+              "page": 23
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L45",
+              "title": "Identify the effects of viruses on living things",
+              "markdown_content": "## Identify the effects of viruses on living things",
+              "page": 24
+            }
+          ]
+        },
+        {
+          "topic_name": "Kingdom Monera",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L46",
+              "title": "Describe characteristics of Kingdom Monera",
+              "markdown_content": "## Describe characteristics of Kingdom Monera",
               "page": 24
             },
             {
-              "lesson_id": "BIO-F1-U1-L12",
-              "title": "Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
-              "markdown_content": "## c) Describe the mechanism of transportation of materials in the human body (the mammalian heart, blood vessels, blood, blood circulatio",
+              "lesson_id": "BIO-F1-UN-L47",
+              "title": "Identify examples of bacteria",
+              "markdown_content": "## Identify examples of bacteria",
               "page": 25
             },
             {
-              "lesson_id": "BIO-F1-U1-L13",
-              "title": "Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio",
-              "markdown_content": "## d) Describe the mechanisms of gaseous exchange and respiration in mammals (gaseous exchange in mammals, aerobic and anaerobic respiratio",
+              "lesson_id": "BIO-F1-UN-L48",
+              "title": "Explain the importance of bacteria",
+              "markdown_content": "## Explain the importance of bacteria",
+              "page": 25
+            }
+          ]
+        },
+        {
+          "topic_name": "Kingdom Protoctista",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L49",
+              "title": "Describe characteristics of Kingdom Protoctista",
+              "markdown_content": "## Describe characteristics of Kingdom Protoctista",
               "page": 26
             },
             {
-              "lesson_id": "BIO-F1-U1-L14",
-              "title": "Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
-              "markdown_content": "## e) Describe the mechanism of gaseous exchange in plants (parts of plants responsible for gaseous exchange and the proces",
-              "page": 28
+              "lesson_id": "BIO-F1-UN-L50",
+              "title": "Identify examples of protoctists",
+              "markdown_content": "## Identify examples of protoctists",
+              "page": 26
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L51",
+              "title": "Explain the importance of protoctists",
+              "markdown_content": "## Explain the importance of protoctists",
+              "page": 27
             }
           ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Conduct biological investigations",
-      "form": 1,
-      "topics": [
+        },
         {
-          "topic_name": "Demonstrate mastery of basic skills for conducting biological investigations",
-          "competence_code": "2.1",
+          "topic_name": "Kingdom Fungi",
+          "competence_code": "5.4",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U2-L15",
-              "title": "Investigate food nutrients in various food samples",
-              "markdown_content": "## a) Investigate food nutrients in various food samples",
+              "lesson_id": "BIO-F1-UN-L52",
+              "title": "Describe characteristics of Kingdom Fungi",
+              "markdown_content": "## Describe characteristics of Kingdom Fungi",
+              "page": 27
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L53",
+              "title": "Identify examples of fungi",
+              "markdown_content": "## Identify examples of fungi",
               "page": 28
             },
             {
-              "lesson_id": "BIO-F1-U2-L16",
-              "title": "Investigate processes of transportation of materials in flowering plants",
-              "markdown_content": "## b) Investigate processes of transportation of materials in flowering plants",
+              "lesson_id": "BIO-F1-UN-L54",
+              "title": "Explain the importance of fungi",
+              "markdown_content": "## Explain the importance of fungi",
+              "page": 28
+            }
+          ]
+        },
+        {
+          "topic_name": "Kingdom Plantae",
+          "competence_code": "5.5",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L55",
+              "title": "Describe characteristics of Kingdom Plantae",
+              "markdown_content": "## Describe characteristics of Kingdom Plantae",
               "page": 29
             },
             {
-              "lesson_id": "BIO-F1-U2-L17",
-              "title": "Carry out experiments to determine the pulse rate in human",
-              "markdown_content": "## c) Carry out experiments to determine the pulse rate in human",
-              "page": 30
+              "lesson_id": "BIO-F1-UN-L56",
+              "title": "Identify major divisions of plants",
+              "markdown_content": "## Identify major divisions of plants",
+              "page": 29
             },
             {
-              "lesson_id": "BIO-F1-U2-L18",
-              "title": "Investigate aerobic and anaerobic respiration in living organisms",
-              "markdown_content": "## d) Investigate aerobic and anaerobic respiration in living organisms",
+              "lesson_id": "BIO-F1-UN-L57",
+              "title": "Explain the importance of plants",
+              "markdown_content": "## Explain the importance of plants",
               "page": 30
             }
           ]
         },
         {
-          "topic_name": "Prepare and present results of biological investigations",
-          "competence_code": "2.2",
+          "topic_name": "Classes of the division Angiospermophyta",
+          "competence_code": "5.6",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U2-L19",
-              "title": "Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
-              "markdown_content": "## a) Prepare and present a report of a biological investigation on ( food nutrients in various food samples, transportation of materials in flowering plants, pulse rate in human, aerobic and anaerobic respiration )",
+              "lesson_id": "BIO-F1-UN-L58",
+              "title": "Identify classes of Angiospermophyta",
+              "markdown_content": "## Identify classes of Angiospermophyta",
+              "page": 30
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L59",
+              "title": "Describe characteristics of each class",
+              "markdown_content": "## Describe characteristics of each class",
+              "page": 31
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L60",
+              "title": "Give examples of each class",
+              "markdown_content": "## Give examples of each class",
               "page": 31
             }
           ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of the concepts, principles and processes of Biology",
-      "form": 1,
-      "topics": [
+        },
         {
-          "topic_name": "Describe the physiological, anatomical and ecological processes of living organisms",
-          "competence_code": "1.1",
+          "topic_name": "Kingdom Animalia",
+          "competence_code": "5.7",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U1-L20",
-              "title": "Describe coordination in plants (tropic, response",
-              "markdown_content": "## a) Describe coordination in plants (tropic, response",
+              "lesson_id": "BIO-F1-UN-L61",
+              "title": "Describe characteristics of Kingdom Animalia",
+              "markdown_content": "## Describe characteristics of Kingdom Animalia",
               "page": 32
             },
             {
-              "lesson_id": "BIO-F1-U1-L21",
-              "title": "and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
-              "markdown_content": "## s) and animals (nervous coordination in human, structure of neurones, sense organs and endocrine syste",
+              "lesson_id": "BIO-F1-UN-L62",
+              "title": "Identify major phyla of animals",
+              "markdown_content": "## Identify major phyla of animals",
               "page": 32
             },
             {
-              "lesson_id": "BIO-F1-U1-L22",
-              "title": "Describe the mechanism of excretion in the human body (systems: organs, product",
-              "markdown_content": "## b) Describe the mechanism of excretion in the human body (systems: organs, product",
+              "lesson_id": "BIO-F1-UN-L63",
+              "title": "Explain the importance of animals",
+              "markdown_content": "## Explain the importance of animals",
               "page": 33
-            },
-            {
-              "lesson_id": "BIO-F1-U1-L23",
-              "title": "Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio",
-              "markdown_content": "## c) Describe the mechanism of regulation in the human body (temperature regulation, blood sugar regulation and osmoregulatio",
-              "page": 34
             }
           ]
         }
       ]
     },
     {
-      "unit_number": 2,
-      "unit_title": "Conduct biological investigations",
+      "unit_number": 6,
+      "unit_title": "NUTRITION IN PLANTS",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Demonstrate mastery of basic skills for conducting biological investigations",
-          "competence_code": "2.1",
+          "topic_name": "Concept of Nutrition",
+          "competence_code": "6.1",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U2-L24",
-              "title": "Investigate the process of nervous coordination (reflex arc and knee jer",
-              "markdown_content": "## a) Investigate the process of nervous coordination (reflex arc and knee jer",
+              "lesson_id": "BIO-F1-UN-L64",
+              "title": "Define nutrition",
+              "markdown_content": "## Define nutrition",
+              "page": 34
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L65",
+              "title": "Explain the importance of nutrition",
+              "markdown_content": "## Explain the importance of nutrition",
+              "page": 34
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L66",
+              "title": "Describe types of nutrition",
+              "markdown_content": "## Describe types of nutrition",
+              "page": 35
+            }
+          ]
+        },
+        {
+          "topic_name": "Photosynthesis",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L67",
+              "title": "Explain the process of photosynthesis",
+              "markdown_content": "## Explain the process of photosynthesis",
               "page": 35
             },
             {
-              "lesson_id": "BIO-F1-U2-L25",
-              "title": "Investigate tropic responses in plants",
-              "markdown_content": "## b) Investigate tropic responses in plants",
+              "lesson_id": "BIO-F1-UN-L68",
+              "title": "State the equation for photosynthesis",
+              "markdown_content": "## State the equation for photosynthesis",
+              "page": 36
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L69",
+              "title": "Identify factors affecting photosynthesis",
+              "markdown_content": "## Identify factors affecting photosynthesis",
               "page": 36
             }
           ]
         },
         {
-          "topic_name": "Carry out a biological project work using biological principles",
-          "competence_code": "2.2",
+          "topic_name": "Structure of the Leaf in Relation to Photosynthesis",
+          "competence_code": "6.3",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U2-L26",
-              "title": "Develop and carry out a simple research project in Biology",
-              "markdown_content": "## a) Develop and carry out a simple research project in Biology",
-              "page": 36
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of the concepts, principles and processes of Biology",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Describe the physiological, anatomical and ecological processes of living organisms",
-          "competence_code": "1.1",
-          "lessons": [
-            {
-              "lesson_id": "BIO-F1-U1-L27",
-              "title": "Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
-              "markdown_content": "## a) Describe reproduction in plants (concept of reproduction in plants, asexual and sexual reproduction, pollination and fertilizatio",
+              "lesson_id": "BIO-F1-UN-L70",
+              "title": "Describe the structure of a leaf",
+              "markdown_content": "## Describe the structure of a leaf",
               "page": 37
             },
             {
-              "lesson_id": "BIO-F1-U1-L28",
-              "title": "Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
-              "markdown_content": "## b) Describe reproduction in humans (sexual reproduction in human, fertilization, pregnancy and child birt",
+              "lesson_id": "BIO-F1-UN-L71",
+              "title": "Explain how leaf structure is adapted for photosynthesis",
+              "markdown_content": "## Explain how leaf structure is adapted for photosynthesis",
+              "page": 37
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L72",
+              "title": "Identify the role of each leaf part",
+              "markdown_content": "## Identify the role of each leaf part",
+              "page": 38
+            }
+          ]
+        },
+        {
+          "topic_name": "Importance of Photosynthesis",
+          "competence_code": "6.4",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L73",
+              "title": "Explain the importance of photosynthesis to plants",
+              "markdown_content": "## Explain the importance of photosynthesis to plants",
               "page": 38
             },
             {
-              "lesson_id": "BIO-F1-U1-L29",
-              "title": "Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
-              "markdown_content": "## c) Describe the mechanisms of growth in mammals and flowering plants (concept of growth, mitosis and growth, growth and developmental stages in human and seed germinatio",
+              "lesson_id": "BIO-F1-UN-L74",
+              "title": "Describe the importance of photosynthesis to animals",
+              "markdown_content": "## Describe the importance of photosynthesis to animals",
               "page": 39
             },
             {
-              "lesson_id": "BIO-F1-U1-L30",
-              "title": "Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
-              "markdown_content": "## d) Explore the basic tenets of genetics (genetic materials, principles of inhertance, monohybrid, Mendelian and non-Mendelian inheritance; variation",
+              "lesson_id": "BIO-F1-UN-L75",
+              "title": "State the importance of photosynthesis in the ecosystem",
+              "markdown_content": "## State the importance of photosynthesis in the ecosystem",
+              "page": 39
+            }
+          ]
+        },
+        {
+          "topic_name": "Essential and Non-essential Elements in Plants",
+          "competence_code": "6.5",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L76",
+              "title": "Distinguish between essential and non-essential elements",
+              "markdown_content": "## Distinguish between essential and non-essential elements",
+              "page": 40
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L77",
+              "title": "Identify essential elements for plant growth",
+              "markdown_content": "## Identify essential elements for plant growth",
+              "page": 40
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L78",
+              "title": "Describe the role of each essential element",
+              "markdown_content": "## Describe the role of each essential element",
               "page": 41
             }
           ]
@@ -306,37 +670,498 @@
       ]
     },
     {
-      "unit_number": 2,
-      "unit_title": "Conduct biological investigations",
-      "form": 1,
+      "unit_number": 7,
+      "unit_title": "NUTRITION IN ANIMALS",
+      "form": 2,
       "topics": [
         {
-          "topic_name": "Demonstrate mastery of basic skills for conducting biological investigations",
-          "competence_code": "2.1",
+          "topic_name": "Concept of nutrition in animals",
+          "competence_code": "1.1",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U2-L31",
-              "title": "Carry out investigation related to reproduction in flowering plants (flower structure and embry",
-              "markdown_content": "## a) Carry out investigation related to reproduction in flowering plants (flower structure and embry",
-              "page": 42
-            },
-            {
-              "lesson_id": "BIO-F1-U2-L32",
-              "title": "Investigate growth in flowering plants (hypogeal and epigeal germinatio",
-              "markdown_content": "## b) Investigate growth in flowering plants (hypogeal and epigeal germinatio",
-              "page": 42
+              "lesson_id": "BIO-F2-U1-L01",
+              "title": "define nutrition in animals",
+              "markdown_content": "## define nutrition in animals",
+              "page": 1
             }
           ]
         },
         {
-          "topic_name": "Carry out a biological project work using biological principles",
+          "topic_name": "Nutrients",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U1-L02",
+              "title": "identify classes of food nutrients",
+              "markdown_content": "## identify classes of food nutrients",
+              "page": 1
+            },
+            {
+              "lesson_id": "BIO-F2-U1-L03",
+              "title": "state the sources and functions of food nutrients",
+              "markdown_content": "## state the sources and functions of food nutrients",
+              "page": 2
+            }
+          ]
+        },
+        {
+          "topic_name": "Balanced diet",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U1-L04",
+              "title": "define a balanced diet",
+              "markdown_content": "## define a balanced diet",
+              "page": 3
+            },
+            {
+              "lesson_id": "BIO-F2-U1-L05",
+              "title": "explain the importance of a balanced diet",
+              "markdown_content": "## explain the importance of a balanced diet",
+              "page": 3
+            }
+          ]
+        },
+        {
+          "topic_name": "Nutritional requirements for different groups",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U1-L06",
+              "title": "describe nutritional needs of different age groups",
+              "markdown_content": "## describe nutritional needs of different age groups",
+              "page": 4
+            },
+            {
+              "lesson_id": "BIO-F2-U1-L07",
+              "title": "explain special nutritional needs of pregnant and lactating women",
+              "markdown_content": "## explain special nutritional needs of pregnant and lactating women",
+              "page": 4
+            }
+          ]
+        },
+        {
+          "topic_name": "Nutritional deficiencies and disorders",
+          "competence_code": "1.5",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U1-L08",
+              "title": "identify common nutritional deficiencies",
+              "markdown_content": "## identify common nutritional deficiencies",
+              "page": 5
+            },
+            {
+              "lesson_id": "BIO-F2-U1-L09",
+              "title": "describe symptoms and prevention of nutritional disorders",
+              "markdown_content": "## describe symptoms and prevention of nutritional disorders",
+              "page": 5
+            }
+          ]
+        },
+        {
+          "topic_name": "Properties of food nutrients",
+          "competence_code": "1.6",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U1-L10",
+              "title": "describe the physical and chemical properties of food nutrients",
+              "markdown_content": "## describe the physical and chemical properties of food nutrients",
+              "page": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 8,
+      "unit_title": "DIGESTIVE SYSTEM",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "The digestion process",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U2-L11",
+              "title": "describe the structure of the human digestive system",
+              "markdown_content": "## describe the structure of the human digestive system",
+              "page": 7
+            },
+            {
+              "lesson_id": "BIO-F2-U2-L12",
+              "title": "explain the process of digestion in different parts of the alimentary canal",
+              "markdown_content": "## explain the process of digestion",
+              "page": 8
+            }
+          ]
+        },
+        {
+          "topic_name": "Disorders and diseases of human digestive system",
           "competence_code": "2.2",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-U2-L33",
-              "title": "Complete and submit a report for the research project started in Form Three",
-              "markdown_content": "## a) Complete and submit a report for the research project started in Form Three",
-              "page": 43
+              "lesson_id": "BIO-F2-U2-L13",
+              "title": "identify common disorders of the digestive system",
+              "markdown_content": "## identify common disorders of the digestive system",
+              "page": 9
+            },
+            {
+              "lesson_id": "BIO-F2-U2-L14",
+              "title": "explain the causes and prevention of digestive diseases",
+              "markdown_content": "## explain the causes and prevention of digestive diseases",
+              "page": 9
+            }
+          ]
+        },
+        {
+          "topic_name": "The digestive system of ruminants",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U2-L15",
+              "title": "describe the structure of the digestive system in ruminants",
+              "markdown_content": "## describe the structure of the digestive system in ruminants",
+              "page": 10
+            },
+            {
+              "lesson_id": "BIO-F2-U2-L16",
+              "title": "compare digestion in ruminants and non-ruminants",
+              "markdown_content": "## compare digestion in ruminants and non-ruminants",
+              "page": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 9,
+      "unit_title": "TRANSPORT OF MATERIALS IN LIVING ORGANISMS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of transportation of materials",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U3-L17",
+              "title": "define transport in living organisms",
+              "markdown_content": "## define transport in living organisms",
+              "page": 12
+            },
+            {
+              "lesson_id": "BIO-F2-U3-L18",
+              "title": "explain the importance of transport systems",
+              "markdown_content": "## explain the importance of transport systems",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Ways of transportation of materials",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U3-L19",
+              "title": "describe different methods of transport in organisms",
+              "markdown_content": "## describe different methods of transport in organisms",
+              "page": 13
+            },
+            {
+              "lesson_id": "BIO-F2-U3-L20",
+              "title": "explain bulk flow systems in multicellular organisms",
+              "markdown_content": "## explain bulk flow systems in multicellular organisms",
+              "page": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 10,
+      "unit_title": "TRANSPORT OF MATERIALS IN FLOWERING PLANTS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "The vascular system",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U4-L21",
+              "title": "describe the structure of xylem and phloem",
+              "markdown_content": "## describe the structure of xylem and phloem",
+              "page": 15
+            },
+            {
+              "lesson_id": "BIO-F2-U4-L22",
+              "title": "explain the function of vascular tissues in transport",
+              "markdown_content": "## explain the function of vascular tissues in transport",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Absorption and movement of water and mineral salts",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U4-L23",
+              "title": "explain the absorption of water and minerals by roots",
+              "markdown_content": "## explain the absorption of water and minerals by roots",
+              "page": 16
+            },
+            {
+              "lesson_id": "BIO-F2-U4-L24",
+              "title": "describe the ascent of sap in plants",
+              "markdown_content": "## describe the ascent of sap in plants",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Transpiration",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U4-L25",
+              "title": "define transpiration",
+              "markdown_content": "## define transpiration",
+              "page": 17
+            },
+            {
+              "lesson_id": "BIO-F2-U4-L26",
+              "title": "explain factors affecting transpiration",
+              "markdown_content": "## explain factors affecting transpiration",
+              "page": 17
+            },
+            {
+              "lesson_id": "BIO-F2-U4-L27",
+              "title": "describe the significance of transpiration",
+              "markdown_content": "## describe the significance of transpiration",
+              "page": 18
+            }
+          ]
+        },
+        {
+          "topic_name": "Guttation",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U4-L28",
+              "title": "define guttation",
+              "markdown_content": "## define guttation",
+              "page": 18
+            },
+            {
+              "lesson_id": "BIO-F2-U4-L29",
+              "title": "distinguish between guttation and transpiration",
+              "markdown_content": "## distinguish between guttation and transpiration",
+              "page": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 11,
+      "unit_title": "TRANSPORT OF MATERIALS IN MAMMALS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "The mammalian heart",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U5-L30",
+              "title": "describe the structure of the mammalian heart",
+              "markdown_content": "## describe the structure of the mammalian heart",
+              "page": 20
+            },
+            {
+              "lesson_id": "BIO-F2-U5-L31",
+              "title": "explain the cardiac cycle",
+              "markdown_content": "## explain the cardiac cycle",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Blood vessels",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U5-L32",
+              "title": "distinguish between arteries, veins and capillaries",
+              "markdown_content": "## distinguish between arteries, veins and capillaries",
+              "page": 22
+            },
+            {
+              "lesson_id": "BIO-F2-U5-L33",
+              "title": "describe the structure and function of blood vessels",
+              "markdown_content": "## describe the structure and function of blood vessels",
+              "page": 22
+            }
+          ]
+        },
+        {
+          "topic_name": "The blood",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U5-L34",
+              "title": "identify the components of blood",
+              "markdown_content": "## identify the components of blood",
+              "page": 23
+            },
+            {
+              "lesson_id": "BIO-F2-U5-L35",
+              "title": "describe the functions of blood components",
+              "markdown_content": "## describe the functions of blood components",
+              "page": 23
+            }
+          ]
+        },
+        {
+          "topic_name": "Blood groups",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U5-L36",
+              "title": "identify the main blood groups",
+              "markdown_content": "## identify the main blood groups",
+              "page": 24
+            },
+            {
+              "lesson_id": "BIO-F2-U5-L37",
+              "title": "explain the importance of blood grouping",
+              "markdown_content": "## explain the importance of blood grouping",
+              "page": 24
+            }
+          ]
+        },
+        {
+          "topic_name": "Blood transfusion",
+          "competence_code": "5.5",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U5-L38",
+              "title": "explain the principles of blood transfusion",
+              "markdown_content": "## explain the principles of blood transfusion",
+              "page": 25
+            },
+            {
+              "lesson_id": "BIO-F2-U5-L39",
+              "title": "identify compatibility of blood groups",
+              "markdown_content": "## identify compatibility of blood groups",
+              "page": 25
+            }
+          ]
+        },
+        {
+          "topic_name": "Blood circulation in human beings",
+          "competence_code": "5.6",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U5-L40",
+              "title": "describe the double circulation system",
+              "markdown_content": "## describe the double circulation system",
+              "page": 26
+            },
+            {
+              "lesson_id": "BIO-F2-U5-L41",
+              "title": "explain the pathway of blood through the body",
+              "markdown_content": "## explain the pathway of blood through the body",
+              "page": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 12,
+      "unit_title": "GAS EXCHANGE AND RESPIRATION",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of gas exchange",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U6-L42",
+              "title": "define gas exchange in living organisms",
+              "markdown_content": "## define gas exchange in living organisms",
+              "page": 28
+            }
+          ]
+        },
+        {
+          "topic_name": "Gas exchange in mammals",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U6-L43",
+              "title": "describe the structure of the mammalian respiratory system",
+              "markdown_content": "## describe the structure of the mammalian respiratory system",
+              "page": 29
+            },
+            {
+              "lesson_id": "BIO-F2-U6-L44",
+              "title": "explain the mechanism of breathing",
+              "markdown_content": "## explain the mechanism of breathing",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "topic_name": "Gas exchange in plants",
+          "competence_code": "6.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U6-L45",
+              "title": "describe gas exchange through stomata",
+              "markdown_content": "## describe gas exchange through stomata",
+              "page": 30
+            },
+            {
+              "lesson_id": "BIO-F2-U6-L46",
+              "title": "explain the role of lenticels in gas exchange",
+              "markdown_content": "## explain the role of lenticels in gas exchange",
+              "page": 30
+            }
+          ]
+        },
+        {
+          "topic_name": "Respiration in mammals",
+          "competence_code": "6.4",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U6-L47",
+              "title": "distinguish between aerobic and anaerobic respiration",
+              "markdown_content": "## distinguish between aerobic and anaerobic respiration",
+              "page": 31
+            },
+            {
+              "lesson_id": "BIO-F2-U6-L48",
+              "title": "write the equations for aerobic and anaerobic respiration",
+              "markdown_content": "## write the equations for aerobic and anaerobic respiration",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "topic_name": "Infections and diseases of the respiratory system",
+          "competence_code": "6.5",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F2-U6-L49",
+              "title": "identify common respiratory infections",
+              "markdown_content": "## identify common respiratory infections",
+              "page": 32
+            },
+            {
+              "lesson_id": "BIO-F2-U6-L50",
+              "title": "explain prevention and control of respiratory diseases",
+              "markdown_content": "## explain prevention and control of respiratory diseases",
+              "page": 32
             }
           ]
         }

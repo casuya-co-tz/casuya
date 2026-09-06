@@ -5,411 +5,205 @@
   "units": [
     {
       "unit_number": 1,
-      "unit_title": "Demonstrate mastery of basic concepts, theories and principles in Chemistry",
+      "unit_title": "Introduction to Chemistry",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Demonstrate mastery of concepts, theories and principles in Chemistry",
+          "topic_name": "Concept of Chemistry",
           "competence_code": "1.1",
           "lessons": [
             {
-              "lesson_id": "CHE-F1-U1-L1",
-              "title": "Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
-              "markdown_content": "## a) Describe the concept of Chemistry (meaning, branches, applications and relationships with other discipline",
+              "lesson_id": "CHEM-F1-UN-L1",
+              "title": "Explain the meaning of Chemistry",
+              "markdown_content": "## a) Explain the meaning of Chemistry",
               "page": 15
             },
             {
-              "lesson_id": "CHE-F1-U1-L2",
-              "title": "Discuss the contribution of Chemistry in the development of modern society",
-              "markdown_content": "## b) Discuss the contribution of Chemistry in the development of modern society",
-              "page": 16
+              "lesson_id": "CHEM-F1-UN-L2",
+              "title": "Describe the branches of Chemistry",
+              "markdown_content": "## b) Describe the branches of Chemistry",
+              "page": 15
             },
             {
-              "lesson_id": "CHE-F1-U1-L3",
-              "title": "Describe the concept of matter (physical and chemical changes of matte",
-              "markdown_content": "## c) Describe the concept of matter (physical and chemical changes of matte",
-              "page": 17
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L4",
-              "title": "Describe the concepts of chemical elements (criteria for assigning chemical symbol",
-              "markdown_content": "## d) Describe the concepts of chemical elements (criteria for assigning chemical symbol",
-              "page": 18
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L5",
-              "title": ", compounds (binary compoun",
-              "markdown_content": "## s) , compounds (binary compoun",
-              "page": 18
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L6",
-              "title": "and mixtures (types of solution and separation of mixture",
-              "markdown_content": "## d) and mixtures (types of solution and separation of mixture",
-              "page": 18
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L7",
-              "title": "Compare the properties of compounds with those of constituent elements",
-              "markdown_content": "## e) Compare the properties of compounds with those of constituent elements",
-              "page": 19
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L8",
-              "title": "Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
-              "markdown_content": "## f) Explain the concept of the periodic table (1st 20 elements in the Periodic Table; metals and non- metal",
-              "page": 20
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Conduct experiments in Chemistry",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Conduct experiments in Chemistry",
-          "competence_code": "2.1",
-          "lessons": [
-            {
-              "lesson_id": "CHE-F1-U2-L9",
-              "title": "Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu",
-              "markdown_content": "## a) Describe basic Chemistry laboratory skills (chemistry laboratory rules and safety measures, first aid, fire and firefighting, and Chemistry laboratory apparatu",
-              "page": 21
-            },
-            {
-              "lesson_id": "CHE-F1-U2-L10",
-              "title": "Perform experiments on the changes of matter from one state to another",
-              "markdown_content": "## b) Perform experiments on the changes of matter from one state to another",
-              "page": 22
-            },
-            {
-              "lesson_id": "CHE-F1-U2-L11",
-              "title": "Perform experiments on separation of different mixtures using different methods",
-              "markdown_content": "## c) Perform experiments on separation of different mixtures using different methods",
-              "page": 23
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of basic concepts, theories and principles in Chemistry",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Demonstrate mastery of concepts, theories and principles in Chemistry",
-          "competence_code": "1.1",
-          "lessons": [
-            {
-              "lesson_id": "CHE-F1-U1-L12",
-              "title": "Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
-              "markdown_content": "## a) Describe the modern concept of atomic structure (Dalton’s atomic structure and sub- atomic particle",
-              "page": 24
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L13",
-              "title": "Describe the concept of electronic arrangements",
-              "markdown_content": "## b) Describe the concept of electronic arrangements",
-              "page": 25
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L14",
-              "title": "Use the concept of atomic structure to determine the atomic and mass numbers of an element",
-              "markdown_content": "## c) Use the concept of atomic structure to determine the atomic and mass numbers of an element",
-              "page": 26
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L15",
-              "title": "Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
-              "markdown_content": "## d) Explain the concept of chemical formulae and nomenclature (valence, oxidation state, radicals and naming of binary inorganic compounds using the IUPAC syste",
-              "page": 27
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L16",
-              "title": "Determine empirical and molecular formulae of common compounds",
-              "markdown_content": "## e) Determine empirical and molecular formulae of common compounds",
-              "page": 28
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L17",
-              "title": "Describe the concept of chemical bonding (covalent and electrovalent bondin",
-              "markdown_content": "## f) Describe the concept of chemical bonding (covalent and electrovalent bondin",
-              "page": 29
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L18",
-              "title": "Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
-              "markdown_content": "## g) Describe the concept of chemical reactions (chemical equations, balancing chemical equations, and types of chemical reaction",
-              "page": 30
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L19",
-              "title": "Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
-              "markdown_content": "## h) Relate the types of chemical reactions with common processes in daily life such as burning of fuel and digestion in living organisms",
-              "page": 31
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L20",
-              "title": "Describe acids, bases and salts (reactions of acids and bases with various substance",
-              "markdown_content": "## i) Describe acids, bases and salts (reactions of acids and bases with various substance",
-              "page": 32
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L21",
-              "title": "and their applications in daily life",
-              "markdown_content": "## s) and their applications in daily life",
-              "page": 32
+              "lesson_id": "CHEM-F1-UN-L3",
+              "title": "State the relationship between Chemistry and other disciplines",
+              "markdown_content": "## c) State the relationship between Chemistry and other disciplines",
+              "page": 15
             }
           ]
         },
         {
-          "topic_name": "Demonstrate an understanding of the physical and chemical properties of elements on the basis of their arrangements in the periodic table",
+          "topic_name": "Relationships of Chemistry with other related disciplines",
           "competence_code": "1.2",
           "lessons": [
             {
-              "lesson_id": "CHE-F1-U1-L22",
-              "title": "Explain the changes in the physical and chemical properties of elements across and down the periodic table",
-              "markdown_content": "## a) Explain the changes in the physical and chemical properties of elements across and down the periodic table",
-              "page": 33
+              "lesson_id": "CHEM-F1-UN-L4",
+              "title": "Discuss the relationship between Chemistry and Physics",
+              "markdown_content": "## a) Discuss the relationship between Chemistry and Physics",
+              "page": 16
             },
             {
-              "lesson_id": "CHE-F1-U1-L23",
-              "title": "Use the electronic configuration of an element to locate their positions in the periodic table",
-              "markdown_content": "## b) Use the electronic configuration of an element to locate their positions in the periodic table",
-              "page": 33
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Conduct experiments in Chemistry",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Conduct experiments in Chemistry",
-          "competence_code": "2.1",
-          "lessons": [
-            {
-              "lesson_id": "CHE-F1-U2-L24",
-              "title": "Prepare acid- base indicators using locally available materials",
-              "markdown_content": "## a) Prepare acid- base indicators using locally available materials",
-              "page": 34
+              "lesson_id": "CHEM-F1-UN-L5",
+              "title": "Explain how Chemistry relates to Biology",
+              "markdown_content": "## b) Explain how Chemistry relates to Biology",
+              "page": 16
             },
             {
-              "lesson_id": "CHE-F1-U2-L25",
-              "title": "Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
-              "markdown_content": "## b) Use the prepared indicators to test acidity and alkalinity of substances found in the locality",
-              "page": 35
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of basic concepts, theories and principles in Chemistry",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Demonstrate mastery of concepts, theories and principles in Chemistry",
-          "competence_code": "1.1",
-          "lessons": [
-            {
-              "lesson_id": "CHE-F1-U1-L26",
-              "title": "Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
-              "markdown_content": "## a) Describe the mole concept (comparison of the mole with other units of measurements and molar quantities of substance",
-              "page": 36
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L27",
-              "title": "Explain Avogadro’s law in relation to molar quantities",
-              "markdown_content": "## b) Explain Avogadro’s law in relation to molar quantities",
-              "page": 37
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L28",
-              "title": "Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation",
-              "markdown_content": "## c) Explain the principles of volumetric analysis (preparation of standard solutions and volumetric calculation",
-              "page": 38
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L29",
-              "title": "Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
-              "markdown_content": "## d) Describe the applications of volumetric analysis in real life and industrial settings as in soft drinks and cocktail making, medicine and in agriculture",
-              "page": 39
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L30",
-              "title": "Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
-              "markdown_content": "## e) Explore the basic tenets of ionic theory and electrolysis (ionic theory, mechanism of electrolysis and laws of electrolysi",
-              "page": 40
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L31",
-              "title": "Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
-              "markdown_content": "## f) Describe the preparation and properties of various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides and sulphates of metal",
-              "page": 41
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L32",
-              "title": "Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
-              "markdown_content": "## g) Describe the oxidizing and displacement properties of non-metal compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia, and carbon dioxid",
-              "page": 42
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Conduct experiments in Chemistry",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Conduct experiments in Chemistry",
-          "competence_code": "2.1",
-          "lessons": [
-            {
-              "lesson_id": "CHE-F1-U2-L33",
-              "title": "Perform experiments on volumetric analysis",
-              "markdown_content": "## a) Perform experiments on volumetric analysis",
-              "page": 43
-            },
-            {
-              "lesson_id": "CHE-F1-U2-L34",
-              "title": "Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
-              "markdown_content": "## b) Perform experiments on the applications of electrolysis in corrosion inhibition and purification of metals",
-              "page": 44
-            },
-            {
-              "lesson_id": "CHE-F1-U2-L35",
-              "title": "Use appropriate software to sketch the set-ups of experiments",
-              "markdown_content": "## c) Use appropriate software to sketch the set-ups of experiments",
-              "page": 45
-            },
-            {
-              "lesson_id": "CHE-F1-U2-L36",
-              "title": "Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
-              "markdown_content": "## d) Prepare various compounds of metals (oxides, hydroxides, carbonates, hydrogen carbonates, nitrates, chlorides, and sulphate",
-              "page": 46
-            },
-            {
-              "lesson_id": "CHE-F1-U2-L37",
-              "title": "Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
-              "markdown_content": "## e) Demonstrate oxidizing and displacement properties of non-metallic compounds (oxygen, hydrogen, chlorine, hydrogen chloride, sulphur dioxide, nitrogen, ammonia and carbon dioxid",
-              "page": 47
-            },
-            {
-              "lesson_id": "CHE-F1-U2-L38",
-              "title": "Prepare sulphuric acid from sulphur dioxide",
-              "markdown_content": "## f) Prepare sulphuric acid from sulphur dioxide",
-              "page": 48
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 3,
-      "unit_title": "Demonstrate mastery of basic principles of extraction of metals",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Demonstrate mastery of the principles of extraction of metals",
-          "competence_code": "3.1",
-          "lessons": [
-            {
-              "lesson_id": "CHE-F1-U3-L39",
-              "title": "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
-              "markdown_content": "## a) Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
-              "page": 49
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 4,
-      "unit_title": "Conduct a project in Chemistry",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Conduct a project in Chemistry",
-          "competence_code": "4.1",
-          "lessons": [
-            {
-              "lesson_id": "CHE-F1-U4-L40",
-              "title": "Design and carry-out a simple research project in Chemistry",
-              "markdown_content": "## a) Design and carry-out a simple research project in Chemistry",
-              "page": 50
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of basic concepts, theories and principles in Chemistry",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": ". Demonstrate mastery of concepts, theories and principles in Chemistry",
-          "competence_code": "1.1",
-          "lessons": [
-            {
-              "lesson_id": "CHE-F1-U1-L41",
-              "title": "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
-              "markdown_content": "## a) Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
-              "page": 51
-            },
-            {
-              "lesson_id": "CHE-F1-U1-L42",
-              "title": "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
-              "markdown_content": "## b) Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
-              "page": 52
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Demonstrate mastery of basic terminologies in Chemistry",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Use the International Union of Pure and Applied Chemistry nomenclature to name chemical species",
-          "competence_code": "2.1",
-          "lessons": [
-            {
-              "lesson_id": "CHE-F1-U2-L43",
-              "title": "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
-              "markdown_content": "## a) Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
-              "page": 53
-            },
-            {
-              "lesson_id": "CHE-F1-U2-L44",
-              "title": "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
-              "markdown_content": "## b) Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
-              "page": 54
+              "lesson_id": "CHEM-F1-UN-L6",
+              "title": "Identify the importance of Chemistry in everyday life",
+              "markdown_content": "## c) Identify the importance of Chemistry in everyday life",
+              "page": 16
             }
           ]
         },
         {
-          "topic_name": "Use chemical symbols, formulae and equations to represent chemical reaction",
+          "topic_name": "Applications of Chemistry in the development of a modern society",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L7",
+              "title": "Discuss the contributions of Chemistry to modern society",
+              "markdown_content": "## a) Discuss the contributions of Chemistry to modern society",
+              "page": 17
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L8",
+              "title": "Identify applications of Chemistry in medicine, agriculture, and industry",
+              "markdown_content": "## b) Identify applications of Chemistry in medicine, agriculture, and industry",
+              "page": 17
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L9",
+              "title": "Explain how Chemistry has improved quality of life",
+              "markdown_content": "## c) Explain how Chemistry has improved quality of life",
+              "page": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Laboratory Techniques and Safety",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Laboratory Safety Measures",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L10",
+              "title": "State the importance of laboratory safety",
+              "markdown_content": "## a) State the importance of laboratory safety",
+              "page": 21
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L11",
+              "title": "Identify common laboratory hazards",
+              "markdown_content": "## b) Identify common laboratory hazards",
+              "page": 21
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L12",
+              "title": "Describe safety measures in the laboratory",
+              "markdown_content": "## c) Describe safety measures in the laboratory",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Handling Chemicals Safely / Safety Signs",
           "competence_code": "2.2",
           "lessons": [
             {
-              "lesson_id": "CHE-F1-U2-L45",
-              "title": "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
-              "markdown_content": "## a) Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
-              "page": 55
+              "lesson_id": "CHEM-F1-UN-L13",
+              "title": "Identify safety signs in the laboratory",
+              "markdown_content": "## a) Identify safety signs in the laboratory",
+              "page": 22
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L14",
+              "title": "Describe how to handle chemicals safely",
+              "markdown_content": "## b) Describe how to handle chemicals safely",
+              "page": 22
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L15",
+              "title": "Explain proper disposal of chemical waste",
+              "markdown_content": "## c) Explain proper disposal of chemical waste",
+              "page": 22
+            }
+          ]
+        },
+        {
+          "topic_name": "Laboratory Rules",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L16",
+              "title": "State laboratory rules before practical activities",
+              "markdown_content": "## a) State laboratory rules before practical activities",
+              "page": 23
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L17",
+              "title": "Describe rules during practical activities",
+              "markdown_content": "## b) Describe rules during practical activities",
+              "page": 23
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L18",
+              "title": "State rules after practical activities",
+              "markdown_content": "## c) State rules after practical activities",
+              "page": 23
+            }
+          ]
+        },
+        {
+          "topic_name": "First Aid and First Aid Kit",
+          "competence_code": "2.4",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L19",
+              "title": "Explain the concept of first aid",
+              "markdown_content": "## a) Explain the concept of first aid",
+              "page": 24
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L20",
+              "title": "Identify contents of a first aid kit",
+              "markdown_content": "## b) Identify contents of a first aid kit",
+              "page": 24
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L21",
+              "title": "Describe how to render first aid for common laboratory accidents",
+              "markdown_content": "## c) Describe how to render first aid for common laboratory accidents",
+              "page": 24
+            }
+          ]
+        },
+        {
+          "topic_name": "Basic Chemistry Laboratory Apparatus",
+          "competence_code": "2.5",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L22",
+              "title": "Identify basic chemistry laboratory apparatus",
+              "markdown_content": "## a) Identify basic chemistry laboratory apparatus",
+              "page": 25
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L23",
+              "title": "State the uses of each apparatus",
+              "markdown_content": "## b) State the uses of each apparatus",
+              "page": 25
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L24",
+              "title": "Describe proper care of laboratory apparatus",
+              "markdown_content": "## c) Describe proper care of laboratory apparatus",
+              "page": 25
             }
           ]
         }
@@ -417,24 +211,78 @@
     },
     {
       "unit_number": 3,
-      "unit_title": "Conduct experiments in Chemistry",
+      "unit_title": "Fire, Firefighting and Flames",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Conduct experiments in Chemistry",
+          "topic_name": "Fire (Components needed to start fire)",
           "competence_code": "3.1",
           "lessons": [
             {
-              "lesson_id": "CHE-F1-U3-L46",
-              "title": "Investigate the composition of chemical species in substances using systematic qualitative analysis",
-              "markdown_content": "## a) Investigate the composition of chemical species in substances using systematic qualitative analysis",
-              "page": 56
+              "lesson_id": "CHEM-F1-UN-L25",
+              "title": "Explain the concept of fire",
+              "markdown_content": "## a) Explain the concept of fire",
+              "page": 30
             },
             {
-              "lesson_id": "CHE-F1-U3-L47",
-              "title": "Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
-              "markdown_content": "## b) Demonstrate the local and industrial preparations of aliphatic hydrocarbons and alcohols",
-              "page": 57
+              "lesson_id": "CHEM-F1-UN-L26",
+              "title": "Identify the three components needed to start fire",
+              "markdown_content": "## b) Identify the three components needed to start fire",
+              "page": 30
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L27",
+              "title": "Describe the fire triangle",
+              "markdown_content": "## c) Describe the fire triangle",
+              "page": 30
+            }
+          ]
+        },
+        {
+          "topic_name": "Firefighting (Portable fire extinguishers)",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L28",
+              "title": "Identify types of portable fire extinguishers",
+              "markdown_content": "## a) Identify types of portable fire extinguishers",
+              "page": 31
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L29",
+              "title": "Describe how to use each type of fire extinguisher",
+              "markdown_content": "## b) Describe how to use each type of fire extinguisher",
+              "page": 31
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L30",
+              "title": "Explain when to use each type of extinguisher",
+              "markdown_content": "## c) Explain when to use each type of extinguisher",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "topic_name": "Flames (Bunsen burner, parts, and characteristics of flames)",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L31",
+              "title": "Identify the parts of a Bunsen burner",
+              "markdown_content": "## a) Identify the parts of a Bunsen burner",
+              "page": 32
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L32",
+              "title": "Describe the characteristics of different flames",
+              "markdown_content": "## b) Describe the characteristics of different flames",
+              "page": 32
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L33",
+              "title": "Explain how to adjust the Bunsen burner flame",
+              "markdown_content": "## c) Explain how to adjust the Bunsen burner flame",
+              "page": 32
             }
           ]
         }
@@ -442,18 +290,714 @@
     },
     {
       "unit_number": 4,
-      "unit_title": "Conduct a project in Chemistry",
+      "unit_title": "Matter",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Conduct a project in Chemistry",
+          "topic_name": "States of Matter",
           "competence_code": "4.1",
           "lessons": [
             {
-              "lesson_id": "CHE-F1-U4-L48",
-              "title": "Complete and submit a report for the project started in Form Three",
-              "markdown_content": "## a) Complete and submit a report for the project started in Form Three",
-              "page": 58
+              "lesson_id": "CHEM-F1-UN-L34",
+              "title": "Describe the three states of matter",
+              "markdown_content": "## a) Describe the three states of matter",
+              "page": 36
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L35",
+              "title": "Identify properties of each state of matter",
+              "markdown_content": "## b) Identify properties of each state of matter",
+              "page": 36
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L36",
+              "title": "Explain the arrangement of particles in each state",
+              "markdown_content": "## c) Explain the arrangement of particles in each state",
+              "page": 36
+            }
+          ]
+        },
+        {
+          "topic_name": "Changes in States of Matter",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L37",
+              "title": "Explain changes of state",
+              "markdown_content": "## a) Explain changes of state",
+              "page": 37
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L38",
+              "title": "Describe melting, freezing, evaporation, condensation, and sublimation",
+              "markdown_content": "## b) Describe melting, freezing, evaporation, condensation, and sublimation",
+              "page": 37
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L39",
+              "title": "Identify factors affecting changes of state",
+              "markdown_content": "## c) Identify factors affecting changes of state",
+              "page": 37
+            }
+          ]
+        },
+        {
+          "topic_name": "Particulate and Kinetic Nature of Matter",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L40",
+              "title": "Explain the particulate nature of matter",
+              "markdown_content": "## a) Explain the particulate nature of matter",
+              "page": 38
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L41",
+              "title": "Describe the kinetic theory of matter",
+              "markdown_content": "## b) Describe the kinetic theory of matter",
+              "page": 38
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L42",
+              "title": "Relate kinetic energy to temperature",
+              "markdown_content": "## c) Relate kinetic energy to temperature",
+              "page": 38
+            }
+          ]
+        },
+        {
+          "topic_name": "Physical and Chemical Changes",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L43",
+              "title": "Distinguish between physical and chemical changes",
+              "markdown_content": "## a) Distinguish between physical and chemical changes",
+              "page": 39
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L44",
+              "title": "Identify examples of each type of change",
+              "markdown_content": "## b) Identify examples of each type of change",
+              "page": 39
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L45",
+              "title": "Describe indicators of chemical changes",
+              "markdown_content": "## c) Describe indicators of chemical changes",
+              "page": 39
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "Elements, Compounds and Mixtures",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Elements and Chemical Symbols",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L46",
+              "title": "Define an element",
+              "markdown_content": "## a) Define an element",
+              "page": 40
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L47",
+              "title": "State the chemical symbols of common elements",
+              "markdown_content": "## b) State the chemical symbols of common elements",
+              "page": 40
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L48",
+              "title": "Identify elements on the periodic table",
+              "markdown_content": "## c) Identify elements on the periodic table",
+              "page": 40
+            }
+          ]
+        },
+        {
+          "topic_name": "Metals and Non-metals",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L49",
+              "title": "Distinguish between metals and non-metals",
+              "markdown_content": "## a) Distinguish between metals and non-metals",
+              "page": 41
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L50",
+              "title": "Describe properties of metals",
+              "markdown_content": "## b) Describe properties of metals",
+              "page": 41
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L51",
+              "title": "Describe properties of non-metals",
+              "markdown_content": "## c) Describe properties of non-metals",
+              "page": 41
+            }
+          ]
+        },
+        {
+          "topic_name": "Compounds and Mixtures",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L52",
+              "title": "Distinguish between compounds and mixtures",
+              "markdown_content": "## a) Distinguish between compounds and mixtures",
+              "page": 42
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L53",
+              "title": "Describe how compounds are formed",
+              "markdown_content": "## b) Describe how compounds are formed",
+              "page": 42
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L54",
+              "title": "Identify examples of compounds and mixtures",
+              "markdown_content": "## c) Identify examples of compounds and mixtures",
+              "page": 42
+            }
+          ]
+        },
+        {
+          "topic_name": "Solutions, Suspensions and Emulsions",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L55",
+              "title": "Distinguish between solutions, suspensions, and emulsions",
+              "markdown_content": "## a) Distinguish between solutions, suspensions, and emulsions",
+              "page": 43
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L56",
+              "title": "Identify examples of each",
+              "markdown_content": "## b) Identify examples of each",
+              "page": 43
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L57",
+              "title": "Describe properties of each type of mixture",
+              "markdown_content": "## c) Describe properties of each type of mixture",
+              "page": 43
+            }
+          ]
+        },
+        {
+          "topic_name": "Separation of Mixtures",
+          "competence_code": "5.5",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F1-UN-L58",
+              "title": "Describe methods of separating mixtures",
+              "markdown_content": "## a) Describe methods of separating mixtures",
+              "page": 44
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L59",
+              "title": "Explain filtration, distillation, evaporation, and chromatography",
+              "markdown_content": "## b) Explain filtration, distillation, evaporation, and chromatography",
+              "page": 44
+            },
+            {
+              "lesson_id": "CHEM-F1-UN-L60",
+              "title": "Apply appropriate separation methods",
+              "markdown_content": "## c) Apply appropriate separation methods",
+              "page": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "ATOMIC STRUCTURE",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of atomic structure",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U1-L01",
+              "title": "define atomic structure",
+              "markdown_content": "## define atomic structure",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Dalton atomic theory",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U1-L02",
+              "title": "state Dalton's atomic theory",
+              "markdown_content": "## state Dalton's atomic theory",
+              "page": 1
+            },
+            {
+              "lesson_id": "CHEM-F2-U1-L03",
+              "title": "explain the limitations of Dalton's theory",
+              "markdown_content": "## explain the limitations of Dalton's theory",
+              "page": 2
+            }
+          ]
+        },
+        {
+          "topic_name": "Sub-atomic particles",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U1-L04",
+              "title": "identify protons, neutrons and electrons",
+              "markdown_content": "## identify protons, neutrons and electrons",
+              "page": 2
+            },
+            {
+              "lesson_id": "CHEM-F2-U1-L05",
+              "title": "state the properties of sub-atomic particles",
+              "markdown_content": "## state the properties of sub-atomic particles",
+              "page": 3
+            }
+          ]
+        },
+        {
+          "topic_name": "Electronic arrangement",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U1-L06",
+              "title": "draw electronic configurations of elements",
+              "markdown_content": "## draw electronic configurations of elements",
+              "page": 3
+            },
+            {
+              "lesson_id": "CHEM-F2-U1-L07",
+              "title": "explain the arrangement of electrons in energy levels",
+              "markdown_content": "## explain the arrangement of electrons in energy levels",
+              "page": 4
+            }
+          ]
+        },
+        {
+          "topic_name": "Determination of atomic number and mass number",
+          "competence_code": "1.5",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U1-L08",
+              "title": "define atomic number and mass number",
+              "markdown_content": "## define atomic number and mass number",
+              "page": 4
+            },
+            {
+              "lesson_id": "CHEM-F2-U1-L09",
+              "title": "calculate the number of sub-atomic particles",
+              "markdown_content": "## calculate the number of sub-atomic particles",
+              "page": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 7,
+      "unit_title": "PERIODIC CLASSIFICATION",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Development of the periodic table",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U2-L10",
+              "title": "describe the historical development of the periodic table",
+              "markdown_content": "## describe the historical development of the periodic table",
+              "page": 6
+            },
+            {
+              "lesson_id": "CHEM-F2-U2-L11",
+              "title": "explain the contributions of Mendeleev and Moseley",
+              "markdown_content": "## explain the contributions of Mendeleev and Moseley",
+              "page": 6
+            }
+          ]
+        },
+        {
+          "topic_name": "Modern periodic table",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U2-L12",
+              "title": "describe the arrangement of elements in the modern periodic table",
+              "markdown_content": "## describe the arrangement of elements in the modern periodic table",
+              "page": 7
+            },
+            {
+              "lesson_id": "CHEM-F2-U2-L13",
+              "title": "identify groups, periods and blocks",
+              "markdown_content": "## identify groups, periods and blocks",
+              "page": 7
+            }
+          ]
+        },
+        {
+          "topic_name": "Electronic configuration and element positioning",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U2-L14",
+              "title": "use electronic configuration to locate elements",
+              "markdown_content": "## use electronic configuration to locate elements",
+              "page": 8
+            },
+            {
+              "lesson_id": "CHEM-F2-U2-L15",
+              "title": "relate electronic configuration to group and period numbers",
+              "markdown_content": "## relate electronic configuration to group and period numbers",
+              "page": 8
+            }
+          ]
+        },
+        {
+          "topic_name": "Trends in physical and chemical properties",
+          "competence_code": "2.4",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U2-L16",
+              "title": "describe trends in physical properties across periods",
+              "markdown_content": "## describe trends in physical properties across periods",
+              "page": 9
+            },
+            {
+              "lesson_id": "CHEM-F2-U2-L17",
+              "title": "describe trends in chemical properties across periods",
+              "markdown_content": "## describe trends in chemical properties across periods",
+              "page": 9
+            },
+            {
+              "lesson_id": "CHEM-F2-U2-L18",
+              "title": "describe trends in physical properties down a group",
+              "markdown_content": "## describe trends in physical properties down a group",
+              "page": 10
+            },
+            {
+              "lesson_id": "CHEM-F2-U2-L19",
+              "title": "describe trends in chemical properties down a group",
+              "markdown_content": "## describe trends in chemical properties down a group",
+              "page": 10
+            },
+            {
+              "lesson_id": "CHEM-F2-U2-L20",
+              "title": "explain trends in selected groups",
+              "markdown_content": "## explain trends in selected groups",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 8,
+      "unit_title": "CHEMICAL BONDING, FORMULA AND NOMENCLATURE",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of chemical bonding",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U3-L21",
+              "title": "explain chemical bonding",
+              "markdown_content": "## explain chemical bonding",
+              "page": 12
+            },
+            {
+              "lesson_id": "CHEM-F2-U3-L22",
+              "title": "describe the formation of ions",
+              "markdown_content": "## describe the formation of ions",
+              "page": 12
+            },
+            {
+              "lesson_id": "CHEM-F2-U3-L23",
+              "title": "explain electrovalent bonding",
+              "markdown_content": "## explain electrovalent bonding",
+              "page": 13
+            },
+            {
+              "lesson_id": "CHEM-F2-U3-L24",
+              "title": "explain covalent bonding",
+              "markdown_content": "## explain covalent bonding",
+              "page": 13
+            },
+            {
+              "lesson_id": "CHEM-F2-U3-L25",
+              "title": "define valency",
+              "markdown_content": "## define valency",
+              "page": 14
+            },
+            {
+              "lesson_id": "CHEM-F2-U3-L26",
+              "title": "identify radicals and their charges",
+              "markdown_content": "## identify radicals and their charges",
+              "page": 14
+            },
+            {
+              "lesson_id": "CHEM-F2-U3-L27",
+              "title": "determine oxidation state of elements",
+              "markdown_content": "## determine oxidation state of elements",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Concept of chemical formulas",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U3-L28",
+              "title": "identify types of chemical formulas",
+              "markdown_content": "## identify types of chemical formulas",
+              "page": 16
+            },
+            {
+              "lesson_id": "CHEM-F2-U3-L29",
+              "title": "write chemical formulas from names",
+              "markdown_content": "## write chemical formulas from names",
+              "page": 16
+            },
+            {
+              "lesson_id": "CHEM-F2-U3-L30",
+              "title": "perform formula calculations",
+              "markdown_content": "## perform formula calculations",
+              "page": 17
+            }
+          ]
+        },
+        {
+          "topic_name": "Nomenclature of binary inorganic compounds",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U3-L31",
+              "title": "name binary inorganic compounds using IUPAC rules",
+              "markdown_content": "## name binary inorganic compounds using IUPAC rules",
+              "page": 18
+            },
+            {
+              "lesson_id": "CHEM-F2-U3-L32",
+              "title": "write chemical names from formulas",
+              "markdown_content": "## write chemical names from formulas",
+              "page": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 9,
+      "unit_title": "CHEMICAL REACTIONS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of chemical reactions",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U4-L33",
+              "title": "define chemical reactions",
+              "markdown_content": "## define chemical reactions",
+              "page": 20
+            },
+            {
+              "lesson_id": "CHEM-F2-U4-L34",
+              "title": "identify signs of chemical reactions",
+              "markdown_content": "## identify signs of chemical reactions",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Chemical equations",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U4-L35",
+              "title": "write word equations",
+              "markdown_content": "## write word equations",
+              "page": 21
+            },
+            {
+              "lesson_id": "CHEM-F2-U4-L36",
+              "title": "write and balance chemical equations",
+              "markdown_content": "## write and balance chemical equations",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Types of chemical reactions",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U4-L37",
+              "title": "classify reactions: combination, decomposition, displacement, double decomposition, combustion",
+              "markdown_content": "## classify reactions",
+              "page": 22
+            },
+            {
+              "lesson_id": "CHEM-F2-U4-L38",
+              "title": "identify reactants and products",
+              "markdown_content": "## identify reactants and products",
+              "page": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 10,
+      "unit_title": "ACIDS, BASES, AND SALTS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Acids",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U5-L39",
+              "title": "describe the properties of acids",
+              "markdown_content": "## describe the properties of acids",
+              "page": 24
+            },
+            {
+              "lesson_id": "CHEM-F2-U5-L40",
+              "title": "distinguish between strong and weak acids",
+              "markdown_content": "## distinguish between strong and weak acids",
+              "page": 24
+            },
+            {
+              "lesson_id": "CHEM-F2-U5-L41",
+              "title": "explain the basicity of an acid",
+              "markdown_content": "## explain the basicity of an acid",
+              "page": 25
+            }
+          ]
+        },
+        {
+          "topic_name": "Bases",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U5-L42",
+              "title": "distinguish between strong and weak bases",
+              "markdown_content": "## distinguish between strong and weak bases",
+              "page": 26
+            },
+            {
+              "lesson_id": "CHEM-F2-U5-L43",
+              "title": "describe the properties of bases",
+              "markdown_content": "## describe the properties of bases",
+              "page": 26
+            },
+            {
+              "lesson_id": "CHEM-F2-U5-L44",
+              "title": "explain the acidity of a base",
+              "markdown_content": "## explain the acidity of a base",
+              "page": 27
+            }
+          ]
+        },
+        {
+          "topic_name": "Neutralisation reaction",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U5-L45",
+              "title": "explain neutralisation reactions",
+              "markdown_content": "## explain neutralisation reactions",
+              "page": 28
+            },
+            {
+              "lesson_id": "CHEM-F2-U5-L46",
+              "title": "write equations for neutralisation reactions",
+              "markdown_content": "## write equations for neutralisation reactions",
+              "page": 28
+            }
+          ]
+        },
+        {
+          "topic_name": "Uses of acids and bases",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U5-L47",
+              "title": "identify common uses of acids and bases",
+              "markdown_content": "## identify common uses of acids and bases",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "topic_name": "Acid-base indicators",
+          "competence_code": "5.5",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U5-L48",
+              "title": "explain the pH scale",
+              "markdown_content": "## explain the pH scale",
+              "page": 30
+            },
+            {
+              "lesson_id": "CHEM-F2-U5-L49",
+              "title": "identify occurrence of pH indicators",
+              "markdown_content": "## identify occurrence of pH indicators",
+              "page": 30
+            },
+            {
+              "lesson_id": "CHEM-F2-U5-L50",
+              "title": "describe uses of pH indicators",
+              "markdown_content": "## describe uses of pH indicators",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "topic_name": "Salts",
+          "competence_code": "5.6",
+          "lessons": [
+            {
+              "lesson_id": "CHEM-F2-U5-L51",
+              "title": "identify types of salts",
+              "markdown_content": "## identify types of salts",
+              "page": 32
+            },
+            {
+              "lesson_id": "CHEM-F2-U5-L52",
+              "title": "describe preparation of salts",
+              "markdown_content": "## describe preparation of salts",
+              "page": 32
+            },
+            {
+              "lesson_id": "CHEM-F2-U5-L53",
+              "title": "describe properties of salts",
+              "markdown_content": "## describe properties of salts",
+              "page": 33
+            },
+            {
+              "lesson_id": "CHEM-F2-U5-L54",
+              "title": "identify uses of salts",
+              "markdown_content": "## identify uses of salts",
+              "page": 33
             }
           ]
         }

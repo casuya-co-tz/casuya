@@ -5,129 +5,78 @@
   "units": [
     {
       "unit_number": 1,
-      "unit_title": "Demonstrate mastery of the structure of the Earth",
+      "unit_title": "CONCEPT OF GEOGRAPHY",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Demonstrate an understanding of the origin and the structure of the Earth and Earth systems",
+          "topic_name": "Meaning and nature of Geography",
           "competence_code": "1.1",
           "lessons": [
             {
-              "lesson_id": "GEO-F1-U1-L1",
-              "title": "Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
-              "markdown_content": "## a) Explain the concept and scope of Geography (branches, importance and relationship with other discipline",
-              "page": 15
+              "lesson_id": "GEOG-F1-U1-L01",
+              "title": "Define Geography",
+              "markdown_content": "## Define Geography",
+              "page": 1
             },
             {
-              "lesson_id": "GEO-F1-U1-L2",
-              "title": "Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
-              "markdown_content": "## b) Describe the Earth (origin, shape, size, position and movements of the earth in the solar system, and parallels and meridian",
-              "page": 16
+              "lesson_id": "GEOG-F1-U1-L02",
+              "title": "Describe the nature of Geography",
+              "markdown_content": "## Describe the nature of Geography",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U1-L03",
+              "title": "Explain the scope of Geography",
+              "markdown_content": "## Explain the scope of Geography",
+              "page": 1
             }
           ]
         },
         {
-          "topic_name": "Demonstrate an understanding of the major features of the Earth surface",
+          "topic_name": "Branches of Geography",
           "competence_code": "1.2",
           "lessons": [
             {
-              "lesson_id": "GEO-F1-U1-L3",
-              "title": "Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
-              "markdown_content": "## a) Describe major features of the Earth’s surface (continents, oceans, major relief features, large inland water bodies and vegetation zone",
-              "page": 17
+              "lesson_id": "GEOG-F1-U1-L04",
+              "title": "Identify Physical Geography",
+              "markdown_content": "## Identify Physical Geography",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U1-L05",
+              "title": "Describe Human Geography",
+              "markdown_content": "## Describe Human Geography",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U1-L06",
+              "title": "Explain Practical Geography",
+              "markdown_content": "## Explain Practical Geography",
+              "page": 1
             }
           ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of the structure of the Earth",
-      "form": 1,
-      "topics": [
+        },
         {
-          "topic_name": "Demonstrate an understanding of the origin and the structure of the Earth and earth systems",
-          "competence_code": "1.1",
+          "topic_name": "Importance of studying Geography",
+          "competence_code": "1.3",
           "lessons": [
             {
-              "lesson_id": "GEO-F1-U1-L4",
-              "title": "Describe the internal structure of the Earth (crust, mantle, cor",
-              "markdown_content": "## a) Describe the internal structure of the Earth (crust, mantle, cor",
-              "page": 18
+              "lesson_id": "GEOG-F1-U1-L07",
+              "title": "Explain the importance of studying Geography",
+              "markdown_content": "## Explain the importance of studying Geography",
+              "page": 1
             },
             {
-              "lesson_id": "GEO-F1-U1-L5",
-              "title": "and their major characteristics (location, size/ thickness, density and gross compositio",
-              "markdown_content": "## e) and their major characteristics (location, size/ thickness, density and gross compositio",
-              "page": 18
+              "lesson_id": "GEOG-F1-U1-L08",
+              "title": "Identify career opportunities in Geography",
+              "markdown_content": "## Identify career opportunities in Geography",
+              "page": 1
             },
             {
-              "lesson_id": "GEO-F1-U1-L6",
-              "title": "Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
-              "markdown_content": "## b) Describe the main external Earth systems (Hydrosphere, Atmosphere and Biospher",
-              "page": 19
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Demonstrate mastery of basic skills and techniques in Geography",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Demonstrate an understanding of the basic techniques of map and photograph interpretation",
-          "competence_code": "2.1",
-          "lessons": [
-            {
-              "lesson_id": "GEO-F1-U2-L7",
-              "title": "Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
-              "markdown_content": "## a) Describe the basic principles of reading and interpreting maps (key, symbols, direction, margin/frame, map title, scale and contour pattern",
-              "page": 20
-            },
-            {
-              "lesson_id": "GEO-F1-U2-L8",
-              "title": "Reading and interpreting various type of maps and their importance (topographical and statistical ma",
-              "markdown_content": "## b) Reading and interpreting various type of maps and their importance (topographical and statistical ma",
-              "page": 20
-            },
-            {
-              "lesson_id": "GEO-F1-U2-L9",
-              "title": "Describe the basic concept of photograph in Geography (meaning, types, elements and use",
-              "markdown_content": "## b) Describe the basic concept of photograph in Geography (meaning, types, elements and use",
-              "page": 21
-            },
-            {
-              "lesson_id": "GEO-F1-U2-L10",
-              "title": "Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen",
-              "markdown_content": "## c) Describe the basic principles of photograph interpretation (identifying foreground, middle ground and background, associating objects with geographical phenomen",
-              "page": 22
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of the structure of the Earth",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Demonstrate an understanding of the relationship between relief, climate and natural vegetation",
-          "competence_code": "1.1",
-          "lessons": [
-            {
-              "lesson_id": "GEO-F1-U1-L11",
-              "title": "Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
-              "markdown_content": "## a) Describe the major climatic regions of the world (tropical, temperate, polar and sub-tropica",
-              "page": 23
-            },
-            {
-              "lesson_id": "GEO-F1-U1-L12",
-              "title": "Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
-              "markdown_content": "## b) Describe the relationship between major features of the Earth’s surface, climate, and natural vegetation",
-              "page": 24
+              "lesson_id": "GEOG-F1-U1-L09",
+              "title": "Discuss the relevance of Geography in everyday life",
+              "markdown_content": "## Discuss the relevance of Geography in everyday life",
+              "page": 1
             }
           ]
         }
@@ -135,24 +84,102 @@
     },
     {
       "unit_number": 2,
-      "unit_title": "Demonstrate mastery of basic skills and techniques in Geography",
+      "unit_title": "THE SOLAR SYSTEM",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Demonstrate an understanding of the basic techniques in land surveying",
+          "topic_name": "Concept of the Solar System",
           "competence_code": "2.1",
           "lessons": [
             {
-              "lesson_id": "GEO-F1-U2-L13",
-              "title": "Explore the basic tenets of surveying (meaning, types, equipment, methods, and importanc",
-              "markdown_content": "## a) Explore the basic tenets of surveying (meaning, types, equipment, methods, and importanc",
-              "page": 25
+              "lesson_id": "GEOG-F1-U2-L01",
+              "title": "Define the Solar System",
+              "markdown_content": "## Define the Solar System",
+              "page": 1
             },
             {
-              "lesson_id": "GEO-F1-U2-L14",
-              "title": "Carry out simple tape/chain surveying",
-              "markdown_content": "## b) Carry out simple tape/chain surveying",
-              "page": 26
+              "lesson_id": "GEOG-F1-U2-L02",
+              "title": "Describe the formation of the Solar System",
+              "markdown_content": "## Describe the formation of the Solar System",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U2-L03",
+              "title": "Identify the position of Earth in the Solar System",
+              "markdown_content": "## Identify the position of Earth in the Solar System",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Components of the Solar System",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U2-L04",
+              "title": "Identify the Sun, planets, satellites, asteroids, comets, and meteors",
+              "markdown_content": "## Identify the Sun, planets, satellites, asteroids, comets, and meteors",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U2-L05",
+              "title": "Describe the characteristics of each component",
+              "markdown_content": "## Describe the characteristics of each component",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U2-L06",
+              "title": "Explain the classification of planets",
+              "markdown_content": "## Explain the classification of planets",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "The Earth",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U2-L07",
+              "title": "Describe the shape of the Earth",
+              "markdown_content": "## Describe the shape of the Earth",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U2-L08",
+              "title": "Explain evidence of the Earth's sphericity",
+              "markdown_content": "## Explain evidence of the Earth's sphericity",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U2-L09",
+              "title": "Estimate the size of the Earth",
+              "markdown_content": "## Estimate the size of the Earth",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Movements of the Earth",
+          "competence_code": "2.4",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U2-L10",
+              "title": "Explain rotation and revolution",
+              "markdown_content": "## Explain rotation and revolution",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U2-L11",
+              "title": "Describe the consequences of rotation",
+              "markdown_content": "## Describe the consequences of rotation",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U2-L12",
+              "title": "Describe the consequences of revolution",
+              "markdown_content": "## Describe the consequences of revolution",
+              "page": 1
             }
           ]
         }
@@ -160,55 +187,552 @@
     },
     {
       "unit_number": 3,
-      "unit_title": "Demonstrate mastery of human geography",
+      "unit_title": "MAJOR FEATURES OF THE EARTH'S SURFACE",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Carry out a project in Geography",
+          "topic_name": "Continents and oceans",
           "competence_code": "3.1",
           "lessons": [
             {
-              "lesson_id": "GEO-F1-U3-L15",
-              "title": "Develop and carry out a simple research project in Geography",
-              "markdown_content": "## a) Develop and carry out a simple research project in Geography",
-              "page": 27
+              "lesson_id": "GEOG-F1-U3-L01",
+              "title": "Identify the seven continents",
+              "markdown_content": "## Identify the seven continents",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U3-L02",
+              "title": "Identify the five oceans",
+              "markdown_content": "## Identify the five oceans",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U3-L03",
+              "title": "Describe the distribution of land and water",
+              "markdown_content": "## Describe the distribution of land and water",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Major relief features of the land",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U3-L04",
+              "title": "Describe mountains, plateaus, plains, and valleys",
+              "markdown_content": "## Describe mountains, plateaus, plains, and valleys",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U3-L05",
+              "title": "Identify the formation of each feature",
+              "markdown_content": "## Identify the formation of each feature",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U3-L06",
+              "title": "Give examples of each feature",
+              "markdown_content": "## Give examples of each feature",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Major relief features of the ocean floor",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U3-L07",
+              "title": "Describe continental shelf, continental slope, deep sea plain, and ocean trenches",
+              "markdown_content": "## Describe continental shelf, continental slope, deep sea plain, and ocean trenches",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U3-L08",
+              "title": "Explain the formation of ocean floor features",
+              "markdown_content": "## Explain the formation of ocean floor features",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U3-L09",
+              "title": "Identify the significance of ocean floor features",
+              "markdown_content": "## Identify the significance of ocean floor features",
+              "page": 1
             }
           ]
         }
       ]
     },
     {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of human geography",
+      "unit_number": 4,
+      "unit_title": "WEATHER AND CLIMATE",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Demonstrate an understanding of the relationship between geography, environmental health, human settlements and economic activities",
-          "competence_code": "1.1",
+          "topic_name": "Concept of weather and climate",
+          "competence_code": "4.1",
           "lessons": [
             {
-              "lesson_id": "GEO-F1-U1-L16",
-              "title": "Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl",
-              "markdown_content": "## a) Describe the geographical factors that influence the spatial distribution of population, human settlements and economic activities (climate, soil, relief, vegetation, transport and water suppl",
-              "page": 28
+              "lesson_id": "GEOG-F1-U4-L01",
+              "title": "Define weather",
+              "markdown_content": "## Define weather",
+              "page": 1
             },
             {
-              "lesson_id": "GEO-F1-U1-L17",
-              "title": "Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
-              "markdown_content": "## b) Examine the impacts of population distribution on economic activities and the environment (land use and settlement patterns change",
-              "page": 29
+              "lesson_id": "GEOG-F1-U4-L02",
+              "title": "Define climate",
+              "markdown_content": "## Define climate",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U4-L03",
+              "title": "Distinguish between weather and climate",
+              "markdown_content": "## Distinguish between weather and climate",
+              "page": 1
             }
           ]
         },
         {
-          "topic_name": "Carry out a project in Geography",
+          "topic_name": "Elements of weather",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U4-L04",
+              "title": "Identify temperature, atmospheric pressure, wind, humidity, precipitation, cloud cover, and sunshine",
+              "markdown_content": "## Identify temperature, atmospheric pressure, wind, humidity, precipitation, cloud cover, and sunshine",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U4-L05",
+              "title": "Describe how each element is measured",
+              "markdown_content": "## Describe how each element is measured",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U4-L06",
+              "title": "Explain the importance of weather elements",
+              "markdown_content": "## Explain the importance of weather elements",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Weather stations and instruments",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U4-L07",
+              "title": "Identify components of a weather station",
+              "markdown_content": "## Identify components of a weather station",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U4-L08",
+              "title": "Describe instruments used to measure weather elements",
+              "markdown_content": "## Describe instruments used to measure weather elements",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U4-L09",
+              "title": "Explain how to read weather instruments",
+              "markdown_content": "## Explain how to read weather instruments",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Factors affecting climate",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U4-L10",
+              "title": "Identify factors affecting climate",
+              "markdown_content": "## Identify factors affecting climate",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U4-L11",
+              "title": "Explain the influence of latitude, altitude, and proximity to the ocean",
+              "markdown_content": "## Explain the influence of latitude, altitude, and proximity to the ocean",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U4-L12",
+              "title": "Describe the effects of vegetation on climate",
+              "markdown_content": "## Describe the effects of vegetation on climate",
+              "page": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "MAP WORK",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Concept and types of maps",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U5-L01",
+              "title": "Define a map",
+              "markdown_content": "## Define a map",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U5-L02",
+              "title": "Identify types of maps",
+              "markdown_content": "## Identify types of maps",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U5-L03",
+              "title": "Describe the characteristics of each type",
+              "markdown_content": "## Describe the characteristics of each type",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Essential components of a map",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U5-L04",
+              "title": "Identify title, key/legend, scale, compass direction, and margin",
+              "markdown_content": "## Identify title, key/legend, scale, compass direction, and margin",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U5-L05",
+              "title": "Describe the function of each component",
+              "markdown_content": "## Describe the function of each component",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U5-L06",
+              "title": "Explain how to use each component",
+              "markdown_content": "## Explain how to use each component",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Scale representation and conversion",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U5-L07",
+              "title": "Define scale",
+              "markdown_content": "## Define scale",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U5-L08",
+              "title": "Identify types of scale representation",
+              "markdown_content": "## Identify types of scale representation",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U5-L09",
+              "title": "Convert between different scale representations",
+              "markdown_content": "## Convert between different scale representations",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Measurement of distances and calculation of areas on maps",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F1-U5-L10",
+              "title": "Measure distances on maps",
+              "markdown_content": "## Measure distances on maps",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U5-L11",
+              "title": "Calculate actual distances using scale",
+              "markdown_content": "## Calculate actual distances using scale",
+              "page": 1
+            },
+            {
+              "lesson_id": "GEOG-F1-U5-L12",
+              "title": "Calculate areas on maps",
+              "markdown_content": "## Calculate areas on maps",
+              "page": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "THE INTERNAL STRUCTURE OF THE EARTH",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "The concept of the internal structure of the Earth",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U1-L01",
+              "title": "describe the layers of the earth: crust, mantle and core",
+              "markdown_content": "## describe the layers of the earth",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "The role of Earth internal structure in rock formation",
           "competence_code": "1.2",
           "lessons": [
             {
-              "lesson_id": "GEO-F1-U1-L18",
-              "title": "Complete and submit a report of the project started in Form Three",
-              "markdown_content": "## a) Complete and submit a report of the project started in Form Three",
-              "page": 30
+              "lesson_id": "GEOG-F2-U1-L02",
+              "title": "describe the formation of igneous, sedimentary and metamorphic rocks",
+              "markdown_content": "## describe the formation of rocks",
+              "page": 2
+            }
+          ]
+        },
+        {
+          "topic_name": "The internal forces of the Earth",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U1-L03",
+              "title": "explain folding, faulting and their landforms",
+              "markdown_content": "## explain folding and faulting",
+              "page": 3
+            },
+            {
+              "lesson_id": "GEOG-F2-U1-L04",
+              "title": "describe block mountains, plateau, basin and rift valley formation",
+              "markdown_content": "## describe landform formation",
+              "page": 3
+            }
+          ]
+        },
+        {
+          "topic_name": "Vulcanicity",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U1-L05",
+              "title": "describe volcanic activities and their economic importance",
+              "markdown_content": "## describe volcanic activities",
+              "page": 4
+            },
+            {
+              "lesson_id": "GEOG-F2-U1-L06",
+              "title": "explain the negative effects of volcanic eruptions",
+              "markdown_content": "## explain negative effects of volcanic eruptions",
+              "page": 4
+            }
+          ]
+        },
+        {
+          "topic_name": "Earthquakes",
+          "competence_code": "1.5",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U1-L07",
+              "title": "explain the causes and effects of earthquakes",
+              "markdown_content": "## explain the causes and effects of earthquakes",
+              "page": 5
+            },
+            {
+              "lesson_id": "GEOG-F2-U1-L08",
+              "title": "describe methods of minimising risks caused by earthquakes",
+              "markdown_content": "## describe methods of minimising earthquake risks",
+              "page": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 7,
+      "unit_title": "THE EXTERNAL STRUCTURE OF THE EARTH",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of the external structure of the Earth",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U2-L09",
+              "title": "explain the concept of external structure of the earth",
+              "markdown_content": "## explain external structure of the earth",
+              "page": 7
+            }
+          ]
+        },
+        {
+          "topic_name": "External forces affecting the Earth surface",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U2-L10",
+              "title": "describe weathering and its significance",
+              "markdown_content": "## describe weathering",
+              "page": 8
+            },
+            {
+              "lesson_id": "GEOG-F2-U2-L11",
+              "title": "explain mass wasting and its effects on the environment",
+              "markdown_content": "## explain mass wasting",
+              "page": 8
+            },
+            {
+              "lesson_id": "GEOG-F2-U2-L12",
+              "title": "describe the action of running water on the earth surface",
+              "markdown_content": "## describe action of running water",
+              "page": 9
+            },
+            {
+              "lesson_id": "GEOG-F2-U2-L13",
+              "title": "explain wave action and coastal features",
+              "markdown_content": "## explain wave action and coastal features",
+              "page": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 8,
+      "unit_title": "MAP READING AND INTERPRETATION",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of map reading and interpretation",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U3-L14",
+              "title": "identify essential elements of a map",
+              "markdown_content": "## identify essential elements of a map",
+              "page": 11
+            },
+            {
+              "lesson_id": "GEOG-F2-U3-L15",
+              "title": "describe characteristics of good maps",
+              "markdown_content": "## describe characteristics of good maps",
+              "page": 11
+            },
+            {
+              "lesson_id": "GEOG-F2-U3-L16",
+              "title": "explain the importance of maps",
+              "markdown_content": "## explain the importance of maps",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Representing relief features on maps",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U3-L17",
+              "title": "interpret contours and associated landforms",
+              "markdown_content": "## interpret contours and landforms",
+              "page": 13
+            },
+            {
+              "lesson_id": "GEOG-F2-U3-L18",
+              "title": "identify highland, lowland and coastline landforms from maps",
+              "markdown_content": "## identify landforms from maps",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Cross-section",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U3-L19",
+              "title": "draw cross-sections from topographical maps",
+              "markdown_content": "## draw cross-sections",
+              "page": 14
+            },
+            {
+              "lesson_id": "GEOG-F2-U3-L20",
+              "title": "calculate vertical exaggeration",
+              "markdown_content": "## calculate vertical exaggeration",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Map interpretation",
+          "competence_code": "3.4",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U3-L21",
+              "title": "interpret physical and human features from maps",
+              "markdown_content": "## interpret features from maps",
+              "page": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 9,
+      "unit_title": "PHOTOGRAPH READING AND INTERPRETATION",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of photograph reading and interpretation",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U4-L22",
+              "title": "identify types of photographs and satellite images",
+              "markdown_content": "## identify types of photographs",
+              "page": 17
+            },
+            {
+              "lesson_id": "GEOG-F2-U4-L23",
+              "title": "explain uses of satellite images",
+              "markdown_content": "## explain uses of satellite images",
+              "page": 17
+            },
+            {
+              "lesson_id": "GEOG-F2-U4-L24",
+              "title": "compare photographs and maps",
+              "markdown_content": "## compare photographs and maps",
+              "page": 18
+            },
+            {
+              "lesson_id": "GEOG-F2-U4-L25",
+              "title": "explain the uses of photographs in geography",
+              "markdown_content": "## explain uses of photographs in geography",
+              "page": 18
+            }
+          ]
+        },
+        {
+          "topic_name": "Photograph reading and interpretation",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "GEOG-F2-U4-L26",
+              "title": "apply techniques of photograph interpretation",
+              "markdown_content": "## apply techniques of photograph interpretation",
+              "page": 19
+            },
+            {
+              "lesson_id": "GEOG-F2-U4-L27",
+              "title": "explain the importance of photograph reading and interpretation",
+              "markdown_content": "## explain importance of photograph interpretation",
+              "page": 19
             }
           ]
         }

@@ -5,53 +5,101 @@
   "units": [
     {
       "unit_number": 1,
-      "unit_title": "NUMBERS AND OPERATIONS",
+      "unit_title": "CONCEPT OF MATHEMATICS",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Whole Numbers",
+          "topic_name": "Meaning of Mathematics",
           "competence_code": "1.1",
           "lessons": [
             {
-              "lesson_id": "041-F1-U1-L1",
-              "title": "Explain whole numbers",
-              "markdown_content": "## Explain whole numbers",
+              "lesson_id": "MATH-F1-U1-L01",
+              "title": "Define Mathematics",
+              "markdown_content": "## Define Mathematics",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U1-L02",
+              "title": "Describe the nature of Mathematics",
+              "markdown_content": "## Describe the nature of Mathematics",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U1-L03",
+              "title": "State the importance of studying Mathematics",
+              "markdown_content": "## State the importance of studying Mathematics",
               "page": 11
             }
           ]
         },
         {
-          "topic_name": "Fractions",
+          "topic_name": "Branches of Mathematics",
           "competence_code": "1.2",
           "lessons": [
             {
-              "lesson_id": "041-F1-U1-L2",
-              "title": "Explain fractions",
-              "markdown_content": "## Explain fractions",
+              "lesson_id": "MATH-F1-U1-L04",
+              "title": "Identify branches of Mathematics",
+              "markdown_content": "## Identify branches of Mathematics",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U1-L05",
+              "title": "Describe pure Mathematics",
+              "markdown_content": "## Describe pure Mathematics",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U1-L06",
+              "title": "Describe applied Mathematics",
+              "markdown_content": "## Describe applied Mathematics",
               "page": 11
             }
           ]
         },
         {
-          "topic_name": "Decimals",
+          "topic_name": "Relationship between Mathematics and other subjects",
           "competence_code": "1.3",
           "lessons": [
             {
-              "lesson_id": "041-F1-U1-L3",
-              "title": "Explain decimals",
-              "markdown_content": "## Explain decimals",
+              "lesson_id": "MATH-F1-U1-L07",
+              "title": "Explain the relationship between Mathematics and Science",
+              "markdown_content": "## Explain the relationship between Mathematics and Science",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U1-L08",
+              "title": "Describe how Mathematics relates to other disciplines",
+              "markdown_content": "## Describe how Mathematics relates to other disciplines",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U1-L09",
+              "title": "Identify applications of Mathematics",
+              "markdown_content": "## Identify applications of Mathematics",
               "page": 11
             }
           ]
         },
         {
-          "topic_name": "Percentages",
+          "topic_name": "Importance of Mathematics",
           "competence_code": "1.4",
           "lessons": [
             {
-              "lesson_id": "041-F1-U1-L4",
-              "title": "Explain percentages",
-              "markdown_content": "## Explain percentages",
+              "lesson_id": "MATH-F1-U1-L10",
+              "title": "Discuss the importance of Mathematics in daily life",
+              "markdown_content": "## Discuss the importance of Mathematics in daily life",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U1-L11",
+              "title": "Identify career opportunities in Mathematics",
+              "markdown_content": "## Identify career opportunities in Mathematics",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U1-L12",
+              "title": "Explain the role of Mathematics in technology",
+              "markdown_content": "## Explain the role of Mathematics in technology",
               "page": 11
             }
           ]
@@ -60,42 +108,150 @@
     },
     {
       "unit_number": 2,
-      "unit_title": "ALGEBRA",
-      "form": 2,
+      "unit_title": "NUMBERS",
+      "form": 1,
       "topics": [
         {
-          "topic_name": "Algebraic Expressions",
+          "topic_name": "Concept of numbers",
           "competence_code": "2.1",
           "lessons": [
             {
-              "lesson_id": "041-F2-U2-L1",
-              "title": "Explain algebraic expressions",
-              "markdown_content": "## Explain algebraic expressions",
-              "page": 12
+              "lesson_id": "MATH-F1-U2-L01",
+              "title": "Define number systems",
+              "markdown_content": "## Define number systems",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L02",
+              "title": "Identify natural numbers",
+              "markdown_content": "## Identify natural numbers",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L03",
+              "title": "Identify whole numbers",
+              "markdown_content": "## Identify whole numbers",
+              "page": 11
             }
           ]
         },
         {
-          "topic_name": "Equations",
+          "topic_name": "Rational numbers",
           "competence_code": "2.2",
           "lessons": [
             {
-              "lesson_id": "041-F2-U2-L2",
-              "title": "Explain equations",
-              "markdown_content": "## Explain equations",
-              "page": 12
+              "lesson_id": "MATH-F1-U2-L04",
+              "title": "Define rational numbers",
+              "markdown_content": "## Define rational numbers",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L05",
+              "title": "Represent rational numbers on a number line",
+              "markdown_content": "## Represent rational numbers on a number line",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L06",
+              "title": "Perform operations with rational numbers",
+              "markdown_content": "## Perform operations with rational numbers",
+              "page": 11
             }
           ]
         },
         {
-          "topic_name": "Inequations",
+          "topic_name": "Irrational numbers",
           "competence_code": "2.3",
           "lessons": [
             {
-              "lesson_id": "041-F2-U2-L3",
-              "title": "Explain inequations",
-              "markdown_content": "## Explain inequations",
-              "page": 12
+              "lesson_id": "MATH-F1-U2-L07",
+              "title": "Define irrational numbers",
+              "markdown_content": "## Define irrational numbers",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L08",
+              "title": "Identify examples of irrational numbers",
+              "markdown_content": "## Identify examples of irrational numbers",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L09",
+              "title": "Approximate irrational numbers",
+              "markdown_content": "## Approximate irrational numbers",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Real numbers",
+          "competence_code": "2.4",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U2-L10",
+              "title": "Define real numbers",
+              "markdown_content": "## Define real numbers",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L11",
+              "title": "Classify real numbers",
+              "markdown_content": "## Classify real numbers",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L12",
+              "title": "Perform operations with real numbers",
+              "markdown_content": "## Perform operations with real numbers",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Inequalities in real numbers",
+          "competence_code": "2.5",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U2-L13",
+              "title": "Define inequalities",
+              "markdown_content": "## Define inequalities",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L14",
+              "title": "Solve linear inequalities",
+              "markdown_content": "## Solve linear inequalities",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L15",
+              "title": "Represent inequalities on a number line",
+              "markdown_content": "## Represent inequalities on a number line",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Absolute value of a real number",
+          "competence_code": "2.6",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U2-L16",
+              "title": "Define absolute value",
+              "markdown_content": "## Define absolute value",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L17",
+              "title": "Calculate absolute values",
+              "markdown_content": "## Calculate absolute values",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U2-L18",
+              "title": "Solve problems involving absolute value",
+              "markdown_content": "## Solve problems involving absolute value",
+              "page": 11
             }
           ]
         }
@@ -103,6 +259,1086 @@
     },
     {
       "unit_number": 3,
+      "unit_title": "APPROXIMATIONS",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Meaning of approximations",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U3-L01",
+              "title": "Define approximation",
+              "markdown_content": "## Define approximation",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U3-L02",
+              "title": "Explain the need for approximation",
+              "markdown_content": "## Explain the need for approximation",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U3-L03",
+              "title": "Identify sources of approximation errors",
+              "markdown_content": "## Identify sources of approximation errors",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Rounding off numbers",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U3-L04",
+              "title": "Explain rounding off to given decimal places",
+              "markdown_content": "## Explain rounding off to given decimal places",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U3-L05",
+              "title": "Round off to significant figures",
+              "markdown_content": "## Round off to significant figures",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U3-L06",
+              "title": "Apply rounding off in calculations",
+              "markdown_content": "## Apply rounding off in calculations",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Significant figures",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U3-L07",
+              "title": "Define significant figures",
+              "markdown_content": "## Define significant figures",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U3-L08",
+              "title": "Identify significant figures in numbers",
+              "markdown_content": "## Identify significant figures in numbers",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U3-L09",
+              "title": "Round numbers to significant figures",
+              "markdown_content": "## Round numbers to significant figures",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Approximations in calculations",
+          "competence_code": "3.4",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U3-L10",
+              "title": "Perform calculations using approximations",
+              "markdown_content": "## Perform calculations using approximations",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U3-L11",
+              "title": "Estimate results before calculation",
+              "markdown_content": "## Estimate results before calculation",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U3-L12",
+              "title": "Check reasonableness of answers",
+              "markdown_content": "## Check reasonableness of answers",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "RATIOS AND PROPORTIONS",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Ratios",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U4-L01",
+              "title": "Define ratio",
+              "markdown_content": "## Define ratio",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U4-L02",
+              "title": "Simplify ratios",
+              "markdown_content": "## Simplify ratios",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U4-L03",
+              "title": "Divide quantities in a given ratio",
+              "markdown_content": "## Divide quantities in a given ratio",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Proportions",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U4-L04",
+              "title": "Define proportion",
+              "markdown_content": "## Define proportion",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U4-L05",
+              "title": "Solve direct proportion problems",
+              "markdown_content": "## Solve direct proportion problems",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U4-L06",
+              "title": "Solve inverse proportion problems",
+              "markdown_content": "## Solve inverse proportion problems",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "ALGEBRA",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Algebraic expressions",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U5-L01",
+              "title": "Define algebraic expressions",
+              "markdown_content": "## Define algebraic expressions",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U5-L02",
+              "title": "Identify terms in an expression",
+              "markdown_content": "## Identify terms in an expression",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U5-L03",
+              "title": "Simplify algebraic expressions",
+              "markdown_content": "## Simplify algebraic expressions",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Algebraic equations",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U5-L04",
+              "title": "Define equations",
+              "markdown_content": "## Define equations",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U5-L05",
+              "title": "Solve linear equations",
+              "markdown_content": "## Solve linear equations",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U5-L06",
+              "title": "Translate word problems into equations",
+              "markdown_content": "## Translate word problems into equations",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Linear simultaneous equations",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U5-L07",
+              "title": "Define simultaneous equations",
+              "markdown_content": "## Define simultaneous equations",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U5-L08",
+              "title": "Solve simultaneous equations by substitution",
+              "markdown_content": "## Solve simultaneous equations by substitution",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U5-L09",
+              "title": "Solve simultaneous equations by elimination",
+              "markdown_content": "## Solve simultaneous equations by elimination",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Solution of inequalities with one unknown",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U5-L10",
+              "title": "Solve linear inequalities",
+              "markdown_content": "## Solve linear inequalities",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U5-L11",
+              "title": "Represent solutions on a number line",
+              "markdown_content": "## Represent solutions on a number line",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U5-L12",
+              "title": "Check solutions of inequalities",
+              "markdown_content": "## Check solutions of inequalities",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "COORDINATE GEOMETRY",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Basic concepts of coordinate geometry",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U6-L01",
+              "title": "Define coordinate geometry",
+              "markdown_content": "## Define coordinate geometry",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L02",
+              "title": "Identify the Cartesian plane",
+              "markdown_content": "## Identify the Cartesian plane",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L03",
+              "title": "Plot points on the Cartesian plane",
+              "markdown_content": "## Plot points on the Cartesian plane",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Gradient of a straight line",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U6-L04",
+              "title": "Define gradient",
+              "markdown_content": "## Define gradient",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L05",
+              "title": "Calculate gradient from two points",
+              "markdown_content": "## Calculate gradient from two points",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L06",
+              "title": "Determine gradient from equation",
+              "markdown_content": "## Determine gradient from equation",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Equation of a straight line",
+          "competence_code": "6.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U6-L07",
+              "title": "Derive the equation of a straight line",
+              "markdown_content": "## Derive the equation of a straight line",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L08",
+              "title": "Identify slope-intercept form",
+              "markdown_content": "## Identify slope-intercept form",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L09",
+              "title": "Identify point-slope form",
+              "markdown_content": "## Identify point-slope form",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "General equation of a straight line",
+          "competence_code": "6.4",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U6-L10",
+              "title": "Write equations in general form",
+              "markdown_content": "## Write equations in general form",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L11",
+              "title": "Convert between forms",
+              "markdown_content": "## Convert between forms",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L12",
+              "title": "Identify parallel and perpendicular lines",
+              "markdown_content": "## Identify parallel and perpendicular lines",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Graphing linear equations",
+          "competence_code": "6.5",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U6-L13",
+              "title": "Plot linear equations on a graph",
+              "markdown_content": "## Plot linear equations on a graph",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L14",
+              "title": "Identify intercepts",
+              "markdown_content": "## Identify intercepts",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L15",
+              "title": "Determine the gradient from a graph",
+              "markdown_content": "## Determine the gradient from a graph",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Solving linear simultaneous equations graphically",
+          "competence_code": "6.6",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F1-U6-L16",
+              "title": "Solve simultaneous equations using graphs",
+              "markdown_content": "## Solve simultaneous equations using graphs",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L17",
+              "title": "Interpret intersection points",
+              "markdown_content": "## Interpret intersection points",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F1-U6-L18",
+              "title": "Verify solutions graphically",
+              "markdown_content": "## Verify solutions graphically",
+              "page": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 7,
+      "unit_title": "RATES AND VARIATIONS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Rates",
+          "competence_code": "1.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U1-L01",
+              "title": "define rates",
+              "markdown_content": "## define rates",
+              "page": 1
+            },
+            {
+              "lesson_id": "MATH-F2-U1-L02",
+              "title": "solve problems involving rates",
+              "markdown_content": "## solve problems involving rates",
+              "page": 1
+            }
+          ]
+        },
+        {
+          "topic_name": "Exchange rates",
+          "competence_code": "1.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U1-L03",
+              "title": "explain exchange rates",
+              "markdown_content": "## explain exchange rates",
+              "page": 2
+            },
+            {
+              "lesson_id": "MATH-F2-U1-L04",
+              "title": "solve problems involving currency conversion",
+              "markdown_content": "## solve problems involving currency conversion",
+              "page": 2
+            }
+          ]
+        },
+        {
+          "topic_name": "Variations",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U1-L05",
+              "title": "define direct and inverse variation",
+              "markdown_content": "## define direct and inverse variation",
+              "page": 3
+            },
+            {
+              "lesson_id": "MATH-F2-U1-L06",
+              "title": "set up variation equations",
+              "markdown_content": "## set up variation equations",
+              "page": 3
+            }
+          ]
+        },
+        {
+          "topic_name": "Direct variations",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U1-L07",
+              "title": "solve problems on direct variation",
+              "markdown_content": "## solve problems on direct variation",
+              "page": 4
+            },
+            {
+              "lesson_id": "MATH-F2-U1-L08",
+              "title": "apply direct variation in real-life situations",
+              "markdown_content": "## apply direct variation in real-life situations",
+              "page": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 8,
+      "unit_title": "CONGRUENCE",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "The concept of congruence",
+          "competence_code": "2.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U2-L09",
+              "title": "define congruence of figures",
+              "markdown_content": "## define congruence of figures",
+              "page": 6
+            },
+            {
+              "lesson_id": "MATH-F2-U2-L10",
+              "title": "identify congruent figures",
+              "markdown_content": "## identify congruent figures",
+              "page": 6
+            }
+          ]
+        },
+        {
+          "topic_name": "Postulates, theorems and proofs",
+          "competence_code": "2.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U2-L11",
+              "title": "state the congruence postulates",
+              "markdown_content": "## state the congruence postulates",
+              "page": 7
+            },
+            {
+              "lesson_id": "MATH-F2-U2-L12",
+              "title": "prove triangle congruence theorems",
+              "markdown_content": "## prove triangle congruence theorems",
+              "page": 7
+            }
+          ]
+        },
+        {
+          "topic_name": "Congruence of triangles",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U2-L13",
+              "title": "apply SSS, SAS, ASA and RHS congruence conditions",
+              "markdown_content": "## apply SSS, SAS, ASA and RHS congruence conditions",
+              "page": 8
+            },
+            {
+              "lesson_id": "MATH-F2-U2-L14",
+              "title": "solve problems using triangle congruence",
+              "markdown_content": "## solve problems using triangle congruence",
+              "page": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 9,
+      "unit_title": "SIMILARITY",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Similar figures",
+          "competence_code": "3.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U3-L15",
+              "title": "define similarity of figures",
+              "markdown_content": "## define similarity of figures",
+              "page": 10
+            },
+            {
+              "lesson_id": "MATH-F2-U3-L16",
+              "title": "distinguish between congruence and similarity",
+              "markdown_content": "## distinguish between congruence and similarity",
+              "page": 10
+            }
+          ]
+        },
+        {
+          "topic_name": "Similar triangles",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U3-L17",
+              "title": "identify conditions for similarity of triangles",
+              "markdown_content": "## identify conditions for similarity of triangles",
+              "page": 11
+            },
+            {
+              "lesson_id": "MATH-F2-U3-L18",
+              "title": "solve problems using similar triangles",
+              "markdown_content": "## solve problems using similar triangles",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Similarity theorems",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U3-L19",
+              "title": "state the AA, SAS and SSS similarity theorems",
+              "markdown_content": "## state the AA, SAS and SSS similarity theorems",
+              "page": 12
+            },
+            {
+              "lesson_id": "MATH-F2-U3-L20",
+              "title": "apply similarity theorems to solve problems",
+              "markdown_content": "## apply similarity theorems to solve problems",
+              "page": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 10,
+      "unit_title": "ALGEBRA",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Binary operations",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U4-L21",
+              "title": "define and evaluate binary operations",
+              "markdown_content": "## define and evaluate binary operations",
+              "page": 14
+            },
+            {
+              "lesson_id": "MATH-F2-U4-L22",
+              "title": "solve problems involving defined binary operations",
+              "markdown_content": "## solve problems involving defined binary operations",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Transposition of formulae",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U4-L23",
+              "title": "transpose formulae to make a specified variable the subject",
+              "markdown_content": "## transpose formulae",
+              "page": 15
+            },
+            {
+              "lesson_id": "MATH-F2-U4-L24",
+              "title": "apply transposition in solving problems",
+              "markdown_content": "## apply transposition in solving problems",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "Quadratic expressions",
+          "competence_code": "4.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U4-L25",
+              "title": "identify quadratic expressions",
+              "markdown_content": "## identify quadratic expressions",
+              "page": 16
+            },
+            {
+              "lesson_id": "MATH-F2-U4-L26",
+              "title": "simplify quadratic expressions",
+              "markdown_content": "## simplify quadratic expressions",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Factorisation of quadratic expressions",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U4-L27",
+              "title": "factorise quadratic expressions",
+              "markdown_content": "## factorise quadratic expressions",
+              "page": 17
+            },
+            {
+              "lesson_id": "MATH-F2-U4-L28",
+              "title": "solve quadratic equations by factorisation",
+              "markdown_content": "## solve quadratic equations by factorisation",
+              "page": 17
+            }
+          ]
+        },
+        {
+          "topic_name": "Quadratic equations",
+          "competence_code": "4.5",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U4-L29",
+              "title": "solve quadratic equations by completing the square",
+              "markdown_content": "## solve quadratic equations by completing the square",
+              "page": 18
+            },
+            {
+              "lesson_id": "MATH-F2-U4-L30",
+              "title": "solve quadratic equations using the formula",
+              "markdown_content": "## solve quadratic equations using the formula",
+              "page": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 11,
+      "unit_title": "EXPONENTS AND RADICALS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Exponents",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U5-L31",
+              "title": "define exponents",
+              "markdown_content": "## define exponents",
+              "page": 20
+            },
+            {
+              "lesson_id": "MATH-F2-U5-L32",
+              "title": "evaluate expressions with exponents",
+              "markdown_content": "## evaluate expressions with exponents",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Laws of exponents",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U5-L33",
+              "title": "state and apply the laws of exponents",
+              "markdown_content": "## state and apply the laws of exponents",
+              "page": 21
+            },
+            {
+              "lesson_id": "MATH-F2-U5-L34",
+              "title": "simplify expressions using exponent laws",
+              "markdown_content": "## simplify expressions using exponent laws",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Exponential equations",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U5-L35",
+              "title": "solve exponential equations",
+              "markdown_content": "## solve exponential equations",
+              "page": 22
+            }
+          ]
+        },
+        {
+          "topic_name": "Fractional exponents",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U5-L36",
+              "title": "convert between radical and fractional exponent forms",
+              "markdown_content": "## convert between radical and fractional exponent forms",
+              "page": 23
+            },
+            {
+              "lesson_id": "MATH-F2-U5-L37",
+              "title": "evaluate expressions with fractional exponents",
+              "markdown_content": "## evaluate expressions with fractional exponents",
+              "page": 23
+            }
+          ]
+        },
+        {
+          "topic_name": "Radicals",
+          "competence_code": "5.5",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U5-L38",
+              "title": "simplify radical expressions",
+              "markdown_content": "## simplify radical expressions",
+              "page": 24
+            },
+            {
+              "lesson_id": "MATH-F2-U5-L39",
+              "title": "perform operations on radicals",
+              "markdown_content": "## perform operations on radicals",
+              "page": 24
+            }
+          ]
+        },
+        {
+          "topic_name": "Rationalisation of denominators",
+          "competence_code": "5.6",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U5-L40",
+              "title": "rationalise denominators of fractions",
+              "markdown_content": "## rationalise denominators of fractions",
+              "page": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 12,
+      "unit_title": "LOGARITHMS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Standard form of numbers",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U6-L41",
+              "title": "express numbers in standard form",
+              "markdown_content": "## express numbers in standard form",
+              "page": 26
+            }
+          ]
+        },
+        {
+          "topic_name": "Concept of logarithms",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U6-L42",
+              "title": "define logarithms",
+              "markdown_content": "## define logarithms",
+              "page": 27
+            },
+            {
+              "lesson_id": "MATH-F2-U6-L43",
+              "title": "relate logarithms to indices",
+              "markdown_content": "## relate logarithms to indices",
+              "page": 27
+            }
+          ]
+        },
+        {
+          "topic_name": "Laws of logarithm",
+          "competence_code": "6.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U6-L44",
+              "title": "state and apply the laws of logarithms",
+              "markdown_content": "## state and apply the laws of logarithms",
+              "page": 28
+            }
+          ]
+        },
+        {
+          "topic_name": "Logarithms of numbers",
+          "competence_code": "6.4",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U6-L45",
+              "title": "find logarithms using tables",
+              "markdown_content": "## find logarithms using tables",
+              "page": 29
+            },
+            {
+              "lesson_id": "MATH-F2-U6-L46",
+              "title": "find logarithms using calculators",
+              "markdown_content": "## find logarithms using calculators",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "topic_name": "Antilogarithms",
+          "competence_code": "6.5",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U6-L47",
+              "title": "find antilogarithms",
+              "markdown_content": "## find antilogarithms",
+              "page": 30
+            }
+          ]
+        },
+        {
+          "topic_name": "Applications of logarithms",
+          "competence_code": "6.6",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U6-L48",
+              "title": "apply logarithms to solve multiplication, division and power problems",
+              "markdown_content": "## apply logarithms",
+              "page": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 13,
+      "unit_title": "SETS",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Concept of a set",
+          "competence_code": "7.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U7-L49",
+              "title": "define a set",
+              "markdown_content": "## define a set",
+              "page": 32
+            },
+            {
+              "lesson_id": "MATH-F2-U7-L50",
+              "title": "describe methods of representing sets",
+              "markdown_content": "## describe methods of representing sets",
+              "page": 32
+            }
+          ]
+        },
+        {
+          "topic_name": "Types of sets",
+          "competence_code": "7.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U7-L51",
+              "title": "identify types of sets: universal, empty, finite, infinite",
+              "markdown_content": "## identify types of sets",
+              "page": 33
+            },
+            {
+              "lesson_id": "MATH-F2-U7-L52",
+              "title": "identify subsets and power sets",
+              "markdown_content": "## identify subsets and power sets",
+              "page": 33
+            }
+          ]
+        },
+        {
+          "topic_name": "Operation on sets",
+          "competence_code": "7.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U7-L53",
+              "title": "perform union, intersection and complement operations",
+              "markdown_content": "## perform set operations",
+              "page": 34
+            },
+            {
+              "lesson_id": "MATH-F2-U7-L54",
+              "title": "solve problems involving set operations",
+              "markdown_content": "## solve problems involving set operations",
+              "page": 34
+            }
+          ]
+        },
+        {
+          "topic_name": "Venn diagrams",
+          "competence_code": "7.4",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U7-L55",
+              "title": "draw Venn diagrams for two and three sets",
+              "markdown_content": "## draw Venn diagrams",
+              "page": 35
+            },
+            {
+              "lesson_id": "MATH-F2-U7-L56",
+              "title": "solve problems using Venn diagrams",
+              "markdown_content": "## solve problems using Venn diagrams",
+              "page": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 14,
+      "unit_title": "TRIGONOMETRY",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Trigonometric ratios",
+          "competence_code": "8.1",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U8-L57",
+              "title": "define sine, cosine and tangent",
+              "markdown_content": "## define sine, cosine and tangent",
+              "page": 37
+            },
+            {
+              "lesson_id": "MATH-F2-U8-L58",
+              "title": "calculate trigonometric ratios using tables and calculators",
+              "markdown_content": "## calculate trigonometric ratios",
+              "page": 37
+            }
+          ]
+        },
+        {
+          "topic_name": "Trigonometric ratios of special angles",
+          "competence_code": "8.2",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U8-L59",
+              "title": "determine trig ratios of 30, 45, 60, 90 degrees",
+              "markdown_content": "## determine trig ratios of special angles",
+              "page": 38
+            },
+            {
+              "lesson_id": "MATH-F2-U8-L60",
+              "title": "extend to angles beyond 90 degrees",
+              "markdown_content": "## extend to angles beyond 90 degrees",
+              "page": 38
+            }
+          ]
+        },
+        {
+          "topic_name": "Trigonometric ratios of any angle",
+          "competence_code": "8.3",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U8-L61",
+              "title": "find trig ratios of any angle",
+              "markdown_content": "## find trig ratios of any angle",
+              "page": 39
+            }
+          ]
+        },
+        {
+          "topic_name": "Relationship between trigonometrical ratios",
+          "competence_code": "8.4",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U8-L62",
+              "title": "state the complementary angle relationships",
+              "markdown_content": "## state the complementary angle relationships",
+              "page": 40
+            },
+            {
+              "lesson_id": "MATH-F2-U8-L63",
+              "title": "apply trig identities to solve problems",
+              "markdown_content": "## apply trig identities to solve problems",
+              "page": 40
+            }
+          ]
+        },
+        {
+          "topic_name": "Inverse of trigonometric ratios",
+          "competence_code": "8.5",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U8-L64",
+              "title": "use inverse trigonometric functions",
+              "markdown_content": "## use inverse trigonometric functions",
+              "page": 41
+            }
+          ]
+        },
+        {
+          "topic_name": "The angle of elevation and depression",
+          "competence_code": "8.6",
+          "lessons": [
+            {
+              "lesson_id": "MATH-F2-U8-L65",
+              "title": "solve problems involving angles of elevation and depression",
+              "markdown_content": "## solve problems involving angles of elevation and depression",
+              "page": 41
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 15,
       "unit_title": "GEOMETRY",
       "form": 3,
       "topics": [
@@ -157,7 +1393,7 @@
       ]
     },
     {
-      "unit_number": 4,
+      "unit_number": 16,
       "unit_title": "STATISTICS AND PROBABILITY",
       "form": 4,
       "topics": [

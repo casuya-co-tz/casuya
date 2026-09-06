@@ -5,145 +5,246 @@
   "units": [
     {
       "unit_number": 1,
-      "unit_title": "Demonstrate an understanding of Creation and God’s commandments",
+      "unit_title": "THE CONCEPT OF THE BIBLE AND BIBLE KNOWLEDGE",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Use the Book of Genesis to learn about creation, responsibility and taking care of life",
+          "topic_name": "Meaning of the Bible",
           "competence_code": "1.1",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U1-L1",
-              "title": "Explain the concept of the Bible and Bible Knowledge",
-              "markdown_content": "## a) Explain the concept of the Bible and Bible Knowledge",
-              "page": 14
+              "lesson_id": "BK-F1-U1-L01",
+              "title": "Define the Bible",
+              "markdown_content": "## Define the Bible",
+              "page": 1
             },
             {
-              "lesson_id": "BIB-F1-U1-L2",
-              "title": "Classify the books in the Bible",
-              "markdown_content": "## b) Classify the books in the Bible",
-              "page": 14
+              "lesson_id": "BK-F1-U1-L02",
+              "title": "Describe the nature of the Bible",
+              "markdown_content": "## Describe the nature of the Bible",
+              "page": 1
             },
             {
-              "lesson_id": "BIB-F1-U1-L3",
-              "title": "Explain the concept of the Book of Genesis",
-              "markdown_content": "## c) Explain the concept of the Book of Genesis",
-              "page": 14
-            },
-            {
-              "lesson_id": "BIB-F1-U1-L4",
-              "title": "Describe the concept of God’s creation",
-              "markdown_content": "## d) Describe the concept of God’s creation",
-              "page": 15
-            },
-            {
-              "lesson_id": "BIB-F1-U1-L5",
-              "title": "Clarify man’s responsibility for God’s creations",
-              "markdown_content": "## e) Clarify man’s responsibility for God’s creations",
-              "page": 15
-            },
-            {
-              "lesson_id": "BIB-F1-U1-L6",
-              "title": "Explain the importance of taking care of life and the environment",
-              "markdown_content": "## f) Explain the importance of taking care of life and the environment",
-              "page": 15
+              "lesson_id": "BK-F1-U1-L03",
+              "title": "State the importance of the Bible",
+              "markdown_content": "## State the importance of the Bible",
+              "page": 1
             }
           ]
         },
         {
-          "topic_name": "Demonstrate mastery of the Holy Scripture through the Book of Genesis",
+          "topic_name": "The meaning of Bible Knowledge",
           "competence_code": "1.2",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U1-L7",
-              "title": "Analyse the Fall of Man and its consequences",
-              "markdown_content": "## a) Analyse the Fall of Man and its consequences",
-              "page": 16
+              "lesson_id": "BK-F1-U1-L04",
+              "title": "Define Bible Knowledge",
+              "markdown_content": "## Define Bible Knowledge",
+              "page": 2
             },
             {
-              "lesson_id": "BIB-F1-U1-L8",
-              "title": "Describe the history of the biblical Patriarchs",
-              "markdown_content": "## b) Describe the history of the biblical Patriarchs",
-              "page": 16
+              "lesson_id": "BK-F1-U1-L05",
+              "title": "Explain the scope of Bible Knowledge",
+              "markdown_content": "## Explain the scope of Bible Knowledge",
+              "page": 2
+            },
+            {
+              "lesson_id": "BK-F1-U1-L06",
+              "title": "State the importance of studying Bible Knowledge",
+              "markdown_content": "## State the importance of studying Bible Knowledge",
+              "page": 2
             }
           ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Demonstrate an understanding of Creation and God’s commandments",
-      "form": 1,
-      "topics": [
+        },
         {
-          "topic_name": "Use the Book of Exodus to understand God’s love and compassion",
+          "topic_name": "Authorship of the Bible",
           "competence_code": "1.3",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U1-L9",
-              "title": "Describe the Concept of the Book of Exodus",
-              "markdown_content": "## a) Describe the Concept of the Book of Exodus",
-              "page": 17
+              "lesson_id": "BK-F1-U1-L07",
+              "title": "Identify the authors of the Bible",
+              "markdown_content": "## Identify the authors of the Bible",
+              "page": 3
             },
             {
-              "lesson_id": "BIB-F1-U1-L10",
-              "title": "Show how the concept of God’s love and compassion appears in the Book of Exodus",
-              "markdown_content": "## b) Show how the concept of God’s love and compassion appears in the Book of Exodus",
-              "page": 17
+              "lesson_id": "BK-F1-U1-L08",
+              "title": "Describe the process of Bible compilation",
+              "markdown_content": "## Describe the process of Bible compilation",
+              "page": 3
             },
             {
-              "lesson_id": "BIB-F1-U1-L11",
-              "title": "Identify the consequences of not appreciating God’s",
-              "markdown_content": "## c) Identify the consequences of not appreciating God’s",
-              "page": 17
-            },
-            {
-              "lesson_id": "BIB-F1-U1-L12",
-              "title": "Love and Compassion",
-              "markdown_content": "## d) Love and Compassion",
-              "page": 18
+              "lesson_id": "BK-F1-U1-L09",
+              "title": "Explain the inspiration of the Bible",
+              "markdown_content": "## Explain the inspiration of the Bible",
+              "page": 3
             }
           ]
         },
         {
-          "topic_name": "Demonstrate an appreciation of God’s commandments as outlined in the Book of Exodus",
+          "topic_name": "Division of the Bible",
           "competence_code": "1.4",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U1-L13",
-              "title": "Explain the Sinai Covenant",
-              "markdown_content": "## a) Explain the Sinai Covenant",
-              "page": 18
+              "lesson_id": "BK-F1-U1-L10",
+              "title": "Identify the two main parts of the Bible",
+              "markdown_content": "## Identify the two main parts of the Bible",
+              "page": 4
             },
             {
-              "lesson_id": "BIB-F1-U1-L14",
-              "title": "Clarify God’s Commandments as stated in the Book of Exodus",
-              "markdown_content": "## b) Clarify God’s Commandments as stated in the Book of Exodus",
-              "page": 18
+              "lesson_id": "BK-F1-U1-L11",
+              "title": "Describe the books in each division",
+              "markdown_content": "## Describe the books in each division",
+              "page": 4
             },
             {
-              "lesson_id": "BIB-F1-U1-L15",
-              "title": "Show the indicators of Moses’ leadership qualities",
-              "markdown_content": "## c) Show the indicators of Moses’ leadership qualities",
-              "page": 18
+              "lesson_id": "BK-F1-U1-L12",
+              "title": "Explain the organization of the Bible",
+              "markdown_content": "## Explain the organization of the Bible",
+              "page": 4
             }
           ]
         },
         {
-          "topic_name": "Demonstrate an appreciation of the importance of statistics based on the Book of Numbers",
+          "topic_name": "Biblical languages",
           "competence_code": "1.5",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U1-L16",
-              "title": "Explain the concept of statistics as revealed in the Book of Numbers",
-              "markdown_content": "## a) Explain the concept of statistics as revealed in the Book of Numbers",
-              "page": 19
+              "lesson_id": "BK-F1-U1-L13",
+              "title": "Identify the original languages of the Bible",
+              "markdown_content": "## Identify the original languages of the Bible",
+              "page": 5
             },
             {
-              "lesson_id": "BIB-F1-U1-L17",
-              "title": "Use the Book of Numbers to discuss the objectives and importance of statistics and the census in society",
-              "markdown_content": "## b) Use the Book of Numbers to discuss the objectives and importance of statistics and the census in society",
-              "page": 19
+              "lesson_id": "BK-F1-U1-L14",
+              "title": "Describe the characteristics of Hebrew, Greek, and Aramaic",
+              "markdown_content": "## Describe the characteristics of Hebrew, Greek, and Aramaic",
+              "page": 5
+            },
+            {
+              "lesson_id": "BK-F1-U1-L15",
+              "title": "Explain the importance of translation",
+              "markdown_content": "## Explain the importance of translation",
+              "page": 5
+            }
+          ]
+        },
+        {
+          "topic_name": "The style of writing in the Bible",
+          "competence_code": "1.6",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U1-L16",
+              "title": "Identify different writing styles in the Bible",
+              "markdown_content": "## Identify different writing styles in the Bible",
+              "page": 6
+            },
+            {
+              "lesson_id": "BK-F1-U1-L17",
+              "title": "Describe poetry, prophecy, narrative, and epistle",
+              "markdown_content": "## Describe poetry, prophecy, narrative, and epistle",
+              "page": 6
+            },
+            {
+              "lesson_id": "BK-F1-U1-L18",
+              "title": "Explain the interpretation of different styles",
+              "markdown_content": "## Explain the interpretation of different styles",
+              "page": 6
+            }
+          ]
+        },
+        {
+          "topic_name": "The purpose of writing the Bible",
+          "competence_code": "1.7",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U1-L19",
+              "title": "Explain the purpose of each book",
+              "markdown_content": "## Explain the purpose of each book",
+              "page": 7
+            },
+            {
+              "lesson_id": "BK-F1-U1-L20",
+              "title": "Describe the audience of Biblical writers",
+              "markdown_content": "## Describe the audience of Biblical writers",
+              "page": 7
+            },
+            {
+              "lesson_id": "BK-F1-U1-L21",
+              "title": "State the relevance of the Bible today",
+              "markdown_content": "## State the relevance of the Bible today",
+              "page": 7
+            }
+          ]
+        },
+        {
+          "topic_name": "Importance of studying Bible Knowledge",
+          "competence_code": "1.8",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U1-L22",
+              "title": "Explain the spiritual importance",
+              "markdown_content": "## Explain the spiritual importance",
+              "page": 8
+            },
+            {
+              "lesson_id": "BK-F1-U1-L23",
+              "title": "Describe the moral importance",
+              "markdown_content": "## Describe the moral importance",
+              "page": 8
+            },
+            {
+              "lesson_id": "BK-F1-U1-L24",
+              "title": "Identify the cultural importance",
+              "markdown_content": "## Identify the cultural importance",
+              "page": 8
+            }
+          ]
+        },
+        {
+          "topic_name": "The Concept of the Book of Genesis",
+          "competence_code": "1.9",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U1-L25",
+              "title": "Describe the content of Genesis",
+              "markdown_content": "## Describe the content of Genesis",
+              "page": 9
+            },
+            {
+              "lesson_id": "BK-F1-U1-L26",
+              "title": "Explain the structure of Genesis",
+              "markdown_content": "## Explain the structure of Genesis",
+              "page": 9
+            },
+            {
+              "lesson_id": "BK-F1-U1-L27",
+              "title": "State the themes of Genesis",
+              "markdown_content": "## State the themes of Genesis",
+              "page": 9
+            }
+          ]
+        },
+        {
+          "topic_name": "The two main parts of the Book of Genesis",
+          "competence_code": "1.10",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U1-L28",
+              "title": "Identify the two main parts",
+              "markdown_content": "## Identify the two main parts",
+              "page": 10
+            },
+            {
+              "lesson_id": "BK-F1-U1-L29",
+              "title": "Describe the content of each part",
+              "markdown_content": "## Describe the content of each part",
+              "page": 10
+            },
+            {
+              "lesson_id": "BK-F1-U1-L30",
+              "title": "Explain the significance of each part",
+              "markdown_content": "## Explain the significance of each part",
+              "page": 10
             }
           ]
         }
@@ -151,54 +252,162 @@
     },
     {
       "unit_number": 2,
-      "unit_title": "Demonstrate an understanding of faith by living a holy life",
+      "unit_title": "GOD'S CREATION",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Demonstrate mastery of the Holy Scripture through the Book of Joshua",
+          "topic_name": "Meaning of God's creation",
           "competence_code": "2.1",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U2-L18",
-              "title": "Identify the main ideas in the book of Joshua",
-              "markdown_content": "## a) Identify the main ideas in the book of Joshua",
-              "page": 19
+              "lesson_id": "BK-F1-U2-L01",
+              "title": "Define creation",
+              "markdown_content": "## Define creation",
+              "page": 11
             },
             {
-              "lesson_id": "BIB-F1-U2-L19",
-              "title": "Use the Book of Joshua to discuss the importance of preparing leaders",
-              "markdown_content": "## b) Use the Book of Joshua to discuss the importance of preparing leaders",
-              "page": 20
+              "lesson_id": "BK-F1-U2-L02",
+              "title": "Explain the concept of creation in the Bible",
+              "markdown_content": "## Explain the concept of creation in the Bible",
+              "page": 11
             },
             {
-              "lesson_id": "BIB-F1-U2-L20",
-              "title": "Describe the fall of the biblical cities of Jericho and Ai",
-              "markdown_content": "## c) Describe the fall of the biblical cities of Jericho and Ai",
-              "page": 20
+              "lesson_id": "BK-F1-U2-L03",
+              "title": "State the purpose of creation",
+              "markdown_content": "## State the purpose of creation",
+              "page": 11
             }
           ]
         },
         {
-          "topic_name": "Use the Book of Joshua to appreciate the importance of courage, bravery, humility, perseverance and patriotism",
+          "topic_name": "The first creation account",
           "competence_code": "2.2",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U2-L21",
-              "title": "Discuss the indicators of strength and bravery according to the Book of Joshua",
-              "markdown_content": "## a) Discuss the indicators of strength and bravery according to the Book of Joshua",
-              "page": 20
+              "lesson_id": "BK-F1-U2-L04",
+              "title": "Describe the first creation account in Genesis",
+              "markdown_content": "## Describe the first creation account in Genesis",
+              "page": 12
             },
             {
-              "lesson_id": "BIB-F1-U2-L22",
-              "title": "Use the Book of Joshua to discuss the importance of bravery, humility and perseverance",
-              "markdown_content": "## b) Use the Book of Joshua to discuss the importance of bravery, humility and perseverance",
-              "page": 21
+              "lesson_id": "BK-F1-U2-L05",
+              "title": "Explain the order of creation",
+              "markdown_content": "## Explain the order of creation",
+              "page": 12
             },
             {
-              "lesson_id": "BIB-F1-U2-L23",
-              "title": "Explain the concept of patriotism as appears in the Book of Joshua",
-              "markdown_content": "## c) Explain the concept of patriotism as appears in the Book of Joshua",
-              "page": 21
+              "lesson_id": "BK-F1-U2-L06",
+              "title": "Describe the creation of light in the spiritual context",
+              "markdown_content": "## Describe the creation of light in the spiritual context",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "The second creation account",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U2-L07",
+              "title": "Describe the second creation account",
+              "markdown_content": "## Describe the second creation account",
+              "page": 13
+            },
+            {
+              "lesson_id": "BK-F1-U2-L08",
+              "title": "Explain the concept of mankind being created in God's image",
+              "markdown_content": "## Explain the concept of mankind being created in God's image",
+              "page": 13
+            },
+            {
+              "lesson_id": "BK-F1-U2-L09",
+              "title": "Describe the Rivers in the Garden of Eden",
+              "markdown_content": "## Describe the Rivers in the Garden of Eden",
+              "page": 13
+            },
+            {
+              "lesson_id": "BK-F1-U2-L10",
+              "title": "Explain Man in the Garden of Eden",
+              "markdown_content": "## Explain Man in the Garden of Eden",
+              "page": 14
+            },
+            {
+              "lesson_id": "BK-F1-U2-L11",
+              "title": "Describe the Creation of the woman",
+              "markdown_content": "## Describe the Creation of the woman",
+              "page": 14
+            }
+          ]
+        },
+        {
+          "topic_name": "Common qualities shared by man and woman",
+          "competence_code": "2.4",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U2-L12",
+              "title": "Identify common qualities",
+              "markdown_content": "## Identify common qualities",
+              "page": 15
+            },
+            {
+              "lesson_id": "BK-F1-U2-L13",
+              "title": "Explain the significance of shared qualities",
+              "markdown_content": "## Explain the significance of shared qualities",
+              "page": 15
+            },
+            {
+              "lesson_id": "BK-F1-U2-L14",
+              "title": "Describe the roles of man and woman",
+              "markdown_content": "## Describe the roles of man and woman",
+              "page": 15
+            }
+          ]
+        },
+        {
+          "topic_name": "God's attributes in the creation stories",
+          "competence_code": "2.5",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U2-L15",
+              "title": "Identify God's attributes",
+              "markdown_content": "## Identify God's attributes",
+              "page": 16
+            },
+            {
+              "lesson_id": "BK-F1-U2-L16",
+              "title": "Explain omnipotence, omniscience, and love",
+              "markdown_content": "## Explain omnipotence, omniscience, and love",
+              "page": 16
+            },
+            {
+              "lesson_id": "BK-F1-U2-L17",
+              "title": "Describe how attributes are revealed in creation",
+              "markdown_content": "## Describe how attributes are revealed in creation",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Three steps of unifying man and woman in marriage",
+          "competence_code": "2.6",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U2-L18",
+              "title": "Describe the three steps",
+              "markdown_content": "## Describe the three steps",
+              "page": 17
+            },
+            {
+              "lesson_id": "BK-F1-U2-L19",
+              "title": "Explain the significance of each step",
+              "markdown_content": "## Explain the significance of each step",
+              "page": 17
+            },
+            {
+              "lesson_id": "BK-F1-U2-L20",
+              "title": "State the Biblical basis for marriage",
+              "markdown_content": "## State the Biblical basis for marriage",
+              "page": 17
             }
           ]
         }
@@ -206,163 +415,427 @@
     },
     {
       "unit_number": 3,
-      "unit_title": "Demonstrate an understanding of devotion to God as revealed in the Bible",
+      "unit_title": "THE FALL OF MAN",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Demonstrate mastery of the Holy Scripture in the Gospel according to Luke",
+          "topic_name": "The concept of the Fall of Man",
           "competence_code": "3.1",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U3-L24",
-              "title": "Explain the term Gospel and Jewish institutions",
-              "markdown_content": "## a) Explain the term Gospel and Jewish institutions",
+              "lesson_id": "BK-F1-U3-L01",
+              "title": "Describe the Fall of Man in Genesis",
+              "markdown_content": "## Describe the Fall of Man in Genesis",
+              "page": 18
+            },
+            {
+              "lesson_id": "BK-F1-U3-L02",
+              "title": "Explain the temptation and disobedience",
+              "markdown_content": "## Explain the temptation and disobedience",
+              "page": 18
+            },
+            {
+              "lesson_id": "BK-F1-U3-L03",
+              "title": "State the consequences of the Fall",
+              "markdown_content": "## State the consequences of the Fall",
+              "page": 18
+            }
+          ]
+        },
+        {
+          "topic_name": "Consequences of the fall of man",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U3-L04",
+              "title": "Identify the consequences",
+              "markdown_content": "## Identify the consequences",
+              "page": 19
+            },
+            {
+              "lesson_id": "BK-F1-U3-L05",
+              "title": "Explain separation from God",
+              "markdown_content": "## Explain separation from God",
+              "page": 19
+            },
+            {
+              "lesson_id": "BK-F1-U3-L06",
+              "title": "Describe the introduction of death and suffering",
+              "markdown_content": "## Describe the introduction of death and suffering",
+              "page": 19
+            }
+          ]
+        },
+        {
+          "topic_name": "The concept of sin",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U3-L07",
+              "title": "Define sin in the Biblical context",
+              "markdown_content": "## Define sin in the Biblical context",
+              "page": 20
+            },
+            {
+              "lesson_id": "BK-F1-U3-L08",
+              "title": "Explain the nature of sin",
+              "markdown_content": "## Explain the nature of sin",
+              "page": 20
+            },
+            {
+              "lesson_id": "BK-F1-U3-L09",
+              "title": "Describe the different types of sin",
+              "markdown_content": "## Describe the different types of sin",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Implications of sin",
+          "competence_code": "3.4",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U3-L10",
+              "title": "Explain the spiritual implications",
+              "markdown_content": "## Explain the spiritual implications",
+              "page": 21
+            },
+            {
+              "lesson_id": "BK-F1-U3-L11",
+              "title": "Describe the social implications",
+              "markdown_content": "## Describe the social implications",
+              "page": 21
+            },
+            {
+              "lesson_id": "BK-F1-U3-L12",
+              "title": "Identify the consequences of sin",
+              "markdown_content": "## Identify the consequences of sin",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Importance of faithfulness in offering to God",
+          "competence_code": "3.5",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U3-L13",
+              "title": "Explain the importance of faithfulness",
+              "markdown_content": "## Explain the importance of faithfulness",
               "page": 22
             },
             {
-              "lesson_id": "BIB-F1-U3-L25",
-              "title": "Discuss the authorship of the Gospel according to Luke (author, recipients and purpos",
-              "markdown_content": "## b) Discuss the authorship of the Gospel according to Luke (author, recipients and purpos",
+              "lesson_id": "BK-F1-U3-L14",
+              "title": "Describe the story of Cain and Abel",
+              "markdown_content": "## Describe the story of Cain and Abel",
               "page": 22
             },
             {
-              "lesson_id": "BIB-F1-U3-L26",
-              "title": "Discuss the themes of the Gospel according to Luke (salvation for all, the work of the Holy Spirit, worship and praise, the role of women, the Gospel of the lost and the Gospel of praye",
-              "markdown_content": "## c) Discuss the themes of the Gospel according to Luke (salvation for all, the work of the Holy Spirit, worship and praise, the role of women, the Gospel of the lost and the Gospel of praye",
+              "lesson_id": "BK-F1-U3-L15",
+              "title": "State the lessons from their offerings",
+              "markdown_content": "## State the lessons from their offerings",
+              "page": 22
+            }
+          ]
+        },
+        {
+          "topic_name": "The descendants of Cain",
+          "competence_code": "3.6",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U3-L16",
+              "title": "Identify the descendants",
+              "markdown_content": "## Identify the descendants",
               "page": 23
             },
             {
-              "lesson_id": "BIB-F1-U3-L27",
-              "title": "Identify the methods used by Jesus in his Ministry (parables and miracle",
-              "markdown_content": "## d) Identify the methods used by Jesus in his Ministry (parables and miracle",
+              "lesson_id": "BK-F1-U3-L17",
+              "title": "Describe their contributions",
+              "markdown_content": "## Describe their contributions",
               "page": 23
             },
             {
-              "lesson_id": "BIB-F1-U3-L28",
-              "title": "Use the Gospel according to Luke to defend human rights",
-              "markdown_content": "## e) Use the Gospel according to Luke to defend human rights",
+              "lesson_id": "BK-F1-U3-L18",
+              "title": "Explain the significance of Cain's lineage",
+              "markdown_content": "## Explain the significance of Cain's lineage",
+              "page": 23
+            }
+          ]
+        },
+        {
+          "topic_name": "The concept of polygamy in the Bible",
+          "competence_code": "3.7",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U3-L19",
+              "title": "Describe polygamy in the Bible",
+              "markdown_content": "## Describe polygamy in the Bible",
               "page": 24
             },
             {
-              "lesson_id": "BIB-F1-U3-L29",
-              "title": "Discuss how the themes in the Gospel according to Luke relate to daily life (choose one theme for course work/ project to be submitted in Form IV)",
-              "markdown_content": "## f) Discuss how the themes in the Gospel according to Luke relate to daily life (choose one theme for course work/ project to be submitted in Form IV)",
+              "lesson_id": "BK-F1-U3-L20",
+              "title": "Explain the consequences",
+              "markdown_content": "## Explain the consequences",
+              "page": 24
+            },
+            {
+              "lesson_id": "BK-F1-U3-L21",
+              "title": "State the Biblical teaching on marriage",
+              "markdown_content": "## State the Biblical teaching on marriage",
               "page": 24
             }
           ]
         },
         {
-          "topic_name": "Use the Gospel according to Luke to appreciate the importance of family life",
-          "competence_code": "3.2",
+          "topic_name": "The Lineage from Adam to Noah",
+          "competence_code": "3.8",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U3-L30",
-              "title": "Explain the concept of family",
-              "markdown_content": "## a) Explain the concept of family",
+              "lesson_id": "BK-F1-U3-L22",
+              "title": "Trace the lineage",
+              "markdown_content": "## Trace the lineage",
               "page": 25
             },
             {
-              "lesson_id": "BIB-F1-U3-L31",
-              "title": "Discuss the characteristics of the families found in the Gospel according to Luke",
-              "markdown_content": "## b) Discuss the characteristics of the families found in the Gospel according to Luke",
+              "lesson_id": "BK-F1-U3-L23",
+              "title": "Describe the significance of the genealogy",
+              "markdown_content": "## Describe the significance of the genealogy",
               "page": 25
             },
             {
-              "lesson_id": "BIB-F1-U3-L32",
-              "title": "Use the Gospel according to Luke to discuss good parental care",
-              "markdown_content": "## c) Use the Gospel according to Luke to discuss good parental care",
+              "lesson_id": "BK-F1-U3-L24",
+              "title": "Explain the connection to the flood story",
+              "markdown_content": "## Explain the connection to the flood story",
               "page": 25
+            }
+          ]
+        },
+        {
+          "topic_name": "Noah and the flood",
+          "competence_code": "3.9",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U3-L25",
+              "title": "Describe the flood story",
+              "markdown_content": "## Describe the flood story",
+              "page": 26
+            },
+            {
+              "lesson_id": "BK-F1-U3-L26",
+              "title": "Explain the reasons for the flood",
+              "markdown_content": "## Explain the reasons for the flood",
+              "page": 26
+            },
+            {
+              "lesson_id": "BK-F1-U3-L27",
+              "title": "Describe the aftermath of the flood",
+              "markdown_content": "## Describe the aftermath of the flood",
+              "page": 26
+            }
+          ]
+        },
+        {
+          "topic_name": "Lessons we learn from the Tower of Babel",
+          "competence_code": "3.10",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U3-L28",
+              "title": "Describe the Tower of Babel story",
+              "markdown_content": "## Describe the Tower of Babel story",
+              "page": 27
+            },
+            {
+              "lesson_id": "BK-F1-U3-L29",
+              "title": "Explain the lessons about pride and unity",
+              "markdown_content": "## Explain the lessons about pride and unity",
+              "page": 27
+            },
+            {
+              "lesson_id": "BK-F1-U3-L30",
+              "title": "State the relevance today",
+              "markdown_content": "## State the relevance today",
+              "page": 27
+            }
+          ]
+        },
+        {
+          "topic_name": "The role of communication in sustainable development",
+          "competence_code": "3.11",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U3-L31",
+              "title": "Explain the importance of communication",
+              "markdown_content": "## Explain the importance of communication",
+              "page": 28
+            },
+            {
+              "lesson_id": "BK-F1-U3-L32",
+              "title": "Describe how communication affects development",
+              "markdown_content": "## Describe how communication affects development",
+              "page": 28
+            },
+            {
+              "lesson_id": "BK-F1-U3-L33",
+              "title": "State the Biblical view on communication",
+              "markdown_content": "## State the Biblical view on communication",
+              "page": 28
             }
           ]
         }
       ]
     },
     {
-      "unit_number": 3,
-      "unit_title": "Demonstrate an understanding of devotion to God as revealed in the Bible",
+      "unit_number": 4,
+      "unit_title": "THE FORMATION OF PATRIARCHS",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Demonstrate mastery of the Holy Scripture in the Book of Acts of the Apostles",
-          "competence_code": "3.3",
+          "topic_name": "The Call of Abram (Abraham)",
+          "competence_code": "4.1",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U3-L33",
-              "title": "Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
-              "markdown_content": "## a) Discuss the authorship of the Book of the Acts of the Apostles (author, recipients and purpos",
-              "page": 26
+              "lesson_id": "BK-F1-U4-L01",
+              "title": "Describe the call of Abram",
+              "markdown_content": "## Describe the call of Abram",
+              "page": 29
             },
             {
-              "lesson_id": "BIB-F1-U3-L34",
-              "title": "Discuss the themes appearing in the Book of the Acts of the Apostles",
-              "markdown_content": "## b) Discuss the themes appearing in the Book of the Acts of the Apostles",
-              "page": 26
+              "lesson_id": "BK-F1-U4-L02",
+              "title": "Explain God's promise",
+              "markdown_content": "## Explain God's promise",
+              "page": 29
             },
             {
-              "lesson_id": "BIB-F1-U3-L35",
-              "title": "Use the Book of the Acts of the Apostles to defend human rights",
-              "markdown_content": "## c) Use the Book of the Acts of the Apostles to defend human rights",
-              "page": 26
+              "lesson_id": "BK-F1-U4-L03",
+              "title": "State the significance of the call",
+              "markdown_content": "## State the significance of the call",
+              "page": 29
             }
           ]
         },
         {
-          "topic_name": "Demonstrate an appreciation of devotion to spreading the Gospel",
-          "competence_code": "3.4",
+          "topic_name": "The Abrahamic Covenant",
+          "competence_code": "4.2",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U3-L36",
-              "title": "Use the Book of the Acts of the Apostles to discuss the commission and order to spread the Gospel",
-              "markdown_content": "## a) Use the Book of the Acts of the Apostles to discuss the commission and order to spread the Gospel",
-              "page": 27
+              "lesson_id": "BK-F1-U4-L04",
+              "title": "Describe the covenant",
+              "markdown_content": "## Describe the covenant",
+              "page": 30
             },
             {
-              "lesson_id": "BIB-F1-U3-L37",
-              "title": "Explain the role of the Holy Spirit in spreading the Gospel",
-              "markdown_content": "## b) Explain the role of the Holy Spirit in spreading the Gospel",
-              "page": 27
+              "lesson_id": "BK-F1-U4-L05",
+              "title": "Explain the promises",
+              "markdown_content": "## Explain the promises",
+              "page": 30
             },
             {
-              "lesson_id": "BIB-F1-U3-L38",
-              "title": "Describe the life of the early Christian community and their role in spreading the Gospel",
-              "markdown_content": "## a) Describe the life of the early Christian community and their role in spreading the Gospel",
-              "page": 28
-            },
-            {
-              "lesson_id": "BIB-F1-U3-L39",
-              "title": "Discuss the acts of courage as revealed in the Book of the Acts of the Apostles",
-              "markdown_content": "## b) Discuss the acts of courage as revealed in the Book of the Acts of the Apostles",
-              "page": 28
-            },
-            {
-              "lesson_id": "BIB-F1-U3-L40",
-              "title": "Discuss Saul’s conversion and his missionary journeys",
-              "markdown_content": "## c) Discuss Saul’s conversion and his missionary journeys",
-              "page": 28
+              "lesson_id": "BK-F1-U4-L06",
+              "title": "State the significance of the covenant",
+              "markdown_content": "## State the significance of the covenant",
+              "page": 30
             }
           ]
         },
         {
-          "topic_name": "Use the Book of Acts of the Apostles to appreciate the importance of justice, peace and equality",
-          "competence_code": "3.5",
+          "topic_name": "Abraham's test of faith",
+          "competence_code": "4.3",
           "lessons": [
             {
-              "lesson_id": "BIB-F1-U3-L41",
-              "title": "Determine the resolution of conflicts during the growth of the early Church",
-              "markdown_content": "## a) Determine the resolution of conflicts during the growth of the early Church",
-              "page": 29
+              "lesson_id": "BK-F1-U4-L07",
+              "title": "Describe the test",
+              "markdown_content": "## Describe the test",
+              "page": 31
             },
             {
-              "lesson_id": "BIB-F1-U3-L42",
-              "title": "Discuss the importance, functions and qualities of deacons used in the early Church",
-              "markdown_content": "## b) Discuss the importance, functions and qualities of deacons used in the early Church",
-              "page": 29
+              "lesson_id": "BK-F1-U4-L08",
+              "title": "Explain the significance",
+              "markdown_content": "## Explain the significance",
+              "page": 31
             },
             {
-              "lesson_id": "BIB-F1-U3-L43",
-              "title": "Discuss the methods used by the Jerusa- lem Council to solve con- flict and bring peace, equality and unity in the early Church",
-              "markdown_content": "## c) Discuss the methods used by the Jerusa- lem Council to solve con- flict and bring peace, equality and unity in the early Church",
-              "page": 29
+              "lesson_id": "BK-F1-U4-L09",
+              "title": "State the lessons about faith",
+              "markdown_content": "## State the lessons about faith",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "topic_name": "The life history of Isaac",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U4-L10",
+              "title": "Describe Isaac's life",
+              "markdown_content": "## Describe Isaac's life",
+              "page": 32
+            },
+            {
+              "lesson_id": "BK-F1-U4-L11",
+              "title": "Explain the covenant blessings",
+              "markdown_content": "## Explain the covenant blessings",
+              "page": 32
+            },
+            {
+              "lesson_id": "BK-F1-U4-L12",
+              "title": "State the significance",
+              "markdown_content": "## State the significance",
+              "page": 32
+            }
+          ]
+        },
+        {
+          "topic_name": "The life history of Jacob",
+          "competence_code": "4.5",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U4-L13",
+              "title": "Describe Jacob's life",
+              "markdown_content": "## Describe Jacob's life",
+              "page": 33
+            },
+            {
+              "lesson_id": "BK-F1-U4-L14",
+              "title": "Explain the wrestling at Peniel",
+              "markdown_content": "## Explain the wrestling at Peniel",
+              "page": 33
+            },
+            {
+              "lesson_id": "BK-F1-U4-L15",
+              "title": "State the significance of his name change",
+              "markdown_content": "## State the significance of his name change",
+              "page": 33
+            }
+          ]
+        },
+        {
+          "topic_name": "The life history of Joseph",
+          "competence_code": "4.6",
+          "lessons": [
+            {
+              "lesson_id": "BK-F1-U4-L16",
+              "title": "Describe Joseph's dreams",
+              "markdown_content": "## Describe Joseph's dreams",
+              "page": 34
+            },
+            {
+              "lesson_id": "BK-F1-U4-L17",
+              "title": "Explain his journey to Egypt",
+              "markdown_content": "## Explain his journey to Egypt",
+              "page": 34
+            },
+            {
+              "lesson_id": "BK-F1-U4-L18",
+              "title": "Describe his rise to power",
+              "markdown_content": "## Describe his rise to power",
+              "page": 34
+            },
+            {
+              "lesson_id": "BK-F1-U4-L19",
+              "title": "Explain the reconciliation with his brothers",
+              "markdown_content": "## Explain the reconciliation with his brothers",
+              "page": 35
             }
           ]
         }

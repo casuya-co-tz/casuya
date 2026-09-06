@@ -5,48 +5,102 @@
   "units": [
     {
       "unit_number": 1,
-      "unit_title": "Kumudu misingi ya Kiswahili",
+      "unit_title": "LUGHA NA UTAMADUNI",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Kutambua Kiswahili kama kielelezo cha utaifa na utambulisho wa Mtanzania",
+          "topic_name": "Matumizi ya lugha ya Kiswahili kama utambulisho wa Mtanzania",
           "competence_code": "1.1",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U1-L1",
-              "title": "Kutumia Kiswahili katika mijadala mbalimbali kwa kuzingatia utamaduni wa Mtanzania (mf. matumizi ya tafsida na uteuzi wa maneno kulingana na mila na desturi za Mtanzani",
-              "markdown_content": "## a) Kutumia Kiswahili katika mijadala mbalimbali kwa kuzingatia utamaduni wa Mtanzania (mf. matumizi ya tafsida na uteuzi wa maneno kulingana na mila na desturi za Mtanzani",
-              "page": 15
+              "lesson_id": "KISW-F1-U1-L01",
+              "title": "Elezea matumizi ya Kiswahili",
+              "markdown_content": "## Elezea matumizi ya Kiswahili",
+              "page": 1
+            },
+            {
+              "lesson_id": "KISW-F1-U1-L02",
+              "title": "Tambua umuhimu wa Kiswahili kama utambulisho",
+              "markdown_content": "## Tambua umuhimu wa Kiswahili kama utambulisho",
+              "page": 1
+            },
+            {
+              "lesson_id": "KISW-F1-U1-L03",
+              "title": "Jadili jinsi Kiswahili inavyounganisha Watanzania",
+              "markdown_content": "## Jadili jinsi Kiswahili inavyounganisha Watanzania",
+              "page": 1
             }
           ]
         },
         {
-          "topic_name": "Kukuza uelewa wa sarufi ya Kiswahili",
+          "topic_name": "Hadhi ya Kiswahili",
           "competence_code": "1.2",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U1-L2",
-              "title": "Kusimulia habari na matukio kwa kuzingatia kiimbo, mkazo, na lafudhi pamoja na dhima zake",
-              "markdown_content": "## a) Kusimulia habari na matukio kwa kuzingatia kiimbo, mkazo, na lafudhi pamoja na dhima zake",
-              "page": 16
+              "lesson_id": "KISW-F1-U1-L04",
+              "title": "Elezea hadhi ya Kiswahili",
+              "markdown_content": "## Elezea hadhi ya Kiswahili",
+              "page": 2
             },
             {
-              "lesson_id": "KIS-F1-U1-L3",
-              "title": "Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa maneno (nomino, vivumishi, vielezi, viwakilishi, vitenzi, vihisishi, vihusishi na viunganish",
-              "markdown_content": "## b) Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa maneno (nomino, vivumishi, vielezi, viwakilishi, vitenzi, vihisishi, vihusishi na viunganish",
-              "page": 16
+              "lesson_id": "KISW-F1-U1-L05",
+              "title": "Tambua miaka ya Kiswahili",
+              "markdown_content": "## Tambua miaka ya Kiswahili",
+              "page": 2
             },
             {
-              "lesson_id": "KIS-F1-U1-L4",
-              "title": "katika sentensi",
-              "markdown_content": "## i) katika sentensi",
-              "page": 16
+              "lesson_id": "KISW-F1-U1-L06",
+              "title": "Jadili maendeleo ya Kiswahili",
+              "markdown_content": "## Jadili maendeleo ya Kiswahili",
+              "page": 2
+            }
+          ]
+        },
+        {
+          "topic_name": "Matumizi ya lugha ya Kiswahili kama kielelezo cha utamaduni wa Mtanzania",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U1-L07",
+              "title": "Elezea Kiswahili kama kielelezo cha utambulisho",
+              "markdown_content": "## Elezea Kiswahili kama kielelezo cha utambulisho",
+              "page": 3
             },
             {
-              "lesson_id": "KIS-F1-U1-L5",
-              "title": "Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa sentensi katika aya",
-              "markdown_content": "## c) Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa sentensi katika aya",
-              "page": 17
+              "lesson_id": "KISW-F1-U1-L08",
+              "title": "Tambua mila na desturi zilizomo katika Kiswahili",
+              "markdown_content": "## Tambua mila na desturi zilizomo katika Kiswahili",
+              "page": 3
+            },
+            {
+              "lesson_id": "KISW-F1-U1-L09",
+              "title": "Jadili umuhimu wa lugha katika utamaduni",
+              "markdown_content": "## Jadili umuhimu wa lugha katika utamaduni",
+              "page": 3
+            }
+          ]
+        },
+        {
+          "topic_name": "Umuhimu wa kujifunza Kiswahili",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U1-L10",
+              "title": "Elezea umuhimu wa kujifunza Kiswahili",
+              "markdown_content": "## Elezea umuhimu wa kujifunza Kiswahili",
+              "page": 4
+            },
+            {
+              "lesson_id": "KISW-F1-U1-L11",
+              "title": "Tambua fursa za kazi zinazotokana na Kiswahili",
+              "markdown_content": "## Tambua fursa za kazi zinazotokana na Kiswahili",
+              "page": 4
+            },
+            {
+              "lesson_id": "KISW-F1-U1-L12",
+              "title": "Jadili umuhimu wa Kiswahili katika Elimu",
+              "markdown_content": "## Jadili umuhimu wa Kiswahili katika Elimu",
+              "page": 4
             }
           ]
         }
@@ -54,60 +108,174 @@
     },
     {
       "unit_number": 2,
-      "unit_title": "Kumudu lugha ya mazungumzo na ya maandishi",
+      "unit_title": "SARUFI YA KISWAHILI",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Kusikiliza na kuelewa mazungumzo",
+          "topic_name": "Matamshi",
           "competence_code": "2.1",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U2-L6",
-              "title": "Kusikiliza mazungumzo changamani na kujibu maswali",
-              "markdown_content": "## a) Kusikiliza mazungumzo changamani na kujibu maswali",
-              "page": 18
+              "lesson_id": "KISW-F1-U2-L01",
+              "title": "Elezea sauti za Kiswahili",
+              "markdown_content": "## Elezea sauti za Kiswahili",
+              "page": 5
             },
             {
-              "lesson_id": "KIS-F1-U2-L7",
-              "title": "Kueleza kwa muhtasari mazungumzo changamani aliyoyasikiliza",
-              "markdown_content": "## b) Kueleza kwa muhtasari mazungumzo changamani aliyoyasikiliza",
-              "page": 19
+              "lesson_id": "KISW-F1-U2-L02",
+              "title": "Tambua mdomo na vifaa vya sauti",
+              "markdown_content": "## Tambua mdomo na vifaa vya sauti",
+              "page": 5
             },
             {
-              "lesson_id": "KIS-F1-U2-L8",
-              "title": "Kushiriki katika majadiliano ya masuala mbalimbali kwa kuzingatia sifa za lugha ya mazungumzo (mf. lugha ya mkato, kupeana nafas",
-              "markdown_content": "## c) Kushiriki katika majadiliano ya masuala mbalimbali kwa kuzingatia sifa za lugha ya mazungumzo (mf. lugha ya mkato, kupeana nafas",
-              "page": 19
+              "lesson_id": "KISW-F1-U2-L03",
+              "title": "Jadili usahihi wa matamshi",
+              "markdown_content": "## Jadili usahihi wa matamshi",
+              "page": 5
             }
           ]
         },
         {
-          "topic_name": "Kusoma matini kwa ufasaha na ufahamu",
+          "topic_name": "Kusimulia habari kwa kuzingatia lafudhi sahihi",
           "competence_code": "2.2",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U2-L9",
-              "title": "Kusoma matini fupi changamani kwa kuzingatia alama za uandishi, kasi sahihi na kiimbo cha tungo",
-              "markdown_content": "## a) Kusoma matini fupi changamani kwa kuzingatia alama za uandishi, kasi sahihi na kiimbo cha tungo",
-              "page": 20
+              "lesson_id": "KISW-F1-U2-L04",
+              "title": "Elezea lafudhi sahihi",
+              "markdown_content": "## Elezea lafudhi sahihi",
+              "page": 6
             },
             {
-              "lesson_id": "KIS-F1-U2-L10",
-              "title": "Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujumbe katika usomaji wa matini fupi changamani",
-              "markdown_content": "## b) Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujumbe katika usomaji wa matini fupi changamani",
-              "page": 20
+              "lesson_id": "KISW-F1-U2-L05",
+              "title": "Tambua tofauti za lafudhi",
+              "markdown_content": "## Tambua tofauti za lafudhi",
+              "page": 6
             },
             {
-              "lesson_id": "KIS-F1-U2-L11",
-              "title": "Kuandika hoja kuu kutoka katika matini fupi changamani alizozisoma kwa kuzingatia sifa za lugha ya maandishi (mf. alama za uandishi, miunganiko sahihi ya tungo, usanif",
-              "markdown_content": "## c) Kuandika hoja kuu kutoka katika matini fupi changamani alizozisoma kwa kuzingatia sifa za lugha ya maandishi (mf. alama za uandishi, miunganiko sahihi ya tungo, usanif",
-              "page": 21
+              "lesson_id": "KISW-F1-U2-L06",
+              "title": "Jinsi ya kusimulia habari kwa lafudhi sahihi",
+              "markdown_content": "## Jinsi ya kusimulia habari kwa lafudhi sahihi",
+              "page": 6
+            }
+          ]
+        },
+        {
+          "topic_name": "Kusimulia habari kwa kuzingatia kiimbo",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U2-L07",
+              "title": "Elezea kiimbo",
+              "markdown_content": "## Elezea kiimbo",
+              "page": 7
             },
             {
-              "lesson_id": "KIS-F1-U2-L12",
-              "title": "Kutumia TEHAMA kutafuta maana ya maneno mapya kutoka katika matini aliyoisoma",
-              "markdown_content": "## d) Kutumia TEHAMA kutafuta maana ya maneno mapya kutoka katika matini aliyoisoma",
-              "page": 21
+              "lesson_id": "KISW-F1-U2-L08",
+              "title": "Tambua aina za kiimbo",
+              "markdown_content": "## Tambua aina za kiimbo",
+              "page": 7
+            },
+            {
+              "lesson_id": "KISW-F1-U2-L09",
+              "title": "Jinsi ya kusimulia habari kwa kiimbo sahihi",
+              "markdown_content": "## Jinsi ya kusimulia habari kwa kiimbo sahihi",
+              "page": 7
+            }
+          ]
+        },
+        {
+          "topic_name": "Kusimulia habari kwa kuzingatia mkazo",
+          "competence_code": "2.4",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U2-L10",
+              "title": "Elezea mkazo",
+              "markdown_content": "## Elezea mkazo",
+              "page": 8
+            },
+            {
+              "lesson_id": "KISW-F1-U2-L11",
+              "title": "Tambua maneno yenye mkazo",
+              "markdown_content": "## Tambua maneno yenye mkazo",
+              "page": 8
+            },
+            {
+              "lesson_id": "KISW-F1-U2-L12",
+              "title": "Jinsi ya kusimulia habari kwa mkazo sahihi",
+              "markdown_content": "## Jinsi ya kusimulia habari kwa mkazo sahihi",
+              "page": 8
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika hadithi kwa kuzingatia uhusiano sahihi wa maneno katika sentensi",
+          "competence_code": "2.5",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U2-L13",
+              "title": "Elezea uhusiano wa maneno",
+              "markdown_content": "## Elezea uhusiano wa maneno",
+              "page": 9
+            },
+            {
+              "lesson_id": "KISW-F1-U2-L14",
+              "title": "Tambua aina za maneno",
+              "markdown_content": "## Tambua aina za maneno",
+              "page": 9
+            },
+            {
+              "lesson_id": "KISW-F1-U2-L15",
+              "title": "Jinsi ya kuandika sentensi sahihi",
+              "markdown_content": "## Jinsi ya kuandika sentensi sahihi",
+              "page": 9
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika hadithi kwa kuzingatia mpangilio wa maneno katika sentensi",
+          "competence_code": "2.6",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U2-L16",
+              "title": "Elezea mpangilio wa maneno",
+              "markdown_content": "## Elezea mpangilio wa maneno",
+              "page": 10
+            },
+            {
+              "lesson_id": "KISW-F1-U2-L17",
+              "title": "Tambua sarufi za maneno",
+              "markdown_content": "## Tambua sarufi za maneno",
+              "page": 10
+            },
+            {
+              "lesson_id": "KISW-F1-U2-L18",
+              "title": "Jinsi ya kuandika sentensi kwa mpangilio sahihi",
+              "markdown_content": "## Jinsi ya kuandika sentensi kwa mpangilio sahihi",
+              "page": 10
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika hadithi kwa kuzingatia uhusiano wa sentensi katika aya",
+          "competence_code": "2.7",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U2-L19",
+              "title": "Elezea uhusiano wa sentensi",
+              "markdown_content": "## Elezea uhusiano wa sentensi",
+              "page": 11
+            },
+            {
+              "lesson_id": "KISW-F1-U2-L20",
+              "title": "Tambua aina za aya",
+              "markdown_content": "## Tambua aina za aya",
+              "page": 11
+            },
+            {
+              "lesson_id": "KISW-F1-U2-L21",
+              "title": "Jinsi ya kuandika aya kwa uhusiano sahihi",
+              "markdown_content": "## Jinsi ya kuandika aya kwa uhusiano sahihi",
+              "page": 11
             }
           ]
         }
@@ -115,282 +283,54 @@
     },
     {
       "unit_number": 3,
-      "unit_title": "Kuwasiliana katika miktadha mbalimbali",
+      "unit_title": "MATUMIZI YA KAMUSI",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Kutumia kamusi katika miktadha mbalimbali",
+          "topic_name": "Kutumia msamiati kwa usahihi",
           "competence_code": "3.1",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U3-L13",
-              "title": "Kutumia msamiati kwa usahihi katika mazungumzo na maandishi",
-              "markdown_content": "## a) Kutumia msamiati kwa usahihi katika mazungumzo na maandishi",
-              "page": 22
+              "lesson_id": "KISW-F1-U3-L01",
+              "title": "Elezea umuhimu wa kamusi",
+              "markdown_content": "## Elezea umuhimu wa kamusi",
+              "page": 12
             },
             {
-              "lesson_id": "KIS-F1-U3-L14",
-              "title": "Kutumia taarifa mbalimbali za kamusi katika mawasiliano ya mazungumzo na maandishi",
-              "markdown_content": "## b) Kutumia taarifa mbalimbali za kamusi katika mawasiliano ya mazungumzo na maandishi",
-              "page": 22
+              "lesson_id": "KISW-F1-U3-L02",
+              "title": "Tambua jinsi ya kutafuta maneno",
+              "markdown_content": "## Tambua jinsi ya kutafuta maneno",
+              "page": 12
+            },
+            {
+              "lesson_id": "KISW-F1-U3-L03",
+              "title": "Jinsi ya kutumia msamiati kwa usahihi",
+              "markdown_content": "## Jinsi ya kutumia msamiati kwa usahihi",
+              "page": 12
             }
           ]
         },
         {
-          "topic_name": "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo",
+          "topic_name": "Kutumia taarifa za kamusi katika mawasiliano",
           "competence_code": "3.2",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U3-L15",
-              "title": "Kuzungumza kwa ufasaha katika miktadha mbalimbali (mf. nyumbani, shuleni na hospitalin",
-              "markdown_content": "## a) Kuzungumza kwa ufasaha katika miktadha mbalimbali (mf. nyumbani, shuleni na hospitalin",
-              "page": 23
+              "lesson_id": "KISW-F1-U3-L04",
+              "title": "Elezea taarifa za kamusi",
+              "markdown_content": "## Elezea taarifa za kamusi",
+              "page": 13
             },
             {
-              "lesson_id": "KIS-F1-U3-L16",
-              "title": "Kutumia lugha kwa ufasaha katika malumbano ya hoja",
-              "markdown_content": "## b) Kutumia lugha kwa ufasaha katika malumbano ya hoja",
-              "page": 23
-            }
-          ]
-        },
-        {
-          "topic_name": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali",
-          "competence_code": "3.3",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U3-L17",
-              "title": "Kujieleza kwa ufasaha kwa maandishi katika miktadha mbalimbali",
-              "markdown_content": "## a) Kujieleza kwa ufasaha kwa maandishi katika miktadha mbalimbali",
-              "page": 24
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Kumudu misingi ya Kiswahili",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Kukuza uelewa wa sarufi ya Kiswahili",
-          "competence_code": "1.1",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U1-L18",
-              "title": "Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish",
-              "markdown_content": "## a) Kuandika habari kwa kuzingatia upatanisho wa kisarufi (kwa kuzingatia ngeli za nomino na viambishi vya upatanish",
-              "page": 25
+              "lesson_id": "KISW-F1-U3-L05",
+              "title": "Tambua aina za kamusi",
+              "markdown_content": "## Tambua aina za kamusi",
+              "page": 13
             },
             {
-              "lesson_id": "KIS-F1-U1-L19",
-              "title": "Kuzungumza kwa kutumia miundo changamani ya sentensi katika miktadha mbalimbali (sentensi ambatani na changaman",
-              "markdown_content": "## b) Kuzungumza kwa kutumia miundo changamani ya sentensi katika miktadha mbalimbali (sentensi ambatani na changaman",
-              "page": 26
-            },
-            {
-              "lesson_id": "KIS-F1-U1-L20",
-              "title": "Kuandika matini fupi kwa kutumia miundo changamani ya sentensi",
-              "markdown_content": "## c) Kuandika matini fupi kwa kutumia miundo changamani ya sentensi",
-              "page": 26
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Kumudu lugha ya mazungumzo na ya maandishi",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Kusikiliza na kuelewa mazungumzo",
-          "competence_code": "2.1",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U2-L21",
-              "title": "Kusikiliza habari changamani kwa umakini, udadisi na kuuliza maswali",
-              "markdown_content": "## a) Kusikiliza habari changamani kwa umakini, udadisi na kuuliza maswali",
-              "page": 27
-            },
-            {
-              "lesson_id": "KIS-F1-U2-L22",
-              "title": "Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu",
-              "markdown_content": "## b) Kusikiliza mijadala/ habari changamani na kuwasilisha mawazo makuu aliyoyapata kwa kuzingatia uwazi na uwekevu",
-              "page": 28
-            }
-          ]
-        },
-        {
-          "topic_name": "Kusoma matini kwa ufasaha na ufahamu",
-          "competence_code": "2.2",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U2-L23",
-              "title": "Kusoma matini ndefu changamani kwa kina na utunduizi",
-              "markdown_content": "## a) Kusoma matini ndefu changamani kwa kina na utunduizi",
-              "page": 29
-            },
-            {
-              "lesson_id": "KIS-F1-U2-L24",
-              "title": "Kusoma matini ndefu changamani, kuandika muhtasari wa hoja kuu zilizomo na kutoa maoni juu ya hoja hizo",
-              "markdown_content": "## b) Kusoma matini ndefu changamani, kuandika muhtasari wa hoja kuu zilizomo na kutoa maoni juu ya hoja hizo",
-              "page": 29
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 3,
-      "unit_title": "Kuwasiliana katika miktadha mbalimbali",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo",
-          "competence_code": "3.1",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U3-L25",
-              "title": "Kuzungumza kwa kutumia mitindo mbalimbali ya lugha ya mazungumzo na kwa kuzingatia miktadha, umri, jinsia na uhusiano",
-              "markdown_content": "## a) Kuzungumza kwa kutumia mitindo mbalimbali ya lugha ya mazungumzo na kwa kuzingatia miktadha, umri, jinsia na uhusiano",
-              "page": 30
-            },
-            {
-              "lesson_id": "KIS-F1-U3-L26",
-              "title": "Kutumia kwa usahihi ishara zinazoambatana na mazungumzo katika kuwasiliana",
-              "markdown_content": "## b) Kutumia kwa usahihi ishara zinazoambatana na mazungumzo katika kuwasiliana",
-              "page": 30
-            }
-          ]
-        },
-        {
-          "topic_name": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali",
-          "competence_code": "3.2",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U3-L27",
-              "title": "Kuandika insha za wasifu na hoja (za kisanaa na zisizo za kisana",
-              "markdown_content": "## a) Kuandika insha za wasifu na hoja (za kisanaa na zisizo za kisana",
-              "page": 31
-            },
-            {
-              "lesson_id": "KIS-F1-U3-L28",
-              "title": "Kusikiliza hoja na kuandika kumbukumbu",
-              "markdown_content": "## b) Kusikiliza hoja na kuandika kumbukumbu",
-              "page": 32
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Kumudu misingi ya Kiswahili",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Kukuza uelewa wa sarufi ya Kiswahili",
-          "competence_code": "1.1",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U1-L29",
-              "title": "Kuunda maneno kwa njia mbalimbali kutokana na habari alizozisoma au kuzisikiliza (mf. utohoaji, uradidi, uhulutishaj",
-              "markdown_content": "## a) Kuunda maneno kwa njia mbalimbali kutokana na habari alizozisoma au kuzisikiliza (mf. utohoaji, uradidi, uhulutishaj",
-              "page": 33
-            },
-            {
-              "lesson_id": "KIS-F1-U1-L30",
-              "title": "Kuandika habari kwa kuzingatia maneno yaliyoundwa kwa njia mbalimbali",
-              "markdown_content": "## b) Kuandika habari kwa kuzingatia maneno yaliyoundwa kwa njia mbalimbali",
-              "page": 34
-            },
-            {
-              "lesson_id": "KIS-F1-U1-L31",
-              "title": "Kujenga hoja za uga mahususi kwa kutumia miundo mbalimbali ya sentensi (mf. siasa, uchumi, kilimo na biashar",
-              "markdown_content": "## c) Kujenga hoja za uga mahususi kwa kutumia miundo mbalimbali ya sentensi (mf. siasa, uchumi, kilimo na biashar",
-              "page": 34
-            },
-            {
-              "lesson_id": "KIS-F1-U1-L32",
-              "title": "Kuandika matini ndefu na changamani kwa kutumia miundo mbalimbali ya sentensi",
-              "markdown_content": "## d) Kuandika matini ndefu na changamani kwa kutumia miundo mbalimbali ya sentensi",
-              "page": 35
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Kumudu lugha ya mazungumzo na ya maandishi",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Kusikiliza na kuelewa mazungumzo",
-          "competence_code": "2.1",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U2-L33",
-              "title": "Kusikiliza habari changamani kitunduizi na kuchangia au kutoa maoni mwafaka",
-              "markdown_content": "## a) Kusikiliza habari changamani kitunduizi na kuchangia au kutoa maoni mwafaka",
-              "page": 36
-            },
-            {
-              "lesson_id": "KIS-F1-U2-L34",
-              "title": "Kusikiliza habari na kuzielezea kwa maneno yake mwenyewe kwa kuzingatia stadi za mawasiliano (mf. uwazi, ukamilifu wa hoja, usahihi, muwala, uwekevu na stah",
-              "markdown_content": "## b) Kusikiliza habari na kuzielezea kwa maneno yake mwenyewe kwa kuzingatia stadi za mawasiliano (mf. uwazi, ukamilifu wa hoja, usahihi, muwala, uwekevu na stah",
-              "page": 36
-            }
-          ]
-        },
-        {
-          "topic_name": "Kusoma matini kwa ufasaha na ufahamu",
-          "competence_code": "2.2",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U2-L35",
-              "title": "Kusoma matini ndefu changamani na kuelezea kwa maandishi mawazo makuu yaliyomo kwa kuzingatia stadi za mawasiliano (mf. uwazi, ukamilifu wa hoja, usahihi, muwala, uwekevu na staha",
-              "markdown_content": "## a) Kusoma matini ndefu changamani na kuelezea kwa maandishi mawazo makuu yaliyomo kwa kuzingatia stadi za mawasiliano (mf. uwazi, ukamilifu wa hoja, usahihi, muwala, uwekevu na staha",
-              "page": 37
-            },
-            {
-              "lesson_id": "KIS-F1-U2-L36",
-              "title": "Kusoma matini ndefu changamani na kutathmini hoja zilizomo",
-              "markdown_content": "## b) Kusoma matini ndefu changamani na kutathmini hoja zilizomo",
-              "page": 37
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 3,
-      "unit_title": "Kuwasiliana katika miktadha mbalimbali",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo",
-          "competence_code": "3.1",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U3-L37",
-              "title": "Kutumia lugha fasaha katika mazungumzo ya hadhara (mf. mikutano ya hadhara, uwasilishaji mbele ya halaiki na mijadala mbalimbal",
-              "markdown_content": "## a) Kutumia lugha fasaha katika mazungumzo ya hadhara (mf. mikutano ya hadhara, uwasilishaji mbele ya halaiki na mijadala mbalimbal",
-              "page": 38
-            }
-          ]
-        },
-        {
-          "topic_name": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali",
-          "competence_code": "3.2",
-          "lessons": [
-            {
-              "lesson_id": "KIS-F1-U3-L38",
-              "title": "Kuandika barua na makala za magazetini",
-              "markdown_content": "## a) Kuandika barua na makala za magazetini",
-              "page": 38
+              "lesson_id": "KISW-F1-U3-L06",
+              "title": "Jinsi ya kutumia kamusi katika mawasiliano",
+              "markdown_content": "## Jinsi ya kutumia kamusi katika mawasiliano",
+              "page": 13
             }
           ]
         }
@@ -398,90 +338,102 @@
     },
     {
       "unit_number": 4,
-      "unit_title": "Kuthamini kazi za fasihi ya Kiswahili",
+      "unit_title": "KUSIKILIZA MAZUNGUMZO",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Kukuza uelewa wa misingi ya fasihi ya Kiswahili",
+          "topic_name": "Kusikiliza mazungumzo changamani",
           "competence_code": "4.1",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U4-L39",
-              "title": "Kufafanua dhana ya fasihi na fasihi ya Kiswahili (maana, aina na dhim",
-              "markdown_content": "## a) Kufafanua dhana ya fasihi na fasihi ya Kiswahili (maana, aina na dhim",
-              "page": 39
+              "lesson_id": "KISW-F1-U4-L01",
+              "title": "Elezea umuhimu wa kusikiliza",
+              "markdown_content": "## Elezea umuhimu wa kusikiliza",
+              "page": 14
             },
             {
-              "lesson_id": "KIS-F1-U4-L40",
-              "title": "Kuchambua tanzu za fasihi simulizi na andishi",
-              "markdown_content": "## b) Kuchambua tanzu za fasihi simulizi na andishi",
-              "page": 39
+              "lesson_id": "KISW-F1-U4-L02",
+              "title": "Tambua njia za kusikiliza",
+              "markdown_content": "## Tambua njia za kusikiliza",
+              "page": 14
+            },
+            {
+              "lesson_id": "KISW-F1-U4-L03",
+              "title": "Jinsi ya kusikiliza mazungumzo kwa ufanisi",
+              "markdown_content": "## Jinsi ya kusikiliza mazungumzo kwa ufanisi",
+              "page": 14
             }
           ]
         },
         {
-          "topic_name": "Kuhakiki kazi za fasihi ya Kiswahili",
+          "topic_name": "Sifa za lugha ya mazungumzo",
           "competence_code": "4.2",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U4-L41",
-              "title": "Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik",
-              "markdown_content": "## a) Kujadili dhana ya uhakiki wa kazi za fasihi (maana ya uhakiki, mhakiki na sifa za mhakik",
-              "page": 41
+              "lesson_id": "KISW-F1-U4-L04",
+              "title": "Elezea sifa za lugha ya mazungumzo",
+              "markdown_content": "## Elezea sifa za lugha ya mazungumzo",
+              "page": 15
             },
             {
-              "lesson_id": "KIS-F1-U4-L42",
-              "title": "Kufafanua misingi ya uhakiki wa kazi za fasihi simulizi na fasihi andishi (vipengele vya fani na maudhu",
-              "markdown_content": "## b) Kufafanua misingi ya uhakiki wa kazi za fasihi simulizi na fasihi andishi (vipengele vya fani na maudhu",
-              "page": 41
+              "lesson_id": "KISW-F1-U4-L05",
+              "title": "Tambua tofauti kati ya lugha ya mazungumzo na lugha ya maandishi",
+              "markdown_content": "## Tambua tofauti kati ya lugha ya mazungumzo na lugha ya maandishi",
+              "page": 15
             },
             {
-              "lesson_id": "KIS-F1-U4-L43",
-              "title": "Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz",
-              "markdown_content": "## c) Kuhakiki fani na maudhui katika kazi za fasihi simulizi (mashairi na maigiz",
-              "page": 42
-            },
-            {
-              "lesson_id": "KIS-F1-U4-L44",
-              "title": "Kuhakiki fani na maudhui katika tamthiliya",
-              "markdown_content": "## d) Kuhakiki fani na maudhui katika tamthiliya",
-              "page": 43
-            },
-            {
-              "lesson_id": "KIS-F1-U4-L45",
-              "title": "Kutathmini namna maudhui ya kazi alizozihakiki yanavyosadifu jamii inayomzunguka",
-              "markdown_content": "## e) Kutathmini namna maudhui ya kazi alizozihakiki yanavyosadifu jamii inayomzunguka",
-              "page": 44
+              "lesson_id": "KISW-F1-U4-L06",
+              "title": "Jadili sifa za mazungumzo",
+              "markdown_content": "## Jadili sifa za mazungumzo",
+              "page": 15
             }
           ]
         },
         {
-          "topic_name": "Kubuni kazi za fasihi ya Kiswahili",
+          "topic_name": "Kufupisha mazungumzo changamani",
           "competence_code": "4.3",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U4-L46",
-              "title": "Kujadili kanuni za utunzi wa nyimbo, ngonjera na maigizo",
-              "markdown_content": "## a) Kujadili kanuni za utunzi wa nyimbo, ngonjera na maigizo",
-              "page": 45
+              "lesson_id": "KISW-F1-U4-L07",
+              "title": "Elezea njia za kufupisha",
+              "markdown_content": "## Elezea njia za kufupisha",
+              "page": 16
             },
             {
-              "lesson_id": "KIS-F1-U4-L47",
-              "title": "Kutunga nyimbo, ngonjera na maigizo",
-              "markdown_content": "## b) Kutunga nyimbo, ngonjera na maigizo",
-              "page": 46
+              "lesson_id": "KISW-F1-U4-L08",
+              "title": "Tambua mambo muhimu ya kufupisha",
+              "markdown_content": "## Tambua mambo muhimu ya kufupisha",
+              "page": 16
             },
             {
-              "lesson_id": "KIS-F1-U4-L48",
-              "title": "Kuimba nyimbo na kutamba ngonjera",
-              "markdown_content": "## c) Kuimba nyimbo na kutamba ngonjera",
-              "page": 46
+              "lesson_id": "KISW-F1-U4-L09",
+              "title": "Jinsi ya kufupisha mazungumzo",
+              "markdown_content": "## Jinsi ya kufupisha mazungumzo",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Kushiriki katika majadiliano ya miktadha mbalimbali",
+          "competence_code": "4.4",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U4-L10",
+              "title": "Elezea umuhimu wa kushiriki",
+              "markdown_content": "## Elezea umuhimu wa kushiriki",
+              "page": 17
             },
             {
-              "lesson_id": "KIS-F1-U4-L49",
-              "title": "Kuigiza maigizo",
-              "markdown_content": "## d) Kuigiza maigizo",
-              "page": 46
+              "lesson_id": "KISW-F1-U4-L11",
+              "title": "Tambua kanuni za majadiliano",
+              "markdown_content": "## Tambua kanuni za majadiliano",
+              "page": 17
+            },
+            {
+              "lesson_id": "KISW-F1-U4-L12",
+              "title": "Jinsi ya kushiriki katika mazungumzo",
+              "markdown_content": "## Jinsi ya kushiriki katika mazungumzo",
+              "page": 17
             }
           ]
         }
@@ -489,207 +441,596 @@
     },
     {
       "unit_number": 5,
-      "unit_title": "Kutoa huduma ya lugha ya Kiswahili katika jamii",
+      "unit_title": "KUSOMA KWA UFASAHANA NA UFAHAMU",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Kufanya tafsiri sahili katika lugha ya Kiswahili",
+          "topic_name": "Kusoma matini fupi changamani",
           "competence_code": "5.1",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U5-L50",
-              "title": "Kujadili dhana, misingi, kanuni, na hatua za tafsiri",
-              "markdown_content": "## a) Kujadili dhana, misingi, kanuni, na hatua za tafsiri",
-              "page": 47
+              "lesson_id": "KISW-F1-U5-L01",
+              "title": "Elezea umuhimu wa alama za uandishi",
+              "markdown_content": "## Elezea umuhimu wa alama za uandishi",
+              "page": 18
             },
             {
-              "lesson_id": "KIS-F1-U5-L51",
-              "title": "Kutafsiri matini fupi sahili",
-              "markdown_content": "## b) Kutafsiri matini fupi sahili",
-              "page": 47
+              "lesson_id": "KISW-F1-U5-L02",
+              "title": "Tambua aina za alama",
+              "markdown_content": "## Tambua aina za alama",
+              "page": 18
             },
             {
-              "lesson_id": "KIS-F1-U5-L52",
-              "title": "Kutatua changamoto zinazojitokeza katika kutafsiri matini",
-              "markdown_content": "## c) Kutatua changamoto zinazojitokeza katika kutafsiri matini",
-              "page": 48
+              "lesson_id": "KISW-F1-U5-L03",
+              "title": "Jinsi ya kusoma kwa kasi sahihi",
+              "markdown_content": "## Jinsi ya kusoma kwa kasi sahihi",
+              "page": 18
             }
           ]
         },
         {
-          "topic_name": "Kuhariri matini mbalimbali za Kiswahili",
+          "topic_name": "Umuhimu wa alama za uandishi na kiimbo",
           "competence_code": "5.2",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U5-L53",
-              "title": "Kujadili dhana, kanuni na misingi ya uhariri",
-              "markdown_content": "## a) Kujadili dhana, kanuni na misingi ya uhariri",
-              "page": 48
+              "lesson_id": "KISW-F1-U5-L04",
+              "title": "Elezea umuhimu wa alama",
+              "markdown_content": "## Elezea umuhimu wa alama",
+              "page": 19
             },
             {
-              "lesson_id": "KIS-F1-U5-L54",
-              "title": "Kuhariri matini fupi za Kiswahili",
-              "markdown_content": "## b) Kuhariri matini fupi za Kiswahili",
-              "page": 48
+              "lesson_id": "KISW-F1-U5-L05",
+              "title": "Tambua athari za alama katika usomaji",
+              "markdown_content": "## Tambua athari za alama katika usomaji",
+              "page": 19
+            },
+            {
+              "lesson_id": "KISW-F1-U5-L06",
+              "title": "Jadili jinsi alama zinavyosaidia ufahamu",
+              "markdown_content": "## Jadili jinsi alama zinavyosaidia ufahamu",
+              "page": 19
+            }
+          ]
+        },
+        {
+          "topic_name": "Athari za alama za uandishi na kiimbo",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U5-L07",
+              "title": "Elezea athari za alama",
+              "markdown_content": "## Elezea athari za alama",
+              "page": 20
+            },
+            {
+              "lesson_id": "KISW-F1-U5-L08",
+              "title": "Tambua mabadiliko ya maana",
+              "markdown_content": "## Tambua mabadiliko ya maana",
+              "page": 20
+            },
+            {
+              "lesson_id": "KISW-F1-U5-L09",
+              "title": "Jinsi ya kuelewa maana kupitia alama",
+              "markdown_content": "## Jinsi ya kuelewa maana kupitia alama",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika hoja kuu",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U5-L10",
+              "title": "Elezea njia za kuchanganua matini",
+              "markdown_content": "## Elezea njia za kuchanganua matini",
+              "page": 21
+            },
+            {
+              "lesson_id": "KISW-F1-U5-L11",
+              "title": "Tambua hoja kuu",
+              "markdown_content": "## Tambua hoja kuu",
+              "page": 21
+            },
+            {
+              "lesson_id": "KISW-F1-U5-L12",
+              "title": "Jinsi ya kuandika hoja kuu",
+              "markdown_content": "## Jinsi ya kuandika hoja kuu",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutumia vifaa vya TEHAMA",
+          "competence_code": "5.5",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U5-L13",
+              "title": "Elezea umuhimu wa TEHAMA",
+              "markdown_content": "## Elezea umuhimu wa TEHAMA",
+              "page": 22
+            },
+            {
+              "lesson_id": "KISW-F1-U5-L14",
+              "title": "Tambua vifaa vya TEHAMA",
+              "markdown_content": "## Tambua vifaa vya TEHAMA",
+              "page": 22
+            },
+            {
+              "lesson_id": "KISW-F1-U5-L15",
+              "title": "Jinsi ya kutumia TEHAMA katika utafiti",
+              "markdown_content": "## Jinsi ya kutumia TEHAMA katika utafiti",
+              "page": 22
             }
           ]
         }
       ]
     },
     {
-      "unit_number": 1,
-      "unit_title": "Kuwasiliana katika miktadha mbalimbali",
+      "unit_number": 6,
+      "unit_title": "KUWASILIANA KWA NJIA YA MAZUNGUMZO",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo",
+          "topic_name": "Kuzungumza kwa ufasaha",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U6-L01",
+              "title": "Elezea umuhimu wa ufasaha",
+              "markdown_content": "## Elezea umuhimu wa ufasaha",
+              "page": 23
+            },
+            {
+              "lesson_id": "KISW-F1-U6-L02",
+              "title": "Tambua miktadha ya mazungumzo",
+              "markdown_content": "## Tambua miktadha ya mazungumzo",
+              "page": 23
+            },
+            {
+              "lesson_id": "KISW-F1-U6-L03",
+              "title": "Jinsi ya kuzungumza kwa ufasaha",
+              "markdown_content": "## Jinsi ya kuzungumza kwa ufasaha",
+              "page": 23
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutumia lugha kwa ufasaha",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U6-L04",
+              "title": "Elezea lugha ya mazungumzo",
+              "markdown_content": "## Elezea lugha ya mazungumzo",
+              "page": 24
+            },
+            {
+              "lesson_id": "KISW-F1-U6-L05",
+              "title": "Tambua kanuni za mazungumzo",
+              "markdown_content": "## Tambua kanuni za mazungumzo",
+              "page": 24
+            },
+            {
+              "lesson_id": "KISW-F1-U6-L06",
+              "title": "Jinsi ya kutumia lugha kwa ufasaha",
+              "markdown_content": "## Jinsi ya kutumia lugha kwa ufasaha",
+              "page": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 7,
+      "unit_title": "KUWASILIANA KWA NJIA YA MAANDISHI",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Kujieleza kwa maandishi",
+          "competence_code": "7.1",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F1-U7-L01",
+              "title": "Elezea umuhimu wa maandishi",
+              "markdown_content": "## Elezea umuhimu wa maandishi",
+              "page": 25
+            },
+            {
+              "lesson_id": "KISW-F1-U7-L02",
+              "title": "Tambua aina za maandishi",
+              "markdown_content": "## Tambua aina za maandishi",
+              "page": 25
+            },
+            {
+              "lesson_id": "KISW-F1-U7-L03",
+              "title": "Jinsi ya kujieleza kwa maandishi",
+              "markdown_content": "## Jinsi ya kujieleza kwa maandishi",
+              "page": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 8,
+      "unit_title": "KUWASILIANA KWA KUZINGATIA UPATANISHO WA KISARUFI",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Kuainisha ngeli za nomino kwa kuzingatia upatanisho wa kisarufi",
           "competence_code": "1.1",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U1-L55",
-              "title": "Kuigiza usaili kwa kuzungumza na kuandika",
-              "markdown_content": "## a) Kuigiza usaili kwa kuzungumza na kuandika",
-              "page": 49
+              "lesson_id": "KISW-F2-U1-L76",
+              "title": "Kubainisha ngeli za nomino kwa kuzingatia upatanisho wa kisarufi",
+              "markdown_content": "## Kubainisha ngeli za nomino kwa kuzingatia upatanisho wa kisarufi",
+              "page": 26
+            },
+            {
+              "lesson_id": "KISW-F2-U1-L77",
+              "title": "Kuainisha nomino katika ngeli zake",
+              "markdown_content": "## Kuainisha nomino katika ngeli zake",
+              "page": 26
             }
           ]
         },
         {
-          "topic_name": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali",
+          "topic_name": "Dhana ya ngeli za nomino na upatanisho wa kisarufi",
           "competence_code": "1.2",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U1-L56",
-              "title": "Kuandika wasifukazi na tawasifu",
-              "markdown_content": "## a) Kuandika wasifukazi na tawasifu",
-              "page": 49
+              "lesson_id": "KISW-F2-U1-L78",
+              "title": "Kufasiri dhana ya ngeli za nomino na upatanisho wa kisarufi",
+              "markdown_content": "## Kufasiri dhana ya ngeli za nomino na upatanisho wa kisarufi",
+              "page": 27
+            },
+            {
+              "lesson_id": "KISW-F2-U1-L79",
+              "title": "Kueleza umuhimu wa upatanisho wa kisarufi katika mawasiliano",
+              "markdown_content": "## Kueleza umuhimu wa upatanisho wa kisarufi katika mawasiliano",
+              "page": 27
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutumia urejeshi kwa kuzingatia ngeli za nomino",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U1-L80",
+              "title": "Kutumia urejeshi kwa kuzingatia ngeli za nomino",
+              "markdown_content": "## Kutumia urejeshi kwa kuzingatia ngeli za nomino",
+              "page": 28
+            },
+            {
+              "lesson_id": "KISW-F2-U1-L81",
+              "title": "Kujadili athari za kukosekana kwa upatanisho wa kisarufi",
+              "markdown_content": "## Kujadili athari za kukosekana kwa upatanisho wa kisarufi",
+              "page": 28
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika kifungu cha habari kwa kuzingatia upatanisho wa kisarufi",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U1-L82",
+              "title": "Kuandika kifungu cha habari kwa kuzingatia upatanisho wa kisarufi",
+              "markdown_content": "## Kuandika kifungu cha habari kwa kuzingatia upatanisho wa kisarufi",
+              "page": 29
+            },
+            {
+              "lesson_id": "KISW-F2-U1-L83",
+              "title": "Kusahihisha makosa ya upatanisho wa kisarufi katika maandishi",
+              "markdown_content": "## Kusahihisha makosa ya upatanisho wa kisarufi katika maandishi",
+              "page": 29
             }
           ]
         }
       ]
     },
     {
-      "unit_number": 2,
-      "unit_title": "Kuthamini kazi za fasihi ya Kiswahili",
-      "form": 1,
+      "unit_number": 9,
+      "unit_title": "KUTUMIA MIUNDO CHANGAMANI KATIKA MIKTADHA MBALIMBALI",
+      "form": 2,
       "topics": [
         {
-          "topic_name": "Kuhakiki kazi za fasihi ya Kiswahili",
+          "topic_name": "Kubaini vipashio vya kimuundo vya Kiswahili",
           "competence_code": "2.1",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U2-L57",
-              "title": "Kujadili dhana ya mashairi andishi",
-              "markdown_content": "## a) Kujadili dhana ya mashairi andishi",
-              "page": 50
+              "lesson_id": "KISW-F2-U2-L84",
+              "title": "Kubaini vipashio vya kimuundo vya Kiswahili",
+              "markdown_content": "## Kubaini vipashio vya kimuundo vya Kiswahili",
+              "page": 30
             },
             {
-              "lesson_id": "KIS-F1-U2-L58",
-              "title": "Kuhakiki fani na maudhui katika mashairi andishi",
-              "markdown_content": "## b) Kuhakiki fani na maudhui katika mashairi andishi",
-              "page": 50
-            },
-            {
-              "lesson_id": "KIS-F1-U2-L59",
-              "title": "Kuhakiki fani na maudhui katika riwaya",
-              "markdown_content": "## c) Kuhakiki fani na maudhui katika riwaya",
-              "page": 51
-            },
-            {
-              "lesson_id": "KIS-F1-U2-L60",
-              "title": "Kuhusianisha kazi za fasihi na maisha halisi",
-              "markdown_content": "## d) Kuhusianisha kazi za fasihi na maisha halisi",
-              "page": 51
+              "lesson_id": "KISW-F2-U2-L85",
+              "title": "Kutambua vipashio vya kimuundo katika sentensi",
+              "markdown_content": "## Kutambua vipashio vya kimuundo katika sentensi",
+              "page": 30
             }
           ]
         },
         {
-          "topic_name": "Kubuni kazi za fasihi ya Kiswahili",
+          "topic_name": "Kuzungumza kwa kutumia miundo changamani katika miktadha mbalimbali",
           "competence_code": "2.2",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U2-L61",
-              "title": "Kujadili kanuni za utunzi wa hadithi fupi simulizi na andishi",
-              "markdown_content": "## a) Kujadili kanuni za utunzi wa hadithi fupi simulizi na andishi",
-              "page": 51
+              "lesson_id": "KISW-F2-U2-L86",
+              "title": "Kuzungumza kwa kutumia miundo changamani",
+              "markdown_content": "## Kuzungumza kwa kutumia miundo changamani",
+              "page": 31
             },
             {
-              "lesson_id": "KIS-F1-U2-L62",
-              "title": "Kutunga hadithi fupi simulizi na andishi",
-              "markdown_content": "## b) Kutunga hadithi fupi simulizi na andishi",
-              "page": 52
+              "lesson_id": "KISW-F2-U2-L87",
+              "title": "Kujadili miktadha mbalimbali ya matumizi ya miundo changamani",
+              "markdown_content": "## Kujadili miktadha mbalimbali ya matumizi ya miundo changamani",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika matini fupi kwa kutumia miundo changamani",
+          "competence_code": "2.3",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U2-L88",
+              "title": "Kuandika matini fupi kwa kutumia miundo changamani",
+              "markdown_content": "## Kuandika matini fupi kwa kutumia miundo changamani",
+              "page": 32
             },
             {
-              "lesson_id": "KIS-F1-U2-L63",
-              "title": "Kutamba hadithi",
-              "markdown_content": "## c) Kutamba hadithi",
-              "page": 52
+              "lesson_id": "KISW-F2-U2-L89",
+              "title": "Kutunga sentensi sahihi kwa kutumia miundo changamani",
+              "markdown_content": "## Kutunga sentensi sahihi kwa kutumia miundo changamani",
+              "page": 32
             }
           ]
         }
       ]
     },
     {
-      "unit_number": 3,
-      "unit_title": "Kutoa huduma ya lugha ya Kiswahili katika jamii",
-      "form": 1,
+      "unit_number": 10,
+      "unit_title": "KUSIKILIZA MAZUNGUMZO",
+      "form": 2,
       "topics": [
         {
-          "topic_name": "Kufanya tafsiri sahili katika lugha ya Kiswahili",
+          "topic_name": "Kusikiliza mazungumzo changamani kwa umakini na udadisi",
           "competence_code": "3.1",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U3-L64",
-              "title": "Kutafsiri matini ndefu sahili",
-              "markdown_content": "## a) Kutafsiri matini ndefu sahili",
-              "page": 53
+              "lesson_id": "KISW-F2-U3-L90",
+              "title": "Kusikiliza mazungumzo changamani kwa umakini na udadisi",
+              "markdown_content": "## Kusikiliza mazungumzo changamani kwa umakini na udadisi",
+              "page": 33
             },
             {
-              "lesson_id": "KIS-F1-U3-L65",
-              "title": "Kutathmini matini zilizotafsiriwa",
-              "markdown_content": "## b) Kutathmini matini zilizotafsiriwa",
-              "page": 53
+              "lesson_id": "KISW-F2-U3-L91",
+              "title": "Kutambua mawazo makuu katika mazungumzo",
+              "markdown_content": "## Kutambua mawazo makuu katika mazungumzo",
+              "page": 33
             }
           ]
         },
         {
-          "topic_name": "Kuhariri matini mbalimbali za Kiswahili",
+          "topic_name": "Kushiriki katika mazungumzo kwa kuzingatia muktadha",
           "competence_code": "3.2",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U3-L66",
-              "title": "Kuhariri matini ndefu za Kiswahili",
-              "markdown_content": "## a) Kuhariri matini ndefu za Kiswahili",
-              "page": 54
+              "lesson_id": "KISW-F2-U3-L92",
+              "title": "Kushiriki katika mazungumzo kwa kuzingatia muktadha",
+              "markdown_content": "## Kushiriki katika mazungumzo kwa kuzingatia muktadha",
+              "page": 34
             },
             {
-              "lesson_id": "KIS-F1-U3-L67",
-              "title": "Kutathmini matini zilizohaririwa",
-              "markdown_content": "## b) Kutathmini matini zilizohaririwa",
-              "page": 54
+              "lesson_id": "KISW-F2-U3-L93",
+              "title": "Kutumia lugha teule katika mazungumzo",
+              "markdown_content": "## Kutumia lugha teule katika mazungumzo",
+              "page": 34
             }
           ]
         },
         {
-          "topic_name": "Kufanya ukalimani sahili kwa lugha ya Kiswahili",
+          "topic_name": "Kusikiliza mijadala na kuwasilisha mawazo makuu",
           "competence_code": "3.3",
           "lessons": [
             {
-              "lesson_id": "KIS-F1-U3-L68",
-              "title": "Kujadili dhana na misingi ya ukalimani",
-              "markdown_content": "## a) Kujadili dhana na misingi ya ukalimani",
-              "page": 54
+              "lesson_id": "KISW-F2-U3-L94",
+              "title": "Kusikiliza mijadala na kuwasilisha mawazo makuu",
+              "markdown_content": "## Kusikiliza mijadala na kuwasilisha mawazo makuu",
+              "page": 35
             },
             {
-              "lesson_id": "KIS-F1-U3-L69",
-              "title": "Kueleza stadi muhimu katika ukalimani",
-              "markdown_content": "## b) Kueleza stadi muhimu katika ukalimani",
-              "page": 55
+              "lesson_id": "KISW-F2-U3-L95",
+              "title": "Kubainisha hoja kuu na mabishano katika mijadala",
+              "markdown_content": "## Kubainisha hoja kuu na mabishano katika mijadala",
+              "page": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 11,
+      "unit_title": "KUWASILIANA KWA UFASAHA KWA NJIA YA MAZUNGUMZO",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Kuzungumza kwa kutumia mitindo mbalimbali ya lugha",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U4-L96",
+              "title": "Kuzungumza kwa kutumia mitindo mbalimbali ya lugha",
+              "markdown_content": "## Kuzungumza kwa kutumia mitindo mbalimbali ya lugha",
+              "page": 36
             },
             {
-              "lesson_id": "KIS-F1-U3-L70",
-              "title": "Kukalimani mazungumzo mafupi na sahili katika miktadha mbalimbali",
-              "markdown_content": "## c) Kukalimani mazungumzo mafupi na sahili katika miktadha mbalimbali",
-              "page": 55
+              "lesson_id": "KISW-F2-U4-L97",
+              "title": "Kubadilisha mitindo ya lugha kulingana na muktadha",
+              "markdown_content": "## Kubadilisha mitindo ya lugha kulingana na muktadha",
+              "page": 36
+            }
+          ]
+        },
+        {
+          "topic_name": "Kutumia ishara katika mazungumzo",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U4-L98",
+              "title": "Kutumia ishara na viashiria visivyo vya maneno katika mazungumzo",
+              "markdown_content": "## Kutumia ishara na viashiria visivyo vya maneno katika mazungumzo",
+              "page": 37
+            },
+            {
+              "lesson_id": "KISW-F2-U4-L99",
+              "title": "Kufasiri ishara katika mazungumzo",
+              "markdown_content": "## Kufasiri ishara katika mazungumzo",
+              "page": 37
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 12,
+      "unit_title": "KUSOMA KWA UFASAHA NA UFAHAMU",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Kusoma matini ndefu kwa ufasaha na ufahamu",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U5-L100",
+              "title": "Kusoma matini ndefu kwa ufasaha na ufahamu",
+              "markdown_content": "## Kusoma matini ndefu kwa ufasaha na ufahamu",
+              "page": 38
+            },
+            {
+              "lesson_id": "KISW-F2-U5-L101",
+              "title": "Kueleza mawazo makuu ya matini ndefu",
+              "markdown_content": "## Kueleza mawazo makuu ya matini ndefu",
+              "page": 38
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika muhtasari wa hoja kuu na kutoa maoni",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U5-L102",
+              "title": "Kuandika muhtasari wa hoja kuu za matini",
+              "markdown_content": "## Kuandika muhtasari wa hoja kuu za matini",
+              "page": 39
+            },
+            {
+              "lesson_id": "KISW-F2-U5-L103",
+              "title": "Kutoa maoni kuhusu matini zilizosomwa",
+              "markdown_content": "## Kutoa maoni kuhusu matini zilizosomwa",
+              "page": 39
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 13,
+      "unit_title": "KUWASILIANA KWA NJIA YA MAANDISHI",
+      "form": 2,
+      "topics": [
+        {
+          "topic_name": "Kuandika insha za wasifu",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U6-L104",
+              "title": "Kuandika insha za wasifu",
+              "markdown_content": "## Kuandika insha za wasifu",
+              "page": 40
+            },
+            {
+              "lesson_id": "KISW-F2-U6-L105",
+              "title": "Kutunga insha za wasifu kwa mpangilio sahihi",
+              "markdown_content": "## Kutunga insha za wasifu kwa mpangilio sahihi",
+              "page": 40
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika insha za hoja",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U6-L106",
+              "title": "Kuandika insha za hoja kwa mabishano thabiti",
+              "markdown_content": "## Kuandika insha za hoja kwa mabishano thabiti",
+              "page": 41
+            },
+            {
+              "lesson_id": "KISW-F2-U6-L107",
+              "title": "Kutathmini hoja zilizotolewa katika insha",
+              "markdown_content": "## Kutathmini hoja zilizotolewa katika insha",
+              "page": 41
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika kumbukumbu za kikao",
+          "competence_code": "6.3",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U6-L108",
+              "title": "Kuandika kumbukumbu za kikao kwa usahihi",
+              "markdown_content": "## Kuandika kumbukumbu za kikao kwa usahihi",
+              "page": 42
+            },
+            {
+              "lesson_id": "KISW-F2-U6-L109",
+              "title": "Kufafanua muundo wa kumbukumbu za kikao",
+              "markdown_content": "## Kufafanua muundo wa kumbukumbu za kikao",
+              "page": 42
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika barua rasmi na nusu rasmi",
+          "competence_code": "6.4",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U6-L110",
+              "title": "Kuandika barua rasmi kwa mtindo unaokubalika",
+              "markdown_content": "## Kuandika barua rasmi kwa mtindo unaokubalika",
+              "page": 43
+            },
+            {
+              "lesson_id": "KISW-F2-U6-L111",
+              "title": "Kuandika barua nusu rasmi kwa usahihi",
+              "markdown_content": "## Kuandika barua nusu rasmi kwa usahihi",
+              "page": 43
+            }
+          ]
+        },
+        {
+          "topic_name": "Kuandika ripoti za kikao",
+          "competence_code": "6.5",
+          "lessons": [
+            {
+              "lesson_id": "KISW-F2-U6-L112",
+              "title": "Kuandika ripoti za kikao kwa muundo sahihi",
+              "markdown_content": "## Kuandika ripoti za kikao kwa muundo sahihi",
+              "page": 44
+            },
+            {
+              "lesson_id": "KISW-F2-U6-L113",
+              "title": "Kubainisha tofauti kati ya ripoti na kumbukumbu",
+              "markdown_content": "## Kubainisha tofauti kati ya ripoti na kumbukumbu",
+              "page": 44
             }
           ]
         }
