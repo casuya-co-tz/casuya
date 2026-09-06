@@ -1,0 +1,975 @@
+{
+  "subject_name": "Chemistry",
+  "subject_slug": "chemistry",
+  "form_level": 2,
+  "standard": "Form 2",
+  "tie_reference": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 2. Dar es Salaam: TIE.",
+  "source_note": "Verified Chemistry Form Two lesson plans (Arusha Catholic Seminary). Term I lessons 1-13 cover atomic structure, the periodic table, chemical bonding, formula writing, and chemical reactions/equations plus acids, bases and salts; lessons 10-11 follow the mid-term assessment week. Term II lessons 14-24 cover laboratory safety and qualitative analysis, volumetric analysis and gas preparation (Hydrogen, Oxygen, Carbon dioxide), and environmental chemistry (air and water pollution). Lesson plan weeks for mid-term assessments/breaks and revision/exam weeks carry no teaching content and are intentionally omitted. Content kept verbatim from the educator-verified source for offline and AI generation grounding.",
+  "lessons": [
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 1: EXPLAIN ATOMIC STRUCTURE CONCEPTS",
+      "sr_no": "1",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of atomic structure, periodicity, and chemical bonding",
+      "specific_competence": "1.1 Explain the concept of atomic structure",
+      "main_activity": "Explain atomic structure concepts",
+      "specific_activity": "Trace Dalton's atomic theory timeline and structure fundamentals",
+      "teaching_learning_resources": "Periodic table charts, historical handouts.",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks students what they know matter is made of; links to everyday examples (water, air, metal).",
+          "learning_activities": "Share prior ideas about the smallest parts of matter.",
+          "assessment_criteria": "Willingness to participate in discussion"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Presents Dalton's atomic theory timeline (Democritus to Dalton) and explains its main postulates using historical handouts.",
+          "learning_activities": "Take notes and follow the timeline on the wall chart.",
+          "assessment_criteria": "Correct sequencing of historical milestones"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides pairs to summarize Dalton's theory postulates in their own words and identify limitations.",
+          "learning_activities": "Discuss in pairs and write summaries.",
+          "assessment_criteria": "Accuracy of summarized postulates"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews pair summaries orally, corrects misconceptions, asks a short oral quiz.",
+          "learning_activities": "Answer oral questions and self-correct notes.",
+          "assessment_criteria": "Ability to state Dalton's postulates correctly"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 2: IDENTIFY SUB-ATOMIC PARTICLES",
+      "sr_no": "2",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of atomic structure, periodicity, and chemical bonding",
+      "specific_competence": "1.1 Explain the concept of atomic structure",
+      "main_activity": "Identify sub-atomic particles",
+      "specific_activity": "Describe discovery, relative mass, and charge of protons, neutrons, electrons",
+      "teaching_learning_resources": "Sub-atomic model kits, wall charts.",
+      "references": "TIE (2026). Chemistry Form 2 Student's Book, Dar es Salaam: TIE.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews Dalton's atomic theory briefly and asks what particles make up an atom.",
+          "learning_activities": "Recall previous lesson and predict answers.",
+          "assessment_criteria": "Recall of prior knowledge"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains discovery experiments (Thomson, Rutherford, Chadwick) and states mass/charge of each particle using model kits.",
+          "learning_activities": "Observe model kits and record particle properties in a table.",
+          "assessment_criteria": "Correct recording of mass and charge values"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Assigns pairs to build a simple atom model using given particle counts.",
+          "learning_activities": "Construct atom models using kits.",
+          "assessment_criteria": "Correct placement of particles in the model"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Selects models for class review, asks students to label diagrams.",
+          "learning_activities": "Label a blank atom diagram individually.",
+          "assessment_criteria": "Accuracy of diagram labeling"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 3: DETERMINE ATOMIC AND MASS NUMBERS",
+      "sr_no": "3",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of atomic structure, periodicity, and chemical bonding",
+      "specific_competence": "1.2 Determine atomic number and mass number",
+      "main_activity": "Determine atomic and mass numbers",
+      "specific_activity": "Configure electron shell filling up to element 20 and compute mass numbers",
+      "teaching_learning_resources": "Electronic configuration charts, exercise books.",
+      "references": "TIE (2026). Chemistry Form 2 Student's Book, Dar es Salaam: TIE.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks students to recall proton/electron numbers from last lesson.",
+          "learning_activities": "Answer recall questions orally.",
+          "assessment_criteria": "Correct recall of particle numbers"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains atomic number, mass number, and electron shell filling rule (2,8,8) up to element 20 using charts.",
+          "learning_activities": "Copy notes and follow worked examples on the board.",
+          "assessment_criteria": "Correct understanding of shell-filling rule"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides individual practice writing electronic configurations for elements 1-20 and computing mass numbers.",
+          "learning_activities": "Solve configuration and mass number exercises.",
+          "assessment_criteria": "Correctness of configurations written"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Marks sample answers on the board, clarifies errors.",
+          "learning_activities": "Self-check answers against board corrections.",
+          "assessment_criteria": "Accuracy of self-corrected work"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 4: EXPLAIN PERIODIC TABLE DEVELOPMENT",
+      "sr_no": "4",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of atomic structure, periodicity, and chemical bonding",
+      "specific_competence": "2.1 Relate electronic configuration to element positioning",
+      "main_activity": "Explain periodic table development",
+      "specific_activity": "Trace historical layout and architecture of the Modern Periodic Table",
+      "teaching_learning_resources": "Wall periodic table charts, flashcards.",
+      "references": "TIE (2026). Chemistry Form 2 Student's Book, Dar es Salaam: TIE.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks students how they think elements were first organized.",
+          "learning_activities": "Give guesses/opinions.",
+          "assessment_criteria": "Engagement in discussion"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Traces the history from Döbereiner's triads and Mendeleev's table to the Modern Periodic Law using the wall chart.",
+          "learning_activities": "Take notes on historical development.",
+          "assessment_criteria": "Correct sequencing of historical stages"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Uses flashcards in a matching game (scientist ↔ contribution).",
+          "learning_activities": "Play matching game in groups.",
+          "assessment_criteria": "Correct scientist-to-contribution matches"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews matching quiz answers as a class.",
+          "learning_activities": "Self-assess matching quiz.",
+          "assessment_criteria": "Number of correct matches achieved"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 5: POSITION ELEMENTS USING CONFIGURATION",
+      "sr_no": "5",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of atomic structure, periodicity, and chemical bonding",
+      "specific_competence": "2.1 Relate electronic configuration to element positioning",
+      "main_activity": "Position elements using configuration",
+      "specific_activity": "Place elements into specific groups and periods via electronic configuration",
+      "teaching_learning_resources": "Periodic table, student notebooks.",
+      "references": "TIE (2026). Chemistry Form 2 Student's Book, Dar es Salaam: TIE.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews electronic configuration from Week 3.",
+          "learning_activities": "Recall configurations of sample elements.",
+          "assessment_criteria": "Correct recall"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains link between outer shell electrons/number of shells and group/period position.",
+          "learning_activities": "Note down rules linking configuration to position.",
+          "assessment_criteria": "Understanding of group/period rule"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides board illustration exercises placing given elements in correct group/period.",
+          "learning_activities": "Practice placing elements in notebooks.",
+          "assessment_criteria": "Correct group/period placement"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Marks selected notebook answers, corrects errors on board.",
+          "learning_activities": "Correct own work based on feedback.",
+          "assessment_criteria": "Accuracy after correction"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 6: ANALYZE PERIODIC TRENDS",
+      "sr_no": "6",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of atomic structure, periodicity, and chemical bonding",
+      "specific_competence": "2.2 Analyze trends in physical and chemical properties",
+      "main_activity": "Analyze periodic trends",
+      "specific_activity": "Examine trends in atomic size and metallic character across periods and groups",
+      "teaching_learning_resources": "Trend summary charts, TIE Chemistry Textbook.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks why some elements are metals and others non-metals.",
+          "learning_activities": "Give initial opinions.",
+          "assessment_criteria": "Engagement in discussion"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains trends in atomic size and metallic character across periods/groups using charts and textbook.",
+          "learning_activities": "Record trend data in notebooks.",
+          "assessment_criteria": "Correct identification of trend direction"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Assigns group task to predict properties of unfamiliar elements using trends.",
+          "learning_activities": "Discuss and predict in groups.",
+          "assessment_criteria": "Reasonableness of predictions made"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Class discussion of group answers; short written test.",
+          "learning_activities": "Complete short written test.",
+          "assessment_criteria": "Correct trend-based answers"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 7: EXPLAIN CHEMICAL BONDING CONCEPTS",
+      "sr_no": "7",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of atomic structure, periodicity, and chemical bonding",
+      "specific_competence": "3.1 Explain chemical bonding, formulas, and nomenclature",
+      "main_activity": "Explain chemical bonding concepts",
+      "specific_activity": "Examine chemical stability and ion formation via electron gain or loss",
+      "teaching_learning_resources": "Electron transfer wall charts, molecular model sets.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks why noble gases are unreactive.",
+          "learning_activities": "Give opinions on stability.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains octet rule, ion formation via electron gain/loss using wall charts.",
+          "learning_activities": "Draw Lewis dot diagrams in notebooks.",
+          "assessment_criteria": "Correct electron dot representation"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides pairs to model ion formation for given atoms using molecular kits.",
+          "learning_activities": "Build ion-formation models in pairs.",
+          "assessment_criteria": "Correct number of electrons gained/lost"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews models, evaluates sample diagrams on the board.",
+          "learning_activities": "Present and explain their models.",
+          "assessment_criteria": "Accuracy of diagram evaluation"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 8: DESCRIBE BOND TYPES",
+      "sr_no": "8",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of atomic structure, periodicity, and chemical bonding",
+      "specific_competence": "3.1 Explain chemical bonding, formulas, and nomenclature",
+      "main_activity": "Describe bond types",
+      "specific_activity": "Differentiate electrovalent (ionic) and covalent bonding using Lewis structures",
+      "teaching_learning_resources": "Molecular model sets, bonding charts.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews ion formation from previous lesson.",
+          "learning_activities": "Recall electron transfer examples.",
+          "assessment_criteria": "Correct recall"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Differentiates ionic and covalent bonding using Lewis structures and bonding charts.",
+          "learning_activities": "Draw both bond types in notebooks.",
+          "assessment_criteria": "Correct differentiation of bond types"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Organizes card-matching game pairing compounds with bond type.",
+          "learning_activities": "Play matching game in pairs.",
+          "assessment_criteria": "Correct compound-to-bond-type matches"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Conducts class quiz on bonding concepts.",
+          "learning_activities": "Answer bonding quiz individually.",
+          "assessment_criteria": "Score on bonding quiz"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 9: CONSTRUCT CHEMICAL FORMULAS",
+      "sr_no": "9",
+      "time": "40 MIN",
+      "main_competence": "1.0 Demonstrate mastery of atomic structure, periodicity, and chemical bonding",
+      "specific_competence": "3.2 Construct chemical formulas and name compounds",
+      "main_activity": "Construct chemical formulas",
+      "specific_activity": "Apply valency, radicals, and oxidation states to name binary compounds",
+      "teaching_learning_resources": "Nomenclature rule sheets, whiteboard.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks students to recall valencies of common elements.",
+          "learning_activities": "Recall valency values orally.",
+          "assessment_criteria": "Correct recall"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains rules for combining valencies/radicals and naming binary compounds using rule sheets.",
+          "learning_activities": "Copy naming rules and worked examples.",
+          "assessment_criteria": "Understanding of naming rules"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides individual practice writing formulas and names for given compounds.",
+          "learning_activities": "Complete formula-writing exercises.",
+          "assessment_criteria": "Correctness of formulas/names written"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Marks board samples, clarifies common errors.",
+          "learning_activities": "Self-correct based on board feedback.",
+          "assessment_criteria": "Accuracy after correction"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 10: EXPLAIN CHEMICAL REACTIONS",
+      "sr_no": "10",
+      "time": "40 MIN",
+      "main_competence": "2.0 Demonstrate mastery of chemical reactions, equations, acids, bases, and salts",
+      "specific_competence": "4.1 Explain chemical reactions and equations",
+      "main_activity": "Explain chemical reactions",
+      "specific_activity": "Formulate word equations and identify reactants and products",
+      "teaching_learning_resources": "Selected safe chemical reagents, glassware.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Shows a simple safe chemical change (e.g., burning magnesium ribbon) and asks what happened.",
+          "learning_activities": "Observe demonstration and predict changes.",
+          "assessment_criteria": "Engagement and observation"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates simple chemical changes, explains reactants/products, and formulates word equations.",
+          "learning_activities": "Record observations and write word equations.",
+          "assessment_criteria": "Correct identification of reactants/products"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides pairs to write word equations for given reactions.",
+          "learning_activities": "Practice writing word equations in pairs.",
+          "assessment_criteria": "Correctness of equations written"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews sample equations on the board.",
+          "learning_activities": "Submit observation reports.",
+          "assessment_criteria": "Quality of observation report"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 11: BALANCE CHEMICAL EQUATIONS",
+      "sr_no": "11",
+      "time": "40 MIN",
+      "main_competence": "2.0 Demonstrate mastery of chemical reactions, equations, acids, bases, and salts",
+      "specific_competence": "4.1 Explain chemical reactions and equations",
+      "main_activity": "Balance chemical equations",
+      "specific_activity": "Balance chemical equations and categorize reaction types",
+      "teaching_learning_resources": "Whiteboard, equation exercise sheets.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews word equations from previous lesson.",
+          "learning_activities": "Recall word equations written.",
+          "assessment_criteria": "Correct recall"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains law of conservation of mass and demonstrates balancing chemical equations.",
+          "learning_activities": "Copy worked examples and attempt balancing.",
+          "assessment_criteria": "Understanding of balancing method"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Assigns group problem-solving of equation-balancing exercise sheets.",
+          "learning_activities": "Solve equations in groups, categorize reaction types.",
+          "assessment_criteria": "Correctness of balanced equations"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Marks a sample worksheet, clarifies errors.",
+          "learning_activities": "Complete balancing worksheet test.",
+          "assessment_criteria": "Score on balancing worksheet test"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 12: INVESTIGATE ACIDS AND BASES",
+      "sr_no": "12",
+      "time": "40 MIN",
+      "main_competence": "2.0 Demonstrate mastery of chemical reactions, equations, acids, bases, and salts",
+      "specific_competence": "5.1 Investigate properties, neutralisation, and salts",
+      "main_activity": "Investigate acids and bases",
+      "specific_activity": "Examine general properties, strengths, and basicity/acidity",
+      "teaching_learning_resources": "Dilute acids/bases, litmus paper, test tubes.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks students to name common acidic/basic substances at home.",
+          "learning_activities": "Give examples from daily life.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains general properties of acids/bases, strength, and basicity/acidity concepts.",
+          "learning_activities": "Test given substances with litmus paper.",
+          "assessment_criteria": "Correct classification of acid/base"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises lab groups testing various solutions with indicators.",
+          "learning_activities": "Conduct guided lab testing in groups.",
+          "assessment_criteria": "Correct use of indicators and safety"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews lab results, discusses findings.",
+          "learning_activities": "Submit lab practical results.",
+          "assessment_criteria": "Accuracy of lab practical assessment"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 13: EXECUTE NEUTRALIZATION AND SALT PREP",
+      "sr_no": "13",
+      "time": "40 MIN",
+      "main_competence": "2.0 Demonstrate mastery of chemical reactions, equations, acids, bases, and salts",
+      "specific_competence": "5.1 Investigate properties, neutralisation, and salts",
+      "main_activity": "Execute neutralization and salt prep",
+      "specific_activity": "Perform neutralisation titrations, use pH scales, and prepare salts",
+      "teaching_learning_resources": "Universal indicator solutions, burettes, filter papers.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews acid/base properties from previous lesson.",
+          "learning_activities": "Recall acid/base classifications.",
+          "assessment_criteria": "Correct recall"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates neutralisation titration and pH scale use with universal indicator.",
+          "learning_activities": "Observe demonstration and record pH readings.",
+          "assessment_criteria": "Correct interpretation of pH values"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides groups through a salt preparation task (titration then evaporation/filtration).",
+          "learning_activities": "Carry out salt preparation practical in groups.",
+          "assessment_criteria": "Correct salt preparation procedure"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews outcomes, assigns project write-up.",
+          "learning_activities": "Prepare project evaluation report.",
+          "assessment_criteria": "Quality of project evaluation report"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 14: REVIEW LABORATORY SAFETY",
+      "sr_no": "14",
+      "time": "40 MIN",
+      "main_competence": "3.0 Execute practical laboratory procedures and qualitative analysis",
+      "specific_competence": "6.1 Review laboratory safety rules and techniques",
+      "main_activity": "Review laboratory safety",
+      "specific_activity": "Identify apparatus and execute safe handling of hazardous reagents",
+      "teaching_learning_resources": "Safety gear, lab apparatus charts.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks students what could go wrong in a lab without safety rules.",
+          "learning_activities": "Share ideas on lab hazards.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains lab safety rules, common apparatus, and hazard symbols using charts.",
+          "learning_activities": "Identify apparatus and note safety rules.",
+          "assessment_criteria": "Correct identification of apparatus/hazards"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Conducts a safety-gear audit and apparatus identification drill in groups.",
+          "learning_activities": "Practice using/identifying safety gear and apparatus.",
+          "assessment_criteria": "Correct handling demonstrated"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a safety quiz.",
+          "learning_activities": "Complete safety quiz.",
+          "assessment_criteria": "Score on safety quiz"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 15: ANALYZE ACTION OF HEAT",
+      "sr_no": "15",
+      "time": "40 MIN",
+      "main_competence": "3.0 Execute practical laboratory procedures and qualitative analysis",
+      "specific_competence": "6.2 Perform qualitative tests on substances",
+      "main_activity": "Analyze action of heat",
+      "specific_activity": "Observe action of heat on carbonates, nitrates, and hydrated salts",
+      "teaching_learning_resources": "Bunsen burners, test tubes, salt samples.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews lab safety rules relevant to heating substances.",
+          "learning_activities": "Recall safety precautions for heating.",
+          "assessment_criteria": "Correct recall"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains expected effects of heat on carbonates, nitrates, hydrated salts, demonstrates with examples.",
+          "learning_activities": "Observe heating demonstrations.",
+          "assessment_criteria": "Accurate observation recording"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises guided group experimentation heating different salt samples.",
+          "learning_activities": "Perform heating tests on salt samples in groups.",
+          "assessment_criteria": "Safe and correct experimental technique"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews observation logs with class.",
+          "learning_activities": "Submit observation log.",
+          "assessment_criteria": "Completeness/accuracy of observation log"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 16: IDENTIFY METALLIC CATIONS",
+      "sr_no": "16",
+      "time": "40 MIN",
+      "main_competence": "3.0 Execute practical laboratory procedures and qualitative analysis",
+      "specific_competence": "6.2 Perform qualitative tests on substances",
+      "main_activity": "Identify metallic cations",
+      "specific_activity": "Test and identify common cations using sodium hydroxide and ammonia",
+      "teaching_learning_resources": "NaOH, NH₄OH, metal salt solutions.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks how we can tell which metal ion is in an unknown solution.",
+          "learning_activities": "Give initial ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains systematic cation testing procedure using NaOH and NH₄OH, expected colour changes/precipitates.",
+          "learning_activities": "Record expected results table.",
+          "assessment_criteria": "Correct understanding of test procedure"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises wet-testing practicals identifying unknown cations.",
+          "learning_activities": "Perform cation tests in groups, record results.",
+          "assessment_criteria": "Correct identification of cations"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews results, clarifies discrepancies.",
+          "learning_activities": "Complete cation identification test.",
+          "assessment_criteria": "Score on cation identification test"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 17: IDENTIFY NON-METALLIC ANIONS",
+      "sr_no": "17",
+      "time": "40 MIN",
+      "main_competence": "3.0 Execute practical laboratory procedures and qualitative analysis",
+      "specific_competence": "6.2 Perform qualitative tests on substances",
+      "main_activity": "Identify non-metallic anions",
+      "specific_activity": "Perform confirmatory tests for chlorides, sulfates, carbonates, and nitrates",
+      "teaching_learning_resources": "BaCl₂, AgNO₃, acid solutions.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews cation testing from previous lesson.",
+          "learning_activities": "Recall cation test procedure.",
+          "assessment_criteria": "Correct recall"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains confirmatory tests for chlorides, sulfates, carbonates, nitrates using BaCl₂/AgNO₃.",
+          "learning_activities": "Record expected colour/precipitate reactions.",
+          "assessment_criteria": "Correct understanding of anion tests"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises reagent-addition drills identifying unknown anions in groups.",
+          "learning_activities": "Perform anion tests, record colour changes.",
+          "assessment_criteria": "Correct identification of anions"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews class results, discusses common errors.",
+          "learning_activities": "Complete anion identification test.",
+          "assessment_criteria": "Score on anion identification test"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 18: INTRODUCE ACID-BASE TITRATIONS",
+      "sr_no": "18",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of volumetric analysis and gas preparation",
+      "specific_competence": "7.1 Perform volumetric analysis calculations",
+      "main_activity": "Introduce acid-base titrations",
+      "specific_activity": "Prepare standard solutions and calculate concentrations in g/dm³ and mol/dm³",
+      "teaching_learning_resources": "Volumetric flasks, analytical balances, calculators.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks what \"concentration\" of a solution means.",
+          "learning_activities": "Give initial definitions.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains preparation of standard solutions and derives formulas for g/dm³ and mol/dm³ with worked examples.",
+          "learning_activities": "Copy formula derivations and worked examples.",
+          "assessment_criteria": "Correct understanding of concentration formulas"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides individual practice calculating concentrations from given data.",
+          "learning_activities": "Solve concentration calculation exercises.",
+          "assessment_criteria": "Correctness of calculations"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Marks sample calculations on the board.",
+          "learning_activities": "Complete calculation test.",
+          "assessment_criteria": "Score on calculation test"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 19: EXECUTE NEUTRALIZATION TITRATIONS",
+      "sr_no": "19",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of volumetric analysis and gas preparation",
+      "specific_competence": "7.1 Perform volumetric analysis calculations",
+      "main_activity": "Execute neutralization titrations",
+      "specific_activity": "Perform acid-base titrations using methyl orange or phenolphthalein indicators",
+      "teaching_learning_resources": "Burettes, pipettes, standard solutions.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews concentration calculations from previous lesson.",
+          "learning_activities": "Recall formula for concentration.",
+          "assessment_criteria": "Correct recall"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates correct titration technique using burette/pipette and choice of indicator.",
+          "learning_activities": "Observe titration demonstration, note colour change (end point).",
+          "assessment_criteria": "Correct identification of end point"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises hands-on titration practicals in pairs.",
+          "learning_activities": "Perform titration practicals in pairs.",
+          "assessment_criteria": "Correct titration technique used"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Checks titre values for accuracy, discusses sources of error.",
+          "learning_activities": "Record and submit titre values.",
+          "assessment_criteria": "Accuracy of titration results"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 20: PREPARE HYDROGEN GAS",
+      "sr_no": "20",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of volumetric analysis and gas preparation",
+      "specific_competence": "8.1 Prepare non-metals and analyze their compounds",
+      "main_activity": "Prepare Hydrogen gas",
+      "specific_activity": "Set up laboratory preparation, physical/chemical properties, and uses of Hydrogen",
+      "teaching_learning_resources": "Thistle funnel, flat-bottom flask, zinc granules, acid.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks what gas is produced when metals react with acids.",
+          "learning_activities": "Give predictions.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains and demonstrates hydrogen gas preparation set-up (zinc + acid), discusses properties/uses.",
+          "learning_activities": "Observe demonstration, record set-up diagram.",
+          "assessment_criteria": "Correct labeling of apparatus set-up"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides student-led gas collection and testing (pop test) in groups.",
+          "learning_activities": "Collect and test hydrogen gas in groups.",
+          "assessment_criteria": "Safe and correct gas collection technique"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews gas preparation reports.",
+          "learning_activities": "Submit gas preparation report.",
+          "assessment_criteria": "Completeness of gas preparation report"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 21: PREPARE OXYGEN GAS",
+      "sr_no": "21",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of volumetric analysis and gas preparation",
+      "specific_competence": "8.1 Prepare non-metals and analyze their compounds",
+      "main_activity": "Prepare Oxygen gas",
+      "specific_activity": "Set up laboratory preparation, properties, and commercial uses of Oxygen",
+      "teaching_learning_resources": "Hydrogen peroxide, manganese dioxide, gas jars.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews hydrogen preparation from previous lesson.",
+          "learning_activities": "Recall hydrogen prep set-up.",
+          "assessment_criteria": "Correct recall"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains catalytic decomposition of H₂O₂ with MnO₂ to produce oxygen; discusses properties/uses.",
+          "learning_activities": "Observe demonstration, note role of catalyst.",
+          "assessment_criteria": "Correct explanation of catalyst role"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides groups to collect oxygen gas and perform the glowing splint test.",
+          "learning_activities": "Collect gas and perform splint test in groups.",
+          "assessment_criteria": "Safe and correct gas testing technique"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a practical quiz on oxygen preparation.",
+          "learning_activities": "Complete practical quiz.",
+          "assessment_criteria": "Score on practical quiz"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 22: PREPARE CARBON DIOXIDE",
+      "sr_no": "22",
+      "time": "40 MIN",
+      "main_competence": "4.0 Demonstrate mastery of volumetric analysis and gas preparation",
+      "specific_competence": "8.1 Prepare non-metals and analyze their compounds",
+      "main_activity": "Prepare Carbon dioxide",
+      "specific_activity": "Examine preparation, properties, and environmental role of Carbon dioxide",
+      "teaching_learning_resources": "Marble chips, hydrochloric acid, delivery tubes.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks what gas we breathe out and its environmental role.",
+          "learning_activities": "Give initial ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Demonstrates CO₂ generation from marble chips and HCl, explains properties and environmental role (greenhouse effect).",
+          "learning_activities": "Observe demonstration, record set-up and observations.",
+          "assessment_criteria": "Correct explanation of CO₂'s environmental role"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides groups to collect CO₂ and test with limewater.",
+          "learning_activities": "Collect CO₂ and perform limewater test in groups.",
+          "assessment_criteria": "Correct interpretation of limewater test result"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a written test on gas chemistry covering H₂, O₂, CO₂.",
+          "learning_activities": "Complete written test.",
+          "assessment_criteria": "Score on gas chemistry test"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 23: EXAMINE AIR POLLUTION",
+      "sr_no": "23",
+      "time": "40 MIN",
+      "main_competence": "5.0 Understand environmental chemistry and pollution control",
+      "specific_competence": "9.1 Analyze air pollution and mitigation",
+      "main_activity": "Examine air pollution",
+      "specific_activity": "Identify sources of global warming, air pollutants, and mitigation measures",
+      "teaching_learning_resources": "Air quality charts, emission reports.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks students to name sources of air pollution they have seen locally.",
+          "learning_activities": "Share local examples of air pollution.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains greenhouse gases, sources of global warming, major pollutants, using air quality charts.",
+          "learning_activities": "Take notes on pollutant sources and effects.",
+          "assessment_criteria": "Correct identification of pollutant sources"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Facilitates group case-study analysis of a real emission report, brainstorming mitigation measures.",
+          "learning_activities": "Analyze case study and brainstorm solutions in groups.",
+          "assessment_criteria": "Relevance of proposed mitigation measures"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews group findings with class.",
+          "learning_activities": "Submit case study report.",
+          "assessment_criteria": "Quality of case study report"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM TWO LESSON PLAN NO. 24: INVESTIGATE WATER POLLUTION",
+      "sr_no": "24",
+      "time": "40 MIN",
+      "main_competence": "5.0 Understand environmental chemistry and pollution control",
+      "specific_competence": "9.2 Analyze water pollution and purification",
+      "main_activity": "Investigate water pollution",
+      "specific_activity": "Study water contamination sources, sewage treatment, and water hardness",
+      "teaching_learning_resources": "Water treatment model charts, soap samples.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks students about water sources in their community and any pollution concerns.",
+          "learning_activities": "Share community water observations.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains water contamination sources, sewage treatment stages, and hard/soft water concept using charts.",
+          "learning_activities": "Take notes on treatment process and hardness.",
+          "assessment_criteria": "Correct understanding of treatment stages"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides groups to create a flowchart of sewage treatment and test soap lathering with different water samples.",
+          "learning_activities": "Create flowchart; test soap samples in groups.",
+          "assessment_criteria": "Correct sequencing of flowchart; valid test interpretation"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a water purification quiz.",
+          "learning_activities": "Complete water purification quiz.",
+          "assessment_criteria": "Score on water purification quiz"
+        }
+      ]
+    }
+  ]
+}

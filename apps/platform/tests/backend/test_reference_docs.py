@@ -135,13 +135,14 @@ def test_bundled_seed_is_idempotent():
     inserts and replaces nothing, and the geography library is present
     (Form 1: 18 lesson plans + 2 term schemes; Form 2: 80 lesson plans +
     2 term schemes). Form Two also carries verified Mathematics (47 lesson
-    plans + 2 term schemes), Chemistry and Biology (2 schemes each) bundles."""
+    plans + 2 term schemes), Chemistry (24 lesson plans + 2 schemes) and
+    Biology (24 lesson plans + 2 schemes) bundles."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
     try:
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
-        assert inserted == 145  # 98 geography lessons + 47 mathematics lessons
+        assert inserted == 193  # 98 geography + 47 mathematics + 24 chemistry + 24 biology lessons
         assert replaced == 0
         assert inserted_schemes == 10
         assert replaced_schemes == 0
@@ -159,9 +160,15 @@ def test_bundled_seed_is_idempotent():
             f2_schemes = list_reference_docs(db, subject_slug=slug, form_level=2, doc_type="scheme_of_work")
             assert len(f2_schemes) == 2, slug
             assert all(doc.source_id.startswith("bundled:") for doc in f2_schemes)
-        math_f2_lessons = list_reference_docs(db, subject_slug="mathematics", form_level=2, doc_type="lesson_plan", limit=200)
-        assert len(math_f2_lessons) == 47
-        assert all(doc.source_id.startswith("bundled:") for doc in math_f2_lessons)
+        check_f2_lessons = {
+            "mathematics": 47,
+            "chemistry": 24,
+            "biology": 24,
+        }
+        for slug, expected in check_f2_lessons.items():
+            f2_lessons = list_reference_docs(db, subject_slug=slug, form_level=2, doc_type="lesson_plan", limit=200)
+            assert len(f2_lessons) == expected, slug
+            assert all(doc.source_id.startswith("bundled:") for doc in f2_lessons)
         again, again_replaced, again_schemes, again_schemes_replaced, again_purged = seed_reference_library_local.run(db)
         assert again == 0
         assert again_replaced == 0
