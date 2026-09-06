@@ -54,8 +54,17 @@ async function request(path, options = {}) {
 
   const doFetch = async () => {
     const token = localStorage.getItem("casuya_token");
+    if (tokenNeedsRefresh(token)) {
+      try {
+        await refreshAuthToken();
+      } catch (e) {
+        // Refresh unavailable — let the request carry the stale token; a 401
+        // below drives the normal session-expired handling (renderLogin).
+      }
+    }
+    const activeToken = localStorage.getItem("casuya_token");
     const headers = { "Content-Type": "application/json", ...options.headers };
-    if (token) headers["Authorization"] = `Bearer ${token}`;
+    if (activeToken) headers["Authorization"] = `Bearer ${activeToken}`;
 
     let lastErr;
     for (let attempt = 0; attempt < 3; attempt++) {
@@ -118,7 +127,26 @@ async function request(path, options = {}) {
   return promise;
 }
 
+let _refreshPromise = null;
+
+function tokenNeedsRefresh(token, skewSeconds = 60) {
+  if (!token) return false;
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    if (typeof payload.exp !== "number") return false;
+    return Date.now() >= payload.exp * 1000 - skewSeconds * 1000;
+  } catch {
+    return false;
+  }
+}
+
 async function refreshAuthToken() {
+  if (_refreshPromise) return _refreshPromise;
+  _refreshPromise = _doRefresh().finally(() => { _refreshPromise = null; });
+  return _refreshPromise;
+}
+
+async function _doRefresh() {
   const refreshToken = localStorage.getItem("casuya_refresh_token");
   if (!refreshToken) throw new Error("No refresh token");
   const resp = await fetch(`${API_BASE}/auth/refresh`, {
