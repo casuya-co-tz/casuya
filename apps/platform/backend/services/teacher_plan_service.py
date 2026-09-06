@@ -302,6 +302,7 @@ async def generate_lesson_plan(
                 period=period or "Period 1",
                 lang=lang,
             )
+        _normalize_stage_times(plan, duration_minutes)
         tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
         if tie_main and tie_spec:
             ca = plan.setdefault("competence_architecture", {})
@@ -1257,40 +1258,30 @@ def _activity_text(value):
     return _as_text(value)
 
 
-def _shorten_text(text, limit=72):
-    text = _as_text(text)
-    if len(text) <= limit:
-        return text
-    return text[:limit].rstrip() + "…"
+def _stage_assessment_criteria(index, learner_activity, lang):
+    """Build a natural, stage-specific Assessment Criterion for a progression
+    stage from the learners' activity in that stage.
 
-
-def _stage_assessment_criteria(index, teacher_activity, learner_activity, lang):
-    """Build an Assessment Criterion that assesses BOTH the teacher's activity
-    and the learners' activity of a given progression stage.
-
-    Each criterion follows the stage's frame and embeds a short form of the
-    stage's teacher and learner tasks, so the column always evaluates what was
-    actually planned in that particular part of the lesson.
+    The frames read like a real teacher's checklist ("Learners <do the stage
+    task>; correct completion demonstrates understanding") rather than a quoting
+    template, matching the reference-library quality teachers expect.
     """
-    t = _shorten_text(_activity_text(teacher_activity)).rstrip()
-    l = _shorten_text(_activity_text(learner_activity)).rstrip()
-    if t[:1].isupper():
-        t = t[0].lower() + t[1:]
+    l = " ".join(_activity_text(learner_activity).split()).rstrip().rstrip(".")
     if l[:1].isupper():
         l = l[0].lower() + l[1:]
     if lang == "sw":
         frames = (
-            f"Kuangalia shughuli ya mwalimu ({t}), wanafunzi hutathminiwa kama wanafanya '{l}' kwa usahihi.",
-            f"Kutathmini mwongozo wa mwalimu ({t}), angalia kama wanafunzi wanatekeleza '{l}' kwa usahihi.",
-            f"Kutathmini kazi ya mwalimu ({t}), angalia kama wanafunzi wanafanya '{l}' kwa usahihi.",
-            f"Kutathmini shughuli ya kumalizia ya mwalimu ({t}), angalia kama wanafunzi wanakamilisha '{l}' na kuonyesha umilisi.",
+            f"Wanafunzi {l}; majibu sahihi yanaonyesha utayari wa somo.",
+            f"Wanafunzi {l}; kukamilika kwa kazi kwa usahihi kunaonyesha uelewa wa dhana.",
+            f"Wanafunzi {l}; kukamilika kwa kazi kwa usahihi kunaonyesha matumizi ya ujuzi.",
+            f"Wanafunzi {l}; uwasilishaji wazi na majibu sahihi vinathibitisha ukomavu wa dhana.",
         )
     else:
         frames = (
-            f"Watching the teacher's opening activity ({t}), assess whether learners accurately carry out '{l}'.",
-            f"Assessing the teacher's guided activity ({t}), check whether learners correctly carry out '{l}'.",
-            f"Assessing the teacher's assignment ({t}), check whether learners correctly carry out '{l}'.",
-            f"Assessing the teacher's closing activity ({t}), check whether learners carry out '{l}' and show mastery.",
+            f"Learners {l}; accurate responses show readiness for the lesson.",
+            f"Learners {l}; correct completion of the task demonstrates understanding.",
+            f"Learners {l}; successful task completion demonstrates application.",
+            f"Learners {l}; clear presentation and accurate answers confirm consolidation.",
         )
     return frames[index]
 
@@ -1321,13 +1312,37 @@ def _reference_stage_assessments(subject_slug, form_level, topic):
     return by_name, by_index
 
 
+def _assessment_quality_reason(text, stage_name, lang):
+    """Return why an existing Assessment Criterion cell is weak (None = keep
+    it). This lets good, naturally-written AI criteria survive - they are only
+    replaced when they are empty, generic filler, too short, or name no actor."""
+    text = _as_text(text).strip()
+    if not text:
+        return "missing"
+    lowered = text.lower()
+    if any(p in lowered for p in _GENERIC_ASSESSMENT_PHRASES):
+        return "generic filler"
+    if lowered.strip(" .:;,-\"'") in (stage_name.lower().strip(" ."), "assessment_criteria"):
+        return "labels only"
+    if len(re.findall(r"\S+", text)) < 5:
+        return "too short"
+    if lang == "sw":
+        mentions_actor = "wanafunzi" in lowered or "mwanafunzi" in lowered
+    else:
+        mentions_actor = (any(w in lowered for w in ("students", "learners", "learner", "pupils"))
+                          or "teacher" in lowered)
+    if not mentions_actor:
+        return "names no actor"
+    return None
+
+
 def _ground_progression_assessment(progression, subject_slug, form_level, topic, lang):
     """Make every stage's Assessment Criteria meaningful and stage-specific.
 
-    Reference text wins when a matching reference-library stage exists; the
-    remaining stages are rewritten as criteria that explicitly assess that
-    stage's own Teacher Activity and Learner Activity, so the column always
-    evaluates what the teacher and learners do in that particular part.
+    Reference text wins when a matching reference-library stage exists. Every
+    other stage keeps its existing criterion when it is already well-written
+    (a natural, actor-named sentence); weak cells are rewritten using that
+    stage's own Learner Activity, mirroring the reference-library style.
     """
     by_name, by_index = _reference_stage_assessments(subject_slug, form_level, topic)
     stages = progression or []
@@ -1340,9 +1355,11 @@ def _ground_progression_assessment(progression, subject_slug, form_level, topic,
         if replacement:
             stage["assessment_criteria"] = replacement
             continue
+        existing = _as_text(stage.get("assessment_criteria"))
+        if existing and not _assessment_quality_reason(existing, name, lang):
+            continue
         stage["assessment_criteria"] = _stage_assessment_criteria(
             i,
-            stage.get("teacher_activity"),
             stage.get("learner_activity"),
             lang,
         )
@@ -1376,6 +1393,24 @@ def _polish_progression_cells(plan, lang):
                 if key not in ("stage", "time") and not text.endswith(("!", ".", "?")):
                     text += "."
             stage[key] = text
+    return plan
+
+
+def _normalize_stage_times(plan, duration_minutes):
+    """Reallocate the four progression stages to the official TIE time weights
+    (Introduction 5 : Competence Development 15 : Design 12 : Realizations 8),
+    scaled to the lesson duration - the pacing teachers expect from a TIE plan.
+    No-op unless there are exactly four stages."""
+    matrix = plan.get("progression_matrix") or []
+    if len(matrix) != 4:
+        return plan
+    weights = [5, 15, 12, 8]
+    total_w = sum(weights)
+    times = [max(2, round(int(duration_minutes) * w / total_w)) for w in weights]
+    times[1] += int(duration_minutes) - sum(times)
+    for stage, minutes in zip(matrix, times):
+        if isinstance(stage, dict):
+            stage["time"] = f"{minutes} min"
     return plan
 
 
@@ -1727,7 +1762,7 @@ def _build_lesson_plan_offline(
     # Each stage's Assessment Criteria assess THAT stage's Teacher Activity and
     # Learner Activity (reference-library criteria still preferred over this).
     assessment = [
-        _stage_assessment_criteria(i, teacher_acts[i], learner_acts[i], lang)
+        _stage_assessment_criteria(i, learner_acts[i], lang)
         for i in range(4)
     ]
 

@@ -223,8 +223,8 @@ def test_lesson_plan_offline_render_kiswahili():
 def test_lesson_plan_tie_specific_activity_and_assessment_echo(monkeypatch):
     """The offline lesson plan matches the official TIE format: a concise (non
     time-boxed) specific learning activity, the 4 official stage names ending in
-    'Realizations', and per-stage assessment criteria that assess the stage's
-    own Teacher Activity and Learner Activity."""
+    'Realizations', and a UNIQUE, learner-focused assessment criterion per stage
+    built from that stage's own Learner Activity."""
     form_data = _seed_subject_dict("physics", 1)
     monkeypatch.setattr(
         "backend.services.teacher_plan_service.get_subject_with_form",
@@ -248,14 +248,16 @@ def test_lesson_plan_tie_specific_activity_and_assessment_echo(monkeypatch):
     # Official stage names, ending in "Realizations".
     stages = [r["stage"] for r in plan["progression_matrix"]]
     assert stages == ["Introduction", "Competence Development", "Design", "Realizations"]
-    # Each stage's Assessment Criteria assess that stage's own Teacher
-    # Activity and Learner Activity (both appear in the criterion text).
+    # Every stage has a UNIQUE criterion built from that stage's Learner
+    # Activity (natural teacher-style wording, not a quoting template).
+    evals = []
     for idx, row in enumerate(plan["progression_matrix"]):
-        criteria = row["assessment_criteria"].lower()
-        t_frag = " ".join(row["teacher_activity"].split()[:6]).lower()
+        criteria = row["assessment_criteria"]
+        evals.append(criteria)
         l_frag = " ".join(row["learner_activity"].split()[:6]).lower()
-        assert t_frag in criteria, criteria
-        assert l_frag in criteria, criteria
+        assert l_frag in criteria.lower(), criteria
+        assert "learners" in criteria.lower(), criteria
+    assert len(set(evals)) == 4, "each stage must have a unique assessment criterion"
 
 
 def test_lesson_plan_offline_uses_knowledge_base(monkeypatch):
@@ -342,10 +344,10 @@ def test_lesson_plan_offline_grounds_assessment_with_reference(monkeypatch):
     assert matrix[3]["assessment_criteria"] == "Students present and justify their solutions to the class"
 
 
-def test_lesson_plan_ai_generic_criteria_rewritten_to_assess_stage_activities(monkeypatch):
-    """Without a matching reference, an AI plan's generic Assessment Criteria
-    are rewritten to explicitly assess that stage's own Teacher Activity and
-    Learner Activity."""
+def test_lesson_plan_ai_keeps_strong_stage_specific_criteria(monkeypatch):
+    """Good, naturally-written AI Assessment Criteria survive: they are not
+    clobbered by templates when they already evaluate the stage (actor-named,
+    non-generic), matching the reference-library quality teachers expect."""
     ai_plan = {
         "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
         "competence_architecture": {
@@ -358,19 +360,19 @@ def test_lesson_plan_ai_generic_criteria_rewritten_to_assess_stage_activities(mo
             {"stage": "Introduction", "time": "10 min",
              "teacher_activity": "Shows word cards and asks oral questions about unknown variables.",
              "learner_activity": "Observe the word cards and answer the oral questions.",
-             "assessment_criteria": "Observe whether students, guided by your word-card prompt, identify the unknown variable correctly."},
+             "assessment_criteria": "Learners recall unknown quantities from daily situations and state why variables matter."},
             {"stage": "Competence Development", "time": "20 min",
              "teacher_activity": "Guides groups to convert scenarios into equations.",
              "learner_activity": "In groups, convert scenarios into equations and solve them.",
-             "assessment_criteria": "Check that students, guided by your demonstration, successfully convert the scenarios into equations."},
+             "assessment_criteria": "Learners correctly convert scenarios into equations and solve them accurately."},
             {"stage": "Design", "time": "5 min",
              "teacher_activity": "Assigns individual contextual problems and asks students to write their own word problems.",
              "learner_activity": "Formulate individual word problems for a peer to solve.",
-             "assessment_criteria": "Verify that students formulate a correct word problem and solve the peer-given one."},
+             "assessment_criteria": "Learners formulate correct word problems and accurately solve a peer's problem."},
             {"stage": "Realizations", "time": "5 min",
              "teacher_activity": "Guides summary and gives exit ticket questions.",
              "learner_activity": "Complete exit ticket questions individually.",
-             "assessment_criteria": "Verify that students complete the exit ticket questions correctly and independently."},
+             "assessment_criteria": "Learners complete the exit ticket correctly and state the key takeaway."},
         ],
         "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
     }
@@ -390,17 +392,17 @@ def test_lesson_plan_ai_generic_criteria_rewritten_to_assess_stage_activities(mo
         subject_slug="mathematics", form_level=2, topic="Algebra",
         subtopic="Linear Equations", school_name="X", teacher_name="Y",
     ))
-    for row, t_frag, l_frag in (
-        (plan["progression_matrix"][0], "shows word cards", "observe the word cards"),
-        (plan["progression_matrix"][1], "guides groups to convert", "convert scenarios into equations"),
-        (plan["progression_matrix"][2], "assigns individual contextual", "formulate individual word"),
-        (plan["progression_matrix"][3], "guides summary and gives exit", "complete exit ticket"),
-    ):
-        criteria = row["assessment_criteria"].lower()
-        assert t_frag in criteria, criteria
-        assert l_frag in criteria, criteria
-        assert "students will learn" not in criteria, criteria
-    assert plan["progression_matrix"][2]["assessment_criteria"] != plan["progression_matrix"][3]["assessment_criteria"]
+    matrix = plan["progression_matrix"]
+    assert matrix[0]["assessment_criteria"] == (
+        "Learners recall unknown quantities from daily situations and state why variables matter."
+    )
+    assert matrix[3]["assessment_criteria"] == (
+        "Learners complete the exit ticket correctly and state the key takeaway."
+    )
+    criteria = [r["assessment_criteria"] for r in matrix]
+    assert len(set(criteria)) == 4, "each stage keeps its own unique criterion"
+    # TIE time weights: Introduction 5 / CD 15 / Design 12 / Realizations 8.
+    assert [r["time"] for r in matrix] == ["5 min", "15 min", "12 min", "8 min"]
 
 
 def _ai_plan_progression(overrides=None):
