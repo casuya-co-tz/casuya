@@ -134,7 +134,8 @@ def test_bundled_seed_is_idempotent():
     """The bundled verified reference material seeds idempotently: a re-run
     inserts and replaces nothing, and the geography library is present
     (Form 1: 18 lesson plans + 2 term schemes; Form 2: 80 lesson plans +
-    2 term schemes)."""
+    2 term schemes). Form Two also carries verified Mathematics, Chemistry
+    and Biology scheme bundles (2 terms each)."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
@@ -142,7 +143,7 @@ def test_bundled_seed_is_idempotent():
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
         assert inserted == 98
         assert replaced == 0
-        assert inserted_schemes == 4
+        assert inserted_schemes == 10
         assert replaced_schemes == 0
         assert purged == 0
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
@@ -154,6 +155,10 @@ def test_bundled_seed_is_idempotent():
         geo_f2_schemes = list_reference_docs(db, subject_slug="geography", form_level=2, doc_type="scheme_of_work")
         assert len(geo_f2_schemes) == 2
         assert all(doc.source_id.startswith("bundled:") for doc in geo_lessons + geo_schemes + geo_f2_lessons + geo_f2_schemes)
+        for slug in ("mathematics", "chemistry", "biology"):
+            f2_schemes = list_reference_docs(db, subject_slug=slug, form_level=2, doc_type="scheme_of_work")
+            assert len(f2_schemes) == 2, slug
+            assert all(doc.source_id.startswith("bundled:") for doc in f2_schemes)
         again, again_replaced, again_schemes, again_schemes_replaced, again_purged = seed_reference_library_local.run(db)
         assert again == 0
         assert again_replaced == 0
