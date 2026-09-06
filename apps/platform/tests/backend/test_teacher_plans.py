@@ -12,12 +12,14 @@ from backend.main import app
 from backend.services.auth_service import register_user
 from backend.services.teacher_plan_service import (
     _build_lesson_plan_offline,
+    _build_lesson_plan_prompt,
     _build_scheme_offline,
     _distribute_periods,
     _fill_lesson_plan_placeholders,
     _lang_label,
     _scheme_row_for_lesson,
     _strip_item_marker,
+    _tie_competences,
     generate_lesson_plan,
     generate_scheme_of_work,
     plan_lessons_for_subtopic,
@@ -142,8 +144,9 @@ def test_lesson_plan_offline_render_english():
     assert "Design" in html
     assert "Realizations" in html
     assert "Assessment Criteria" in html
-    # Removed placeholders / sections must not render.
-    assert "REMARKS" not in html
+    # Removed placeholders / sections must not render (the REMARKS/evaluation
+    # section IS part of the current TIE render and stays).
+    assert "REMARKS" in html
     assert "LESSON OBJECTIVE" not in html
     assert "Learner Evaluation" not in html
     assert "Teacher Evaluation" not in html
@@ -343,6 +346,56 @@ def test_lesson_plan_uses_verbatim_tie_competence():
     assert ">Topic:" not in html
     assert ">Subtopic:" not in html
     assert ">Topic</" not in html
+
+
+def test_tie_competences_chemistry_from_tie_syllabus():
+    """Chemistry (absent from the curated topic map) resolves the verbatim TIE
+    CBC competence from the full tie_syllabus dataset."""
+    for lang in ("en", "sw"):
+        main, spec = _tie_competences("chemistry", 2, "Atomic Structure", lang)
+        assert main == "1.0 Demonstrate mastery of basic concepts, theories and principles in Chemistry"
+        assert spec == "1.1 Demonstrate mastery of concepts, theories and principles in Chemistry"
+
+
+def test_lesson_plan_prompt_asks_for_verbatim_tie_competence():
+    """The AI prompt instructs the model to copy the REAL TIE competence
+    statements verbatim; the topic/subtopic TITLES never fill the competence
+    fields."""
+    prompt = _build_lesson_plan_prompt(
+        lang="en",
+        curriculum_ctx=_curriculum_ctx(),
+        subject_label="Chemistry",
+        subject_slug="chemistry",
+        form_level=2,
+        topic="Atomic Structure",
+        subtopic="Atomic models",
+        school_name="School",
+        teacher_name="Teacher",
+        number_of_students=40,
+        duration_minutes=40,
+        period="Period 1",
+    )
+    assert ("main_competence = 1.0 Demonstrate mastery of basic concepts, "
+            "theories and principles in Chemistry") in prompt
+    assert ("specific_competence = 1.1 Demonstrate mastery of concepts, "
+            "theories and principles in Chemistry") in prompt
+    assert "# Atomic Structure" not in prompt
+    assert "# Atomic models" not in prompt
+    assert "NEVER the topic title" in prompt
+
+
+def test_scheme_of_work_chemistry_uses_verbatim_tie_competence():
+    """A Chemistry scheme-of-work (subject outside the curated map) uses the
+    verbatim TIE competence from the tie_syllabus dataset, not topic titles."""
+    plan = _build_scheme_offline(
+        subject_slug="chemistry", subject_label="Chemistry", form_level=2,
+        term="Term 1", academic_year="2026", school_name="School",
+        teacher_name="Teacher", topics=["Atomic Structure"], lang="en",
+    )
+    rows = [w for w in plan["weeks"] if w["main_competence"].startswith("1.0")]
+    assert rows
+    assert rows[0]["main_competence"] == "1.0 Demonstrate mastery of basic concepts, theories and principles in Chemistry"
+    assert rows[0]["specific_competence"] == "1.1 Demonstrate mastery of concepts, theories and principles in Chemistry"
 
 
 def test_scheme_of_work_uses_verbatim_tie_competence():
@@ -723,6 +776,45 @@ def test_lesson_plan_uses_complete_ai_plan(monkeypatch):
     assert plan["header"]["school_name"] == "AI School"
     assert plan["progression_matrix"][3]["stage"] == "Realizations"
     assert plan["competence_architecture"]["main_learning_activity"] == "MLA"
+
+
+def test_lesson_plan_ai_overrides_topic_title_competences_with_tie(monkeypatch):
+    """An AI plan that wrote topic/subtopic TITLES into the competence fields
+    (the reported lesson-plans bug) has those fields replaced by the real TIE
+    statements before returning."""
+    ai_plan = {
+        "header": {"school_name": "AI School", "teacher_name": "AI Teacher", "class_name": "Form 2"},
+        "competence_architecture": {
+            "main_competence": "# ATOMIC STRUCTURE",
+            "specific_competence": "# Atomic models",
+            "main_learning_activity": "MLA", "specific_learning_activity": "SLA",
+            "lesson_objective": "Obj",
+        },
+        "resources_strategies": {"resources": [], "strategies": []},
+        "progression_matrix": [
+            {"stage": "Knowledge", "duration_minutes": 10, "activities": []},
+            {"stage": "Skills", "duration_minutes": 10, "activities": []},
+            {"stage": "Competence", "duration_minutes": 10, "activities": []},
+            {"stage": "Realizations", "duration_minutes": 10, "activities": []},
+        ],
+        "evaluation_learners": [], "evaluation_teacher": [], "remarks": "",
+    }
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service._call_ai_service",
+        _async_return(ai_plan),
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plan_service.get_curriculum_context",
+        _curriculum_ctx,
+    )
+    plan = _run(generate_lesson_plan(
+        subject_slug="chemistry", form_level=2, topic="Atomic Structure",
+        subtopic="Atomic models", school_name="X", teacher_name="Y",
+    ))
+    ca = plan["competence_architecture"]
+    assert ca["main_competence"] == "1.0 Demonstrate mastery of basic concepts, theories and principles in Chemistry"
+    assert ca["specific_competence"] == "1.1 Demonstrate mastery of concepts, theories and principles in Chemistry"
+    assert "# ATOMIC STRUCTURE" not in ca["main_competence"]
 
 
 def test_lesson_plan_falls_back_on_incomplete_ai(monkeypatch):

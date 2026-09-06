@@ -46,17 +46,41 @@ def _lang_label(subject_slug: str) -> str:
     return "sw" if _is_kiswahili(subject_slug) else "en"
 
 
+def _tie_syllabus_competence(subject_slug: str, form_level: int, topic_title: str):
+    """Fall back to the full TIE CBC syllabus dataset for the subject.
+
+    Returns verbatim (main_competence, specific_competence) statements from the
+    specific-competence record that best matches the teaching topic, or the
+    form's first record when nothing matches. Returns (None, None) when the
+    subject/form has no TIE syllabus data.
+    """
+    recs = ts_get_specific_competences(subject_slug, form_level)
+    if not recs:
+        return None, None
+    best = None
+    try:
+        best = ts_find_by_keyword(subject_slug, form_level, topic_title)
+    except Exception:
+        best = None
+    rec = best or recs[0]
+    return (
+        f"{rec.get('main_code', '')} {rec.get('main_competence', '')}".strip(),
+        f"{rec.get('specific_code', '')} {rec.get('specific_competence', '')}".strip(),
+    )
+
+
 def _tie_competences(subject_slug: str, form_level: int, topic_title: str, lang: str):
     """Return (main_competence, specific_competence) verbatim TIE statements.
 
     Looks up the official TIE CBC (2023) competence for the given subject /
-    form / topic and formats it as "<code> <statement>". Returns (None, None)
-    when the subject or topic is not in the curated mapping so callers can
-    gracefully fall back to their existing behaviour.
+    form / topic and formats it as "<code> <statement>". Uses the curated
+    topic-level mapping first, then falls back to the full TIE syllabus dataset.
+    Returns (None, None) when the subject or topic has no TIE data so callers
+    can gracefully fall back to their existing behaviour.
     """
     rec = lookup_competence(subject_slug, form_level, topic_title)
     if not rec:
-        return None, None
+        return _tie_syllabus_competence(subject_slug, form_level, topic_title)
     return (
         f"{rec['main_code']} {rec['main'][lang]}".strip(),
         f"{rec['specific_code']} {rec['specific'][lang]}".strip(),
@@ -177,6 +201,7 @@ async def generate_lesson_plan(
         lang=lang,
         curriculum_ctx=curriculum_ctx,
         subject_label=subject_label,
+        subject_slug=subject_slug,
         form_level=form_level,
         topic=topic,
         subtopic=subtopic or "",
@@ -454,7 +479,7 @@ async def generate_scheme_of_work(
 
 
 def _build_lesson_plan_prompt(
-    *, lang, curriculum_ctx, subject_label, form_level, topic, subtopic,
+    *, lang, curriculum_ctx, subject_label, subject_slug, form_level, topic, subtopic,
     school_name, teacher_name, number_of_students, students_boys=None, students_girls=None,
     duration_minutes, period,
 ) -> str:
@@ -481,6 +506,29 @@ def _build_lesson_plan_prompt(
         subtopic_code=subtopic_code or "#", subtopic_title=subtopic_display,
         duration_minutes=duration_minutes,
     )
+
+    # Resolve the verbatim TIE Main/Specific Competence statements for this
+    # lesson so the model copies them word-for-word instead of substituting
+    # the topic/subtopic TITLES into the competence fields.
+    tie_main, tie_spec = _tie_competences(subject_slug, form_level, topic, lang)
+    main_comp_hint = tie_main or (
+        "the REAL Main Competence statement from the CURRICULUM CONTEXT, verbatim "
+        "from the TIE syllabus (e.g. \"1.0 Demonstrate mastery of basic concepts "
+        "and skills\") - NOT the topic title"
+    )
+    spec_comp_hint = tie_spec or (
+        "the REAL Specific Competence statement from the CURRICULUM CONTEXT, "
+        "verbatim from the TIE syllabus (e.g. \"1.1 Use numerical skills in "
+        "different contexts\") - NOT the subtopic title"
+    )
+    real_comp_block = ""
+    if tie_main and tie_spec:
+        real_comp_block = (
+            f"\nREAL COMPETENCES FOR THIS LESSON (copy VERBATIM into "
+            f"main_competence and specific_competence):\n"
+            f"main_competence = {tie_main}\n"
+            f"specific_competence = {tie_spec}\n"
+        )
 
     students_total = number_of_students
     if students_boys is not None or students_girls is not None:
@@ -511,8 +559,8 @@ def _build_lesson_plan_prompt(
             "students_absent": {"boys": "", "girls": "", "total": ""},
         },
         "competence_architecture": {
-            "main_competence": "1.1 INDICES AND LOGARITHMS (use the real topic code and title from the curriculum context for THIS lesson)",
-            "specific_competence": "1.1.1 LAWS OF INDICES (use the real subtopic code and title from the curriculum context for THIS lesson)",
+            "main_competence": main_comp_hint,
+            "specific_competence": spec_comp_hint,
             "main_learning_activity": "Students apply the laws of indices to simplify numerical and algebraic expressions",
             "specific_learning_activity": (
                 "Define the laws of indices and apply them to simplify expressions"
@@ -566,6 +614,7 @@ def _build_lesson_plan_prompt(
             "kila hatua ikiwa na Shughuli ya Ufundishaji, Shughuli ya Kujifunza, na "
             "Kigezo cha Tathmini.\n"
             f"{rules_sw}\n"
+            f"{real_comp_block}\n"
             f"Urefu wa somo ni dakika {duration_minutes}; gauza hatua nne kwa busara "
             "ndani ya muda huo (Utangulizi mfupi zaidi, Ukuzaji wa Ujuzi ndio mrefu "
             "zaidi), si mgawanyo usiobadilika.\n"
@@ -582,6 +631,7 @@ def _build_lesson_plan_prompt(
         "Competence Information, Teaching & Learning Resources, and the Teaching & "
         "Learning Process.\n"
         f"{rules}\n"
+        f"{real_comp_block}\n"
         f"The lesson length is {duration_minutes} minutes; allocate the four stages "
         "sensibly within that total (Introduction shortest, Competence Development the "
         "longest), rather than forcing a fixed split.\n"
@@ -593,8 +643,16 @@ def _build_lesson_plan_prompt(
 # TIE (Tanzania Institute of Education) competence-based format.
 _TIE_LESSON_PLAN_RULES_EN = (
     "HARD RULES (must all hold):\n"
-    "1. Competences carry their syllabus codes: main_competence = '{topic_code} {topic_title}', "
-    "specific_competence = '{subtopic_code} {subtopic_title}'. Never omit the codes.\n"
+    "1. main_competence and specific_competence are the REAL, verbatim TIE syllabus "
+    "competence STATEMENTS, carrying their own syllabus codes (main_code / "
+    "specific_code), e.g. \"3.0 Demonstrate mastery of basic concepts and skills\" "
+    "and \"3.1 Use [...] skills in daily life\". The Main Competence is a broad "
+    "outcome statement (starts like \"Demonstrate mastery of\", \"Apply\", \"Use\", "
+    "\"Conduct\"), and the Specific Competence is a narrower related statement. They "
+    "are NEVER the topic title or subtopic title. Copy the REAL COMPETENCES block "
+    "verbatim when one is supplied. The topic TITLE goes only in header.topic and "
+    "the subtopic TITLE only in header.subtopic; do not put them in competence "
+    "fields under any circumstances.\n"
     "2. main_learning_activity is the topic's broad learning narrative (from the syllabus "
     "context); specific_learning_activity is the SINGLE specific learning activity/outcome "
     "focused on this lesson, written as a concise outcome phrase (e.g. \"Define hyperbolic "
@@ -701,8 +759,15 @@ def _build_lesson_plan_topic_codes(subject_data, topic, subtopic, lang):
 # Kiswahili translation of the shared TIE lesson-plan rules.
 _TIE_LESSON_PLAN_RULES_SW = (
     "KANUNI ZISIZOBADILISHA (lazima zote zitimie):\n"
-    "1. Ujuzi hubeba misimbo ya misingumo: ujuzi mkuu = '{topic_code} {topic_title}', "
-    "ujuzi mahususi = '{subtopic_code} {subtopic_title}'. Usiachie misimbo.\n"
+    "1. Ujuzi Mkuu na Ujuzi Mahususi ni TAARIFA halisi za ujuzi kutoka misingumo ya "
+    "TIE, kwa maneno kwa maneno, zenye misimbo yao wenyewe (main_code / specific_code), "
+    "k.m. \"3.0 Kuonyesha ustadi wa dhana na ujuzi wa msingi\" na \"3.1 Kutumia [...] "
+    "katika maisha ya kila siku\". Ujuzi Mkuu ni taarifa pana ya matokeo (inaanza kama "
+    "\"Kuonyesha ustadi wa\", \"Kutumia\", \"Kuendesha\"), na Ujuzi Mahususi ni taarifa "
+    "nyembamba inayohusiana nayo. Haziwezi kamwe kuwa jina la mada au sehemu ya mada. "
+    "Nakili kikamilifu kipengele cha REAL COMPETENCES kama kimetolewa. Jina la mada "
+    "huwekwa tu kwenye header.topic na jina la sehemu ya mada kwenye header.subtopic; "
+    "usiviweke kwenye sehemu za ujuzi kwa hali yoyote.\n"
     "2. Shughuli kuu ni maelezo mapana ya kujifunza kwa mada (kutoka misingumo); "
     "shughuli mahususi ni SHUGHULI MAHUSUSI MOJA ya kujifunza inayolenga somo hili, "
     "ikiandikwa kama kishazi fupi cha matokeo (mf. \"Fafanua sifa za vitendakazi "
