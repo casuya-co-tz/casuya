@@ -136,15 +136,15 @@ def test_bundled_seed_is_idempotent():
     (Form 1: 18 lesson plans + 2 term schemes; Form 2: 80 lesson plans +
     2 term schemes). Form Two also carries verified Mathematics (47 lesson
     plans + 2 term schemes), Chemistry (24 lesson plans + 2 schemes),
-    Biology (24 lesson plans + 2 schemes), and History / Historia ya
-    Tanzania na Maadili / Business Studies / English / Kiswahili scheme
-    bundles."""
+    Biology (24 lesson plans + 2 schemes), English (21 lesson plans + 2
+    schemes), and History / Historia ya Tanzania na Maadili / Business
+    Studies / Kiswahili scheme bundles."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
     try:
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
-        assert inserted == 193  # 98 geography + 47 mathematics + 24 chemistry + 24 biology lessons
+        assert inserted == 290  # 98 geography + 47 mathematics + 24 chemistry + 24 biology + 21 english + 13 history + 21 historia_tanzania_maadili + 21 business_studies + 21 kiswahili lessons
         assert replaced == 0
         assert inserted_schemes == 19
         assert replaced_schemes == 0
@@ -174,6 +174,11 @@ def test_bundled_seed_is_idempotent():
             "mathematics": 47,
             "chemistry": 24,
             "biology": 24,
+            "english": 21,
+            "history": 13,
+            "history_civics": 21,
+            "business_studies": 21,
+            "kiswahili": 21,
         }
         for slug, expected in check_f2_lessons.items():
             f2_lessons = list_reference_docs(db, subject_slug=slug, form_level=2, doc_type="lesson_plan", limit=200)

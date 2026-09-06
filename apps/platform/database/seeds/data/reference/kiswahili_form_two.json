@@ -1,0 +1,871 @@
+{
+  "subject_name": "Kiswahili",
+  "subject_slug": "kiswahili",
+  "form_level": 2,
+  "standard": "Form 2",
+  "tie_reference": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+  "source_note": "Verified Kiswahili Form Two lesson plans (Arusha Catholic Seminary). 21 lesson plans covering Upatanisho wa Kisarufi, Miundo Changamani, Kusikiliza Mazungumzo and Marudio/Tathmini Endelevu (Muhula wa Kwanza), then Mazungumzo kwa Ufasaha, Kusoma kwa Ufasaha, Maandishi ya Wasifu, Maandishi ya Hoja na Kumbukumbu za Kikao (Muhula wa Pili). One verified lesson per teaching week (3 periods each); weeks for mid-term assessments, FTNA revision and annual examinations carry no teaching content and are intentionally omitted. Content kept verbatim from the educator-verified source for offline and AI generation grounding.",
+  "lessons": [
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 1: KUANIASHA NGELI ZA NOMINO",
+      "sr_no": "1",
+      "time": "40 MIN",
+      "main_competence": "1.0 Kuwasiliana kwa kuzingatia upatanisho wa kisarufi",
+      "specific_competence": "1.1 Kuainisha ngeli za nomino",
+      "main_activity": "Kuainisha ngeli",
+      "specific_activity": "Kuainisha ngeli za nomino kwa kuzingatia upatanisho wa kisarufi",
+      "teaching_learning_resources": "Kitabu cha Kiswahili, chati za ngeli.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anauliza wanafunzi kuorodhesha majina ya vitu darasani; anaingiza dhana ya ngeli.",
+          "learning_activities": "Wanataja nomino na kuangazia vipawa vyake.",
+          "assessment_criteria": "Ushiriki katika kutaja nomino."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anafafanua ngeli za nomino kwa kutumia chati na mifano ya nomino katika ngeli mbalimbali.",
+          "learning_activities": "Wanaandika maelezo ya ngeli na mifano yake.",
+          "assessment_criteria": "Ubainishaji sahihi wa ngeli za nomino."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza katika mazoezi ya kuainisha nomino katika ngeli mbalimbali.",
+          "learning_activities": "Wanaainisha nomino katika mazoezi ya darasani.",
+          "assessment_criteria": "Uainishaji sahihi wa nomino katika ngeli stahiki."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anauliza maswali ya mdomo na kusahihisha makosa ya uainishaji.",
+          "learning_activities": "Wanajibu maswali ya mdomo na kujisahihisha.",
+          "assessment_criteria": "Uwezo wa kuainisha ngeli za nomino kwa usahihi."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 2: DHANA YA NGELI",
+      "sr_no": "2",
+      "time": "40 MIN",
+      "main_competence": "1.0 Kuwasiliana kwa kuzingatia upatanisho wa kisarufi",
+      "specific_competence": "1.2 Kueleza dhana ya ngeli",
+      "main_activity": "Kueleza dhana ya ngeli",
+      "specific_activity": "Kueleza dhana ya ngeli za nomino na upatanisho wa kisarufi",
+      "teaching_learning_resources": "Chati za ngeli, maelezo ya darasani.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anauliza kwa nini tukisema 'mtoto mzuri' si 'mtoto wazuri'; anaingiza dhana ya ngeli.",
+          "learning_activities": "Wanabainisha tofauti za mawilimwili na ulezi.",
+          "assessment_criteria": "Ufahamu wa awali wa dhana ya ngeli."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza dhana ya ngeli za nomino na umuhimu wa upatanisho wa kisarufi kwa mifano.",
+          "learning_activities": "Wanaandika maelezo kuhusu ngeli na upatanisho.",
+          "assessment_criteria": "Uelewa wa dhana ya ngeli na upatanisho wa kisarufi."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anatoa mifano na kuongoza mazoezi ya kupatanisha vivumishi na vitenzi na nomino.",
+          "learning_activities": "Wanafanya mazoezi ya upatanisho wa kisarufi.",
+          "assessment_criteria": "Upatanisho sahihi wa vivumishi na vitenzi."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatoa jaribio fupi na kurekebisha makosa ya upatanisho.",
+          "learning_activities": "Wanajibu jaribio fupi na kujisahihisha.",
+          "assessment_criteria": "Uwezo wa kueleza na kutumia dhana ya ngeli."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 3: UTUMIAJI WA UREJESHI",
+      "sr_no": "3",
+      "time": "40 MIN",
+      "main_competence": "1.0 Kuwasiliana kwa kuzingatia upatanisho wa kisarufi",
+      "specific_competence": "1.3 Kutumia urejeshi",
+      "main_activity": "Kutumia urejeshi",
+      "specific_activity": "Kutumia urejeshi kwa kuzingatia ngeli za nomino",
+      "teaching_learning_resources": "Karatasi za mazoezi, chati za urejeshi.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anaandika 'Mtoto alikuja. Mtoto alilala' na kuuliza jinsi ya kuepuka kurudia neno 'mtoto'.",
+          "learning_activities": "Wanapendekeza matumizi ya 'yeye' kama urejeshi.",
+          "assessment_criteria": "Ufahamu wa dhana ya urejeshi."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza aina za urejeshi na jinsi zinavyokaa na ngeli za nomino.",
+          "learning_activities": "Wanaandika maelezo kuhusu urejeshi na ngeli.",
+          "assessment_criteria": "Uelewa wa matumizi ya urejeshi."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza kuandika sentensi kwa kutumia urejeshi sahihi.",
+          "learning_activities": "Wanaandika sentensi na kufanya mazoezi ya urejeshi.",
+          "assessment_criteria": "Sentensi zenye urejeshi sahihi."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatoa zoezi la maandishi na kusahihisha makosa.",
+          "learning_activities": "Wanajibu zoezi la maandishi.",
+          "assessment_criteria": "Matumizi sahihi ya urejeshi kwa ngeli stahiki."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 4: KUANDIKA KIFUNGU CHA HABARI",
+      "sr_no": "4",
+      "time": "40 MIN",
+      "main_competence": "1.0 Kuwasiliana kwa kuzingatia upatanisho wa kisarufi",
+      "specific_competence": "1.4 Kuandika kifungu cha habari",
+      "main_activity": "Kuandika kifungu cha habari",
+      "specific_activity": "Kuandika kifungu cha habari kwa kuzingatia upatanisho wa kisarufi",
+      "teaching_learning_resources": "Karatasi za uandishi, mfano wa kifungu cha habari.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anauliza wanafunzi kusimulia tukio la shuleni kwa sentensi mbili; anaingiza uandishi wa habari.",
+          "learning_activities": "Wanasimulia tukio lao kwa kifupi.",
+          "assessment_criteria": "Ushiriki katika kusimulia tukio."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza muundo wa kifungu cha habari (mwanzo, katikati, mwisho) na upatanisho wa kisarufi.",
+          "learning_activities": "Wanasoma mfano wa kifungu cha habari na kutambua muundo wake.",
+          "assessment_criteria": "Uelewa wa muundo wa kifungu cha habari."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza kuandika kifungu cha habari kuhusu tukio wanachokijua.",
+          "learning_activities": "Wanaandika kifungu cha habari kwa uongozi wa mwalimu.",
+          "assessment_criteria": "Kifungu chenye upatanisho sahihi wa kisarufi."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anakusanya kazi, anatathmini na kutoa maoni ya kujenga.",
+          "learning_activities": "Wanapokea maoni na kuimarisha kazi zao.",
+          "assessment_criteria": "Kifungu cha habari kilichoandikwa vizuri."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 5: VIPASHIO VYA KIMUUNDO",
+      "sr_no": "5",
+      "time": "40 MIN",
+      "main_competence": "2.0 Kutumia miundo changamani",
+      "specific_competence": "2.1 Kubaini vipashio vya kimuundo",
+      "main_activity": "Kubaini vipashio",
+      "specific_activity": "Kubaini vipashio vya kimuundo",
+      "teaching_learning_resources": "Kitabu cha kiada, mifano ya sentensi.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anaandika sentensi na kuuliza ni sehemu gani zinazounda sentensi.",
+          "learning_activities": "Wanatoa mawazo kuhusu sehemu za sentensi.",
+          "assessment_criteria": "Ushiriki katika kubaini sehemu za sentensi."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza vipashio vya kimuundo (kiima, kiarifa, kielezi) kwa mifano.",
+          "learning_activities": "Wanaandika maelezo kuhusu vipashio vya kimuundo.",
+          "assessment_criteria": "Uelewa wa vipashio vya kimuundo."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anaongoza mjadala na kutoa mifano ya kutambua vipashio katika sentensi.",
+          "learning_activities": "Wanabaini vipashio katika sentensi mbalimbali.",
+          "assessment_criteria": "Ubainishaji sahihi wa vipashio vya kimuundo."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anauliza maswali ya mdomo na kuhitimisha vipashio.",
+          "learning_activities": "Wanajibu maswali ya mdomo.",
+          "assessment_criteria": "Uwezo wa kubaini vipashio vya kimuundo."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 6: KUZUNGUMZA KWA MIUNDO CHANGAMANI",
+      "sr_no": "6",
+      "time": "40 MIN",
+      "main_competence": "2.0 Kutumia miundo changamani",
+      "specific_competence": "2.2 Kuzungumza kwa miundo changamani",
+      "main_activity": "Kuzungumza kwa miundo",
+      "specific_activity": "Kuzungumza kwa kutumia miundo changamani katika miktadha mbalimbali",
+      "teaching_learning_resources": "Kadi za miktadha, maelezo ya mazungumzo.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anatoa muktadha wa mazungumzo (sokoni) na kuuliza watu husema nini.",
+          "learning_activities": "Wanapendekeza maneno ya mazungumzo ya sokoni.",
+          "assessment_criteria": "Ushiriki katika kutunga mazungumzo."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza jinsi ya kuzungumza kwa kutumia miundo changamani katika miktadha mbalimbali.",
+          "learning_activities": "Wanasikiliza na kuandika maelezo ya mazungumzo.",
+          "assessment_criteria": "Uelewa wa miundo changamani katika mazungumzo."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anaongoza mazungumzo ya jozi kwa kutumia kadi za miktadha.",
+          "learning_activities": "Wanafanya mazungumzo ya jozi katika miktadha mbalimbali.",
+          "assessment_criteria": "Mazungumzo yenye miundo changamani sahihi."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatoa tathmini ya mazungumzo na kusahihisha makosa.",
+          "learning_activities": "Wanapokea maoni na kuboresha mazungumzo.",
+          "assessment_criteria": "Uwezo wa kuzungumza kwa miundo changamani."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 7: KUANDIKA MATINI FUPI KWA MIUNDO CHANGAMANI",
+      "sr_no": "7",
+      "time": "40 MIN",
+      "main_competence": "2.0 Kutumia miundo changamani",
+      "specific_competence": "2.3 Kuandika matini fupi",
+      "main_activity": "Kuandika matini fupi",
+      "specific_activity": "Kuandika matini fupi kwa kutumia miundo changamani",
+      "teaching_learning_resources": "Karatasi za uandishi, mifano ya matini fupi.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anaonyesha barua fupi na kuuliza muundo wake.",
+          "learning_activities": "Wanabaini sehemu za barua fupi.",
+          "assessment_criteria": "Ufahamu wa muundo wa matini fupi."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza namna ya kuandika matini fupi kwa kutumia miundo changamani.",
+          "learning_activities": "Wanaandika maelezo na kusoma mifano.",
+          "assessment_criteria": "Uelewa wa uandishi wa matini fupi."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza kuandika matini fupi (barua, taarifa) kwa kutumia miundo changamani.",
+          "learning_activities": "Wanaandika matini fupi kwa uongozi wa mwalimu.",
+          "assessment_criteria": "Matini fupi zenye miundo changamani sahihi."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anakusanya, anatathmini na kutoa maoni ya kujenga.",
+          "learning_activities": "Wanapokea maoni na kuimarisha matini zao.",
+          "assessment_criteria": "Tathmini ya maandishi yenye miundo ipasavyo."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 8: KUSIKILIZA KWA UMAKINI",
+      "sr_no": "8",
+      "time": "40 MIN",
+      "main_competence": "3.0 Kusikiliza mazungumzo",
+      "specific_competence": "3.1 Kusikiliza kwa umakini",
+      "main_activity": "Kusikiliza mazungumzo",
+      "specific_activity": "Kusikiliza mazungumzo changamani kwa umakini na udadisi",
+      "teaching_learning_resources": "Rekodi za sauti, maswali ya kusikiliza.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anawauliza wanafunzi kusikiliza kwa makini na kuweka madhumuni ya kusikiliza.",
+          "learning_activities": "Wanaandaa madhumuni ya kusikiliza.",
+          "assessment_criteria": "Utayari wa kusikiliza kwa umakini."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anachezesha rekodi ya sauti na kuongoza mazoezi ya kusikiliza kwa umakini.",
+          "learning_activities": "Wanasikiliza rekodi na kunukuu mawazo muhimu.",
+          "assessment_criteria": "Unukuzi sahihi wa mawazo wakati wa kusikiliza."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anaongoza mazoezi ya kusikiliza mazungumzo changamani na kujibu maswali.",
+          "learning_activities": "Wanajibu maswali ya kusikiliza kwa maandishi.",
+          "assessment_criteria": "Majibu sahihi ya maswali ya kusikiliza."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatoa zoezi la kusikiliza na kusahihisha majibu.",
+          "learning_activities": "Wanajibu zoezi la kusikiliza.",
+          "assessment_criteria": "Uwezo wa kusikiliza kwa umakini na udadisi."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 9: KUSIKILIZA MIJADALA",
+      "sr_no": "9",
+      "time": "40 MIN",
+      "main_competence": "3.0 Kusikiliza mazungumzo",
+      "specific_competence": "3.2 Kusikiliza mijadala",
+      "main_activity": "Kusikiliza mijadala",
+      "specific_activity": "Kusikiliza mijadala changamani na kuwasilisha mawazo makuu",
+      "teaching_learning_resources": "Rekodi za mijadala, karatasi za kumbukumbu.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anaeleza sifa za mjadala na umuhimu wa kusikiliza mijadala.",
+          "learning_activities": "Wanasikiliza maelezo kuhusu mjadala.",
+          "assessment_criteria": "Ufahamu wa sifa za mjadala."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anachezesha rekodi ya mjadala na kuongoza unukuzi wa mawazo makuu.",
+          "learning_activities": "Wanasikiliza mjadala na kunukuu mawazo makuu.",
+          "assessment_criteria": "Unukuzi sahihi wa mawazo makuu ya mjadala."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anaongoza wanafunzi kuwasilisha mawazo makuu waliosikia.",
+          "learning_activities": "Wanawasilisha mawazo makuu ya mjadala.",
+          "assessment_criteria": "Uwasilishaji sahihi wa mawazo ya mjadala."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatoa tathmini ya uwasilishaji na kusahihisha upungufu.",
+          "learning_activities": "Wanapokea maoni na kuboresha uwasilishaji.",
+          "assessment_criteria": "Uwezo wa kusikiliza na kuwasilisha mawazo ya mjadala."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 10: KUSIKILIZA HABARI NA KUANDIKA MUHTASARI",
+      "sr_no": "10",
+      "time": "40 MIN",
+      "main_competence": "3.0 Kusikiliza mazungumzo",
+      "specific_competence": "3.3 Kusikiliza habari",
+      "main_activity": "Kusikiliza habari",
+      "specific_activity": "Kusikiliza habari changamani na kuwasilisha mawazo makuu",
+      "teaching_learning_resources": "Rekodi za habari, karatasi za muhtasari.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anaeleza maana ya muhtasari na umuhimu wake baada ya kusikiliza habari.",
+          "learning_activities": "Wanasikiliza ufafanuzi wa muhtasari.",
+          "assessment_criteria": "Ufahamu wa dhana ya muhtasari."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anachezesha rekodi ya habari na kuongoza unukuzi wa mawazo makuu.",
+          "learning_activities": "Wanasikiliza habari na kuandika mawazo makuu.",
+          "assessment_criteria": "Unukuzi sahihi wa mawazo makuu ya habari."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza kuandika muhtasari wa habari iliyosikika.",
+          "learning_activities": "Wanaandika muhtasari wa habari.",
+          "assessment_criteria": "Muhtasari wenye mawazo makuu ya habari."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatathmini muhtasari na kutoa maoni ya kujenga.",
+          "learning_activities": "Wanapokea maoni na kuimarisha muhtasari.",
+          "assessment_criteria": "Tathmini ya muhtasari wenye uelewa wa habari."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 11: MARUDIO YA SURA 1-3",
+      "sr_no": "11",
+      "time": "40 MIN",
+      "main_competence": "Marudio",
+      "specific_competence": "Marudio ya Sura 1-3",
+      "main_activity": "Kufanya marudio",
+      "specific_activity": "Kupitia dhana muhimu za Sura 1-3",
+      "teaching_learning_resources": "Maelezo ya marudio, karatasi za jaribio.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anawaalika wanafunzi kutaja mada zilizojifunza katika Sura 1-3.",
+          "learning_activities": "Wanaorodhesha mada zilizojifunzwa.",
+          "assessment_criteria": "Uwezo wa kukumbuka mada zilizojifunzwa."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anapitia dhana muhimu za Sura 1-3 kwa kutumia maelezo ya marudio.",
+          "learning_activities": "Wanaandika maelezo na kufuatilia dhana muhimu.",
+          "assessment_criteria": "Uelewa wa dhana muhimu za Sura 1-3."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anaongoza maswali na majibu ya marudio kuhusu dhana zote.",
+          "learning_activities": "Wanajibu maswali ya marudio.",
+          "assessment_criteria": "Majibu sahihi ya maswali ya marudio."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatoa jaribio la marudio na kutoa mwongozo wa maandalizi.",
+          "learning_activities": "Wanajibu jaribio la marudio.",
+          "assessment_criteria": "Utayari wa tathmini endelevu."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 12: TATHMINI ENDELEVU YA SURA 1-3",
+      "sr_no": "12",
+      "time": "40 MIN",
+      "main_competence": "Tathmini endelevu",
+      "specific_competence": "Sura 1-3",
+      "main_activity": "Kufanya tathmini",
+      "specific_activity": "Kusimamia jaribio la Sura 1-3",
+      "teaching_learning_resources": "Karatasi za jaribio, mwongozo wa majibu.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anaeleza taratibu za jaribio la tathmini endelevu la Sura 1-3.",
+          "learning_activities": "Wanasikiliza taratibu za jaribio.",
+          "assessment_criteria": "Uelewa wa taratibu za jaribio."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anagawia karatasi za jaribio na kusimamia jaribio la mtu mmoja mmoja.",
+          "learning_activities": "Wanajibu jaribio la mtu mmoja mmoja.",
+          "assessment_criteria": "Kukamilisha jaribio kwa uwazi."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anakusanya karatasi za jaribio na kufanya ukaguzi mfupi wa majibu muhimu.",
+          "learning_activities": "Wanakabidhi karatasi za jaribio.",
+          "assessment_criteria": "Ukabidhiwaji wa karatasi zilizojibiwa."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatoa maoni kuhusu utendaji na maeneo ya kuboresha.",
+          "learning_activities": "Wanabainisha maeneo ya kuboresha.",
+          "assessment_criteria": "Ufahamu wa maeneo ya kuboresha."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 13: MITINDO MBALIMBALI YA LUGHA",
+      "sr_no": "13",
+      "time": "40 MIN",
+      "main_competence": "4.0 Kuwasiliana kwa ufasaha kwa njia ya mazungumzo",
+      "specific_competence": "4.1 Kutumia mitindo mbalimbali",
+      "main_activity": "Kutumia mitindo ya lugha",
+      "specific_activity": "Kuzungumza kwa kutumia mitindo mbalimbali ya lugha",
+      "teaching_learning_resources": "Kadi za mitindo, mifano ya lugha.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anaonyesha namna mbili za kusalimu (rasmi na isiyo rasmi) na kuuliza tofauti.",
+          "learning_activities": "Wanabainisha tofauti za mitindo ya lugha.",
+          "assessment_criteria": "Ufahamu wa mitindo ya lugha."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anafafanua mitindo mbalimbali ya lugha (rasmi, yasiyo rasmi, fashihi) kwa mifano.",
+          "learning_activities": "Wanaandika maelezo kuhusu mitindo ya lugha.",
+          "assessment_criteria": "Uelewa wa mitindo ya lugha."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza katika uigizaji na mazoezi ya kuzungumza kwa mitindo mbalimbali.",
+          "learning_activities": "Wanaigiza na kuzungumza kwa kutumia kadi za mitindo.",
+          "assessment_criteria": "Matumizi sahihi ya mitindo ya lugha."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatoa tathmini ya mazungumzo na kusahihisha makosa.",
+          "learning_activities": "Wanapokea maoni na kuboresha mazungumzo.",
+          "assessment_criteria": "Uwezo wa kutumia mitindo mbalimbali ya lugha."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 14: UTUMIAJI WA ISHARA KATIKA MAWASILIANO",
+      "sr_no": "14",
+      "time": "40 MIN",
+      "main_competence": "4.0 Kuwasiliana kwa ufasaha kwa njia ya mazungumzo",
+      "specific_competence": "4.2 Kutumia ishara",
+      "main_activity": "Kutumia ishara za mawasiliano",
+      "specific_activity": "Kutumia ishara katika mazungumzo",
+      "teaching_learning_resources": "Video za mazungumzo, orodha ya uchunguzi.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anawasalimu kwa ishara ya mkono na kuuliza ujumbe uliosambazwa.",
+          "learning_activities": "Wanabainisha ujumbe wa ishara.",
+          "assessment_criteria": "Ufahamu wa mawasiliano yasiyo ya maneno."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaonyesha video za mazungumzo na kueleza matumizi ya ishara (uso, mikono, mwili).",
+          "learning_activities": "Wanatazama video na kutambua ishara.",
+          "assessment_criteria": "Utambuzi sahihi wa ishara katika mawasiliano."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anaongoza uigizaji na uchunguzi wa video ili kuendeleza matumizi ya ishara.",
+          "learning_activities": "Wanaigiza na kuchunguza ishara.",
+          "assessment_criteria": "Matumizi sahihi ya ishara katika mazungumzo."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anakamilisha orodha ya uchunguzi na kutathmini utumiaji wa ishara.",
+          "learning_activities": "Wanapokea maoni na kuboresha matumizi ya ishara.",
+          "assessment_criteria": "Tathmini ya utumiaji sahihi wa ishara."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 15: KUSOMA KITUNDUIZI MATINI NDHIU",
+      "sr_no": "15",
+      "time": "40 MIN",
+      "main_competence": "5.0 Kusoma kwa ufasaha na ufahamu",
+      "specific_competence": "5.1 Kusoma kitunduizi matini ndefu",
+      "main_activity": "Kusoma matini ndefu",
+      "specific_activity": "Kusoma kitunduizi matini ndefu changamani",
+      "teaching_learning_resources": "Vitabu vya hadithi, maswali ya ufahamu.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anawauliza kuhusu kitabu cha hadithi wanachokijua na mbinu za kusoma matini ndefu.",
+          "learning_activities": "Wanatambua mbinu za kusoma matini ndefu.",
+          "assessment_criteria": "Ushiriki katika mjadala wa mbinu za kusoma."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza namna ya kusoma kitunduizi na kusoma matini ndefu kwa ufasaha na ufahamu.",
+          "learning_activities": "Wanaandika maelezo na kusoma kwa kimya.",
+          "assessment_criteria": "Uelewa wa mbinu za kusoma kitunduizi."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anaongoza usomaji wa kimya wa hadithi na kujadili muhtasari.",
+          "learning_activities": "Wanasoma hadithi na kujadili katika vikundi.",
+          "assessment_criteria": "Usomaji wenye ufahamu wa matini."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatoa jaribio la ufahamu na kusahihisha majibu.",
+          "learning_activities": "Wanajibu jaribio la ufahamu.",
+          "assessment_criteria": "Ufahamu wa matini ndefu uliodhihirika."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 16: KUANDIKA MUHTASARI WA HOJA KUU",
+      "sr_no": "16",
+      "time": "40 MIN",
+      "main_competence": "5.0 Kusoma kwa ufasaha na ufahamu",
+      "specific_competence": "5.2 Kuandika muhtasari",
+      "main_activity": "Kuandika muhtasari",
+      "specific_activity": "Kuandika muhtasari wa hoja kuu na kutoa maoni",
+      "teaching_learning_resources": "Karatasi za uandishi, mifano ya muhtasari.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anauliza maana ya muhtasari na hoja kuu za kifungu.",
+          "learning_activities": "Wanatoa mawazo kuhusu muhtasari.",
+          "assessment_criteria": "Ufahamu wa dhana ya muhtasari."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza namna ya kubaini hoja kuu na kuandika muhtasari.",
+          "learning_activities": "Wanaandika maelezo na kubaini hoja kuu.",
+          "assessment_criteria": "Ubainishaji sahihi wa hoja kuu."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza kuandika muhtasari wa kifungu na kutoa maoni yao.",
+          "learning_activities": "Wanaandika muhtasari na maoni yao.",
+          "assessment_criteria": "Muhtasari wenye hoja kuu na maoni."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatathmini muhtasari na kutoa maoni ya kujenga.",
+          "learning_activities": "Wanapokea maoni na kuimarisha muhtasari.",
+          "assessment_criteria": "Tathmini ya muhtasari wenye hoja kuu."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 17: IN SHA ZA WASIFU ZA KISANAA",
+      "sr_no": "17",
+      "time": "40 MIN",
+      "main_competence": "6.0 Kuwasiliana kwa njia ya maandishi",
+      "specific_competence": "6.1 Kuandika insha za wasifu za kisanaa",
+      "main_activity": "Kuandika insha za kisanaa",
+      "specific_activity": "Kuandika insha za wasifu za kisanaa",
+      "teaching_learning_resources": "Sampuli za insha, karatasi za uandishi.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anauliza wanafunzi kumweleza mtu anayempenda; anaingiza dhana ya wasifu.",
+          "learning_activities": "Wanisimulie mtu anayewapendeza.",
+          "assessment_criteria": "Ushiriki katika kueleza wasifu."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza sifa za insha ya wasifu za kisanaa na kutoa sampuli.",
+          "learning_activities": "Wanasoma sampuli ya insha na kubaini sifa zake.",
+          "assessment_criteria": "Uelewa wa sifa za insha za kisanaa."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza kuandika insha ya wasifu za kisanaa kuhusu mtu waliyemchukulia.",
+          "learning_activities": "Wanaandika insha ya wasifu za kisanaa.",
+          "assessment_criteria": "Insha zenye sifa za kisanaa."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anakusanya insha, anatathmini na kutoa maoni.",
+          "learning_activities": "Wanapokea maoni na kuimarisha insha zao.",
+          "assessment_criteria": "Tathmini ya insha za wasifu za kisanaa."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 18: INSHA ZA WASIFU ZISIZO ZA KISANAA",
+      "sr_no": "18",
+      "time": "40 MIN",
+      "main_competence": "6.0 Kuwasiliana kwa njia ya maandishi",
+      "specific_competence": "6.2 Kuandika insha za wasifu zisizo za kisanaa",
+      "main_activity": "Kuandika insha zisizo za kisanaa",
+      "specific_activity": "Kuandika insha za wasifu zisizo za kisanaa",
+      "teaching_learning_resources": "Sampuli za insha, karatasi za uandishi.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anafafanua tofauti kati ya wasifu wa kisanaa na usio wa kisanaa.",
+          "learning_activities": "Wanasikiliza na kutofautisha insha hizo.",
+          "assessment_criteria": "Uelewa wa tofauti za insha za wasifu."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza sifa za insha ya wasifu isiyo ya kisanaa kwa mifano.",
+          "learning_activities": "Wanaandika maelezo na kusoma sampuli.",
+          "assessment_criteria": "Uelewa wa sifa za insha isiyo ya kisanaa."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza kuandika insha ya wasifu isiyo ya kisanaa kuhusu mtu fulani.",
+          "learning_activities": "Wanaandika insha ya wasifu isiyo ya kisanaa.",
+          "assessment_criteria": "Insha zenye muundo sahihi."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anakusanya insha, anatathmini na kutoa maoni.",
+          "learning_activities": "Wanapokea maoni na kuimarisha insha.",
+          "assessment_criteria": "Tathmini ya insha za wasifu zisizo za kisanaa."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 19: INSHA ZA HOJA ZA KISANAA",
+      "sr_no": "19",
+      "time": "40 MIN",
+      "main_competence": "6.0 Kuwasiliana kwa njia ya maandishi",
+      "specific_competence": "6.3 Kuandika insha za hoja za kisanaa",
+      "main_activity": "Kuandika insha za hoja",
+      "specific_activity": "Kuandika insha za hoja za kisanaa",
+      "teaching_learning_resources": "Sampuli za insha, karatasi za uandishi.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anauliza mada ya hoja (mfano: 'Elimu ni muhimu') na atakayeijadili.",
+          "learning_activities": "Wanapendekeza mada za hoja.",
+          "assessment_criteria": "Ushiriki katika kupendekeza mada za hoja."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza sifa za insha za hoja za kisanaa na kuonyesha sampuli.",
+          "learning_activities": "Wanasoma sampuli ya insha ya hoja.",
+          "assessment_criteria": "Uelewa wa sifa za insha za hoja."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza kuandika insha ya hoja za kisanaa kuhusu mada waliyochagua.",
+          "learning_activities": "Wanaandika insha ya hoja za kisanaa.",
+          "assessment_criteria": "Insha zenye hoja na ushawishi."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anakusanya insha, anatathmini na kutoa maoni.",
+          "learning_activities": "Wanapokea maoni na kuimarisha insha.",
+          "assessment_criteria": "Tathmini ya insha za hoja za kisanaa."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 20: INSHA ZA HOJA ZISIZO ZA KISANAA",
+      "sr_no": "20",
+      "time": "40 MIN",
+      "main_competence": "6.0 Kuwasiliana kwa njia ya maandishi",
+      "specific_competence": "6.4 Kuandika insha za hoja zisizo za kisanaa",
+      "main_activity": "Kuandika insha za hoja zisizo za kisanaa",
+      "specific_activity": "Kuandika insha za hoja zisizo za kisanaa",
+      "teaching_learning_resources": "Sampuli za insha, karatasi za uandishi.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anaeleza tofauti kati ya insha ya hoja ya kisanaa na isiyo ya kisanaa.",
+          "learning_activities": "Wanatofautisha insha hizo mbili.",
+          "assessment_criteria": "Uelewa wa aina za insha za hoja."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza sifa za insha ya hoja isiyo ya kisanaa kwa mifano.",
+          "learning_activities": "Wanaandika maelezo na kusoma sampuli.",
+          "assessment_criteria": "Uelewa wa insha za hoja zisizo za kisanaa."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anawaongoza kuandika insha ya hoja isiyo ya kisanaa kuhusu mada husika.",
+          "learning_activities": "Wanaandika insha ya hoja isiyo ya kisanaa.",
+          "assessment_criteria": "Insha zenye hoja na muundo sahihi."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anakusanya insha, anatathmini na kutoa maoni.",
+          "learning_activities": "Wanapokea maoni na kuimarisha insha.",
+          "assessment_criteria": "Tathmini ya insha za hoja zisizo za kisanaa."
+        }
+      ]
+    },
+    {
+      "title": "KISWAHILI FORM TWO LESSON PLAN NO. 21: KUANDIKA KUMBUKUMBU ZA KIKAO",
+      "sr_no": "21",
+      "time": "40 MIN",
+      "main_competence": "6.0 Kuwasiliana kwa njia ya maandishi",
+      "specific_competence": "6.5 Kuandika kumbukumbu za kikao",
+      "main_activity": "Kuandika kumbukumbu",
+      "specific_activity": "Kuandika kumbukumbu za kikao",
+      "teaching_learning_resources": "Sampuli za kumbukumbu, mfano wa kikao.",
+      "references": "TIE (2026). Kiswahili, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Anauliza kile kinachoandikwa baada ya kikao; anaingiza dhana ya kumbukumbu.",
+          "learning_activities": "Wanatoa mawazo kuhusu kumbukumbu za kikao.",
+          "assessment_criteria": "Ufahamu wa dhana ya kumbukumbu za kikao."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Anaeleza muundo wa kumbukumbu za kikao (muda, waliokuwepo, ajenda, maazimio) kwa sampuli.",
+          "learning_activities": "Wanaandika maelezo na kusoma sampuli.",
+          "assessment_criteria": "Uelewa wa muundo wa kumbukumbu."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Anaongoza kisa huletwamo mfano wa kikao na uandishi wa kumbukumbu.",
+          "learning_activities": "Wanaandika kumbukumbu za kikao kwa uongozi.",
+          "assessment_criteria": "Kumbukumbu zenye muundo sahihi."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Anatathmini kumbukumbu na kutoa maoni ya kujenga.",
+          "learning_activities": "Wanapokea maoni na kuimarisha kumbukumbu.",
+          "assessment_criteria": "Tathmini ya kumbukumbu za kikao."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,871 @@
+{
+  "subject_name": "Business Studies",
+  "subject_slug": "business_studies",
+  "form_level": 2,
+  "standard": "Form 2",
+  "tie_reference": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+  "source_note": "Verified Business Studies Form Two lesson plans (Arusha Catholic Seminary). 21 lesson plans covering the Concept of Production, Financing of Small Businesses, Small Business Management and review/continuous assessment (Term I), then Warehousing and Inventorying, Business Opportunity Identification, review and the Practical Business Plan Project (Term II). One verified lesson per teaching week (3 periods each); weeks for mid-term assessments, annual-exam revision and the annual examinations carry no teaching content and are intentionally omitted. Content kept verbatim from the educator-verified source for offline and AI generation grounding.",
+  "lessons": [
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 1: CONCEPT OF PRODUCTION",
+      "sr_no": "1",
+      "time": "40 MIN",
+      "main_competence": "1.0 Understand the concept of production",
+      "specific_competence": "1.1 Explain the concept of production",
+      "main_activity": "Define production",
+      "specific_activity": "Explain the meaning and importance of production",
+      "teaching_learning_resources": "Business Studies textbook, real-life examples, wall chart.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks learners what the food they eat and the clothes they wear have in common; links to production.",
+          "learning_activities": "Share examples of goods and services they use daily.",
+          "assessment_criteria": "Recognition of production in daily life."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Defines production and explains its meaning and importance using real-life examples and the wall chart.",
+          "learning_activities": "Take notes on the definition and importance of production.",
+          "assessment_criteria": "Correct definition of production and its importance."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Leads a class discussion; learners identify goods and services produced in their community.",
+          "learning_activities": "List local examples of production in pairs.",
+          "assessment_criteria": "Accurate identification of local production activities."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Poses oral questions and corrects misconceptions.",
+          "learning_activities": "Answer oral questions and self-correct notes.",
+          "assessment_criteria": "Correct explanation of the meaning and importance of production."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 2: FACTORS OF PRODUCTION",
+      "sr_no": "2",
+      "time": "40 MIN",
+      "main_competence": "1.0 Understand the concept of production",
+      "specific_competence": "1.2 Analyze factors of production",
+      "main_activity": "Identify factors of production",
+      "specific_activity": "Explain land, labour, capital, and entrepreneurship as factors of production",
+      "teaching_learning_resources": "Charts, local business examples, Business Studies textbook.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks what a farmer needs to grow crops (land, tools, effort, ideas); introduces factors of production.",
+          "learning_activities": "Brainstorm what is needed to produce goods.",
+          "assessment_criteria": "Generation of essential inputs for production."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains land, labour, capital and entrepreneurship with examples using charts and local business cases.",
+          "learning_activities": "Take notes on the four factors of production.",
+          "assessment_criteria": "Correct identification of the four factors of production."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides group brainstorming: learners classify local production inputs into the four factors.",
+          "learning_activities": "Work in groups to classify examples under each factor.",
+          "assessment_criteria": "Accurate classification of inputs into factors."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a short quiz on the factors and reviews answers.",
+          "learning_activities": "Complete the quiz and self-correct.",
+          "assessment_criteria": "Correct explanation of the factors of production."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 3: SMALL-SIZED BUSINESSES",
+      "sr_no": "3",
+      "time": "40 MIN",
+      "main_competence": "2.0 Understand financing of small businesses",
+      "specific_competence": "2.1 Explain the concept of small businesses",
+      "main_activity": "Define small-sized businesses",
+      "specific_activity": "Explain characteristics of small-sized businesses",
+      "teaching_learning_resources": "Textbook, local business case studies.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks learners to name small businesses in their neighbourhood.",
+          "learning_activities": "List examples of small businesses (kiosks, salons, stalls).",
+          "assessment_criteria": "Recognition of small businesses around them."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains the concept of small-sized businesses and their characteristics using local case studies.",
+          "learning_activities": "Take notes on the characteristics of small businesses.",
+          "assessment_criteria": "Correct identification of small-business characteristics."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Leads a class discussion comparing a small kiosk with a big company.",
+          "learning_activities": "Discuss differences and similarities in groups.",
+          "assessment_criteria": "Accurate comparison of small and large businesses."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Conducts a short oral test and consolidates the concept.",
+          "learning_activities": "Answer oral questions and self-correct.",
+          "assessment_criteria": "Correct explanation of small-sized business characteristics."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 4: SOURCES OF FUNDS FOR SMALL BUSINESSES",
+      "sr_no": "4",
+      "time": "40 MIN",
+      "main_competence": "2.0 Understand financing of small businesses",
+      "specific_competence": "2.2 Analyze sources of funds",
+      "main_activity": "Identify funding sources",
+      "specific_activity": "Explain sources of funds available for small businesses",
+      "teaching_learning_resources": "Bank product brochures, textbook, guest examples.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks learners where a small shop owner gets money to buy stock.",
+          "learning_activities": "Suggest sources such as savings, loans, family and friends.",
+          "assessment_criteria": "Generation of common funding sources."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains internal and external sources of funds (personal savings, loans, suppliers' credit) using brochures.",
+          "learning_activities": "Take notes on the sources of business funds.",
+          "assessment_criteria": "Correct identification of funding sources."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides a group discussion using bank brochures and local examples of how businesses get funds.",
+          "learning_activities": "Analyze the brochures and discuss in groups.",
+          "assessment_criteria": "Accurate analysis of sources of funds."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a short written test on funding sources.",
+          "learning_activities": "Complete the written test and self-correct.",
+          "assessment_criteria": "Correct explanation of funds available for small businesses."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 5: MICROFINANCE AND COOPERATIVES",
+      "sr_no": "5",
+      "time": "40 MIN",
+      "main_competence": "2.0 Understand financing of small businesses",
+      "specific_competence": "2.3 Analyze microfinance and cooperatives",
+      "main_activity": "Study microfinancing role",
+      "specific_activity": "Explain how microfinancing and cooperatives facilitate business formation",
+      "teaching_learning_resources": "SACCOS sample documents, textbook, case-study sheets.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks learners if they know groups where members save together (SACCOS, village groups).",
+          "learning_activities": "Share experiences of saving groups in their communities.",
+          "assessment_criteria": "Recognition of group saving practices."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains microfinancing and cooperatives and how they help start small businesses.",
+          "learning_activities": "Take notes on microfinance and cooperative services.",
+          "assessment_criteria": "Correct understanding of microfinancing and cooperatives."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides a case-study analysis using SACCOS sample documents.",
+          "learning_activities": "Analyze the case study and complete a short report.",
+          "assessment_criteria": "Accurate case-study report on microfinancing."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Collects and reviews reports; clarifies the role of microfinance.",
+          "learning_activities": "Present findings and answer questions.",
+          "assessment_criteria": "Clear explanation of how microfinance facilitates business formation."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 6: SMALL BUSINESS MANAGEMENT",
+      "sr_no": "6",
+      "time": "40 MIN",
+      "main_competence": "3.0 Understand small business management",
+      "specific_competence": "3.1 Explain small business management",
+      "main_activity": "Define small business management",
+      "specific_activity": "Explain the concept and importance of managing a small business",
+      "teaching_learning_resources": "Textbook, sample business plans.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks what happens when a small shop has no one to plan, record and control its business.",
+          "learning_activities": "Predict problems of unmanaged businesses.",
+          "assessment_criteria": "Recognition of the need for management."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains the concept and importance of small business management using sample business plans.",
+          "learning_activities": "Take notes on the functions of management.",
+          "assessment_criteria": "Correct understanding of business management."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Leads a class discussion using a sample business plan to show how management works.",
+          "learning_activities": "Examine the sample plan and discuss management tasks.",
+          "assessment_criteria": "Accurate identification of management tasks."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Poses oral questions and summarizes the importance of management.",
+          "learning_activities": "Answer questions and self-correct.",
+          "assessment_criteria": "Correct explanation of the importance of managing a small business."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 7: RECORD-KEEPING PRACTICES",
+      "sr_no": "7",
+      "time": "40 MIN",
+      "main_competence": "3.0 Understand small business management",
+      "specific_competence": "3.2 Apply record-keeping practices",
+      "main_activity": "Practice record-keeping",
+      "specific_activity": "Prepare simple financial and other business records",
+      "teaching_learning_resources": "Sample ledgers, receipt books, record templates.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks how a shop owner knows if the business is making money; introduces record-keeping.",
+          "learning_activities": "Suggest that records show income and expenses.",
+          "assessment_criteria": "Recognition of the purpose of business records."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains simple financial records (cash book, sales and purchases) using sample ledgers and receipts.",
+          "learning_activities": "Follow the sample records and note the columns.",
+          "assessment_criteria": "Correct understanding of basic business records."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Runs a hands-on exercise: learners complete simple record-book entries from given transactions.",
+          "learning_activities": "Fill in the record templates individually.",
+          "assessment_criteria": "Accurate completion of record-book entries."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews a record-keeping exercise and corrects common errors.",
+          "learning_activities": "Reflect on feedback and correct their records.",
+          "assessment_criteria": "Correct preparation of simple business records."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 8: CALCULATE PROFIT AND LOSS",
+      "sr_no": "8",
+      "time": "40 MIN",
+      "main_competence": "3.0 Understand small business management",
+      "specific_competence": "3.3 Calculate profit and loss",
+      "main_activity": "Compute profit/loss",
+      "specific_activity": "Calculate profit and loss for a small business scenario",
+      "teaching_learning_resources": "Calculators, sample accounts, worked-example sheets.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks learners: if you buy for 10,000 and sell for 15,000, what is the gain?",
+          "learning_activities": "Compute a simple gain mentally.",
+          "assessment_criteria": "Understanding of profit as income minus cost."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains how to calculate profit and loss using worked examples and sample accounts.",
+          "learning_activities": "Follow the worked examples and note the formula.",
+          "assessment_criteria": "Correct application of the profit/loss formula."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides individual practice: learners calculate profit or loss for short business scenarios using calculators.",
+          "learning_activities": "Solve the practice scenarios independently.",
+          "assessment_criteria": "Accurate calculation of profit or loss."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a short calculation test and reviews the answers.",
+          "learning_activities": "Complete the test and self-correct.",
+          "assessment_criteria": "Correct calculation of profit and loss."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 9: BUDGETING AND CONTROL",
+      "sr_no": "9",
+      "time": "40 MIN",
+      "main_competence": "3.0 Understand small business management",
+      "specific_competence": "3.4 Apply budgeting and control",
+      "main_activity": "Prepare a budget",
+      "specific_activity": "Explain budgeting, control, and administration procedures",
+      "teaching_learning_resources": "Budget templates, sample budgets.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks learners how a family plans spending for the month; introduces budgeting.",
+          "learning_activities": "Share how the family plans money.",
+          "assessment_criteria": "Recognition of budgeting in daily life."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains budgeting, control and administration procedures using budget templates and examples.",
+          "learning_activities": "Take notes on how to prepare a budget.",
+          "assessment_criteria": "Correct understanding of budgeting terms."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides a group budgeting exercise: groups prepare a simple budget for a school event.",
+          "learning_activities": "Prepare the budget using the template in groups.",
+          "assessment_criteria": "Complete, balanced group budgets."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Evaluates the budgets and gives feedback on control.",
+          "learning_activities": "Present budgets and reflect on feedback.",
+          "assessment_criteria": "Correct explanation and application of budgeting."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 10: PRACTICAL SIMULATION OF THE BOOKKEEPING CYCLE",
+      "sr_no": "10",
+      "time": "40 MIN",
+      "main_competence": "3.0 Understand small business management",
+      "specific_competence": "3.4 Apply budgeting and control",
+      "main_activity": "Consolidate management skills",
+      "specific_activity": "Practice full bookkeeping cycle (records, profit/loss, budget)",
+      "teaching_learning_resources": "Sample business files, simulation materials.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps the record-keeping, profit/loss and budgeting skills learned in previous weeks.",
+          "learning_activities": "Review their notes and the previous exercises.",
+          "assessment_criteria": "Recall of the bookkeeping cycle steps."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Guides a practical simulation: learners act as a small-shop owner recording transactions for one week.",
+          "learning_activities": "Follow the simulation steps with the sample files.",
+          "assessment_criteria": "Correct sequencing of the bookkeeping cycle."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Supervises the practical assessment where learners prepare records, compute profit/loss and set a small budget.",
+          "learning_activities": "Complete the full task using the sample business files.",
+          "assessment_criteria": "Accurate completion of the full bookkeeping cycle."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Gives feedback on the practical assessment and consolidates the skills.",
+          "learning_activities": "Reflect on feedback and correct errors.",
+          "assessment_criteria": "Consolidated management skills application."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 11: REVIEW OF PRODUCTION AND MANAGEMENT",
+      "sr_no": "11",
+      "time": "40 MIN",
+      "main_competence": "Comprehensive review",
+      "specific_competence": "Review Chapters 1-3",
+      "main_activity": "Revise production & business management",
+      "specific_activity": "Review key concepts from production, financing, and management",
+      "teaching_learning_resources": "Revision notes, review charts.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Brainstorms the key topics covered: production, financing and management of small businesses.",
+          "learning_activities": "List the key topics studied in the term.",
+          "assessment_criteria": "Recall of the term's topics."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Reviews the main concepts from Chapters 1-3 with revision notes and examples.",
+          "learning_activities": "Review notes and practise sample items.",
+          "assessment_criteria": "Accurate recall of key concepts."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Runs Q&A and group revision on the concepts learned.",
+          "learning_activities": "Participate in group revision and answer questions.",
+          "assessment_criteria": "Satisfactory participation and answers."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a revision quiz and gives feedback for the assessment.",
+          "learning_activities": "Complete the revision quiz and note gaps.",
+          "assessment_criteria": "Consolidated understanding of Chapters 1-3."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 12: CONTINUOUS ASSESSMENT OF CHAPTERS 1-3",
+      "sr_no": "12",
+      "time": "40 MIN",
+      "main_competence": "Continuous assessment",
+      "specific_competence": "Cover Chapters 1-3",
+      "main_activity": "Conduct continuous assessment",
+      "specific_activity": "Administer a test covering Chapters 1-3",
+      "teaching_learning_resources": "Test papers, answer guidelines.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Explains the continuous assessment rules and how questions cover Chapters 1-3.",
+          "learning_activities": "Listen to instructions and prepare for the test.",
+          "assessment_criteria": "Clear understanding of test expectations."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Distributes the test papers and supervises the individual written test.",
+          "learning_activities": "Answer the test questions individually.",
+          "assessment_criteria": "Test responses cover the key concepts."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Collects completed papers and administers a brief oral review of key answers where appropriate.",
+          "learning_activities": "Submit the papers and take part in the review.",
+          "assessment_criteria": "Submission of the completed test."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Gives feedback on performance and areas for improvement.",
+          "learning_activities": "Note improvement areas for revision.",
+          "assessment_criteria": "Awareness of strengths and weaknesses."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 13: CONCEPT OF WAREHOUSING",
+      "sr_no": "13",
+      "time": "40 MIN",
+      "main_competence": "4.0 Understand warehousing and inventorying",
+      "specific_competence": "4.1 Explain the concept of warehousing",
+      "main_activity": "Define warehousing",
+      "specific_activity": "Explain the meaning and role of warehousing in business",
+      "teaching_learning_resources": "Textbook, warehouse photos, visuals.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks learners where shops keep goods before selling; introduces warehousing.",
+          "learning_activities": "Suggest storage places used by businesses.",
+          "assessment_criteria": "Recognition of the need for storage."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains the meaning and role of warehousing in business using visuals and photos.",
+          "learning_activities": "Take notes on the functions of warehouses.",
+          "assessment_criteria": "Correct understanding of warehousing."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Leads a class discussion on how warehousing supports trade and distribution.",
+          "learning_activities": "Discuss the role of warehouses with examples.",
+          "assessment_criteria": "Accurate explanation of the role of warehousing."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Poses oral questions and consolidates the concept.",
+          "learning_activities": "Answer questions and self-correct.",
+          "assessment_criteria": "Correct explanation of the meaning and role of warehousing."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 14: CONCEPT OF INVENTORYING",
+      "sr_no": "14",
+      "time": "40 MIN",
+      "main_competence": "4.0 Understand warehousing and inventorying",
+      "specific_competence": "4.2 Explain the concept of inventorying",
+      "main_activity": "Define inventorying",
+      "specific_activity": "Explain the meaning and importance of inventory management",
+      "teaching_learning_resources": "Sample inventory sheets, textbook.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks how a shopkeeper knows how many items remain in stock.",
+          "learning_activities": "Suggest counting and listing stock.",
+          "assessment_criteria": "Recognition of stock counting as inventorying."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains the meaning and importance of inventory management using sample inventory sheets.",
+          "learning_activities": "Take notes on inventory management.",
+          "assessment_criteria": "Correct understanding of inventorying."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides learners to list a small inventory from a given scenario using the sample sheets.",
+          "learning_activities": "Prepare a simple inventory list in pairs.",
+          "assessment_criteria": "Accurate inventory list preparation."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a short quiz on inventorying and reviews the answers.",
+          "learning_activities": "Complete the quiz and self-correct.",
+          "assessment_criteria": "Correct explanation of inventory management."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 15: ESSENTIAL WAREHOUSE DOCUMENTS",
+      "sr_no": "15",
+      "time": "40 MIN",
+      "main_competence": "4.0 Understand warehousing and inventorying",
+      "specific_competence": "4.3 Identify essential documents",
+      "main_activity": "Study warehouse documents",
+      "specific_activity": "Identify essential documents used in warehouse and inventory management",
+      "teaching_learning_resources": "Sample stock cards, delivery notes, document samples.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks what paper records a warehouse records on (receipt of goods, issues).",
+          "learning_activities": "List documents used to record stock movements.",
+          "assessment_criteria": "Recognition of the need for documents."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains essential documents: stock cards, delivery notes, goods received notes, with samples.",
+          "learning_activities": "Examine the sample documents and note their use.",
+          "assessment_criteria": "Correct identification of warehouse documents."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides a document sample analysis activity in groups.",
+          "learning_activities": "Analyze the samples and state each document's purpose.",
+          "assessment_criteria": "Accurate description of each document's purpose."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a document identification test and reviews answers.",
+          "learning_activities": "Complete the test and self-correct.",
+          "assessment_criteria": "Correct identification of essential warehouse documents."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 16: INVENTORY MANAGEMENT METHODS",
+      "sr_no": "16",
+      "time": "40 MIN",
+      "main_competence": "4.0 Understand warehousing and inventorying",
+      "specific_competence": "4.4 Apply inventory management methods",
+      "main_activity": "Practice inventory methods",
+      "specific_activity": "Apply methods for managing inventory (e.g., FIFO/LIFO)",
+      "teaching_learning_resources": "Sample stock records, worked examples.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks which goods should be sold first if they can spoil; introduces FIFO.",
+          "learning_activities": "Suggest selling older stock first.",
+          "assessment_criteria": "Recognition of the order-of-use principle."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains FIFO and LIFO with worked examples using sample stock records.",
+          "learning_activities": "Follow the worked examples and note the methods.",
+          "assessment_criteria": "Correct understanding of FIFO and LIFO."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides a practical exercise: learners apply FIFO/LIFO to value stock in given scenarios.",
+          "learning_activities": "Complete the exercise using the sample records.",
+          "assessment_criteria": "Accurate application of inventory methods."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews the practical exercise and gives corrective feedback.",
+          "learning_activities": "Correct their work based on feedback.",
+          "assessment_criteria": "Correct application of inventory management methods."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 17: CONCEPT OF BUSINESS OPPORTUNITY",
+      "sr_no": "17",
+      "time": "40 MIN",
+      "main_competence": "5.0 Understand business opportunity identification",
+      "specific_competence": "5.1 Explain the concept of business opportunity",
+      "main_activity": "Define business opportunity",
+      "specific_activity": "Explain the meaning of a business opportunity",
+      "teaching_learning_resources": "Textbook, local case studies.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks learners what need could inspire a new business in their village.",
+          "learning_activities": "Suggest business ideas from local needs.",
+          "assessment_criteria": "Recognition of needs as business opportunities."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Defines a business opportunity and gives local case-study examples.",
+          "learning_activities": "Take notes on the meaning of business opportunity.",
+          "assessment_criteria": "Correct definition of a business opportunity."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Leads a brainstorming session on opportunities in the community.",
+          "learning_activities": "Brainstorm and list viable opportunities.",
+          "assessment_criteria": "Relevant business opportunities identified."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Poses oral questions and consolidates the concept.",
+          "learning_activities": "Answer questions and self-correct.",
+          "assessment_criteria": "Correct explanation of a business opportunity."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 18: METHODS OF IDENTIFYING BUSINESS OPPORTUNITIES",
+      "sr_no": "18",
+      "time": "40 MIN",
+      "main_competence": "5.0 Understand business opportunity identification",
+      "specific_competence": "5.2 Apply methods of identifying opportunities",
+      "main_activity": "Identify business opportunities",
+      "specific_activity": "Apply techniques for identifying viable business opportunities",
+      "teaching_learning_resources": "Market survey sheets, SWOT template.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks how someone can discover a good business idea; introduces market observation.",
+          "learning_activities": "Suggest observing markets and customer needs.",
+          "assessment_criteria": "Recognition of observation as a technique."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains techniques: market surveys, observation, SWOT analysis, using the survey sheet.",
+          "learning_activities": "Take notes on the identification techniques.",
+          "assessment_criteria": "Correct understanding of identification methods."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Runs a field-based brainstorming and a SWOT exercise in groups using the survey sheet.",
+          "learning_activities": "Complete the SWOT and survey exercise in groups.",
+          "assessment_criteria": "Accurate SWOT analysis of a chosen opportunity."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Collects the opportunity identification reports and reviews the techniques.",
+          "learning_activities": "Present reports and reflect on the methods.",
+          "assessment_criteria": "Correct application of opportunity identification techniques."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 19: REVIEW OF WAREHOUSING AND OPPORTUNITIES",
+      "sr_no": "19",
+      "time": "40 MIN",
+      "main_competence": "Comprehensive review",
+      "specific_competence": "Review Chapters 4-5",
+      "main_activity": "Revise warehousing & opportunity identification",
+      "specific_activity": "Review key concepts from Chapters 4 and 5",
+      "teaching_learning_resources": "Revision notes, review charts.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Brainstorms the key topics: warehousing, inventorying and opportunity identification.",
+          "learning_activities": "List the topics to be revised.",
+          "assessment_criteria": "Recall of the term's topics."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Reviews the main concepts from Chapters 4 and 5 with examples.",
+          "learning_activities": "Review notes and practise sample items.",
+          "assessment_criteria": "Accurate recall of key concepts."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Runs Q&A and group revision on the concepts learned.",
+          "learning_activities": "Participate in group revision and answer questions.",
+          "assessment_criteria": "Satisfactory participation and answers."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Administers a revision quiz and gives feedback.",
+          "learning_activities": "Complete the revision quiz and note gaps.",
+          "assessment_criteria": "Consolidated understanding of Chapters 4-5."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 20: DRAFTING A SIMPLE BUSINESS PLAN",
+      "sr_no": "20",
+      "time": "40 MIN",
+      "main_competence": "Practical project",
+      "specific_competence": "Apply integrated business skills",
+      "main_activity": "Draft a simple business plan",
+      "specific_activity": "Develop a business plan incorporating production, financing, management, and opportunity identification",
+      "teaching_learning_resources": "Business plan template, project guide.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Explains that a business plan combines all the skills learned this year.",
+          "learning_activities": "Recall the skills: production, financing, management, opportunity.",
+          "assessment_criteria": "Recognition of the plan's components."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Walks through the business plan template sections with examples.",
+          "learning_activities": "Study the template and note each section.",
+          "assessment_criteria": "Understanding of the plan structure."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Guides project-based group work: groups draft the business plan for a chosen idea.",
+          "learning_activities": "Draft the plan in groups using the template.",
+          "assessment_criteria": "Complete plan drafts covering all sections."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews the drafts and gives feedback for improving them.",
+          "learning_activities": "Refine the drafts based on feedback.",
+          "assessment_criteria": "Improved business plan drafts."
+        }
+      ]
+    },
+    {
+      "title": "BUSINESS STUDIES FORM TWO LESSON PLAN NO. 21: PRESENTING BUSINESS PLANS",
+      "sr_no": "21",
+      "time": "40 MIN",
+      "main_competence": "Practical project",
+      "specific_competence": "Present business plans",
+      "main_activity": "Present business plans",
+      "specific_activity": "Present group business plans to class",
+      "teaching_learning_resources": "Presentation materials, presentation rubric.",
+      "references": "TIE (2026). Business Studies for Secondary Schools Student's Book Form 2. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Explains the presentation expectations and the rubric used for assessment.",
+          "learning_activities": "Listen to the presentation instructions.",
+          "assessment_criteria": "Understanding of presentation expectations."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Guides groups to present their business plans while others listen.",
+          "learning_activities": "Present the business plan using their materials.",
+          "assessment_criteria": "Clear presentation of the business plan."
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Facilitates questions and feedback on each presentation against the rubric.",
+          "learning_activities": "Answer questions and give peer feedback.",
+          "assessment_criteria": "Responsive and clear Q&A."
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Completes the presentation assessment and summarizes lessons learned.",
+          "learning_activities": "Reflect on feedback and consolidate learning.",
+          "assessment_criteria": "Completed, assessed business plan presentations."
+        }
+      ]
+    }
+  ]
+}
