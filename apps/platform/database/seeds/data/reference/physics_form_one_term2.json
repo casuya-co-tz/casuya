@@ -1,0 +1,994 @@
+{
+ "subject_name": "Physics",
+ "subject_slug": "physics",
+ "form_level": 1,
+ "standard": "Form 1",
+ "tie_reference": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+ "source_note": "Verified Physics Form One lesson plans (Arusha Catholic Seminary). 24 lesson plans (80 min double periods, 2 per week) covering Mechanical Properties of Matter (Weeks 1-3), Pressure (Weeks 4-6), Linear Motion (Weeks 7-9), and Work, Energy, and Power (Weeks 11-13) for Term II. Week 10 is mid-term assessment; Week 14 is annual examinations/closing of the academic year.",
+ "lessons": [
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 14A (TERM II - WEEK 1, DOUBLE PERIOD - 80 min): CONCEPT OF ELASTICITY",
+   "sr_no": "14A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "6.1 Explain the concept of elasticity",
+   "main_activity": "Explain elasticity",
+   "specific_activity": "Examine elastic and plastic behavior of materials using Hooke's Law",
+   "teaching_learning_resources": "Springs, weights, rulers, graph paper.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Stretches a rubber band and a piece of clay, asking students to compare what happens when released.",
+     "learning_activities": "Observe and compare the two materials' behavior.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth elastic vs. plastic behavior and states Hooke's Law (extension proportional to force) with a worked example.",
+     "learning_activities": "Take detailed notes on elasticity and Hooke's Law.",
+     "assessment_criteria": "Correct statement of Hooke's Law"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group practical loading a spring with increasing weights, measuring extension, and plotting a force-extension graph.",
+     "learning_activities": "Perform spring-loading practical and plot graph in groups.",
+     "assessment_criteria": "Accuracy of graph plotted"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group graphs and administers a practical test on identifying the elastic limit.",
+     "learning_activities": "Complete practical test.",
+     "assessment_criteria": "Score on practical test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 14B (TERM II - WEEK 1, DOUBLE PERIOD - 80 min): CONCEPT OF ELASTICITY (CONT.)",
+   "sr_no": "14B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "6.1 Explain the concept of elasticity",
+   "main_activity": "Reinforce elasticity knowledge",
+   "specific_activity": "Interpret force-extension graphs and identify the elastic limit",
+   "teaching_learning_resources": "Sample force-extension graphs, graph paper.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the graph plotted in the double period.",
+     "learning_activities": "Recall the shape of the graph.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth how to read a force-extension graph and identify the elastic limit point where the line stops being straight.",
+     "learning_activities": "Take detailed notes and follow the worked example.",
+     "assessment_criteria": "Correct interpretation of the graph"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides individual practice interpreting sample force-extension graphs and identifying elastic limits.",
+     "learning_activities": "Interpret sample graphs individually.",
+     "assessment_criteria": "Accuracy of interpretation"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews answers with the class and clarifies common errors.",
+     "learning_activities": "Self-check answers.",
+     "assessment_criteria": "Accuracy of self-assessment"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 15A (TERM II - WEEK 2, DOUBLE PERIOD - 80 min): ADHESION AND COHESION",
+   "sr_no": "15A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "6.2 Explain adhesion and cohesion",
+   "main_activity": "Study adhesion and cohesion",
+   "specific_activity": "Distinguish adhesive and cohesive forces using capillary tube and liquid drop observations",
+   "teaching_learning_resources": "Capillary tubes, glass surfaces, water, oil.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Places a water drop on glass and asks students why it spreads or beads up.",
+     "learning_activities": "Observe demonstration and share predictions.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth adhesion (attraction between different molecules) and cohesion (attraction between like molecules) with examples.",
+     "learning_activities": "Take detailed notes with labeled examples.",
+     "assessment_criteria": "Correct differentiation of adhesion and cohesion"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group practical comparing water and oil drops on different surfaces to identify which forces dominate.",
+     "learning_activities": "Test drops on surfaces in groups and record observations.",
+     "assessment_criteria": "Accuracy of recorded observations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group findings and consolidates on the board.",
+     "learning_activities": "Present findings to the class.",
+     "assessment_criteria": "Correctness of findings presented"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 15B (TERM II - WEEK 2, DOUBLE PERIOD - 80 min): ADHESION AND COHESION (CONT.)",
+   "sr_no": "15B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "6.2 Explain adhesion and cohesion",
+   "main_activity": "Reinforce adhesion/cohesion knowledge",
+   "specific_activity": "Identify real-life examples of adhesion and cohesion",
+   "teaching_learning_resources": "Example picture cards (paint, ink, waterproof fabric).",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the drop tests from the double period.",
+     "learning_activities": "Recall drop test observations.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth real-life applications where adhesion or cohesion dominates (paint sticking to walls, waterproof coatings).",
+     "learning_activities": "Take detailed notes with examples.",
+     "assessment_criteria": "Correct identification of applications"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group activity classifying picture cards as examples of adhesion or cohesion.",
+     "learning_activities": "Classify picture cards in groups.",
+     "assessment_criteria": "Correctness of classification"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Administers oral questions to check understanding.",
+     "learning_activities": "Answer oral questions individually.",
+     "assessment_criteria": "Ability to justify classifications"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 16A (TERM II - WEEK 3, DOUBLE PERIOD - 80 min): SURFACE TENSION AND CAPILLARITY",
+   "sr_no": "16A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "6.3 Explain surface tension and capillarity",
+   "main_activity": "Study surface tension & capillarity",
+   "specific_activity": "Examine surface tension using a floating needle and capillarity using tubes of different diameters",
+   "teaching_learning_resources": "Needles, water, capillary tubes of varying diameter.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students how a small insect can walk on water without sinking.",
+     "learning_activities": "Share initial predictions.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth surface tension as a result of cohesive forces at a liquid's surface, and capillarity as liquid rise in narrow tubes.",
+     "learning_activities": "Take detailed notes on both concepts.",
+     "assessment_criteria": "Correct explanation of surface tension and capillarity"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group practical floating a needle on water and observing capillary rise in tubes of different diameters.",
+     "learning_activities": "Perform both practicals in groups and record results.",
+     "assessment_criteria": "Accuracy of recorded observations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group results and consolidates the relationship between tube diameter and capillary rise.",
+     "learning_activities": "Present observation report.",
+     "assessment_criteria": "Accuracy of observation report"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 16B (TERM II - WEEK 3, DOUBLE PERIOD - 80 min): SURFACE TENSION AND CAPILLARITY (CONT.)",
+   "sr_no": "16B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "6.3 Explain surface tension and capillarity",
+   "main_activity": "Reinforce surface tension/capillarity knowledge",
+   "specific_activity": "Identify real-life applications of capillarity (plants, ink pens, towels)",
+   "teaching_learning_resources": "Textbook, example images.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the capillary rise results from the double period.",
+     "learning_activities": "Recall capillary rise observations.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth real-life applications of capillarity (water rising in plant stems, ink moving up a pen, towels absorbing water).",
+     "learning_activities": "Take detailed notes with examples.",
+     "assessment_criteria": "Correct identification of applications"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group discussion connecting each application to the capillarity principle learned.",
+     "learning_activities": "Discuss and connect applications in groups.",
+     "assessment_criteria": "Relevance of connections made"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Administers a written short test on surface tension and capillarity.",
+     "learning_activities": "Complete written short test.",
+     "assessment_criteria": "Score on written test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 17A (TERM II - WEEK 4, DOUBLE PERIOD - 80 min): PRESSURE DUE TO SOLIDS",
+   "sr_no": "17A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "7.1 Explain pressure due to solids",
+   "main_activity": "Explain pressure concepts",
+   "specific_activity": "Examine the concept of pressure and calculate pressure exerted by solids",
+   "teaching_learning_resources": "Blocks of varying base area, sand tray, weights.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students why a sharp knife cuts more easily than a blunt one with the same force.",
+     "learning_activities": "Share initial predictions.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth the concept of pressure (force per unit area) and derives the formula with worked examples.",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct understanding of the pressure formula"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group practical pressing blocks of different base areas into a sand tray, comparing the depth of impression.",
+     "learning_activities": "Perform sand-tray practical in groups and record results.",
+     "assessment_criteria": "Accuracy of recorded observations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group results and administers a calculation test.",
+     "learning_activities": "Complete calculation test.",
+     "assessment_criteria": "Score on calculation test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 17B (TERM II - WEEK 4, DOUBLE PERIOD - 80 min): PRESSURE DUE TO SOLIDS (CONT.)",
+   "sr_no": "17B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "7.1 Explain pressure due to solids",
+   "main_activity": "Reinforce solid pressure knowledge",
+   "specific_activity": "Identify real-life applications of increasing/decreasing pressure (skis, sharp blades, wide tires)",
+   "teaching_learning_resources": "Example picture cards.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the sand-tray results from the double period.",
+     "learning_activities": "Recall pressure-area relationship.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth real-life applications where pressure is increased (nails, blades) or decreased (skis, wide tires, foundations).",
+     "learning_activities": "Take detailed notes with examples.",
+     "assessment_criteria": "Correct identification of applications"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group activity classifying picture cards as increasing or decreasing pressure design.",
+     "learning_activities": "Classify picture cards in groups.",
+     "assessment_criteria": "Correctness of classification"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews classifications and administers oral questions.",
+     "learning_activities": "Answer oral questions individually.",
+     "assessment_criteria": "Ability to justify classifications"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 18A (TERM II - WEEK 5, DOUBLE PERIOD - 80 min): PRESSURE IN LIQUIDS",
+   "sr_no": "18A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "7.2 Explain pressure in liquids",
+   "main_activity": "Study liquid pressure",
+   "specific_activity": "Examine factors affecting liquid pressure (depth, density) using a pressure apparatus",
+   "teaching_learning_resources": "Liquid pressure apparatus, measuring cylinders, liquids of varying density.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students why divers feel more pressure the deeper they swim.",
+     "learning_activities": "Share initial predictions.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth factors affecting liquid pressure (depth and density) and derives the formula P = rho g h with a worked example.",
+     "learning_activities": "Take detailed notes and follow the worked example.",
+     "assessment_criteria": "Correct understanding of liquid pressure formula"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group practical using a liquid pressure apparatus to measure pressure at different depths and with different liquids.",
+     "learning_activities": "Perform pressure apparatus practical in groups.",
+     "assessment_criteria": "Accuracy of recorded observations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group results and administers a written short test.",
+     "learning_activities": "Complete written short test.",
+     "assessment_criteria": "Score on written test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 18B (TERM II - WEEK 5, DOUBLE PERIOD - 80 min): PRESSURE IN LIQUIDS (CONT.)",
+   "sr_no": "18B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "7.2 Explain pressure in liquids",
+   "main_activity": "Reinforce liquid pressure knowledge",
+   "specific_activity": "Solve calculation problems using the liquid pressure formula",
+   "teaching_learning_resources": "Calculation worksheets, calculators.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the pressure formula from the double period.",
+     "learning_activities": "Recall the formula P = rho g h.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Works through additional numerical problems calculating liquid pressure at various depths and densities.",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct application of the formula"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Supervises individual practice solving liquid pressure calculation problems.",
+     "learning_activities": "Solve problems individually.",
+     "assessment_criteria": "Correctness of calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Marks sample answers on the board and clarifies common errors.",
+     "learning_activities": "Self-correct based on board feedback.",
+     "assessment_criteria": "Accuracy after correction"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 19A (TERM II - WEEK 6, DOUBLE PERIOD - 80 min): ATMOSPHERIC PRESSURE",
+   "sr_no": "19A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "7.3 Explain atmospheric pressure",
+   "main_activity": "Study atmospheric pressure",
+   "specific_activity": "Examine evidence for atmospheric pressure and its measurement using a barometer",
+   "teaching_learning_resources": "Simple barometer, tin can, heat source.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students if air has weight and can exert pressure, even though it's invisible.",
+     "learning_activities": "Share initial ideas.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth the concept of atmospheric pressure and how it's caused by the weight of the air column above us.",
+     "learning_activities": "Take detailed notes on atmospheric pressure theory.",
+     "assessment_criteria": "Correct explanation of atmospheric pressure cause"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Demonstrates the collapsing-can experiment (heating a can, sealing it, then cooling to show implosion from atmospheric pressure).",
+     "learning_activities": "Observe demonstration and record explanation in groups.",
+     "assessment_criteria": "Correct explanation of the observed collapse"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Guides a barometer reading practical and administers a practical quiz.",
+     "learning_activities": "Read barometer values and complete practical quiz.",
+     "assessment_criteria": "Score on practical quiz"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 19B (TERM II - WEEK 6, DOUBLE PERIOD - 80 min): ATMOSPHERIC PRESSURE (CONT.)",
+   "sr_no": "19B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "7.3 Explain atmospheric pressure",
+   "main_activity": "Reinforce atmospheric pressure knowledge",
+   "specific_activity": "Explain how a drinking straw and a syringe use atmospheric pressure",
+   "teaching_learning_resources": "Drinking straws, syringes, water.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the collapsing-can demonstration from the double period.",
+     "learning_activities": "Recall the demonstration explanation.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth how drinking straws and syringes work by creating a pressure difference using atmospheric pressure.",
+     "learning_activities": "Take detailed notes with diagrams.",
+     "assessment_criteria": "Correct explanation of straw/syringe operation"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group practical using straws and syringes to draw up water, discussing the pressure difference created.",
+     "learning_activities": "Test straws/syringes in groups and discuss findings.",
+     "assessment_criteria": "Accuracy of explanation given"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Administers a written test on atmospheric pressure applications.",
+     "learning_activities": "Complete written test.",
+     "assessment_criteria": "Score on written test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 20A (TERM II - WEEK 7, DOUBLE PERIOD - 80 min): MOTION, DISTANCE, AND DISPLACEMENT",
+   "sr_no": "20A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "8.1 Explain motion, distance, and displacement",
+   "main_activity": "Explain motion concepts",
+   "specific_activity": "Distinguish distance from displacement using practical examples",
+   "teaching_learning_resources": "Measuring tape, playground/classroom space.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks a student to walk a zigzag path back to a nearby point and asks how far they walked vs. how far they ended up from the start.",
+     "learning_activities": "Observe the walk and share observations.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth the difference between distance (scalar, total path) and displacement (vector, straight-line change in position).",
+     "learning_activities": "Take detailed notes with diagrams.",
+     "assessment_criteria": "Correct differentiation of distance and displacement"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group practical where students walk different paths and measure both distance traveled and displacement achieved.",
+     "learning_activities": "Perform walking practical and measure both quantities in groups.",
+     "assessment_criteria": "Accuracy of distance/displacement measurements"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group results and consolidates the vector vs. scalar distinction on the board.",
+     "learning_activities": "Present results to the class.",
+     "assessment_criteria": "Correctness of distinction explained"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 20B (TERM II - WEEK 7, DOUBLE PERIOD - 80 min): MOTION, DISTANCE, AND DISPLACEMENT (CONT.)",
+   "sr_no": "20B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "8.1 Explain motion, distance, and displacement",
+   "main_activity": "Reinforce distance/displacement knowledge",
+   "specific_activity": "Solve problems distinguishing distance and displacement from given diagrams",
+   "teaching_learning_resources": "Diagram worksheets.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the walking practical results from the double period.",
+     "learning_activities": "Recall distance/displacement results.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Works through diagram-based problems, guiding students to calculate distance and displacement from given paths.",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct calculation approach understood"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Supervises individual practice solving distance/displacement problems from diagrams.",
+     "learning_activities": "Solve diagram problems individually.",
+     "assessment_criteria": "Correctness of calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews answers with the class and clarifies common errors.",
+     "learning_activities": "Self-check answers.",
+     "assessment_criteria": "Accuracy of self-assessment"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 21A (TERM II - WEEK 8, DOUBLE PERIOD - 80 min): SPEED, VELOCITY, AND ACCELERATION",
+   "sr_no": "21A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "8.2 Analyze speed, velocity, and acceleration",
+   "main_activity": "Study speed, velocity & acceleration",
+   "specific_activity": "Calculate speed, velocity, and acceleration from given motion data",
+   "teaching_learning_resources": "Stopwatches, measuring tape, ball/trolley.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students what it means when a car's speedometer changes from 40 km/h to 60 km/h.",
+     "learning_activities": "Share initial ideas about changing speed.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth speed, velocity, and acceleration with formulas and derives each with worked examples.",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct understanding of the three formulas"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group practical timing a rolling ball/trolley over a measured distance to calculate speed, then repeating with changing speed to find acceleration.",
+     "learning_activities": "Perform timed-motion practical in groups.",
+     "assessment_criteria": "Accuracy of speed/acceleration calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group results and administers a calculation test.",
+     "learning_activities": "Complete calculation test.",
+     "assessment_criteria": "Score on calculation test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 21B (TERM II - WEEK 8, DOUBLE PERIOD - 80 min): SPEED, VELOCITY, AND ACCELERATION (CONT.)",
+   "sr_no": "21B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "8.2 Analyze speed, velocity, and acceleration",
+   "main_activity": "Reinforce speed/velocity/acceleration knowledge",
+   "specific_activity": "Interpret distance-time and speed-time graphs",
+   "teaching_learning_resources": "Sample graphs, graph paper.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the calculations made in the double period.",
+     "learning_activities": "Recall speed/acceleration formulas.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth how to read distance-time and speed-time graphs, including what the gradient represents.",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct interpretation of graph gradients"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides individual practice interpreting sample graphs and answering related questions.",
+     "learning_activities": "Interpret sample graphs individually.",
+     "assessment_criteria": "Accuracy of interpretation"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews answers with the class and clarifies common errors.",
+     "learning_activities": "Self-check answers.",
+     "assessment_criteria": "Accuracy of self-assessment"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 22A (TERM II - WEEK 9, DOUBLE PERIOD - 80 min): EQUATIONS OF LINEAR MOTION AND MOTION UNDER GRAVITY",
+   "sr_no": "22A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "8.3 Apply equations of linear motion and motion under gravity",
+   "main_activity": "Study motion equations",
+   "specific_activity": "Apply the equations of linear motion to solve problems including motion under gravity",
+   "teaching_learning_resources": "Stopwatches, small balls, calculators.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Drops a small ball and asks students what happens to its speed as it falls.",
+     "learning_activities": "Observe demonstration and share predictions.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth the equations of linear motion (v=u+at, s=ut+0.5at^2, v^2=u^2+2as) and applies them to motion under gravity (g=9.8 m/s^2).",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct understanding of motion equations"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group practical timing a free-falling object over a measured height to estimate g.",
+     "learning_activities": "Perform free-fall timing practical in groups.",
+     "assessment_criteria": "Accuracy of experimental estimate of g"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group results and administers a written test applying the motion equations.",
+     "learning_activities": "Complete written test.",
+     "assessment_criteria": "Score on written test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 22B (TERM II - WEEK 9, DOUBLE PERIOD - 80 min): EQUATIONS OF LINEAR MOTION AND MOTION UNDER GRAVITY (CONT.)",
+   "sr_no": "22B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "8.3 Apply equations of linear motion and motion under gravity",
+   "main_activity": "Reinforce motion equations",
+   "specific_activity": "Additional problem-solving practice using the equations of motion",
+   "teaching_learning_resources": "Calculation worksheets, calculators.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the three equations of motion from the double period.",
+     "learning_activities": "Recall the three equations.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Works through additional numerical problems combining the equations with motion under gravity scenarios.",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct application of equations"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Supervises individual practice solving additional motion equation problems.",
+     "learning_activities": "Solve problems individually.",
+     "assessment_criteria": "Correctness of calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Marks sample answers on the board and clarifies common errors.",
+     "learning_activities": "Self-correct based on board feedback.",
+     "assessment_criteria": "Accuracy after correction"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 23A (TERM II - WEEK 11, DOUBLE PERIOD - 80 min): CONCEPT OF WORK",
+   "sr_no": "23A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "9.1 Explain the concept of work",
+   "main_activity": "Explain work concepts",
+   "specific_activity": "Calculate work done using force and distance moved",
+   "teaching_learning_resources": "Spring balance, blocks, measuring tape.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students if pushing a wall (that doesn't move) counts as doing work in the Physics sense.",
+     "learning_activities": "Share initial ideas about 'work'.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth the Physics definition of work (force multiplied by distance moved in the direction of force) with worked examples.",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct understanding of the work formula"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group practical pulling a block a measured distance with a spring balance and calculating work done.",
+     "learning_activities": "Perform pulling practical and calculate work in groups.",
+     "assessment_criteria": "Correctness of work calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group results and administers a calculation test.",
+     "learning_activities": "Complete calculation test.",
+     "assessment_criteria": "Score on calculation test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 23B (TERM II - WEEK 11, DOUBLE PERIOD - 80 min): CONCEPT OF WORK (CONT.)",
+   "sr_no": "23B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "9.1 Explain the concept of work",
+   "main_activity": "Reinforce work concepts",
+   "specific_activity": "Identify situations where work is or is not done in the Physics sense",
+   "teaching_learning_resources": "Scenario picture cards.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the work calculations from the double period.",
+     "learning_activities": "Recall the work formula.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth scenarios where no work is done (holding a heavy bag still) vs. where work is done (carrying it up stairs).",
+     "learning_activities": "Take detailed notes with examples.",
+     "assessment_criteria": "Correct differentiation of scenarios"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group activity classifying scenario cards as 'work done' or 'no work done'.",
+     "learning_activities": "Classify scenario cards in groups.",
+     "assessment_criteria": "Correctness of classification"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews classifications and administers oral questions.",
+     "learning_activities": "Answer oral questions individually.",
+     "assessment_criteria": "Ability to justify classifications"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 24A (TERM II - WEEK 12, DOUBLE PERIOD - 80 min): CONCEPT OF ENERGY",
+   "sr_no": "24A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "9.2 Explain the concept of energy",
+   "main_activity": "Explain energy concepts",
+   "specific_activity": "Examine forms of energy and the principle of conservation of energy",
+   "teaching_learning_resources": "Simple pendulum, weights, charts.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students to name different forms of energy they encounter daily (light, heat, sound, etc.).",
+     "learning_activities": "Share examples of energy forms.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth different forms of energy (kinetic, potential, and others) and states the principle of conservation of energy.",
+     "learning_activities": "Take detailed notes on energy forms and conservation.",
+     "assessment_criteria": "Correct explanation of energy forms and conservation"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Demonstrates a swinging pendulum, guiding groups to identify energy transformations (potential to kinetic) at different points of the swing.",
+     "learning_activities": "Observe pendulum demonstration and identify energy changes in groups.",
+     "assessment_criteria": "Correct identification of energy transformations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group findings and administers a written short test.",
+     "learning_activities": "Complete written short test.",
+     "assessment_criteria": "Score on written test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 24B (TERM II - WEEK 12, DOUBLE PERIOD - 80 min): CONCEPT OF ENERGY (CONT.)",
+   "sr_no": "24B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "9.2 Explain the concept of energy",
+   "main_activity": "Reinforce energy concepts",
+   "specific_activity": "Calculate kinetic and potential energy for given scenarios",
+   "teaching_learning_resources": "Calculation worksheets, calculators.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the pendulum energy transformations from the double period.",
+     "learning_activities": "Recall energy transformation points.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth the formulas for kinetic energy (0.5mv^2) and potential energy (mgh) with worked examples.",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct understanding of energy formulas"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Supervises individual practice calculating kinetic and potential energy for given scenarios.",
+     "learning_activities": "Solve energy calculation problems individually.",
+     "assessment_criteria": "Correctness of calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews answers with the class and clarifies common errors.",
+     "learning_activities": "Self-check answers.",
+     "assessment_criteria": "Accuracy of self-assessment"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 25A (TERM II - WEEK 13, DOUBLE PERIOD - 80 min): CONCEPT OF POWER",
+   "sr_no": "25A",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "9.3 Explain the concept of power",
+   "main_activity": "Explain power concepts",
+   "specific_activity": "Calculate power using work done and time taken",
+   "teaching_learning_resources": "Calculators, textbook.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students why two people carrying the same load up the same stairs, one running and one walking, both do the same work but not the same power.",
+     "learning_activities": "Share initial ideas about power vs. work.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains in depth power as the rate of doing work (Power = Work/Time) with the SI unit (Watt) and worked examples.",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct understanding of the power formula"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides individual practice calculating power for various given work/time scenarios.",
+     "learning_activities": "Solve power calculation problems individually.",
+     "assessment_criteria": "Correctness of calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Marks sample answers on the board and clarifies common errors.",
+     "learning_activities": "Self-correct based on board feedback.",
+     "assessment_criteria": "Accuracy after correction"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 25B (TERM II - WEEK 13, DOUBLE PERIOD - 80 min): COMPREHENSIVE REVISION (CHAPTERS 6-9)",
+   "sr_no": "25B",
+   "time": "80 MIN",
+   "main_competence": "3.0 Demonstrate mastery of mechanical properties of matter, pressure, motion, and energy",
+   "specific_competence": "9.3 Explain the concept of power; comprehensive revision",
+   "main_activity": "Conduct comprehensive revision",
+   "specific_activity": "Revise Chapters 6-9 and complete the revision test",
+   "teaching_learning_resources": "Revision notes.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Outlines the topics covered in Chapters 6-9 (elasticity, adhesion/cohesion, surface tension, pressure, motion, work, energy, power).",
+     "learning_activities": "Listen to the revision outline.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Leads a rapid review of key Chapter 6-9 concepts through guided Q&A.",
+     "learning_activities": "Answer questions and take additional notes.",
+     "assessment_criteria": "Correctness of revision answers"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Organizes a group quiz competition covering all four chapters.",
+     "learning_activities": "Participate in group quiz competition.",
+     "assessment_criteria": "Participation and accuracy in the competition"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Administers the comprehensive revision test and previews the annual examination.",
+     "learning_activities": "Complete revision test; listen to exam preview.",
+     "assessment_criteria": "Score on revision test"
+    }
+   ]
+  }
+ ]
+}

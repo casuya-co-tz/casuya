@@ -134,6 +134,8 @@ def test_bundled_seed_is_idempotent():
     """The bundled verified reference material seeds idempotently: a re-run
     inserts and replaces nothing, and the geography library is present
     (Form 1: 18 lesson plans + 2 term schemes; Form 2: 80 lesson plans +
+    2 term schemes). Physics carries verified bundles for both Form One
+    (50 lesson plans + 2 term schemes) and Form Two (52 lesson plans +
     2 term schemes). Form Two also carries verified Mathematics (47 lesson
     plans + 2 term schemes), Chemistry (24 lesson plans + 2 schemes),
     Biology (24 lesson plans + 2 schemes), English (21 lesson plans + 2
@@ -144,9 +146,9 @@ def test_bundled_seed_is_idempotent():
     db = next(get_db())
     try:
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
-        assert inserted == 342  # 98 geography + 47 mathematics + 24 chemistry + 24 biology + 21 english + 13 history + 21 historia_tanzania_maadili + 21 business_studies + 21 kiswahili + 52 physics lessons
+        assert inserted == 392  # 98 geography + 47 mathematics + 24 chemistry + 24 biology + 21 english + 13 history + 21 historia_tanzania_maadili + 21 business_studies + 21 kiswahili + 50 physics form one + 52 physics form two lessons
         assert replaced == 0
-        assert inserted_schemes == 21
+        assert inserted_schemes == 23
         assert replaced_schemes == 0
         assert purged == 0
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
@@ -174,6 +176,13 @@ def test_bundled_seed_is_idempotent():
         physics_schemes = list_reference_docs(db, subject_slug="physics", form_level=2, doc_type="scheme_of_work")
         assert len(physics_schemes) == 2
         assert all(doc.source_id.startswith("bundled:") for doc in physics_schemes)
+        # Physics Form One: 50 lesson plans (26 Term I + 24 Term II) + 2 schemes
+        physics_f1_lessons = list_reference_docs(db, subject_slug="physics", form_level=1, doc_type="lesson_plan", limit=200)
+        assert len(physics_f1_lessons) == 50
+        assert all(doc.source_id.startswith("bundled:") for doc in physics_f1_lessons)
+        physics_f1_schemes = list_reference_docs(db, subject_slug="physics", form_level=1, doc_type="scheme_of_work")
+        assert len(physics_f1_schemes) == 2
+        assert all(doc.source_id.startswith("bundled:") for doc in physics_f1_schemes)
         check_f2_lessons = {
             "mathematics": 47,
             "chemistry": 24,

@@ -1,0 +1,1076 @@
+{
+ "subject_name": "Physics",
+ "subject_slug": "physics",
+ "form_level": 1,
+ "standard": "Form 1",
+ "tie_reference": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+ "source_note": "Verified Physics Form One lesson plans (Arusha Catholic Seminary). 26 lesson plans (80 min double periods, 2 per week) covering Introduction to Physics (Weeks 1-2), Measurement (Weeks 3-5), Introduction to Force (Weeks 6-8), Density and Relative Density (Weeks 9, 11), and Sinking and Floating (Weeks 12-14) for Term I. Week 10 is mid-term assessment.",
+ "lessons": [
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 1A (TERM I - WEEK 1, DOUBLE PERIOD - 80 min): CONCEPT OF PHYSICS",
+   "sr_no": "1A",
+   "time": "80 MIN",
+   "main_competence": "1.0 Demonstrate mastery of the nature of Physics, measurement, and force",
+   "specific_competence": "1.1 Explain the concept and scope of Physics",
+   "main_activity": "Introduce Physics as a subject",
+   "specific_activity": "Explain the concept of Physics and its branches",
+   "teaching_learning_resources": "Physics textbook, wall charts.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students to name everyday objects that work using physics principles (mobile phone, bicycle, torch).",
+     "learning_activities": "Name everyday objects and share ideas.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Defines Physics as the branch of science that studies matter, energy, and their interactions. Explains branches: mechanics, heat, light, sound, electricity, magnetism, and modern physics, linking each to daily life.",
+     "learning_activities": "Take detailed notes on the definition and branches of Physics.",
+     "assessment_criteria": "Correct understanding of Physics and its branches"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students work in groups to sort given phenomena (rainbow, moving car, boiling water, magnet picking pins) under the correct branch of Physics.",
+     "learning_activities": "Sort phenomena under the correct branches.",
+     "assessment_criteria": "Correct classification of phenomena"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group answers, summarises the scope of Physics, and asks oral questions.",
+     "learning_activities": "Answer oral questions and self-correct.",
+     "assessment_criteria": "Correct oral answers"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 1B (TERM I - WEEK 1, DOUBLE PERIOD - 80 min): CONCEPT OF PHYSICS (CONT.)",
+   "sr_no": "1B",
+   "time": "80 MIN",
+   "main_competence": "1.0 Demonstrate mastery of the nature of Physics, measurement, and force",
+   "specific_competence": "1.1 Explain the concept and scope of Physics",
+   "main_activity": "Reinforce the concept and scope of Physics",
+   "specific_activity": "Describe the scope of Physics and its branches in daily life",
+   "teaching_learning_resources": "Physics textbook, wall charts.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the definition and branches of Physics from the double period.",
+     "learning_activities": "Recall branches of Physics.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains the relationship between Physics and other subjects (chemistry, biology, geography, mathematics) and careers that require Physics (engineering, medicine, teaching, meteorology).",
+     "learning_activities": "Take detailed notes linking Physics to other fields.",
+     "assessment_criteria": "Correct understanding of Physics in other fields"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group discussion matching each career to the branch of Physics it uses most.",
+     "learning_activities": "Match careers to branches in groups.",
+     "assessment_criteria": "Relevance of matches made"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Administers oral questions on the scope of Physics and its branches.",
+     "learning_activities": "Answer oral questions individually.",
+     "assessment_criteria": "Ability to justify answers"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 2A (TERM I - WEEK 2, DOUBLE PERIOD - 80 min): CONTRIBUTION OF PHYSICS TO THE DEVELOPMENT OF MODERN SOCIETY",
+   "sr_no": "2A",
+   "time": "80 MIN",
+   "main_competence": "1.0 Demonstrate mastery of the nature of Physics, measurement, and force",
+   "specific_competence": "1.2 Analyze the role and theoretical basis of Physics",
+   "main_activity": "Explain Physics in society and its theories",
+   "specific_activity": "Discuss the contribution of Physics to modern society and outline key theories/principles of Physics",
+   "teaching_learning_resources": "Pictures of technological inventions, textbook.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Shows a mobile phone and asks students how electricity, waves, and materials science make it work.",
+     "learning_activities": "Observe the phone and share ideas.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains the contribution of Physics to modern society: transport (vehicles, aircraft), communication (phones, radio, internet), medicine (X-rays, imaging), agriculture (machinery, irrigation), and energy (electricity generation).",
+     "learning_activities": "Take detailed notes on the applications of Physics.",
+     "assessment_criteria": "Correct identification of contributions"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students in groups study picture cards of technological inventions and identify the physics behind each.",
+     "learning_activities": "Identify the physics behind each invention.",
+     "assessment_criteria": "Correct identification of physics principles"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group findings and administers a short quiz on contributions of Physics.",
+     "learning_activities": "Complete the short quiz.",
+     "assessment_criteria": "Score on short quiz"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 2B (TERM I - WEEK 2, DOUBLE PERIOD - 80 min): THEORIES AND PRINCIPLES OF PHYSICS",
+   "sr_no": "2B",
+   "time": "80 MIN",
+   "main_competence": "1.0 Demonstrate mastery of the nature of Physics, measurement, and force",
+   "specific_competence": "1.2 Analyze the role and theoretical basis of Physics",
+   "main_activity": "Reinforce the role and theoretical basis of Physics",
+   "specific_activity": "Outline key theories and principles of Physics with examples",
+   "teaching_learning_resources": "Pictures of technological inventions, textbook.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the contributions of Physics discussed in the double period.",
+     "learning_activities": "Recall contributions of Physics.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Outlines classic principles of Physics: Newton's laws of motion, the law of gravity, and the principle of conservation of energy, with simple examples of each.",
+     "learning_activities": "Take detailed notes on key theories and principles.",
+     "assessment_criteria": "Correct statement of the principles"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides students to match each principle to a real-life example (ball falling, bicycle stopping, battery powering a torch).",
+     "learning_activities": "Match principles to examples individually.",
+     "assessment_criteria": "Correctness of matching"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews answers, clarifies common errors, and asks oral questions.",
+     "learning_activities": "Answer oral questions and self-correct.",
+     "assessment_criteria": "Correct oral answers"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 3A (TERM I - WEEK 3, DOUBLE PERIOD - 80 min): CONCEPT OF MEASUREMENT",
+   "sr_no": "3A",
+   "time": "80 MIN",
+   "main_competence": "1.0 Demonstrate mastery of the nature of Physics, measurement, and force",
+   "specific_competence": "2.1 Explain the concept of measurement",
+   "main_activity": "Explain measurement concepts",
+   "specific_activity": "Examine the meaning and importance of measurement in Physics",
+   "teaching_learning_resources": "Rulers, measuring tapes.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students how tall they are and how we know, prompting a discussion on measuring.",
+     "learning_activities": "Share guesses and measuring ideas.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains the meaning of measurement (comparing a quantity with a standard unit), its importance in daily life and science, and introduces SI units as the international standard.",
+     "learning_activities": "Take detailed notes on measurement and SI units.",
+     "assessment_criteria": "Correct understanding of measurement"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides an estimation activity: students estimate the length and width of their desk, then measure with a ruler and compare.",
+     "learning_activities": "Estimate then measure the desk.",
+     "assessment_criteria": "Accuracy of estimates vs measurements"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Discusses why measurement must be accurate and consistent, then asks oral questions.",
+     "learning_activities": "Answer oral questions.",
+     "assessment_criteria": "Correct oral answers"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 3B (TERM I - WEEK 3, DOUBLE PERIOD - 80 min): CONCEPT OF MEASUREMENT (CONT.)",
+   "sr_no": "3B",
+   "time": "80 MIN",
+   "main_competence": "1.0 Demonstrate mastery of the nature of Physics, measurement, and force",
+   "specific_competence": "2.1 Explain the concept of measurement",
+   "main_activity": "Reinforce measurement concepts",
+   "specific_activity": "Apply the meaning and importance of measurement through estimation activities",
+   "teaching_learning_resources": "Rulers, measuring tapes.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the meaning and importance of measurement from the double period.",
+     "learning_activities": "Recall the meaning of measurement.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains estimation, accuracy, and how to avoid common measuring errors (parallax error on a ruler, incorrect starting point).",
+     "learning_activities": "Take detailed notes on accuracy and errors.",
+     "assessment_criteria": "Correct understanding of measuring errors"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students practise measuring different classroom objects and record the correct reading, discussing sources of error.",
+     "learning_activities": "Measure objects and record correct readings.",
+     "assessment_criteria": "Accuracy of recorded readings"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews a few readings, highlights common errors, and reinforces good technique.",
+     "learning_activities": "Self-correct readings.",
+     "assessment_criteria": "Accuracy after correction"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 4A (TERM I - WEEK 4, DOUBLE PERIOD - 80 min): PHYSICAL QUANTITIES AND THEIR UNITS",
+   "sr_no": "4A",
+   "time": "80 MIN",
+   "main_competence": "1.0 Demonstrate mastery of the nature of Physics, measurement, and force",
+   "specific_competence": "2.2 Identify physical quantities and their units",
+   "main_activity": "Study physical quantities",
+   "specific_activity": "Distinguish fundamental and derived physical quantities and their SI units",
+   "teaching_learning_resources": "SI unit charts, textbook.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students what is meant when a car travels at 60 km/h.",
+     "learning_activities": "Share ideas about speed and units.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Defines a physical quantity as a property that can be measured. Distinguishes fundamental quantities (length, mass, time, temperature, electric current, amount of substance, luminous intensity) from derived quantities and states base SI units.",
+     "learning_activities": "Take detailed notes on quantities and units.",
+     "assessment_criteria": "Correct distinction of fundamental and derived quantities"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students classify a list of physical quantities into fundamental or derived using a chart of SI units.",
+     "learning_activities": "Classify quantities and match units.",
+     "assessment_criteria": "Correct classification"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the classification and administers a matching quiz on quantities and SI units.",
+     "learning_activities": "Complete a matching quiz.",
+     "assessment_criteria": "Score on matching quiz"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 4B (TERM I - WEEK 4, DOUBLE PERIOD - 80 min): PHYSICAL QUANTITIES AND THEIR UNITS (CONT.)",
+   "sr_no": "4B",
+   "time": "80 MIN",
+   "main_competence": "1.0 Demonstrate mastery of the nature of Physics, measurement, and force",
+   "specific_competence": "2.2 Identify physical quantities and their units",
+   "main_activity": "Reinforce physical quantity knowledge",
+   "specific_activity": "Convert and apply SI units of common physical quantities",
+   "teaching_learning_resources": "SI unit charts, textbook.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps fundamental and derived quantities from the double period.",
+     "learning_activities": "Recall the definitions.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains derived quantities further (area, volume, speed, density) and how their units are formed from base units; introduces unit prefixes (kilo, milli, centi).",
+     "learning_activities": "Take detailed notes on derived units and prefixes.",
+     "assessment_criteria": "Correct understanding of derived units"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students convert simple measurements between units (kg to g, m to cm) and write units for given derived quantities.",
+     "learning_activities": "Convert units and write derived units.",
+     "assessment_criteria": "Correctness of conversions"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Marks sample conversions on the board and clarifies common errors.",
+     "learning_activities": "Self-correct conversions.",
+     "assessment_criteria": "Accuracy after correction"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 5A (TERM I - WEEK 5, DOUBLE PERIOD - 80 min): BASIC EQUIPMENT/APPARATUS AND THEIR USES",
+   "sr_no": "5A",
+   "time": "80 MIN",
+   "main_competence": "1.0 Demonstrate mastery of the nature of Physics, measurement, and force",
+   "specific_competence": "2.3 Use basic measuring apparatus",
+   "main_activity": "Study measuring apparatus",
+   "specific_activity": "Identify basic equipment (metre rule, vernier calipers, micrometer screw gauge, stopwatch, beam balance) and their uses",
+   "teaching_learning_resources": "Metre rules, vernier calipers, micrometer screw gauges, stopwatches, beam balance.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students how to measure the thickness of one sheet of paper.",
+     "learning_activities": "Suggest ways to measure small thickness.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Identifies basic measuring apparatus and their uses: metre rule (length), vernier calipers and micrometer screw gauge (small lengths/thicknesses), stopwatch (time), beam balance (mass).",
+     "learning_activities": "Take detailed notes on each apparatus and its use.",
+     "assessment_criteria": "Correct identification of apparatus and uses"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Hands-on activity: students handle each apparatus, identify its parts, and measure given objects (thickness of a pencil, length of a book, time for a swing).",
+     "learning_activities": "Handle apparatus and take measurements.",
+     "assessment_criteria": "Accuracy of measurements taken"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Administers a practical identification test on the apparatus.",
+     "learning_activities": "Complete the practical identification test.",
+     "assessment_criteria": "Score on practical identification test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 5B (TERM I - WEEK 5, DOUBLE PERIOD - 80 min): BASIC EQUIPMENT/APPARATUS AND THEIR USES (CONT.)",
+   "sr_no": "5B",
+   "time": "80 MIN",
+   "main_competence": "1.0 Demonstrate mastery of the nature of Physics, measurement, and force",
+   "specific_competence": "2.3 Use basic measuring apparatus",
+   "main_activity": "Reinforce measuring apparatus knowledge",
+   "specific_activity": "Take correct readings from measuring apparatus",
+   "teaching_learning_resources": "Metre rules, vernier calipers, micrometer screw gauges, stopwatches, beam balance.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the apparatus studied in the double period.",
+     "learning_activities": "Recall the apparatus and their uses.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains how to read each apparatus correctly (main scale and vernier scale, thimble scale, stopwatch reading, beam balance riders) and the idea of the least count.",
+     "learning_activities": "Take detailed notes on correct reading.",
+     "assessment_criteria": "Correct understanding of scale reading"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students take several readings with the vernier calipers and micrometer and compare with metre rule readings.",
+     "learning_activities": "Take and compare readings.",
+     "assessment_criteria": "Accuracy of readings"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews readings and administers oral questions on reading scales.",
+     "learning_activities": "Answer oral questions.",
+     "assessment_criteria": "Correct oral answers"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 6A (TERM I - WEEK 6, DOUBLE PERIOD - 80 min): CONCEPT OF FORCE",
+   "sr_no": "6A",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "3.1 Explain the concept of force",
+   "main_activity": "Explain force concepts",
+   "specific_activity": "Examine the meaning of force and its measurement using a spring balance",
+   "teaching_learning_resources": "Spring balances, weights.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Pushes a book on the table and kicks a ball, asking what makes them move.",
+     "learning_activities": "Observe and suggest what causes motion.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Defines force as a push or a pull acting on an object, describes how force is measured using a spring balance, and introduces the SI unit newton (N).",
+     "learning_activities": "Take detailed notes on the definition of force and its unit.",
+     "assessment_criteria": "Correct definition of force"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students use a spring balance to pull objects of different masses and record the force needed.",
+     "learning_activities": "Measure forces with the spring balance.",
+     "assessment_criteria": "Accuracy of force readings"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the readings, links force to the newton, and asks oral questions.",
+     "learning_activities": "Answer oral questions and self-correct.",
+     "assessment_criteria": "Correct oral answers"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 6B (TERM I - WEEK 6, DOUBLE PERIOD - 80 min): CONCEPT OF FORCE (CONT.)",
+   "sr_no": "6B",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "3.1 Explain the concept of force",
+   "main_activity": "Reinforce force concepts",
+   "specific_activity": "Measure force using a spring balance and state the SI unit of force",
+   "teaching_learning_resources": "Spring balances, weights.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps how force is measured with a spring balance.",
+     "learning_activities": "Recall how to read the spring balance.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains mass versus weight (weight is the force of gravity, W = mg), and how a spring balance measures weight as a force.",
+     "learning_activities": "Take detailed notes on mass and weight.",
+     "assessment_criteria": "Correct understanding of mass and weight"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students measure the weight of different objects with a spring balance and record them in newtons.",
+     "learning_activities": "Measure and record weights.",
+     "assessment_criteria": "Accuracy of weight measurements"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the results and reinforces the difference between mass and weight.",
+     "learning_activities": "Self-check results.",
+     "assessment_criteria": "Correct distinction of mass and weight"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 7A (TERM I - WEEK 7, DOUBLE PERIOD - 80 min): EFFECTS OF FORCES",
+   "sr_no": "7A",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "3.2 Analyze the effects of force",
+   "main_activity": "Study effects of force",
+   "specific_activity": "Examine how force changes shape, size, speed, and direction of objects",
+   "teaching_learning_resources": "Springs, balls, blocks.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Stretches a spring and squeezes a ball, asking students what happens to each object.",
+     "learning_activities": "Observe and describe what happens.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains the effects of forces: changing shape and size (stretching a spring), changing speed (starting or stopping motion), changing direction (kicking a ball), often several effects at once.",
+     "learning_activities": "Take detailed notes on the effects of force.",
+     "assessment_criteria": "Correct explanation of effects of force"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students in groups stretch springs, bounce balls, and push blocks, recording the effect observed in each case.",
+     "learning_activities": "Perform demonstrations and record effects.",
+     "assessment_criteria": "Accuracy of recorded effects"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews group observations and administers a short written test on effects of force.",
+     "learning_activities": "Complete the short written test.",
+     "assessment_criteria": "Score on short written test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 7B (TERM I - WEEK 7, DOUBLE PERIOD - 80 min): EFFECTS OF FORCES (CONT.)",
+   "sr_no": "7B",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "3.2 Analyze the effects of force",
+   "main_activity": "Reinforce effects of force knowledge",
+   "specific_activity": "Identify real-life examples of the effects of forces",
+   "teaching_learning_resources": "Springs, balls, blocks.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the effects of force demonstrated in the double period.",
+     "learning_activities": "Recall the effects of force.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains real-life examples of force effects: braking a bicycle (changes speed), bending a wire (changes shape), hitting a ball (changes direction).",
+     "learning_activities": "Take detailed notes with real-life examples.",
+     "assessment_criteria": "Correct identification of examples"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students in groups identify and record the effect of force in given picture cards and justify their choices.",
+     "learning_activities": "Identify and justify force effects.",
+     "assessment_criteria": "Correctness of identification"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the answers and clarifies any misconceptions.",
+     "learning_activities": "Self-check and correct.",
+     "assessment_criteria": "Accuracy after correction"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 8A (TERM I - WEEK 8, DOUBLE PERIOD - 80 min): TYPES OF FORCES",
+   "sr_no": "8A",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "3.3 Classify types of force",
+   "main_activity": "Study types of force",
+   "specific_activity": "Differentiate contact forces (friction, tension) and non-contact forces (gravitational, magnetic, electrostatic)",
+   "teaching_learning_resources": "Magnets, blocks, inclined plane.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students what force is at work when a magnet holds a pin on the board without touching it.",
+     "learning_activities": "Share ideas about the magnet's force.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Classifies forces as contact forces (friction, tension, applied push/pull, normal reaction) and non-contact forces (gravitational, magnetic, electrostatic), explaining how each acts.",
+     "learning_activities": "Take detailed notes on types of forces.",
+     "assessment_criteria": "Correct classification of forces"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students sort given scenarios into contact and non-contact forces, and observe demonstrations of friction (rubbing hands) and magnetism (picking pins).",
+     "learning_activities": "Sort scenarios and observe demonstrations.",
+     "assessment_criteria": "Correctness of sorting"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the classification and administers a classification quiz.",
+     "learning_activities": "Complete the classification quiz.",
+     "assessment_criteria": "Score on classification quiz"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 8B (TERM I - WEEK 8, DOUBLE PERIOD - 80 min): TYPES OF FORCES (CONT.)",
+   "sr_no": "8B",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "3.3 Classify types of force",
+   "main_activity": "Reinforce types of force knowledge",
+   "specific_activity": "Classify forces in given scenarios and cite applications",
+   "teaching_learning_resources": "Magnets, blocks, inclined plane.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps contact and non-contact forces using a magnet.",
+     "learning_activities": "Recall the two classes of force.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains everyday applications: friction when walking or braking (contact), gravity holding objects down (non-contact), and uses of magnets.",
+     "learning_activities": "Take detailed notes on applications.",
+     "assessment_criteria": "Correct understanding of applications"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Guides group activity classifying more scenarios (leaf falling, book on a table, comb attracting paper) as contact or non-contact forces.",
+     "learning_activities": "Classify scenarios in groups.",
+     "assessment_criteria": "Correctness of classification"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Administers oral questions and clarifies misconceptions.",
+     "learning_activities": "Answer oral questions individually.",
+     "assessment_criteria": "Ability to justify classifications"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 9A (TERM I - WEEK 9, DOUBLE PERIOD - 80 min): CONCEPT OF DENSITY",
+   "sr_no": "9A",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "4.1 Explain the concept of density",
+   "main_activity": "Explain density concepts",
+   "specific_activity": "Determine density of regular and irregular solids using mass and volume",
+   "teaching_learning_resources": "Beam balance, measuring cylinders, solid samples.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students which is heavier: a kilogram of feathers or a kilogram of iron, then why iron feels denser.",
+     "learning_activities": "Share ideas about heaviness.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Defines density as mass per unit volume (density = mass divided by volume) with the SI unit kg/m^3, and explains the concept of mass and volume measurement.",
+     "learning_activities": "Take detailed notes on the density formula.",
+     "assessment_criteria": "Correct understanding of the density formula"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students measure the mass (beam balance) and volume (measuring cylinder) of regular and irregular solids, then compute density.",
+     "learning_activities": "Measure mass and volume and compute density.",
+     "assessment_criteria": "Accuracy of density calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the computed densities and administers a calculation test.",
+     "learning_activities": "Complete the calculation test.",
+     "assessment_criteria": "Score on calculation test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 9B (TERM I - WEEK 9, DOUBLE PERIOD - 80 min): CONCEPT OF DENSITY (CONT.)",
+   "sr_no": "9B",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "4.1 Explain the concept of density",
+   "main_activity": "Reinforce density concepts",
+   "specific_activity": "Calculate density of solids and liquids from measured mass and volume",
+   "teaching_learning_resources": "Beam balance, measuring cylinders, calculators.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps the density formula and the practical results from the double period.",
+     "learning_activities": "Recall the density formula.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Works through numerical examples of density of solids and liquids, including using the measuring cylinder to find the volume of a liquid.",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct application of the formula"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students solve density problems and determine the density of a liquid sample.",
+     "learning_activities": "Solve density problems individually.",
+     "assessment_criteria": "Correctness of calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Marks sample answers on the board and clarifies common errors.",
+     "learning_activities": "Self-correct based on board feedback.",
+     "assessment_criteria": "Accuracy after correction"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 10A (TERM I - WEEK 11, DOUBLE PERIOD - 80 min): RELATIVE DENSITY OF A SUBSTANCE",
+   "sr_no": "10A",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "4.2 Determine relative density of substances",
+   "main_activity": "Study relative density",
+   "specific_activity": "Calculate relative density of solids and liquids relative to water",
+   "teaching_learning_resources": "Density bottles, measuring cylinders, water, calculators.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students whether oil floats on water and why, introducing comparison with water.",
+     "learning_activities": "Share ideas about floating liquids.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Defines relative density as the ratio of the density of a substance to the density of water (no units), and explains how to find it using a density bottle.",
+     "learning_activities": "Take detailed notes on relative density.",
+     "assessment_criteria": "Correct definition of relative density"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students use a density bottle to determine the relative density of a liquid by weighing it empty, filled with water, and filled with the liquid.",
+     "learning_activities": "Perform the density bottle practical.",
+     "assessment_criteria": "Accuracy of relative density results"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the results, compares with textbook values, and administers oral questions.",
+     "learning_activities": "Answer oral questions and self-check.",
+     "assessment_criteria": "Correct oral answers"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 10B (TERM I - WEEK 11, DOUBLE PERIOD - 80 min): RELATIVE DENSITY OF A SUBSTANCE (CONT.)",
+   "sr_no": "10B",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "4.2 Determine relative density of substances",
+   "main_activity": "Reinforce relative density knowledge",
+   "specific_activity": "Solve problems on relative density and cite its applications",
+   "teaching_learning_resources": "Density bottles, measuring cylinders, water, calculators.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps relative density and how it was measured with the density bottle.",
+     "learning_activities": "Recall the density bottle method.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Works through calculation problems on relative density of solids and liquids, and cites applications (checking purity of milk, battery acid testing).",
+     "learning_activities": "Take detailed notes and follow worked examples.",
+     "assessment_criteria": "Correct application of relative density"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students solve relative density problems using mass ratios for solid and liquid samples.",
+     "learning_activities": "Solve relative density problems individually.",
+     "assessment_criteria": "Correctness of calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Marks sample answers, clarifies errors, and discusses applications.",
+     "learning_activities": "Self-correct and note applications.",
+     "assessment_criteria": "Accuracy after correction"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 11A (TERM I - WEEK 12, DOUBLE PERIOD - 80 min): CONCEPT OF SINKING AND FLOATING",
+   "sr_no": "11A",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "5.1 Explain sinking, floating, and upthrust",
+   "main_activity": "Study sinking and floating",
+   "specific_activity": "Examine why objects sink or float and the concept of upthrust",
+   "teaching_learning_resources": "Water tank, assorted objects of varying density.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Drops a stone and a piece of wood into a tank of water, asking students to predict what happens.",
+     "learning_activities": "Predict outcomes and observe.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains why objects sink or float by comparing their density with water's density, and introduces upthrust as the upward force exerted by a liquid on a submerged object.",
+     "learning_activities": "Take detailed notes on sinking, floating, and upthrust.",
+     "assessment_criteria": "Correct understanding of sinking and floating"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students test assorted objects (stone, wood, coin, cork, egg) in a water tank, recording which sink and which float and why.",
+     "learning_activities": "Perform the sink-or-float practical and record results.",
+     "assessment_criteria": "Accuracy of recorded observations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the results and consolidates the density comparison rule, with oral questions.",
+     "learning_activities": "Answer oral questions.",
+     "assessment_criteria": "Correct explanation of results"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 11B (TERM I - WEEK 12, DOUBLE PERIOD - 80 min): CONCEPT OF UPTHRUST",
+   "sr_no": "11B",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "5.1 Explain sinking, floating, and upthrust",
+   "main_activity": "Reinforce sinking and floating knowledge",
+   "specific_activity": "Measure upthrust on submerged objects by weighing them in air and water",
+   "teaching_learning_resources": "Spring balance, overflow can, measuring cylinder.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students why a heavy ship floats while a small nail sinks.",
+     "learning_activities": "Share ideas about ships floating.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains upthrust in detail: an object in a liquid feels lighter because the liquid pushes it upward, and shows how upthrust is measured by weighing an object in air and in water.",
+     "learning_activities": "Take detailed notes on measuring upthrust.",
+     "assessment_criteria": "Correct understanding of upthrust"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students weigh an object with a spring balance in air, then in water, recording the upthrust (loss of weight).",
+     "learning_activities": "Measure weight in air and water.",
+     "assessment_criteria": "Accuracy of upthrust measurements"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the results and consolidates the meaning of upthrust with oral questions.",
+     "learning_activities": "Answer oral questions and self-check.",
+     "assessment_criteria": "Correct oral answers"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 12A (TERM I - WEEK 13, DOUBLE PERIOD - 80 min): ARCHIMEDES' PRINCIPLE",
+   "sr_no": "12A",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "5.2 Apply Archimedes' Principle",
+   "main_activity": "Study Archimedes' Principle",
+   "specific_activity": "Verify Archimedes' Principle through practical displacement of water",
+   "teaching_learning_resources": "Spring balance, overflow can, measuring cylinder.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Asks students why it is easier to lift a bucket of water when it is still in the water.",
+     "learning_activities": "Share ideas about lifting in water.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "States Archimedes' Principle: an object wholly or partly immersed in a fluid is buoyed up by a force equal to the weight of the fluid displaced, with a worked example.",
+     "learning_activities": "Take detailed notes on Archimedes' Principle.",
+     "assessment_criteria": "Correct statement of Archimedes' Principle"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students perform the displacement practical: weigh an object in air and in water over an overflow can, collect the displaced water, and compare its weight with the loss of weight.",
+     "learning_activities": "Perform the displacement practical.",
+     "assessment_criteria": "Accuracy of displacement measurements"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the comparison and confirms Archimedes' Principle, then administers a practical test.",
+     "learning_activities": "Complete the practical test.",
+     "assessment_criteria": "Score on practical test"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 12B (TERM I - WEEK 13, DOUBLE PERIOD - 80 min): ARCHIMEDES' PRINCIPLE (CONT.)",
+   "sr_no": "12B",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "5.2 Apply Archimedes' Principle",
+   "main_activity": "Reinforce Archimedes' Principle knowledge",
+   "specific_activity": "Apply Archimedes' Principle to solve problems and real-life situations",
+   "teaching_learning_resources": "Spring balance, overflow can, measuring cylinder.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Recaps Archimedes' Principle and the displacement practical.",
+     "learning_activities": "Recall the principle.",
+     "assessment_criteria": "Correct recall"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Explains applications of Archimedes' Principle: hydrometers, submarines, ships, and hot-air balloons, and works through calculation examples of upthrust.",
+     "learning_activities": "Take detailed notes on applications and examples.",
+     "assessment_criteria": "Correct identification of applications"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students solve calculation problems on upthrust and displaced weight.",
+     "learning_activities": "Solve upthrust problems individually.",
+     "assessment_criteria": "Correctness of calculations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Marks sample answers, clarifies errors, and reinforces the applications.",
+     "learning_activities": "Self-correct based on board feedback.",
+     "assessment_criteria": "Accuracy after correction"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 13A (TERM I - WEEK 14, DOUBLE PERIOD - 80 min): LAW OF FLOATATION",
+   "sr_no": "13A",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "5.3 Apply the Law of Floatation",
+   "main_activity": "Study the Law of Floatation",
+   "specific_activity": "Apply the Law of Floatation to explain floatation of ships/objects",
+   "teaching_learning_resources": "Model boats, water tank.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Floats a loaded model boat and asks why the boat stays afloat while a piece of the same material sinks when solid.",
+     "learning_activities": "Observe and share ideas.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "States the Law of Floatation: a floating body displaces its own weight of fluid, and explains why ships made of iron float because of their shape.",
+     "learning_activities": "Take detailed notes on the Law of Floatation.",
+     "assessment_criteria": "Correct statement of the Law of Floatation"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Students float model boats and observe how deep they sink with different loads, linking to displaced water.",
+     "learning_activities": "Float model boats and record sinking depth.",
+     "assessment_criteria": "Accuracy of observations"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Reviews the observations, ties the law back to Archimedes' Principle, and asks oral questions.",
+     "learning_activities": "Answer oral questions.",
+     "assessment_criteria": "Correct explanation of floatation"
+    }
+   ]
+  },
+  {
+   "title": "PHYSICS FORM ONE LESSON PLAN NO. 13B (TERM I - WEEK 14, DOUBLE PERIOD - 80 min): TERM I REVISION",
+   "sr_no": "13B",
+   "time": "80 MIN",
+   "main_competence": "2.0 Demonstrate mastery of force, density, and floatation",
+   "specific_competence": "5.3 Apply the Law of Floatation",
+   "main_activity": "Revise Term I",
+   "specific_activity": "Complete Term I revision of all chapters with a revision test",
+   "teaching_learning_resources": "Revision notes.",
+   "references": "TIE (2026). Physics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+   "teaching_structure": [
+    {
+     "stage": "Introduction",
+     "time": "10 min",
+     "teaching_activities": "Outlines the Term I topics to revise: introduction to Physics, measurement, force, density, and sinking/floating.",
+     "learning_activities": "Listen to the revision outline.",
+     "assessment_criteria": "Engagement"
+    },
+    {
+     "stage": "Competence Development",
+     "time": "30 min",
+     "teaching_activities": "Leads a rapid review of key Term I concepts through guided Q&A and worked examples on density and relative density.",
+     "learning_activities": "Answer revision questions and take notes.",
+     "assessment_criteria": "Correctness of revision answers"
+    },
+    {
+     "stage": "Design",
+     "time": "25 min",
+     "teaching_activities": "Organizes a group quiz competition covering all Term I chapters.",
+     "learning_activities": "Participate in the group quiz competition.",
+     "assessment_criteria": "Participation and accuracy"
+    },
+    {
+     "stage": "Realization",
+     "time": "15 min",
+     "teaching_activities": "Administers the Term I revision test and previews the Term II syllabus.",
+     "learning_activities": "Complete the revision test.",
+     "assessment_criteria": "Score on revision test"
+    }
+   ]
+  }
+ ]
+}
