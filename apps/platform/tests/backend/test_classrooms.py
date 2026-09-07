@@ -66,3 +66,47 @@ def test_regenerate_code():
     assert resp.status_code == 200
     new_code = resp.json()["code"]
     assert new_code != old_code
+
+
+def test_student_classroom_includes_teacher_context():
+    teacher_headers, _ = _register("teacher")
+    student_headers, _ = _register("student")
+
+    # Teacher names their class and shares the code.
+    code = client.get("/classrooms/me", headers=teacher_headers).json()["code"]
+    resp = client.post("/classrooms/me", json={"name": "Form Two East"}, headers=teacher_headers)
+    assert resp.status_code == 200
+    assert resp.json()["name"] == "Form Two East"
+
+    # Student joins.
+    client.post("/classrooms/join", json={"code": code}, headers=student_headers)
+
+    # Student view now carries classmates count, class name, teacher info.
+    resp = client.get("/classrooms/me", headers=student_headers)
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["classroom"]["code"] == code
+    assert data["class_name"] == "Form Two East"
+    assert "classmates_count" in data
+    assert "teacher" in data
+    assert "name" in data["teacher"]
+    assert "subjects" in data["teacher"]
+    assert data["published_lessons"] == []
+    assert data["assignments"] == []
+
+
+def test_teacher_roster_includes_student_stats():
+    teacher_headers, _ = _register("teacher")
+    student_headers, _ = _register("student")
+    code = client.get("/classrooms/me", headers=teacher_headers).json()["code"]
+    client.post("/classrooms/join", json={"code": code}, headers=student_headers)
+
+    resp = client.get("/classrooms/me/students", headers=teacher_headers)
+    assert resp.status_code == 200
+    payload = resp.json()
+    assert payload["total"] == 1
+    student = payload["students"][0]
+    assert "stats" in student
+    assert "lessons_completed" in student["stats"]
+    assert "avg_score" in student["stats"]
+    assert "assignments_submitted" in student["stats"]

@@ -12,13 +12,17 @@ import string
 
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, field_validator
+from sqlalchemy import func
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
 from backend.middleware.auth import get_current_user
 from backend.middleware.permissions import require_role
+from backend.models.assignment import Assignment, AssignmentSubmission
 from backend.models.classroom import Classroom, ClassroomEnrollment
+from backend.models.lesson import Lesson
+from backend.models.progress import ProgressRecord
 from backend.models.student import Student
 from backend.models.teacher import Teacher
 from backend.models.user import User
@@ -115,6 +119,85 @@ def _list_connected_students(db: Session, classroom_id: str) -> list[dict]:
     ]
 
 
+def _teacher_profile(db: Session, teacher: Teacher) -> dict:
+    """Resolve a teacher's display fields (name, email, subjects)."""
+    row = (
+        db.query(User.full_name, User.email)
+        .filter(User.id == teacher.user_id)
+        .first()
+    )
+    name, email = (row if row else (None, None))
+    return {
+        "name": name,
+        "email": email,
+        "subjects": teacher.subjects,
+    }
+
+
+def _teacher_published_lessons(db: Session, teacher: Teacher, limit: int = 20) -> list[dict]:
+    rows = (
+        db.query(Lesson)
+        .filter(Lesson.created_by == teacher.user_id, Lesson.status == "published")
+        .limit(limit)
+        .all()
+    )
+    return [
+        {
+            "id": l.id,
+            "title": l.title,
+            "status": l.status,
+        }
+        for l in rows
+    ]
+
+
+def _teacher_assignments(db: Session, teacher: Teacher, limit: int = 20) -> list[dict]:
+    rows = (
+        db.query(Assignment, Lesson.title)
+        .outerjoin(Lesson, Assignment.lesson_id == Lesson.id)
+        .filter(Assignment.created_by == teacher.user_id)
+        .order_by(Assignment.created_at.desc())
+        .limit(limit)
+        .all()
+    )
+    return [
+        {
+            "id": a.id,
+            "title": a.title,
+            "lesson_id": a.lesson_id,
+            "lesson_title": lesson_title,
+            "due_date": a.due_date,
+            "status": a.status,
+            "has_paper": bool(a.paper_json),
+        }
+        for a, lesson_title in rows
+    ]
+
+
+def _student_class_stats(db: Session, student: Student) -> dict:
+    """Quick engagement snapshot for a teacher's roster view."""
+    completed = (
+        db.query(ProgressRecord)
+        .filter(ProgressRecord.student_id == student.id, ProgressRecord.completion_percentage >= 100)
+        .count()
+    )
+    avg_score = (
+        db.query(func.avg(ProgressRecord.score_percentage))
+        .filter(ProgressRecord.student_id == student.id, ProgressRecord.score_percentage > 0)
+        .scalar()
+    )
+    submissions = (
+        db.query(AssignmentSubmission)
+        .filter(AssignmentSubmission.student_id == student.id)
+        .count()
+    )
+    return {
+        "lessons_completed": completed,
+        "avg_score": round(float(avg_score)) if avg_score is not None else 0,
+        "assignments_submitted": submissions,
+    }
+
+
 # --- Teacher routes ---
 
 
@@ -141,19 +224,29 @@ def get_my_classroom(current_user=Depends(get_current_user), db: Session = Depen
             return {"classroom": None, "teacher": None}
         enrollment_row, classroom = enrollment
         teacher = db.get(Teacher, classroom.teacher_id)
-        teacher_name = None
-        teacher_email = None
+        teacher_dict = None
+        published_lessons: list[dict] = []
+        assignments: list[dict] = []
+        classmates_count = 0
         if teacher:
-            row = (
-                db.query(User.full_name, User.email)
-                .filter(User.id == teacher.user_id)
-                .first()
+            teacher_dict = _teacher_profile(db, teacher)
+            published_lessons = _teacher_published_lessons(db, teacher)
+            assignments = _teacher_assignments(db, teacher)
+        classmates_count = (
+            db.query(ClassroomEnrollment)
+            .filter(
+                ClassroomEnrollment.classroom_id == classroom.id,
+                ClassroomEnrollment.status == "active",
             )
-            if row:
-                teacher_name, teacher_email = row
+            .count()
+        )
         return {
             "classroom": _classroom_dict(db, classroom, include_students=False),
-            "teacher": {"name": teacher_name, "email": teacher_email},
+            "class_name": classroom.name,
+            "teacher": teacher_dict,
+            "classmates_count": classmates_count,
+            "published_lessons": published_lessons,
+            "assignments": assignments,
         }
     raise HTTPException(status_code=403, detail="Not authorized")
 
@@ -182,6 +275,13 @@ def get_my_connected_students(current_user=Depends(get_current_user), db: Sessio
     teacher = _get_teacher(db, current_user["sub"])
     classroom = _find_or_create_classroom(db, teacher)
     students = _list_connected_students(db, classroom.id)
+    for entry in students:
+        student = db.get(Student, entry["id"])
+        entry["stats"] = _student_class_stats(db, student) if student else {
+            "lessons_completed": 0,
+            "avg_score": 0,
+            "assignments_submitted": 0,
+        }
     return {"classroom": _classroom_dict(db, classroom, include_students=False), "students": students, "total": len(students)}
 
 
