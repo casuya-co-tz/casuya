@@ -1,0 +1,1076 @@
+{
+  "subject_name": "Physics",
+  "subject_slug": "physics",
+  "form_level": 2,
+  "standard": "Form 2",
+  "tie_reference": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+  "source_note": "Verified Physics Form Two lesson plans (Arusha Catholic Seminary). 26 lesson plans (80 min double periods, 2 per week) covering Static Electricity (Weeks 1-5), Current Electricity (Weeks 6-9), Revision and Assessment (Week 10 mid-term), and Magnetism (Weeks 11-14). Weeks for mid-term assessments, FTNA revision and annual examinations carry no teaching content and are intentionally omitted. Content kept verbatim from the educator-verified source for offline and AI generation grounding.",
+  "lessons": [
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 1 (TERM I - WEEK 1, DOUBLE PERIOD - 80 min): IDENTIFYING CHARGED MATERIALS",
+      "sr_no": "1",
+      "time": "80 MIN",
+      "main_competence": "1.0 Understand static electricity",
+      "specific_competence": "1.1 Identify charged materials",
+      "main_activity": "Identify charged materials",
+      "specific_activity": "Identify charged materials using simple experiments",
+      "teaching_learning_resources": "Ebonite rod, fur, pieces of paper, glass rod, silk, electroscope.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Asks students what happens when they rub a balloon on their hair; introduces the concept of static electricity.",
+          "learning_activities": "Share observations about static cling on clothes and hair.",
+          "assessment_criteria": "Prior knowledge of static electricity phenomena."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Demonstrates charging an ebonite rod by rubbing with fur and attracting small pieces of paper. Repeats with glass rod and silk. Explains that rubbing transfers electrons, creating positive and negative charges.",
+          "learning_activities": "Observe the experiments, record which materials become charged and which do not, discuss the role of friction.",
+          "assessment_criteria": "Ability to identify which materials become charged by friction."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides students through hands-on experiments: rub various rod-and-cloth combinations, test attraction of paper pieces, use an electroscope to detect charge. Students work in pairs to test predictions.",
+          "learning_activities": "Conduct experiments in pairs, record observations in tables, classify materials as charged or uncharged based on evidence.",
+          "assessment_criteria": "Correct identification of charged materials; accurate recording of experimental results."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews experimental findings with the class, clarifies misconceptions about charge types, administers a short practical test where students identify charged materials.",
+          "learning_activities": "Present findings, answer review questions, self-assess using the teacher's answer key.",
+          "assessment_criteria": "Ability to distinguish charged from uncharged materials; correct use of scientific terminology."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 2 (TERM I - WEEK 1, DOUBLE PERIOD - 80 min): CHARGING MATERIALS BY FRICTION",
+      "sr_no": "2",
+      "time": "80 MIN",
+      "main_competence": "1.0 Understand static electricity",
+      "specific_competence": "1.2 Charge materials by friction",
+      "main_activity": "Charge materials by friction",
+      "specific_activity": "Charge materials by friction and explain the process",
+      "teaching_learning_resources": "Ebonite rod, fur, glass rod, silk, electroscope, pith balls.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps lesson 1 by demonstrating ebonite rod attracting paper; asks why rubbing causes attraction.",
+          "learning_activities": "Recall previous experiments and suggest explanations for charge transfer.",
+          "assessment_criteria": "Recall of friction-charging experiments."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains electron transfer during friction: electrons move from the material with weaker electron grip to the one with stronger grip. Uses diagrams to show ebonite gaining electrons (negative) and glass losing electrons (positive).",
+          "learning_activities": "Take notes on electron transfer, draw diagrams showing charge movement, answer guided questions.",
+          "assessment_criteria": "Understanding of electron transfer mechanism in frictional charging."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students charge rods using different materials, test with electroscope, measure deflection angle. Compare results across different rod-cloth combinations. Teacher circulates to check understanding.",
+          "learning_activities": "Charge materials independently, record electroscope deflections, compare effectiveness of different material pairs.",
+          "assessment_criteria": "Correct charging technique; ability to relate electron transfer to observed charge."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups present their findings, teacher highlights key patterns, provides a summary diagram of frictional charging. Assigns follow-up questions.",
+          "learning_activities": "Present group results, discuss patterns, complete assigned questions.",
+          "assessment_criteria": "Clear explanation of charging by friction with correct terminology."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 3 (TERM I - WEEK 2, DOUBLE PERIOD - 80 min): CHARGING MATERIALS BY INDUCTION",
+      "sr_no": "3",
+      "time": "80 MIN",
+      "main_competence": "1.0 Understand static electricity",
+      "specific_competence": "1.3 Charge materials by induction",
+      "main_activity": "Charge by induction",
+      "specific_activity": "Charge materials by induction and distinguish from charging by friction",
+      "teaching_learning_resources": "Metal conductors, electroscope, charged ebonite rod, earth wire.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Brings a charged rod near (but not touching) an electroscope and observes deflection; asks why the electroscope responds without contact.",
+          "learning_activities": "Observe electroscope deflection without contact and suggest explanations.",
+          "assessment_criteria": "Recognition that charges can influence objects without direct contact."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains induction: a charged object brought near a conductor rearranges free electrons in the conductor, creating a separation of charge. Demonstrates earthing to permanentize the charge. Compares friction vs induction.",
+          "learning_activities": "Take notes on induction process, draw electron movement diagrams, list differences between friction and induction.",
+          "assessment_criteria": "Understanding of charge redistribution and earthing in induction."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students charge metal spheres by induction using charged rods and earthing wire. Test the induced charge with an electroscope. Compare results with friction-charged objects.",
+          "learning_activities": "Perform induction experiments, test charge presence, record and compare results with friction method.",
+          "assessment_criteria": "Successful charging by induction; ability to explain the role of earthing."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Class discussion on advantages of induction over friction, administers a comparison exercise (friction vs induction table).",
+          "learning_activities": "Complete comparison table, answer evaluation questions, peer-check answers.",
+          "assessment_criteria": "Clear distinction between charging by friction and charging by induction."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 4 (TERM I - WEEK 2, DOUBLE PERIOD - 80 min): LAW OF CHARGES",
+      "sr_no": "4",
+      "time": "80 MIN",
+      "main_competence": "1.0 Understand static electricity",
+      "specific_competence": "1.4 Apply the law of charges",
+      "main_activity": "Apply the law of charges",
+      "specific_activity": "Apply the law of charges to predict interactions between charged objects",
+      "teaching_learning_resources": "Charged rods, pith balls, electroscope, suspending thread.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Suspends two pith balls and brings a charged rod near; observes attraction and repulsion. Asks students to predict what happens with different charge combinations.",
+          "learning_activities": "Observe pith ball interactions and make predictions about like and unlike charges.",
+          "assessment_criteria": "Initial understanding of charge interactions."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "States the law of charges: like charges repel, unlike charges attract. Uses electron theory to explain: two negatively charged objects both have excess electrons and repel; a positive and negative object attract.",
+          "learning_activities": "Take notes on the law of charges, draw force diagrams for like/unlike charge pairs.",
+          "assessment_criteria": "Correct statement and application of the law of charges."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students perform experiments: charge two rods by friction (same material = same charge), bring them close; charge two different rods (different charges), observe. Record results in a table and draw conclusions.",
+          "learning_activities": "Conduct charge interaction experiments, record observations, determine which charge combinations repel/attract.",
+          "assessment_criteria": "Accurate prediction and experimental verification of charge interactions."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews experimental results, poses challenge questions (e.g., 'A charged rod attracts a neutral pith ball - why?'), administers a written test on charge interactions.",
+          "learning_activities": "Solve charge interaction problems, explain induced attraction, complete the written test.",
+          "assessment_criteria": "Correct application of law of charges to new situations; understanding of induced attraction."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 5 (TERM I - WEEK 3, DOUBLE PERIOD - 80 min): DANGERS AND USES OF STATIC ELECTRICITY",
+      "sr_no": "5",
+      "time": "80 MIN",
+      "main_competence": "1.0 Understand static electricity",
+      "specific_competence": "1.5 Explain dangers and uses of static electricity",
+      "main_activity": "Dangers and uses",
+      "specific_activity": "Describe dangers and practical uses of static electricity in daily life",
+      "teaching_learning_resources": "Charts, video clips, spray painting equipment, photocopier diagrams.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Shows a video of lightning; asks what causes it and whether static electricity is always useful.",
+          "learning_activities": "Watch video, identify lightning as a large-scale static discharge phenomenon.",
+          "assessment_criteria": "Recognition of static electricity in natural phenomena."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Discusses dangers: lightning strikes, sparks in fuel stations, shocks from synthetic clothes. Discusses uses: spray painting, photocopiers, electrostatic precipitators, Van de Graaff generators in research.",
+          "learning_activities": "Take notes on dangers and uses, classify each example as danger or use, discuss safety precautions.",
+          "assessment_criteria": "Ability to list and explain at least three dangers and three uses of static electricity."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students research in groups: one group presents dangers, another presents uses, third group presents safety measures. Each group prepares a poster or chart.",
+          "learning_activities": "Group research and poster preparation, peer teaching through gallery walk.",
+          "assessment_criteria": "Well-organized presentation of dangers/uses with real-world examples."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Gallery walk: groups view each other's posters and provide feedback. Teacher evaluates presentations and administers a short quiz.",
+          "learning_activities": "View posters, give peer feedback, complete the quiz individually.",
+          "assessment_criteria": "Comprehensive understanding of static electricity applications and safety."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 6 (TERM I - WEEK 3, DOUBLE PERIOD - 80 min): ELECTRIC FIELDS",
+      "sr_no": "6",
+      "time": "80 MIN",
+      "main_competence": "1.0 Understand static electricity",
+      "specific_competence": "1.6 Describe electric fields",
+      "main_activity": "Electric fields",
+      "specific_activity": "Draw and describe electric field patterns around charged conductors",
+      "teaching_learning_resources": "Field diagrams, grass seeds in oil, charged conductors, drawing instruments.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Brings a charged rod near grass seeds suspended in oil; the seeds align in patterns. Asks students what invisible force causes this alignment.",
+          "learning_activities": "Observe grass seed alignment, hypothesize about an invisible field around the charged rod.",
+          "assessment_criteria": "Recognition that charged objects create an invisible field of influence."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Defines electric field as the region around a charged object where its influence is felt. Explains field direction: away from positive, toward negative. Shows field patterns for single charges and charge pairs.",
+          "learning_activities": "Take notes on electric field definition and direction, sketch field patterns from diagrams on the board.",
+          "assessment_criteria": "Correct definition and direction of electric fields; accurate sketching of field patterns."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students draw field patterns for: single positive charge, single negative charge, two unlike charges, two like charges. Use iron filings on paper over charged plates to verify patterns.",
+          "learning_activities": "Draw field diagrams, verify with iron filings experiments, compare predicted and observed patterns.",
+          "assessment_criteria": "Accurate field pattern diagrams for all four charge configurations."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews all field patterns, corrects common errors (e.g., crossing field lines), administers a diagram test.",
+          "learning_activities": "Self-correct diagrams, complete the test, peer-check answers.",
+          "assessment_criteria": "Correct field diagrams and understanding of field direction conventions."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 7 (TERM I - WEEK 4, DOUBLE PERIOD - 80 min): EFFECTS OF ELECTRIC CURRENT",
+      "sr_no": "7",
+      "time": "80 MIN",
+      "main_competence": "2.0 Understand current electricity",
+      "specific_competence": "2.1 Identify effects of electric current",
+      "main_activity": "Effects of current",
+      "specific_activity": "Identify heating, magnetic and chemical effects of electric current",
+      "teaching_learning_resources": "Cells, wires, bulbs, ammeters, heating coils, iron filings, electrolysis kit.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Connects a bulb to a cell; asks what forms of energy the bulb produces (light and heat). Introduces the idea that current has multiple effects.",
+          "learning_activities": "Observe bulb lighting, identify heat and light as effects of current.",
+          "assessment_criteria": "Recognition of basic effects of electric current."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains three main effects: heating (bulbs, toasters), magnetic (electromagnets, motors), chemical (electrolysis, batteries). Demonstrates each with simple circuits.",
+          "learning_activities": "Take notes on three effects, observe demonstrations, classify household devices by their dominant effect.",
+          "assessment_criteria": "Identification of heating, magnetic and chemical effects of current."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students build three circuits: (1) heating coil warming water, (2) solenoid picking up paper clips, (3) electrolysis of copper sulphate solution. Record observations for each.",
+          "learning_activities": "Build and test circuits, record temperature changes, observe magnetic attraction, note electrode deposits.",
+          "assessment_criteria": "Successful demonstration of all three effects; accurate observation records."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups present findings, teacher links effects to everyday applications, administers a classification exercise.",
+          "learning_activities": "Present results, classify devices by effect, complete the exercise.",
+          "assessment_criteria": "Correct classification and real-world application of current effects."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 8 (TERM I - WEEK 4, DOUBLE PERIOD - 80 min): CIRCUIT DIAGRAMS",
+      "sr_no": "8",
+      "time": "80 MIN",
+      "main_competence": "2.0 Understand current electricity",
+      "specific_competence": "2.2 Draw and interpret circuit diagrams",
+      "main_activity": "Circuit diagrams",
+      "specific_activity": "Draw and interpret circuit diagrams using standard symbols",
+      "teaching_learning_resources": "Circuit symbol charts, drawing instruments, blank paper, worksheet.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Shows a photograph of a real circuit and its corresponding diagram side by side; asks why we use diagrams instead of pictures.",
+          "learning_activities": "Compare photograph and diagram, identify that diagrams are simpler and use standard symbols.",
+          "assessment_criteria": "Recognition of the need for standard circuit symbols."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Introduces standard symbols: cell, battery, switch (open/closed), bulb, resistor, ammeter, voltmeter, motor, buzzer. Demonstrates how to draw a simple circuit using symbols.",
+          "learning_activities": "Copy symbols into notebooks, practice drawing simple circuits from component lists.",
+          "assessment_criteria": "Correct use of at least 8 standard circuit symbols."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students draw circuit diagrams from written descriptions (e.g., 'a bulb connected to a cell with a switch'). Then reverse: given a diagram, write the component description. Includes series and parallel examples.",
+          "learning_activities": "Draw diagrams from descriptions, write descriptions from diagrams, self-check against answer sheets.",
+          "assessment_criteria": "Accurate drawing and interpretation of circuit diagrams; correct symbol usage."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews common errors (e.g., crossing wires, missing labels), administers a symbol identification test and a diagram drawing test.",
+          "learning_activities": "Correct errors in sample diagrams, complete the tests.",
+          "assessment_criteria": "Error-free circuit diagrams; accurate symbol identification."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 9 (TERM I - WEEK 5, DOUBLE PERIOD - 80 min): SERIES AND PARALLEL CIRCUITS",
+      "sr_no": "9",
+      "time": "80 MIN",
+      "main_competence": "2.0 Understand current electricity",
+      "specific_competence": "2.3 Distinguish series and parallel connections",
+      "main_activity": "Series and parallel circuits",
+      "specific_activity": "Connect components in series and parallel and compare their characteristics",
+      "teaching_learning_resources": "Cells, bulbs, switches, ammeters, voltmeters, wires.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Connects two bulbs in series; removes one and asks what happens to the other. Repeats with parallel connection. Asks students to explain the difference.",
+          "learning_activities": "Observe bulb behavior in both configurations, predict outcomes before each removal.",
+          "assessment_criteria": "Recognition that series and parallel circuits behave differently when a component is removed."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Defines series (components in a single path) and parallel (components in separate branches). Explains current and voltage rules: same current through all series components; voltage splits in series. Current splits in parallel; same voltage across parallel branches.",
+          "learning_activities": "Take notes on series/parallel rules, draw circuit diagrams for both, complete a comparison table.",
+          "assessment_criteria": "Correct statement of current and voltage rules for series and parallel circuits."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students build series and parallel circuits, measure current and voltage at various points using ammeters and voltmeters. Record data in tables and verify the rules experimentally.",
+          "learning_activities": "Build circuits, take measurements, record data, compare experimental values with predicted values.",
+          "assessment_criteria": "Correct circuit construction; accurate measurements that verify series/parallel rules."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups share data, teacher highlights patterns, administers a problem-solving worksheet (e.g., 'If 3 bulbs are in parallel and total current is 6A, what is the current through each bulb?').",
+          "learning_activities": "Share data, solve problems, peer-check solutions.",
+          "assessment_criteria": "Correct application of series/parallel rules to calculation problems."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 10 (TERM I - WEEK 5, DOUBLE PERIOD - 80 min): OHM'S LAW",
+      "sr_no": "10",
+      "time": "80 MIN",
+      "main_competence": "2.0 Understand current electricity",
+      "specific_competence": "2.4 Apply Ohm's law",
+      "main_activity": "Apply Ohm's law",
+      "specific_activity": "State and apply Ohm's law to calculate current, voltage and resistance",
+      "teaching_learning_resources": "Resistors, voltmeters, ammeters, power supply, connecting wires.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Connects a resistor to a power supply and measures current. Increases voltage and observes current increase. Asks what relationship students notice.",
+          "learning_activities": "Observe that increasing voltage increases current; hypothesize a relationship.",
+          "assessment_criteria": "Recognition of a relationship between voltage and current."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "States Ohm's law: V = IR (voltage equals current times resistance). Explains each term with units (volts, amperes, ohms). Derives rearrangements: I = V/R, R = V/I. Shows a worked example.",
+          "learning_activities": "Take notes on Ohm's law formula, practice rearranging equations, solve one example with the teacher.",
+          "assessment_criteria": "Correct statement of Ohm's law and formula rearrangements."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students set up a circuit with a fixed resistor, vary the voltage using a variable power supply, record current at each voltage. Plot a V-I graph and calculate resistance from the gradient.",
+          "learning_activities": "Collect V-I data, plot graph, calculate resistance, verify Ohm's law experimentally.",
+          "assessment_criteria": "Accurate V-I graph with correct resistance calculation."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews graph results, discusses why some resistors give straight lines (ohmic) and others do not. Administers a calculation test (V=IR problems).",
+          "learning_activities": "Discuss ohmic vs non-ohmic resistors, solve calculation problems, self-check answers.",
+          "assessment_criteria": "Correct application of Ohm's law to solve numerical problems."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 11 (TERM I - WEEK 6, DOUBLE PERIOD - 80 min): REVISION EXERCISE - STATIC AND CURRENT ELECTRICITY",
+      "sr_no": "11",
+      "time": "80 MIN",
+      "main_competence": "1.0 Understand static electricity / 2.0 Understand current electricity",
+      "specific_competence": "Revision of Topics 1 and 2",
+      "main_activity": "Revision exercise",
+      "specific_activity": "Review and consolidate understanding of static electricity and current electricity",
+      "teaching_learning_resources": "Past exam questions, revision worksheets, laboratory equipment.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Reviews the main topics covered so far: static electricity (charging, law of charges, uses/dangers) and current electricity (effects, circuits, Ohm's law).",
+          "learning_activities": "Recall key concepts from each topic, identify areas of difficulty.",
+          "assessment_criteria": "Ability to list main concepts from Topics 1 and 2."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Works through selected past exam questions on static electricity and current electricity. Explains marking schemes and common pitfalls.",
+          "learning_activities": "Follow worked examples, identify own mistakes, take notes on exam techniques.",
+          "assessment_criteria": "Improved understanding of exam question patterns and expected answers."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students complete a timed practice paper covering Topics 1 and 2. Teacher monitors and provides hints where needed.",
+          "learning_activities": "Complete practice paper independently, manage time, attempt all questions.",
+          "assessment_criteria": "Attempted all questions with reasonable accuracy."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews answers with the class, highlights frequent errors, provides additional practice for weak areas.",
+          "learning_activities": "Self-mark, identify weak areas, ask clarification questions.",
+          "assessment_criteria": "Recognition and correction of personal errors; confidence in weak areas."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 12 (TERM I - WEEK 6, DOUBLE PERIOD - 80 min): REVISION EXERCISE - CIRCUITS AND OHM'S LAW",
+      "sr_no": "12",
+      "time": "80 MIN",
+      "main_competence": "2.0 Understand current electricity",
+      "specific_competence": "Revision of circuit analysis and Ohm's law",
+      "main_activity": "Revision exercise",
+      "specific_activity": "Review and consolidate understanding of circuit diagrams, series/parallel circuits and Ohm's law",
+      "teaching_learning_resources": "Revision worksheets, circuit diagrams, calculation problems.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Quick-fire questions: 'What is the formula for Ohm's law?', 'What happens to current in a parallel circuit?', 'Draw the symbol for a resistor'.",
+          "learning_activities": "Answer rapid-fire questions, identify topics needing more review.",
+          "assessment_criteria": "Quick recall of key circuit concepts."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Works through complex circuit problems combining series and parallel components with Ohm's law calculations. Emphasizes step-by-step problem-solving approach.",
+          "learning_activities": "Follow the problem-solving steps, practice similar problems, discuss solution strategies.",
+          "assessment_criteria": "Systematic approach to multi-step circuit problems."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students complete a mixed revision exercise: draw circuit diagrams from descriptions, solve Ohm's law calculations, analyze series-parallel combination circuits.",
+          "learning_activities": "Complete the exercise, apply problem-solving strategies, check answers against rubrics.",
+          "assessment_criteria": "Accurate completion of all exercise types."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews difficult problems, provides additional examples for common error types, administers a short quiz.",
+          "learning_activities": "Review quiz results, identify remaining gaps, plan for midterm study.",
+          "assessment_criteria": "Confident application of circuit analysis and Ohm's law."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 13 (TERM I - WEEK 7, DOUBLE PERIOD - 80 min): PROPERTIES OF MAGNETS",
+      "sr_no": "13",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.1 Describe properties of magnets",
+      "main_activity": "Properties of magnets",
+      "specific_activity": "Identify and describe the properties of magnets",
+      "teaching_learning_resources": "Bar magnets, compass, iron filings, steel rod, threads.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Shows a bar magnet and asks students what they know about magnets. Demonstrates the magnet picking up paper clips.",
+          "learning_activities": "Share prior knowledge of magnets, observe magnet attracting iron objects.",
+          "assessment_criteria": "Basic awareness of magnet properties."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains magnet properties: (1) attract magnetic materials (iron, steel, cobalt, nickel), (2) have two poles (north and south), (3) like poles repel, unlike poles attract, (4) a freely suspended magnet aligns north-south, (5) poles cannot be isolated (domain theory). Demonstrates each property.",
+          "learning_activities": "Take notes on each property, observe demonstrations, test predictions with magnets.",
+          "assessment_criteria": "Identification of all five properties of magnets."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students investigate properties: test which materials magnets attract, suspend magnets to find north-south alignment, test pole interactions with multiple magnet combinations, attempt to break a magnet to find isolated poles.",
+          "learning_activities": "Conduct property tests, record results, draw conclusions about each property.",
+          "assessment_criteria": "Experimental verification of all magnet properties."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups present findings, teacher summarizes properties with a poster, administers a properties identification quiz.",
+          "learning_activities": "Present experimental results, complete the quiz, peer-check answers.",
+          "assessment_criteria": "Comprehensive understanding of magnet properties."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 14 (TERM I - WEEK 7, DOUBLE PERIOD - 80 min): MAGNETIC AND NON-MAGNETIC MATERIALS",
+      "sr_no": "14",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.2 Distinguish magnetic and non-magnetic materials",
+      "main_activity": "Magnetic materials",
+      "specific_activity": "Classify materials as magnetic or non-magnetic using experiments",
+      "teaching_learning_resources": "Magnets, samples of iron, copper, aluminium, plastic, wood, cloth, zinc, tin.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Brings a collection of objects (paper clip, rubber band, coin, key) and tests each with a magnet. Asks students to predict which will be attracted.",
+          "learning_activities": "Predict which objects will be attracted, observe the actual results.",
+          "assessment_criteria": "Initial prediction ability based on everyday experience."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Defines magnetic materials (ferromagnetic: iron, steel, cobalt, nickel) and non-magnetic materials (copper, aluminium, plastic, wood, glass). Explains that magnetism arises from aligned electron domains.",
+          "learning_activities": "Take notes on magnetic vs non-magnetic classification, understand the role of electron domains.",
+          "assessment_criteria": "Correct classification of materials as magnetic or non-magnetic."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students test a large set of materials (at least 15 items) with magnets, classify each as magnetic or non-magnetic, record results in a table. Includes tricky cases (stainless steel, alloys).",
+          "learning_activities": "Test materials systematically, record results, classify, discuss borderline cases.",
+          "assessment_criteria": "Accurate classification of all tested materials."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups compile a master classification table, discuss why some metals are magnetic and others are not, administer a classification test with unfamiliar materials.",
+          "learning_activities": "Complete master table, answer test questions, explain classification reasoning.",
+          "assessment_criteria": "Correct classification and ability to explain why certain materials are magnetic."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 15 (TERM I - WEEK 8, DOUBLE PERIOD - 80 min): MAGNETIC FIELDS",
+      "sr_no": "15",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.3 Describe and draw magnetic fields",
+      "main_activity": "Magnetic fields",
+      "specific_activity": "Describe and draw magnetic field patterns around bar magnets and current-carrying conductors",
+      "teaching_learning_resources": "Bar magnets, iron filings, compasses, paper, solenoids.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Sprinkles iron filings around a bar magnet on paper; the filings form patterns. Asks what invisible force arranges the filings.",
+          "learning_activities": "Observe iron filing patterns, infer the existence of a magnetic field.",
+          "assessment_criteria": "Recognition that magnets create invisible fields of influence."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Defines magnetic field as the region around a magnet where its force acts. Explains field direction: from north to south outside the magnet. Shows field patterns for: single bar magnet, two unlike poles, two like poles. Introduces the solenoid field pattern.",
+          "learning_activities": "Take notes on field definition and direction, sketch field patterns from board diagrams.",
+          "assessment_criteria": "Correct field direction (N→S outside magnet); accurate pattern sketches."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students place compasses around bar magnets and solenoids, mark field direction at each compass position, connect marks to draw complete field patterns. Compare with iron filing patterns.",
+          "learning_activities": "Use compasses to trace field lines, draw field patterns, compare with iron filing results.",
+          "assessment_criteria": "Accurate field pattern diagrams with correct direction arrows."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews field patterns, discusses differences between bar magnet and solenoid fields, administers a field diagram test.",
+          "learning_activities": "Complete field diagram test, self-correct using teacher's model answers.",
+          "assessment_criteria": "Correct field patterns for bar magnets and solenoids."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 16 (TERM I - WEEK 8, DOUBLE PERIOD - 80 min): MAKING MAGNETS",
+      "sr_no": "16",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.4 Explain methods of making magnets",
+      "main_activity": "Making magnets",
+      "specific_activity": "Demonstrate methods of making magnets from magnetic materials",
+      "teaching_learning_resources": "Steel rods, bar magnets, hammers, solenoids, cells, iron nails.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Shows a magnetized steel rod and an unmagnetized one; demonstrates that only one picks up paper clips. Asks how we can turn the unmagnetized one into a magnet.",
+          "learning_activities": "Observe the difference, hypothesize methods to magnetize the steel rod.",
+          "assessment_criteria": "Recognition that unmagnetized materials can be magnetized."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains three methods: (1) stroking method - stroke steel with magnet in one direction, (2) electrical method - place in solenoid with current, (3) induction method - place near a strong magnet. Explains that these align the magnetic domains.",
+          "learning_activities": "Take notes on three magnetization methods, understand domain alignment theory.",
+          "assessment_criteria": "Understanding of all three methods and the domain explanation."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students magnetize steel needles using: (1) stroking method, (2) solenoid method. Test each by picking up paper clips, compare strength of magnets made by each method.",
+          "learning_activities": "Make magnets using both methods, test strength, compare results, record observations.",
+          "assessment_criteria": "Successful magnetization; ability to compare method effectiveness."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups present results, teacher discusses which method produces stronger magnets and why, introduces demagnetization briefly.",
+          "learning_activities": "Present findings, discuss method comparisons, note demagnetization methods for next lesson.",
+          "assessment_criteria": "Clear comparison of magnetization methods with evidence."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 17 (TERM I - WEEK 9, DOUBLE PERIOD - 80 min): DEMAGNETIZATION",
+      "sr_no": "17",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.4 Explain methods of demagnetizing magnets",
+      "main_activity": "Demagnetizing magnets",
+      "specific_activity": "Demonstrate methods of demagnetizing magnetic materials",
+      "teaching_learning_resources": "Magnetized steel rods, hammers, solenoids, heating equipment.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Shows a strong magnet and asks: 'Can we make this stop being a magnet?' Demagnetizes a magnet by dropping it on the floor; tests it.",
+          "learning_activities": "Observe demagnetization by impact, predict other methods.",
+          "assessment_criteria": "Recognition that magnets can be weakened or destroyed."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains demagnetization methods: (1) heating above Curie temperature, (2) hammering (randomizes domains), (3) stroking in alternating directions, (4) placing in an AC solenoid. Explains each using domain theory.",
+          "learning_activities": "Take notes on demagnetization methods, understand why each method disrupts domain alignment.",
+          "assessment_criteria": "Understanding of all four demagnetization methods."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students demagnetize magnets using: (1) hammering, (2) heating with a Bunsen burner (teacher-supervised), (3) stroking in reverse direction. Test strength before and after each method.",
+          "learning_activities": "Apply demagnetization methods, test magnet strength before/after, compare effectiveness.",
+          "assessment_criteria": "Successful demagnetization; comparison of method effectiveness."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups present before/after data, teacher discusses practical applications of demagnetization (e.g., degaussing ships), administers a combined magnetization/demagnetization quiz.",
+          "learning_activities": "Present data, discuss applications, complete the quiz.",
+          "assessment_criteria": "Correct application of magnetization and demagnetization concepts."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 18 (TERM I - WEEK 9, DOUBLE PERIOD - 80 min): USES OF MAGNETS",
+      "sr_no": "18",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.5 Describe uses of magnets",
+      "main_activity": "Uses of magnets",
+      "specific_activity": "Describe everyday and industrial uses of magnets",
+      "teaching_learning_resources": "Compasses, speakers, MRI images, fridge magnets, scrap yard crane photos.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Shows a compass and a fridge magnet; asks where else magnets are used in everyday life and industry.",
+          "learning_activities": "Brainstorm uses of magnets in homes, schools and industries.",
+          "assessment_criteria": "Awareness of magnets in everyday life."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Discusses uses: navigation (compasses), speakers/headphones, MRI machines, magnetic separators in mining, scrap yard cranes, magnetic strips on credit cards, electric motors, generators. Explains how each uses the magnetic force.",
+          "learning_activities": "Take notes on uses, classify by application area (medical, industrial, domestic, navigation).",
+          "assessment_criteria": "Identification of at least six uses of magnets with brief explanations."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students research in groups: each group chooses one use of magnets, prepares a presentation with diagrams and real-world examples. Groups include: navigation, medical, industrial, domestic.",
+          "learning_activities": "Group research, prepare presentation materials, practice presenting.",
+          "assessment_criteria": "Well-researched presentation with accurate scientific explanation."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups present to class, teacher evaluates and provides feedback, administers a matching exercise (use → application area).",
+          "learning_activities": "Present to peers, view other presentations, complete matching exercise.",
+          "assessment_criteria": "Comprehensive understanding of magnet applications across different sectors."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 19 (TERM I - WEEK 11, DOUBLE PERIOD - 80 min): MAGNETIC FIELD OF A SOLENOID",
+      "sr_no": "19",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.3 Describe and draw magnetic field of a solenoid",
+      "main_activity": "Solenoid magnetic field",
+      "specific_activity": "Investigate and describe the magnetic field pattern of a current-carrying solenoid",
+      "teaching_learning_resources": "Solenoid, iron filings, compasses, cells, connecting wires, paper.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps the bar magnet field pattern from lesson 15; asks: 'What would happen to the field if we could make a magnet in a coil shape?'",
+          "learning_activities": "Recall bar magnet field, predict solenoid field shape.",
+          "assessment_criteria": "Recall of bar magnet field pattern."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains that a current-carrying solenoid produces a field identical to a bar magnet. Demonstrates with iron filings around a solenoid. Introduces the right-hand grip rule to find the north pole of a solenoid.",
+          "learning_activities": "Observe solenoid field pattern, learn right-hand grip rule, practice determining pole direction.",
+          "assessment_criteria": "Correct use of right-hand grip rule; recognition of solenoid-bar magnet field similarity."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students trace solenoid field using compasses, draw the complete field pattern, determine the north pole using the right-hand rule. Test by bringing a bar magnet near the solenoid.",
+          "learning_activities": "Trace field with compasses, draw diagrams, verify north pole determination experimentally.",
+          "assessment_criteria": "Accurate solenoid field diagrams with correct pole labels."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Compares solenoid and bar magnet fields side by side, discusses how to increase solenoid strength (more turns, more current, iron core), administers a field diagram test.",
+          "learning_activities": "Compare fields, note ways to strengthen electromagnets, complete the test.",
+          "assessment_criteria": "Accurate field diagrams; understanding of factors affecting electromagnet strength."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 20 (TERM I - WEEK 11, DOUBLE PERIOD - 80 min): ELECTROMAGNETS",
+      "sr_no": "20",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.4 Explain the construction and use of electromagnets",
+      "main_activity": "Electromagnets",
+      "specific_activity": "Construct and test an electromagnet; investigate factors affecting its strength",
+      "teaching_learning_resources": "Iron nails, insulated copper wire, cells, paper clips, rheostat.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Shows an electromagnet picking up paper clips; asks what makes it different from a permanent magnet.",
+          "learning_activities": "Observe electromagnet behavior, identify that it can be switched on and off.",
+          "assessment_criteria": "Recognition that electromagnets are temporary magnets controlled by current."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains electromagnet construction: coil of wire around an iron core. When current flows, it magnetizes the core. When current stops, magnetism disappears. Discusses factors affecting strength: number of turns, current magnitude, iron core.",
+          "learning_activities": "Take notes on electromagnet construction and factors affecting strength.",
+          "assessment_criteria": "Understanding of electromagnet construction and strength factors."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students build electromagnets, test strength by counting paper clips picked up. Vary: number of wire turns, number of cells (current), presence/absence of iron core. Record results in tables.",
+          "learning_activities": "Build electromagnets, vary parameters systematically, record paper clip counts, identify patterns.",
+          "assessment_criteria": "Systematic investigation with accurate data collection and pattern identification."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups share data, teacher helps identify trends (more turns = stronger, more current = stronger, iron core essential), discusses applications (cranes, relays, bells).",
+          "learning_activities": "Share data, identify trends, discuss real-world applications.",
+          "assessment_criteria": "Correct identification of strength factors and understanding of applications."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 21 (TERM I - WEEK 12, DOUBLE PERIOD - 80 min): FORCE ON A CURRENT-CARRYING CONDUCTOR",
+      "sr_no": "21",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.6 Describe the force on a current-carrying conductor in a magnetic field",
+      "main_activity": "Force on current-carrying conductor",
+      "specific_activity": "Investigate the force on a current-carrying conductor placed in a magnetic field",
+      "teaching_learning_resources": "Horseshoe magnet, copper wire, power supply, connecting wires, pivot stand.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Hangs a copper wire between the poles of a horseshoe magnet; passes current through it. The wire moves. Asks students what causes the movement.",
+          "learning_activities": "Observe wire deflection, hypothesize that the magnetic field exerts a force on the current.",
+          "assessment_criteria": "Recognition that magnetic fields can exert forces on current-carrying wires."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains the motor effect: a current-carrying conductor in a magnetic field experiences a force (Fleming's left-hand rule). Demonstrates that reversing current or field direction reverses the force. Introduces Fleming's left-hand rule for direction.",
+          "learning_activities": "Take notes on motor effect, learn Fleming's left-hand rule, practice determining force direction.",
+          "assessment_criteria": "Correct application of Fleming's left-hand rule."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students set up the experiment: vary current direction, vary magnetic field direction (flip magnet), observe deflection direction each time. Record results and verify Fleming's left-hand rule.",
+          "learning_activities": "Conduct experiments, vary parameters, record deflection directions, verify the rule.",
+          "assessment_criteria": "Experimental verification of Fleming's left-hand rule."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews results, links the motor effect to electric motors, discusses how to increase the force (stronger field, more current, longer wire). Administers a direction test.",
+          "learning_activities": "Discuss motor applications, solve direction problems, complete the test.",
+          "assessment_criteria": "Correct determination of force direction; understanding of motor effect applications."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 22 (TERM I - WEEK 12, DOUBLE PERIOD - 80 min): THE ELECTRIC MOTOR",
+      "sr_no": "22",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.7 Describe the principle and construction of an electric motor",
+      "main_activity": "Electric motor",
+      "specific_activity": "Describe how an electric motor converts electrical energy to mechanical energy",
+      "teaching_learning_resources": "Simple motor kit (coil, magnets, brushes, split-ring commutator), diagrams.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Shows a small electric motor spinning a fan; asks what energy conversions happen inside it.",
+          "learning_activities": "Identify electrical to mechanical energy conversion in the motor.",
+          "assessment_criteria": "Recognition of energy conversion in electric motors."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains motor principle: current-carrying coil in a magnetic field experiences a torque (from lesson 21's motor effect). Shows how the split-ring commutator reverses current each half-turn to keep the coil spinning. Labels parts: coil, magnets, brushes, commutator, axle.",
+          "learning_activities": "Take notes on motor construction and operation, label motor diagrams, follow the current path.",
+          "assessment_criteria": "Correct labeling of motor parts and explanation of continuous rotation."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students assemble a simple motor from a kit, observe the coil spinning. Test what happens when: current direction is reversed, magnet poles are swapped, number of coil turns is increased.",
+          "learning_activities": "Build motor, observe spinning, vary parameters, record effects on speed and direction.",
+          "assessment_criteria": "Successful motor assembly; correct observation of parameter effects."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups share findings, teacher summarizes motor operation, discusses real-world motor applications (fans, pumps, vehicles). Administers a motor operation quiz.",
+          "learning_activities": "Present findings, discuss applications, complete the quiz.",
+          "assessment_criteria": "Comprehensive understanding of motor construction, operation and applications."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 23 (TERM I - WEEK 13, DOUBLE PERIOD - 80 min): THE ELECTROMAGNETIC INDUCTION",
+      "sr_no": "23",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.8 Describe electromagnetic induction",
+      "main_activity": "Electromagnetic induction",
+      "specific_activity": "Investigate how moving a conductor in a magnetic field induces an electric current",
+      "teaching_learning_resources": "Coil of wire, galvanometer, bar magnet, solenoid, iron core.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Connects a galvanometer to a coil; pushes a magnet into the coil and the needle deflects. Pulls it out and the needle deflects the other way. Asks students what they observe.",
+          "learning_activities": "Observe galvanometer deflection, notice that movement creates current.",
+          "assessment_criteria": "Recognition that moving a magnet near a wire creates a current."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains Faraday's law of electromagnetic induction: a changing magnetic field through a coil induces an EMF (voltage). Factors affecting induced EMF: speed of movement, number of turns, strength of magnet. Lenz's law: induced current opposes the change.",
+          "learning_activities": "Take notes on Faraday's and Lenz's laws, understand the factors affecting induced EMF.",
+          "assessment_criteria": "Statement of Faraday's law; understanding of factors affecting induced EMF."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students investigate induction: vary magnet speed, vary number of coil turns, use different magnets, measure galvanometer deflection. Record results and verify Faraday's law.",
+          "learning_activities": "Conduct experiments, measure deflections, vary parameters, record and analyze data.",
+          "assessment_criteria": "Experimental verification of Faraday's law; correct data collection."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups present results, teacher links induction to generators and power stations, discusses why the induced current opposes the change (Lenz's law). Administers a conceptual test.",
+          "learning_activities": "Present findings, discuss generator applications, answer test questions.",
+          "assessment_criteria": "Understanding of electromagnetic induction and its applications."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 24 (TERM I - WEEK 13, DOUBLE PERIOD - 80 min): THE ELECTRIC GENERATOR",
+      "sr_no": "24",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "3.9 Describe the principle and construction of an electric generator",
+      "main_activity": "Electric generator",
+      "specific_activity": "Describe how an electric generator converts mechanical energy to electrical energy",
+      "teaching_learning_resources": "Simple generator kit (coil, magnets, slip rings/commutator), galvanometer, diagrams.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps electromagnetic induction from lesson 23; asks: 'If moving a magnet near a wire makes electricity, can we build a machine to do this continuously?'",
+          "learning_activities": "Recall induction principle, predict how a generator might work.",
+          "assessment_criteria": "Recall of electromagnetic induction; prediction of generator principle."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Explains generator principle: a coil rotates in a magnetic field, continuously changing the magnetic flux through it, inducing an alternating EMF. Distinguishes AC generator (slip rings) from DC generator (split-ring commutator). Labels parts.",
+          "learning_activities": "Take notes on generator construction, label diagrams, follow the current path during rotation.",
+          "assessment_criteria": "Correct labeling of generator parts; distinction between AC and DC generators."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students build a simple AC generator using a coil and magnets, connect to a galvanometer, rotate the coil and observe the needle oscillating. Compare with DC generator using a commutator.",
+          "learning_activities": "Build generators, observe galvanometer deflection patterns, compare AC and DC output.",
+          "assessment_criteria": "Successful generator construction; correct observation of AC/DC output differences."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Groups share observations, teacher links generators to power stations and everyday electricity generation, discusses energy conversion (mechanical → electrical). Administers a comparison test (motor vs generator).",
+          "learning_activities": "Present findings, compare motor and generator, complete the test.",
+          "assessment_criteria": "Clear distinction between motors and generators; understanding of energy conversions."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 25 (TERM I - WEEK 14, DOUBLE PERIOD - 80 min): REVISION EXERCISE - MAGNETISM AND ELECTROMAGNETISM",
+      "sr_no": "25",
+      "time": "80 MIN",
+      "main_competence": "3.0 Understand magnetism",
+      "specific_competence": "Revision of Topics 3 (Magnetism and Electromagnetism)",
+      "main_activity": "Revision exercise",
+      "specific_activity": "Review and consolidate understanding of magnetism, electromagnetism, motors and generators",
+      "teaching_learning_resources": "Past exam questions, revision worksheets, laboratory equipment.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Lists all magnetism topics covered: properties of magnets, magnetic fields, making/demagnetizing magnets, electromagnets, motor effect, motors, induction, generators.",
+          "learning_activities": "Recall key concepts from each topic, identify areas of difficulty.",
+          "assessment_criteria": "Ability to list all magnetism topics covered."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Works through selected past exam questions covering magnet properties, field diagrams, electromagnet construction, motor/generator principles. Explains marking schemes.",
+          "learning_activities": "Follow worked examples, identify mistakes, take notes on exam techniques.",
+          "assessment_criteria": "Improved understanding of exam question patterns."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students complete a timed practice paper on magnetism and electromagnetism. Includes: field diagrams, calculation problems, descriptive questions, motor vs generator comparison.",
+          "learning_activities": "Complete practice paper independently, manage time, attempt all questions.",
+          "assessment_criteria": "Attempted all questions with reasonable accuracy."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews answers with the class, highlights common errors, provides additional practice for weak areas, discusses exam preparation strategies.",
+          "learning_activities": "Self-mark, identify weak areas, plan revision strategy for end-of-term exam.",
+          "assessment_criteria": "Recognition and correction of errors; confidence in exam preparation."
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 26 (TERM I - WEEK 14, DOUBLE PERIOD - 80 min): COMPREHENSIVE REVISION - ALL TERM I TOPICS",
+      "sr_no": "26",
+      "time": "80 MIN",
+      "main_competence": "1.0-3.0 Comprehensive revision of all Term I topics",
+      "specific_competence": "Revision of Static Electricity, Current Electricity and Magnetism",
+      "main_activity": "Comprehensive revision",
+      "specific_activity": "Review and consolidate all Term I Physics content for end-of-term assessment",
+      "teaching_learning_resources": "Comprehensive revision paper, laboratory equipment, past exam papers.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Provides an overview of all three Term I topics and their interconnections (e.g., how static electricity concepts relate to current electricity, which leads to magnetism and electromagnetism).",
+          "learning_activities": "Map the connections between topics, identify how concepts build on each other.",
+          "assessment_criteria": "Understanding of topic interconnections."
+        },
+        {
+          "stage": "Competence Development",
+          "time": "20 min",
+          "teaching_activities": "Works through a comprehensive revision paper covering all three topics: multiple choice, short answer, diagram-based and calculation questions. Focuses on question interpretation and answer structure.",
+          "learning_activities": "Follow the worked solutions, note exam techniques for different question types.",
+          "assessment_criteria": "Understanding of how to approach different question types across all topics."
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Students complete a full mock exam paper covering Static Electricity, Current Electricity and Magnetism under timed conditions. Teacher monitors and manages time.",
+          "learning_activities": "Complete mock exam, manage time across sections, attempt all questions.",
+          "assessment_criteria": "Reasonable completion of mock exam within time limits."
+        },
+        {
+          "stage": "Realization",
+          "time": "25 min",
+          "teaching_activities": "Reviews the mock exam, provides model answers, discusses common mistakes, administers a final self-assessment checklist for end-of-term preparation.",
+          "learning_activities": "Self-assess mock exam performance, complete self-assessment checklist, plan targeted revision.",
+          "assessment_criteria": "Clear understanding of personal strengths and weaknesses; a revision plan for the end-of-term exam."
+        }
+      ]
+    }
+  ]
+}
