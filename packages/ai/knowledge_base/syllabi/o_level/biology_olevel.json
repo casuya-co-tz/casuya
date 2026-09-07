@@ -239,25 +239,25 @@
           ]
         },
         {
-          "topic_name": "Cell Differentiation",
+          "topic_name": "Cell Organization",
           "competence_code": "3.3",
           "lessons": [
             {
               "lesson_id": "BIO-F1-UN-L28",
-              "title": "Explain the concept of cell differentiation",
-              "markdown_content": "## Explain the concept of cell differentiation",
+              "title": "Explain the concept of cell organization",
+              "markdown_content": "## Explain the concept of cell organization",
               "page": 15
             },
             {
               "lesson_id": "BIO-F1-UN-L29",
-              "title": "Describe how cells specialize",
-              "markdown_content": "## Describe how cells specialize",
+              "title": "Describe how cells are organized into tissues",
+              "markdown_content": "## Describe how cells are organized into tissues",
               "page": 15
             },
             {
               "lesson_id": "BIO-F1-UN-L30",
-              "title": "Identify tissues formed through cell differentiation",
-              "markdown_content": "## Identify tissues formed through cell differentiation",
+              "title": "Identify levels of cell organization",
+              "markdown_content": "## Identify levels of cell organization",
               "page": 16
             }
           ]
@@ -572,98 +572,98 @@
           ]
         },
         {
-          "topic_name": "Photosynthesis",
+          "topic_name": "Essential and Non-essential Elements in Plants",
           "competence_code": "6.2",
           "lessons": [
             {
               "lesson_id": "BIO-F1-UN-L67",
-              "title": "Explain the process of photosynthesis",
-              "markdown_content": "## Explain the process of photosynthesis",
+              "title": "Distinguish between essential and non-essential elements",
+              "markdown_content": "## Distinguish between essential and non-essential elements",
               "page": 35
             },
             {
               "lesson_id": "BIO-F1-UN-L68",
-              "title": "State the equation for photosynthesis",
-              "markdown_content": "## State the equation for photosynthesis",
-              "page": 36
+              "title": "Identify essential elements for plant growth",
+              "markdown_content": "## Identify essential elements for plant growth",
+              "page": 35
             },
             {
               "lesson_id": "BIO-F1-UN-L69",
+              "title": "Describe the role of each essential element",
+              "markdown_content": "## Describe the role of each essential element",
+              "page": 36
+            }
+          ]
+        },
+        {
+          "topic_name": "Photosynthesis",
+          "competence_code": "6.3",
+          "lessons": [
+            {
+              "lesson_id": "BIO-F1-UN-L70",
+              "title": "Explain the process of photosynthesis",
+              "markdown_content": "## Explain the process of photosynthesis",
+              "page": 36
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L71",
+              "title": "State the equation for photosynthesis",
+              "markdown_content": "## State the equation for photosynthesis",
+              "page": 37
+            },
+            {
+              "lesson_id": "BIO-F1-UN-L72",
               "title": "Identify factors affecting photosynthesis",
               "markdown_content": "## Identify factors affecting photosynthesis",
-              "page": 36
+              "page": 37
             }
           ]
         },
         {
           "topic_name": "Structure of the Leaf in Relation to Photosynthesis",
-          "competence_code": "6.3",
+          "competence_code": "6.4",
           "lessons": [
             {
-              "lesson_id": "BIO-F1-UN-L70",
+              "lesson_id": "BIO-F1-UN-L73",
               "title": "Describe the structure of a leaf",
               "markdown_content": "## Describe the structure of a leaf",
-              "page": 37
+              "page": 38
             },
             {
-              "lesson_id": "BIO-F1-UN-L71",
+              "lesson_id": "BIO-F1-UN-L74",
               "title": "Explain how leaf structure is adapted for photosynthesis",
               "markdown_content": "## Explain how leaf structure is adapted for photosynthesis",
-              "page": 37
+              "page": 38
             },
             {
-              "lesson_id": "BIO-F1-UN-L72",
+              "lesson_id": "BIO-F1-UN-L75",
               "title": "Identify the role of each leaf part",
               "markdown_content": "## Identify the role of each leaf part",
-              "page": 38
+              "page": 39
             }
           ]
         },
         {
           "topic_name": "Importance of Photosynthesis",
-          "competence_code": "6.4",
-          "lessons": [
-            {
-              "lesson_id": "BIO-F1-UN-L73",
-              "title": "Explain the importance of photosynthesis to plants",
-              "markdown_content": "## Explain the importance of photosynthesis to plants",
-              "page": 38
-            },
-            {
-              "lesson_id": "BIO-F1-UN-L74",
-              "title": "Describe the importance of photosynthesis to animals",
-              "markdown_content": "## Describe the importance of photosynthesis to animals",
-              "page": 39
-            },
-            {
-              "lesson_id": "BIO-F1-UN-L75",
-              "title": "State the importance of photosynthesis in the ecosystem",
-              "markdown_content": "## State the importance of photosynthesis in the ecosystem",
-              "page": 39
-            }
-          ]
-        },
-        {
-          "topic_name": "Essential and Non-essential Elements in Plants",
           "competence_code": "6.5",
           "lessons": [
             {
               "lesson_id": "BIO-F1-UN-L76",
-              "title": "Distinguish between essential and non-essential elements",
-              "markdown_content": "## Distinguish between essential and non-essential elements",
-              "page": 40
+              "title": "Explain the importance of photosynthesis to plants",
+              "markdown_content": "## Explain the importance of photosynthesis to plants",
+              "page": 39
             },
             {
               "lesson_id": "BIO-F1-UN-L77",
-              "title": "Identify essential elements for plant growth",
-              "markdown_content": "## Identify essential elements for plant growth",
+              "title": "Describe the importance of photosynthesis to animals",
+              "markdown_content": "## Describe the importance of photosynthesis to animals",
               "page": 40
             },
             {
               "lesson_id": "BIO-F1-UN-L78",
-              "title": "Describe the role of each essential element",
-              "markdown_content": "## Describe the role of each essential element",
-              "page": 41
+              "title": "State the importance of photosynthesis in the ecosystem",
+              "markdown_content": "## State the importance of photosynthesis in the ecosystem",
+              "page": 40
             }
           ]
         }

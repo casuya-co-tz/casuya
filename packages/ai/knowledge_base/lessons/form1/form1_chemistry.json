@@ -1,54 +1,54 @@
 {
   "form": "form1",
-  "subject": "chemistry===",
-  "topic_count": 6,
+  "subject": "Chemistry",
+  "topic_count": 5,
   "topics": [
     {
       "topic_number": "1",
-      "topic_name": "INTRODUCTION TO CHEMISTRY ",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5 &tno=1&m_topic=INTRODUCTION TO CHEMISTRY ",
+      "topic_name": "INTRODUCTION TO CHEMISTRY",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5&tno=1&m_topic=INTRODUCTION TO CHEMISTRY",
       "plan": {
-        "competence": "Identify materials made of chemistry in the environment",
-        "general_objectives": "explain the importance of Chemistry in daily life;",
-        "specific_objectives": "By the end of the lesson the student should be bale to: a) explain the concept of Chemistry. b) mention materials and objects made by application of Chemistry.",
+        "competence": "Demonstrate mastery of the concept of chemistry, its relationships with other disciplines, and its applications.",
+        "general_objectives": "Explain the concept of chemistry, its scope, and its applications in the development of a modern society.",
+        "specific_objectives": "By the end of the lesson the student should be able to: a) explain the concept of chemistry; b) state the relationships of chemistry with other related disciplines; c) describe the applications of chemistry in the development of a modern society.",
         "main_topic": "INTRODUCTION TO CHEMISTRY",
-        "sub_topic": "The Concept of Chemistry",
-        "teaching_aids": "Detergents, soft drinks, fertilizers, medicines, plastics, spirits, wines, toothpaste, shoe polish, table salt, cement, baking powder, yeast, fuel and cosmeticsIs",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "sub_topic": "Concept of Chemistry",
+        "teaching_aids": "Detergents, soft drinks, fertilizers, medicines, plastics, cement, textbook, branch/interdisciplinary charts",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "Guide students in relating chemistry with the science they studied in Primary school",
+            "teacher_activities": "Guide students in relating chemistry with the science they studied in Primary school.",
             "student_activities": "Students to brainstorm on the meaning of chemistry.",
-            "assessment": "Is the student be able to define the term chemistry?"
+            "assessment": "Can the student define the term chemistry?"
           },
           {
             "stage": "PRESENTATION",
             "time": "40",
-            "teacher_activities": "Guide students in groups to come up with meaning of chemistry, identify items made from knowledge of chemistry in their areas",
-            "student_activities": "students in groups identify items made from chemistry knowledge and explain how they can be useful to them.",
-            "assessment": "can the student identify items made from chemistry knowledge?"
+            "teacher_activities": "Guide students in groups to come up with the meaning of chemistry and identify materials made from knowledge of chemistry in their areas.",
+            "student_activities": "Students in groups identify items made from chemistry knowledge and explain how they relate to other disciplines.",
+            "assessment": "Can the student identify items made from chemistry knowledge and its applications?"
           },
           {
             "stage": "REFLECTION",
             "time": "10",
-            "teacher_activities": "Guide students in class to make presentations on the meaning of chemistry and items that can be made from knowledge of chemistry",
-            "student_activities": "Student to present their findings in a plenary session",
-            "assessment": "Can the students make presentation about items made from chemistry knowledge and their applications in daily life?"
+            "teacher_activities": "Guide students to discuss the relationship of chemistry with other related disciplines.",
+            "student_activities": "Students to present their findings in a plenary session.",
+            "assessment": "Can the students relate chemistry to other disciplines?"
           },
           {
             "stage": "REINFORCEMENT",
             "time": "10",
-            "teacher_activities": "Guide students in class to make presentations on the meaning of chemistry and items that can be made from knowledge of chemistry",
-            "student_activities": "The students to answer questions asked by the teacher",
-            "assessment": "can the student be able to answer questions asked by the teacher?"
+            "teacher_activities": "Guide students to discuss the applications of chemistry in modern society.",
+            "student_activities": "Students to answer questions asked by the teacher.",
+            "assessment": "Can the student answer questions asked by the teacher?"
           },
           {
             "stage": "CONCLUSION",
             "time": "10",
-            "teacher_activities": "Guide students to write important points on the lesson",
-            "student_activities": "Students to copy lesson summmary in their note books",
+            "teacher_activities": "Guide students to write important points on the lesson.",
+            "student_activities": "Students to copy lesson summary in their note books.",
             "assessment": "Can the student answer examination questions from the lesson?"
           }
         ]
@@ -57,254 +57,203 @@
     {
       "topic_number": "2",
       "topic_name": "LABORATORY TECHNIQUES AND SAFETY",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5 &tno=2&m_topic=LABORATORY TECHNIQUES AND SAFETY",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5&tno=2&m_topic=LABORATORY TECHNIQUES AND SAFETY",
       "plan": {
-        "competence": "Take care of laboratory apparatus",
-        "general_objectives": "Carry out Chemistry activities safely and efficiently;",
-        "specific_objectives": "By the end of the lesson the learner should be able to:",
+        "competence": "Demonstrate mastery of laboratory safety measures, first aid, and basic laboratory apparatus.",
+        "general_objectives": "Carry out Chemistry activities safely and efficiently.",
+        "specific_objectives": "By the end of the lesson the learner should be able to: a) explain laboratory safety measures; b) apply first aid procedures; c) identify basic chemistry laboratory apparatus.",
         "main_topic": "LABORATORY TECHNIQUES AND SAFETY",
-        "sub_topic": "Rules and Safety Precautions in a Chemistry Laboratory",
-        "teaching_aids": "Wall charts showing safety measures for a Chemistry laboratory� Pictures showing dangerous actions which have to be avoidedIs",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "sub_topic": "Laboratory Safety Measures",
+        "teaching_aids": "Wall charts showing safety measures, laboratory apparatus, first aid kit",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "Make abrief introduction about the meaning of laboratory",
-            "student_activities": "Students to brainstorm on the meaning of laboratory",
-            "assessment": "Is the student able to state chemistry laboratory rules?"
+            "teacher_activities": "Make a brief introduction about the meaning of laboratory and safety measures.",
+            "student_activities": "Students to brainstorm on the meaning of laboratory and safety.",
+            "assessment": "Is the student able to state laboratory safety measures?"
           },
           {
             "stage": "PRESENTATION",
             "time": "40",
-            "teacher_activities": "To guide students to discuss every laboratory rule and establish its importance.",
-            "student_activities": "Students to prepare a list of ten safety rules in a Chemistry laboratory.",
-            "assessment": "Is the student able to state chemistry laboratory rules?"
+            "teacher_activities": "Guide students to discuss laboratory safety measures, first aid, and basic laboratory apparatus.",
+            "student_activities": "Students to prepare a list of safety rules and identify basic apparatus and first aid kit contents.",
+            "assessment": "Is the student able to state laboratory rules and identify apparatus?"
           },
           {
             "stage": "REFLECTION",
             "time": "10",
-            "teacher_activities": "To guide students to role play the laboratory safety measures.",
-            "student_activities": "Students in groups to role play the safety measures for a Chemistry laboratory.",
-            "assessment": "Is the student able to explain the safety measures needed to avoid accidents in a Chemistry laboratory?"
+            "teacher_activities": "Guide students to role play laboratory safety measures and first aid procedures.",
+            "student_activities": "Students in groups to role play the safety measures and first aid procedures.",
+            "assessment": "Is the student able to apply first aid procedures?"
           },
           {
             "stage": "REINFORCEMENT",
             "time": "10",
-            "teacher_activities": "To guide students to role play the laboratory safety measures.",
-            "student_activities": "Sudents to answer questions correctly and seek for clarification",
-            "assessment": "Is the student able to explain the safety measures needed to avoid accidents in a Chemistry laboratory?"
+            "teacher_activities": "Using questions and answers help students to summarize concepts taught.",
+            "student_activities": "Students to answer questions correctly and seek clarification.",
+            "assessment": "Is the student able to explain the safety measures needed to avoid accidents?"
           },
           {
             "stage": "CONCLUSION",
             "time": "10",
-            "teacher_activities": "Guide the students to summarise the main ideas from the lesson taught",
-            "student_activities": "Students to be able to write summary of the topic well",
-            "assessment": "Is the student able to explain the safety measures needed to avoid accidents in a Chemistry laborato"
+            "teacher_activities": "Guide the students to summarize the main ideas from the lesson taught.",
+            "student_activities": "Students to write a summary of the topic well.",
+            "assessment": "Is the student able to explain laboratory safety and first aid?"
           }
         ]
       }
     },
     {
       "topic_number": "3",
-      "topic_name": "HEAT SOURCES AND FLAMES",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5 &tno=3&m_topic=HEAT SOURCES AND FLAMES",
+      "topic_name": "FIRE, FIREFIGHTING AND FLAMES",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5&tno=3&m_topic=FIRE, FIREFIGHTING AND FLAMES",
       "plan": {
-        "competence": "identify heat sources",
-        "general_objectives": "carry out Chemistry activities safely and efficiently;",
-        "specific_objectives": "By the end of the lesson, the student should be able to: a) name different heat sources which can be used in a Chemistry laboratory.",
-        "main_topic": "HEAT SOURCES AND FLAMES",
-        "sub_topic": "Heat Sources",
-        "teaching_aids": "� Candle� Spirit burner� Bunsen burner� Kerosene burner� Charcoal burner� �Kibatari�� Blow pipeIs",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "Demonstrate mastery of fire, flames, and firefighting methods and equipment.",
+        "general_objectives": "Explain the concept of fire, types of flames, and firefighting methods and equipment.",
+        "specific_objectives": "By the end of the lesson, the student should be able to: a) explain the concept and conditions for fire; b) explain the concept and types of flames; c) describe firefighting methods, equipment, and prevention.",
+        "main_topic": "FIRE, FIREFIGHTING AND FLAMES",
+        "sub_topic": "Fire",
+        "teaching_aids": "Fire triangle chart, Bunsen burner, flame structure diagram, fire extinguisher samples",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "to guide students through think pair share to discuss how to use the following heat sources in a Chemistry laboratory:� Candle,� Spirit burner,� Kerosene burner,� �Kibatari�, and� Charcoal burner.",
-            "student_activities": "Students in pairs to name different heat sources which can be used in Chemistry laboratory.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams, practical work"
+            "teacher_activities": "Guide students to brainstorm on the concept of fire and its conditions.",
+            "student_activities": "Students to brainstorm on the concept of fire and the fire triangle.",
+            "assessment": "Class discussion, oral questions"
           },
           {
             "stage": "PRESENTATION",
             "time": "40",
-            "teacher_activities": "Guide students to make use of heat sources",
-            "student_activities": "Students to practice using different heat sources",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams, practical work"
+            "teacher_activities": "Explain the concept of fire, types of flames, and firefighting methods and equipment.",
+            "student_activities": "Students to observe the Bunsen burner flame and identify firefighting equipment.",
+            "assessment": "Diagram labeling, classification test"
           },
           {
             "stage": "REFLECTION",
             "time": "10",
-            "teacher_activities": "Guide students in groups to demonstrate on how to use different heat sources",
-            "student_activities": "The students in groups to demonstrate how to use various heat sources",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams, practical work"
+            "teacher_activities": "Guide students to describe zones of a flame and firefighting methods.",
+            "student_activities": "Students in groups to describe flame zones and firefighting methods.",
+            "assessment": "Group discussion"
           },
           {
             "stage": "REINFORCEMENT",
             "time": "10",
-            "teacher_activities": "Guide students in groups to demonstrate on how to use different heat sources",
-            "student_activities": "Students to individually solve questions on the board with the guidance of the teacher. Respond to questions and seek clarifications",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams, practical work"
+            "teacher_activities": "Guide students to discuss fire prevention measures.",
+            "student_activities": "Students to answer questions and discuss fire prevention.",
+            "assessment": "Short quiz"
           },
           {
             "stage": "CONCLUSION",
             "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams, pract"
+            "teacher_activities": "To write short summarized notes and assign homework.",
+            "student_activities": "Students to copy notes and work on the assignment.",
+            "assessment": "Chapter review test"
           }
         ]
       }
     },
     {
       "topic_number": "4",
-      "topic_name": "THE SCIENTIFIC PROCEDURE",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5 &tno=4&m_topic=THE SCIENTIFIC PROCEDURE",
+      "topic_name": "MATTER",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5&tno=4&m_topic=MATTER",
       "plan": {
-        "competence": "Use scientific procedure",
-        "general_objectives": "use scientific procedures in carrying out investigations.",
-        "specific_objectives": "By the end of the lesson the student should be able to;a) explain the concept of scientific procedure.",
-        "main_topic": "THE SCIENTIFIC PROCEDURE",
-        "sub_topic": "Significance of the Scientific Procedure",
-        "teaching_aids": "Wall chart showing the steps of the scientific procedure.",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "Demonstrate mastery of the states of matter and physical and chemical changes.",
+        "general_objectives": "Explain the states of matter and distinguish physical from chemical changes.",
+        "specific_objectives": "By the end of the lesson, the student should be able to: a) explain the states of matter; b) distinguish between physical and chemical changes.",
+        "main_topic": "MATTER",
+        "sub_topic": "States of Matter",
+        "teaching_aids": "Solids, liquids, gases, comparison chart, samples for physical and chemical change demonstrations",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
-            "time": "10",
-            "teacher_activities": "to guide students to discuss the meaning of the scientific procedure.",
-            "student_activities": "students to discuss the meaning of the scientific procedure.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams, practical work"
+            "time": "5",
+            "teacher_activities": "Guide students to brainstorm on the meaning of matter.",
+            "student_activities": "Students to brainstorm on the meaning of matter.",
+            "assessment": "Oral questions, class discussions"
           },
           {
             "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "Guide students in groups in discussing the meaning of scientific procedure",
-            "student_activities": "Student in group to discuss the concept of scientific procedure.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams, practical work"
+            "time": "20",
+            "teacher_activities": "Guide students to explain the states of matter and their properties.",
+            "student_activities": "Students to observe samples and describe the states of matter.",
+            "assessment": "Property comparison table"
           },
           {
             "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "Keep students in groups and give them assignment to work on assignment",
-            "student_activities": "Students in groups to work on assignment given",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams, practical work"
+            "time": "5",
+            "teacher_activities": "Guide students to distinguish physical and chemical changes.",
+            "student_activities": "Students in groups to compare physical and chemical changes.",
+            "assessment": "T-chart evaluation"
           },
           {
             "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "Keep students in groups and give them assignment to work on assignment",
-            "student_activities": "Students to individually solve questions on the board with the guidance of the teacher. Respond to questions and seek clarifications",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams, practical work"
+            "time": "5",
+            "teacher_activities": "Using questions and answers help students to summarize concepts taught.",
+            "student_activities": "Students to individually answer questions asked by the teacher.",
+            "assessment": "Short quiz"
           },
           {
             "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams, pract"
+            "time": "5",
+            "teacher_activities": "To write short summarized notes and assign homework.",
+            "student_activities": "Students to copy notes and work on the assignment.",
+            "assessment": "Chapter review test"
           }
         ]
       }
     },
     {
       "topic_number": "5",
-      "topic_name": "MATTER",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5 &tno=5&m_topic=MATTER",
+      "topic_name": "ELEMENTS, COMPOUNDS AND MIXTURES",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5&tno=5&m_topic=ELEMENTS, COMPOUNDS AND MIXTURES",
       "plan": {
-        "competence": "Describe matter",
-        "general_objectives": "Differentiate physical from chemical changes of matter",
-        "specific_objectives": "By the end of the lesson, the student should be able to;explain the concept of matter",
-        "main_topic": "MATTER",
-        "sub_topic": "Concept of Matter",
-        "teaching_aids": "� Solids� Liquids� Gases",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
-        "teaching_structure": [
-          {
-            "stage": "INTRODUCTION",
-            "time": "5",
-            "teacher_activities": "Guide students to brainstorm on meaning of matter",
-            "student_activities": "Students to brainstorm on meaning of matter",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
-          },
-          {
-            "stage": "PRESENTATION",
-            "time": "20",
-            "teacher_activities": "to guide students through questions and answers to discuss the meaning of matter.",
-            "student_activities": "students through questions and answers to discuss the meaning of matter.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
-          },
-          {
-            "stage": "REFLECTION",
-            "time": "5",
-            "teacher_activities": "To summarize students work and give them assignments",
-            "student_activities": "Students to work on assignment given",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
-          },
-          {
-            "stage": "REINFORCEMENT",
-            "time": "5",
-            "teacher_activities": "To summarize students work and give them assignments",
-            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "5",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
-          }
-        ]
-      }
-    },
-    {
-      "topic_number": "6",
-      "topic_name": "AIR, COMBUSTION, RUSTING AND FIRE FIGHTING ",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=Y2hlbWlzdHJ5 &tno=6&m_topic=AIR, COMBUSTION, RUSTING AND FIRE FIGHTING ",
-      "plan": {
-        "competence": "show composition of air",
-        "general_objectives": "use scientific procedures in carrying out investigations",
-        "specific_objectives": "By the end of the lesson, the student should be able to:a) name the gases present in air and their proportions. b) demonstrate the presence of different gases in air.",
-        "main_topic": "AIR, COMBUSTION, RUSTING AND FIRE FIGHTING",
-        "sub_topic": "Composition of Air",
-        "teaching_aids": "� Lime water� Phosphorus� Bell jar� Water � Trough� Candle",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "Demonstrate mastery of elements, compounds, mixtures, and methods of separating mixtures.",
+        "general_objectives": "Explain elements, compounds, and mixtures and apply methods of separating mixtures.",
+        "specific_objectives": "By the end of the lesson, the student should be able to: a) explain elements and chemical symbols; b) explain compounds and mixtures; c) describe and apply methods of separating mixtures.",
+        "main_topic": "ELEMENTS, COMPOUNDS AND MIXTURES",
+        "sub_topic": "Elements and Chemical Symbols",
+        "teaching_aids": "Samples of elements, periodic table, sand, salt, water, filter paper, magnet",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "to guide students to do library search to find out information about the proportions of different gases in air.",
-            "student_activities": "students to do library search to find out information about the proportions of different gases in air.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Guide students to brainstorm on the meaning of elements.",
+            "student_activities": "Students to brainstorm on the meaning of elements and chemical symbols.",
+            "assessment": "Oral questions, class discussions"
           },
           {
             "stage": "PRESENTATION",
             "time": "40",
-            "teacher_activities": "Guide Students to present the information on the composition of gases present in air.",
-            "student_activities": "Students to present the information on the composition of gases present in air.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Explain elements, chemical symbols, compounds, and mixtures and demonstrate separation of mixtures.",
+            "student_activities": "Students to observe samples and perform separation of mixtures (filtration, evaporation, magnetic separation).",
+            "assessment": "Symbol quiz, practical checklist"
           },
           {
             "stage": "REFLECTION",
             "time": "10",
-            "teacher_activities": "to facilitate students to perform experiments on the presence of the following gases in air:� carbon dioxide, and� oxygen.",
-            "student_activities": "Students to perform experiment to prove the presence of carbon dioxide and oxygen in air.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Guide students to compare compounds and mixtures.",
+            "student_activities": "Students in groups to compare compounds and mixtures using a T-chart.",
+            "assessment": "T-chart evaluation"
           },
           {
             "stage": "REINFORCEMENT",
             "time": "10",
-            "teacher_activities": "to facilitate students to perform experiments on the presence of the following gases in air:� carbon dioxide, and� oxygen.",
-            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Guide students to select appropriate methods for separating given mixtures.",
+            "student_activities": "Students to individually answer questions asked by the teacher.",
+            "assessment": "Classification worksheet"
           },
           {
             "stage": "CONCLUSION",
             "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "To write short summarized notes and assign homework.",
+            "student_activities": "Students to copy notes and work on the assignment.",
+            "assessment": "Chapter review test"
           }
         ]
       }

@@ -146,9 +146,9 @@ def test_bundled_seed_is_idempotent():
     db = next(get_db())
     try:
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
-        assert inserted == 392  # 98 geography + 47 mathematics + 24 chemistry + 24 biology + 21 english + 13 history + 21 historia_tanzania_maadili + 21 business_studies + 21 kiswahili + 50 physics form one + 52 physics form two lessons
+        assert inserted == 472  # 98 geography + 47 mathematics f2 + 24 chemistry f2 + 24 biology f2 + 21 english + 13 history + 21 historia_tanzania_maadili + 21 business_studies + 21 kiswahili + 50 physics form one + 52 physics form two + 20 chemistry f1 + 30 biology f1 + 30 mathematics f1 lessons
         assert replaced == 0
-        assert inserted_schemes == 23
+        assert inserted_schemes == 28
         assert replaced_schemes == 0
         assert purged == 0
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
@@ -160,6 +160,22 @@ def test_bundled_seed_is_idempotent():
         geo_f2_schemes = list_reference_docs(db, subject_slug="geography", form_level=2, doc_type="scheme_of_work")
         assert len(geo_f2_schemes) == 2
         assert all(doc.source_id.startswith("bundled:") for doc in geo_lessons + geo_schemes + geo_f2_lessons + geo_f2_schemes)
+        # Form One: Chemistry (20 lessons, 1 scheme), Biology (30 lessons, 2 schemes), Mathematics (30 lessons, 2 schemes)
+        chem_f1_lessons = list_reference_docs(db, subject_slug="chemistry", form_level=1, doc_type="lesson_plan", limit=200)
+        assert len(chem_f1_lessons) == 20
+        chem_f1_schemes = list_reference_docs(db, subject_slug="chemistry", form_level=1, doc_type="scheme_of_work")
+        assert len(chem_f1_schemes) == 1
+
+        bio_f1_lessons = list_reference_docs(db, subject_slug="biology", form_level=1, doc_type="lesson_plan", limit=200)
+        assert len(bio_f1_lessons) == 30
+        bio_f1_schemes = list_reference_docs(db, subject_slug="biology", form_level=1, doc_type="scheme_of_work")
+        assert len(bio_f1_schemes) == 2
+
+        math_f1_lessons = list_reference_docs(db, subject_slug="mathematics", form_level=1, doc_type="lesson_plan", limit=200)
+        assert len(math_f1_lessons) == 30
+        math_f1_schemes = list_reference_docs(db, subject_slug="mathematics", form_level=1, doc_type="scheme_of_work")
+        assert len(math_f1_schemes) == 2
+
         for slug in ("mathematics", "chemistry", "biology"):
             f2_schemes = list_reference_docs(db, subject_slug=slug, form_level=2, doc_type="scheme_of_work")
             assert len(f2_schemes) == 2, slug

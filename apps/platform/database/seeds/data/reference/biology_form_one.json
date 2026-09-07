@@ -1,0 +1,1240 @@
+{
+  "subject_name": "Biology",
+  "subject_slug": "biology",
+  "form_level": 1,
+  "standard": "Form 1",
+  "tie_reference": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: TIE.",
+  "source_note": "Verified Biology Form One lesson plans (Arusha Catholic Seminary). 30 lesson plans (80 min double periods, 2 per week) covering Term I (Introduction to Biology, Laboratory Apparatus & Scientific Skills, Scientific Method & Experiments, The Cell, Types of Cells, Cell Organization) and Term II (Concept & Systems of Classification, Major Groups & Binomial Nomenclature, Viruses & Kingdom Monera, Kingdoms Protoctista & Fungi, Kingdom Plantae & Angiospermophyta, Kingdom Animalia, Nutrition & Elements in Plants, Photosynthesis, Leaf Structure & Importance).",
+  "lessons": [
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 1: EXPLAIN BASIC BIOLOGICAL CONCEPTS AND TERMINOLOGIES",
+      "sr_no": "1",
+      "time": "80 min",
+      "main_competence": "1.0 Demonstrate mastery of foundational biological concepts",
+      "specific_competence": "1.1 Explain basic biological concepts and terminologies",
+      "main_activity": "Explain the concept of Biology and basic terminologies",
+      "specific_activity": "Define Biology; define and give examples of basic terminologies (organism, species, habitat)",
+      "teaching_learning_resources": "Textbook, terminology flashcards",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners to name living things they saw on the way to school.",
+          "learning_activities": "Share examples.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines Biology; introduces key terms (organism, species, habitat) using flashcards with examples of each.",
+          "learning_activities": "Take notes; match flashcards to definitions.",
+          "assessment_criteria": "Correct use of terminology"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a matching/sorting activity where groups classify local plants and animals by species and habitat.",
+          "learning_activities": "Sort examples in groups by species/habitat.",
+          "assessment_criteria": "Accuracy of classification"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions on the terms covered.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 2: EXPLAIN THE IMPORTANCE AND INTERDISCIPLINARY RELATIONSHIPS OF BIOLOGY",
+      "sr_no": "2",
+      "time": "80 min",
+      "main_competence": "1.0 Demonstrate mastery of foundational biological concepts",
+      "specific_competence": "1.1 Explain the importance and interdisciplinary relationships of Biology",
+      "main_activity": "Explain the importance of Biology and its relationship with other disciplines",
+      "specific_activity": "Discuss the importance of studying Biology (health, agriculture, environment, careers); relate Biology to Chemistry, Physics, Geography, and Agriculture",
+      "teaching_learning_resources": "Interdisciplinary chart, career pictures",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps basic terminology; asks why a farmer might need to understand Biology.",
+          "learning_activities": "Recall previous lesson; give a reason.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains the importance of Biology and its links to Chemistry, Physics, Geography, and Agriculture using the interdisciplinary chart.",
+          "learning_activities": "Take notes; give own examples.",
+          "assessment_criteria": "Correct identification of at least 2 links"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Assigns groups a career picture (doctor, farmer, conservationist, lab technician) to prepare a short case study on how that career uses Biology.",
+          "learning_activities": "Discuss in groups; prepare and present a case study.",
+          "assessment_criteria": "Quality of group presentation"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Facilitates discussion comparing presentations; administers the Chapter 1 Review Test.",
+          "learning_activities": "Listen to peers; complete review test.",
+          "assessment_criteria": "Chapter 1 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 3: IDENTIFY LABORATORY APPARATUS AND EQUIPMENT",
+      "sr_no": "3",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of scientific processes and laboratory skills",
+      "specific_competence": "2.1 Identify laboratory apparatus and equipment",
+      "main_activity": "Identify common Biology laboratory apparatus and state their uses",
+      "specific_activity": "Identify and state uses of common Biology apparatus (microscope, hand lens, forceps, Petri dish, test tubes)",
+      "teaching_learning_resources": "Real/labelled apparatus, microscope, hand lens",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Displays a microscope and asks if learners know its use.",
+          "learning_activities": "Share initial ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Displays each apparatus item and explains its name, use, and safe handling.",
+          "learning_activities": "Observe and record uses in notebooks.",
+          "assessment_criteria": "Correct identification of apparatus"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides an apparatus identification drill where groups rotate through stations naming and demonstrating correct handling of each item.",
+          "learning_activities": "Rotate through stations identifying apparatus.",
+          "assessment_criteria": "Apparatus Identification Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the apparatus identification test.",
+          "learning_activities": "Complete identification test.",
+          "assessment_criteria": "Apparatus Identification Test score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 4: DEMONSTRATE BASIC SCIENTIFIC SKILLS",
+      "sr_no": "4",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of scientific processes and laboratory skills",
+      "specific_competence": "2.1 Demonstrate basic scientific skills",
+      "main_activity": "Practice observation, measurement, recording, and specimen drawing",
+      "specific_activity": "Practice careful observation, accurate measurement, systematic recording, and labelled specimen drawing using real specimens",
+      "teaching_learning_resources": "Specimen samples, microscope, hand lens",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps apparatus names briefly; asks what makes a \"good\" scientific drawing.",
+          "learning_activities": "Recall previous lesson; share ideas.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates the skills of observation, measurement, recording, and specimen drawing using a sample specimen.",
+          "learning_activities": "Observe demonstration; take notes on skill standards.",
+          "assessment_criteria": "Correct application of each skill"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides hands-on practice where groups observe, measure, and draw a given specimen following the demonstrated standards.",
+          "learning_activities": "Practice all four skills with specimens in groups.",
+          "assessment_criteria": "Skills Practical Checklist score"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews sample drawings and measurements against the checklist criteria.",
+          "learning_activities": "Present work for feedback.",
+          "assessment_criteria": "Skills Practical Checklist score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 5: EXPLAIN THE STEPS OF THE SCIENTIFIC METHOD",
+      "sr_no": "5",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of scientific processes and laboratory skills",
+      "specific_competence": "2.2 Explain the steps of the scientific method",
+      "main_activity": "Explain the scientific method",
+      "specific_activity": "Describe the steps of the scientific method (observation, hypothesis, experiment, conclusion) with everyday examples",
+      "teaching_learning_resources": "Scientific method chart, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks how a doctor figures out what is wrong with a patient.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains the steps of the scientific method using the chart and everyday examples.",
+          "learning_activities": "Take notes on each step.",
+          "assessment_criteria": "Correct sequencing of steps"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group practice writing a hypothesis and outlining an experiment for a given everyday question (e.g. \"Do plants need light?\").",
+          "learning_activities": "Write a hypothesis and outline an experiment in groups.",
+          "assessment_criteria": "Hypothesis-Writing Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Facilitates sharing of group hypotheses and gives feedback.",
+          "learning_activities": "Present hypotheses; receive feedback.",
+          "assessment_criteria": "Quality of hypothesis-writing"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 6: CONDUCT SIMPLE BIOLOGICAL EXPERIMENTS",
+      "sr_no": "6",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of scientific processes and laboratory skills",
+      "specific_competence": "2.2 Conduct simple biological experiments",
+      "main_activity": "Carry out a simple biological experiment following the scientific method",
+      "specific_activity": "Carry out a simple experiment (e.g. starch test on a leaf, or effect of light on plant growth) following the scientific method steps",
+      "teaching_learning_resources": "Iodine solution, leaves, potted plants",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps the scientific method steps and the hypothesis written in Period 1.",
+          "learning_activities": "Recall previous lesson.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates the starch test/light experiment step by step, following the scientific method.",
+          "learning_activities": "Observe demonstration; note each step.",
+          "assessment_criteria": "Correct following of method steps"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides groups to carry out the experiment themselves and record observations and conclusions.",
+          "learning_activities": "Perform experiment in groups; record results.",
+          "assessment_criteria": "Practical Report quality"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter 2 Review Test.",
+          "learning_activities": "Complete review test.",
+          "assessment_criteria": "Chapter 2 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 7: DEFINE THE CELL AND DESCRIBE CELL THEORY",
+      "sr_no": "7",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of cell structure and organization",
+      "specific_competence": "3.1 Define the cell and describe cell theory",
+      "main_activity": "Explain the concept of the cell and cell theory",
+      "specific_activity": "Define a cell; describe the main points of cell theory (all living things are made of cells; the cell is the basic unit of life)",
+      "teaching_learning_resources": "Cell diagram chart, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners what they think the smallest unit of a living thing is.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines a cell; explains cell theory using the chart.",
+          "learning_activities": "Take notes on cell theory.",
+          "assessment_criteria": "Correct statement of cell theory"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group discussion linking cell theory to real examples (single-celled vs multicellular organisms).",
+          "learning_activities": "Discuss examples in groups.",
+          "assessment_criteria": "Quality of group discussion"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing cell theory.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 8: IDENTIFY AND LABEL PARTS OF A GENERALIZED CELL",
+      "sr_no": "8",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of cell structure and organization",
+      "specific_competence": "3.1 Identify and label parts of a generalized cell",
+      "main_activity": "Identify and label parts of a generalized cell using the microscope and diagrams",
+      "specific_activity": "Identify and label the parts of a generalized cell (nucleus, cytoplasm, cell membrane, cell wall) using prepared slides and diagrams",
+      "teaching_learning_resources": "Microscope, prepared slides, cell diagram chart",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps cell theory briefly; asks what parts learners expect to see inside a cell.",
+          "learning_activities": "Recall and predict.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates using the microscope to view a prepared slide, pointing out and naming visible structures.",
+          "learning_activities": "Observe demonstration; take notes on parts.",
+          "assessment_criteria": "Correct naming of cell parts"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides groups to use the microscope themselves and label a blank cell diagram based on their observations.",
+          "learning_activities": "Use microscope in groups; label diagrams.",
+          "assessment_criteria": "Diagram Labeling Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews with a practical observation checklist.",
+          "learning_activities": "Complete checklist.",
+          "assessment_criteria": "Practical Observation Checklist score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 9: DISTINGUISH PLANT AND ANIMAL CELLS",
+      "sr_no": "9",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of cell structure and organization",
+      "specific_competence": "3.2 Distinguish plant and animal cells",
+      "main_activity": "Compare plant and animal cells",
+      "specific_activity": "Distinguish plant and animal cells based on structure (cell wall, chloroplast, vacuole) using onion and cheek cell slides",
+      "teaching_learning_resources": "Microscope, onion/cheek cell slides",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks if a plant cell and an animal cell look the same.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains structural differences between plant and animal cells using the comparison chart.",
+          "learning_activities": "Take notes; observe comparison chart.",
+          "assessment_criteria": "Correct differentiation"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides microscope observation of onion cells (plant) and cheek cells (animal), with comparative diagram drawing.",
+          "learning_activities": "Observe slides in groups; draw comparative diagrams.",
+          "assessment_criteria": "Diagram Comparison Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews with a T-chart evaluation comparing plant and animal cells.",
+          "learning_activities": "Complete T-chart.",
+          "assessment_criteria": "T-Chart Evaluation score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 10: DISTINGUISH PROKARYOTIC AND EUKARYOTIC CELLS",
+      "sr_no": "10",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of cell structure and organization",
+      "specific_competence": "3.2 Distinguish prokaryotic and eukaryotic cells",
+      "main_activity": "Compare prokaryotic and eukaryotic cells",
+      "specific_activity": "Distinguish prokaryotic and eukaryotic cells based on the presence/absence of a true nucleus and other membrane-bound organelles",
+      "teaching_learning_resources": "Comparison chart, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps plant vs animal cells; asks if bacteria have the same cell structure.",
+          "learning_activities": "Recall and predict.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains the key difference between prokaryotic (no true nucleus) and eukaryotic (true nucleus) cells using the comparison chart.",
+          "learning_activities": "Take notes; copy comparison chart.",
+          "assessment_criteria": "Correct differentiation"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group construction of a T-chart comparing prokaryotic and eukaryotic cells, using bacteria and plant/animal cells as examples.",
+          "learning_activities": "Build T-chart in groups.",
+          "assessment_criteria": "T-Chart Evaluation accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a diagram comparison test covering all cell type distinctions from the week.",
+          "learning_activities": "Complete comparison test.",
+          "assessment_criteria": "Diagram Comparison Test score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 11: EXPLAIN ORGANIZATION FROM CELL TO TISSUE TO ORGAN",
+      "sr_no": "11",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of cell structure and organization",
+      "specific_competence": "3.3 Explain organization from cell to tissue to organ",
+      "main_activity": "Explain the levels of organization from cell to organ",
+      "specific_activity": "Describe organization from cell → tissue → organ, with human and plant examples (e.g. muscle cells → muscle tissue → heart)",
+      "teaching_learning_resources": "Organization-level chart, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners to name body parts (organs) they know.",
+          "learning_activities": "Share examples.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains the levels cell → tissue → organ with the chart, using the heart and a leaf as examples.",
+          "learning_activities": "Take notes; give own examples.",
+          "assessment_criteria": "Correct sequencing of first three levels"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair construction of a partial sequence diagram (cell to organ) using given examples.",
+          "learning_activities": "Build sequence diagram in pairs.",
+          "assessment_criteria": "Sequence Diagram accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing the sequence.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 12: EXPLAIN ORGANIZATION FROM ORGAN SYSTEM TO ORGANISM",
+      "sr_no": "12",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of cell structure and organization",
+      "specific_competence": "3.3 Explain organization from organ system to organism",
+      "main_activity": "Explain the complete levels of organization up to the organism",
+      "specific_activity": "Describe organization from organ → organ system → organism, with human/plant examples; consolidate the full sequence from cell to organism",
+      "teaching_learning_resources": "Organization-level chart, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps cell → tissue → organ; asks what other organs work with the heart.",
+          "learning_activities": "Recall previous lesson; respond.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains organ → organ system → organism with examples (heart + blood vessels = circulatory system).",
+          "learning_activities": "Take notes; give own examples.",
+          "assessment_criteria": "Correct sequencing of full hierarchy"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair/group construction of the complete sequence diagram from cell to organism using human and plant examples.",
+          "learning_activities": "Build the full sequence diagram in groups.",
+          "assessment_criteria": "Sequence Diagram Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter 3 Review Test.",
+          "learning_activities": "Complete review test.",
+          "assessment_criteria": "Chapter 3 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 13: DEFINE CLASSIFICATION AND EXPLAIN ITS REASONS",
+      "sr_no": "13",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of classification of living things",
+      "specific_competence": "4.1 Define classification and explain its reasons",
+      "main_activity": "Explain the concept and reasons for classification",
+      "specific_activity": "Define classification; explain reasons for classifying organisms (identification, study, understanding relationships)",
+      "teaching_learning_resources": "Assorted specimen pictures, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks how learners might sort a mixed pile of objects at home.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines classification; explains the reasons for classifying living things.",
+          "learning_activities": "Take notes.",
+          "assessment_criteria": "Correct explanation of reasons"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a sorting/grouping activity using specimen pictures, letting groups create their own sorting criteria first.",
+          "learning_activities": "Sort specimens into groups; explain their criteria.",
+          "assessment_criteria": "Sorting Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions comparing group sorting criteria.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 14: DESCRIBE ARTIFICIAL AND NATURAL CLASSIFICATION SYSTEMS",
+      "sr_no": "14",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of classification of living things",
+      "specific_competence": "4.1 Describe artificial and natural classification systems",
+      "main_activity": "Compare artificial and natural classification systems",
+      "specific_activity": "Describe artificial classification (based on convenience, e.g. size/colour) versus natural classification (based on evolutionary relationships)",
+      "teaching_learning_resources": "Classification chart, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps their own sorting criteria from Period 1; asks if scientists sort organisms the same way.",
+          "learning_activities": "Recall previous lesson; predict.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains artificial vs natural classification systems with the chart and examples.",
+          "learning_activities": "Take notes.",
+          "assessment_criteria": "Correct differentiation of systems"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group discussion re-sorting the Period 1 specimens using natural classification criteria instead of their own.",
+          "learning_activities": "Re-sort specimens using natural classification in groups.",
+          "assessment_criteria": "Sorting Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions consolidating both systems.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 15: OUTLINE THE MAJOR GROUPS OF LIVING THINGS",
+      "sr_no": "15",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of classification of living things",
+      "specific_competence": "4.2 Outline the major groups/kingdoms of living things",
+      "main_activity": "Describe the major groups of living things",
+      "specific_activity": "Outline the five kingdoms of living things (Monera, Protoctista, Fungi, Plantae, Animalia) with one distinguishing feature and example of each",
+      "teaching_learning_resources": "Five-kingdom chart, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners to name any groups they think living things fall into.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Outlines the five kingdoms using the chart, giving one feature and example of each.",
+          "learning_activities": "Take notes; copy chart.",
+          "assessment_criteria": "Correct outline of the five kingdoms"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a group classification chart activity sorting given organism cards into the correct kingdom.",
+          "learning_activities": "Sort organism cards into kingdoms in groups.",
+          "assessment_criteria": "Classification accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing kingdom features.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 16: APPLY BINOMIAL NOMENCLATURE",
+      "sr_no": "16",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of classification of living things",
+      "specific_competence": "4.2 Apply binomial nomenclature",
+      "main_activity": "State and apply the rules of binomial nomenclature",
+      "specific_activity": "State the rules of binomial nomenclature (genus capitalized, species lowercase, italicized/underlined); apply the rules to correctly name given organisms",
+      "teaching_learning_resources": "Naming rule examples, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps the five kingdoms; asks learners if they know a scientific name for any organism (e.g. Homo sapiens).",
+          "learning_activities": "Recall previous lesson; share known names.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "States and explains the binomial nomenclature rules with worked examples.",
+          "learning_activities": "Take notes; practice writing examples correctly.",
+          "assessment_criteria": "Correct application of naming rules"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a naming-rules drill in pairs where learners correct improperly written scientific names and name given organisms correctly.",
+          "learning_activities": "Practice naming organisms in pairs.",
+          "assessment_criteria": "Naming Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter 4 Review Test.",
+          "learning_activities": "Complete review test.",
+          "assessment_criteria": "Chapter 4 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 17: DESCRIBE THE STRUCTURE AND EFFECTS OF VIRUSES",
+      "sr_no": "17",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of viruses and the major groups of living things",
+      "specific_competence": "5.1 Describe the structure and effects of viruses",
+      "main_activity": "Explain viruses",
+      "specific_activity": "Describe the structure of a virus; explain its characteristics and effects on living organisms (e.g. common cold, influenza)",
+      "teaching_learning_resources": "Virus diagrams and pictures, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks what learners know about diseases caused by tiny organisms (e.g. flu).",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Describes virus structure (protein coat, genetic material) and characteristics using diagrams and pictures.",
+          "learning_activities": "Observe pictures; take notes.",
+          "assessment_criteria": "Correct description of virus structure"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides diagram drawing and group discussion on the effects of specific viral diseases learners may know.",
+          "learning_activities": "Draw virus diagram; discuss disease effects in groups.",
+          "assessment_criteria": "Diagram Labeling Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing virus structure and effects.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 18: DESCRIBE KINGDOM MONERA",
+      "sr_no": "18",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of viruses and the major groups of living things",
+      "specific_competence": "5.1 Describe Kingdom Monera",
+      "main_activity": "Explain the characteristics of Kingdom Monera",
+      "specific_activity": "Describe the characteristics of Kingdom Monera (bacteria) and give examples of beneficial and harmful bacteria",
+      "teaching_learning_resources": "Bacteria diagrams and pictures, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps viruses briefly; asks if bacteria are the same as viruses.",
+          "learning_activities": "Recall previous lesson; respond.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Describes characteristics of Kingdom Monera using pictures, distinguishing bacteria from viruses.",
+          "learning_activities": "Observe pictures; take notes.",
+          "assessment_criteria": "Correct description of bacterial characteristics"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group discussion classifying given examples into beneficial (yoghurt-making) or harmful (disease-causing) bacteria.",
+          "learning_activities": "Classify examples in groups; discuss.",
+          "assessment_criteria": "Oral Questions accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a short quiz on viruses and Kingdom Monera.",
+          "learning_activities": "Complete short quiz.",
+          "assessment_criteria": "Quiz score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 19: DESCRIBE KINGDOM PROTOCTISTA",
+      "sr_no": "19",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of viruses and the major groups of living things",
+      "specific_competence": "5.2 Describe Kingdom Protoctista",
+      "main_activity": "Explain the characteristics of Kingdom Protoctista",
+      "specific_activity": "Describe characteristics of Kingdom Protoctista with examples (Amoeba, algae) and their habitats",
+      "teaching_learning_resources": "Protoctista specimens or pictures, microscope",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows a picture of pond water and asks what tiny living things might be in it.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Describes Protoctista characteristics using Amoeba and algae as examples, with pictures/microscope images.",
+          "learning_activities": "Observe pictures/specimens; take notes.",
+          "assessment_criteria": "Correct description of characteristics"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides microscope/picture observation of Protoctista examples and group discussion of their habitats.",
+          "learning_activities": "Observe specimens in groups; discuss habitats.",
+          "assessment_criteria": "Comparison Chart Evaluation quality"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing Protoctista features.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 20: DESCRIBE KINGDOM FUNGI",
+      "sr_no": "20",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of viruses and the major groups of living things",
+      "specific_competence": "5.2 Describe Kingdom Fungi",
+      "main_activity": "Explain the characteristics of Kingdom Fungi",
+      "specific_activity": "Describe characteristics of Kingdom Fungi with examples (mushroom, yeast, mould) and compare with Protoctista",
+      "teaching_learning_resources": "Fungi specimens or pictures, microscope",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows a picture of mould on bread and asks what it is.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Describes Kingdom Fungi characteristics using mushroom, yeast, and mould as examples.",
+          "learning_activities": "Observe specimens/pictures; take notes.",
+          "assessment_criteria": "Correct description of fungal characteristics"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides construction of a comparative chart contrasting Protoctista and Fungi based on both lessons this week.",
+          "learning_activities": "Build comparative chart in groups.",
+          "assessment_criteria": "Comparison Chart Evaluation quality"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a short quiz covering Protoctista and Fungi.",
+          "learning_activities": "Complete short quiz.",
+          "assessment_criteria": "Quiz score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 21: DESCRIBE CHARACTERISTICS OF KINGDOM PLANTAE",
+      "sr_no": "21",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of viruses and the major groups of living things",
+      "specific_competence": "5.3 Describe characteristics of Kingdom Plantae",
+      "main_activity": "Explain the characteristics of Kingdom Plantae",
+      "specific_activity": "Describe general characteristics of Kingdom Plantae (multicellular, chlorophyll-containing, cell wall present)",
+      "teaching_learning_resources": "Plant specimens, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks what all plants around the school compound have in common.",
+          "learning_activities": "Share observations.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Describes the general characteristics of Kingdom Plantae with plant specimens as examples.",
+          "learning_activities": "Take notes; examine plant specimens.",
+          "assessment_criteria": "Correct description of plant characteristics"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group observation of various plant specimens, identifying the shared characteristics discussed.",
+          "learning_activities": "Examine specimens in groups; record shared features.",
+          "assessment_criteria": "Observation accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing Kingdom Plantae characteristics.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 22: CLASSIFY CLASSES OF ANGIOSPERMOPHYTA",
+      "sr_no": "22",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of viruses and the major groups of living things",
+      "specific_competence": "5.3 Classify classes of Angiospermophyta",
+      "main_activity": "Distinguish Monocotyledonae and Dicotyledonae",
+      "specific_activity": "Distinguish Monocotyledonae and Dicotyledonae classes based on leaf venation, root type, and seed structure, using field/garden examples",
+      "teaching_learning_resources": "Plant specimens (monocot/dicot samples), classification chart",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows a maize leaf and a bean leaf; asks if they look the same.",
+          "learning_activities": "Share observations.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains distinguishing features of monocots and dicots (leaf venation, roots, seeds) using the classification chart.",
+          "learning_activities": "Take notes; compare sample leaves.",
+          "assessment_criteria": "Correct distinction of classes"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides plant specimen observation and comparative table construction using monocot/dicot samples brought from the school garden/field.",
+          "learning_activities": "Observe specimens in groups; build comparison table.",
+          "assessment_criteria": "Comparison Table accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a specimen identification test.",
+          "learning_activities": "Complete identification test.",
+          "assessment_criteria": "Specimen Identification Test score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 23: DESCRIBE CHARACTERISTICS OF INVERTEBRATES",
+      "sr_no": "23",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of viruses and the major groups of living things",
+      "specific_competence": "5.4 Describe characteristics of invertebrates",
+      "main_activity": "Explain the characteristics of invertebrates",
+      "specific_activity": "Describe characteristics of invertebrates (no backbone) and classify examples into major invertebrate phyla (insects, worms, molluscs)",
+      "teaching_learning_resources": "Animal group pictures/charts, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners to name animals without a backbone that they've seen (insects, worms).",
+          "learning_activities": "Share examples.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Describes invertebrate characteristics and major phyla using picture charts.",
+          "learning_activities": "Observe pictures; take notes.",
+          "assessment_criteria": "Correct differentiation of phyla"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides picture/specimen sorting where groups classify given invertebrate examples into their correct phylum.",
+          "learning_activities": "Sort animals into groups; justify classification.",
+          "assessment_criteria": "Classification Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing invertebrate classification.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 24: DESCRIBE CHARACTERISTICS OF VERTEBRATES",
+      "sr_no": "24",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of viruses and the major groups of living things",
+      "specific_competence": "5.4 Describe characteristics of vertebrates",
+      "main_activity": "Explain the characteristics of vertebrates",
+      "specific_activity": "Describe characteristics of vertebrates (backbone present) and classify examples into major vertebrate classes (fish, amphibians, reptiles, birds, mammals)",
+      "teaching_learning_resources": "Animal group pictures/charts, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps invertebrates briefly; asks learners to name animals with a backbone.",
+          "learning_activities": "Recall previous lesson; give examples.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Describes the five vertebrate classes and their distinguishing features using picture charts.",
+          "learning_activities": "Observe pictures; take notes.",
+          "assessment_criteria": "Correct differentiation of classes"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group classification chart activity sorting vertebrate examples into their classes, followed by a group presentation summarizing invertebrates vs vertebrates.",
+          "learning_activities": "Sort animals into classes; prepare group presentation.",
+          "assessment_criteria": "Group Presentation Rubric score"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter 5 Review Test.",
+          "learning_activities": "Complete review test.",
+          "assessment_criteria": "Chapter 5 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 25: EXPLAIN THE CONCEPT OF NUTRITION",
+      "sr_no": "25",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of nutrition in plants",
+      "specific_competence": "6.1 Explain the concept of nutrition",
+      "main_activity": "Explain the concept of nutrition in plants",
+      "specific_activity": "Define nutrition; explain how plants obtain and use nutrients differently from animals",
+      "teaching_learning_resources": "Plant nutrient chart, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks how plants \"eat\" since they have no mouths.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines nutrition; explains how plants absorb nutrients through roots and manufacture food via photosynthesis.",
+          "learning_activities": "Take notes.",
+          "assessment_criteria": "Correct explanation of plant nutrition"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group discussion comparing plant and animal nutrition methods using the nutrient chart.",
+          "learning_activities": "Discuss comparisons in groups.",
+          "assessment_criteria": "Quality of group discussion"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing the concept of nutrition.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 26: DISTINGUISH ESSENTIAL AND NON-ESSENTIAL ELEMENTS",
+      "sr_no": "26",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of nutrition in plants",
+      "specific_competence": "6.1 Distinguish essential and non-essential elements",
+      "main_activity": "Explain essential and non-essential elements and their deficiency symptoms",
+      "specific_activity": "Distinguish essential and non-essential elements (macro/micro nutrients) in plants and their roles; identify deficiency symptoms",
+      "teaching_learning_resources": "Deficiency symptom pictures, plant nutrient chart",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows a picture of a yellowing plant and asks why it looks unhealthy.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains essential vs non-essential elements, macro/micro nutrients, and their roles in plant growth.",
+          "learning_activities": "Take notes.",
+          "assessment_criteria": "Correct classification of nutrients"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a deficiency-symptom picture matching activity, linking symptoms (yellowing, stunted growth) to missing nutrients.",
+          "learning_activities": "Match symptoms to deficiencies in pairs.",
+          "assessment_criteria": "Matching Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions consolidating nutrient roles and deficiencies.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 27: STATE THE EQUATION AND REQUIREMENTS OF PHOTOSYNTHESIS",
+      "sr_no": "27",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of nutrition in plants",
+      "specific_competence": "6.2 State the equation and requirements of photosynthesis",
+      "main_activity": "Explain the process of photosynthesis",
+      "specific_activity": "State the word and chemical equation of photosynthesis; describe its requirements (light, water, carbon dioxide, chlorophyll)",
+      "teaching_learning_resources": "Photosynthesis equation chart, textbook",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks how plants make their own food.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "States the word and chemical equation of photosynthesis; explains each requirement using the equation chart.",
+          "learning_activities": "Take notes; copy the equation.",
+          "assessment_criteria": "Correct writing of the equation"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group discussion identifying where each requirement (light, water, CO2, chlorophyll) comes from in a real plant.",
+          "learning_activities": "Discuss requirements in groups.",
+          "assessment_criteria": "Equation Writing Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers an equation-writing test.",
+          "learning_activities": "Complete equation-writing test.",
+          "assessment_criteria": "Equation Writing Test score"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 28: TEST A LEAF FOR STARCH AS EVIDENCE OF PHOTOSYNTHESIS",
+      "sr_no": "28",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of nutrition in plants",
+      "specific_competence": "6.2 Test a leaf for starch as evidence of photosynthesis",
+      "main_activity": "Carry out a leaf starch test experiment",
+      "specific_activity": "Perform the iodine starch test on a leaf, following correct experimental steps, and relate the colour change result to photosynthesis",
+      "teaching_learning_resources": "Iodine solution, leaves, Bunsen burner/hot water bath",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps the photosynthesis equation briefly; asks how one could prove a leaf has made starch.",
+          "learning_activities": "Recall previous lesson; predict a method.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates the starch test procedure step by step (boiling leaf, decolorizing, applying iodine).",
+          "learning_activities": "Observe demonstration; note each step.",
+          "assessment_criteria": "Correct sequencing of test steps"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides groups to carry out the starch test themselves and record the colour change observed.",
+          "learning_activities": "Perform the test in groups; record results.",
+          "assessment_criteria": "Practical Report quality"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Leads discussion relating the result to the photosynthesis equation; reviews the week's learning.",
+          "learning_activities": "Discuss findings; contribute to review.",
+          "assessment_criteria": "Accuracy of interpretation"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 29: RELATE LEAF STRUCTURE TO PHOTOSYNTHESIS",
+      "sr_no": "29",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of nutrition in plants",
+      "specific_competence": "6.3 Relate leaf structure to photosynthesis",
+      "main_activity": "Describe internal and external leaf structure in relation to photosynthesis",
+      "specific_activity": "Describe internal/external leaf structure (stomata, palisade/spongy mesophyll, chlorophyll) and relate each part's function to photosynthesis",
+      "teaching_learning_resources": "Microscope, leaf cross-section slides/diagram",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks why leaves are usually broad, thin, and green.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Describes internal/external leaf structures and their functions using the leaf cross-section diagram.",
+          "learning_activities": "Take notes; observe diagram.",
+          "assessment_criteria": "Correct labeling of leaf structures"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides microscope observation of leaf cross-section slides and diagram labeling in groups.",
+          "learning_activities": "Observe slides in groups; label diagrams.",
+          "assessment_criteria": "Diagram Labeling Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions linking leaf structure to photosynthesis function.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "BIOLOGY FORM ONE LESSON PLAN NO. 30: EXPLAIN THE IMPORTANCE OF PHOTOSYNTHESIS",
+      "sr_no": "30",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of nutrition in plants",
+      "specific_competence": "6.3 Explain the importance of photosynthesis",
+      "main_activity": "Explain the importance of photosynthesis to plants and other living things",
+      "specific_activity": "Explain the importance of photosynthesis (food production, oxygen release, energy source for food chains) to plants and to other living things, including humans",
+      "teaching_learning_resources": "Textbook, photosynthesis importance chart",
+      "references": "TIE (2026). Biology for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps leaf structure briefly; asks what would happen if all plants disappeared.",
+          "learning_activities": "Recall previous lesson; predict consequences.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains the importance of photosynthesis for plants, oxygen supply, and food chains, using the importance chart.",
+          "learning_activities": "Take notes.",
+          "assessment_criteria": "Correct explanation of importance"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group discussion/poster activity summarizing why photosynthesis matters to all living things, drawing on the whole chapter (nutrition, elements, equation, leaf structure).",
+          "learning_activities": "Discuss and summarize in groups; create a simple summary poster.",
+          "assessment_criteria": "Quality of group summary"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter 6 Review Test, concluding the Biology syllabus for the year.",
+          "learning_activities": "Complete review test.",
+          "assessment_criteria": "Chapter 6 Review Test score"
+        }
+      ]
+    }
+  ]
+}

@@ -5,66 +5,78 @@
   "units": [
     {
       "unit_number": 1,
-      "unit_title": "Demonstrate mastery of mathematical language",
+      "unit_title": "CONCEPT OF MATHEMATICS",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Use numerical skills in different contexts",
+          "topic_name": "Meaning of Mathematics",
           "competence_code": "1.1",
           "lessons": [
             {
-              "lesson_id": "MAT-F1-U1-L1",
-              "title": "Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
-              "markdown_content": "## a) Explain the basic concepts of Mathematics (Meaning of mathematics, branches of mathematics, relationship between mathematics and other subjects, importance of mathematic",
-              "page": 14
+              "lesson_id": "MAT-F1-U1-L01",
+              "title": "Explain the meaning of Mathematics",
+              "markdown_content": "## a) Explain the meaning of Mathematics",
+              "page": 1
             },
             {
-              "lesson_id": "MAT-F1-U1-L2",
-              "title": "Explain the concept of rational, irrational, and real numbers",
-              "markdown_content": "## b) Explain the concept of rational, irrational, and real numbers",
-              "page": 15
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L3",
-              "title": "Convert repeating/ recurring decimals into fractions and vice versa",
-              "markdown_content": "## b) Convert repeating/ recurring decimals into fractions and vice versa",
-              "page": 16
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L4",
-              "title": "Represent rational numbers on a number line",
-              "markdown_content": "## c) Represent rational numbers on a number line",
-              "page": 16
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L5",
-              "title": "Explain the concept of inequalities and absolute values of real numbers",
-              "markdown_content": "## d) Explain the concept of inequalities and absolute values of real numbers",
-              "page": 17
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L6",
-              "title": "Describe the importance of numbers in real-life situations",
-              "markdown_content": "## e) Describe the importance of numbers in real-life situations",
-              "page": 17
+              "lesson_id": "MAT-F1-U1-L02",
+              "title": "Describe the concept of Mathematics as a science of patterns and numbers",
+              "markdown_content": "## b) Describe the concept of Mathematics as a science of patterns and numbers",
+              "page": 1
             }
           ]
         },
         {
-          "topic_name": "Use ratios and proportions in daily life",
+          "topic_name": "Branches of Mathematics",
           "competence_code": "1.2",
           "lessons": [
             {
-              "lesson_id": "MAT-F1-U1-L7",
-              "title": "Explain the concept of ratios and proportions",
-              "markdown_content": "## a) Explain the concept of ratios and proportions",
-              "page": 17
+              "lesson_id": "MAT-F1-U1-L03",
+              "title": "Identify branches of Mathematics (Arithmetic, Algebra, Geometry, Statistics)",
+              "markdown_content": "## a) Identify branches of Mathematics (Arithmetic, Algebra, Geometry, Statistics)",
+              "page": 2
             },
             {
-              "lesson_id": "MAT-F1-U1-L8",
-              "title": "Solve ratio and proportion problems",
-              "markdown_content": "## b) Solve ratio and proportion problems",
-              "page": 18
+              "lesson_id": "MAT-F1-U1-L04",
+              "title": "Explain the scope of each branch of Mathematics",
+              "markdown_content": "## b) Explain the scope of each branch of Mathematics",
+              "page": 2
+            }
+          ]
+        },
+        {
+          "topic_name": "Relationship between Mathematics and other subjects",
+          "competence_code": "1.3",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U1-L05",
+              "title": "Relate Mathematics to Science, Economics, and Geography",
+              "markdown_content": "## a) Relate Mathematics to Science, Economics, and Geography",
+              "page": 3
+            },
+            {
+              "lesson_id": "MAT-F1-U1-L06",
+              "title": "Identify how Mathematics is applied in other disciplines",
+              "markdown_content": "## b) Identify how Mathematics is applied in other disciplines",
+              "page": 3
+            }
+          ]
+        },
+        {
+          "topic_name": "Importance of Mathematics",
+          "competence_code": "1.4",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U1-L07",
+              "title": "Explain the importance of Mathematics in daily life",
+              "markdown_content": "## a) Explain the importance of Mathematics in daily life",
+              "page": 4
+            },
+            {
+              "lesson_id": "MAT-F1-U1-L08",
+              "title": "Discuss the importance of Mathematics in various careers",
+              "markdown_content": "## b) Discuss the importance of Mathematics in various careers",
+              "page": 4
             }
           ]
         }
@@ -72,66 +84,114 @@
     },
     {
       "unit_number": 2,
-      "unit_title": "Demonstrate mastery of basic concepts in geometry and algebra",
+      "unit_title": "NUMBERS",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Use geometry, approximations, relations and functions in various contexts",
+          "topic_name": "Concept of Numbers",
           "competence_code": "2.1",
           "lessons": [
             {
-              "lesson_id": "MAT-F1-U2-L9",
-              "title": "Explain the concept of approximations (rounding off, significant figures, and decimal place",
-              "markdown_content": "## a) Explain the concept of approximations (rounding off, significant figures, and decimal place",
-              "page": 18
+              "lesson_id": "MAT-F1-U2-L09",
+              "title": "Define a number",
+              "markdown_content": "## a) Define a number",
+              "page": 5
             },
             {
               "lesson_id": "MAT-F1-U2-L10",
-              "title": "Round off numbers and estimate values of expressions",
-              "markdown_content": "## b) Round off numbers and estimate values of expressions",
-              "page": 19
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L11",
-              "title": "Approximate numbers to the required significant figures and decimal places",
-              "markdown_content": "## c) Approximate numbers to the required significant figures and decimal places",
-              "page": 19
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L12",
-              "title": "Use approximations in computations and measurements of quantities in various contexts",
-              "markdown_content": "## d) Use approximations in computations and measurements of quantities in various contexts",
-              "page": 20
+              "title": "Classify natural numbers, whole numbers, and integers",
+              "markdown_content": "## b) Classify natural numbers, whole numbers, and integers",
+              "page": 5
             }
           ]
         },
         {
-          "topic_name": "Use algebra and matrices in problem solving",
+          "topic_name": "Rational Numbers",
           "competence_code": "2.2",
           "lessons": [
             {
+              "lesson_id": "MAT-F1-U2-L11",
+              "title": "Define rational numbers with examples (fractions, terminating and recurring decimals)",
+              "markdown_content": "## a) Define rational numbers with examples (fractions, terminating and recurring decimals)",
+              "page": 6
+            },
+            {
+              "lesson_id": "MAT-F1-U2-L12",
+              "title": "Represent rational numbers on a number line",
+              "markdown_content": "## b) Represent rational numbers on a number line",
+              "page": 6
+            }
+          ]
+        },
+        {
+          "topic_name": "Irrational Numbers",
+          "competence_code": "2.3",
+          "lessons": [
+            {
               "lesson_id": "MAT-F1-U2-L13",
-              "title": "Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow",
-              "markdown_content": "## a) Explore the basic tenets of algebra (algebraic expressions and equations, linear simultaneous equations of two unknowns, inequalities in one unknow",
-              "page": 20
+              "title": "Define irrational numbers with examples (\u221a2, \u03c0)",
+              "markdown_content": "## a) Define irrational numbers with examples (\u221a2, \u03c0)",
+              "page": 7
             },
             {
               "lesson_id": "MAT-F1-U2-L14",
-              "title": "Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
-              "markdown_content": "## b) Use algebraic expressions to model situations (word problems into algebraic expressions and equation",
-              "page": 21
-            },
+              "title": "Distinguish between rational and irrational numbers",
+              "markdown_content": "## b) Distinguish between rational and irrational numbers",
+              "page": 7
+            }
+          ]
+        },
+        {
+          "topic_name": "Real Numbers",
+          "competence_code": "2.4",
+          "lessons": [
             {
               "lesson_id": "MAT-F1-U2-L15",
-              "title": "Solve simultaneous equations using substitution and elimination methods",
-              "markdown_content": "## c) Solve simultaneous equations using substitution and elimination methods",
-              "page": 21
+              "title": "Describe the real number system as the union of rational and irrational numbers",
+              "markdown_content": "## a) Describe the real number system as the union of rational and irrational numbers",
+              "page": 8
             },
             {
               "lesson_id": "MAT-F1-U2-L16",
-              "title": "Solve inequalities in one unknown",
-              "markdown_content": "## d) Solve inequalities in one unknown",
-              "page": 22
+              "title": "Represent real numbers on the number line",
+              "markdown_content": "## b) Represent real numbers on the number line",
+              "page": 8
+            }
+          ]
+        },
+        {
+          "topic_name": "Inequalities in Real Numbers",
+          "competence_code": "2.5",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U2-L17",
+              "title": "Represent and solve simple inequalities using <, >, \u2264, \u2265 on a number line",
+              "markdown_content": "## a) Represent and solve simple inequalities using <, >, \u2264, \u2265 on a number line",
+              "page": 9
+            },
+            {
+              "lesson_id": "MAT-F1-U2-L18",
+              "title": "Solve word problems involving inequalities",
+              "markdown_content": "## b) Solve word problems involving inequalities",
+              "page": 9
+            }
+          ]
+        },
+        {
+          "topic_name": "Absolute Value of a Real Number",
+          "competence_code": "2.6",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U2-L19",
+              "title": "Define absolute value",
+              "markdown_content": "## a) Define absolute value",
+              "page": 10
+            },
+            {
+              "lesson_id": "MAT-F1-U2-L20",
+              "title": "Calculate |x| for given real numbers and solve simple problems involving absolute value",
+              "markdown_content": "## b) Calculate |x| for given real numbers and solve simple problems involving absolute value",
+              "page": 10
             }
           ]
         }
@@ -139,371 +199,335 @@
     },
     {
       "unit_number": 3,
-      "unit_title": "Demonstrate mastery of basic concepts in coordinate geometry, trigonometry, circles, vectors, probability and statistics",
+      "unit_title": "APPROXIMATIONS",
       "form": 1,
       "topics": [
         {
-          "topic_name": "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
+          "topic_name": "Meaning of Approximations",
           "competence_code": "3.1",
           "lessons": [
             {
-              "lesson_id": "MAT-F1-U3-L17",
-              "title": "Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
-              "markdown_content": "## a) Explore the basic tenets of coordinate geometry (gradient and equations of a straight line, graphs of linear equation",
-              "page": 22
-            },
-            {
-              "lesson_id": "MAT-F1-U3-L18",
-              "title": "Find the gradient/ slope of a line",
-              "markdown_content": "## b) Find the gradient/ slope of a line",
-              "page": 22
-            },
-            {
-              "lesson_id": "MAT-F1-U3-L19",
-              "title": "Determine the equation of a straight line and draw its graph",
-              "markdown_content": "## c) Determine the equation of a straight line and draw its graph",
-              "page": 23
-            },
-            {
-              "lesson_id": "MAT-F1-U3-L20",
-              "title": "Solve linear simultaneous equations graphically",
-              "markdown_content": "## d) Solve linear simultaneous equations graphically",
-              "page": 23
-            },
-            {
               "lesson_id": "MAT-F1-U3-L21",
-              "title": "Use mathematical software to solve and draw graphs of simultaneous equations",
-              "markdown_content": "## e) Use mathematical software to solve and draw graphs of simultaneous equations",
+              "title": "Define approximation",
+              "markdown_content": "## a) Define approximation",
+              "page": 11
+            },
+            {
+              "lesson_id": "MAT-F1-U3-L22",
+              "title": "Explain the importance of approximation in real life",
+              "markdown_content": "## b) Explain the importance of approximation in real life",
+              "page": 11
+            }
+          ]
+        },
+        {
+          "topic_name": "Rounding off Numbers",
+          "competence_code": "3.2",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U3-L23",
+              "title": "Round off numbers to the nearest whole number, tens, and hundreds",
+              "markdown_content": "## a) Round off numbers to the nearest whole number, tens, and hundreds",
+              "page": 12
+            },
+            {
+              "lesson_id": "MAT-F1-U3-L24",
+              "title": "Round off numbers to a given number of decimal places",
+              "markdown_content": "## b) Round off numbers to a given number of decimal places",
+              "page": 12
+            }
+          ]
+        },
+        {
+          "topic_name": "Significant Figures",
+          "competence_code": "3.3",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U3-L25",
+              "title": "State the rules for significant figures",
+              "markdown_content": "## a) State the rules for significant figures",
+              "page": 13
+            },
+            {
+              "lesson_id": "MAT-F1-U3-L26",
+              "title": "Round numbers to a given number of significant figures",
+              "markdown_content": "## b) Round numbers to a given number of significant figures",
+              "page": 13
+            }
+          ]
+        },
+        {
+          "topic_name": "Approximations in Calculations",
+          "competence_code": "3.4",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U3-L27",
+              "title": "Apply approximation in everyday estimation and calculations",
+              "markdown_content": "## a) Apply approximation in everyday estimation and calculations",
+              "page": 14
+            },
+            {
+              "lesson_id": "MAT-F1-U3-L28",
+              "title": "Use approximations to estimate values of numeric expressions",
+              "markdown_content": "## b) Use approximations to estimate values of numeric expressions",
+              "page": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "RATIOS AND PROPORTIONS",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Ratios",
+          "competence_code": "4.1",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U4-L29",
+              "title": "Define ratio",
+              "markdown_content": "## a) Define ratio",
+              "page": 15
+            },
+            {
+              "lesson_id": "MAT-F1-U4-L30",
+              "title": "Express quantities as ratios and simplify ratios",
+              "markdown_content": "## b) Express quantities as ratios and simplify ratios",
+              "page": 15
+            },
+            {
+              "lesson_id": "MAT-F1-U4-L31",
+              "title": "Solve real-life sharing problems using ratios",
+              "markdown_content": "## c) Solve real-life sharing problems using ratios",
+              "page": 16
+            }
+          ]
+        },
+        {
+          "topic_name": "Proportions",
+          "competence_code": "4.2",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U4-L32",
+              "title": "Define direct proportion",
+              "markdown_content": "## a) Define direct proportion",
+              "page": 16
+            },
+            {
+              "lesson_id": "MAT-F1-U4-L33",
+              "title": "Define inverse proportion",
+              "markdown_content": "## b) Define inverse proportion",
+              "page": 17
+            },
+            {
+              "lesson_id": "MAT-F1-U4-L34",
+              "title": "Solve problems involving direct and inverse proportion (recipes, speed/time)",
+              "markdown_content": "## c) Solve problems involving direct and inverse proportion (recipes, speed/time)",
+              "page": 17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "ALGEBRA",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Algebraic Expressions",
+          "competence_code": "5.1",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U5-L35",
+              "title": "Define algebraic expression, term, coefficient, and variable",
+              "markdown_content": "## a) Define algebraic expression, term, coefficient, and variable",
+              "page": 18
+            },
+            {
+              "lesson_id": "MAT-F1-U5-L36",
+              "title": "Form algebraic expressions from word statements",
+              "markdown_content": "## b) Form algebraic expressions from word statements",
+              "page": 18
+            },
+            {
+              "lesson_id": "MAT-F1-U5-L37",
+              "title": "Simplify algebraic expressions by collecting like terms",
+              "markdown_content": "## c) Simplify algebraic expressions by collecting like terms",
+              "page": 19
+            }
+          ]
+        },
+        {
+          "topic_name": "Algebraic Equations",
+          "competence_code": "5.2",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U5-L38",
+              "title": "Form linear equations from word problems",
+              "markdown_content": "## a) Form linear equations from word problems",
+              "page": 19
+            },
+            {
+              "lesson_id": "MAT-F1-U5-L39",
+              "title": "Solve linear equations in one unknown",
+              "markdown_content": "## b) Solve linear equations in one unknown",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "topic_name": "Linear Simultaneous Equations",
+          "competence_code": "5.3",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U5-L40",
+              "title": "Solve simultaneous equations using the elimination method",
+              "markdown_content": "## a) Solve simultaneous equations using the elimination method",
+              "page": 20
+            },
+            {
+              "lesson_id": "MAT-F1-U5-L41",
+              "title": "Solve simultaneous equations using the substitution method",
+              "markdown_content": "## b) Solve simultaneous equations using the substitution method",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "topic_name": "Solution of Inequalities with One Unknown",
+          "competence_code": "5.4",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U5-L42",
+              "title": "Solve simple linear inequalities in one unknown",
+              "markdown_content": "## a) Solve simple linear inequalities in one unknown",
+              "page": 21
+            },
+            {
+              "lesson_id": "MAT-F1-U5-L43",
+              "title": "Represent solutions of inequalities on a number line",
+              "markdown_content": "## b) Represent solutions of inequalities on a number line",
+              "page": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "unit_number": 6,
+      "unit_title": "COORDINATE GEOMETRY",
+      "form": 1,
+      "topics": [
+        {
+          "topic_name": "Basic Concepts of Coordinate Geometry",
+          "competence_code": "6.1",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U6-L44",
+              "title": "Describe the Cartesian plane, axes, and origin",
+              "markdown_content": "## a) Describe the Cartesian plane, axes, and origin",
+              "page": 23
+            },
+            {
+              "lesson_id": "MAT-F1-U6-L45",
+              "title": "Plot points on the Cartesian plane",
+              "markdown_content": "## b) Plot points on the Cartesian plane",
+              "page": 23
+            }
+          ]
+        },
+        {
+          "topic_name": "Gradient of a Straight Line",
+          "competence_code": "6.2",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U6-L46",
+              "title": "Define the gradient of a straight line",
+              "markdown_content": "## a) Define the gradient of a straight line",
+              "page": 24
+            },
+            {
+              "lesson_id": "MAT-F1-U6-L47",
+              "title": "Calculate the gradient of a line joining two points",
+              "markdown_content": "## b) Calculate the gradient of a line joining two points",
               "page": 24
             }
           ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of mathematical language",
-      "form": 1,
-      "topics": [
+        },
         {
-          "topic_name": "Use rates and variations in different contexts",
-          "competence_code": "1.1",
+          "topic_name": "Equation of a Straight Line",
+          "competence_code": "6.3",
           "lessons": [
             {
-              "lesson_id": "MAT-F1-U1-L22",
-              "title": "Describe the concepts of rates and variations",
-              "markdown_content": "## a) Describe the concepts of rates and variations",
+              "lesson_id": "MAT-F1-U6-L48",
+              "title": "Derive the equation of a line in the form y = mx + c",
+              "markdown_content": "## a) Derive the equation of a line in the form y = mx + c",
               "page": 25
             },
             {
-              "lesson_id": "MAT-F1-U1-L23",
-              "title": "Solve problems on rates and variations",
-              "markdown_content": "## b) Solve problems on rates and variations",
+              "lesson_id": "MAT-F1-U6-L49",
+              "title": "Determine the equation of a straight line given the gradient and a point",
+              "markdown_content": "## b) Determine the equation of a straight line given the gradient and a point",
               "page": 25
             }
           ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Demonstrate mastery of basic concepts in geometry and algebra",
-      "form": 1,
-      "topics": [
+        },
         {
-          "topic_name": "Use geometry, approximations, relations and functions in various contexts",
-          "competence_code": "2.1",
+          "topic_name": "General Equation of a Straight Line",
+          "competence_code": "6.4",
           "lessons": [
             {
-              "lesson_id": "MAT-F1-U2-L24",
-              "title": "Describe the concepts of geometry (similarities and congruenc",
-              "markdown_content": "## a) Describe the concepts of geometry (similarities and congruenc",
+              "lesson_id": "MAT-F1-U6-L50",
+              "title": "Express equations of a straight line in general form ax + by + c = 0",
+              "markdown_content": "## a) Express equations of a straight line in general form ax + by + c = 0",
               "page": 26
             },
             {
-              "lesson_id": "MAT-F1-U2-L25",
-              "title": "Recognize properties of similar triangles",
-              "markdown_content": "## b) Recognize properties of similar triangles",
+              "lesson_id": "MAT-F1-U6-L51",
+              "title": "Convert between the gradient-intercept form and the general form",
+              "markdown_content": "## b) Convert between the gradient-intercept form and the general form",
               "page": 26
+            }
+          ]
+        },
+        {
+          "topic_name": "Graphing Linear Equations",
+          "competence_code": "6.5",
+          "lessons": [
+            {
+              "lesson_id": "MAT-F1-U6-L52",
+              "title": "Draw graphs of linear equations using a table of values",
+              "markdown_content": "## a) Draw graphs of linear equations using a table of values",
+              "page": 27
             },
             {
-              "lesson_id": "MAT-F1-U2-L26",
-              "title": "Explain postulates, proofs, and theorems of congruent triangles",
-              "markdown_content": "## c) Explain postulates, proofs, and theorems of congruent triangles",
+              "lesson_id": "MAT-F1-U6-L53",
+              "title": "Read and interpret points on the graph of a linear equation",
+              "markdown_content": "## b) Read and interpret points on the graph of a linear equation",
               "page": 27
             }
           ]
         },
         {
-          "topic_name": "Use algebra and matrices in problem solving",
-          "competence_code": "2.2",
+          "topic_name": "Solving Linear Simultaneous Equations Graphically",
+          "competence_code": "6.6",
           "lessons": [
             {
-              "lesson_id": "MAT-F1-U2-L27",
-              "title": "Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
-              "markdown_content": "## a) Explore the basic tenets of algebra (binary operations, quadratic expressions and equations, radicals, exponents, and logarithm",
+              "lesson_id": "MAT-F1-U6-L54",
+              "title": "Draw the graphs of two simultaneous linear equations on the same axes",
+              "markdown_content": "## a) Draw the graphs of two simultaneous linear equations on the same axes",
               "page": 28
             },
             {
-              "lesson_id": "MAT-F1-U2-L28",
-              "title": "Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
-              "markdown_content": "## b) Solve quadratic equations by using different methods (factorisation, Completing the square, and quadratic formul",
-              "page": 29
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L29",
-              "title": "Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
-              "markdown_content": "## c) Identify and use laws of exponents involving positive, negative, and zero exponents (multiplication law, division law, power law, and zero inde",
-              "page": 29
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L30",
-              "title": "Write numbers in standard form",
-              "markdown_content": "## d) Write numbers in standard form",
-              "page": 30
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L31",
-              "title": "Use laws of logarithms to solve problems",
-              "markdown_content": "## e) Use laws of logarithms to solve problems",
-              "page": 30
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L32",
-              "title": "Perform operations on radicals and rationalize the denominators",
-              "markdown_content": "## f) Perform operations on radicals and rationalize the denominators",
-              "page": 30
+              "lesson_id": "MAT-F1-U6-L55",
+              "title": "Solve simultaneous equations by finding the point of intersection of two graphs",
+              "markdown_content": "## b) Solve simultaneous equations by finding the point of intersection of two graphs",
+              "page": 28
             }
           ]
-        },
-        {
-          "topic_name": "Use sets, sequences and series in problem solving",
-          "competence_code": "2.3",
-          "lessons": [
-            {
-              "lesson_id": "MAT-F1-U2-L33",
-              "title": "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
-              "markdown_content": "## a) Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
-              "page": 31
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L34",
-              "title": "Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
-              "markdown_content": "## b) Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
-              "page": 31
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L35",
-              "title": "Compare sets (subsets and universal set",
-              "markdown_content": "## c) Compare sets (subsets and universal set",
-              "page": 32
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L36",
-              "title": "Perform operations with sets (union, intersection, and complement of a se",
-              "markdown_content": "## d) Perform operations with sets (union, intersection, and complement of a se",
-              "page": 32
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L37",
-              "title": "Represent two sets in a Venn diagram",
-              "markdown_content": "## e) Represent two sets in a Venn diagram",
-              "page": 32
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L38",
-              "title": "Find the number of elements in a set",
-              "markdown_content": "## f) Find the number of elements in a set",
-              "page": 33
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 3,
-      "unit_title": "Demonstrate mastery of basic concepts in coordinate geometry, trigonometry, circles, vectors, probability, and statistics",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Use basic coordinate geometry, trigonometry and vectors skills in daily life",
-          "competence_code": "3.1",
-          "lessons": [
-            {
-              "lesson_id": "MAT-F1-U3-L39",
-              "title": "Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
-              "markdown_content": "## a) Explore the basic tenets of trigonometry (trigonometric ratios, angles of elevation and depressio",
-              "page": 33
-            },
-            {
-              "lesson_id": "MAT-F1-U3-L40",
-              "title": "Determine trigonometric ratios of angles and special angles",
-              "markdown_content": "## b) Determine trigonometric ratios of angles and special angles",
-              "page": 34
-            },
-            {
-              "lesson_id": "MAT-F1-U3-L41",
-              "title": "Calculate angles of elevation and depression",
-              "markdown_content": "## c) Calculate angles of elevation and depression",
-              "page": 34
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "Demonstrate mastery of basic concepts in geometry and algebra",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Use geometry, approximations, relations and functions in various contexts",
-          "competence_code": "1.1",
-          "lessons": [
-            {
-              "lesson_id": "MAT-F1-U1-L42",
-              "title": "Describe the concepts of relations and functions (linear and quadrati",
-              "markdown_content": "## a) Describe the concepts of relations and functions (linear and quadrati",
-              "page": 35
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L43",
-              "title": "(types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function",
-              "markdown_content": "## c) (types of relations, domain and range of relations, graphs of relations and functions, inverse of relations, and function",
-              "page": 35
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L44",
-              "title": "Find the domain and range of relations and functions",
-              "markdown_content": "## b) Find the domain and range of relations and functions",
-              "page": 36
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L45",
-              "title": "Find the inverses of relations and functions",
-              "markdown_content": "## c) Find the inverses of relations and functions",
-              "page": 37
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L46",
-              "title": "Draw graphs of relations and functions",
-              "markdown_content": "## d) Draw graphs of relations and functions",
-              "page": 37
-            }
-          ]
-        },
-        {
-          "topic_name": "Use algebra and matrices in problem solving",
-          "competence_code": "1.2",
-          "lessons": []
-        },
-        {
-          "topic_name": "Use sets, sequences and series in problem solving",
-          "competence_code": "1.3",
-          "lessons": [
-            {
-              "lesson_id": "MAT-F1-U1-L47",
-              "title": "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
-              "markdown_content": "## a) Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
-              "page": 39
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L48",
-              "title": "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
-              "markdown_content": "## b) Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
-              "page": 39
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L49",
-              "title": "Calculate arithmetic mean, geometric mean, and compound interest",
-              "markdown_content": "## c) Calculate arithmetic mean, geometric mean, and compound interest",
-              "page": 40
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Demonstrate mastery of basic concepts in coordinate geometry, trigonometry, circles, vectors, probability and statistics",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Use basic skills of circles in daily life",
-          "competence_code": "2.1",
-          "lessons": []
-        }
-      ]
-    },
-    {
-      "unit_number": 1,
-      "unit_title": "D emonstrate mastery of basic concepts in geometry and algebra",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Use algebra and matrices in problem solving",
-          "competence_code": "1.1",
-          "lessons": [
-            {
-              "lesson_id": "MAT-F1-U1-L50",
-              "title": "Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
-              "markdown_content": "## a) Explore the basic tenets of matrices ( 2×2 matrices: operations, determinant, inverse, and transformation",
-              "page": 42
-            },
-            {
-              "lesson_id": "MAT-F1-U1-L51",
-              "title": "Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul",
-              "markdown_content": "## b) Apply matrices to solve simultaneous equations of two unknowns (matrix inversion method and Cramer’s rul",
-              "page": 42
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "unit_number": 2,
-      "unit_title": "Demonstrate mastery of basic concepts in coordinate geometry, trigonometry, circles, vectors, probability, and statistics",
-      "form": 1,
-      "topics": [
-        {
-          "topic_name": "Use basic coordinate geometry, trigonometry, and vectors skills in daily life",
-          "competence_code": "2.1",
-          "lessons": [
-            {
-              "lesson_id": "MAT-F1-U2-L52",
-              "title": "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
-              "markdown_content": "## a) Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
-              "page": 44
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L53",
-              "title": "Apply sine and cosine rules to find distances or angles of elevation",
-              "markdown_content": "## b) Apply sine and cosine rules to find distances or angles of elevation",
-              "page": 45
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L54",
-              "title": "Derive and use compound angles to solve problems",
-              "markdown_content": "## c) Derive and use compound angles to solve problems",
-              "page": 45
-            },
-            {
-              "lesson_id": "MAT-F1-U2-L55",
-              "title": "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
-              "markdown_content": "## d) Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
-              "page": 46
-            }
-          ]
-        },
-        {
-          "topic_name": "Use probability in problem solving",
-          "competence_code": "2.2",
-          "lessons": []
-        },
-        {
-          "topic_name": "Use statistics in problem solving",
-          "competence_code": "2.3",
-          "lessons": []
         }
       ]
     }

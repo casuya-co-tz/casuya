@@ -112,98 +112,50 @@
           ]
         },
         {
-          "topic_name": "Handling Chemicals Safely / Safety Signs",
+          "topic_name": "First Aid",
           "competence_code": "2.2",
           "lessons": [
             {
               "lesson_id": "CHEM-F1-UN-L13",
-              "title": "Identify safety signs in the laboratory",
-              "markdown_content": "## a) Identify safety signs in the laboratory",
+              "title": "Explain the concept of first aid",
+              "markdown_content": "## a) Explain the concept of first aid",
               "page": 22
             },
             {
               "lesson_id": "CHEM-F1-UN-L14",
-              "title": "Describe how to handle chemicals safely",
-              "markdown_content": "## b) Describe how to handle chemicals safely",
+              "title": "Identify contents of a first aid kit",
+              "markdown_content": "## b) Identify contents of a first aid kit",
               "page": 22
             },
             {
               "lesson_id": "CHEM-F1-UN-L15",
-              "title": "Explain proper disposal of chemical waste",
-              "markdown_content": "## c) Explain proper disposal of chemical waste",
-              "page": 22
-            }
-          ]
-        },
-        {
-          "topic_name": "Laboratory Rules",
-          "competence_code": "2.3",
-          "lessons": [
-            {
-              "lesson_id": "CHEM-F1-UN-L16",
-              "title": "State laboratory rules before practical activities",
-              "markdown_content": "## a) State laboratory rules before practical activities",
-              "page": 23
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L17",
-              "title": "Describe rules during practical activities",
-              "markdown_content": "## b) Describe rules during practical activities",
-              "page": 23
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L18",
-              "title": "State rules after practical activities",
-              "markdown_content": "## c) State rules after practical activities",
-              "page": 23
-            }
-          ]
-        },
-        {
-          "topic_name": "First Aid and First Aid Kit",
-          "competence_code": "2.4",
-          "lessons": [
-            {
-              "lesson_id": "CHEM-F1-UN-L19",
-              "title": "Explain the concept of first aid",
-              "markdown_content": "## a) Explain the concept of first aid",
-              "page": 24
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L20",
-              "title": "Identify contents of a first aid kit",
-              "markdown_content": "## b) Identify contents of a first aid kit",
-              "page": 24
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L21",
               "title": "Describe how to render first aid for common laboratory accidents",
               "markdown_content": "## c) Describe how to render first aid for common laboratory accidents",
-              "page": 24
+              "page": 22
             }
           ]
         },
         {
           "topic_name": "Basic Chemistry Laboratory Apparatus",
-          "competence_code": "2.5",
+          "competence_code": "2.3",
           "lessons": [
             {
-              "lesson_id": "CHEM-F1-UN-L22",
+              "lesson_id": "CHEM-F1-UN-L16",
               "title": "Identify basic chemistry laboratory apparatus",
               "markdown_content": "## a) Identify basic chemistry laboratory apparatus",
-              "page": 25
+              "page": 23
             },
             {
-              "lesson_id": "CHEM-F1-UN-L23",
+              "lesson_id": "CHEM-F1-UN-L17",
               "title": "State the uses of each apparatus",
               "markdown_content": "## b) State the uses of each apparatus",
-              "page": 25
+              "page": 23
             },
             {
-              "lesson_id": "CHEM-F1-UN-L24",
+              "lesson_id": "CHEM-F1-UN-L18",
               "title": "Describe proper care of laboratory apparatus",
               "markdown_content": "## c) Describe proper care of laboratory apparatus",
-              "page": 25
+              "page": 23
             }
           ]
         }
@@ -215,7 +167,7 @@
       "form": 1,
       "topics": [
         {
-          "topic_name": "Fire (Components needed to start fire)",
+          "topic_name": "Fire",
           "competence_code": "3.1",
           "lessons": [
             {
@@ -239,49 +191,49 @@
           ]
         },
         {
-          "topic_name": "Firefighting (Portable fire extinguishers)",
+          "topic_name": "Flames",
           "competence_code": "3.2",
           "lessons": [
             {
               "lesson_id": "CHEM-F1-UN-L28",
-              "title": "Identify types of portable fire extinguishers",
-              "markdown_content": "## a) Identify types of portable fire extinguishers",
+              "title": "Identify the parts of a Bunsen burner",
+              "markdown_content": "## a) Identify the parts of a Bunsen burner",
               "page": 31
             },
             {
               "lesson_id": "CHEM-F1-UN-L29",
-              "title": "Describe how to use each type of fire extinguisher",
-              "markdown_content": "## b) Describe how to use each type of fire extinguisher",
+              "title": "Describe the characteristics of different flames",
+              "markdown_content": "## b) Describe the characteristics of different flames",
               "page": 31
             },
             {
               "lesson_id": "CHEM-F1-UN-L30",
-              "title": "Explain when to use each type of extinguisher",
-              "markdown_content": "## c) Explain when to use each type of extinguisher",
+              "title": "Explain how to adjust the Bunsen burner flame",
+              "markdown_content": "## c) Explain how to adjust the Bunsen burner flame",
               "page": 31
             }
           ]
         },
         {
-          "topic_name": "Flames (Bunsen burner, parts, and characteristics of flames)",
+          "topic_name": "Firefighting",
           "competence_code": "3.3",
           "lessons": [
             {
               "lesson_id": "CHEM-F1-UN-L31",
-              "title": "Identify the parts of a Bunsen burner",
-              "markdown_content": "## a) Identify the parts of a Bunsen burner",
+              "title": "Identify types of portable fire extinguishers",
+              "markdown_content": "## a) Identify types of portable fire extinguishers",
               "page": 32
             },
             {
               "lesson_id": "CHEM-F1-UN-L32",
-              "title": "Describe the characteristics of different flames",
-              "markdown_content": "## b) Describe the characteristics of different flames",
+              "title": "Describe how to use each type of fire extinguisher",
+              "markdown_content": "## b) Describe how to use each type of fire extinguisher",
               "page": 32
             },
             {
               "lesson_id": "CHEM-F1-UN-L33",
-              "title": "Explain how to adjust the Bunsen burner flame",
-              "markdown_content": "## c) Explain how to adjust the Bunsen burner flame",
+              "title": "Explain when to use each type of extinguisher",
+              "markdown_content": "## c) Explain when to use each type of extinguisher",
               "page": 32
             }
           ]
@@ -318,74 +270,26 @@
           ]
         },
         {
-          "topic_name": "Changes in States of Matter",
+          "topic_name": "Physical and Chemical Changes",
           "competence_code": "4.2",
           "lessons": [
             {
               "lesson_id": "CHEM-F1-UN-L37",
-              "title": "Explain changes of state",
-              "markdown_content": "## a) Explain changes of state",
+              "title": "Distinguish between physical and chemical changes",
+              "markdown_content": "## a) Distinguish between physical and chemical changes",
               "page": 37
             },
             {
               "lesson_id": "CHEM-F1-UN-L38",
-              "title": "Describe melting, freezing, evaporation, condensation, and sublimation",
-              "markdown_content": "## b) Describe melting, freezing, evaporation, condensation, and sublimation",
+              "title": "Identify examples of each type of change",
+              "markdown_content": "## b) Identify examples of each type of change",
               "page": 37
             },
             {
               "lesson_id": "CHEM-F1-UN-L39",
-              "title": "Identify factors affecting changes of state",
-              "markdown_content": "## c) Identify factors affecting changes of state",
-              "page": 37
-            }
-          ]
-        },
-        {
-          "topic_name": "Particulate and Kinetic Nature of Matter",
-          "competence_code": "4.3",
-          "lessons": [
-            {
-              "lesson_id": "CHEM-F1-UN-L40",
-              "title": "Explain the particulate nature of matter",
-              "markdown_content": "## a) Explain the particulate nature of matter",
-              "page": 38
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L41",
-              "title": "Describe the kinetic theory of matter",
-              "markdown_content": "## b) Describe the kinetic theory of matter",
-              "page": 38
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L42",
-              "title": "Relate kinetic energy to temperature",
-              "markdown_content": "## c) Relate kinetic energy to temperature",
-              "page": 38
-            }
-          ]
-        },
-        {
-          "topic_name": "Physical and Chemical Changes",
-          "competence_code": "4.4",
-          "lessons": [
-            {
-              "lesson_id": "CHEM-F1-UN-L43",
-              "title": "Distinguish between physical and chemical changes",
-              "markdown_content": "## a) Distinguish between physical and chemical changes",
-              "page": 39
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L44",
-              "title": "Identify examples of each type of change",
-              "markdown_content": "## b) Identify examples of each type of change",
-              "page": 39
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L45",
               "title": "Describe indicators of chemical changes",
               "markdown_content": "## c) Describe indicators of chemical changes",
-              "page": 39
+              "page": 37
             }
           ]
         }
@@ -421,98 +325,50 @@
           ]
         },
         {
-          "topic_name": "Metals and Non-metals",
+          "topic_name": "Compounds and Mixtures",
           "competence_code": "5.2",
           "lessons": [
             {
               "lesson_id": "CHEM-F1-UN-L49",
-              "title": "Distinguish between metals and non-metals",
-              "markdown_content": "## a) Distinguish between metals and non-metals",
+              "title": "Distinguish between compounds and mixtures",
+              "markdown_content": "## a) Distinguish between compounds and mixtures",
               "page": 41
             },
             {
               "lesson_id": "CHEM-F1-UN-L50",
-              "title": "Describe properties of metals",
-              "markdown_content": "## b) Describe properties of metals",
+              "title": "Describe how compounds are formed",
+              "markdown_content": "## b) Describe how compounds are formed",
               "page": 41
             },
             {
               "lesson_id": "CHEM-F1-UN-L51",
-              "title": "Describe properties of non-metals",
-              "markdown_content": "## c) Describe properties of non-metals",
-              "page": 41
-            }
-          ]
-        },
-        {
-          "topic_name": "Compounds and Mixtures",
-          "competence_code": "5.3",
-          "lessons": [
-            {
-              "lesson_id": "CHEM-F1-UN-L52",
-              "title": "Distinguish between compounds and mixtures",
-              "markdown_content": "## a) Distinguish between compounds and mixtures",
-              "page": 42
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L53",
-              "title": "Describe how compounds are formed",
-              "markdown_content": "## b) Describe how compounds are formed",
-              "page": 42
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L54",
               "title": "Identify examples of compounds and mixtures",
               "markdown_content": "## c) Identify examples of compounds and mixtures",
-              "page": 42
-            }
-          ]
-        },
-        {
-          "topic_name": "Solutions, Suspensions and Emulsions",
-          "competence_code": "5.4",
-          "lessons": [
-            {
-              "lesson_id": "CHEM-F1-UN-L55",
-              "title": "Distinguish between solutions, suspensions, and emulsions",
-              "markdown_content": "## a) Distinguish between solutions, suspensions, and emulsions",
-              "page": 43
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L56",
-              "title": "Identify examples of each",
-              "markdown_content": "## b) Identify examples of each",
-              "page": 43
-            },
-            {
-              "lesson_id": "CHEM-F1-UN-L57",
-              "title": "Describe properties of each type of mixture",
-              "markdown_content": "## c) Describe properties of each type of mixture",
-              "page": 43
+              "page": 41
             }
           ]
         },
         {
           "topic_name": "Separation of Mixtures",
-          "competence_code": "5.5",
+          "competence_code": "5.3",
           "lessons": [
             {
-              "lesson_id": "CHEM-F1-UN-L58",
+              "lesson_id": "CHEM-F1-UN-L52",
               "title": "Describe methods of separating mixtures",
               "markdown_content": "## a) Describe methods of separating mixtures",
-              "page": 44
+              "page": 42
             },
             {
-              "lesson_id": "CHEM-F1-UN-L59",
+              "lesson_id": "CHEM-F1-UN-L53",
               "title": "Explain filtration, distillation, evaporation, and chromatography",
               "markdown_content": "## b) Explain filtration, distillation, evaporation, and chromatography",
-              "page": 44
+              "page": 42
             },
             {
-              "lesson_id": "CHEM-F1-UN-L60",
+              "lesson_id": "CHEM-F1-UN-L54",
               "title": "Apply appropriate separation methods",
               "markdown_content": "## c) Apply appropriate separation methods",
-              "page": 44
+              "page": 42
             }
           ]
         }

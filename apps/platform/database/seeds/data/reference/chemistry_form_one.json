@@ -1,0 +1,830 @@
+{
+  "subject_name": "Chemistry",
+  "subject_slug": "chemistry",
+  "form_level": 1,
+  "standard": "Form 1",
+  "tie_reference": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: TIE.",
+  "source_note": "Verified Chemistry Form One lesson plans (Arusha Catholic Seminary). 20 lesson plans (80 min double periods, 2 per week) covering Introduction to Chemistry (Week 1), Laboratory Rules and Safety (Week 2), First Aid & Apparatus (Week 3), Fire & Flames (Week 5), Flame Structure & Firefighting (Week 6), States of Matter (Week 7), Physical & Chemical Changes (Week 8), Elements & Symbols (Week 9), Compounds & Mixtures (Week 10), and Separating Mixtures (Week 11).",
+  "lessons": [
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 1: EXPLAIN THE CONCEPT AND BRANCHES OF CHEMISTRY",
+      "sr_no": "1",
+      "time": "80 min",
+      "main_competence": "1.0 Demonstrate mastery of foundational chemistry concepts",
+      "specific_competence": "1.1 Define chemistry and its branches",
+      "main_activity": "Explain the concept and branches of chemistry",
+      "specific_activity": "Define chemistry; classify its branches (organic, inorganic, physical, analytical, biochemistry) with examples of what each studies",
+      "teaching_learning_resources": "Textbook, branch-classification chart",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners what images come to mind when they hear \"chemistry\"; records responses on the board.",
+          "learning_activities": "Share initial ideas in a quick brainstorm.",
+          "assessment_criteria": "Engagement and relevance of ideas"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines chemistry formally; introduces the five branches with the classification chart, giving one real-world example per branch.",
+          "learning_activities": "Take notes; copy branch chart into notebooks.",
+          "assessment_criteria": "Correct statement of the definition"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Organises a concept-mapping activity where groups place given topics (e.g., \"rusting,\" \"digestion,\" \"rocket fuel\") under the correct branch.",
+          "learning_activities": "Work in groups to build a concept map matching topics to branches.",
+          "assessment_criteria": "Correct placement of topics under branches"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions asking learners to justify their group's placements.",
+          "learning_activities": "Answer oral questions individually.",
+          "assessment_criteria": "Accuracy and reasoning of responses"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 2: INTERDISCIPLINARY LINKS AND APPLICATIONS OF CHEMISTRY",
+      "sr_no": "2",
+      "time": "80 min",
+      "main_competence": "1.0 Demonstrate mastery of foundational chemistry concepts",
+      "specific_competence": "1.2–1.3 Explain chemistry's links with other disciplines and its applications",
+      "main_activity": "Explain the interdisciplinary links and applications of chemistry",
+      "specific_activity": "Link chemistry to Biology, Physics, Mathematics, Geography, and Agriculture; discuss applications of chemistry in medicine, agriculture, industry, and careers",
+      "teaching_learning_resources": "Interdisciplinary chart, career flashcards, industry pictures",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps Period 1's branches briefly; asks how a Biology teacher might also use chemistry.",
+          "learning_activities": "Recall previous lesson; give a guess.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains, with the interdisciplinary chart, how chemistry links to each subject; shows industry pictures illustrating applications.",
+          "learning_activities": "Take notes; observe pictures.",
+          "assessment_criteria": "Correct identification of at least 3 links"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Assigns groups a career flashcard (doctor, farmer, engineer, forensic officer) and asks them to prepare a 2-minute case study on how that career uses chemistry.",
+          "learning_activities": "Discuss in groups; prepare and present a short case study.",
+          "assessment_criteria": "Quality and accuracy of group presentation"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Facilitates whole-class discussion comparing the presentations; administers the Chapter 1 Review Test.",
+          "learning_activities": "Listen to peers; complete review test.",
+          "assessment_criteria": "Chapter 1 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 3: LABORATORY RULES AND HAZARD SYMBOLS",
+      "sr_no": "3",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of laboratory safety and practices",
+      "specific_competence": "2.1 Explain laboratory rules and hazard symbols",
+      "main_activity": "Explain laboratory rules, dress code, and hazard symbols",
+      "specific_activity": "State laboratory rules and correct dress code; identify hazard symbols (toxic, corrosive, flammable, irritant)",
+      "teaching_learning_resources": "Lab safety poster, PPE samples, hazard symbol charts",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks what could go wrong entering a lab without following any rules.",
+          "learning_activities": "Share views.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Conducts a lab tour/demonstration explaining each safety rule and correct PPE use.",
+          "learning_activities": "Observe demonstration; try on PPE samples; record rules.",
+          "assessment_criteria": "Correct listing of at least 5 rules"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Runs a hazard-symbol matching game: groups match symbol cards to their meaning and an example substance.",
+          "learning_activities": "Play matching game in groups; justify matches.",
+          "assessment_criteria": "Accuracy of symbol matching"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Distributes a rules checklist for learners to self-assess their understanding.",
+          "learning_activities": "Complete rules checklist.",
+          "assessment_criteria": "Rules Checklist score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 4: SAFE CHEMICAL HANDLING AND FIRST AID PROCEDURES",
+      "sr_no": "4",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of laboratory safety and practices",
+      "specific_competence": "2.2 Explain safe chemical handling and first aid procedures",
+      "main_activity": "Explain safe handling/storage/disposal of chemicals and first aid response",
+      "specific_activity": "Describe safe handling, storage, and disposal of chemicals; explain first aid for cuts, burns, chemical splashes, and poisoning",
+      "teaching_learning_resources": "First aid box/kit, PPE samples, lab safety poster",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps hazard symbols from Period 1; asks what to do if acid splashes on skin.",
+          "learning_activities": "Recall symbols; attempt an answer.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates safe handling, storage, and disposal procedures for common lab chemicals.",
+          "learning_activities": "Observe demonstration; note key safety steps.",
+          "assessment_criteria": "Correct sequencing of handling steps"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Leads a first-aid role play: groups act out responding to a cut, a burn, a chemical splash, and suspected poisoning.",
+          "learning_activities": "Perform role play in groups, applying correct first aid steps.",
+          "assessment_criteria": "Role Play Rubric score"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Observes and scores each group's practical response using a checklist.",
+          "learning_activities": "Receive feedback; complete self/peer checklist.",
+          "assessment_criteria": "Practical Checklist score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 5: FIRST AID KIT CONTENTS AND EMERGENCY PROCEDURES",
+      "sr_no": "5",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of laboratory safety and practices",
+      "specific_competence": "2.2 Identify first aid kit contents and emergency procedures",
+      "main_activity": "Apply first aid kit use in emergencies",
+      "specific_activity": "Identify first aid kit contents (bandages, antiseptic, gloves, scissors, eyewash) and describe the correct emergency procedure for each type of injury",
+      "teaching_learning_resources": "First aid kit, lab safety poster",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Opens the first aid kit and asks learners to name any items they recognise.",
+          "learning_activities": "Name visible items.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains the use of each item and the correct emergency sequence (assess, protect, treat, refer).",
+          "learning_activities": "Observe; take notes on procedure sequence.",
+          "assessment_criteria": "Correct sequencing of emergency steps"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a practical demonstration where groups practice locating and using specific kit items for a given scenario card.",
+          "learning_activities": "Practice using kit items per scenario in groups.",
+          "assessment_criteria": "Practical Demonstration Checklist score"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews with rapid-fire oral questions on which item suits which injury.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 6: BASIC CHEMISTRY LABORATORY APPARATUS",
+      "sr_no": "6",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of laboratory safety and practices",
+      "specific_competence": "2.3 Identify basic chemistry laboratory apparatus",
+      "main_activity": "Identify and use basic laboratory apparatus",
+      "specific_activity": "Identify test tubes, beakers, flasks, funnels, burettes, Bunsen burner, tripod stand, wire gauze, measuring cylinder, pipette, thermometer, and balance; state the use of each",
+      "teaching_learning_resources": "Real laboratory apparatus, apparatus charts, measuring instruments",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Displays 3–4 pieces of apparatus and asks learners to guess their names/uses.",
+          "learning_activities": "Guess names and uses.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Introduces each remaining apparatus item, stating its name, use, and safe handling.",
+          "learning_activities": "Observe; label a diagram sheet as items are introduced.",
+          "assessment_criteria": "Correct naming of apparatus"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Runs an apparatus identification and measurement drill in groups (measuring set volumes with cylinder/pipette, reading a thermometer, using a balance).",
+          "learning_activities": "Rotate through stations identifying apparatus and taking measurements.",
+          "assessment_criteria": "Practical Skills Checklist score"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers an apparatus identification test with labelled diagrams.",
+          "learning_activities": "Complete identification test.",
+          "assessment_criteria": "Apparatus Identification Test / Diagram Labeling Test score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 7: CONCEPT AND CONDITIONS FOR FIRE",
+      "sr_no": "7",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of fire, flames, and firefighting",
+      "specific_competence": "3.1 Explain the concept and conditions for fire",
+      "main_activity": "Explain fire, the fire triangle, and its causes/effects",
+      "specific_activity": "Define fire and the fire triangle (fuel, heat, oxygen); discuss causes and effects of fire using real case studies",
+      "teaching_learning_resources": "Fire triangle chart, case studies/news clippings",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners the three things needed to start and sustain a fire.",
+          "learning_activities": "Give initial ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains the fire triangle and demonstrates removing one element to show a fire dies (e.g., smothering a candle).",
+          "learning_activities": "Observe demonstration; label the fire triangle diagram.",
+          "assessment_criteria": "Correct labeling of fire triangle"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Distributes case studies/news clippings on real fire incidents; groups identify the fuel, heat source, and effects in each case.",
+          "learning_activities": "Analyse case studies in groups; discuss findings.",
+          "assessment_criteria": "Discussion Rubric score"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Leads whole-class sharing of case study findings and clarifies misconceptions.",
+          "learning_activities": "Present findings; ask questions.",
+          "assessment_criteria": "Diagram Labeling accuracy"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 8: CLASSIFICATION OF FIRES AND TYPES OF FLAMES",
+      "sr_no": "8",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of fire, flames, and firefighting",
+      "specific_competence": "3.1–3.2 Classify fires and explain the concept of flames",
+      "main_activity": "Classify fires and distinguish types of flames",
+      "specific_activity": "Classify fires into classes A, B, C, D, and electrical; define flame and distinguish luminous from non-luminous flames using the Bunsen burner",
+      "teaching_learning_resources": "Fire class chart, Bunsen burner",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps the fire triangle; asks if all fires are put out the same way.",
+          "learning_activities": "Recall previous lesson.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains the five fire classes with examples of each fuel type, using the fire class chart.",
+          "learning_activities": "Take notes; match examples to classes.",
+          "assessment_criteria": "Correct classification of examples"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Demonstrates the Bunsen burner with air-hole open and closed; groups record observations of luminous vs non-luminous flames.",
+          "learning_activities": "Observe demonstration in groups; record flame characteristics.",
+          "assessment_criteria": "Observation Record accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a fire classification test.",
+          "learning_activities": "Complete classification test.",
+          "assessment_criteria": "Classification Test score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 9: FLAME STRUCTURE AND ZONES",
+      "sr_no": "9",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of fire, flames, and firefighting",
+      "specific_competence": "3.2 Describe flame structure",
+      "main_activity": "Describe the zones of a non-luminous flame",
+      "specific_activity": "Identify and describe the three zones of a non-luminous Bunsen flame (dark zone, luminous zone, outer/hottest zone)",
+      "teaching_learning_resources": "Flame structure diagram, Bunsen burner",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks which part of a candle flame is hottest and why they think so.",
+          "learning_activities": "Share predictions.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Draws and explains the three flame zones on the board using the flame structure diagram.",
+          "learning_activities": "Copy and label the flame diagram.",
+          "assessment_criteria": "Correct labeling of flame zones"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Demonstrates testing the temperature of each zone (e.g., holding a matchstick briefly across the flame) for groups to observe and record.",
+          "learning_activities": "Observe demonstration in groups; record which zone chars the matchstick fastest.",
+          "assessment_criteria": "Diagram Labeling Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews with a diagram-based matching exercise on flame zones.",
+          "learning_activities": "Complete matching exercise.",
+          "assessment_criteria": "Matching Exercise score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 10: FIREFIGHTING METHODS AND EQUIPMENT",
+      "sr_no": "10",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of fire, flames, and firefighting",
+      "specific_competence": "3.3 Explain methods and equipment used in firefighting",
+      "main_activity": "Explain firefighting methods, equipment, and prevention",
+      "specific_activity": "Explain cooling, smothering, starving, and chain-reaction-interruption methods; identify fire extinguisher types and their appropriate use; discuss fire prevention measures",
+      "teaching_learning_resources": "Firefighting method chart, sample extinguishers, fire prevention posters",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks how learners would put out a small kitchen fire at home.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains the four firefighting methods, linking each to the fire triangle; introduces extinguisher types and their matching fire classes.",
+          "learning_activities": "Take notes; match extinguisher types to fire classes.",
+          "assessment_criteria": "Correct method-to-class matching"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides groups in an equipment identification drill using sample extinguishers, followed by designing a fire-prevention poster/slogan for the school.",
+          "learning_activities": "Identify extinguishers in groups; design a poster/slogan.",
+          "assessment_criteria": "Poster/Slogan Rubric score"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers an identification test on methods and equipment.",
+          "learning_activities": "Complete identification test.",
+          "assessment_criteria": "Identification Test score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 11: STATES OF MATTER AND PARTICLE THEORY",
+      "sr_no": "11",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of the states and changes of matter",
+      "specific_competence": "4.1 Explain the states of matter and particle theory",
+      "main_activity": "Explain matter, its states, and particle arrangement",
+      "specific_activity": "Define matter; describe properties of solids, liquids, and gases; explain particle arrangement and movement using the kinetic theory",
+      "teaching_learning_resources": "Solid/liquid/gas samples, particle diagrams/bead model",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows ice, water, and an inflated balloon; asks what is common and different among them.",
+          "learning_activities": "Observe and respond.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines matter; explains properties of the three states and demonstrates particle arrangement using the bead model.",
+          "learning_activities": "Observe bead model demonstration; take notes.",
+          "assessment_criteria": "Correct description of particle arrangement per state"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides groups to handle the solid/liquid/gas samples and complete a property-comparison table (shape, volume, compressibility).",
+          "learning_activities": "Handle samples; complete comparison table in groups.",
+          "assessment_criteria": "Property Comparison Table accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews with a diagram labeling test on particle arrangement.",
+          "learning_activities": "Complete diagram labeling test.",
+          "assessment_criteria": "Diagram Labeling Test score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 12: CHANGES OF STATE",
+      "sr_no": "12",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of the states and changes of matter",
+      "specific_competence": "4.1 Explain changes of state",
+      "main_activity": "Explain melting, freezing, evaporation, condensation, and sublimation",
+      "specific_activity": "Describe melting, freezing, evaporation, condensation, and sublimation; explain factors affecting the rate of change of state (temperature, surface area, pressure)",
+      "teaching_learning_resources": "State-change chart, data tables",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps particle arrangement briefly; asks what happens to ice left in the sun.",
+          "learning_activities": "Recall previous lesson; predict outcome.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates ice melting and water boiling, naming each change of state as it occurs.",
+          "learning_activities": "Observe demonstration; record each change and its name.",
+          "assessment_criteria": "Correct naming of each change"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a guided discussion and data-table activity on factors affecting rate of change (comparing melting times under different conditions).",
+          "learning_activities": "Complete data table in groups; discuss factors.",
+          "assessment_criteria": "Problem-Solving Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Sets a cycle-diagram labeling task showing all changes of state in sequence.",
+          "learning_activities": "Complete cycle diagram labeling.",
+          "assessment_criteria": "Cycle Diagram Labeling score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 13: PHYSICAL CHANGE",
+      "sr_no": "13",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of the states and changes of matter",
+      "specific_competence": "4.2 Explain physical change",
+      "main_activity": "Identify and explain physical changes",
+      "specific_activity": "Define physical change; demonstrate and identify examples (cutting paper, melting ice, dissolving salt/sugar in water)",
+      "teaching_learning_resources": "Paper, ice, salt/sugar and water",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Tears a piece of paper in front of the class and asks if it is still paper.",
+          "learning_activities": "Respond and justify.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines physical change; explains why cutting, melting, and dissolving are physical (no new substance formed).",
+          "learning_activities": "Take notes; give own examples.",
+          "assessment_criteria": "Correct definition and reasoning"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides groups through practical stations: cutting paper, observing ice melt, dissolving salt/sugar in water.",
+          "learning_activities": "Perform each activity in groups; record observations.",
+          "assessment_criteria": "Observation Record accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Leads discussion confirming each activity is reversible/no new substance formed.",
+          "learning_activities": "Contribute to discussion.",
+          "assessment_criteria": "Quality of reasoning given"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 14: CHEMICAL CHANGE AND COMPARISON",
+      "sr_no": "14",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of the states and changes of matter",
+      "specific_competence": "4.2 Explain and apply chemical change",
+      "main_activity": "Identify chemical changes and compare them with physical changes",
+      "specific_activity": "Define chemical change with examples (burning, rusting, cooking); identify signs of a chemical reaction; compare physical and chemical change; apply to real-life situations",
+      "teaching_learning_resources": "Rusted nail sample, candle, comparison chart",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows a rusted nail and asks if it can be turned back into shiny metal.",
+          "learning_activities": "Give initial ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines chemical change; explains signs of reaction (colour change, gas production, heat, new substance) using the burning candle as a live example.",
+          "learning_activities": "Observe candle burning; take notes on signs of reaction.",
+          "assessment_criteria": "Correct listing of signs of reaction"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides groups to build a T-chart comparing physical vs chemical change using examples from both lessons, then apply the concept to real-life scenarios (cooking, rusting cars).",
+          "learning_activities": "Build T-chart in groups; discuss real-life applications.",
+          "assessment_criteria": "T-Chart Evaluation accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the signs-of-reaction checklist and Chapter Review Test.",
+          "learning_activities": "Complete checklist and review test.",
+          "assessment_criteria": "Signs-of-Reaction Checklist / Chapter Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 15: ELEMENTS AND CHEMICAL SYMBOLS",
+      "sr_no": "15",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of elements, compounds, and mixtures",
+      "specific_competence": "5.1 Classify elements and apply chemical symbols",
+      "main_activity": "Define elements and apply chemical symbol rules",
+      "specific_activity": "Define an element; classify metals, non-metals, and metalloids; state chemical symbols and the rules for writing them",
+      "teaching_learning_resources": "Metal/non-metal samples, periodic table",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows a metal spoon and a piece of sulfur; asks how they differ.",
+          "learning_activities": "Share observations.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines an element; explains classification into metals, non-metals, metalloids using the periodic table; states symbol-writing rules (capital first letter, lowercase second).",
+          "learning_activities": "Take notes; identify sample elements on the periodic table.",
+          "assessment_criteria": "Correct classification of samples"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Runs a symbol memorization drill and sample-sorting activity in groups (sorting samples into metal/non-metal/metalloid trays).",
+          "learning_activities": "Sort samples in groups; practice writing symbols correctly.",
+          "assessment_criteria": "Symbol Quiz accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a short symbol quiz.",
+          "learning_activities": "Complete symbol quiz.",
+          "assessment_criteria": "Symbol Quiz score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 16: PROPERTIES AND USES OF ELEMENTS",
+      "sr_no": "16",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of elements, compounds, and mixtures",
+      "specific_competence": "5.1 Compare properties and uses of elements",
+      "main_activity": "Compare properties of elements and describe their uses",
+      "specific_activity": "Compare properties of elements (lustre, electrical conductivity, malleability); describe practical uses of common elements",
+      "teaching_learning_resources": "Conductivity tester, use-case studies",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps metal/non-metal classification; asks why wires are made of copper, not wood.",
+          "learning_activities": "Recall previous lesson; give a reason.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains lustre, conductivity, and malleability as distinguishing properties, demonstrating a conductivity test.",
+          "learning_activities": "Observe demonstration; take notes.",
+          "assessment_criteria": "Correct property definitions"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides groups to practically test conductivity of different samples and study use-case cards on real applications (aluminium in cans, copper in wiring, iron in construction).",
+          "learning_activities": "Test conductivity in groups; discuss use-case studies.",
+          "assessment_criteria": "Comparison Table accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Facilitates a group presentation on one element's properties and uses.",
+          "learning_activities": "Present findings to class.",
+          "assessment_criteria": "Presentation Rubric score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 17: CONCEPT OF COMPOUNDS",
+      "sr_no": "17",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of elements, compounds, and mixtures",
+      "specific_competence": "5.2 Explain the concept of compounds",
+      "main_activity": "Explain compound formation from elements",
+      "specific_activity": "Define a compound; explain how compounds form from elements chemically combining, using water and carbon dioxide as examples",
+      "teaching_learning_resources": "Compound formation chart",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners to name a substance made of more than one element.",
+          "learning_activities": "Share examples.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines a compound; explains formation from elements using the compound formation chart (e.g., hydrogen + oxygen → water).",
+          "learning_activities": "Take notes; copy formation examples.",
+          "assessment_criteria": "Correct explanation of compound formation"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group discussion identifying more compound examples and their constituent elements from given substance cards.",
+          "learning_activities": "Identify constituent elements of given compounds in groups.",
+          "assessment_criteria": "Oral Questions accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing compound formation.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 18: MIXTURES AND COMPARISON WITH COMPOUNDS",
+      "sr_no": "18",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of elements, compounds, and mixtures",
+      "specific_competence": "5.2 Explain mixtures and compare with compounds",
+      "main_activity": "Explain mixtures and compare them with compounds",
+      "specific_activity": "Define a mixture (homogeneous/heterogeneous); compare compounds and mixtures by composition, properties, and separability; classify given substances",
+      "teaching_learning_resources": "Sand/salt/water, comparison chart, sample substance cards",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps compounds; shows a cup of sand and water and asks if it's a compound.",
+          "learning_activities": "Recall previous lesson; respond.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines mixture types (homogeneous/heterogeneous) and explains differences from compounds (no fixed ratio, physically combined, separable).",
+          "learning_activities": "Take notes; observe sand+water and salt+water examples.",
+          "assessment_criteria": "Correct differentiation"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a practical mixing activity (sand+water, salt+water) followed by building a T-chart comparing compounds and mixtures.",
+          "learning_activities": "Mix substances in groups; complete T-chart.",
+          "assessment_criteria": "T-Chart Evaluation accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Sets a classification worksheet using sample substance cards.",
+          "learning_activities": "Complete classification worksheet.",
+          "assessment_criteria": "Classification Worksheet / Practical Checklist score"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 19: SEPARATION METHODS - FILTRATION, DECANTATION, EVAPORATION, CRYSTALLIZATION",
+      "sr_no": "19",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of elements, compounds, and mixtures",
+      "specific_competence": "5.3 Explain filtration, decantation, evaporation, and crystallization",
+      "main_activity": "Explain and demonstrate simple separation methods",
+      "specific_activity": "Describe and practically demonstrate filtration, decantation, evaporation, and crystallization as methods of separating mixtures",
+      "teaching_learning_resources": "Filter paper/funnel, evaporating dish",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks how one would separate sand from water at home.",
+          "learning_activities": "Give suggestions.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains filtration, decantation, evaporation, and crystallization, describing when each is appropriate.",
+          "learning_activities": "Take notes on each method.",
+          "assessment_criteria": "Correct description of each method"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Demonstrates filtration (sand from water) and evaporation (salt from water) practically; groups observe and record each step.",
+          "learning_activities": "Observe and assist demonstration in groups; record observations.",
+          "assessment_criteria": "Practical Checklist / Observation Record accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews with oral questions comparing the four methods.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "CHEMISTRY FORM ONE LESSON PLAN NO. 20: SEPARATION METHODS - DISTILLATION, SUBLIMATION, MAGNETIC SEPARATION",
+      "sr_no": "20",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of elements, compounds, and mixtures",
+      "specific_competence": "5.3 Explain distillation, sublimation, and magnetic separation; select appropriate methods",
+      "main_activity": "Explain and apply distillation, sublimation, and magnetic separation",
+      "specific_activity": "Describe distillation, sublimation, and magnetic separation; select the appropriate separation method for a given mixture",
+      "teaching_learning_resources": "Distillation diagram, magnet/iron filings",
+      "references": "TIE (2026). Chemistry for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps filtration/evaporation briefly; asks how to separate iron filings from sand.",
+          "learning_activities": "Recall previous lesson; predict a method.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains distillation using the diagram; demonstrates sublimation (if a suitable substance is available) and magnetic separation of iron filings from sand.",
+          "learning_activities": "Observe demonstrations; take notes.",
+          "assessment_criteria": "Correct diagram labeling of distillation set-up"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Sets a decision-matrix exercise where groups are given mixture cards and must select and justify the correct separation method for each.",
+          "learning_activities": "Complete decision-matrix exercise in groups.",
+          "assessment_criteria": "Diagram Labeling Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter Review Test covering all separation methods.",
+          "learning_activities": "Complete Chapter Review Test.",
+          "assessment_criteria": "Chapter Review Test score"
+        }
+      ]
+    }
+  ]
+}

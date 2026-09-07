@@ -1,0 +1,1240 @@
+{
+  "subject_name": "Mathematics",
+  "subject_slug": "mathematics",
+  "form_level": 1,
+  "standard": "Form 1",
+  "tie_reference": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: TIE.",
+  "source_note": "Verified Basic Mathematics Form One lesson plans (Arusha Catholic Seminary). 30 lesson plans (80 min double periods, 2 per week) covering Term I (Concept of Mathematics, Numbers Classification, Real Numbers and Inequalities, Absolute Value, Approximation & Rounding, Significant Figures) and Term II (Ratios, Proportions, Algebraic Expressions, Linear Equations, Simultaneous Equations, Inequalities, Coordinate Geometry: Cartesian Plane, Gradient, Equation of Straight Line, Graphing Linear Equations).",
+  "lessons": [
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 1: MEANING AND BRANCHES OF MATHEMATICS",
+      "sr_no": "1",
+      "time": "80 min",
+      "main_competence": "1.0 Demonstrate mastery of foundational mathematical concepts",
+      "specific_competence": "1.1 Explain the meaning and branches of Mathematics",
+      "main_activity": "Explain the meaning and branches of Mathematics",
+      "specific_activity": "Define Mathematics; classify its branches (Arithmetic, Algebra, Geometry, Statistics) with examples of what each branch studies",
+      "teaching_learning_resources": "Textbook, branch-classification chart",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners where they used numbers or shapes on their way to school.",
+          "learning_activities": "Share examples.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines Mathematics; introduces the four branches with the classification chart and one example problem per branch.",
+          "learning_activities": "Take notes; copy branch chart.",
+          "assessment_criteria": "Correct definition and branch listing"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a concept-mapping activity where groups sort given problems (e.g. \"measuring a plot,\" \"solving for x,\" \"average rainfall\") under the correct branch.",
+          "learning_activities": "Build concept map in groups matching problems to branches.",
+          "assessment_criteria": "Correct placement under branches"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions asking learners to justify their group's placements.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy and reasoning of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 2: RELATE MATHEMATICS TO OTHER SUBJECTS AND EXPLAIN ITS IMPORTANCE",
+      "sr_no": "2",
+      "time": "80 min",
+      "main_competence": "1.0 Demonstrate mastery of foundational mathematical concepts",
+      "specific_competence": "1.1 Relate Mathematics to other subjects and explain its importance",
+      "main_activity": "Explain the relationship between Mathematics and other subjects and its importance",
+      "specific_activity": "Relate Mathematics to Science, Economics, and Geography; discuss the importance of Mathematics in daily life and in careers",
+      "teaching_learning_resources": "Career flashcards, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps the four branches; asks how a shopkeeper uses Mathematics daily.",
+          "learning_activities": "Recall previous lesson; give an example.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains links between Mathematics and Science, Economics, and Geography with concrete examples of each.",
+          "learning_activities": "Take notes; give own examples.",
+          "assessment_criteria": "Correct identification of at least 2 links"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Assigns groups a career flashcard (engineer, accountant, pilot, nurse) to prepare a short case study on how that career uses Mathematics.",
+          "learning_activities": "Discuss in groups; prepare and present a case study.",
+          "assessment_criteria": "Quality of group presentation"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Facilitates discussion comparing presentations; administers the Chapter 1 Review Test.",
+          "learning_activities": "Listen to peers; complete review test.",
+          "assessment_criteria": "Chapter 1 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 3: CLASSIFY NATURAL NUMBERS, WHOLE NUMBERS, AND INTEGERS",
+      "sr_no": "3",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of the number system",
+      "specific_competence": "2.1 Classify natural numbers, whole numbers, and integers",
+      "main_activity": "Explain the concept of numbers and their basic classifications",
+      "specific_activity": "Define a number; classify natural numbers, whole numbers, and integers with examples on a number line",
+      "teaching_learning_resources": "Number classification chart, number line",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners to list any five numbers they use in a typical day.",
+          "learning_activities": "Give examples.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines natural numbers, whole numbers, and integers, showing each set on the number line.",
+          "learning_activities": "Take notes; plot examples on number line.",
+          "assessment_criteria": "Correct classification of given numbers"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a number classification sorting activity where groups place number cards into the correct set (natural/whole/integer).",
+          "learning_activities": "Sort number cards in groups.",
+          "assessment_criteria": "Sorting accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Checks notebooks and asks oral questions on the three sets.",
+          "learning_activities": "Respond to questions.",
+          "assessment_criteria": "Notebook Check score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 4: DEFINE AND CLASSIFY RATIONAL AND IRRATIONAL NUMBERS",
+      "sr_no": "4",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of the number system",
+      "specific_competence": "2.1 Define and classify rational and irrational numbers",
+      "main_activity": "Explain rational and irrational numbers",
+      "specific_activity": "Define rational numbers with examples (fractions, terminating/recurring decimals); define irrational numbers with examples (√2, π)",
+      "teaching_learning_resources": "Number classification chart, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps natural/whole/integer numbers; asks if ½ fits any of those sets.",
+          "learning_activities": "Recall previous lesson; respond.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines rational numbers (fractions, terminating/recurring decimals) and irrational numbers (√2, π) with worked examples.",
+          "learning_activities": "Take notes; try converting fractions to decimals.",
+          "assessment_criteria": "Correct classification of examples"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair work sorting a mixed list of numbers into rational and irrational categories, justifying each choice.",
+          "learning_activities": "Sort numbers in pairs; justify classification.",
+          "assessment_criteria": "Classification Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a short classification test.",
+          "learning_activities": "Complete classification test.",
+          "assessment_criteria": "Classification Test score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 5: EXPLAIN THE REAL NUMBER SYSTEM",
+      "sr_no": "5",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of the number system",
+      "specific_competence": "2.2 Explain the real number system",
+      "main_activity": "Describe the real number system",
+      "specific_activity": "Describe the real number system as the union of rational and irrational numbers; place a variety of numbers correctly within the real number system diagram",
+      "teaching_learning_resources": "Real number system diagram, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners to recall rational and irrational numbers from the previous lesson.",
+          "learning_activities": "Recall and give examples.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains the real number system as the union of rational and irrational numbers using a Venn-style diagram.",
+          "learning_activities": "Take notes; copy diagram.",
+          "assessment_criteria": "Correct description of the real number system"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair work placing a list of mixed numbers correctly onto the real number system diagram.",
+          "learning_activities": "Place numbers on diagram in pairs.",
+          "assessment_criteria": "Placement accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions confirming understanding of the real number system.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 6: REPRESENT INEQUALITIES IN REAL NUMBERS",
+      "sr_no": "6",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of the number system",
+      "specific_competence": "2.2 Represent inequalities in real numbers",
+      "main_activity": "Represent and solve simple inequalities on a number line",
+      "specific_activity": "Represent and solve simple inequalities using <, >, ≤, ≥ on a number line",
+      "teaching_learning_resources": "Number line chart, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners to compare their heights using \"greater than\" or \"less than.\"",
+          "learning_activities": "Compare and respond.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Introduces the symbols <, >, ≤, ≥ and demonstrates representing simple inequalities on a number line.",
+          "learning_activities": "Take notes; copy number line examples.",
+          "assessment_criteria": "Correct symbol usage"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair work solving and representing a set of inequality statements on the number line.",
+          "learning_activities": "Work in pairs on inequality problems.",
+          "assessment_criteria": "Written Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a short quiz on inequalities.",
+          "learning_activities": "Complete short quiz.",
+          "assessment_criteria": "Quiz score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 7: DEFINE AND DETERMINE THE ABSOLUTE VALUE OF A REAL NUMBER",
+      "sr_no": "7",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of the number system",
+      "specific_competence": "2.3 Define and determine the absolute value of a real number",
+      "main_activity": "Explain the meaning of absolute value",
+      "specific_activity": "Define absolute value as distance from zero; calculate |x| for a range of positive and negative real numbers",
+      "teaching_learning_resources": "Number line, worked example sheets",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks how far -5 and 5 are from zero on a number line.",
+          "learning_activities": "Give initial ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines absolute value as distance from zero; works through examples calculating |x| for various numbers on the board.",
+          "learning_activities": "Take notes; observe worked examples.",
+          "assessment_criteria": "Correct definition and calculation"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice calculating absolute values using the number-line distance illustration for a worksheet of numbers.",
+          "learning_activities": "Solve problems in pairs using number line.",
+          "assessment_criteria": "Calculation Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing the definition and calculation method.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 8: SOLVE PROBLEMS INVOLVING ABSOLUTE VALUE",
+      "sr_no": "8",
+      "time": "80 min",
+      "main_competence": "2.0 Demonstrate mastery of the number system",
+      "specific_competence": "2.3 Solve problems involving absolute value",
+      "main_activity": "Apply absolute value to solve simple problems",
+      "specific_activity": "Solve simple word and equation problems involving absolute value; consolidate the full number system (natural, whole, integer, rational, irrational, real, absolute value)",
+      "teaching_learning_resources": "Worked example sheets, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps absolute value calculation briefly with a quick example.",
+          "learning_activities": "Recall and answer.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates solving simple equations/word problems involving absolute value step by step.",
+          "learning_activities": "Follow worked examples; take notes.",
+          "assessment_criteria": "Correct method application"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair problem-solving on a worksheet combining absolute value with the full number classification learned across the chapter.",
+          "learning_activities": "Solve mixed problems in pairs.",
+          "assessment_criteria": "Problem-solving accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter 2 Review Test.",
+          "learning_activities": "Complete Chapter 2 Review Test.",
+          "assessment_criteria": "Chapter 2 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 9: EXPLAIN THE MEANING OF APPROXIMATION",
+      "sr_no": "9",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of approximation techniques",
+      "specific_competence": "3.1 Explain the meaning of approximation",
+      "main_activity": "Explain the meaning and purpose of approximation",
+      "specific_activity": "Define approximation; explain why and when estimation is used in daily life",
+      "teaching_learning_resources": "Rounding rules chart, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners to estimate the total cost of items in a shopping basket without a calculator.",
+          "learning_activities": "Give estimates.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines approximation; discusses everyday situations requiring estimation (shopping, time, distance).",
+          "learning_activities": "Take notes; give own examples.",
+          "assessment_criteria": "Correct explanation of approximation's purpose"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides a discussion activity where groups estimate answers to given real-life scenario cards before calculating exactly.",
+          "learning_activities": "Estimate then verify in groups.",
+          "assessment_criteria": "Quality of group estimates"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions on when approximation is appropriate.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 10: ROUND OFF NUMBERS",
+      "sr_no": "10",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of approximation techniques",
+      "specific_competence": "3.1 Round off numbers",
+      "main_activity": "Round off numbers to given place values",
+      "specific_activity": "Round off numbers to the nearest whole number, tens, hundreds, and decimal places",
+      "teaching_learning_resources": "Rounding rules chart, worked examples",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps why estimation matters; asks learners to round 47 to the nearest ten mentally.",
+          "learning_activities": "Recall and attempt.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates rounding rules for whole numbers, tens, hundreds, and decimal places with worked examples.",
+          "learning_activities": "Follow worked examples; take notes.",
+          "assessment_criteria": "Correct application of rounding rules"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides rounding drills in pairs across a range of place values.",
+          "learning_activities": "Practice rounding drills in pairs.",
+          "assessment_criteria": "Rounding Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing rounding rules.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 11: DETERMINE SIGNIFICANT FIGURES",
+      "sr_no": "11",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of approximation techniques",
+      "specific_competence": "3.2 Determine significant figures",
+      "main_activity": "State and apply rules for significant figures",
+      "specific_activity": "State the rules for significant figures; round numbers to a given number of significant figures",
+      "teaching_learning_resources": "Significant-figure rules chart, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks why \"300\" might mean different levels of precision.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "States and explains the rules for identifying significant figures with worked examples.",
+          "learning_activities": "Follow worked examples; take notes.",
+          "assessment_criteria": "Correct identification of significant figures"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair drills rounding numbers to a specified number of significant figures.",
+          "learning_activities": "Complete pair drills.",
+          "assessment_criteria": "Significant Figures Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Significant Figures Test.",
+          "learning_activities": "Complete test.",
+          "assessment_criteria": "Significant Figures Test score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 12: APPLY APPROXIMATIONS IN CALCULATIONS",
+      "sr_no": "12",
+      "time": "80 min",
+      "main_competence": "3.0 Demonstrate mastery of approximation techniques",
+      "specific_competence": "3.2 Apply approximations in calculations",
+      "main_activity": "Apply approximation in everyday estimation and calculations",
+      "specific_activity": "Apply rounding and significant figures to solve real-life estimation problems (shopping totals, measurements, distances)",
+      "teaching_learning_resources": "Textbook, real-life estimation task cards",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps significant figures briefly with a rapid example.",
+          "learning_activities": "Recall and respond.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates applying approximation to solve a multi-step real-life estimation problem.",
+          "learning_activities": "Follow demonstration; take notes.",
+          "assessment_criteria": "Correct method application"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides groups through real-life estimation task cards requiring rounding and significant figures.",
+          "learning_activities": "Solve estimation tasks in groups.",
+          "assessment_criteria": "Estimation Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter 3 Review Test.",
+          "learning_activities": "Complete review test.",
+          "assessment_criteria": "Chapter 3 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 13: DEFINE AND EXPRESS RATIOS",
+      "sr_no": "13",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of ratios and proportions",
+      "specific_competence": "4.1 Define and express ratios",
+      "main_activity": "Explain the concept of ratio",
+      "specific_activity": "Define ratio; express given quantities as ratios; simplify ratios to their lowest terms",
+      "teaching_learning_resources": "Ratio worked examples, counters/objects",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks how learners would fairly share 12 sweets between 3 friends.",
+          "learning_activities": "Give suggestions.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines ratio; demonstrates expressing quantities as ratios and simplifying them using counters.",
+          "learning_activities": "Follow worked examples using counters.",
+          "assessment_criteria": "Correct simplification of ratios"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group practice expressing and simplifying a variety of quantity comparisons as ratios.",
+          "learning_activities": "Practice in groups with objects/counters.",
+          "assessment_criteria": "Ratio Problem-Solving Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing ratio simplification.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 14: APPLY RATIOS TO REAL-LIFE SHARING PROBLEMS",
+      "sr_no": "14",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of ratios and proportions",
+      "specific_competence": "4.1 Apply ratios to real-life sharing problems",
+      "main_activity": "Apply ratios to solve real-life sharing problems",
+      "specific_activity": "Solve real-life problems involving sharing a quantity according to a given ratio",
+      "teaching_learning_resources": "Ratio worked examples, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps simplifying ratios briefly with a quick example.",
+          "learning_activities": "Recall and respond.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates solving a real-life sharing problem step by step using a given ratio.",
+          "learning_activities": "Follow worked examples; take notes.",
+          "assessment_criteria": "Correct method application"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides group activity solving several real-life sharing problems (money, land, ingredients) using ratios.",
+          "learning_activities": "Solve sharing problems in groups.",
+          "assessment_criteria": "Ratio Problem-Solving Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions consolidating the topic.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 15: EXPLAIN DIRECT PROPORTION",
+      "sr_no": "15",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of ratios and proportions",
+      "specific_competence": "4.2 Explain direct proportion",
+      "main_activity": "Explain and solve problems involving direct proportion",
+      "specific_activity": "Define direct proportion; solve problems where two quantities increase or decrease together (e.g. recipes, cost per item)",
+      "teaching_learning_resources": "Proportion worked examples, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks how the cost of sugar changes if you buy double the amount.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines direct proportion; works through recipe/cost examples showing quantities increasing together.",
+          "learning_activities": "Follow worked examples; take notes.",
+          "assessment_criteria": "Correct identification of direct proportion"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair work solving direct proportion problems from real-life scenarios (recipes, shopping).",
+          "learning_activities": "Solve problems in pairs.",
+          "assessment_criteria": "Proportion Problem-Solving Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing direct proportion.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 16: EXPLAIN INVERSE PROPORTION",
+      "sr_no": "16",
+      "time": "80 min",
+      "main_competence": "4.0 Demonstrate mastery of ratios and proportions",
+      "specific_competence": "4.2 Explain inverse proportion",
+      "main_activity": "Explain and solve problems involving inverse proportion",
+      "specific_activity": "Define inverse proportion; solve problems where one quantity increases as another decreases (e.g. speed/time, workers/days)",
+      "teaching_learning_resources": "Proportion worked examples, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks how travel time changes if speed doubles over the same distance.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines inverse proportion; works through speed/time and workers/days examples.",
+          "learning_activities": "Follow worked examples; take notes.",
+          "assessment_criteria": "Correct identification of inverse proportion"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair work solving inverse proportion problems and comparing them with direct proportion problems from Period 1.",
+          "learning_activities": "Solve problems in pairs; compare with direct proportion cases.",
+          "assessment_criteria": "Proportion Problem-Solving Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter 4 Review Test.",
+          "learning_activities": "Complete review test.",
+          "assessment_criteria": "Chapter 4 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 17: FORM ALGEBRAIC EXPRESSIONS",
+      "sr_no": "17",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of algebraic manipulation and equations",
+      "specific_competence": "5.1 Form algebraic expressions",
+      "main_activity": "Define algebraic terms and form expressions from word statements",
+      "specific_activity": "Define algebraic expression, term, coefficient, and variable; form expressions from given word statements",
+      "teaching_learning_resources": "Algebra worked examples, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners to represent \"a number plus 3\" symbolically.",
+          "learning_activities": "Attempt representation.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Defines expression, term, coefficient, and variable with guided examples on the board.",
+          "learning_activities": "Take notes; copy definitions.",
+          "assessment_criteria": "Correct use of terminology"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair work matching given word problems to their correct algebraic expressions.",
+          "learning_activities": "Match word problems to expressions in pairs.",
+          "assessment_criteria": "Matching accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing key terms.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 18: SIMPLIFY ALGEBRAIC EXPRESSIONS",
+      "sr_no": "18",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of algebraic manipulation and equations",
+      "specific_competence": "5.1 Simplify algebraic expressions",
+      "main_activity": "Simplify algebraic expressions by collecting like terms",
+      "specific_activity": "Identify like and unlike terms; simplify expressions by collecting like terms",
+      "teaching_learning_resources": "Algebra worked examples, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps forming expressions; asks if 3x and 5x can be combined.",
+          "learning_activities": "Recall and respond.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Explains identifying like terms and demonstrates simplification step by step.",
+          "learning_activities": "Follow worked examples; take notes.",
+          "assessment_criteria": "Correct identification of like terms"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice simplifying a worksheet of expressions by collecting like terms.",
+          "learning_activities": "Practice simplification in pairs.",
+          "assessment_criteria": "Simplification Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a short quiz on simplification.",
+          "learning_activities": "Complete short quiz.",
+          "assessment_criteria": "Quiz score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 19: FORM LINEAR EQUATIONS FROM WORD PROBLEMS",
+      "sr_no": "19",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of algebraic manipulation and equations",
+      "specific_competence": "5.2 Form linear equations from word problems",
+      "main_activity": "Form linear equations from word problems",
+      "specific_activity": "Translate word problems into linear equations in one unknown",
+      "teaching_learning_resources": "Equation worked examples, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Poses a simple word problem requiring an unknown number (\"I think of a number, add 5, I get 12\").",
+          "learning_activities": "Attempt to solve mentally.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates translating word problems into algebraic equations step by step.",
+          "learning_activities": "Follow demonstration; take notes.",
+          "assessment_criteria": "Correct equation formation"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice forming equations from a set of word problems.",
+          "learning_activities": "Practice forming equations in pairs.",
+          "assessment_criteria": "Equation formation accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing the translation process.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 20: SOLVE LINEAR EQUATIONS",
+      "sr_no": "20",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of algebraic manipulation and equations",
+      "specific_competence": "5.2 Solve linear equations",
+      "main_activity": "Solve linear equations in one unknown",
+      "specific_activity": "Solve linear equations in one unknown using inverse operations",
+      "teaching_learning_resources": "Equation worked examples, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps forming equations; presents one formed in Period 1 to solve.",
+          "learning_activities": "Recall and attempt to solve.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates solving linear equations step by step using inverse operations.",
+          "learning_activities": "Follow step-by-step solving.",
+          "assessment_criteria": "Correct application of inverse operations"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair problem-solving on a worksheet of linear equations, including those formed from word problems.",
+          "learning_activities": "Solve equations in pairs.",
+          "assessment_criteria": "Equation-Solving Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a short quiz.",
+          "learning_activities": "Complete short quiz.",
+          "assessment_criteria": "Quiz score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 21: SOLVE SIMULTANEOUS EQUATIONS BY ELIMINATION",
+      "sr_no": "21",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of algebraic manipulation and equations",
+      "specific_competence": "5.3 Solve simultaneous equations by elimination",
+      "main_activity": "Solve linear simultaneous equations using the elimination method",
+      "specific_activity": "Solve simultaneous equations in two unknowns using the elimination method",
+      "teaching_learning_resources": "Simultaneous equation worked examples, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Poses a problem involving two unknowns (e.g. two numbers' sum and difference).",
+          "learning_activities": "Attempt to reason it out.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates the elimination method step by step on the board.",
+          "learning_activities": "Follow demonstration; take notes.",
+          "assessment_criteria": "Correct use of elimination method"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice solving simultaneous equations using elimination.",
+          "learning_activities": "Practice elimination method in pairs.",
+          "assessment_criteria": "Problem-Solving Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions checking understanding of each elimination step.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 22: SOLVE SIMULTANEOUS EQUATIONS BY SUBSTITUTION",
+      "sr_no": "22",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of algebraic manipulation and equations",
+      "specific_competence": "5.3 Solve simultaneous equations by substitution",
+      "main_activity": "Solve linear simultaneous equations using the substitution method",
+      "specific_activity": "Solve simultaneous equations in two unknowns using the substitution method; compare with the elimination method",
+      "teaching_learning_resources": "Simultaneous equation worked examples, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps elimination method briefly; asks if there's another way to solve the same equations.",
+          "learning_activities": "Recall previous lesson.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates the substitution method step by step, then compares it with elimination.",
+          "learning_activities": "Follow demonstration; take notes on both methods.",
+          "assessment_criteria": "Correct use of substitution method"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice solving a mixed set of simultaneous equations, choosing either method.",
+          "learning_activities": "Solve problems in pairs.",
+          "assessment_criteria": "Problem-Solving Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a written test covering both methods.",
+          "learning_activities": "Complete written test.",
+          "assessment_criteria": "Written Test score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 23: SOLVE LINEAR INEQUALITIES WITH ONE UNKNOWN",
+      "sr_no": "23",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of algebraic manipulation and equations",
+      "specific_competence": "5.4 Solve linear inequalities with one unknown",
+      "main_activity": "Solve simple linear inequalities",
+      "specific_activity": "Solve simple inequalities in one unknown using inverse operations, noting the effect of multiplying/dividing by a negative number",
+      "teaching_learning_resources": "Inequality worked examples, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners for numbers that satisfy \"x is greater than 3.\"",
+          "learning_activities": "Suggest examples.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates solving simple inequalities step by step, highlighting the sign-flip rule when dividing by a negative.",
+          "learning_activities": "Follow worked examples; take notes.",
+          "assessment_criteria": "Correct solving of inequalities"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice solving a worksheet of inequalities.",
+          "learning_activities": "Solve inequalities in pairs.",
+          "assessment_criteria": "Inequality-Solving Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing the sign-flip rule.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 24: REPRESENT INEQUALITY SOLUTIONS ON A NUMBER LINE",
+      "sr_no": "24",
+      "time": "80 min",
+      "main_competence": "5.0 Demonstrate mastery of algebraic manipulation and equations",
+      "specific_competence": "5.4 Represent inequality solutions on a number line",
+      "main_activity": "Represent solutions of inequalities on a number line",
+      "specific_activity": "Represent solution sets of linear inequalities on a number line, distinguishing open and closed circles",
+      "teaching_learning_resources": "Number line chart, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps solving inequalities; asks how to show \"x > 3\" on a number line.",
+          "learning_activities": "Recall and attempt.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates representing solutions on a number line, explaining open circles (<, >) vs closed circles (≤, ≥).",
+          "learning_activities": "Follow demonstration; take notes.",
+          "assessment_criteria": "Correct use of open/closed circles"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice solving inequalities and representing each solution on a number line.",
+          "learning_activities": "Solve and represent solutions in pairs.",
+          "assessment_criteria": "Inequality-Solving Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter 5 Review Test.",
+          "learning_activities": "Complete review test.",
+          "assessment_criteria": "Chapter 5 Review Test score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 25: DESCRIBE THE CARTESIAN PLANE AND PLOT POINTS",
+      "sr_no": "25",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of coordinate geometry",
+      "specific_competence": "6.1 Describe the Cartesian plane and plot points",
+      "main_activity": "Explain the Cartesian plane and plot points",
+      "specific_activity": "Describe the Cartesian plane, axes, and origin; plot given points accurately on graph paper",
+      "teaching_learning_resources": "Graph papers, Cartesian plane chart",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners how to describe a seat position in a classroom grid (row and column).",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Introduces the Cartesian plane, x- and y-axes, and origin; demonstrates plotting points.",
+          "learning_activities": "Take notes; observe plotting examples.",
+          "assessment_criteria": "Correct description of the Cartesian plane"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice plotting a set of given coordinate points on graph paper.",
+          "learning_activities": "Plot points in pairs on graph paper.",
+          "assessment_criteria": "Plotting Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions on reading coordinates from plotted points.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 26: DETERMINE THE GRADIENT OF A STRAIGHT LINE",
+      "sr_no": "26",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of coordinate geometry",
+      "specific_competence": "6.1 Determine the gradient of a straight line",
+      "main_activity": "Calculate the gradient of a line joining two points",
+      "specific_activity": "Calculate the gradient of a straight line joining two given points using the gradient formula",
+      "teaching_learning_resources": "Graph papers, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps plotting points; asks which of two plotted lines looks \"steeper.\"",
+          "learning_activities": "Recall and observe.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Introduces the gradient formula and demonstrates calculating gradient between two points.",
+          "learning_activities": "Follow worked examples; take notes.",
+          "assessment_criteria": "Correct application of gradient formula"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice calculating gradients for several pairs of points on graph paper.",
+          "learning_activities": "Practice gradient calculation in pairs.",
+          "assessment_criteria": "Gradient Calculation Test accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a gradient calculation test.",
+          "learning_activities": "Complete test.",
+          "assessment_criteria": "Gradient Calculation Test score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 27: DERIVE THE EQUATION OF A STRAIGHT LINE",
+      "sr_no": "27",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of coordinate geometry",
+      "specific_competence": "6.2 Derive the equation of a straight line",
+      "main_activity": "Derive the equation of a straight line in the form y = mx + c",
+      "specific_activity": "Derive the equation of a line given its gradient and y-intercept, and given two points, in the form y = mx + c",
+      "teaching_learning_resources": "Graph papers, worked example sheets",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Reviews gradient calculation from the previous week briefly.",
+          "learning_activities": "Recall previous lesson.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Derives the equation y = mx + c using guided steps, showing how gradient and intercept build the equation.",
+          "learning_activities": "Follow derivation; take notes.",
+          "assessment_criteria": "Correct derivation of equation"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice deriving equations of lines from given gradient/intercept and from two points.",
+          "learning_activities": "Practice derivations in pairs.",
+          "assessment_criteria": "Equation Derivation Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions reviewing the derivation steps.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 28: EXPRESS THE GENERAL EQUATION OF A STRAIGHT LINE",
+      "sr_no": "28",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of coordinate geometry",
+      "specific_competence": "6.2 Express the general equation of a straight line",
+      "main_activity": "Express equations in general form ax + by + c = 0",
+      "specific_activity": "Convert equations between the form y = mx + c and the general form ax + by + c = 0",
+      "teaching_learning_resources": "Worked example sheets, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps y = mx + c briefly; shows an equation and asks learners to identify m and c.",
+          "learning_activities": "Recall and respond.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates converting y = mx + c into general form ax + by + c = 0 and vice versa.",
+          "learning_activities": "Follow worked examples; take notes.",
+          "assessment_criteria": "Correct conversion between forms"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice converting a set of equations between the two forms.",
+          "learning_activities": "Practice conversions in pairs.",
+          "assessment_criteria": "Equation Derivation Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers a written test.",
+          "learning_activities": "Complete written test.",
+          "assessment_criteria": "Written Test score"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 29: GRAPH LINEAR EQUATIONS USING A TABLE OF VALUES",
+      "sr_no": "29",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of coordinate geometry",
+      "specific_competence": "6.3 Graph linear equations using a table of values",
+      "main_activity": "Draw graphs of linear equations",
+      "specific_activity": "Construct a table of values for a linear equation and draw its graph on graph paper",
+      "teaching_learning_resources": "Graph papers, rulers",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Asks learners how many points are needed to draw a straight line.",
+          "learning_activities": "Share ideas.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates constructing a table of values and plotting the resulting line graph.",
+          "learning_activities": "Follow demonstration; construct own table.",
+          "assessment_criteria": "Correct construction of table of values"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair practice constructing tables and drawing graphs for a set of given linear equations.",
+          "learning_activities": "Draw graphs in pairs using rulers.",
+          "assessment_criteria": "Graph Plotting Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Poses oral questions on reading values from the graphs drawn.",
+          "learning_activities": "Answer oral questions.",
+          "assessment_criteria": "Accuracy of responses"
+        }
+      ]
+    },
+    {
+      "title": "MATHEMATICS FORM ONE LESSON PLAN NO. 30: SOLVE SIMULTANEOUS EQUATIONS GRAPHICALLY",
+      "sr_no": "30",
+      "time": "80 min",
+      "main_competence": "6.0 Demonstrate mastery of coordinate geometry",
+      "specific_competence": "6.3 Solve simultaneous equations graphically",
+      "main_activity": "Solve simultaneous equations by finding the point of intersection of two graphs",
+      "specific_activity": "Draw two linear equations on the same axes and identify the point of intersection as the solution to the simultaneous equations",
+      "teaching_learning_resources": "Graph papers, rulers, textbook",
+      "references": "TIE (2026). Mathematics for Secondary Schools Student's Book Form 1. Dar es Salaam: Tanzania Institute of Education.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Recaps drawing a single line graph; asks what it means if two lines cross.",
+          "learning_activities": "Recall and predict.",
+          "assessment_criteria": "Recall accuracy"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "25 min",
+          "teaching_activities": "Demonstrates drawing two linear equations on the same axes and reading off the intersection point as the solution.",
+          "learning_activities": "Follow demonstration; take notes.",
+          "assessment_criteria": "Correct identification of intersection point"
+        },
+        {
+          "stage": "Design",
+          "time": "30 min",
+          "teaching_activities": "Guides pair drawing of two graphs for a given pair of simultaneous equations, verifying the solution algebraically.",
+          "learning_activities": "Draw graphs; verify solution in pairs.",
+          "assessment_criteria": "Graph Plotting Exercise accuracy"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Administers the Chapter 6 Review Test.",
+          "learning_activities": "Complete review test.",
+          "assessment_criteria": "Chapter 6 Review Test score"
+        }
+      ]
+    }
+  ]
+}
