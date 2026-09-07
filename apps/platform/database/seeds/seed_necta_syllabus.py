@@ -56,6 +56,7 @@ NECTA_SYLLABUS: list[dict] = [
                 'geometry, trigonometry, statistics, and mensuration.',
  'form_start': 1,
  'form_end': 4,
+ 'replace_topic_form_levels': [1],
  'topics': [
   {'title': 'CONCEPT OF MATHEMATICS', 'code': '1.0', 'form_level': 1, 'order': 1, 'periods': 10, 'weight': 'medium', 'subtopics': [
   {'title': 'Meaning of Mathematics', 'code': '1.1', 'order': 1, 'periods': 2, 'outcomes': [('Explain the meaning of Mathematics', 'comprehension', 1), ('Describe Mathematics as a science of patterns and numbers', 'comprehension', 2)]},
@@ -3214,6 +3215,7 @@ NECTA_SYLLABUS: list[dict] = [
                 'industrial chemistry.',
  'form_start': 1,
  'form_end': 6,
+ 'replace_topic_form_levels': [1],
  'topics': [
   {'title': 'INTRODUCTION TO CHEMISTRY', 'code': '1.0', 'form_level': 1, 'order': 1, 'periods': 10, 'weight': 'low', 'subtopics': [
   {'title': 'Concept of Chemistry', 'code': '1.1', 'order': 1, 'periods': 4, 'outcomes': [('Explain the meaning of Chemistry', 'comprehension', 1), ('Describe the branches of Chemistry', 'knowledge', 2)]},
@@ -3877,6 +3879,7 @@ NECTA_SYLLABUS: list[dict] = [
                 'genetics, ecology, human physiology, plants, microorganisms, biochemistry and evolution.',
  'form_start': 1,
  'form_end': 6,
+ 'replace_topic_form_levels': [1],
  'topics': [
   {'title': 'INTRODUCTION TO BIOLOGY', 'code': '1.0', 'form_level': 1, 'order': 1, 'periods': 12, 'weight': 'medium', 'subtopics': [
   {'title': 'Concept of Biology', 'code': '1.1', 'order': 1, 'periods': 4, 'outcomes': [('Define Biology and basic concepts and terminologies', 'comprehension', 1), ('Identify branches of Biology', 'knowledge', 2)]},
