@@ -144,9 +144,9 @@ def test_bundled_seed_is_idempotent():
     db = next(get_db())
     try:
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
-        assert inserted == 316  # 98 geography + 47 mathematics + 24 chemistry + 24 biology + 21 english + 13 history + 21 historia_tanzania_maadili + 21 business_studies + 21 kiswahili + 26 physics lessons
+        assert inserted == 342  # 98 geography + 47 mathematics + 24 chemistry + 24 biology + 21 english + 13 history + 21 historia_tanzania_maadili + 21 business_studies + 21 kiswahili + 52 physics lessons
         assert replaced == 0
-        assert inserted_schemes == 20
+        assert inserted_schemes == 21
         assert replaced_schemes == 0
         assert purged == 0
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
@@ -170,9 +170,9 @@ def test_bundled_seed_is_idempotent():
             f2_schemes = list_reference_docs(db, subject_slug=slug, form_level=2, doc_type="scheme_of_work")
             assert len(f2_schemes) == 2, slug
             assert all(doc.source_id.startswith("bundled:") for doc in f2_schemes)
-        # Physics: Term I scheme only (Term II not yet provided)
+        # Physics: 2 term schemes
         physics_schemes = list_reference_docs(db, subject_slug="physics", form_level=2, doc_type="scheme_of_work")
-        assert len(physics_schemes) == 1
+        assert len(physics_schemes) == 2
         assert all(doc.source_id.startswith("bundled:") for doc in physics_schemes)
         check_f2_lessons = {
             "mathematics": 47,
@@ -183,7 +183,7 @@ def test_bundled_seed_is_idempotent():
             "history_civics": 21,
             "business_studies": 21,
             "kiswahili": 21,
-            "physics": 26,
+            "physics": 52,
         }
         for slug, expected in check_f2_lessons.items():
             f2_lessons = list_reference_docs(db, subject_slug=slug, form_level=2, doc_type="lesson_plan", limit=200)

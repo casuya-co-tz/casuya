@@ -1,0 +1,1076 @@
+{
+  "subject_name": "Physics",
+  "subject_slug": "physics",
+  "form_level": 2,
+  "standard": "Form 2",
+  "tie_reference": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+  "source_note": "Verified Physics Form Two lesson plans (Arusha Catholic Seminary). 26 lesson plans (80 min double periods, 2 per week) covering Nature and Reflection of Light (Weeks 1-4), Refraction and Dispersion of Light (Weeks 5-8), and Optical Instruments (Weeks 9-14) for Term II.",
+  "lessons": [
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 1 (TERM II - WEEK 1, DOUBLE PERIOD - 80 min): CONCEPT OF LIGHT",
+      "sr_no": "1",
+      "time": "80 MIN",
+      "main_competence": "4.0 Demonstrate mastery of the nature, reflection, refraction, and instruments of light",
+      "specific_competence": "4.1 Explain the concept of light",
+      "main_activity": "Explain light concepts",
+      "specific_activity": "Examine sources of light and the nature of light rays",
+      "teaching_learning_resources": "Ray box, light sources (sun, torch, candle, LED), screens.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Turns off classroom lights, shines a torch. Asks: 'What is light? Where does it come from?'",
+          "learning_activities": "Observe light from different sources, share ideas.",
+          "assessment_criteria": "Engagement and observation"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Defines light as electromagnetic radiation visible to the human eye. Classifies sources: natural (sun, stars, fireflies) and artificial (torches, bulbs, LEDs). Explains luminous vs non-luminous objects. Introduces light rays as straight lines from a source.",
+          "learning_activities": "Take notes on light definition, source classification.",
+          "assessment_criteria": "Correct classification of light sources"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students categorize 20 objects as luminous/non-luminous and natural/artificial. Use ray box to observe straight-line light rays.",
+          "learning_activities": "Categorize objects, observe ray behavior.",
+          "assessment_criteria": "Correct categorization and ray observation"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, introduces light speed (3 x 10^8 m/s). Administers a classification quiz.",
+          "learning_activities": "Complete quiz, self-check.",
+          "assessment_criteria": "Correct classification and speed knowledge"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 2 (TERM II - WEEK 1, DOUBLE PERIOD - 80 min): CONCEPT OF LIGHT (CONT.)",
+      "sr_no": "2",
+      "time": "80 MIN",
+      "main_competence": "4.0 Demonstrate mastery of the nature, reflection, refraction, and instruments of light",
+      "specific_competence": "4.1 Explain the concept of light",
+      "main_activity": "Reinforce light concepts",
+      "specific_activity": "Discuss the nature of light (particle vs wave theories)",
+      "teaching_learning_resources": "Diagrams of wave and particle models, history of light theory.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps light sources from the previous lesson. Asks: 'Is light made of particles or waves? How do we know?'",
+          "learning_activities": "Recall sources, share initial ideas.",
+          "assessment_criteria": "Recall and inquiry"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains the historical debate: Newton's particle theory vs Huygens' wave theory. Introduces wave-particle duality (light behaves as both). Mentions key evidence: diffraction (wave), photoelectric effect (particle).",
+          "learning_activities": "Take notes on theories and evidence.",
+          "assessment_criteria": "Understanding of wave-particle duality"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Groups research one piece of evidence for wave or particle nature, prepare a brief summary.",
+          "learning_activities": "Research and summarize evidence.",
+          "assessment_criteria": "Correct identification of evidence"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Groups present findings, teacher synthesizes. Assigns reading.",
+          "learning_activities": "Present findings.",
+          "assessment_criteria": "Understanding of light's dual nature"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 3 (TERM II - WEEK 2, DOUBLE PERIOD - 80 min): PROPAGATION AND TRANSMISSION OF LIGHT",
+      "sr_no": "3",
+      "time": "80 MIN",
+      "main_competence": "4.0 Demonstrate mastery of the nature, reflection, refraction, and instruments of light",
+      "specific_competence": "4.2 Explain propagation and transmission of light",
+      "main_activity": "Study propagation of light",
+      "specific_activity": "Examine rectilinear propagation and transparent/translucent/opaque materials",
+      "teaching_learning_resources": "Pinhole camera model, assorted materials (glass, paper, cardboard, cloth), light source.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shines a ray box through a narrow slit; observes a straight beam on the wall. Asks: 'What path does light follow?'",
+          "learning_activities": "Observe straight beam, predict light's path.",
+          "assessment_criteria": "Engagement and prediction"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Explains rectilinear propagation (light travels in straight lines). Demonstrates with pinhole camera. Classifies materials: transparent (clear, e.g., glass), translucent (partially clear, e.g., frosted glass), opaque (blocks light, e.g., wood).",
+          "learning_activities": "Take notes on propagation and material classification.",
+          "assessment_criteria": "Correct understanding of rectilinear propagation and material types"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students test various materials: shine light through each, classify as transparent/translucent/opaque. Build a simple pinhole camera and observe the image.",
+          "learning_activities": "Test materials, classify, build pinhole camera.",
+          "assessment_criteria": "Correct classification and successful pinhole camera"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, discusses applications (windows, sunglasses, medical imaging). Administers a classification test.",
+          "learning_activities": "Complete test, self-check.",
+          "assessment_criteria": "Correct classification with justification"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 4 (TERM II - WEEK 2, DOUBLE PERIOD - 80 min): PROPAGATION AND TRANSMISSION OF LIGHT (CONT.)",
+      "sr_no": "4",
+      "time": "80 MIN",
+      "main_competence": "4.0 Demonstrate mastery of the nature, reflection, refraction, and instruments of light",
+      "specific_competence": "4.2 Explain propagation and transmission of light",
+      "main_activity": "Reinforce propagation knowledge",
+      "specific_activity": "Investigate shadows and eclipses using rectilinear propagation",
+      "teaching_learning_resources": "Light source, opaque objects of different shapes, screen.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps rectilinear propagation. Asks: 'What causes shadows?'",
+          "learning_activities": "Recall propagation, hypothesize shadow formation.",
+          "assessment_criteria": "Recall and hypothesis"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains shadow formation: opaque object blocks light, creating a dark region. Defines umbra (total shadow) and penumbra (partial shadow). Links to solar and lunar eclipses.",
+          "learning_activities": "Take notes on shadow types and eclipses.",
+          "assessment_criteria": "Correct understanding of shadow and eclipse formation"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Students create shadows of different shapes, measure shadow size vs object-screen distance. Identify umbra/penumbra.",
+          "learning_activities": "Create and measure shadows, identify shadow zones.",
+          "assessment_criteria": "Accurate shadow measurements"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews results, discusses real-world shadow applications (sundials, shadow puppetry).",
+          "learning_activities": "Complete exercises.",
+          "assessment_criteria": "Application of shadow knowledge"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 5 (TERM II - WEEK 3, DOUBLE PERIOD - 80 min): REFLECTION OF LIGHT BY PLANE MIRRORS",
+      "sr_no": "5",
+      "time": "80 MIN",
+      "main_competence": "4.0 Demonstrate mastery of the nature, reflection, refraction, and instruments of light",
+      "specific_competence": "4.3 Explain reflection by plane mirrors",
+      "main_activity": "Study plane mirror reflection",
+      "specific_activity": "Verify laws of reflection using a plane mirror",
+      "teaching_learning_resources": "Plane mirrors, protractors, ray boxes, drawing pins, white paper.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Students look into a plane mirror and observe their image. Asks: 'Why is the image the same size but reversed left-right?'",
+          "learning_activities": "Observe mirror image, share observations.",
+          "assessment_criteria": "Engagement and observation"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Defines reflection as the bouncing back of light from a surface. States the laws: (1) angle of incidence = angle of reflection, (2) incident ray, reflected ray, and normal are in the same plane. Defines key terms: incident ray, reflected ray, normal, angle of incidence (i), angle of reflection (r).",
+          "learning_activities": "Take notes on laws of reflection and key terms.",
+          "assessment_criteria": "Correct statement of laws and term definitions"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students trace ray paths: shine a ray at a plane mirror at different angles, measure i and r with a protractor. Verify i = r for each trial.",
+          "learning_activities": "Trace rays, measure angles, verify law.",
+          "assessment_criteria": "Accurate angle measurements verifying i = r"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, discusses image properties (virtual, upright, same size, laterally inverted, equidistant). Administers a diagram labeling test.",
+          "learning_activities": "Complete labeling test, self-check.",
+          "assessment_criteria": "Correct labeling and image property identification"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 6 (TERM II - WEEK 3, DOUBLE PERIOD - 80 min): REFLECTION OF LIGHT BY PLANE MIRRORS (CONT.)",
+      "sr_no": "6",
+      "time": "80 MIN",
+      "main_competence": "4.0 Demonstrate mastery of the nature, reflection, refraction, and instruments of light",
+      "specific_competence": "4.3 Explain reflection by plane mirrors",
+      "main_activity": "Reinforce plane mirror reflection",
+      "specific_activity": "Construct ray diagrams for plane mirror image formation",
+      "teaching_learning_resources": "Plane mirrors, ray boxes, graph paper, drawing instruments.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps laws of reflection. Asks: 'How do we draw where an image appears in a mirror?'",
+          "learning_activities": "Recall laws, suggest diagram approach.",
+          "assessment_criteria": "Recall and prediction"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains image construction: use two rays from an object point, reflect each using the law, extend reflected rays backward to find the virtual image point. Shows the image is equidistant from the mirror.",
+          "learning_activities": "Follow the ray diagram construction steps.",
+          "assessment_criteria": "Correct ray diagram construction"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Students draw ray diagrams for objects at different distances from a plane mirror. Measure object and image distances to verify they are equal.",
+          "learning_activities": "Draw ray diagrams, measure distances.",
+          "assessment_criteria": "Accurate diagrams with equal distances"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews diagrams, discusses applications (periscopes, rear-view mirrors). Assigns exercises.",
+          "learning_activities": "Complete exercises.",
+          "assessment_criteria": "Application of plane mirror knowledge"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 7 (TERM II - WEEK 4, DOUBLE PERIOD - 80 min): REFLECTION OF LIGHT FROM CURVED MIRRORS",
+      "sr_no": "7",
+      "time": "80 MIN",
+      "main_competence": "4.0 Demonstrate mastery of the nature, reflection, refraction, and instruments of light",
+      "specific_competence": "4.4 Explain reflection by curved mirrors",
+      "main_activity": "Study curved mirror reflection",
+      "specific_activity": "Examine image formation in concave/convex mirrors",
+      "teaching_learning_resources": "Concave/convex mirrors, ray boxes, candle, screen, drawing instruments.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows a concave mirror (make-up/shaving mirror) and a convex mirror (car side mirror). Asks: 'Why do they produce different images?'",
+          "learning_activities": "Observe different mirror types, hypothesize image differences.",
+          "assessment_criteria": "Engagement and hypothesis"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Explains concave mirror: converging, can form real or virtual images depending on object position. Explains convex mirror: diverging, always forms virtual, smaller images. Defines key terms: centre of curvature, principal axis, focal point, principal focus.",
+          "learning_activities": "Take notes on mirror types, key terms, and image properties.",
+          "assessment_criteria": "Correct distinction between concave and convex mirrors"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students place a candle at different distances from a concave mirror, observe image on a screen. Repeat with convex mirror. Record image characteristics.",
+          "learning_activities": "Observe and record image properties at different distances.",
+          "assessment_criteria": "Accurate observation and recording"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, summarizes image properties for both mirror types. Administers a comparison test.",
+          "learning_activities": "Complete comparison test, self-check.",
+          "assessment_criteria": "Correct comparison of concave and convex mirror images"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 8 (TERM II - WEEK 4, DOUBLE PERIOD - 80 min): REVISION EXERCISE 4 - NATURE AND REFLECTION OF LIGHT",
+      "sr_no": "8",
+      "time": "80 MIN",
+      "main_competence": "4.0 Demonstrate mastery of the nature, reflection, refraction, and instruments of light",
+      "specific_competence": "Revision of Chapter 4",
+      "main_activity": "Revision exercise",
+      "specific_activity": "Complete Revision Exercise 4 and review all Chapter 4 concepts",
+      "teaching_learning_resources": "Revision Exercise 4 sheet, past exam questions.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Outlines Chapter 4 topics: concept of light, propagation, plane mirror reflection, curved mirrors.",
+          "learning_activities": "Listen and note topics to revise.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Works through selected past exam questions on Chapter 4. Explains marking schemes.",
+          "learning_activities": "Follow worked examples, identify mistakes.",
+          "assessment_criteria": "Improved exam technique"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Students complete Revision Exercise 4 under timed conditions.",
+          "learning_activities": "Complete exercise independently.",
+          "assessment_criteria": "Attempted all questions accurately"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews answers as a class, highlights common errors.",
+          "learning_activities": "Self-mark, identify weak areas.",
+          "assessment_criteria": "Recognition and correction of errors"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 9 (TERM II - WEEK 5, DOUBLE PERIOD - 80 min): CONCEPT OF REFRACTION OF LIGHT",
+      "sr_no": "9",
+      "time": "80 MIN",
+      "main_competence": "5.0 Demonstrate mastery of refraction and dispersion of light",
+      "specific_competence": "5.1 Explain the concept of refraction of light",
+      "main_activity": "Explain refraction concepts",
+      "specific_activity": "Examine bending of light at different media boundaries",
+      "teaching_learning_resources": "Glass blocks, ray boxes, protractors, white paper, drawing pins.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Places a pencil in a glass of water; observes it appears bent at the water surface. Asks: 'Why does the pencil look broken?'",
+          "learning_activities": "Observe pencil distortion, hypothesize the cause.",
+          "assessment_criteria": "Engagement and hypothesis"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Defines refraction as the bending of light as it passes from one medium to another. Explains cause: light changes speed in different media. States Snell's Law: n1 sin i = n2 sin r. Defines refractive index (n = speed in vacuum / speed in medium).",
+          "learning_activities": "Take notes on refraction definition, Snell's Law, and refractive index.",
+          "assessment_criteria": "Correct definition and application of Snell's Law"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students trace a ray through a glass block at different angles. Measure angles of incidence and refraction. Calculate refractive index using Snell's Law.",
+          "learning_activities": "Trace rays, measure angles, calculate n.",
+          "assessment_criteria": "Accurate measurements and calculations"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, discusses examples of refraction (mirage, swimming pool depth illusion). Administers a calculation test.",
+          "learning_activities": "Complete test, self-check.",
+          "assessment_criteria": "Correct refraction calculations"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 10 (TERM II - WEEK 5, DOUBLE PERIOD - 80 min): CONCEPT OF REFRACTION OF LIGHT (CONT.)",
+      "sr_no": "10",
+      "time": "80 MIN",
+      "main_competence": "5.0 Demonstrate mastery of refraction and dispersion of light",
+      "specific_competence": "5.1 Explain the concept of refraction of light",
+      "main_activity": "Reinforce refraction knowledge",
+      "specific_activity": "Investigate total internal reflection and critical angle",
+      "teaching_learning_resources": "Semicircular glass block, ray box, protractor, calculator.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps refraction. Asks: 'Can light ever be completely reflected back inside a medium?'",
+          "learning_activities": "Recall refraction, predict possibility.",
+          "assessment_criteria": "Recall and prediction"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains total internal reflection: when light travels from a denser to a rarer medium at an angle greater than the critical angle, all light is reflected. Defines critical angle (sin c = n2/n1). Applications: optical fibres, prisms in binoculars.",
+          "learning_activities": "Take notes on total internal reflection, critical angle, applications.",
+          "assessment_criteria": "Correct understanding of critical angle and applications"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Students use a semicircular glass block to find the critical angle by varying the angle of incidence until total internal reflection occurs.",
+          "learning_activities": "Vary angles, identify critical angle.",
+          "assessment_criteria": "Accurate critical angle determination"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews results, discusses optical fibre and binocular applications.",
+          "learning_activities": "Complete exercises.",
+          "assessment_criteria": "Application of total internal reflection"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 11 (TERM II - WEEK 6, DOUBLE PERIOD - 80 min): REFRACTION OF LIGHT BY A GLASS PRISM",
+      "sr_no": "11",
+      "time": "80 MIN",
+      "main_competence": "5.0 Demonstrate mastery of refraction and dispersion of light",
+      "specific_competence": "5.2 Explain refraction by a glass prism",
+      "main_activity": "Study prism refraction",
+      "specific_activity": "Examine light bending and deviation through a triangular prism",
+      "teaching_learning_resources": "Triangular glass prisms, ray boxes, protractors, white paper.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shines a ray through a triangular prism; observes it bends twice (entering and leaving). Asks: 'Why does the ray change direction twice?'",
+          "learning_activities": "Observe ray bending, hypothesize the cause.",
+          "assessment_criteria": "Engagement and hypothesis"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Explains prism refraction: light bends toward the normal entering the denser glass, then away from the normal leaving. Defines angle of deviation (total bending angle). Shows that deviation depends on prism angle and incident angle.",
+          "learning_activities": "Take notes on prism refraction process and deviation angle.",
+          "assessment_criteria": "Correct understanding of double refraction in prisms"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students trace rays through a prism at different incident angles. Measure deviation angle for each. Plot a graph of deviation vs incident angle.",
+          "learning_activities": "Trace rays, measure deviations, plot graph.",
+          "assessment_criteria": "Accurate measurements and graph"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, identifies the angle of minimum deviation. Discusses prism applications (spectroscopy). Administers a diagram test.",
+          "learning_activities": "Complete diagram test, self-check.",
+          "assessment_criteria": "Correct prism ray diagrams"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 12 (TERM II - WEEK 6, DOUBLE PERIOD - 80 min): REFRACTION OF LIGHT BY A GLASS PRISM (CONT.)",
+      "sr_no": "12",
+      "time": "80 MIN",
+      "main_competence": "5.0 Demonstrate mastery of refraction and dispersion of light",
+      "specific_competence": "5.2 Explain refraction by a glass prism",
+      "main_activity": "Reinforce prism refraction knowledge",
+      "specific_activity": "Apply prism refraction to explain mirages and apparent depth",
+      "teaching_learning_resources": "Diagrams of mirages, apparent depth examples.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps prism refraction. Asks: 'How does a prism explain a mirage on a hot road?'",
+          "learning_activities": "Recall prism refraction, link to mirage.",
+          "assessment_criteria": "Recall and application"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains mirage: hot air near the road is less dense, light bends away from normal as it passes through air layers of different temperatures, creating an inverted image that looks like water. Explains apparent depth: object appears shallower due to refraction.",
+          "learning_activities": "Take notes on mirage and apparent depth explanations.",
+          "assessment_criteria": "Correct explanation using refraction principles"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Groups create diagrams showing light ray paths in mirages and apparent depth scenarios.",
+          "learning_activities": "Draw ray diagrams for both phenomena.",
+          "assessment_criteria": "Accurate diagrams"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Groups present diagrams, teacher provides feedback. Assigns homework.",
+          "learning_activities": "Present diagrams.",
+          "assessment_criteria": "Application of refraction to real phenomena"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 13 (TERM II - WEEK 7, DOUBLE PERIOD - 80 min): COLOURS OF LIGHT",
+      "sr_no": "13",
+      "time": "80 MIN",
+      "main_competence": "5.0 Demonstrate mastery of refraction and dispersion of light",
+      "specific_competence": "5.3 Explain colours of light",
+      "main_activity": "Study dispersion and colours of light",
+      "specific_activity": "Examine dispersion of white light and colour recombination",
+      "teaching_learning_resources": "Prisms, colour wheels, white light source, glass slabs.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shines white light through a prism; observes a rainbow spectrum on the wall. Asks: 'Where do the colours come from?'",
+          "learning_activities": "Observe spectrum, hypothesize the cause.",
+          "assessment_criteria": "Engagement and observation"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Explains dispersion: white light splits into its component colours (ROYGBIV) because each colour bends by a different amount in the prism. Defines spectrum. Shows recombination: a second inverted prism recombines the spectrum into white light (Newton's experiment).",
+          "learning_activities": "Take notes on dispersion, spectrum, and recombination.",
+          "assessment_criteria": "Correct explanation of dispersion and recombination"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students observe spectrum through a prism, identify all seven colours. Use a colour wheel to show recombination (spinning the wheel fast appears white).",
+          "learning_activities": "Observe spectrum, spin colour wheel.",
+          "assessment_criteria": "Correct colour identification and recombination observation"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, discusses applications (rainbow formation, spectrum analysis in astronomy). Administers a written short test.",
+          "learning_activities": "Complete test, self-check.",
+          "assessment_criteria": "Correct understanding of dispersion"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 14 (TERM II - WEEK 7, DOUBLE PERIOD - 80 min): COLOURS OF LIGHT (CONT.)",
+      "sr_no": "14",
+      "time": "80 MIN",
+      "main_competence": "5.0 Demonstrate mastery of refraction and dispersion of light",
+      "specific_competence": "5.3 Explain colours of light",
+      "main_activity": "Reinforce colour knowledge",
+      "specific_activity": "Investigate primary colours of light and pigment mixing",
+      "teaching_learning_resources": "Colour filters, coloured lights, paint samples, colour wheels.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps dispersion. Asks: 'What colours combine to make other colours? Are light and paint mixing the same?'",
+          "learning_activities": "Recall spectrum, predict colour mixing.",
+          "assessment_criteria": "Recall and prediction"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains additive colour mixing (light): red + green + blue = white. Subtractive colour mixing (pigment): cyan + magenta + yellow = black. Shows why primary colours differ for light vs paint.",
+          "learning_activities": "Take notes on additive and subtractive mixing.",
+          "assessment_criteria": "Correct understanding of both mixing types"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Students mix coloured lights (red, green, blue) on a white screen, observe results. Mix paint colours separately. Compare.",
+          "learning_activities": "Mix light and paint colours, record results.",
+          "assessment_criteria": "Correct observation of colour mixing"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews results, discusses applications (TV screens use RGB, printing uses CMY). Assigns exercises.",
+          "learning_activities": "Complete exercises.",
+          "assessment_criteria": "Application of colour mixing knowledge"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 15 (TERM II - WEEK 8, DOUBLE PERIOD - 80 min): REFRACTION OF LIGHT BY LENSES",
+      "sr_no": "15",
+      "time": "80 MIN",
+      "main_competence": "5.0 Demonstrate mastery of refraction and dispersion of light",
+      "specific_competence": "5.4 Explain refraction by lenses",
+      "main_activity": "Study lenses",
+      "specific_activity": "Examine converging/diverging lenses and image formation",
+      "teaching_learning_resources": "Convex/concave lenses, ray boxes, screens, candles, drawing instruments.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows a convex lens focusing sunlight to a point on paper (paper burns). Shows a concave lens spreading light. Asks: 'Why do these lenses behave differently?'",
+          "learning_activities": "Observe lens effects, hypothesize the cause.",
+          "assessment_criteria": "Engagement and observation"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Explains convex (converging) lens: thicker in middle, brings parallel rays to a focus. Concave (diverging) lens: thinner in middle, spreads parallel rays. Defines key terms: principal axis, optical centre, focal point, focal length. Shows ray diagrams for both lens types.",
+          "learning_activities": "Take notes on lens types, key terms, and ray rules.",
+          "assessment_criteria": "Correct distinction between converging and diverging lenses"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students trace rays through convex and concave lenses at different positions. Measure focal length. Observe real and virtual images on a screen.",
+          "learning_activities": "Trace rays, measure focal length, observe images.",
+          "assessment_criteria": "Accurate ray diagrams and focal length measurements"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, summarizes image properties for both lens types. Administers a lens identification test.",
+          "learning_activities": "Complete test, self-check.",
+          "assessment_criteria": "Correct lens identification and image properties"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 16 (TERM II - WEEK 8, DOUBLE PERIOD - 80 min): REVISION EXERCISE 5 - REFRACTION AND DISPERSION OF LIGHT",
+      "sr_no": "16",
+      "time": "80 MIN",
+      "main_competence": "5.0 Demonstrate mastery of refraction and dispersion of light",
+      "specific_competence": "Revision of Chapter 5",
+      "main_activity": "Revision exercise",
+      "specific_activity": "Complete Revision Exercise 5 and review all Chapter 5 concepts",
+      "teaching_learning_resources": "Revision Exercise 5 sheet, past exam questions.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Outlines Chapter 5 topics: refraction concepts, prism refraction, colours of light, lenses.",
+          "learning_activities": "Listen and note topics to revise.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Works through selected past exam questions on Chapter 5. Explains marking schemes.",
+          "learning_activities": "Follow worked examples, identify mistakes.",
+          "assessment_criteria": "Improved exam technique"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Students complete Revision Exercise 5 under timed conditions.",
+          "learning_activities": "Complete exercise independently.",
+          "assessment_criteria": "Attempted all questions accurately"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews answers as a class, highlights common errors.",
+          "learning_activities": "Self-mark, identify weak areas.",
+          "assessment_criteria": "Recognition and correction of errors"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 17 (TERM II - WEEK 9, DOUBLE PERIOD - 80 min): SIMPLE MICROSCOPE",
+      "sr_no": "17",
+      "time": "80 MIN",
+      "main_competence": "6.0 Demonstrate mastery of optical instruments",
+      "specific_competence": "6.1 Explain the structure and use of a simple microscope",
+      "main_activity": "Study the simple microscope",
+      "specific_activity": "Examine magnification and image formation in a simple microscope",
+      "teaching_learning_resources": "Magnifying lenses/simple microscopes, small specimens, graph paper.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Gives each student a magnifying lens to examine their hand. Asks: 'What do you notice about the image? Is it bigger? Is it upright?'",
+          "learning_activities": "Examine hand through lens, describe the image.",
+          "assessment_criteria": "Engagement and observation"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Explains simple microscope (magnifying glass): a convex lens used within its focal length. Shows that it produces a virtual, upright, magnified image. Defines magnification (M = 25/f + 1 for near point). Discusses lens power (dioptres = 1/f in metres).",
+          "learning_activities": "Take notes on simple microscope principle, magnification formula.",
+          "assessment_criteria": "Correct understanding of magnification and lens power"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students use magnifying lenses of different focal lengths to examine specimens. Measure focal length, calculate magnification. Observe image characteristics.",
+          "learning_activities": "Measure focal length, calculate magnification, observe images.",
+          "assessment_criteria": "Accurate measurements and calculations"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, discusses uses (reading, biology, jewellery inspection). Administers a magnification calculation test.",
+          "learning_activities": "Complete test, self-check.",
+          "assessment_criteria": "Correct magnification calculations"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 18 (TERM II - WEEK 9, DOUBLE PERIOD - 80 min): SIMPLE MICROSCOPE (CONT.)",
+      "sr_no": "18",
+      "time": "80 MIN",
+      "main_competence": "6.0 Demonstrate mastery of optical instruments",
+      "specific_competence": "6.1 Explain the structure and use of a simple microscope",
+      "main_activity": "Reinforce simple microscope knowledge",
+      "specific_activity": "Investigate factors affecting magnification",
+      "teaching_learning_resources": "Lenses of different focal lengths, specimens, graph paper.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps magnification formula. Asks: 'What happens to magnification when the focal length changes?'",
+          "learning_activities": "Recall formula, predict relationship.",
+          "assessment_criteria": "Recall and prediction"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains relationship: shorter focal length = higher magnification. Shows graph of M vs f. Discusses practical limits (very short f lenses are small and hard to use).",
+          "learning_activities": "Take notes on M-f relationship, plot sample graph.",
+          "assessment_criteria": "Correct understanding of focal length-magnification relationship"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Students use lenses of 3+ different focal lengths, measure magnification for each, plot M vs f graph.",
+          "learning_activities": "Measure, calculate, plot graph.",
+          "assessment_criteria": "Accurate graph with correct relationship"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews graph, discusses why professional microscopes use multiple lenses.",
+          "learning_activities": "Complete exercises.",
+          "assessment_criteria": "Understanding of magnification factors"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 19 (TERM II - WEEK 11, DOUBLE PERIOD - 80 min): COMPOUND MICROSCOPE",
+      "sr_no": "19",
+      "time": "80 MIN",
+      "main_competence": "6.0 Demonstrate mastery of optical instruments",
+      "specific_competence": "6.2 Explain the structure and use of a compound microscope",
+      "main_activity": "Study the compound microscope",
+      "specific_activity": "Examine lens arrangement and magnification in a compound microscope",
+      "teaching_learning_resources": "Compound microscopes, prepared slides, lens diagrams.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows a compound microscope and lets students observe a prepared slide. Asks: 'How is this different from a simple magnifying glass?'",
+          "learning_activities": "Observe through microscope, compare with magnifying glass.",
+          "assessment_criteria": "Engagement and comparison"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Explains compound microscope structure: objective lens (short focal length, close to specimen) and eyepiece lens (longer focal length). Shows how the objective forms a real, magnified image that the eyepiece further magnifies. Total magnification = M_objective x M_eyepiece.",
+          "learning_activities": "Take notes on structure, lens roles, and total magnification formula.",
+          "assessment_criteria": "Correct understanding of compound microscope principle"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students use a compound microscope to view prepared slides. Identify the objective and eyepiece lenses. Calculate total magnification from given focal lengths.",
+          "learning_activities": "Use microscope, identify lenses, calculate magnification.",
+          "assessment_criteria": "Correct microscope use and magnification calculation"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, compares simple vs compound microscope magnification. Administers a structure identification test.",
+          "learning_activities": "Complete test, self-check.",
+          "assessment_criteria": "Correct identification of microscope parts"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 20 (TERM II - WEEK 11, DOUBLE PERIOD - 80 min): COMPOUND MICROSCOPE (CONT.)",
+      "sr_no": "20",
+      "time": "80 MIN",
+      "main_competence": "6.0 Demonstrate mastery of optical instruments",
+      "specific_competence": "6.2 Explain the structure and use of a compound microscope",
+      "main_activity": "Reinforce compound microscope knowledge",
+      "specific_activity": "Compare simple and compound microscopes",
+      "teaching_learning_resources": "Simple and compound microscopes, comparison charts.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps compound microscope structure. Asks: 'Why use a compound microscope instead of just a magnifying glass?'",
+          "learning_activities": "Recall structure, suggest advantages.",
+          "assessment_criteria": "Recall and reasoning"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Compares simple vs compound: magnification range, resolution, image quality, portability, cost. Explains why compound gives much higher magnification (multiple lens stages).",
+          "learning_activities": "Take notes on comparison.",
+          "assessment_criteria": "Correct comparison of both microscope types"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Groups prepare a comparison chart of simple vs compound microscopes covering magnification, resolution, uses, cost.",
+          "learning_activities": "Create comparison chart.",
+          "assessment_criteria": "Accurate and comprehensive comparison"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Groups present charts, teacher provides feedback. Discusses clinical and research microscope uses.",
+          "learning_activities": "Present charts.",
+          "assessment_criteria": "Application of microscope knowledge"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 21 (TERM II - WEEK 12, DOUBLE PERIOD - 80 min): ASTRONOMICAL TELESCOPE",
+      "sr_no": "21",
+      "time": "80 MIN",
+      "main_competence": "6.0 Demonstrate mastery of optical instruments",
+      "specific_competence": "6.3 Explain the structure and use of an astronomical telescope",
+      "main_activity": "Study the astronomical telescope",
+      "specific_activity": "Examine lens arrangement and image formation in a telescope",
+      "teaching_learning_resources": "Telescope model/diagrams, ray boxes, convex lenses of different focal lengths.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows images of distant objects through a telescope vs naked eye. Asks: 'How does a telescope make distant objects appear closer?'",
+          "learning_activities": "Observe magnified images, hypothesize the mechanism.",
+          "assessment_criteria": "Engagement and hypothesis"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Explains astronomical telescope structure: objective lens (long focal length, forms real image of distant object) and eyepiece (short focal length, magnifies the real image). Angular magnification = f_objective / f_eyepiece. Shows ray diagram of image formation.",
+          "learning_activities": "Take notes on telescope structure, lens roles, and magnification formula.",
+          "assessment_criteria": "Correct understanding of telescope principle"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students assemble a telescope from two lenses, observe a distant object. Measure focal lengths, calculate angular magnification. Compare with different lens combinations.",
+          "learning_activities": "Assemble telescope, measure, calculate magnification.",
+          "assessment_criteria": "Successful assembly and magnification calculation"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, discusses telescope types (refracting vs reflecting). Administers a structure identification test.",
+          "learning_activities": "Complete test, self-check.",
+          "assessment_criteria": "Correct identification of telescope parts"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 22 (TERM II - WEEK 12, DOUBLE PERIOD - 80 min): ASTRONOMICAL TELESCOPE (CONT.)",
+      "sr_no": "22",
+      "time": "80 MIN",
+      "main_competence": "6.0 Demonstrate mastery of optical instruments",
+      "specific_competence": "6.3 Explain the structure and use of an astronomical telescope",
+      "main_activity": "Reinforce telescope knowledge",
+      "specific_activity": "Discuss types of telescopes and their applications",
+      "teaching_learning_resources": "Diagrams of refracting and reflecting telescopes, observatory photos.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps telescope structure. Asks: 'Why do large observatories use mirrors instead of lenses?'",
+          "learning_activities": "Recall structure, hypothesize mirror advantage.",
+          "assessment_criteria": "Recall and reasoning"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains reflecting telescope: uses a curved mirror instead of an objective lens, avoids chromatic aberration, can be made much larger. Discusses applications: astronomy, navigation, surveillance.",
+          "learning_activities": "Take notes on reflecting telescopes and applications.",
+          "assessment_criteria": "Correct understanding of telescope types"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Groups create a comparison chart of refracting vs reflecting telescopes.",
+          "learning_activities": "Create comparison chart.",
+          "assessment_criteria": "Accurate comparison"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Groups present charts, teacher discusses real-world telescope projects (Hubble, James Webb).",
+          "learning_activities": "Present charts.",
+          "assessment_criteria": "Application of telescope knowledge"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 23 (TERM II - WEEK 13, DOUBLE PERIOD - 80 min): BINOCULARS AND LENS CAMERA",
+      "sr_no": "23",
+      "time": "80 MIN",
+      "main_competence": "6.0 Demonstrate mastery of optical instruments",
+      "specific_competence": "6.4 Explain the structure and use of binoculars and a lens camera",
+      "main_activity": "Study binoculars and lens camera",
+      "specific_activity": "Compare optical arrangement and function of binoculars and a lens camera",
+      "teaching_learning_resources": "Binoculars, camera models/diagrams, lens arrangement charts.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows binoculars and a camera. Asks: 'What do these two instruments have in common? How are they different?'",
+          "learning_activities": "Observe both instruments, identify similarities.",
+          "assessment_criteria": "Engagement and comparison"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Explains binoculars: two small telescopes side by side, uses Porro prisms to flip images upright. Explains lens camera: convex lens forms real, inverted image on film/sensor, adjustable distance for focus. Both use converging lenses but serve different purposes.",
+          "learning_activities": "Take notes on binocular and camera structure and function.",
+          "assessment_criteria": "Correct understanding of both instruments"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Groups examine binoculars and camera models, identify lens arrangements, draw ray diagrams for each. Compare magnification and image formation.",
+          "learning_activities": "Examine instruments, draw diagrams, compare.",
+          "assessment_criteria": "Accurate diagrams and comparison"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Groups present findings, teacher provides feedback. Administers a comparison quiz.",
+          "learning_activities": "Complete comparison quiz, self-check.",
+          "assessment_criteria": "Correct comparison of binoculars and camera"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 24 (TERM II - WEEK 13, DOUBLE PERIOD - 80 min): BINOCULARS AND LENS CAMERA (CONT.)",
+      "sr_no": "24",
+      "time": "80 MIN",
+      "main_competence": "6.0 Demonstrate mastery of optical instruments",
+      "specific_competence": "6.4 Explain the structure and use of binoculars and a lens camera",
+      "main_activity": "Reinforce binoculars and camera knowledge",
+      "specific_activity": "Investigate focusing mechanisms in cameras",
+      "teaching_learning_resources": "Camera lens diagrams, focusing demonstrations.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Recaps camera structure. Asks: 'How does a camera focus on objects at different distances?'",
+          "learning_activities": "Recall structure, hypothesize focusing mechanism.",
+          "assessment_criteria": "Recall and reasoning"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Explains camera focusing: moving the lens closer or farther from the sensor/film changes where the image forms. Close objects need the lens farther away, distant objects need it closer. Auto-focus uses sensors and motors.",
+          "learning_activities": "Take notes on focusing mechanism.",
+          "assessment_criteria": "Correct understanding of focusing"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Groups use a simple camera model to demonstrate focusing by varying lens-sensor distance for near and far objects.",
+          "learning_activities": "Demonstrate focusing, record observations.",
+          "assessment_criteria": "Successful focusing demonstration"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews results, discusses digital vs film camera differences.",
+          "learning_activities": "Complete exercises.",
+          "assessment_criteria": "Application of camera knowledge"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 25 (TERM II - WEEK 14, DOUBLE PERIOD - 80 min): THE HUMAN EYE",
+      "sr_no": "25",
+      "time": "80 MIN",
+      "main_competence": "6.0 Demonstrate mastery of optical instruments",
+      "specific_competence": "6.5 Explain the structure and function of the human eye",
+      "main_activity": "Study the human eye",
+      "specific_activity": "Examine eye structure, image formation, and common eye defects",
+      "teaching_learning_resources": "Human eye model/charts, diagrams of eye defects.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "10 min",
+          "teaching_activities": "Shows an eye model and asks students to identify the parts they recognize. Asks: 'How does the eye form images like a camera?'",
+          "learning_activities": "Observe eye model, identify parts.",
+          "assessment_criteria": "Engagement and observation"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "30 min",
+          "teaching_activities": "Explains eye structure: cornea, iris, pupil, lens, retina, optic nerve. Compares to a camera (lens = camera lens, retina = film/sensor, iris = aperture). Explains image formation: lens focuses light on retina, inverted real image. Discusses defects: myopia (nearsightedness), hyperopia (farsightedness), astigmatism.",
+          "learning_activities": "Take notes on eye structure, camera comparison, and defects.",
+          "assessment_criteria": "Correct identification of eye parts and defects"
+        },
+        {
+          "stage": "Design",
+          "time": "25 min",
+          "teaching_activities": "Students label eye diagrams, identify each part's function. Match eye defects with their correction lenses (concave for myopia, convex for hyperopia). Draw ray diagrams for each defect.",
+          "learning_activities": "Label diagrams, match defects to lenses, draw ray diagrams.",
+          "assessment_criteria": "Accurate labeling and defect identification"
+        },
+        {
+          "stage": "Realization",
+          "time": "15 min",
+          "teaching_activities": "Reviews results, discusses eye care and common treatments. Administers an eye structure identification test.",
+          "learning_activities": "Complete test, self-check.",
+          "assessment_criteria": "Correct eye structure and defect knowledge"
+        }
+      ]
+    },
+    {
+      "title": "PHYSICS FORM TWO LESSON PLAN NO. 26 (TERM II - WEEK 14, DOUBLE PERIOD - 80 min): REVISION EXERCISE 6 - OPTICAL INSTRUMENTS",
+      "sr_no": "26",
+      "time": "80 MIN",
+      "main_competence": "6.0 Demonstrate mastery of optical instruments",
+      "specific_competence": "Revision of Chapter 6",
+      "main_activity": "Revision exercise",
+      "specific_activity": "Complete Revision Exercise 6 and review all Chapter 6 concepts",
+      "teaching_learning_resources": "Revision Exercise 6 sheet, past exam questions.",
+      "references": "TIE (2026). Physics, Kitabu cha Mwanafunzi, Kidato cha Pili. Dar es Salaam: Taasisi ya Elimu Tanzania.",
+      "teaching_structure": [
+        {
+          "stage": "Introduction",
+          "time": "5 min",
+          "teaching_activities": "Outlines Chapter 6 topics: simple microscope, compound microscope, telescope, binoculars, camera, human eye.",
+          "learning_activities": "Listen and note topics to revise.",
+          "assessment_criteria": "Engagement"
+        },
+        {
+          "stage": "Competence Development",
+          "time": "15 min",
+          "teaching_activities": "Works through selected past exam questions on Chapter 6. Explains marking schemes.",
+          "learning_activities": "Follow worked examples, identify mistakes.",
+          "assessment_criteria": "Improved exam technique"
+        },
+        {
+          "stage": "Design",
+          "time": "12 min",
+          "teaching_activities": "Students complete Revision Exercise 6 under timed conditions.",
+          "learning_activities": "Complete exercise independently.",
+          "assessment_criteria": "Attempted all questions accurately"
+        },
+        {
+          "stage": "Realization",
+          "time": "8 min",
+          "teaching_activities": "Reviews answers as a class, highlights common errors. Previews annual exam.",
+          "learning_activities": "Self-mark, note weak areas, listen to exam preview.",
+          "assessment_criteria": "Recognition and correction of errors"
+        }
+      ]
+    }
+  ]
+}
