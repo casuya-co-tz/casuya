@@ -2087,7 +2087,7 @@ NECTA_SYLLABUS: list[dict] = [
                 'electricity, magnetism, thermodynamics, modern physics and advanced electromagnetism.',
  'form_start': 1,
  'form_end': 6,
- 'replace_topic_form_levels': [1],
+ 'replace_topic_form_levels': [1, 2, 3, 4, 5, 6],
  'topics': [{'title': 'INTRODUCTION TO PHYSICS',
              'code': '1.0',
              'form_level': 1,
