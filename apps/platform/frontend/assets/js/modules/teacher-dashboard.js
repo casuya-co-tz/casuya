@@ -554,6 +554,7 @@ async function renderTeacherDashboard() {
       const classroom = res?.classroom || await request("/classrooms/me?_t=" + Date.now());
       const students = Array.isArray(res?.students) ? res.students : [];
       const code = classroom?.code || "";
+      const className = classroom?.name || "";
       const limit = classroom?.lesson_limit ?? 2;
       const pubCount = Array.isArray(teacherLessons) ? teacherLessons.filter(l => l.status === "published").length : 0;
 
@@ -565,11 +566,23 @@ async function renderTeacherDashboard() {
           </div>
 
           <div class="card" style="margin-bottom:1.25rem;padding:1.5rem;background:linear-gradient(135deg,#eff6ff,#ede9fe);border:1px solid #dbeafe;text-align:center">
+            <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem">
+              <span style="font-size:1.05rem;font-weight:700;color:#1e3a8a" id="manage-class-name-display">${escapeHtml(className || "My Class")}</span>
+              <button class="btn btn-sm" id="edit-class-name" title="Edit class name">✏️ Edit</button>
+            </div>
+            <div id="manage-class-name-edit" style="display:none;max-width:320px;margin:0 auto 0.5rem;gap:0.5rem;align-items:center">
+              <input class="input" id="manage-class-name-input" value="${escapeHtml(className)}" maxlength="80" placeholder="Class name (e.g. Form Two East)" style="text-align:center">
+              <div style="display:flex;gap:0.4rem;justify-content:center;margin-top:0.4rem">
+                <button class="btn btn-sm btn-success" id="save-class-name">Save</button>
+                <button class="btn btn-sm" id="cancel-class-name">Cancel</button>
+              </div>
+              <p id="class-name-status" style="display:none;font-size:0.8rem;margin:0.25rem 0 0"></p>
+            </div>
             <div style="font-size:0.8rem;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:0.04em">Share this code with your students</div>
             <p style="margin:0.4rem auto 0;font-size:0.9rem;color:var(--color-text-muted);max-width:460px">
               Tell students to open <b>Connect to Teacher</b> on their dashboard, paste this code, and save it.
             </p>
-            <div id="manage-class-code" style="font-size:3rem;font-weight:800;letter-spacing:0.35em;color:#1e40af;font-family:monospace;margin:0.75rem 0" >${escapeHtml(code)}</div>
+            <div id="manage-class-code" style="font-size:3rem;font-weight:800;letter-spacing:0.35em;color:#1e40af;font-family:monospace;margin:0.75rem 0">${escapeHtml(code)}</div>
             <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap">
               <button class="btn" id="copy-manage-code">Copy Code</button>
               <button class="btn" id="regenerate-code">↻ Regenerate Code</button>
@@ -584,10 +597,16 @@ async function renderTeacherDashboard() {
           ${students.length === 0 ? `
             <div class="empty-state" style="padding:2rem">
               <p>No students connected yet.</p>
-              <p style="font-size:0.85rem;color:var(--color-text-muted)">Share your class code with students — once they paste and save it, they will appear here.</p>
+              <p style="font-size:0.85rem;color:var(--color-text-muted)">Share your class code with students — once they paste and save it, they will appear here and you can see their progress.</p>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:1rem">
+                <button class="btn" id="copy-manage-code-empty">Copy Code</button>
+                <button class="btn btn-primary" id="view-lessons-empty">View Your Lessons</button>
+              </div>
             </div>` :
             `<div class="card-grid">
-              ${students.map(s => `
+              ${students.map(s => {
+                const stats = s.stats || { lessons_completed: 0, avg_score: 0, assignments_submitted: 0 };
+                return `
                 <div class="card student-card" data-id="${escapeHtml(s.id)}" data-name="${escapeHtml(s.full_name || s.email || "Student")}" style="cursor:pointer">
                   <div style="display:flex;align-items:center;gap:0.75rem">
                     <div style="width:40px;height:40px;border-radius:50%;background:var(--color-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0">${escapeHtml((s.full_name || "S").charAt(0).toUpperCase())}</div>
@@ -598,17 +617,27 @@ async function renderTeacherDashboard() {
                     </div>
                     <span style="color:var(--color-text-muted);font-size:0.8rem">→</span>
                   </div>
-                </div>
-              `).join("")}
+                  <div style="display:flex;gap:0.4rem;margin-top:0.75rem;flex-wrap:wrap">
+                    <span class="student-stat-chip" title="Lessons completed">✅ ${stats.lessons_completed}</span>
+                    <span class="student-stat-chip" title="Average score">📈 ${stats.avg_score}%</span>
+                    <span class="student-stat-chip" title="Assignments submitted">📝 ${stats.assignments_submitted}</span>
+                  </div>
+                </div>`;
+              }).join("")}
             </div>`}
         </div>
       `);
       document.getElementById("back-btn").addEventListener("click", loadTeacherOverview);
-      document.getElementById("copy-manage-code").addEventListener("click", () => {
+      document.getElementById("copy-manage-code")?.addEventListener("click", () => {
         const code = document.getElementById("manage-class-code").textContent;
         const done = () => { const b = document.getElementById("copy-manage-code"); if (b) { const t=b.textContent; b.textContent="Copied ✓"; setTimeout(()=>b.textContent=t,1500);} };
         if (navigator.clipboard?.writeText) { navigator.clipboard.writeText(code).then(done).catch(done); } else done();
       });
+      document.getElementById("copy-manage-code-empty")?.addEventListener("click", () => {
+        const done = () => { const b = document.getElementById("copy-manage-code-empty"); if (b) { const t=b.textContent; b.textContent="Copied ✓"; setTimeout(()=>b.textContent=t,1500);} };
+        if (navigator.clipboard?.writeText) navigator.clipboard.writeText(code).then(done).catch(done); else done();
+      });
+      document.getElementById("view-lessons-empty")?.addEventListener("click", () => loadTeacherLessons());
       document.getElementById("regenerate-code").addEventListener("click", async () => {
         if (!confirm("Regenerate your class code? Students using the old code will need the new one.")) return;
         try {
@@ -618,6 +647,40 @@ async function renderTeacherDashboard() {
         } catch(e) { alert("Failed to regenerate code: " + e.message); }
       });
       document.getElementById("refresh-students")?.addEventListener("click", loadTeacherClass);
+      document.getElementById("edit-class-name")?.addEventListener("click", () => {
+        document.getElementById("manage-class-name-display").style.display = "none";
+        const editRow = document.getElementById("manage-class-name-edit");
+        editRow.style.display = "block";
+        const input = document.getElementById("manage-class-name-input");
+        input.focus();
+      });
+      document.getElementById("cancel-class-name")?.addEventListener("click", () => {
+        document.getElementById("manage-class-name-edit").style.display = "none";
+        document.getElementById("manage-class-name-display").style.display = "";
+      });
+      document.getElementById("save-class-name")?.addEventListener("click", async () => {
+        const input = document.getElementById("manage-class-name-input");
+        const status = document.getElementById("class-name-status");
+        const name = (input.value || "").trim();
+        if (!name) { status.style.display = "block"; status.style.color = "red"; status.textContent = "Enter a class name first."; return; }
+        status.style.display = "block";
+        status.style.color = "var(--color-text-muted)";
+        status.style.marginTop = "0.4rem";
+        status.style.fontSize = "0.8rem";
+        status.textContent = "Saving...";
+        try {
+          await request("/classrooms/me", { method: "POST", body: JSON.stringify({ name }) });
+          document.getElementById("manage-class-name-edit").style.display = "none";
+          const display = document.getElementById("manage-class-name-display");
+          display.textContent = name;
+          display.style.display = "";
+          status.style.display = "none";
+          showToast("Class name saved");
+        } catch(e) {
+          status.style.color = "red";
+          status.textContent = e.message || "Could not save class name.";
+        }
+      });
       document.querySelectorAll("#teacher-content .student-card").forEach(card => {
         card.addEventListener("click", () => viewTeacherStudent(card.dataset.id, card.dataset.name));
       });
@@ -1544,9 +1607,9 @@ async function renderTeacherDashboard() {
       { slug: "kiswahili", name: "Kiswahili", sw: true },
       { slug: "geography", name: "Geography", sw: false },
       { slug: "history", name: "History", sw: false },
-      { slug: "civics", name: "Civics", sw: true },
+      { slug: "history_civics", name: "Historia ya Tanzania na Maadili", sw: true },
+      { slug: "business_studies", name: "Business Studies", sw: false },
       { slug: "computing", name: "Computing & ICT", sw: false },
-      { slug: "historia-ya-tanzania-na-maadili", name: "Historia ya Tanzania na Maadili", sw: true },
     ];
     const ROMAN = { 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI" };
     const termNames = { "Term 1": "Term I", "Term 2": "Term II" };
@@ -2201,7 +2264,8 @@ async function renderTeacherDashboard() {
       { slug: "kiswahili", name: "Kiswahili" },
       { slug: "geography", name: "Geography" },
       { slug: "history", name: "History" },
-      { slug: "history_civics", name: "Civics" },
+      { slug: "history_civics", name: "Historia ya Tanzania na Maadili" },
+      { slug: "business_studies", name: "Business Studies" },
       { slug: "computing", name: "Computing & ICT" },
     ];
     let docs = [];
@@ -2369,7 +2433,8 @@ async function renderTeacherDashboard() {
                   <option value="kiswahili">Kiswahili</option>
                   <option value="geography">Geography</option>
                   <option value="history">History</option>
-                  <option value="civics">Civics</option>
+                  <option value="history_civics">Historia ya Tanzania na Maadili</option>
+                  <option value="business_studies">Business Studies</option>
                   <option value="computing">Computing</option>
                 </select>
                 <select class="input" name="form_level" style="flex:0.5">
@@ -2403,7 +2468,8 @@ async function renderTeacherDashboard() {
                   <option value="kiswahili">Kiswahili</option>
                   <option value="geography">Geography</option>
                   <option value="history">History</option>
-                  <option value="civics">Civics</option>
+                  <option value="history_civics">Historia ya Tanzania na Maadili</option>
+                  <option value="business_studies">Business Studies</option>
                   <option value="computing">Computing</option>
                 </select>
                 <select class="input" name="form_level" style="flex:0.5">

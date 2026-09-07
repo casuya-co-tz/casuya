@@ -353,7 +353,7 @@ function renderQuizQuestions(questions, meta = {}) {
   const subject = meta.subject || "General";
   const formLevel = meta.formLevel || "";
   const topic = meta.topic || "";
-  const subjectLabels = { mathematics:"Mathematics", biology:"Biology", chemistry:"Chemistry", physics:"Physics", english:"English", kiswahili:"Kiswahili", geography:"Geography", history:"History", civics:"Civics", computing:"Computing" };
+  const subjectLabels = { mathematics:"Mathematics", biology:"Biology", chemistry:"Chemistry", physics:"Physics", english:"English", kiswahili:"Kiswahili", geography:"Geography", history:"History", history_civics:"Historia ya Tanzania na Maadili", business_studies:"Business Studies", computing:"Computing" };
   const subjectLabel = subjectLabels[subject] || subject;
   const formLabel = formLevel ? `Form ${["I","II","III","IV"][Number(formLevel)-1] || formLevel}` : "";
   const badgeParts = [subjectLabel, formLabel].filter(Boolean).join(" \u2022 ");
@@ -503,7 +503,7 @@ function _tutorWrongQuestions(quizId, total, wrongIndexes) {
 
   var subjectSlug = "";
   var formLevel = "";
-  var slugMap = { mathematics:"mathematics", math:"mathematics", biology:"biology", chemistry:"chemistry", physics:"physics", english:"english", kiswahili:"kiswahili", geography:"geography", history:"history", civics:"civics", computing:"computing" };
+  var slugMap = { mathematics:"mathematics", math:"mathematics", biology:"biology", chemistry:"chemistry", physics:"physics", english:"english", kiswahili:"kiswahili", geography:"geography", history:"history", history_civics:"history_civics", business_studies:"business_studies", computing:"computing" };
   var m = (data.meta || "").match(/^([A-Za-z ]+)\s*(\u2022)?\s*Form\s*([IVX]+)/i);
   if (m) {
     var label = slugMap[m[1].trim().toLowerCase()];

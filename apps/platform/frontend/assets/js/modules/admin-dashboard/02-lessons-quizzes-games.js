@@ -133,7 +133,8 @@
                   <option value="kiswahili">Kiswahili</option>
                   <option value="geography">Geography</option>
                   <option value="history">History</option>
-                  <option value="civics">Civics</option>
+                  <option value="history_civics">Historia ya Tanzania na Maadili</option>
+                  <option value="business_studies">Business Studies</option>
                   <option value="computing">Computing</option>
                 </select>
                 <select class="input" name="form_level" style="flex:0.5">

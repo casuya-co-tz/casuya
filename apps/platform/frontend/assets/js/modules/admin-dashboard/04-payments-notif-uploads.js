@@ -643,7 +643,8 @@
       { slug: "kiswahili", name: "Kiswahili" },
       { slug: "geography", name: "Geography" },
       { slug: "history", name: "History" },
-      { slug: "history_civics", name: "Civics" },
+      { slug: "history_civics", name: "Historia ya Tanzania na Maadili" },
+      { slug: "business_studies", name: "Business Studies" },
       { slug: "computing", name: "Computing & ICT" },
     ];
     let docs = [];
