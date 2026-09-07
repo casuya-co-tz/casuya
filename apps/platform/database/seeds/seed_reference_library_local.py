@@ -206,6 +206,9 @@ def _upsert_doc(db, doc_type: str, source_raw: str, title: str, standard: str,
             if getattr(existing, key) != value:
                 setattr(existing, key, value)
                 updated = True
+        if not existing.visible_to_students:
+            existing.visible_to_students = True
+            updated = True
         return (1, False) if updated else (0, False)
 
     db.add(ReferenceDoc(
@@ -218,6 +221,7 @@ def _upsert_doc(db, doc_type: str, source_raw: str, title: str, standard: str,
         form_level=form_level,
         standard=standard,
         content=json.dumps(content, ensure_ascii=False),
+        visible_to_students=True,
     ))
     return 1, True
 
