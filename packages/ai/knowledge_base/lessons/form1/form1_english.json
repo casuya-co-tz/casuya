@@ -1,412 +1,2776 @@
 {
   "form": "form1",
   "subject": "English",
-  "topic_count": 8,
+  "topic_count": 63,
   "topics": [
     {
       "topic_number": "1",
-      "topic_name": "LISTENING TO AND UNDERSTANDING SIMPLE TEXTS ABOUT A VARIETY OF EVENTS AND SITUATIONS. ",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=ZW5nbGlzaA%3D%3D &tno=1&m_topic=LISTENING TO AND UNDERSTANDING SIMPLE TEXTS ABOUT A VARIETY OF EVENTS AND SITUATIONS. ",
+      "topic_name": "1A: SEARCH ENGINES AND BROWSERS",
+      "url": "",
       "plan": {
-        "competence": "Make simple sentences based on variety of events",
-        "general_objectives": "Listen to and understand simple oral texts",
-        "specific_objectives": "By the end of the lesson the student should be able to:answer questions on simple oral texts on events.",
-        "main_topic": "LISTENING TO AND UNDERSTANDING SIMPLE TEXTS ABOUT A VARIETY OF EVENTS AND SITUATIONS.",
-        "sub_topic": "1.1 Listening to and understanding simple oral texts on events",
-        "teaching_aids": "i) Texts on graduation, sports day, accidents. ii) Recorded materials - video - audio cassettes",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Familiarise with search engines and browsers",
+        "specific_objectives": "Identify and use various types of search engines (e.g., Google, Bing) and browsers (e.g., Chrome, Firefox)",
+        "main_topic": "1.1 Familiarising with various types of search engines and browsers",
+        "sub_topic": "Term I - 1A (80 MIN)",
+        "teaching_aids": "Computers/tablets, internet (if available), textbook.",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "Present various vocabularies to students",
-            "student_activities": "Students to brainstorm essential vocabulary in a text.",
-            "assessment": "Quizzes, group work, class presentation, debate, essay competition"
+            "teacher_activities": "Asks students whether they have ever searched for information on a computer or phone and how they did it.",
+            "student_activities": "Share personal searching experiences.",
+            "assessment": "Engagement in discussion"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "The teacher to provide students with some guiding questions to guide their listening.",
-            "student_activities": "Students to listen to a text and answer questions based on the text in groups and individually.",
-            "assessment": "Quizzes, group work, class presentation, debate, essay competition"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains the difference between a search engine and a browser, demonstrating how to open a browser and run a search on Google and Bing.",
+            "student_activities": "Take detailed notes and follow the demonstrations.",
+            "assessment": "Correct identification of search engines and browsers"
           },
           {
-            "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "The teacher to conduct pronunciation drills to solve students pronunciation problems noted",
-            "student_activities": "Students to make own sentences and pronounce various words",
-            "assessment": "Quizzes, group work, class presentation, debate, essay competition"
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pairs in performing a practical search for a given topic using a search engine.",
+            "student_activities": "Run a guided practical search in pairs.",
+            "assessment": "Correct completion of the search task"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "The teacher to conduct pronunciation drills to solve students pronunciation problems noted",
-            "student_activities": "Students to pronounce the words correctly",
-            "assessment": "Quizzes, group work, class presentation, debate, essay competition"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "To provide student with practice work and guide them to do it",
-            "student_activities": "Students to work on the work given and make clarrifications",
-            "assessment": "Quizzes, group work, class presentation, debate, essay competition"
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews pair results, addresses errors, and consolidates the key points on the board.",
+            "student_activities": "Present search results and answer questions.",
+            "assessment": "Accuracy of search results presented"
           }
         ]
       }
     },
     {
       "topic_number": "2",
-      "topic_name": "GIVING DIRECTIONS",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=ZW5nbGlzaA%3D%3D &tno=2&m_topic=GIVING DIRECTIONS",
+      "topic_name": "1B: PRACTISING THE SEARCH STEPS",
+      "url": "",
       "plan": {
-        "competence": "Be able to ask and give directions",
-        "general_objectives": "Stating directions",
-        "specific_objectives": "By the end of the lesson, the student should be able to: a) Give directions b) Ask for directions",
-        "main_topic": "GIVING DIRECTIONS",
-        "sub_topic": "Stating directions",
-        "teaching_aids": "A text talking about giving directions.",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Practise using browsers",
+        "specific_objectives": "Open a browser, type a query, and find information on a given topic",
+        "main_topic": "1.1 Familiarising with various types of search engines and browsers",
+        "sub_topic": "Term I - 1B (80 MIN)",
+        "teaching_aids": "Computers/tablets, textbook.",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "To give students a text about giving and asking for directions.",
-            "student_activities": "Students to practise giving and asking for directions to different places in the school, village or town.",
-            "assessment": "Quizzes, questions, remedial work, class presentation, debate, oral work, group discussions"
+            "teacher_activities": "Recaps search engines versus browsers from the first double period.",
+            "student_activities": "Recall the two concepts.",
+            "assessment": "Correct recall"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "Guide students to correctly ask for direction and give directions to colleagues",
-            "student_activities": "Students to practice asking for directions and also giving directions to the friends",
-            "assessment": "Quizzes, questions, remedial work, class presentation, debate, oral work, group discussions"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Demonstrates the full steps of a search: open browser, type the query, read results, open a page, and save useful information.",
+            "student_activities": "Take notes on the search steps.",
+            "assessment": "Correct sequencing of steps"
           },
           {
-            "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "To ask for directions from students pretending he/she is lost",
-            "student_activities": "Students to try and give the teacher directions to the correct destinations",
-            "assessment": "Quizzes, questions, remedial work, class presentation, debate, oral work, group discussions"
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups through a practice search on the topic of their school community.",
+            "student_activities": "Perform a practice search in groups.",
+            "assessment": "Correct application of the search steps"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "To ask for directions from students pretending he/she is lost",
-            "student_activities": "Students to try and help the teacher to arrive at various destinations",
-            "assessment": "Quizzes, questions, remedial work, class presentation, debate, oral work, group discussions"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "Guide students to copy questions pertaining giving directions and mark them",
-            "student_activities": "Students to copy assignment give and take summary notes",
-            "assessment": "Quizzes, questions, remedial work, class presentation, debate, oral work, group discussions"
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews group findings and consolidates on the board.",
+            "student_activities": "Present findings to the class.",
+            "assessment": "Quality of findings presented"
           }
         ]
       }
     },
     {
       "topic_number": "3",
-      "topic_name": "USING A DICTIONARY",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=ZW5nbGlzaA%3D%3D &tno=3&m_topic=USING A DICTIONARY",
+      "topic_name": "1C: REVIEW OF SEARCH ENGINES AND BROWSERS",
+      "url": "",
       "plan": {
-        "competence": "use dictionary",
-        "general_objectives": "Express oneself appropriately in different situations using simple English structures.",
-        "specific_objectives": "By the end of the lesson, the student should be able to: use dictionaries effectively for obtaining meanings and spelling",
-        "main_topic": "USING A DICTIONARY",
-        "sub_topic": "use dictionary",
-        "teaching_aids": "Dictionaries, entry copied from dictionaries.",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Review search tasks",
+        "specific_objectives": "Name search engines and browsers and state one use of each",
+        "main_topic": "1.1 Familiarising with various types of search engines and browsers",
+        "sub_topic": "Term I - 1C (40 MIN)",
+        "teaching_aids": "Word cards, textbook.",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
-            "time": "10",
-            "teacher_activities": "Guide students: to brainstorm on: ? How to get meanings of difficult words. ? The meaning and uses of dictionaries.",
-            "student_activities": "students: to brainstorm on: ? How to get meanings of difficult words. ? The meaning and uses of dictionaries.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "time": "5",
+            "teacher_activities": "Recaps the practical searches done in the double periods.",
+            "student_activities": "Recall the searches performed.",
+            "assessment": "Correct recall"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "to provide students with activities for developing the skills of looking up for words in dictionaries to get meanings and spellings",
-            "student_activities": "Students to practice making use of dictionaries to obtain meanings and spellings of difficult words.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Reviews the key terms (search engine, browser) and their uses with oral examples.",
+            "student_activities": "Answer guided oral questions.",
+            "assessment": "Correctness of oral answers"
           },
           {
-            "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "Guide students in writing a list of new words and looking for them from dictionary",
-            "student_activities": "Students to work in groups to find meaning of new words",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Poses oral questions about search engines and browsers to individual students.",
+            "student_activities": "Answer oral questions individually.",
+            "assessment": "Ability to distinguish search engines and browsers"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "Guide students in writing a list of new words and looking for them from dictionary",
-            "student_activities": "Students to individually read sentences and new word aloud, make simple sentences and phrases",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews next week's topic (searching for general information).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for next topic"
           }
         ]
       }
     },
     {
       "topic_number": "4",
-      "topic_name": "EXPRESSING PERSONAL AND GROUP ROUTINE/ HABITS",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=ZW5nbGlzaA%3D%3D &tno=4&m_topic=EXPRESSING PERSONAL AND GROUP ROUTINE/ HABITS",
+      "topic_name": "2A: SEARCHING FOR GENERAL INFORMATION",
+      "url": "",
       "plan": {
-        "competence": "Talk about routine",
-        "general_objectives": "Express oneself appropriately in different situations using simple English structures.",
-        "specific_objectives": "By the end of the topic, the student should be able to:talk about his/her home routine/ habits",
-        "main_topic": "EXPRESSING PERSONAL AND GROUP ROUTINE/ HABITS",
-        "sub_topic": "4.1 Expressing personal routine/ habits",
-        "teaching_aids": "Pictures on daily routine/ habits",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Utilise ICT tools to search for information",
+        "specific_objectives": "Search for general information on given topics using ICT tools",
+        "main_topic": "1.2 Utilising ICT tools to search for general information",
+        "sub_topic": "Term I - 2A (80 MIN)",
+        "teaching_aids": "Computers/tablets, topic cards, textbook.",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "to show pictures expressing habits of everyday activities by talking about his/her daily routine.",
-            "student_activities": "Students to imitate and practise by giving an account of their daily activities",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Asks students what kind of general information they would like to search for using a computer.",
+            "student_activities": "Share topic ideas.",
+            "assessment": "Engagement"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "to guide students to write about their daily routine through controlled/ guided activities.",
-            "student_activities": "students to write about their daily routine through controlled/ guided activities.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains and demonstrates how to search for general information (school news, geography facts, health tips) using ICT tools.",
+            "student_activities": "Take detailed notes and follow the demonstration.",
+            "assessment": "Correct understanding of general information search"
           },
           {
-            "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "Guide students in describing routines",
-            "student_activities": "Students to learn to follow routines",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups in searching for information on a given topic card.",
+            "student_activities": "Search for information in groups.",
+            "assessment": "Correctness of information found"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "Guide students in describing routines",
-            "student_activities": "Students to individually read sentences and new word aloud, make simple sentences and phrases",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews the information found by each group and gives feedback.",
+            "student_activities": "Present information found to the class.",
+            "assessment": "Relevance of information presented"
           }
         ]
       }
     },
     {
       "topic_number": "5",
-      "topic_name": "EXPRESSING ONGOING ACTIVITIES",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=ZW5nbGlzaA%3D%3D &tno=5&m_topic=EXPRESSING ONGOING ACTIVITIES",
+      "topic_name": "2B: REPORTING SEARCHED INFORMATION",
+      "url": "",
       "plan": {
-        "competence": "Express oneself better",
-        "general_objectives": "Express oneself appropriately in different situations using simple English structures.",
-        "specific_objectives": "By the end of the lesson, the student should be able to :a) Talk about activities being done by oneself and other creatures/ things.",
-        "main_topic": "EXPRESSING ONGOING ACTIVITIES",
-        "sub_topic": "Ongoing activities.",
-        "teaching_aids": "Written texts, pictures.",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Report searched information",
+        "specific_objectives": "Organize and present general information found through a search",
+        "main_topic": "1.2 Utilising ICT tools to search for general information",
+        "sub_topic": "Term I - 2B (80 MIN)",
+        "teaching_aids": "Computers/tablets, paper and pens.",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "To present pattern and structure by writting questions on the board",
-            "student_activities": "students to read loud on what the teacher has written",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Recaps the information each group searched for in the first double period.",
+            "student_activities": "Recall their search topics.",
+            "assessment": "Correct recall"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "to demonstrate ongoing activities by asking and responding to questions posed in the negative and positive form.",
-            "student_activities": "To follow teacher demonstrate ongoing activities by asking and responding to questions posed in the negative and positive form.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Guides students on how to organize and report the information they found (what it is, where it came from, whether it is useful).",
+            "student_activities": "Take notes on how to report findings.",
+            "assessment": "Understanding of reporting structure"
           },
           {
-            "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "write sentences for students to copy and practice reading",
-            "student_activities": "students to copy notes and practice reading the sentences writen",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups to prepare a short written report of their findings.",
+            "student_activities": "Prepare short reports in groups.",
+            "assessment": "Clarity of the written report"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "write sentences for students to copy and practice reading",
-            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews group reports with the class.",
+            "student_activities": "Present reports for class review.",
+            "assessment": "Accuracy of reported information"
           }
         ]
       }
     },
     {
       "topic_number": "6",
-      "topic_name": "EXPRESSING LIKES AND DISLIKES",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=ZW5nbGlzaA%3D%3D &tno=6&m_topic=EXPRESSING LIKES AND DISLIKES",
+      "topic_name": "2C: INFORMATION SEARCH",
+      "url": "",
       "plan": {
-        "competence": "make sentences expressing likes and dislikes",
-        "general_objectives": "Express oneself appropriately in different situations using simple English structures.",
-        "specific_objectives": "By the end of the topic, the student should be able to; to express likes/ dislikes orally and in writings",
-        "main_topic": "EXPRESSING LIKES AND DISLIKES",
-        "sub_topic": "Expressing likes/ dislikes",
-        "teaching_aids": "Pictures, recorded materials.",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Consolidate information search",
+        "specific_objectives": "Oral quiz on search engines, browsers and general information search",
+        "main_topic": "1.2 Utilising ICT tools to search for general information",
+        "sub_topic": "Term I - 2C (40 MIN)",
+        "teaching_aids": "Oral quiz question list.",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
-            "time": "10",
-            "teacher_activities": "Guide students make and read sentences using like",
-            "student_activities": "students to read and make sentences that carry the word like",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "time": "5",
+            "teacher_activities": "Recaps the reports done in the double periods.",
+            "student_activities": "Recall key report points.",
+            "assessment": "Correct recall"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "using pictures to express his/ her likes/dislikes using meaningful contexts.",
-            "student_activities": "students using pictures to express his/ her likes/dislikes using meaningful contexts.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Leads a rapid oral review of how to search for general information.",
+            "student_activities": "Answer rapid-fire oral questions.",
+            "assessment": "Correctness of oral answers"
           },
           {
-            "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "write sentences using word like, let students read loud and copy them",
-            "student_activities": "students to copy sentences and read them loud",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Continues the oral quiz covering remaining points.",
+            "student_activities": "Continue answering oral questions.",
+            "assessment": "Correctness of oral answers"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "write sentences using word like, let students read loud and copy them",
-            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews Chapter Two (Listening to various types of information).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for Chapter Two"
           }
         ]
       }
     },
     {
       "topic_number": "7",
-      "topic_name": "TALKING ABOUT ONE",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=ZW5nbGlzaA%3D%3D &tno=7&m_topic=TALKING ABOUT ONE",
+      "topic_name": "3A: LISTENING TO ORAL INFORMATION",
+      "url": "",
       "plan": {
-        "competence": "Express kinship",
-        "general_objectives": "Express oneself appropriately in different situations using simple English structures.",
-        "specific_objectives": "By the end of the lesson, the student should be able to:to express kinship",
-        "main_topic": "TALKING ABOUT ONE&apos;S FAMILY",
-        "sub_topic": "Expressing family relations.",
-        "teaching_aids": "Family tree diagram.",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Listen to oral information",
+        "specific_objectives": "Listen to oral presentations/tasks and answer questions based on them",
+        "main_topic": "2.1 Answering questions based on information from presentations/tasks",
+        "sub_topic": "Term I - 3A (80 MIN)",
+        "teaching_aids": "Recorded texts/audio, textbook.",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "present diagram showing family tree",
-            "student_activities": "students to describe the family tree",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Asks students what they do when their teacher reads a story aloud to the class.",
+            "student_activities": "Share listening habits.",
+            "assessment": "Engagement"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "to use a family tree diagram to describe family relations.",
-            "student_activities": "Students to use a family tree diagram to describe family relations.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains the importance of careful listening and plays/delivers a short oral text, giving guiding questions before listening.",
+            "student_activities": "Listen attentively and note key ideas.",
+            "assessment": "Comprehension of the oral text"
           },
           {
-            "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "Guide students write sentences and read them loudly",
-            "student_activities": "Student practice writing and reading sentences",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Poses comprehension questions based on the oral text and guides pair discussion of answers.",
+            "student_activities": "Answer questions and discuss in pairs.",
+            "assessment": "Correctness of answers"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "Guide students write sentences and read them loudly",
-            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews answers as a class and consolidates key points.",
+            "student_activities": "Present answers to the class.",
+            "assessment": "Accuracy of answers presented"
           }
         ]
       }
     },
     {
       "topic_number": "8",
-      "topic_name": "EXPRESSING OPINIONS AND FEELINGS",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=ZW5nbGlzaA%3D%3D &tno=8&m_topic=EXPRESSING OPINIONS AND FEELINGS",
+      "topic_name": "3B: RESPONDING TO QUESTIONS FROM PRESENTATIONS",
+      "url": "",
       "plan": {
-        "competence": "Express opinions",
-        "general_objectives": "Express oneself appropriately in different situations using simple English structures.",
-        "specific_objectives": "By the end of the lesson, the student should be able to:express his/ her opinions on familiar issues orally and in writings.",
-        "main_topic": "EXPRESSING OPINIONS AND FEELINGS",
-        "sub_topic": "8.1 Expressing personal opinions",
-        "teaching_aids": "A written text on child labour and road safety.",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Respond to questions from presentations",
+        "specific_objectives": "Respond appropriately to questions raised from oral presentations and tasks",
+        "main_topic": "2.1 Answering questions based on information from presentations/tasks",
+        "sub_topic": "Term I - 3B (80 MIN)",
+        "teaching_aids": "Recorded texts/audio, prompt cards.",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "Guide students in expressing opinion",
-            "student_activities": "students to express opinions",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Recaps the oral text from the first double period.",
+            "student_activities": "Recall its key ideas.",
+            "assessment": "Correct recall"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "Guide Students to read a text on either child labour or road safety.",
-            "student_activities": "Students to read a text on either child labour or road safety.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Guides students through responding to questions from a new oral presentation, using prompt phrase frames (e.g., \"The speaker said that...\").",
+            "student_activities": "Practice responding using the frames.",
+            "assessment": "Appropriate responses"
           },
           {
-            "stage": "REFLECTION",
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pair work in which one partner asks questions and the other responds.",
+            "student_activities": "Ask and respond to questions in pairs.",
+            "assessment": "Appropriateness of responses"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews a few pairs and gives class feedback.",
+            "student_activities": "Present short question-response exchanges.",
+            "assessment": "Quality of responses presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "9",
+      "topic_name": "3C: LISTENING SKILLS",
+      "url": "",
+      "plan": {
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Consolidate listening skills",
+        "specific_objectives": "Answer short oral/written questions on a brief oral text",
+        "main_topic": "2.1 Answering questions based on information from presentations/tasks",
+        "sub_topic": "Term I - 3C (40 MIN)",
+        "teaching_aids": "Short oral text, question cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the listening strategies used in the double periods.",
+            "student_activities": "Recall listening strategies.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Delivers a brief oral text and guides answering of short questions.",
+            "student_activities": "Listen and take brief notes.",
+            "assessment": "Comprehension of the brief text"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Administers short written questions based on the text.",
+            "student_activities": "Complete the short written questions.",
+            "assessment": "Accuracy of written answers"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Reviews answers with the class.",
+            "student_activities": "Self-check answers.",
+            "assessment": "Accuracy of self-assessment"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "10",
+      "topic_name": "4A: RESPONDING TO QUESTIONS FROM OTHERS",
+      "url": "",
+      "plan": {
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Respond to questions from others",
+        "specific_objectives": "Respond appropriately to questions raised from presentations/tasks",
+        "main_topic": "2.2 Responding to questions from others",
+        "sub_topic": "Term I - 4A (80 MIN)",
+        "teaching_aids": "Prompt cards, recorded texts/audio.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "Guide students write notes and summary",
-            "student_activities": "students write notes and make summary",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Asks students to describe how they feel when someone asks them a direct question in class.",
+            "student_activities": "Share feelings about being asked questions.",
+            "assessment": "Engagement"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "Guide students write notes and summary",
-            "student_activities": "Students to individually answer questions asked by of the teacher. Respond to questions and seek clarifications",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains the features of a good oral response (clear, relevant, polite, complete) and models examples.",
+            "student_activities": "Take notes on features of good responses.",
+            "assessment": "Correct understanding of good responses"
           },
           {
-            "stage": "CONCLUSION",
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides role plays in which students ask each other questions and respond using prompt cards.",
+            "student_activities": "Practise asking and responding in role plays.",
+            "assessment": "Appropriateness of responses in role play"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews selected role plays and consolidates on the board.",
+            "student_activities": "Present role plays to the class.",
+            "assessment": "Quality of responses presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "11",
+      "topic_name": "4B: PRACTISING CONFIDENT RESPONSES",
+      "url": "",
+      "plan": {
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Practise responding confidently",
+        "specific_objectives": "Practise responding to questions from a freshly presented task",
+        "main_topic": "2.2 Responding to questions from others",
+        "sub_topic": "Term I - 4B (80 MIN)",
+        "teaching_aids": "Recorded texts/audio, prompt cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Recaps the features of a good oral response.",
+            "student_activities": "Recall the features.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Presents a short task and demonstrates appropriate ways of responding to its questions.",
+            "student_activities": "Follow the demonstration and note response frames.",
+            "assessment": "Correct use of response frames"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pair interviews where students ask and answer questions from the task.",
+            "student_activities": "Conduct pair interviews.",
+            "assessment": "Appropriateness of responses in interviews"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews pair interviews and gives feedback.",
+            "student_activities": "Self-correct based on feedback.",
+            "assessment": "Improved response quality"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "12",
+      "topic_name": "4C: RESPONDING SKILLS",
+      "url": "",
+      "plan": {
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Consolidate responding skills",
+        "specific_objectives": "Oral practice of responding to short questions",
+        "main_topic": "2.2 Responding to questions from others",
+        "sub_topic": "Term I - 4C (40 MIN)",
+        "teaching_aids": "Question cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the pair interviews from the double periods.",
+            "student_activities": "Recall the interview activity.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Models a rapid question-and-answer exchange.",
+            "student_activities": "Practise rapid exchanges in pairs.",
+            "assessment": "Fluency in short responses"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Poses short questions to individual students.",
+            "student_activities": "Answer short oral questions individually.",
+            "assessment": "Ability to respond clearly and relevantly"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews pronunciation work (2.3).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for pronunciation work"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "13",
+      "topic_name": "5A: PRACTISING PRONUNCIATION",
+      "url": "",
+      "plan": {
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Practise pronunciation",
+        "specific_objectives": "Pronounce words correctly by imitating oral, audio and audio-visual sources",
+        "main_topic": "2.3 Practising pronunciation of words from oral, audio and audio-visual sources",
+        "sub_topic": "Term I - 5A (80 MIN)",
+        "teaching_aids": "Audio/audio-visual recordings, word cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students to pronounce a few common words aloud and discuss why pronunciation matters.",
+            "student_activities": "Try pronouncing the given words.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains correct pronunciation and plays audio/audio-visual recordings of target words, demonstrating clear pronunciation.",
+            "student_activities": "Listen and imitate the correct pronunciation.",
+            "assessment": "Acceptable pronunciation of target words"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides choral and individual repetition of the target words using word cards.",
+            "student_activities": "Repeat words chorally and individually.",
+            "assessment": "Correctness of pronunciation in repetition"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Selects students to pronounce words and corrects errors.",
+            "student_activities": "Pronounce words for correction.",
+            "assessment": "Improved pronunciation"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "14",
+      "topic_name": "5B: WORD STRESS AND DIFFICULT SOUNDS",
+      "url": "",
+      "plan": {
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Practise word stress and sounds",
+        "specific_objectives": "Practise pronunciation of words with correct word stress and difficult sounds",
+        "main_topic": "2.3 Practising pronunciation of words from oral, audio and audio-visual sources",
+        "sub_topic": "Term I - 5B (80 MIN)",
+        "teaching_aids": "Audio/audio-visual recordings, word cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the target words from the first double period.",
+            "student_activities": "Pronounce the target words again.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains word stress and tricky sounds, playing audio examples for imitation.",
+            "student_activities": "Listen, note stress, and imitate.",
+            "assessment": "Correct stress patterns"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pair drills in which students listen, repeat, and check each other's pronunciation.",
+            "student_activities": "Practise in pairs with word cards.",
+            "assessment": "Correct pronunciation in pair drills"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews pair drills and consolidates the correct pronunciations.",
+            "student_activities": "Present words for checking.",
+            "assessment": "Accuracy of pronunciation presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "15",
+      "topic_name": "5C: PRONUNCIATION CHECK",
+      "url": "",
+      "plan": {
+        "competence": "1.0 Using ICT tools to search for information",
+        "general_objectives": "Check pronunciation",
+        "specific_objectives": "Short pronunciation check of target words",
+        "main_topic": "2.3 Practising pronunciation of words from oral, audio and audio-visual sources",
+        "sub_topic": "Term I - 5C (40 MIN)",
+        "teaching_aids": "Word cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the pronunciation drills from the double periods.",
+            "student_activities": "Recall the target words.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Reviews remaining pronunciation difficulties.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Administers a short oral pronunciation check.",
+            "student_activities": "Pronounce the given words individually.",
+            "assessment": "Score on pronunciation check"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews Chapter Three (Producing short and coherent oral messages).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for Chapter Three"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "16",
+      "topic_name": "6A: FORMING SIMPLE STRUCTURES",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Form simple structures",
+        "specific_objectives": "Form simple and coherent oral sentences using correct word order",
+        "main_topic": "3.1 Forming simple structures",
+        "sub_topic": "Term I - 6A (80 MIN)",
+        "teaching_aids": "Textbook, sentence strips.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students to put a few scrambled words into a correct sentence on the board.",
+            "student_activities": "Attempt simple sentence ordering.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains the basic subject-verb-object word order and models simple oral sentences.",
+            "student_activities": "Take notes on word order and follow the models.",
+            "assessment": "Correct understanding of sentence structure"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups in arranging sentence strips to form correct sentences and saying them aloud.",
+            "student_activities": "Arrange and say sentences in groups.",
+            "assessment": "Correctness of sentence order"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews group sentences and corrects mistakes.",
+            "student_activities": "Present sentences to the class.",
+            "assessment": "Accuracy of sentences presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "17",
+      "topic_name": "6B: PRACTISING SIMPLE STRUCTURES",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Practise forming structures",
+        "specific_objectives": "Form and say a variety of simple sentences using given vocabulary",
+        "main_topic": "3.1 Forming simple structures",
+        "sub_topic": "Term I - 6B (80 MIN)",
+        "teaching_aids": "Word cards, textbook.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps subject-verb-object order from the first double period.",
+            "student_activities": "Recall the word order rule.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Models forming sentences from given word cards and expands to negatives and questions.",
+            "student_activities": "Follow the models and take notes.",
+            "assessment": "Correct formation of sentences"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides substitution drills in pairs with word cards.",
+            "student_activities": "Practise forming sentences in pairs.",
+            "assessment": "Correctness of sentences formed"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews pair work and administers oral sentence checks.",
+            "student_activities": "Say sentences for checking.",
+            "assessment": "Accuracy of oral sentences"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "18",
+      "topic_name": "6C: SIMPLE STRUCTURES",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Consolidate simple structures",
+        "specific_objectives": "Form simple sentences individually from given words",
+        "main_topic": "3.1 Forming simple structures",
+        "sub_topic": "Term I - 6C (40 MIN)",
+        "teaching_aids": "Word cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the sentence drills from the double periods.",
+            "student_activities": "Recall the rules.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Reviews common mistakes in sentence ordering.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Guides individual formation of sentences from word cards.",
+            "student_activities": "Form sentences individually.",
+            "assessment": "Correctness of sentences"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews 3.2 (Producing short oral messages).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for 3.2"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "19",
+      "topic_name": "7A: PRODUCING SHORT ORAL MESSAGES",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Produce short oral messages",
+        "specific_objectives": "Produce short oral messages on particular topics (e.g., introducing oneself) with intelligible pronunciation and fluency",
+        "main_topic": "3.2 Producing short oral messages on particular topics",
+        "sub_topic": "Term I - 7A (80 MIN)",
+        "teaching_aids": "Textbook, prompt cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students to introduce themselves in one or two sentences.",
+            "student_activities": "Introduce themselves briefly.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains the structure of a short oral message (greeting, main content, closing) using the example of self-introduction.",
+            "student_activities": "Take notes on the structure.",
+            "assessment": "Correct understanding of structure"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides students to prepare and practise introducing themselves using prompt cards.",
+            "student_activities": "Prepare and practise self-introductions.",
+            "assessment": "Coherence of prepared messages"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Selects students to present their introductions and gives feedback.",
+            "student_activities": "Present self-introductions to the class.",
+            "assessment": "Quality of oral presentations"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "20",
+      "topic_name": "7B: PRACTISING SHORT ORAL MESSAGES",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Practise producing short messages",
+        "specific_objectives": "Produce short oral messages on topics such as describing one's family",
+        "main_topic": "3.2 Producing short oral messages on particular topics",
+        "sub_topic": "Term I - 7B (80 MIN)",
+        "teaching_aids": "Prompt cards, textbook.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the structure of a short oral message.",
+            "student_activities": "Recall the structure.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Models a short message describing one's family with correct pronunciation and fluency.",
+            "student_activities": "Follow the model and take notes.",
+            "assessment": "Understanding of message structure"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pairs to prepare and practise short messages about their families.",
+            "student_activities": "Prepare and practise in pairs.",
+            "assessment": "Structure and fluency of messages"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews selected pairs and consolidates on the board.",
+            "student_activities": "Present messages to the class.",
+            "assessment": "Quality of messages presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "21",
+      "topic_name": "7C: SHORT ORAL MESSAGES",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Consolidate short messages",
+        "specific_objectives": "Produce a very short oral message about oneself individually",
+        "main_topic": "3.2 Producing short oral messages on particular topics",
+        "sub_topic": "Term I - 7C (40 MIN)",
+        "teaching_aids": "Prompt cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the messages practised in the double periods.",
+            "student_activities": "Recall key points.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Reviews pronunciation and fluency issues noted.",
+            "student_activities": "Practise correction of noted issues.",
+            "assessment": "Improved pronunciation and fluency"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Guides individual production of a very short self-introduction.",
+            "student_activities": "Produce a short message individually.",
+            "assessment": "Fluency and clarity of the message"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Collects key feedback and previews Chapter Four (Developing vocabulary).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for Chapter Four"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "22",
+      "topic_name": "8A: WRITING NEW VOCABULARY",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Write new vocabulary",
+        "specific_objectives": "Write new vocabulary from conversations and written texts on particular topics",
+        "main_topic": "4.1 Writing new vocabulary from conversations and written texts",
+        "sub_topic": "Term I - 8A (80 MIN)",
+        "teaching_aids": "Texts of different types, dictionaries.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students which new English words they heard yesterday outside class.",
+            "student_activities": "Share new words heard.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains how to identify and note new vocabulary while listening to conversations and reading texts, and how to record meanings.",
+            "student_activities": "Take notes on vocabulary recording.",
+            "assessment": "Correct identification of new words"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups through reading a short text and writing a list of new words with their guessed meanings.",
+            "student_activities": "Write vocabulary lists in groups.",
+            "assessment": "Correctness of words and meanings"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews the lists, corrects meanings, and consolidates on the board.",
+            "student_activities": "Present word lists and check meanings.",
+            "assessment": "Accuracy of meanings presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "23",
+      "topic_name": "8B: PRACTISING VOCABULARY CAPTURE",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Practise vocabulary capture",
+        "specific_objectives": "Write new vocabulary from a dialogue and check meanings in dictionaries",
+        "main_topic": "4.1 Writing new vocabulary from conversations and written texts",
+        "sub_topic": "Term I - 8B (80 MIN)",
+        "teaching_aids": "Dialogue text, dictionaries.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps how to record new vocabulary.",
+            "student_activities": "Recall the recording strategy.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Reads/acts a short dialogue and guides noting of new vocabulary with dictionary checks.",
+            "student_activities": "Note new words and look up meanings.",
+            "assessment": "Correct meanings found"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pairs in extracting and defining new words from the dialogue with dictionaries.",
+            "student_activities": "Extract and define words in pairs.",
+            "assessment": "Correctness of dictionary work"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews pair work and gives feedback.",
+            "student_activities": "Present word definitions to the class.",
+            "assessment": "Accuracy of definitions presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "24",
+      "topic_name": "8C: VOCABULARY DICTATION AND CHECK",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Check vocabulary capture",
+        "specific_objectives": "Short dictation and word-list check",
+        "main_topic": "4.1 Writing new vocabulary from conversations and written texts",
+        "sub_topic": "Term I - 8C (40 MIN)",
+        "teaching_aids": "Dictation text.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the vocabulary work from the double periods.",
+            "student_activities": "Recall the new words.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies remaining difficulties with the recorded words.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Administers a short dictation of the week's words.",
+            "student_activities": "Complete the dictation.",
+            "assessment": "Score on dictation"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Reviews the dictation and previews 4.2 (Constructing sentences).",
+            "student_activities": "Self-check work and listen to preview.",
+            "assessment": "Readiness for 4.2"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "25",
+      "topic_name": "9A: CONSTRUCTING SENTENCES WITH NEW VOCABULARY",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Construct sentences with new vocabulary",
+        "specific_objectives": "Construct sentences using vocabulary acquired from conversations and written texts",
+        "main_topic": "4.2 Constructing sentences using vocabulary acquired",
+        "sub_topic": "Term I - 9A (80 MIN)",
+        "teaching_aids": "Texts, flash cards, dictionaries.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students to use one of the week's new words in a sentence.",
+            "student_activities": "Say sentences using new words.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains how to construct correct sentences with new vocabulary (subject-verb-object, tense agreement).",
+            "student_activities": "Take notes and follow the models.",
+            "assessment": "Correct construction of sentences"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups in constructing sentences with the new vocabulary using flash cards.",
+            "student_activities": "Construct sentences in groups.",
+            "assessment": "Correctness of sentences constructed"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews group sentences and corrects errors.",
+            "student_activities": "Present sentences to the class.",
+            "assessment": "Accuracy of sentences presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "26",
+      "topic_name": "9B: PRACTISING VOCABULARY USE",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Practise using vocabulary",
+        "specific_objectives": "Construct written sentences using vocabulary acquired from conversations",
+        "main_topic": "4.2 Constructing sentences using vocabulary acquired",
+        "sub_topic": "Term I - 9B (80 MIN)",
+        "teaching_aids": "Word lists, textbook.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the sentences built in the first double period.",
+            "student_activities": "Recall the sentences.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Models written sentence construction and guides correction of common errors.",
+            "student_activities": "Follow the models and take notes.",
+            "assessment": "Correct written sentence construction"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides individual writing of sentences using the acquired vocabulary.",
+            "student_activities": "Write sentences individually.",
+            "assessment": "Correctness of written sentences"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews written sentences and gives feedback.",
+            "student_activities": "Read aloud and check their written sentences.",
+            "assessment": "Accuracy of written sentences"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "27",
+      "topic_name": "9C: VOCABULARY USE",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Producing short and coherent oral messages",
+        "general_objectives": "Consolidate vocabulary use",
+        "specific_objectives": "Short exercise constructing sentences with new words",
+        "main_topic": "4.2 Constructing sentences using vocabulary acquired",
+        "sub_topic": "Term I - 9C (40 MIN)",
+        "teaching_aids": "Exercise sheets.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the sentence-writing practice.",
+            "student_activities": "Recall the rules.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies remaining grammar points for sentence construction.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Administers a short written exercise.",
+            "student_activities": "Complete the exercise individually.",
+            "assessment": "Score on the exercise"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews mid-term and Chapter Five.",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for mid-term assessment"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "28",
+      "topic_name": "10A: USING APPROPRIATE GRAMMAR",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Use appropriate grammar",
+        "specific_objectives": "Use proper grammar (tenses, articles, pronouns, prepositions) in oral and written language tasks",
+        "main_topic": "5.1 Using appropriate grammar in oral and written language tasks",
+        "sub_topic": "Term I - 10A (80 MIN)",
+        "teaching_aids": "Textbook, grammar charts.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Reviews Term I work up to the mid-term and asks students to name any English tense they know.",
+            "student_activities": "Recall tenses and grammar knowledge.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains key grammar points (simple present, simple past, articles, pronouns, prepositions) with oral examples.",
+            "student_activities": "Take detailed notes on each grammar point.",
+            "assessment": "Correct understanding of the grammar points"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups in completing grammar tasks (filling gaps, correcting sentences) on charts.",
+            "student_activities": "Complete grammar tasks in groups.",
+            "assessment": "Correctness of grammar tasks"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews group answers and consolidates on the board.",
+            "student_activities": "Present answers and explain their choices.",
+            "assessment": "Accuracy of grammar answers"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "29",
+      "topic_name": "10B: USING GRAMMAR IN WRITING",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Use grammar in writing",
+        "specific_objectives": "Write short sentences using the grammar points learned",
+        "main_topic": "5.1 Using appropriate grammar in oral and written language tasks",
+        "sub_topic": "Term I - 10B (80 MIN)",
+        "teaching_aids": "Textbook, grammar exercise sheets.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the grammar points from the first double period.",
+            "student_activities": "Recall the grammar points.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Models writing sentences using correct tenses, articles and prepositions and explains common errors.",
+            "student_activities": "Follow the models and take notes.",
+            "assessment": "Correct written grammar"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides individual writing of short sentences using the grammar points.",
+            "student_activities": "Write sentences individually.",
+            "assessment": "Correctness of written grammar"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews written work and gives feedback.",
+            "student_activities": "Present and check their written sentences.",
+            "assessment": "Accuracy of written grammar"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "30",
+      "topic_name": "10C: GRAMMAR USE",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Consolidate grammar use",
+        "specific_objectives": "Short grammar exercise on tenses, articles and prepositions",
+        "main_topic": "5.1 Using appropriate grammar in oral and written language tasks",
+        "sub_topic": "Term I - 10C (40 MIN)",
+        "teaching_aids": "Grammar exercise sheets.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the grammar practice from the double periods.",
+            "student_activities": "Recall key rules.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies remaining grammar difficulties.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Administers a short grammar exercise.",
+            "student_activities": "Complete the grammar exercise individually.",
+            "assessment": "Score on the exercise"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews 5.2 (Using appropriate vocabulary).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for 5.2"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "31",
+      "topic_name": "11A: USING APPROPRIATE VOCABULARY",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Use appropriate vocabulary",
+        "specific_objectives": "Use appropriate vocabulary relating to a specific context in oral and written tasks",
+        "main_topic": "5.2 Using appropriate vocabulary in oral and written language tasks",
+        "sub_topic": "Term I - 11A (80 MIN)",
+        "teaching_aids": "Pictures, dictionaries, texts.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Shows pictures of different contexts (school, market, hospital) and asks students to name words connected to each.",
+            "student_activities": "Name context vocabulary.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains how to choose appropriate words for a specific context and models example sentences.",
+            "student_activities": "Take notes on context vocabulary.",
+            "assessment": "Correct word choice in examples"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups in matching context vocabulary to pictures and constructing sentences.",
+            "student_activities": "Match and construct sentences in groups.",
+            "assessment": "Correctness of vocabulary use"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews group work and consolidates on the board.",
+            "student_activities": "Present sentences to the class.",
+            "assessment": "Accuracy of vocabulary use presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "32",
+      "topic_name": "11B: USING VOCABULARY IN WRITING",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Use vocabulary in writing",
+        "specific_objectives": "Write short passages using appropriate context vocabulary",
+        "main_topic": "5.2 Using appropriate vocabulary in oral and written language tasks",
+        "sub_topic": "Term I - 11B (80 MIN)",
+        "teaching_aids": "Pictures, dictionaries.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the context vocabulary from the first double period.",
+            "student_activities": "Recall the vocabulary.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Models writing short passages (e.g., describing a visit to the market) using appropriate vocabulary.",
+            "student_activities": "Follow the models and take notes.",
+            "assessment": "Understanding of appropriate vocabulary use"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pairs to write short passages on a chosen context.",
+            "student_activities": "Write short passages in pairs.",
+            "assessment": "Appropriateness of vocabulary used"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews pair passages and gives feedback.",
+            "student_activities": "Present passages for class review.",
+            "assessment": "Quality of vocabulary use in passages"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "33",
+      "topic_name": "11C: VOCABULARY USE",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Consolidate vocabulary use",
+        "specific_objectives": "Short vocabulary exercise (word-picture matching and sentence completion)",
+        "main_topic": "5.2 Using appropriate vocabulary in oral and written language tasks",
+        "sub_topic": "Term I - 11C (40 MIN)",
+        "teaching_aids": "Exercise sheets.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the passages written in the double periods.",
+            "student_activities": "Recall key vocabulary.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies remaining vocabulary usage issues.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Administers a short vocabulary exercise.",
+            "student_activities": "Complete the exercise individually.",
+            "assessment": "Score on the exercise"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews Chapter Six (Reading texts for comprehension).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for Chapter Six"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "34",
+      "topic_name": "12A: IDENTIFYING MAIN IDEAS AND SUPPORTING DETAILS",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Identify main ideas and details",
+        "specific_objectives": "Identify main ideas and supporting details from a text",
+        "main_topic": "6.1 Identifying main ideas and supporting details",
+        "sub_topic": "Term I - 12A (80 MIN)",
+        "teaching_aids": "A variety of texts, selected readers.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students what they think the main idea of a text is.",
+            "student_activities": "Share initial ideas about main ideas.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains main ideas versus supporting details and demonstrates identifying them in a short text.",
+            "student_activities": "Take notes and follow the demonstration.",
+            "assessment": "Correct identification in the demonstration"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups in reading a text and identifying its main idea and supporting details.",
+            "student_activities": "Read and identify main ideas in groups.",
+            "assessment": "Correctness of main idea identification"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews group findings and consolidates on the board.",
+            "student_activities": "Present findings and justify them.",
+            "assessment": "Accuracy of findings presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "35",
+      "topic_name": "12B: PRACTISING MAIN IDEA IDENTIFICATION",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Practise main idea identification",
+        "specific_objectives": "Identify main ideas and supporting details in a second text",
+        "main_topic": "6.1 Identifying main ideas and supporting details",
+        "sub_topic": "Term I - 12B (80 MIN)",
+        "teaching_aids": "A second text, selected readers.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps main ideas versus supporting details.",
+            "student_activities": "Recall the distinction.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Guides guided reading of a second text, spotting the main idea and details together.",
+            "student_activities": "Read along and follow the analysis.",
+            "assessment": "Correct identification in guided practice"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pair work to find the main idea and details of a further short text.",
+            "student_activities": "Work in pairs on the short text.",
+            "assessment": "Correctness of main idea found"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews pair findings and gives feedback.",
+            "student_activities": "Present findings to the class.",
+            "assessment": "Quality of findings presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "36",
+      "topic_name": "12C: MAIN IDEA CHECK",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Check comprehension",
+        "specific_objectives": "Short task: state the main idea of a short text",
+        "main_topic": "6.1 Identifying main ideas and supporting details",
+        "sub_topic": "Term I - 12C (40 MIN)",
+        "teaching_aids": "Short texts, question cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the reading tasks from the double periods.",
+            "student_activities": "Recall key strategies.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Reviews how to state a main idea in one sentence.",
+            "student_activities": "Practise stating main ideas.",
+            "assessment": "Correct main idea statements"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Administers a short main-idea task on a short text.",
+            "student_activities": "Complete the short task individually.",
+            "assessment": "Score on the task"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews 6.2 (Inferring meanings).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for 6.2"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "37",
+      "topic_name": "13A: INFERRING MEANINGS OF UNFAMILIAR WORDS",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Infer meanings of unfamiliar words",
+        "specific_objectives": "Infer meanings of unfamiliar words and expressions from a text using context clues",
+        "main_topic": "6.2 Inferring meanings of unfamiliar words",
+        "sub_topic": "Term I - 13A (80 MIN)",
+        "teaching_aids": "A variety of texts, dictionaries.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students what they do when they meet an English word they do not know in a story.",
+            "student_activities": "Share strategies for unknown words.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains context clues (definition, synonym, example, contrast) used to infer meanings of unfamiliar words.",
+            "student_activities": "Take notes on the types of context clues.",
+            "assessment": "Correct understanding of context clues"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups in inferring the meanings of underlined words in a text using context clues.",
+            "student_activities": "Infer word meanings in groups.",
+            "assessment": "Correctness of inferred meanings"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews group answers, reconciling them with dictionary checks.",
+            "student_activities": "Present inferred meanings and check in dictionaries.",
+            "assessment": "Accuracy of inferred meanings"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "38",
+      "topic_name": "13B: TERM I REVISION",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Term I revision",
+        "specific_objectives": "Complete comprehensive revision of Term I content and the Term I revision test",
+        "main_topic": "6.2 Inferring meanings of unfamiliar words",
+        "sub_topic": "Term I - 13B (80 MIN)",
+        "teaching_aids": "Revision notes, revision test sheets.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Outlines the topics covered in Term I (ICT information search, listening, oral messages, vocabulary, grammar, reading comprehension).",
+            "student_activities": "Listen to the revision outline.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Leads a rapid review of key Term I competences through guided Q&A.",
+            "student_activities": "Answer questions and take additional notes.",
+            "assessment": "Correctness of revision answers"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Supervises students completing the Term I revision test.",
+            "student_activities": "Complete the Term I revision test.",
+            "assessment": "Score on the revision test"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Collects the tests and previews Term II content (oral comprehension, responding, oral communication grammar/vocabulary, text creation).",
+            "student_activities": "Listen to the Term II preview.",
+            "assessment": "Readiness for Term II"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "39",
+      "topic_name": "13C: CLOSING THE TERM",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Using appropriate grammar and vocabulary in oral and written contexts",
+        "general_objectives": "Close the term",
+        "specific_objectives": "Review the revision test and pronounce the end of Term I",
+        "main_topic": "6.2 Inferring meanings of unfamiliar words",
+        "sub_topic": "Term I - 13C (40 MIN)",
+        "teaching_aids": "Revision test answers.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the Term I revision test from the double period.",
+            "student_activities": "Recall test requirements.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Reviews the revision test answers with the class.",
+            "student_activities": "Self-check test answers.",
+            "assessment": "Accuracy of self-assessment"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Addresses common errors and answers final questions.",
+            "student_activities": "Ask clarifying questions on weak areas.",
+            "assessment": "Improved understanding of weak areas"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Wishes students a good break and previews Term II.",
+            "student_activities": "Listen to the Term II preview.",
+            "assessment": "Readiness for Term II"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "40",
+      "topic_name": "1A: SYNTHESISING IDEAS FROM ORAL SOURCES",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Synthesise ideas from oral sources",
+        "specific_objectives": "Synthesise ideas from a variety of oral sources (e.g., presentations, recordings, radio, TV)",
+        "main_topic": "7.1 Synthesising ideas from a variety of oral sources",
+        "sub_topic": "Term II - 1A (80 MIN)",
+        "teaching_aids": "Audio and audio-visual materials (recorded presentations, radio clips), notebooks.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Plays a short recorded presentation about a local topic and asks students to name the main points they heard.",
+            "student_activities": "Share the main points they heard.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains what synthesising oral information means (combining and connecting ideas from different oral sources on the same topic) and models how to compare and join the main points of two short recordings.",
+            "student_activities": "Take detailed notes and follow the modelling.",
+            "assessment": "Correct understanding of synthesising"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Plays two short audio clips on the same topic and guides groups in listing and combining the main ideas from both.",
+            "student_activities": "Work in groups, listing and combining the main ideas from the two clips.",
+            "assessment": "Completeness of the synthesised main ideas"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews group contributions, draws a combined summary map on the board and consolidates the key steps.",
+            "student_activities": "Present group ideas to the class.",
+            "assessment": "Quality of synthesised ideas presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "41",
+      "topic_name": "1B: PRACTISING SYNTHESISING IDEAS",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Practise synthesising ideas",
+        "specific_objectives": "Synthesise ideas from a recorded presentation in pairs",
+        "main_topic": "7.1 Synthesising ideas from a variety of oral sources",
+        "sub_topic": "Term II - 1B (80 MIN)",
+        "teaching_aids": "Audio and audio-visual materials (recorded presentations, radio clips), notebooks.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the steps for synthesising ideas from the first double period.",
+            "student_activities": "Recall the synthesising steps.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Plays a slightly longer recorded presentation and demonstrates how to pick out key ideas, re-state them in one's own words and connect related points.",
+            "student_activities": "Follow the demonstration and note key phrases.",
+            "assessment": "Correct use of note-taking phrases"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pairs in synthesising the presentation into three or four combined points written in their own words.",
+            "student_activities": "Write combined points in pairs.",
+            "assessment": "Accuracy of the synthesised points"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews pair summaries, addresses errors and gives feedback.",
+            "student_activities": "Share summaries and self-correct.",
+            "assessment": "Improved synthesis quality"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "42",
+      "topic_name": "1C: SYNTHESISING SKILLS",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Consolidate synthesising skills",
+        "specific_objectives": "Give a short oral synthesis of a short recorded talk",
+        "main_topic": "7.1 Synthesising ideas from a variety of oral sources",
+        "sub_topic": "Term II - 1C (40 MIN)",
+        "teaching_aids": "Audio clips, question sheet.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the group synthesis from the double periods.",
+            "student_activities": "Recall what synthesising is.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies difficulties in distinguishing key ideas from supporting examples.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Plays a short clip and asks students to state its main ideas orally and combine them.",
+            "student_activities": "Give a short oral synthesis individually.",
+            "assessment": "Ability to synthesise orally"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews 7.2 (Summarising information from oral sources).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for 7.2"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "43",
+      "topic_name": "2A: SUMMARISING ORAL INFORMATION",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Summarise information from oral sources",
+        "specific_objectives": "Summarise information from a variety of oral sources",
+        "main_topic": "7.2 Summarising information from oral sources",
+        "sub_topic": "Term II - 2A (80 MIN)",
+        "teaching_aids": "Audio and audio-visual materials, summarising practice sheets.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Plays a short announcement and asks students to say in one sentence what it was about.",
+            "student_activities": "Attempt a one-sentence summary.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains what a summary is (a brief restatement of the key ideas) and how it differs from retelling the whole passage, modelling summarising a short recorded passage.",
+            "student_activities": "Take notes on the rules of summarising.",
+            "assessment": "Correct understanding of summaries"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Plays an audio passage and guides pairs in writing a three or four sentence summary.",
+            "student_activities": "Write summaries in pairs.",
+            "assessment": "Coverage of key ideas in the summary"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews pair summaries, compares their lengths and consolidates the key points on the board.",
+            "student_activities": "Present summaries and compare them.",
+            "assessment": "Accuracy and brevity of summaries"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "44",
+      "topic_name": "2B: SUMMARISING A RECORDED INTERVIEW",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Summarise a recorded interview",
+        "specific_objectives": "Produce an oral and written summary of a recorded interview",
+        "main_topic": "7.2 Summarising information from oral sources",
+        "sub_topic": "Term II - 2B (80 MIN)",
+        "teaching_aids": "Audio and audio-visual materials, summarising practice sheets.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the summarising rules from the first double period.",
+            "student_activities": "Recall the summarising rules.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Plays a recorded interview and demonstrates selecting the speaker's main ideas and supporting examples into a short summary.",
+            "student_activities": "Follow the demonstration and take notes.",
+            "assessment": "Correct grasp of interview summarising"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pairs in summarising the interview orally and then writing the summary down.",
+            "student_activities": "Summarise the interview in pairs, orally then in writing.",
+            "assessment": "Quality of the written summary"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Collects and reviews several written summaries and gives feedback.",
+            "student_activities": "Check and improve their summaries.",
+            "assessment": "Improved summarising"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "45",
+      "topic_name": "2C: SUMMARISING SKILLS",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Consolidate summarising skills",
+        "specific_objectives": "Write a short summary of a short talk",
+        "main_topic": "7.2 Summarising information from oral sources",
+        "sub_topic": "Term II - 2C (40 MIN)",
+        "teaching_aids": "Audio clip, summary sheets.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the interview summaries from the double periods.",
+            "student_activities": "Recall what makes a good summary.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies the difference between main ideas and supporting details.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Plays a short talk and asks students to write a three-line summary.",
+            "student_activities": "Write a short summary individually.",
+            "assessment": "Coverage of key ideas"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews 8.1 (Responding appropriately in oral communication).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for 8.1"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "46",
+      "topic_name": "3A: RESPONDING APPROPRIATELY IN ORAL COMMUNICATION",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Respond appropriately in oral communication",
+        "specific_objectives": "Respond appropriately in oral communication contexts (e.g., instructions, information, orders)",
+        "main_topic": "8.1 Responding appropriately in oral communication",
+        "sub_topic": "Term II - 3A (80 MIN)",
+        "teaching_aids": "Oral texts, prompt cards, telephone props.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students how they respond when a teacher gives them an instruction.",
+            "student_activities": "Share typical responses.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains appropriate ways of responding to instructions, information and orders (acknowledgement, asking for clarification, politeness).",
+            "student_activities": "Take notes on the response types.",
+            "assessment": "Correct understanding of response types"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides role plays in which students respond to instructions, information and orders using prompt cards.",
+            "student_activities": "Practise responding in role plays.",
+            "assessment": "Appropriateness of responses"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews selected role plays and consolidates the response formulae on the board.",
+            "student_activities": "Present role plays to the class.",
+            "assessment": "Quality of responses presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "47",
+      "topic_name": "3B: PRACTISING ORAL RESPONSES",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Practise responding appropriately in oral communication",
+        "specific_objectives": "Practise telephone conversations and panel interview responses",
+        "main_topic": "8.1 Responding appropriately in oral communication",
+        "sub_topic": "Term II - 3B (80 MIN)",
+        "teaching_aids": "Prompt cards, telephone props, panel cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the response types from the first double period.",
+            "student_activities": "Recall the response types.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Models a telephone conversation and a short panel interview, explaining turn-taking and polite response formulae.",
+            "student_activities": "Follow the models and note the response formulae.",
+            "assessment": "Correct use of response formulae"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides telephone conversation practice and mini panel interviews in groups.",
+            "student_activities": "Practise telephone and panel exchanges in groups.",
+            "assessment": "Appropriateness in extended exchanges"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews a panel exchange and gives feedback.",
+            "student_activities": "Self-correct based on feedback.",
+            "assessment": "Improved responding"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "48",
+      "topic_name": "3C: ORAL RESPONDING",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Consolidate oral responding skills",
+        "specific_objectives": "Respond to short oral prompts individually",
+        "main_topic": "8.1 Responding appropriately in oral communication",
+        "sub_topic": "Term II - 3C (40 MIN)",
+        "teaching_aids": "Prompt cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the telephone and panel practice from the double periods.",
+            "student_activities": "Recall the response formulae.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies remaining difficulties with polite response formulae.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Holds rapid question-and-answer practice, posing short prompts to individual students.",
+            "student_activities": "Respond to short oral prompts individually.",
+            "assessment": "Fluency and relevance of responses"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews 8.2 (Responding appropriately in written communication).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for 8.2"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "49",
+      "topic_name": "4A: RESPONDING APPROPRIATELY IN WRITTEN COMMUNICATION",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Respond appropriately in written communication",
+        "specific_objectives": "Respond appropriately in written communication contexts (e.g., writing responses to questions and messages)",
+        "main_topic": "8.2 Responding appropriately in written communication",
+        "sub_topic": "Term II - 4A (80 MIN)",
+        "teaching_aids": "Written texts, sample responses, question sheets.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students how they respond in writing when they receive a written message or question.",
+            "student_activities": "Share experiences of written responses.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains the features of a good written response (clear, complete, relevant, polite) using sample responses.",
+            "student_activities": "Take notes and examine the sample responses.",
+            "assessment": "Correct understanding of written responses"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides individual writing of responses to short written questions and messages.",
+            "student_activities": "Write responses individually.",
+            "assessment": "Completeness of written responses"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews written responses, addresses common errors and consolidates on the board.",
+            "student_activities": "Present and self-check their responses.",
+            "assessment": "Accuracy of written responses"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "50",
+      "topic_name": "4B: PRACTISING WRITTEN RESPONSES",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Practise written responding",
+        "specific_objectives": "Exchange written messages and respond to them in pairs",
+        "main_topic": "8.2 Responding appropriately in written communication",
+        "sub_topic": "Term II - 4B (80 MIN)",
+        "teaching_aids": "Sample messages and notes for exchange.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the features of a good written response.",
+            "student_activities": "Recall the features.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Models responding to a brief note and a friendly message in writing.",
+            "student_activities": "Follow the models and note useful expressions.",
+            "assessment": "Correct grasp of written response formats"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pairs in exchanging written messages and responding to each other's message in writing.",
+            "student_activities": "Exchange messages and respond in writing.",
+            "assessment": "Appropriateness of exchanged responses"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews samples of the exchanged messages and gives feedback.",
+            "student_activities": "Read each other's responses and refine them.",
+            "assessment": "Improved written responses"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "51",
+      "topic_name": "4C: WRITTEN RESPONDING",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Consolidate written responding skills",
+        "specific_objectives": "Write short responses to given written questions in class",
+        "main_topic": "8.2 Responding appropriately in written communication",
+        "sub_topic": "Term II - 4C (40 MIN)",
+        "teaching_aids": "Question sheets.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the exchanged messages from the double periods.",
+            "student_activities": "Recall how to start and end a written response.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies common errors in written responses.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Administers a short written-response exercise.",
+            "student_activities": "Write short responses individually.",
+            "assessment": "Score on the exercise"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews 9.1 (Using appropriate grammar for oral communication).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for 9.1"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "52",
+      "topic_name": "5A: USING APPROPRIATE GRAMMAR FOR ORAL COMMUNICATION",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Use appropriate grammar for oral communication",
+        "specific_objectives": "Use appropriate grammar in oral communication in a variety of contexts (e.g., expressing daily routines, ongoing activities)",
+        "main_topic": "9.1 Using appropriate grammar for oral communication",
+        "sub_topic": "Term II - 5A (80 MIN)",
+        "teaching_aids": "Dictionaries, pictures, recorded materials, timetable chart.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students to describe orally what they do every morning and listens for grammar.",
+            "student_activities": "Describe daily routines.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains the simple present (daily routines) and present continuous (ongoing activities) for oral use, with pictures and recorded examples.",
+            "student_activities": "Take notes and practise the structures orally.",
+            "assessment": "Correct use of the structures"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides an interview practice in which students ask and answer about daily routines and current activities.",
+            "student_activities": "Conduct interviews using correct grammar.",
+            "assessment": "Correctness of grammar in interviews"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews selected interviews, corrects errors on the board and consolidates the structures.",
+            "student_activities": "Present short reports of their interviews.",
+            "assessment": "Accuracy of oral grammar"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "53",
+      "topic_name": "5B: USING GRAMMAR IN REAL-LIFE CONTEXTS",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Use grammar in real-life contexts",
+        "specific_objectives": "Express daily routines and ongoing activities in a class inquiry",
+        "main_topic": "9.1 Using appropriate grammar for oral communication",
+        "sub_topic": "Term II - 5B (80 MIN)",
+        "teaching_aids": "Dictionaries, pictures, recorded materials, timetable chart.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the simple present and present continuous structures.",
+            "student_activities": "Recall the structures.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Demonstrates describing a weekly timetable and activities happening now, using pictures and recorded materials.",
+            "student_activities": "Follow the demonstration and take notes.",
+            "assessment": "Correct use of the structures in description"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Runs a class inquiry in which each student describes a daily routine and a current activity.",
+            "student_activities": "Describe routines and ongoing activities.",
+            "assessment": "Correctness of oral grammar"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews the inquiry, corrects errors and gives feedback.",
+            "student_activities": "Self-correct based on feedback.",
+            "assessment": "Improved oral grammar"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "54",
+      "topic_name": "5C: ORAL GRAMMAR",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Consolidate oral grammar for communication",
+        "specific_objectives": "Short oral grammar practice on daily routines and ongoing activities",
+        "main_topic": "9.1 Using appropriate grammar for oral communication",
+        "sub_topic": "Term II - 5C (40 MIN)",
+        "teaching_aids": "Picture cards, timer.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the class inquiry from the double periods.",
+            "student_activities": "Recall the two grammar structures.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies remaining difficulties with the structures.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Poses oral questions about everyday routines and current activities to individual students.",
+            "student_activities": "Answer using the correct structures.",
+            "assessment": "Correctness of oral grammar"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews 9.2 (Using appropriate vocabulary for oral communication).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for 9.2"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "55",
+      "topic_name": "6A: USING APPROPRIATE VOCABULARY FOR ORAL COMMUNICATION",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Use appropriate vocabulary for oral communication",
+        "specific_objectives": "Use appropriate vocabulary for oral communication in a variety of contexts",
+        "main_topic": "9.2 Using appropriate vocabulary for oral communication",
+        "sub_topic": "Term II - 6A (80 MIN)",
+        "teaching_aids": "Dictionaries, pictures, word cards, songs.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Plays a short song and asks students to name new words they heard.",
+            "student_activities": "Share new words heard in the song.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains choosing appropriate words for different contexts (describing people, objects and places; formal and informal settings) using pictures and dictionaries.",
+            "student_activities": "Take notes and look up new words.",
+            "assessment": "Correct word choices"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides description practice in which students describe pictures and objects using the new vocabulary.",
+            "student_activities": "Describe pictures and objects in pairs.",
+            "assessment": "Accuracy of the vocabulary used"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews the descriptions and records the new words on the board.",
+            "student_activities": "Present descriptions to the class.",
+            "assessment": "Precision of the vocabulary used"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "56",
+      "topic_name": "6B: VOCABULARY THROUGH SONGS AND GAMES",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Use vocabulary in songs and games",
+        "specific_objectives": "Practise vocabulary through word games in groups",
+        "main_topic": "9.2 Using appropriate vocabulary for oral communication",
+        "sub_topic": "Term II - 6B (80 MIN)",
+        "teaching_aids": "Word cards, picture cards, song sheet.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the new vocabulary from the first double period.",
+            "student_activities": "Recall the new words.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Introduces word association, vocabulary bingo and a simple song as ways to learn and use vocabulary, modelling each activity.",
+            "student_activities": "Follow the modelling and learn the activity rules.",
+            "assessment": "Understanding of the activities"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides groups in playing vocabulary games using word and picture cards.",
+            "student_activities": "Play vocabulary games in groups.",
+            "assessment": "Correct use of vocabulary in the games"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews the games, clarifies misused words and gives feedback.",
+            "student_activities": "Self-correct and record new words.",
+            "assessment": "Improved vocabulary use"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "57",
+      "topic_name": "6C: ORAL VOCABULARY",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Comprehending oral messages",
+        "general_objectives": "Consolidate oral vocabulary",
+        "specific_objectives": "Short vocabulary practice using picture cards",
+        "main_topic": "9.2 Using appropriate vocabulary for oral communication",
+        "sub_topic": "Term II - 6C (40 MIN)",
+        "teaching_aids": "Picture cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the songs and games from the double periods.",
+            "student_activities": "Recall the new vocabulary.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies the meaning and use of the trickiest words.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Holds quick picture-card naming practice with individual students.",
+            "student_activities": "Name the pictures using correct vocabulary.",
+            "assessment": "Accuracy of vocabulary"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews 10.1 (Creating formal texts).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for 10.1"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "58",
+      "topic_name": "7A: CREATING FORMAL TEXTS",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Creating a variety of texts using appropriate tone and register",
+        "general_objectives": "Create formal texts (e.g., friendly letters and invitations)",
+        "specific_objectives": "Create formal texts (e.g., friendly letters and invitations) using appropriate tone and register",
+        "main_topic": "10.1 Creating formal texts",
+        "sub_topic": "Term II - 7A (80 MIN)",
+        "teaching_aids": "Samples of friendly letters and invitations, textbook.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students whether they have ever written a letter or an invitation.",
+            "student_activities": "Share experiences of writing letters.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Shows samples of friendly letters and invitations and explains their layout (addresses, date, salutation, body, closing) and polite tone.",
+            "student_activities": "Observe the samples and take notes on the layout.",
+            "assessment": "Correct understanding of the layout"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides guided writing of an invitation in pairs.",
+            "student_activities": "Write invitations in pairs.",
+            "assessment": "Completeness and politeness of the invitations"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews the written invitations and consolidates the layout on the board.",
+            "student_activities": "Present their invitations.",
+            "assessment": "Accuracy of layout and tone"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "59",
+      "topic_name": "7B: WRITING A FRIENDLY LETTER",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Creating a variety of texts using appropriate tone and register",
+        "general_objectives": "Write a friendly letter",
+        "specific_objectives": "Write a friendly letter to a friend using appropriate tone and register",
+        "main_topic": "10.1 Creating formal texts",
+        "sub_topic": "Term II - 7B (80 MIN)",
+        "teaching_aids": "Sample friendly letter, blank letter paper.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the layout of formal texts.",
+            "student_activities": "Recall the parts of a letter.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Models writing a friendly letter and lists common polite expressions used in letters and invitations.",
+            "student_activities": "Follow the model and note the expressions.",
+            "assessment": "Correct grasp of letter writing"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides individual guided writing of a friendly letter to a friend.",
+            "student_activities": "Write friendly letters individually.",
+            "assessment": "Completeness and tone of the letters"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews selected letters and gives feedback.",
+            "student_activities": "Present and self-check their letters.",
+            "assessment": "Improved letter writing"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "60",
+      "topic_name": "7C: FORMAL WRITING",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Creating a variety of texts using appropriate tone and register",
+        "general_objectives": "Consolidate formal writing",
+        "specific_objectives": "Complete a short invitation in class",
+        "main_topic": "10.1 Creating formal texts",
+        "sub_topic": "Term II - 7C (40 MIN)",
+        "teaching_aids": "Invitation templates.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the friendly letters from the double periods.",
+            "student_activities": "Recall the parts of a letter.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies remaining difficulties with layout and tone.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Guides students in writing a short invitation to an event.",
+            "student_activities": "Write an invitation individually.",
+            "assessment": "Correctness of the invitation"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback and previews 10.2 (Creating informal texts).",
+            "student_activities": "Listen to the preview.",
+            "assessment": "Readiness for 10.2"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "61",
+      "topic_name": "8A: CREATING INFORMAL TEXTS",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Creating a variety of texts using appropriate tone and register",
+        "general_objectives": "Create informal texts (e.g., dialogues, daily/weekly timetables)",
+        "specific_objectives": "Create informal texts (e.g., dialogues, daily/weekly timetables) using appropriate tone and register",
+        "main_topic": "10.2 Creating informal texts",
+        "sub_topic": "Term II - 8A (80 MIN)",
+        "teaching_aids": "Texts (dialogues, timetables), prompt cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Asks students what a dialogue is and what their daily timetable lists.",
+            "student_activities": "Brainstorm ideas about dialogues and timetables.",
+            "assessment": "Engagement"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Explains informal texts (dialogues, daily and weekly timetables) and shows examples, clarifying the informal tone used.",
+            "student_activities": "Observe the examples and take notes.",
+            "assessment": "Correct understanding of informal texts"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides pair work in creating a short dialogue from a given scenario.",
+            "student_activities": "Create dialogues in pairs.",
+            "assessment": "Appropriateness of tone in the dialogues"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews the dialogues through short role plays to the class.",
+            "student_activities": "Present the dialogues.",
+            "assessment": "Quality of the dialogues presented"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "62",
+      "topic_name": "8B: CREATING A DAILY/WEEKLY TIMETABLE",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Creating a variety of texts using appropriate tone and register",
+        "general_objectives": "Create a daily/weekly timetable",
+        "specific_objectives": "Write a daily/weekly timetable with activities using appropriate register",
+        "main_topic": "10.2 Creating informal texts",
+        "sub_topic": "Term II - 8B (80 MIN)",
+        "teaching_aids": "Timetable templates, prompt cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Recaps the dialogues from the first double period.",
+            "student_activities": "Recall what makes an informal text.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Models a weekly timetable showing daily activities and explains how to record activities in short, clear phrases.",
+            "student_activities": "Follow the model and take notes.",
+            "assessment": "Correct grasp of timetable writing"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Guides individual writing of a weekly timetable of their own activities.",
+            "student_activities": "Write weekly timetables individually.",
+            "assessment": "Completeness and clarity of the timetables"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Reviews selected timetables and gives feedback.",
+            "student_activities": "Present and compare their timetables.",
+            "assessment": "Improved timetable writing"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "63",
+      "topic_name": "8C: INFORMAL WRITING",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Creating a variety of texts using appropriate tone and register",
+        "general_objectives": "Consolidate informal writing",
+        "specific_objectives": "Short dialogue practice and preparation for Term II revision",
+        "main_topic": "10.2 Creating informal texts",
+        "sub_topic": "Term II - 8C (40 MIN)",
+        "teaching_aids": "Prompt cards.",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Recaps the dialogues and timetables from the double periods.",
+            "student_activities": "Recall the features of informal texts.",
+            "assessment": "Correct recall"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Clarifies the difference between formal and informal texts.",
+            "student_activities": "Ask clarifying questions.",
+            "assessment": "Improved understanding"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Guides short dialogue practice in pairs using prompt cards.",
+            "student_activities": "Practise short dialogues in pairs.",
+            "assessment": "Appropriateness of tone"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Gives feedback, reviews the Term II work covered and previews the final weeks (revision, mock, FTNA and annual examinations).",
+            "student_activities": "Listen to the review and preview.",
+            "assessment": "Readiness for the Term II revision"
           }
         ]
       }

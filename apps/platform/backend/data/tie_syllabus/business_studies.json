@@ -6,29 +6,249 @@
       "specific_competences": [
         {
           "main_code": "1.0",
-          "main_competence": "Demonstrate mastery of business knowledge",
+          "main_competence": "Demonstrate understanding of the concept, terminologies, and scope of Business Studies",
           "specific_code": "1.1",
-          "specific_competence": "Demonstrate mastery of the concepts, theories and principles of Business Education",
-          "number_of_periods": "70",
+          "specific_competence": "Explain the concept of a business",
+          "number_of_periods": "3",
           "learning_activities": [
-            "(a) Describe the concept and scope of business studies, and its relationship with other disciplines",
-            "(b) Describe the concept and theories of entrepreneurship (meaning, characteristics, skills and importance)",
-            "(c) Describe sole proprietorship (meaning, features, advantages and disadvantages and start-up)"
+            "(a) Examine business processes (production, distribution, exchange, consumption) and the purpose of a business"
           ],
           "teaching_methods": [
-            "Scenario: In manageable groups provide a scenario showing various activities involved in the production, distribution and consumption of a product. Guide students to share what they have learnt from the scenario Jigsaw: Guide students through jigsaw, to explore relationship of business studies and other subjects Brainstorming: Guide students to brainstorm on the importance of business studies in the community. Relate their responses to the importance of business studies Resourceful person: Invite a guest to share with the students on the relationship between business studies and other disciplines. Then, guide the students to summarise what they have learnt Skills lab: Organise students in manageable groups to identify various clubs that exist in schools. Then, relate their responses to the concept of a school business club, its meaning, importance and how it works. Provide students with the business club guidelines and milestones. Ask each group to work on one component of the simple constitution of a club such as membership, leadership, finance, disputes, and dissolution, and share Project activity: Task students to compile all the components (developed in the skills lab) into one document. Guide students to make several amendments into a club constitution and use it to formulate the business club Follow-up on project activity: Let students reflect on what mindsets and skills they had to use to create the constitution and how they might use those skills in the future as entrepreneurs or business owners",
-            "Brainstorm: Organise students in manageable groups to generate a list of different activities performed in their community Then, discuss what it takes to do those activities and be successful. Relate the discussion to the meaning and characteristics of a good entrepreneur, based on their discussions Field trip: Assign students in manageable groups to visit nearby businesses to explore the importance of their activities to the community and the skills they might need to become successful entrepreneurs. Let groups share their findings with the rest of the class through presentations Relate their findings to the skills and importance of entrepreneurship Role play/simulation: Assign students in manageable groups to prepare the simulation game on various theories and approaches to entrepreneurship by choosing a theme that is relevant to a particular theory (innovation theory, economic theory, sociological theory, opportunity and resource-based theory) Let students discuss lessons learnt from the simulation. Relate their ideas with the theories of entrepreneurship Then, synthesise what students have presented and make a conclusion on the intended lesson",
-            "Brainstorming: Guide students to brainstorm on the businesses found in their surroundings and their owners Guide them to explain why they think some businesses are owned by one person and others by more than one person. Relate their findings to the meaning and features of sole proprietorship legal form of business Guest speaker: Invite a sole proprietor to the school to share with students on his or her experience on advantages and disadvantages of being a sole proprietor. Let students summarise what they have learnt Project activity: Task students in a group(s) to write a simple report/presentation on how to register a sole proprietorship in Tanzania Case study: Provide case studies on sole proprietor business start-up processes of a real person (from capital acquisition, the business idea, resources needed, customers and market) Guide students in pairs to discuss and share some things they would consider when starting up their own businesses"
+            "Class discussion, real-life business examples, flow-chart drawing"
           ],
           "assessment_criteria": [
-            "The concept and scope of business studies is clearly described",
-            "The concept and theories of entrepreneurship are well described",
-            "Sole proprietorship is clearly described"
+            "Oral questions"
           ],
           "resources": [
-            "Online/offline sources, business club guidelines and video clips showing various business activities",
-            "Online/ offline sources and video clips showing various business activities",
-            "Online/ offline sources from Business Registration and Lincesing Authority (BRELA)"
+            "Business Studies textbook, local business examples"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate understanding of the concept, terminologies, and scope of Business Studies",
+          "specific_code": "1.2",
+          "specific_competence": "Define needs, wants, and services",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Distinguish needs from wants and explain the nature of services as intangible products"
+          ],
+          "teaching_methods": [
+            "Class discussion, sorting activity (needs vs wants cards)"
+          ],
+          "assessment_criteria": [
+            "Short quiz"
+          ],
+          "resources": [
+            "Picture cards, textbook"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate understanding of the concept, terminologies, and scope of Business Studies",
+          "specific_code": "1.3",
+          "specific_competence": "Classify goods (I)",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Distinguish free and economic goods, and consumer and producer goods, using local examples"
+          ],
+          "teaching_methods": [
+            "Sorting activity, group discussion"
+          ],
+          "assessment_criteria": [
+            "Classification quiz"
+          ],
+          "resources": [
+            "Sample goods/pictures, textbook"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate understanding of the concept, terminologies, and scope of Business Studies",
+          "specific_code": "1.4",
+          "specific_competence": "Classify goods (II)",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Distinguish perishable and durable goods, and merit and demerit goods"
+          ],
+          "teaching_methods": [
+            "Sorting activity, group discussion, case examples"
+          ],
+          "assessment_criteria": [
+            "Classification quiz"
+          ],
+          "resources": [
+            "Sample goods/pictures, textbook"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate understanding of the concept, terminologies, and scope of Business Studies",
+          "specific_code": "1.5",
+          "specific_competence": "Explain resources and scarcity",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Identify types of resources and examine the concept of scarcity"
+          ],
+          "teaching_methods": [
+            "Class discussion, brainstorming on limited resources"
+          ],
+          "assessment_criteria": [
+            "Oral questions"
+          ],
+          "resources": [
+            "Textbook, resource charts"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate understanding of the concept, terminologies, and scope of Business Studies",
+          "specific_code": "1.6",
+          "specific_competence": "Explain opportunity cost",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Calculate and interpret opportunity cost using simple choice scenarios"
+          ],
+          "teaching_methods": [
+            "Scenario analysis, worked examples"
+          ],
+          "assessment_criteria": [
+            "Written short test"
+          ],
+          "resources": [
+            "Scenario cards, textbook"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate understanding of the concept, terminologies, and scope of Business Studies",
+          "specific_code": "1.7",
+          "specific_competence": "Explain the concept, importance, and scope of Business Studies",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Examine the importance of studying Business Studies and its scope"
+          ],
+          "teaching_methods": [
+            "Class discussion, brainstorming on career relevance"
+          ],
+          "assessment_criteria": [
+            "Oral questions"
+          ],
+          "resources": [
+            "Textbook"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Demonstrate understanding of the concept, terminologies, and scope of Business Studies",
+          "specific_code": "1.8",
+          "specific_competence": "Relate Business Studies to other subjects",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Examine links between Business Studies and subjects such as Geography, Mathematics, and Civics"
+          ],
+          "teaching_methods": [
+            "Class discussion, concept mapping"
+          ],
+          "assessment_criteria": [
+            "Concept map evaluation"
+          ],
+          "resources": [
+            "Textbook, concept map templates"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate understanding of entrepreneurship",
+          "specific_code": "2.1",
+          "specific_competence": "Explain the concept of entrepreneurship",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Examine the meaning of entrepreneurship and characteristics of an entrepreneur"
+          ],
+          "teaching_methods": [
+            "Class discussion, case studies of local entrepreneurs"
+          ],
+          "assessment_criteria": [
+            "Oral questions"
+          ],
+          "resources": [
+            "Textbook, local entrepreneur profiles"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate understanding of entrepreneurship",
+          "specific_code": "2.2",
+          "specific_competence": "Explain theories of entrepreneurship",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Examine major theories explaining why people become entrepreneurs"
+          ],
+          "teaching_methods": [
+            "Guided lecture, group discussion"
+          ],
+          "assessment_criteria": [
+            "Written short test"
+          ],
+          "resources": [
+            "Textbook, theory summary charts"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Demonstrate understanding of entrepreneurship",
+          "specific_code": "2.3",
+          "specific_competence": "Analyze challenges facing entrepreneurship",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Identify challenges facing entrepreneurs and ways of solving them"
+          ],
+          "teaching_methods": [
+            "Case study analysis, group brainstorming"
+          ],
+          "assessment_criteria": [
+            "Case study report"
+          ],
+          "resources": [
+            "Textbook, local case studies"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Demonstrate understanding of sole proprietorship",
+          "specific_code": "3.1",
+          "specific_competence": "Explain sole proprietorship and its formation",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Examine the concept of sole proprietorship and the process of forming one"
+          ],
+          "teaching_methods": [
+            "Class discussion, guided reading, procedure charting"
+          ],
+          "assessment_criteria": [
+            "Oral questions, short quiz"
+          ],
+          "resources": [
+            "Textbook, sample registration documents"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Demonstrate understanding of sole proprietorship",
+          "specific_code": "3.2",
+          "specific_competence": "Explain the role of sole proprietorship",
+          "number_of_periods": "3",
+          "learning_activities": [
+            "(a) Examine the role/importance of sole proprietorship in the economy and revise Term I content"
+          ],
+          "teaching_methods": [
+            "Class discussion, guided revision Q&A"
+          ],
+          "assessment_criteria": [
+            "Term I revision test"
+          ],
+          "resources": [
+            "Textbook, revision notes"
           ]
         }
       ]
