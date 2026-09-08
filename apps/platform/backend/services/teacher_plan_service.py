@@ -33,6 +33,7 @@ MAX_PLAN_REPAIR_ATTEMPTS = 2
 
 KISWAHILI_SUBJECTS = {
     "kiswahili",
+    "history_civics",
     "historia-ya-tanzania-na-maadili",
     "historia ya tanzania na maadili",
     "civics",

@@ -56,10 +56,10 @@ def test_unknown_subject_and_form_return_empty():
 
 def test_slugs_and_aliases():
     assert ts._canonical_slug("math") == "mathematics"
-    assert ts._canonical_slug("civics") == "history_civics"
+    assert ts._canonical_slug("civics") == "historia_ya_tanzania_na_maadili"
     assert ts._canonical_slug("Basic-Mathematics") == "mathematics"
 
 
 def test_kiswahili_language_syllabi_marked_sw():
-    for slug in ("kiswahili", "history_civics"):
+    for slug in ("kiswahili", "historia_ya_tanzania_na_maadili"):
         assert ts.get_subject(slug)["language"] == "sw"

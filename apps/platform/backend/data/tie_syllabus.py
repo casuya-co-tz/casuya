@@ -20,8 +20,8 @@ Each specific-competence record:
      "assessment_criteria": [str], "resources": [str]}
 
 Note: "Civics and Moral Education" is not a separate TIE academic syllabus; it
-is covered by the "Historia ya Tanzania na Maadili" (history_civics) syllabus,
-which is in Kiswahili.
+is covered by the "Historia ya Tanzania na Maadili"
+(historia_ya_tanzania_na_maadili) syllabus, which is in Kiswahili.
 """
 
 import json
@@ -36,7 +36,7 @@ SUBJECT_SLUG_FILES = {
     "english": "english.json",
     "kiswahili": "kiswahili.json",
     "history": "history.json",
-    "history_civics": "history_civics.json",
+    "historia_ya_tanzania_na_maadili": "history_civics.json",
     "geography": "geography.json",
     "biology": "biology.json",
     "chemistry": "chemistry.json",
@@ -51,8 +51,9 @@ SUBJECT_SLUG_FILES = {
 ALIASES = {
     "basic_mathematics": "mathematics",
     "math": "mathematics",
-    "civics": "history_civics",
-    "moral_education": "history_civics",
+    "civics": "historia_ya_tanzania_na_maadili",
+    "moral_education": "historia_ya_tanzania_na_maadili",
+    "history_civics": "historia_ya_tanzania_na_maadili",
     "commerce": "business_studies",
     "book_keeping": "bookkeeping",
 }

@@ -31,6 +31,7 @@ _SUBJECT_RULES: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"chemistry|\bkemia\b"), "chemistry"),
     (re.compile(r"physics|\bfizikia\b"), "physics"),
     (re.compile(r"geography|jiografia|mazingira"), "geography"),
+    (re.compile(r"historia\s+ya\s+tanzania\s+na\s+maadili"), "historia-ya-tanzania-na-maadili"),
     (re.compile(r"civics\s*and\s*moral|civics|uraia\s*na\s*maadili|maadili|moral\s*education|historia\s*na\s*maadili"), "history_civics"),
     (re.compile(r"history\s*of?\s*tanzania|historia\s*ya\s*tanzania"), "history"),
     (re.compile(r"history|\bhistoria\b"), "history"),

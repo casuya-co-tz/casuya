@@ -104,6 +104,7 @@ def _register(role: str):
 
 def test_language_mapping():
     assert _lang_label("kiswahili") == "sw"
+    assert _lang_label("history_civics") == "sw"
     assert _lang_label("historia-ya-tanzania-na-maadili") == "sw"
     assert _lang_label("mathematics") == "en"
     assert _lang_label("biology") == "en"

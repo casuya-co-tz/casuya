@@ -56,6 +56,7 @@ def test_map_subject_slug_en_and_sw():
     assert map_subject_slug(None, "SCHEME OF WORK FOR ACCOUNTANCY FORM FIVE") == "bookkeeping"
     assert map_subject_slug(None, "LESSON PLAN FOR CIVICS AND MORAL EDUCATION") == "history_civics"
     assert map_subject_slug(None, "SCHEME FOR URABIA NA MAADILI") == "history_civics"
+    assert map_subject_slug(None, "LESSON PLAN FOR BIBLE KNOWLEDGE FORM ONE") == "bible_knowledge"
     assert map_subject_slug(None, "LESSON PLAN FOR ADVANCED MATHEMATICS") == "additional_mathematics"
     assert map_subject_slug(None, "SCHEME OF WORK FOR COMMERCE FORM ONE") == "business_studies"
     assert map_subject_slug(None, "LESSON PLAN FOR AGRICULTURE") == "agriculture"
@@ -141,17 +142,20 @@ def test_bundled_seed_is_idempotent():
     Biology (24 lesson plans + 2 schemes), English (21 lesson plans + 2
     schemes), and History / Historia ya Tanzania na Maadili / Business
     Studies / Kiswahili scheme bundles. Business Studies Form One carries
-    52 lesson plans + 2 term schemes, and Kiswahili Form One carries 52
-    lesson plans + 2 term schemes (26 Term I, 1A-13B + 26 Term II,
-    14A-26B)."""
+    52 lesson plans + 2 term schemes, Kiswahili Form One carries 52 lesson
+    plans + 2 term schemes (26 Term I, 1A-13B + 26 Term II, 14A-26B),
+    Historia ya Tanzania na Maadili Form One carries 52 lesson plans +
+    2 term schemes (26 Term I, 1A-13B + 26 Term II, 14A-26B), and Bible
+    Knowledge Form One carries 52 lesson plans + 2 term schemes (26 Term I,
+    1A-13B + 26 Term II, 14A-26B)."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
     try:
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
-        assert inserted == 699  # 98 geography (18 f1 + 80 f2) + 60 history f1 + 47 mathematics f2 + 24 chemistry f2 + 24 biology f2 + 21 english + 13 history f2 + 21 historia_tanzania_maadili + 21 business_studies f2 + 21 kiswahili + 50 physics form one + 52 physics form two + 20 chemistry f1 + 30 biology f1 + 30 mathematics f1 + 52 business_studies form one + 39 english form one term i lessons + 24 english form one term ii lessons + 52 kiswahili form one lessons
+        assert inserted == 803  # 98 geography (18 f1 + 80 f2) + 60 history f1 + 47 mathematics f2 + 24 chemistry f2 + 24 biology f2 + 21 english + 13 history f2 + 21 historia_tanzania_maadili + 21 business_studies f2 + 21 kiswahili + 50 physics form one + 52 physics form two + 20 chemistry f1 + 30 biology f1 + 30 mathematics f1 + 52 business_studies form one + 39 english form one term i lessons + 24 english form one term ii lessons + 52 kiswahili form one lessons + 52 historia_tanzania_maadili form one lessons + 52 bible_knowledge form one lessons
         assert replaced == 0
-        assert inserted_schemes == 35
+        assert inserted_schemes == 39
         assert replaced_schemes == 0
         assert purged == 0
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
@@ -187,7 +191,7 @@ def test_bundled_seed_is_idempotent():
         hist_schemes = list_reference_docs(db, subject_slug="history", form_level=2, doc_type="scheme_of_work")
         assert len(hist_schemes) == 1
         assert all(doc.source_id.startswith("bundled:") for doc in hist_schemes)
-        for slug in ("history_civics", "business_studies", "english", "kiswahili"):
+        for slug in ("historia-ya-tanzania-na-maadili", "business_studies", "english", "kiswahili"):
             f2_schemes = list_reference_docs(db, subject_slug=slug, form_level=2, doc_type="scheme_of_work")
             assert len(f2_schemes) == 2, slug
             assert all(doc.source_id.startswith("bundled:") for doc in f2_schemes)
@@ -229,13 +233,33 @@ def test_bundled_seed_is_idempotent():
         sw_f1_schemes = list_reference_docs(db, subject_slug="kiswahili", form_level=1, doc_type="scheme_of_work")
         assert len(sw_f1_schemes) == 2
         assert all(doc.source_id.startswith("bundled:") for doc in sw_f1_schemes)
+        # Historia ya Tanzania na Maadili Form One: 52 lesson plans (26 Term I, 1A-13B + 26 Term II, 14A-26B) + 2 schemes
+        htm_f1_lessons = list_reference_docs(db, subject_slug="historia-ya-tanzania-na-maadili", form_level=1, doc_type="lesson_plan", limit=200)
+        assert len(htm_f1_lessons) == 52
+        assert all(doc.source_id.startswith("bundled:") for doc in htm_f1_lessons)
+        htm_f1_titles = {doc.title for doc in htm_f1_lessons}
+        assert any("NO. 1A " in t and "TERM I - WEEK 1" in t for t in htm_f1_titles)
+        assert any("NO. 14A " in t and "TERM II - WEEK 1" in t for t in htm_f1_titles)
+        htm_f1_schemes = list_reference_docs(db, subject_slug="historia-ya-tanzania-na-maadili", form_level=1, doc_type="scheme_of_work")
+        assert len(htm_f1_schemes) == 2
+        assert all(doc.source_id.startswith("bundled:") for doc in htm_f1_schemes)
+        # Bible Knowledge Form One: 52 lesson plans (26 Term I, 1A-13B + 26 Term II, 14A-26B) + 2 schemes
+        bible_f1_lessons = list_reference_docs(db, subject_slug="bible_knowledge", form_level=1, doc_type="lesson_plan", limit=200)
+        assert len(bible_f1_lessons) == 52
+        assert all(doc.source_id.startswith("bundled:") for doc in bible_f1_lessons)
+        bible_f1_titles = {doc.title for doc in bible_f1_lessons}
+        assert any("NO. 1A " in t and "TERM I - WEEK 1" in t for t in bible_f1_titles)
+        assert any("NO. 14A " in t and "TERM II - WEEK 1" in t for t in bible_f1_titles)
+        bible_f1_schemes = list_reference_docs(db, subject_slug="bible_knowledge", form_level=1, doc_type="scheme_of_work")
+        assert len(bible_f1_schemes) == 2
+        assert all(doc.source_id.startswith("bundled:") for doc in bible_f1_schemes)
         check_f2_lessons = {
             "mathematics": 47,
             "chemistry": 24,
             "biology": 24,
             "english": 21,
             "history": 13,
-            "history_civics": 21,
+            "historia-ya-tanzania-na-maadili": 21,
             "business_studies": 21,
             "kiswahili": 21,
             "physics": 52,

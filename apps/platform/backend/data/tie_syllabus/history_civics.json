@@ -1,240 +1,482 @@
 {
-  "subject": "history_civics",
+  "subject": "historia_ya_tanzania_na_maadili",
   "language": "sw",
   "forms": {
     "1": {
       "specific_competences": [
         {
-          "main_code": null,
-          "main_competence": "",
-          "specific_code": "1.1",
-          "specific_competence": "Kuelezea chimbuko la jamii za Kitanzania na maadili yake",
-          "number_of_periods": "9",
+          "main_code": "1.0",
+          "main_competence": "Kumudu dhana ya Historia ya Tanzania na Maadili",
+          "specific_code": "1.1 Kueleza dhana ya Historia ya Tanzania na Maadili na maadili",
+          "specific_competence": "Kueleza dhana ya Historia ya Tanzania na Maadili na maadili",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kueleza asili ya jamii za Kitanzania (Wabantu, Wanilo, Wakushito, Wakichembe)",
-            "Shughuli za ujifunzaji",
-            "(b) Kubaini shughuli mbalimbali za makundi ya asili ya jamii za Kitanzania",
-            "(c) Kueleza maadili ya jamii za asili ya Kitanzania",
-            "Shughuli za ujifunzaji"
+            "(a) Kueleza maana ya Historia ya Tanzania na Maadili na dhana ya maadili"
           ],
           "teaching_methods": [
-            "Bunguabongo: Ongoza wanafunzi kubungua bongo ili kubainisha jamii mbalimbali za Kitanzania Kualika mtaalamu: Ongoza mtaalamu kutoa maelezo kwa wanafunzi juu ya asili za jamii mbalimbali za Kitanzania. Majadiliano: Ongoza wanafunzi kwenye vikundi vidogovidogo kujadili na kuandika muhtasari wa maelezo yaliyotolewa na mtaalamu na kuwasilisha darasani.",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa",
-            "Fikiri-andika- jozisha-shirikisha: Ongoza wanafunzi kufikiri, kuandika, kukaa katika jozi na kujadili shughuli walizoandika, kisha wajadili katika vikundi ili kuorodhesha shughuli mbalimbali za makundi ya asili ya jamii za Kitanzania. Majadiliano: Ongoza majadiliano ya darasa kujadili shughuli mbalimbali za makundi ya asili ya jamii za Kitanzania.",
-            "Bunguabongo: Ongoza wanafunzi kujibu maswali kuhusu maadili ya jamii mbalimbali za asili.",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa Kisa mafunzo: Ongoza wanafunzi kusoma visamafunzo katika vikundi vyao kwa kutumia maswali yaliyotolewa ili kufanya uchambuzi wa kina. Majadiliano: Ongoza majadiliano darasani kwa wanafunzi kuwasilisha walichojadili katika vikundi vyao kuhusu maadili ya jamii za asili za Kitanzania."
+            "Mihadhara mifupi, majadiliano ya darasa"
           ],
           "assessment_criteria": [
-            "Asili ya jamii za Kitanzania zimeelezwa kwa usahihi",
-            "Vigezo vya upimaji",
-            "Shughuli za makundi ya asili ya jamii za Kitanzania zimebainishwa",
-            "Maadili ya jamii za asili ya Kitanzania yameelezwa kwa ufasaha",
-            "Vigezo vya upimaji"
+            "Maswali ya mdomo"
           ],
           "resources": [
-            "Matini zenye kuonesha asili ya jamii za Kitanzania Ramani kuonesha mtawanyiko wa jamii za asili Vitu halisi vilivyotumiwa na watu wa jamii za asili",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa",
-            "",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Chati za dhana, mifano halisi ya maadili"
           ]
         },
         {
-          "main_code": null,
-          "main_competence": "",
-          "specific_code": "1.2",
-          "specific_competence": "Kumudu maarifa na ujuzi wa maadili na urithi wa jamii za Kitanzania",
-          "number_of_periods": "10",
+          "main_code": "1.0",
+          "main_competence": "Kumudu dhana ya Historia ya Tanzania na Maadili",
+          "specific_code": "1.2 Kueleza umuhimu wa somo na uhusiano wake na masomo mengine",
+          "specific_competence": "Kueleza umuhimu wa somo na uhusiano wake na masomo mengine",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kuchambua maadili na urithi wa jamii za Kitanzania",
-            "Shughuli za ujifunzaji",
-            "(b) Kueleza matendo ya msingi yanayokuza na kulinda maadili na urithi wa jamii za Kitanzania"
+            "(a) Kueleza umuhimu wa somo la Historia ya Tanzania na Maadili na uhusiano wake na masomo mengine"
           ],
           "teaching_methods": [
-            "Changanyakete: Gawa visamafunzo mbalimbali kuhusu maadili na urithi wa jamii za Kitanzania kwenye makundi.",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa Majadiliano: Ongoza wanafunzi katika vikundi kujadili na kuandika muhtasari wa walichojifunza.",
-            "Majadiliano: Ongoza wanafunzi katika vikundi vidogovidogo, kujadili matendo ya msingi yanayokuza na kulinda maadili na urithi wa jamii za Kitanzania."
+            "Ramani dhana, majadiliano ya vikundi"
           ],
           "assessment_criteria": [
-            "Maadili na urithi wa jamii za Kitanzania yamecha- mbuliwa kwa ufasaha",
-            "Vigezo vya upimaji",
-            "Matendo ya msingi yanayokuza na kulinda maadili na urithi wa jamii za Kitanzania yameelezwa kwa ufasaha"
+            "Zoezi la maandishi mafupi"
           ],
           "resources": [
-            "Ramani kuonesha maeneo yenye urithi wa Tanzania Vitu halisi vilivyotumiwa na watu wa jamii za asili",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa",
-            ""
-          ]
-        },
-        {
-          "main_code": null,
-          "main_competence": "",
-          "specific_code": "1.3",
-          "specific_competence": "Kutumia maarifa na ujuzi wa historia na urithi kubuni fursa mbalimbali zilizopo katika jamii za Kitanzania",
-          "number_of_periods": "10",
-          "learning_activities": [
-            "(a) Kubaini fursa mbalimbali zilizopo kwenye urithi wa jamii za Kitanzania",
-            "Shughuli za ujifunzaji",
-            "(b) Kueleza namna fursa zilizopo kwenye urithi wa jamii za Kitanzania zinavyoweza kutumika kukuza uchumi binafsi na jamii",
-            "Shughuli za ujifunzaji",
-            "(c) Kueleza njia mbalimbali za kutunza urithi wa jamii za Kitanzania"
-          ],
-          "teaching_methods": [
-            "Utafiti mdogo: Ongoza wanafunzi katika vikundi vyao watembelee na kubaini fursa anuai zilizopo katika maeneo wanamoishi zenye urithi wa jamii za Kitanzanai. Matembezi ya galari: Ongoza wanafunzi kuziorodhesha, kubandika",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa kwenye kuta za darasa, kufanya matembezi na kuuliza maswali katika vikundi mbalimbali.",
-            "Kisamafunzo: Ongoza wanafunzi kujadili kisamafunzo na kutoa maoni yao kuhusu fursa za urithi na manufaa yake katika jamii za Kitanzania. Mtaalamu mwalikwa: Ongoza wanafunzi kumsikiliza na kuuliza maswali mtaalamu kuhusu namna ya kutumia fursa za urithi katika kukuza uchumi binafsi na jamii.",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa",
-            "Fikiri -andika- jozisha -shirikisha: Ongoza wanafunzi kufikiri, kuandika, kujozisha na kushirikishana katika vikundi kuelezea njia mbalimbali za kutunza urithi wa jamii inayowazunguka. Majadiliano: Ongoza wanafunzi kufanya majadiliano katika darasa kuelezea njia mbalimbali za kutunza urithi wa jamii za Kitanzania."
-          ],
-          "assessment_criteria": [
-            "Fursa mbalimbali zilizopo kwenye urithi wa jamii za Kitanzania zimebainishwa",
-            "Vigezo vya upimaji",
-            "Fursa zilizopo kwenye urithi wa jamii za Kitanzania zinavyoweza kutumika kukuza uchumi binafsi na jamii zimeelezwa kwa ufasaha",
-            "Vigezo vya upimaji",
-            "Njia mbalimbali za kutunza urithi wa jamii za Kitanzania zimeelezwa kwa ufasaha"
-          ],
-          "resources": [
-            "Matini kuhusu fursa kwenye urithi wa jamii za Kitanzania Ramani kuonesha maeneo yenye urithi wa Tanzania Vitu halisi vilivyotumiwa na watu wa jamii za asili",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa",
-            ""
-          ]
-        },
-        {
-          "main_code": null,
-          "main_competence": "",
-          "specific_code": "1.4",
-          "specific_competence": "Kubaini fursa mbalimbali za kujenga ushirikiano na kukuza uchumi wa kitaifa",
-          "number_of_periods": "8",
-          "learning_activities": [
-            "(a) Kuainisha shughuli mbalimbali za kujenga ushirikiano na kukuza uchumi wa Taifa",
-            "Shughuli za ujifunzaji",
-            "(b) Kufafanua namna shughuli mbalimbali zinavyochangia kujenga ushirikiano na kukuza uchumi wa Taifa",
-            "Shughuli za ujifunzaji"
-          ],
-          "teaching_methods": [
-            "Utafiti mdogo: Ongoza wanafunzi kutembelea maeneo mbalimbali yenye shughuli mbalimbali za kujenga ushirikiano na kukuza uchumi wa Taifa.",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa Matembezi ya galari: Ongoza wanafunzi kwenye vikundi vidogovidogo kijadili, kisha waelekeze wabandike matokeo ya utafiti wao na kurekebisha pale palipokuwa na upungufu.",
-            "Mtaalamu mwalikwa: Ongoza mtaalamu kufafanua shughuli mbalimbali zinavyochangia ushirikiano na uchumi wa Taifa. Majadiliano: Ongoza wanafunzi katika vikundi vidogovidogo kujadili kisha kuwasilisha kwenye darasa kwa majadiliano.",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa"
-          ],
-          "assessment_criteria": [
-            "Shughuli mbalimbali za kujenga ushirikiano na kukuza uchumi wa Taifa zimeanishwa",
-            "Vigezo vya upimaji",
-            "Shughuli mbalimbali zinavyochangia kujenga ushirikiano na kukuza uchumi wa Taifa zimefafanuliwa kwa ufasaha",
-            "Vigezo vya upimaji"
-          ],
-          "resources": [
-            "Matini kuhusu fursa mbalimbali za kujenga ushirikiano na kukuza uchumi wa kitaifa Picha kuonesha shughuli mbalimbali",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa Ramani kuonesha maeneo yenye fursa mbalimbali",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Chati linganishi ya masomo"
           ]
         },
         {
           "main_code": "2.0",
-          "main_competence": "Kumudu historia ya Tanzania na maadili kabla ya ukoloni",
-          "specific_code": "2.1",
-          "specific_competence": "Kuchambua mifumo ya kijamii (elimu, afya, utamaduni) iliyokuza na kuendeleza maadili ya jamii za Kitanzania kabla ya ukoloni",
-          "number_of_periods": "10",
+          "main_competence": "Kumudu chimbuko la jamii za Kitanzania na maadili yake",
+          "specific_code": "2.1 Kueleza dhana ya jamii na asili ya jamii za Kitanzania",
+          "specific_competence": "Kueleza dhana ya jamii na asili ya jamii za Kitanzania",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kubaini mifumo ya kijamii ya Tanzania kabla ya ukoloni",
-            "(b) Kueleza mifumo ya kijamii ya Tanzania ilivyokuza maadili kabla ya ukoloni",
-            "Shughuli za ujifunzaji"
+            "(a) Kueleza dhana ya jamii na kubainisha asili ya jamii za Kitanzania"
           ],
           "teaching_methods": [
-            "Utafiti mdogo: Elekeza wanafunzi kusoma matini kutoka katika sehemu mbalimbali kama maktaba na Intaneti na kuandika kwa ufupi kuhusu mifumo ya kijamii za Tanzania kabla ya ukoloni. Majadiliano: Ongoza wanafunzi katika vikundi kujadili na kuwasilisha darasani kwa majadiliano ya pamoja.",
-            "Mtaalamu mwalikwa: Ongoza wanafunzi kusikiliza na kuuliza maswali mtaalamu mwalikwa kuhusu jinsi mifumo ya jamii za Tanzania ilivyokuza maadili kabla ya ukoloni.",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa Majadiliano: Ongoza wanafunzi kujadili katika vikundi jinsi mifumo ya kijamii ya Kitanzania ilivyokuza maadili kabla ya ukoloni kisha kuwasilisha darasani kwa majadiliano zaidi."
+            "Ramani za Afrika, hadithi za asili"
           ],
           "assessment_criteria": [
-            "Mifumo ya kijamii za Tanzania kabla ya ukoloni imebainishwa",
-            "Mifumo ya kijamii ya Tanzania ilivyokuza maadili kabla ya ukoloni imeelezwa kwa ufasaha",
-            "Vigezo vya upimaji"
+            "Maswali ya mdomo"
           ],
           "resources": [
-            "Picha kuonesha miundombinu ya elimu, afya na utamaduni kabla ya ukoloni Ramani kuonesha mtawanyiko wa miundombinu elimu, afya na utamaduni kabla ya ukoloni Vitu halisi vilivyotumika kabla ya ukoloni",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Ramani, picha za makabila"
           ]
         },
         {
           "main_code": "2.0",
-          "main_competence": "Kumudu historia ya Tanzania na maadili kabla ya ukoloni",
-          "specific_code": "2.2",
-          "specific_competence": "Kuchambua mifumo iliyokuza na kuendeleza uchumi na siasa katika jamiii za Kitanzania kabla ya ukoloni",
-          "number_of_periods": "15",
+          "main_competence": "Kumudu chimbuko la jamii za Kitanzania na maadili yake",
+          "specific_code": "2.2 Kueleza mtawanyiko wa jamii za Tanzania kabla ya ukoloni",
+          "specific_competence": "Kueleza mtawanyiko wa jamii za Tanzania kabla ya ukoloni",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kubaini mifumo ya kiuchumi na kisiasa katika jamii za Kitanzania kabla ya ukoloni",
-            "Shughuli za ujifunzaji",
-            "(b) Kueleza jinsi mifumo ya kisiasa na kiuchumi ilivyokuza na kuendeleza shughuli za kiuchumi na kisiasa kabla ya ukoloni",
-            "(c) Kufafanua uhusiano kati ya jamiii za Kitanzania na za Mashariki ya Kati, Mashariki",
-            "Shughuli za ujifunzaji",
-            "ya Mbali na Ulaya katika kuendeleza shughuli za kiuchumi na kisiasa kabla ya ukoloni",
-            "(d) Kutathmini mchango wa mifumo ya kisiasa na kiuchumi katika kukuza maadili ya jamii za Kitanzania kabla ya ukoloni",
-            "Shughuli za ujifunzaji"
+            "(a) Kueleza jinsi jamii za Tanzania zilivyotawanyika kabla ya ukoloni"
           ],
           "teaching_methods": [
-            "Utafiti mdogo: Elekeza wanafunzi kusoma matini kutoka katika vyanzo mbalimbali na kuandika maelezo kuhusu mifumo ya kiuchumi na kisiasa katika jamii za Kitanzania kabla ya ukoloni. Majadiliano: Ongoza wanafunzi katika vikundi kujadili na kisha kuwasilisha darasani kwa majadiliano ya pamoja.",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa",
-            "Utafiti mdogo: Elekeza wanafunzi kusoma matini na kuandika maelezo kuhusu jinsi mifumo ya kisiasa na kiuchumi ilivyokuza na kuendeleza shughuli za kiuchumi na kisiasa kabla ya ukoloni. Majadiliano: Ongoza majadiliano ya vikundi kuhusu jinsi mifumo ya kisiasa na kiuchumi ilivyokuza na kuendeleza shughuli za kiuchumi na kisiasa kabla ya ukoloni",
-            "Changanyakete: Ongoza wanafunzi katika vikundi kusoma matini kuhusu uhusiano wa jamii mmoja ya Kitanzania na jamii za Mashariki",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa",
-            "ya Kati au Mashariki ya Mbali au Ulaya. Elekeza kila kikundi kutoa mwakilishi mmoja kwenda kikundi kingine kufundisha walichojifunza katika kundi lao.",
-            "Kisamafunzo: Elekeza wanafunzi katika vikundi kusoma na kuchambua faida na hasara za mifumo ya kisiasa na kiuchumi katika kukuza maadili ya jamii za Kitanzania kabla ya ukoloni. Majadiliano: Ongoza vikundi kuwasilisha darasani kwa majadiliano ya pamoja.",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Uchambuzi wa ramani, majadiliano"
           ],
           "assessment_criteria": [
-            "Mifumo ya kiuchumi na kisiasa katika jamii za Kitanzania kabla ya ukoloni imebainishwa",
-            "Vigezo vya upimaji",
-            "Mifumo ya kisiasa na kiuchumi ilivyokuza na kuendeleza shughuli za kiuchumi na kisiasa kabla ya ukoloni imeelezwa kwa ufasaha",
-            "Uhusiano kati ya jamii za Kitanzania na za Mashariki ya Kati, Mashariki ya Mbali na Ulaya katika",
-            "Vigezo vya upimaji",
-            "kuendeleza shughuli za kiuchumi na kisiasa kabla ya ukoloni umefafanuliwa kwa ufasaha",
-            "Mchango wa mifumo ya kisiasa na kiuchumi katika kukuza maadili ya jamii za Kitanzania kabla ya ukoloni umetathminiwa",
-            "Vigezo vya upimaji"
+            "Zoezi la ramani"
           ],
           "resources": [
-            "Matini kuhusu mifumo ya kiuchumi na kisiasa kabla ya ukoloni Ramani kuonesha maeneo mbalimbali ya jamii za asili za Kitanzania",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa",
-            "",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa",
-            "",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Ramani za uhamaji"
           ]
         },
         {
           "main_code": "2.0",
-          "main_competence": "Kumudu historia ya Tanzania na maadili kabla ya ukoloni",
-          "specific_code": "2.3",
-          "specific_competence": "Kutathmini vichocheo vya mabadiliko ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni",
-          "number_of_periods": "8",
+          "main_competence": "Kumudu chimbuko la jamii za Kitanzania na maadili yake",
+          "specific_code": "2.3 Kueleza matokeo ya uhamaji",
+          "specific_competence": "Kueleza matokeo ya uhamaji",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kueleza hali ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni",
-            "Shughuli za ujifunzaji",
-            "(b) Kubaini vichocheo vya mabadiliko ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni",
-            "Shughuli za ujifunzaji"
+            "(a) Kueleza matokeo ya uhamaji wa jamii za Kitanzania"
           ],
           "teaching_methods": [
-            "Utafiti mdogo: Elekeza wanafunzi kusoma matini na kuandika maelezo kuhusu hali ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni. Majadiliano: Ongoza majadiliano ya vikundi kuhusu hali ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni.",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa",
-            "Kisamafunzo: Elekeza wanafunzi kusikiliza kisamafunzo kuhusu vichocheo vya mabadiliko ya sayansi na teknolojia katika jamii mojawapo ya Kitanzania kabla ya ukoloni. Maswali na majibu: Uliza maswali kuwezesha wanafunzi kuzungumzia jamii zingine za Kitanzania",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Majadiliano ya vikundi, mfano linganishi"
           ],
           "assessment_criteria": [
-            "Hali ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni imeelezwa kwa ufasaha",
-            "Vigezo vya upimaji",
-            "Vichocheo vya mabadiliko ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni vimebainishwa",
-            "Vigezo vya upimaji"
+            "Insha fupi"
           ],
           "resources": [
-            "Matini kuhusu vichocheo vya mabadiliko ya sayansi na teknolojia katika jamii za Kitanzania kabla ya ukoloni Picha ya bidhaa zilizozalishwa na jamii za Kitanzania kabla ya ukoloni Ramani kuonesha maeneo yaliyokuwa ya uzalishaji wa bidhaa kabla ya ukoloni",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Vielelezo vya matokeo ya uhamaji"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Kumudu chimbuko la jamii za Kitanzania na maadili yake",
+          "specific_code": "2.4 Kueleza shughuli za makundi ya asili",
+          "specific_competence": "Kueleza shughuli za makundi ya asili",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza shughuli za kiuchumi za makundi ya asili ya jamii za Kitanzania"
+          ],
+          "teaching_methods": [
+            "Picha za shughuli za asili, majadiliano"
+          ],
+          "assessment_criteria": [
+            "Maswali ya mdomo"
+          ],
+          "resources": [
+            "Picha, vielelezo"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Kumudu chimbuko la jamii za Kitanzania na maadili yake",
+          "specific_code": "2.5 Kueleza maadili ya jamii za asili ya Kitanzania",
+          "specific_competence": "Kueleza maadili ya jamii za asili ya Kitanzania",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza maadili yaliyokuwepo katika jamii za asili za Kitanzania"
+          ],
+          "teaching_methods": [
+            "Hadithi za mababu, mjadala wa darasa"
+          ],
+          "assessment_criteria": [
+            "Zoezi la maandishi"
+          ],
+          "resources": [
+            "Hadithi simulizi"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Kumudu maadili na urithi wa jamii za Kitanzania",
+          "specific_code": "3.1 Kueleza dhana ya urithi na maadili kama sehemu ya urithi",
+          "specific_competence": "Kueleza dhana ya urithi na maadili kama sehemu ya urithi",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza dhana ya urithi wa Tanzania na maadili kama sehemu ya urithi wa kiutamaduni"
+          ],
+          "teaching_methods": [
+            "Mifano ya urithi, majadiliano"
+          ],
+          "assessment_criteria": [
+            "Maswali ya mdomo"
+          ],
+          "resources": [
+            "Picha za urithi wa kiutamaduni"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Kumudu maadili na urithi wa jamii za Kitanzania",
+          "specific_code": "3.2 Kueleza kazi za binadamu na urithi wa asili",
+          "specific_competence": "Kueleza kazi za binadamu na urithi wa asili",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza kazi za binadamu kama sehemu ya urithi wa kiutamaduni na urithi wa asili"
+          ],
+          "teaching_methods": [
+            "Picha za kazi za sanaa, mazingira asilia"
+          ],
+          "assessment_criteria": [
+            "Zoezi la uainishaji"
+          ],
+          "resources": [
+            "Picha, video fupi"
+          ]
+        },
+        {
+          "main_code": "3.0",
+          "main_competence": "Kumudu maadili na urithi wa jamii za Kitanzania",
+          "specific_code": "3.3 Kueleza matendo yanayokuza na kulinda maadili na urithi wa Tanzania",
+          "specific_competence": "Kueleza matendo yanayokuza na kulinda maadili na urithi wa Tanzania",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza matendo yanayokuza na kulinda maadili na urithi wa Tanzania"
+          ],
+          "teaching_methods": [
+            "Mjadala wa darasa, uchambuzi wa kesi"
+          ],
+          "assessment_criteria": [
+            "Insha fupi"
+          ],
+          "resources": [
+            "Vielelezo vya uhifadhi wa urithi"
+          ]
+        },
+        {
+          "main_code": "4.0",
+          "main_competence": "Kumudu fursa zinazotokana na urithi wa jamii za Kitanzania",
+          "specific_code": "4.1 Kueleza urithi wa kihistoria na fursa zake",
+          "specific_competence": "Kueleza urithi wa kihistoria na fursa zake",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza urithi wa kihistoria, fursa zake, na matumizi yake"
+          ],
+          "teaching_methods": [
+            "Picha za maeneo ya kihistoria, majadiliano"
+          ],
+          "assessment_criteria": [
+            "Maswali ya mdomo"
+          ],
+          "resources": [
+            "Picha za maeneo ya kihistoria"
+          ]
+        },
+        {
+          "main_code": "4.0",
+          "main_competence": "Kumudu fursa zinazotokana na urithi wa jamii za Kitanzania",
+          "specific_code": "4.2 Kueleza urithi wa asili na fursa zake",
+          "specific_competence": "Kueleza urithi wa asili na fursa zake",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza urithi wa asili, fursa zake, na matumizi yake"
+          ],
+          "teaching_methods": [
+            "Picha za mbuga za wanyama, majadiliano"
+          ],
+          "assessment_criteria": [
+            "Zoezi la maandishi"
+          ],
+          "resources": [
+            "Ramani za hifadhi za taifa"
+          ]
+        },
+        {
+          "main_code": "4.0",
+          "main_competence": "Kumudu fursa zinazotokana na urithi wa jamii za Kitanzania",
+          "specific_code": "4.3 Kueleza njia za kutunza urithi na fursa za kiuchumi; Marudio ya Muhula I",
+          "specific_competence": "Kueleza njia za kutunza urithi na fursa za kiuchumi; Marudio ya Muhula I",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza njia za kutunza urithi wa jamii za Kitanzania na fursa za kukuza uchumi na ushirikiano wa kitaifa; kufanya marudio ya Sura 1–4"
+          ],
+          "teaching_methods": [
+            "Majadiliano, maswali ya marudio"
+          ],
+          "assessment_criteria": [
+            "Mtihani wa marudio wa Muhula I"
+          ],
+          "resources": [
+            "Maelezo ya marudio"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu mifumo katika jamii za Kitanzania kabla ya ukoloni",
+          "specific_code": "5.1 Kueleza mifumo ya kijamii na utamaduni kabla ya ukoloni",
+          "specific_competence": "Kueleza mifumo ya kijamii na utamaduni kabla ya ukoloni",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza mifumo ya kijamii na utamaduni wa jamii za asili ya Tanzania kabla ya ukoloni"
+          ],
+          "teaching_methods": [
+            "Majadiliano, mifano ya koo/ukoo"
+          ],
+          "assessment_criteria": [
+            "Maswali ya mdomo"
+          ],
+          "resources": [
+            "Chati za muundo wa jamii"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu mifumo katika jamii za Kitanzania kabla ya ukoloni",
+          "specific_code": "5.2 Kueleza jinsi mifumo ya kijamii ilivyokuza ujenzi wa maadili",
+          "specific_competence": "Kueleza jinsi mifumo ya kijamii ilivyokuza ujenzi wa maadili",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza jinsi mifumo ya kijamii ilivyokuza ujenzi wa maadili"
+          ],
+          "teaching_methods": [
+            "Mjadala wa darasa, uchambuzi wa kesi"
+          ],
+          "assessment_criteria": [
+            "Insha fupi"
+          ],
+          "resources": [
+            "Vielelezo vya maadili ya kijamii"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu mifumo katika jamii za Kitanzania kabla ya ukoloni",
+          "specific_code": "5.3 Kueleza mifumo ya kiuchumi na maendeleo ya viwanda kabla ya ukoloni",
+          "specific_competence": "Kueleza mifumo ya kiuchumi na maendeleo ya viwanda kabla ya ukoloni",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza mifumo ya kiuchumi kabla ya ukoloni na maendeleo ya viwanda vya asili"
+          ],
+          "teaching_methods": [
+            "Picha za viwanda vya asili, majadiliano"
+          ],
+          "assessment_criteria": [
+            "Maswali ya mdomo"
+          ],
+          "resources": [
+            "Picha, vielelezo vya viwanda vya asili"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu mifumo katika jamii za Kitanzania kabla ya ukoloni",
+          "specific_code": "5.4 Kueleza shughuli za kilimo katika jamii za asili",
+          "specific_competence": "Kueleza shughuli za kilimo katika jamii za asili",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza shughuli za kilimo zilizofanywa na jamii za asili"
+          ],
+          "teaching_methods": [
+            "Picha za zana za kilimo, majadiliano"
+          ],
+          "assessment_criteria": [
+            "Zoezi la maandishi"
+          ],
+          "resources": [
+            "Picha za zana za kilimo za asili"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu mifumo katika jamii za Kitanzania kabla ya ukoloni",
+          "specific_code": "5.5 Kueleza mifumo ya kisiasa kabla ya ukoloni",
+          "specific_competence": "Kueleza mifumo ya kisiasa kabla ya ukoloni",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza mifumo ya kisiasa ya jamii za Kitanzania kabla ya ukoloni"
+          ],
+          "teaching_methods": [
+            "Mifano ya utawala wa kimila, majadiliano"
+          ],
+          "assessment_criteria": [
+            "Maswali ya mdomo"
+          ],
+          "resources": [
+            "Chati za mifumo ya kisiasa ya asili"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu mifumo katika jamii za Kitanzania kabla ya ukoloni",
+          "specific_code": "5.6 Kueleza mchango wa mifumo ya kisiasa na kiuchumi katika kukuza siasa na maadili",
+          "specific_competence": "Kueleza mchango wa mifumo ya kisiasa na kiuchumi katika kukuza siasa na maadili",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza jinsi mifumo ya kisiasa na kiuchumi ilivyokuza shughuli za siasa na maadili"
+          ],
+          "teaching_methods": [
+            "Mjadala wa darasa, uchambuzi wa kesi"
+          ],
+          "assessment_criteria": [
+            "Insha fupi"
+          ],
+          "resources": [
+            "Vielelezo vya uongozi wa asili"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu mifumo katika jamii za Kitanzania kabla ya ukoloni",
+          "specific_code": "5.7 Kueleza changamoto zilizojitokeza katika ujenzi wa maadili",
+          "specific_competence": "Kueleza changamoto zilizojitokeza katika ujenzi wa maadili",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza changamoto zilizojitokeza katika ujenzi wa maadili kabla ya ukoloni"
+          ],
+          "teaching_methods": [
+            "Majadiliano ya vikundi"
+          ],
+          "assessment_criteria": [
+            "Zoezi la maandishi"
+          ],
+          "resources": [
+            "Vielelezo vya changamoto za kijamii"
+          ]
+        },
+        {
+          "main_code": "6.0",
+          "main_competence": "Kumudu uhusiano kati ya jamii za Kitanzania na jamii nyingine",
+          "specific_code": "6.1 Kueleza uhusiano kati ya jamii za Kitanzania na uhusiano na jamii za Mashariki ya Kati na Mbali",
+          "specific_competence": "Kueleza uhusiano kati ya jamii za Kitanzania na uhusiano na jamii za Mashariki ya Kati na Mbali",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza uhusiano kati ya jamii za Kitanzania na uhusiano wa jamii za Kitanzania na za Mashariki ya Kati na Mbali"
+          ],
+          "teaching_methods": [
+            "Ramani za njia za biashara, majadiliano"
+          ],
+          "assessment_criteria": [
+            "Maswali ya mdomo"
+          ],
+          "resources": [
+            "Ramani za njia za biashara za kale"
+          ]
+        },
+        {
+          "main_code": "6.0",
+          "main_competence": "Kumudu uhusiano kati ya jamii za Kitanzania na jamii nyingine",
+          "specific_code": "6.2 Kueleza uhusiano na jamii za Ulaya na athari za mahusiano hayo",
+          "specific_competence": "Kueleza uhusiano na jamii za Ulaya na athari za mahusiano hayo",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza uhusiano wa jamii za Kitanzania na jamii za Ulaya na athari za uhusiano huo pamoja na wa Mashariki ya Kati na Mbali"
+          ],
+          "teaching_methods": [
+            "Majadiliano ya vikundi, uchambuzi wa athari"
+          ],
+          "assessment_criteria": [
+            "Insha fupi"
+          ],
+          "resources": [
+            "Ramani za mwingiliano wa kimataifa"
+          ]
+        },
+        {
+          "main_code": "7.0",
+          "main_competence": "Kumudu sayansi na teknolojia kabla ya ukoloni",
+          "specific_code": "7.1 Kueleza dhana ya sayansi na teknolojia na teknolojia ya Zama za Mawe za Kale",
+          "specific_competence": "Kueleza dhana ya sayansi na teknolojia na teknolojia ya Zama za Mawe za Kale",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza dhana ya sayansi na teknolojia na kubainisha teknolojia iliyotumika Zama za Mawe za Kale"
+          ],
+          "teaching_methods": [
+            "Picha za zana za mawe, majadiliano"
+          ],
+          "assessment_criteria": [
+            "Maswali ya mdomo"
+          ],
+          "resources": [
+            "Picha za zana za Zama za Mawe"
+          ]
+        },
+        {
+          "main_code": "7.0",
+          "main_competence": "Kumudu sayansi na teknolojia kabla ya ukoloni",
+          "specific_code": "7.2 Kueleza teknolojia ya Zama za Chuma na tofauti yake na Zama za Mawe",
+          "specific_competence": "Kueleza teknolojia ya Zama za Chuma na tofauti yake na Zama za Mawe",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza teknolojia iliyotumika Zama za Chuma na kulinganisha na Zama za Mawe"
+          ],
+          "teaching_methods": [
+            "Picha za zana za chuma, jedwali linganishi"
+          ],
+          "assessment_criteria": [
+            "Zoezi la ulinganishaji"
+          ],
+          "resources": [
+            "Picha za zana za Zama za Chuma"
+          ]
+        },
+        {
+          "main_code": "7.0",
+          "main_competence": "Kumudu sayansi na teknolojia kabla ya ukoloni",
+          "specific_code": "7.3 Kueleza mambo ya kujifunza na vichocheo vya mabadiliko ya sayansi na teknolojia",
+          "specific_competence": "Kueleza mambo ya kujifunza na vichocheo vya mabadiliko ya sayansi na teknolojia",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza mambo ya kujifunza kutokana na maendeleo ya Zama za Chuma na vichocheo vya mabadiliko ya sayansi na teknolojia kabla ya ukoloni"
+          ],
+          "teaching_methods": [
+            "Mjadala wa darasa, uchambuzi wa kesi"
+          ],
+          "assessment_criteria": [
+            "Insha fupi"
+          ],
+          "resources": [
+            "Vielelezo vya vichocheo vya mabadiliko"
           ]
         }
       ]
