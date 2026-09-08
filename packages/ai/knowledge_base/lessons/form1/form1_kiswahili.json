@@ -1,412 +1,2292 @@
 {
   "form": "form1",
-  "subject": "kiswahili===",
-  "topic_count": 8,
+  "subject": "Kiswahili",
+  "topic_count": 52,
   "topics": [
     {
       "topic_number": "1",
-      "topic_name": "MAWASILIANO ",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=a2lzd2FoaWxp &tno=1&m_topic=MAWASILIANO ",
+      "topic_name": "1A: KISWAHILI KAMA UTAMBULISHO WA MTANZANIA",
+      "url": "",
       "plan": {
-        "competence": "Fafanua dhana ya mawasiliano",
-        "general_objectives": "Kusikiliza na kuelewa taarifa au mazungumzo kwa kiswahili yanayolingana na kiwango chake",
-        "specific_objectives": "Kufikia mwisho wa kipindi, mwanafunzi aweze; 1.Kufafanua dhima ya lugha katika mawasiliano",
-        "main_topic": "MAWASILIANO",
-        "sub_topic": "1.1 Lugha kama chombo cha mawasiliano",
-        "teaching_aids": "Kanda za sauti, katuni zenye maneno yenye matamshi na lafudhi sahihi na isiyo sahihi.",
-        "remarks": "Kwa wanafunzi ambao hawakuelewa mada vyema, watahudhuria watahudhuria vipindi vya ziada FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+        "general_objectives": "Kujadili utambulisho wa kitaifa",
+        "specific_objectives": "Kueleza jinsi Kiswahili kinavyodhihirisha utaifa wa Mtanzania",
+        "main_topic": "1.1 Kubainisha Kiswahili kama utambulisho wa Mtanzania",
+        "sub_topic": "Term I - 1A (80 MIN)",
+        "teaching_aids": "Chati, mifano halisi ya matumizi ya Kiswahili",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
-            "time": "5",
-            "teacher_activities": "1. Kwa kutumia maswali na majibu, pamoja na picha za mawazo waongoze wanafunzi wajadili hali ingekuwaje kama binadamu asingekuwa na lugha.",
-            "student_activities": "wanafunzi wajadili hali ingekuwaje kama binadamu asingekuwa na lugha.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "time": "10",
+            "teacher_activities": "Kuuliza wanafunzi ni lugha gani wanazozitumia nyumbani na shuleni na kwa nini",
+            "student_activities": "Kutoa mifano ya lugha wanazozitumia",
+            "assessment": "Ushiriki"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "20",
-            "teacher_activities": "Ongoza Wanafunzi wafanye mazoezi ya kuwasiliana bila kutumia lugha, kisha watumie lugha",
-            "student_activities": "2. Wanafunzi wafanye mazoezi ya kuwasiliana bila kutumia lugha, kisha watumie lugha",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua kwa kina jinsi Kiswahili kinavyowaunganisha Watanzania kutoka makabila mbalimbali",
+            "student_activities": "Kuandika vidokezo kwa umakini",
+            "assessment": "Uelewa sahihi wa dhana"
           },
           {
-            "stage": "REFLECTION",
-            "time": "5",
-            "teacher_activities": "Ongoza Wanafunzi katika vikundi wajadili umuhimu wa lugha katika mawasiliano",
-            "student_activities": "3. Wanafunzi katika vikundi wajadili umuhimu wa lugha katika mawasiliano",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza vikundi kutafakari na kuorodhesha mifano ya matumizi ya Kiswahili kama utambulisho",
+            "student_activities": "Kujadili na kuorodhesha mifano katika vikundi",
+            "assessment": "Usahihi wa mifano iliyotolewa"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "5",
-            "teacher_activities": "Ongoza Wanafunzi katika vikundi wajadili umuhimu wa lugha katika mawasiliano",
-            "student_activities": "Kila mwanafunzi ajibu maswali ambayo ameulizwa na mwalimu. Mwanafunzi apate ufafanuzi",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "5",
-            "teacher_activities": "Andika muktasari wa nukuu, simamia wanafunzi wafanye mazoezi",
-            "student_activities": "Mwanafunzi aweze kufanya kazi ya ziada atakayopewa kwa umakini na kuuliza maswali ili kupata jibu",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia majibu ya vikundi na kutoa muhtasari ubaoni",
+            "student_activities": "Kuwasilisha mifano mbele ya darasa",
+            "assessment": "Ubora wa uwasilishaji"
           }
         ]
       }
     },
     {
       "topic_number": "2",
-      "topic_name": "AINA ZA MANENO",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=a2lzd2FoaWxp &tno=2&m_topic=AINA ZA MANENO",
+      "topic_name": "1B: UTAMBULISHO WA KISWAHILI",
+      "url": "",
       "plan": {
-        "competence": "Awe na uwezo wa kubaini aina za mmaneno",
-        "general_objectives": "Kubaini matumizi sahihi ya maneno katika tungo mbalimbali za kiswahili",
-        "specific_objectives": "Kufikia mwisho wa kipindi, mwanafunzi aweze; kubaini aina saba za maneno",
-        "main_topic": "AINA ZA MANENO",
-        "sub_topic": "Ubainishaji wa aina za maneno",
-        "teaching_aids": "1. Chati za ukutani za aina za maneno na ufafanuzi wake 2. Vitu halisi. 3. Picha za vitu, watu na wanyama mbalimbali 4. Chati ya sentensi mbalimbali",
-        "remarks": "Kwa wanafunzi ambao hawakuelewa mada vyema, watahudhuria watahudhuria vipindi vya ziada FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+        "general_objectives": "Kuimarisha dhana ya utambulisho",
+        "specific_objectives": "Kujibu maswali ya mdomo kuhusu Kiswahili kama utambulisho wa Mtanzania",
+        "main_topic": "1.1 Kubainisha Kiswahili kama utambulisho wa Mtanzania",
+        "sub_topic": "Term I - 1B (40 MIN)",
+        "teaching_aids": "Karatasi ya maswali",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
-            "time": "10",
-            "teacher_activities": "1. Kwa kutumia vitu halis/picha waelekeze wanafunzi watunge sentensi mbalimbali",
-            "student_activities": "2. Wanafunzi watambue neon moja (nomino), kisha a) Wafafanue dhima yake katika sentensi husika. b) Katika jozi wabaini maneno mengine yenye dhima kama hiyo katika sentensi nyingine",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "time": "5",
+            "teacher_activities": "Kukumbusha mifano iliyojadiliwa kipindi kilichopita",
+            "student_activities": "Kukumbuka mifano",
+            "assessment": "Ukumbukaji sahihi"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "Kwa kutumia maswali na majibu waongoze wanafunzi kufikia hitimisho la kundi la maneno kama hayo (nomino)",
-            "student_activities": "wanafunzi kufikia hitimisho la kundi la maneno kama hayo (nomino)",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kufafanua maswali yenye utata kwa njia ya maswali na majibu",
+            "student_activities": "Kuuliza na kujibu maswali",
+            "assessment": "Uelewa ulioboreshwa"
           },
           {
-            "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "Tumia utaratibu huo kufundisha aina nyingine za maneno.",
-            "student_activities": "5. Wanafunzi wafanye mazoezi ya kubaini aina za maneno kwa kutumia matini, Makala mbalimbali na chati ya sentensi.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kutoa maswali ya mdomo kwa wanafunzi binafsi",
+            "student_activities": "Kujibu maswali ya mdomo",
+            "assessment": "Usahihi wa majibu"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "Tumia utaratibu huo kufundisha aina nyingine za maneno.",
-            "student_activities": "Kila mwanafunzi ajibu maswali ambayo ameulizwa na mwalimu. Mwanafunzi apate ufafanuzi",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "Andika muktasari wa nukuu, simamia wanafunzi wafanye mazoezi",
-            "student_activities": "Mwanafunzi aweze kufanya kazi ya ziada atakayopewa kwa umakini na kuuliza maswali ili kupata jibu",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho na kusahihisha makosa",
+            "student_activities": "Kujirekebisha kutokana na mrejesho",
+            "assessment": "Uwezo wa kujirekebisha"
           }
         ]
       }
     },
     {
       "topic_number": "3",
-      "topic_name": "FASIHI KWA UJUMLA",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=a2lzd2FoaWxp &tno=3&m_topic=FASIHI KWA UJUMLA",
+      "topic_name": "2A: HADHI YA KISWAHILI",
+      "url": "",
       "plan": {
-        "competence": "Aweze kutumia fasihi sahihi",
-        "general_objectives": "Kubaini, kuhakiki na kutunga kazi za fasihi simulizi kwa kiswahili",
-        "specific_objectives": "Kufikia mwisho wa kipindi mwanafunzi aweze: kufafanua matumizi ya fasihi.",
-        "main_topic": "FASIHI KWA UJUMLA",
-        "sub_topic": "3.1 Dhima ya fasihi",
-        "teaching_aids": "Chati ya methali, nahau, hadithi, vikato vya magazeti venye mashauri. Vitabu na matini mbalimbali Za kifasihi na zisizo za kifasihi",
-        "remarks": "Kwa wanafunzi ambao hawakuelewa mada vyema, watahudhuria watahudhuria vipindi vya ziada FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+        "general_objectives": "Kuchunguza hadhi ya Kiswahili",
+        "specific_objectives": "Kueleza hadhi ya Kiswahili kitaifa na kimataifa",
+        "main_topic": "1.2 Kueleza hadhi ya Kiswahili",
+        "sub_topic": "Term I - 2A (80 MIN)",
+        "teaching_aids": "Makala/vipande vya habari kuhusu Kiswahili",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "Kwa kutumia mifano ya kazi za kifasihi na zisizo za kifasihi Ongoza majadiliano ya vikundi kuhusu tofauti za kifani za kazi hizo.",
-            "student_activities": "Wanafunzi wadadisi tofauti hizo na kuziwasilisha darasani",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "teacher_activities": "Kuuliza wanafunzi wanajua nchi gani nyingine zinazotumia Kiswahili",
+            "student_activities": "Kutoa majina ya nchi wanazozijua",
+            "assessment": "Ushiriki"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "Ongoza majadiliano na kufikia hitimisho la dhana ya fasihi",
-            "student_activities": "majadiliano ya matumizi na umuhimu wa kazi mbalimbali za kifasihi katika jamii.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua hadhi ya Kiswahili kama lugha ya taifa, lugha rasmi ya Afrika Mashariki, na lugha ya kimataifa",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa hadhi ya Kiswahili"
           },
           {
-            "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "Ongoza kutumia hadithi, nyimbo, methali na nahau wanafunzi wajadili katika jozi matumizi na umuhimu wa kazi za kifasihi katika jamii.",
-            "student_activities": "Kwa kutumia hadithi, nyimbo, methali na nahau wanafunzi wajadili katika jozi matumizi na umuhimu wa kazi za kifasihi katika jamii.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mweziMazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza vikundi kusoma kipande cha habari na kuainisha ushahidi wa hadhi ya Kiswahili",
+            "student_activities": "Kusoma na kuainisha kwa vikundi",
+            "assessment": "Usahihi wa uainishaji"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "Ongoza kutumia hadithi, nyimbo, methali na nahau wanafunzi wajadili katika jozi matumizi na umuhimu wa kazi za kifasihi katika jamii.",
-            "student_activities": "Kila mwanafunzi ajibu maswali ambayo ameulizwa na mwalimu. Mwanafunzi apate ufafanuzi",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "Andika muktasari wa nukuu, simamia wanafunzi wafanye mazoezi",
-            "student_activities": "Mwanafunzi aweze kufanya kazi ya ziada atakayopewa kwa umakini na kuuliza maswali ili kupata jibu",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia majibu na kuunganisha mawazo ubaoni",
+            "student_activities": "Kuwasilisha matokeo",
+            "assessment": "Ubora wa uwasilishaji"
           }
         ]
       }
     },
     {
       "topic_number": "4",
-      "topic_name": "FASIHI SIMULIZI",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=a2lzd2FoaWxp &tno=4&m_topic=FASIHI SIMULIZI",
+      "topic_name": "2B: HADHI YA KISWAHILI",
+      "url": "",
       "plan": {
-        "competence": "Baini Tanzu za fasihi",
-        "general_objectives": "Kubainisha, kuhakiki na kutunga kazi za fasihi simulizi kwa kiswahili",
-        "specific_objectives": "Kufikia mwisho wa kipindi, mwanafunzi aweze; Kubainisha tanzu za fasihi simulizi.",
-        "main_topic": "FASIHI SIMULIZI",
-        "sub_topic": "4.1 Ubainishaji wa Tanzu za Fasihi simulizi",
-        "teaching_aids": "Kanda za sauti na Video zenye kazi za fasihi simulizi",
-        "remarks": "Kwa wanafunzi ambao hawakuelewa mada vyema, watahudhuria watahudhuria vipindi vya ziada FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+        "general_objectives": "Kuchunguza hadhi ya Kiswahili",
+        "specific_objectives": "Zoezi la maandishi mafupi kuhusu hadhi ya Kiswahili",
+        "main_topic": "1.2 Kueleza hadhi ya Kiswahili",
+        "sub_topic": "Term I - 2B (40 MIN)",
+        "teaching_aids": "Karatasi za kazi",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "5",
-            "teacher_activities": "waongoze wanafunzi waorodheshe tanzu mbalimbali za fasihi simulizi wanazozifahamu au wasikilize kanda zenye kazi za kifasihi simulizi.",
-            "student_activities": "wanafunzi waorodheshe tanzu mbalimbali za fasihi simulizi wanazozifahamu au wasikilize kanda zenye kazi za kifasihi simulizi.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "teacher_activities": "Kukumbusha vipengele vya hadhi vilivyojadiliwa",
+            "student_activities": "Kukumbuka vipengele",
+            "assessment": "Ukumbukaji sahihi"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "20",
-            "teacher_activities": "Ongoza Wanafunzi wajadili maumbo ya kazi hizo na kuyaweka katika makundi ya mfanano.",
-            "student_activities": "Wanafunzi wajadili maumbo ya kazi hizo na kuyaweka katika makundi ya mfanano.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuonyesha jinsi ya kuandika aya fupi kuhusu hadhi ya Kiswahili",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa muundo wa aya"
           },
           {
-            "stage": "REFLECTION",
-            "time": "5",
-            "teacher_activities": "waongoze wanafunzi kufikia hitimisho la tanzu za fasihi simulizi.",
-            "student_activities": "Mwanafunzi afikie hitimisho la tunzo la fasihi",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia uandishi wa aya fupi binafsi",
+            "student_activities": "Kuandika aya fupi",
+            "assessment": "Usahihi wa maudhui"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "5",
-            "teacher_activities": "waongoze wanafunzi kufikia hitimisho la tanzu za fasihi simulizi.",
-            "student_activities": "Kila mwanafunzi ajibu maswali ambayo ameulizwa na mwalimu. Mwanafunzi apate ufafanuzi",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "5",
-            "teacher_activities": "Andika muktasari wa nukuu, simamia wanafunzi wafanye mazoezi",
-            "student_activities": "Mwanafunzi aweze kufanya kazi ya ziada atakayopewa kwa umakini na kuuliza maswali ili kupata jibu",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kaziya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kukusanya na kutoa mrejesho wa jumla",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa mrejesho"
           }
         ]
       }
     },
     {
       "topic_number": "5",
-      "topic_name": "USIMULIZI",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=a2lzd2FoaWxp &tno=5&m_topic=USIMULIZI",
+      "topic_name": "3A: KISWAHILI KAMA KIELELEZO CHA UTAMADUNI",
+      "url": "",
       "plan": {
-        "competence": "Aonyeshe maadili mema",
-        "general_objectives": "Kujieleza kwa kiswahili kwa kusimulia au kuandika habari fupi kwa kuzingatia taratibu za uandishi",
-        "specific_objectives": "Kufikia mwisho wa kipindi, mwanafunzi aweze kusimulia hadithi zenye maadili ya kijamii kwa kuzingatia Kiswahili fasaha.",
-        "main_topic": "USIMULIZI",
-        "sub_topic": "5.1 Usimulizi wa Hadithi",
-        "teaching_aids": "Picha kwenye mabango, vitini vyenye hadithi.",
-        "remarks": "Kwa wanafunzi ambao hawakuelewa mada vyema, watahudhuria watahudhuria vipindi vya ziada FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+        "general_objectives": "Kuunganisha lugha na utamaduni",
+        "specific_objectives": "Kueleza jinsi Kiswahili kinavyodhihirisha utamaduni wa Mtanzania",
+        "main_topic": "1.3 Kubainisha Kiswahili kama kielelezo cha utamaduni",
+        "sub_topic": "Term I - 3A (80 MIN)",
+        "teaching_aids": "Methali, nyimbo za asili",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
-            "time": "5",
-            "teacher_activities": "Waongoze wanafunzi wasimulie hadithi mbalimbali kutokana na uzoefu wao au kutoka kwenye matini alizosoma. Hadithi hizo zijumuishe masuala yenye Elimu ya UKIMWI, Elimu ya Mazingira, Athari za ajira kwa",
-            "student_activities": "wanafunzi wasimulie hadithi mbalimbali kutokana na uzoefu wao au kutoka kwenye matini alizosoma. Hadithi hizo zijumuishe masuala yenye Elimu ya UKIMWI, Elimu ya Mazingira, Athari za ajira kwa watoto.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "time": "10",
+            "teacher_activities": "Kusoma methali moja na kuuliza maana yake",
+            "student_activities": "Kutafsiri methali",
+            "assessment": "Ushiriki"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "20",
-            "teacher_activities": "Ongoza Wanafunzi wajadili kufaa au kutokufaa kwa habari hiyo.",
-            "student_activities": "Wanafunzi wajadili kufaa au kutokufaa kwa habari hiyo.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua jinsi methali, nyimbo na misemo vinavyobeba utamaduni wa Mtanzania",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa uhusiano lugha-utamaduni"
           },
           {
-            "stage": "REFLECTION",
-            "time": "5",
-            "teacher_activities": "Ongoza Wanafunzi wajadili kufaa au kutofaa kwa maadili ya hadhithi hizo",
-            "student_activities": "Kwa kila usimulizi wanafunzi wabaini na kusahihisha makossa ya matamshi, kiimbo na mbinu za utambaji.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza vikundi kukusanya methali/nyimbo zinazojulikana na kueleza maana zake",
+            "student_activities": "Kukusanya na kueleza kwa vikundi",
+            "assessment": "Usahihi wa tafsiri"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "5",
-            "teacher_activities": "Ongoza Wanafunzi wajadili kufaa au kutofaa kwa maadili ya hadhithi hizo",
-            "student_activities": "Kila mwanafunzi ajibu maswali ambayo ameulizwa na mwalimu. Mwanafunzi apate ufafanuzi",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "5",
-            "teacher_activities": "Andika muktasari wa nukuu, simamia wanafunzi wafanye mazoezi",
-            "student_activities": "Mwanafunzi aweze kufanya kazi ya ziada atakayopewa kwa umakini na kuuliza maswali ili kupata jibu",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia mifano na kuchambua ubaoni",
+            "student_activities": "Kuwasilisha methali/nyimbo",
+            "assessment": "Ubora wa uchambuzi"
           }
         ]
       }
     },
     {
       "topic_number": "6",
-      "topic_name": "UANDISHI VVA INSHA",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=a2lzd2FoaWxp &tno=6&m_topic=UANDISHI VVA INSHA",
+      "topic_name": "3B: LUGHA NA UTAMADUNI",
+      "url": "",
       "plan": {
-        "competence": "Tunga Insha",
-        "general_objectives": "Kubainishi, kuhakiki na kutunga kazi za fasihi simulizi kwa kiswahili",
-        "specific_objectives": "Kufikia mwisho wa kipindi, mwanafunzi aweze; kueleza muundo wa insha.",
-        "main_topic": "UANDISHI VVA INSHA",
-        "sub_topic": "Insha za wasifu",
-        "teaching_aids": "Chati ya umbo la insha",
-        "remarks": "Kwa wanafunzi ambao hawakuelewa mada vyema, watahudhuria watahudhuria vipindi vya ziada FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+        "general_objectives": "Kuunganisha lugha na utamaduni",
+        "specific_objectives": "Tathmini ya mdomo kuhusu lugha na utamaduni",
+        "main_topic": "1.3 Kubainisha Kiswahili kama kielelezo cha utamaduni",
+        "sub_topic": "Term I - 3B (40 MIN)",
+        "teaching_aids": "Orodha ya maswali ya mdomo",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "5",
-            "teacher_activities": "Wape wanafunzi insha ambayo haina mtiririko mzuri wa mawazo",
-            "student_activities": "wanafunzi insha ambayo haina mtiririko mzuri wa mawazo",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "teacher_activities": "Kukumbusha methali/nyimbo zilizojadiliwa",
+            "student_activities": "Kukumbuka mifano",
+            "assessment": "Ukumbukaji sahihi"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "20",
-            "teacher_activities": "Kuwaongoza wanafunzi mmoja mmoja katika jozi na katika vikundi wayapange mawazo hayo ili yalete mtiririko wa mantiki.",
-            "student_activities": "wanafunzi mmoja mmoja katika jozi na katika vikundi wayapange mawazo hayo ili yalete mtiririko wa mantiki.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kufafanua maswali magumu kwa njia ya majadiliano",
+            "student_activities": "Kuuliza na kujibu",
+            "assessment": "Uelewa ulioboreshwa"
           },
           {
-            "stage": "REFLECTION",
-            "time": "5",
-            "teacher_activities": "Kwa kutumia insha hiyo, mwalimu atumie maswali na majibu kuwaongoza wanafunzi wabaini umbo la insha",
-            "student_activities": "Wanafunzi wajadili umbo hilo kwa kutumia chati ya umbo la insha",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kutoa maswali ya mdomo kwa wanafunzi mmoja mmoja",
+            "student_activities": "Kujibu maswali binafsi",
+            "assessment": "Usahihi wa majibu"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "5",
-            "teacher_activities": "Kwa kutumia insha hiyo, mwalimu atumie maswali na majibu kuwaongoza wanafunzi wabaini umbo la insha",
-            "student_activities": "Kila mwanafunzi ajibu maswali ambayo ameulizwa na mwalimu. Mwanafunzi apate ufafanuzi",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "5",
-            "teacher_activities": "Andika muktasari wa nukuu, simamia wanafunzi wafanye mazoezi",
-            "student_activities": "Mwanafunzi aweze kufanya kazi ya ziada atakayopewa kwa umakini na kuuliza maswali ili kupata jibu",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho wa mwisho",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa maeneo dhaifu"
           }
         ]
       }
     },
     {
       "topic_number": "7",
-      "topic_name": "UANDISHI WA BARUA ",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=a2lzd2FoaWxp &tno=7&m_topic=UANDISHI WA BARUA ",
+      "topic_name": "4A: UMUHIMU WA KUJIFUNZA KISWAHILI",
+      "url": "",
       "plan": {
-        "competence": "Andika barua ya kirafiki",
-        "general_objectives": "Kubainisha, kuhakiki na kutunga kazi za fasihi simulizi kwa kiswahili",
-        "specific_objectives": "Kufikia mwisho wa kipindi, mwanafunzi aweze; kueleza muundo wa barua za kirafiki",
-        "main_topic": "UANDISHI WA BARUA",
-        "sub_topic": "Barua za kirafiki",
-        "teaching_aids": "Barua za kirafiki Zilizopokelewa.",
-        "remarks": "Kwa wanafunzi ambao hawakuelewa mada vyema, watahudhuria watahudhuria vipindi vya ziada FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+        "general_objectives": "Kutambua umuhimu wa Kiswahili",
+        "specific_objectives": "Kutoa sababu za umuhimu wa kujifunza Kiswahili",
+        "main_topic": "1.4 Kueleza umuhimu wa kujifunza Kiswahili",
+        "sub_topic": "Term I - 4A (80 MIN)",
+        "teaching_aids": "Karatasi za kazi",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "Pamoja na wanafunzi walete barua za kirafiki na wazisome darasani.",
-            "student_activities": "Wanafunzi walete barua za kirafiki na wazisome darasani.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "teacher_activities": "Kuuliza wanafunzi kwa nini wanasoma Kiswahili shuleni",
+            "student_activities": "Kutoa sababu zao wenyewe",
+            "assessment": "Ushiriki"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "40",
-            "teacher_activities": "Ongoza majadiliano ya vikundi kubaini muundo wa barua kwa kutumia barua chache zilizosomwa",
-            "student_activities": "Shiriki katika majadiliano",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua kwa kina umuhimu wa Kiswahili kielimu, kiuchumi, na kijamii",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa sababu mbalimbali"
           },
           {
-            "stage": "REFLECTION",
-            "time": "10",
-            "teacher_activities": "Andika nukuu wanafunzi waandike",
-            "student_activities": "Wanafunzi waandike nukuu",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mjadala wa darasa kuhusu umuhimu wa Kiswahili katika soko la ajira",
+            "student_activities": "Kushiriki mjadala",
+            "assessment": "Ubora wa hoja zilizotolewa"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "10",
-            "teacher_activities": "Andika nukuu wanafunzi waandike",
-            "student_activities": "Kila mwanafunzi ajibu maswali ambayo ameulizwa na mwalimu. Mwanafunzi apate ufafanuzi",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
-          },
-          {
-            "stage": "CONCLUSION",
-            "time": "10",
-            "teacher_activities": "Andika muktasari wa nukuu, simamia wanafunzi wafanye mazoezi",
-            "student_activities": "Mwanafunzi aweze kufanya kazi ya ziada atakayopewa kwa umakini na kuuliza maswali ili kupata jibu",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kuongoza uandishi wa insha fupi kuhusu umuhimu wa Kiswahili",
+            "student_activities": "Kuandika insha fupi",
+            "assessment": "Ubora wa insha"
           }
         ]
       }
     },
     {
       "topic_number": "8",
-      "topic_name": "UFAHAMU ",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=a2lzd2FoaWxp &tno=8&m_topic=UFAHAMU ",
+      "topic_name": "4B: INSA FUPI NA MARUDIO YA SURA YA KWANZA",
+      "url": "",
       "plan": {
-        "competence": "Kujibu maswali ya fasihi",
-        "general_objectives": "Kujenga tabia ya kujisomea maandiko mbalimbali ya Kiswahili",
-        "specific_objectives": "Kufikia mwisho wa mada, mwanafunzi aweze; Kujibu maswali kutokana na habari aliyoisikiliza.",
-        "main_topic": "UFAHAMU",
-        "sub_topic": "8.1 Kusikiliza",
-        "teaching_aids": "Makala ya masuala ya Jinsia, Ukimwi, Madawa ya kulevya na Ajira ya watoto",
-        "remarks": "Kwa wanafunzi ambao hawakuelewa mada vyema, watahudhuria watahudhuria vipindi vya ziada FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+        "general_objectives": "Kutambua umuhimu wa Kiswahili",
+        "specific_objectives": "Kukamilisha na kuwasilisha insha fupi; Marudio ya Sura ya Kwanza",
+        "main_topic": "1.4 Kueleza umuhimu wa kujifunza Kiswahili",
+        "sub_topic": "Term I - 4B (40 MIN)",
+        "teaching_aids": "Insha za wanafunzi",
+        "remarks": "",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "5",
-            "teacher_activities": "Wasomee kwa ufasaha matini/ Makala kulingana na kiwango cha darasa.",
-            "student_activities": "wanafunzi wasome makala",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "teacher_activities": "Kuwakumbusha wanafunzi kukamilisha insha zao",
+            "student_activities": "Kukamilisha insha",
+            "assessment": "Ukamilifu wa kazi"
           },
           {
-            "stage": "PRESENTATION",
-            "time": "20",
-            "teacher_activities": "Wanafunzi wasikilize kwa makini.",
-            "student_activities": "Wanafunzi wasikilize kwa makini.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kufanya marudio ya haraka ya Sura ya Kwanza kwa maswali na majibu",
+            "student_activities": "Kujibu maswali ya marudio",
+            "assessment": "Usahihi wa majibu"
           },
           {
-            "stage": "REFLECTION",
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kukusanya baadhi ya insha na kuzisoma kwa ufupi",
+            "student_activities": "Kusikiliza na kutoa maoni",
+            "assessment": "Ushiriki katika mrejesho"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa maoni ya jumla na kutangaza Sura ya Pili",
+            "student_activities": "Kusikiliza matangazo",
+            "assessment": "Utayari kwa mada mpya"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "9",
+      "topic_name": "5A: MATAMSHI SAHIHI",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kufundisha matamshi sahihi",
+        "specific_objectives": "Kutamka maneno kwa usahihi kulingana na sauti za Kiswahili",
+        "main_topic": "2.1 Kutamka maneno kwa usahihi",
+        "sub_topic": "Term I - 5A (80 MIN)",
+        "teaching_aids": "Kanda za sauti, orodha ya maneno",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kusikiza maneno machache yanayotamkwa vibaya mara kwa mara",
+            "student_activities": "Kutambua matamshi sahihi/yasiyo sahihi",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua sauti za Kiswahili na kanuni za matamshi sahihi",
+            "student_activities": "Kuandika na kurudia matamshi",
+            "assessment": "Usahihi wa matamshi"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mazoezi ya jozi ya kutamkiana maneno na kusahihishana",
+            "student_activities": "Kufanya mazoezi ya matamshi kwa jozi",
+            "assessment": "Ubora wa mrejesho wa rika"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia makosa ya kawaida na kuonyesha matamshi sahihi tena",
+            "student_activities": "Kujirekebisha kutokana na mfano",
+            "assessment": "Uboreshaji wa matamshi"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "10",
+      "topic_name": "5B: UKAGUZI WA MATAMSHI",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kufundisha matamshi sahihi",
+        "specific_objectives": "Ukaguzi wa matamshi kwa kutumia orodhahakiki",
+        "main_topic": "2.1 Kutamka maneno kwa usahihi",
+        "sub_topic": "Term I - 5B (40 MIN)",
+        "teaching_aids": "Orodhahakiki ya matamshi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
             "time": "5",
-            "teacher_activities": "Waulize wanafunzi maswali ya kufikirisha, kumbukumbu na ya uhakiki kutokana na habari waliyoisikiliza.",
-            "student_activities": "Wanafunzi wajadili kisha wajibu maswali hayo kwa mdomo na kwa kuandika.",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "teacher_activities": "Kueleza muundo wa ukaguzi wa matamshi",
+            "student_activities": "Kusikiliza maelekezo",
+            "assessment": "Uelewa wa muundo"
           },
           {
-            "stage": "REINFORCEMENT",
-            "time": "5",
-            "teacher_activities": "Waulize wanafunzi maswali ya kufikirisha, kumbukumbu na ya uhakiki kutokana na habari waliyoisikiliza.",
-            "student_activities": "Kila mwanafunzi ajibu maswali ambayo ameulizwa na mwalimu. Mwanafunzi apate ufafanuzi",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kupitia tena maneno lengwa ya wiki kama darasa",
+            "student_activities": "Kutamka pamoja kama darasa",
+            "assessment": "Utamkaji sahihi wa pamoja"
           },
           {
-            "stage": "CONCLUSION",
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kumtathmini kila mwanafunzi akisoma orodha ya maneno dhidi ya orodhahakiki",
+            "student_activities": "Kusoma orodha ya maneno binafsi",
+            "assessment": "Alama za orodhahakiki"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho binafsi na kubainisha maneno ya kuboresha",
+            "student_activities": "Kuandika maneno ya kufanyia mazoezi zaidi",
+            "assessment": "Ufahamu wa maeneo ya kuboresha"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "11",
+      "topic_name": "6A: KUSIMULIA KWA LAFUDHI SAHIHI",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kusimulia habari kwa lafudhi sahihi",
+        "specific_objectives": "Kusimulia hadithi fupi kwa kuzingatia lafudhi sahihi",
+        "main_topic": "2.2 Kusimulia kwa lafudhi sahihi",
+        "sub_topic": "Term I - 6A (80 MIN)",
+        "teaching_aids": "Hadithi fupi, kinasa sauti",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kusimulia hadithi fupi kwa lafudhi sahihi kama mfano",
+            "student_activities": "Kusikiliza kwa makini",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua maana ya lafudhi na jinsi inavyoathiri maana ya usimuliaji",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa dhana ya lafudhi"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mazoezi ya vikundi ya kusimulia hadithi fupi kwa lafudhi sahihi",
+            "student_activities": "Kusimulia kwa zamu ndani ya vikundi",
+            "assessment": "Usahihi wa lafudhi"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kuchagua wanafunzi wachache kusimulia mbele ya darasa na kutoa mrejesho",
+            "student_activities": "Kusimulia mbele ya darasa",
+            "assessment": "Ubora wa lafudhi iliyoonyeshwa"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "12",
+      "topic_name": "6B: TATHMINI YA USIMULIAJI KWA LAFUDHI SAHIHI",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kusimulia habari kwa lafudhi sahihi",
+        "specific_objectives": "Tathmini ya usimuliaji kwa lafudhi sahihi",
+        "main_topic": "2.2 Kusimulia kwa lafudhi sahihi",
+        "sub_topic": "Term I - 6B (40 MIN)",
+        "teaching_aids": "Orodhahakiki ya usimuliaji",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
             "time": "5",
-            "teacher_activities": "Andika muktasari wa nukuu, simamia wanafunzi wafanye mazoezi",
-            "student_activities": "Mwanafunzi aweze kufanya kazi ya ziada atakayopewa kwa umakini na kuuliza maswali ili kupata jibu",
-            "assessment": "Mazoezi, maswali na majibu, majaribio, kazi ya vikundi, kazi ya nyumbani, mtihani wa mwezi"
+            "teacher_activities": "Kukumbusha vigezo vya lafudhi sahihi",
+            "student_activities": "Kukumbuka vigezo",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuruhusu muda mfupi wa maandalizi ya hadithi fupi",
+            "student_activities": "Kuandaa hadithi fupi",
+            "assessment": "Utayari"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kutathmini sampuli ya wanafunzi wakisimulia dhidi ya orodhahakiki",
+            "student_activities": "Kusimulia kwa tathmini",
+            "assessment": "Alama za orodhahakiki"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho binafsi wa haraka",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa maboresho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "13",
+      "topic_name": "7A: KUSIMULIA KWA KUZINGATIA KIIMBO",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kusimulia kwa kiimbo sahihi",
+        "specific_objectives": "Kusimulia habari kwa kutumia kiimbo kinachofaa hisia za ujumbe",
+        "main_topic": "2.3 Kusimulia kwa kuzingatia kiimbo",
+        "sub_topic": "Term I - 7A (80 MIN)",
+        "teaching_aids": "Kanda za sauti/video",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kucheza toleo mbili za sauti moja — moja yenye kiimbo, nyingine bila",
+            "student_activities": "Kulinganisha na kutoa maoni",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua aina za kiimbo na uhusiano wake na hisia za ujumbe",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa dhana ya kiimbo"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mazoezi binafsi ya kusimulia sentensi zilezile kwa kiimbo tofauti kuonyesha hisia tofauti",
+            "student_activities": "Kufanya mazoezi ya kiimbo binafsi",
+            "assessment": "Usahihi wa kiimbo kilichotumika"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kuchagua wanafunzi kuonyesha kiimbo mbele ya darasa na kutoa mrejesho",
+            "student_activities": "Kuonyesha kiimbo mbele ya darasa",
+            "assessment": "Ubora wa kiimbo kilichoonyeshwa"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "14",
+      "topic_name": "7B: ZOEZI LA UKAGUZI WA KIIMBO",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kusimulia kwa kiimbo sahihi",
+        "specific_objectives": "Zoezi la ukaguzi wa kiimbo",
+        "main_topic": "2.3 Kusimulia kwa kuzingatia kiimbo",
+        "sub_topic": "Term I - 7B (40 MIN)",
+        "teaching_aids": "Sentensi za mazoezi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha aina za kiimbo zilizojadiliwa",
+            "student_activities": "Kukumbuka aina za kiimbo",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kufafanua tena kwa mifano mifupi maeneo yenye utata",
+            "student_activities": "Kuuliza maswali ya ufafanuzi",
+            "assessment": "Uelewa ulioboreshwa"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kutoa sentensi za mazoezi kwa wanafunzi binafsi kusoma kwa kiimbo sahihi",
+            "student_activities": "Kusoma sentensi kwa kiimbo",
+            "assessment": "Usahihi wa kiimbo"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho wa mwisho na kubainisha maeneo ya kuboresha",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Ufahamu wa maboresho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "15",
+      "topic_name": "8A: KUSIMULIA KWA KUZINGATIA MKAZO",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kusimulia kwa mkazo sahihi",
+        "specific_objectives": "Kusimulia habari kwa kuweka mkazo mahali muhimu",
+        "main_topic": "2.4 Kusimulia kwa kuzingatia mkazo",
+        "sub_topic": "Term I - 8A (80 MIN)",
+        "teaching_aids": "Kanda za sauti",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kutamka neno moja kwa mkazo tofauti na kuuliza tofauti ya maana",
+            "student_activities": "Kutambua tofauti za maana",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua dhana ya mkazo na mahali muhimu pa kuweka mkazo katika sentensi",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa dhana ya mkazo"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mazoezi ya kusikiliza na kubainisha mkazo katika sentensi za kanda za sauti",
+            "student_activities": "Kusikiliza na kubainisha mkazo",
+            "assessment": "Usahihi wa ubainishaji"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia majibu ya darasa na kufafanua makosa ya kawaida",
+            "student_activities": "Kujirekebisha kutokana na mrejesho",
+            "assessment": "Uelewa ulioboreshwa"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "16",
+      "topic_name": "8B: MKAZO",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kusimulia kwa mkazo sahihi",
+        "specific_objectives": "Tathmini ya mdomo kuhusu mkazo",
+        "main_topic": "2.4 Kusimulia kwa kuzingatia mkazo",
+        "sub_topic": "Term I - 8B (40 MIN)",
+        "teaching_aids": "Orodha ya sentensi za tathmini",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha kanuni za mkazo",
+            "student_activities": "Kukumbuka kanuni",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kufafanua maswali yaliyobaki kwa mifano zaidi",
+            "student_activities": "Kuuliza maswali",
+            "assessment": "Uelewa ulioboreshwa"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kutathmini wanafunzi binafsi wakisimulia sentensi kwa mkazo sahihi",
+            "student_activities": "Kusimulia sentensi kwa mkazo",
+            "assessment": "Usahihi wa mkazo"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho wa jumla",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Ufahamu wa maboresho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "17",
+      "topic_name": "9A: UHUSIANO SAHIHI WA MANENO KATIKA SENTENSI",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kuandika hadithi fupi",
+        "specific_objectives": "Kuandika hadithi kwa kuzingatia uhusiano sahihi wa maneno katika sentensi",
+        "main_topic": "2.5 Kuandika kwa uhusiano sahihi wa maneno katika sentensi",
+        "sub_topic": "Term I - 9A (80 MIN)",
+        "teaching_aids": "Karatasi za kazi, kamusi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuonyesha sentensi yenye uhusiano mbaya wa maneno na kuuliza tatizo lake",
+            "student_activities": "Kutambua tatizo la sentensi",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua kanuni za uhusiano sahihi wa maneno (upatanisho wa kisarufi) katika sentensi",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa upatanisho wa kisarufi"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza uandishi wa hadithi fupi binafsi ukizingatia uhusiano sahihi wa maneno",
+            "student_activities": "Kuandika hadithi fupi binafsi",
+            "assessment": "Usahihi wa uhusiano wa maneno"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia sampuli ya kazi na kusahihisha ubaoni",
+            "student_activities": "Kujisahihisha kutokana na mrejesho",
+            "assessment": "Usahihi baada ya masahihisho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "18",
+      "topic_name": "9B: KUSAHIHISHA SENTENSI ZENYE MAKOSA YA UHUSIANO WA MANENO",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kuandika hadithi fupi",
+        "specific_objectives": "Zoezi la maandishi la kusahihisha sentensi zenye makosa ya uhusiano wa maneno",
+        "main_topic": "2.5 Kuandika kwa uhusiano sahihi wa maneno katika sentensi",
+        "sub_topic": "Term I - 9B (40 MIN)",
+        "teaching_aids": "Karatasi za mazoezi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha kanuni za uhusiano wa maneno",
+            "student_activities": "Kukumbuka kanuni",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuonyesha mfano wa kusahihisha sentensi yenye makosa",
+            "student_activities": "Kutazama mfano",
+            "assessment": "Uelewa wa mchakato wa kusahihisha"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia zoezi la kusahihisha sentensi binafsi",
+            "student_activities": "Kusahihisha sentensi binafsi",
+            "assessment": "Usahihi wa masahihisho"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kukusanya kazi na kutoa mrejesho wa jumla",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa mrejesho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "19",
+      "topic_name": "10A: MPANGILIO SAHIHI WA MANENO KATIKA SENTENSI",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kuandika hadithi fupi",
+        "specific_objectives": "Kuandika hadithi kwa kuzingatia mpangilio sahihi wa maneno katika sentensi",
+        "main_topic": "2.6 Kuandika kwa mpangilio sahihi wa maneno katika sentensi",
+        "sub_topic": "Term I - 10A (80 MIN)",
+        "teaching_aids": "Karatasi za kazi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuonyesha sentensi yenye mpangilio mbaya wa maneno na kuomba wapange upya",
+            "student_activities": "Kupanga upya sentensi",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua kanuni za mpangilio sahihi wa maneno katika muundo wa sentensi ya Kiswahili",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa mpangilio wa sentensi"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza uandishi wa hadithi fupi ukizingatia mpangilio sahihi wa maneno",
+            "student_activities": "Kuandika hadithi fupi binafsi",
+            "assessment": "Usahihi wa mpangilio"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia sampuli ya kazi na kusahihisha ubaoni",
+            "student_activities": "Kujisahihisha",
+            "assessment": "Usahihi baada ya masahihisho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "20",
+      "topic_name": "10B: MPANGILIO WA MANENO",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kuandika hadithi fupi",
+        "specific_objectives": "Marekebisho ya rika ya sentensi kwa mpangilio wa maneno",
+        "main_topic": "2.6 Kuandika kwa mpangilio sahihi wa maneno katika sentensi",
+        "sub_topic": "Term I - 10B (40 MIN)",
+        "teaching_aids": "Orodhahakiki ya urekebishaji rika",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha kanuni za mpangilio wa maneno",
+            "student_activities": "Kukumbuka kanuni",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kufafanua jinsi ya kufanya marekebisho ya rika kwa heshima na usahihi",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa maadili ya urekebishaji"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kuongoza wanafunzi kubadilishana hadithi zao za wiki iliyopita na kurekebishana",
+            "student_activities": "Kurekebishana kazi kwa jozi",
+            "assessment": "Usahihi wa marekebisho"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kupitia baadhi ya masahihisho na kuyajadili",
+            "student_activities": "Kujadili masahihisho",
+            "assessment": "Ubora wa mjadala"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "21",
+      "topic_name": "11A: UHUSIANO WA SENTENSI KATIKA AYA",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kuandika hadithi fupi",
+        "specific_objectives": "Kuandika hadithi kwa kuzingatia uhusiano wa sentensi katika aya",
+        "main_topic": "2.7 Kuandika kwa uhusiano wa sentensi katika aya",
+        "sub_topic": "Term I - 11A (80 MIN)",
+        "teaching_aids": "Karatasi za kazi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuonyesha aya yenye sentensi zisizounganika vizuri",
+            "student_activities": "Kutambua tatizo la aya",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua vifungu vya kuunganisha (k.m. kwa hiyo, hata hivyo, aidha) na jinsi vinavyounganisha sentensi katika aya",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa vifungu vya kuunganisha"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza uandishi wa aya moja binafsi ukizingatia uhusiano sahihi wa sentensi",
+            "student_activities": "Kuandika aya binafsi",
+            "assessment": "Usahihi wa mtiririko wa aya"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia sampuli ya aya na kutoa mrejesho",
+            "student_activities": "Kujisahihisha kutokana na mrejesho",
+            "assessment": "Ubora wa aya baada ya masahihisho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "22",
+      "topic_name": "11B: INSA FUPI KWA VIFUNGU VYA KUUNGANISHA",
+      "url": "",
+      "plan": {
+        "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+        "general_objectives": "Kuandika hadithi fupi",
+        "specific_objectives": "Insha fupi inayotumia vifungu vya kuunganisha",
+        "main_topic": "2.7 Kuandika kwa uhusiano wa sentensi katika aya",
+        "sub_topic": "Term I - 11B (40 MIN)",
+        "teaching_aids": "Karatasi za insha",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha vifungu vya kuunganisha vilivyojifunzwa",
+            "student_activities": "Kukumbuka vifungu",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuonyesha mfano wa insha fupi yenye mtiririko mzuri",
+            "student_activities": "Kutazama mfano",
+            "assessment": "Uelewa wa mtiririko"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia uandishi wa insha fupi binafsi",
+            "student_activities": "Kuandika insha fupi",
+            "assessment": "Matumizi sahihi ya vifungu"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kukusanya kazi na kutoa mrejesho wa jumla",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa mrejesho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "23",
+      "topic_name": "12A: KUTUMIA KAMUSI KUTAFUTA MAANA ZA MANENO",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Kumudu matumizi sahihi ya kamusi",
+        "general_objectives": "Kutumia kamusi",
+        "specific_objectives": "Kutumia msamiati kwa usahihi kwa msaada wa kamusi",
+        "main_topic": "3.1 Kutumia msamiati kwa usahihi",
+        "sub_topic": "Term I - 12A (80 MIN)",
+        "teaching_aids": "Kamusi za Kiswahili",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuuliza wanafunzi wanafanya nini wanapokutana na neno gumu",
+            "student_activities": "Kutoa mbinu zao za sasa",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua muundo wa kamusi na jinsi ya kutafuta maana ya neno kwa usahihi",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa matumizi ya kamusi"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mazoezi ya vikundi ya kutafuta maana za maneno kumi kwa kutumia kamusi",
+            "student_activities": "Kutafuta maana za maneno kwa vikundi",
+            "assessment": "Usahihi wa maana zilizopatikana"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia majibu ya vikundi na kusahihisha makosa",
+            "student_activities": "Kuwasilisha maana zilizopatikana",
+            "assessment": "Usahihi baada ya masahihisho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "24",
+      "topic_name": "12B: ZOEZI LA MSAMIATI KWA SENTENSI",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Kumudu matumizi sahihi ya kamusi",
+        "general_objectives": "Kutumia kamusi",
+        "specific_objectives": "Zoezi la msamiati kwa kutumia sentensi",
+        "main_topic": "3.1 Kutumia msamiati kwa usahihi",
+        "sub_topic": "Term I - 12B (40 MIN)",
+        "teaching_aids": "Karatasi za msamiati",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha maneno yaliyotafutwa kipindi kilichopita",
+            "student_activities": "Kukumbuka maneno",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuonyesha jinsi ya kutunga sentensi sahihi kwa kutumia maneno hayo",
+            "student_activities": "Kutazama mfano",
+            "assessment": "Uelewa wa matumizi sahihi"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia utungaji wa sentensi binafsi kwa kila neno",
+            "student_activities": "Kutunga sentensi binafsi",
+            "assessment": "Usahihi wa matumizi ya msamiati"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kupitia sampuli ya sentensi na kutoa mrejesho",
+            "student_activities": "Kujirekebisha",
+            "assessment": "Usahihi baada ya masahihisho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "25",
+      "topic_name": "13A: KUTUMIA TAARIFA ZA KAMUSI KATIKA MAWASILIANO",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Kumudu matumizi sahihi ya kamusi",
+        "general_objectives": "Kutumia taarifa za kamusi; Kufanya marudio",
+        "specific_objectives": "Kutumia taarifa za kamusi katika mawasiliano na kufanya marudio ya Sura 1–3",
+        "main_topic": "3.2 Kutumia taarifa za kamusi katika mawasiliano",
+        "sub_topic": "Term I - 13A (80 MIN)",
+        "teaching_aids": "Kamusi, maelezo ya marudio",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuonyesha jinsi taarifa za kamusi (aina ya neno, matamshi) zinavyosaidia mawasiliano",
+            "student_activities": "Kutazama na kutoa maoni",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua kwa kina jinsi ya kutumia taarifa zote za kamusi (aina ya neno, matamshi, maana) katika mawasiliano halisi",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa taarifa za kamusi"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mazoezi ya vikundi ya kutunga mazungumzo mafupi yakitumia taarifa za kamusi kwa usahihi",
+            "student_activities": "Kutunga mazungumzo mafupi kwa vikundi",
+            "assessment": "Usahihi wa matumizi ya taarifa za kamusi"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kuwaomba vikundi kuwasilisha mazungumzo yao na kutoa mrejesho",
+            "student_activities": "Kuwasilisha mazungumzo",
+            "assessment": "Ubora wa uwasilishaji"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "26",
+      "topic_name": "13B: MARUDIO YA SURA 1–3 NA MTIHANI WA MUHULA I",
+      "url": "",
+      "plan": {
+        "competence": "3.0 Kumudu matumizi sahihi ya kamusi",
+        "general_objectives": "Kutumia taarifa za kamusi; Kufanya marudio",
+        "specific_objectives": "Marudio ya Sura ya Kwanza hadi ya Tatu na Mtihani wa Marudio wa Muhula I",
+        "main_topic": "3.2 Kutumia taarifa za kamusi katika mawasiliano",
+        "sub_topic": "Term I - 13B (40 MIN)",
+        "teaching_aids": "Maelezo ya marudio, karatasi za mtihani",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kutoa muhtasari wa mada zilizofunzwa Muhula I (lugha na utamaduni, sarufi, kamusi)",
+            "student_activities": "Kusikiliza muhtasari",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuongoza marudio ya haraka kwa maswali na majibu kwa sura zote tatu",
+            "student_activities": "Kujibu maswali ya marudio",
+            "assessment": "Usahihi wa majibu"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia Mtihani wa Marudio wa Muhula I",
+            "student_activities": "Kufanya mtihani wa marudio",
+            "assessment": "Alama za mtihani wa marudio"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kukusanya mitihani na kuonyesha mada za Muhula II",
+            "student_activities": "Kusikiliza utangulizi wa Muhula II",
+            "assessment": "Utayari kwa Muhula II"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "27",
+      "topic_name": "14A: KUSIKILIZA MAZUNGUMZO CHANGAMANI",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+        "general_objectives": "Kusikiliza matini ya mazungumzo",
+        "specific_objectives": "Kusikiliza mazungumzo changamani na kuelewa ujumbe wake",
+        "main_topic": "4.1 Kusikiliza mazungumzo changamani",
+        "sub_topic": "Term II - 14A (80 MIN)",
+        "teaching_aids": "Kanda ya mazungumzo, kinasa sauti",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuuliza wanafunzi wanakumbuka nini kuhusu Muhula I na kuwatanguliza mada",
+            "student_activities": "Kukumbuka na kushiriki",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua mikakati ya kusikiliza mazungumzo changamani kwa makini",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa mikakati ya kusikiliza"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kucheza kanda ya mazungumzo changamani na kuongoza vikundi kutambua ujumbe mkuu",
+            "student_activities": "Kusikiliza na kujadili ujumbe kwa vikundi",
+            "assessment": "Uelewa wa ujumbe mkuu"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia majibu ya vikundi na kutoa mrejesho",
+            "student_activities": "Kuwasilisha ujumbe waliopata",
+            "assessment": "Usahihi wa uwasilishaji"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "28",
+      "topic_name": "14B: MASWALI YA UFAHAMU KUTOKA MAZUNGUMZO",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+        "general_objectives": "Kusikiliza matini ya mazungumzo",
+        "specific_objectives": "Kujibu maswali ya ufahamu kutokana na mazungumzo yaliyosikilizwa",
+        "main_topic": "4.1 Kusikiliza mazungumzo changamani",
+        "sub_topic": "Term II - 14B (40 MIN)",
+        "teaching_aids": "Karatasi ya maswali",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha ujumbe wa mazungumzo yaliyosikilizwa",
+            "student_activities": "Kukumbuka ujumbe",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kufafanua mchoro wa maswali ya ufahamu (kwa nini, vipi, je)",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa mchoro wa maswali"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia kujibu maswali ya ufahamu binafsi",
+            "student_activities": "Kujibu maswali ya ufahamu",
+            "assessment": "Usahihi wa majibu"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kupitia majibu na kutoa mrejesho wa jumla",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa mrejesho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "29",
+      "topic_name": "15A: SIFA ZA LUGHA YA MAZUNGUMZO",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+        "general_objectives": "Kubainisha sifa za lugha ya mazungumzo",
+        "specific_objectives": "Kubainisha sifa za lugha ya mazungumzo (ufupi, usahihi, ufasaha)",
+        "main_topic": "4.2 Kubainisha sifa za lugha ya mazungumzo",
+        "sub_topic": "Term II - 15A (80 MIN)",
+        "teaching_aids": "Kanda za mazungumzo mbalimbali",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kucheza mazungumzo mafupi mawili — yenye sifa sahihi na isiyo nayo — na kuuliza tofauti",
+            "student_activities": "Kulinganisha mazungumzo",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua sifa za lugha ya mazungumzo kama ufupi, usahihi, ufasaha na uwazi",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa sifa mbalimbali"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza vikundi kubainisha sifa kutoka kwenye kanda mpya za mazungumzo",
+            "student_activities": "Kubainisha sifa kwa vikundi",
+            "assessment": "Usahihi wa ubainishaji"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia majibu ya vikundi na kujadili",
+            "student_activities": "Kuwasilisha matokeo",
+            "assessment": "Ubora wa mjadala"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "30",
+      "topic_name": "15B: ZOEZI LA KUFUNGAMANISHA SIFA NA MAZUNGUMZO",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+        "general_objectives": "Kubainisha sifa za lugha ya mazungumzo",
+        "specific_objectives": "Zoezi la kufungamanisha sifa na mazungumzo",
+        "main_topic": "4.2 Kubainisha sifa za lugha ya mazungumzo",
+        "sub_topic": "Term II - 15B (40 MIN)",
+        "teaching_aids": "Karatasi za kazi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha sifa za lugha ya mazungumzo",
+            "student_activities": "Kukumbuka sifa",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuonyesha mfano wa kufungamanisha sifa na mazungumzo",
+            "student_activities": "Kutazama mfano",
+            "assessment": "Uelewa wa mchakato"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia zoezi la kufungamanisha binafsi",
+            "student_activities": "Kufanya zoezi la kufungamanisha",
+            "assessment": "Usahihi wa kufungamanisha"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kukusanya na kutoa mrejesho wa jumla",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa mrejesho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "31",
+      "topic_name": "16A: KUFUPISHA MAZUNGUMZO CHANGAMANI",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+        "general_objectives": "Kufupisha mazungumzo",
+        "specific_objectives": "Kufupisha mazungumzo changamani kwa maneno yake",
+        "main_topic": "4.3 Kufupisha mazungumzo changamani",
+        "sub_topic": "Term II - 16A (80 MIN)",
+        "teaching_aids": "Kanda ya mazungumzo, karatasi za kazi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuuliza kwa nini ni muhimu kufupisha mazungumzo",
+            "student_activities": "Kutoa sababu",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua mikakati ya kufupisha: kutambua ujumbe mkuu na kuacha maelezo yasiyo na maana",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa mikakati ya kufupisha"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kucheza kanda ya mazungumzo na kuongoza vikundi kuandika muhtasari mfupi",
+            "student_activities": "Kuandika muhtasari kwa vikundi",
+            "assessment": "Usahihi wa muhtasari"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia muhtasari wa vikundi na kutoa mrejesho",
+            "student_activities": "Kuwasilisha muhtasari",
+            "assessment": "Ubora wa muhtasari"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "32",
+      "topic_name": "16B: KUFUPISHA MAZUNGUMZO MAPYA KWA MAANDISHI",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+        "general_objectives": "Kufupisha mazungumzo",
+        "specific_objectives": "Fupisha mazungumzo mapya katika taarifa fupi iliyoandikwa",
+        "main_topic": "4.3 Kufupisha mazungumzo changamani",
+        "sub_topic": "Term II - 16B (40 MIN)",
+        "teaching_aids": "Karatasi za kazi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha mikakati ya kufupisha",
+            "student_activities": "Kukumbuka mikakati",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kufafanua tena maeneo yenye utata kwa mifano mifupi",
+            "student_activities": "Kuuliza maswali",
+            "assessment": "Uelewa ulioboreshwa"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia uandishi wa muhtasari wa mazungumzo mapya",
+            "student_activities": "Kuandika muhtasari binafsi",
+            "assessment": "Usahihi wa ufupisho"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kukusanya kazi na kutoa mrejesho",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa mrejesho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "33",
+      "topic_name": "17A: KUSHIRIKI MAJADILIANO YA MIKTADHA MBALIMBALI",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+        "general_objectives": "Kushiriki majadiliano",
+        "specific_objectives": "Kushiriki katika majadiliano ya miktadha mbalimbali kwa lugha adabu",
+        "main_topic": "4.4 Kushiriki katika majadiliano ya miktadha mbalimbali",
+        "sub_topic": "Term II - 17A (80 MIN)",
+        "teaching_aids": "Kadi za miktadha mbalimbali",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kulenga mada kwa kuonyesha kadi ya muktadha mmoja (k.m. shuleni)",
+            "student_activities": "Kutazama kadi na kushiriki",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua adabu za lugha katika majadiliano ya miktadha mbalimbali",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa adabu za lugha"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuigiza na kuongoza mazoezi ya vikundi katika miktadha mbalimbali (familia, shule, sokoni)",
+            "student_activities": "Kushiriki majadiliano ya kikundi",
+            "assessment": "Adabu ya lugha katika majadiliano"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kuchagua vikundi vichache kuigiza mbele ya darasa na kutoa mrejesho",
+            "student_activities": "Kuigiza mbele ya darasa",
+            "assessment": "Ubora wa uigizaji"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "34",
+      "topic_name": "17B: ZOEZI LA MAJADILIANO YA MIKTADHA MIPYA",
+      "url": "",
+      "plan": {
+        "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+        "general_objectives": "Kushiriki majadiliano",
+        "specific_objectives": "Zoezi la kubadilishana majadiliano kwenye miktadha mipya",
+        "main_topic": "4.4 Kushiriki katika majadiliano ya miktadha mbalimbali",
+        "sub_topic": "Term II - 17B (40 MIN)",
+        "teaching_aids": "Kadi za miktadha mipya",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha adabu na miktadha iliyojadiliwa",
+            "student_activities": "Kukumbuka miktadha",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kugawa kadi za miktadha mipya na kufafanua",
+            "student_activities": "Kupokea kadi",
+            "assessment": "Uelewa wa maelekezo"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kuongoza mazoezi ya jozi ya majadiliano kwenye miktadha mipya",
+            "student_activities": "Kushiriki majadiliano ya jozi",
+            "assessment": "Adabu ya lugha"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho wa jumla baada ya kuangalia baadhi ya jozi",
+            "student_activities": "Kuigiza kwa mrejesho",
+            "assessment": "Uelewa wa maboresho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "35",
+      "topic_name": "18A: KUSOMA KWA KUZINGATIA ALAMA ZA UANDISHI, KASI NA KIIMBO",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+        "general_objectives": "Usomaji wa ufasaha",
+        "specific_objectives": "Kusoma kwa kuzingatia alama za uandishi, kasi na kiimbo zinazofaa",
+        "main_topic": "5.1 Kusoma kwa kuzingatia alama za uandishi, kasi na kiimbo",
+        "sub_topic": "Term II - 18A (80 MIN)",
+        "teaching_aids": "Vipande vya matini",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuuliza wanafunzi waandike koma na kuishia wapi katika sentensi moja",
+            "student_activities": "Kutambua alama za uandishi",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua alama za uandishi na athari zake kwa kasi na kiimbo cha usomaji",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa alama za uandishi"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mazoezi binafsi ya kusoma kwa makini ukizingatia kasi na kiimbo",
+            "student_activities": "Kusoma binafsi kwa ufasaha",
+            "assessment": "Usahihi wa kasi na kiimbo"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia utendaji na kutoa mrejesho",
+            "student_activities": "Kujirekebisha kutokana na mrejesho",
+            "assessment": "Uboreshaji wa usomaji"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "36",
+      "topic_name": "18B: UKAGUZI WA USOMAJI KWA UFAHASA",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+        "general_objectives": "Usomaji wa ufasaha",
+        "specific_objectives": "Ukaguzi wa usomaji kwa kutumia orodhahakiki",
+        "main_topic": "5.1 Kusoma kwa kuzingatia alama za uandishi, kasi na kiimbo",
+        "sub_topic": "Term II - 18B (40 MIN)",
+        "teaching_aids": "Orodhahakiki ya usomaji",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kueleza muundo wa ukaguzi wa usomaji",
+            "student_activities": "Kusikiliza maelekezo",
+            "assessment": "Uelewa wa muundo"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kupitia tena vipengele vya usomaji wa ufasaha kama darasa",
+            "student_activities": "Kusoma sentensi pamoja",
+            "assessment": "Utamkaji sahihi wa pamoja"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kutathmini wanafunzi binafsi wakisoma kwa kasi, kiimbo na alama sahihi",
+            "student_activities": "Kusoma binafsi kwa tathmini",
+            "assessment": "Alama za orodhahakiki"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho binafsi wa haraka",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Ufahamu wa maboresho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "37",
+      "topic_name": "19A: UMUHIMU WA ALAMA ZA UANDISHI NA KIIMBO",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+        "general_objectives": "Kutambua umuhimu wa alama za uandishi",
+        "specific_objectives": "Kueleza umuhimu wa alama za uandishi na kiimbo katika usomaji na maandishi",
+        "main_topic": "5.2 Kueleza umuhimu wa alama za uandishi na kiimbo",
+        "sub_topic": "Term II - 19A (80 MIN)",
+        "teaching_aids": "Vipande vya matini",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuonyesha aya bila alama za uandishi na kuuliza shida yake",
+            "student_activities": "Kutambua tatizo la aya",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua umuhimu wa alama za uandishi na kiimbo katika kufikisha maana",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa umuhimu"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza vikundi kulinganisha matini yenye na isiyo na alama sahihi",
+            "student_activities": "Kulinganisha matini kwa vikundi",
+            "assessment": "Uwezo wa kuona tofauti za maana"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia majibu ya vikundi na kutoa muhtasari",
+            "student_activities": "Kuwasilisha matokeo",
+            "assessment": "Ubora wa muhtasari"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "38",
+      "topic_name": "19B: KUWEKA ALAMA SAHIHI ZA UANDISHI",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+        "general_objectives": "Kutambua umuhimu wa alama za uandishi",
+        "specific_objectives": "Zoezi la kuweka alama sahihi za uandishi kwenye matini",
+        "main_topic": "5.2 Kueleza umuhimu wa alama za uandishi na kiimbo",
+        "sub_topic": "Term II - 19B (40 MIN)",
+        "teaching_aids": "Karatasi za mazoezi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha umuhimu wa alama za uandishi",
+            "student_activities": "Kukumbuka alama",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuonyesha mfano wa kuweka alama sahihi za uandishi",
+            "student_activities": "Kutazama mfano",
+            "assessment": "Uelewa wa mchakato"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia zoezi la kuweka alama za uandishi binafsi",
+            "student_activities": "Kuweka alama binafsi",
+            "assessment": "Usahihi wa alama zilizowekwa"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kupitia kazi na kutoa mrejesho",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa mrejesho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "39",
+      "topic_name": "20A: ATHARI ZA KUTOKUZINGATIA ALAMA ZA UANDISHI NA KIIMBO",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+        "general_objectives": "Kueleza athari za alama za uandishi",
+        "specific_objectives": "Kueleza athari za kutokuzingatia alama za uandishi na kiimbo katika mawasiliano",
+        "main_topic": "5.3 Kueleza athari za alama za uandishi na kiimbo",
+        "sub_topic": "Term II - 20A (80 MIN)",
+        "teaching_aids": "Mifano ya matini yenye kutokuzingatia alama",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuonyesha sentensi ambayo maana yake inabadilika kwa kukosekana kwa koma (k.m. 'Tule tumsamehe')",
+            "student_activities": "Kutambua mabadiliko ya maana",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua athari za kutokuzingatia alama za uandishi na kiimbo (kutoelewana, maana hasi)",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa athari mbalimbali"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza vikundi chunguza matini zenye maana isiyo sahihi kutokana na alama",
+            "student_activities": "Kuchunguza matini kwa vikundi",
+            "assessment": "Usahihi wa uchunguzi"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia matokeo ya vikundi na kujadili athari",
+            "student_activities": "Kuwasilisha matokeo",
+            "assessment": "Ubora wa mjadala"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "40",
+      "topic_name": "20B: ATHARI ZA ALAMA ZA UANDISHI NA KIIMBO",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+        "general_objectives": "Kueleza athari za alama za uandishi",
+        "specific_objectives": "Tathmini ya mdomo kuhusu athari za alama za uandishi na kiimbo",
+        "main_topic": "5.3 Kueleza athari za alama za uandishi na kiimbo",
+        "sub_topic": "Term II - 20B (40 MIN)",
+        "teaching_aids": "Orodha ya maswali ya mdomo",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha athari zilizojadiliwa",
+            "student_activities": "Kukumbuka athari",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kufafanua maswali yenye utata",
+            "student_activities": "Kuuliza maswali",
+            "assessment": "Uelewa ulioboreshwa"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kutoa maswali ya mdomo kwa wanafunzi binafsi",
+            "student_activities": "Kujibu maswali ya mdomo",
+            "assessment": "Usahihi wa majibu"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho wa mwisho",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Ufahamu wa maboresho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "41",
+      "topic_name": "21A: KUANDIKA HOJA KUU KUTOKA MATINI",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+        "general_objectives": "Kuandika hoja kuu",
+        "specific_objectives": "Kusoma na kuandika hoja kuu kutoka katika matini fupi changamani",
+        "main_topic": "5.4 Kuandika hoja kuu kutoka matini",
+        "sub_topic": "Term II - 21A (80 MIN)",
+        "teaching_aids": "Matini fupi changamani",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuuliza hoja kuu ya matini fupi moja inayosomwa darasani",
+            "student_activities": "Kutambua hoja kuu",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua jinsi ya kubainisha hoja kuu na hoja tetezi katika matini",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa hoja kuu na tetezi"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza usomaji wa matini fupi binafsi na kuandika hoja kuu katika sentensi zao",
+            "student_activities": "Kuandika hoja kuu binafsi",
+            "assessment": "Usahihi wa hoja kuu zilizoandikwa"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia sampuli za kazi na kutoa mrejesho",
+            "student_activities": "Kujirekebisha kutokana na mrejesho",
+            "assessment": "Uboreshaji wa uandishi wa hoja kuu"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "42",
+      "topic_name": "21B: ZOEZI LA KUTOA HOJA KUU ZA MATINI FUPI",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+        "general_objectives": "Kuandika hoja kuu",
+        "specific_objectives": "Zoezi la maandishi la kutoa hoja kuu za matini fupi nyingi",
+        "main_topic": "5.4 Kuandika hoja kuu kutoka matini",
+        "sub_topic": "Term II - 21B (40 MIN)",
+        "teaching_aids": "Karatasi za matini fupi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha mbinu za kubainisha hoja kuu",
+            "student_activities": "Kukumbuka mbinu",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuonyesha mfano wa zoezi la hoja kuu",
+            "student_activities": "Kutazama mfano",
+            "assessment": "Uelewa wa mchakato"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia zoezi la maandishi la kutoa hoja kuu za matini fupi",
+            "student_activities": "Kutoa hoja kuu binafsi",
+            "assessment": "Usahihi wa hoja kuu"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kukusanya kazi na kutoa mrejesho wa jumla",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa mrejesho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "43",
+      "topic_name": "22A: KUTUMIA TEHAMA KUTAFUTA MAANA ZA MANENO",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+        "general_objectives": "Kutumia TEHAMA kutafuta maana",
+        "specific_objectives": "Kutumia vifaa vya TEHAMA (kamusi za mtandaoni, injini za utafutaji) kutafuta maana za maneno",
+        "main_topic": "5.5 Kutumia TEHAMA kutafuta maana za maneno",
+        "sub_topic": "Term II - 22A (80 MIN)",
+        "teaching_aids": "Vifaa vya TEHAMA na kamusi za mtandaoni",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuuliza ni vifaa gani vya TEHAMA wanavyovitumia",
+            "student_activities": "Kutaja vifaa vya TEHAMA",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua jinsi ya kutumia kamusi za mtandaoni na injini za utafutaji kutafuta maana",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa matumizi ya TEHAMA"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mazoezi ya vikundi ya kutafuta maana za maneno kwa vifaa vya TEHAMA vinavyopatikana",
+            "student_activities": "Kutafuta maana za maneno kwa vikundi",
+            "assessment": "Usahihi wa maana zilizopatikana"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia matokeo ya vikundi na kulinganisha na kamusi ya karatasi",
+            "student_activities": "Kuwasilisha matokeo",
+            "assessment": "Ubora wa uwasilishaji"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "44",
+      "topic_name": "22B: TEHAMA NA KAMUSI YA KARATASI",
+      "url": "",
+      "plan": {
+        "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+        "general_objectives": "Kutumia TEHAMA kutafuta maana",
+        "specific_objectives": "Zoezi la msamiati kwa kutumia TEHAMA na kamusi ya karatasi",
+        "main_topic": "5.5 Kutumia TEHAMA kutafuta maana za maneno",
+        "sub_topic": "Term II - 22B (40 MIN)",
+        "teaching_aids": "Kamusi za mtandaoni na karatasi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha mbinu za matumizi ya TEHAMA",
+            "student_activities": "Kukumbuka mbinu",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kufafanua linganisho la kamusi za mtandaoni na za karatasi",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa linganisho"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia zoezi la msamiati likitumia TEHAMA na kamusi ya karatasi",
+            "student_activities": "Kutafuta maana kwa zana zote mbili",
+            "assessment": "Usahihi wa maana zilizopatikana"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kukusanya kazi na kutoa mrejesho",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa mrejesho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "45",
+      "topic_name": "23A: KUZUNGUMZA KWA UFAHASA KATIKA MIKTADHA MBALIMBALI",
+      "url": "",
+      "plan": {
+        "competence": "6.0 Kumudu mawasiliano kwa njia ya mazungumzo",
+        "general_objectives": "Kuzungumza kwa ufasaha",
+        "specific_objectives": "Kuzungumza kwa ufasaha katika miktadha mbalimbali kama uwasilishaji wa taarifa",
+        "main_topic": "6.1 Kuzungumza kwa ufasaha katika miktadha mbalimbali",
+        "sub_topic": "Term II - 23A (80 MIN)",
+        "teaching_aids": "Kadi za miktadha ya mazungumzo",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuuliza mwanafunzi mmoja kuzungumza na tabaka zuri juu ya jambo la kawaida",
+            "student_activities": "Kuzungumza mbele ya darasa",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua sifa za ufasaha: matamshi, sauti, kiimbo na mtiririko wa mawazo",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa sifa za ufasaha"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mazoezi ya vikundi ya kuwasilisha taarifa ndefu kwa ufasaha",
+            "student_activities": "Kuwasilisha taarifa kwa vikundi",
+            "assessment": "Ufasaha katika uwasilishaji"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kuchagua wawakilishi kuwasilisha mbele ya darasa na kutoa mrejesho",
+            "student_activities": "Kuwasilisha mbele ya darasa",
+            "assessment": "Ubora wa uwasilishaji"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "46",
+      "topic_name": "23B: TATHMINI YA UWASILISHAJI KWA UFAHASA",
+      "url": "",
+      "plan": {
+        "competence": "6.0 Kumudu mawasiliano kwa njia ya mazungumzo",
+        "general_objectives": "Kuzungumza kwa ufasaha",
+        "specific_objectives": "Tathmini ya uwasilishaji kwa kutumia orodhahakiki",
+        "main_topic": "6.1 Kuzungumza kwa ufasaha katika miktadha mbalimbali",
+        "sub_topic": "Term II - 23B (40 MIN)",
+        "teaching_aids": "Orodhahakiki ya uwasilishaji",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha sifa za ufasaha",
+            "student_activities": "Kukumbuka sifa",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kueleza vigezo vya orodhahakiki ya uwasilishaji",
+            "student_activities": "Kusikiliza maelekezo",
+            "assessment": "Uelewa wa vigezo"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kutathmini sampuli ya wanafunzi wakiwasilisha dhidi ya orodhahakiki",
+            "student_activities": "Kuwasilisha kwa tathmini",
+            "assessment": "Alama za orodhahakiki"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho binafsi wa haraka",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Ufahamu wa maboresho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "47",
+      "topic_name": "24A: KUTUMIA LUGHA KWA UFAHASA KATIKA MAZUNGUMZO",
+      "url": "",
+      "plan": {
+        "competence": "6.0 Kumudu mawasiliano kwa njia ya mazungumzo",
+        "general_objectives": "Kutumia lugha kwa ufasaha",
+        "specific_objectives": "Kutumia lugha kwa ufasaha katika mazungumzo ya miktadha rahisi na changamani",
+        "main_topic": "6.2 Kutumia lugha kwa ufasaha katika mazungumzo",
+        "sub_topic": "Term II - 24A (80 MIN)",
+        "teaching_aids": "Kadi za miktadha ya mazungumzo",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuonyesha mazungumzo mafupi kama mfano wa darasa",
+            "student_activities": "Kutazama na kushiriki",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua jinsi ya kutumia lugha kwa ufasaha kulingana na muktadha wa mazungumzo",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa matumizi ya lugha kwa muktadha"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza vikundi kuwasilisha mazungumzo ndefu kulingana na miktadha mbalimbali",
+            "student_activities": "Mazungumzo ya kikundi kwa ufasaha",
+            "assessment": "Usahihi wa lugha iliyotumika"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia mazungumzo ya vikundi na kutoa mrejesho",
+            "student_activities": "Kuwasilisha mazungumzo",
+            "assessment": "Ubora wa mazungumzo"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "48",
+      "topic_name": "24B: ZOEZI LA MAZUNGUMZO KWA JOZI",
+      "url": "",
+      "plan": {
+        "competence": "6.0 Kumudu mawasiliano kwa njia ya mazungumzo",
+        "general_objectives": "Kutumia lugha kwa ufasaha",
+        "specific_objectives": "Zoezi la mazungumzo kwa jozi",
+        "main_topic": "6.2 Kutumia lugha kwa ufasaha katika mazungumzo",
+        "sub_topic": "Term II - 24B (40 MIN)",
+        "teaching_aids": "Kadi za miktadha ya jozi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha sifa za mazungumzo ya ufasaha",
+            "student_activities": "Kukumbuka sifa",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kugawa kadi za miktadha kwa jozi na kufafanua",
+            "student_activities": "Kupokea kadi",
+            "assessment": "Uelewa wa maelekezo"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kuongoza mazungumzo ya jozi kwa ufasaha",
+            "student_activities": "Mazungumzo ya jozi",
+            "assessment": "Usahihi wa lugha katika jozi"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kutoa mrejesho wa jumla baada ya kufuatilia jozi kadhaa",
+            "student_activities": "Kuigiza kwa mrejesho",
+            "assessment": "Uelewa wa maboresho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "49",
+      "topic_name": "25A: KUJIELEZA KWA MAANDISHI RASMI NA YASIYO RASMI",
+      "url": "",
+      "plan": {
+        "competence": "7.0 Kumudu mawasiliano kwa njia ya maandishi",
+        "general_objectives": "Kujieleza kwa maandishi",
+        "specific_objectives": "Kujieleza kwa maandishi rasmi na yasiyo rasmi katika miktadha mbalimbali (barua, insha, fomu)",
+        "main_topic": "7.1 Kujieleza kwa maandishi katika miktadha mbalimbali",
+        "sub_topic": "Term II - 25A (80 MIN)",
+        "teaching_aids": "Sampuli za maandishi, karatasi za kazi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kuonyesha sampuli za maandishi mbalimbali (barua, insha, fomu) na kuuliza utofauti",
+            "student_activities": "Kutambua aina za maandishi",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua sifa za maandishi rasmi na yasiyo rasmi na muktadha wa matumizi yake",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa maandishi rasmi/visivyo rasmi"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza uandishi binafsi wa maandishi mafupi kulingana na miktadha mbalimbali",
+            "student_activities": "Kuandika maandishi binafsi",
+            "assessment": "Usahihi wa umbizo la maandishi"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia sampuli za kazi na kutoa mrejesho",
+            "student_activities": "Kujirekebisha kutokana na mrejesho",
+            "assessment": "Uboreshaji wa maandishi"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "50",
+      "topic_name": "25B: MUKTADHA NA AINA YA MAANDISHI",
+      "url": "",
+      "plan": {
+        "competence": "7.0 Kumudu mawasiliano kwa njia ya maandishi",
+        "general_objectives": "Kujieleza kwa maandishi",
+        "specific_objectives": "Zoezi la maandishi la kutunganisha muktadha na aina ya maandishi",
+        "main_topic": "7.1 Kujieleza kwa maandishi katika miktadha mbalimbali",
+        "sub_topic": "Term II - 25B (40 MIN)",
+        "teaching_aids": "Karatasi za kazi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha aina za maandishi na sifa zake",
+            "student_activities": "Kukumbuka aina",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuonyesha mfano wa zoezi la kutunganisha",
+            "student_activities": "Kutazama mfano",
+            "assessment": "Uelewa wa mchakato"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia zoezi la kutunganisha muktadha na aina ya maandishi binafsi",
+            "student_activities": "Kufanya zoezi la kutunganisha",
+            "assessment": "Usahihi wa kutunganisha"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kukusanya kazi na kutoa mrejesho wa jumla",
+            "student_activities": "Kupokea mrejesho",
+            "assessment": "Uelewa wa mrejesho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "51",
+      "topic_name": "26A: KUKAMILISHA MAZOEZI NA MARUDIO YA SURA 4–7",
+      "url": "",
+      "plan": {
+        "competence": "7.0 Kumudu mawasiliano kwa njia ya maandishi",
+        "general_objectives": "Kufanya marudio ya Sura 4–7",
+        "specific_objectives": "Kukamilisha mazoezi ya kujieleza kwa maandishi na kufanya marudio ya Sura 4–7",
+        "main_topic": "7.1 Kujieleza kwa maandishi katika miktadha mbalimbali",
+        "sub_topic": "Term II - 26A (80 MIN)",
+        "teaching_aids": "Maelezo ya marudio, karatasi za mazoezi",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Kutoa muhtasari wa mada za Sura 4–7 (kusikiliza, usomaji, mazungumzo, maandishi)",
+            "student_activities": "Kusikiliza muhtasari",
+            "assessment": "Ushiriki"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "30",
+            "teacher_activities": "Kufafanua maeneo magumu kwa kuangalia mazoezi yaliyobaki",
+            "student_activities": "Kuandika vidokezo",
+            "assessment": "Uelewa wa maeneo magumu"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "25",
+            "teacher_activities": "Kuongoza mazoezi ya maandishi na marudio ya Sura 4–7 katika miktadha mbalimbali",
+            "student_activities": "Kukamilisha mazoezi binafsi",
+            "assessment": "Usahihi wa mazoezi"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "15",
+            "teacher_activities": "Kupitia mazoezi na kutoa muhtasari wa mwisho wa Muhula II",
+            "student_activities": "Kupokea muhtasari wa mwisho",
+            "assessment": "Utayari kwa mitihani ya mwisho"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "52",
+      "topic_name": "26B: MARUDIO YA MWISHO YA SURA 4–7",
+      "url": "",
+      "plan": {
+        "competence": "7.0 Kumudu mawasiliano kwa njia ya maandishi",
+        "general_objectives": "Kufanya marudio ya Sura 4–7",
+        "specific_objectives": "Marudio ya mwisho ya Sura 4–7 na zoezi la kujieleza kwa maandishi",
+        "main_topic": "7.1 Kujieleza kwa maandishi katika miktadha mbalimbali",
+        "sub_topic": "Term II - 26B (40 MIN)",
+        "teaching_aids": "Karatasi za zoezi la mwisho",
+        "remarks": "",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "5",
+            "teacher_activities": "Kukumbusha mada zote za Muhula II",
+            "student_activities": "Kukumbuka mada",
+            "assessment": "Ukumbukaji sahihi"
+          },
+          {
+            "stage": "COMPETENCE DEVELOPMENT",
+            "time": "15",
+            "teacher_activities": "Kuongoza marudio ya haraka kwa maswali na majibu",
+            "student_activities": "Kujibu maswali ya marudio",
+            "assessment": "Usahihi wa majibu"
+          },
+          {
+            "stage": "DESIGN",
+            "time": "12",
+            "teacher_activities": "Kusimamia zoezi la mwisho la kujieleza kwa maandishi katika muktadha mmoja",
+            "student_activities": "Kukamilisha zoezi la mwisho",
+            "assessment": "Ubora wa zoezi la mwisho"
+          },
+          {
+            "stage": "REALIZATION",
+            "time": "8",
+            "teacher_activities": "Kukusanya kazi na kutoa baraka na maelekezo ya mitihani ya mwisho",
+            "student_activities": "Kupokea maelekezo",
+            "assessment": "Utayari kwa mitihani ya mwisho"
           }
         ]
       }

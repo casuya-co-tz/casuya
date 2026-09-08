@@ -141,15 +141,17 @@ def test_bundled_seed_is_idempotent():
     Biology (24 lesson plans + 2 schemes), English (21 lesson plans + 2
     schemes), and History / Historia ya Tanzania na Maadili / Business
     Studies / Kiswahili scheme bundles. Business Studies Form One carries
-    52 lesson plans + 2 term schemes."""
+    52 lesson plans + 2 term schemes, and Kiswahili Form One carries 52
+    lesson plans + 2 term schemes (26 Term I, 1A-13B + 26 Term II,
+    14A-26B)."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
     try:
         inserted, replaced, inserted_schemes, replaced_schemes, purged = seed_reference_library_local.run(db)
-        assert inserted == 647  # 98 geography (18 f1 + 80 f2) + 60 history f1 + 47 mathematics f2 + 24 chemistry f2 + 24 biology f2 + 21 english + 13 history f2 + 21 historia_tanzania_maadili + 21 business_studies f2 + 21 kiswahili + 50 physics form one + 52 physics form two + 20 chemistry f1 + 30 biology f1 + 30 mathematics f1 + 52 business_studies form one + 39 english form one term i lessons + 24 english form one term ii lessons
+        assert inserted == 699  # 98 geography (18 f1 + 80 f2) + 60 history f1 + 47 mathematics f2 + 24 chemistry f2 + 24 biology f2 + 21 english + 13 history f2 + 21 historia_tanzania_maadili + 21 business_studies f2 + 21 kiswahili + 50 physics form one + 52 physics form two + 20 chemistry f1 + 30 biology f1 + 30 mathematics f1 + 52 business_studies form one + 39 english form one term i lessons + 24 english form one term ii lessons + 52 kiswahili form one lessons
         assert replaced == 0
-        assert inserted_schemes == 33
+        assert inserted_schemes == 35
         assert replaced_schemes == 0
         assert purged == 0
         geo_lessons = list_reference_docs(db, subject_slug="geography", form_level=1, doc_type="lesson_plan")
@@ -217,6 +219,16 @@ def test_bundled_seed_is_idempotent():
         eng_f1_schemes = list_reference_docs(db, subject_slug="english", form_level=1, doc_type="scheme_of_work")
         assert len(eng_f1_schemes) == 2
         assert all(doc.source_id.startswith("bundled:") for doc in eng_f1_schemes)
+        # Kiswahili Form One: 52 lesson plans (26 Term I, 1A-13B + 26 Term II, 14A-26B) + 2 schemes
+        sw_f1_lessons = list_reference_docs(db, subject_slug="kiswahili", form_level=1, doc_type="lesson_plan", limit=200)
+        assert len(sw_f1_lessons) == 52
+        assert all(doc.source_id.startswith("bundled:") for doc in sw_f1_lessons)
+        sw_f1_titles = {doc.title for doc in sw_f1_lessons}
+        assert any("NO. 1A " in t and "TERM I - WEEK 1" in t for t in sw_f1_titles)
+        assert any("NO. 14A " in t and "TERM II - WEEK 1" in t for t in sw_f1_titles)
+        sw_f1_schemes = list_reference_docs(db, subject_slug="kiswahili", form_level=1, doc_type="scheme_of_work")
+        assert len(sw_f1_schemes) == 2
+        assert all(doc.source_id.startswith("bundled:") for doc in sw_f1_schemes)
         check_f2_lessons = {
             "mathematics": 47,
             "chemistry": 24,

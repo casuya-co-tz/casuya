@@ -1,192 +1,386 @@
 {
-  "file": "KISW F1 2026.docx",
+  "file": "KISWAHILI FORM ONE SCHEME OF WORK 2026 (VERIFIED).docx",
+  "subject": "Kiswahili",
+  "form": "Form1",
+  "year": "2026",
   "subjects": [
     {
       "table_index": 0,
+      "entry_count": 14,
       "headers": [
-        "UMAHILI MKUU",
-        "UMAHIRI MAHUSUSI",
-        "SUGHURIKUU ZAUJIFUNZAJI",
-        "SHUGHURI NDOGOZA UJIFUNZAJI",
-        "MWEZ I",
-        "WIK I",
-        "VIPIN DI",
-        "REJEA",
-        "MBINU ZA UFUNZAJINA UFUNDISHAJI",
-        "ZANAZA UFUNDIS HAJI NA UFUNZAJI",
-        "ZANA ZAUPIMA JI",
-        "MAONI"
+        "Umahiri Mkuu",
+        "Umahiri Mahususi",
+        "Shughuli Kuu",
+        "Shughuli Mahususi",
+        "Mwezi",
+        "Wiki",
+        "Vipindi",
+        "Mbinu za ufundishaji",
+        "Zana za ufundishaji",
+        "Zana za upimaji",
+        "Rejea",
+        "Maoni"
       ],
       "column_count": 12,
       "entries": [
         {
-          "competence": "Kumudu",
-          "objective": "Kutambua",
-          "learning_act": "Kutumiwa",
-          "sub_topic": "Kujadiliana",
-          "month": "M",
+          "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+          "objective": "1.1 Kubainisha Kiswahili kama utambulisho wa Mtanzania",
+          "learning_act": "Kujadili utambulisho wa kitaifa",
+          "main_topic": "Kueleza jinsi Kiswahili kinavyodhihirisha utaifa wa Mtanzania",
+          "month": "January",
           "week": "1",
-          "period": "4",
-          "teaching_act": "TET(2023)",
-          "materials": "Mazoe"
+          "period": "2",
+          "teaching_act": "Methods: Majadiliano darasani, hojaji fupi",
+          "assessment": "Maswali ya mdomo",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
         },
         {
-          "competence": "misingi ya kiswahili",
-          "objective": "Kiswahili kama kielelezocha utaifa na utambulisho wamtanzania",
-          "learning_act": "Kiswahili katika mijadala mbalimbali kwa kuzingatia",
-          "sub_topic": "kuhusu masuala mbalimbali yanayohusu utaduni wa mtanzania",
-          "month": "ACHI",
-          "teaching_act": "KISWAHILI SHULE ZA SEKONDARI, KITABU CHA MWANAFUNZIKIDATO CHA KWANZA",
-          "materials": "zi, maswa li, Kazi ya Vikund iKazi mradi"
+          "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+          "objective": "1.2 Kueleza hadhi ya Kiswahili",
+          "learning_act": "Kuchunguza hadhi ya Kiswahili",
+          "main_topic": "Kueleza hadhi ya Kiswahili kitaifa na kimataifa",
+          "month": "January",
+          "week": "2",
+          "period": "2",
+          "teaching_act": "Methods: Mihadhara mifupi, majadiliano ya vikundi",
+          "assessment": "Zoezi la maandishi mafupi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
         },
         {
-          "competence": "misingi ya kiswahili",
-          "objective": "Kiswahili kama kielelezocha utaifa na utambulisho wamtanzania",
-          "learning_act": "Kiswahili katika mijadala mbalimbali kwa kuzingatia",
-          "sub_topic": "kuhusu masuala mbalimbali yanayohusu utaduni wa mtanzania",
-          "month": "ACHI",
-          "teaching_act": "KISWAHILI SHULE ZA SEKONDARI, KITABU CHA MWANAFUNZIKIDATO CHA KWANZA",
-          "materials": "zi, maswa li, Kazi ya Vikund iKazi mradi"
-        },
-        {
-          "learning_act": "utamaduni",
-          "sub_topic": "katika",
-          "materials": "Majari"
-        },
-        {
-          "learning_act": "wa mtanzania",
-          "sub_topic": "matumiziya lugha ya kiswahili",
-          "materials": "bio majadiliano"
-        },
-        {
-          "objective": "Kukuza",
-          "learning_act": "Kusimulia",
-          "sub_topic": "Kusimulia",
-          "month": "MACHI",
-          "week": "1",
-          "period": "4",
-          "teaching_act": "TET(2023)",
-          "materials": "Mazoe"
-        },
-        {
-          "objective": "uelewawa sarufi ya kiswahili",
-          "learning_act": "habari na matukiokwa kuzingatia kiimbo, mkazo na lafudhi pamojana",
-          "sub_topic": "visa au matukio mbalimbali kwa kuzingatia kiimbo, mkazo",
-          "month": "MACHI",
-          "teaching_act": "KISWAHILI SHULE ZA SEKONDARI, KITABU CHA MWANAFUNZIKIDATO CHA KWANZA",
-          "materials": "zi, maswa li, Kazi ya Vikund iKazi mradi Majari"
-        },
-        {
-          "objective": "uelewawa sarufi ya kiswahili",
-          "learning_act": "habari na matukiokwa kuzingatia kiimbo, mkazo na lafudhi pamojana",
-          "sub_topic": "visa au matukio mbalimbali kwa kuzingatia kiimbo, mkazo",
-          "month": "MACHI",
-          "period": "4",
-          "teaching_act": "KISWAHILI SHULE ZA SEKONDARI, KITABU CHA MWANAFUNZIKIDATO CHA KWANZA",
-          "materials": "zi, maswa li, Kazi ya Vikund iKazi mradi Majari"
-        },
-        {
-          "learning_act": "dhimazake",
-          "sub_topic": "lafudhi pamoja na dhimazake",
-          "month": "MACHI",
-          "materials": "bio majadiliano"
-        },
-        {
-          "month": "MACHI",
-          "week": "2"
-        },
-        {
-          "learning_act": "Kuandika",
-          "sub_topic": "Kusoma",
-          "month": "MACHI",
+          "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+          "objective": "1.3 Kubainisha Kiswahili kama kielelezo cha utamaduni",
+          "learning_act": "Kuunganisha lugha na utamaduni",
+          "main_topic": "Kueleza jinsi Kiswahili kinavyodhihirisha utamaduni wa Mtanzania",
+          "month": "January",
           "week": "3",
-          "period": "4",
-          "teaching_act": "TET(2023)",
-          "materials": "Mazoe"
+          "period": "2",
+          "teaching_act": "Methods: Mifano ya methali/nyimbo, majadiliano",
+          "assessment": "Tathmini ya mdomo",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
         },
         {
-          "learning_act": "hadithi kwa kuzingatia mpangiliona uhusiano sahihi wa",
-          "sub_topic": "matini zenye aina mbalimbali zamaneno kasha",
-          "month": "MACHI",
-          "teaching_act": "KISWAHILI SHULE ZA SEKONDARI, KITABU CHA MWANAFUNZIKIDATO CHA",
-          "materials": "zi, maswa li, Kazi ya Vikund iKazi"
-        },
-        {
-          "learning_act": "hadithi kwa kuzingatia mpangiliona uhusiano sahihi wa",
-          "sub_topic": "matini zenye aina mbalimbali zamaneno kasha",
-          "month": "MACHI",
-          "period": "4",
-          "teaching_act": "KISWAHILI SHULE ZA SEKONDARI, KITABU CHA MWANAFUNZIKIDATO CHA",
-          "materials": "zi, maswa li, Kazi ya Vikund iKazi"
-        },
-        {
-          "learning_act": "maneno",
-          "sub_topic": "kubainisha uhusianowa maneno unaofanan katika",
-          "month": "MACHI",
+          "competence": "1.0 Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+          "objective": "1.4 Kueleza umuhimu wa kujifunza Kiswahili",
+          "learning_act": "Kutambua umuhimu wa Kiswahili",
+          "main_topic": "Kutoa sababu za umuhimu wa kujifunza Kiswahili",
+          "month": "January",
           "week": "4",
-          "teaching_act": "KWANZA",
-          "materials": "mradi Majari biomajadiliano"
+          "period": "2",
+          "teaching_act": "Methods: Mjadala wa darasa, insha fupi",
+          "assessment": "Insha fupi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
         },
         {
-          "sub_topic": "sentesi",
-          "month": "MACHI"
+          "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "objective": "2.1 Kutamka maneno kwa usahihi",
+          "learning_act": "Kufundisha matamshi sahihi",
+          "main_topic": "Kutamka maneno kwa usahihi kulingana na sauti za Kiswahili",
+          "month": "February",
+          "week": "5",
+          "period": "2",
+          "teaching_act": "Methods: Mazoezi ya kutamka, kurudia-rudia",
+          "assessment": "Ukaguzi wa matamshi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
         },
         {
-          "learning_act": "MTIHANIWAROBOMUHULANALIKIZOFUPI 27/03/2026-14/04/2026",
-          "sub_topic": "MTIHANIWAROBOMUHULANALIKIZOFUPI 27/03/2026-14/04/2026",
-          "month": "MTIHANIWAROBOMUHULANALIKIZOFUPI 27/03/2026-14/04/2026",
-          "week": "MTIHANIWAROBOMUHULANALIKIZOFUPI 27/03/2026-14/04/2026",
-          "period": "MTIHANIWAROBOMUHULANALIKIZOFUPI 27/03/2026-14/04/2026",
-          "teaching_act": "MTIHANIWAROBOMUHULANALIKIZOFUPI 27/03/2026-14/04/2026",
-          "materials": "MTIHANIWAROBOMUHULANALIKIZOFUPI 27/03/2026-14/04/2026",
-          "assessment": "MTIHANIWAROBOMUHULANALIKIZOFUPI 27/03/2026-14/04/2026"
+          "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "objective": "2.2 Kusimulia kwa lafudhi sahihi",
+          "learning_act": "Kusimulia habari kwa lafudhi sahihi",
+          "main_topic": "Kusimulia hadithi fupi kwa kuzingatia lafudhi sahihi",
+          "month": "February",
+          "week": "6",
+          "period": "2",
+          "teaching_act": "Methods: Kusimulia mfano, mazoezi ya vikundi",
+          "assessment": "Tathmini ya usimuliaji",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
         },
         {
-          "learning_act": "Kuandika",
-          "sub_topic": "Kutembelea",
+          "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "objective": "2.3 Kusimulia kwa kuzingatia kiimbo",
+          "learning_act": "Kusimulia kwa kiimbo sahihi",
+          "main_topic": "Kusimulia habari kwa kutumia kiimbo kinachofaa hisia za ujumbe",
+          "month": "February",
+          "week": "7",
+          "period": "2",
+          "teaching_act": "Methods: Kuiga mifano ya kiimbo, mazoezi binafsi",
+          "assessment": "Ukaguzi wa kiimbo",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "objective": "2.4 Kusimulia kwa kuzingatia mkazo",
+          "learning_act": "Kusimulia kwa mkazo sahihi",
+          "main_topic": "Kusimulia habari kwa kuweka mkazo mahali muhimu",
+          "month": "February",
+          "week": "8",
+          "period": "2",
+          "teaching_act": "Methods: Mazoezi ya mkazo wa maneno, kusikiliza mifano",
+          "assessment": "Tathmini ya mdomo",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "objective": "2.5 Kuandika kwa uhusiano sahihi wa maneno katika sentensi",
+          "learning_act": "Kuandika hadithi fupi",
+          "main_topic": "Kuandika hadithi kwa kuzingatia uhusiano sahihi wa maneno katika sentensi",
+          "month": "March",
+          "week": "9",
+          "period": "2",
+          "teaching_act": "Methods: Uandishi elekezi, marekebisho ya rika",
+          "assessment": "Zoezi la maandishi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "",
+          "objective": "",
+          "learning_act": "",
+          "main_topic": "TATHMINI YA KATI YA MUHULA & LIKIZO",
+          "month": "March",
+          "week": "10",
+          "period": "2",
+          "teaching_act": "",
+          "assessment": "",
+          "references": ""
+        },
+        {
+          "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "objective": "2.6 Kuandika kwa mpangilio sahihi wa maneno katika sentensi",
+          "learning_act": "Kuandika hadithi fupi",
+          "main_topic": "Kuandika hadithi kwa kuzingatia mpangilio sahihi wa maneno katika sentensi",
+          "month": "March",
+          "week": "11",
+          "period": "2",
+          "teaching_act": "Methods: Uandishi elekezi, mifano ya sentensi",
+          "assessment": "Zoezi la maandishi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "2.0 Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "objective": "2.7 Kuandika kwa uhusiano wa sentensi katika aya",
+          "learning_act": "Kuandika hadithi fupi",
+          "main_topic": "Kuandika hadithi kwa kuzingatia uhusiano wa sentensi katika aya",
+          "month": "March",
+          "week": "12",
+          "period": "2",
+          "teaching_act": "Methods: Uandishi wa aya, marekebisho ya rika",
+          "assessment": "Insha fupi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "3.0 Kumudu matumizi sahihi ya kamusi",
+          "objective": "3.1 Kutumia msamiati kwa usahihi",
+          "learning_act": "Kutumia kamusi",
+          "main_topic": "Kutumia msamiati kwa usahihi kwa msaada wa kamusi",
           "month": "April",
-          "week": "4",
-          "teaching_act": "TET(2023)",
-          "materials": "Mazoe"
+          "week": "13",
+          "period": "2",
+          "teaching_act": "Methods: Zoezi la kamusi, kazi za vikundi",
+          "assessment": "Zoezi la msamiati",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
         },
         {
-          "learning_act": "hadithi kwa kuzingatia mpangiliona uhusiano",
-          "sub_topic": "maktabana kusoma hadithikwa kuzingatia",
+          "competence": "3.0 Kumudu matumizi sahihi ya kamusi",
+          "objective": "3.2 Kutumia taarifa za kamusi katika mawasiliano",
+          "learning_act": "Kutumia taarifa za kamusi; Kufanya marudio",
+          "main_topic": "Kutumia taarifa za kamusi katika mawasiliano na kufanya marudio ya Sura 1–3",
           "month": "April",
-          "teaching_act": "KISWAHILI SHULE ZA SEKONDARI, KITABUCHA MWANAFUNZI",
-          "materials": "zi, maswa li, Kazi ya Vikund"
-        },
-        {
-          "learning_act": "sahihiwa",
-          "sub_topic": "mpangilio",
-          "month": "April",
-          "teaching_act": "KIDATOCHA",
-          "materials": "iKazi"
-        },
-        {
-          "learning_act": "sentensi",
-          "sub_topic": "sahihiwa",
-          "month": "April",
-          "week": "4",
-          "teaching_act": "KWANZA",
-          "materials": "mradi"
-        },
-        {
-          "learning_act": "katikahaya",
-          "sub_topic": "sentensi,",
-          "month": "April",
-          "materials": "Majari"
-        },
-        {
-          "learning_act": "katikahaya",
-          "sub_topic": "kasha",
-          "month": "April",
-          "materials": "bio"
+          "week": "14",
+          "period": "2",
+          "teaching_act": "Methods: Zoezi la kamusi, maswali ya marudio",
+          "assessment": "Mtihani wa marudio wa Muhula I",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
         }
+      ]
+    },
+    {
+      "table_index": 1,
+      "entry_count": 14,
+      "headers": [
+        "Umahiri Mkuu",
+        "Umahiri Mahususi",
+        "Shughuli Kuu",
+        "Shughuli Mahususi",
+        "Mwezi",
+        "Wiki",
+        "Vipindi",
+        "Mbinu za ufundishaji",
+        "Zana za ufundishaji",
+        "Zana za upimaji",
+        "Rejea",
+        "Maoni"
       ],
-      "entry_count": 22
+      "column_count": 12,
+      "entries": [
+        {
+          "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+          "objective": "4.1 Kusikiliza mazungumzo changamani",
+          "learning_act": "Kusikiliza matini ya mazungumzo",
+          "main_topic": "Kusikiliza mazungumzo changamani na kuelewa ujumbe wake",
+          "month": "July",
+          "week": "1",
+          "period": "2",
+          "teaching_act": "Methods: Kusikiliza kanda, maswali ya ufahamu",
+          "assessment": "Maswali ya ufahamu",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+          "objective": "4.2 Kubainisha sifa za lugha ya mazungumzo",
+          "learning_act": "Kubainisha sifa za lugha ya mazungumzo",
+          "main_topic": "Kubainisha sifa za lugha ya mazungumzo (ufupi, usahihi, ufasaha)",
+          "month": "July",
+          "week": "2",
+          "period": "2",
+          "teaching_act": "Methods: Kucheza kanda, majadiliano ya vikundi",
+          "assessment": "Zoezi la kufungamanisha",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+          "objective": "4.3 Kufupisha mazungumzo changamani",
+          "learning_act": "Kufupisha mazungumzo",
+          "main_topic": "Kufupisha mazungumzo changamani kwa maneno yake",
+          "month": "July",
+          "week": "3",
+          "period": "2",
+          "teaching_act": "Methods: Kusikiliza na kuandika muhtasari",
+          "assessment": "Muhtasari wa maandishi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "4.0 Kumudu ujuzi wa kusikiliza mazungumzo",
+          "objective": "4.4 Kushiriki katika majadiliano ya miktadha mbalimbali",
+          "learning_act": "Kushiriki majadiliano",
+          "main_topic": "Kushiriki katika majadiliano ya miktadha mbalimbali kwa lugha adabu",
+          "month": "July",
+          "week": "4",
+          "period": "2",
+          "teaching_act": "Methods: Kucheza majukumu, mazoezi ya vikundi",
+          "assessment": "Uigizaji/uchunguzi wa majadiliano",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+          "objective": "5.1 Kusoma kwa kuzingatia alama za uandishi, kasi na kiimbo",
+          "learning_act": "Usomaji wa ufasaha",
+          "main_topic": "Kusoma kwa kuzingatia alama za uandishi, kasi na kiimbo zinazofaa",
+          "month": "August",
+          "week": "5",
+          "period": "2",
+          "teaching_act": "Methods: Mazoezi ya usomaji binafsi, mifano darasani",
+          "assessment": "Ukaguzi wa usomaji",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+          "objective": "5.2 Kueleza umuhimu wa alama za uandishi na kiimbo",
+          "learning_act": "Kutambua umuhimu wa alama za uandishi",
+          "main_topic": "Kueleza umuhimu wa alama za uandishi na kiimbo katika usomaji na maandishi",
+          "month": "August",
+          "week": "6",
+          "period": "2",
+          "teaching_act": "Methods: Majadiliano, uchunguzi wa matini",
+          "assessment": "Zoezi la kuweka alama za uandishi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+          "objective": "5.3 Kueleza athari za alama za uandishi na kiimbo",
+          "learning_act": "Kueleza athari za alama za uandishi",
+          "main_topic": "Kueleza athari za kutokuzingatia alama za uandishi na kiimbo katika mawasiliano",
+          "month": "August",
+          "week": "7",
+          "period": "2",
+          "teaching_act": "Methods: Vichocheo, majadiliano ya vikundi",
+          "assessment": "Tathmini ya mdomo",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+          "objective": "5.4 Kuandika hoja kuu kutoka matini",
+          "learning_act": "Kuandika hoja kuu",
+          "main_topic": "Kusoma na kuandika hoja kuu kutoka katika matini fupi changamani",
+          "month": "August",
+          "week": "8",
+          "period": "2",
+          "teaching_act": "Methods: Usomaji elekezi, uandishi wa hoja kuu",
+          "assessment": "Zoezi la maandishi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "5.0 Kumudu usomaji wa ufasaha na ufahamu",
+          "objective": "5.5 Kutumia TEHAMA kutafuta maana za maneno",
+          "learning_act": "Kutumia TEHAMA kutafuta maana",
+          "main_topic": "Kutumia vifaa vya TEHAMA (kamusi za mtandaoni, injini za utafutaji) kutafuta maana za maneno",
+          "month": "September",
+          "week": "9",
+          "period": "2",
+          "teaching_act": "Methods: Mazoezi ya vikundi, mifano ya mtandaoni",
+          "assessment": "Zoezi linganisho la kamusi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "",
+          "objective": "",
+          "learning_act": "",
+          "main_topic": "TATHMINI YA KATI YA MUHULA & LIKIZO",
+          "month": "September",
+          "week": "10",
+          "period": "2",
+          "teaching_act": "",
+          "assessment": "",
+          "references": ""
+        },
+        {
+          "competence": "6.0 Kumudu mawasiliano kwa njia ya mazungumzo",
+          "objective": "6.1 Kuzungumza kwa ufasaha katika miktadha mbalimbali",
+          "learning_act": "Kuzungumza kwa ufasaha",
+          "main_topic": "Kuzungumza kwa ufasaha katika miktadha mbalimbali kama uwasilishaji wa taarifa",
+          "month": "September",
+          "week": "11",
+          "period": "2",
+          "teaching_act": "Methods: Uwasilishaji elekezi, mazoezi ya vikundi",
+          "assessment": "Orodhahakiki ya uwasilishaji",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "6.0 Kumudu mawasiliano kwa njia ya mazungumzo",
+          "objective": "6.2 Kutumia lugha kwa ufasaha katika mazungumzo",
+          "learning_act": "Kutumia lugha kwa ufasaha",
+          "main_topic": "Kutumia lugha kwa ufasaha katika mazungumzo ya miktadha rahisi na changamani",
+          "month": "October",
+          "week": "12",
+          "period": "2",
+          "teaching_act": "Methods: Mifano ya mazungumzo, mazoezi ya jozi",
+          "assessment": "Mazungumzo ya jozi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "7.0 Kumudu mawasiliano kwa njia ya maandishi",
+          "objective": "7.1 Kujieleza kwa maandishi katika miktadha mbalimbali",
+          "learning_act": "Kujieleza kwa maandishi",
+          "main_topic": "Kujieleza kwa maandishi rasmi na yasiyo rasmi katika miktadha mbalimbali (barua, insha, fomu)",
+          "month": "October",
+          "week": "13",
+          "period": "2",
+          "teaching_act": "Methods: Uandishi elekezi, mifano ya maandishi",
+          "assessment": "Zoezi la maandishi",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        },
+        {
+          "competence": "7.0 Kumudu mawasiliano kwa njia ya maandishi",
+          "objective": "7.1 Kujieleza kwa maandishi katika miktadha mbalimbali",
+          "learning_act": "Kufanya marudio ya Sura 4–7",
+          "main_topic": "Kukamilisha mazoezi ya kujieleza kwa maandishi na kufanya marudio ya Sura 4–7",
+          "month": "October",
+          "week": "14",
+          "period": "2",
+          "teaching_act": "Methods: Mazoezi ya maandishi, maswali ya marudio",
+          "assessment": "Zoezi la mwisho la marudio",
+          "references": "TIE (2026). Kiswahili kwa Shule za Sekondari, Kitabu cha Mwanafunzi Kidato cha Kwanza. Dar es Salaam: Taasisi ya Elimu Tanzania."
+        }
+      ]
     }
-  ],
-  "form": "Form1",
-  "year": "2026"
+  ]
 }

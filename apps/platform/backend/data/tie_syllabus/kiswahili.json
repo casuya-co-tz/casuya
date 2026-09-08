@@ -6,211 +6,477 @@
       "specific_competences": [
         {
           "main_code": "1.0",
-          "main_competence": "Kumudu misingi ya Kiswahili",
-          "specific_code": "1.1",
-          "specific_competence": "Kutambua Kiswahili kama kielelezo cha utaifa na utambulisho wa Mtanzania",
-          "number_of_periods": "8",
+          "main_competence": "Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+          "specific_code": "1.1 Kubainisha Kiswahili kama utambulisho wa Mtanzania",
+          "specific_competence": "Kubainisha Kiswahili kama utambulisho wa Mtanzania",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kutumia Kiswahili katika mijadala mbalimbali kwa kuzingatia utamaduni wa Mtanzania (mf. matumizi ya tafsida na uteuzi wa maneno kulingana na mila na desturi za Mtanzania)",
-            "Shughuli za ujifunzaji"
+            "(a) Kueleza jinsi Kiswahili kinavyodhihirisha utaifa wa Mtanzania"
           ],
           "teaching_methods": [
-            "Majadiliano: Waongoze wanafunzi katika vikundi kujadiliana masuala mbalimbali yanayohusu utamaduni wa Mtanzania katika matumizi ya lugha ya Kiswahili Mdahalo: Waongoze wanafunzi kufanya mdahalo kwa kutumia lugha ya Kiswahili kwa kuzingatia masuala ya kiutamaduni",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Majadiliano darasani, hojaji fupi"
           ],
           "assessment_criteria": [
-            "Kiswahili kama kielelezo cha utaifa na utambulisho wa Mtanzania kimetumiwa",
-            "Vigezo vya upimaji"
+            "Maswali ya mdomo"
           ],
           "resources": [
-            "Matini, video zenye matumizi ya lugha kulingana na utamaduni wa Mtanzania, vitu halisi",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Chati, mifano halisi ya matumizi ya Kiswahili"
           ]
         },
         {
           "main_code": "1.0",
-          "main_competence": "Kumudu misingi ya Kiswahili",
-          "specific_code": "1.2",
-          "specific_competence": "Kukuza uelewa wa sarufi ya Kiswahili",
-          "number_of_periods": "36",
+          "main_competence": "Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+          "specific_code": "1.2 Kueleza hadhi ya Kiswahili",
+          "specific_competence": "Kueleza hadhi ya Kiswahili",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kusimulia habari na matukio kwa kuzingatia kiimbo, mkazo, na lafudhi pamoja na dhima zake",
-            "(b) Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa maneno (nomino, vivumishi, vielezi, viwakilishi, vitenzi, vihisishi, vihusishi na viunganishi) katika sentensi",
-            "Shughuli za ujifunzaji",
-            "(c) Kuandika hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa sentensi katika aya",
-            "Shughuli za ujifunzaji"
+            "(a) Kueleza hadhi ya Kiswahili kitaifa na kimataifa"
           ],
           "teaching_methods": [
-            "Masimulizi: Waongoze wanafunzi kusimulia visa au matukio mbalimbali kwa kuzingatia kiimbo, mkazo, lafudhi pamoja na dhima zake",
-            "Uchambuzi wa matini: Waongoze wanafunzi kusoma matini zenye aina mbalimbali za maneno, kisha wabainishe uhusiano wa maneno yanayofuatana katika sentensi, na waandike hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa maneno",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa",
-            "Uchambuzi wa matini: Waongoze wanafunzi kusoma matini mbalimbali kisha wabainishe uhusiano sahihi wa sentensi katika aya, na waandike hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa sentensi katika aya Kazimradi: Waelekeze wanafunzi kutembelea maktaba na kusoma hadithi mbalimbali kwa kuzingatia mpangilio sahihi wa sentensi, kisha waandike hadithi kwa kuzingatia mpangilio na uhusiano sahihi wa sentensi katika aya",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Mihadhara mifupi, majadiliano ya vikundi"
           ],
           "assessment_criteria": [
-            "Habari na matukio vimesimuliwa kwa kuzingatia kiimbo, mkazo, lafudhi na dhima zake",
-            "Hadithi zimeandikwa kwa kuzingatia mpangilio na uhusiano sahihi wa maneno katika sentensi",
-            "Vigezo vya upimaji",
-            "Hadithi zimeandikwa kwa kuzingatia mpangilio na uhusiano sahihi wa sentensi katika aya",
-            "Vigezo vya upimaji"
+            "Zoezi la maandishi mafupi"
           ],
           "resources": [
-            "Kinyonyi chenye mazungumzo yaliyorekodiwa, matini za sarufi, kamusi, chati ya tungo",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Makala/vipande vya habari kuhusu Kiswahili"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+          "specific_code": "1.3 Kubainisha Kiswahili kama kielelezo cha utamaduni",
+          "specific_competence": "Kubainisha Kiswahili kama kielelezo cha utamaduni",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza jinsi Kiswahili kinavyodhihirisha utamaduni wa Mtanzania"
+          ],
+          "teaching_methods": [
+            "Mifano ya methali/nyimbo, majadiliano"
+          ],
+          "assessment_criteria": [
+            "Tathmini ya mdomo"
+          ],
+          "resources": [
+            "Methali, nyimbo za asili"
+          ]
+        },
+        {
+          "main_code": "1.0",
+          "main_competence": "Kumudu matumizi ya lugha ya Kiswahili na utamaduni wa Mtanzania",
+          "specific_code": "1.4 Kueleza umuhimu wa kujifunza Kiswahili",
+          "specific_competence": "Kueleza umuhimu wa kujifunza Kiswahili",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kutoa sababu za umuhimu wa kujifunza Kiswahili"
+          ],
+          "teaching_methods": [
+            "Mjadala wa darasa, insha fupi"
+          ],
+          "assessment_criteria": [
+            "Insha fupi"
+          ],
+          "resources": [
+            "Karatasi za kazi"
           ]
         },
         {
           "main_code": "2.0",
-          "main_competence": "Kumudu lugha ya mazungumzo na ya maandishi",
-          "specific_code": "2.1",
-          "specific_competence": "Kusikiliza na kuelewa mazungumzo",
-          "number_of_periods": "24",
+          "main_competence": "Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "specific_code": "2.1 Kutamka maneno kwa usahihi",
+          "specific_competence": "Kutamka maneno kwa usahihi",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kusikiliza mazungumzo changamani na kujibu maswali",
-            "Shughuli za ujifunzaji",
-            "(b) Kueleza kwa muhtasari mazungumzo changamani aliyoyasikiliza",
-            "(c) Kushiriki katika majadiliano ya masuala mbalimbali kwa kuzingatia sifa za lugha ya mazungumzo (mf. lugha ya mkato, kupeana nafasi)",
-            "Shughuli za ujifunzaji"
+            "(a) Kutamka maneno kwa usahihi kulingana na sauti za Kiswahili"
           ],
           "teaching_methods": [
-            "Ziara: Wanafunzi watembelee maeneo mbalimbali yenye mazungumzo changamani, kisha wajibu maswali kutokana na mazungumzo waliyoyasikiliza Maswali na majibu: Waongoze wanafunzi kujibu maswali mbalimbali kutokana na mazungumzo changamani waliyoyasikiliza",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa",
-            "Majadiliano: Kuwaongoza wanafunzi kujadiliana katika vikundi kuhusu mazungumzo changamani waliyoyasikiliza, kisha waeleze kwa muhtasari",
-            "Majadiliano: Waongoze wanafunzi kushiriki majadiliano ya masuala mbalimbali kwa kuzingatia sifa za lugha ya mazungumzo",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Mazoezi ya kutamka, kurudia-rudia"
           ],
           "assessment_criteria": [
-            "Mazungumzo changamani yamesikilizwa na maswali yamejibiwa",
-            "Vigezo vya upimaji",
-            "Mazungumzo changamani aliyoyasikiliza yameelezwa kwa muhtasari",
-            "Wanafunzi wameshiriki katika majadiliano ya masuala mbalimbali kwa kuzingatia sifa za lugha ya mazungumzo",
-            "Vigezo vya upimaji"
+            "Ukaguzi wa matamshi"
           ],
           "resources": [
-            "Kinyonyi kilichohifadhiwa mazungumzo changamani yaliyorekodiwa",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa",
-            "",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Kanda za sauti, orodha ya maneno"
           ]
         },
         {
           "main_code": "2.0",
-          "main_competence": "Kumudu lugha ya mazungumzo na ya maandishi",
-          "specific_code": "2.2",
-          "specific_competence": "Kusoma matini kwa ufasaha na ufahamu",
-          "number_of_periods": "32",
+          "main_competence": "Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "specific_code": "2.2 Kusimulia kwa lafudhi sahihi",
+          "specific_competence": "Kusimulia kwa lafudhi sahihi",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kusoma matini fupi changamani kwa kuzingatia alama za uandishi, kasi sahihi na kiimbo cha tungo",
-            "(b) Kueleza namna alama za uandishi na kiimbo vinavyoathiri ujumbe katika usomaji wa matini fupi changamani",
-            "Shughuli za ujifunzaji",
-            "(c) Kuandika hoja kuu kutoka katika matini fupi changamani alizozisoma kwa kuzingatia sifa za lugha ya maandishi (mf. alama za uandishi, miunganiko sahihi ya tungo, usanifu)",
-            "(d) Kutumia TEHAMA kutafuta maana ya maneno mapya kutoka katika matini aliyoisoma",
-            "Shughuli za ujifunzaji"
+            "(a) Kusimulia hadithi fupi kwa kuzingatia lafudhi sahihi"
           ],
           "teaching_methods": [
-            "Michezo: Waongoze wanafunzi kukaa katika makundi mawili ya ushindani kisha wasome matini fupi changamani kwa kupokezana kwa kuzingatia alama za uandishi, kasi sahihi na kiimbo cha tungo",
-            "Uchambuzi wa matini: Waongoze wanafunzi kusoma matini fupi changamani, kisha wabainishe umuhimu wa alama za uandishi na kiimbo katika kutoa maana",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa",
-            "Uchambuzi wa matini: Waongoze wanafunzi katika jozi kusoma matini, kisha waandike mawazo makuu kwa kuzingatia sifa ya lugha ya maandishi",
-            "Uchunguzi: Waongoze wanafunzi kutafuta maana za maneno kwa kutumia vifaa vya TEHAMA",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Kusimulia mfano, mazoezi ya vikundi"
           ],
           "assessment_criteria": [
-            "Matini fupi changamani zimesomwa kwa kuzingatia alama za uandishi, kasi sahihi na kiimbo cha tungo",
-            "Namna alama za uandishi na kiimbo vinavyoathiri ujumbe katika usomaji wa matini fupi changamani imeelezwa",
-            "Vigezo vya upimaji",
-            "Hoja kuu kutoka katika matini fupi changamani alizozisoma zimeandikwa kwa kuzingatia sifa za lugha ya maandishi",
-            "TEHAMA imetumika kutafuta maana za maneno mapya kutoka katika matini aliyoisoma",
-            "Vigezo vya upimaji"
+            "Tathmini ya usimuliaji"
           ],
           "resources": [
-            "Matini za kusoma, kadi za maneno/ tungo",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa",
-            "",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Hadithi fupi, kinasa sauti"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "specific_code": "2.3 Kusimulia kwa kuzingatia kiimbo",
+          "specific_competence": "Kusimulia kwa kuzingatia kiimbo",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kusimulia habari kwa kutumia kiimbo kinachofaa hisia za ujumbe"
+          ],
+          "teaching_methods": [
+            "Kuiga mifano ya kiimbo, mazoezi binafsi"
+          ],
+          "assessment_criteria": [
+            "Ukaguzi wa kiimbo"
+          ],
+          "resources": [
+            "Kanda za sauti/video"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "specific_code": "2.4 Kusimulia kwa kuzingatia mkazo",
+          "specific_competence": "Kusimulia kwa kuzingatia mkazo",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kusimulia habari kwa kuweka mkazo mahali muhimu"
+          ],
+          "teaching_methods": [
+            "Mazoezi ya mkazo wa maneno, kusikiliza mifano"
+          ],
+          "assessment_criteria": [
+            "Tathmini ya mdomo"
+          ],
+          "resources": [
+            "Kanda za sauti"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "specific_code": "2.5 Kuandika kwa uhusiano sahihi wa maneno katika sentensi",
+          "specific_competence": "Kuandika kwa uhusiano sahihi wa maneno katika sentensi",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kuandika hadithi kwa kuzingatia uhusiano sahihi wa maneno katika sentensi"
+          ],
+          "teaching_methods": [
+            "Uandishi elekezi, marekebisho ya rika"
+          ],
+          "assessment_criteria": [
+            "Zoezi la maandishi"
+          ],
+          "resources": [
+            "Karatasi za kazi, kamusi"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "specific_code": "2.6 Kuandika kwa mpangilio sahihi wa maneno katika sentensi",
+          "specific_competence": "Kuandika kwa mpangilio sahihi wa maneno katika sentensi",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kuandika hadithi kwa kuzingatia mpangilio sahihi wa maneno katika sentensi"
+          ],
+          "teaching_methods": [
+            "Uandishi elekezi, mifano ya sentensi"
+          ],
+          "assessment_criteria": [
+            "Zoezi la maandishi"
+          ],
+          "resources": [
+            "Karatasi za kazi"
+          ]
+        },
+        {
+          "main_code": "2.0",
+          "main_competence": "Kumudu sarufi ya Kiswahili katika mawasiliano",
+          "specific_code": "2.7 Kuandika kwa uhusiano wa sentensi katika aya",
+          "specific_competence": "Kuandika kwa uhusiano wa sentensi katika aya",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kuandika hadithi kwa kuzingatia uhusiano wa sentensi katika aya"
+          ],
+          "teaching_methods": [
+            "Uandishi wa aya, marekebisho ya rika"
+          ],
+          "assessment_criteria": [
+            "Insha fupi"
+          ],
+          "resources": [
+            "Karatasi za kazi"
           ]
         },
         {
           "main_code": "3.0",
-          "main_competence": "Kuwasiliana katika miktadha mbalimbali",
-          "specific_code": "3.1",
-          "specific_competence": "Kutumia kamusi katika miktadha mbalimbali",
-          "number_of_periods": "16",
+          "main_competence": "Kumudu matumizi sahihi ya kamusi",
+          "specific_code": "3.1 Kutumia msamiati kwa usahihi",
+          "specific_competence": "Kutumia msamiati kwa usahihi",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kutumia msamiati kwa usahihi katika mazungumzo na maandishi",
-            "(b) Kutumia taarifa mbalimbali za kamusi katika mawasiliano ya mazungumzo na maandishi",
-            "Shughuli za ujifunzaji"
+            "(a) Kutumia msamiati kwa usahihi kwa msaada wa kamusi"
           ],
           "teaching_methods": [
-            "Majadiliano: Waongoze wanafunzi katika vikundi vidogovidogo wasome kamusi kisha wabainishe taarifa za kikamusi",
-            "Usomaji wa matini: Andaa maneno mbalimbali kisha waongoze wanafunzi katika vikundi kutafuta taarifa za maneno hayo katika kamusi halafu wayatumie kuwasiliana katika mazungumzo na maandishi",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa Maswali na majibu: Waongoze wanafunzi kujibu maswali mbalimbali yanayohusiana na kamusi"
+            "Zoezi la kamusi, kazi za vikundi"
           ],
           "assessment_criteria": [
-            "Msamiati katika mazungumzo na maandishi umetumiwa kwa usahihi",
-            "Taarifa mbalimbali za kamusi zimetumiwa katika mawasiliano ya mazungumzo na maandishi",
-            "Vigezo vya upimaji"
+            "Zoezi la msamiati"
           ],
           "resources": [
-            "Kamusi na matini za kusoma",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Kamusi za Kiswahili"
           ]
         },
         {
           "main_code": "3.0",
-          "main_competence": "Kuwasiliana katika miktadha mbalimbali",
-          "specific_code": "3.2",
-          "specific_competence": "Kuwasiliana kwa ufasaha kwa njia ya mazungumzo",
-          "number_of_periods": "16",
+          "main_competence": "Kumudu matumizi sahihi ya kamusi",
+          "specific_code": "3.2 Kutumia taarifa za kamusi katika mawasiliano",
+          "specific_competence": "Kutumia taarifa za kamusi katika mawasiliano",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kuzungumza kwa ufasaha katika miktadha mbalimbali (mf. nyumbani, shuleni na hospitalini)",
-            "(b) Kutumia lugha kwa ufasaha katika malumbano ya hoja",
-            "Shughuli za ujifunzaji"
+            "(a) Kutumia taarifa za kamusi katika mawasiliano na kufanya marudio ya Sura 1–3"
           ],
           "teaching_methods": [
-            "Igizodhima: Waongoze wanafunzi kuigiza nafasi mbalimbali za uhusika katika mazungumzo katika miktadha mbalimbali",
-            "Mdahalo: Waongoze wanafunzi kufanya mdahalo",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa Kazimradi: Waongoze wanafunzi kusikiliza vipindi vya redioni au kwenye televisheni kisha waoneshe namna lugha fasaha inavyotumika katika kujenga na kupinga hoja"
+            "Zoezi la kamusi, maswali ya marudio"
           ],
           "assessment_criteria": [
-            "Kuzungumza kwa ufasaha katika miktadha mbalimbali kumezingatiwa",
-            "Lugha imetumika kwa ufasaha katika malumbano ya hoja",
-            "Vigezo vya upimaji"
+            "Mtihani wa marudio wa Muhula I"
           ],
           "resources": [
-            "Video na kinyonyi kilichohifadhiwa mazungumzo ya mada mbalimbali",
-            "",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Kamusi, maelezo ya marudio"
           ]
         },
         {
-          "main_code": "3.0",
-          "main_competence": "Kuwasiliana katika miktadha mbalimbali",
-          "specific_code": "3.3",
-          "specific_competence": "Kuwasiliana kwa njia ya maandishi katika miktadha mbalimbali",
-          "number_of_periods": "8",
+          "main_code": "4.0",
+          "main_competence": "Kumudu ujuzi wa kusikiliza mazungumzo",
+          "specific_code": "4.1 Kusikiliza mazungumzo changamani",
+          "specific_competence": "Kusikiliza mazungumzo changamani",
+          "number_of_periods": "2",
           "learning_activities": [
-            "(a) Kujieleza kwa ufasaha kwa maandishi katika miktadha mbalimbali",
-            "Shughuli za ujifunzaji"
+            "(a) Kusikiliza mazungumzo changamani na kuelewa ujumbe wake"
           ],
           "teaching_methods": [
-            "Kuandika na kuwasilisha: Wape wanafunzi mada mahususi waandike kuhusu mada hiyo kisha wawasilishe darasani",
-            "Mbinu za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Kusikiliza kanda, maswali ya ufahamu"
           ],
           "assessment_criteria": [
-            "Kujieleza kwa ufasaha kwa maandishi katika miktadha mbalimbali kumetendeka",
-            "Vigezo vya upimaji"
+            "Maswali ya ufahamu"
           ],
           "resources": [
-            "Matini za kuandika, picha na michoro, chati za miundo mbalimbali ya uandishi",
-            "Zana za ufundishaji na ujifunzaji zinazopendekezwa"
+            "Kanda ya mazungumzo, kinasa sauti"
+          ]
+        },
+        {
+          "main_code": "4.0",
+          "main_competence": "Kumudu ujuzi wa kusikiliza mazungumzo",
+          "specific_code": "4.2 Kubainisha sifa za lugha ya mazungumzo",
+          "specific_competence": "Kubainisha sifa za lugha ya mazungumzo",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kubainisha sifa za lugha ya mazungumzo (ufupi, usahihi, ufasaha)"
+          ],
+          "teaching_methods": [
+            "Kucheza kanda, majadiliano ya vikundi"
+          ],
+          "assessment_criteria": [
+            "Zoezi la kufungamanisha"
+          ],
+          "resources": [
+            "Kanda za mazungumzo mbalimbali"
+          ]
+        },
+        {
+          "main_code": "4.0",
+          "main_competence": "Kumudu ujuzi wa kusikiliza mazungumzo",
+          "specific_code": "4.3 Kufupisha mazungumzo changamani",
+          "specific_competence": "Kufupisha mazungumzo changamani",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kufupisha mazungumzo changamani kwa maneno yake"
+          ],
+          "teaching_methods": [
+            "Kusikiliza na kuandika muhtasari"
+          ],
+          "assessment_criteria": [
+            "Muhtasari wa maandishi"
+          ],
+          "resources": [
+            "Kanda ya mazungumzo, karatasi za kazi"
+          ]
+        },
+        {
+          "main_code": "4.0",
+          "main_competence": "Kumudu ujuzi wa kusikiliza mazungumzo",
+          "specific_code": "4.4 Kushiriki katika majadiliano ya miktadha mbalimbali",
+          "specific_competence": "Kushiriki katika majadiliano ya miktadha mbalimbali",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kushiriki katika majadiliano ya miktadha mbalimbali kwa lugha adabu"
+          ],
+          "teaching_methods": [
+            "Kucheza majukumu, mazoezi ya vikundi"
+          ],
+          "assessment_criteria": [
+            "Uigizaji/uchunguzi wa majadiliano"
+          ],
+          "resources": [
+            "Kadi za miktadha mbalimbali"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu usomaji wa ufasaha na ufahamu",
+          "specific_code": "5.1 Kusoma kwa kuzingatia alama za uandishi, kasi na kiimbo",
+          "specific_competence": "Kusoma kwa kuzingatia alama za uandishi, kasi na kiimbo",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kusoma kwa kuzingatia alama za uandishi, kasi na kiimbo zinazofaa"
+          ],
+          "teaching_methods": [
+            "Mazoezi ya usomaji binafsi, mifano darasani"
+          ],
+          "assessment_criteria": [
+            "Ukaguzi wa usomaji"
+          ],
+          "resources": [
+            "Vipande vya matini"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu usomaji wa ufasaha na ufahamu",
+          "specific_code": "5.2 Kueleza umuhimu wa alama za uandishi na kiimbo",
+          "specific_competence": "Kueleza umuhimu wa alama za uandishi na kiimbo",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza umuhimu wa alama za uandishi na kiimbo katika usomaji na maandishi"
+          ],
+          "teaching_methods": [
+            "Majadiliano, uchunguzi wa matini"
+          ],
+          "assessment_criteria": [
+            "Zoezi la kuweka alama za uandishi"
+          ],
+          "resources": [
+            "Vipande vya matini"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu usomaji wa ufasaha na ufahamu",
+          "specific_code": "5.3 Kueleza athari za alama za uandishi na kiimbo",
+          "specific_competence": "Kueleza athari za alama za uandishi na kiimbo",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kueleza athari za kutokuzingatia alama za uandishi na kiimbo katika mawasiliano"
+          ],
+          "teaching_methods": [
+            "Vichocheo, majadiliano ya vikundi"
+          ],
+          "assessment_criteria": [
+            "Tathmini ya mdomo"
+          ],
+          "resources": [
+            "Mifano ya matini yenye kutokuzingatia alama"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu usomaji wa ufasaha na ufahamu",
+          "specific_code": "5.4 Kuandika hoja kuu kutoka matini",
+          "specific_competence": "Kuandika hoja kuu kutoka matini",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kusoma na kuandika hoja kuu kutoka katika matini fupi changamani"
+          ],
+          "teaching_methods": [
+            "Usomaji elekezi, uandishi wa hoja kuu"
+          ],
+          "assessment_criteria": [
+            "Zoezi la maandishi"
+          ],
+          "resources": [
+            "Matini fupi changamani"
+          ]
+        },
+        {
+          "main_code": "5.0",
+          "main_competence": "Kumudu usomaji wa ufasaha na ufahamu",
+          "specific_code": "5.5 Kutumia TEHAMA kutafuta maana za maneno",
+          "specific_competence": "Kutumia TEHAMA kutafuta maana za maneno",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kutumia vifaa vya TEHAMA (kamusi za mtandaoni, injini za utafutaji) kutafuta maana za maneno"
+          ],
+          "teaching_methods": [
+            "Mazoezi ya vikundi, mifano ya mtandaoni"
+          ],
+          "assessment_criteria": [
+            "Zoezi linganisho la kamusi"
+          ],
+          "resources": [
+            "Vifaa vya TEHAMA na kamusi za mtandaoni"
+          ]
+        },
+        {
+          "main_code": "6.0",
+          "main_competence": "Kumudu mawasiliano kwa njia ya mazungumzo",
+          "specific_code": "6.1 Kuzungumza kwa ufasaha katika miktadha mbalimbali",
+          "specific_competence": "Kuzungumza kwa ufasaha katika miktadha mbalimbali",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kuzungumza kwa ufasaha katika miktadha mbalimbali kama uwasilishaji wa taarifa"
+          ],
+          "teaching_methods": [
+            "Uwasilishaji elekezi, mazoezi ya vikundi"
+          ],
+          "assessment_criteria": [
+            "Orodhahakiki ya uwasilishaji"
+          ],
+          "resources": [
+            "Kadi za miktadha ya mazungumzo"
+          ]
+        },
+        {
+          "main_code": "6.0",
+          "main_competence": "Kumudu mawasiliano kwa njia ya mazungumzo",
+          "specific_code": "6.2 Kutumia lugha kwa ufasaha katika mazungumzo",
+          "specific_competence": "Kutumia lugha kwa ufasaha katika mazungumzo",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kutumia lugha kwa ufasaha katika mazungumzo ya miktadha rahisi na changamani"
+          ],
+          "teaching_methods": [
+            "Mifano ya mazungumzo, mazoezi ya jozi"
+          ],
+          "assessment_criteria": [
+            "Mazungumzo ya jozi"
+          ],
+          "resources": [
+            "Kadi za miktadha ya mazungumzo"
+          ]
+        },
+        {
+          "main_code": "7.0",
+          "main_competence": "Kumudu mawasiliano kwa njia ya maandishi",
+          "specific_code": "7.1 Kujieleza kwa maandishi katika miktadha mbalimbali",
+          "specific_competence": "Kujieleza kwa maandishi katika miktadha mbalimbali",
+          "number_of_periods": "2",
+          "learning_activities": [
+            "(a) Kujieleza kwa maandishi rasmi na yasiyo rasmi katika miktadha mbalimbali (barua, insha, fomu)"
+          ],
+          "teaching_methods": [
+            "Uandishi elekezi, mifano ya maandishi"
+          ],
+          "assessment_criteria": [
+            "Zoezi la maandishi"
+          ],
+          "resources": [
+            "Sampuli za maandishi, karatasi za kazi"
           ]
         }
       ]
