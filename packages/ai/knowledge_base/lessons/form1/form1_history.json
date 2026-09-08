@@ -1,208 +1,361 @@
 {
   "form": "form1",
   "subject": "History",
-  "topic_count": 4,
+  "topic_count": 7,
   "topics": [
     {
       "topic_number": "1",
-      "topic_name": "SOURCES AND IMPORTANCE OF HISTORY",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D &tno=1&m_topic=SOURCES AND IMPORTANCE OF HISTORY",
+      "topic_name": "INTRODUCTION TO HISTORY",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D&tno=1&m_topic=INTRODUCTION TO HISTORY",
       "plan": {
-        "competence": "Demonstrate an understanding of meaning of History",
-        "general_objectives": "Explain the concept and appreciate the importance and sources of History",
-        "specific_objectives": "By the end of the lesson the student should be able to:a) Explain the meaning of History b) Explain the importance of studying History",
-        "main_topic": "SOURCES AND IMPORTANCE OF HISTORY",
-        "sub_topic": "Meaning and importance of History",
-        "teaching_aids": "i) Written texts on the various sources of History ii) Written texts in Braille for visual impaired children",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "1.0 Demonstrate mastery of the meaning, importance, and sources of history",
+        "general_objectives": "Explain the concept of History, the qualities and dating of historical events, its importance, relationships with other subjects, and sources of historical information.",
+        "specific_objectives": "By the end of the lesson the student should be able to: Explain the meaning of History and its basic concepts; identify the qualities that make an event historical; explain the ways of dating historical events (time units, BC/AD/BCE/CE, timelines); explain the importance of studying History; relate History to Geography, Civics, and Economics; describe primary and secondary sources of historical information.",
+        "main_topic": "INTRODUCTION TO HISTORY",
+        "sub_topic": "Meaning of History",
+        "teaching_aids": "History textbook, concept charts, timeline wall charts, source samples, flashcards",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "To introduce the concept of history by letting the students to brainstorm on the meaning",
-            "student_activities": "Students to brainstorm on the meaning of history",
-            "assessment": "Is the student able to give the meaning of history?"
+            "teacher_activities": "Guide students to brainstorm on the topic and recall their prior knowledge.",
+            "student_activities": "Students to brainstorm and share prior knowledge related to the topic.",
+            "assessment": "Oral questions, class discussion"
           },
           {
             "stage": "PRESENTATION",
             "time": "40",
-            "teacher_activities": "To guide the students in groups to read texts on and discuss the importance of studying History",
-            "student_activities": "Students in groups to read texts on and discuss the importance of studying History",
-            "assessment": "Is the student able to give the importance of studying history?"
+            "teacher_activities": "Guide students in groups to read written sources and discuss the key concepts of the subtopic.",
+            "student_activities": "Students in groups to read written sources, take notes, and discuss the key concepts.",
+            "assessment": "Group discussion, short notes review"
           },
           {
             "stage": "REFLECTION",
             "time": "10",
-            "teacher_activities": "To guide the students to present the points raised by groups for further discussion and clarification.",
-            "student_activities": "Students to present the points raised by groups for further discussion and clarification.",
-            "assessment": "Is the student able to participate fully in discussions?"
+            "teacher_activities": "Guide groups to present their findings in class for further discussion and clarification.",
+            "student_activities": "Groups to present findings and participate in class discussions.",
+            "assessment": "Group presentation rubric"
           },
           {
             "stage": "REINFORCEMENT",
             "time": "10",
-            "teacher_activities": "To guide the students to present the points raised by groups for further discussion and clarification.",
-            "student_activities": "Students to respond to teachers questions and ask for clarifications",
-            "assessment": "Is the student able to respond to questions asked appropriately"
+            "teacher_activities": "Using questions and answers, help students to summarise the concepts taught.",
+            "student_activities": "Students to individually answer questions asked by the teacher.",
+            "assessment": "Short quiz"
           },
           {
             "stage": "CONCLUSION",
             "time": "10",
-            "teacher_activities": "To guide students to write notes and copy take home assignment",
-            "student_activities": "Students to copy notes and work on the assigned tasks",
-            "assessment": "Is the student able to respond well to questions given by the teacher?"
+            "teacher_activities": "Write short summarised notes and assign take-home work.",
+            "student_activities": "Students to copy notes and work on the assigned tasks.",
+            "assessment": "Chapter review test"
           }
         ]
       }
     },
     {
       "topic_number": "2",
-      "topic_name": "EVOLUTION OF MAN, TECHNOLOGY AND ENVIRONMENT",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D &tno=2&m_topic=EVOLUTION OF MAN, TECHNOLOGY AND ENVIRONMENT",
+      "topic_name": "ORIGIN OF HUMAN BEINGS",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D&tno=2&m_topic=ORIGIN OF HUMAN BEINGS",
       "plan": {
-        "competence": "Demonstrate the action of evolution in realy life",
-        "general_objectives": "Explain the theories of the origin and evolution of man",
-        "specific_objectives": "By the end of the lesson the student should be able to: a) Explain the meaning of evolution of man, b) Explain the theory of evolution of man and the religious theory of creation of man",
-        "main_topic": "EVOLUTION OF MAN, TECHNOLOGY AND ENVIRONMENT",
-        "sub_topic": "Evolution of Man",
-        "teaching_aids": "i) Written texts on the theories of evolution of man and creation of man. ii) Written texts in Braille",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "2.0 Demonstrate mastery of the origin of human beings and early technology",
+        "general_objectives": "Explain the theories of human origin, the major groups of human ancestors, and the development of early human technology.",
+        "specific_objectives": "By the end of the lesson the student should be able to: Describe the Creation Theory and the Theory of Evolution (Charles Darwin); describe early human ancestors (Australopithecus, Homo habilis); describe advanced human ancestors (Homo erectus, Homo sapiens); examine early human technology (Old, Middle, Late Stone Age and Iron Age).",
+        "main_topic": "ORIGIN OF HUMAN BEINGS",
+        "sub_topic": "Theories of the origin of human beings",
+        "teaching_aids": "Evolution tree chart, hominid diagrams, Olduvai Gorge illustrations, stone tool model kits",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "Using the question and answer technique the teacher to guide the students to explain the meaning of evolution of man.",
-            "student_activities": "Students to brainstorm on the meaning of evolution",
-            "assessment": "Is the student able to give the meaning of evolution?"
+            "teacher_activities": "Guide students to brainstorm on the topic and recall their prior knowledge.",
+            "student_activities": "Students to brainstorm and share prior knowledge related to the topic.",
+            "assessment": "Oral questions, class discussion"
           },
           {
             "stage": "PRESENTATION",
             "time": "40",
-            "teacher_activities": "To guide the students in groups to conduct a library research on the theories of evolution of man and creation of man",
-            "student_activities": "Students in groups to conduct a library research on the theories of evolution of man and creation of man",
-            "assessment": "Is the student able to explain the theory of evolution of man and the theory of creation?"
+            "teacher_activities": "Guide students in groups to read written sources and discuss the key concepts of the subtopic.",
+            "student_activities": "Students in groups to read written sources, take notes, and discuss the key concepts.",
+            "assessment": "Group discussion, short notes review"
           },
           {
             "stage": "REFLECTION",
             "time": "10",
-            "teacher_activities": "To guide the students to present in class their findings for discussion and clarification.",
-            "student_activities": "Students to present in class their findings for discussion and clarification.",
-            "assessment": "Is the student able to explain the theory of evolution of man and the theory of creation?"
+            "teacher_activities": "Guide groups to present their findings in class for further discussion and clarification.",
+            "student_activities": "Groups to present findings and participate in class discussions.",
+            "assessment": "Group presentation rubric"
           },
           {
             "stage": "REINFORCEMENT",
             "time": "10",
-            "teacher_activities": "To guide the students to present in class their findings for discussion and clarification.",
-            "student_activities": "Students to listen careful take notes and respond to questions asked by the teacher",
-            "assessment": "Are the students able to take notes as assigned?"
+            "teacher_activities": "Using questions and answers, help students to summarise the concepts taught.",
+            "student_activities": "Students to individually answer questions asked by the teacher.",
+            "assessment": "Short quiz"
           },
           {
             "stage": "CONCLUSION",
             "time": "10",
-            "teacher_activities": "To guide students to write notes and summary for the lesson",
-            "student_activities": "Students to write summarized notes and respond to questions asked appropriately",
-            "assessment": "Are the students able to answer the questions assigned?"
+            "teacher_activities": "Write short summarised notes and assign take-home work.",
+            "student_activities": "Students to copy notes and work on the assigned tasks.",
+            "assessment": "Chapter review test"
           }
         ]
       }
     },
     {
       "topic_number": "3",
-      "topic_name": "DEVELOPMENT OF ECONOMIC ACTIVITIES AND THEIR IMPACT",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D &tno=3&m_topic=DEVELOPMENT OF ECONOMIC ACTIVITIES AND THEIR IMPACT",
+      "topic_name": "PRODUCTION AND SOCIAL ORGANISATION IN PRE-COLONIAL AFRICA",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D&tno=3&m_topic=PRODUCTION AND SOCIAL ORGANISATION IN PRE-COLONIAL AFRICA",
       "plan": {
-        "competence": "relate agriculture and technology",
-        "general_objectives": "Relate man�s development to the environment and technology.",
-        "specific_objectives": "By the end of the lesson, the student should be able to: a) Show the relationship between agriculture, environment, and technological development.",
-        "main_topic": "DEVELOPMENT OF ECONOMIC ACTIVITIES AND THEIR IMPACT",
-        "sub_topic": "Agriculture",
-        "teaching_aids": "i) Written texts on agriculture, environment and technological development. ii) Written texts on the relationship between agriculture, the environment, and technological development.",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "3.0 Demonstrate mastery of production and social organisation in pre-colonial Africa",
+        "general_objectives": "Explain the concepts of social organisation and economic production, and the pre-colonial modes of production in Africa.",
+        "specific_objectives": "By the end of the lesson the student should be able to: Define production, instruments of labour, and subjects of labour; explain social organization and social relations of production; describe the Communal, Slavery, and Feudalism modes of production and their African forms (Unyarubanja, Umwinyi).",
+        "main_topic": "PRODUCTION AND SOCIAL ORGANISATION IN PRE-COLONIAL AFRICA",
+        "sub_topic": "Concepts of social organisation and economic production",
+        "teaching_aids": "Production elements chart, socio-economic structure diagram, feudal hierarchy diagram, East Africa map",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "to guide the students through questions and answers to give the correct meaning of agriculture environment, technology and development.",
-            "student_activities": "students through questions and answers to give the correct meaning of agriculture environment, technology and development.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Guide students to brainstorm on the topic and recall their prior knowledge.",
+            "student_activities": "Students to brainstorm and share prior knowledge related to the topic.",
+            "assessment": "Oral questions, class discussion"
           },
           {
             "stage": "PRESENTATION",
             "time": "40",
-            "teacher_activities": "to guide the students in groups to read written sources on and show the relationship between agriculture, environment and technological development.",
-            "student_activities": "students in groups to read written sources on and show the relationship between agriculture, environment and technological development.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Guide students in groups to read written sources and discuss the key concepts of the subtopic.",
+            "student_activities": "Students in groups to read written sources, take notes, and discuss the key concepts.",
+            "assessment": "Group discussion, short notes review"
           },
           {
             "stage": "REFLECTION",
             "time": "10",
-            "teacher_activities": "to guide the groups to present in class their findings for further discussion and clarification.",
-            "student_activities": "groups to present in class their findings for further discussion and clarification.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Guide groups to present their findings in class for further discussion and clarification.",
+            "student_activities": "Groups to present findings and participate in class discussions.",
+            "assessment": "Group presentation rubric"
           },
           {
             "stage": "REINFORCEMENT",
             "time": "10",
-            "teacher_activities": "to guide the groups to present in class their findings for further discussion and clarification.",
-            "student_activities": "Students to individually solve questions on the board with the guidance of the teacher. Respond to questions and seek clarifications",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Using questions and answers, help students to summarise the concepts taught.",
+            "student_activities": "Students to individually answer questions asked by the teacher.",
+            "assessment": "Short quiz"
           },
           {
             "stage": "CONCLUSION",
             "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Write short summarised notes and assign take-home work.",
+            "student_activities": "Students to copy notes and work on the assigned tasks.",
+            "assessment": "Chapter review test"
           }
         ]
       }
     },
     {
       "topic_number": "4",
-      "topic_name": "DEVELOPMENT OF SOCIAL AND POLITICAL SYSTEMS",
-      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D &tno=4&m_topic=DEVELOPMENT OF SOCIAL AND POLITICAL SYSTEMS",
+      "topic_name": "DEVELOPMENT OF AGRICULTURE IN PRE-COLONIAL AFRICAN SOCIETIES",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D&tno=4&m_topic=DEVELOPMENT OF AGRICULTURE IN PRE-COLONIAL AFRICAN SOCIETIES",
       "plan": {
-        "competence": "show clan organization",
-        "general_objectives": "Explain how people�s economic activities influenced the development of their social and political organization in pre-colonial Africa.",
-        "specific_objectives": "By the end of the lesson the student should be able to: a) Explain the meaning of kinship or clan. b) Explain the social, political and economic, organization of kinship or clan.",
-        "main_topic": "DEVELOPMENT OF SOCIAL AND POLITICAL SYSTEMS",
-        "sub_topic": "4.1 Kinship of Clan Organization",
-        "teaching_aids": "i) Written texts on the organization of kinship or clan. ii) List of guiding questions. iii) A wall chart showing political organization of a clan or kinship iv) Written texts in Braille v) Tactile maps",
-        "remarks": "The students who did not understood the lesson well will be in the remedial class. Otherwise I will proceed with the topic. FILL THE FORM BELOW TO DOWNLOAD",
+        "competence": "4.0 Demonstrate mastery of agricultural development in pre-colonial Africa",
+        "general_objectives": "Explain agriculture and the transition from hunting and gathering to farming, and the types of agricultural practices in pre-colonial Africa.",
+        "specific_objectives": "By the end of the lesson the student should be able to: Define agriculture and explain the Neolithic Revolution; describe shifting cultivation and bush fallowing; describe permanent crop cultivation and pastoralism; examine advanced agricultural techniques (terracing and irrigation).",
+        "main_topic": "DEVELOPMENT OF AGRICULTURE IN PRE-COLONIAL AFRICAN SOCIETIES",
+        "sub_topic": "Agriculture",
+        "teaching_aids": "Transition infographic chart, shifting cultivation diagrams, regional agricultural map, terracing and irrigation diagrams",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
         "teaching_structure": [
           {
             "stage": "INTRODUCTION",
             "time": "10",
-            "teacher_activities": "to guide student through the question and answer method to explain the meaning of kinship or clan?",
-            "student_activities": "students in groups to read written sources on kinships, discuss and present in class their findings for further discussion and clarification.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Guide students to brainstorm on the topic and recall their prior knowledge.",
+            "student_activities": "Students to brainstorm and share prior knowledge related to the topic.",
+            "assessment": "Oral questions, class discussion"
           },
           {
             "stage": "PRESENTATION",
             "time": "40",
-            "teacher_activities": "to guide the students to read written sources in groups or conduct interviews on the organization of kinship or clan.",
-            "student_activities": "students to read written sources in groups or conduct interviews on the organization of kinship or clan.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Guide students in groups to read written sources and discuss the key concepts of the subtopic.",
+            "student_activities": "Students in groups to read written sources, take notes, and discuss the key concepts.",
+            "assessment": "Group discussion, short notes review"
           },
           {
             "stage": "REFLECTION",
             "time": "10",
-            "teacher_activities": "to guide the students to present group findings in class for further discussion and clarification.",
-            "student_activities": "students to present group findings in class for further discussion and clarification.",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Guide groups to present their findings in class for further discussion and clarification.",
+            "student_activities": "Groups to present findings and participate in class discussions.",
+            "assessment": "Group presentation rubric"
           },
           {
             "stage": "REINFORCEMENT",
             "time": "10",
-            "teacher_activities": "to guide the students to present group findings in class for further discussion and clarification.",
-            "student_activities": "Students to individually solve questions on the board with the guidance of the teacher. Respond to questions and seek clarifications",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Using questions and answers, help students to summarise the concepts taught.",
+            "student_activities": "Students to individually answer questions asked by the teacher.",
+            "assessment": "Short quiz"
           },
           {
             "stage": "CONCLUSION",
             "time": "10",
-            "teacher_activities": "To write short summarized notes, questions and supervise the students while working on them",
-            "student_activities": "The student to work on assignment given in groups and latter individually and copy notes",
-            "assessment": "Quizzes, question and answers, tests, group presentation, take home assignment, monthly exams"
+            "teacher_activities": "Write short summarised notes and assign take-home work.",
+            "student_activities": "Students to copy notes and work on the assigned tasks.",
+            "assessment": "Chapter review test"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "5",
+      "topic_name": "HANDCRAFT AND MINING INDUSTRIES IN PRE-COLONIAL AFRICA",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D&tno=5&m_topic=HANDCRAFT AND MINING INDUSTRIES IN PRE-COLONIAL AFRICA",
+      "plan": {
+        "competence": "5.0 Demonstrate mastery of handcraft and mining industries in pre-colonial Africa",
+        "general_objectives": "Describe the traditional handcraft industries and the mining industry of pre-colonial Africa.",
+        "specific_objectives": "By the end of the lesson the student should be able to: Describe traditional pottery, weaving, and woodworking handcraft industries; describe traditional iron-smelting technology; describe traditional mining industry (gold, copper, salt, iron ore) and extraction methods.",
+        "main_topic": "HANDCRAFT AND MINING INDUSTRIES IN PRE-COLONIAL AFRICA",
+        "sub_topic": "Handcraft industries",
+        "teaching_aids": "Craft item samples, furnace diagrams, bellows illustrations, mining site map, mineral samples",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Guide students to brainstorm on the topic and recall their prior knowledge.",
+            "student_activities": "Students to brainstorm and share prior knowledge related to the topic.",
+            "assessment": "Oral questions, class discussion"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "Guide students in groups to read written sources and discuss the key concepts of the subtopic.",
+            "student_activities": "Students in groups to read written sources, take notes, and discuss the key concepts.",
+            "assessment": "Group discussion, short notes review"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "Guide groups to present their findings in class for further discussion and clarification.",
+            "student_activities": "Groups to present findings and participate in class discussions.",
+            "assessment": "Group presentation rubric"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "Using questions and answers, help students to summarise the concepts taught.",
+            "student_activities": "Students to individually answer questions asked by the teacher.",
+            "assessment": "Short quiz"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "Write short summarised notes and assign take-home work.",
+            "student_activities": "Students to copy notes and work on the assigned tasks.",
+            "assessment": "Chapter review test"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "6",
+      "topic_name": "SOCIAL, POLITICAL AND EDUCATION SYSTEMS IN PRE-COLONIAL AFRICA",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D&tno=6&m_topic=SOCIAL, POLITICAL AND EDUCATION SYSTEMS IN PRE-COLONIAL AFRICA",
+      "plan": {
+        "competence": "6.0 Demonstrate mastery of social, political, and education systems in pre-colonial Africa",
+        "general_objectives": "Explain the concepts of social, political, and education systems, the non-centralised political systems, and the education system in pre-colonial African societies.",
+        "specific_objectives": "By the end of the lesson the student should be able to: Explain the concepts of social, political, and education systems; describe non-centralised political systems (clan-based organization, age-set system); describe the indigenous education system (informal learning, initiation ceremonies).",
+        "main_topic": "SOCIAL, POLITICAL AND EDUCATION SYSTEMS IN PRE-COLONIAL AFRICA",
+        "sub_topic": "Concepts of social, political and education systems",
+        "teaching_aids": "System structure chart, clan tree diagram, age-set hierarchy chart, informal learning methods chart",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Guide students to brainstorm on the topic and recall their prior knowledge.",
+            "student_activities": "Students to brainstorm and share prior knowledge related to the topic.",
+            "assessment": "Oral questions, class discussion"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "Guide students in groups to read written sources and discuss the key concepts of the subtopic.",
+            "student_activities": "Students in groups to read written sources, take notes, and discuss the key concepts.",
+            "assessment": "Group discussion, short notes review"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "Guide groups to present their findings in class for further discussion and clarification.",
+            "student_activities": "Groups to present findings and participate in class discussions.",
+            "assessment": "Group presentation rubric"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "Using questions and answers, help students to summarise the concepts taught.",
+            "student_activities": "Students to individually answer questions asked by the teacher.",
+            "assessment": "Short quiz"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "Write short summarised notes and assign take-home work.",
+            "student_activities": "Students to copy notes and work on the assigned tasks.",
+            "assessment": "Chapter review test"
+          }
+        ]
+      }
+    },
+    {
+      "topic_number": "7",
+      "topic_name": "STATE ORGANISATION IN PRE-COLONIAL AFRICA",
+      "url": "https://learninghubtz.co.tz/lesson_demo.php?fm=Zm9ybTE%3D&sub=aGlzdG9yeQ%3D%3D&tno=7&m_topic=STATE ORGANISATION IN PRE-COLONIAL AFRICA",
+      "plan": {
+        "competence": "7.0 Demonstrate mastery of state organisation in pre-colonial Africa",
+        "general_objectives": "Explain the meaning of a state and describe the centralised states and kingdoms of pre-colonial Africa.",
+        "specific_objectives": "By the end of the lesson the student should be able to: Describe the meaning of a state and factors for state formation; describe centralised states in East Africa (Buganda, Bunyoro, Karagwe); describe Western Sudanic states (Ghana, Mali, Songhai) and Forest states of West Africa (Oyo, Dahomey, Asante); describe Central African kingdoms (Kongo, Luba, Lunda) and Southern African kingdoms (Mwenemutapa, Great Zimbabwe, Zulu).",
+        "main_topic": "STATE ORGANISATION IN PRE-COLONIAL AFRICA",
+        "sub_topic": "Meaning of a state",
+        "teaching_aids": "Maps of pre-colonial African states and kingdoms, state formation concept chart, regional summary wall chart",
+        "remarks": "The students who did not understand the lesson well will be in the remedial class. Otherwise I will proceed with the topic.",
+        "teaching_structure": [
+          {
+            "stage": "INTRODUCTION",
+            "time": "10",
+            "teacher_activities": "Guide students to brainstorm on the topic and recall their prior knowledge.",
+            "student_activities": "Students to brainstorm and share prior knowledge related to the topic.",
+            "assessment": "Oral questions, class discussion"
+          },
+          {
+            "stage": "PRESENTATION",
+            "time": "40",
+            "teacher_activities": "Guide students in groups to read written sources and discuss the key concepts of the subtopic.",
+            "student_activities": "Students in groups to read written sources, take notes, and discuss the key concepts.",
+            "assessment": "Group discussion, short notes review"
+          },
+          {
+            "stage": "REFLECTION",
+            "time": "10",
+            "teacher_activities": "Guide groups to present their findings in class for further discussion and clarification.",
+            "student_activities": "Groups to present findings and participate in class discussions.",
+            "assessment": "Group presentation rubric"
+          },
+          {
+            "stage": "REINFORCEMENT",
+            "time": "10",
+            "teacher_activities": "Using questions and answers, help students to summarise the concepts taught.",
+            "student_activities": "Students to individually answer questions asked by the teacher.",
+            "assessment": "Short quiz"
+          },
+          {
+            "stage": "CONCLUSION",
+            "time": "10",
+            "teacher_activities": "Write short summarised notes and assign take-home work.",
+            "student_activities": "Students to copy notes and work on the assigned tasks.",
+            "assessment": "Chapter review test"
           }
         ]
       }

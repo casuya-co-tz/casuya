@@ -7015,183 +7015,279 @@ NECTA_SYLLABUS: list[dict] = [
         "description": "History for Ordinary and Advanced Secondary Education, Form I-VI. Covers Tanzania and Africa from prehistory to independence, the world since 1500, and advanced approaches to the study of history.",
         "form_start": 1,
         "form_end": 6,
+        "replace_topic_form_levels": [1],
         "topics": [
             {
-                "title": "SOURCES AND IMPORTANCE OF HISTORY",
+                "title": "INTRODUCTION TO HISTORY",
                 "code": "1.0",
                 "form_level": 1,
                 "order": 1,
-                "periods": 16,
+                "periods": 24,
                 "weight": "medium",
                 "subtopics": [
                     {
-                        "title": "Meaning and importance of studying history",
+                        "title": "Meaning of History",
                         "code": "1.1",
                         "order": 1,
                         "periods": 4,
                         "outcomes": [
-                            ("Explain the meaning and reasons for studying history", "comprehension", 1),
-                            ("Explain the importance of studying history", "comprehension", 2),
-                        ],
+                            ("Define history and explain its basic concepts", "comprehension", 1)]
                     },
                     {
-                        "title": "Sources of history",
+                        "title": "Qualities of historical events",
                         "code": "1.2",
                         "order": 2,
-                        "periods": 8,
+                        "periods": 4,
                         "outcomes": [
-                            ("Identify written, unwritten and electronic sources of history", "knowledge", 1),
-                            ("Describe the methods of collecting historical information", "comprehension", 2),
-                        ],
+                            ("Identify and describe the qualities that make an event historical", "knowledge", 1),
+                            ("Evaluate local Tanzanian events to determine their historical qualities", "evaluation", 2)]
                     },
                     {
-                        "title": "Preservation of historical sources",
+                        "title": "Ways of dating historical events",
                         "code": "1.3",
                         "order": 3,
                         "periods": 4,
                         "outcomes": [
-                            ("Explain the ways of preserving historical sources and information", "comprehension", 1),
-                        ],
+                            ("Explain chronological units (Day, Week, Month, Year, Decade, Century, Millennium)", "comprehension", 1),
+                            ("Describe time notation systems (BC, AD, BCE, CE) and construct historical timelines", "application", 2)]
                     },
+                    {
+                        "title": "Importance of studying History",
+                        "code": "1.4",
+                        "order": 4,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Explain the social, political, and economic importance of studying history", "comprehension", 1)]
+                    },
+                    {
+                        "title": "Relationship between History and other related subjects",
+                        "code": "1.5",
+                        "order": 5,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Discuss the relationship between History, Geography, Civics, and Economics", "comprehension", 1)]
+                    },
+                    {
+                        "title": "Concept of sources of historical information",
+                        "code": "1.6",
+                        "order": 6,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Describe primary and secondary sources of historical information", "comprehension", 1),
+                            ("Describe oral traditions, archaeology, archives, and museums as historical sources", "knowledge", 2)]
+                    }
                 ],
             },
             {
-                "title": "EVOLUTION OF MAN, TECHNOLOGY AND ENVIRONMENT",
+                "title": "ORIGIN OF HUMAN BEINGS",
                 "code": "2.0",
                 "form_level": 1,
                 "order": 2,
-                "periods": 20,
+                "periods": 12,
                 "weight": "medium",
                 "subtopics": [
                     {
-                        "title": "Evolution of man",
+                        "title": "Theories of the origin of human beings",
                         "code": "2.1",
                         "order": 1,
-                        "periods": 6,
+                        "periods": 4,
                         "outcomes": [
-                            ("Explain the theories of the origin of man", "comprehension", 1),
-                            ("Trace the stages of human evolution", "comprehension", 2),
-                        ],
+                            ("Describe the Creation Theory of human origin", "comprehension", 1),
+                            ("Describe the Theory of Evolution proposed by Charles Darwin", "comprehension", 2)]
                     },
                     {
-                        "title": "Development of early technology",
+                        "title": "Major groups of human ancestors",
                         "code": "2.2",
                         "order": 2,
-                        "periods": 8,
+                        "periods": 4,
                         "outcomes": [
-                            ("Describe early tools and technology of man", "comprehension", 1),
-                            ("Analyze the impact of early technology on human development", "analysis", 2),
-                        ],
+                            ("Describe early human ancestors (Australopithecus, Homo habilis)", "comprehension", 1),
+                            ("Describe advanced human ancestors (Homo erectus, Homo sapiens)", "comprehension", 2)]
                     },
                     {
-                        "title": "Early man and the environment",
+                        "title": "Human technology",
                         "code": "2.3",
                         "order": 3,
-                        "periods": 6,
+                        "periods": 4,
                         "outcomes": [
-                            ("Explain the relationship between early man, technology and the environment", "comprehension", 1),
-                            ("Describe the economic activities of early man", "comprehension", 2),
-                        ],
-                    },
+                            ("Examine early human technology (Old Stone Age, Middle Stone Age, Late Stone Age, Iron Age)", "comprehension", 1)]
+                    }
                 ],
             },
             {
-                "title": "DEVELOPMENT OF ECONOMIC ACTIVITIES AND THEIR IMPACT",
+                "title": "PRODUCTION AND SOCIAL ORGANISATION IN PRE-COLONIAL AFRICA",
                 "code": "3.0",
                 "form_level": 1,
                 "order": 3,
-                "periods": 18,
+                "periods": 8,
                 "weight": "medium",
                 "subtopics": [
                     {
-                        "title": "Agriculture in pre-colonial Africa",
+                        "title": "Concepts of social organisation and economic production",
                         "code": "3.1",
                         "order": 1,
-                        "periods": 6,
+                        "periods": 4,
                         "outcomes": [
-                            ("Describe the development of agriculture in Africa", "comprehension", 1),
-                            ("Explain the impact of agriculture on African societies", "comprehension", 2),
-                        ],
+                            ("Define production, instruments of labour, and subjects of labour", "comprehension", 1),
+                            ("Explain social organization and social relations of production", "comprehension", 2)]
                     },
                     {
-                        "title": "Mining and industries",
+                        "title": "Pre-colonial modes of production",
                         "code": "3.2",
                         "order": 2,
-                        "periods": 6,
+                        "periods": 4,
                         "outcomes": [
-                            ("Describe the development of mining and industries in Africa", "comprehension", 1),
-                            ("Analyze the impact of craft industries on society", "analysis", 2),
-                        ],
-                    },
-                    {
-                        "title": "Trade in pre-colonial Africa",
-                        "code": "3.3",
-                        "order": 3,
-                        "periods": 6,
-                        "outcomes": [
-                            ("Describe local, regional and long-distance trade in Africa", "comprehension", 1),
-                            ("Analyze the impact of the long-distance trade on East African societies", "analysis", 2),
-                        ],
-                    },
+                            ("Describe the Communal Mode of Production (Communalism)", "comprehension", 1),
+                            ("Describe the Slavery Mode of Production", "comprehension", 2),
+                            ("Describe Feudalism and its forms (Uhubasi, Unyarubanja, Umwinyi)", "comprehension", 3)]
+                    }
                 ],
             },
             {
-                "title": "SOCIAL AND CULTURAL DEVELOPMENT IN TANZANIA AND AFRICA",
+                "title": "DEVELOPMENT OF AGRICULTURE IN PRE-COLONIAL AFRICAN SOCIETIES",
                 "code": "4.0",
                 "form_level": 1,
                 "order": 4,
-                "periods": 16,
+                "periods": 8,
                 "weight": "medium",
                 "subtopics": [
                     {
-                        "title": "Social organization of African societies",
+                        "title": "Agriculture",
                         "code": "4.1",
                         "order": 1,
-                        "periods": 8,
+                        "periods": 4,
                         "outcomes": [
-                            ("Describe the social organization of pre-colonial African societies", "comprehension", 1),
-                            ("Explain the structure of kinship, clan and age-set systems", "comprehension", 2),
-                        ],
+                            ("Define agriculture and explain the transition from hunting and gathering to farming", "comprehension", 1),
+                            ("Examine advanced agricultural techniques (terracing and irrigation)", "comprehension", 2)]
                     },
                     {
-                        "title": "Cultural practices and material culture",
+                        "title": "Types of agricultural practices in pre-colonial Africa",
                         "code": "4.2",
                         "order": 2,
-                        "periods": 8,
+                        "periods": 4,
                         "outcomes": [
-                            ("Describe the cultural practices of African societies", "comprehension", 1),
-                            ("Explain the importance of preserving African cultural heritage", "evaluation", 2),
-                        ],
-                    },
+                            ("Describe shifting cultivation and bush fallowing", "comprehension", 1),
+                            ("Describe permanent crop cultivation and pastoralism", "comprehension", 2)]
+                    }
                 ],
             },
             {
-                "title": "INTERACTIONS AMONG THE PEOPLE OF AFRICA",
+                "title": "HANDCRAFT AND MINING INDUSTRIES IN PRE-COLONIAL AFRICA",
                 "code": "5.0",
                 "form_level": 1,
                 "order": 5,
-                "periods": 14,
+                "periods": 8,
                 "weight": "low",
                 "subtopics": [
                     {
-                        "title": "Forms of interaction",
+                        "title": "Handcraft industries",
                         "code": "5.1",
                         "order": 1,
-                        "periods": 8,
+                        "periods": 4,
                         "outcomes": [
-                            ("Describe the forms of interaction: trade, migration, war and intermarriage", "comprehension", 1),
-                            ("Analyze the impact of these interactions on the development of societies", "analysis", 2),
-                        ],
+                            ("Describe traditional pottery, weaving, and woodworking handcraft industries", "comprehension", 1),
+                            ("Describe traditional iron-smelting technology", "comprehension", 2)]
                     },
                     {
-                        "title": "Formation of states",
+                        "title": "Mining industry",
                         "code": "5.2",
                         "order": 2,
-                        "periods": 6,
+                        "periods": 4,
                         "outcomes": [
-                            ("Describe the formation of early states in Tanzania and Africa", "comprehension", 1),
-                        ],
+                            ("Describe the traditional mining industry (gold, copper, salt, iron ore)", "comprehension", 1)]
+                    }
+                ],
+            },
+            {
+                "title": "SOCIAL, POLITICAL AND EDUCATION SYSTEMS IN PRE-COLONIAL AFRICA",
+                "code": "6.0",
+                "form_level": 1,
+                "order": 6,
+                "periods": 12,
+                "weight": "medium",
+                "subtopics": [
+                    {
+                        "title": "Concepts of social, political and education systems",
+                        "code": "6.1",
+                        "order": 1,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Explain concepts of social, political, and education systems in traditional societies", "comprehension", 1)]
                     },
+                    {
+                        "title": "Non-centralised political system",
+                        "code": "6.2",
+                        "order": 2,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Describe non-centralized political systems (clan-based organization, age-set system)", "comprehension", 1)]
+                    },
+                    {
+                        "title": "Education system in pre-colonial African societies",
+                        "code": "6.3",
+                        "order": 3,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Describe the indigenous education system in pre-colonial African societies", "comprehension", 1)]
+                    }
+                ],
+            },
+            {
+                "title": "STATE ORGANISATION IN PRE-COLONIAL AFRICA",
+                "code": "7.0",
+                "form_level": 1,
+                "order": 7,
+                "periods": 24,
+                "weight": "high",
+                "subtopics": [
+                    {
+                        "title": "Meaning of a state",
+                        "code": "7.1",
+                        "order": 1,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Explain the meaning of a state and factors for state formation", "comprehension", 1)]
+                    },
+                    {
+                        "title": "Centralised states in East Africa",
+                        "code": "7.2",
+                        "order": 2,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Describe centralized states in East Africa (Buganda, Bunyoro, Karagwe)", "comprehension", 1)]
+                    },
+                    {
+                        "title": "Western Sudanic states",
+                        "code": "7.3",
+                        "order": 3,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Describe Western Sudanic states (Ghana, Mali, Songhai)", "comprehension", 1)]
+                    },
+                    {
+                        "title": "Forest states of West Africa",
+                        "code": "7.4",
+                        "order": 4,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Describe Forest states of West Africa (Oyo, Dahomey, Asante)", "comprehension", 1)]
+                    },
+                    {
+                        "title": "Central African kingdoms",
+                        "code": "7.5",
+                        "order": 5,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Describe Central African kingdoms (Kongo, Luba, Lunda)", "comprehension", 1)]
+                    },
+                    {
+                        "title": "Southern African kingdoms",
+                        "code": "7.6",
+                        "order": 6,
+                        "periods": 4,
+                        "outcomes": [
+                            ("Describe Southern African kingdoms (Mwenemutapa, Great Zimbabwe, Zulu State)", "comprehension", 1)]
+                    }
                 ],
             },
             {
