@@ -1607,7 +1607,8 @@ async function renderTeacherDashboard() {
       { slug: "kiswahili", name: "Kiswahili", sw: true },
       { slug: "geography", name: "Geography", sw: false },
       { slug: "history", name: "History", sw: false },
-      { slug: "history_civics", name: "Historia ya Tanzania na Maadili", sw: true },
+      { slug: "historia-ya-tanzania-na-maadili", name: "Historia ya Tanzania na Maadili", sw: true },
+      { slug: "bible_knowledge", name: "Bible Knowledge", sw: false },
       { slug: "business_studies", name: "Business Studies", sw: false },
       { slug: "computing", name: "Computing & ICT", sw: false },
     ];
@@ -2264,7 +2265,8 @@ async function renderTeacherDashboard() {
       { slug: "kiswahili", name: "Kiswahili" },
       { slug: "geography", name: "Geography" },
       { slug: "history", name: "History" },
-      { slug: "history_civics", name: "Historia ya Tanzania na Maadili" },
+      { slug: "historia-ya-tanzania-na-maadili", name: "Historia ya Tanzania na Maadili" },
+      { slug: "bible_knowledge", name: "Bible Knowledge" },
       { slug: "business_studies", name: "Business Studies" },
       { slug: "computing", name: "Computing & ICT" },
     ];
@@ -2433,7 +2435,8 @@ async function renderTeacherDashboard() {
                   <option value="kiswahili">Kiswahili</option>
                   <option value="geography">Geography</option>
                   <option value="history">History</option>
-                  <option value="history_civics">Historia ya Tanzania na Maadili</option>
+                  <option value="historia-ya-tanzania-na-maadili">Historia ya Tanzania na Maadili</option>
+                  <option value="bible_knowledge">Bible Knowledge</option>
                   <option value="business_studies">Business Studies</option>
                   <option value="computing">Computing</option>
                 </select>
@@ -2468,7 +2471,8 @@ async function renderTeacherDashboard() {
                   <option value="kiswahili">Kiswahili</option>
                   <option value="geography">Geography</option>
                   <option value="history">History</option>
-                  <option value="history_civics">Historia ya Tanzania na Maadili</option>
+                  <option value="historia-ya-tanzania-na-maadili">Historia ya Tanzania na Maadili</option>
+                  <option value="bible_knowledge">Bible Knowledge</option>
                   <option value="business_studies">Business Studies</option>
                   <option value="computing">Computing</option>
                 </select>

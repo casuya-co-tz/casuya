@@ -133,7 +133,8 @@
                   <option value="kiswahili">Kiswahili</option>
                   <option value="geography">Geography</option>
                   <option value="history">History</option>
-                  <option value="history_civics">Historia ya Tanzania na Maadili</option>
+                  <option value="historia-ya-tanzania-na-maadili">Historia ya Tanzania na Maadili</option>
+                  <option value="bible_knowledge">Bible Knowledge</option>
                   <option value="business_studies">Business Studies</option>
                   <option value="computing">Computing</option>
                 </select>

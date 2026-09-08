@@ -643,7 +643,8 @@
       { slug: "kiswahili", name: "Kiswahili" },
       { slug: "geography", name: "Geography" },
       { slug: "history", name: "History" },
-      { slug: "history_civics", name: "Historia ya Tanzania na Maadili" },
+      { slug: "historia-ya-tanzania-na-maadili", name: "Historia ya Tanzania na Maadili" },
+      { slug: "bible_knowledge", name: "Bible Knowledge" },
       { slug: "business_studies", name: "Business Studies" },
       { slug: "computing", name: "Computing & ICT" },
     ];
