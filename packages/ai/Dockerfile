@@ -13,6 +13,9 @@ RUN npm install
 COPY packages/ai/tsconfig.json ./
 COPY packages/ai/tsconfig.server.json ./
 COPY packages/ai/src/ src/
+COPY packages/ai/routes/ routes/
+COPY packages/ai/server-utils.ts ./
+COPY packages/ai/server-utils/ server-utils/
 COPY packages/ai/server.ts ./
 
 RUN npx tsc -p tsconfig.server.json
