@@ -11,7 +11,11 @@
     const token = localStorage.getItem("casuya_token");
     const headers = { "Content-Type": "application/json", ...(options && options.headers) };
     if (token) headers["Authorization"] = `Bearer ${token}`;
-    return fetch(`${API_BASE}${path}`, { ...options, headers }).then((r) => r.json());
+    return fetch(`${API_BASE}${path}`, { ...options, headers })
+      .then((r) => {
+        if (!r.ok) throw new Error(r.statusText || "Request failed");
+        return r.json();
+      });
   }
 
   async function mountBlackboard(container, opts) {

@@ -119,6 +119,7 @@ export interface Snapshot {
   camera?: Camera;
   graph?: GraphConfig;
   theme?: 'light' | 'dark';
+  imagePool?: string[];
 }
 
 export type BlackboardEvent =

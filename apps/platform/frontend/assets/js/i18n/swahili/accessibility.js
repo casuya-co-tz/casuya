@@ -1,0 +1,42 @@
+// i18n/swahili/accessibility.js — accessibility toolbar + settings translations.
+
+window.SW = Object.assign(window.SW || {}, {
+    // Accessibility toolbar
+    "a11y.skip": "Ruka hadi kwenye maudhui makuu",
+    "a11y.region": "Chaguzi za ufikiaji",
+    "a11y.open": "Fungua mipangilio ya ufikiaji",
+    "a11y.panel": "Jopo la mipangilio ya ufikiaji",
+    "a11y.settings": "Mipangilio ya Ufikiaji",
+    "a11y.dyslexia": "Maandishi ya Wenye Changamoto ya Kusoma (Dyslexia)",
+    "a11y.toggle_dyslexia": "Washa/zima font ya wenye changamoto ya kusoma",
+    "a11y.high_contrast": "Ung'avu wa Juu",
+    "a11y.toggle_contrast": "Washa/zima hali ya ung'avu wa juu",
+    "a11y.large_text": "Maandishi Makubwa",
+    "a11y.toggle_large_text": "Washa/zima hali ya maandishi makubwa",
+    "a11y.wide_spacing": "Nafasi Kubwa Kati ya Maandishi",
+    "a11y.toggle_wide_spacing": "Washa/zima nafasi kubwa kati ya mistari na maandishi",
+    "a11y.size": "Ukubwa",
+    "a11y.fontsize_pct": "Asilimia ya ukubwa wa fonti",
+    "a11y.tts": "Kusoma kwa Sauti",
+    "a11y.toggle_tts": "Washa/zima usomaji kwa sauti",
+    "a11y.speech_rate": "Kasi ya usomaji",
+    "a11y.play": "Cheza usomaji",
+    "a11y.pause": "Simamisha usomaji",
+    "a11y.stop": "Acha usomaji",
+    "a11y.ready": "Tayari",
+
+    // Accessibility
+    "a11y.title": "Mipangilio ya Upatikanaji",
+    "a11y.dyslexia": "Fonti ya Wasomaji",
+    "a11y.contrast": "Tofauti Kubwa",
+    "a11y.large_text": "Maandishi Makubwa",
+    "a11y.wide_spacing": "Nafasi Pana",
+    "a11y.size": "Ukubwa",
+    "a11y.tts": "Maandishi kuwa Sauti",
+    "a11y.ready": "Tayari",
+    "a11y.speaking": "Inasema...",
+    "a11y.done": "Imekamilika",
+    "a11y.error": "Hitilafu",
+    "a11y.paused": "Imesimamishwa",
+    "a11y.stopped": "Imesimama",
+});

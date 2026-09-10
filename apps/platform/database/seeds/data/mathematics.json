@@ -1,0 +1,2235 @@
+{
+  "name": "Basic Mathematics",
+  "code": "MATH",
+  "slug": "mathematics",
+  "necta_code": "021",
+  "is_core": true,
+  "description": "Mathematics for Ordinary Secondary Education, Form I-IV. Covers number systems, algebra, geometry, trigonometry, statistics, and mensuration.",
+  "form_start": 1,
+  "form_end": 4,
+  "replace_topic_form_levels": [
+    1
+  ],
+  "topics": [
+    {
+      "title": "CONCEPT OF MATHEMATICS",
+      "code": "1.0",
+      "form_level": 1,
+      "order": 1,
+      "periods": 10,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Meaning of Mathematics",
+          "code": "1.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the meaning of Mathematics",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe Mathematics as a science of patterns and numbers",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Branches of Mathematics",
+          "code": "1.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Identify branches of Mathematics (Arithmetic, Algebra, Geometry, Statistics)",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the scope of each branch of Mathematics",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Relationship between Mathematics and other subjects",
+          "code": "1.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Relate Mathematics to Science, Economics, and Geography",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify how Mathematics is applied in other disciplines",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Importance of Mathematics",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain the importance of Mathematics in daily life",
+              "comprehension",
+              1
+            ],
+            [
+              "Discuss the importance of Mathematics in various careers",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NUMBERS",
+      "code": "2.0",
+      "form_level": 1,
+      "order": 2,
+      "periods": 34,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of Numbers",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define a number",
+              "comprehension",
+              1
+            ],
+            [
+              "Classify natural numbers, whole numbers, and integers",
+              "knowledge",
+              2
+            ],
+            [
+              "Apply numbers in daily life situations",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Rational Numbers",
+          "code": "2.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define rational numbers with examples (fractions, terminating and recurring decimals)",
+              "knowledge",
+              1
+            ],
+            [
+              "Represent rational numbers on a number line",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Irrational Numbers",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define irrational numbers with examples (√2, π)",
+              "knowledge",
+              1
+            ],
+            [
+              "Distinguish between rational and irrational numbers",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Real Numbers",
+          "code": "2.4",
+          "order": 4,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the real number system as the union of rational and irrational numbers",
+              "comprehension",
+              1
+            ],
+            [
+              "Represent real numbers on the number line",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Inequalities in Real Numbers",
+          "code": "2.5",
+          "order": 5,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Represent and solve simple inequalities using <, >, ≤, ≥ on a number line",
+              "application",
+              1
+            ],
+            [
+              "Solve word problems involving inequalities",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Absolute Value of a Real Number",
+          "code": "2.6",
+          "order": 6,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define absolute value",
+              "comprehension",
+              1
+            ],
+            [
+              "Calculate |x| for given real numbers and solve simple problems involving absolute value",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "APPROXIMATIONS",
+      "code": "3.0",
+      "form_level": 1,
+      "order": 3,
+      "periods": 20,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Meaning of Approximations",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define approximation",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the importance of approximation in real life",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Rounding off Numbers",
+          "code": "3.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Round off numbers to the nearest whole number, tens, and hundreds",
+              "application",
+              1
+            ],
+            [
+              "Round off numbers to a given number of decimal places",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Significant Figures",
+          "code": "3.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "State the rules for significant figures",
+              "knowledge",
+              1
+            ],
+            [
+              "Round numbers to a given number of significant figures",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Approximations in Calculations",
+          "code": "3.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Apply approximation in everyday estimation and calculations",
+              "application",
+              1
+            ],
+            [
+              "Use approximations to estimate values of numeric expressions",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "RATIOS AND PROPORTIONS",
+      "code": "4.0",
+      "form_level": 1,
+      "order": 4,
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Ratios",
+          "code": "4.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Define ratio",
+              "comprehension",
+              1
+            ],
+            [
+              "Express quantities as ratios and simplify ratios",
+              "application",
+              2
+            ],
+            [
+              "Solve real-life sharing problems using ratios",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Proportions",
+          "code": "4.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Define direct proportion",
+              "comprehension",
+              1
+            ],
+            [
+              "Define inverse proportion",
+              "comprehension",
+              2
+            ],
+            [
+              "Solve problems involving direct and inverse proportion (recipes, speed/time)",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ALGEBRA",
+      "code": "5.0",
+      "form_level": 1,
+      "order": 5,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Algebraic Expressions",
+          "code": "5.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define algebraic expression, term, coefficient, and variable",
+              "knowledge",
+              1
+            ],
+            [
+              "Form algebraic expressions from word statements",
+              "application",
+              2
+            ],
+            [
+              "Simplify algebraic expressions by collecting like terms",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Algebraic Equations",
+          "code": "5.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Form linear equations from word problems",
+              "application",
+              1
+            ],
+            [
+              "Solve linear equations in one unknown",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Linear Simultaneous Equations",
+          "code": "5.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Solve simultaneous equations using the elimination method",
+              "application",
+              1
+            ],
+            [
+              "Solve simultaneous equations using the substitution method",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Solution of Inequalities with One Unknown",
+          "code": "5.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Solve simple linear inequalities in one unknown",
+              "application",
+              1
+            ],
+            [
+              "Represent solutions of inequalities on a number line",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "COORDINATE GEOMETRY",
+      "code": "6.0",
+      "form_level": 1,
+      "order": 6,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Basic Concepts of Coordinate Geometry",
+          "code": "6.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Describe the Cartesian plane, axes, and origin",
+              "knowledge",
+              1
+            ],
+            [
+              "Plot points on the Cartesian plane",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Gradient of a Straight Line",
+          "code": "6.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Define the gradient of a straight line",
+              "comprehension",
+              1
+            ],
+            [
+              "Calculate the gradient of a line joining two points",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Equation of a Straight Line",
+          "code": "6.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Derive the equation of a line in the form y = mx + c",
+              "comprehension",
+              1
+            ],
+            [
+              "Determine the equation of a straight line given the gradient and a point",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "General Equation of a Straight Line",
+          "code": "6.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Express equations of a straight line in general form ax + by + c = 0",
+              "application",
+              1
+            ],
+            [
+              "Convert between the gradient-intercept form and the general form",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Graphing Linear Equations",
+          "code": "6.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Draw graphs of linear equations using a table of values",
+              "application",
+              1
+            ],
+            [
+              "Read and interpret points on the graph of a linear equation",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Solving Linear Simultaneous Equations Graphically",
+          "code": "6.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Draw the graphs of two simultaneous linear equations on the same axes",
+              "application",
+              1
+            ],
+            [
+              "Solve simultaneous equations by finding the point of intersection of two graphs",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "RATES AND VARIATIONS",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 11,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Rates",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "define rates",
+              "comprehension",
+              1
+            ],
+            [
+              "solve problems involving rates",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Exchange rates",
+          "code": "1.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "explain exchange rates",
+              "comprehension",
+              1
+            ],
+            [
+              "solve problems involving currency conversion",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Variations",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "define direct and inverse variation",
+              "comprehension",
+              1
+            ],
+            [
+              "set up variation equations",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Direct variations",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "solve problems on direct variation",
+              "application",
+              1
+            ],
+            [
+              "apply direct variation in real-life situations",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CONGRUENCE",
+      "code": "2.0",
+      "form_level": 2,
+      "order": 12,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "The concept of congruence",
+          "code": "2.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "define congruence of figures",
+              "comprehension",
+              1
+            ],
+            [
+              "identify congruent figures",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Postulates, theorems and proofs",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "state the congruence postulates",
+              "comprehension",
+              1
+            ],
+            [
+              "prove triangle congruence theorems",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Congruence of triangles",
+          "code": "2.3",
+          "order": 3,
+          "periods": 7,
+          "outcomes": [
+            [
+              "apply SSS, SAS, ASA and RHS congruence conditions",
+              "application",
+              1
+            ],
+            [
+              "solve problems using triangle congruence",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SIMILARITY",
+      "code": "3.0",
+      "form_level": 2,
+      "order": 13,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Similar figures",
+          "code": "3.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "define similarity of figures",
+              "comprehension",
+              1
+            ],
+            [
+              "distinguish between congruence and similarity",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Similar triangles",
+          "code": "3.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "identify conditions for similarity of triangles",
+              "comprehension",
+              1
+            ],
+            [
+              "solve problems using similar triangles",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Similarity theorems",
+          "code": "3.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "state the AA, SAS and SSS similarity theorems",
+              "comprehension",
+              1
+            ],
+            [
+              "apply similarity theorems to solve problems",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ALGEBRA",
+      "code": "4.0",
+      "form_level": 2,
+      "order": 14,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Binary operations",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "define and evaluate binary operations",
+              "comprehension",
+              1
+            ],
+            [
+              "solve problems involving defined binary operations",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Transposition of formulae",
+          "code": "4.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "transpose formulae to make a specified variable the subject",
+              "application",
+              1
+            ],
+            [
+              "apply transposition in solving problems",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Quadratic expressions",
+          "code": "4.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "identify quadratic expressions",
+              "comprehension",
+              1
+            ],
+            [
+              "simplify quadratic expressions",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Factorisation of quadratic expressions",
+          "code": "4.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "factorise quadratic expressions",
+              "application",
+              1
+            ],
+            [
+              "solve quadratic equations by factorisation",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Quadratic equations",
+          "code": "4.5",
+          "order": 5,
+          "periods": 4,
+          "outcomes": [
+            [
+              "solve quadratic equations by completing the square",
+              "application",
+              1
+            ],
+            [
+              "solve quadratic equations using the formula",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EXPONENTS AND RADICALS",
+      "code": "5.0",
+      "form_level": 2,
+      "order": 15,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Exponents",
+          "code": "5.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "define exponents",
+              "comprehension",
+              1
+            ],
+            [
+              "evaluate expressions with exponents",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Laws of exponents",
+          "code": "5.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "state and apply the laws of exponents",
+              "application",
+              1
+            ],
+            [
+              "simplify expressions using exponent laws",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Exponential equations",
+          "code": "5.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "solve exponential equations",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Fractional exponents",
+          "code": "5.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "convert between radical and fractional exponent forms",
+              "application",
+              1
+            ],
+            [
+              "evaluate expressions with fractional exponents",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Radicals",
+          "code": "5.5",
+          "order": 5,
+          "periods": 3,
+          "outcomes": [
+            [
+              "simplify radical expressions",
+              "application",
+              1
+            ],
+            [
+              "perform operations on radicals",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Rationalisation of denominators",
+          "code": "5.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "rationalise denominators of fractions",
+              "application",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LOGARITHMS",
+      "code": "6.0",
+      "form_level": 2,
+      "order": 16,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Standard form of numbers",
+          "code": "6.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "express numbers in standard form",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Concept of logarithms",
+          "code": "6.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "define logarithms",
+              "comprehension",
+              1
+            ],
+            [
+              "relate logarithms to indices",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Laws of logarithm",
+          "code": "6.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "state and apply the laws of logarithms",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Logarithms of numbers",
+          "code": "6.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "find logarithms using tables",
+              "application",
+              1
+            ],
+            [
+              "find logarithms using calculators",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Antilogarithms",
+          "code": "6.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "find antilogarithms",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Applications of logarithms",
+          "code": "6.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "apply logarithms to solve multiplication, division and power problems",
+              "application",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SETS",
+      "code": "7.0",
+      "form_level": 2,
+      "order": 17,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of a set",
+          "code": "7.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "define a set",
+              "comprehension",
+              1
+            ],
+            [
+              "describe methods of representing sets",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Types of sets",
+          "code": "7.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "identify types of sets: universal, empty, finite, infinite",
+              "comprehension",
+              1
+            ],
+            [
+              "identify subsets and power sets",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Operation on sets",
+          "code": "7.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "perform union, intersection and complement operations",
+              "application",
+              1
+            ],
+            [
+              "solve problems involving set operations",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Venn diagrams",
+          "code": "7.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "draw Venn diagrams for two and three sets",
+              "application",
+              1
+            ],
+            [
+              "solve problems using Venn diagrams",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRIGONOMETRY",
+      "code": "8.0",
+      "form_level": 2,
+      "order": 18,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Trigonometric ratios",
+          "code": "8.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "define sine, cosine and tangent",
+              "comprehension",
+              1
+            ],
+            [
+              "calculate trigonometric ratios using tables and calculators",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Trigonometric ratios of special angles",
+          "code": "8.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "determine trig ratios of 30, 45, 60, 90 degrees",
+              "application",
+              1
+            ],
+            [
+              "extend to angles beyond 90 degrees",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Trigonometric ratios of any angle",
+          "code": "8.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "find trig ratios of any angle",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Relationship between trigonometrical ratios",
+          "code": "8.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "state the complementary angle relationships",
+              "comprehension",
+              1
+            ],
+            [
+              "apply trig identities to solve problems",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Inverse of trigonometric ratios",
+          "code": "8.5",
+          "order": 5,
+          "periods": 3,
+          "outcomes": [
+            [
+              "use inverse trigonometric functions",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "The angle of elevation and depression",
+          "code": "8.6",
+          "order": 6,
+          "periods": 3,
+          "outcomes": [
+            [
+              "solve problems involving angles of elevation and depression",
+              "application",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NUMBER BASES",
+      "code": "1.0",
+      "form_level": 3,
+      "order": 18,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Number bases other than base ten",
+          "code": "1.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Convert numbers from base ten to other bases and vice versa",
+              "application",
+              1
+            ],
+            [
+              "Perform arithmetic operations in different bases",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Application of number bases in computers",
+          "code": "1.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Convert between binary, octal, hexadecimal and decimal systems",
+              "application",
+              1
+            ],
+            [
+              "Perform binary arithmetic: addition, subtraction, multiplication and division",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "RATES AND VARIATIONS",
+      "code": "2.0",
+      "form_level": 3,
+      "order": 19,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Rates",
+          "code": "2.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Solve problems involving rates of work, speed, flow and other rates",
+              "application",
+              1
+            ],
+            [
+              "Convert units of rates",
+              "application",
+              2
+            ],
+            [
+              "Describe the concepts of rates and variations",
+              "comprehension",
+              0
+            ]
+          ]
+        },
+        {
+          "title": "Direct and inverse variations",
+          "code": "2.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Identify and solve problems involving direct variation",
+              "application",
+              1
+            ],
+            [
+              "Identify and solve problems involving inverse variation",
+              "application",
+              2
+            ],
+            [
+              "Identify and solve problems involving joint variation",
+              "application",
+              3
+            ],
+            [
+              "Solve problems on rates and variations",
+              "comprehension",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SEQUENCES AND SERIES",
+      "code": "3.0",
+      "form_level": 3,
+      "order": 20,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Arithmetic progressions (AP)",
+          "code": "3.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Identify and describe arithmetic progressions",
+              "comprehension",
+              1
+            ],
+            [
+              "Find the nth term of an AP",
+              "application",
+              2
+            ],
+            [
+              "Find the sum of the first n terms of an AP",
+              "application",
+              3
+            ],
+            [
+              "Explore the basic tenets of sets (types of sets, subsets, operation with sets, and Venn diagrams of two set",
+              "comprehension",
+              0
+            ],
+            [
+              "Compare sets (subsets and universal set",
+              "comprehension",
+              0
+            ],
+            [
+              "Represent two sets in a Venn diagram",
+              "comprehension",
+              0
+            ],
+            [
+              "Explore the basic tenets of sequences and series (Arithmetic progression AP, Geometric progression GP)",
+              "comprehension",
+              0
+            ],
+            [
+              "Calculate arithmetic mean, geometric mean, and compound interest",
+              "comprehension",
+              0
+            ]
+          ]
+        },
+        {
+          "title": "Geometric progressions (GP)",
+          "code": "3.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Identify and describe geometric progressions",
+              "comprehension",
+              1
+            ],
+            [
+              "Find the nth term of a GP",
+              "application",
+              2
+            ],
+            [
+              "Find the sum of the first n terms and sum to infinity of a GP",
+              "application",
+              3
+            ],
+            [
+              "Distinguish among different types of sets (universal set, equal sets, empty/null set, finite and infinite sets, equivalent sets, and disjoint set",
+              "comprehension",
+              0
+            ],
+            [
+              "Perform operations with sets (union, intersection, and complement of a se",
+              "comprehension",
+              0
+            ],
+            [
+              "Find the number of elements in a set",
+              "comprehension",
+              0
+            ],
+            [
+              "Find the general term for AP and GP and use them to derive formulae for the sums of APs and GPs",
+              "comprehension",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "QUADRATIC EQUATIONS",
+      "code": "4.0",
+      "form_level": 3,
+      "order": 21,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Solving quadratic equations",
+          "code": "4.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Solve quadratic equations by factorization, completing the square and quadratic formula",
+              "application",
+              1
+            ],
+            [
+              "Determine the nature of roots using the discriminant",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Quadratic functions and graphs",
+          "code": "4.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Draw graphs of quadratic functions and identify the vertex, axis of symmetry and intercepts",
+              "application",
+              1
+            ],
+            [
+              "Solve quadratic equations graphically",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SIMULTANEOUS EQUATIONS",
+      "code": "5.0",
+      "form_level": 3,
+      "order": 22,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Simultaneous linear equations",
+          "code": "5.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Solve simultaneous equations involving one linear and one quadratic equation",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Simultaneous non-linear equations",
+          "code": "5.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Solve problems modeled by simultaneous equations",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LOGARITHMS AND ANTLOGARITHMS",
+      "code": "6.0",
+      "form_level": 3,
+      "order": 23,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Logarithmic equations",
+          "code": "6.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Solve equations involving logarithms",
+              "application",
+              1
+            ],
+            [
+              "Use logarithm tables and antilog tables",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Application of logarithms",
+          "code": "6.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Apply logarithms to solve real-life problems involving exponential growth and decay",
+              "analysis",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MENSURATION III",
+      "code": "7.0",
+      "form_level": 3,
+      "order": 24,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Surface area and volume of solids",
+          "code": "7.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Calculate surface area and volume of spheres, hemispheres, cones and pyramids",
+              "application",
+              1
+            ],
+            [
+              "Solve composite solid problems",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Arc length and sector area",
+          "code": "7.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Calculate arc length of a circle",
+              "application",
+              1
+            ],
+            [
+              "Calculate area of a sector and segment",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Length of chords and areas of segments",
+          "code": "7.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Calculate the length of chords and areas of minor and major segments",
+              "application",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GEOMETRICAL AND TRANSFORMATIONS",
+      "code": "8.0",
+      "form_level": 3,
+      "order": 25,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Scale drawing",
+          "code": "8.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Make and interpret scale drawings",
+              "application",
+              1
+            ],
+            [
+              "Calculate actual distances from scale drawings",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Bearings",
+          "code": "8.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Calculate true bearings and compass directions",
+              "application",
+              1
+            ],
+            [
+              "Solve problems involving three-figure bearings",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Construction of triangles",
+          "code": "8.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Construct triangles given: SSS, SAS, ASA, AAS and RHS",
+              "application",
+              1
+            ],
+            [
+              "Construct bisectors of angles and perpendicular bisectors",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "COORDINATE GEOMETRY II",
+      "code": "1.0",
+      "form_level": 4,
+      "order": 26,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Distance and midpoint formulae",
+          "code": "1.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Calculate the distance between two points using the distance formula",
+              "application",
+              1
+            ],
+            [
+              "Find the midpoint of a line segment",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Gradients and equations of lines",
+          "code": "1.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Calculate the gradient of a line segment",
+              "application",
+              1
+            ],
+            [
+              "Determine the equation of a straight line in various forms",
+              "application",
+              2
+            ],
+            [
+              "Determine parallel and perpendicular lines using gradients",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Area of triangles and quadrilaterals",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Calculate the area of a triangle given coordinates of vertices",
+              "application",
+              1
+            ],
+            [
+              "Calculate the area of a quadrilateral given coordinates of vertices",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "AREA AND PERIMETER",
+      "code": "2.0",
+      "form_level": 4,
+      "order": 27,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Area of regular polygons",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Calculate area of regular polygons using the formula A = 1/2 × perimeter × apothem",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Surface area of solids",
+          "code": "2.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Calculate the surface area of composite solids",
+              "analysis",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THREE DIMENSIONAL FIGURES",
+      "code": "3.0",
+      "form_level": 4,
+      "order": 28,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Three dimensional figures",
+          "code": "3.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Identify properties of 3D figures: faces, edges, vertices",
+              "knowledge",
+              1
+            ],
+            [
+              "Draw 3D figures using isometric projection",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Volume of composite solids",
+          "code": "3.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Calculate volume and capacity of composite 3D figures",
+              "application",
+              1
+            ],
+            [
+              "Solve real-world problems involving 3D figures",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PROBABILITY",
+      "code": "4.0",
+      "form_level": 4,
+      "order": 29,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Basic probability",
+          "code": "4.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define and calculate theoretical probability of simple events",
+              "application",
+              1
+            ],
+            [
+              "Use experiments to estimate probability",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Combined events",
+          "code": "4.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Calculate probability of combined events using addition and multiplication rules",
+              "application",
+              1
+            ],
+            [
+              "Use tree diagrams and Venn diagrams to solve probability problems",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Conditional probability",
+          "code": "4.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Calculate conditional probability",
+              "analysis",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRIGONOMETRY II",
+      "code": "5.0",
+      "form_level": 4,
+      "order": 30,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "General angles and trigonometric functions",
+          "code": "5.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Determine trigonometric ratios of any angle",
+              "application",
+              1
+            ],
+            [
+              "Use the sine and cosine rules to solve triangles",
+              "application",
+              2
+            ],
+            [
+              "Explore the basic tenets of coordinate geometry (midpoint of a line segment, distance between two points on a line, parallel, and perpendicular line",
+              "comprehension",
+              0
+            ],
+            [
+              "Explore the basic tenets of vectors (displacement and position vectors, magnitude and direction, sum and differences, multiplication of vectors by a scala",
+              "comprehension",
+              0
+            ]
+          ]
+        },
+        {
+          "title": "Graphs of trigonometric functions",
+          "code": "5.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Draw graphs of y = sin x, y = cos x and y = tan x",
+              "application",
+              1
+            ],
+            [
+              "Solve trigonometric equations using graphs",
+              "analysis",
+              2
+            ],
+            [
+              "Apply sine and cosine rules to find distances or angles of elevation",
+              "comprehension",
+              0
+            ]
+          ]
+        },
+        {
+          "title": "Trigonometric identities",
+          "code": "5.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Prove and apply the identity sin²θ + cos²θ = 1",
+              "evaluation",
+              1
+            ],
+            [
+              "Use compound angle formulae",
+              "application",
+              2
+            ],
+            [
+              "Derive and use compound angles to solve problems",
+              "comprehension",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "VECTORS",
+      "code": "6.0",
+      "form_level": 4,
+      "order": 31,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Introduction to vectors",
+          "code": "6.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define and represent vectors using column and position notation",
+              "comprehension",
+              1
+            ],
+            [
+              "Add and subtract vectors",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Magnitudes and directions",
+          "code": "6.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Calculate the magnitude of a vector",
+              "application",
+              1
+            ],
+            [
+              "Determine the unit vector in the direction of a given vector",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Applications of vectors",
+          "code": "6.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Solve problems involving position vectors and displacement",
+              "analysis",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MATRICES",
+      "code": "7.0",
+      "form_level": 4,
+      "order": 32,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Operations on matrices",
+          "code": "7.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Add, subtract and multiply matrices",
+              "application",
+              1
+            ],
+            [
+              "Find the determinant of 2×2 and 3×3 matrices",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Inverse matrices",
+          "code": "7.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Find the inverse of a 2×2 matrix",
+              "application",
+              1
+            ],
+            [
+              "Use matrices to solve simultaneous equations",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Transformations using matrices",
+          "code": "7.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Represent transformations using matrices",
+              "application",
+              1
+            ],
+            [
+              "Solve problems using matrix transformations",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LINEAR PROGRAMMING",
+      "code": "8.0",
+      "form_level": 4,
+      "order": 33,
+      "periods": 10,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Inequalities in two unknowns",
+          "code": "8.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Graph linear inequalities in two unknowns",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Linear programming problems",
+          "code": "8.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Formulate and solve linear programming problems graphically",
+              "analysis",
+              1
+            ],
+            [
+              "Find the optimal solution (maximum and minimum) of the objective function",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "STATISTICS AND DATA REPRESENTATION",
+      "code": "9.0",
+      "form_level": 4,
+      "order": 34,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Data collection and presentation",
+          "code": "9.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Collect, organize and present data using tables, bar charts, histograms, frequency polygons and pie charts",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Measures of central tendency",
+          "code": "9.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Calculate mean, median, mode and their uses",
+              "application",
+              1
+            ],
+            [
+              "Calculate weighted mean and estimated mean from grouped data",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Measures of dispersion",
+          "code": "9.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Calculate range, variance and standard deviation",
+              "application",
+              1
+            ],
+            [
+              "Interpret data using measures of central tendency and dispersion",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

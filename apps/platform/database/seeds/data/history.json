@@ -1,0 +1,1598 @@
+{
+  "name": "History",
+  "code": "HIST",
+  "slug": "history",
+  "necta_code": "013",
+  "is_core": true,
+  "description": "History for Ordinary and Advanced Secondary Education, Form I-VI. Covers Tanzania and Africa from prehistory to independence, the world since 1500, and advanced approaches to the study of history.",
+  "form_start": 1,
+  "form_end": 6,
+  "replace_topic_form_levels": [
+    1
+  ],
+  "topics": [
+    {
+      "title": "INTRODUCTION TO HISTORY",
+      "code": "1.0",
+      "form_level": 1,
+      "order": 1,
+      "periods": 24,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Meaning of History",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define history and explain its basic concepts",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Qualities of historical events",
+          "code": "1.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify and describe the qualities that make an event historical",
+              "knowledge",
+              1
+            ],
+            [
+              "Evaluate local Tanzanian events to determine their historical qualities",
+              "evaluation",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Ways of dating historical events",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain chronological units (Day, Week, Month, Year, Decade, Century, Millennium)",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe time notation systems (BC, AD, BCE, CE) and construct historical timelines",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Importance of studying History",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain the social, political, and economic importance of studying history",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Relationship between History and other related subjects",
+          "code": "1.5",
+          "order": 5,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Discuss the relationship between History, Geography, Civics, and Economics",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Concept of sources of historical information",
+          "code": "1.6",
+          "order": 6,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe primary and secondary sources of historical information",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe oral traditions, archaeology, archives, and museums as historical sources",
+              "knowledge",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ORIGIN OF HUMAN BEINGS",
+      "code": "2.0",
+      "form_level": 1,
+      "order": 2,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Theories of the origin of human beings",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the Creation Theory of human origin",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe the Theory of Evolution proposed by Charles Darwin",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Major groups of human ancestors",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe early human ancestors (Australopithecus, Homo habilis)",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe advanced human ancestors (Homo erectus, Homo sapiens)",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Human technology",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Examine early human technology (Old Stone Age, Middle Stone Age, Late Stone Age, Iron Age)",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PRODUCTION AND SOCIAL ORGANISATION IN PRE-COLONIAL AFRICA",
+      "code": "3.0",
+      "form_level": 1,
+      "order": 3,
+      "periods": 8,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concepts of social organisation and economic production",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define production, instruments of labour, and subjects of labour",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain social organization and social relations of production",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Pre-colonial modes of production",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the Communal Mode of Production (Communalism)",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe the Slavery Mode of Production",
+              "comprehension",
+              2
+            ],
+            [
+              "Describe Feudalism and its forms (Uhubasi, Unyarubanja, Umwinyi)",
+              "comprehension",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DEVELOPMENT OF AGRICULTURE IN PRE-COLONIAL AFRICAN SOCIETIES",
+      "code": "4.0",
+      "form_level": 1,
+      "order": 4,
+      "periods": 8,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Agriculture",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define agriculture and explain the transition from hunting and gathering to farming",
+              "comprehension",
+              1
+            ],
+            [
+              "Examine advanced agricultural techniques (terracing and irrigation)",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Types of agricultural practices in pre-colonial Africa",
+          "code": "4.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe shifting cultivation and bush fallowing",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe permanent crop cultivation and pastoralism",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "HANDCRAFT AND MINING INDUSTRIES IN PRE-COLONIAL AFRICA",
+      "code": "5.0",
+      "form_level": 1,
+      "order": 5,
+      "periods": 8,
+      "weight": "low",
+      "subtopics": [
+        {
+          "title": "Handcraft industries",
+          "code": "5.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe traditional pottery, weaving, and woodworking handcraft industries",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe traditional iron-smelting technology",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Mining industry",
+          "code": "5.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the traditional mining industry (gold, copper, salt, iron ore)",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SOCIAL, POLITICAL AND EDUCATION SYSTEMS IN PRE-COLONIAL AFRICA",
+      "code": "6.0",
+      "form_level": 1,
+      "order": 6,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concepts of social, political and education systems",
+          "code": "6.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain concepts of social, political, and education systems in traditional societies",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Non-centralised political system",
+          "code": "6.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe non-centralized political systems (clan-based organization, age-set system)",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Education system in pre-colonial African societies",
+          "code": "6.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the indigenous education system in pre-colonial African societies",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "STATE ORGANISATION IN PRE-COLONIAL AFRICA",
+      "code": "7.0",
+      "form_level": 1,
+      "order": 7,
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning of a state",
+          "code": "7.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain the meaning of a state and factors for state formation",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Centralised states in East Africa",
+          "code": "7.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe centralized states in East Africa (Buganda, Bunyoro, Karagwe)",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Western Sudanic states",
+          "code": "7.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe Western Sudanic states (Ghana, Mali, Songhai)",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Forest states of West Africa",
+          "code": "7.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe Forest states of West Africa (Oyo, Dahomey, Asante)",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Central African kingdoms",
+          "code": "7.5",
+          "order": 5,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe Central African kingdoms (Kongo, Luba, Lunda)",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Southern African kingdoms",
+          "code": "7.6",
+          "order": 6,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe Southern African kingdoms (Mwenemutapa, Great Zimbabwe, Zulu State)",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "INTERACTIONS IN PRE-COLONIAL AFRICA",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 6,
+      "periods": 20,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Meaning of interaction",
+          "code": "1.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Explain socio-cultural factors of interaction",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain political factors of interaction",
+              "comprehension",
+              2
+            ],
+            [
+              "Explain economic factors of interaction",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Interactions in different regions",
+          "code": "1.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe interactions in various regions of Africa",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Interactions on the Indian Ocean islands",
+          "code": "1.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe interactions on the Indian Ocean islands",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Interactions in Southern Africa",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain the Mfecane and its effects",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the causes of the Ngoni migration",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Interactions in Eastern Africa",
+          "code": "1.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Describe interactions in Eastern Africa",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Interactions in Western Africa",
+          "code": "1.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Describe interactions in Western Africa",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Interactions in Northern Africa",
+          "code": "1.7",
+          "order": 7,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Describe interactions in Northern Africa",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Effects of the interactions",
+          "code": "1.8",
+          "order": 8,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Explain the effects of interactions in pre-colonial Africa",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EARLY CONTACTS BETWEEN AFRICA, THE MIDDLE EAST AND THE FAR EAST",
+      "code": "2.0",
+      "form_level": 2,
+      "order": 7,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Early contacts between Africans and people of the Middle and Far East",
+          "code": "2.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe the early contacts",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Motives for the early contacts",
+          "code": "2.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Explain the motives for early contacts",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Conditions that facilitated the early contacts",
+          "code": "2.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Identify conditions that facilitated early contacts",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Major commodities exchanged",
+          "code": "2.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "List the major commodities exchanged",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Effects of the early contacts",
+          "code": "2.5",
+          "order": 5,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Explain the effects of early contacts on Africa",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EARLY CONTACTS BETWEEN AFRICA AND EUROPE",
+      "code": "3.0",
+      "form_level": 2,
+      "order": 8,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Background to the contacts between Africa and Europe",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the background to Africa-Europe contacts",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Early contacts between Africans and the Portuguese",
+          "code": "3.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe the early contacts with the Portuguese",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the impact of Portuguese exploration on African societies",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ESTABLISHMENT OF COLONIALISM IN AFRICA",
+      "code": "1.0",
+      "form_level": 3,
+      "order": 11,
+      "periods": 20,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Scramble for and partition of Africa",
+          "code": "1.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Explain the causes of the scramble for and partition of Africa",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the Berlin Conference of 1884-1885 and its impact",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Occupation of colonial territories",
+          "code": "1.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe the methods used to occupy and establish colonial rule",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain colonial administration systems: assimilation, indirect rule and settler systems",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ESTABLISHMENT OF COLONIALISM IN AFRICA (CONTINUED)",
+      "code": "2.0",
+      "form_level": 3,
+      "order": 12,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "colonial economy",
+          "code": "2.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe the colonial economic policies: production of cash crops, mining and labour",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the impact of the colonial economy on African societies",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Social and cultural changes",
+          "code": "2.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe social and cultural changes under colonialism",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the growth of mission schools and urbanization",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "COLONIAL SOCIAL SERVICES",
+      "code": "3.0",
+      "form_level": 3,
+      "order": 13,
+      "periods": 14,
+      "weight": "low",
+      "subtopics": [
+        {
+          "title": "Education, health and communication",
+          "code": "3.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe colonial education and its impact on Africans",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe the development of health and transport services under colonialism",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Colonial legacy",
+          "code": "3.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze the legacy of colonial social services in independent Africa",
+              "analysis",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE NATIONAL STRUGGLE FOR INDEPENDENCE IN AFRICA",
+      "code": "4.0",
+      "form_level": 3,
+      "order": 14,
+      "periods": 20,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Rise of African nationalism",
+          "code": "4.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Explain the factors for the rise of nationalism in Africa",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe the role of political parties and trade unions in the struggle",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Nationalism in Tanzania",
+          "code": "4.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Trace the development of TANU and the struggle for Tanganyika's independence",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the role of the independence movement in Zanzibar",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "POLITICAL, ECONOMIC AND SOCIAL DEVELOPMENT IN AFRICA AFTER INDEPENDENCE",
+      "code": "5.0",
+      "form_level": 3,
+      "order": 15,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Political changes after independence",
+          "code": "5.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe nation building and constitutional changes in Africa",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the rise of one-party and multi-party systems in Africa",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Economic and social policies in Tanzania",
+          "code": "5.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe the Arusha Declaration and socialism in Tanzania",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the achievements and challenges of Ujamaa and villagization",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CRISIS IN THE COLONIAL SYSTEM",
+      "code": "1.0",
+      "form_level": 4,
+      "order": 16,
+      "periods": 20,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Industrialization in colonial Africa",
+          "code": "1.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Explain the factors for the slow industrialization under colonialism",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the crisis in the colonial economy",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Decline of colonial rule",
+          "code": "1.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Explain the factors that contributed to the crisis and decline of the colonial system",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE CRISIS OF THE CAPITALIST SYSTEM",
+      "code": "2.0",
+      "form_level": 4,
+      "order": 17,
+      "periods": 16,
+      "weight": "low",
+      "subtopics": [
+        {
+          "title": "The great depression and world economic crisis",
+          "code": "2.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Explain the causes of the great depression of the 1930s",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the impact of the depression on African colonies",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Neo-colonialism",
+          "code": "2.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Explain the meaning and manifestations of neo-colonialism",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the effects of neo-colonialism on developing countries",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TANZANIA IN INTERNATIONAL AFFAIRS",
+      "code": "3.0",
+      "form_level": 4,
+      "order": 18,
+      "periods": 16,
+      "weight": "low",
+      "subtopics": [
+        {
+          "title": "Tanzania and international organizations",
+          "code": "3.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe Tanzania's membership and role in the UN, AU and SADC",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain Tanzania's foreign policy and role in regional cooperation",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "The East African Community",
+          "code": "3.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Trace the history of the East African Community and its revival",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the achievements and challenges of the EAC",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "WORLD PROBLEMS SINCE THE SECOND WORLD WAR",
+      "code": "4.0",
+      "form_level": 4,
+      "order": 19,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "The cold war and its impact",
+          "code": "4.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Explain the causes and course of the Cold War",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the impact of the Cold War on Africa and the Third World",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Contemporary world problems",
+          "code": "4.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe problems of refugees, terrorism, poverty and global warming",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the role of the UN and other bodies in solving world problems",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 1: PRE-COLONIAL AFRICAN SOCIETIES AND ECONOMIES",
+      "code": "1.0",
+      "form_level": 5,
+      "order": 20,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Origin and development of African societies",
+          "code": "1.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the formation and development of early African kingdoms",
+              "analysis",
+              1
+            ],
+            [
+              "Review debates on the origins of African states",
+              "evaluation",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Pre-colonial economies of Africa",
+          "code": "1.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze agriculture, trade and craft production in pre-colonial Africa",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the impact of the long-distance trade on East Africa",
+              "evaluation",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Social and political organization of African societies",
+          "code": "1.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Describe the political systems and social organization of African societies",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze kinship, clan, age-set and state structures",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 1: COLONIALISM IN AFRICA",
+      "code": "2.0",
+      "form_level": 5,
+      "order": 21,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Scramble, partition and occupation",
+          "code": "2.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the causes and processes of the partition of Africa",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the Berlin Conference of 1884-1885",
+              "evaluation",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Colonial administration and economy",
+          "code": "2.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Compare indirect rule, assimilation and direct rule systems",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze colonial economic exploitation and its legacy",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "African resistance to colonial rule",
+          "code": "2.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze early and organized resistance movements",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the impact of resistance such as the Maji Maji and Abushiri uprisings",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 1: NATIONALISM AND INDEPENDENCE",
+      "code": "3.0",
+      "form_level": 5,
+      "order": 22,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Rise of nationalism",
+          "code": "3.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the factors for the rise of nationalism in Africa",
+              "analysis",
+              1
+            ],
+            [
+              "Describe the role of trade unions, churches and political parties",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Paths to independence",
+          "code": "3.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Compare peaceful and armed struggles for independence",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze independence movements in East, Central and Southern Africa",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Independence and nation building",
+          "code": "3.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze challenges of nation building after independence",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate experiences of chosen African countries in consolidation",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 1: SELECTED THEMES (TANZANIA, KENYA, ZIMBABWE, NIGERIA)",
+      "code": "4.0",
+      "form_level": 5,
+      "order": 23,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Tanzania case study",
+          "code": "4.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the Arusha Declaration, Ujamaa and political development in Tanzania",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate socialist policies and economic reform",
+              "evaluation",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Kenya case study",
+          "code": "4.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Analyze the history of Kenya from resistance to independence and its development",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Zimbabwe and Nigeria case studies",
+          "code": "4.3",
+          "order": 3,
+          "periods": 16,
+          "outcomes": [
+            [
+              "Analyze the struggle for independence in Zimbabwe",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze the history of Nigeria from colonialism to independence and beyond",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 2: TRANSFORMATION OF THE WORLD FROM 1800",
+      "code": "1.0",
+      "form_level": 6,
+      "order": 24,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Crisis and transformation in the capitalist system",
+          "code": "1.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the industrial revolution and its consequences on the world",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze the great depression and world economic crises",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "The rise of imperialism",
+          "code": "1.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the causes and forms of modern imperialism",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the impact of imperialism on colonized societies",
+              "evaluation",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "The First and Second World Wars",
+          "code": "1.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the causes, course and consequences of the world wars",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate peace settlements and the League of Nations and UN",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 2: THE AGE OF REVOLUTIONS",
+      "code": "2.0",
+      "form_level": 6,
+      "order": 25,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The French Revolution",
+          "code": "2.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Analyze the causes, course and impact of the French Revolution",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "The Industrial Revolution",
+          "code": "2.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the causes and effects of the Industrial Revolution in Britain and beyond",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "The Russian Revolution",
+          "code": "2.3",
+          "order": 3,
+          "periods": 14,
+          "outcomes": [
+            [
+              "Analyze the causes, course and impact of the Russian Revolution",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the rise of the Soviet state and the cold war",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 2: THE WORLD SINCE 1945",
+      "code": "3.0",
+      "form_level": 6,
+      "order": 26,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Cold War and decolonization",
+          "code": "3.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the origins and dynamics of the Cold War",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze decolonization and the emergence of the Third World",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "The Non-Aligned Movement",
+          "code": "3.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Explain the origins and role of the Non-Aligned Movement",
+              "comprehension",
+              1
+            ],
+            [
+              "Evaluate Tanzania's role in the Non-Aligned Movement",
+              "evaluation",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Contemporary international relations",
+          "code": "3.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze globalization, regional integration and world problems",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the role of the UN and international organizations in the modern world",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 2: HISTORIOGRAPHY AND THE PHILOSOPHY OF HISTORY",
+      "code": "4.0",
+      "form_level": 6,
+      "order": 27,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and methods of history",
+          "code": "4.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Explain the meaning, scope and methods of history",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the causes of history and interpretation in historiography",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Schools of historical thought",
+          "code": "4.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Describe idealist, empiricist, positivist and Marxist schools of thought",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the contribution of African historians to the study of history",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "The philosophy of history",
+          "code": "4.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the value and relevance of studying history today",
+              "evaluation",
+              1
+            ],
+            [
+              "Evaluate historical thinking and the use of sources and evidence",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

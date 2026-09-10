@@ -1,0 +1,2904 @@
+{
+  "name": "Historia ya Tanzania na Maadili",
+  "code": "HTM",
+  "slug": "historia-ya-tanzania-na-maadili",
+  "necta_code": "014",
+  "is_core": true,
+  "description": "Somo la Historia ya Tanzania na Maadili linafundisha historia ya jamii za Kiafrika, ukoloni, ukombozi, na ujenzi wa taifa pamoja na maadili, thamani za kiraifa, na kanuni za maisha bora kwa wanafunzi wa Form I hadi Form VI.",
+  "form_start": 1,
+  "form_end": 6,
+  "replace_topic_form_levels": [
+    1
+  ],
+  "topics": [
+    {
+      "title": "Kumudu dhana ya Historia ya Tanzania na Maadili",
+      "code": "1.0",
+      "form_level": 1,
+      "order": 1,
+      "periods": 4,
+      "weight": "low",
+      "subtopics": [
+        {
+          "title": "Kueleza dhana ya Historia ya Tanzania na Maadili na maadili",
+          "code": "1.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza dhana ya Historia ya Tanzania na Maadili na maadili",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza umuhimu wa somo na uhusiano wake na masomo mengine",
+          "code": "1.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza umuhimu wa somo na uhusiano wake na masomo mengine",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kumudu chimbuko la jamii za Kitanzania na maadili yake",
+      "code": "2.0",
+      "form_level": 1,
+      "order": 2,
+      "periods": 10,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Kueleza dhana ya jamii na asili ya jamii za Kitanzania",
+          "code": "2.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza dhana ya jamii na asili ya jamii za Kitanzania",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza mtawanyiko wa jamii za Tanzania kabla ya ukoloni",
+          "code": "2.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza mtawanyiko wa jamii za Tanzania kabla ya ukoloni",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza matokeo ya uhamaji",
+          "code": "2.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza matokeo ya uhamaji",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza shughuli za makundi ya asili",
+          "code": "2.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza shughuli za makundi ya asili",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza maadili ya jamii za asili ya Kitanzania",
+          "code": "2.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza maadili ya jamii za asili ya Kitanzania",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kumudu maadili na urithi wa jamii za Kitanzania",
+      "code": "3.0",
+      "form_level": 1,
+      "order": 3,
+      "periods": 6,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Kueleza dhana ya urithi na maadili kama sehemu ya urithi",
+          "code": "3.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza dhana ya urithi na maadili kama sehemu ya urithi",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza kazi za binadamu na urithi wa asili",
+          "code": "3.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza kazi za binadamu na urithi wa asili",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza matendo yanayokuza na kulinda maadili na urithi wa Tanzania",
+          "code": "3.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza matendo yanayokuza na kulinda maadili na urithi wa Tanzania",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kumudu fursa zinazotokana na urithi wa jamii za Kitanzania",
+      "code": "4.0",
+      "form_level": 1,
+      "order": 4,
+      "periods": 6,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Kueleza urithi wa kihistoria na fursa zake",
+          "code": "4.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza urithi wa kihistoria na fursa zake",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza urithi wa asili na fursa zake",
+          "code": "4.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza urithi wa asili na fursa zake",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza njia za kutunza urithi na fursa za kiuchumi",
+          "code": "4.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza njia za kutunza urithi na fursa za kiuchumi",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kumudu mifumo katika jamii za Kitanzania kabla ya ukoloni",
+      "code": "5.0",
+      "form_level": 1,
+      "order": 5,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Kueleza mifumo ya kijamii na utamaduni kabla ya ukoloni",
+          "code": "5.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza mifumo ya kijamii na utamaduni kabla ya ukoloni",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza jinsi mifumo ya kijamii ilivyokuza ujenzi wa maadili",
+          "code": "5.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza jinsi mifumo ya kijamii ilivyokuza ujenzi wa maadili",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza mifumo ya kiuchumi na maendeleo ya viwanda kabla ya ukoloni",
+          "code": "5.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza mifumo ya kiuchumi na maendeleo ya viwanda kabla ya ukoloni",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza shughuli za kilimo katika jamii za asili",
+          "code": "5.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza shughuli za kilimo katika jamii za asili",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza mifumo ya kisiasa kabla ya ukoloni",
+          "code": "5.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza mifumo ya kisiasa kabla ya ukoloni",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza mchango wa mifumo ya kisiasa na kiuchumi katika kukuza siasa na maadili",
+          "code": "5.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza mchango wa mifumo ya kisiasa na kiuchumi katika kukuza siasa na maadili",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza changamoto zilizojitokeza katika ujenzi wa maadili",
+          "code": "5.7",
+          "order": 7,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza changamoto zilizojitokeza katika ujenzi wa maadili",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kumudu uhusiano kati ya jamii za Kitanzania na jamii nyingine",
+      "code": "6.0",
+      "form_level": 1,
+      "order": 6,
+      "periods": 4,
+      "weight": "low",
+      "subtopics": [
+        {
+          "title": "Kueleza uhusiano kati ya jamii za Kitanzania na uhusiano na jamii za Mashariki ya Kati na Mbali",
+          "code": "6.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza uhusiano kati ya jamii za Kitanzania na uhusiano na jamii za Mashariki ya Kati na Mbali",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza uhusiano na jamii za Ulaya na athari za mahusiano hayo",
+          "code": "6.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza uhusiano na jamii za Ulaya na athari za mahusiano hayo",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kumudu sayansi na teknolojia kabla ya ukoloni",
+      "code": "7.0",
+      "form_level": 1,
+      "order": 7,
+      "periods": 6,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Kueleza dhana ya sayansi na teknolojia na teknolojia ya Zama za Mawe za Kale",
+          "code": "7.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza dhana ya sayansi na teknolojia na teknolojia ya Zama za Mawe za Kale",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza teknolojia ya Zama za Chuma na tofauti yake na Zama za Mawe",
+          "code": "7.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza teknolojia ya Zama za Chuma na tofauti yake na Zama za Mawe",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kueleza mambo ya kujifunza na vichocheo vya mabadiliko ya sayansi na teknolojia",
+          "code": "7.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Kueleza mambo ya kujifunza na vichocheo vya mabadiliko ya sayansi na teknolojia",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ukoloni katika jamii za Kitanzania",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 7,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Chimbuko na ukuaji wa ukoloni",
+          "code": "1.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea chimbuko la ukoloni barani Afrika",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua ukuaji wa ukoloni katika jamii za Kitanzania",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua sababu za uvamizi wa kikoloni",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mifumo ya kikoloni ya mataifa yaliyozitawala jamii za Kitanzania",
+          "code": "1.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Bainisha mataifa yaliyotawala jamii za Kitanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mifumo ya utawala wa kikoloni",
+              "comprehension",
+              2
+            ],
+            [
+              "Linganisha mifumo ya utawala wa kikoloni",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Utawala wa Wajerumani",
+          "code": "1.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea misingi ya utawala wa Wajerumani",
+              "comprehension",
+              1
+            ],
+            [
+              "Fafanua madhara ya utawala wa Wajerumani",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini athari za utawala wa Wajerumani kwa maadili ya Kitanzania",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Utawala wa Waingereza Tanganyika",
+          "code": "1.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea mfumo wa utawala wa Waingereza Tanganyika",
+              "comprehension",
+              1
+            ],
+            [
+              "Fafanua sera iliyotumiwa na utawala wa Waingereza",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za utawala wa Waingereza katika maadili ya Kitanzania",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Utawala wa Waarabu na Zanzibar",
+          "code": "1.5",
+          "order": 5,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea utawala wa Waarabu Zanzibar",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua mfumo wa utawala wa Waarabu Zanzibar",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini athari za utawala wa Waarabu kwa maadili ya Wazanzibari",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Athari za ukoloni katika maadili ya Kitanzania",
+      "code": "2.0",
+      "form_level": 2,
+      "order": 8,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Maadili ya jamii za Kitanzania wakati ukoloni unaingia",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea maadili ya jamii za Kitanzania kabla ya ukoloni",
+              "knowledge",
+              1
+            ],
+            [
+              "Bainisha maadili yanayofundishwa katika jamii asilia",
+              "comprehension",
+              2
+            ],
+            [
+              "Elezea mfumo wa malezi katika jamii za Kitanzania",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Maadili ya Kitanzania yaliyodumishwa wakati wa ukoloni",
+          "code": "2.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Bainisha maadili ya Kitanzania yaliyodumishwa wakati wa ukoloni",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua jinsi maadili ya Kitanzania yalivyodumishwa",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua umuhimu wa kudumisha maadili ya asili",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Athari za mfumo wa ukoloni katika maadili ya Kitanzania",
+          "code": "2.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Bainisha athari za ukoloni katika maadili ya Kitanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua namna ukoloni ulivyodhoofisha maadili ya Kitanzania",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini athari za ukoloni kwenye maadili ya Kitanzania",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mapambano ya awali dhidi ya uvamizi wa kikoloni",
+      "code": "3.0",
+      "form_level": 2,
+      "order": 9,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Dhana ya uvamizi wa kikoloni",
+          "code": "3.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Fasiri dhana ya uvamizi wa kikoloni",
+              "comprehension",
+              1
+            ],
+            [
+              "Elezea sababu zinazowafanya wakoloni kuivamia Afrika",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Sababu za kuupinga uvamizi wa kikoloni",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea sababu za kuupinga uvamizi wa kikoloni",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua maadili ya jamii zilizopinga uvamizi wa kikoloni",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua nia za kuupinga uvamizi wa kikoloni",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Upinzani dhidi ya uvamizi wa kikoloni katika jamii za Kitanzania",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea upinzani dhidi ya uvamizi wa kikoloni",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua mashujaa wakubwa wa upinzani katika jamii za Kitanzania",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua hatua mbalimbali za upinzani zilizochukuliwa",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Changamoto zilizokabili mapambano dhidi ya uvamizi wa kikoloni",
+          "code": "3.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Bainisha changamoto zilizokabili mapambano dhidi ya ukoloni",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua namna changamoto hizi zilivyoshughulikiwa",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Matokeo ya kupinga uvamizi wa kikoloni",
+          "code": "3.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Elezea matokeo ya kupinga uvamizi wa kikoloni",
+              "knowledge",
+              1
+            ],
+            [
+              "Tathmini mafanikio ya mapambano dhidi ya uvamizi wa kikoloni",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Harakati za kudai uhuru wa Tanganyika na Zanzibar",
+      "code": "4.0",
+      "form_level": 2,
+      "order": 10,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Dhana ya uhuru na harakati za kudai uhuru",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Fasiri dhana ya uhuru",
+              "comprehension",
+              1
+            ],
+            [
+              "Elezea maana ya harakati za kudai uhuru",
+              "knowledge",
+              2
+            ],
+            [
+              "Chambua umuhimu wa uhuru kwa maendeleo ya taifa",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Misingi ya kudai uhuru wa Tanganyika na Zanzibar",
+          "code": "4.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Bainisha misingi ya kudai uhuru wa Tanganyika",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua misingi ya kudai uhuru wa Zanzibar",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua msimamo wa viongozi mbalimbali katika kudai uhuru",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mbinu zilizotumika kudai uhuru wa Tanganyika na Zanzibar",
+          "code": "4.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mbinu zilizotumika kudai uhuru wa Tanganyika na Zanzibar",
+              "comprehension",
+              1
+            ],
+            [
+              "Fafanua mchango wa vyama vya siasa katika kudai uhuru",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini mbinu zilizotumika kudai uhuru",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mchango wa harakati za kupinga uvamizi na ukoloni katika kudai uhuru",
+          "code": "4.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Bainisha mchango wa harakati za kupinga ukoloni",
+              "comprehension",
+              1
+            ],
+            [
+              "Fafanua jinsi mapambano ya awali yalivyochochea kudai uhuru",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua mchango wa harakati mbalimbali katika kudai uhuru",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ujenzi wa taifa baada ya ukoloni",
+      "code": "5.0",
+      "form_level": 2,
+      "order": 11,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Dhana ya ujenzi wa taifa",
+          "code": "5.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Fasiri dhana ya ujenzi wa taifa",
+              "comprehension",
+              1
+            ],
+            [
+              "Elezea maadili yanayohimizwa katika ujenzi wa taifa",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Mifumo iliyojengwa kati ya mwaka 1961 hadi 1966 ya ujenzi wa taifa",
+          "code": "5.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mifumo ya ujenzi wa taifa",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua mifumo iliyojengwa kati ya mwaka 1961 hadi 1966",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua mchango wa mifumo hiyo katika ujenzi wa taifa",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mikakati ya ujenzi wa taifa",
+          "code": "5.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Bainisha mikakati ya ujenzi wa taifa",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua mikakati ya kijamii, kiuchumi na kisiasa ya ujenzi wa taifa",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini mikakati ya ujenzi wa taifa",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Changamoto za ujenzi wa taifa",
+          "code": "5.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea changamoto za ujenzi wa taifa",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua namna changamoto hizo zinavyoshughulikiwa",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mapinduzi Matukufu ya Zanzibar",
+      "code": "6.0",
+      "form_level": 2,
+      "order": 12,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Dhana ya mapinduzi",
+          "code": "6.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Fasiri dhana ya mapinduzi",
+              "comprehension",
+              1
+            ],
+            [
+              "Elezea umuhimu wa mapinduzi",
+              "knowledge",
+              2
+            ],
+            [
+              "Chambua tofauti kati ya mapinduzi na makubaliano ya kisiasa",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Chimbuko la Mapinduzi Matukufu ya Zanzibar",
+          "code": "6.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea chimbuko la Mapinduzi Matukufu ya Zanzibar",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua muktadha wa Mapinduzi Matukufu ya Zanzibar",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Sababu za Mapinduzi Matukufu ya Zanzibar",
+          "code": "6.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Bainisha sababu za Mapinduzi Matukufu ya Zanzibar",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua sababu za kisiasa, kiuchumi na kijamii za Mapinduzi",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua mchango wa maadili katika Mapinduzi Matukufu ya Zanzibar",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mchango wa Mapinduzi Matukufu ya Zanzibar",
+          "code": "6.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea mchango wa Mapinduzi Matukufu ya Zanzibar",
+              "knowledge",
+              1
+            ],
+            [
+              "Fafanua maadili yaliyolenga kujengwa na Mapinduzi",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini mchango wa Mapinduzi Matukufu ya Zanzibar",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MIKASA YA UFALME WALENGHE",
+      "code": "1.0",
+      "form_level": 3,
+      "order": 13,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Enchi na Nchi Jirani za Ufalme",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Elezea enchi zilizoanzisha ufalme wa Walelenghe",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea ukubwa na mipaka ya ufalme huu",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua umuhimu wa enchi hizi kwa maendeleo ya ufalme",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Misingi ya Uongozi na Biashara",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Tambua misingi ya uongozi katika Ufalme wa Walelenghe",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea shughuli za biashara zilizofanywa na ufalme",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua miundo ya uongozi na ushawishi wa ufalme",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Utawala na Taratibu za Kila Siku",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea taratibu za utawala katika ufalme",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea maisha ya kila siku ya watu wa ufalme",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili changamoto zilizojitokeza katika utawala wa ufalme",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Miladha na Maisha ya Watu",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea miladha za watu wa Ufalme wa Walelenghe",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi miladha zilivyochangia maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini umuhimu wa miladha katika maisha ya watu wa ufalme",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UTAFUTAJI WA WAEUROPA AFRIKA MASHARIKI",
+      "code": "2.0",
+      "form_level": 3,
+      "order": 14,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Siasa za Ulaya na Kusalitiwa",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea siasa za Ulaya zilizopelekea kusalitiwa kwa Afrika",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea sababu za Waeuropa kutaka kuchukua eneo la Afrika",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua matokeo ya siasa za Ulaya kwa Afrika",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Sababu za Utafutaji na Mazingira",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Tambua sababu zilizopelekea Waeuropa kufanya utafutaji Afrika",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea vigezo vya kijiografia vilivyowezesha utafutaji",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za utafutaji kwa watu wa Afrika",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Watafiti na Safari Zao",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea safari za watafiti wake kama Burton, Speke, na Livingstone",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mafanikio ya watafiti wake Afrika",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili matokeo ya safari za watafiti kwa watu wa Afrika",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mazungumzo ya Waeuropa na Wenyeji",
+          "code": "2.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mazungumzo ya kwanza kati ya Waeuropa na wenyeji",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi mazungumzo yaliyopelekea mabadiliko",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za mazungumzo kwa jamii za wenyeji",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UTAWALA WA KOLONI LA KIJERUMANI TANGANYIKA",
+      "code": "3.0",
+      "form_level": 3,
+      "order": 15,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Misingi ya Utawala wa Kijerumani",
+          "code": "3.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Elezea misingi ya utawala wa koloni la Kijerumani",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mfumo wa utawala uliotumika na Wajerumani",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua matokeo ya mfumo huu kwa watu wa Tanganyika",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Sera za Kiuchumi za Wajerumani",
+          "code": "3.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Elezea sera za kiuchumi zilizotumika na Wajerumani",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi sera hizi zilivyobadilisha uchumi wa Tanganyika",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za sera za kiuchumi kwa watu wa Tanganyika",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Ushindani kati ya Wajerumani na Wananchi",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea sababu za ushindani kati ya Wajerumani na wananchi",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mbinu zilizotumika na Wajerumani kukabiliana na upinzani",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili matokeo ya ushindani kwa maendeleo ya taifa",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mabadiliko ya Kijamii",
+          "code": "3.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mabadiliko ya kijamii yaliyotokea wakati wa utawala wa Kijerumani",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi mabadiliko yaliyoathiri maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini athari za mabadiliko ya kijamii kwa jamii za Tanganyika",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UTAWALA WA KOLONI LA KIBRITANI TANGANYIKA",
+      "code": "4.0",
+      "form_level": 3,
+      "order": 16,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Misingi ya Utawala wa Kibritani",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea misingi ya utawala wa koloni la Kibritani",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mfumo wa utawala wa Kibritani",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua matokeo ya mfumo huu kwa watu wa Tanganyika",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Sera za Elimu na Afya",
+          "code": "4.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea sera za elimu na afya zilizotumika na Wabritani",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi sera hizi zilivyobadilisha maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili athari za sera za elimu na afya kwa jamii",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Utawala wa Kati na Wa Ndani",
+          "code": "4.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mfumo wa utawala wa kati na wa ndani",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi utawala ulivyosimamiwa na watu wa ndani",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua changamoto zilizojitokeza katika utawala",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Sera za Kazi na Ushuru",
+          "code": "4.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea sera za kazi na ushuru zilizotumika na Wabritani",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi sera hizi zilivyobadilisha maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini athari za sera za kazi na ushuru kwa watu wa Tanganyika",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAPINDUZI YA MAJI MAJI NA UPINZANI Mwingine",
+      "code": "5.0",
+      "form_level": 3,
+      "order": 17,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Sababu za Mapinduzi ya Maji Maji",
+          "code": "5.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea sababu za mapinduzi ya Maji Maji",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea sababu za kijamii na kiuchumi zilizopelekea mapinduzi",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua changamoto za upinzani dhidi ya ukoloni",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Viongozi na Mikakati ya Mapinduzi",
+          "code": "5.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea viongozi wa mapinduzi ya Maji Maji",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mikakati iliyotumika na viongozi hawa",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua jukumu la viongozi katika kusukuma mapinduzi",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mapinduzi ya Nchi Nyingine",
+          "code": "5.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea mapinduzi mengine yaliyotokea Tanganyika",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea sababu za mapinduzi hayo",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua matokeo ya mapinduzi hayo kwa watu",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Matokeo ya Mapinduzi",
+          "code": "5.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea matokeo ya mapinduzi ya Maji Maji na upinzani mwingine",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi mapinduzi yaliyoathiri maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini umuhimu wa mapinduzi katika historia ya Tanzania",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAISHA NA UCHUMI WAKATI WA KOLONI",
+      "code": "6.0",
+      "form_level": 3,
+      "order": 18,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Mfumo wa Kazi na Ushuru",
+          "code": "6.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mfumo wa kazi na ushuru uliotumika wakati wa koloni",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi mfumo huu ulivyobadilisha maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za mfumo wa kazi na ushuru kwa jamii",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Dini na Maisha ya Kila Siku",
+          "code": "6.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea jinsi dini zilivyoingia na kuenea Afrika",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea athari za dini kwa maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili matokeo ya dini kwa miladha na desturi",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mabadiliko ya Jamii na Jinsia",
+          "code": "6.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea mabadiliko ya jamii yaliyotokea wakati wa koloni",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi mabadiliko yaliyoathiri maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za mabadiliko kwa jamii za Tanganyika",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Maisha ya Kijamii na Kiuchumi",
+          "code": "6.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea maisha ya kijamii na kiuchumi wakati wa koloni",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi maisha yaliyobadilika",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini umuhimu wa mabadiliko ya kijamii na kiuchumi kwa jamii",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "VITA VYA DUNIA NA ATHARI ZAKE TANGANYIKA",
+      "code": "1.0",
+      "form_level": 4,
+      "order": 19,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Vita vya Dunia ya Kwanza Tanganyika",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea matokeo ya Vita vya Dunia ya Kwanza kwa Tanganyika",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi vita vilivyobadilisha uchumi wa Tanganyika",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za Vita vya Dunia ya Kwanza kwa watu",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Vita vya Dunia ya Pili Tanganyika",
+          "code": "1.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea matokeo ya Vita vya Dunia ya Pili kwa Tanganyika",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi vita vilivyobadilisha uchumi na jamii",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za Vita vya Dunia ya Pili kwa watu",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Kuchangishwa kwa Kazi na Vitengo",
+          "code": "1.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea jinsi watu walivyolazimishwa kuchangisha kazi",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi kazi ilivyobadilisha maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini athari za kuchangishwa kwa kazi kwa watu",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mabadiliko ya Kijamii na Kisiasa",
+          "code": "1.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea mabadiliko ya kijamii na kisiasa baada ya vita",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi vita vilivyosababisha mabadiliko",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili umuhimu wa mabadiliko hayo kwa maendeleo ya taifa",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "HARAKATI ZA WAFANYIKAZI NA UMOJA WAO",
+      "code": "2.0",
+      "form_level": 4,
+      "order": 20,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Mazingira ya Kazi",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mazingira ya kazi ya wafanyakazi wakati wa koloni",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea changamoto zilizokuwepo kwa wafanyakazi",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za mazingira ya kazi kwa wafanyakazi",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Umoja wa Wafanyakazi",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea jinsi wafanyakazi walivyoungana kulinda haki zao",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mikakati iliyotumika na wafanyakazi",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili mafanikio ya umoja wa wafanyakazi",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mapinduzi ya Reli 1947",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea sababu za mapinduzi ya reli ya 1947",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea matokeo ya mapinduzi ya reli",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini umuhimu wa mapinduzi ya reli katika historia",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "HARAKATI ZA UHURU NA KUUNGANISHWA",
+      "code": "3.0",
+      "form_level": 4,
+      "order": 21,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Asasi za Kisiasa za Kwanza",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea asasi za kisiasa za kwanza zilizoanzishwa",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea sababu za kuanzishwa kwa asasi hizi",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua jukumu la asasi hizi katika kupigania uhuru",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Chama cha TANU",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea historia ya chama cha TANU",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jukumu la TANU katika kupigania uhuru",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua mikakati ya TANU katika kupata uhuru",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Viongozi wa Harakati",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea viongozi wa harakati za uhuru",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mchango wa kila kiongozi",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini umuhimu wa viongozi katika kupigania uhuru",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Uhamasishaji wa Wananchi",
+          "code": "3.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mikakati ya uhamasishaji wa wananchi",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi uhamasishaji ulivyosaidia kupigania uhuru",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua matokeo ya uhamasishaji wa wananchi",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAPINDUZI YA KISASA NA KUPATA UHURU",
+      "code": "4.0",
+      "form_level": 4,
+      "order": 22,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Mazungumzo ya Kisiasa",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mazungumzo ya kisiasa yaliyofanyika",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mafanikio ya mazungumzo hayo",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua changamoto zilizojitokeza katika mazungumzo",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Katiba na Uhuru",
+          "code": "4.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mchakato wa upatikanaji wa katiba",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi katiba ilivyosaidia kupata uhuru",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili umuhimu wa katiba katika historia ya uhuru",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Uhuru wa Tanganyika",
+          "code": "4.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea tarehe na mazingira ya kupata uhuru",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mafanikio ya kupata uhuru",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini umuhimu wa uhuru kwa watu wa Tanganyika",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Unganisho na Zanzibar",
+          "code": "4.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea sababu za unganisho na Zanzibar",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea matokeo ya unganisho huu",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za unganisho kwa watu wa Tanzania",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UJENZI WA TAIFA NA UJAMAA",
+      "code": "5.0",
+      "form_level": 4,
+      "order": 23,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Azimio la Arusha",
+          "code": "5.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea sababu za kutoa Azimio la Arusha",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea misingi ya Azimio la Arusha",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua matokeo ya Azimio la Arusha kwa taifa",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Ujamaa na Kujitegemea",
+          "code": "5.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea dhana ya Ujamaa na Kujitegemea",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi Ujamaa ulivyoendeshwa",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini mafanikio na changamoto za Ujamaa",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Kujenga Ujamaa Vijijini",
+          "code": "5.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea mpango wa kujenga Ujamaa vijijini",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mafanikio ya mpango huu",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili changamoto zilizojitokeza katika utekelezaji",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Maendeleo ya Jamii",
+          "code": "5.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea maendeleo ya jamii yaliyopatikana",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi maendeleo yaliyoathiri maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini umuhimu wa maendeleo hayo kwa taifa",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TANZANIA NA KUSHIRIKIANA KIMATAIFA",
+      "code": "6.0",
+      "form_level": 4,
+      "order": 24,
+      "periods": 10,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Nchi washirika wa Tanzania",
+          "code": "6.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea nchi washirika wa Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea misingi ya ushirikiano kati ya nchi hizi",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua umuhimu wa ushirikiano huu kwa Tanzania",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Usaidizi wa Kikanda na Ujumla",
+          "code": "6.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea usaidizi wa kikanda na wa ujumla uliotolewa",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea matokeo ya usaidizi huu",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini umuhimu wa usaidizi huu kwa maendeleo",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Uhusiano wa Kimataifa",
+          "code": "6.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea uhusiano wa Tanzania na nchi nyingine",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mafanikio ya uhusiano huu",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua changamoto za uhusiano wa kimataifa",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DEMOKRASIA YA KIPANDE CHA SIKU",
+      "code": "1.0",
+      "form_level": 5,
+      "order": 25,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Tatizo la Demokrasia",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Elezea maana ya demokrasia ya kipande cha siku",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea sababu za mabadiliko ya kidemokrasia",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili umuhimu wa demokrasia katika maisha ya siku",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Katiba ya Kipande cha Siku",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Elezea misingi ya katiba ya kipande cha siku",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mabadiliko yaliyofanywa kwenye katiba",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua matokeo ya mabadiliko ya katiba kwa jamii",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Shughuli za NEC na Vyama vya Siasa",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea shughuli za NEC na vyama vya siasa",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jukumu la NEC katika kusimamia uchaguzi",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua changamoto zilizojitokeza katika shughuli hizi",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CHANGAMOTO ZA USAWAZI WA KISASA",
+      "code": "2.0",
+      "form_level": 5,
+      "order": 26,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Rushwa na Mapambano",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea maana ya rushwa na sababu zake",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea athari za rushwa kwa taifa",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili mikakati ya kupambana na rushwa",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Haki za Binadamu na Uwezeshaji",
+          "code": "2.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Elezea haki za binadamu na kanuni zake",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi haki za binadamu zilivyolindwa",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini umuhimu wa ulinzi wa haki za binadamu kwa jamii",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Uwajibikaji na Usimamizi",
+          "code": "2.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Elezea dhana ya uwajibikaji na usimamizi",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi uwajibikaji unavyosaidia kupunguza rushwa",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua changamoto za uwajibikaji na usimamizi",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "USHIRIKIANO WA KIKANDA",
+      "code": "3.0",
+      "form_level": 5,
+      "order": 27,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Jumuiya ya Afrika Mashariki na PEMEA",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea historia ya Jumuiya ya Afrika Mashariki",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea misingi ya Jumuiya ya Afrika Mashariki",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua mafanikio ya Jumuiya kwa nchi washirika",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Jumuiya ya Afrika (AU)",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea historia ya Jumuiya ya Afrika",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea misingi ya Jumuiya ya Afrika",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini umuhimu wa AU katika maendeleo ya bara",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mikakati ya Kikanda na Ushirikiano",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mikakati ya kikanda ya ushirikiano",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi mikakati ilivyosaidia maendeleo",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua changamoto za utekelezaji wa mikakati",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAISHA YA SIKU ZA HATARI",
+      "code": "4.0",
+      "form_level": 5,
+      "order": 28,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Idadi ya Watu na Mabadiliko",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mabadiliko ya idadi ya watu Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea sababu za mabadiliko ya idadi ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua athari za mabadiliko ya idadi ya watu kwa maendeleo",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mazingira na Uharibifu",
+          "code": "4.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea changamoto za mazingira Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea sababu za uharibifu wa mazingira",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini mikakati ya kulinda mazingira",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Teknolojia na Maendeleo",
+          "code": "4.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea jinsi teknolojia inavyoendeleza maisha",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea athari za teknolojia kwa jamii",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili umuhimu wa teknolojia katika maendeleo ya taifa",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "AFYA NA MAISHA YA KIJAMII",
+      "code": "5.0",
+      "form_level": 5,
+      "order": 29,
+      "periods": 10,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Changamoto za Afya",
+          "code": "5.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea changamoto za afya Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea sababu za changamoto hizi",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili mikakati ya kukabiliana na changamoto za afya",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Afya ya Umma",
+          "code": "5.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea umuhimu wa afya ya umma",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi afya ya umma inavyoathiri maendeleo",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini mafanikio ya afya ya umma",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Maisha ya Kijamii",
+          "code": "5.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea maisha ya kijamii ya watu Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea changamoto za maisha ya kijamii",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua mikakati ya kukabiliana na changamoto za kijamii",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UTAWALA WA KIPANDE CHA SIKU",
+      "code": "1.0",
+      "form_level": 6,
+      "order": 30,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Taasisi za Demokrasia",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea taasisi za demokrasia Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jukumu la kila taasisi katika demokrasia",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua changamoto za taasisi za demokrasia",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Uchaguzi na Usimamizi",
+          "code": "1.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mchakato wa uchaguzi Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi uchaguzi unavyosimamiwa",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini changamoto za uchaguzi na suluhisho",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Uwajibikaji na Upinzani",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea umuhimu wa uwajibikaji na upinzani",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi uwajibikaji unavyosaidia demokrasia",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili changamoto za uwajibikaji na upinzani",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CHANGAMOTO ZA KISASA ZA USAWAZI",
+      "code": "2.0",
+      "form_level": 6,
+      "order": 31,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Rushwa na Mapambano",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea changamoto za rushwa kwa usawazi",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mikakati ya kupambana na rushwa",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini ufanisi wa mikakati ya kupambana na rushwa",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Haki za Binadamu na Haki za Jamii",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea changamoto za haki za binadamu Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mikakati ya kulinda haki za binadamu",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua changamoto za utekelezaji wa haki za binadamu",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Usimamizi na Uwajibikaji",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea changamoto za usimamizi na uwajibikaji",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi usimamizi unavyoathiri maisha ya watu",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili mikakati ya kuboresha usimamizi na uwajibikaji",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "USHIRIKIANO WA KIKANDA NA UMOJA",
+      "code": "3.0",
+      "form_level": 6,
+      "order": 32,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Jumuiya ya Afrika Mashariki",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea historia na misingi ya Jumuiya ya Afrika Mashariki",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mafanikio ya Jumuiya kwa nchi washirika",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini changamoto za Jumuiya na suluhisho",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Jumuiya ya Afrika na Muungano",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea historia ya Muungano wa Afrika na Jumuiya ya Afrika",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea misingi ya ushirikiano wa kikanda",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua mafanikio na changamoto za ushirikiano",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mikakati ya Kikanda",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea mikakati ya ushirikiano wa kikanda",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi mikakati ilivyosaidia maendeleo",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili changamoto za utekelezaji wa mikakati",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAISHA YA SIKU ZA HATARI",
+      "code": "4.0",
+      "form_level": 6,
+      "order": 33,
+      "periods": 10,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Idadi ya Watu na Mazingira",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Elezea changamoto za idadi ya watu na mazingira",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea jinsi changamoto hizi zilivyoathiri maisha",
+              "comprehension",
+              2
+            ],
+            [
+              "Tathmini mikakati ya kukabiliana na changamoto hizi",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Teknolojia na Maisha",
+          "code": "4.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea jinsi teknolojia inavyoendeleza maisha",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea athari za teknolojia kwa jamii na maendeleo",
+              "comprehension",
+              2
+            ],
+            [
+              "Chambua changamoto za teknolojia na suluhisho",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Afya na Maisha ya Kijamii",
+          "code": "4.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Elezea changamoto za afya na maisha ya kijamii",
+              "knowledge",
+              1
+            ],
+            [
+              "Elezea mikakati ya kukabiliana na changamoto hizi",
+              "comprehension",
+              2
+            ],
+            [
+              "Jadili umuhimu wa afya katika maendeleo ya taifa",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

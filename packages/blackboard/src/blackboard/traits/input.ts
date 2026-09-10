@@ -1,8 +1,6 @@
-import type { Tool, Point, Camera, Stroke, Shape, LaTeXElement, TextElement, ImageElement, GraphConfig, BlackboardOptions, Element, Snapshot, BlackboardEvent, BlackboardEventCallback, ToolbarElements, BlackboardAPI, BoundingBox, Viewport, SelectionBox, CollabUser, CollabState, CollabAdapter } from '../../types';
-import { IS_MOBILE, uid, isInInput } from '../../utils';
-import { THEMES, MOBILE_STYLES, injectMobileStyles } from '../../theme';
-import { createToolbar, updateToolbarState } from '../../toolbar';
+import type { Point, Shape, LaTeXElement, TextElement } from '../../types';
 import { BlackboardBase, Constructor } from '../base';
+import { handleKeyDown } from './input/handle-key-down';
 
 export const InputMixin = <T extends Constructor<BlackboardBase>>(Base: T) => class InputTrait extends Base {
 attachEvents(): void {
@@ -100,6 +98,7 @@ zoomTo(level: number, center?: Point): void {
     const worldAfter = this.screenToWorld(cx, cy);
     this.camera.x += worldBefore.x - worldAfter.x;
     this.camera.y += worldBefore.y - worldAfter.y;
+    this.graphDirty = true;
     this.renderAll();
     this.updateToolbar();
   }
@@ -109,4 +108,75 @@ handleDragOver(e: DragEvent): void {
     if (e.dataTransfer) e.dataTransfer.dropEffect = 'copy';
   }
 
+onKeyDown = (e: KeyboardEvent): void => {
+    handleKeyDown(this, e);
+  };
+
+onKeyUp = (e: KeyboardEvent): void => {
+    if (e.key === ' ') {
+      this.isSpaceDown = false;
+      this.setTool(this.activeTool);
+    }
+  };
+
+onContextMenu = (e: MouseEvent): void => {
+    e.preventDefault();
+    const point = this.getPoint(e as any);
+    const hit = this.hitTest(point);
+    if (hit) {
+      if (!this.selectedIds.has(hit.id)) {
+        this.selectedIds.clear();
+        this.selectedIds.add(hit.id);
+        this.renderAll();
+      }
+    }
+    this.showContextMenu(e.clientX, e.clientY);
+  };
+
+onDoubleClick = (e: MouseEvent): void => {
+    const point = this.getPoint(e as any);
+    const hit = this.hitTest(point);
+    if (hit && (hit.tool === 'rect' || hit.tool === 'circle' || hit.tool === 'diamond')) {
+      const shape = hit as Shape;
+      const bounds = this.getElementBounds(shape);
+      const cx = bounds.x + bounds.w / 2;
+      const cy = bounds.y + bounds.h / 2;
+      if (shape.label) {
+        const existingText = this.elements.find(el => el.tool === 'text' && (el as TextElement).content === shape.label);
+        if (existingText) {
+          this.editingShapeId = shape.id;
+          this.startTextEdit((existingText as TextElement).position.x, (existingText as TextElement).position.y, existingText as TextElement);
+          return;
+        }
+      }
+      this.editingShapeId = shape.id;
+      const world = this.screenToWorld(cx, cy);
+      this.startTextEdit(world.x, world.y);
+    } else if (hit && (hit.tool === 'line' || hit.tool === 'arrow')) {
+      const shape = hit as Shape;
+      const mx = (shape.start.x + shape.end.x) / 2;
+      const my = (shape.start.y + shape.end.y) / 2;
+      const label = prompt('Label for this line/arrow:', shape.label ?? '');
+      if (label !== null) {
+        this.pushUndo();
+        shape.label = label;
+        this.renderAll();
+        this.emit('change');
+      }
+    } else if (hit && hit.tool === 'katex') {
+      const k = hit as LaTeXElement;
+      const newLatex = prompt('Edit LaTeX:', k.latex);
+      if (newLatex !== null && newLatex !== k.latex) {
+        this.pushUndo();
+        k.latex = newLatex;
+        this.katexImageCache.clear();
+        this.renderAll();
+        this.emit('change');
+      }
+    }
+  };
+
+onWindowClick = (): void => {
+    this.dismissContextMenu();
+  };
 };

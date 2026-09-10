@@ -1,8 +1,8 @@
-import type { Tool, Point, Camera, Stroke, Shape, LaTeXElement, TextElement, ImageElement, GraphConfig, BlackboardOptions, Element, Snapshot, BlackboardEvent, BlackboardEventCallback, ToolbarElements, BlackboardAPI, BoundingBox, Viewport, SelectionBox, CollabUser, CollabState, CollabAdapter } from '../../types';
-import { IS_MOBILE, uid, isInInput } from '../../utils';
-import { THEMES, MOBILE_STYLES, injectMobileStyles } from '../../theme';
-import { createToolbar, updateToolbarState } from '../../toolbar';
+import type { Point, Stroke, Shape, LaTeXElement, TextElement, ImageElement, Element, BlackboardEvent, BlackboardEventCallback } from '../../types';
 import { BlackboardBase, Constructor } from '../base';
+import { flushLive as flushLiveOverlay } from './misc/flush-live';
+import { bringForward, sendBackward, bringToFront, sendToBack } from './misc/z-order';
+import { startPresentation, stopPresentation, isPresenting, presentNext, presentPrev, showPresenterView } from './misc/presentation';
 
 export const MiscMixin = <T extends Constructor<BlackboardBase>>(Base: T) => class MiscTrait extends Base {
 snapToGrid(point: Point): Point {
@@ -46,40 +46,7 @@ getRotationCenter(el: Element): Point {
   }
 
 flushLive(): void {
-    const ctx = this.liveCtx;
-    ctx.clearRect(0, 0, this.width, this.height);
-    ctx.save();
-    ctx.scale(this.camera.zoom, this.camera.zoom);
-    ctx.translate(-this.camera.x, -this.camera.y);
-    if (this.currentElement) this.drawElement(ctx, this.currentElement);
-    this.drawSelectionIndicators(ctx);
-    this.drawAlignmentGuides(ctx);
-    this.drawLaserStrokes(ctx);
-    this.drawRemoteCursors(ctx);
-    if (this.marqueeStart && this.marqueeEnd) {
-      const t = THEMES[this.theme];
-      const x = Math.min(this.marqueeStart.x, this.marqueeEnd.x);
-      const y = Math.min(this.marqueeStart.y, this.marqueeEnd.y);
-      const w = Math.abs(this.marqueeEnd.x - this.marqueeStart.x);
-      const h = Math.abs(this.marqueeEnd.y - this.marqueeStart.y);
-      ctx.fillStyle = t.selectionFill;
-      ctx.fillRect(x, y, w, h);
-      ctx.strokeStyle = t.selectionColor;
-      ctx.lineWidth = 1 / this.camera.zoom;
-      ctx.setLineDash([4 / this.camera.zoom, 4 / this.camera.zoom]);
-      ctx.strokeRect(x, y, w, h);
-      ctx.setLineDash([]);
-    }
-    
-    if (this.activeTool === 'eraser' && this.lastPointerWorld) {
-      const eraserRadius = (IS_MOBILE() ? this.strokeWidth * 3.5 : this.strokeWidth * 2.5);
-      ctx.beginPath();
-      ctx.arc(this.lastPointerWorld.x, this.lastPointerWorld.y, eraserRadius, 0, Math.PI * 2);
-      ctx.strokeStyle = THEMES[this.theme].selectionColor;
-      ctx.lineWidth = 1 / this.camera.zoom;
-      ctx.stroke();
-    }
-    ctx.restore();
+    flushLiveOverlay(this);
   }
 
 roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number): void {
@@ -192,49 +159,19 @@ emit(event: BlackboardEvent): void {
   }
 
 bringForward(): void {
-    if (this.selectedIds.size !== 1) return;
-    const id = this.selectedIds.values().next().value!;
-    const idx = this.elements.findIndex(e => e.id === id);
-    if (idx < 0 || idx >= this.elements.length - 1) return;
-    this.pushUndo();
-    [this.elements[idx], this.elements[idx + 1]] = [this.elements[idx + 1], this.elements[idx]];
-    this.renderAll();
-    this.emit('change');
+    bringForward(this);
   }
 
 sendBackward(): void {
-    if (this.selectedIds.size !== 1) return;
-    const id = this.selectedIds.values().next().value!;
-    const idx = this.elements.findIndex(e => e.id === id);
-    if (idx <= 0) return;
-    this.pushUndo();
-    [this.elements[idx], this.elements[idx - 1]] = [this.elements[idx - 1], this.elements[idx]];
-    this.renderAll();
-    this.emit('change');
+    sendBackward(this);
   }
 
 bringToFront(): void {
-    if (this.selectedIds.size !== 1) return;
-    const id = this.selectedIds.values().next().value!;
-    const idx = this.elements.findIndex(e => e.id === id);
-    if (idx < 0 || idx >= this.elements.length - 1) return;
-    this.pushUndo();
-    const [el] = this.elements.splice(idx, 1);
-    this.elements.push(el);
-    this.renderAll();
-    this.emit('change');
+    bringToFront(this);
   }
 
 sendToBack(): void {
-    if (this.selectedIds.size !== 1) return;
-    const id = this.selectedIds.values().next().value!;
-    const idx = this.elements.findIndex(e => e.id === id);
-    if (idx <= 0) return;
-    this.pushUndo();
-    const [el] = this.elements.splice(idx, 1);
-    this.elements.unshift(el);
-    this.renderAll();
-    this.emit('change');
+    sendToBack(this);
   }
 
 toBlob(type = 'image/png', quality = 1): Promise<Blob | null> {
@@ -249,72 +186,25 @@ toBlob(type = 'image/png', quality = 1): Promise<Blob | null> {
   }
 
 startPresentation(): void {
-    if (this.elements.length === 0) return;
-    this.presenterMode = true;
-    this.presenterStep = 0;
-    this.showPresenterView();
-    this.showToast('Presentation mode — use arrow keys or click to advance');
+    startPresentation(this);
   }
 
 stopPresentation(): void {
-    this.presenterMode = false;
-    this.presenterStep = 0;
-    if (this.presenterOverlay) { this.presenterOverlay.remove(); this.presenterOverlay = null; }
-    this.renderAll();
+    stopPresentation(this);
   }
 
-isPresenting(): boolean { return this.presenterMode; }
+isPresenting(): boolean { return isPresenting(this); }
 
 presentNext(): void {
-    if (!this.presenterMode) return;
-    if (this.presenterStep < this.elements.length - 1) {
-      this.presenterStep++;
-      this.showPresenterView();
-    } else {
-      this.showToast('End of presentation');
-    }
+    presentNext(this);
   }
 
 presentPrev(): void {
-    if (!this.presenterMode) return;
-    if (this.presenterStep > 0) {
-      this.presenterStep--;
-      this.showPresenterView();
-    }
+    presentPrev(this);
   }
 
 showPresenterView(): void {
-    if (!this.presenterOverlay) {
-      this.presenterOverlay = document.createElement('div');
-      this.presenterOverlay.style.cssText = 'position:fixed;inset:0;z-index:3000;background:#000;display:flex;align-items:center;justify-content:center;';
-      this.presenterOverlay.addEventListener('click', (e) => {
-        if (e.target === this.presenterOverlay) this.presentNext();
-      });
-      this.presenterOverlay.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === ' ') this.presentNext();
-        else if (e.key === 'ArrowLeft') this.presentPrev();
-        else if (e.key === 'Escape') this.stopPresentation();
-      });
-      document.body.appendChild(this.presenterOverlay);
-      this.presenterOverlay.tabIndex = 0;
-      this.presenterOverlay.focus();
-    }
-    const visible = this.elements.slice(0, this.presenterStep + 1);
-    const c = document.createElement('canvas');
-    c.width = this.width * this.dpr;
-    c.height = this.height * this.dpr;
-    c.style.cssText = 'max-width:95vw;max-height:90vh;object-fit:contain;';
-    const ctx = c.getContext('2d')!;
-    ctx.scale(this.dpr, this.dpr);
-    ctx.fillStyle = '#1e1e2e';
-    ctx.fillRect(0, 0, this.width, this.height);
-    for (const el of visible) this.drawElement(ctx, el);
-    this.presenterOverlay.innerHTML = '';
-    this.presenterOverlay.appendChild(c);
-    const counter = document.createElement('div');
-    counter.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);color:#888;font:14px system-ui;background:rgba(0,0,0,0.5);padding:4px 12px;border-radius:8px;';
-    counter.textContent = `${this.presenterStep + 1} / ${this.elements.length}`;
-    this.presenterOverlay.appendChild(counter);
+    showPresenterView(this);
   }
 
 destroy(): void {

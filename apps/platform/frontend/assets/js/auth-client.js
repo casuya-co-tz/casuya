@@ -110,11 +110,17 @@ export async function refreshAccessToken() {
     throw new Error("No refresh token available");
   }
 
-  const response = await fetch(buildApiUrl("/auth/refresh", "POST"), {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ refresh_token: refreshToken }),
-  });
+  let response;
+  try {
+    response = await fetch(buildApiUrl("/auth/refresh", "POST"), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ refresh_token: refreshToken }),
+    });
+  } catch (networkError) {
+    clearAuth();
+    throw new Error("Network error during token refresh. Please check your connection.");
+  }
 
   const data = safeJsonParse(await response.text()) || {};
 

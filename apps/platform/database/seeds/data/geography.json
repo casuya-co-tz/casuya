@@ -1,0 +1,1658 @@
+{
+  "name": "Geography",
+  "code": "GEOG",
+  "slug": "geography",
+  "necta_code": "014",
+  "is_core": true,
+  "description": "Geography for Ordinary and Advanced Secondary Education, Form I-VI. Covers the earth and the solar system, map reading, physical and human geography, and advanced approaches to geography.",
+  "form_start": 1,
+  "form_end": 6,
+  "topics": [
+    {
+      "title": "CONCEPT OF GEOGRAPHY",
+      "code": "1.0",
+      "form_level": 1,
+      "order": 1,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Meaning and importance of geography",
+          "code": "1.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Explain the meaning and branches of geography",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the importance of studying geography",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Sub-branches of geography",
+          "code": "1.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe the main sub-branches of geography and their fields",
+              "comprehension",
+              1
+            ],
+            [
+              "Relate geography to science, economics and social studies",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE EARTH AND THE SOLAR SYSTEM",
+      "code": "2.0",
+      "form_level": 1,
+      "order": 2,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "The solar system",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the composition of the solar system",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the rotation and revolution of the earth and moon",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "The earth and its movements",
+          "code": "2.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Explain the effects of the earth's rotation and revolution",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the causes of day and night, seasons and eclipses",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Structure of the earth",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the internal structure of the earth",
+              "knowledge",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAJOR FEATURES OF THE EARTH'S SURFACE",
+      "code": "3.0",
+      "form_level": 1,
+      "order": 3,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Continents and oceans",
+          "code": "3.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Identify the major continents, oceans and their features",
+              "knowledge",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Major landforms",
+          "code": "3.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe the major landforms and their formation",
+              "comprehension",
+              1
+            ],
+            [
+              "Locate major physical features of Africa and Tanzania",
+              "knowledge",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "WEATHER AND CLIMATE",
+      "code": "4.0",
+      "form_level": 1,
+      "order": 4,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Elements of weather and climate",
+          "code": "4.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe the elements of weather and climate",
+              "knowledge",
+              1
+            ],
+            [
+              "Use and interpret instruments for measuring weather elements",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Factors influencing weather and climate",
+          "code": "4.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze the factors that influence weather and climate",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Climatic regions of the world",
+          "code": "4.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe the major climatic regions and their characteristics",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the impact of climate change on people and the environment",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAP READING AND INTERPRETATION",
+      "code": "5.0",
+      "form_level": 1,
+      "order": 5,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Elements of a map",
+          "code": "5.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Identify title, scale, key/direction and grid references on maps",
+              "knowledge",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Scale and representation",
+          "code": "5.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Use different types of scales to measure distances on maps",
+              "application",
+              1
+            ],
+            [
+              "Represent relief using contours, hachures, layer tinting and spot heights",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Interpretation of maps",
+          "code": "5.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Interpret physical, cultural and economic information from maps",
+              "application",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FORCES THAT AFFECT THE EARTH",
+      "code": "6.0",
+      "form_level": 1,
+      "order": 6,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Internal forces and landforms",
+          "code": "6.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe the landforms produced by internal forces such as folding and faulting",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe volcanic and seismic activity and their effects",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "External forces and landforms",
+          "code": "6.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe landforms produced by weathering and erosion",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the process of soil formation",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "APPLICATION OF STATISTICS IN GEOGRAPHY",
+      "code": "7.0",
+      "form_level": 1,
+      "order": 7,
+      "periods": 16,
+      "weight": "low",
+      "subtopics": [
+        {
+          "title": "Collecting and presenting geostatistical data",
+          "code": "7.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Collect and organize geographical data",
+              "application",
+              1
+            ],
+            [
+              "Present data using graphs and diagrams",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Interpreting statistics in geography",
+          "code": "7.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Interpret simple statistical measures and distributions",
+              "analysis",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE INTERNAL STRUCTURE OF THE EARTH",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 8,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The concept of the internal structure of the Earth",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the layers of the earth: crust, mantle and core",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "The role of Earth internal structure in rock formation",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the formation of igneous, sedimentary and metamorphic rocks",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "The internal forces of the Earth",
+          "code": "1.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Explain folding, faulting and their landforms",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe block mountains, plateau, basin and rift valley formation",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Vulcanicity",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe volcanic activities and their economic importance",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the negative effects of volcanic eruptions",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Earthquakes",
+          "code": "1.5",
+          "order": 5,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Explain the causes and effects of earthquakes",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe methods of minimising risks caused by earthquakes",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE EXTERNAL STRUCTURE OF THE EARTH",
+      "code": "2.0",
+      "form_level": 2,
+      "order": 9,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of the external structure of the Earth",
+          "code": "2.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Explain the concept of external structure of the earth",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "External forces affecting the Earth surface",
+          "code": "2.2",
+          "order": 2,
+          "periods": 15,
+          "outcomes": [
+            [
+              "Describe weathering and its significance",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain mass wasting and its effects on the environment",
+              "comprehension",
+              2
+            ],
+            [
+              "Describe the action of running water on the earth surface",
+              "comprehension",
+              3
+            ],
+            [
+              "Explain wave action and coastal features",
+              "comprehension",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAP READING AND INTERPRETATION",
+      "code": "3.0",
+      "form_level": 2,
+      "order": 10,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of map reading and interpretation",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify essential elements of a map",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe characteristics of good maps",
+              "comprehension",
+              2
+            ],
+            [
+              "Explain the importance of maps",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Representing relief features on maps",
+          "code": "3.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Interpret contours and associated landforms",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify highland, lowland and coastline landforms from maps",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Cross-section",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Draw cross-sections from topographical maps",
+              "application",
+              1
+            ],
+            [
+              "Calculate vertical exaggeration",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Map interpretation",
+          "code": "3.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Interpret physical and human features from maps",
+              "application",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PHOTOGRAPH READING AND INTERPRETATION",
+      "code": "4.0",
+      "form_level": 2,
+      "order": 11,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of photograph reading and interpretation",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify types of photographs and satellite images",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain uses of satellite images",
+              "comprehension",
+              2
+            ],
+            [
+              "Compare photographs and maps",
+              "comprehension",
+              3
+            ],
+            [
+              "Explain the uses of photographs in geography",
+              "comprehension",
+              4
+            ]
+          ]
+        },
+        {
+          "title": "Photograph reading and interpretation",
+          "code": "4.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Apply techniques of photograph interpretation",
+              "application",
+              1
+            ],
+            [
+              "Explain the importance of photograph reading and interpretation",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "WATER MANAGEMENT FOR ECONOMIC DEVELOPMENT",
+      "code": "1.0",
+      "form_level": 3,
+      "order": 14,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Sources and importance of water",
+          "code": "1.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the sources of water and their importance",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the water cycle",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Water for economic use",
+          "code": "1.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the uses of water in agriculture, industry and energy production",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Water management",
+          "code": "1.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Evaluate conservation and management of water resources in Tanzania",
+              "evaluation",
+              1
+            ],
+            [
+              "Explain international cooperation over transboundary water resources",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "WORLD MINERAL PRODUCTION",
+      "code": "2.0",
+      "form_level": 3,
+      "order": 15,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Types and distribution of minerals",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the types and distribution of minerals in the world",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Mining and its effects",
+          "code": "2.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the methods of mining and processing",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze the economic and environmental effects of mining",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Minerals in Tanzania",
+          "code": "2.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the mineral resources of Tanzania and their contribution to the economy",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MANUFACTURING INDUSTRY",
+      "code": "3.0",
+      "form_level": 3,
+      "order": 16,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Types and location of industries",
+          "code": "3.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe the types of manufacturing industries and factors for locating them",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Industrial development in Tanzania",
+          "code": "3.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze the development and challenges of industry in Tanzania",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Tanzania and the world industrial links",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe Tanzania's industrial ties and technological transfer",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "WORLD POPULATION AND DEVELOPMENT",
+      "code": "4.0",
+      "form_level": 3,
+      "order": 17,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Population growth trends",
+          "code": "4.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze world population growth trends and demographic transition",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Population and development",
+          "code": "4.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze the relationship between population and development",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Population policies and programmes",
+          "code": "4.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Evaluate population policies and their impact on development",
+              "evaluation",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "REGIONAL FOCAL STUDIES",
+      "code": "5.0",
+      "form_level": 3,
+      "order": 18,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Study of selected countries",
+          "code": "5.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Conduct geographical studies of selected African and world countries",
+              "analysis",
+              1
+            ],
+            [
+              "Compare economic activities of selected regions",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Regional cooperation in Africa",
+          "code": "5.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe regional organizations and their economic roles",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze trade and cooperation within the EAC and SADC",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "RESEARCH IN GEOGRAPHY",
+      "code": "6.0",
+      "form_level": 3,
+      "order": 19,
+      "periods": 18,
+      "weight": "low",
+      "subtopics": [
+        {
+          "title": "Conducting research",
+          "code": "6.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Formulate a research topic and objectives in geography",
+              "synthesis",
+              1
+            ],
+            [
+              "Apply research methods and techniques in collecting data",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Reporting research findings",
+          "code": "6.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Organize, present and write a research report",
+              "synthesis",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAP READING, PHOTOGRAPH READING AND FIELD WORK",
+      "code": "1.0",
+      "form_level": 4,
+      "order": 20,
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Interpretation of topographical maps",
+          "code": "1.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Interpret relief, drainage, settlement and communication from topographical maps",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Photograph reading and interpretation",
+          "code": "1.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Distinguish ground, vertical and oblique photographs",
+              "knowledge",
+              1
+            ],
+            [
+              "Interpret human and physical features from photographs",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Field work",
+          "code": "1.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Plan, conduct and report a geographical field study",
+              "synthesis",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CLIMATE AND FORESTRY",
+      "code": "2.0",
+      "form_level": 4,
+      "order": 21,
+      "periods": 20,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Climatic change and regions",
+          "code": "2.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Analyze the causes and impacts of climatic change",
+              "analysis",
+              1
+            ],
+            [
+              "Describe the classification and distribution of climatic regions",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Forestry and forest resources",
+          "code": "2.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe the types, distribution and importance of forests",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze forestry management and conservation in Tanzania",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Forestry and the economy",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Evaluate the contribution of forestry to the Tanzanian economy",
+              "evaluation",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "POPULATION, HEALTH AND FOOD",
+      "code": "3.0",
+      "form_level": 4,
+      "order": 22,
+      "periods": 20,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Population and health",
+          "code": "3.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Analyze the relationship between population growth and health",
+              "analysis",
+              1
+            ],
+            [
+              "Describe measures to control major diseases",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Food production and security",
+          "code": "3.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze food production, distribution and consumption patterns in the world",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate strategies for ensuring food security in Tanzania",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE ENVIRONMENT AND HUMAN ACTIVITIES",
+      "code": "4.0",
+      "form_level": 4,
+      "order": 23,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Review of environmental problems",
+          "code": "4.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe major environmental problems such as land degradation and pollution",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Environmental conservation",
+          "code": "4.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Explain the principles of environmental management",
+              "comprehension",
+              1
+            ],
+            [
+              "Evaluate conservation strategies and sustainable development",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAP READING AND FIELD STUDIES (REVIEW)",
+      "code": "5.0",
+      "form_level": 4,
+      "order": 24,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Application of map reading",
+          "code": "5.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Apply map interpretation skills to real-life situations",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Advanced field studies",
+          "code": "5.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Design and conduct comprehensive geographical field studies",
+              "synthesis",
+              1
+            ],
+            [
+              "Present and defend field study findings",
+              "synthesis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 1: THE EARTH AND ITS DYNAMIC FORCES",
+      "code": "1.0",
+      "form_level": 5,
+      "order": 25,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The earth's structure and interior",
+          "code": "1.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the structure, composition and origin of the earth",
+              "analysis",
+              1
+            ],
+            [
+              "Explain the earth's heat engines and plate tectonics",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Major surface features of the earth",
+          "code": "1.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze landforms of folding, faulting, vulcanicity and denudation",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Earth evolution and dynamic forces",
+          "code": "1.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the forces shaping the earth's surface and their effects on human activity",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the effects of earthquakes, volcanic eruptions and mass wasting",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 1: CLIMATOLOGY AND BIOGEOGRAPHY",
+      "code": "2.0",
+      "form_level": 5,
+      "order": 26,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The atmosphere and climate",
+          "code": "2.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the composition and structure of the atmosphere",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze weather systems, pressure systems and air masses",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Climatic change and global warming",
+          "code": "2.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Evaluate the causes and evidence of climatic change",
+              "evaluation",
+              1
+            ],
+            [
+              "Analyze the impact of global warming on climate and human activity",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Soils, vegetation and ecosystems",
+          "code": "2.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze soil formation, types and profiles",
+              "analysis",
+              1
+            ],
+            [
+              "Describe world vegetation regions and classify them",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyze natural ecosystems and their components",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 1: GEOMORPHOLOGY",
+      "code": "3.0",
+      "form_level": 5,
+      "order": 27,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Weathering and erosion",
+          "code": "3.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze weathering and denudation processes and their landforms",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "River, glacier and desert landforms",
+          "code": "3.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the work of rivers and fluvial landforms",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze glacial and desert processes and landforms",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Coastal and karst landforms",
+          "code": "3.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the work of the sea and coastal landforms",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze groundwater and karst landforms",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 1: THE PHYSICAL GEOGRAPHY OF TANZANIA",
+      "code": "4.0",
+      "form_level": 5,
+      "order": 28,
+      "periods": 24,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Relief and mineral resources",
+          "code": "4.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Analyze the distribution of relief features in Tanzania",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Drainage and water resources",
+          "code": "4.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe the river systems, lakes and water bodies of Tanzania",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Climate and vegetation of Tanzania",
+          "code": "4.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Analyze the climate and natural vegetation zones of Tanzania",
+              "analysis",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 2: POPULATION GEOGRAPHY",
+      "code": "1.0",
+      "form_level": 6,
+      "order": 29,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Population growth, structure and distribution",
+          "code": "1.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze world population growth, structure and distribution",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate population theories and policies",
+              "evaluation",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Population movements",
+          "code": "1.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze causes, types and consequences of migration",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze the impact of population movements on source and destination areas",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Population and development",
+          "code": "1.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the relationship between population resources and development",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate population programmes and their impact",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 2: SETTLEMENT GEOGRAPHY",
+      "code": "2.0",
+      "form_level": 6,
+      "order": 30,
+      "periods": 30,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Rural settlements",
+          "code": "2.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Analyze the types, patterns and functions of rural settlements",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Urban settlements and urbanization",
+          "code": "2.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the growth, structure and functions of urban settlements",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the causes and consequences of urbanization in developing countries",
+              "evaluation",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Settlement planning",
+          "code": "2.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Analyze land use models and urban planning",
+              "analysis",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 2: AGRICULTURE AND ECONOMIC GEOGRAPHY",
+      "code": "3.0",
+      "form_level": 6,
+      "order": 31,
+      "periods": 36,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Agriculture and land use",
+          "code": "3.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the types, systems and economics of agriculture",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze world agricultural regions and land use patterns",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Trade, transport and industry",
+          "code": "3.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the role of trade and transport in economic development",
+              "analysis",
+              1
+            ],
+            [
+              "Analyze world industries and industrial location theory",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Natural resources and economic development",
+          "code": "3.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Evaluate the role of water, mineral and energy resources in economic development",
+              "evaluation",
+              1
+            ],
+            [
+              "Analyze the exploitation and management of natural resources",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAPER 2: MAP WORK AND RESEARCH SKILLS",
+      "code": "4.0",
+      "form_level": 6,
+      "order": 32,
+      "periods": 30,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Advanced map and photograph interpretation",
+          "code": "4.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Apply advanced map reading and geospatial techniques",
+              "application",
+              1
+            ],
+            [
+              "Interpret aerial photographs and remote sensing imagery",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Research skills in geography",
+          "code": "4.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Formulate and carry out geographical research projects",
+              "synthesis",
+              1
+            ],
+            [
+              "Analyze and present research data",
+              "synthesis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Contemporary issues in geography",
+          "code": "4.3",
+          "order": 3,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Evaluate contemporary geographical issues such as climate change and natural disasters",
+              "evaluation",
+              1
+            ],
+            [
+              "Analyze environmental management and sustainable development",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

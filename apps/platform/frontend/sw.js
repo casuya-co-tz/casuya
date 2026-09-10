@@ -10,7 +10,7 @@
 //
 // Cache is versioned; bump CACHE_VERSION when you change cached assets.
 
-const CACHE_VERSION = "casuya-static-v5";
+const CACHE_VERSION = "casuya-static-v6";
 const PRECACHE = [
   "/",
   "/manifest.webmanifest",
@@ -18,7 +18,14 @@ const PRECACHE = [
   "/assets/css/tailwind.min.css",
   "/assets/js/env.js",
   "/assets/js/config.js",
-  "/assets/js/main.min.js",
+  "/assets/js/i18n/swahili/navigation.js",
+  "/assets/js/i18n/swahili/accessibility.js",
+  "/assets/js/i18n/swahili/hero.js",
+  "/assets/js/i18n/swahili/landing.js",
+  "/assets/js/i18n/swahili/demo.js",
+  "/assets/js/i18n/swahili/auth.js",
+  "/assets/js/i18n/swahili.js",
+  "/assets/js/i18n.js",
   "/assets/js/brand.js",
   "/assets/images/casuya-logo.svg",
   "/assets/images/icons/icon-192.png",

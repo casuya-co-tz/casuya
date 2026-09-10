@@ -1,0 +1,1927 @@
+{
+  "name": "Civics",
+  "code": "CIV",
+  "slug": "civics",
+  "necta_code": "015",
+  "is_core": true,
+  "description": "Civics is a core subject covering national identity, governance, rights, responsibilities, and social development for Tanzanian Ordinary Level secondary education across Form I to Form IV.",
+  "form_start": 1,
+  "form_end": 4,
+  "topics": [
+    {
+      "title": "OUR NATION",
+      "code": "1.0",
+      "form_level": 1,
+      "order": 1,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Geographical features of Tanzania",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify major physical features of Tanzania including mountains, lakes, and rivers",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the climatic zones of Tanzania and their characteristics",
+              "comprehension",
+              2
+            ],
+            [
+              "Explain how geographical features influence human activities in Tanzania",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Historical background of Tanzania",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "State key historical events leading to the formation of Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the significance of the union between Tanganyika and Zanzibar",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the impact of colonialism on the social and political development of Tanzania",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "National symbols and identity",
+          "code": "1.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "List Tanzania's national symbols including the flag, anthem, and coat of arms",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the meaning and significance of each national symbol",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss how national symbols promote unity and patriotism among citizens",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Tanzania as a nation state",
+          "code": "1.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define the concept of a nation state",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the features that make Tanzania a nation state",
+              "comprehension",
+              2
+            ],
+            [
+              "Compare Tanzania's characteristics as a nation state with those of other African countries",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PROMOTION OF LIFE SKILLS",
+      "code": "2.0",
+      "form_level": 1,
+      "order": 2,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and types of life skills",
+          "code": "2.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define life skills and state their importance",
+              "knowledge",
+              1
+            ],
+            [
+              "Classify different types of life skills such as social, coping, and personal skills",
+              "comprehension",
+              2
+            ],
+            [
+              "Illustrate how life skills can be applied in daily situations",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Decision making and problem solving",
+          "code": "2.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the steps involved in effective decision making",
+              "comprehension",
+              1
+            ],
+            [
+              "Apply problem solving techniques to common life challenges",
+              "application",
+              2
+            ],
+            [
+              "Evaluate the consequences of poor decision making in personal and social life",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Coping with stress and peer pressure",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify sources of stress and peer pressure among young people",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain strategies for coping with stress and resisting negative peer pressure",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply coping strategies in real life situations involving stress and peer influence",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Self awareness and self esteem",
+          "code": "2.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define self awareness and self esteem",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe ways of building positive self esteem",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the effects of low self esteem on academic and social performance",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "HUMAN RIGHTS",
+      "code": "1.0",
+      "form_level": 1,
+      "order": 3,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and classification of human rights",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define human rights and state their universal nature",
+              "knowledge",
+              1
+            ],
+            [
+              "Distinguish between civil and political rights and economic social and cultural rights",
+              "comprehension",
+              2
+            ],
+            [
+              "Classify human rights according to the International Bill of Rights",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Human rights in Tanzania",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "List fundamental human rights guaranteed by the Constitution of Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain how human rights are protected under Tanzanian law",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the effectiveness of human rights protection mechanisms in Tanzania",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Responsibilities of citizens",
+          "code": "1.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "State the duties and responsibilities of citizens to the state",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the relationship between rights and responsibilities of citizens",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the importance of fulfilling civic duties for national development",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Violation of human rights",
+          "code": "1.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify common forms of human rights violations in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the causes of human rights violations in the community",
+              "analysis",
+              2
+            ],
+            [
+              "Propose solutions to prevent human rights violations in society",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NATIONAL CULTURE",
+      "code": "2.0",
+      "form_level": 1,
+      "order": 4,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Meaning and elements of national culture",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define culture and distinguish it from tradition and custom",
+              "knowledge",
+              1
+            ],
+            [
+              "Identify the key elements of Tanzanian national culture",
+              "knowledge",
+              2
+            ],
+            [
+              "Explain how national culture promotes unity among diverse communities",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Roles of culture in national development",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the positive roles of culture in society",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain how cultural practices can both promote and hinder development",
+              "analysis",
+              2
+            ],
+            [
+              "Propose ways to preserve beneficial cultural practices while discarding harmful ones",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "National Cultural Policy",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "State the main objectives of the National Cultural Policy of Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the role of the government in promoting national culture",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the effectiveness of the National Cultural Policy in preserving Tanzanian culture",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Cultural diversity in Tanzania",
+          "code": "2.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify different cultural groups in Tanzania and their unique practices",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe how cultural diversity enriches the Tanzanian national identity",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss strategies for promoting harmony among different cultural groups",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE ELECTORAL PROCESS",
+      "code": "3.0",
+      "form_level": 1,
+      "order": 5,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Meaning and types of elections",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define election and state its importance in a democratic society",
+              "knowledge",
+              1
+            ],
+            [
+              "Distinguish between general elections and by elections in Tanzania",
+              "comprehension",
+              2
+            ],
+            [
+              "Explain the role of the National Electoral Commission in managing elections",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Voter registration and voting procedures",
+          "code": "3.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the process of voter registration in Tanzania",
+              "comprehension",
+              1
+            ],
+            [
+              "Apply knowledge of voting procedures during election day",
+              "application",
+              2
+            ],
+            [
+              "Evaluate the importance of voter participation in strengthening democracy",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Qualifications and disqualifications of candidates",
+          "code": "3.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "State the qualifications required for candidates to stand for election",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the conditions under which a candidate may be disqualified",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the importance of having qualified candidates in elections",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PROMOTION OF FAMILY LIFE",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 6,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Structure and functions of the family",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define the family and identify different types of family structures in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the functions of the family in society",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the changing nature of family structures in modern Tanzania",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Family values and moral development",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "List core family values such as honesty, respect, and responsibility",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain how family values contribute to moral development of children",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the role of parents and guardians in instilling moral values in children",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Challenges facing family life in Tanzania",
+          "code": "1.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify major challenges facing families in Tanzania today",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the effects of poverty, divorce, and child neglect on family stability",
+              "analysis",
+              2
+            ],
+            [
+              "Propose solutions to address challenges facing family life in the community",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Parental responsibilities and children's rights",
+          "code": "1.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "State the legal responsibilities of parents towards their children",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the rights of children as protected by the Law of the Child Act",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the impact of parental neglect on children's welfare and development",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GOVERNMENT OF TANZANIA",
+      "code": "2.0",
+      "form_level": 2,
+      "order": 7,
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and forms of government",
+          "code": "2.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define government and explain its importance in society",
+              "knowledge",
+              1
+            ],
+            [
+              "Distinguish between different forms of government including monarchy, democracy, and dictatorship",
+              "comprehension",
+              2
+            ],
+            [
+              "Classify the government of Tanzania according to its structural form",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Structure of government in Tanzania",
+          "code": "2.2",
+          "order": 2,
+          "periods": 7,
+          "outcomes": [
+            [
+              "Identify the three organs of government in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the functions of the executive, legislative, and judicial organs",
+              "comprehension",
+              2
+            ],
+            [
+              "Explain the principle of checks and balances among the three organs",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Constitution of Tanzania",
+          "code": "2.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "State the key provisions of the Constitution of the United Republic of Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the process of constitutional amendment in Tanzania",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the importance of the Constitution as the supreme law of the land",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Local government in Tanzania",
+          "code": "2.4",
+          "order": 4,
+          "periods": 6,
+          "outcomes": [
+            [
+              "List the levels of local government in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the functions and responsibilities of local government authorities",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the role of local government in promoting grassroots development",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DEMOCRACY",
+      "code": "3.0",
+      "form_level": 2,
+      "order": 8,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and principles of democracy",
+          "code": "3.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define democracy and identify its core principles",
+              "knowledge",
+              1
+            ],
+            [
+              "Distinguish between direct and representative democracy",
+              "comprehension",
+              2
+            ],
+            [
+              "Explain how the principle of majority rule and minority rights operate in democracy",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Democratic practices in Tanzania",
+          "code": "3.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify democratic institutions and practices in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe how multiparty democracy functions in Tanzania",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the strengths and weaknesses of the multiparty system in Tanzania",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Role of civil society in democracy",
+          "code": "3.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define civil society and give examples of civil society organisations in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the roles of civil society in promoting democratic governance",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the impact of civil society organisations on good governance in Tanzania",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Challenges to democracy in Tanzania",
+          "code": "3.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "List obstacles to democratic governance in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the effects of corruption, illiteracy, and poverty on democracy",
+              "analysis",
+              2
+            ],
+            [
+              "Propose measures to strengthen democratic practices in Tanzania",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ENVIRONMENTAL CONSERVATION",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 9,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Meaning and importance of environmental conservation",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define environmental conservation and explain its importance",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the components of the natural environment that need conservation",
+              "comprehension",
+              2
+            ],
+            [
+              "Explain the relationship between human activities and environmental degradation",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Threats to the environment in Tanzania",
+          "code": "1.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify major environmental problems in Tanzania such as deforestation and soil erosion",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the causes and effects of environmental degradation in local communities",
+              "analysis",
+              2
+            ],
+            [
+              "Discuss the consequences of environmental destruction on human health and livelihoods",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Government policies on environmental protection",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "State key government policies and laws on environmental protection in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the role of the National Environment Management Council in environmental protection",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the effectiveness of government efforts in conserving the environment",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Community participation in environmental conservation",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify ways in which communities can participate in environmental conservation",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe community based environmental conservation initiatives in Tanzania",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply knowledge of environmental conservation in planning community based projects",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NATIONAL UNITY",
+      "code": "1.0",
+      "form_level": 3,
+      "order": 10,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and importance of national unity",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define national unity and explain its significance to a nation",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the factors that promote national unity in Tanzania",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the consequences of national disunity on development",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Factors promoting national unity in Tanzania",
+          "code": "1.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "List national symbols, policies, and institutions that promote unity",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the role of the national language Swahili in fostering unity",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss how education and sports contribute to national cohesion",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Challenges to national unity",
+          "code": "1.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Identify threats to national unity in Tanzania such as tribalism and regionalism",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the effects of ethnicity and regional disparities on national cohesion",
+              "analysis",
+              2
+            ],
+            [
+              "Evaluate government strategies for addressing challenges to national unity",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Role of citizens in promoting national unity",
+          "code": "1.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "State the responsibilities of citizens in promoting national unity",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain how individual behaviour contributes to or undermines national unity",
+              "comprehension",
+              2
+            ],
+            [
+              "Propose practical actions that citizens can take to strengthen national cohesion",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GLOBALIZATION",
+      "code": "2.0",
+      "form_level": 3,
+      "order": 11,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and dimensions of globalization",
+          "code": "2.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define globalization and identify its main dimensions",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the economic, political, and cultural dimensions of globalization",
+              "comprehension",
+              2
+            ],
+            [
+              "Explain how technology and communication have accelerated globalization",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Positive effects of globalization",
+          "code": "2.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "List the benefits of globalization for developing countries including Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain how globalization promotes trade investment and technology transfer",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the positive impact of globalization on education and health sectors in Tanzania",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Negative effects of globalization",
+          "code": "2.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify the negative impacts of globalization on local economies and cultures",
+              "knowledge",
+              1
+            ],
+            [
+              "Discuss how globalization can increase poverty and inequality in developing nations",
+              "synthesis",
+              2
+            ],
+            [
+              "Evaluate the extent to which Tanzania has benefited or suffered from globalization",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Tanzania's response to globalization",
+          "code": "2.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the government policies adopted to address globalization challenges",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the role of regional and international organizations in managing globalization",
+              "application",
+              2
+            ],
+            [
+              "Propose strategies for Tanzania to maximise benefits and minimise costs of globalization",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "INTEGRATION AND NATIONAL INTEGRATION",
+      "code": "3.0",
+      "form_level": 3,
+      "order": 12,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and types of integration",
+          "code": "3.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define integration and distinguish between economic political and social integration",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the difference between regional integration and national integration",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the importance of integration for national development",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Economic integration in Tanzania",
+          "code": "3.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify key economic integration initiatives in Tanzania including the EAC and SADC",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the benefits of economic integration for trade and investment",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss challenges facing economic integration in East Africa",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Social integration in Tanzania",
+          "code": "3.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "List policies and programmes that promote social integration in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the role of education, language, and intermarriage in social integration",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the effectiveness of social integration policies in fostering national cohesion",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Challenges to integration in Tanzania",
+          "code": "3.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify obstacles to integration at national and regional levels",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the effects of poverty inequality and political differences on integration",
+              "analysis",
+              2
+            ],
+            [
+              "Propose solutions to overcome barriers to integration in Tanzania and East Africa",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CORRUPTION",
+      "code": "4.0",
+      "form_level": 3,
+      "order": 13,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and forms of corruption",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define corruption and state its meaning in the Tanzanian context",
+              "knowledge",
+              1
+            ],
+            [
+              "Distinguish between different forms of corruption including bribery embezzlement and nepotism",
+              "comprehension",
+              2
+            ],
+            [
+              "Classify corruption cases according to their severity and context",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Causes and effects of corruption",
+          "code": "4.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "List the major causes of corruption in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the social economic and political effects of corruption on national development",
+              "analysis",
+              2
+            ],
+            [
+              "Discuss how corruption undermines public service delivery and investor confidence",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Anti corruption measures in Tanzania",
+          "code": "4.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify government institutions and laws fighting corruption in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the functions of the Prevention of Combating of Corruption Bureau",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the effectiveness of anti corruption measures in reducing corruption",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Role of citizens in fighting corruption",
+          "code": "4.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "State the responsibilities of citizens in preventing and reporting corruption",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain how civic education can help reduce corruption in the community",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply ethical principles to resist and report corrupt practices in daily life",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CULTURE AND SOCIALIZATION",
+      "code": "1.0",
+      "form_level": 4,
+      "order": 14,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of culture and socialization",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define culture and socialization and explain their relationship",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the agents of socialization including family school and media",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse how socialization processes shape individual and collective behaviour",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Cultural change and modernization",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify factors that cause cultural change in Tanzanian society",
+              "knowledge",
+              1
+            ],
+            [
+              "Discuss the impact of modernization on traditional cultural values and practices",
+              "synthesis",
+              2
+            ],
+            [
+              "Evaluate the balance between preserving culture and embracing modernization",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Culture and national development",
+          "code": "1.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe how cultural values can contribute to economic and social development",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the role of arts music and literature in promoting national identity",
+              "application",
+              2
+            ],
+            [
+              "Discuss the importance of cultural heritage tourism for Tanzania's economy",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Global cultural interactions",
+          "code": "1.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify the effects of global cultural exchanges on Tanzanian culture",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the impact of foreign media and technology on local cultural values",
+              "analysis",
+              2
+            ],
+            [
+              "Propose strategies for Tanzania to engage positively with global cultural influences while preserving national identity",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GENDER ISSUES IN SOCIETY",
+      "code": "2.0",
+      "form_level": 4,
+      "order": 15,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning of gender and gender concepts",
+          "code": "2.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define gender and distinguish between sex and gender",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain key gender concepts including gender roles gender equity and gender equality",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the social construction of gender roles in Tanzanian society",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Gender inequality and its effects",
+          "code": "2.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify areas of gender inequality in education employment and politics in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the causes and consequences of gender inequality on national development",
+              "analysis",
+              2
+            ],
+            [
+              "Discuss the impact of gender based violence on individuals and communities",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Government policies on gender equality",
+          "code": "2.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "List government policies and laws aimed at promoting gender equality in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the role of the Ministry of Community Development Gender and Children",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the effectiveness of gender mainstreaming in Tanzania's development planning",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Role of stakeholders in promoting gender equality",
+          "code": "2.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify the roles of government, NGOs, and communities in promoting gender equality",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain how education and awareness campaigns can reduce gender disparities",
+              "application",
+              2
+            ],
+            [
+              "Propose strategies for achieving gender equality in Tanzanian schools and communities",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ROAD SAFETY EDUCATION",
+      "code": "3.0",
+      "form_level": 4,
+      "order": 16,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Meaning and importance of road safety",
+          "code": "3.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define road safety and explain its importance for individuals and the nation",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe common causes of road accidents in Tanzania",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the social and economic costs of road accidents on the nation",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Road safety rules and regulations",
+          "code": "3.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "List key road safety rules and traffic regulations in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the functions of road safety agencies including TARURA and the police",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply road safety rules and regulations in real life situations as a pedestrian or passenger",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Roles of stakeholders in road safety",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify the responsibilities of drivers, pedestrians, and passengers in ensuring road safety",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the role of government and private sector in improving road safety",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the effectiveness of road safety campaigns in reducing accidents",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Technology and road safety",
+          "code": "3.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify technologies used to improve road safety such as speed cameras and vehicle inspection",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain how technology can help reduce road accidents and enforce traffic laws",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the challenges of implementing road safety technology in Tanzania",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "REGIONAL AND INTERNATIONAL COOPERATION",
+      "code": "4.0",
+      "form_level": 4,
+      "order": 17,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and types of international cooperation",
+          "code": "4.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Define international cooperation and identify its types",
+              "knowledge",
+              1
+            ],
+            [
+              "Distinguish between bilateral and multilateral cooperation",
+              "comprehension",
+              2
+            ],
+            [
+              "Explain the importance of international cooperation for developing nations",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Tanzania and regional organizations",
+          "code": "4.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "List the regional organizations Tanzania belongs to including EAC, SADC, and AU",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the objectives and functions of the East African Community",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the benefits and challenges of Tanzania's membership in regional organizations",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Tanzania and international organizations",
+          "code": "4.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Identify major international organizations Tanzania works with including the UN and World Bank",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the role of the United Nations in promoting peace development and human rights",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the impact of international aid and cooperation on Tanzania's development",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Challenges and prospects of international cooperation",
+          "code": "4.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify challenges facing international cooperation such as unequal power relations",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the effects of conditionalities attached to international aid",
+              "analysis",
+              2
+            ],
+            [
+              "Evaluate Tanzania's role and contributions in regional and international cooperation forums",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "HEALTH AND SOCIAL WELFARE",
+      "code": "1.0",
+      "form_level": 4,
+      "order": 18,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Public health challenges in Tanzania",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify major public health challenges facing Tanzania including HIV/AIDS and malaria",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe how communicable and non-communicable diseases affect national development",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the relationship between poverty, education, and health outcomes",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Government health policies and programmes",
+          "code": "1.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "List key government health policies and programmes in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the role of the primary health services approach in improving health care",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the effectiveness of government health programmes in reducing disease burden",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Community participation in health promotion",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify ways communities can participate in health promotion activities",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the role of community health workers in primary health care delivery",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply health education principles to promote healthy behaviours in the community",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Social welfare and protection",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define social welfare and identify vulnerable groups in need of social protection",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain government social welfare programmes for the elderly, orphans, and people with disabilities",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the importance of social welfare in promoting equitable national development",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CITIZENSHIP AND NATIONAL DEVELOPMENT",
+      "code": "2.0",
+      "form_level": 4,
+      "order": 19,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Meaning and types of citizenship",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define citizenship and distinguish between different types of citizenship",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the ways of acquiring citizenship in Tanzania by birth descent and naturalization",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the rights and obligations of citizens in a democratic state",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Citizenship and national development",
+          "code": "2.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the roles of citizens in promoting national economic development",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain how civic participation contributes to good governance and accountability",
+              "application",
+              2
+            ],
+            [
+              "Discuss the importance of patriotism and national service in building the nation",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Challenges to active citizenship",
+          "code": "2.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify obstacles to active civic participation in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the effects of political apathy, corruption, and illiteracy on citizenship",
+              "analysis",
+              2
+            ],
+            [
+              "Evaluate strategies for promoting active and responsible citizenship",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Youth and national development",
+          "code": "2.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "State the role of youth in national development and nation building",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe how youth empowerment programmes contribute to economic growth",
+              "comprehension",
+              2
+            ],
+            [
+              "Propose ways for young people to actively participate in community and national development",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

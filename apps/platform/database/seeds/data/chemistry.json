@@ -1,0 +1,1612 @@
+{
+  "name": "Chemistry",
+  "code": "CHEM",
+  "slug": "chemistry",
+  "necta_code": "032",
+  "is_core": true,
+  "description": "Chemistry for Ordinary and Advanced Secondary Education, Form I-VI. Covers matter, atomic structure, chemical bonding, reactions, organic chemistry, physical chemistry and industrial chemistry.",
+  "form_start": 1,
+  "form_end": 6,
+  "replace_topic_form_levels": [
+    1
+  ],
+  "topics": [
+    {
+      "title": "INTRODUCTION TO CHEMISTRY",
+      "code": "1.0",
+      "form_level": 1,
+      "order": 1,
+      "periods": 10,
+      "weight": "low",
+      "subtopics": [
+        {
+          "title": "Concept of Chemistry",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain the meaning of Chemistry",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe the branches of Chemistry",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Relationships of Chemistry with other related disciplines",
+          "code": "1.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "State the relationship between Chemistry and Biology, Physics, Math, Geography, and Agriculture",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Applications of Chemistry in the development of a modern society",
+          "code": "1.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe applications of Chemistry in medicine, agriculture, and industry",
+              "comprehension",
+              1
+            ],
+            [
+              "Discuss contributions of Chemistry to modern society and careers",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LABORATORY TECHNIQUES AND SAFETY",
+      "code": "2.0",
+      "form_level": 1,
+      "order": 2,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Laboratory Safety Measures",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "State laboratory rules and dress code",
+              "knowledge",
+              1
+            ],
+            [
+              "Identify hazard symbols (toxic, corrosive, flammable)",
+              "knowledge",
+              2
+            ],
+            [
+              "Describe safe handling, storage, and disposal of chemicals",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "First Aid",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain first aid procedures for cuts, burns, splashes, and poisoning",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify contents of a first aid kit and their uses",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Basic Chemistry Laboratory Apparatus",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify basic chemistry laboratory apparatus",
+              "knowledge",
+              1
+            ],
+            [
+              "State the uses of each apparatus",
+              "knowledge",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FIRE, FIREFIGHTING AND FLAMES",
+      "code": "3.0",
+      "form_level": 1,
+      "order": 3,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Fire",
+          "code": "3.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define fire and the fire triangle (fuel, heat, oxygen)",
+              "comprehension",
+              1
+            ],
+            [
+              "Classify fires by class (A, B, C, D, electrical)",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Flames",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define a flame and distinguish luminous and non-luminous flames",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe the zones of a non-luminous flame",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Firefighting",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain firefighting methods (cooling, smothering, starving, chain reaction)",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify fire extinguisher types and how to use them",
+              "knowledge",
+              2
+            ],
+            [
+              "Discuss fire prevention measures",
+              "comprehension",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MATTER",
+      "code": "4.0",
+      "form_level": 1,
+      "order": 4,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "States of Matter",
+          "code": "4.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe the properties of solids, liquids, and gases",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the particle arrangement (kinetic theory) in each state",
+              "comprehension",
+              2
+            ],
+            [
+              "Describe melting, freezing, evaporation, condensation, and sublimation",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Physical and Chemical Changes",
+          "code": "4.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Define physical change (cutting, melting, dissolving)",
+              "comprehension",
+              1
+            ],
+            [
+              "Define chemical change (burning, rusting, cooking) and identify signs of reaction",
+              "comprehension",
+              2
+            ],
+            [
+              "Compare physical and chemical changes and apply to real-life situations",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ELEMENTS, COMPOUNDS AND MIXTURES",
+      "code": "5.0",
+      "form_level": 1,
+      "order": 5,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Elements and Chemical Symbols",
+          "code": "5.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define an element and classify metals, non-metals, and metalloids",
+              "comprehension",
+              1
+            ],
+            [
+              "State chemical symbols and writing rules",
+              "knowledge",
+              2
+            ],
+            [
+              "Compare properties (lustre, conductivity, malleability) and describe uses of elements",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Compounds and Mixtures",
+          "code": "5.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define a compound (formation from elements) and a mixture (homogeneous/heterogeneous)",
+              "comprehension",
+              1
+            ],
+            [
+              "Compare compounds and mixtures by composition, properties, and separability",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Separation of Mixtures",
+          "code": "5.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe filtration, decantation, evaporation, crystallization, distillation, sublimation, and magnetic separation",
+              "knowledge",
+              1
+            ],
+            [
+              "Select an appropriate method for separating a given mixture",
+              "evaluation",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ATOMIC STRUCTURE",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 5,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of atomic structure",
+          "code": "1.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "define atomic structure",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Dalton atomic theory",
+          "code": "1.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "state Dalton's atomic theory",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the limitations of Dalton's theory",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Sub-atomic particles",
+          "code": "1.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "identify protons, neutrons and electrons",
+              "comprehension",
+              1
+            ],
+            [
+              "state the properties of sub-atomic particles",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Electronic arrangement",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "draw electronic configurations of elements",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the arrangement of electrons in energy levels",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Determination of atomic number and mass number",
+          "code": "1.5",
+          "order": 5,
+          "periods": 4,
+          "outcomes": [
+            [
+              "define atomic number and mass number",
+              "comprehension",
+              1
+            ],
+            [
+              "calculate the number of sub-atomic particles",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PERIODIC CLASSIFICATION",
+      "code": "2.0",
+      "form_level": 2,
+      "order": 6,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Development of the periodic table",
+          "code": "2.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe the historical development of the periodic table",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the contributions of Mendeleev and Moseley",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Modern periodic table",
+          "code": "2.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe the arrangement of elements in the modern periodic table",
+              "comprehension",
+              1
+            ],
+            [
+              "identify groups, periods and blocks",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Electronic configuration and element positioning",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "use electronic configuration to locate elements",
+              "comprehension",
+              1
+            ],
+            [
+              "relate electronic configuration to group and period numbers",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Trends in physical and chemical properties",
+          "code": "2.4",
+          "order": 4,
+          "periods": 8,
+          "outcomes": [
+            [
+              "describe trends in physical properties across periods",
+              "comprehension",
+              1
+            ],
+            [
+              "describe trends in chemical properties across periods",
+              "comprehension",
+              2
+            ],
+            [
+              "describe trends in physical properties down a group",
+              "comprehension",
+              3
+            ],
+            [
+              "describe trends in chemical properties down a group",
+              "comprehension",
+              4
+            ],
+            [
+              "explain trends in selected groups",
+              "comprehension",
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CHEMICAL BONDING, FORMULA AND NOMENCLATURE",
+      "code": "3.0",
+      "form_level": 2,
+      "order": 7,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of chemical bonding",
+          "code": "3.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "explain chemical bonding",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the formation of ions",
+              "comprehension",
+              2
+            ],
+            [
+              "explain electrovalent bonding",
+              "comprehension",
+              3
+            ],
+            [
+              "explain covalent bonding",
+              "comprehension",
+              4
+            ],
+            [
+              "define valency",
+              "comprehension",
+              5
+            ],
+            [
+              "identify radicals and their charges",
+              "comprehension",
+              6
+            ],
+            [
+              "determine oxidation state of elements",
+              "comprehension",
+              7
+            ]
+          ]
+        },
+        {
+          "title": "Concept of chemical formulas",
+          "code": "3.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "identify types of chemical formulas",
+              "comprehension",
+              1
+            ],
+            [
+              "write chemical formulas from names",
+              "comprehension",
+              2
+            ],
+            [
+              "perform formula calculations",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Nomenclature of binary inorganic compounds",
+          "code": "3.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "name binary inorganic compounds using IUPAC rules",
+              "comprehension",
+              1
+            ],
+            [
+              "write chemical names from formulas",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CHEMICAL REACTIONS",
+      "code": "4.0",
+      "form_level": 2,
+      "order": 8,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of chemical reactions",
+          "code": "4.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "define chemical reactions",
+              "comprehension",
+              1
+            ],
+            [
+              "identify signs of chemical reactions",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Chemical equations",
+          "code": "4.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "write word equations",
+              "comprehension",
+              1
+            ],
+            [
+              "write and balance chemical equations",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Types of chemical reactions",
+          "code": "4.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "classify reactions: combination, decomposition, displacement, double decomposition, combustion",
+              "comprehension",
+              1
+            ],
+            [
+              "identify reactants and products",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ACIDS, BASES, AND SALTS",
+      "code": "5.0",
+      "form_level": 2,
+      "order": 9,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Acids",
+          "code": "5.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "describe the properties of acids",
+              "comprehension",
+              1
+            ],
+            [
+              "distinguish between strong and weak acids",
+              "comprehension",
+              2
+            ],
+            [
+              "explain the basicity of an acid",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Bases",
+          "code": "5.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "distinguish between strong and weak bases",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the properties of bases",
+              "comprehension",
+              2
+            ],
+            [
+              "explain the acidity of a base",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Neutralisation reaction",
+          "code": "5.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain neutralisation reactions",
+              "comprehension",
+              1
+            ],
+            [
+              "write equations for neutralisation reactions",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Uses of acids and bases",
+          "code": "5.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "identify common uses of acids and bases",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Acid-base indicators",
+          "code": "5.5",
+          "order": 5,
+          "periods": 4,
+          "outcomes": [
+            [
+              "explain the pH scale",
+              "comprehension",
+              1
+            ],
+            [
+              "identify occurrence of pH indicators",
+              "comprehension",
+              2
+            ],
+            [
+              "describe uses of pH indicators",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Salts",
+          "code": "5.6",
+          "order": 6,
+          "periods": 3,
+          "outcomes": [
+            [
+              "identify types of salts",
+              "comprehension",
+              1
+            ],
+            [
+              "describe preparation of salts",
+              "comprehension",
+              2
+            ],
+            [
+              "describe properties of salts",
+              "comprehension",
+              3
+            ],
+            [
+              "identify uses of salts",
+              "comprehension",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CHEMICAL REACTIONS",
+      "code": "1.0",
+      "form_level": 3,
+      "order": 7,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Types of chemical reactions",
+          "code": "1.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Classify reactions: combination, decomposition, displacement, double decomposition, combustion",
+              "classification",
+              1
+            ],
+            [
+              "Write word and balanced chemical equations",
+              "application",
+              2
+            ],
+            [
+              "Describe the extraction of iron from its ore (ores, stages, and methods of extractio",
+              "comprehension",
+              0
+            ],
+            [
+              "Describe the chemical reactions of aliphatic hydrocarbons and alcohols in relation to their structures",
+              "comprehension",
+              0
+            ]
+          ]
+        },
+        {
+          "title": "Acids, bases and salts",
+          "code": "1.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Define acids, bases and salts",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the preparation of salts: neutralization, precipitation, titration",
+              "application",
+              2
+            ],
+            [
+              "Use indicators and pH scale to measure acidity and alkalinity",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mole concept and stoichiometry",
+          "code": "1.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define the mole and Avogadro's constant",
+              "knowledge",
+              1
+            ],
+            [
+              "Calculate molar mass, molar volume of gas at STP",
+              "application",
+              2
+            ],
+            [
+              "Perform stoichiometric calculations from balanced equations",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GASES",
+      "code": "2.0",
+      "form_level": 3,
+      "order": 8,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Molar gas volume",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the molar volume of a gas at STP (22.4 dm³)",
+              "knowledge",
+              1
+            ],
+            [
+              "Calculate the volume of gases using molar volume",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Ideal gas equation",
+          "code": "2.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Apply PV = nRT to solve gas problems",
+              "application",
+              1
+            ],
+            [
+              "Describe gas preparation and collection methods",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Gas laws",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Apply Boyle's, Charles's and Pressure laws to chemical problems",
+              "application",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ORGANIC CHEMISTRY",
+      "code": "1.0",
+      "form_level": 4,
+      "order": 9,
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Introduction to organic chemistry",
+          "code": "1.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define organic chemistry and identify characteristics of organic compounds",
+              "comprehension",
+              1
+            ],
+            [
+              "Name and draw structural formulae of first six alkanes",
+              "application",
+              2
+            ],
+            [
+              "Use Chemistry software to draw organic structures of hydrocarbons and alcohols with 1 carbon to 10 carbon atoms",
+              "comprehension",
+              0
+            ]
+          ]
+        },
+        {
+          "title": "Homologous series: alkanes, alkenes, alcohols",
+          "code": "1.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe properties and reactions of alkanes (substitution)",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe properties and reactions of alkenes (addition)",
+              "comprehension",
+              2
+            ],
+            [
+              "Describe properties and reactions of alcohols (oxidation, esterification)",
+              "comprehension",
+              3
+            ],
+            [
+              "Name aliphatic hydrocarbons and alcohols with 1 carbon to 10 carbon atoms using the IUPAC system and Chemistry software",
+              "comprehension",
+              0
+            ]
+          ]
+        },
+        {
+          "title": "Hydrocarbons and their derivatives",
+          "code": "1.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe cracking and reforming of hydrocarbons",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the uses of organic compounds in daily life",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Polymers",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe addition and condensation polymerization",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify uses and environmental effects of polymers",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SALTS",
+      "code": "2.0",
+      "form_level": 4,
+      "order": 10,
+      "periods": 16,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Preparation of salts",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Prepare soluble salts by neutralization and titration",
+              "application",
+              1
+            ],
+            [
+              "Prepare insoluble salts by precipitation",
+              "application",
+              2
+            ],
+            [
+              "Explore the basic tenets of qualitative analysis (preliminary analysis, tests in solution and confirmatory tes",
+              "comprehension",
+              0
+            ]
+          ]
+        },
+        {
+          "title": "Properties of salts",
+          "code": "2.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe thermal decomposition of salts",
+              "comprehension",
+              1
+            ],
+            [
+              "Use salt analysis to identify unknown salts",
+              "analysis",
+              2
+            ],
+            [
+              "Explore the basic tenets of Organic Chemistry (organic compounds; aliphatic hydrocarbons and alcohol",
+              "comprehension",
+              0
+            ]
+          ]
+        },
+        {
+          "title": "Water of crystallization",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Determine the formula of a salt containing water of crystallization",
+              "application",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ELECTROLYSIS",
+      "code": "3.0",
+      "form_level": 4,
+      "order": 11,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Electrolytic cells and electrolysis",
+          "code": "3.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Define electrolysis and distinguish electrolytic cells from electrochemical cells",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe the electrolysis of molten compounds and aqueous solutions",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply Faraday's laws of electrolysis",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Applications of electrolysis",
+          "code": "3.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe electroplating and its applications",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe purification of metals by electrolysis",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Electrochemical cells",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe primary cells (Leclanché, dry cell)",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe secondary cells (lead-acid accumulator, lithium-ion)",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DOMAIN A: PHYSICAL CHEMISTRY I",
+      "code": "1.0",
+      "form_level": 5,
+      "order": 12,
+      "periods": 40,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Atomic structure and periodicity",
+          "code": "1.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Describe modern atomic models and quantum numbers",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze electron configurations and the Aufbau principle",
+              "analysis",
+              2
+            ],
+            [
+              "Explain periodic trends in ionization energy, electronegativity and atomic radius",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Chemical energetics",
+          "code": "1.2",
+          "order": 2,
+          "periods": 14,
+          "outcomes": [
+            [
+              "Apply Hess's law to calculate reaction enthalpies",
+              "application",
+              1
+            ],
+            [
+              "Calculate bond energies and hydration enthalpies",
+              "application",
+              2
+            ],
+            [
+              "Analyze enthalpy and entropy contributions to spontaneity via Gibbs free energy",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Chemical kinetics",
+          "code": "1.3",
+          "order": 3,
+          "periods": 14,
+          "outcomes": [
+            [
+              "Define reaction rate and rate law coefficients",
+              "knowledge",
+              1
+            ],
+            [
+              "Apply the Arrhenius equation and activation energy concepts",
+              "application",
+              2
+            ],
+            [
+              "Interpret zero, first and second order reactions",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DOMAIN B: INORGANIC CHEMISTRY I",
+      "code": "2.0",
+      "form_level": 5,
+      "order": 13,
+      "periods": 30,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Bonding and structure of solids",
+          "code": "2.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Compare ionic, covalent, metallic and hydrogen bonds",
+              "analysis",
+              1
+            ],
+            [
+              "Relate crystal lattices to physical properties",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "s-block and p-block elements",
+          "code": "2.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Describe reactions of Group 1 and Group 2 metals",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze trends in Groups 13-18 elements and their compounds",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Oxidation-reduction and electrochemistry",
+          "code": "2.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Balance redox equations using oxidation numbers",
+              "application",
+              1
+            ],
+            [
+              "Apply electrochemical series and Nernst equation",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DOMAIN C: ORGANIC CHEMISTRY I",
+      "code": "3.0",
+      "form_level": 5,
+      "order": 14,
+      "periods": 38,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Structural and stereochemistry",
+          "code": "3.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Name compounds using IUPAC nomenclature",
+              "application",
+              1
+            ],
+            [
+              "Distinguish structural and stereoisomers (geometric and optical)",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Hydrocarbons and their derivatives",
+          "code": "3.2",
+          "order": 2,
+          "periods": 14,
+          "outcomes": [
+            [
+              "Predict reactions of alkanes, alkenes, alkynes and arenas",
+              "application",
+              1
+            ],
+            [
+              "Describe reactions of haloalkanes and alcohols",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Reaction mechanisms",
+          "code": "3.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Classify substitution, addition, elimination and rearrangement reactions",
+              "analysis",
+              1
+            ],
+            [
+              "Illustrate nucleophilic and electrophilic substitution mechanisms",
+              "synthesis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DOMAIN A: PHYSICAL CHEMISTRY II",
+      "code": "1.0",
+      "form_level": 6,
+      "order": 15,
+      "periods": 40,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Chemical equilibria",
+          "code": "1.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "State the equilibrium law and interpret equilibrium constants",
+              "knowledge",
+              1
+            ],
+            [
+              "Apply Le Chatelier's principle to shifts in equilibrium",
+              "application",
+              2
+            ],
+            [
+              "Analyze acid-base and solubility equilibria",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Electrochemistry and thermodynamics",
+          "code": "1.2",
+          "order": 2,
+          "periods": 14,
+          "outcomes": [
+            [
+              "Apply Faraday's laws of electrolysis",
+              "application",
+              1
+            ],
+            [
+              "Relate Gibbs free energy to electromotive force",
+              "application",
+              2
+            ],
+            [
+              "Analyze electrolytic cells and fuel cells",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Quantum chemistry",
+          "code": "1.3",
+          "order": 3,
+          "periods": 14,
+          "outcomes": [
+            [
+              "Describe atomic orbitals and wave functions",
+              "comprehension",
+              1
+            ],
+            [
+              "Apply molecular orbital theory to diatomic molecules",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DOMAIN B: INORGANIC CHEMISTRY II",
+      "code": "2.0",
+      "form_level": 6,
+      "order": 16,
+      "periods": 30,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Transition metal chemistry",
+          "code": "2.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Describe variable oxidation states and colour of transition metals",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain crystal field theory and complex ion formation",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Environmental and industrial chemistry",
+          "code": "2.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Analyze pollution and green chemistry principles",
+              "analysis",
+              1
+            ],
+            [
+              "Describe extraction of metals (sodium, aluminium, iron)",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Qualitative and quantitative analysis",
+          "code": "2.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Apply analytical techniques for cation and anion identification",
+              "application",
+              1
+            ],
+            [
+              "Perform volumetric and gravimetric calculations",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DOMAIN C: ORGANIC CHEMISTRY II",
+      "code": "3.0",
+      "form_level": 6,
+      "order": 17,
+      "periods": 38,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Carbonyl compounds and carboxylic acids",
+          "code": "3.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Predict reactions of aldehydes and ketones",
+              "application",
+              1
+            ],
+            [
+              "Describe reactions of carboxylic acids and their derivatives",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Nitrogen compounds and polymers",
+          "code": "3.2",
+          "order": 2,
+          "periods": 14,
+          "outcomes": [
+            [
+              "Describe amines, amides, nitriles and diazonium salts",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain polymerization and the structure of macromolecules",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Spectroscopy of organic compounds",
+          "code": "3.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Interpret infrared spectra to identify functional groups",
+              "analysis",
+              1
+            ],
+            [
+              "Use mass spectrometry and NMR to deduce structure",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

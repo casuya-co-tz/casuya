@@ -9,18 +9,11 @@ import {
 import { BaseProvider } from '../providers/base-provider';
 import { PromptManager } from '../prompts/prompt-manager';
 import { CacheManager } from '../caching/cache-manager';
-import { CasuyaAIError, ErrorCode, Logger } from '../utilities';
+import { Logger } from '../utilities';
 import { SyllabusAdapter } from '../adapters/syllabus-adapter';
-
-/** Maps subject names/slugs to TIE syllabus slugs */
-const SUBJECT_SLUG_MAP: Record<string, string> = {
-  mathematics: 'mathematics',
-  physics: 'physics',
-  chemistry: 'chemistry',
-  biology: 'biology',
-  english: 'english',
-  kiswahili: 'kiswahili',
-};
+import { validateRequest } from './request-validation';
+import { parseQuestionResponse } from './question-parser';
+import { buildCurriculumContext } from './curriculum-context';
 
 export class QuestionGenerator {
   private cache: CacheManager;
@@ -41,24 +34,18 @@ export class QuestionGenerator {
   }
 
   async generateQuestions(request: QuestionGenerationRequest): Promise<GeneratedQuestion[]> {
-    this.validateRequest(request);
+    validateRequest(request);
 
     const cacheKey = `qgen:${request.subject}:${request.topic}:${request.difficulty}:${request.count}:${(request.context ?? '').slice(0, 120)}`;
     const cached = this.cache.get<GeneratedQuestion[]>(cacheKey);
     if (cached) return cached;
 
     // Fetch TIE curriculum context for NECTA-aligned questions
-    let curriculumContext = '';
-    const subjectSlug = SUBJECT_SLUG_MAP[request.subject?.toLowerCase?.() ?? ''] ?? '';
-    const formLevel = (request as unknown as Record<string, unknown>).formLevel as number | undefined;
-
-    if (this.syllabusAdapter && subjectSlug && formLevel) {
-      try {
-        curriculumContext = await this.syllabusAdapter.getCurriculumContext(subjectSlug, formLevel);
-      } catch {
-        this.logger?.warn(`Failed to fetch curriculum context for question generation`);
-      }
-    }
+    const { curriculumContext, subjectSlug, formLevel } = await buildCurriculumContext(
+      request,
+      this.syllabusAdapter,
+      this.logger,
+    );
 
     const templateId = curriculumContext ? 'necta-question-generation' : 'question-generation-mcq';
     const variables: Record<string, unknown> = {
@@ -87,7 +74,7 @@ export class QuestionGenerator {
       maxTokens: Math.min(4096, Math.max(1024, request.count * 280)),
     });
 
-    const questions = this.parseQuestions(response.content, request);
+    const questions = parseQuestionResponse(response.content, request, this.logger);
     if (!questions.length) {
       return [];
     }
@@ -122,173 +109,6 @@ export class QuestionGenerator {
     return this.questionBank.get(key) ?? [];
   }
 
-  private validateRequest(request: QuestionGenerationRequest): void {
-    if (!request.subject) {
-      throw new CasuyaAIError('Subject is required', ErrorCode.VALIDATION_ERROR);
-    }
-    if (!request.topic) {
-      throw new CasuyaAIError('Topic is required', ErrorCode.VALIDATION_ERROR);
-    }
-    if (request.count < 1 || request.count > 50) {
-      throw new CasuyaAIError('Count must be between 1 and 50', ErrorCode.VALIDATION_ERROR);
-    }
-  }
-
-  private parseQuestions(response: string, request: QuestionGenerationRequest): GeneratedQuestion[] {
-    // Strip markdown code fences (```json ... ```) that models wrap around JSON
-    let cleaned = response.trim();
-    const fenceMatch = cleaned.match(/```(?:json)?\s*([\s\S]*?)```/);
-    if (fenceMatch) {
-      cleaned = fenceMatch[1].trim();
-    }
-
-    let questions = this.tryParseArray(cleaned, request);
-
-    if (!questions.length) {
-      // Tolerate invalid JSON escapes (e.g. LaTeX `\,` / `\ln`) models often emit
-      const sanitized = this.sanitizeJsonEscapes(cleaned);
-      if (sanitized !== cleaned) {
-        questions = this.tryParseArray(sanitized, request);
-      }
-    }
-
-    if (!questions.length) {
-      // If the model clearly returned (broken) JSON, never render raw text as a question
-      if (/\{?\s*"question"|"correctAnswer"|"options"/.test(response)) {
-        this.logger?.warn('could not parse question JSON; returning no questions instead of raw text');
-        return [];
-      }
-      questions = this.extractQuestionsFromText(response, request);
-    }
-
-    return this.validateQuestions(questions, request);
-  }
-
-  private tryParseArray(text: string, request: QuestionGenerationRequest): GeneratedQuestion[] {
-    try {
-      const parsed = JSON.parse(text);
-      if (Array.isArray(parsed)) {
-        return parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
-      }
-    } catch {
-      // Not JSON, try to extract an array from mixed model output
-    }
-
-    const start = text.indexOf('[');
-    const end = text.lastIndexOf(']');
-    if (start >= 0 && end > start) {
-      try {
-        const parsed = JSON.parse(text.slice(start, end + 1));
-        if (Array.isArray(parsed)) {
-          return parsed.slice(0, request.count).map((q, i) => this.normalizeQuestion(q, i, request));
-        }
-      } catch {
-        // fall through
-      }
-    }
-    return [];
-  }
-
-  private sanitizeJsonEscapes(text: string): string {
-    // Double any backslash that is not part of a valid JSON escape (\" \\ \/ \b \f \n \r \t \uXXXX)
-    return text.replace(/\\(?!["\\/bfnrt]|u[0-9a-fA-F]{4})/g, '\\\\');
-  }
-
-  private validateQuestions(questions: GeneratedQuestion[], request: QuestionGenerationRequest): GeneratedQuestion[] {
-    const uncertaintyPatterns = [
-      /\bwait\b/i,
-      /\bactually\b.*\bshould\b/i,
-      /\bcorrect answer should\b/i,
-      /\bthis question demonstrates the importance\b/i,
-      /\bhmm\b/i,
-      /\blet me\b/i,
-      /\bperhaps\b/i,
-      /\bmaybe\b/i,
-      /\bprobably not\b/i,
-    ];
-    const validated: GeneratedQuestion[] = [];
-    for (const q of questions) {
-      if (!q.text.trim() || !q.correctAnswer) continue;
-      if (!q.options || q.options.length < 2) continue;
-      const expl = (q.explanation ?? '').toLowerCase();
-      if (uncertaintyPatterns.some((p) => p.test(expl))) continue;
-      validated.push(q);
-    }
-    const result = validated.slice(0, request.count);
-    if (!result.length) {
-      this.logger?.warn('validateQuestions filtered all generated questions; returning original set as fallback');
-      return questions.slice(0, request.count);
-    }
-    return result;
-  }
-
-  private normalizeQuestion(raw: Record<string, unknown>, index: number, request: QuestionGenerationRequest): GeneratedQuestion {
-    // Handle options as either array of strings or {A: ..., B: ...} object
-    let options: string[] | undefined;
-    const rawOptions = raw.options as Record<string, string> | string[] | undefined;
-    if (rawOptions) {
-      if (Array.isArray(rawOptions)) {
-        options = rawOptions;
-      } else if (typeof rawOptions === 'object') {
-        options = Object.values(rawOptions).map(String);
-      }
-    }
-
-    return {
-      id: `q-${Date.now()}-${index}`,
-      type: request.questionType,
-      category: (raw.category as QuestionCategory) ?? request.category,
-      difficulty: request.difficulty,
-      subject: request.subject,
-      topic: request.topic,
-      text: String(raw.text ?? raw.question ?? ''),
-      options,
-      correctAnswer: String(raw.correctAnswer ?? raw.correct_answer ?? raw.answer ?? ''),
-      explanation: String(raw.explanation ?? ''),
-      hints: raw.hints as string[] | undefined,
-      metadata: {
-        estimatedTime: this.estimateTime(request.questionType),
-        bloomLevel: request.category,
-        concepts: [request.topic],
-        tags: [request.subject, request.topic],
-        reviewed: false,
-        version: '1.0.0',
-      },
-    };
-  }
-
-  private extractQuestionsFromText(text: string, request: QuestionGenerationRequest): GeneratedQuestion[] {
-    const questions: GeneratedQuestion[] = [];
-    const blocks = text.split(/\n\s*(?=\d+[.)]|Q[.)])/);
-    let index = 0;
-
-    for (const block of blocks) {
-      if (!block.trim()) continue;
-      questions.push({
-        id: `q-${Date.now()}-${index}`,
-        type: request.questionType,
-        category: request.category,
-        difficulty: request.difficulty,
-        subject: request.subject,
-        topic: request.topic,
-        text: block.trim(),
-        correctAnswer: '',
-        explanation: '',
-        metadata: {
-          estimatedTime: this.estimateTime(request.questionType),
-          bloomLevel: request.category,
-          concepts: [request.topic],
-          tags: [request.subject, request.topic],
-          reviewed: false,
-          version: '1.0.0',
-        },
-      });
-      index++;
-    }
-
-    return questions;
-  }
-
   private addToBank(question: GeneratedQuestion): void {
     const key = `${question.subject}:${question.topic}:${question.difficulty}`;
     if (!this.questionBank.has(key)) {
@@ -307,19 +127,6 @@ export class QuestionGenerator {
         averageTime: 0,
         lastUsed: new Date(),
       });
-    }
-  }
-
-  private estimateTime(type: QuestionType): number {
-    switch (type) {
-      case QuestionType.MULTIPLE_CHOICE: return 60;
-      case QuestionType.TRUE_FALSE: return 30;
-      case QuestionType.SHORT_ANSWER: return 90;
-      case QuestionType.ESSAY: return 300;
-      case QuestionType.FILL_IN_BLANK: return 45;
-      case QuestionType.MATCHING: return 120;
-      case QuestionType.ORDERING: return 60;
-      default: return 60;
     }
   }
 }

@@ -1,0 +1,3485 @@
+{
+  "name": "Physics",
+  "code": "PHYS",
+  "slug": "physics",
+  "necta_code": "031",
+  "is_core": true,
+  "description": "Physics for Ordinary and Advanced Secondary Education, Form I-VI. Covers mechanics, waves, electricity, magnetism, thermodynamics, modern physics and advanced electromagnetism.",
+  "form_start": 1,
+  "form_end": 6,
+  "replace_topic_form_levels": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "topics": [
+    {
+      "title": "INTRODUCTION TO PHYSICS",
+      "code": "1.0",
+      "form_level": 1,
+      "order": 1,
+      "periods": 8,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of Physics",
+          "code": "1.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the concept of physics",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the major branches of physics",
+              "comprehension",
+              2
+            ],
+            [
+              "state the importance of studying physics",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Contribution of Physics to the Development of Modern Society",
+          "code": "1.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "identify the contribution of physics to the development of modern society",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the role of physics in technological advancement",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Theories and Principles of Physics",
+          "code": "1.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "state the basic theories and principles of physics",
+              "comprehension",
+              1
+            ],
+            [
+              "apply the principles of physics to explain natural phenomena",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MEASUREMENT",
+      "code": "2.0",
+      "form_level": 1,
+      "order": 2,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of Measurement",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "explain the concept of measurement",
+              "comprehension",
+              1
+            ],
+            [
+              "state the importance of measurement in daily life",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Physical Quantities",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "define a physical quantity",
+              "comprehension",
+              1
+            ],
+            [
+              "distinguish between fundamental and derived quantities",
+              "comprehension",
+              2
+            ],
+            [
+              "state the S.I. units of fundamental quantities",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Basic Equipment and Apparatus and Their Uses",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "identify basic measuring instruments and apparatus",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the use of basic measuring instruments and apparatus",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "INTRODUCTION TO FORCE",
+      "code": "3.0",
+      "form_level": 1,
+      "order": 3,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of Force",
+          "code": "3.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concept of force",
+              "comprehension",
+              1
+            ],
+            [
+              "state the S.I. unit of force",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Effects of Forces",
+          "code": "3.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "describe the effects of forces on objects",
+              "comprehension",
+              1
+            ],
+            [
+              "relate the effects of forces to daily life experiences",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Types of Forces",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "identify different types of forces",
+              "comprehension",
+              1
+            ],
+            [
+              "distinguish between contact and non-contact forces",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DENSITY AND RELATIVE DENSITY",
+      "code": "4.0",
+      "form_level": 1,
+      "order": 4,
+      "periods": 8,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of Density",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "explain the concept of density",
+              "comprehension",
+              1
+            ],
+            [
+              "determine the density of regular solids and liquids",
+              "application",
+              2
+            ],
+            [
+              "solve problems involving density",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Relative Density of a Substance",
+          "code": "4.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "explain the concept of relative density",
+              "comprehension",
+              1
+            ],
+            [
+              "determine the relative density of a substance",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SINKING AND FLOATING",
+      "code": "5.0",
+      "form_level": 1,
+      "order": 5,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of Sinking and Floating",
+          "code": "5.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concepts of sinking and floating",
+              "comprehension",
+              1
+            ],
+            [
+              "relate the sinking and floating of objects to their densities",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Concept of Upthrust",
+          "code": "5.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concept of upthrust",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the factors affecting upthrust",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Archimedes' Principle",
+          "code": "5.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "state Archimedes' principle",
+              "comprehension",
+              1
+            ],
+            [
+              "verify Archimedes' principle experimentally",
+              "application",
+              2
+            ],
+            [
+              "apply Archimedes' principle to solve problems",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Law of Flotation",
+          "code": "5.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "state the law of flotation",
+              "comprehension",
+              1
+            ],
+            [
+              "apply the law of flotation to explain floating bodies",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MECHANICAL PROPERTIES OF MATTER",
+      "code": "6.0",
+      "form_level": 1,
+      "order": 6,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of Elasticity",
+          "code": "6.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concept of elasticity",
+              "comprehension",
+              1
+            ],
+            [
+              "state Hooke's law",
+              "comprehension",
+              2
+            ],
+            [
+              "describe the elastic and plastic behaviour of materials",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Adhesion and Cohesion",
+          "code": "6.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concepts of adhesion and cohesion",
+              "comprehension",
+              1
+            ],
+            [
+              "identify examples of adhesion and cohesion in daily life",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Surface Tension",
+          "code": "6.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concept of surface tension",
+              "comprehension",
+              1
+            ],
+            [
+              "describe phenomena caused by surface tension",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Capillarity",
+          "code": "6.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concept of capillarity",
+              "comprehension",
+              1
+            ],
+            [
+              "identify the applications of capillarity in daily life",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PRESSURE",
+      "code": "7.0",
+      "form_level": 1,
+      "order": 7,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of Pressure",
+          "code": "7.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concept of pressure",
+              "comprehension",
+              1
+            ],
+            [
+              "state the S.I. unit of pressure",
+              "comprehension",
+              2
+            ],
+            [
+              "solve problems involving pressure",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Pressure due to Solids",
+          "code": "7.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe the pressure exerted by solids",
+              "comprehension",
+              1
+            ],
+            [
+              "relate pressure to force and the area of contact",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Pressure in Liquids",
+          "code": "7.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe the characteristics of pressure in liquids",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the principle of a hydraulic press",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Atmospheric Pressure",
+          "code": "7.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe the existence of atmospheric pressure",
+              "comprehension",
+              1
+            ],
+            [
+              "measure atmospheric pressure",
+              "application",
+              2
+            ],
+            [
+              "identify the applications of atmospheric pressure",
+              "comprehension",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LINEAR MOTION",
+      "code": "8.0",
+      "form_level": 1,
+      "order": 8,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of Motion",
+          "code": "8.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the concept of motion",
+              "comprehension",
+              1
+            ],
+            [
+              "distinguish between rest and motion",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Distance and Displacement",
+          "code": "8.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "distinguish between distance and displacement",
+              "comprehension",
+              1
+            ],
+            [
+              "determine the distance and displacement of a body",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Speed and Velocity",
+          "code": "8.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "distinguish between speed and velocity",
+              "comprehension",
+              1
+            ],
+            [
+              "solve problems involving speed and velocity",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Acceleration",
+          "code": "8.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the concept of acceleration",
+              "comprehension",
+              1
+            ],
+            [
+              "solve problems involving acceleration",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Equation of Linear Motion",
+          "code": "8.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "state the equations of linear motion",
+              "comprehension",
+              1
+            ],
+            [
+              "apply the equations of linear motion to solve problems",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Motion under Gravity",
+          "code": "8.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "describe motion under gravity",
+              "comprehension",
+              1
+            ],
+            [
+              "solve problems involving free fall",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "WORK, ENERGY, AND POWER",
+      "code": "9.0",
+      "form_level": 1,
+      "order": 9,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of Work",
+          "code": "9.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "explain the concept of work",
+              "comprehension",
+              1
+            ],
+            [
+              "state the S.I. unit of work",
+              "comprehension",
+              2
+            ],
+            [
+              "determine the work done by an applied force",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Concept of Energy",
+          "code": "9.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "explain the concept of energy",
+              "comprehension",
+              1
+            ],
+            [
+              "state the S.I. unit of energy",
+              "comprehension",
+              2
+            ],
+            [
+              "identify different forms of energy",
+              "comprehension",
+              3
+            ],
+            [
+              "distinguish between potential energy and kinetic energy",
+              "comprehension",
+              4
+            ],
+            [
+              "state the principle of conservation of energy",
+              "comprehension",
+              5
+            ]
+          ]
+        },
+        {
+          "title": "Concept of Power",
+          "code": "9.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "explain the concept of power",
+              "comprehension",
+              1
+            ],
+            [
+              "state the S.I. unit of power",
+              "comprehension",
+              2
+            ],
+            [
+              "determine the rate of doing work",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "STATIC ELECTRICITY",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 1,
+      "periods": 8,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of static electricity",
+          "code": "1.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the concept of static electricity",
+              "comprehension",
+              1
+            ],
+            [
+              "identify objects that acquire static charge",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Conductors and insulators",
+          "code": "1.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "distinguish between conductors and insulators",
+              "comprehension",
+              1
+            ],
+            [
+              "identify examples of conductors and insulators",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Capacitors",
+          "code": "1.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the concept of a capacitor",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the types of capacitors",
+              "comprehension",
+              2
+            ],
+            [
+              "state the uses of capacitors",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Charge distribution on a conductor",
+          "code": "1.4",
+          "order": 4,
+          "periods": 1,
+          "outcomes": [
+            [
+              "explain charge distribution on conductors",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the behavior of charge on sharp and dull surfaces",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Lightning and thunderstorms",
+          "code": "1.5",
+          "order": 5,
+          "periods": 1,
+          "outcomes": [
+            [
+              "explain the formation of lightning",
+              "comprehension",
+              1
+            ],
+            [
+              "describe methods of protecting buildings from lightning",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CURRENT ELECTRICITY",
+      "code": "2.0",
+      "form_level": 2,
+      "order": 2,
+      "periods": 10,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of current electricity",
+          "code": "2.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "define current electricity",
+              "comprehension",
+              1
+            ],
+            [
+              "identify the source of current electricity",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Resistance to an electric current",
+          "code": "2.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concept of resistance",
+              "comprehension",
+              1
+            ],
+            [
+              "identify factors affecting resistance",
+              "comprehension",
+              2
+            ],
+            [
+              "calculate resistance using Ohm law",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Heating effect of an electric current",
+          "code": "2.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the heating effect of electric current",
+              "comprehension",
+              1
+            ],
+            [
+              "calculate electrical energy and power",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Electrical installations",
+          "code": "2.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "describe components of household electrical installations",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the use of fuses and circuit breakers",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Cells",
+          "code": "2.5",
+          "order": 5,
+          "periods": 1,
+          "outcomes": [
+            [
+              "explain the working principle of a cell",
+              "comprehension",
+              1
+            ],
+            [
+              "distinguish between primary and secondary cells",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAGNETISM",
+      "code": "3.0",
+      "form_level": 2,
+      "order": 3,
+      "periods": 6,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of magnetism",
+          "code": "3.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the concept of magnetism",
+              "comprehension",
+              1
+            ],
+            [
+              "identify magnetic and non-magnetic materials",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Magnetisation and demagnetisation",
+          "code": "3.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain methods of magnetisation",
+              "comprehension",
+              1
+            ],
+            [
+              "describe methods of demagnetisation",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Magnetic field of a magnet",
+          "code": "3.3",
+          "order": 3,
+          "periods": 1,
+          "outcomes": [
+            [
+              "draw magnetic field lines around a magnet",
+              "comprehension",
+              1
+            ],
+            [
+              "identify properties of magnetic field lines",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Earth's magnetic field",
+          "code": "3.4",
+          "order": 4,
+          "periods": 1,
+          "outcomes": [
+            [
+              "explain the earth as a giant magnet",
+              "comprehension",
+              1
+            ],
+            [
+              "state the uses of earth magnetic field",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NATURE AND REFLECTION OF LIGHT",
+      "code": "4.0",
+      "form_level": 2,
+      "order": 4,
+      "periods": 8,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of light",
+          "code": "4.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the concept of light",
+              "comprehension",
+              1
+            ],
+            [
+              "identify sources of light",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Propagation and transmission of light",
+          "code": "4.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the rectilinear propagation of light",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the transmission of light through different media",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Reflection of light through the plane mirror",
+          "code": "4.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "state the laws of reflection",
+              "comprehension",
+              1
+            ],
+            [
+              "determine image characteristics in a plane mirror",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Reflection of light from curved mirrors",
+          "code": "4.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "distinguish between concave and convex mirrors",
+              "comprehension",
+              1
+            ],
+            [
+              "construct ray diagrams for curved mirrors",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "REFRACTION AND DISPERSION OF LIGHT",
+      "code": "5.0",
+      "form_level": 2,
+      "order": 5,
+      "periods": 8,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of refraction of light",
+          "code": "5.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the concept of refraction",
+              "comprehension",
+              1
+            ],
+            [
+              "identify examples of refraction in daily life",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Refraction of light by a glass prism",
+          "code": "5.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "describe the refraction of light through a prism",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the deviation of light by a prism",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Colours of light",
+          "code": "5.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the dispersion of white light",
+              "comprehension",
+              1
+            ],
+            [
+              "identify the components of white light",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Refraction of light by lenses",
+          "code": "5.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "distinguish between concave and convex lenses",
+              "comprehension",
+              1
+            ],
+            [
+              "construct ray diagrams for lenses",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "OPTICAL INSTRUMENTS",
+      "code": "6.0",
+      "form_level": 2,
+      "order": 6,
+      "periods": 10,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Simple microscope",
+          "code": "6.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the working principle of a simple microscope",
+              "comprehension",
+              1
+            ],
+            [
+              "calculate the magnifying power of a simple microscope",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Compound microscope",
+          "code": "6.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "describe the structure of a compound microscope",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the magnification of a compound microscope",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Astronomical telescope",
+          "code": "6.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "explain the working of an astronomical telescope",
+              "comprehension",
+              1
+            ],
+            [
+              "state the uses of astronomical telescope",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Binoculars",
+          "code": "6.4",
+          "order": 4,
+          "periods": 1,
+          "outcomes": [
+            [
+              "explain the construction of binoculars",
+              "comprehension",
+              1
+            ],
+            [
+              "state the uses of binoculars",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Lens camera",
+          "code": "6.5",
+          "order": 5,
+          "periods": 1,
+          "outcomes": [
+            [
+              "explain the working of a lens camera",
+              "comprehension",
+              1
+            ],
+            [
+              "identify the components of a camera",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "The human eye",
+          "code": "6.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "describe the structure of the human eye",
+              "comprehension",
+              1
+            ],
+            [
+              "explain common defects of the eye",
+              "comprehension",
+              2
+            ],
+            [
+              "state the methods of correcting eye defects",
+              "comprehension",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "LIGHT",
+      "code": "1.0",
+      "form_level": 3,
+      "order": 1,
+      "periods": 9,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Relfection of Light from Curved Mirrors",
+          "code": "1.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "distinguish between concave and convex mirrors",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the terms principle axis, pole, principle focus, radius of curvature and focal length as applied to curved mirrors",
+              "comprehension",
+              2
+            ],
+            [
+              "Determine practically the focal length of a concave mirror",
+              "comprehension",
+              3
+            ],
+            [
+              "use convex and concave mirrors in daily life",
+              "comprehension",
+              4
+            ],
+            [
+              "measure the angle of incidence and angle of refraction",
+              "comprehension",
+              5
+            ],
+            [
+              "state the laws of refraction",
+              "comprehension",
+              6
+            ],
+            [
+              "explain the concept of critical angle and total internal relfection of light; and",
+              "comprehension",
+              7
+            ],
+            [
+              "explain the occurrence of mirage",
+              "comprehension",
+              8
+            ]
+          ]
+        },
+        {
+          "title": "Refraction of Light by Triangular Prism",
+          "code": "1.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "trace the passage of light through a rectangular prism",
+              "comprehension",
+              1
+            ],
+            [
+              "trace the passage of light through a triangular prism",
+              "comprehension",
+              2
+            ],
+            [
+              "determine the angles of deviation and minimum deviation; and",
+              "comprehension",
+              3
+            ],
+            [
+              "construct a simple prism binocular",
+              "comprehension",
+              4
+            ],
+            [
+              "recombine colours of white light",
+              "comprehension",
+              5
+            ],
+            [
+              "explain the appearances of coloured object under white light",
+              "comprehension",
+              6
+            ]
+          ]
+        },
+        {
+          "title": "Refraction of Light by Lenses",
+          "code": "1.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "distinguish between additive and subtractive combination of colours",
+              "comprehension",
+              1
+            ],
+            [
+              "distinguish between convex and concave lenses",
+              "comprehension",
+              2
+            ],
+            [
+              "determine practically the focal length of a lens",
+              "comprehension",
+              3
+            ],
+            [
+              "locate the image formed by a lens",
+              "comprehension",
+              4
+            ],
+            [
+              "determine the magniifcation of a lens; and",
+              "comprehension",
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "OPTICAL INSTRUMENTS",
+      "code": "2.0",
+      "form_level": 3,
+      "order": 2,
+      "periods": 9,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Simple Microscope",
+          "code": "2.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe the structure of the simple microscope",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the mode of action of a simple microscope",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Compound Microscope",
+          "code": "2.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe the structure of a compound microscope",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the mode of action of a compound microscope",
+              "comprehension",
+              2
+            ],
+            [
+              "mention uses of a compound microscope; and",
+              "comprehension",
+              3
+            ],
+            [
+              "construct a simple compound microscope",
+              "comprehension",
+              4
+            ],
+            [
+              "describe the mode of action of an astronomical telescope",
+              "comprehension",
+              5
+            ],
+            [
+              "determine the magniifcation of an astronomical telescope",
+              "comprehension",
+              6
+            ]
+          ]
+        },
+        {
+          "title": "Projection Lantern",
+          "code": "2.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "construct a simple astronomical telescope",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the structure of the projection lantern",
+              "comprehension",
+              2
+            ],
+            [
+              "describe the mode of action of a projection lantern",
+              "comprehension",
+              3
+            ],
+            [
+              "mention uses of a projection lantern; and",
+              "comprehension",
+              4
+            ],
+            [
+              "construct a simple projection lantern",
+              "comprehension",
+              5
+            ],
+            [
+              "describe the mode of action of the lens camera",
+              "comprehension",
+              6
+            ],
+            [
+              "determine the magniifcation of the lens camera; and",
+              "comprehension",
+              7
+            ],
+            [
+              "construct a simple lens camera",
+              "comprehension",
+              8
+            ],
+            [
+              "explain accommodation power of the human eye",
+              "comprehension",
+              9
+            ],
+            [
+              "identify the defects of the human eye",
+              "comprehension",
+              10
+            ],
+            [
+              "describe the correction of the defects of the human eye; and",
+              "comprehension",
+              11
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THERMAL EXPANSION",
+      "code": "3.0",
+      "form_level": 3,
+      "order": 3,
+      "periods": 9,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Thermal Energy",
+          "code": "3.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concept of heat",
+              "comprehension",
+              1
+            ],
+            [
+              "state the sources of thermal energy in everyday life and",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Thermal Expansion of Solids",
+          "code": "3.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "demonstrate expansion of solids",
+              "comprehension",
+              1
+            ],
+            [
+              "explain expansion of solids in terms of kinetic theory of matter",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Thermal Expansion of Liquids",
+          "code": "3.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the applications of expansion of solids in daily life",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the apparent expansion of liquids",
+              "comprehension",
+              2
+            ],
+            [
+              "verify the anomalous expansion of water; and",
+              "comprehension",
+              3
+            ],
+            [
+              "explain the applications of expansion of liquids in everyday life",
+              "comprehension",
+              4
+            ],
+            [
+              "Source of heat i",
+              "comprehension",
+              5
+            ],
+            [
+              "capillary tube with mercury pellet ii",
+              "comprehension",
+              6
+            ],
+            [
+              "tripod stand experiment",
+              "comprehension",
+              7
+            ],
+            [
+              "Thermometer vi",
+              "comprehension",
+              8
+            ],
+            [
+              "graph paper vii",
+              "comprehension",
+              9
+            ],
+            [
+              "Tall jar. i",
+              "comprehension",
+              10
+            ],
+            [
+              "Sulphuric acid",
+              "comprehension",
+              11
+            ],
+            [
+              "investigate the relationship between pressure and temperature of a ifxed mass of gas at constant volume",
+              "comprehension",
+              12
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSFER OF THERMAL ENERGY",
+      "code": "4.0",
+      "form_level": 3,
+      "order": 4,
+      "periods": 6,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Conduction",
+          "code": "4.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the concept of conduction of heat",
+              "comprehension",
+              1
+            ],
+            [
+              "identify good and bad conductors of heat",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Convection",
+          "code": "4.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "apply knowledge of conduction in daily life",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the concept of convection of heat",
+              "comprehension",
+              2
+            ],
+            [
+              "explain how to minimize heat losses due to convection; and",
+              "comprehension",
+              3
+            ],
+            [
+              "apply knowledge of convection to daily life",
+              "comprehension",
+              4
+            ],
+            [
+              "identify good absorbers and emitters of radiant heat; and",
+              "comprehension",
+              5
+            ],
+            [
+              "minimize heat losses due to radiation",
+              "comprehension",
+              6
+            ],
+            [
+              "Thermometer ii",
+              "comprehension",
+              7
+            ],
+            [
+              "Calorimeter i",
+              "comprehension",
+              8
+            ],
+            [
+              "wooden base i",
+              "comprehension",
+              9
+            ],
+            [
+              "Beam balance",
+              "comprehension",
+              10
+            ],
+            [
+              "determine experimentally the melting point of a substance from its cooling curve",
+              "comprehension",
+              11
+            ],
+            [
+              "demonstrate the effect of pressure on the boiling point and freezing point of a substance",
+              "comprehension",
+              12
+            ],
+            [
+              "explain the phenomenon of regulation",
+              "comprehension",
+              13
+            ],
+            [
+              "demonstrate latent heat of fusion and vaporization; and",
+              "comprehension",
+              14
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "VAPOUR AND HUMIDITY",
+      "code": "5.0",
+      "form_level": 3,
+      "order": 5,
+      "periods": 21,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Vapour",
+          "code": "5.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the process of evaporation of liquid",
+              "comprehension",
+              1
+            ],
+            [
+              "identify factors affecting evaporation of a liquid",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Humidity",
+          "code": "5.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the effect of temperature on saturated vapour pressure (S.V.P) of a liquid",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the concept of humidity",
+              "comprehension",
+              2
+            ],
+            [
+              "measure relative humidity",
+              "comprehension",
+              3
+            ],
+            [
+              "apply the knowledge of humidity in daily life",
+              "comprehension",
+              4
+            ],
+            [
+              "state the S.I units of electromotive force and potential difference; and",
+              "comprehension",
+              5
+            ],
+            [
+              "measure electromotive force of a cell and potential difference across a conductor",
+              "comprehension",
+              6
+            ],
+            [
+              "describe factors which determine the resistance of a conductor",
+              "comprehension",
+              7
+            ],
+            [
+              "identify types of resistors",
+              "comprehension",
+              8
+            ],
+            [
+              "determine the equivalent resistance of more than two resistors in series and parallel",
+              "comprehension",
+              9
+            ]
+          ]
+        },
+        {
+          "title": "Effects of an Electric Current",
+          "code": "5.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Connect and analyse a simple electric circuit",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the mechanism of heating by electric current",
+              "comprehension",
+              2
+            ],
+            [
+              "determine electrical power; and",
+              "comprehension",
+              3
+            ],
+            [
+              "interpret the power rating of electrical appliances",
+              "comprehension",
+              4
+            ],
+            [
+              "describe the functions of a fuse and a circuit breaker",
+              "comprehension",
+              5
+            ],
+            [
+              "perform wiring on a board; and",
+              "comprehension",
+              6
+            ],
+            [
+              "check and rectify electrical faults in domestic appliances",
+              "comprehension",
+              7
+            ],
+            [
+              "determine voltage combination of cells in series and parallel",
+              "comprehension",
+              8
+            ],
+            [
+              "identify the cell defects",
+              "comprehension",
+              9
+            ],
+            [
+              "explain the charging and discharging phenomenon of an accumulator; and",
+              "comprehension",
+              10
+            ],
+            [
+              "use cells and accumulators in daily life",
+              "comprehension",
+              11
+            ],
+            [
+              "explain the terms wave length, frequency and velocity of a wave; and",
+              "comprehension",
+              12
+            ],
+            [
+              "identify types of waves",
+              "comprehension",
+              13
+            ],
+            [
+              "mention the application of relfection, refraction, diffraction and interference of waves in daily life; and",
+              "comprehension",
+              14
+            ]
+          ]
+        },
+        {
+          "title": "Propagation of Waves",
+          "code": "5.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe the propagation of mechanical waves",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the propagation of electromagnetic waves",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Sound Waves",
+          "code": "5.5",
+          "order": 5,
+          "periods": 3,
+          "outcomes": [
+            [
+              "determine the refractive index of a medium",
+              "comprehension",
+              1
+            ],
+            [
+              "identify sources of sound waves",
+              "comprehension",
+              2
+            ],
+            [
+              "explain the concept of audibility range",
+              "comprehension",
+              3
+            ],
+            [
+              "explain the concept of echo and reverberation of sound",
+              "comprehension",
+              4
+            ],
+            [
+              "determine the speed of sound in air",
+              "comprehension",
+              5
+            ],
+            [
+              "identify factors affecting loudness, pitch and quality of a musical sound",
+              "comprehension",
+              6
+            ],
+            [
+              "identify the different musical instruments",
+              "comprehension",
+              7
+            ],
+            [
+              "determine the frequency of a musical note; and",
+              "comprehension",
+              8
+            ],
+            [
+              "distinguish between the fundamental note and overtones",
+              "comprehension",
+              9
+            ]
+          ]
+        },
+        {
+          "title": "Electromagnetic Spectrum",
+          "code": "5.6",
+          "order": 6,
+          "periods": 3,
+          "outcomes": [
+            [
+              "construct a simple musical instrument",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the concept of the electromagnetic spectrum",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Applications of Eletromagnetic Wave in Daily Life",
+          "code": "5.7",
+          "order": 7,
+          "periods": 3,
+          "outcomes": [
+            [
+              "detect infra-red, visible and ultra- violet rays",
+              "comprehension",
+              1
+            ],
+            [
+              "identify the application of microwaves, radio-waves, infra-red, gamma rays and x-rays; and",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ELECTROMAGNETISM",
+      "code": "1.0",
+      "form_level": 4,
+      "order": 1,
+      "periods": 10,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Magnetic ifelds due to a current – carrying conductor",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "explain how electric current produces a magnetic ifeld",
+              "comprehension",
+              1
+            ],
+            [
+              "identify the pattern of the magnetic ifeld lines around a straight conductor",
+              "comprehension",
+              2
+            ],
+            [
+              "determine presence and direction of a force on a current- carrying conductor in a magnetic ifeld; and",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Electromagnetic Induction",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "explain the concept of electromagnetic induction",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the concepts of self and mutual induction",
+              "comprehension",
+              2
+            ],
+            [
+              "describe the mode of action of a.c. and d.c. generator; and",
+              "comprehension",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "RADIOACTIVITY",
+      "code": "2.0",
+      "form_level": 4,
+      "order": 2,
+      "periods": 41,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Nucleus of an Atom",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "describe the structure of the nucleus of an atom",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Natural Radioactivity",
+          "code": "2.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "mention forces holding the nucleus",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the concept of radioactivity",
+              "comprehension",
+              2
+            ],
+            [
+              "explain the nuclear changes due to the emission of alpha(α), beta (β) and gamma (γ) radiations",
+              "comprehension",
+              3
+            ],
+            [
+              "explain the detection of (α), (β) and (γ) radiations",
+              "comprehension",
+              4
+            ],
+            [
+              "determine the half-life of a radioactive element; and",
+              "comprehension",
+              5
+            ],
+            [
+              "identify the applications of natural radioactive substances",
+              "comprehension",
+              6
+            ]
+          ]
+        },
+        {
+          "title": "Radiation Hazards and Safety",
+          "code": "2.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "describe methods of producing artiifcial radioactive isotopes; and",
+              "comprehension",
+              1
+            ],
+            [
+              "mention the applications of artiifcial radioactivity",
+              "comprehension",
+              2
+            ],
+            [
+              "explain the effects of nuclear radiations on human body; and",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Nuclear Fission and Fusion",
+          "code": "2.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "explain the nuclear ifssion and fusion",
+              "comprehension",
+              1
+            ],
+            [
+              "mention the applications of nuclear ifssion and fusion",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "X - rays",
+          "code": "2.5",
+          "order": 5,
+          "periods": 5,
+          "outcomes": [
+            [
+              "state the properties of cathode rays",
+              "comprehension",
+              1
+            ],
+            [
+              "state the applications of cathode ray tube",
+              "comprehension",
+              2
+            ],
+            [
+              "describe the structure and mode of action of the X-ray tube",
+              "comprehension",
+              3
+            ],
+            [
+              "state the properties of X-rays; and",
+              "comprehension",
+              4
+            ],
+            [
+              "identify the applications of X-rays in daily life",
+              "comprehension",
+              5
+            ],
+            [
+              "Conductors i",
+              "comprehension",
+              6
+            ],
+            [
+              "Semiconductors ii",
+              "comprehension",
+              7
+            ],
+            [
+              "Insulators conductors, i",
+              "comprehension",
+              8
+            ],
+            [
+              "Galvanometer v",
+              "comprehension",
+              9
+            ],
+            [
+              "Connecting wires",
+              "comprehension",
+              10
+            ]
+          ]
+        },
+        {
+          "title": "Diodes",
+          "code": "2.6",
+          "order": 6,
+          "periods": 5,
+          "outcomes": [
+            [
+              "describe the construction of P-N junction",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the mode of action of a P-N junction",
+              "comprehension",
+              2
+            ],
+            [
+              "identify the types of diodes; and",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Transistor",
+          "code": "2.7",
+          "order": 7,
+          "periods": 5,
+          "outcomes": [
+            [
+              "describe the construction of a PNP transistor",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the mode of action of a PNP transistor",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Single Stage Ampliifer",
+          "code": "2.8",
+          "order": 8,
+          "periods": 5,
+          "outcomes": [
+            [
+              "outline the applications of transistors in daily life",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the concept of analogue signals",
+              "comprehension",
+              2
+            ],
+            [
+              "explain the concept of digital signals; and",
+              "comprehension",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ELEMENTARY ASTRONOMY",
+      "code": "3.0",
+      "form_level": 4,
+      "order": 3,
+      "periods": 21,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Introduction to Astronomy",
+          "code": "3.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "explain the concept of astronomy; and",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the importance of astronomy in everyday life",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Constellations",
+          "code": "3.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "explain the force of gravitation which maintains celestrial bodies in their orbits",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the concept of constellation",
+              "comprehension",
+              2
+            ],
+            [
+              "identify constellations; and",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Earth and the Moon",
+          "code": "3.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "describe the surface features and temperature of the moon; and",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the causes of ocean tides",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Earthquakes and Volcanoes",
+          "code": "3.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "describe the composition of the layers of the earth; and",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the importance of the layers of the earth",
+              "comprehension",
+              2
+            ],
+            [
+              "explain the origin of volcanoes",
+              "comprehension",
+              3
+            ],
+            [
+              "explain the origin of earthquake; and",
+              "comprehension",
+              4
+            ],
+            [
+              "describe the principle of measurement of earthquake; and",
+              "comprehension",
+              5
+            ],
+            [
+              "identify precautions against earthquake hazards",
+              "comprehension",
+              6
+            ],
+            [
+              "describe the composition of the atmosphere",
+              "comprehension",
+              7
+            ],
+            [
+              "explain the importance of various layers of the atmosphere",
+              "comprehension",
+              8
+            ],
+            [
+              "identify sources of greenhouse",
+              "comprehension",
+              9
+            ],
+            [
+              "explain the occurrence of global warming; and",
+              "comprehension",
+              10
+            ],
+            [
+              "state the consequences of global warming",
+              "comprehension",
+              11
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MEASUREMENT AND ERROR ANALYSIS",
+      "code": "1.0",
+      "form_level": 5,
+      "order": 16,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Dimensions and dimensional analysis",
+          "code": "1.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "State dimensions of physical quantities",
+              "knowledge",
+              1
+            ],
+            [
+              "Use dimensional analysis to verify equations",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Error estimation and propagation",
+          "code": "1.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Distinguish systematic and random errors",
+              "comprehension",
+              1
+            ],
+            [
+              "Calculate absolute, relative and fractional errors",
+              "application",
+              2
+            ],
+            [
+              "Compute propagation of errors in compound equations",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MECHANICS I",
+      "code": "2.0",
+      "form_level": 5,
+      "order": 17,
+      "periods": 30,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Kinematics and equations of motion",
+          "code": "2.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Derive equations of motion under constant acceleration",
+              "application",
+              1
+            ],
+            [
+              "Define velocity and acceleration using calculus",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Projectile motion",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Derive trajectory, time of flight, range and maximum height",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Newton's laws and momentum",
+          "code": "2.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Apply Newton's laws of motion",
+              "application",
+              1
+            ],
+            [
+              "Solve problems on impulse and conservation of linear momentum",
+              "application",
+              2
+            ],
+            [
+              "Analyze elastic and inelastic collisions in two dimensions",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Circular motion",
+          "code": "2.4",
+          "order": 4,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Apply centripetal acceleration and force formulas",
+              "application",
+              1
+            ],
+            [
+              "Analyze conical pendulums and banking of roads",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Rotational dynamics",
+          "code": "2.5",
+          "order": 5,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define moment of inertia and torque",
+              "application",
+              1
+            ],
+            [
+              "Apply conservation of angular momentum",
+              "application",
+              2
+            ],
+            [
+              "Calculate rotational kinetic energy",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Gravitation",
+          "code": "2.6",
+          "order": 6,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Apply Newton's law of gravitation and gravitational field strength",
+              "application",
+              1
+            ],
+            [
+              "Analyze satellite orbital mechanics and escape velocity",
+              "application",
+              2
+            ],
+            [
+              "Apply Kepler's laws of planetary motion",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FLUID MECHANICS",
+      "code": "3.0",
+      "form_level": 5,
+      "order": 18,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Fluid flow and equation of continuity",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Distinguish streamline and turbulent flow",
+              "comprehension",
+              1
+            ],
+            [
+              "Apply the equation of continuity",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Bernoulli's principle",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Derive and apply Bernoulli's equation",
+              "application",
+              1
+            ],
+            [
+              "Explain applications in Venturi meter, Pitot tubes and lift",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Viscosity",
+          "code": "3.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Apply Poiseuille's formula and Stokes' law",
+              "application",
+              1
+            ],
+            [
+              "Determine terminal velocity",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Surface tension",
+          "code": "3.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain surface energy and capillary rise",
+              "comprehension",
+              1
+            ],
+            [
+              "Solve problems on angle of contact and capillarity",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PROPERTIES OF MATTER",
+      "code": "4.0",
+      "form_level": 5,
+      "order": 19,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Elasticity",
+          "code": "4.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Apply Hooke's law and define stress and strain",
+              "application",
+              1
+            ],
+            [
+              "Calculate Young's, bulk and shear moduli",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Elastic potential energy",
+          "code": "4.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Calculate work done in stretching a wire",
+              "application",
+              1
+            ],
+            [
+              "Apply elastic potential energy parameters",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "KINETIC THEORY AND GAS LAWS",
+      "code": "5.0",
+      "form_level": 5,
+      "order": 20,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Ideal gas theory",
+          "code": "5.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "State ideal gas assumptions",
+              "knowledge",
+              1
+            ],
+            [
+              "Derive ideal gas pressure from kinetic theory",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Molecular speed distribution",
+          "code": "5.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe Maxwell-Boltzmann distribution of molecular speeds",
+              "comprehension",
+              1
+            ],
+            [
+              "Calculate root-mean-square velocity",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Real gases",
+          "code": "5.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Compare real and ideal gases",
+              "analysis",
+              1
+            ],
+            [
+              "Apply the Van der Waals equation of state",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THERMODYNAMICS",
+      "code": "6.0",
+      "form_level": 5,
+      "order": 21,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Laws of thermodynamics",
+          "code": "6.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "State the zeroth, first and second laws of thermodynamics",
+              "knowledge",
+              1
+            ],
+            [
+              "Apply the first law delta Q = delta U + delta W",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Thermodynamic processes",
+          "code": "6.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze isothermal, adiabatic, isobaric and isochoric processes",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Heat engines and entropy",
+          "code": "6.3",
+          "order": 3,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Analyze heat engines and refrigerators",
+              "application",
+              1
+            ],
+            [
+              "Calculate Carnot cycle efficiencies",
+              "application",
+              2
+            ],
+            [
+              "Explain entropy concepts",
+              "comprehension",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "WAVE MOTION AND OSCILLATIONS",
+      "code": "7.0",
+      "form_level": 5,
+      "order": 22,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Simple harmonic motion",
+          "code": "7.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Set up and solve SHM differential equations",
+              "application",
+              1
+            ],
+            [
+              "Analyze displacement, velocity and acceleration in SHM",
+              "analysis",
+              2
+            ],
+            [
+              "Explain energy transformations in springs and torsion pendulums",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Progressive wave equations",
+          "code": "7.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Write the equation of a progressive wave",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Superposition of waves",
+          "code": "7.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze stationary waves in strings and air columns",
+              "analysis",
+              1
+            ],
+            [
+              "Identify harmonics and overtones",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Acoustic phenomena",
+          "code": "7.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain beats formation",
+              "comprehension",
+              1
+            ],
+            [
+              "Apply the Doppler effect for sound waves",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ELECTROSTATICS",
+      "code": "1.0",
+      "form_level": 6,
+      "order": 23,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Coulomb's law",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Apply Coulomb's law for point charges in vacuum and dielectrics",
+              "application",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Electric fields and Gauss's law",
+          "code": "1.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define electric field strength and flux",
+              "knowledge",
+              1
+            ],
+            [
+              "Apply Gauss's law to spheres, cylinders and planes",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Electric potential",
+          "code": "1.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define potential difference and equipotential surfaces",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyze electric potential energy profiles",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Capacitance",
+          "code": "1.4",
+          "order": 4,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze parallel plate capacitors and dielectrics",
+              "analysis",
+              1
+            ],
+            [
+              "Calculate energy stored in capacitors and RC circuits",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CURRENT ELECTRICITY (ADVANCED)",
+      "code": "2.0",
+      "form_level": 6,
+      "order": 24,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Kirchhoff's laws",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze circuits using loop and junction rules",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Measuring instruments",
+          "code": "2.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Apply Wheatstone bridge and meter bridge methods",
+              "application",
+              1
+            ],
+            [
+              "Use potentiometer to compare e.m.f. and find internal resistance",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Thermoelectricity",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain Seebeck, Peltier and Thomson effects",
+              "comprehension",
+              1
+            ],
+            [
+              "Apply thermocouple concepts",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ELECTROMAGNETISM AND MAGNETIC FIELDS",
+      "code": "3.0",
+      "form_level": 6,
+      "order": 25,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Biot-Savart and Ampere's laws",
+          "code": "3.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Apply Biot-Savart law and Ampere's circuital law",
+              "application",
+              1
+            ],
+            [
+              "Calculate fields around conductors, solenoids and toroids",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Lorentz force",
+          "code": "3.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Apply the Lorentz force on moving charges",
+              "application",
+              1
+            ],
+            [
+              "Analyze cyclotron motion parameters",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Magnetic properties of materials",
+          "code": "3.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Compare diamagnetic, paramagnetic and ferromagnetic materials",
+              "analysis",
+              1
+            ],
+            [
+              "Interpret hysteresis loops",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ALTERNATING CURRENT CIRCUITS",
+      "code": "4.0",
+      "form_level": 6,
+      "order": 26,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "A.C. generation and r.m.s. values",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe A.C. generation",
+              "comprehension",
+              1
+            ],
+            [
+              "Distinguish r.m.s. and peak values",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Reactance in A.C. circuits",
+          "code": "4.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Analyze resistive, inductive and capacitive A.C. circuits",
+              "analysis",
+              1
+            ],
+            [
+              "Calculate reactance parameters",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "LCR series circuits",
+          "code": "4.3",
+          "order": 3,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Calculate impedance and use phasor diagrams",
+              "application",
+              1
+            ],
+            [
+              "Analyze power factor and resonance frequency",
+              "analysis",
+              2
+            ],
+            [
+              "Compute Q-factor",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "WAVE OPTICS",
+      "code": "5.0",
+      "form_level": 6,
+      "order": 27,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Huygens' principle",
+          "code": "5.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain wavefronts and Huygens' principle",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Interference of light",
+          "code": "5.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze Young's double slit experiment",
+              "analysis",
+              1
+            ],
+            [
+              "Derive fringe width and analyze thin film interference",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Diffraction",
+          "code": "5.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Analyze single-slit diffraction and diffraction gratings",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Polarization",
+          "code": "5.4",
+          "order": 4,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Apply Brewster's law and Malus's law",
+              "application",
+              1
+            ],
+            [
+              "Explain production and detection of polarized light",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MODERN PHYSICS AND QUANTUM MECHANICS",
+      "code": "6.0",
+      "form_level": 6,
+      "order": 28,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Photoelectric effect",
+          "code": "6.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Apply Einstein's photoelectric equation",
+              "application",
+              1
+            ],
+            [
+              "Determine work function, threshold frequency and stopping potential",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Wave-particle duality",
+          "code": "6.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Apply the de Broglie wavelength formula",
+              "application",
+              1
+            ],
+            [
+              "Explain the Heisenberg uncertainty principle",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Atomic models and spectra",
+          "code": "6.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Apply Bohr's theory of the hydrogen atom",
+              "application",
+              1
+            ],
+            [
+              "Analyze energy level transitions and line spectra series",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "X-ray physics",
+          "code": "6.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe X-ray production in a Coolidge tube",
+              "comprehension",
+              1
+            ],
+            [
+              "Distinguish continuous and characteristic spectra and apply Bragg's law",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SOLID STATE ELECTRONICS",
+      "code": "7.0",
+      "form_level": 6,
+      "order": 29,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Energy band theory",
+          "code": "7.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Classify insulators, semiconductors and conductors using band theory",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Bipolar junction transistors",
+          "code": "7.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Analyze NPN and PNP transistor arrangements",
+              "analysis",
+              1
+            ],
+            [
+              "Interpret common-emitter configurations and characteristics",
+              "comprehension",
+              2
+            ],
+            [
+              "Design transistor switching circuits",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Operational amplifiers",
+          "code": "7.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Apply ideal op-amp properties",
+              "application",
+              1
+            ],
+            [
+              "Analyze inverting and non-inverting configurations",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

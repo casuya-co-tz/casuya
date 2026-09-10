@@ -1,0 +1,2023 @@
+{
+  "name": "Biology",
+  "code": "BIO",
+  "slug": "biology",
+  "necta_code": "033",
+  "is_core": true,
+  "description": "Biology for Ordinary and Advanced Secondary Education, Form I-VI. Covers cell biology, genetics, ecology, human physiology, plants, microorganisms, biochemistry and evolution.",
+  "form_start": 1,
+  "form_end": 6,
+  "replace_topic_form_levels": [
+    1
+  ],
+  "topics": [
+    {
+      "title": "INTRODUCTION TO BIOLOGY",
+      "code": "1.0",
+      "form_level": 1,
+      "order": 1,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of Biology",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define Biology and basic concepts and terminologies",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify branches of Biology",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Importance of Studying Biology",
+          "code": "1.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain the importance of studying Biology",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify career opportunities in Biology",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Relationship between Biology and other Scientific Fields",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the relationship between Biology and other scientific fields",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SCIENTIFIC PROCESSES",
+      "code": "2.0",
+      "form_level": 1,
+      "order": 2,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Common Biology Laboratory Apparatus, Equipment and Other Resources",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify common Biology laboratory apparatus, equipment, and resources",
+              "knowledge",
+              1
+            ],
+            [
+              "State the uses of each apparatus and proper care",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Basic Skills in Scientific Studies",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe basic skills in scientific studies (observation, recording, measurement)",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Scientific Methods",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the steps of the scientific method",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain hypothesis formulation and experimentation",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Simple Biological Experiments",
+          "code": "2.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Conduct simple biological experiments and record observations accurately",
+              "application",
+              1
+            ],
+            [
+              "Draw conclusions from experiments",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CELL STRUCTURE AND ORGANIZATION",
+      "code": "3.0",
+      "form_level": 1,
+      "order": 3,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Cell",
+          "code": "3.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Define a cell and describe its structure",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify cell organelles and their functions",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Types of Cells",
+          "code": "3.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Distinguish between plant and animal cells",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify prokaryotic and eukaryotic cells",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Cell Organization",
+          "code": "3.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Explain the concept of cell organization",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify levels of cell organization (cell, tissue, organ)",
+              "knowledge",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CLASSIFICATION OF LIVING THINGS",
+      "code": "4.0",
+      "form_level": 1,
+      "order": 4,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of Classification",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define classification and explain its importance",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Classification Systems",
+          "code": "4.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe classification systems and the hierarchy of classification",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify the five kingdoms of classification",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Major Groups of Living Things",
+          "code": "4.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify major groups of living things and their characteristics",
+              "knowledge",
+              1
+            ],
+            [
+              "Distinguish between vertebrates and invertebrates",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Binomial Nomenclature",
+          "code": "4.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain the rules of binomial nomenclature",
+              "comprehension",
+              1
+            ],
+            [
+              "Give examples of scientific names and state the importance of scientific naming",
+              "knowledge",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "VIRUSES AND MAJOR GROUPS OF LIVING THINGS",
+      "code": "5.0",
+      "form_level": 1,
+      "order": 5,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Viruses",
+          "code": "5.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe the structure and reproduction of viruses",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify the effects of viruses on living things",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Kingdom Monera",
+          "code": "5.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe characteristics of Kingdom Monera and identify examples",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kingdom Protoctista",
+          "code": "5.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe characteristics of Kingdom Protoctista and identify examples",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kingdom Fungi",
+          "code": "5.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe characteristics of Kingdom Fungi and identify examples",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kingdom Plantae",
+          "code": "5.5",
+          "order": 5,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe characteristics of Kingdom Plantae and identify major divisions of plants",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Classes of the division Angiospermophyta",
+          "code": "5.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Identify classes of Angiospermophyta and their characteristics",
+              "knowledge",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Kingdom Animalia",
+          "code": "5.7",
+          "order": 7,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe characteristics of Kingdom Animalia and identify major phyla",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NUTRITION IN PLANTS",
+      "code": "6.0",
+      "form_level": 1,
+      "order": 6,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Concept of Nutrition",
+          "code": "6.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define nutrition and explain its importance",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe types of nutrition",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Essential and Non-essential Elements in Plants",
+          "code": "6.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Distinguish essential and non-essential elements and identify essential elements for plant growth",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Photosynthesis",
+          "code": "6.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain the process of photosynthesis and state its equation",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify factors affecting photosynthesis",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Structure of the Leaf in Relation to Photosynthesis",
+          "code": "6.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe the structure of a leaf and how it is adapted for photosynthesis",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Importance of Photosynthesis",
+          "code": "6.5",
+          "order": 5,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Explain the importance of photosynthesis to plants, animals, and the ecosystem",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NUTRITION IN ANIMALS",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 4,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of nutrition in animals",
+          "code": "1.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "define nutrition in animals",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Nutrients",
+          "code": "1.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "identify classes of food nutrients",
+              "comprehension",
+              1
+            ],
+            [
+              "state the sources and functions of food nutrients",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Balanced diet",
+          "code": "1.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "define a balanced diet",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the importance of a balanced diet",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Nutritional requirements for different groups",
+          "code": "1.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe nutritional needs of different age groups",
+              "comprehension",
+              1
+            ],
+            [
+              "explain special nutritional needs of pregnant and lactating women",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Nutritional deficiencies and disorders",
+          "code": "1.5",
+          "order": 5,
+          "periods": 3,
+          "outcomes": [
+            [
+              "identify common nutritional deficiencies",
+              "comprehension",
+              1
+            ],
+            [
+              "describe symptoms and prevention of nutritional disorders",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Properties of food nutrients",
+          "code": "1.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "describe the physical and chemical properties of food nutrients",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DIGESTIVE SYSTEM",
+      "code": "2.0",
+      "form_level": 2,
+      "order": 5,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "The digestion process",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "describe the structure of the human digestive system",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the process of digestion in different parts of the alimentary canal",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Disorders and diseases of human digestive system",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "identify common disorders of the digestive system",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the causes and prevention of digestive diseases",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "The digestive system of ruminants",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "describe the structure of the digestive system in ruminants",
+              "comprehension",
+              1
+            ],
+            [
+              "compare digestion in ruminants and non-ruminants",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT OF MATERIALS IN LIVING ORGANISMS",
+      "code": "3.0",
+      "form_level": 2,
+      "order": 6,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of transportation of materials",
+          "code": "3.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "define transport in living organisms",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the importance of transport systems",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Ways of transportation of materials",
+          "code": "3.2",
+          "order": 2,
+          "periods": 9,
+          "outcomes": [
+            [
+              "describe different methods of transport in organisms",
+              "comprehension",
+              1
+            ],
+            [
+              "explain bulk flow systems in multicellular organisms",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT OF MATERIALS IN FLOWERING PLANTS",
+      "code": "4.0",
+      "form_level": 2,
+      "order": 7,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "The vascular system",
+          "code": "4.1",
+          "order": 1,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe the structure of xylem and phloem",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the function of vascular tissues in transport",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Absorption and movement of water and mineral salts",
+          "code": "4.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "explain the absorption of water and minerals by roots",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the ascent of sap in plants",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Transpiration",
+          "code": "4.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "define transpiration",
+              "comprehension",
+              1
+            ],
+            [
+              "explain factors affecting transpiration",
+              "comprehension",
+              2
+            ],
+            [
+              "describe the significance of transpiration",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Guttation",
+          "code": "4.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "define guttation",
+              "comprehension",
+              1
+            ],
+            [
+              "distinguish between guttation and transpiration",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT OF MATERIALS IN MAMMALS",
+      "code": "5.0",
+      "form_level": 2,
+      "order": 8,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The mammalian heart",
+          "code": "5.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "describe the structure of the mammalian heart",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the cardiac cycle",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Blood vessels",
+          "code": "5.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "distinguish between arteries, veins and capillaries",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the structure and function of blood vessels",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "The blood",
+          "code": "5.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "identify the components of blood",
+              "comprehension",
+              1
+            ],
+            [
+              "describe the functions of blood components",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Blood groups",
+          "code": "5.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "identify the main blood groups",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the importance of blood grouping",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Blood transfusion",
+          "code": "5.5",
+          "order": 5,
+          "periods": 3,
+          "outcomes": [
+            [
+              "explain the principles of blood transfusion",
+              "comprehension",
+              1
+            ],
+            [
+              "identify compatibility of blood groups",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Blood circulation in human beings",
+          "code": "5.6",
+          "order": 6,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe the double circulation system",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the pathway of blood through the body",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GAS EXCHANGE AND RESPIRATION",
+      "code": "6.0",
+      "form_level": 2,
+      "order": 9,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Concept of gas exchange",
+          "code": "6.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "define gas exchange in living organisms",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Gas exchange in mammals",
+          "code": "6.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "describe the structure of the mammalian respiratory system",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the mechanism of breathing",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Gas exchange in plants",
+          "code": "6.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "describe gas exchange through stomata",
+              "comprehension",
+              1
+            ],
+            [
+              "explain the role of lenticels in gas exchange",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Respiration in mammals",
+          "code": "6.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "distinguish between aerobic and anaerobic respiration",
+              "comprehension",
+              1
+            ],
+            [
+              "write the equations for aerobic and anaerobic respiration",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Infections and diseases of the respiratory system",
+          "code": "6.5",
+          "order": 5,
+          "periods": 3,
+          "outcomes": [
+            [
+              "identify common respiratory infections",
+              "comprehension",
+              1
+            ],
+            [
+              "explain prevention and control of respiratory diseases",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EXCRETION",
+      "code": "1.0",
+      "form_level": 3,
+      "order": 6,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Excretory organs and systems",
+          "code": "1.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Identify excretory organs: kidneys, lungs, skin, liver",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the structure of the kidney and nephron",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Urine formation",
+          "code": "1.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the process of urine formation: filtration, reabsorption, secretion",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain osmoregulation",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Kidney disorders",
+          "code": "1.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Describe kidney disorders: kidney stones, kidney failure, dialysis",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "REPRODUCTION",
+      "code": "2.0",
+      "form_level": 3,
+      "order": 7,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Human reproductive system",
+          "code": "2.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe the male and female reproductive systems",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the menstrual cycle and hormonal control",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Fertilization and development",
+          "code": "2.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe internal and external fertilization",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe embryonic development and the role of the placenta",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Reproduction in plants",
+          "code": "2.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe sexual and asexual reproduction in plants",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe pollination and its types: self, cross, wind, insect",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Reproductive health",
+          "code": "2.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Describe STIs: HIV/AIDS, gonorrhoea, syphilis and their prevention",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe contraceptive methods",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GENETICS",
+      "code": "1.0",
+      "form_level": 4,
+      "order": 8,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Mendelian genetics",
+          "code": "1.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Define gene, allele, genotype and phenotype",
+              "knowledge",
+              1
+            ],
+            [
+              "Apply monohybrid and dihybrid crosses using Punnett squares",
+              "application",
+              2
+            ],
+            [
+              "Explain the laws of segregation and independent assortment",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Inheritance patterns",
+          "code": "1.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Explain Mendelian and non-Mendelian inheritance: incomplete dominance, codominance, sex-linkage",
+              "comprehension",
+              1
+            ],
+            [
+              "Use genetic crosses to predict outcomes of inherited traits",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "DNA and biotechnology",
+          "code": "1.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the structure of DNA and its role in protein synthesis",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain genetic engineering and its applications",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ECOLOGY",
+      "code": "2.0",
+      "form_level": 4,
+      "order": 9,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Ecosystems",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define ecosystem and identify its biotic and abiotic components",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe food chains and food webs",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Energy flow and nutrient cycling",
+          "code": "2.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe energy flow through ecosystems: producers, consumers, decomposers",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain carbon, nitrogen and water cycles",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Environmental conservation",
+          "code": "2.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe human activities that damage the environment: deforestation, pollution, overgrazing",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain conservation methods: afforestation, recycling, protected areas",
+              "comprehension",
+              2
+            ],
+            [
+              "Describe the effects of global warming and ozone depletion",
+              "comprehension",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "MAN AND HIS ENVIRONMENT",
+      "code": "3.0",
+      "form_level": 4,
+      "order": 10,
+      "periods": 12,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Parasitism, symbiosis and commensalism",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Distinguish between parasitism, mutualism and commensalism",
+              "analysis",
+              1
+            ],
+            [
+              "Identify examples of each relationship in ecosystems",
+              "knowledge",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Adaptations",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe structural, physiological and behavioral adaptations of organisms",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Evolution",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain theories of evolution: Lamarckism and Darwinism",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe evidence for evolution: fossils, comparative anatomy, biogeography",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CYTOGENETICS AND MOLECULAR BIOLOGY",
+      "code": "1.0",
+      "form_level": 5,
+      "order": 11,
+      "periods": 34,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Cytogenetics",
+          "code": "1.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Analyze the structure and behaviour of chromosomes",
+              "analysis",
+              1
+            ],
+            [
+              "Describe linkage, crossing-over and gene maps",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Nucleic acids and gene expression",
+          "code": "1.2",
+          "order": 2,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Explain DNA replication and transcription and translation",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe gene regulation mechanisms",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Protein synthesis",
+          "code": "1.3",
+          "order": 3,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Trace the steps of protein synthesis and the genetic code",
+              "application",
+              1
+            ],
+            [
+              "Describe the effects of mutations on gene products",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GROWTH AND DEVELOPMENT",
+      "code": "2.0",
+      "form_level": 5,
+      "order": 12,
+      "periods": 26,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Growth in plants",
+          "code": "2.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Describe meristematic activity and cell differentiation in plants",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain physiological and morphological responses of plants to stimuli",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Growth in animals",
+          "code": "2.2",
+          "order": 2,
+          "periods": 14,
+          "outcomes": [
+            [
+              "Describe the role of hormones in animal growth and development",
+              "comprehension",
+              1
+            ],
+            [
+              "Compare human growth and development patterns across life stages",
+              "analysis",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "COORDINATION, IRRITABILITY AND MOVEMENT",
+      "code": "3.0",
+      "form_level": 5,
+      "order": 13,
+      "periods": 28,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Nervous coordination",
+          "code": "3.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Describe the transmission of nerve impulses across synapses",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze reflex actions and their centre",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Chemical and sensory coordination",
+          "code": "3.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe endocrine regulation and pheromone function",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe sensory receptors and perception",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Movement and locomotion",
+          "code": "3.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe mechanisms of movement in animals and plants",
+              "comprehension",
+              1
+            ],
+            [
+              "Relate muscle structure to contraction",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GASEOUS EXCHANGE AND RESPIRATION",
+      "code": "4.0",
+      "form_level": 5,
+      "order": 14,
+      "periods": 26,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Gaseous exchange mechanisms",
+          "code": "4.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe gaseous exchange in plants, insects, fish and mammals",
+              "comprehension",
+              1
+            ],
+            [
+              "Compare transport structures supporting gas exchange",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Cellular respiration",
+          "code": "4.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Summarize glycolysis, the Krebs cycle and the electron transport chain",
+              "comprehension",
+              1
+            ],
+            [
+              "Compare aerobic and anaerobic respiration and ATP yield",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Respiratory diseases",
+          "code": "4.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe causes and prevention of common respiratory diseases",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "EXCRETION AND HOMEOSTASIS",
+      "code": "5.0",
+      "form_level": 5,
+      "order": 15,
+      "periods": 26,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Excretory organs",
+          "code": "5.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe the structure and function of excretory organs (kidney, liver, lungs, skin)",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe the formation of urine and kidney homeostasis",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Homeostatic regulation",
+          "code": "5.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe regulation of temperature, water, glucose and pH balance",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain the role of feedback mechanisms in homeostasis",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Homeostatic disorders",
+          "code": "5.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe diabetes, kidney failure, acidosis and osmoregulation disorders",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NUTRITION, METABOLISM AND SUPPORT",
+      "code": "1.0",
+      "form_level": 6,
+      "order": 16,
+      "periods": 30,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Nutrients, vitamins and metabolism",
+          "code": "1.1",
+          "order": 1,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Describe the classes and functions of nutrients and vitamins",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze metabolism, mineral nutrition and vitamins in the body",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Principles of nutrition in living organisms",
+          "code": "1.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Compare autotrophic and heterotrophic modes of nutrition",
+              "analysis",
+              1
+            ],
+            [
+              "Describe balanced diet, food preparation and preservation",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Plant and animal support systems",
+          "code": "1.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe support systems in plants (turgidity, wood, fibers)",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe support systems in animals (skeletons, hydrostatic)",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TRANSPORT IN LIVING ORGANISMS",
+      "code": "2.0",
+      "form_level": 6,
+      "order": 17,
+      "periods": 26,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Transport in plants",
+          "code": "2.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe uptake of water and minerals by roots",
+              "comprehension",
+              1
+            ],
+            [
+              "Explain cohesion-tension and pressure-flow hypotheses of translocation",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Transport in mammals",
+          "code": "2.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe circulation of blood and lymph",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe blood groups and systemic circulation",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Cardiovascular and transport disorders",
+          "code": "2.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe hypertension, anemia and other transport disorders",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "NUTRITION, DIGESTION AND ENZYMES",
+      "code": "3.0",
+      "form_level": 6,
+      "order": 18,
+      "periods": 26,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Enzymes and catalysis",
+          "code": "3.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe the mechanism of enzyme action",
+              "comprehension",
+              1
+            ],
+            [
+              "Analyze factors affecting enzyme activity",
+              "analysis",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Digestion and absorption",
+          "code": "3.2",
+          "order": 2,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Trace the digestive process in the gastrointestinal tract",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe absorption of digested products",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Nutritional disorders",
+          "code": "3.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe deficiency diseases such as kwashiorkor and marasmus",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GENETICS, EVOLUTION AND CLASSIFICATION",
+      "code": "4.0",
+      "form_level": 6,
+      "order": 19,
+      "periods": 30,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Regulation of gene expression",
+          "code": "4.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Explain operon models and gene regulation in prokaryotes and eukaryotes",
+              "analysis",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Variation, mutation and genetics defects",
+          "code": "4.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe causes and effects of genetic chromosome defects",
+              "comprehension",
+              1
+            ],
+            [
+              "Apply probability to solve genetics problems",
+              "application",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "DNA technology and genetic engineering",
+          "code": "4.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe recombinant DNA technology and gene cloning",
+              "comprehension",
+              1
+            ],
+            [
+              "Discuss ethical issues of genetic engineering and biotechnology",
+              "evaluation",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Modern taxonomy",
+          "code": "4.4",
+          "order": 4,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe classification systems and phylogenetics",
+              "comprehension",
+              1
+            ],
+            [
+              "Apply dichotomous keys for identification",
+              "application",
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ORGANISMS AND THEIR ENVIRONMENT",
+      "code": "5.0",
+      "form_level": 6,
+      "order": 20,
+      "periods": 26,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Ecosystem organization",
+          "code": "5.1",
+          "order": 1,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe the components and functioning of ecosystems",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe energy flow and nutrient cycles",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Population ecology",
+          "code": "5.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyze population growth models and carrying capacity",
+              "analysis",
+              1
+            ],
+            [
+              "Describe population structure and sampling methods",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Applied ecology",
+          "code": "5.3",
+          "order": 3,
+          "periods": 12,
+          "outcomes": [
+            [
+              "Explain succession, parasitism and co-evolution",
+              "analysis",
+              1
+            ],
+            [
+              "Apply ecology to land, water and field studies",
+              "application",
+              2
+            ],
+            [
+              "Describe conservation strategies for biodiversity",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "REPRODUCTION AND DEVELOPMENT",
+      "code": "6.0",
+      "form_level": 6,
+      "order": 21,
+      "periods": 26,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Reproduction in plants and animals",
+          "code": "6.1",
+          "order": 1,
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe the reproductive structures of flowering plants",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe reproductive processes in animals",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Hormonal regulation of reproduction",
+          "code": "6.2",
+          "order": 2,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Explain the hormonal control of the menstrual cycle",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe contraception and family planning methods",
+              "comprehension",
+              2
+            ]
+          ]
+        },
+        {
+          "title": "Pregnancy and development",
+          "code": "6.3",
+          "order": 3,
+          "periods": 8,
+          "outcomes": [
+            [
+              "Describe fertilization, implantation and embryonic development",
+              "comprehension",
+              1
+            ],
+            [
+              "Describe childbirth and the protection of the embryo",
+              "comprehension",
+              2
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

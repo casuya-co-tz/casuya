@@ -227,9 +227,8 @@ apps/platform/frontend/assets/js/brand.js
 apps/platform/frontend/assets/js/config.js
 apps/platform/frontend/assets/js/env.js
 apps/platform/frontend/assets/js/i18n.js
-apps/platform/frontend/assets/js/main.bundle.js
+apps/platform/frontend/assets/js/i18n-swahili.js
 apps/platform/frontend/assets/js/main.js
-apps/platform/frontend/assets/js/main.min.js
 apps/platform/frontend/assets/js/modules/admin-dashboard/00-shell.js
 apps/platform/frontend/assets/js/modules/admin-dashboard/01-overview.js
 apps/platform/frontend/assets/js/modules/admin-dashboard/02-lessons-quizzes-games.js
@@ -3140,6 +3139,9 @@ packages/ai/package-lock.json
 packages/ai/railway.toml
 packages/ai/README.md
 packages/ai/scripts/build-kb.mjs
+packages/ai/scripts/kb-collect.mjs
+packages/ai/scripts/kb-renderers.mjs
+packages/ai/scripts/kb-tokenizer.mjs
 packages/ai/server.ts
 packages/ai/src/adapters/bridge-adapter.ts
 packages/ai/src/adapters/index.ts
@@ -3645,7 +3647,6 @@ pyproject.toml
 README.md
 run.ps1
 start.ps1
-tools/bundle-main.mjs
 tools/check-layers.mjs
 tools/check-vercel-deploy.mjs
 tools/split-blackboard.mjs

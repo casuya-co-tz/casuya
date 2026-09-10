@@ -2,7 +2,6 @@ import {
   TutoringRequest,
   TutoringResponse,
   TutoringSession,
-  TutoringMode,
   KnowledgeState,
 } from '../types';
 import { BaseProvider } from '../providers/base-provider';
@@ -10,24 +9,8 @@ import { PromptManager } from '../prompts/prompt-manager';
 import { CacheManager } from '../caching/cache-manager';
 import { CasuyaAIError, ErrorCode, Logger } from '../utilities';
 import { SyllabusAdapter } from '../adapters/syllabus-adapter';
-import { buildSubjectFrameworkBlock } from '../prompts/subject-frameworks';
-
-/** Maps subject names/slugs to TIE syllabus slugs */
-const SUBJECT_SLUG_MAP: Record<string, string> = {
-  mathematics: 'mathematics',
-  'basic mathematics': 'mathematics',
-  physics: 'physics',
-  chemistry: 'chemistry',
-  biology: 'biology',
-  english: 'english',
-  'english language': 'english',
-  kiswahili: 'kiswahili',
-};
-
-/** Forms I-II default to Kiswahili-medium */
-function isKiswahiliMedium(formLevel?: number): boolean {
-  return formLevel !== undefined && formLevel <= 2;
-}
+import { buildTutoringSystemPrompt, buildTutoringUserPrompt, getTemperature, getMaxTokens } from './prompts';
+import { postProcessTutoringResponse } from './post-process';
 
 export class TutoringEngine {
   private sessions: Map<string, TutoringSession>;
@@ -54,8 +37,8 @@ export class TutoringEngine {
     const cached = this.cache.get<TutoringResponse>(cacheKey);
     if (cached?.message?.trim()) return cached;
 
-    const systemPrompt = await this.buildSystemPrompt(request);
-    const userPrompt = this.buildUserPrompt(request);
+    const systemPrompt = await buildTutoringSystemPrompt(request, this.promptManager, this.syllabusAdapter, this.logger);
+    const userPrompt = buildTutoringUserPrompt(request);
 
     const response = await this.provider.chatCompletion({
       messages: [
@@ -66,8 +49,8 @@ export class TutoringEngine {
         })),
         { role: 'user', content: userPrompt },
       ],
-      temperature: this.getTemperature(request.mode),
-      maxTokens: this.getMaxTokens(request.mode),
+      temperature: getTemperature(request.mode),
+      maxTokens: getMaxTokens(request.mode),
     });
 
     const rawMessage = response.content;
@@ -128,76 +111,6 @@ export class TutoringEngine {
     }
   }
 
-  private async buildSystemPrompt(request: TutoringRequest): Promise<string> {
-    const formLevel = (request.preferences as unknown as Record<string, unknown>)?.formLevel as number | undefined;
-    const subjectSlug = SUBJECT_SLUG_MAP[request.subject?.toLowerCase?.() ?? ''] ?? '';
-    const useKiswahili = isKiswahiliMedium(formLevel);
-
-    // Fetch TIE curriculum context if adapter is available
-    let curriculumContext = '';
-    if (this.syllabusAdapter && subjectSlug && formLevel) {
-      try {
-        curriculumContext = await this.syllabusAdapter.getCurriculumContext(subjectSlug, formLevel);
-      } catch {
-        this.logger.warn(`Failed to fetch curriculum context for ${subjectSlug} Form ${formLevel}`);
-      }
-    }
-
-    // Choose NECTA-aligned template or fall back to generic
-    const templateId = curriculumContext
-      ? (useKiswahili ? 'necta-tutoring-kiswahili' : 'necta-tutoring')
-      : 'tutoring-explain';
-
-    const variables: Record<string, unknown> = {
-      subject: request.subject,
-      topic: request.topic,
-      difficulty: request.preferences?.difficulty ?? 'intermediate',
-      language: request.preferences?.language ?? 'en',
-      question: request.message,
-      subject_framework: buildSubjectFrameworkBlock(subjectSlug || 'general'),
-    };
-
-    if (curriculumContext) {
-      variables.curriculum_context = curriculumContext;
-      variables.form_level = formLevel ?? 1;
-      variables.necta_code = subjectSlug.toUpperCase().slice(0, 4);
-    }
-
-    return this.promptManager.execute({ templateId, variables }).content;
-  }
-
-  private buildUserPrompt(request: TutoringRequest): string {
-    const modeInstructions: Record<TutoringMode, string> = {
-      [TutoringMode.EXPLAIN]: 'Provide a clear, comprehensive explanation.',
-      [TutoringMode.SOCRATIC]: 'Guide the student to discover the answer through questions.',
-      [TutoringMode.PRACTICE]: 'Provide practice problems and exercises.',
-      [TutoringMode.REVIEW]: 'Review previously covered material and identify gaps.',
-      [TutoringMode.ASSESS]: 'Assess the student understanding and provide feedback.',
-    };
-
-    return `${modeInstructions[request.mode]}\n\nStudent question: ${request.message}`;
-  }
-
-  private getTemperature(mode: TutoringMode): number {
-    switch (mode) {
-      case TutoringMode.EXPLAIN: return 0.3;
-      case TutoringMode.SOCRATIC: return 0.7;
-      case TutoringMode.PRACTICE: return 0.4;
-      case TutoringMode.REVIEW: return 0.3;
-      case TutoringMode.ASSESS: return 0.2;
-    }
-  }
-
-  private getMaxTokens(mode: TutoringMode): number {
-    switch (mode) {
-      case TutoringMode.EXPLAIN: return 2048;
-      case TutoringMode.SOCRATIC: return 1024;
-      case TutoringMode.PRACTICE: return 1536;
-      case TutoringMode.REVIEW: return 1024;
-      case TutoringMode.ASSESS: return 768;
-    }
-  }
-
   private extractSuggestions(response: string): string[] {
     const suggestions: string[] = [];
     const lines = response.split('\n');
@@ -250,63 +163,4 @@ export class TutoringEngine {
 
     this.sessions.set(sessionId, session);
   }
-}
-
-// ---------------------------------------------------------------------------
-// Post-processing: fixes formatting drift from the AI model
-// ---------------------------------------------------------------------------
-
-/**
- * Wraps bare "🌍 ... Context" lines in markdown blockquotes (>).
- * The AI model sometimes emits the context line as plain text instead of `>`.
- */
-function wrapContextBlockquote(text: string): string {
-  return text.replace(
-    /^((?:🌍|> ?🌍|\*\*🌍|🌍 )\s*.*?Context.*)$/gm,
-    (match) => {
-      const cleaned = match.replace(/^>\s*/, '').replace(/^\*\*/, '');
-      return `> ${cleaned}`;
-    },
-  );
-}
-
-/**
- * Ensures a `---` or `***` horizontal rule exists before
- * "💡 NECTA Examination Tip" if one is missing.
- */
-function ensureNectaTipDivider(text: string): string {
-  return text.replace(
-    /(?<!^---\s*\n|^>\s*---\s*\n|^>\s*\*\*\*\s*\n|^\*\*\*\s*\n)(^(?:💡|> ?💡|\*\*💡)\s*\*?\*?NECTA Examination Tip)/gm,
-    '---\n\n$1',
-  );
-}
-
-/**
- * Normalizes notation quirks: "(1n)" → "(n)" for gamete chromosome counts.
- */
-function cleanNotation(text: string): string {
-  return text.replace(/\(1n\)/g, '(n)');
-}
-
-/**
- * Removes the literal `[next sub-topic]` placeholder and replaces it
- * with a generic but helpful suggestion.
- */
-function cleanPlaceholders(text: string): string {
-  return text.replace(
-    /\[next sub-topic\]/gi,
-    'a related topic',
-  );
-}
-
-/**
- * Runs all post-processing fixes on the raw AI response.
- */
-function postProcessTutoringResponse(text: string): string {
-  let result = text;
-  result = wrapContextBlockquote(result);
-  result = ensureNectaTipDivider(result);
-  result = cleanNotation(result);
-  result = cleanPlaceholders(result);
-  return result;
 }

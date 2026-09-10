@@ -1,0 +1,2433 @@
+{
+  "name": "English Language",
+  "code": "ENG",
+  "slug": "english",
+  "necta_code": "011",
+  "is_core": true,
+  "description": "English Language for Ordinary and Advanced Secondary Education, Form I-VI. Covers grammar, vocabulary, composition, comprehension, literature, translation and advanced linguistics.",
+  "form_start": 1,
+  "form_end": 6,
+  "topics": [
+    {
+      "order": 1,
+      "code": "1.0",
+      "form_level": 1,
+      "title": "Listening and Speaking (Oral Communication)",
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Listen attentively to spoken information and respond appropriately",
+              "comprehension",
+              1
+            ],
+            [
+              "Express ideas and information clearly in spoken English",
+              "application",
+              2
+            ],
+            [
+              "Answer questions based on information from presentations/tasks",
+              "comprehension",
+              0
+            ],
+            [
+              "Reproduce messages from oral presentations",
+              "comprehension",
+              0
+            ],
+            [
+              "Paraphrase various oral messages from different contexts",
+              "comprehension",
+              0
+            ],
+            [
+              "Participate in various conversations in different communicative settings (e.g., peer discussions, storytellin",
+              "comprehension",
+              0
+            ],
+            [
+              "Synthesise ideas from a variety of oral sources",
+              "comprehension",
+              0
+            ],
+            [
+              "Discuss information from various oral sources",
+              "comprehension",
+              0
+            ],
+            [
+              "Deduce the main ideas from an oral presentation or language task",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Expressing Information",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Engage in polite social interactions using appropriate register",
+              "application",
+              3
+            ],
+            [
+              "Initiate and sustain conversations in familiar contexts",
+              "application",
+              4
+            ],
+            [
+              "Practise pronunciation of words from oral and audio/audio- visual sources",
+              "comprehension",
+              0
+            ],
+            [
+              "Respond to oral messages from different contexts",
+              "comprehension",
+              0
+            ],
+            [
+              "Summarise information from oral presentations and audio/audio- visual sources",
+              "comprehension",
+              0
+            ],
+            [
+              "Summarise information from a variety of oral sources",
+              "comprehension",
+              0
+            ],
+            [
+              "Respond to various oral messages",
+              "comprehension",
+              0
+            ],
+            [
+              "Examine information from oral sources",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Social Interactions",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Identify basic speech sounds and sound patterns in English",
+              "knowledge",
+              5
+            ],
+            [
+              "Pronounce English phonemes with reasonable accuracy",
+              "application",
+              6
+            ],
+            [
+              "Write words heard from oral and audio/audio- visual sources",
+              "comprehension",
+              0
+            ],
+            [
+              "Respond to questions about oral messages",
+              "comprehension",
+              0
+            ],
+            [
+              "Paraphrase information presented orally",
+              "comprehension",
+              0
+            ],
+            [
+              "Participate in contextualised oral conversations",
+              "comprehension",
+              0
+            ],
+            [
+              "Make comments on oral messages",
+              "comprehension",
+              0
+            ],
+            [
+              "Relate the core messages of an oral presentation to real life experiences",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Phonetics Foundations",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "code": "2.0",
+      "form_level": 1,
+      "title": "Grammar Patterns (Part I)",
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Identify nouns and pronouns and their functions in sentences",
+              "knowledge",
+              7
+            ],
+            [
+              "Use nouns and pronouns correctly in writing and speech",
+              "application",
+              8
+            ],
+            [
+              "Express ideas or opinions in contextualised oral and written language tasks using proper grammar and vocabulary (e.g hospital, market, library, bus stop, sport and game",
+              "comprehension",
+              0
+            ],
+            [
+              "Produce contextualised oral and written descriptions based on personal experience",
+              "comprehension",
+              0
+            ],
+            [
+              "Hold conversations about various contexts using appropriate grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition",
+              "comprehension",
+              0
+            ],
+            [
+              "using correct grammar and vocabulary",
+              "comprehension",
+              0
+            ],
+            [
+              "Prepare and deliver short speeches about common topics (e.g., entrepreneurship, corruption, child rights and security, gender education, cyber security education, disaster management, health and reproductive education, drug abuse, life skills, financial management education, taxatio",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Nouns and Pronouns",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Recognize main verb forms and tense patterns",
+              "knowledge",
+              9
+            ],
+            [
+              "Conjugate verbs accurately across basic tenses",
+              "application",
+              10
+            ],
+            [
+              "Construct sentences using appropriate grammar and vocabulary relating to a specific context (structure: tenses – simple past, simple present, articles, present progressive, pronouns, coordinators, prepositions, adjectives, adverb",
+              "comprehension",
+              0
+            ],
+            [
+              "Compose passages on specific contexts (structure: tenses –past progressive, present perfect, past perfect, present progressive, adjectives, adverbs, coordinators, prepositions, determiners, conjunction",
+              "comprehension",
+              0
+            ],
+            [
+              "Compose stories using proper grammar and vocabulary (structure: tenses, adverbs, adjectives, active and passive voice, conjunctions, coordinators, preposition",
+              "comprehension",
+              0
+            ],
+            [
+              "Compose different types of essays (narrative, descriptive, argumentative and expositor",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Verbs and Tenses",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Identify adjectives and prepositions and their uses",
+              "knowledge",
+              11
+            ],
+            [
+              "Apply adjectives and prepositions appropriately in sentences",
+              "application",
+              12
+            ],
+            [
+              "Debate on topics using proper grammar and vocabulary",
+              "comprehension",
+              0
+            ],
+            [
+              "Present messages in formal discussions on various issues using correct grammar and vocabulary",
+              "comprehension",
+              0
+            ],
+            [
+              "Describe events (e.g., general elections, state funerals, world cu",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Adjectives and Prepositions",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "code": "3.0",
+      "form_level": 1,
+      "title": "Reading for Comprehension (Part I)",
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Read texts aloud with correct pacing and expression",
+              "application",
+              13
+            ],
+            [
+              "Demonstrate fluency in oral reading passages",
+              "application",
+              14
+            ],
+            [
+              "Sequence the order of events in stories",
+              "comprehension",
+              0
+            ],
+            [
+              "Express the main ideas from a text",
+              "comprehension",
+              0
+            ],
+            [
+              "Distinguish facts from opinions within a given text",
+              "comprehension",
+              0
+            ],
+            [
+              "Discuss the author’s motives in a given text",
+              "comprehension",
+              0
+            ],
+            [
+              "from a text",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Reading aloud and pacing",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Read silently to locate specific details in a text",
+              "comprehension",
+              15
+            ],
+            [
+              "Answer comprehension questions based on locating details",
+              "comprehension",
+              16
+            ],
+            [
+              "Make a summary of stories",
+              "comprehension",
+              0
+            ],
+            [
+              "Infer meanings of unfamiliar words and idiomatic expressions from a given text",
+              "comprehension",
+              0
+            ],
+            [
+              "Express connotative meanings of words in relation to a text",
+              "comprehension",
+              0
+            ],
+            [
+              "Deliver an oral presentation about the content of a text",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Silent reading and locating details",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Infer the meaning of new words from context",
+              "comprehension",
+              17
+            ],
+            [
+              "Build a personal vocabulary from reading materials",
+              "application",
+              18
+            ],
+            [
+              "Retell stories",
+              "comprehension",
+              0
+            ],
+            [
+              "Relate the core messages from a text to real life experiences",
+              "comprehension",
+              0
+            ],
+            [
+              "Paraphrase a given text",
+              "comprehension",
+              0
+            ],
+            [
+              "Draw inferences (conclusion",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Expanding vocabulary",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "code": "4.0",
+      "form_level": 1,
+      "title": "Writing Skills (Part I)",
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Apply basic punctuation marks correctly",
+              "application",
+              19
+            ],
+            [
+              "Use capitalization and punctuation to clarify meaning",
+              "application",
+              20
+            ],
+            [
+              "Recognise the main stages of writing texts (e.g., pre- writing, drafting, revising, editin",
+              "comprehension",
+              0
+            ],
+            [
+              "Create and express orally daily and weekly timetables for routines",
+              "comprehension",
+              0
+            ],
+            [
+              "Write claim and request letters in different contexts (e.g., learning facilities, sports gear, result report – Structure: I would like to bring your kind attention… I am writing to request…)",
+              "comprehension",
+              0
+            ],
+            [
+              "Write a letter to the editor, an order letter and a complaint letter (structure: Dear editor.., I would like to order…. We are glad to place our first order…, I am writing to complain about…, I am writing to bring your attention…, a complaint against…)",
+              "comprehension",
+              0
+            ],
+            [
+              "Write application letters for various purposes (e.g., job application, school admissio",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Punctuation mechanics",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Construct simple Subject-Verb-Object sentences",
+              "application",
+              21
+            ],
+            [
+              "Join sentences to form coherent paragraphs",
+              "synthesis",
+              22
+            ],
+            [
+              "Write a variety of friendly letters and invitations (vocabulary: Dear Father/ Uncle, Dear Mother/Aunt, Mr/Mrs…, Dr./ Prof./Madam/Ms …)",
+              "comprehension",
+              0
+            ],
+            [
+              "Compose E-mails on various issues using appropriate language",
+              "comprehension",
+              0
+            ],
+            [
+              "Write reports on various events (e.g., sports, graduation, study tour",
+              "comprehension",
+              0
+            ],
+            [
+              "Write speeches on a variety of topics, including cross- cutting issues",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Sentence formations (SVO)",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Write functional texts such as letters and invitations",
+              "synthesis",
+              23
+            ],
+            [
+              "Complete forms with accurate personal information",
+              "application",
+              24
+            ],
+            [
+              "Create dialogues on various topics (e.g., the value of education, environment, culture, gender equalit",
+              "comprehension",
+              0
+            ],
+            [
+              "Create short stories on various topics (structure: once upon a time …, I wonder…, what if…, back in time…)",
+              "comprehension",
+              0
+            ],
+            [
+              "Write biographies (structure: past and present tense, third perso",
+              "comprehension",
+              0
+            ],
+            [
+              "Write Curriculum Vitae (CV) for different purposes",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Functional writing (letters, invitations, forms)",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "code": "5.0",
+      "form_level": 1,
+      "title": "Vocabulary Building and Expressions",
+      "periods": 20,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Use expressions to state preferences and needs clearly",
+              "application",
+              25
+            ],
+            [
+              "Respond to expressions of preference and need appropriately",
+              "application",
+              26
+            ],
+            [
+              "Write new vocabulary from conversations and written texts on particular topics (e.g., politics, sports, tourism, agricultur",
+              "comprehension",
+              0
+            ],
+            [
+              "Play vocabulary building games using digital and non-digital resources (e.g., word board games, charades, picture games, flash card",
+              "comprehension",
+              0
+            ],
+            [
+              "Recognise words with opposite meanings from conversations and written texts",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Expressions for preferences and needs",
+          "order": 0
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Categorize vocabulary clusters for numbers and time",
+              "application",
+              27
+            ],
+            [
+              "Use vocabulary related to school and occupations in context",
+              "application",
+              28
+            ],
+            [
+              "Construct sentences using vocabulary acquired from conversations and written texts",
+              "comprehension",
+              0
+            ],
+            [
+              "Use words from conversations and written texts to produce new vocabulary by attaching suffixes and prefixes (e.g., kind-unkind; slow-slowl",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Vocabulary clusters (school, occupations, time, numbers)",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "code": "6.0",
+      "form_level": 1,
+      "title": "Introduction to Literature",
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 6,
+          "outcomes": [
+            [
+              "Define literature and explain its purposes",
+              "knowledge",
+              29
+            ],
+            [
+              "Discuss the value of literature in society",
+              "comprehension",
+              30
+            ],
+            [
+              "Assess the language used in selected poems and plays",
+              "comprehension",
+              0
+            ],
+            [
+              "Assess the language used in a selected novella",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Definition and purpose of literature",
+          "order": 0
+        },
+        {
+          "periods": 4,
+          "outcomes": [
+            [
+              "Distinguish between oral and written literature",
+              "analysis",
+              31
+            ],
+            [
+              "Give examples of oral and written literary works",
+              "comprehension",
+              32
+            ],
+            [
+              "Compare own values and perspectives with those implied in selected poems and plays",
+              "comprehension",
+              0
+            ],
+            [
+              "Compare own values and perspectives with those implied in a selected novella",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Oral vs Written literature",
+          "order": 0
+        },
+        {
+          "periods": 6,
+          "outcomes": [
+            [
+              "Identify primary literary genres",
+              "knowledge",
+              33
+            ],
+            [
+              "Differentiate plays, novels, and poetry",
+              "analysis",
+              34
+            ],
+            [
+              "Dramatise episodes from a selected novella",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Primary genres (plays, novels, poetry)",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "code": "1.0",
+      "form_level": 2,
+      "title": "Listening",
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Participate fluently in everyday conversations on familiar topics",
+              "application",
+              35
+            ],
+            [
+              "Sustain conversations by responding appropriately to the speaker's message",
+              "application",
+              36
+            ]
+          ],
+          "title": "Participating in different conversations",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Extract the main ideas from an oral presentation",
+              "comprehension",
+              37
+            ],
+            [
+              "Produce a concise summary of information heard",
+              "comprehension",
+              38
+            ]
+          ],
+          "title": "Summarising information from oral presentations",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Restate spoken information in simple language",
+              "comprehension",
+              39
+            ],
+            [
+              "Paraphrase complex oral messages without changing meaning",
+              "analysis",
+              40
+            ]
+          ],
+          "title": "Paraphrasing oral information",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "code": "2.0",
+      "form_level": 2,
+      "title": "Producing Oral Messages",
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 9,
+          "outcomes": [
+            [
+              "Construct sentences orally with correct stress and intonation",
+              "application",
+              41
+            ],
+            [
+              "Vary tone and intonation to convey different meanings",
+              "analysis",
+              42
+            ]
+          ],
+          "title": "Constructing sentences with proper intonation",
+          "order": 0
+        },
+        {
+          "periods": 9,
+          "outcomes": [
+            [
+              "Link ideas in oral presentations using cohesive devices",
+              "application",
+              43
+            ],
+            [
+              "Deliver coherent oral presentations with appropriate connectors",
+              "synthesis",
+              44
+            ]
+          ],
+          "title": "Using cohesive devices in oral presentations",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "code": "3.0",
+      "form_level": 2,
+      "title": "Vocabulary",
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Identify antonyms of given words",
+              "knowledge",
+              45
+            ],
+            [
+              "Use antonyms correctly in sentences",
+              "application",
+              46
+            ]
+          ],
+          "title": "Recognising words with opposite meanings",
+          "order": 0
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Form new words by adding prefixes and suffixes",
+              "application",
+              47
+            ],
+            [
+              "Use derived words appropriately in context",
+              "application",
+              48
+            ]
+          ],
+          "title": "Producing new vocabulary by attaching prefixes and suffixes",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "code": "4.0",
+      "form_level": 2,
+      "title": "Grammar and Vocabulary",
+      "periods": 26,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 9,
+          "outcomes": [
+            [
+              "Describe personal experiences using appropriate grammar",
+              "application",
+              49
+            ],
+            [
+              "Write about personal experiences with a clear sequence of ideas",
+              "synthesis",
+              50
+            ]
+          ],
+          "title": "Producing contextualised descriptions of personal experiences",
+          "order": 0
+        },
+        {
+          "periods": 9,
+          "outcomes": [
+            [
+              "Compose short passages from a given context",
+              "synthesis",
+              51
+            ],
+            [
+              "Organise passages coherently for specific audiences and purposes",
+              "analysis",
+              52
+            ]
+          ],
+          "title": "Composing a passage from a specific context",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Present spoken messages with grammatical accuracy",
+              "application",
+              53
+            ],
+            [
+              "Choose precise vocabulary to convey the intended meaning",
+              "analysis",
+              54
+            ]
+          ],
+          "title": "Presenting messages using correct grammar and vocabulary",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "code": "5.0",
+      "form_level": 2,
+      "title": "Reading for Comprehension",
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Identify the main idea of a given text",
+              "comprehension",
+              55
+            ],
+            [
+              "Express the main ideas of texts in one's own words",
+              "comprehension",
+              56
+            ]
+          ],
+          "title": "Expressing the main ideas from texts",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Draw conclusions from implicit information in texts",
+              "analysis",
+              57
+            ],
+            [
+              "Infer the meanings of unfamiliar words from context",
+              "comprehension",
+              58
+            ]
+          ],
+          "title": "Inferring meanings",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Relate the messages of texts to real-life situations",
+              "evaluation",
+              59
+            ],
+            [
+              "Apply lessons from texts to personal experiences",
+              "application",
+              60
+            ]
+          ],
+          "title": "Relating messages from the text to real-life experiences",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "code": "6.0",
+      "form_level": 2,
+      "title": "Comprehending Oral Messages",
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 6,
+          "outcomes": [
+            [
+              "Combine ideas from different oral sources into a coherent whole",
+              "synthesis",
+              61
+            ],
+            [
+              "Compare and contrast information from oral sources",
+              "analysis",
+              62
+            ]
+          ],
+          "title": "Synthesising ideas from a variety of oral sources",
+          "order": 0
+        },
+        {
+          "periods": 6,
+          "outcomes": [
+            [
+              "Condense oral information into key points",
+              "comprehension",
+              63
+            ],
+            [
+              "Paraphrase summaries of oral messages accurately",
+              "comprehension",
+              64
+            ]
+          ],
+          "title": "Summarising information from oral sources",
+          "order": 0
+        },
+        {
+          "periods": 6,
+          "outcomes": [
+            [
+              "Engage in situational conversations using appropriate language",
+              "application",
+              65
+            ],
+            [
+              "Respond appropriately to ideas raised in discussions",
+              "application",
+              66
+            ]
+          ],
+          "title": "Participating in contextualised oral conversation",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "code": "7.0",
+      "form_level": 2,
+      "title": "Responding to Oral and Written Communication",
+      "periods": 22,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 6,
+          "outcomes": [
+            [
+              "Express personal opinions in a clear and respectful manner",
+              "application",
+              67
+            ],
+            [
+              "Support opinions with relevant reasons and examples",
+              "analysis",
+              68
+            ]
+          ],
+          "title": "Expressing ideas and opinions in communicative settings",
+          "order": 0
+        },
+        {
+          "periods": 6,
+          "outcomes": [
+            [
+              "Use non-verbal cues to reinforce spoken messages",
+              "application",
+              69
+            ],
+            [
+              "Interpret the non-verbal cues of speakers in group discussions",
+              "application",
+              70
+            ]
+          ],
+          "title": "Using appropriate non-verbal cues in group communication",
+          "order": 0
+        },
+        {
+          "periods": 5,
+          "outcomes": [
+            [
+              "Apply correct grammar and vocabulary during oral communication",
+              "application",
+              71
+            ],
+            [
+              "Adjust language use to suit different communicative situations",
+              "evaluation",
+              72
+            ]
+          ],
+          "title": "Using appropriate grammar and vocabulary for oral communication",
+          "order": 0
+        },
+        {
+          "periods": 5,
+          "outcomes": [
+            [
+              "Create texts for different purposes using appropriate tone and register",
+              "synthesis",
+              73
+            ],
+            [
+              "Compose texts for various contexts observing conventions of register",
+              "synthesis",
+              74
+            ]
+          ],
+          "title": "Creating a variety of texts for different communicative purposes using appropriate tone and register in a variety of contexts",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "code": "1.0",
+      "form_level": 3,
+      "title": "Advanced Analytical Grammar",
+      "periods": 26,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Transform active sentences into the passive voice",
+              "application",
+              68
+            ],
+            [
+              "Explain when the passive voice is appropriate",
+              "analysis",
+              69
+            ]
+          ],
+          "title": "The passive voice",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Form conditional sentences of Types 0 to 3",
+              "application",
+              70
+            ],
+            [
+              "Distinguish the meaning of each conditional type",
+              "analysis",
+              71
+            ]
+          ],
+          "title": "Conditional sentences (Type 0-3)",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Use relative clauses to combine and enrich sentences",
+              "application",
+              72
+            ],
+            [
+              "Distinguish defining and non-defining clauses",
+              "analysis",
+              73
+            ]
+          ],
+          "title": "Relative clauses",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "code": "2.0",
+      "form_level": 3,
+      "title": "Creative and Digital Writing",
+      "periods": 24,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Write descriptive compositions with vivid detail",
+              "synthesis",
+              74
+            ],
+            [
+              "Write narrative compositions with coherent plot",
+              "synthesis",
+              75
+            ],
+            [
+              "Compose free verse poems on various topics using literary language",
+              "comprehension",
+              0
+            ],
+            [
+              "Apply literary skills to compose short stories on various topics",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Descriptive and narrative compositions",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Write effective emails and blog posts",
+              "application",
+              76
+            ],
+            [
+              "Adapt tone and style for digital audiences",
+              "synthesis",
+              77
+            ],
+            [
+              "Publish the poems on various platforms (e.g., note boards and online platform",
+              "comprehension",
+              0
+            ],
+            [
+              "Publish the short stories on various platforms (e.g., note boards and online platform",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Digital communication (emails, blogs)",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Record minutes of meetings in standard format",
+              "application",
+              78
+            ],
+            [
+              "Summarize deliberations and resolutions accurately",
+              "synthesis",
+              79
+            ]
+          ],
+          "title": "Minutes of meetings",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "code": "3.0",
+      "form_level": 3,
+      "title": "Literary Critique: Selected Plays",
+      "periods": 28,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Read and understand the two class plays",
+              "comprehension",
+              80
+            ],
+            [
+              "Summarize the plot of each play",
+              "comprehension",
+              81
+            ],
+            [
+              "Describe different genres of written literature and their conventions",
+              "comprehension",
+              0
+            ],
+            [
+              "Analyse techniques of critiquing literary texts based on their conventions",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Two class plays",
+          "order": 0
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Analyze plots, dramatic irony, and character motivations",
+              "analysis",
+              82
+            ],
+            [
+              "Evaluate the effectiveness of dramatic techniques",
+              "evaluation",
+              83
+            ],
+            [
+              "Analyse techniques of critiquing poems and plays based on their conventions",
+              "comprehension",
+              0
+            ],
+            [
+              "Critique a selected novella based on form and content",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Plots, dramatic irony, character motivations",
+          "order": 0
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Examine themes of corruption, class, and gender",
+              "analysis",
+              84
+            ],
+            [
+              "Relate play themes to contemporary society",
+              "evaluation",
+              85
+            ],
+            [
+              "Critique selected poems and plays based on form and content",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Core themes (corruption, class, gender)",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "code": "4.0",
+      "form_level": 3,
+      "title": "Literary Critique: Selected Novels",
+      "periods": 28,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Read and understand the two class novels",
+              "comprehension",
+              86
+            ],
+            [
+              "Trace the development of characters across the narrative",
+              "analysis",
+              87
+            ]
+          ],
+          "title": "Two novels",
+          "order": 0
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Analyze characterization in the novels",
+              "analysis",
+              88
+            ],
+            [
+              "Evaluate character development and motivations",
+              "evaluation",
+              89
+            ]
+          ],
+          "title": "Characterization",
+          "order": 0
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Identify stylistic devices such as flashbacks and symbolism",
+              "analysis",
+              90
+            ],
+            [
+              "Analyze the effects of point of view on narrative",
+              "analysis",
+              91
+            ]
+          ],
+          "title": "Styles (flashbacks, symbolism, point of view)",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "code": "5.0",
+      "form_level": 3,
+      "title": "Complex Reading and Summary Compilations",
+      "periods": 24,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 12,
+          "outcomes": [
+            [
+              "Read argumentative texts and identify the main thesis",
+              "comprehension",
+              92
+            ],
+            [
+              "Critically examine arguments and supporting evidence",
+              "analysis",
+              93
+            ],
+            [
+              "Identify different ways/strategies for organising information from various sources",
+              "comprehension",
+              0
+            ],
+            [
+              "Compile information searched from various sources",
+              "comprehension",
+              0
+            ],
+            [
+              "Compare ideas from various texts",
+              "comprehension",
+              0
+            ],
+            [
+              "Infer meanings of unfamiliar words from a variety of texts",
+              "comprehension",
+              0
+            ],
+            [
+              "Explore strategies for deriving meanings of words from given texts (e.g., contextual guessin",
+              "comprehension",
+              0
+            ],
+            [
+              "Write a single text from information and opinions derived from a variety of texts",
+              "comprehension",
+              0
+            ],
+            [
+              "Relate the core messages from multiple and diverse texts to real life experiences",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Argumentative text reading",
+          "order": 0
+        },
+        {
+          "periods": 12,
+          "outcomes": [
+            [
+              "Write summaries within a specified word count",
+              "application",
+              94
+            ],
+            [
+              "Condense texts while preserving key ideas",
+              "synthesis",
+              95
+            ],
+            [
+              "Sort and categorise information obtained from various sources into related themes",
+              "comprehension",
+              0
+            ],
+            [
+              "Read and generate meanings from a variety of texts",
+              "comprehension",
+              0
+            ],
+            [
+              "Paraphrase textual information from multiple sources",
+              "comprehension",
+              0
+            ],
+            [
+              "Synthesise ideas and draw conclusions from multiple and diverse texts",
+              "comprehension",
+              0
+            ],
+            [
+              "Make inferences about a variety of texts",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Summary writing within word count",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "code": "6.0",
+      "form_level": 3,
+      "title": "Lexical Formations and Syntactic Shifts",
+      "periods": 18,
+      "weight": "low",
+      "subtopics": [
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Identify prefixes and suffixes and their meanings",
+              "knowledge",
+              96
+            ],
+            [
+              "Form new words through affixation",
+              "application",
+              97
+            ]
+          ],
+          "title": "Prefixes and suffixes",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Convert words from one class to another",
+              "application",
+              98
+            ],
+            [
+              "Explain the effects of word-class conversion",
+              "analysis",
+              99
+            ]
+          ],
+          "title": "Word-class conversion",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "code": "1.0",
+      "form_level": 4,
+      "title": "Mastery of Structural Syntax",
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 12,
+          "outcomes": [
+            [
+              "Refine phonological and syntactic accuracy in production",
+              "application",
+              100
+            ],
+            [
+              "Analyze complex sentence structures",
+              "analysis",
+              101
+            ]
+          ],
+          "title": "Phonological and syntactic refinement",
+          "order": 0
+        },
+        {
+          "periods": 12,
+          "outcomes": [
+            [
+              "Form and respond to tag questions correctly",
+              "application",
+              102
+            ],
+            [
+              "Use inverted structures for emphasis and questions",
+              "application",
+              103
+            ]
+          ],
+          "title": "Tag questions and inverted structures",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "code": "2.0",
+      "form_level": 4,
+      "title": "Literary Critique: Selected Poetry",
+      "periods": 24,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 4,
+          "outcomes": [
+            [
+              "Read the prescribed poetry books",
+              "comprehension",
+              104
+            ],
+            [
+              "Identify the poems' subjects and speakers",
+              "comprehension",
+              105
+            ]
+          ],
+          "title": "Poetry books",
+          "order": 0
+        },
+        {
+          "periods": 6,
+          "outcomes": [
+            [
+              "Distinguish traditional from free verse",
+              "analysis",
+              106
+            ],
+            [
+              "Examine the effects of each verse form",
+              "analysis",
+              107
+            ]
+          ],
+          "title": "Traditional vs free verse",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Identify poetic devices such as imagery and rhyme",
+              "knowledge",
+              108
+            ],
+            [
+              "Analyze how poetic devices create meaning",
+              "analysis",
+              109
+            ]
+          ],
+          "title": "Poetic devices",
+          "order": 0
+        },
+        {
+          "periods": 6,
+          "outcomes": [
+            [
+              "Interpret the social messages of poems",
+              "comprehension",
+              110
+            ],
+            [
+              "Evaluate poems' relevance to society",
+              "evaluation",
+              111
+            ]
+          ],
+          "title": "Social messages of poems",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "code": "3.0",
+      "form_level": 4,
+      "title": "Translation and Interpretation Fundamentals",
+      "periods": 22,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Define translation and interpretation concepts",
+              "knowledge",
+              112
+            ],
+            [
+              "Distinguish translation from interpretation",
+              "comprehension",
+              113
+            ],
+            [
+              "Recognise the basic principles of editing and proofreading texts (e.g., sentence construction, language clarity, grammar, semantic rules, logical flo",
+              "comprehension",
+              0
+            ],
+            [
+              "Use the principles of editing and proofreading to edit and proofread simple and short texts in a school context (e.g., laboratory rules, announcement",
+              "comprehension",
+              0
+            ],
+            [
+              "Explain the concept of interpretation",
+              "comprehension",
+              0
+            ],
+            [
+              "(English to Kiswahili and vice vers",
+              "comprehension",
+              0
+            ],
+            [
+              "Explain the concept of translation",
+              "comprehension",
+              0
+            ],
+            [
+              "Edit and proofread texts in a school context (e.g., school rules and regulations, essays/ composition",
+              "comprehension",
+              0
+            ],
+            [
+              "Interpret messages in informal contexts (e.g., family conversations and peer conversation",
+              "comprehension",
+              0
+            ],
+            [
+              "Interpret messages in large formal settings (e.g., church, mosque and meeting",
+              "comprehension",
+              0
+            ],
+            [
+              "Translate texts in contexts outside the school (from English to Kiswahili and vice vers",
+              "comprehension",
+              0
+            ],
+            [
+              "Desribe the use of Computer- Assisted Tools in translating and editing",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Concepts of translation and interpretation",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Translate paragraphs between languages with fidelity",
+              "application",
+              114
+            ],
+            [
+              "Preserve meaning and style in translation",
+              "analysis",
+              115
+            ],
+            [
+              "Describe the main steps of editing and proofreading",
+              "comprehension",
+              0
+            ],
+            [
+              "Elaborate the principles of interpretation",
+              "comprehension",
+              0
+            ],
+            [
+              "Elaborate the principles of translation",
+              "comprehension",
+              0
+            ],
+            [
+              "Edit and proofread short texts in contexts outside the school (e.g. posters, flyers, user manual",
+              "comprehension",
+              0
+            ],
+            [
+              "(from English to Kiswahili and vice vers",
+              "comprehension",
+              0
+            ],
+            [
+              "Translate a variety of short texts (e.g., advertisements and functional text",
+              "comprehension",
+              0
+            ],
+            [
+              "Use Computer- Assisted Translation Tools to translate and edit short simple texts",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Translating paragraphs",
+          "order": 0
+        },
+        {
+          "periods": 6,
+          "outcomes": [
+            [
+              "Translate idioms and cultural expressions accurately",
+              "application",
+              116
+            ],
+            [
+              "Explain cultural challenges in translation",
+              "analysis",
+              117
+            ],
+            [
+              "Describe the basic principles and methods of editing and proofreading",
+              "comprehension",
+              0
+            ],
+            [
+              "Interpret a short simple text in a school context (e.g., greetings, self introduction",
+              "comprehension",
+              0
+            ],
+            [
+              "Translate a simple short text in a school context (e.g., laboratory rules, timetables, joining instruction",
+              "comprehension",
+              0
+            ],
+            [
+              "Interpret messages in small formal settings (e.g., classroom and subject group discussion",
+              "comprehension",
+              0
+            ],
+            [
+              "Translate a variety of long texts (from English to Kiswahili and vice vers",
+              "comprehension",
+              0
+            ]
+          ],
+          "title": "Idioms and cultural expressions",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "code": "4.0",
+      "form_level": 4,
+      "title": "English as an International Language",
+      "periods": 18,
+      "weight": "low",
+      "subtopics": [
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Explain the role of English as a global lingua franca",
+              "comprehension",
+              118
+            ],
+            [
+              "Discuss the implications of English's global status",
+              "evaluation",
+              119
+            ]
+          ],
+          "title": "English as global lingua franca",
+          "order": 0
+        },
+        {
+          "periods": 8,
+          "outcomes": [
+            [
+              "Analyze the relationship between English and Swahili in Tanzania",
+              "analysis",
+              120
+            ],
+            [
+              "Evaluate language policy and its effects",
+              "evaluation",
+              121
+            ]
+          ],
+          "title": "English and Swahili in Tanzania",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "code": "5.0",
+      "form_level": 4,
+      "title": "Exam Preparation and Synthesized Production",
+      "periods": 28,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Practice a comprehensive range of exam-style questions",
+              "application",
+              122
+            ],
+            [
+              "Manage time effectively in examination conditions",
+              "application",
+              123
+            ]
+          ],
+          "title": "Comprehensive practice",
+          "order": 0
+        },
+        {
+          "periods": 18,
+          "outcomes": [
+            [
+              "Write structured essays under time constraints",
+              "synthesis",
+              124
+            ],
+            [
+              "Perform error analysis on written work",
+              "analysis",
+              125
+            ],
+            [
+              "Produce summaries and literary evaluations",
+              "synthesis",
+              126
+            ]
+          ],
+          "title": "Essay, error analysis, summaries, literary evaluation",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "order": 25,
+      "code": "1.0",
+      "form_level": 5,
+      "title": "Advanced Phonology and Phonetics (Paper 1)",
+      "periods": 30,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Transcribe English words using the IPA",
+              "application",
+              127
+            ],
+            [
+              "Interpret phonemic transcription accurately",
+              "comprehension",
+              128
+            ]
+          ],
+          "title": "Phonemic transcription and IPA"
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Explain articulation of speech sounds",
+              "comprehension",
+              129
+            ],
+            [
+              "Apply word stress patterns correctly",
+              "application",
+              130
+            ]
+          ],
+          "title": "Articulation and word stress"
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe sentence stress, intonation, and rhythm",
+              "comprehension",
+              131
+            ],
+            [
+              "Analyze the communicative functions of intonation",
+              "analysis",
+              132
+            ]
+          ],
+          "title": "Sentence stress, intonation and rhythm"
+        }
+      ]
+    },
+    {
+      "order": 26,
+      "code": "2.0",
+      "form_level": 5,
+      "title": "Advanced Morphology and Syntax (Paper 1)",
+      "periods": 30,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Distinguish free from bound morphemes",
+              "analysis",
+              133
+            ],
+            [
+              "Identify morpheme types in complex words",
+              "analysis",
+              134
+            ]
+          ],
+          "title": "Free vs bound morphemes"
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Differentiate derivation from inflection",
+              "analysis",
+              135
+            ],
+            [
+              "Apply morphological processes in word formation",
+              "application",
+              136
+            ]
+          ],
+          "title": "Derivation vs inflection"
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Parse sentence constituents grammatically",
+              "analysis",
+              137
+            ],
+            [
+              "Construct tree diagrams for complex sentences",
+              "synthesis",
+              138
+            ]
+          ],
+          "title": "Sentence parsing and tree diagrams"
+        }
+      ]
+    },
+    {
+      "order": 27,
+      "code": "3.0",
+      "form_level": 5,
+      "title": "Rhetoric and Stylistics (Paper 1)",
+      "periods": 28,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 12,
+          "outcomes": [
+            [
+              "Identify registers and styles across different contexts",
+              "analysis",
+              139
+            ],
+            [
+              "Analyze stylistic choices in various text types",
+              "analysis",
+              140
+            ]
+          ],
+          "title": "Registers and styles across contexts"
+        },
+        {
+          "periods": 16,
+          "outcomes": [
+            [
+              "Write academic essays following scholarly conventions",
+              "synthesis",
+              141
+            ],
+            [
+              "Conduct and present research writing systematically",
+              "synthesis",
+              142
+            ]
+          ],
+          "title": "Academic essays and research writing"
+        }
+      ]
+    },
+    {
+      "order": 28,
+      "code": "4.0",
+      "form_level": 5,
+      "title": "Theories of Literature and Criticism (Paper 2)",
+      "periods": 32,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 16,
+          "outcomes": [
+            [
+              "Explain major literary theories",
+              "comprehension",
+              143
+            ],
+            [
+              "Apply Marxist and feminist criticism to texts",
+              "analysis",
+              144
+            ],
+            [
+              "Apply post-colonial, psychoanalytic and structuralist criticism",
+              "analysis",
+              145
+            ]
+          ],
+          "title": "Marxist, Feminist, Post-colonial, Psychoanalytic, Structuralism"
+        }
+      ]
+    },
+    {
+      "order": 29,
+      "code": "5.0",
+      "form_level": 5,
+      "title": "Advanced Drama Evaluation (Paper 2)",
+      "periods": 30,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Analyze complex African and international plays",
+              "analysis",
+              146
+            ],
+            [
+              "Evaluate plays within their cultural contexts",
+              "evaluation",
+              147
+            ]
+          ],
+          "title": "Complex African and international plays"
+        },
+        {
+          "periods": 20,
+          "outcomes": [
+            [
+              "Examine tragedy and comedy as dramatic forms",
+              "analysis",
+              148
+            ],
+            [
+              "Analyze alienation and satire as techniques",
+              "analysis",
+              149
+            ]
+          ],
+          "title": "Tragedy, comedy, alienation, satire"
+        }
+      ]
+    },
+    {
+      "order": 30,
+      "code": "6.0",
+      "form_level": 5,
+      "title": "Advanced African and World Prose (Paper 2)",
+      "periods": 30,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 16,
+          "outcomes": [
+            [
+              "Read and analyze heavy selected global works",
+              "comprehension",
+              150
+            ],
+            [
+              "Critically evaluate themes in world prose",
+              "evaluation",
+              151
+            ]
+          ],
+          "title": "Heavy selected global works"
+        },
+        {
+          "periods": 14,
+          "outcomes": [
+            [
+              "Analyze stream-of-consciousness narration",
+              "analysis",
+              152
+            ],
+            [
+              "Evaluate modern stylistic techniques in prose",
+              "evaluation",
+              153
+            ]
+          ],
+          "title": "Stream-of-consciousness and modern stylistics"
+        }
+      ]
+    },
+    {
+      "order": 31,
+      "code": "1.0",
+      "form_level": 6,
+      "title": "Advanced Semantics and Pragmatics (Paper 1)",
+      "periods": 32,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 12,
+          "outcomes": [
+            [
+              "Explain theories of meaning and sense relations",
+              "comprehension",
+              154
+            ],
+            [
+              "Analyze sense relations such as synonymy and antonymy",
+              "analysis",
+              155
+            ]
+          ],
+          "title": "Theories of meaning and sense relations"
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Identify speech acts and their functions",
+              "comprehension",
+              156
+            ],
+            [
+              "Analyze illocutionary force in utterances",
+              "analysis",
+              157
+            ]
+          ],
+          "title": "Speech acts"
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Apply the cooperative principle to discourse",
+              "application",
+              158
+            ],
+            [
+              "Analyze conversational implicature",
+              "analysis",
+              159
+            ]
+          ],
+          "title": "Cooperative principle"
+        }
+      ]
+    },
+    {
+      "order": 32,
+      "code": "2.0",
+      "form_level": 6,
+      "title": "Sociolinguistics and Historical Tracking (Paper 1)",
+      "periods": 30,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe language variation across social factors",
+              "comprehension",
+              160
+            ],
+            [
+              "Analyze regional and social dialects",
+              "analysis",
+              161
+            ]
+          ],
+          "title": "Language variation"
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Explain code-switching and code-mixing",
+              "comprehension",
+              162
+            ],
+            [
+              "Analyze the functions of code choice in discourse",
+              "analysis",
+              163
+            ]
+          ],
+          "title": "Code-switching and code-mixing"
+        },
+        {
+          "periods": 10,
+          "outcomes": [
+            [
+              "Describe world Englishes and their features",
+              "comprehension",
+              164
+            ],
+            [
+              "Trace the historical expansion of English",
+              "comprehension",
+              165
+            ]
+          ],
+          "title": "World Englishes and historical expansion"
+        }
+      ]
+    },
+    {
+      "order": 33,
+      "code": "3.0",
+      "form_level": 6,
+      "title": "Advanced Practical Application (Paper 1)",
+      "periods": 28,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 28,
+          "outcomes": [
+            [
+              "Translate technical, legal, and political documents accurately",
+              "application",
+              166
+            ],
+            [
+              "Analyze terminology challenges in specialized translation",
+              "analysis",
+              167
+            ],
+            [
+              "Produce culturally appropriate translations of complex documents",
+              "synthesis",
+              168
+            ]
+          ],
+          "title": "Complex translation of technical, legal and political documents"
+        }
+      ]
+    },
+    {
+      "order": 34,
+      "code": "4.0",
+      "form_level": 6,
+      "title": "Advanced Poetic Analysis (Paper 2)",
+      "periods": 30,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "periods": 16,
+          "outcomes": [
+            [
+              "Trace poetic movements from Romanticism to Modernism",
+              "analysis",
+              169
+            ],
+            [
+              "Analyze representative poems from each movement",
+              "analysis",
+              170
+            ]
+          ],
+          "title": "Romanticism to Modernism"
+        },
+        {
+          "periods": 14,
+          "outcomes": [
+            [
+              "Analyze post-colonial African poetry",
+              "analysis",
+              171
+            ],
+            [
+              "Evaluate themes and techniques in African poetry",
+              "evaluation",
+              172
+            ]
+          ],
+          "title": "Post-colonial African poetry"
+        }
+      ]
+    },
+    {
+      "order": 35,
+      "code": "5.0",
+      "form_level": 6,
+      "title": "Synthesized Creative Production (Paper 2)",
+      "periods": 30,
+      "weight": "high",
+      "subtopics": [
+        {
+          "periods": 14,
+          "outcomes": [
+            [
+              "Write analytical literary essays of depth and rigor",
+              "synthesis",
+              173
+            ],
+            [
+              "Evaluate critical arguments in essay form",
+              "evaluation",
+              174
+            ]
+          ],
+          "title": "Analytical literary essays"
+        },
+        {
+          "periods": 16,
+          "outcomes": [
+            [
+              "Compose original creative scripts",
+              "synthesis",
+              175
+            ],
+            [
+              "Compose original verse demonstrating poetic craft",
+              "synthesis",
+              176
+            ]
+          ],
+          "title": "Creative scripts and verse"
+        }
+      ]
+    }
+  ]
+}

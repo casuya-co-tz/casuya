@@ -7,6 +7,9 @@
  * if a model-backed call is unavailable, so the platform always receives a 200.
  *
  * Dependency-free: uses Node's built-in http module.
+ *
+ * Shared constants and pure helpers live in server-utils.ts and are re-exported
+ * below so the route handlers can keep importing from '../server'.
  */
 
 import * as http from 'http';
@@ -14,17 +17,39 @@ import * as path from 'path';
 import dotenv from 'dotenv';
 import { CasuyaAI } from './src/casuya-ai';
 import { buildFreeProviderSpecs, specsToConfigMap } from './src/providers/free-chain';
-import { ProviderFactory } from './src/providers/provider-factory';
 import { getKnowledgeBase } from './src/kb';
+import { handleQuestionGenerate, handleTutoringQuiz } from './routes/questions';
+import { handleTutoringExplain, handlePlanLesson, handlePlanScheme } from './routes/tutoring';
 import {
-  QuestionType,
-  QuestionCategory,
-  Difficulty,
-  TutoringSubject,
-  TutoringMode,
-  Language,
-  ModerationContentType,
-} from './src/types/index';
+  handleContentAnalyze,
+  handleContentModerate,
+  handleContentTranslate,
+  handleMathSolve,
+  handleMathSteps,
+  handleMathConvert,
+  handleMathPhysics,
+  handleExamGenerate,
+} from './routes/content';
+
+export {
+  SUBJECT_NAME,
+  resolveSubject,
+  formToKbForm,
+  formLabel,
+  buildGroundedMessage,
+  buildGroundedFallback,
+  cleanThink,
+  ExamSectionSpec,
+  EXAM_KIND_LABEL,
+  numToWords,
+  countLabel,
+  markLabel,
+  sectionInstruction,
+  buildExamPrompt,
+  parseExamJson,
+  normalizeExamPaper,
+  parseJsonObject,
+} from './server-utils';
 
 dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env') });
 
@@ -47,6 +72,9 @@ function readBody(req: http.IncomingMessage): Promise<any> {
         resolve({});
       }
     });
+    req.on('error', () => {
+      resolve({});
+    });
   });
 }
 
@@ -57,432 +85,6 @@ async function safeAsync(fn: () => Promise<unknown>, fallback: unknown): Promise
     console.error('[safeAsync] Error:', err);
     return fallback;
   }
-}
-
-const SUBJECT_NAME: Record<string, string> = {
-  mathematics: 'Mathematics',
-  'basic mathematics': 'Mathematics',
-  physics: 'Physics',
-  chemistry: 'Chemistry',
-  biology: 'Biology',
-  'animal husbandry': 'Animal Husbandry',
-  agriculture: 'Agriculture',
-  'english language': 'English Language',
-  english: 'English Language',
-  kiswahili: 'Kiswahili',
-  history: 'History',
-  geography: 'Geography',
-  'book keeping': 'Book Keeping',
-  commerce: 'Commerce',
-  economics: 'Economics',
-  divinity: 'Divinity',
-  'bible knowledge': 'Bible Knowledge',
-  'computer science': 'Computer Science',
-  civics: 'Civics',
-};
-
-/** Resolve a subject slug to a human name plus the closest TutoringSubject enum. */
-function resolveSubject(slug?: string): { name: string; enumValue: TutoringSubject } {
-  const s = (slug || '').toLowerCase();
-  const name = SUBJECT_NAME[s] || (slug ? slug.replace(/[_-]+/g, ' ') : '');
-  let enumValue: TutoringSubject = TutoringSubject.GENERAL;
-  if (/(mathematics|math)/.test(s)) enumValue = TutoringSubject.MATHEMATICS;
-  else if (/(physics|chemistry|biology|science|agriculture|geography)/.test(s))
-    enumValue = TutoringSubject.SCIENCE;
-  else if (/history/.test(s)) enumValue = TutoringSubject.HISTORY;
-  else if (/literature/.test(s)) enumValue = TutoringSubject.LITERATURE;
-  else if (/(english|kiswahili|swahili|language)/.test(s)) enumValue = TutoringSubject.LANGUAGE;
-  else if (/(computer|computing|ict)/.test(s)) enumValue = TutoringSubject.COMPUTING;
-  else if (/(art|music|drama)/.test(s)) enumValue = TutoringSubject.ARTS;
-  return { name, enumValue };
-}
-
-/** Map an integer form (1-6) to the KB's `formN` string, or undefined. */
-function formToKbForm(form?: number | string): string | undefined {
-  const n = typeof form === 'string' ? parseInt(form, 10) : form;
-  if (typeof n !== 'number' || !Number.isFinite(n) || n < 1 || n > 6) return undefined;
-  return `form${n}`;
-}
-
-function formLabel(form?: number | string): string {
-  const n = typeof form === 'string' ? parseInt(form, 10) : form;
-  return typeof n === 'number' && Number.isInteger(n) && n >= 1 && n <= 6 ? `Form ${n}` : '';
-}
-
-/** Build the grounded message given to the tutor (question + full pasted text + RAG). */
-function buildGroundedMessage(opts: {
-  question: string;
-  context?: string;
-  subjectName: string;
-  form?: number | string;
-  ragText: string;
-  maxContextChars?: number;
-}): string {
-  const ctx = (opts.context || '').trim();
-  const form = formLabel(opts.form);
-  const lines: string[] = [];
-  lines.push('Answer the student question below, grounded in the provided lesson text and reference material, and in reality — do not guess or invent when the sources are silent.');
-  if (opts.subjectName) lines.push(`Subject: ${opts.subjectName}`);
-  if (form) lines.push(`Class/Form: ${form}`);
-  if (ctx) {
-    const clip = ctx.length > (opts.maxContextChars || 4000) ? ctx.slice(0, opts.maxContextChars || 4000) + '…' : ctx;
-    lines.push(`\nLESSON TEXT THE STUDENT IS READING (read this carefully and use it as the primary basis of your answer):\n"""\n${clip}\n"""`);
-  }
-  if (opts.ragText) lines.push(opts.ragText);
-  lines.push(`\nSTUDENT QUESTION: ${opts.question}`);
-  return lines.join('\n');
-}
-
-/** Meaningful, KB-grounded fallback when every model provider fails. */
-function buildGroundedFallback(
-  question: string,
-  ragDocs: { title: string; kind: string; snippet?: string }[],
-): string {
-  const cleanQ = question.replace(/^(explain|describe|define|what is|what are|how does|how do|why is|why do|state|list|outline|distinguish|compare)\b[\s:]*/i, '').trim() || question.trim();
-  if (ragDocs.length) {
-    const refs = ragDocs
-      .map((d) => {
-        const snip = d.snippet ? `\n  ${d.snippet}` : '';
-        return `- ${d.title}${snip}`;
-      })
-      .join('\n');
-    return `I couldn't reach an AI model just now, so here is the closest NECTA/TIE material for "${cleanQ}":\n\n${refs}\n\nRead that with your lesson text, then ask again — the next attempt will try Groq, Google, Mistral, and Grok in turn.`;
-  }
-  return `I couldn't reach Groq, Google, Mistral, or Grok just now. Please ask "${cleanQ}" again in a moment.`;
-}
-
-function cleanThink(text: string): string {
-  let msg = text;
-  msg = msg.replace(/<thinking>[\s\S]*?<\/thinking>/gi, '');
-  msg = msg.replace(/\s*thinking[\s\S]*?<\/think>/i, '');
-  return msg.trim();
-}
-
-// ---------- Exam paper generation ----------
-
-interface ExamSectionSpec {
-  id: string;
-  title: string;
-  questionType: string;
-  count: number;
-  marksPerQuestion: number;
-}
-
-const EXAM_KIND_LABEL: Record<string, string> = {
-  necta: 'NECTA-STYLE EXAMINATION',
-  internal: 'INTERNAL EXAMINATION',
-  exercise: 'CLASS EXERCISE',
-};
-
-/** English number words for 1-59 (question counts / marks are small integers). */
-function numToWords(n: number): string {
-  const ones = [
-    '', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine',
-    'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
-    'seventeen', 'eighteen', 'nineteen',
-  ];
-  const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty'];
-  if (n < 20) return ones[n] || String(n);
-  const t = Math.floor(n / 10);
-  if (t >= 6) return String(n);
-  return n % 10 ? `${tens[t]}-${ones[n % 10]}` : tens[t];
-}
-
-function countLabel(count: number): string {
-  return `${numToWords(count)} (${count}) questions`;
-}
-
-function markLabel(n: number): string {
-  return `${numToWords(n)} (${n}) mark${n === 1 ? '' : 's'}`;
-}
-
-function sectionInstruction(s: ExamSectionSpec): string {
-  if (s.questionType === 'mcq') {
-    return `This section consists of ${countLabel(s.count)}. Every question carries one (1) mark. Answer ALL questions.`;
-  }
-  return `This section consists of ${countLabel(s.count)}. Each question carries ${markLabel(s.marksPerQuestion)}. Answer ALL questions.`;
-}
-
-function buildExamPrompt(args: {
-  subject: string;
-  formLabel: string;
-  topic: string;
-  context: string;
-  curriculum: string;
-  kindLabel: string;
-  duration: string;
-  total: number;
-  sections: ExamSectionSpec[];
-}): string {
-  const specLines = args.sections
-    .map((s) => {
-      const typeDetail =
-        s.questionType === 'mcq'
-          ? 'a MULTIPLE-CHOICE objective question with exactly FOUR options labelled "A. ...", "B. ...", "C. ...", "D. ...", plus an "answer" field holding the 0-based index of the correct option'
-          : s.questionType === 'structured'
-            ? 'a STRUCTURED short-answer question using NECTA command verbs (state, list, outline, explain, distinguish, describe, calculate)'
-            : 'an ESSAY / long-response question requiring a coherent written answer of several short paragraphs';
-      return `- Section ${s.id} "${s.title}": exactly ${s.count} questions, ${markLabel(s.marksPerQuestion)} each. Each question must be ${typeDetail}.`;
-    })
-    .join('\n');
-
-  return [
-    'You are an experienced Tanzanian secondary school examiner working with the official TIE curriculum. Compose an examination paper.',
-    '',
-    'RULES (strict):',
-    '- Every question MUST be based ONLY on facts, definitions, examples and concepts present in the LESSON TEXT below. Never invent material that is not in the lesson text.',
-    '- Align difficulty and terminology with the TIE syllabus class/form level stated.',
-    '- Use correct English and NECTA-style command verbs.',
-    '- The number of questions in each section MUST exactly match the specification.',
-    '- The marks for each question MUST match the specification.',
-    '',
-    `SUBJECT: ${args.subject}`,
-    `CLASS: ${args.formLabel}`,
-    `TOPIC: ${args.topic}`,
-    `PAPER TITLE: ${args.kindLabel}`,
-    `TIME ALLOWED: ${args.duration}`,
-    `TOTAL MARKS: ${args.total}`,
-    '',
-    'SECTIONS:',
-    specLines,
-    '',
-    'LESSON TEXT (your ONLY source of content):',
-    '"""',
-    args.context,
-    '"""',
-    '',
-    'TIE CURRICULUM CONTEXT:',
-    '"""',
-    args.curriculum || '(none provided)',
-    '"""',
-    '',
-    'RESPOND WITH ONLY A JSON OBJECT, exactly this shape (no markdown, no backticks, no commentary):',
-    '{ "sections": [ { "id": "A", "question_type": "mcq", "questions": [ { "text": "...", "marks": 1, "options": ["A. ...", "B. ...", "C. ...", "D. ..."], "answer": 0 } ] }, { "id": "B", "question_type": "structured", "questions": [ { "text": "...", "marks": 6 } ] }, { "id": "C", "question_type": "essay", "questions": [ { "text": "...", "marks": 22 } ] } ] }',
-  ].join('\n');
-}
-
-/** Extract the first JSON object from a model response (tolerates fences/trailing text). */
-function parseExamJson(content: string): { sections?: unknown[] } | null {
-  let text = String(content || '').trim();
-  text = text.replace(/```json/gi, '').replace(/```/g, '');
-  const start = text.indexOf('{');
-  const end = text.lastIndexOf('}');
-  if (start === -1 || end <= start) return null;
-  try {
-    const data = JSON.parse(text.slice(start, end + 1));
-    return data && Array.isArray(data.sections) ? data : { sections: [] };
-  } catch {
-    return null;
-  }
-}
-
-/** Normalize the model's question content into the canonical, numbered paper. */
-function normalizeExamPaper(
-  body: any,
-  parsed: any,
-  spec: ExamSectionSpec[],
-  subjectName: string,
-): any | null {
-  // Strict: every section must deliver exactly the requested number of valid
-  // questions — otherwise the platform falls back to its local generator.
-  const pickedBySection: Record<string, any[]> = {};
-  for (const s of spec) {
-    const src = (parsed.sections || []).find((x: any) => String(x?.id || '').toUpperCase() === s.id.toUpperCase());
-    const qs = Array.isArray(src?.questions) ? src.questions : [];
-    const valid =
-      s.questionType === 'mcq'
-        ? qs.filter((q: any) => q && typeof q.text === 'string' && Array.isArray(q.options) && q.options.length >= 2)
-        : qs.filter((q: any) => q && typeof q.text === 'string');
-    if (valid.length < s.count) return null;
-    pickedBySection[s.id.toUpperCase()] = valid.slice(0, s.count);
-  }
-
-  let number = 1;
-  let totalMarks = 0;
-  const sections = spec.map((s) => {
-    const questions = pickedBySection[s.id.toUpperCase()].map((q) => {
-      const text = String(q.text || '').replace(/\s+/g, ' ').trim();
-      const marks = Math.max(1, Math.round(Number(q.marks) || s.marksPerQuestion));
-      const entry: any = { number: number++, text, marks };
-      if (s.questionType === 'mcq') {
-        let opts = (q.options || []).map((o: any, i: number) => {
-          const clean = String(o || '').replace(/\s+/g, ' ').trim();
-          return /^[A-Da-d][.)]\s*/.test(clean) ? clean : `${String.fromCharCode(65 + i)}. ${clean}`;
-        });
-        while (opts.length < 4) opts.push(`${String.fromCharCode(65 + opts.length)}. —`);
-        opts = opts.slice(0, 4);
-        let answer = 0;
-        if (typeof q.answer === 'number' && Number.isFinite(q.answer) && q.answer >= 0 && q.answer < 4) {
-          answer = Math.round(q.answer);
-        } else if (/^[A-Da-d]$/.test(String(q.answer || '').trim())) {
-          answer = String(q.answer).trim().toUpperCase().charCodeAt(0) - 65;
-        }
-        entry.options = opts;
-        entry.answer = answer;
-      }
-      totalMarks += marks;
-      return entry;
-    });
-    return {
-      id: s.id,
-      title: s.title,
-      instruction: sectionInstruction(s),
-      question_type: s.questionType,
-      count: questions.length,
-      marks_per_question: s.marksPerQuestion,
-      questions,
-    };
-  });
-
-  const kindKey = String(body.kind || '').toLowerCase();
-  const formLevel = Number(body.form_level) || 1;
-  const instructions: string[] = [];
-  instructions.push(`This paper consists of ${sections.length} section(s) with a total of ${totalMarks} marks.`);
-  instructions.push('Answer ALL questions.');
-  instructions.push('Marks for each question are shown in brackets.');
-  instructions.push(
-    kindKey === 'exercise'
-      ? 'Write all your answers in the space provided below each question.'
-      : 'For objective questions choose the correct answer and write its letter. Show your working where necessary.',
-  );
-
-  return {
-    kind: kindKey || 'internal',
-    format_label: EXAM_KIND_LABEL[kindKey] || 'EXAMINATION',
-    header: {
-      exam: EXAM_KIND_LABEL[kindKey] || 'EXAMINATION',
-      subject: subjectName,
-      subject_slug: typeof body.subject_slug === 'string' ? body.subject_slug : '',
-      form_level: formLevel,
-      form_label: `${formLabel(body.form_level) || `Form ${formLevel}`} - ${subjectName}`,
-      topic: String(body.topic || '').trim(),
-      lesson_title: String(body.lesson_title || '').trim(),
-      duration: String(body.duration || (kindKey === 'exercise' ? '40 Minutes' : '2 Hours')),
-      year: String(new Date().getFullYear()),
-      total_marks: totalMarks,
-      instructions,
-    },
-    sections,
-    meta: { generator: 'casuya-ai', generated_at: new Date().toISOString() },
-  };
-}
-
-async function generateExamPaper(ai: CasuyaAI, body: any): Promise<any | null> {
-  const rawSections = Array.isArray(body.sections) ? body.sections : [];
-  const spec: ExamSectionSpec[] = rawSections
-    .map((s: any) => {
-      const id = String(s?.id || '').trim().toUpperCase();
-      const questionType = String(s?.question_type || '').toLowerCase();
-      if (!id || !['mcq', 'structured', 'essay'].includes(questionType)) return null;
-      return {
-        id,
-        title: String(s?.title || 'QUESTIONS'),
-        questionType,
-        count: Math.max(1, Math.min(40, Math.round(Number(s?.count) || 1))),
-        marksPerQuestion: Math.max(1, Math.min(50, Math.round(Number(s?.marks_per_question) || 1))),
-      };
-    })
-    .filter(Boolean) as ExamSectionSpec[];
-  if (!spec.length) return null;
-
-  const context = String(body.context || '').slice(0, 12000);
-  const subjectSlug = typeof body.subject_slug === 'string' ? body.subject_slug : '';
-  const subjectName =
-    typeof body.subject === 'string' && body.subject ? body.subject : resolveSubject(subjectSlug).name;
-  const total = spec.reduce((sum, s) => sum + s.count * s.marksPerQuestion, 0);
-  const formLabelStr = formLabel(body.form_level);
-
-  const provider = ProviderFactory.getProvider('failover') || ProviderFactory.getProvider('local');
-  if (!provider) return null;
-
-  const prompt = buildExamPrompt({
-    subject: subjectName || 'General',
-    formLabel: formLabelStr,
-    topic: String(body.topic || 'the lesson topic').slice(0, 120),
-    context: context || `(No lesson text was provided. Use your general knowledge of ${subjectName || 'the subject'} at ${formLabelStr || 'the given level'}.)`,
-    curriculum: String(body.curriculum_context || '').slice(0, 5000),
-    kindLabel: EXAM_KIND_LABEL[String(body.kind || '').toLowerCase()] || 'EXAMINATION',
-    duration: String(body.duration || '2 Hours'),
-    total,
-    sections: spec,
-  });
-
-  const maxTokens = Math.min(9000, Math.max(2048, total * 50 + spec.length * 500));
-  const result = await provider.chatCompletion({
-    messages: [
-      { role: 'system', content: 'You are an educational assessment generator. Respond with valid JSON only.' },
-      { role: 'user', content: prompt },
-    ],
-    temperature: 0.7,
-    maxTokens,
-  });
-
-  const parsed = parseExamJson(result.content);
-  if (!parsed) return null;
-  try {
-    return normalizeExamPaper(body, parsed, spec, subjectName || 'General');
-  } catch (err) {
-    console.error('[exams/generate] normalization failed:', err);
-    return null;
-  }
-}
-
-/** Tolerantly extract the first JSON object from a model response. */
-function parseJsonObject(content: string): any | null {
-  let text = String(content || '').trim();
-  text = text.replace(/```json/gi, '').replace(/```/g, '');
-  const start = text.indexOf('{');
-  const end = text.lastIndexOf('}');
-  if (start === -1 || end <= start) return null;
-  try {
-    return JSON.parse(text.slice(start, end + 1));
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Generate a TIE lesson-plan / scheme-of-work JSON via the provider chain.
- *
- * The platform sends a fully-specified TIE prompt (body.prompt) that already
- * embeds the exact target JSON schema. We ask the model to fill it and parse
- * the JSON. On any failure we return a `{ header: {} }` shell, which the
- * platform's completeness check rejects so the platform falls back to its
- * reliable offline builder rather than rendering a half-built AI plan.
- */
-async function generatePlanJson(ai: CasuyaAI, body: any, kind: 'lesson' | 'scheme'): Promise<any> {
-  const sentPrompt = String(body?.prompt || body?.question || '').trim();
-  const userPrompt =
-    sentPrompt ||
-    `Generate an official TIE ${kind === 'lesson' ? 'Lesson Plan' : 'Scheme of Work'} as valid JSON only, ` +
-      `with a "header" object ${
-        kind === 'lesson'
-          ? 'and "competence_architecture", "progression_matrix", "resources_strategies"'
-          : 'and a non-empty "weeks" array'
-      }. Subject: ${String(body?.subject_slug || '')} Form ${body?.form_level || 1}.`;
-
-  const provider = ProviderFactory.getProvider('failover') || ProviderFactory.getProvider('local');
-  if (!provider) return { header: {} };
-
-  try {
-    const result = await provider.chatCompletion({
-      messages: [
-        {
-          role: 'system',
-          content:
-            'You are a Tanzanian TIE curriculum expert. Respond with valid JSON only, matching the exact schema in the prompt.',
-        },
-        { role: 'user', content: userPrompt },
-      ],
-      temperature: 0.6,
-      maxTokens: Math.min(9000, 4000),
-    });
-    const parsed = parseJsonObject(result.content);
-    if (parsed && typeof parsed === 'object' && parsed.header) return parsed;
-  } catch (err) {
-    console.error(`[plans/${kind}] generation failed:`, err);
-  }
-  return { header: {} };
 }
 
 async function start() {
@@ -524,232 +126,40 @@ async function start() {
 
     async function dispatch(): Promise<unknown> {
       switch (url) {
-        case '/api/questions/generate': {
-          const { content, count = 5, topic: rawTopic, subject_slug } = body;
-          const topic = (rawTopic || content || 'lesson content').slice(0, 80);
-          const subjectKey = (subject_slug || '').toLowerCase() as keyof typeof TutoringSubject;
-          const subjectValue = TutoringSubject[subjectKey] || TutoringSubject.GENERAL;
-          return safeAsync(
-            async () => {
-              const questions = await ai.questionGenerator.generateQuestions({
-                subject: subjectValue,
-                topic,
-                questionType: QuestionType.MULTIPLE_CHOICE,
-                difficulty: Difficulty.INTERMEDIATE,
-                category: QuestionCategory.COMPREHENSION,
-                count: Number(count) || 5,
-                context: content,
-              });
-              return { questions };
-            },
-            { questions: [] },
-          );
-        }
-
-        case '/api/tutoring/explain': {
-          const { question, context, subject_slug, form_level, max_questions } = body;
-          const subject = resolveSubject(subject_slug);
-          const query = [question, context].filter(Boolean).join(' ').trim();
-          const kbForm = formToKbForm(form_level);
-
-          // RAG retrieval scoped to the user's subject + class, with a graceful
-          // fallback to unscoped retrieval so the answer is never left empty.
-          let ragText = '';
-          let ragDocs: { title: string; kind: string; subject: string; snippet?: string }[] = [];
-          if (kb.ready) {
-            let rag = kb.buildRagContext(
-              query,
-              { subject: subject_slug || undefined, form: kbForm, limit: 3 },
-              Number(process.env.KB_RAG_MAX_CHARS) || 6000,
-            );
-            if (!rag.docs.length && kbForm) {
-              rag = kb.buildRagContext(
-                query,
-                { subject: subject_slug || undefined, limit: 3 },
-                Number(process.env.KB_RAG_MAX_CHARS) || 6000,
-              );
-            }
-            ragDocs = rag.docs.map((d) => ({
-              title: d.title,
-              kind: d.kind,
-              subject: d.subject,
-              snippet: kb.renderSnippet(d.docId, 240) || undefined,
-            }));
-            if (rag.docs.length && rag.text) {
-              ragText = `\n\n# REFERENCE MATERIAL (from NECTA/TIE knowledge base)\nUse only what is relevant here to ground your answer. If the material doesn't answer the question, say so honestly rather than guessing.\n\n${rag.text}\n# END REFERENCE MATERIAL`;
-            }
-          }
-
-          const nQuestions = Math.min(Math.max(Number(max_questions) || 10, 1), 20);
-
-          const grounded = buildGroundedMessage({
-            question: String(question || '').trim(),
-            context: context,
-            subjectName: subject.name,
-            form: form_level,
-            ragText,
-            maxContextChars: Number(process.env.KB_CONTEXT_MAX_CHARS) || 4000,
-          });
-
-          let response = '';
-          let sourced = false;
-          try {
-            const result = await ai.tutoring.tutor({
-              studentId: 'platform',
-              subject: subject.enumValue,
-              topic: (context || question || 'topic').slice(0, 80),
-              mode: TutoringMode.EXPLAIN,
-              message: grounded,
-              context: { lessonId: undefined, currentConcept: context },
-              preferences: form_level ? ({ formLevel: form_level } as any) : undefined,
-            });
-            response = cleanThink(result.message);
-            sourced = !!ragText;
-            if (!response.trim()) {
-              console.error(
-                '[explain] tutor returned empty output',
-                JSON.stringify({
-                  messageLen: result.message?.length,
-                  confidence: result.confidence,
-                  completionTokens: result.usage?.completionTokens,
-                }),
-              );
-              response = buildGroundedFallback(String(question || 'your question'), ragDocs);
-            }
-          } catch (err) {
-            console.error('[explain] tutor failed, using KB-grounded fallback:', err);
-            response = buildGroundedFallback(String(question || 'your question'), ragDocs);
-            sourced = !!ragText;
-          }
-
-          // Generate up to 20 practice questions of any type (wrapped so a
-          // generation failure never breaks the explanation above).
-          let questions: unknown[] = [];
-          try {
-            const generated = await ai.questionGenerator.generateQuestions({
-              subject: subject.name || (subject_slug || 'general'),
-              topic: (context || question || 'lesson content').slice(0, 80),
-              questionType: QuestionType.MULTIPLE_CHOICE,
-              difficulty: Difficulty.INTERMEDIATE,
-              category: QuestionCategory.COMPREHENSION,
-              count: nQuestions,
-              context: (context || '').slice(0, 4000),
-              formLevel: form_level,
-            } as any);
-            questions = (generated || []).slice(0, nQuestions);
-          } catch (err) {
-            console.error('[explain] question generation failed:', err);
-          }
-
-          return { response, sourced, kbHits: ragDocs, questions, max_questions: nQuestions };
-        }
-
-        case '/api/plans/lesson-plan': {
-          return safeAsync(async () => generatePlanJson(ai, body, 'lesson'), { header: {} });
-        }
-
-        case '/api/plans/scheme-of-work': {
-          return safeAsync(async () => generatePlanJson(ai, body, 'scheme'), { header: {} });
-        }
-
-        case '/api/exams/generate': {
-          return safeAsync(
-            async () => {
-              const paper = await generateExamPaper(ai, body);
-              return paper ? { paper } : { paper: null };
-            },
-            { paper: null },
-          );
-        }
-
-        case '/api/tutoring/quiz': {
-          const { question, context, subject_slug, form_level, count } = body;
-          const subject = resolveSubject(subject_slug);
-          const n = Math.min(Math.max(Number(count) || 10, 1), 20);
-          let questions: unknown[] = [];
-          try {
-            const generated = await ai.questionGenerator.generateQuestions({
-              subject: subject.name || (subject_slug || 'general'),
-              topic: (context || question || 'lesson content').slice(0, 80),
-              questionType: QuestionType.MULTIPLE_CHOICE,
-              difficulty: Difficulty.INTERMEDIATE,
-              category: QuestionCategory.COMPREHENSION,
-              count: n,
-              context: (context || '').slice(0, 4000),
-              formLevel: form_level,
-            } as any);
-            questions = (generated || []).slice(0, n);
-          } catch (err) {
-            console.error('[quiz] question generation failed:', err);
-          }
-          return { questions, count: questions.length };
-        }
-
-        case '/api/content/analyze': {
-          const text = typeof body.content === 'string' ? body.content : '';
-          return {
-            wordCount: text.split(/\s+/).filter(Boolean).length,
-            charCount: text.length,
-            headings: (text.match(/<h[1-6][^>]*>/gi) || []).length,
-            links: (text.match(/<a\s/gi) || []).length,
-            readability: 'unknown',
-          };
-        }
-
-        case '/api/content/moderate': {
-          const content = typeof body.content === 'string' ? body.content : '';
-          return safeAsync(
-            () =>
-              ai.moderation.moderate({
-                content,
-                contentType: ModerationContentType.TEXT,
-                language: Language.ENGLISH,
-                context: 'educational',
-              }),
-            { flagged: false, flags: [], score: 0 },
-          );
-        }
-
-        case '/api/content/translate': {
-          const { text: translateText, content: translateContent, target_language } = body;
-          const inputText = translateText || translateContent || '';
-          return safeAsync(
-            () =>
-              ai.translator.translate({
-                text: inputText,
-                sourceLanguage: Language.ENGLISH,
-                targetLanguage: (target_language as Language) || Language.SWAHILI,
-              }),
-            { translated: inputText, targetLanguage: target_language || 'sw' },
-          );
-        }
-
+        case '/api/questions/generate':
+          return safeAsync(() => handleQuestionGenerate(ai, body), { questions: [] });
+        case '/api/tutoring/explain':
+          return handleTutoringExplain(ai, body);
+        case '/api/plans/lesson-plan':
+          return safeAsync(() => handlePlanLesson(ai, body), { header: {} });
+        case '/api/plans/scheme-of-work':
+          return safeAsync(() => handlePlanScheme(ai, body), { header: {} });
+        case '/api/exams/generate':
+          return safeAsync(() => handleExamGenerate(ai, body), { paper: null });
+        case '/api/tutoring/quiz':
+          return handleTutoringQuiz(ai, body);
+        case '/api/content/analyze':
+          return handleContentAnalyze(body);
+        case '/api/content/moderate':
+          return safeAsync(() => handleContentModerate(ai, body), { flagged: false, flags: [], score: 0 });
+        case '/api/content/translate':
+          return safeAsync(() => handleContentTranslate(ai, body), { translatedText: '', sourceLanguage: 'en', targetLanguage: 'sw', confidence: 0, latency: 0 });
         case '/api/math/solve':
-          return { formula: body.formula, variables: body.variables || {}, solved: true };
-
+          return handleMathSolve(body);
         case '/api/math/steps':
-          return {
-            steps: [`Start with ${body.expression}`, body.target ? `Solve for ${body.target}` : 'Simplify'],
-          };
-
+          return handleMathSteps(body);
         case '/api/math/convert':
-          return { value: body.value, from: body.from, to: body.to, converted: body.value };
-
+          return handleMathConvert(body);
         case '/api/math/physics-problem':
-          return {
-            topic: body.topic || 'physics',
-            difficulty: body.difficulty || 'medium',
-            problem: `A ${body.topic || 'physics'} problem at ${body.difficulty || 'medium'} difficulty.`,
-          };
-
+          return handleMathPhysics(body);
         default:
-          return { error: 'not_found', path: url };
+          return null;
       }
     }
 
     const result = await dispatch();
-    if (url === '/default' || (result as any)?.error === 'not_found') {
-      return send(res, 404, result);
+    if (result === null) {
+      return send(res, 404, { error: 'not_found', path: url });
     }
     return send(res, 200, result);
   });

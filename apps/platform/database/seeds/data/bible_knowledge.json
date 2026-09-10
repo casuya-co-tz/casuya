@@ -1,0 +1,3200 @@
+{
+  "name": "Bible Knowledge",
+  "code": "BK",
+  "slug": "bible_knowledge",
+  "necta_code": "016",
+  "is_core": true,
+  "description": "Bible Knowledge covers the study of the Old and New Testaments for Tanzanian O-Level (Form I-IV) and A-Level (Form V-VI) students, exploring the life and teachings of Jesus Christ, Old Testament narratives, prophetic literature, epistles, Christian ethics, and the growth of the Church.",
+  "form_start": 1,
+  "form_end": 6,
+  "replace_topic_form_levels": [
+    1
+  ],
+  "topics": [
+    {
+      "title": "Comprehend the concept of the Bible and Bible Knowledge",
+      "code": "1.0",
+      "form_level": 1,
+      "order": 1,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Explain the meaning of the Bible and the meaning of Bible Knowledge",
+          "code": "1.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the meaning of the Bible and the meaning of Bible Knowledge",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the concept of knowledge from the Bible and its relationship with Mathematics and Biology",
+          "code": "1.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the concept of knowledge from the Bible and its relationship with Mathematics and Biology",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the relationship between Bible Knowledge and History, Geography, Civics and Languages",
+          "code": "1.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the relationship between Bible Knowledge and History, Geography, Civics and Languages",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the authorship and division of the Bible",
+          "code": "1.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the authorship and division of the Bible",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the languages of the Bible and the writing style",
+          "code": "1.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the languages of the Bible and the writing style",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the purpose of writing the Bible and the importance of studying Bible Knowledge",
+          "code": "1.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the purpose of writing the Bible and the importance of studying Bible Knowledge",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the concept of the Book of Genesis and its two main parts",
+          "code": "1.7",
+          "order": 7,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the concept of the Book of Genesis and its two main parts",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Comprehend the concept of God's Creation",
+      "code": "2.0",
+      "form_level": 1,
+      "order": 2,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Explain the meaning of God's creation and the first creation account",
+          "code": "2.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the meaning of God's creation and the first creation account",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain light in the spiritual context and the second creation account",
+          "code": "2.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain light in the spiritual context and the second creation account",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the concept of mankind being created in God's image and the rivers in the Garden of Eden",
+          "code": "2.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the concept of mankind being created in God's image and the rivers in the Garden of Eden",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain mankind in the Garden of Eden and the common qualities shared by man and woman",
+          "code": "2.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain mankind in the Garden of Eden and the common qualities shared by man and woman",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain God's attributes in the creation stories and the creation of woman",
+          "code": "2.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain God's attributes in the creation stories and the creation of woman",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the three steps of unifying husband and wife in marriage",
+          "code": "2.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the three steps of unifying husband and wife in marriage",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Comprehend the concept of the Fall of Man",
+      "code": "3.0",
+      "form_level": 1,
+      "order": 3,
+      "periods": 12,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Explain the concept of the Fall of Man and its consequences",
+          "code": "3.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the concept of the Fall of Man and its consequences",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the concept of sin and its effects",
+          "code": "3.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the concept of sin and its effects",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the importance of faithfulness in offering to God and the descendants of Cain",
+          "code": "3.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the importance of faithfulness in offering to God and the descendants of Cain",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the concept of polygamy in the Bible and the lineage from Adam to Noah",
+          "code": "3.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the concept of polygamy in the Bible and the lineage from Adam to Noah",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain Enoch's walk with God and the punishment of the flood on Noah",
+          "code": "3.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain Enoch's walk with God and the punishment of the flood on Noah",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the risks of alcohol and drug use, the lessons of the Tower of Babel, and the role of communication in sustainable development",
+          "code": "3.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the risks of alcohol and drug use, the lessons of the Tower of Babel, and the role of communication in sustainable development",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Comprehend the history of the Patriarchs (Genesis 12-50)",
+      "code": "4.0",
+      "form_level": 1,
+      "order": 4,
+      "periods": 14,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Explain the history of the call of Abraham up to his meeting with the King of Sodom",
+          "code": "4.1",
+          "order": 1,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the history of the call of Abraham up to his meeting with the King of Sodom",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the Abrahamic Covenant up to Abraham and Sarah before King Abimelech",
+          "code": "4.2",
+          "order": 2,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the Abrahamic Covenant up to Abraham and Sarah before King Abimelech",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the life history of Isaac and Abraham's test of faith",
+          "code": "4.3",
+          "order": 3,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the life history of Isaac and Abraham's test of faith",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the life history of Jacob: from the birthright to his marriage",
+          "code": "4.4",
+          "order": 4,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the life history of Jacob: from the birthright to his marriage",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the life history of Jacob: from the birth of his children to the death of Isaac",
+          "code": "4.5",
+          "order": 5,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the life history of Jacob: from the birth of his children to the death of Isaac",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the life history of Joseph: from his dreams to interpreting Pharaoh's dream",
+          "code": "4.6",
+          "order": 6,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the life history of Joseph: from his dreams to interpreting Pharaoh's dream",
+              "comprehension",
+              1
+            ]
+          ]
+        },
+        {
+          "title": "Explain the life history of Joseph: from meeting his brothers to the lessons we learn",
+          "code": "4.7",
+          "order": 7,
+          "periods": 2,
+          "outcomes": [
+            [
+              "Explain the life history of Joseph: from meeting his brothers to the lessons we learn",
+              "comprehension",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE LIFE AND MINISTRY OF JESUS CHRIST I",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 6,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Birth and Early Life of Jesus",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the annunciation to Mary and the birth of Jesus in Bethlehem",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the visits of the shepherds and the wise men",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the significance of the virgin birth for Christian doctrine",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Baptism and Temptation of Jesus",
+          "code": "1.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Narrate the baptism of Jesus by John the Baptist",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the three temptations of Jesus in the wilderness",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse how Jesus overcame temptation through Scripture",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Call of the Disciples",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify the twelve apostles called by Jesus",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the circumstances of the call of Peter, Andrew, James, and John",
+              "knowledge",
+              2
+            ],
+            [
+              "Explain the meaning of Jesus' call to follow Him for all believers",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Sermon on the Mount",
+          "code": "1.4",
+          "order": 4,
+          "periods": 7,
+          "outcomes": [
+            [
+              "Recall the Beatitudes as recorded in Matthew 5",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Jesus' teachings on love, prayer, and fasting",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply the principles of the Sermon on the Mount to daily life",
+              "application",
+              3
+            ],
+            [
+              "Analyse the contrast between Jesus' teaching and the Pharisaic interpretation",
+              "analysis",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE LIFE AND MINISTRY OF JESUS CHRIST II",
+      "code": "2.0",
+      "form_level": 2,
+      "order": 7,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Miracles of Jesus",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Classify Jesus' miracles into categories of healing, nature, and exorcism",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe specific miracles such as the calming of the storm and feeding of thousands",
+              "knowledge",
+              2
+            ],
+            [
+              "Analyse the purpose and theological meaning of Jesus' miracles",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Parables of Jesus",
+          "code": "2.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Narrate parables such as the Sower, the Prodigal Son, and the Good Samaritan",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the central message of each parable studied",
+              "comprehension",
+              2
+            ],
+            [
+              "Interpret the meaning of parables in their first-century Jewish context",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Teachings on the Kingdom of God",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe how Jesus taught about the Kingdom of God through words and deeds",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the present and future dimensions of the Kingdom",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss how the Kingdom of God challenges human values and expectations",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Conflicts with Religious Leaders",
+          "code": "2.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify the main areas of conflict between Jesus and the Pharisees",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the dispute over Sabbath observance and tradition",
+              "analysis",
+              2
+            ],
+            [
+              "Evaluate the significance of Jesus' authority over the Law",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE PASSION, DEATH AND RESURRECTION OF JESUS",
+      "code": "3.0",
+      "form_level": 2,
+      "order": 8,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Triumphal Entry and Last Supper",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe Jesus' entry into Jerusalem on Palm Sunday",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the events and teachings at the Last Supper",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the institution of the Eucharist and its meaning",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Arrest and Trial of Jesus",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Narrate the events in Gethsemane and the arrest of Jesus",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the trials before the Sanhedrin and Pilate",
+              "knowledge",
+              2
+            ],
+            [
+              "Analyse the injustice of the trials and the response of Jesus",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Crucifixion and Death of Jesus",
+          "code": "3.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the events of the crucifixion as recorded in the Gospels",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the sayings of Jesus from the cross",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the theological significance of the atonement through Christ's death",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Resurrection and Ascension",
+          "code": "3.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the discovery of the empty tomb and post-resurrection appearances",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the evidence for the resurrection of Jesus",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the importance of the resurrection for Christian faith and hope",
+              "evaluation",
+              3
+            ],
+            [
+              "Synthesise the link between the resurrection and the ascension of Jesus",
+              "synthesis",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE ACTS OF THE APOSTLES I",
+      "code": "1.0",
+      "form_level": 2,
+      "order": 9,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Coming of the Holy Spirit at Pentecost",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the events of the Day of Pentecost in Acts 2",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the role and gifts of the Holy Spirit in the early Church",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the significance of Pentecost for the birth of the Christian Church",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Early Church in Jerusalem",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the life and practices of the first Christian community",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the unity and sharing among the early believers",
+              "analysis",
+              2
+            ],
+            [
+              "Explain the challenges faced by the early Church from Jewish authorities",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Stephen the First Martyr",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Narrate the story of Stephen's ministry, trial, and martyrdom",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse Stephen's speech before the Sanhedrin",
+              "analysis",
+              2
+            ],
+            [
+              "Discuss the impact of Stephen's death on the spread of the Gospel",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Conversion of Saul",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe Saul's conversion experience on the road to Damascus",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the significance of Paul's conversion for the Christian mission",
+              "comprehension",
+              2
+            ],
+            [
+              "Synthesise the connection between Paul's background and his apostolic calling",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE ACTS OF THE APOSTLES II",
+      "code": "2.0",
+      "form_level": 2,
+      "order": 10,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Paul's Missionary Journeys",
+          "code": "2.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Trace the route and key events of Paul's three missionary journeys",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the establishment of churches in various cities",
+              "knowledge",
+              2
+            ],
+            [
+              "Analyse the methods Paul used to spread the Gospel",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Council of Jerusalem",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the issue debated at the Council of Jerusalem in Acts 15",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the decision reached regarding Gentile converts",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the significance of this decision for the universality of Christianity",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Paul's Voyage and Arrival in Rome",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Narrate the events of Paul's voyage to Rome as recorded in Acts 27-28",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse Paul's leadership and courage during the shipwreck",
+              "analysis",
+              2
+            ],
+            [
+              "Explain the significance of Paul preaching in Rome",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Growth and Spread of Early Christianity",
+          "code": "2.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Identify the factors that contributed to the growth of the early Church",
+              "knowledge",
+              1
+            ],
+            [
+              "Discuss the challenges of persecution and internal conflict",
+              "evaluation",
+              2
+            ],
+            [
+              "Synthesise how the early Church model influences modern Christian communities",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CHRISTIAN WORSHIP AND SACRAMENTS",
+      "code": "3.0",
+      "form_level": 2,
+      "order": 11,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Introduction to Christian Worship",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define worship and distinguish between public and private worship",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the elements of a Christian worship service",
+              "knowledge",
+              2
+            ],
+            [
+              "Explain the importance of worship in the life of a Christian",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Sacraments of Baptism and Eucharist",
+          "code": "3.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the biblical basis and practice of Christian baptism",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the meaning and significance of the Holy Communion",
+              "comprehension",
+              2
+            ],
+            [
+              "Compare different Christian views on the sacraments",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Prayer in Christian Life",
+          "code": "3.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify types of prayer including praise, confession, thanksgiving, and intercession",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Jesus' teaching on prayer including the Lord's Prayer",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply the principles of prayer in personal and communal Christian life",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "OLD TESTAMENT PROPHETS I",
+      "code": "1.0",
+      "form_level": 3,
+      "order": 12,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Call and Role of the Prophets",
+          "code": "1.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define the role of prophets in ancient Israel",
+              "knowledge",
+              1
+            ],
+            [
+              "Distinguish between writing and non-writing prophets",
+              "knowledge",
+              2
+            ],
+            [
+              "Explain the concept of prophetic call narratives in the Old Testament",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Isaiah",
+          "code": "1.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Identify the major themes in the book of Isaiah",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the Messianic prophecies in Isaiah 7, 9, and 53",
+              "analysis",
+              2
+            ],
+            [
+              "Discuss the social justice message of Isaiah",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Jeremiah",
+          "code": "1.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe Jeremiah's call and his suffering as a prophet",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Jeremiah's message of judgment and hope",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the concept of the New Covenant in Jeremiah 31",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Lamentations",
+          "code": "1.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the historical background of the destruction of Jerusalem",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the themes of grief, suffering, and hope in Lamentations",
+              "analysis",
+              2
+            ],
+            [
+              "Discuss the relevance of Lamentations to human suffering and faith",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "OLD TESTAMENT PROPHETS II",
+      "code": "2.0",
+      "form_level": 3,
+      "order": 13,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Book of Amos",
+          "code": "2.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the background and social conditions during Amos' ministry",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse Amos' message of justice and righteousness",
+              "analysis",
+              2
+            ],
+            [
+              "Explain the visions of Amos and their meaning",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Hosea",
+          "code": "2.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Narrate the story of Hosea and Gomer as a symbol of God's love",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the theme of God's faithful love for unfaithful Israel",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the relevance of Hosea's message to Christian understanding of grace",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Ezekiel",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe Ezekiel's call and his symbolic acts",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the vision of the valley of dry bones",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the theme of restoration in Ezekiel's prophecy",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Daniel",
+          "code": "2.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Narrate the stories of Daniel and his friends in Babylon",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Daniel's apocalyptic visions and their symbolic meaning",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss faithfulness to God in the face of persecution",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE PSALMS AND WISDOM LITERATURE",
+      "code": "3.0",
+      "form_level": 3,
+      "order": 14,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Introduction to the Psalms",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Classify the Psalms into types such as praise, lament, thanksgiving, and wisdom",
+              "knowledge",
+              1
+            ],
+            [
+              "Recite and explain the meaning of selected Psalms (e.g. Psalm 23, 51, 139)",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss how the Psalms are used in Christian worship and personal devotion",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Proverbs",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify the major themes in the book of Proverbs",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the concept of wisdom as presented in Proverbs",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply selected proverbs to everyday moral decision-making",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Job",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Summarise the narrative of Job and his suffering",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the arguments of Job's friends and Job's response",
+              "analysis",
+              2
+            ],
+            [
+              "Discuss the theme of innocent suffering and God's sovereignty in Job",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Ecclesiastes and the Song of Solomon",
+          "code": "3.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the main message of Ecclesiastes on the meaning of life",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the theme of 'vanity' and the search for purpose",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the Song of Solomon as a celebration of love and fidelity",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE SYNOPTIC GOSPELS",
+      "code": "4.0",
+      "form_level": 3,
+      "order": 15,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Introduction to the Synoptic Problem",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define the Synoptic Gospels and explain the term 'synoptic'",
+              "knowledge",
+              1
+            ],
+            [
+              "Describe the relationships between Matthew, Mark, and Luke",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the evidence for the priority of Mark's Gospel",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Comparative Study of Selected Passages",
+          "code": "4.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Compare parallel passages from the three Synoptic Gospels",
+              "analysis",
+              1
+            ],
+            [
+              "Identify similarities and differences in the accounts",
+              "analysis",
+              2
+            ],
+            [
+              "Explain how each Gospel writer presents Jesus for a particular audience",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Gospel of Matthew",
+          "code": "4.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify the unique features and themes of Matthew's Gospel",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Matthew's portrayal of Jesus as the fulfilment of Old Testament prophecy",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss Matthew's emphasis on the kingdom of heaven and discipleship",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Gospel of Luke",
+          "code": "4.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify the unique features and themes of Luke's Gospel",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Luke's emphasis on compassion for the poor, women, and outcasts",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the parables unique to Luke such as the Good Samaritan and the Prodigal Son",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CHRISTIAN ETHICS AND MORAL TEACHING",
+      "code": "5.0",
+      "form_level": 3,
+      "order": 16,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Biblical Foundations of Christian Ethics",
+          "code": "5.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify key ethical teachings of Jesus in the Gospels",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the principle of love as the basis of Christian morality",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply the Sermon on the Mount principles to contemporary ethical dilemmas",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Christian Teaching on Social Issues",
+          "code": "5.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "State the Christian position on issues such as poverty, corruption, and injustice",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse how biblical teaching addresses contemporary social problems",
+              "analysis",
+              2
+            ],
+            [
+              "Evaluate the role of the Church in promoting social justice",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Christian Teaching on Marriage and Family",
+          "code": "5.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the biblical teaching on marriage and family life",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the roles and responsibilities within the Christian family",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss challenges to Christian family values in modern society",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Environmental Stewardship",
+          "code": "5.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify biblical teachings on human responsibility for creation",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the concept of stewardship in Genesis and the Psalms",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply Christian environmental ethics to current ecological challenges",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE GOSPEL OF JOHN",
+      "code": "1.0",
+      "form_level": 3,
+      "order": 17,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Prologue and the Divinity of Christ",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse the Prologue of John's Gospel (John 1:1-18)",
+              "analysis",
+              1
+            ],
+            [
+              "Explain the concept of the Word (Logos) made flesh",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss how John presents Jesus as divine from the opening of his Gospel",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Signs and 'I Am' Statements",
+          "code": "1.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Identify the seven signs performed by Jesus in John's Gospel",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the meaning of the 'I Am' statements (e.g. Bread of Life, Light of the World)",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the relationship between the signs and the 'I Am' declarations",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Farewell Discourse",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe Jesus' teachings to his disciples in John 14-17",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the promise of the Holy Spirit as the Comforter",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss Jesus' high priestly prayer and its themes of unity and love",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Passion and Resurrection in John",
+          "code": "1.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Compare John's account of the Passion with the Synoptic Gospels",
+              "analysis",
+              1
+            ],
+            [
+              "Explain the unique details in John's resurrection narrative",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the restoration of Peter in John 21 and its significance",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "OLD TESTAMENT HISTORICAL BOOKS",
+      "code": "2.0",
+      "form_level": 3,
+      "order": 18,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "The United Monarchy: Saul, David, and Solomon",
+          "code": "2.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the establishment of the monarchy in Israel under Samuel",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the reigns of Saul, David, and Solomon",
+              "analysis",
+              2
+            ],
+            [
+              "Discuss the rise and fall of the united kingdom",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Divided Kingdom",
+          "code": "2.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Explain the causes of the division into northern and southern kingdoms",
+              "comprehension",
+              1
+            ],
+            [
+              "Identify key events and rulers in Judah and Israel",
+              "knowledge",
+              2
+            ],
+            [
+              "Analyse the role of prophets in the divided kingdom",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Exile and Return",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the fall of the northern kingdom (722 BCE) and southern kingdom (586 BCE)",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the experience of exile in Babylon and its impact on faith",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the rebuilding of the Temple and the restoration of the community",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Ezra-Nehemiah",
+          "code": "2.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Narrate the return from exile and the rebuilding efforts",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Nehemiah's work in rebuilding the walls of Jerusalem",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply the theme of spiritual renewal in Ezra-Nehemiah to the Church today",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "OLD TESTAMENT STUDIES",
+      "code": "1.0",
+      "form_level": 4,
+      "order": 19,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Pentateuch: Authorship and Composition",
+          "code": "1.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the traditional and modern views on the authorship of the Pentateuch",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the Documentary Hypothesis (JEDP theory)",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the strengths and weaknesses of different theories of Pentateuchal composition",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Covenant Theology in the Old Testament",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify the major covenants in the Old Testament (Noahic, Abrahamic, Mosaic, Davidic)",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the structure and content of the Sinai covenant",
+              "comprehension",
+              2
+            ],
+            [
+              "Synthesise the relationship between the various covenants in salvation history",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Law and Sacrifice in Ancient Israel",
+          "code": "1.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Classify the different types of law in the Pentateuch",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the sacrificial system and the Day of Atonement",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the relevance of the sacrificial system to Christian theology of atonement",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Themes of Election and Mission",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define the concept of election in the Old Testament",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Israel's calling to be a light to the nations",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the universal scope of God's plan as seen in Old Testament texts",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE PAULINE EPISTLES I",
+      "code": "2.0",
+      "form_level": 4,
+      "order": 20,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Introduction to Pauline Theology",
+          "code": "2.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify the letters attributed to Paul and their contexts",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the major themes of Pauline theology",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the significance of Paul's letters for Christian doctrine",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Epistle to the Romans",
+          "code": "2.2",
+          "order": 2,
+          "periods": 7,
+          "outcomes": [
+            [
+              "Outline the structure and main argument of Romans",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Paul's teaching on justification by faith",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the relationship between grace, faith, and works in Romans",
+              "analysis",
+              3
+            ],
+            [
+              "Discuss the practical implications of Romans for Christian living",
+              "evaluation",
+              4
+            ]
+          ]
+        },
+        {
+          "title": "The Epistle to the Galatians",
+          "code": "2.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the occasion and purpose of Paul's letter to the Galatians",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Paul's argument against circumcision and legalism",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the contrast between law and grace in Galatians",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Epistle to the Philippians",
+          "code": "2.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify the key themes of joy, humility, and unity in Philippians",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the Christ Hymn in Philippians 2:5-11",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply the teaching on Christian humility and service to contemporary life",
+              "application",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE GOSPEL OF JOHN AND JOHANNINE LITERATURE",
+      "code": "3.0",
+      "form_level": 4,
+      "order": 21,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Theology and Theme of John's Gospel",
+          "code": "3.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify the major theological themes of John's Gospel",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the dualism of light and darkness, truth and falsehood",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse John's Christology and presentation of Jesus as the Son of God",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Johannine Epistles",
+          "code": "3.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Describe the occasion and purpose of 1, 2, and 3 John",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain John's teaching on love, truth, and fellowship",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the warnings against false teaching in the Johannine Epistles",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Revelation",
+          "code": "3.3",
+          "order": 3,
+          "periods": 7,
+          "outcomes": [
+            [
+              "Describe the historical context and literary form of the Apocalypse",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the main symbols and visions in Revelation",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the themes of judgment, hope, and the final victory of God",
+              "evaluation",
+              3
+            ],
+            [
+              "Synthesise the relevance of Revelation for Christian faith and perseverance",
+              "synthesis",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE PAULINE EPISTLES",
+      "code": "4.0",
+      "form_level": 4,
+      "order": 22,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "1 Corinthians: Order and Discipline",
+          "code": "4.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify the main issues Paul addressed in 1 Corinthians",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Paul's teaching on spiritual gifts, love, and the resurrection",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply 1 Corinthians 13 and 15 to contemporary Christian life",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "2 Corinthians: Suffering and Comfort",
+          "code": "4.2",
+          "order": 2,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Describe the circumstances behind 2 Corinthians",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Paul's theology of suffering and divine comfort",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss Paul's defence of his apostolic ministry",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Ephesians: The Church as the Body of Christ",
+          "code": "4.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify the key themes of Ephesians including unity, grace, and the armour of God",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the metaphor of the Church as the body and bride of Christ",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the practical ethical instructions in Ephesians 4-6",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Colossians and Philemon",
+          "code": "4.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the context and content of the Epistle to the Colossians",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain Paul's teaching on the supremacy of Christ in Colossians",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss Paul's appeal for Onesimus in the letter to Philemon",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CHRISTIAN ETHICS IN MODERN SOCIETY",
+      "code": "5.0",
+      "form_level": 4,
+      "order": 23,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Biblical Principles for Moral Decision-Making",
+          "code": "5.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify biblical sources for ethical decision-making in the Old and New Testaments",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the role of conscience, Scripture, and the Holy Spirit in moral discernment",
+              "comprehension",
+              2
+            ],
+            [
+              "Apply biblical ethical principles to real-life moral dilemmas",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Christian Perspectives on Governance and Leadership",
+          "code": "5.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe biblical teachings on authority, obedience, and civic responsibility",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the Christian understanding of servant leadership",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the role of the Church in promoting good governance in Tanzania",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Christianity and Science",
+          "code": "5.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify different Christian responses to scientific discoveries",
+              "knowledge",
+              1
+            ],
+            [
+              "Discuss the relationship between faith and reason",
+              "evaluation",
+              2
+            ],
+            [
+              "Synthesise a Christian worldview that engages with modern scientific thought",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Christianity and Other Religions",
+          "code": "5.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the major world religions and their core beliefs",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the Christian understanding of salvation and its exclusivity or inclusivity",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss Christian approaches to interfaith dialogue and coexistence",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE PENTATEUCH IN DEPTH",
+      "code": "1.0",
+      "form_level": 5,
+      "order": 24,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Critical Study of Genesis 1-11",
+          "code": "1.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyse the structure and literary features of the primeval history",
+              "analysis",
+              1
+            ],
+            [
+              "Compare the creation and flood narratives with Ancient Near Eastern parallels",
+              "analysis",
+              2
+            ],
+            [
+              "Evaluate the theological messages of Genesis 1-11 for Israel and the Church",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Abrahamic Narratives: Faith and Promise",
+          "code": "1.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse the theology of election in the call of Abraham",
+              "analysis",
+              1
+            ],
+            [
+              "Examine the testing of Abraham's faith in the binding of Isaac",
+              "analysis",
+              2
+            ],
+            [
+              "Synthesise the Abrahamic promises and their fulfilment throughout Scripture",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Sinai Covenant: Law and Theology",
+          "code": "1.3",
+          "order": 3,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyse the treaty form of the Sinai covenant in its Ancient Near Eastern context",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the ethical, ceremonial, and civil dimensions of the Mosaic Law",
+              "evaluation",
+              2
+            ],
+            [
+              "Discuss the relationship between the Old and New Covenants theologically",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Holiness Code (Leviticus 17-26)",
+          "code": "1.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify the key laws and themes of the Holiness Code",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the concept of holiness as central to Israelite identity",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse the ethical and ritual laws and their social implications",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE HISTORICAL BOOKS: KINGS AND CHRONICLES",
+      "code": "2.0",
+      "form_level": 5,
+      "order": 25,
+      "periods": 18,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "The United and Divided Monarchy in Kings",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyse the Deuteronomistic evaluation of the kings of Israel and Judah",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the theological interpretation of the rise and fall of the monarchy",
+              "evaluation",
+              2
+            ],
+            [
+              "Compare the portrayal of Solomon in Kings and Chronicles",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Elijah and Elisha Narratives",
+          "code": "2.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse the miracles and prophetic actions of Elijah and Elisha",
+              "analysis",
+              1
+            ],
+            [
+              "Explain the conflict between Yahwism and Baalism in the narratives",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the themes of power, faith, and divine sovereignty",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Chronicler's Perspective",
+          "code": "2.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Compare the Chronicler's presentation of David and Solomon with Samuel-Kings",
+              "analysis",
+              1
+            ],
+            [
+              "Explain the Chronicler's emphasis on Temple worship and restoration",
+              "comprehension",
+              2
+            ],
+            [
+              "Discuss the post-exilic theology of the Chronicler",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Exile and Restoration in Historical Narrative",
+          "code": "2.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Synthesise the theological significance of the exile across historical books",
+              "synthesis",
+              1
+            ],
+            [
+              "Evaluate the themes of judgment, mercy, and hope in the restoration accounts",
+              "evaluation",
+              2
+            ],
+            [
+              "Discuss the relevance of the exile-experience for diaspora communities",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE SYNOPTIC PROBLEM AND CHRISTOLOGY",
+      "code": "3.0",
+      "form_level": 5,
+      "order": 26,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Synoptic Problem: Methods and Solutions",
+          "code": "3.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyse the evidence for the Two-Source and Farrer hypotheses",
+              "analysis",
+              1
+            ],
+            [
+              "Compare different scholarly approaches to the Synoptic problem",
+              "analysis",
+              2
+            ],
+            [
+              "Evaluate the strengths and weaknesses of current solutions",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Christology in the Synoptic Gospels",
+          "code": "3.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse how each Synoptic evangelist presents the identity of Jesus",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the titles applied to Jesus (Son of Man, Son of God, Messiah)",
+              "comprehension",
+              2
+            ],
+            [
+              "Synthesise the christological development across the three Gospels",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Mark's Gospel: Passion Narrative and Christology",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Analyse the structure and theology of Mark's passion narrative",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the 'messianic secret' motif in Mark",
+              "evaluation",
+              2
+            ],
+            [
+              "Examine the ending of Mark (16:1-8) and its interpretive challenges",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Matthew's Gospel: Community and Ethics",
+          "code": "3.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse the five discourses of Matthew and their structural significance",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss Matthew's portrayal of Jesus as the new Moses and teacher",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate Matthew's ecclesiology and vision of the Christian community",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE PAULINE EPISTLES: THEOLOGY AND CONTEXT",
+      "code": "4.0",
+      "form_level": 5,
+      "order": 27,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Paul's World and Mission",
+          "code": "4.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Analyse the social, religious, and political context of Paul's ministry",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss Paul's conversion experience and its impact on his theology",
+              "evaluation",
+              2
+            ],
+            [
+              "Synthesise the relationship between Paul's missionary activity and his letters",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Theology of Romans",
+          "code": "4.2",
+          "order": 2,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyse Paul's argument on universal sin and human accountability",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss justification by faith apart from works of the law",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the implications of Romans for Jewish-Gentile relations",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Pauline Ethics and the Household Codes",
+          "code": "4.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify the ethical instructions in Colossians 3 and Ephesians 5-6",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the household codes (Haustafeln) in their Greco-Roman context",
+              "analysis",
+              2
+            ],
+            [
+              "Evaluate the transformative and conservative elements of Pauline ethics",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Pastorals and Pauline Legacy",
+          "code": "4.4",
+          "order": 4,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Discuss the authorship and purpose of 1 Timothy, 2 Timothy, and Titus",
+              "evaluation",
+              1
+            ],
+            [
+              "Analyse the ecclesiology and ethics of the Pastoral Epistles",
+              "analysis",
+              2
+            ],
+            [
+              "Synthesise Paul's influence on the development of early Christian ministry",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "OLD TESTAMENT POETRY AND WISDOM",
+      "code": "5.0",
+      "form_level": 5,
+      "order": 28,
+      "periods": 14,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Critical Study of the Psalms",
+          "code": "5.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse the classification, structure, and poetry of the Psalms",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the historical and cultic background of Israelite psalmody",
+              "evaluation",
+              2
+            ],
+            [
+              "Interpret selected Psalms using literary and theological methods",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Job: Suffering and Theodicy",
+          "code": "5.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse the structure of Job (prose frame and poetic dialogues)",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the theodicy arguments of Job's friends and Elihu",
+              "evaluation",
+              2
+            ],
+            [
+              "Discuss God's speech from the whirlwind and its theological significance",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Ecclesiastes and the Search for Meaning",
+          "code": "5.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Analyse the philosophical and theological themes of Ecclesiastes",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the concept of 'hebel' (vanity/meaninglessness)",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate Ecclesiastes' contribution to Old Testament wisdom and faith",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "OLD TESTAMENT PROPHETIC LITERATURE: ADVANCED",
+      "code": "1.0",
+      "form_level": 6,
+      "order": 29,
+      "periods": 22,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Isaiah: Deutero-Isaiah and Trito-Isaiah",
+          "code": "1.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyse the divisions of the book of Isaiah and the arguments for multiple authorship",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the Servant Songs and their christological interpretation",
+              "evaluation",
+              2
+            ],
+            [
+              "Synthesise the themes of judgment and restoration across all three sections",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Twelve Minor Prophets",
+          "code": "1.2",
+          "order": 2,
+          "periods": 7,
+          "outcomes": [
+            [
+              "Analyse the historical context and message of Hosea, Amos, and Micah",
+              "analysis",
+              1
+            ],
+            [
+              "Evaluate the social justice themes in the prophetic literature",
+              "evaluation",
+              2
+            ],
+            [
+              "Discuss the eschatological hope in Joel, Zechariah, and Malachi",
+              "comprehension",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Ezekiel and Apocalyptic Literature",
+          "code": "1.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse the symbolism and visions in Ezekiel's prophecy",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the themes of divine glory, judgment, and renewal in Ezekiel",
+              "comprehension",
+              2
+            ],
+            [
+              "Synthesise the connection between Ezekiel and later apocalyptic literature",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Daniel and Apocalyptic Thought",
+          "code": "1.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Analyse the narrative and apocalyptic sections of Daniel",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the historical-critical issues surrounding the book of Daniel",
+              "evaluation",
+              2
+            ],
+            [
+              "Evaluate the influence of Daniel on New Testament and early Christian apocalypticism",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "THE JOHANNINE LITERATURE: ADVANCED STUDY",
+      "code": "2.0",
+      "form_level": 6,
+      "order": 30,
+      "periods": 20,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "The Composition and Theology of John's Gospel",
+          "code": "2.1",
+          "order": 1,
+          "periods": 6,
+          "outcomes": [
+            [
+              "Analyse the composition history and community behind John's Gospel",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the distinctive Johannine vocabulary and theological concepts",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the relationship between John and the Synoptic Gospels",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Johannine Christology and Soteriology",
+          "code": "2.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse the 'I Am' discourse theology and its roots in Exodus 3",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the Johannine presentation of eternal life and belief",
+              "comprehension",
+              2
+            ],
+            [
+              "Synthesise the soteriological views in John with those of the Synoptics and Paul",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Johannine Epistles: Community and Conflict",
+          "code": "2.3",
+          "order": 3,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse the situation of the Johannine community reflected in 1-3 John",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the ethical and relational tests of true faith in 1 John",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the Christological and ethical implications of the secession crisis",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "The Book of Revelation: Interpretation and Relevance",
+          "code": "2.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Analyse the major interpretive approaches (preterist, historicist, futurist, idealist)",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the political and theological context of Revelation",
+              "evaluation",
+              2
+            ],
+            [
+              "Synthesise the relevance of Revelation for Christian hope and resistance",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "AFRICAN CHRISTIANITY AND INCULTURATION",
+      "code": "3.0",
+      "form_level": 6,
+      "order": 31,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "The History of Christianity in Africa",
+          "code": "3.1",
+          "order": 1,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Trace the spread of Christianity from the early Church to modern Africa",
+              "knowledge",
+              1
+            ],
+            [
+              "Discuss the impact of colonialism and missionary activity on African Christianity",
+              "evaluation",
+              2
+            ],
+            [
+              "Analyse the growth of indigenous African Christian movements",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Inculturation and African Theology",
+          "code": "3.2",
+          "order": 2,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Define inculturation and explain its significance for African Christianity",
+              "comprehension",
+              1
+            ],
+            [
+              "Discuss the challenges of contextualising the Gospel in African cultures",
+              "evaluation",
+              2
+            ],
+            [
+              "Analyse key African theologians and their contributions",
+              "analysis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "African Initiated Churches",
+          "code": "3.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Identify major African Initiated Churches and their characteristics",
+              "knowledge",
+              1
+            ],
+            [
+              "Explain the theological and social reasons for the rise of AICs",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the role of AICs in African society and mission",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Christianity in Tanzania Today",
+          "code": "3.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Describe the denominational landscape and ecumenical movement in Tanzania",
+              "knowledge",
+              1
+            ],
+            [
+              "Discuss the role of the Church in education, health, and development",
+              "comprehension",
+              2
+            ],
+            [
+              "Analyse contemporary challenges facing Christianity in Tanzania",
+              "analysis",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "PAULINE THEOLOGY: ADVANCED THEMES",
+      "code": "4.0",
+      "form_level": 6,
+      "order": 32,
+      "periods": 18,
+      "weight": "high",
+      "subtopics": [
+        {
+          "title": "Justification and the New Perspective on Paul",
+          "code": "4.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse the traditional Reformed reading of Paul on justification",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the New Perspective on Paul (Sanders, Dunn, Wright)",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the implications of the New Perspective for Protestant theology",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Paul's Ecclesiology",
+          "code": "4.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Analyse Paul's metaphor of the Church as the body of Christ",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the issues of unity, diversity, and spiritual gifts in Pauline churches",
+              "comprehension",
+              2
+            ],
+            [
+              "Synthesise Paul's ecclesiology with modern ecumenical concerns",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Paul and the Law",
+          "code": "4.3",
+          "order": 3,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Analyse Paul's varying statements about the Mosaic Law across his letters",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the relationship between Torah observance and Gentile inclusion",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate scholarly debates on Paul's view of the Law",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Paul's Eschatology",
+          "code": "4.4",
+          "order": 4,
+          "periods": 4,
+          "outcomes": [
+            [
+              "Analyse Paul's teaching on the resurrection of the body and the second coming",
+              "analysis",
+              1
+            ],
+            [
+              "Discuss the 'already but not yet' tension in Pauline eschatology",
+              "comprehension",
+              2
+            ],
+            [
+              "Evaluate the ethical implications of Paul's eschatological hope",
+              "evaluation",
+              3
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "RESEARCH AND INTERPRETATION IN BIBLE KNOWLEDGE",
+      "code": "5.0",
+      "form_level": 6,
+      "order": 33,
+      "periods": 16,
+      "weight": "medium",
+      "subtopics": [
+        {
+          "title": "Methods of Biblical Interpretation",
+          "code": "5.1",
+          "order": 1,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Identify major hermeneutical methods (historical-critical, literary, theological)",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse the strengths and limitations of each interpretive approach",
+              "analysis",
+              2
+            ],
+            [
+              "Apply appropriate hermeneutical methods to a biblical text",
+              "application",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Introduction to Exegesis",
+          "code": "5.2",
+          "order": 2,
+          "periods": 5,
+          "outcomes": [
+            [
+              "Describe the steps of exegetical method (observation, interpretation, application)",
+              "knowledge",
+              1
+            ],
+            [
+              "Analyse a selected biblical passage using exegetical tools",
+              "analysis",
+              2
+            ],
+            [
+              "Synthesise exegetical findings into a coherent interpretation",
+              "synthesis",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Writing a Research Essay in Bible Knowledge",
+          "code": "5.3",
+          "order": 3,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Identify the structure and requirements of a biblical research essay",
+              "knowledge",
+              1
+            ],
+            [
+              "Apply academic writing conventions including proper citation",
+              "application",
+              2
+            ],
+            [
+              "Evaluate the quality of biblical scholarship using critical criteria",
+              "evaluation",
+              3
+            ]
+          ]
+        },
+        {
+          "title": "Biblical Theology and its Relevance",
+          "code": "5.4",
+          "order": 4,
+          "periods": 3,
+          "outcomes": [
+            [
+              "Define biblical theology and distinguish it from systematic theology",
+              "knowledge",
+              1
+            ],
+            [
+              "Discuss the unity and diversity of the biblical canon",
+              "evaluation",
+              2
+            ],
+            [
+              "Synthesise a holistic understanding of the biblical narrative from creation to new creation",
+              "synthesis",
+              3
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
