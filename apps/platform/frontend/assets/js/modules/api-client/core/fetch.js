@@ -45,6 +45,12 @@ async function request(path, options = {}) {
 
     const error = new Error(response.statusText || "Request failed");
     error.status = response.status;
+    try {
+      const body = await response.json();
+      if (body && typeof body.detail === "string" && body.detail) {
+        error.message = body.detail;
+      }
+    } catch (e) {}
     throw error;
   }
 

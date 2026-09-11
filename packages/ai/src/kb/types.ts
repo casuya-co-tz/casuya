@@ -32,7 +32,13 @@ export interface KbIndex {
 export interface SearchOptions {
   subject?: string;
   form?: string;
+  /** Match docs whose source filename contains formNumber (e.g. `_form4_`). */
+  formNumber?: number;
   year?: string;
+  /** Exact match on the KbDoc level field (e.g. 'internal', 'ftna', 'csee', 'acsee'). */
+  level?: string;
+  /** Substring match on the source file path (used to select exam type buckets). */
+  file?: string;
   kind?: KbKind[];
   limit?: number;
 }

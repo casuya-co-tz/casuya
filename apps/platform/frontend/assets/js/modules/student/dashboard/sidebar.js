@@ -33,6 +33,7 @@ Object.assign(StudentDashboard.prototype, {
             <div class="sidebar-nav-item" data-view="downloads">📥 Downloads</div>
             <div class="sidebar-nav-item" data-view="library">📖 Reference Library</div>
             <div class="sidebar-nav-item" data-view="exams">📝 Exams</div>
+            <div class="sidebar-nav-item" data-view="test-generator">📝 Test Generator</div>
             <div class="sidebar-nav-item" data-view="files">📁 Files</div>
             <div class="sidebar-nav-item" data-view="payments">💳 Payments</div>
             <div class="sidebar-nav-item" data-view="notifications">🔔 Notifications</div>

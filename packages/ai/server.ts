@@ -20,6 +20,7 @@ import { buildFreeProviderSpecs, specsToConfigMap } from './src/providers/free-c
 import { getKnowledgeBase } from './src/kb';
 import { handleQuestionGenerate, handleTutoringQuiz } from './routes/questions';
 import { handleTutoringExplain, handlePlanLesson, handlePlanScheme } from './routes/tutoring';
+import { handleTestGenerate } from './routes/tests';
 import {
   handleContentAnalyze,
   handleContentModerate,
@@ -138,6 +139,17 @@ async function start() {
           return safeAsync(() => handleExamGenerate(ai, body), { paper: null });
         case '/api/tutoring/quiz':
           return handleTutoringQuiz(ai, body);
+        case '/api/tests/generate':
+          return safeAsync(() => handleTestGenerate(ai, body), {
+            questions: [],
+            count: 0,
+            testType: 'topical',
+            testTypeLabel: 'Practice Test',
+            grounded: false,
+            subject: '',
+            formLevel: null,
+            kbHits: [],
+          });
         case '/api/content/analyze':
           return handleContentAnalyze(body);
         case '/api/content/moderate':

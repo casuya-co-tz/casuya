@@ -9,7 +9,7 @@ function renderQuizQuestions(questions, meta = {}) {
   const topic = meta.topic || "";
   const subjectLabels = { mathematics:"Mathematics", chemistry:"Chemistry", physics:"Physics" };
   const subjectLabel = subjectLabels[subject] || subject;
-  const formLabel = formLevel ? `Form ${["I","II","III","IV"][Number(formLevel)-1] || formLevel}` : "";
+  const formLabel = formLevel ? `Form ${["I","II","III","IV","V","VI"][Number(formLevel)-1] || formLevel}` : "";
   const badgeParts = [subjectLabel, formLabel].filter(Boolean).join(" \u2022 ");
   const quizId = "quiz-" + Date.now();
 

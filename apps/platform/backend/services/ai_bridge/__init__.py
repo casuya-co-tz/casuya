@@ -7,6 +7,7 @@ generation when the AI service is unavailable.
 
 from .client import CASUYA_AI_URL, _call_ai_service  # noqa: F401
 from .exam import generate_exam_paper  # noqa: F401
+from .tests import generate_test_questions, TEST_TYPES  # noqa: F401
 from .math import (  # noqa: F401
     convert_units,
     generate_math_steps,
@@ -27,6 +28,8 @@ __all__ = [
     "CASUYA_AI_URL",
     "_call_ai_service",
     "generate_exam_paper",
+    "generate_test_questions",
+    "TEST_TYPES",
     "convert_units",
     "generate_math_steps",
     "generate_physics_problem",

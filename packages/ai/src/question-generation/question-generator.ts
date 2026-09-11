@@ -36,7 +36,9 @@ export class QuestionGenerator {
   async generateQuestions(request: QuestionGenerationRequest): Promise<GeneratedQuestion[]> {
     validateRequest(request);
 
-    const cacheKey = `qgen:${request.subject}:${request.topic}:${request.difficulty}:${request.count}:${(request.context ?? '').slice(0, 120)}`;
+    const topicsSig = (request.topicsCovered ?? []).slice(0, 8).join('|');
+    const subTopicsSig = (request.subtopicsCovered ?? []).slice(0, 8).join('|');
+    const cacheKey = `qgen:${request.subject}:${request.topic}:${topicsSig}:${subTopicsSig}:${(request.subtopic ?? '')}:${request.difficulty}:${request.count}:${(request.context ?? '').slice(0, 120)}:${(request.referenceContext ?? '').slice(0, 120)}`;
     const cached = this.cache.get<GeneratedQuestion[]>(cacheKey);
     if (cached) return cached;
 
@@ -47,7 +49,12 @@ export class QuestionGenerator {
       this.logger,
     );
 
-    const templateId = curriculumContext ? 'necta-question-generation' : 'question-generation-mcq';
+    const grounded = (request.referenceContext ?? '').trim();
+    const templateId = grounded
+      ? 'test-generation-grounded'
+      : curriculumContext
+        ? 'necta-question-generation'
+        : 'question-generation-mcq';
     const variables: Record<string, unknown> = {
       subject: request.subject,
       topic: request.topic,
@@ -63,6 +70,28 @@ export class QuestionGenerator {
       variables.exam_section = 'mixed';
     }
 
+    if (grounded) {
+      variables.reference_context = grounded;
+      variables.test_type_label = request.testTypeLabel ?? 'Practice Test';
+      const topicsCovered = request.topicsCovered?.length ? request.topicsCovered : [request.topic];
+      const subtopicsCovered = request.subtopicsCovered?.length
+        ? request.subtopicsCovered
+        : request.subtopic
+          ? [request.subtopic]
+          : ['All sub-topics'];
+      variables.topics_covered = topicsCovered.map((t) => `- ${t}`).join('\n');
+      variables.subtopics_covered = subtopicsCovered.map((t) => `- ${t}`).join('\n');
+      variables.scope = [
+        `Subject: ${request.subject}`,
+        `Form: ${formLevel ?? 1}`,
+        `Topics (${topicsCovered.length}): ${topicsCovered.join('; ')}`,
+        `Subtopics (${subtopicsCovered.length}): ${subtopicsCovered.join('; ')}`,
+      ]
+        .filter(Boolean)
+        .join(' | ');
+      variables.form_level = formLevel ?? 1;
+    }
+
     const promptResult = this.promptManager.execute({ templateId, variables });
 
     const response = await this.provider.chatCompletion({
@@ -70,7 +99,7 @@ export class QuestionGenerator {
         { role: 'system', content: 'You are an educational assessment generator. Generate questions and respond with valid JSON.' },
         { role: 'user', content: promptResult.content },
       ],
-      temperature: 0.7,
+      temperature: request.temperature ?? 0.7,
       maxTokens: Math.min(4096, Math.max(1024, request.count * 280)),
     });
 

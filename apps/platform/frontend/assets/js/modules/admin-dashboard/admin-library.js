@@ -108,6 +108,8 @@
               <option value="2">Form II</option>
               <option value="3">Form III</option>
               <option value="4">Form IV</option>
+              <option value="5">Form V</option>
+              <option value="6">Form VI</option>
             </select>
             <input class="input" id="lib-search" type="search" placeholder="Search titles..." style="max-width:220px;padding:0.45rem 0.6rem;font-size:0.85rem">
             <div style="margin-left:auto;display:flex;gap:0.4rem">

@@ -17,6 +17,7 @@ function renderStudentDashboard() {
   registerAssignmentsView(dashboard);
   registerGamesView(dashboard);
   registerExamsView(dashboard);
+  registerTestsView(dashboard);
   registerFilesView(dashboard);
   registerLibraryView(dashboard);
   registerPaymentsView(dashboard);

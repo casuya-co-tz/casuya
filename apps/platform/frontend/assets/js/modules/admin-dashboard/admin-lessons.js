@@ -1,3 +1,20 @@
+  function checkSubjectContentMatch(subjectSlug, htmlContent) {
+    const plain = String(htmlContent || "").toLowerCase().replace(/<[^>]+>/g, " ");
+    const subjects = {
+      mathematics: { label: "Mathematics", keywords: ["math", "mathematics", "algebra", "geometry", "equation", "calculus", "number", "probability", "trigonometry", "statistics", "function", "formula", "solve", "measure", "graph", "fraction", "percent", "angle", "proportion", "vector", "matrix", "integral", "derivative", "arithmetic", "sum", "multiply", "divide", "add", "subtract", "quadratic", "linear", "exponent", "logarithm", "sequence", "series", "distance", "speed", "area", "volume"] },
+      chemistry: { label: "Chemistry", keywords: ["chem", "chemistry", "atom", "molecule", "element", "compound", "reaction", "acid", "base", "balance", "equilibrium", "bond", "electron", "proton", "neutron", "ion", "periodic", "table", "formula", "mole", "concentration", "solution", "oxid", "reduc", "titration", "gas", "solid", "liquid", "state", "organic", "inorganic", "polymer", "chemical", "salt", "ph", "electroly", "carbon", "hydrogen", "oxygen", "nitrogen"] },
+      physics: { label: "Physics", keywords: ["phys", "physics", "force", "mass", "energy", "velocity", "acceleration", "momentum", "newton", "gravity", "electron", "magnet", "electric", "current", "voltage", "resistance", "wavelength", "frequency", "wave", "sound", "light", "optics", "refraction", "reflection", "lens", "mirror", "circuit", "heat", "temperature", "thermodynamic", "work", "power", "pressure", "density", "kinetic", "potential", "speed", "motion", "displacement", "projectile", "hooke", "ohms", "law", "capacitor", "friction"] },
+    };
+    const def = subjects[subjectSlug];
+    const keywords = def ? def.keywords : [];
+    if (!keywords.length) return { warning: "" };
+    const matches = keywords.filter(k => plain.includes(k));
+    if (matches.length === 0) {
+      return { warning: `The pasted content does not appear to be about ${def.label}. Questions generated may not match the selected subject. Make sure the content is from the ${def.label} topic for accurate questions.` };
+    }
+    return { warning: "" };
+  }
+
   async function loadAdminLessons() {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading lessons...</p></div>');
     try {
@@ -85,6 +102,8 @@
                   <option value="2">Form II</option>
                   <option value="3">Form III</option>
                   <option value="4">Form IV</option>
+                  <option value="5">Form V</option>
+                  <option value="6">Form VI</option>
                 </select>
               </div>
               <textarea class="input" name="lesson_html" rows="5" placeholder="Paste lesson content..." required></textarea>
@@ -108,22 +127,28 @@
           const fd = new FormData(e.target);
           const resultDiv = document.getElementById("ai-gen-result");
           const textDiv = document.getElementById("ai-gen-text");
+          const lessonHtml = fd.get("lesson_html") || "";
+          const subjectSlug = fd.get("subject_slug") || "";
+          const subjectCheck = checkSubjectContentMatch(subjectSlug, lessonHtml);
+          if (subjectCheck.warning) {
+            if (!confirm(subjectCheck.warning + "\n\nDo you want to continue generating anyway?")) return;
+          }
           resultDiv.style.display = "block";
           textDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating...</div>';
           try {
             const result = await request("/ai/questions/generate", {
               method: "POST",
               body: JSON.stringify({
-                lesson_html: fd.get("lesson_html"),
+                lesson_html: lessonHtml,
                 count: parseInt(fd.get("count")) || 5,
-                subject_slug: fd.get("subject_slug"),
+                subject_slug: subjectSlug,
                 form_level: parseInt(fd.get("form_level")) || 2,
               }),
             });
             const questions = result?.questions || result;
             if (Array.isArray(questions) && questions.length) {
               textDiv.innerHTML = renderQuizQuestions(questions, {
-                subject: fd.get("subject_slug"),
+                subject: subjectSlug,
                 formLevel: fd.get("form_level"),
                 topic: questions[0]?.topic || "",
               });

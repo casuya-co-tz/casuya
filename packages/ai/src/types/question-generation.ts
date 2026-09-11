@@ -30,6 +30,20 @@ export interface QuestionGenerationRequest {
   language?: Language;
   context?: string;
   constraints?: QuestionConstraints;
+  /** TIE form level (1-6) used for curriculum context + exam scoping. */
+  formLevel?: number;
+  /** Subtopic label to focus the questions on. */
+  subtopic?: string;
+  /** Full list of topic titles the test must cover (for scope + RAG query). */
+  topicsCovered?: string[];
+  /** Full list of subtopic titles the test must cover (for scope + RAG query). */
+  subtopicsCovered?: string[];
+  /** Label for the examination type (e.g. "Terminal Test", "NECTA Form IV"). */
+  testTypeLabel?: string;
+  /** Rendered knowledge-base reference material used to ground the questions. */
+  referenceContext?: string;
+  /** Sampling temperature. When omitted the generator defaults to 0.7. */
+  temperature?: number;
 }
 
 export interface QuestionConstraints {

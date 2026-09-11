@@ -8,9 +8,12 @@ import re
 
 from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse
+from fastapi import HTTPException
 from pydantic import BaseModel
 
 from backend.middleware.auth import get_current_user
+from backend.services.ai_bridge.prompts import _SUBJECT_LABELS, _strip_html, check_subject_relevance
+from backend.services.ai_bridge.tests import TEST_TYPES, generate_test_questions
 from backend.services.ai_service import (
     analyze_content,
     generate_practice_questions,
@@ -29,6 +32,9 @@ class QuestionRequest(BaseModel):
     count: int = 5
     subject_slug: str | None = None
     form_level: int | None = None
+
+
+_ALLOWED_SUBJECTS = {"mathematics", "chemistry", "physics"}
 
 
 class TutoringRequest(BaseModel):
@@ -52,8 +58,33 @@ class TranslateRequest(BaseModel):
     target_language: str
 
 
+class TestGenerationRequest(BaseModel):
+    """Knowledge-base-grounded test/exam generator request (Test Generator)."""
+
+    test_type: str
+    topic: str = ""
+    subtopic: str = ""
+    topics: list[str] = []
+    subtopics: list[str] = []
+    count: int = 10
+    difficulty: str = "medium"
+    subject_slug: str | None = None
+    form_level: int | None = None
+
+
 @router.post("/questions/generate")
 async def api_generate_questions(req: QuestionRequest, _user=Depends(get_current_user)):
+    if req.subject_slug and req.subject_slug not in _ALLOWED_SUBJECTS:
+        raise HTTPException(
+            status_code=422,
+            detail=f"subject_slug must be one of {sorted(_ALLOWED_SUBJECTS)}",
+        )
+    if req.form_level is not None and (req.form_level < 1 or req.form_level > 6):
+        raise HTTPException(status_code=422, detail="form_level must be between 1 and 6")
+    if req.subject_slug:
+        mismatch = check_subject_relevance(_strip_html(req.lesson_html), req.subject_slug)
+        if mismatch:
+            raise HTTPException(status_code=422, detail=mismatch)
     questions = await generate_quiz_questions(
         req.lesson_html,
         req.count,
@@ -90,6 +121,65 @@ async def api_tutoring_quiz(req: TutoringRequest, _user=Depends(get_current_user
         count=req.max_questions or 10,
     )
     return {"questions": questions, "count": len(questions)}
+
+
+@router.post("/tests/generate")
+async def api_generate_tests(req: TestGenerationRequest, _user=Depends(get_current_user)):
+    """Generate exam-style practice questions grounded in the NECTA/TIE
+    knowledge base (Test Generator shared by admin, teacher, and student).
+
+    The casuya-ai route picks the matching past-paper bucket for the test type
+    (topical/monthly/midterm/terminal/annual/NECTA Form II/IV/VI) + subject +
+    form, grounds the questions on it via RAG, and runs at a low temperature
+    (0.1-0.2) so past questions are never copied verbatim.
+    """
+    if req.test_type not in TEST_TYPES:
+        raise HTTPException(
+            status_code=422,
+            detail=f"test_type must be one of {sorted(TEST_TYPES)}",
+        )
+    if req.subject_slug and req.subject_slug not in _ALLOWED_SUBJECTS:
+        raise HTTPException(
+            status_code=422,
+            detail=f"subject_slug must be one of {sorted(_ALLOWED_SUBJECTS)}",
+        )
+    if req.form_level is not None and (req.form_level < 1 or req.form_level > 6):
+        raise HTTPException(status_code=422, detail="form_level must be between 1 and 6")
+    if not req.topic and not req.subtopic and not req.topics and not req.subtopics:
+        raise HTTPException(
+            status_code=422,
+            detail="Provide a topic (or subtopic) to generate the test from",
+        )
+    if len(req.topics) > 30 or len(req.subtopics) > 30:
+        raise HTTPException(status_code=422, detail="At most 30 topics and 30 subtopics per test")
+    if any(len(t) > 120 for t in req.topics + req.subtopics):
+        raise HTTPException(status_code=422, detail="Topic/subtopic titles must be at most 120 characters")
+    if req.count < 1 or req.count > 20:
+        raise HTTPException(status_code=422, detail="count must be between 1 and 20")
+
+    questions, meta = await generate_test_questions(
+        req.test_type,
+        subject_slug=req.subject_slug,
+        form_level=req.form_level,
+        topic=req.topic,
+        subtopic=req.subtopic,
+        topics=req.topics,
+        subtopics=req.subtopics,
+        count=req.count,
+        difficulty=req.difficulty,
+    )
+    return {
+        "questions": questions,
+        "count": len(questions),
+        "testType": req.test_type,
+        "testTypeLabel": TEST_TYPES.get(req.test_type, req.test_type),
+        "grounded": bool(meta.get("grounded")),
+        "subject": _SUBJECT_LABELS.get(req.subject_slug or "") or req.subject_slug or "",
+        "formLevel": req.form_level,
+        "topics": req.topics,
+        "subtopics": req.subtopics,
+        "kbHits": meta.get("kbHits") or [],
+    }
 
 
 @router.post("/content/analyze")
