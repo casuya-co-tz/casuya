@@ -202,12 +202,12 @@ def run(
 ) -> None:
     """Seed the NECTA/TIE syllabus data into the database.
 
-    Only topics in the ``[form_min, form_max]`` form window are seeded (the
-    default is Form I-II); topics in higher forms are never created, replaced
-    or removed here. Additive at topic level within the window: existing
-    subjects are updated, brand-new subjects are created whole. Subjects may
-    declare replace_topic_form_levels to make the seed data the authoritative
-    topic set for those form levels (still bounded by the window). Safe to
+    Seeding is wipe-and-replace within the ``[form_min, form_max]`` form
+    window (default Form I-II): every existing in-window topic, subtopic and
+    learning outcome is deleted first, then the current official set from
+    ``data/*.json`` is inserted, so the database always matches the seed
+    exactly. Topics in forms outside the window are never created, replaced or
+    removed here. Brand-new subjects are created with the same window. Safe to
     re-run in local and production environments.
     """
     init_db()
@@ -240,13 +240,29 @@ def run(
                 if subj_data.get("description"):
                     existing.description = subj_data["description"]
 
+                # Wipe-and-replace inside the window: drop every existing
+                # in-window topic (subtopics/outcomes cascade through the ORM
+                # relationships), then insert the official set below.
+                window_topics = (
+                    db.query(SyllabusTopic)
+                    .filter(
+                        SyllabusTopic.subject_id == existing.id,
+                        SyllabusTopic.form_level >= form_min,
+                        SyllabusTopic.form_level <= form_max,
+                    )
+                    .all()
+                )
+                for topic in window_topics:
+                    db.delete(topic)
+                db.flush()
+
                 added = _seed_topics(
                     db, existing, subj_data, form_min=form_min, form_max=form_max
                 )
                 new_topics += added
                 db.commit()
                 if added:
-                    print(f"  [OK] {subj_data['name']} ({code}) appended {added} new topic(s)")
+                    print(f"  [OK] {subj_data['name']} ({code}) inserted {added} topic(s)")
             except Exception:
                 db.rollback()
                 raise

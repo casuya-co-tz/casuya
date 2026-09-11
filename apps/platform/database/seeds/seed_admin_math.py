@@ -8,9 +8,12 @@ used by the AI agent. This seed maps the official NECTA subjects, topics and
 subtopics (O-Level and A-Level) into those admin-facing tables so the admin
 shows the real curriculum.
 
-Additive & idempotent: subjects/topics/subtopics already present are skipped,
-and existing rows with downstream references (lessons, progress) are never
-deleted. Safe to re-run against local and production.
+Wipe-and-replace inside the active form window (Form I-II by default): every
+existing in-window topic/subtopic is deleted before the official set is
+inserted, so the catalog always matches the seed exactly; lessons hanging off
+removed subtopics (and their dependents) are deleted too. Topics in higher
+forms and lessons outside the window are left untouched. Safe to re-run
+against local and production.
 """
 
 from __future__ import annotations
@@ -32,6 +35,129 @@ def _uuid() -> str:
     return str(uuid.uuid4())
 
 
+def _delete_in_window_topics(
+    db: Session,
+    subject: Subject,
+    form_min: int,
+    form_max: int,
+) -> tuple[int, int, int]:
+    """Delete every topic/subtopic in the form window for one admin subject.
+
+    Seeding is wipe-and-replace: all topics inside ``[form_min, form_max]``
+    are removed so the catalog exactly matches the official seed afterwards.
+    Lessons attached to those subtopics — and everything that references them
+    (quizzes, games, assignments, progress, bookmarks, notes, activity,
+    analytics, versions) — are removed too, since the DB has no cascades.
+    Returns (topics_removed, subtopics_removed, lessons_removed).
+    """
+    from backend.models.lesson import Lesson, Topic
+
+    window_forms = {ROMAN[f] for f in range(form_min, form_max + 1)}
+    topics = (
+        db.query(Topic)
+        .filter(
+            Topic.subject_id == subject.id,
+            Topic.form_level.in_(window_forms),
+        )
+        .all()
+    )
+    if not topics:
+        return 0, 0, 0
+    topic_ids = [t.id for t in topics]
+    sub_ids = [
+        r[0]
+        for r in db.query(Subtopic.id).filter(Subtopic.topic_id.in_(topic_ids)).all()
+    ]
+    lesson_ids = [
+        r[0]
+        for r in db.query(Lesson.id).filter(Lesson.subtopic_id.in_(sub_ids)).all()
+    ]
+
+    if lesson_ids:
+        _delete_lessons_with_dependents(db, lesson_ids)
+    if sub_ids:
+        db.query(Subtopic).filter(Subtopic.topic_id.in_(topic_ids)).delete(
+            synchronize_session=False
+        )
+    db.query(Topic).filter(Topic.id.in_(topic_ids)).delete(
+        synchronize_session=False
+    )
+    return len(topic_ids), len(sub_ids), len(lesson_ids)
+
+
+def _delete_lessons_with_dependents(db: Session, lesson_ids: list[str]) -> None:
+    """Delete lessons and every row that references them (dependency order).
+
+    The lesson tables carry no DB-level cascades, so dependents are removed
+    explicitly: quiz options/questions, quizzes, games, assignments (+
+    submissions), progress, bookmarks, notes, activity, analytics, versions.
+    """
+    from backend.models.activity import RecentActivity
+    from backend.models.analytics import LessonAnalyticsSnapshot
+    from backend.models.assignment import Assignment, AssignmentSubmission
+    from backend.models.bookmark import Bookmark
+    from backend.models.game import Game
+    from backend.models.lesson import Lesson
+    from backend.models.lesson_version import LessonVersion
+    from backend.models.note import Note
+    from backend.models.progress import ProgressRecord
+    from backend.models.quiz import Quiz, QuizQuestion, QuizOption
+
+    quiz_ids = [
+        r[0]
+        for r in db.query(Quiz.id).filter(Quiz.lesson_id.in_(lesson_ids)).all()
+    ]
+    if quiz_ids:
+        question_ids = [
+            r[0]
+            for r in db.query(QuizQuestion.id)
+            .filter(QuizQuestion.quiz_id.in_(quiz_ids))
+            .all()
+        ]
+        if question_ids:
+            db.query(QuizOption).filter(
+                QuizOption.question_id.in_(question_ids)
+            ).delete(synchronize_session=False)
+        db.query(QuizQuestion).filter(
+            QuizQuestion.quiz_id.in_(quiz_ids)
+        ).delete(synchronize_session=False)
+    db.query(Quiz).filter(Quiz.lesson_id.in_(lesson_ids)).delete(
+        synchronize_session=False
+    )
+    db.query(Game).filter(Game.lesson_id.in_(lesson_ids)).delete(
+        synchronize_session=False
+    )
+
+    assignment_ids = [
+        r[0]
+        for r in db.query(Assignment.id)
+        .filter(Assignment.lesson_id.in_(lesson_ids))
+        .all()
+    ]
+    if assignment_ids:
+        db.query(AssignmentSubmission).filter(
+            AssignmentSubmission.assignment_id.in_(assignment_ids)
+        ).delete(synchronize_session=False)
+        db.query(Assignment).filter(Assignment.id.in_(assignment_ids)).delete(
+            synchronize_session=False
+        )
+
+    for model in (
+        Bookmark,
+        LessonAnalyticsSnapshot,
+        LessonVersion,
+        Note,
+        ProgressRecord,
+        RecentActivity,
+    ):
+        db.query(model).filter(model.lesson_id.in_(lesson_ids)).delete(
+            synchronize_session=False
+        )
+    db.query(Lesson).filter(Lesson.id.in_(lesson_ids)).delete(
+        synchronize_session=False
+    )
+
+
 def _seed_entry(
     db: Session,
     entry: dict,
@@ -42,13 +168,11 @@ def _seed_entry(
     """Seed one NECTA subject's topics/subtopics into the admin catalog.
 
     ``codes`` restricts which syllabus entries are handled (empty set = all).
-    Only topics whose form level is inside ``[form_min, form_max]`` are seeded;
-    higher forms are left untouched. In-window topics absent from the official
-    seed (stale leftovers from older data) are pruned unless a lesson
-    references them — referenced topics are always kept so downstream rows are
-    never orphaned. Returns
-    (topics_created, total_topics, total_subtopics, topics_pruned) for the
-    subject.
+    Seeding is wipe-and-replace inside ``[form_min, form_max]``: every
+    existing in-window topic/subtopic (and any lessons referencing them, with
+    their dependents) is deleted first, then the official set is inserted.
+    Forms outside the window are left untouched. Returns
+    (topics_created, total_topics, total_subtopics, topics_removed).
     """
     if codes and entry["code"] not in codes:
         return (0, 0, 0, 0)
@@ -58,6 +182,8 @@ def _seed_entry(
         subject = Subject(name=entry["name"], slug=entry["slug"])
         db.add(subject)
         db.flush()
+
+    removed = _delete_in_window_topics(db, subject, form_min, form_max)
 
     created = 0
     for topic_data in entry.get("topics", []):
@@ -106,51 +232,6 @@ def _seed_entry(
                 )
         db.flush()
 
-    # Prune stale in-window leftovers (topics from older seed data that are no
-    # longer part of the official syllabus) unless a lesson references the
-    # topic's subtopics -- referenced topics are always kept intact.
-    from backend.models.lesson import Lesson
-
-    official = {
-        (t["title"], t.get("form_level", 1))
-        for t in entry.get("topics", [])
-        if form_min <= t.get("form_level", 1) <= form_max
-    }
-    reverse_roman = {roman: num for num, roman in ROMAN.items()}
-    window_forms = {ROMAN[f] for f in range(form_min, form_max + 1)}
-    pruned = 0
-    db_topics = (
-        db.query(Topic)
-        .filter(
-            Topic.subject_id == subject.id,
-            Topic.form_level.in_(window_forms),
-        )
-        .all()
-    )
-    for topic in db_topics:
-        if (topic.title, reverse_roman[topic.form_level]) in official:
-            continue
-        sub_ids = [
-            r[0]
-            for r in db.query(Subtopic.id)
-            .filter(Subtopic.topic_id == topic.id)
-            .all()
-        ]
-        referenced = (
-            db.query(Lesson).filter(Lesson.subtopic_id.in_(sub_ids)).first()
-            is not None
-            if sub_ids
-            else False
-        )
-        if referenced:
-            continue
-        if sub_ids:
-            db.query(Subtopic).filter(Subtopic.topic_id == topic.id).delete(
-                synchronize_session=False
-            )
-        db.delete(topic)
-        pruned += 1
-
     total_topics = db.query(Topic).filter(Topic.subject_id == subject.id).count()
     total_subtopics = (
         db.query(Subtopic)
@@ -158,7 +239,7 @@ def _seed_entry(
         .filter(Topic.subject_id == subject.id)
         .count()
     )
-    return (created, total_topics, total_subtopics, pruned)
+    return (created, total_topics, total_subtopics, removed)
 
 
 def run_math(
@@ -176,11 +257,12 @@ def run_math(
         created_total = 0
         for entry in NECTA_SYLLABUS:
             if entry["code"] in ("MATH", "AMATH"):
-                created, topics, sub_topics, pruned = _seed_entry(
+                created, topics, sub_topics, removed = _seed_entry(
                     db, entry, set(), form_min=form_min, form_max=form_max
                 )
                 created_total += created
-                print(f"  {entry['name']}: {topics} topics, {sub_topics} subtopics in admin catalog ({created} new topics, {pruned} pruned).")
+                removed_topics, removed_subs, removed_lessons = removed
+                print(f"  {entry['name']}: {topics} topics, {sub_topics} subtopics in admin catalog ({created} new, {removed_subs} subtopics / {removed_lessons} lessons removed).")
         db.commit()
 
         # Invalidate any cached admin list responses so the UI reflects new data.
@@ -210,12 +292,13 @@ def seed_all(
         created_total = 0
         for entry in NECTA_SYLLABUS:
             try:
-                created, topics, sub_topics, pruned = _seed_entry(
+                created, topics, sub_topics, removed = _seed_entry(
                     db, entry, set(), form_min=form_min, form_max=form_max
                 )
                 created_total += created
+                removed_topics, removed_subs, removed_lessons = removed
                 db.commit()
-                print(f"  {entry['name']} ({entry['code']}): {topics} topics, {sub_topics} subtopics in admin catalog ({created} new topics, {pruned} pruned).")
+                print(f"  {entry['name']} ({entry['code']}): {topics} topics, {sub_topics} subtopics in admin catalog ({created} new, {removed_subs} subtopics / {removed_lessons} lessons removed).")
             except Exception:
                 db.rollback()
                 raise

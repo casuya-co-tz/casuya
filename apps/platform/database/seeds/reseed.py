@@ -9,14 +9,16 @@ curriculum (Mathematics, Chemistry, Physics):
    - admin lesson-catalog ``subjects`` (cascades topics/subtopics)
    - ``reference_docs`` tagged with a removed slug (or an unmapped/NULL slug)
    - ``teacher_plans`` tagged with a removed slug (defensive; none today)
-2. **Introduce** — run the authoritative seeds in dependency order:
+2. **Introduce** — run the authoritative seeds in dependency order. Each seed
+   is wipe-and-replace *inside the active form window* (Form I-II by default):
+   every existing in-window topic/subtopic is deleted first, then the current
+   official set (and any lessons referencing the removed subtopics, with their
+   dependents) is inserted. Existing Form III-VI rows are never touched by any
+   seed step or by the purge; they stay until the window is explicitly widened
+   (``--forms``).
    - ``seed_necta_syllabus``  -> ``syllabus_*`` (official TIE topics/outcomes)
    - ``seed_admin_math``      -> admin ``subjects``/``topics``/``subtopics``
    - ``seed_reference_library_local`` -> bundled lesson plans + schemes
-
-Topics are only introduced for the current form window — Form I and Form II
-by default. Existing Form III-VI rows are never touched by any seed step or
-by the purge; they stay until the window is explicitly widened (``--forms``).
 
 Strict table references (lessons, progress) are untouched: they never attach
 to removed subjects. ``--demo`` additionally runs the dev-data seed
