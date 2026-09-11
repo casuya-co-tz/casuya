@@ -12,14 +12,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   applyAppearance();
   const token = localStorage.getItem("casuya_token");
   if (token) {
+    // Render the shell immediately. The maintenance check runs in parallel and
+    // overlays the maintenance screen only if it's actually enabled — otherwise
+    // it used to block every page load on a server round-trip.
+    renderApp();
     try {
       const data = await request("/settings/maintenance");
       if (data && data.enabled === true && localStorage.getItem("casuya_role") !== "admin") {
         renderMaintenanceScreen(data);
-        return;
       }
     } catch (_) {}
-    renderApp();
   } else {
     renderLogin();
   }

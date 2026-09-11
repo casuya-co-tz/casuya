@@ -1,8 +1,8 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
-from backend.middleware.cache import cache_get, cache_invalidate, cache_set
+from backend.middleware.cache import apply_public_cache, cache_get, cache_invalidate, cache_set
 from backend.middleware.permissions import require_role
 from backend.models.lesson import Subtopic
 from backend.schemas.subtopics import SubtopicCreate, SubtopicResponse
@@ -12,10 +12,14 @@ router = APIRouter(prefix="/subtopics", tags=["subtopics"])
 
 @router.get("", response_model=list[SubtopicResponse])
 @router.get("/", response_model=list[SubtopicResponse])
-def list_subtopics(topic_id: str | None = None):
+def list_subtopics(topic_id: str | None = None, request: Request = None, response: Response = None):
     cache_key = f"subtopics:list:{topic_id or 'all'}"
     cached = cache_get(cache_key, ttl_seconds=600)
     if cached is not None:
+        if request is not None and response is not None:
+            not_modified = apply_public_cache(response, request, cached, max_age=300)
+            if not_modified is not None:
+                return not_modified
         return cached
     _gen = get_db()
     db: Session = next(_gen)
@@ -26,6 +30,10 @@ def list_subtopics(topic_id: str | None = None):
         subtopics = query.all()
         result = [SubtopicResponse(id=s.id, topic_id=s.topic_id, title=s.title) for s in subtopics]
         cache_set(cache_key, [r.model_dump() for r in result], ttl=600)
+        if request is not None and response is not None:
+            not_modified = apply_public_cache(response, request, result, max_age=300)
+            if not_modified is not None:
+                return not_modified
         return result
     finally:
         _gen.close()

@@ -22,6 +22,23 @@ _memory_store: dict[str, list[float]] = defaultdict(list)
 _MEMORY_STORE_MAX = 10000  # prevent unbounded growth
 
 
+def _rate_limited_429(limit: int, window_start: float, now: float):
+    """Build + send a 429 response for the in-memory path."""
+    ttl = int(window_start + 60 - now)
+    body = json.dumps({"detail": f"Rate limit exceeded. Try again in {max(ttl, 1)} seconds."}).encode()
+    return (
+        {
+            "type": "http.response.start",
+            "status": 429,
+            "headers": [
+                [b"content-type", b"application/json"],
+                [b"content-length", str(len(body)).encode()],
+            ],
+        },
+        {"type": "http.response.body", "body": body},
+    )
+
+
 class RateLimitMiddleware:
     def __init__(self, app: ASGIApp) -> None:
         self.app = app
@@ -51,6 +68,26 @@ class RateLimitMiddleware:
         redis_key = f"rate_limit:{client_ip}:{path}"
         now = time.time()
         window_start = now - 60
+
+        # Routine endpoints (public reads, dashboards, data lists) use a cheap
+        # in-memory bucket per worker instead of a Redis round-trip on every
+        # request. A slow/distant Redis would otherwise dwarf the actual data
+        # transfer and make every page load slower. Sensitive endpoints below
+        # keep the strict shared Redis window. (S-12)
+        if path not in ENDPOINT_LIMITS:
+            if len(_memory_store) < _MEMORY_STORE_MAX:
+                entries = _memory_store[redis_key]
+                # Purge old entries outside the window
+                _memory_store[redis_key] = [t for t in entries if t > window_start]
+                entries = _memory_store[redis_key]
+                if len(entries) >= limit:
+                    start, body = _rate_limited_429(limit, window_start, now)
+                    await send(start)
+                    await send(body)
+                    return
+                entries.append(now)
+            await self.app(scope, receive, send)
+            return
 
         try:
             from backend.config.database import redis_client

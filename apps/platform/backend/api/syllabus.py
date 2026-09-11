@@ -6,9 +6,9 @@ to serve Tanzania-aligned educational content.
 
 from __future__ import annotations
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException, Query, Request, Response
 
-from backend.middleware.cache import cache_get, cache_set
+from backend.middleware.cache import apply_public_cache, cache_get, cache_set
 from backend.schemas.syllabus import (
     SyllabusSubjectResponse,
     SyllabusSubjectSummary,
@@ -25,6 +25,8 @@ router = APIRouter(prefix="/syllabus", tags=["syllabus"])
 @router.get("/subjects", response_model=list[SyllabusSubjectSummary])
 @router.get("/subjects/", response_model=list[SyllabusSubjectSummary])
 def list_syllabus_subjects(
+    request: Request,
+    response: Response,
     form_level: int | None = Query(None, description="Filter by form level (1-4)"),
     core_only: bool = Query(False, description="Only return core subjects"),
 ):
@@ -32,30 +34,48 @@ def list_syllabus_subjects(
     cache_key = f"syllabus:subjects:{form_level}:{core_only}"
     cached = cache_get(cache_key, ttl_seconds=600)
     if cached is not None:
+        not_modified = apply_public_cache(response, request, cached, max_age=600)
+        if not_modified is not None:
+            return not_modified
         return cached
 
     result = syllabus_service.list_subjects(form_level=form_level, core_only=core_only)
     cache_set(cache_key, result, ttl=600)
+    not_modified = apply_public_cache(response, request, result, max_age=600)
+    if not_modified is not None:
+        return not_modified
     return result
 
 
 @router.get("/subjects/{slug}", response_model=SyllabusSubjectResponse)
 @router.get("/subjects/{slug}/", response_model=SyllabusSubjectResponse)
-def get_syllabus_subject(slug: str):
+def get_syllabus_subject(slug: str, request: Request, response: Response):
     """Get a NECTA/TIE subject with all topics, subtopics, and learning outcomes.
 
     This is the primary endpoint the AI agent uses to understand the
     exact curriculum structure for a subject.
     """
+    cache_key = f"syllabus:subject:{slug}"
+    cached = cache_get(cache_key, ttl_seconds=600)
+    if cached is not None:
+        not_modified = apply_public_cache(response, request, cached, max_age=600)
+        if not_modified is not None:
+            return not_modified
+        return cached
+
     result = syllabus_service.get_subject_by_slug(slug)
     if not result:
         raise HTTPException(status_code=404, detail=f"Subject '{slug}' not found")
+    cache_set(cache_key, result, ttl=600)
+    not_modified = apply_public_cache(response, request, result, max_age=600)
+    if not_modified is not None:
+        return not_modified
     return result
 
 
 @router.get("/subjects/{slug}/forms/{form_level}")
 @router.get("/subjects/{slug}/forms/{form_level}/")
-def get_syllabus_subject_by_form(slug: str, form_level: int):
+def get_syllabus_subject_by_form(slug: str, form_level: int, request: Request, response: Response):
     """Get a subject's topics for a specific form level.
 
     Returns only the topics relevant to that form, with subtopics
@@ -64,9 +84,21 @@ def get_syllabus_subject_by_form(slug: str, form_level: int):
     if form_level < 1 or form_level > 6:
         raise HTTPException(status_code=400, detail="Form level must be between 1 and 6")
 
+    cache_key = f"syllabus:subject:{slug}:form:{form_level}"
+    cached = cache_get(cache_key, ttl_seconds=600)
+    if cached is not None:
+        not_modified = apply_public_cache(response, request, cached, max_age=600)
+        if not_modified is not None:
+            return not_modified
+        return cached
+
     result = syllabus_service.get_subject_with_form(slug, form_level)
     if not result:
         raise HTTPException(status_code=404, detail=f"Subject '{slug}' not found")
+    cache_set(cache_key, result, ttl=600)
+    not_modified = apply_public_cache(response, request, result, max_age=600)
+    if not_modified is not None:
+        return not_modified
     return result
 
 
@@ -77,12 +109,26 @@ def get_syllabus_subject_by_form(slug: str, form_level: int):
 @router.get("/subjects/{slug}/topics/", response_model=list[SyllabusTopicResponse])
 def list_syllabus_topics(
     slug: str,
+    request: Request,
+    response: Response,
     form_level: int = Query(..., description="Form level (1-4)"),
 ):
     """List topics for a subject and form level."""
+    cache_key = f"syllabus:topics:{slug}:{form_level}"
+    cached = cache_get(cache_key, ttl_seconds=600)
+    if cached is not None:
+        not_modified = apply_public_cache(response, request, cached, max_age=600)
+        if not_modified is not None:
+            return not_modified
+        return cached
+
     result = syllabus_service.get_topics_for_form(slug, form_level)
     if not result:
         raise HTTPException(status_code=404, detail=f"No topics found for '{slug}' at form {form_level}")
+    cache_set(cache_key, result, ttl=600)
+    not_modified = apply_public_cache(response, request, result, max_age=600)
+    if not_modified is not None:
+        return not_modified
     return result
 
 
@@ -91,11 +137,23 @@ def list_syllabus_topics(
 
 @router.get("/subtopics/{subtopic_id}")
 @router.get("/subtopics/{subtopic_id}/")
-def get_syllabus_subtopic(subtopic_id: str):
+def get_syllabus_subtopic(subtopic_id: str, request: Request, response: Response):
     """Get a specific subtopic with all its learning outcomes."""
+    cache_key = f"syllabus:subtopic:{subtopic_id}"
+    cached = cache_get(cache_key, ttl_seconds=600)
+    if cached is not None:
+        not_modified = apply_public_cache(response, request, cached, max_age=600)
+        if not_modified is not None:
+            return not_modified
+        return cached
+
     result = syllabus_service.get_subtopic_with_outcomes(subtopic_id)
     if not result:
         raise HTTPException(status_code=404, detail=f"Subtopic '{subtopic_id}' not found")
+    cache_set(cache_key, result, ttl=600)
+    not_modified = apply_public_cache(response, request, result, max_age=600)
+    if not_modified is not None:
+        return not_modified
     return result
 
 
@@ -104,17 +162,30 @@ def get_syllabus_subtopic(subtopic_id: str):
 
 @router.get("/ai/curriculum-context/{slug}/{form_level}")
 @router.get("/ai/curriculum-context/{slug}/{form_level}/")
-def get_ai_curriculum_context(slug: str, form_level: int):
+def get_ai_curriculum_context(slug: str, form_level: int, request: Request, response: Response):
     """Get the curriculum context string for AI prompt injection.
 
     Returns a formatted text block describing the exact TIE syllabus
     content for a given subject and form level. The AI tutoring engine
     uses this to ensure responses align with the official curriculum.
     """
+    cache_key = f"syllabus:ai-context:{slug}:{form_level}"
+    cached = cache_get(cache_key, ttl_seconds=600)
+    if cached is not None:
+        not_modified = apply_public_cache(response, request, cached, max_age=600)
+        if not_modified is not None:
+            return not_modified
+        return cached
+
     context = syllabus_service.get_curriculum_context(slug, form_level)
     if not context:
         raise HTTPException(status_code=404, detail=f"No curriculum data for '{slug}' at form {form_level}")
-    return {"subject": slug, "form_level": form_level, "context": context}
+    result = {"subject": slug, "form_level": form_level, "context": context}
+    cache_set(cache_key, result, ttl=600)
+    not_modified = apply_public_cache(response, request, result, max_age=600)
+    if not_modified is not None:
+        return not_modified
+    return result
 
 
 @router.get("/ai/search-outcomes")

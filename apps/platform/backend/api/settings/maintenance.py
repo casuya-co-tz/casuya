@@ -13,12 +13,14 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
+from backend.middleware.cache import cache_get, cache_invalidate, cache_set
 from backend.middleware.permissions import require_role
 from backend.models.setting import Setting
 
 router = APIRouter(tags=["settings"])
 
 MAINTENANCE_KEY = "maintenance"
+MAINTENANCE_CACHE_KEY = "maintenance:state"
 
 DEFAULT_MAINTENANCE = {
     "enabled": False,
@@ -68,13 +70,18 @@ def get_maintenance(db: Session = Depends(get_db)):
     """Public maintenance status. Unauthenticated so portal pages can gate on it
     before the app boots. Only `enabled` + messaging is exposed regardless of
     who asks; admins manage it through the admin settings screen."""
+    cached = cache_get(MAINTENANCE_CACHE_KEY, ttl_seconds=60)
+    if cached is not None:
+        return cached
     data = _load_maintenance(db)
-    return {
+    payload = {
         "enabled": bool(data["enabled"]),
         "title": data["title"],
         "message": data["message"],
         "until": data["until"],
     }
+    cache_set(MAINTENANCE_CACHE_KEY, payload, ttl=60)
+    return payload
 
 
 @router.put("/maintenance")
@@ -94,6 +101,7 @@ def update_maintenance(
     if payload.until is not None:
         current["until"] = payload.until.strip() if payload.until.strip() else None
     _save_maintenance(db, current)
+    cache_invalidate(MAINTENANCE_CACHE_KEY)
     return {
         "enabled": bool(current["enabled"]),
         "title": current["title"],
