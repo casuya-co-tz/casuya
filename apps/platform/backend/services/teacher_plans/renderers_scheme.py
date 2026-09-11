@@ -8,7 +8,7 @@ def render_scheme_of_work_html(plan: dict) -> str:
     weeks = plan.get("weeks", [])
     is_sw = str(h.get("lang", "")).lower() == "sw" or any(
         w in (h.get("subject", "") + h.get("term", "")).lower()
-        for w in ["historia", "maadili", "kiswahili", "uraia"]
+        for w in ["somo", "darasa", "mada", "kujifunza"]
     )
 
     labels = {

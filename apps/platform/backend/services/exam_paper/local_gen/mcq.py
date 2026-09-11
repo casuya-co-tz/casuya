@@ -56,10 +56,10 @@ def _build_mcq(sentence: str, terms: list[str], rng: random.Random, qno: int = 0
 
 
 _TOPIC_MCQ = [
-    ("What is the main subject of this lesson?", ["{subject}", "History", "Geography", "Literature"]),
-    ("Which topic does this lesson focus on?", ["{topic}", "Economics", "Biology", "Physics"]),
+    ("What is the main subject of this lesson?", ["{subject}", "Language and Communication", "Environment and Society", "Arts and Culture"]),
+    ("Which topic does this lesson focus on?", ["{topic}", "Data and Statistics", "Health and Society", "Numerical Skills"]),
     ("What type of content does this lesson cover?", ["{subject} concepts and principles", "Sports training", "Cooking recipes", "Music theory"]),
-    ("In which academic area is this lesson categorised?", ["{subject}", "Physical Education", "Art and Design", "Computer Science"]),
+    ("In which academic area is this lesson categorised?", ["{subject}", "Sports and Health", "Arts and Design", "Technology Skills"]),
     ("What is the primary learning objective of this lesson?", ["Understanding {topic}", " memorising dates", " learning recipes", " practising sports"]),
 ]
 

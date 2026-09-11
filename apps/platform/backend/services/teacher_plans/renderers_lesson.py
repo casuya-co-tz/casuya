@@ -18,7 +18,7 @@ def render_lesson_plan_html(plan: dict) -> str:
     h = plan.get("header", {})
     is_sw = str(h.get("lang", "")).lower() == "sw" or any(
         w in (h.get("topic", "") + h.get("subject", "")).lower()
-        for w in ["historia", "maadili", "kiswahili", "uraia"]
+        for w in ["somo", "darasa", "mada", "kujifunza"]
     )
 
     LST = lambda en, sw: sw if is_sw else en
