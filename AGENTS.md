@@ -39,7 +39,7 @@ pnpm lint              # ESLint across JS/TS packages
 pnpm test              # vitest + pytest + jest + node:test
 
 # Combined validation
-pnpm validate          # layers + lint + typecheck
+pnpm validate          # layers + deploy + lint + typecheck
 pnpm check:layers      # enforce downward-only dependencies
 
 # Platform-specific

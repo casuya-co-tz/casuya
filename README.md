@@ -41,6 +41,13 @@ casuya-hybrid/
 `libs/` only; `apps/` may depend on both. Enforced by `tools/check-layers.mjs`
 and in CI.
 
+## Content scope
+
+Casuya delivers **three subjects**: Mathematics, Chemistry, and Physics
+(the core NECTA science/mathematics set). The data layer, AI knowledge base,
+frontend, and docs are trimmed to this scope; languages are Kiswahili and
+English.
+
 ## Getting started
 
 ```bash
@@ -70,7 +77,7 @@ pnpm test             # vitest (TS) + pytest (Python) + jest (AI)
 pnpm clean            # remove build artifacts
 
 pnpm check:layers     # enforce downward-only dependencies
-pnpm validate         # layers + lint + typecheck
+pnpm validate         # layers + deploy + lint + typecheck
 pnpm install:py       # pip install -r requirements.txt
 ```
 

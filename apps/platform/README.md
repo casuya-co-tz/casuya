@@ -8,6 +8,7 @@ Student, admin, and teacher web platform for Casuya (`casuya.co.tz`) focused on 
 
 Casuya is designed for Tanzanian secondary education and prioritizes:
 
+* Mathematics, Chemistry, and Physics (NECTA science/mathematics scope)
 * Low-end Android devices
 * 2G and 3G networks
 * Offline-first experiences
@@ -311,8 +312,7 @@ pnpm install
 pip install -r requirements.txt
 cp .env.example .env
 
-pnpm dev:backend      # uvicorn on :8000
-pnpm dev:frontend     # static UI on :5173
+pnpm dev:backend      # uvicorn on :8765 — serves API + static frontend
 ```
 
 Health endpoint:
@@ -338,35 +338,22 @@ and platform requirements before running `pnpm test` across the entire monorepo.
 
 # Current Status
 
-Implemented:
+Implemented and deployed:
 
-* Project structure
-* Configuration layer
-* SQLAlchemy models
-* Database relationships
-* Main application wiring
-* Router registration
-* Development scaffolding
+* Full API layer (`backend/api/*` routers) with auth (JWT, bcrypt), subjects,
+  topics, subtopics, lessons, quizzes, games, exams, progress, assignments,
+  reference library, teacher plans, payments (AzamPay), notifications
+* Services layer with business logic and integration orchestration
+* SQLAlchemy models + Alembic migrations
+* Frontend (static, served by the backend): student, teacher, and admin
+  portals + marketing pages
+* Teacher lesson-plan / scheme-of-work generation (online + offline fallback)
+* AI tutoring engine (`packages/ai`) and offline knowledge base
+* Background jobs (RQ), rate limiting, Sentry error tracking
+* CI/CD via `.github/workflows/ci.yml` (build, typecheck, lint, test, layer check)
 
-Stubbed:
-
-* API routes
-* Services
-* Middleware
-* External integrations
-
-Recommended implementation order:
-
-1. Authentication
-2. Subjects
-3. Topics
-4. Subtopics
-5. Lessons
-6. casuya-core packaging flow
-7. Progress tracking
-8. Analytics
-9. Notifications
-10. Payments
+Serving scope: Mathematics, Chemistry, Physics (NECTA science/mathematics set).
+Languages: Kiswahili and English.
 
 ---
 

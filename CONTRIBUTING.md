@@ -64,7 +64,6 @@ A separate `backend` job validates that the Python app boots correctly.
 - **Commits:** clear, imperative ("add lesson cache", not "added cache").
 - **Storybook stories:** excluded from typecheck via `tsconfig.json` `exclude`
   field (Storybook is not installed as a dependency).
-- Document cross-cutting decisions in `docs/adr/` (ADRs).
 
 ## Local setup
 
