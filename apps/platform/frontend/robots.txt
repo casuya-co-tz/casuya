@@ -3,6 +3,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /student/
 Disallow: /teacher/
+Allow: /assets/images/
 Disallow: /assets/
 Disallow: /static/
 Disallow: /api/
