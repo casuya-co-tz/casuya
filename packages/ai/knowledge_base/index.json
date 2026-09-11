@@ -1,6 +1,6 @@
 {
   "version": "3.0",
-  "generated": "2026-09-10T18:32:28.069304Z",
+  "generated": "2026-09-11T03:06:55.562Z",
   "syllabi": {
     "o_level": [
       {
@@ -4146,11 +4146,11 @@
     ]
   },
   "schemes": {
-    "form1": 17,
-    "form2": 20,
-    "form3": 14,
-    "form4": 12,
-    "form5": 14
+    "form1": 6,
+    "form2": 7,
+    "form3": 4,
+    "form4": 3,
+    "form5": 3
   },
   "lessons": {
     "form1": 3,
@@ -4162,12 +4162,12 @@
   },
   "exam_formats": {
     "ACSEE_2019": 3,
-    "CSEE_2022": 4,
-    "FTNA_2022": 4,
-    "FTNA_GENERAL_2026": 4,
+    "CSEE_2022": 3,
+    "FTNA_2022": 3,
+    "FTNA_GENERAL_2026": 3,
     "FTNA_VOCATIONAL_2025": 1
   },
-  "exam_formats_total": 16,
+  "exam_formats_total": 13,
   "templates": 20,
   "marking_schemes": 10,
   "pdfs": {

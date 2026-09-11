@@ -3,7 +3,7 @@ knowledge-base JSON files parsed from the official TIE PDFs.
 
 Strategy (hybrid):
 - For subjects where the knowledge-base JSON is rich and complete (Physics,
-  English, Kiswahili), rebuild the O-Level topics/subtopics/outcomes from the
+  Chemistry, Mathematics), rebuild the O-Level topics/subtopics/outcomes from the
   real TIE lesson content (unit -> competence -> lesson), preserving the
   official NECTA code and the per-form estimated-period totals already present
   in the current seed (the knowledge-base JSON carries no period data).
@@ -23,11 +23,8 @@ The knowledge-base is messy (duplicated units, OCR noise, unreliable "form" and
 from __future__ import annotations
 
 from .maps import (
-    ENGLISH_TOPIC_MAP,
-    KISWAHILI_TOPIC_MAP,
     MATHS_TOPIC_MAP,
     CHEMISTRY_TOPIC_MAP,
-    BIOLOGY_TOPIC_MAP,
     OFFICIAL_NECTA_CODE,
     KB_OLEVEL_FILE,
 )
@@ -45,11 +42,8 @@ from .olect import (
 )
 
 __all__ = [
-    "ENGLISH_TOPIC_MAP",
-    "KISWAHILI_TOPIC_MAP",
     "MATHS_TOPIC_MAP",
     "CHEMISTRY_TOPIC_MAP",
-    "BIOLOGY_TOPIC_MAP",
     "OFFICIAL_NECTA_CODE",
     "KB_OLEVEL_FILE",
     "_OCR_FIXES",

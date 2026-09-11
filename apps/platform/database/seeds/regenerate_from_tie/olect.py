@@ -13,11 +13,8 @@ from collections import OrderedDict
 from pathlib import Path
 
 from .maps import (
-    ENGLISH_TOPIC_MAP,
-    KISWAHILI_TOPIC_MAP,
     MATHS_TOPIC_MAP,
     CHEMISTRY_TOPIC_MAP,
-    BIOLOGY_TOPIC_MAP,
     KB_OLEVEL_FILE,
 )
 from .text import _clean
@@ -46,11 +43,8 @@ def enrich_subject(kb_root: str, slug: str, existing_subject: dict) -> dict | No
     A-Level topics; appends the KB competence lessons into matching topics.
     """
     comp_map = {
-        "english": ENGLISH_TOPIC_MAP,
-        "kiswahili": KISWAHILI_TOPIC_MAP,
         "mathematics": MATHS_TOPIC_MAP,
         "chemistry": CHEMISTRY_TOPIC_MAP,
-        "biology": BIOLOGY_TOPIC_MAP,
     }.get(slug)
     if comp_map is None:
         return None
