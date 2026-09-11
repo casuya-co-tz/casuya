@@ -6,17 +6,8 @@ function registerLibraryView(d) {
   async function loadStudentLibrary() {
     const SUBJECTS = [
       { slug: "mathematics", name: "Mathematics" },
-      { slug: "biology", name: "Biology" },
       { slug: "chemistry", name: "Chemistry" },
       { slug: "physics", name: "Physics" },
-      { slug: "english", name: "English" },
-      { slug: "kiswahili", name: "Kiswahili" },
-      { slug: "geography", name: "Geography" },
-      { slug: "history", name: "History" },
-      { slug: "historia-ya-tanzania-na-maadili", name: "Historia ya Tanzania na Maadili" },
-      { slug: "bible_knowledge", name: "Bible Knowledge" },
-      { slug: "business_studies", name: "Business Studies" },
-      { slug: "computing", name: "Computing & ICT" },
     ];
     let docs = [];
     let total = 0;

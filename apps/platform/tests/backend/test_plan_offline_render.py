@@ -9,9 +9,35 @@ from backend.services.teacher_plan_service import (
 )
 
 
-def test_lesson_plan_offline_render_english():
+def _suppress_reference_grounding(monkeypatch):
+    """Rendering tests don't exercise verified reference grounding; suppress it
+    so a seeded bundle can't override the scaffold/knowledge-base content."""
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.offline.fetch_reference_grounding",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.fetch_reference_grounding",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.lookup_competence",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.ts_get_specific_competences",
+        lambda *a, **k: [],
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.offline_lesson.ts_get_specific_competences",
+        lambda *a, **k: [],
+    )
+
+
+def test_lesson_plan_offline_render_english(monkeypatch):
+    _suppress_reference_grounding(monkeypatch)
     plan = _build_lesson_plan_offline(
-        subject_slug="social-studies", subject_label="Mathematics", form_level=2,
+        subject_slug="mathematics", subject_label="Mathematics", form_level=2,
         topic="Algebra", subtopic="Linear Equations", school_name="Mwanza Sec",
         teacher_name="Mr J", number_of_students=42, duration_minutes=40,
         period="Period 3", lang="en",
@@ -100,10 +126,11 @@ def test_fill_lesson_plan_placeholders_replaces_literal_tokens():
     assert "{" not in filled["competence_architecture"]["lesson_objective"]
 
 
-def test_lesson_plan_offline_render_kiswahili():
+def test_lesson_plan_offline_render_kiswahili(monkeypatch):
+    _suppress_reference_grounding(monkeypatch)
     plan = _build_lesson_plan_offline(
-        subject_slug="kiswahili", subject_label="Kiswahili", form_level=1,
-        topic="Fasihi", subtopic="Methali", school_name="Shule", teacher_name="Bw J",
+        subject_slug="mathematics", subject_label="Hisabati", form_level=1,
+        topic="Algebra", subtopic="Milinganyo", school_name="Shule", teacher_name="Bw J",
         number_of_students=30, duration_minutes=40, period="Kipindi 1", lang="sw",
     )
     assert len(plan["progression_matrix"]) == 4
@@ -111,7 +138,7 @@ def test_lesson_plan_offline_render_kiswahili():
     # The specific activity is populated from the scheme (verbatim TIE syllabus).
     assert plan["competence_architecture"]["specific_learning_activity"]
     html = render_lesson_plan_html(plan)
-    assert "Methali" in html
+    assert "Milinganyo" in html
     assert "JAMHURI YA MUUNGANO WA TANZANIA" not in html
     assert "MPANGO WA SOMO LA MWALIMU" not in html
     assert "Ukuzaji wa Ujuzi" in html or "Kigezo cha Tathmini" in html

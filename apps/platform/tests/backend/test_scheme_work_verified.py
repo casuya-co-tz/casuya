@@ -1,5 +1,5 @@
 """Tests for scheme of work generation (_build_scheme_offline): verified
-educator-authored Geography rows (Form One / Two, Term I / II) are mirrored
+educator-authored Physics rows (Form One / Two, Term I / II) are mirrored
 verbatim when the bundled schemes are seeded.
 """
 
@@ -7,8 +7,8 @@ from backend.config.database import get_db
 from backend.services.teacher_plan_service import _build_scheme_offline
 
 
-def test_scheme_of_work_offline_uses_verified_geography_reference():
-    """When the bundled educator-verified Geography Form One schemes are
+def test_scheme_of_work_offline_uses_verified_physics_reference():
+    """When the bundled educator-verified Physics Form One schemes are
     seeded, the offline Term I scheme reproduces the verified per-week rows
     verbatim: competences, strategies, resources and assessment tools."""
     from database.seeds import seed_reference_library_local
@@ -20,28 +20,29 @@ def test_scheme_of_work_offline_uses_verified_geography_reference():
         db.close()
 
     plan = _build_scheme_offline(
-        subject_slug="geography", subject_label="Geography", form_level=1,
+        subject_slug="physics", subject_label="Physics", form_level=1,
         term="1", academic_year="2026", school_name="Moshi Sec",
         teacher_name="Mrs K", topics=[], lang="en",
     )
     weeks = plan["weeks"]
     assert any("MIDTERM EXAMINATION" == w["main_competence"] for w in weeks)
-    week1 = next(w for w in weeks if w["learning_activities"] == ["Explain the concept of Geography"])
-    assert week1["main_competence"] == "1.0 Demonstrate mastery of foundational geographical concepts"
-    assert week1["specific_competence"].startswith("1.1 Define Geography")
-    assert "Interactive lecture" in week1["teaching_methods"]
-    assert any("guided discussion" in m.lower() for m in week1["teaching_methods"])
-    assert week1["assessment_tools"] == "Observation, Oral Questions, Portfolio"
-    assert any("Globe" in r for r in week1["teaching_resources"])
-    assert week1["learning_activities"] == ["Explain the concept of Geography"]
+    week1 = next(w for w in weeks if w["learning_activities"] == ["Introduce Physics as a subject"])
+    assert week1["main_competence"] == "1.0 Demonstrate mastery of the nature of Physics, measurement, and force"
+    assert week1["specific_competence"] == "1.1 Explain the concept and scope of Physics"
+    assert "Class discussion" in week1["teaching_methods"]
+    assert any("brainstorming" in m.lower() for m in week1["teaching_methods"])
+    assert week1["assessment_tools"] == "Oral questions"
+    assert "Physics textbook" in week1["teaching_resources"]
+    assert week1["learning_activities"] == ["Introduce Physics as a subject"]
     assert week1["specific_activities"] == [
-        "Define Geography using Greek origins (Geo and Graphein) and describe its main focus"
+        "Explain the concept of Physics and its branches"
     ]
+    assert week1["periods"] == 4
 
 
 def test_scheme_of_work_offline_term_two_uses_verified_rows():
     """Term II generation selects the verified Term 2 scheme (not Term 1):
-    rows carry the Weather and Climate / Map Work content."""
+    rows carry the Mechanical Properties / Pressure / Linear Motion content."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
@@ -51,20 +52,20 @@ def test_scheme_of_work_offline_term_two_uses_verified_rows():
         db.close()
 
     plan = _build_scheme_offline(
-        subject_slug="geography", subject_label="Geography", form_level=1,
+        subject_slug="physics", subject_label="Physics", form_level=1,
         term="2", academic_year="2026", school_name="Moshi Sec",
         teacher_name="Mrs K", topics=[], lang="en",
     )
     weeks = plan["weeks"]
-    weather = next(w for w in weeks if "weather" in w["topic"].lower())
-    assert weather["specific_competence"].startswith("3.1 Differentiate weather")
-    assert weather["assessment_tools"] == "T-Chart Evaluation, Oral Questions"
-    assert any("Daily weather observation" in m for m in weather["teaching_methods"])
-    assert any("Map Work" == w["topic"] for w in weeks)
+    mech = next(w for w in weeks if "mechanical" in w["topic"].lower())
+    assert mech["specific_competence"].startswith("6.1 Explain the concept of elasticity")
+    assert mech["assessment_tools"] == "Practical test"
+    assert any("Spring stretching practical" in m for m in mech["teaching_methods"])
+    assert any("pressure" in w["topic"].lower() for w in weeks)
 
 
-def test_scheme_of_work_offline_uses_verified_geography_form_two_reference():
-    """When the bundled verified Geography Form Two schemes are seeded, the
+def test_scheme_of_work_offline_uses_verified_physics_form_two_reference():
+    """When the bundled verified Physics Form Two schemes are seeded, the
     offline Term I scheme reproduces the educator-verified per-week rows
     verbatim: competences, lesson-load periods, strategies, resources and
     assessment tools, plus the injected mid-term weeks."""
@@ -77,28 +78,27 @@ def test_scheme_of_work_offline_uses_verified_geography_form_two_reference():
         db.close()
 
     plan = _build_scheme_offline(
-        subject_slug="geography", subject_label="Geography", form_level=2,
+        subject_slug="physics", subject_label="Physics", form_level=2,
         term="1", academic_year="2026", school_name="Arusha Sec",
         teacher_name="Mr K", topics=[], lang="en",
     )
     weeks = plan["weeks"]
     assert any("MIDTERM EXAMINATION" == w["main_competence"] for w in weeks)
-    week1 = next(w for w in weeks if w["learning_activities"] == ["Explain the concept of the internal structure of the Earth"])
-    assert week1["main_competence"] == "1.0 Demonstrate mastery of the Earth's internal structure and landform processes"
-    assert week1["specific_competence"] == "1.1 Describe the layers of the Earth's interior and their characteristics"
+    week1 = next(w for w in weeks if w["learning_activities"] == ["Identifying charges"])
+    assert week1["main_competence"] == "1.0 Understand static electricity"
+    assert week1["specific_competence"] == "1.1 Identify charged materials"
     assert week1["periods"] == 3
-    assert week1["specific_activities"] == ["Describe the Crust, Mantle, and Core (3 lessons)"]
-    assert "group reading of TIE textbook" in week1["teaching_methods"]
-    assert "Wall chart of Earth interior" in week1["teaching_resources"]
-    assert week1["assessment_tools"] == "Diagram labeling, Oral questions"
-    weathering = next(w for w in weeks if w["learning_activities"] == ["Explain weathering concepts and types"])
-    assert weathering["periods"] == 4
-    assert "Field walk around school compound to observe weathered rocks/buildings" in weathering["teaching_methods"]
+    assert week1["specific_activities"] == ["Identify charged materials using simple experiments"]
+    assert "Demonstration" in week1["teaching_methods"]
+    assert "Ebonite rod" in week1["teaching_resources"]
+    assert week1["assessment_tools"] == "Observation test"
+    current = next(w for w in weeks if w["learning_activities"] == ["Effects of electric current"])
+    assert current["specific_competence"] == "2.1 Identify effects of electric current"
 
 
-def test_scheme_of_work_offline_geography_form_two_term_two_uses_verified_rows():
-    """Form Two Term II generation selects the bundled Term 2 scheme: map and
-    photograph reading rows, with no Term I (Earth structure) content."""
+def test_scheme_of_work_offline_physics_form_two_term_two_uses_verified_rows():
+    """Form Two Term II generation selects the bundled Term 2 scheme: optics
+    rows, with no Term I (electricity) content."""
     from database.seeds import seed_reference_library_local
 
     db = next(get_db())
@@ -108,14 +108,14 @@ def test_scheme_of_work_offline_geography_form_two_term_two_uses_verified_rows()
         db.close()
 
     plan = _build_scheme_offline(
-        subject_slug="geography", subject_label="Geography", form_level=2,
+        subject_slug="physics", subject_label="Physics", form_level=2,
         term="2", academic_year="2026", school_name="Arusha Sec",
         teacher_name="Mr K", topics=[], lang="en",
     )
     weeks = plan["weeks"]
-    maps_row = next(w for w in weeks if w["topic"] == "Map Reading and Interpretation")
-    assert maps_row["specific_competence"] == "3.1 Apply essential elements and characteristics of good maps"
-    assert maps_row["assessment_tools"] == "Element audit checklist, Oral quiz"
-    photo = next(w for w in weeks if w["topic"] == "Photograph Reading and Interpretation")
-    assert photo["specific_competence"].startswith("4.1 Classify")
-    assert all("Internal Structure" not in w["topic"] for w in weeks)
+    light_row = next(w for w in weeks if w["topic"] == "Nature and Reflection of Light")
+    assert light_row["specific_competence"] == "4.1 Explain the concept of light"
+    assert light_row["assessment_tools"] == "Oral questions"
+    optical = next(w for w in weeks if w["topic"] == "Optical Instruments")
+    assert optical["specific_competence"].startswith("6.1")
+    assert all("Static Electricity" not in w["topic"] for w in weeks)

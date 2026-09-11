@@ -3,17 +3,8 @@
 
 const plansSubjects = [
   { slug: "mathematics", name: "Mathematics", sw: false },
-  { slug: "biology", name: "Biology", sw: false },
   { slug: "chemistry", name: "Chemistry", sw: false },
   { slug: "physics", name: "Physics", sw: false },
-  { slug: "english", name: "English", sw: false },
-  { slug: "kiswahili", name: "Kiswahili", sw: true },
-  { slug: "geography", name: "Geography", sw: false },
-  { slug: "history", name: "History", sw: false },
-  { slug: "historia-ya-tanzania-na-maadili", name: "Historia ya Tanzania na Maadili", sw: true },
-  { slug: "bible_knowledge", name: "Bible Knowledge", sw: false },
-  { slug: "business_studies", name: "Business Studies", sw: false },
-  { slug: "computing", name: "Computing & ICT", sw: false },
 ];
 const plansRoman = { 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI" };
 const plansTermNames = { "Term 1": "Term I", "Term 2": "Term II" };

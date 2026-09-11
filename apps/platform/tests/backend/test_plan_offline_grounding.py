@@ -88,11 +88,38 @@ def _ref_grounding(*args, **kwargs):
     }
 
 
+def _suppress_reference_grounding(monkeypatch):
+    """These tests assert scaffold/knowledge-base behavior (not verified
+    reference grounding); suppress the seeded bundles and TIE syllabus so they
+    can't win."""
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.offline.fetch_reference_grounding",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.fetch_reference_grounding",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.lookup_competence",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.competences.ts_get_specific_competences",
+        lambda *a, **k: [],
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.offline_lesson.ts_get_specific_competences",
+        lambda *a, **k: [],
+    )
+
+
 def test_lesson_plan_tie_specific_activity_and_assessment_echo(monkeypatch):
     """The offline lesson plan matches the official TIE format: a concise (non
     time-boxed) specific learning activity, the 4 official stage names ending in
     'Realizations', and a UNIQUE, learner-focused assessment criterion per stage
     built from that stage's own Learner Activity."""
+    _suppress_reference_grounding(monkeypatch)
     form_data = _seed_subject_dict("physics", 1)
     monkeypatch.setattr(
         "backend.services.teacher_plans.offline.get_subject_with_form",
@@ -102,7 +129,7 @@ def test_lesson_plan_tie_specific_activity_and_assessment_echo(monkeypatch):
     topic = next(t for t in form_data["topics"] if t["subtopics"])
     subtopic = topic["subtopics"][0]
     plan = _build_lesson_plan_offline(
-        subject_slug="social-studies", subject_label="Physics", form_level=1,
+        subject_slug="physics", subject_label="Physics", form_level=1,
         topic=topic["title"], subtopic=subtopic["title"], school_name="School",
         teacher_name="Teacher", number_of_students=40, duration_minutes=40,
         period="Period 1", lang="en",
@@ -129,13 +156,14 @@ def test_lesson_plan_tie_specific_activity_and_assessment_echo(monkeypatch):
 
 
 def test_lesson_plan_offline_uses_knowledge_base(monkeypatch):
+    _suppress_reference_grounding(monkeypatch)
     knowledge_topics = [
         {
-            "title": "Cell Biology", "code": "1.0", "estimated_periods": 20,
-            "description": "Understand the cell as the basic unit of life",
+            "title": "Mechanics", "code": "1.0", "estimated_periods": 20,
+            "description": "Understand force and motion",
             "subtopics": [
-                {"title": "Cell Structure", "code": "1.1", "estimated_periods": 8,
-                 "outcomes": [{"description": "Describe the cell", "cognitive_level": "knowledge"}]},
+                {"title": "Kinematics", "code": "1.1", "estimated_periods": 8,
+                 "outcomes": [{"description": "Describe motion", "cognitive_level": "knowledge"}]},
             ],
         },
     ]
@@ -145,30 +173,31 @@ def test_lesson_plan_offline_uses_knowledge_base(monkeypatch):
     )
 
     plan = _build_lesson_plan_offline(
-        subject_slug="social-studies", subject_label="Biology", form_level=3,
-        topic="Cell Biology", subtopic="Cell Structure", school_name="School",
+        subject_slug="physics", subject_label="Physics", form_level=3,
+        topic="Mechanics", subtopic="Kinematics", school_name="School",
         teacher_name="Teacher", number_of_students=30, duration_minutes=40,
         period="Period 3", lang="en",
     )
     ca = plan["competence_architecture"]
-    assert ca["main_competence"] == "1.0 Cell Biology"
-    assert ca["specific_competence"] == "1.1 Cell Structure"
-    assert "Understand the cell" in ca["main_learning_activity"]
-    assert "Describe the cell" in ca["specific_learning_activity"]
+    assert ca["main_competence"] == "1.0 Mechanics"
+    assert ca["specific_competence"] == "1.1 Kinematics"
+    assert "Understand force and motion" in ca["main_learning_activity"]
+    assert "Describe motion" in ca["specific_learning_activity"]
     # Realizations stage is populated from the syllabus outcome.
-    assert "Describe the cell" in plan["progression_matrix"][3]["learner_activity"]
+    assert "Describe motion" in plan["progression_matrix"][3]["learner_activity"]
 
     from backend.services.teacher_plan_service import render_lesson_plan_html
 
     html = render_lesson_plan_html(plan)
-    assert "1.1 Cell Structure" in html
-    assert "Describe the cell" in html
+    assert "1.1 Kinematics" in html
+    assert "Describe motion" in html
     assert "Realizations" in html
 
 
-def test_lesson_plan_offline_falls_back_without_knowledge_base():
+def test_lesson_plan_offline_falls_back_without_knowledge_base(monkeypatch):
+    _suppress_reference_grounding(monkeypatch)
     plan = _build_lesson_plan_offline(
-        subject_slug="social-studies", subject_label="Mathematics", form_level=2,
+        subject_slug="mathematics", subject_label="Mathematics", form_level=2,
         topic="Algebra", subtopic="Linear Equations", school_name="Mwanza Sec",
         teacher_name="Mr J", number_of_students=42, duration_minutes=40,
         period="Period 3", lang="en",

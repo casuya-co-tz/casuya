@@ -7,9 +7,6 @@ const SUBJECT_SLUG_MAP: Record<string, string> = {
   mathematics: 'mathematics',
   physics: 'physics',
   chemistry: 'chemistry',
-  biology: 'biology',
-  english: 'english',
-  kiswahili: 'kiswahili',
 };
 
 export interface CurriculumContext {

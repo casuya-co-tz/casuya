@@ -6,7 +6,7 @@ from __future__ import annotations
 def render_scheme_of_work_html(plan: dict) -> str:
     h = plan.get("header", {})
     weeks = plan.get("weeks", [])
-    is_sw = any(
+    is_sw = str(h.get("lang", "")).lower() == "sw" or any(
         w in (h.get("subject", "") + h.get("term", "")).lower()
         for w in ["historia", "maadili", "kiswahili", "uraia"]
     )

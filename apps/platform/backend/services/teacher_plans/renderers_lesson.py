@@ -16,7 +16,7 @@ def render_lesson_plan_html(plan: dict) -> str:
         duration_minutes=int(plan.get("header", {}).get("duration_minutes") or 40),
     )
     h = plan.get("header", {})
-    is_sw = any(
+    is_sw = str(h.get("lang", "")).lower() == "sw" or any(
         w in (h.get("topic", "") + h.get("subject", "")).lower()
         for w in ["historia", "maadili", "kiswahili", "uraia"]
     )

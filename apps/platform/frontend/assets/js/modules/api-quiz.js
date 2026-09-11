@@ -76,7 +76,7 @@ function _tutorWrongQuestions(quizId, total, wrongIndexes) {
 
   var subjectSlug = "";
   var formLevel = "";
-  var slugMap = { mathematics:"mathematics", math:"mathematics", biology:"biology", chemistry:"chemistry", physics:"physics", english:"english", kiswahili:"kiswahili", geography:"geography", history:"history", history_civics:"history_civics", "historia ya tanzania na maadili":"historia-ya-tanzania-na-maadili", bible_knowledge:"bible_knowledge", business_studies:"business_studies", computing:"computing" };
+  var slugMap = { mathematics:"mathematics", math:"mathematics", chemistry:"chemistry", physics:"physics" };
   var m = (data.meta || "").match(/^([A-Za-z ]+)\s*(\u2022)?\s*Form\s*([IVX]+)/i);
   if (m) {
     var label = slugMap[m[1].trim().toLowerCase()];

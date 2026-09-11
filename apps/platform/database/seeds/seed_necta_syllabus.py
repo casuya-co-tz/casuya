@@ -11,9 +11,6 @@ Sources:
 - TIE Basic Mathematics Syllabus Form I-IV (2005, Reprinted 2017)
 - TIE Physics Syllabus Form I-IV
 - TIE Chemistry Syllabus Form I-IV
-- TIE Biology Syllabus Form I-IV
-- TIE English Language Syllabus Form I-IV
-- TIE Kiswahili Syllabus Form I-IV
 - NECTA CSEE Examination Formats 2022/2023
 """
 

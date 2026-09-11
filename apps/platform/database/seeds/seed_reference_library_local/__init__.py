@@ -9,8 +9,8 @@ for the offline-first / 2G target.
 Each bundled file follows::
 
     {
-      "subject_name": "Geography",
-      "subject_slug": "geography",
+      "subject_name": "Physics",
+      "subject_slug": "physics",
       "form_level": 1,
       "standard": "Form 1",
       "lessons": [ {plan detail dicts like the reference API, each with "title"}, ... ],

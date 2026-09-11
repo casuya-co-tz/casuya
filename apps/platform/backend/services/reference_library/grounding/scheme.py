@@ -51,7 +51,7 @@ def _is_non_teaching_scheme_row(row: dict) -> bool:
     row's topic/competence text."""
     if row.get("non_teaching"):
         return True
-    topic = " ".join(str(row.get("topic") or "") + " " + str(row.get("one") or "")).lower()
+    topic = f"{_clean_row_value(row.get('topic'))} {_clean_row_value(row.get('one'))}".lower()
     return any(hint in topic for hint in _NONTEACHING_TOPIC_HINTS)
 
 

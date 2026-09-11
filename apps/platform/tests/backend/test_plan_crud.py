@@ -100,16 +100,16 @@ def test_export_regenerates_html_when_not_stored():
     resp = client.post("/teacher-plans/save", headers=headers, json={
         "plan_type": "lesson_plan",
         "title": "Regen",
-        "subject_slug": "biology",
-        "subject_name": "Biology",
+        "subject_slug": "chemistry",
+        "subject_name": "Chemistry",
         "form_level": 3,
-        "topic": "Cell Biology",
-        "subtopic": "The Cell",
+        "topic": "Chemical Bonding",
+        "subtopic": "Ionic Bonding",
         "plan_data": json.dumps({
             "header": {
                 "school_name": "School", "teacher_name": "T",
-                "class_name": "Form 3", "subject": "Biology",
-                "topic": "Cell Biology", "subtopic": "The Cell",
+                "class_name": "Form 3", "subject": "Chemistry",
+                "topic": "Chemical Bonding", "subtopic": "Ionic Bonding",
             },
             "competences": ["Comp"], "specific_objectives": ["Obj"],
             "teaching_aids": ["Book"], "references": ["TIE"],
@@ -123,4 +123,4 @@ def test_export_regenerates_html_when_not_stored():
     export = client.get(f"/teacher-plans/{plan_id}/export", headers=headers)
     assert export.status_code == 200
     assert "<!DOCTYPE html" in export.text
-    assert "Biology" in export.text
+    assert "Chemistry" in export.text

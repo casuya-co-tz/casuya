@@ -19,9 +19,8 @@ Each specific-competence record:
      "learning_activities": [str], "teaching_methods": [str],
      "assessment_criteria": [str], "resources": [str]}
 
-Note: "Civics and Moral Education" is not a separate TIE academic syllabus; it
-is covered by the "Historia ya Tanzania na Maadili"
-(historia_ya_tanzania_na_maadili) syllabus, which is in Kiswahili.
+Note: only Mathematics, Chemistry and Physics are supported on the platform;
+Casuya serves these three subjects from the TIE CBC Lower-Secondary syllabus.
 """
 
 import json
@@ -32,30 +31,15 @@ _DATA_DIR = Path(__file__).resolve().parent / "tie_syllabus"
 
 SUBJECT_SLUG_FILES = {
     "mathematics": "mathematics.json",
-    "additional_mathematics": "additional_mathematics.json",
-    "english": "english.json",
-    "kiswahili": "kiswahili.json",
-    "history": "history.json",
-    "historia_ya_tanzania_na_maadili": "history_civics.json",
-    "geography": "geography.json",
-    "biology": "biology.json",
     "chemistry": "chemistry.json",
     "physics": "physics.json",
-    "computer_science": "computer_science.json",
-    "business_studies": "business_studies.json",
-    "bookkeeping": "bookkeeping.json",
-    "agriculture": "agriculture.json",
-    "bible_knowledge": "bible_knowledge.json",
 }
 
 ALIASES = {
     "basic_mathematics": "mathematics",
     "math": "mathematics",
-    "civics": "historia_ya_tanzania_na_maadili",
-    "moral_education": "historia_ya_tanzania_na_maadili",
-    "history_civics": "historia_ya_tanzania_na_maadili",
-    "commerce": "business_studies",
-    "book_keeping": "bookkeeping",
+    "chem": "chemistry",
+    "phys": "physics",
 }
 
 _cache: dict[str, Any] = {}

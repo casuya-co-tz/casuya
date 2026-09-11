@@ -11,23 +11,9 @@ import re
 # Keyword -> Casuya subject_slug mapping (best-effort). Ordered so more
 # specific phrases (e.g. "advanced mathematics") match before generic ones.
 _SUBJECT_RULES: list[tuple[re.Pattern[str], str]] = [
-    (re.compile(r"advanced\s*(mathematics|math)|additional\s*math"), "additional_mathematics"),
     (re.compile(r"basic\s*mathematics|mathematics|mathemat|hisabati|kuhesabu|numeracy|\bmath\b"), "mathematics"),
-    (re.compile(r"book[\s-]*keeping|book[\s-]*keeping\b|accountancy|\baccounting|\baccount\b"), "bookkeeping"),
-    (re.compile(r"business\s*studies|commerce|\bbiashara\b"), "business_studies"),
-    (re.compile(r"computer\s*(science|applications)|\bcomputer\b|teknolojia ya habari"), "computer_science"),
-    (re.compile(r"bible\s*knowledge|\bbible\b|\bdini\b"), "bible_knowledge"),
-    (re.compile(r"agriculture|\bkilimo\b"), "agriculture"),
-    (re.compile(r"biology|biologia"), "biology"),
     (re.compile(r"chemistry|\bkemia\b"), "chemistry"),
     (re.compile(r"physics|\bfizikia\b"), "physics"),
-    (re.compile(r"geography|jiografia|mazingira"), "geography"),
-    (re.compile(r"historia\s+ya\s+tanzania\s+na\s+maadili"), "historia-ya-tanzania-na-maadili"),
-    (re.compile(r"civics\s*and\s*moral|civics|uraia\s*na\s*maadili|maadili|moral\s*education|historia\s*na\s*maadili"), "history_civics"),
-    (re.compile(r"history\s*of?\s*tanzania|historia\s*ya\s*tanzania"), "history"),
-    (re.compile(r"history|\bhistoria\b"), "history"),
-    (re.compile(r"english\s*language|english|reading|writing|listening\s*and\s*speaking|\bkuandika\b|\bkusoma\b"), "english"),
-    (re.compile(r"kiswahili|fasihi|\blugha\b"), "kiswahili"),
 ]
 
 _FORM_WORDS = {
@@ -68,7 +54,7 @@ def _rule_match(text: str) -> str | None:
 
 def _header(text: str) -> str:
     """Leading title header (text before the first ':') — where the actual
-    subject normally lives, e.g. 'GEOGRAPHY FORM TWO LESSON PLAN NO. 44'."""
+    subject normally lives, e.g. 'PHYSICS FORM ONE LESSON PLAN NO. 1'."""
     return text.split(":", 1)[0]
 
 
@@ -76,8 +62,8 @@ def map_subject_slug(raw_subject_name: str | None, title: str) -> str | None:
     """Best-effort map a raw subject name / reference title to a Casuya slug.
 
     A subject keyword in the leading header wins: a title like
-    'GEOGRAPHY ... LESSON PLAN NO. 44: CONCEPT OF AGRICULTURE' is a Geography
-    lesson (header) even though its topic text mentions agriculture. Falls
+    'PHYSICS ... LESSON PLAN NO. 1: CONCEPT OF PHYSICS' is a Physics
+    lesson (header) even though its topic text mentions physics. Falls
     back to scanning the full text when the header carries no subject."""
     text = " ".join(x for x in [raw_subject_name, title] if x)
     return _rule_match(_header(text)) or _rule_match(text)

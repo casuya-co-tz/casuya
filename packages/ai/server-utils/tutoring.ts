@@ -13,21 +13,6 @@ export const SUBJECT_NAME: Record<string, string> = {
   'basic mathematics': 'Mathematics',
   physics: 'Physics',
   chemistry: 'Chemistry',
-  biology: 'Biology',
-  'animal husbandry': 'Animal Husbandry',
-  agriculture: 'Agriculture',
-  'english language': 'English Language',
-  english: 'English Language',
-  kiswahili: 'Kiswahili',
-  history: 'History',
-  geography: 'Geography',
-  'book keeping': 'Book Keeping',
-  commerce: 'Commerce',
-  economics: 'Economics',
-  divinity: 'Divinity',
-  'bible knowledge': 'Bible Knowledge',
-  'computer science': 'Computer Science',
-  civics: 'Civics',
 };
 
 export function resolveSubject(slug?: string): { name: string; enumValue: TutoringSubject } {
@@ -35,13 +20,7 @@ export function resolveSubject(slug?: string): { name: string; enumValue: Tutori
   const name = SUBJECT_NAME[s] || (slug ? slug.replace(/[_-]+/g, ' ') : '');
   let enumValue: TutoringSubject = TutoringSubject.GENERAL;
   if (/(mathematics|math)/.test(s)) enumValue = TutoringSubject.MATHEMATICS;
-  else if (/(physics|chemistry|biology|science|agriculture|geography)/.test(s))
-    enumValue = TutoringSubject.SCIENCE;
-  else if (/history/.test(s)) enumValue = TutoringSubject.HISTORY;
-  else if (/literature/.test(s)) enumValue = TutoringSubject.LITERATURE;
-  else if (/(english|kiswahili|swahili|language)/.test(s)) enumValue = TutoringSubject.LANGUAGE;
-  else if (/(computer|computing|ict)/.test(s)) enumValue = TutoringSubject.COMPUTING;
-  else if (/(art|music|drama)/.test(s)) enumValue = TutoringSubject.ARTS;
+  else if (/(physics|chemistry|science)/.test(s)) enumValue = TutoringSubject.SCIENCE;
   return { name, enumValue };
 }
 

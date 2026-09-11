@@ -45,7 +45,7 @@ describe('ContentModerator', () => {
   });
 
   it('should check age appropriateness', async () => {
-    const result = await moderator.checkAgeAppropriateness('Introduction to biology for young learners', 10);
+    const result = await moderator.checkAgeAppropriateness('Introduction to physics for young learners', 10);
     expect(result).toBeDefined();
     expect(result.appropriate).toBeDefined();
   });

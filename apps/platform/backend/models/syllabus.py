@@ -26,7 +26,7 @@ from backend.models.user import _uuid
 
 
 class SyllabusSubject(Base):
-    """A NECTA exam subject (e.g. Mathematics, Physics, Biology).
+    """A NECTA exam subject (e.g. Mathematics, Physics, Chemistry).
 
     Each subject has a code matching the official NECTA subject code,
     covers a specific form range (I-IV for O-Level, V-VI for A-Level),

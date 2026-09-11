@@ -5,16 +5,6 @@ from __future__ import annotations
 # How many repair rounds the AI gets before the near-zero deterministic recovery.
 MAX_PLAN_REPAIR_ATTEMPTS = 2
 
-KISWAHILI_SUBJECTS = {
-    "kiswahili",
-    "history_civics",
-    "historia-ya-tanzania-na-maadili",
-    "historia ya tanzania na maadili",
-    "civics",
-    "elimu-ya-dini-islamu",
-    "uraia-na-maadili",
-}
-
 
 _GENERIC_ASSESSMENT_PHRASES = (
     "students will learn", "students will understand", "understand the concept",

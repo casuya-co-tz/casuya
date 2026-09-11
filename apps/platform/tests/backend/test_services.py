@@ -97,22 +97,22 @@ def test_analytics():
 
 def test_lesson_distribution_grouped_by_lesson():
     db: Session = next(get_db())
-    subj = Subject(name="Biology", slug="biology-test")
+    subj = Subject(name="Physics", slug="physics-dist")
     db.add(subj)
     db.flush()
-    topic = Topic(subject_id=subj.id, title="Cells", form_level="I")
+    topic = Topic(subject_id=subj.id, title="Mechanics", form_level="I")
     db.add(topic)
     db.flush()
     subtopic = Subtopic(topic_id=topic.id, title="Intro")
     db.add(subtopic)
     db.flush()
-    lesson = Lesson(subtopic_id=subtopic.id, slug="cells-intro-test", title="Cells Intro", status="published")
+    lesson = Lesson(subtopic_id=subtopic.id, slug="mechanics-intro-test", title="Mechanics Intro", status="published")
     db.add(lesson)
     db.commit()
 
     dist = get_lesson_distribution()
     assert isinstance(dist, list)
-    entry = next((d for d in dist if d["lesson_title"] == "Cells Intro"), None)
+    entry = next((d for d in dist if d["lesson_title"] == "Mechanics Intro"), None)
     assert entry is not None, "published lesson should appear in the distribution"
     assert entry["session_count"] >= 0
     assert "avg_completion_percentage" in entry

@@ -9,12 +9,10 @@
 import type { PromptTemplate } from '../types';
 import { NECTA_TUTORING_TEMPLATE } from './necta/tutoring';
 import { NECTA_QUESTION_TEMPLATE } from './necta/question';
-import { NECTA_KISWAHILI_TUTORING_TEMPLATE } from './necta/kiswahili';
 
-export { NECTA_TUTORING_TEMPLATE, NECTA_QUESTION_TEMPLATE, NECTA_KISWAHILI_TUTORING_TEMPLATE };
+export { NECTA_TUTORING_TEMPLATE, NECTA_QUESTION_TEMPLATE };
 
 export const NECTA_TEMPLATES: PromptTemplate[] = [
   NECTA_TUTORING_TEMPLATE,
   NECTA_QUESTION_TEMPLATE,
-  NECTA_KISWAHILI_TUTORING_TEMPLATE,
 ];

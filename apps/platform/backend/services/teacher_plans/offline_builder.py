@@ -135,7 +135,7 @@ def _build_lesson_plan_offline(
 
     # Prefer the verbatim TIE CBC (2023) Main/Specific Competence statements
     # for this teaching topic, independent of the knowledge-base lookup. A
-    # bundled, educator-verified reference lesson (e.g. the Geography Form One
+    # bundled, educator-verified reference lesson (e.g. the Physics Form One
     # lessons) carries authentic competences for its own chapter and outranks
     # the keyword-match fallback, because bundled lessons are verified TIE
     # content tailored to exactly that subtopic.
@@ -244,6 +244,7 @@ def _build_lesson_plan_offline(
             "topic": topic, "subtopic": header_subtopic,
             "date": today, "time_from": "08:00", "time_to": time_to,
             "period": header_period, "number_of_students": total,
+            "lang": lang,
             "students_registered": {"boys": boys, "girls": girls, "total": total},
             "students_present": {"boys": "", "girls": "", "total": ""},
             "students_absent": {"boys": "", "girls": "", "total": ""},

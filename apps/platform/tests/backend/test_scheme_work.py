@@ -75,23 +75,38 @@ def _seed_subject_dict(slug: str, form_level: int) -> dict:
 
 
 def test_scheme_of_work_offline_render(monkeypatch):
+    # Rendering tests don't exercise verified reference grounding; suppress it
+    # so a seeded bundle or the TIE syllabus can't override the monkeypatched
+    # knowledge topics.
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.offline.fetch_reference_grounding",
+        lambda *a, **k: None,
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.scheme_rows.ts_get_specific_competences",
+        lambda *a, **k: [],
+    )
+    monkeypatch.setattr(
+        "backend.services.teacher_plans.scheme_rows._tie_competences",
+        lambda *a, **k: (None, None),
+    )
     knowledge_topics = [
         {
-            "title": "Cell Biology", "code": "1.0", "estimated_periods": 20,
+            "title": "Mechanics", "code": "1.0", "estimated_periods": 20,
             "subtopics": [
-                {"title": "Cell Structure", "code": "1.1", "estimated_periods": 8,
-                 "outcomes": [{"description": "Describe the cell", "cognitive_level": "knowledge"}]},
-                {"title": "Cell Division", "code": "1.2", "estimated_periods": 12,
-                 "outcomes": [{"description": "Explain mitosis", "cognitive_level": "comprehension"}]},
+                {"title": "Kinematics", "code": "1.1", "estimated_periods": 8,
+                 "outcomes": [{"description": "Describe motion", "cognitive_level": "knowledge"}]},
+                {"title": "Dynamics", "code": "1.2", "estimated_periods": 12,
+                 "outcomes": [{"description": "Explain forces", "cognitive_level": "comprehension"}]},
             ],
         },
         {
-            "title": "Genetics", "code": "2.0", "estimated_periods": 20,
+            "title": "Waves", "code": "2.0", "estimated_periods": 20,
             "subtopics": [
-                {"title": "DNA and RNA", "code": "2.1", "estimated_periods": 10,
-                 "outcomes": [{"description": "Describe DNA structure", "cognitive_level": "knowledge"}]},
-                {"title": "Mendelian Inheritance", "code": "2.2", "estimated_periods": 10,
-                 "outcomes": [{"description": "Apply Mendel's laws", "cognitive_level": "application"}]},
+                {"title": "Sound Waves", "code": "2.1", "estimated_periods": 10,
+                 "outcomes": [{"description": "Describe sound propagation", "cognitive_level": "knowledge"}]},
+                {"title": "Light Waves", "code": "2.2", "estimated_periods": 10,
+                 "outcomes": [{"description": "Apply reflection laws", "cognitive_level": "application"}]},
             ],
         },
     ]
@@ -101,19 +116,19 @@ def test_scheme_of_work_offline_render(monkeypatch):
     )
 
     plan = _build_scheme_offline(
-        subject_slug="social-studies", subject_label="Social Studies", form_level=3,
+        subject_slug="physics", subject_label="Physics", form_level=3,
         term="Term 1", academic_year="2026", school_name="School",
-        teacher_name="Teacher", topics=["Cell Biology", "Genetics"], lang="en",
+        teacher_name="Teacher", topics=["Mechanics", "Waves"], lang="en",
     )
     # weeks: 4 teaching + 2 midterm (exam + holiday) inserted at the midpoint.
     assert [w["specific_competence"] for w in plan["weeks"]] == [
-        "1.1 Cell Structure", "1.2 Cell Division",
+        "1.1 Kinematics", "1.2 Dynamics",
         "Assess learner mastery of the Term's topics",
         "Learner break following the midterm examination",
-        "2.1 DNA and RNA", "2.2 Mendelian Inheritance",
+        "2.1 Sound Waves", "2.2 Light Waves",
     ]
-    assert plan["weeks"][0]["main_competence"] == "1.0 Cell Biology"
-    assert "Describe the cell" in plan["weeks"][0]["learning_activities"]
+    assert plan["weeks"][0]["main_competence"] == "1.0 Mechanics"
+    assert "Describe motion" in plan["weeks"][0]["learning_activities"]
     assert plan["weeks"][0]["periods"] == 8
     # Midterm weeks have periods=0 (non-teaching).
     assert plan["weeks"][2]["periods"] == 0
@@ -126,8 +141,8 @@ def test_scheme_of_work_offline_render(monkeypatch):
     assert [w["month"] for w in plan["weeks"][4:]] == ["February"] * 2
 
     html = render_scheme_of_work_html(plan)
-    assert "Cell Biology" in html
-    assert "Cell Structure" in html
+    assert "Mechanics" in html
+    assert "Kinematics" in html
     assert "Term 1" in html
     assert "downloadAsWord" in html
     assert "ORIENTATION COURSE" in html

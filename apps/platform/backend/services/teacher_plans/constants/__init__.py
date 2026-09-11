@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from backend.services.teacher_plans.constants.misc import (
-    KISWAHILI_SUBJECTS,
     MAX_PLAN_REPAIR_ATTEMPTS,
     _GENERIC_ASSESSMENT_PHRASES,
     _ROMAN,
@@ -18,7 +17,6 @@ from backend.services.teacher_plans.constants.plan_rules_sw import (
 )
 
 __all__ = [
-    "KISWAHILI_SUBJECTS",
     "MAX_PLAN_REPAIR_ATTEMPTS",
     "_GENERIC_ASSESSMENT_PHRASES",
     "_ROMAN",

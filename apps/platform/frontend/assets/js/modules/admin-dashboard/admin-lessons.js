@@ -77,17 +77,8 @@
               <div style="display:flex;gap:0.5rem">
                 <select class="input" name="subject_slug" style="flex:1">
                   <option value="mathematics">Mathematics</option>
-                  <option value="biology">Biology</option>
                   <option value="chemistry">Chemistry</option>
                   <option value="physics">Physics</option>
-                  <option value="english">English</option>
-                  <option value="kiswahili">Kiswahili</option>
-                  <option value="geography">Geography</option>
-                  <option value="history">History</option>
-                  <option value="historia-ya-tanzania-na-maadili">Historia ya Tanzania na Maadili</option>
-                  <option value="bible_knowledge">Bible Knowledge</option>
-                  <option value="business_studies">Business Studies</option>
-                  <option value="computing">Computing</option>
                 </select>
                 <select class="input" name="form_level" style="flex:0.5">
                   <option value="1">Form I</option>

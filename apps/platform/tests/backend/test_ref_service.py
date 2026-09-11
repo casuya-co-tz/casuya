@@ -33,7 +33,7 @@ def test_service_browse_by_type():
     db = next(get_db())
     try:
         _seed_doc(db, doc_type="lesson_plan", source_id="10", title="A MATH LESSON", slug="mathematics", form=1)
-        _seed_doc(db, doc_type="scheme_of_work", source_id="11", title="A HISTORY SCHEME", slug="history", form=2)
+        _seed_doc(db, doc_type="scheme_of_work", source_id="11", title="A PHYSICS SCHEME", slug="physics", form=2)
         lessons = list_reference_docs(db, doc_type="lesson_plan")
         assert len(lessons) == 1
         assert lessons[0].doc_type == "lesson_plan"
@@ -47,13 +47,13 @@ def test_service_search_filters():
     db = next(get_db())
     try:
         _seed_doc(db, source_id="20", title="LESSON PLAN FOR MATHEMATICS FORM TWO", slug="mathematics", form=2)
-        _seed_doc(db, source_id="21", title="LESSON PLAN FOR KISWAHILI FORM TWO", slug="kiswahili", form=2)
-        _seed_doc(db, source_id="22", title="LESSON PLAN FOR ENGLISH FORM FOUR", slug="english", form=4)
-        found = list_reference_docs(db, subject_slug="kiswahili")
+        _seed_doc(db, source_id="21", title="LESSON PLAN FOR CHEMISTRY FORM TWO", slug="chemistry", form=2)
+        _seed_doc(db, source_id="22", title="LESSON PLAN FOR PHYSICS FORM FOUR", slug="physics", form=4)
+        found = list_reference_docs(db, subject_slug="chemistry")
         assert len(found) == 1 and found[0].source_id == "21"
         found = list_reference_docs(db, form_level=2)
         assert len(found) == 2
-        found = list_reference_docs(db, query="kiswahili")
+        found = list_reference_docs(db, query="chemistry")
         assert len(found) == 1
     finally:
         db.close()

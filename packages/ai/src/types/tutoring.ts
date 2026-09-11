@@ -11,11 +11,6 @@ export enum TutoringMode {
 export enum TutoringSubject {
   MATHEMATICS = 'mathematics',
   SCIENCE = 'science',
-  HISTORY = 'history',
-  LITERATURE = 'literature',
-  LANGUAGE = 'language',
-  COMPUTING = 'computing',
-  ARTS = 'arts',
   GENERAL = 'general',
 }
 

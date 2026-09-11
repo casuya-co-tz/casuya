@@ -23,11 +23,9 @@ from backend.services.teacher_plan_service import (
 
 
 def test_language_mapping():
-    assert _lang_label("kiswahili") == "sw"
-    assert _lang_label("history_civics") == "sw"
-    assert _lang_label("historia-ya-tanzania-na-maadili") == "sw"
     assert _lang_label("mathematics") == "en"
-    assert _lang_label("biology") == "en"
+    assert _lang_label("chemistry") == "en"
+    assert _lang_label("physics") == "en"
 
 
 def test_distribute_periods_sums_to_total():
@@ -254,9 +252,9 @@ def test_plan_lessons_grouped_by_learning_activity(monkeypatch):
     assert f"(1/{first_weight})" in lessons[0]["header"]["period"]
 
 
-def test_plan_lessons_for_subtopic_english_and_kiswahili(monkeypatch):
-    # Both an English (physics) and a Kiswahili subject produce lessons wired
-    # to their own scheme rows, with locale-correct class names. Each subject's
+def test_plan_lessons_for_subtopic_across_subjects(monkeypatch):
+    # Both Physics and Chemistry (English-medium) produce lessons wired to
+    # their own scheme rows, with locale-correct class names. Each subject's
     # lesson count equals its own scheme row period allocation.
     from backend.services.teacher_plan_service import get_subject_with_form as _orig  # noqa: F401
 
@@ -272,10 +270,10 @@ def test_plan_lessons_for_subtopic_english_and_kiswahili(monkeypatch):
         )
         return lessons, row
 
-    en, en_row = _run("physics", 1, "en", "Period")
-    sw, sw_row = _run("kiswahili", 1, "sw", "Kipindi")
-    assert en_row is not None and sw_row is not None
-    assert len(en) == en_row["periods"]
-    assert len(sw) == sw_row["periods"]
-    assert en[0]["header"]["class_name"] == "Form 1"
-    assert sw[0]["header"]["class_name"] == "Kidato 1"
+    phy, phy_row = _run("physics", 1, "en", "Period")
+    chem, chem_row = _run("chemistry", 1, "en", "Period")
+    assert phy_row is not None and chem_row is not None
+    assert len(phy) == phy_row["periods"]
+    assert len(chem) == chem_row["periods"]
+    assert phy[0]["header"]["class_name"] == "Form 1"
+    assert chem[0]["header"]["class_name"] == "Form 1"

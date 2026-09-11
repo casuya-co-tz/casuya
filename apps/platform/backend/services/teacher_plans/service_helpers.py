@@ -129,7 +129,7 @@ async def _finalize_ai_lesson_plan(
         )
     _normalize_stage_times(plan, duration_minutes)
     _ai_ref_gl = _reference_lesson_grounding(subject_slug, form_level, topic, subtopic or "")
-    # Only bundled, educator-verified reference lessons (e.g. Geography
+    # Only bundled, educator-verified reference lessons (e.g. Physics
     # Form One) get to override competences here: keyed docs are not as
     # authoritative as the TIE syllabus for competence statements.
     _ai_verified = _ai_ref_gl if (_ai_ref_gl and _ai_ref_gl.get("__bundled")) else None

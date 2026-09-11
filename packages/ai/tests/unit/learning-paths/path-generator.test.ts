@@ -27,8 +27,8 @@ describe('LearningPathGenerator', () => {
       const path = await generator.generatePath({
         studentId: 'student-2',
         goal: {
-          subject: 'Science',
-          targetConcept: 'Biology',
+          subject: 'Chemistry',
+          targetConcept: 'Chemical Bonding',
           targetDifficulty: Difficulty.BEGINNER,
           estimatedHours: 10,
         },
@@ -49,7 +49,7 @@ describe('LearningPathGenerator', () => {
     it('should retrieve existing path', async () => {
       const path = await generator.generatePath({
         studentId: 'student-3',
-        goal: { subject: 'History', targetConcept: 'World War II', targetDifficulty: Difficulty.INTERMEDIATE },
+        goal: { subject: 'Physics', targetConcept: 'Waves', targetDifficulty: Difficulty.INTERMEDIATE },
       });
       const retrieved = generator.getPath(path.id);
       expect(retrieved).toBeDefined();

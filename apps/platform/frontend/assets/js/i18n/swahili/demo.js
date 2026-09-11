@@ -37,7 +37,7 @@ window.SW = Object.assign(window.SW || {}, {
     "demo.chem_organic": "Kemia - Misombo ya Kikaboni",
     "demo.chapter_time": "Sura ya 3 • Dakika 45",
     "demo.subject_chem": "Kemia",
-    "demo.subject_bio": "Biolojia",
+    "demo.subject_phys": "Fizikia",
     "demo.subject_math": "Hisabati",
     "demo.already_account": "Tayari una akaunti?",
     "demo.sign_in_link": "Ingia",

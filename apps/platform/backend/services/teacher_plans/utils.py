@@ -6,15 +6,11 @@ import json
 import re
 from datetime import datetime, timedelta
 
-from .constants import KISWAHILI_SUBJECTS, _ROMAN
-
-
-def _is_kiswahili(subject_slug: str) -> bool:
-    return subject_slug.lower().strip() in KISWAHILI_SUBJECTS
+from .constants import _ROMAN
 
 
 def _lang_label(subject_slug: str) -> str:
-    return "sw" if _is_kiswahili(subject_slug) else "en"
+    return "en"
 
 
 def _time_to(duration_minutes: int) -> str:

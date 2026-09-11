@@ -10,14 +10,26 @@ from backend.services.reference_library_service import (
 def test_map_subject_slug_en_and_sw():
     assert map_subject_slug(None, "LESSON PLAN FOR MATHEMATICS FORM SIX") == "mathematics"
     assert map_subject_slug(None, "MPANGOKAZI WA HISABATI DARASA LA TANO") == "mathematics"
-    assert map_subject_slug(None, "LESSON PLAN FOR BOOK-KEEPING FORM TWO") == "bookkeeping"
-    assert map_subject_slug(None, "SCHEME OF WORK FOR ACCOUNTANCY FORM FIVE") == "bookkeeping"
-    assert map_subject_slug(None, "LESSON PLAN FOR CIVICS AND MORAL EDUCATION") == "history_civics"
-    assert map_subject_slug(None, "SCHEME FOR URABIA NA MAADILI") == "history_civics"
-    assert map_subject_slug(None, "LESSON PLAN FOR BIBLE KNOWLEDGE FORM ONE") == "bible_knowledge"
-    assert map_subject_slug(None, "LESSON PLAN FOR ADVANCED MATHEMATICS") == "additional_mathematics"
-    assert map_subject_slug(None, "SCHEME OF WORK FOR COMMERCE FORM ONE") == "business_studies"
-    assert map_subject_slug(None, "LESSON PLAN FOR AGRICULTURE") == "agriculture"
+    assert map_subject_slug(None, "LESSON PLAN FOR ADVANCED MATHEMATICS") == "mathematics"
+    assert map_subject_slug(None, "SCHEME OF WORK FOR BASIC MATHEMATICS FORM TWO") == "mathematics"
+    assert map_subject_slug(None, "LESSON PLAN FOR CHEMISTRY FORM TWO") == "chemistry"
+    assert map_subject_slug(None, "SCHEME KWA KEMIA DARASA LA NNE") == "chemistry"
+    assert map_subject_slug(None, "LESSON PLAN FOR PHYSICS FORM ONE") == "physics"
+    assert map_subject_slug(None, "SCHEME KWA FIZIKIA DARASA LA TANO") == "physics"
+
+
+def test_map_subject_slug_removed_subjects_are_unmappable():
+    assert map_subject_slug(None, "LESSON PLAN FOR BOOK-KEEPING FORM TWO") is None
+    assert map_subject_slug(None, "SCHEME OF WORK FOR ACCOUNTANCY FORM FIVE") is None
+    assert map_subject_slug(None, "LESSON PLAN FOR CIVICS AND MORAL EDUCATION") is None
+    assert map_subject_slug(None, "SCHEME FOR URABIA NA MAADILI") is None
+    assert map_subject_slug(None, "LESSON PLAN FOR BIBLE KNOWLEDGE FORM ONE") is None
+    assert map_subject_slug(None, "SCHEME OF WORK FOR COMMERCE FORM ONE") is None
+    assert map_subject_slug(None, "LESSON PLAN FOR AGRICULTURE") is None
+    assert map_subject_slug(None, "LESSON PLAN FOR GEOGRAPHY FORM ONE") is None
+    assert map_subject_slug(None, "LESSON PLAN FOR BIOLOGY FORM TWO") is None
+    assert map_subject_slug(None, "LESSON PLAN FOR ENGLISH LANGUAGE") is None
+    assert map_subject_slug(None, "LESSON PLAN FOR KISWAHILI FORM ONE") is None
 
 
 def test_map_subject_slug_unmappable():
@@ -35,7 +47,7 @@ def test_map_form_level():
 
 
 def test_parse_metadata():
-    slug, form, name = parse_metadata("LESSON PLAN FOR GEOGRAPHY FORM THREE", "Form 3")
-    assert slug == "geography"
+    slug, form, name = parse_metadata("LESSON PLAN FOR PHYSICS FORM THREE", "Form 3")
+    assert slug == "physics"
     assert form == 3
     assert name is not None and name.lower()

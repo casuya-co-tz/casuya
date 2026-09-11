@@ -14,9 +14,6 @@ export enum TranslationDomain {
   EDUCATION = 'education',
   SCIENCE = 'science',
   MATHEMATICS = 'mathematics',
-  LITERATURE = 'literature',
-  HISTORY = 'history',
-  TECHNOLOGY = 'technology',
 }
 
 export interface TranslationResult {

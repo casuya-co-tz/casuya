@@ -59,7 +59,7 @@ def _authoritative_competences(subject_slug, form_level, topic_title, lang, ref_
 
     Precedence: (1) the curated topic-level TIE competence mapping, (2) the
     matched verified reference lesson's own competences (educator-verified TIE
-    content, e.g. the bundled Geography Form One lessons), (3) the best-effort
+    content, e.g. the bundled Physics Form One lessons), (3) the best-effort
     keyword match over the full TIE syllabus dataset. The reference lesson wins
     over the keyword fallback because the bundled lessons carry authentic,
     verified competence statements for their chapters, whereas keyword matching

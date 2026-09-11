@@ -69,7 +69,7 @@ def _purge_conflicting_online_docs(db, doc_type: str, slug: str | None,
     Once an educator-verified ``bundled:`` document exists for a
     (doc_type, subject, form), it is the single authoritative record: any
     online-catalog copies that crept in for the same slot are deleted so the
-    library speaks one language (Geography Form One's noisy online schemes and
+    library speaks one language (Physics Form One's noisy online schemes and
     duplicate lesson plans are the motivating case). Returns the number of
     rows removed; a no-op for subject/form/type pairs without a bundle.
     """
@@ -109,8 +109,8 @@ def _deduplicate_online_docs(db) -> int:
 
     Even when no bundled docs exist yet (e.g. the bundled seed failed
     silently), near-identical online imports like
-    ``LESSON PLAN FOR GEOGRAPHY FORM ONE 2026`` and
-    ``LESSON PLAN FOR GEOGRAPHY FORM ONE-2026`` should collapse to the
+    ``LESSON PLAN FOR PHYSICS FORM ONE 2026`` and
+    ``LESSON PLAN FOR PHYSICS FORM ONE-2026`` should collapse to the
     latest record (highest ``source_id``).  Returns the number of rows
     removed.
     """

@@ -25,7 +25,7 @@ def _reference_scheme_grounding(subject_slug, form_level, term):
     Returns the ``scheme_of_work_grounding`` enrichment (generic methods,
     resources, assessment, references plus the normalized per-week ``rows``)
     only when the reference library has a bundled, verified scheme document for
-    the subject/form/term (e.g. the Geography Form One Term I/II schemes).
+    the subject/form/term (e.g. the Physics Form One Term I/II schemes).
     External (librarian-imported) scheme documents are NOT trusted for this so
     offline generation never reproduces unverified rows.
     """
@@ -150,7 +150,7 @@ def _build_scheme_offline(
     # A bundled, educator-verified scheme of work for this subject/form/term is
     # the authoritative model for offline output: its per-week rows reproduce
     # the educator-verified competences, activities, strategies, resources and
-    # assessment tools verbatim (e.g. the Geography Form One Term I/II schemes).
+    # assessment tools verbatim (e.g. the Physics Form One Term I/II schemes).
     _ref_rows = []
     _ref_scheme = _reference_scheme_grounding(subject_slug, form_level, term)
     if _ref_scheme:
@@ -212,7 +212,7 @@ def _build_scheme_offline(
         "header": {
             "school_name": school_name, "teacher_name": teacher_name,
             "subject": subject_label, "class_name": class_name,
-            "term": term, "academic_year": academic_year,
+            "term": term, "academic_year": academic_year, "lang": lang,
         },
         "weeks": weeks,
     }

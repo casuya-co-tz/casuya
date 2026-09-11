@@ -51,7 +51,7 @@ def _build_lesson_plan_prompt(
     # Resolve the verbatim TIE Main/Specific Competence statements for this
     # lesson so the model copies them word-for-word instead of substituting
     # the topic/subtopic TITLES into the competence fields. A matched verified
-    # reference lesson (e.g. the bundled Geography Form One content) outranks
+    # reference lesson (e.g. the bundled Physics Form One content) outranks
     # the best-effort keyword fallback for its chapter.
     ref_gl = _reference_lesson_grounding(subject_slug, form_level, topic, subtopic or "")
     tie_main, tie_spec = _authoritative_competences(
@@ -79,7 +79,7 @@ def _build_lesson_plan_prompt(
     # A matched verified reference lesson is the authoritative model for the
     # plan: its competences, activities, resources/references and per-stage
     # teacher/learner/assessment content shape the output exactly like the
-    # educator-verified curriculum (e.g. Geography Form One Chapter 1-4).
+    # educator-verified curriculum (e.g. Physics Form One Chapter 1-4).
     reference_block = ""
     if ref_gl:
         progression_text = ""

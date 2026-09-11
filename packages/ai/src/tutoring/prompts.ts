@@ -9,16 +9,7 @@ const SUBJECT_SLUG_MAP: Record<string, string> = {
   'basic mathematics': 'mathematics',
   physics: 'physics',
   chemistry: 'chemistry',
-  biology: 'biology',
-  english: 'english',
-  'english language': 'english',
-  kiswahili: 'kiswahili',
 };
-
-/** Forms I-II default to Kiswahili-medium */
-function isKiswahiliMedium(formLevel?: number): boolean {
-  return formLevel !== undefined && formLevel <= 2;
-}
 
 export async function buildTutoringSystemPrompt(
   request: TutoringRequest,
@@ -28,7 +19,6 @@ export async function buildTutoringSystemPrompt(
 ): Promise<string> {
   const formLevel = (request.preferences as unknown as Record<string, unknown>)?.formLevel as number | undefined;
   const subjectSlug = SUBJECT_SLUG_MAP[request.subject?.toLowerCase?.() ?? ''] ?? '';
-  const useKiswahili = isKiswahiliMedium(formLevel);
 
   // Fetch TIE curriculum context if adapter is available
   let curriculumContext = '';
@@ -42,7 +32,7 @@ export async function buildTutoringSystemPrompt(
 
   // Choose NECTA-aligned template or fall back to generic
   const templateId = curriculumContext
-    ? (useKiswahili ? 'necta-tutoring-kiswahili' : 'necta-tutoring')
+    ? 'necta-tutoring'
     : 'tutoring-explain';
 
   const variables: Record<string, unknown> = {

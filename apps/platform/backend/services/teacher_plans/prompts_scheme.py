@@ -19,7 +19,7 @@ def _build_scheme_prompt(
     topic_list = "\n".join(f"  - {t}" for t in topics) if topics else "  (Use curriculum context)"
 
     # A bundled, educator-verified scheme for this subject/form/term is fed to
-    # the model as the authoritative content model (e.g. the Geography Form One
+    # the model as the authoritative content model (e.g. the Physics Form One
     # Term I/II schemes), reproduced verbatim rather than invented.
     scheme_block = ""
     _ref_scheme = _reference_scheme_grounding(subject_slug, form_level, term) if subject_slug else None
