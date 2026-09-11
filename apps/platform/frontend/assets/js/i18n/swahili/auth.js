@@ -1,9 +1,9 @@
-// i18n/swahili/auth.js — login, register, forgot-password translations + strength + validation errors.
+// i18n/swahili/auth.js — login, register, forgot-password, reset-password translations + strength + validation errors.
 
 window.SW = Object.assign(window.SW || {}, {
     // Login
     "login.title": "Karibu Tena",
-    "login.desc": "Ingia ili kuendelea na safari yako ya kujifunza",
+    "login.desc": "Endelea ulipokosimama — masomo, maswali na maendeleo, kwenye sehemu moja.",
     "login.email_label": "Barua Pepe",
     "login.email_placeholder": "Weka barua pepe yako",
     "login.password_label": "Nenosiri",
@@ -24,7 +24,7 @@ window.SW = Object.assign(window.SW || {}, {
 
     // Register
     "register.title": "Fungua akaunti yako",
-    "register.desc": "Jiunge na Casuya na endelea na lango lako la mwanafunzi au mwalimu.",
+    "register.desc": "Chagua ni nani wewe — mwanafunzi, mwalimu, au msomaji anayehitaji msaada zaidi — na tutaunda nafasi yako.",
     "register.fullname_label": "Jina Kamili",
     "register.fullname_placeholder": "Weka jina lako kamili",
     "register.email_label": "Barua Pepe",
@@ -56,6 +56,7 @@ window.SW = Object.assign(window.SW || {}, {
     "register.confirm_label": "Thibitisha Nenosiri",
     "register.confirm_placeholder": "Weka nenosiri lako tena",
     "register.terms_prefix": "Ninakubali",
+    "register.and": "na",
     "register.terms_link": "Masharti ya Huduma",
     "register.privacy_link": "Sera ya Faragha",
     "register.terms_summary": "Soma kwa lugha rahisi",
@@ -93,10 +94,33 @@ window.SW = Object.assign(window.SW || {}, {
     "forgot.step2": "Pata barua pepe kutoka Jukwaa la Casuya",
     "forgot.step3": "Bofya kiungo la \"Kurejesha Nenosiri\" kwenye barua pepe",
     "forgot.step4": "Fungua nenosiri lako jipya",
-    "forgot.spam": "Hujapokea? Angalia folda yako ya au jaribu tena.",
+    "forgot.spam": "Hujapokea? Angalia folda yako au jaribu tena.",
     "forgot.return": "Rudi kwenye Uingizaji",
     "forgot.remember": "Unakumbuka nenosiri lako?",
     "forgot.signin": "Ingia kwenye akaunti yako",
+
+    // Forgot — phone success steps
+    "forgot.check_phone": "Angalia ujumbe wako wa SMS kwa nambari ya kurejesha. Inaweza kuchukua dakika chache kufika.",
+    "forgot.sms_step1": "Fungua programu ya ujumbe simu",
+    "forgot.sms_step2": "Pata ujumbe kutoka Casuya Platform",
+    "forgot.sms_step3": "Bofya kiungo la \"Kurejesha Nenosiri\" kwenye ujumbe",
+    "forgot.sms_step4": "Weka nenosiri lako jipya",
+
+    // Reset password
+    "reset.title": "Weka Nenosiri Jipya",
+    "reset.desc": "Chagua nenosiri dhabihu ulilotumia hapo awali. Lazima liwe na herufi 8 au zaidi.",
+    "reset.skip_link": "Ruka hadi fomu ya kuweka nenosiri jipya",
+    "reset.new_label": "Nenosiri Jipya",
+    "reset.new_placeholder": "Herufi 8 au zaidi",
+    "reset.confirm_label": "Thibitisha Nenosiri",
+    "reset.confirm_placeholder": "Weka nenosiri lako tena",
+    "reset.submit": "Weka nenosiri jipya",
+    "reset.success_title": "Nenosiri limesasishwa!",
+    "reset.success_desc": "Nenosiri lako limebadilishwa. Sasa unaweza kuingia na nenosiri jipya.",
+    "reset.sign_in": "Ingia",
+    "reset.back": "← Rudi kwenye Uingizaji",
+    "reset.invalid_title": "Kiungo kisahihi au kimeisha muda.",
+    "reset.invalid_request": "Omba kiungo kipya cha kurejesha",
 
     // Password strength
     "strength.weak": "Dhaifu",

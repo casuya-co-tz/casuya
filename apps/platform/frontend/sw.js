@@ -10,7 +10,7 @@
 //
 // Cache is versioned; bump CACHE_VERSION when you change cached assets.
 
-const CACHE_VERSION = "casuya-static-v6";
+const CACHE_VERSION = "casuya-static-v7";
 const PRECACHE = [
   "/",
   "/manifest.webmanifest",

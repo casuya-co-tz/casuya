@@ -14,6 +14,18 @@ window.SW = Object.assign(window.SW || {}, {
     "features.badge": "Casuya hufanya nini siku ya kawaida",
     "features.title": "Zana ndogo, siku za kweli",
     "features.desc": "Hakuna mambo ya sifa tu — ni vitu vinavyorahisisha maisha ya shule, hata kama simu ni ya zamani na mtandao ni dhaifu.",
+
+    // New homepage features (notebook)
+    "features2.tag": "Zana ndogo, siku halisi",
+    "features2.title": "Hakuna kitu cha kujionyesha — ni kile tu kinachopunguza mzigo shuleni",
+    "features2.desc": "Imejengwa kwa ajili ya simu ya zamani na mtandao dhaifu, si kinyume chake.",
+    "notebook.lead": "\"Somo moja kwa siku linatosha kuanza. Maendeleo yako yanahifadhiwa mara tu unapojiunga — kuwe na taa ya mafuta au isiwepo.\"",
+    "notebook.download.title": "Pakua mara moja, jifunze popote",
+    "notebook.download.desc": "Pata somo kwenye Wi-Fi ya shule, kisha endelea kujifunza kwenye daladala ukirudi nyumbani — hakuna mtandao unaohitajika.",
+    "notebook.quiz.title": "Maswali yanayojisahihisha",
+    "notebook.quiz.desc": "Weka mara moja, sahihisha papo hapo — ili jioni ziwe kwa wanafunzi wanaohitaji msaada, si rundo la karatasi.",
+    "notebook.progress.title": "Maendeleo unayoweza kuyaona kweli",
+    "notebook.progress.desc": "Somo kwa somo, wiki kwa wiki — kwa mwanafunzi anayefuatilia ukuaji wake na mzazi anayeangalia hali.",
     "feature.interactiveLessons.title": "Masomo Shirikishi",
     "feature.interactiveLessons.blurb": "Masomo yenye mvuto kama mchezo — chemsha bongo na mazoezi yanayojisahihisha yenyewe unapofanya. Unaweza kurudia mada mpaka uelewe vizuri.",
     "feature.offlineLearning.title": "Kujifunza Nje ya Mtandao",
@@ -33,8 +45,9 @@ window.SW = Object.assign(window.SW || {}, {
 
     // Subjects
     "subjects.badge": "Kidato cha 1–6 · Mtalaa wa Tanzania",
-    "subjects.title": "Masomo unayofanya — yote mahali pamoja",
-    "subjects.desc": "Hisabati, Kemia na Fizikia — masomo yale yale unayofanya darasani, tayari kwa kidato cha kwanza hadi cha sita.",
+    "subjects.title": "Madarasa unayosoma kweli, yote mahali pamoja",
+    "subjects.desc": "Masomo yale yale unayofanyia mtihani darasani, tayari wakati wowote una dakika chache.",
+    "subjects.more_spine": "Masomo mengine",
     "subjects.maths": "Hisabati",
     "subjects.physics": "Fizikia",
     "subjects.chemistry": "Kemia",
@@ -43,25 +56,25 @@ window.SW = Object.assign(window.SW || {}, {
 
     // Audiences
     "audiences.badge": "Watu halisi, siku halisi",
-    "audiences.title": "Imetengenezwa kwa madarasa kama yako",
-    "audiences.desc": "Mwalimu, wanafunzi na baba — watu wa kawaida ambao Casuya imewajengewa. Kama inafanya kazi kwa simu ya kushirikiwa kijijini, inafanya kazi kwako.",
+    "audiences.title": "Imejengwa kwa ajili ya madarasa kama lako",
+    "audiences.desc": "Mwalimu, wanafunzi na baba — watu wa kawaida ambao Casuya imejengwa kwa ajili yao.",
 
     // People (users of Casuya, not builders)
     "people.cosmas": "Cosmas Dismas",
-    "people.cosmas_role": "Mwalimu · Geita",
-    "people.cosmas_story": "Cosmas husahihisha karatasi hamsini au sitini za Kidato cha Tatu baada ya shule, mara nyingi kwa taa ya mafuta umeme unapokatika. Kwa Casuya anaanzisha majaribio mara moja na yanajisahihisha yenyewe — ili aokoe muda jioni wa kuwasaidia wanafunzi wanaomhitaji.",
+    "people.cosmas_role": "Mwalimu",
+    "people.cosmas_story": "\"Kwa Casuya naweka maswali mara moja, nayo yanajisahihisha — hivyo natumia jioni kuwasaidia wanafunzi wanaonihitaji, si kusahihisha kwa taa ya mafuta.\"",
     "people.bahati": "Bahati Abeld Chusi",
-    "people.bahati_role": "Mwanafunzi · Iringa",
-    "people.bahati_story": "Bahati anashiriki simu. Anapakua maelezo yake ya Hisabati Kidato cha Pili kwenye mtandao mzuri wa shule, kisha anasoma akirudi nyumbani kwa daladala — bila mtandao, bila shida.",
+    "people.bahati_role": "Mwanafunzi",
+    "people.bahati_story": "\"Napakua maelezo yangu kwenye Wi-Fi ya shule, kisha najifunza kwenye safari ya daladala kurudi nyumbani. Hakuna mtandao, hakuna tatizo.\"",
     "people.nickson": "Nickson Kasmir Tlanka",
-    "people.nickson_role": "Mwanafunzi · Karatu",
-    "people.nickson_story": "Nickson anaona masomo mengine ni magumu kufuata darasani kukiwa na wanafunzi wengi. Masomo shirikishi ya Casuya yanamruhusu kurudi nyuma na kujifunza kwa kasi yake, mara kwa mara, mpaka aelewe.",
+    "people.nickson_role": "Mwanafunzi",
+    "people.nickson_story": "\"Masomo mengine ni magumu kufuatilia darasani likiwa limejaa. Naweza kurudi na kujifunza tena kwa kasi yangu, mara kwa mara, mpaka nielewe.\"",
     "people.shedrack": "Shedrack Peam Laurent",
     "people.shedrack_role": "Mwanafunzi · Arusha",
     "people.shedrack_story": "Shedrack anataka kufuatilia maendeleo yake, somo kwa somo, bila kusubiri mwisho wa muhula. Casuya inamuonyesha anapokua kila wiki.",
     "people.eliya": "Eliya Kikoti",
-    "people.eliya_role": "Baba · Iringa",
-    "people.eliya_story": "Eliya anataka kujua kama mtoto wake anajifunza kweli, si tu 'kupita.' Kwa Casuya anaweza kuona maendeleo halisi — jaribio kwa jaribio, somo kwa somo — hata kwenye simu ya kushirikiwa ya mtoto wake.",
+    "people.eliya_role": "Baba",
+    "people.eliya_story": "\"Nataka kujua kama mtoto wangu anajifunza kweli, si kupita tu. Sasa naweza kuona maendeleo halisi — mtihani kwa mtihani, somo kwa somo.\"",
 
     // Mid-page re-ask
     "reask.title": "Anza mfuatano wako leo — siku ya kwanza ni bure",
@@ -71,9 +84,15 @@ window.SW = Object.assign(window.SW || {}, {
     // CTA
     "cta.letterlabel": "Neno kutoka Casuya",
     "cta.letter": "\"Casuya ilijengwa kwa watu halisi kama <strong>Cosmas</strong>, mwalimu; <strong>Bahati</strong>, <strong>Nickson</strong> na <strong>Shedrack</strong>, wanafunzi; na <strong>Eliya</strong>, baba — watu wanaoshiriki simu, wanaosoma wakati umeme ukipita, na ambao daima waliweza zaidi ya hali zao zilivyoruhusu.<br><br>Shule hii ni yako. Ni nyepesi kwa simu uliyo nayo, na inafanya kazi hata mahali mtandao usipofika — ili kizuizi pekee cha mafanikio yako kiondoke. Karibu — sasa wewe ni sehemu ya Casuya.\"",
-    "cta.how": "Karibu — angalia jinsi inavyofanya kazi",
+    "cta.how": "Twende — angalia jinsi inavyofanya kazi",
+    "cta.closing_title": "Karibu — sasa u sehemu ya Casuya.",
+    "cta.closing_desc": "Nyepesi vya kutosha kwa simu uliyonayo. Imejengwa kufanya kazi hata pale mtandao unapokwama — ili kinachosimama kati yako na kufaulu kiondoke.",
+    "cta.create_free": "Fungua akaunti bure",
 
     // Footer
+    "footer.product": "Bidhaa",
+    "footer.stories": "Hadithi",
+    "footer.tagline": "Shule ya mtandaoni inayofanya kazi bila intaneti kwa wanafunzi, walimu na familia za Tanzania — imejengwa hapa, kwa ajili ya hapa.",
     "footer.platform": "Jukwaa",
     "footer.features": "Vipengele",
     "footer.docs": "Nyaraka",

@@ -5,6 +5,7 @@ window.SW = Object.assign(window.SW || {}, {
     "nav.features": "Vipengele",
     "nav.subjects": "Masomo",
     "nav.about": "Kuhusu",
+    "nav.stories": "Hadithi",
     "nav.login": "Ingia",
     "nav.get_started": "Anza Sasa",
     "nav.start": "Anza",

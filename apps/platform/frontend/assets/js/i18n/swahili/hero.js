@@ -3,14 +3,21 @@
 window.SW = Object.assign(window.SW || {}, {
     // Hero
     "hero.badge": "Kwa wanafunzi na walimu wa Tanzania",
-    "hero.title1": "Shule unayotamani kuwa nayo —<br>kwenye simu inayoshirikiwa.",
+    "hero.title1": "Shule uliyotamani kuwa nayo, kwenye simu unayoshiriki nayo tayari.",
     "hero.title2": "Fundisha Bora.",
     "hero.title3": "Jenga Mustakabali.",
     "hero.clarity": "Masomo, majaribio na matokeo — yaliyojengwa kwa mtaala wa kidato cha kwanza hadi cha sita.",
-    "hero.desc": "Casuya hukuletea kujifunza nyumbani: nje ya mtandao, kwa Kiswahili na Kiingereza, kwenye simu ambazo Watanzania wanatumia.",
+    "hero.desc": "Masomo, maswali na matokeo yaliyojengwa kufuata mtaala wa Form One hadi Form Six — bila mtandao, kwa Kiswahili na Kiingereza, kwenye simu ambazo watu wanazo kweli.",
     "hero.off_excuse": "Jifunze ulipo — hata mtandao usipokuwapo.",
-    "hero.start": "Karibu — ingia kufungulia wiki yako",
-    "hero.demo": "Twende — angalia jinsi inavyofanya kazi",
+    "hero.start": "Karibu — anza kujifunza",
+    "hero.demo": "Angalia jinsi inavyofanya kazi",
+    "hero.fine": "Bure kuanza · Inafanya kazi kwenye simu ya 2GB · Kazi yako inabaki hata mtandao unapokatika",
+
+    // Hero chalk stat strip
+    "hero.stat_2gb": "Inafanya kazi kwenye simu ya 2GB",
+    "hero.stat_offline": "Inafanya kazi bila mtandao",
+    "hero.stat_lang": "Kiingereza na Kiswahili",
+    "hero.stat_marks": "Alama zako ni zako",
 
     // Hero "your week" card
     "hero_week_sub": "wiki yako ya kujifunza",

@@ -133,10 +133,12 @@
       <div class="auth-card-premium">
         <div class="text-center mb-8">
           <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:linear-gradient(135deg,rgba(37,99,235,0.1),rgba(124,58,237,0.08));border:1px solid rgba(37,99,235,0.15);box-shadow:0 4px 16px rgba(37,99,235,0.08);">
-            <svg class="w-8 h-8" style="color:#2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+            <svg class="w-8 h-8" style="color:#2563eb;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" role="img" aria-label="Add user">
+              <use href="/assets/images/icons/platform-icons.svg#i-user-plus"></use>
+            </svg>
           </div>
           <h1 id="register-heading" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2" style="letter-spacing:-0.03em;" data-i18n="register.title">Create your account</h1>
-          <p class="text-sm" style="color:#64748b;" data-i18n="register.desc">Join Casuya and continue with your student or teacher portal.</p>
+          <p class="text-sm" style="color:#64748b;" data-i18n="register.desc">Pick who you are — a student, a teacher, or a learner who needs extra support — and we'll set up your space.</p>
         </div>
 
         <form class="space-y-6" id="register-form" novalidate aria-label="Registration form">
@@ -271,7 +273,7 @@
                   data-i18n-ph="register.password_placeholder"
                 >
                 <button type="button" id="toggle-reg-password" class="absolute right-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors" aria-label="Show password" aria-pressed="false">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/images/icons/platform-icons.svg#i-eye"></use></svg>
                 </button>
               </div>
               <!-- Strength meter -->
@@ -313,20 +315,22 @@
           <div class="space-y-2">
             <div class="flex items-start gap-3 min-h-[44px] py-1">
               <input id="terms" type="checkbox" required class="w-4 h-4 mt-0.5 text-blue-600 border-slate-300 rounded focus:ring-blue-500" aria-describedby="terms-error">
-              <label for="terms" class="text-sm text-slate-600" data-i18n="register.terms">
-                I agree to the <a href="/terms.html" class="font-semibold text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener">Terms of Service</a>
-                and <a href="/privacy.html" class="font-semibold text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener">Privacy Policy</a>
+              <label for="terms" class="text-sm text-slate-600">
+                <span data-i18n="register.terms_prefix">I agree to the</span>
+                <a href="/terms.html" class="font-semibold text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener" data-i18n="register.terms_link">Terms of Service</a>
+                <span data-i18n="register.and">and</span>
+                <a href="/privacy.html" class="font-semibold text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener" data-i18n="register.privacy_link">Privacy Policy</a>
                 <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span>
               </label>
             </div>
             <details class="terms-plain">
-              <summary data-i18n="register.plain_language">Read in plain language</summary>
+              <summary data-i18n="register.terms_summary">Read in plain language</summary>
               <ul class="mt-2 space-y-1 list-disc list-inside">
-                <li data-i18n="register.plain_collect"><strong>What we collect:</strong> Your name, email, phone (optional), and learning progress.</li>
-                <li data-i18n="register.plain_use"><strong>How we use it:</strong> To track your lessons, quizzes, and provide personalised learning.</li>
-                <li data-i18n="register.plain_data"><strong>Your data:</strong> You can ask us to delete your account and data at any time.</li>
-                <li data-i18n="register.plain_payments"><strong>Payments:</strong> We never store your credit card. Payments are handled by trusted providers.</li>
-                <li data-i18n="register.plain_safety"><strong>Safety:</strong> We follow Tanzanian data protection laws and keep your data secure.</li>
+                <li><span class="font-semibold" data-i18n="register.what_collect">What we collect:</span> <span data-i18n="register.collect_desc">Your name, email, phone (optional), and learning progress.</span></li>
+                <li><span class="font-semibold" data-i18n="register.how_use">How we use it:</span> <span data-i18n="register.use_desc">To track your lessons, quizzes, and provide personalised learning.</span></li>
+                <li><span class="font-semibold" data-i18n="register.your_data">Your data:</span> <span data-i18n="register.data_desc">You can ask us to delete your account and data at any time.</span></li>
+                <li><span class="font-semibold" data-i18n="register.payments">Payments:</span> <span data-i18n="register.payments_desc">We never store your credit card. Payments are handled by trusted providers.</span></li>
+                <li><span class="font-semibold" data-i18n="register.safety">Safety:</span> <span data-i18n="register.safety_desc">We follow Tanzanian data protection laws and keep your data secure.</span></li>
               </ul>
             </details>
           </div>
@@ -480,11 +484,16 @@
     // ── Password toggle ─────────────────────────────────────────
     document.getElementById('toggle-reg-password').addEventListener('click', function() {
       const pw = document.getElementById('password');
+      const eyeUse = this.querySelector('use');
       if (pw.type === 'password') {
-        pw.type = 'text'; this.setAttribute('aria-label', 'Hide password'); this.setAttribute('aria-pressed', 'true');
+        pw.type = 'text';
+        if (eyeUse) eyeUse.setAttribute('href', '/assets/images/icons/platform-icons.svg#i-eye-off');
+        this.setAttribute('aria-label', 'Hide password'); this.setAttribute('aria-pressed', 'true');
         announce('Password visible');
       } else {
-        pw.type = 'password'; this.setAttribute('aria-label', 'Show password'); this.setAttribute('aria-pressed', 'false');
+        pw.type = 'password';
+        if (eyeUse) eyeUse.setAttribute('href', '/assets/images/icons/platform-icons.svg#i-eye');
+        this.setAttribute('aria-label', 'Show password'); this.setAttribute('aria-pressed', 'false');
         announce('Password hidden');
       }
     });
