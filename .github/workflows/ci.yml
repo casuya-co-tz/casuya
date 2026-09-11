@@ -47,4 +47,6 @@ jobs:
       - run: pip install -r apps/platform/requirements.txt
       - name: Validate app boots
         working-directory: apps/platform
+        env:
+          JWT_SECRET: ci-boot-check-only-jwt-secret-value-0123456789abcdef
         run: python -c "import backend.main"
