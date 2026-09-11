@@ -1,4 +1,10 @@
 // modules/admin-dashboard.js — extracted from main.js (classic script, shared global scope)
+function showAdminView(content) {
+  const el = document.getElementById("admin-content");
+  if (!el) return;
+  el.innerHTML = content;
+}
+
 async function renderAdminDashboard() {
   const token = localStorage.getItem("casuya_token");
   const payload = decodeToken(token);
@@ -105,12 +111,6 @@ async function renderAdminDashboard() {
     _adminNavItems.forEach(el => {
       el.classList.toggle("active", el.dataset.view === viewId);
     });
-  }
-
-  function showAdminView(content) {
-    const el = document.getElementById("admin-content");
-    if (!el) return;
-    el.innerHTML = content;
   }
 
   const navHandlers = {
