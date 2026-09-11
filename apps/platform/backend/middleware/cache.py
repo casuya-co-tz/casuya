@@ -4,6 +4,7 @@ import threading
 import time
 
 from fastapi import Request, Response
+from pydantic import BaseModel
 
 from backend.config.database import redis_client
 
@@ -109,9 +110,24 @@ def cache_invalidate(pattern: str | None = None):
         return 0
 
 
+def _jsonable(data: object):
+    """Normalise Pydantic models inside containers so an ETag computed on a
+    freshly-rendered response (model objects) always equals the ETag computed
+    on the same data straight from the cache (plain dicts)."""
+    if isinstance(data, BaseModel):
+        return data.model_dump()
+    if isinstance(data, list):
+        return [_jsonable(i) for i in data]
+    if isinstance(data, tuple):
+        return [_jsonable(i) for i in data]
+    if isinstance(data, dict):
+        return {k: _jsonable(v) for k, v in data.items()}
+    return data
+
+
 def etag_for(data: object) -> str:
     """Compute a stable ETag from a JSON-serialisable object."""
-    raw = json.dumps(data, sort_keys=True, default=str).encode()
+    raw = json.dumps(_jsonable(data), sort_keys=True, default=str).encode()
     return '"' + hashlib.sha256(raw).hexdigest()[:16] + '"'
 
 
