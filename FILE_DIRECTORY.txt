@@ -15,7 +15,6 @@ CONTRIBUTING.md
 FILE_DIRECTORY.txt
 LICENSE
 README.md
-REFACTOR-PLAN.md
 apps/ds-docs/.gitignore
 apps/ds-docs/.storybook/main.ts
 apps/ds-docs/.storybook/manager.ts
@@ -366,6 +365,7 @@ apps/platform/database/seeds/regenerate_from_tie/maps.py
 apps/platform/database/seeds/regenerate_from_tie/olect.py
 apps/platform/database/seeds/regenerate_from_tie/text.py
 apps/platform/database/seeds/regenerate_from_tie/transform.py
+apps/platform/database/seeds/reseed.py
 apps/platform/database/seeds/seed_admin_math.py
 apps/platform/database/seeds/seed_dev_data/__init__.py
 apps/platform/database/seeds/seed_dev_data/data.py
@@ -382,10 +382,7 @@ apps/platform/docker/koyeb-entrypoint.sh
 apps/platform/docker/koyeb.Dockerfile
 apps/platform/docker/nginx-koyeb.conf
 apps/platform/docker/nginx/default.conf
-apps/platform/docs/api/README.md
-apps/platform/docs/architecture/README.md
 apps/platform/docs/deployment/README.md
-apps/platform/docs/user-guides/README.md
 apps/platform/frontend/.gitignore
 apps/platform/frontend/.vercelignore
 apps/platform/frontend/admin/index.html
@@ -747,7 +744,6 @@ apps/platform/tests/integrations/.gitkeep
 apps/platform/tests/performance/.gitkeep
 apps/platform/vercel.json
 build.ps1
-docs/subject-trimming-evaluation.md
 infra/Dockerfile
 infra/docker-compose.yml
 infra/render.yaml
@@ -774,7 +770,6 @@ libs/core/casuya_core/signatures.py
 libs/core/casuya_core/utils.py
 libs/core/casuya_core/validator.py
 libs/core/casuya_core/versioning.py
-libs/core/docs/README.md
 libs/core/examples/simple_lesson.py
 libs/core/pyproject.toml
 libs/core/requirements.txt
@@ -798,14 +793,12 @@ packages/ai/.prettierrc
 packages/ai/Dockerfile
 packages/ai/LICENSE
 packages/ai/README.md
-packages/ai/docs/README.md
 packages/ai/docs/system-prompt-v2.md
 packages/ai/docs/tutoring-ui-spec.md
 packages/ai/jest.config.js
 packages/ai/kb-data/index.json
 packages/ai/kb-data/knowledge.tar.gz
 packages/ai/knowledge_base/.gitignore
-packages/ai/knowledge_base/PLAN.md
 packages/ai/knowledge_base/README.md
 packages/ai/knowledge_base/exam_formats/index.json
 packages/ai/knowledge_base/exam_formats/parsed/ACSEE_2019.json
@@ -1513,10 +1506,8 @@ packages/ai/tsconfig.json
 packages/ai/tsconfig.server.json
 packages/blackboard/.gitignore
 packages/blackboard/LICENSE
-packages/blackboard/PLAN.md
 packages/blackboard/README.md
 packages/blackboard/demo.html
-packages/blackboard/docs/README.md
 packages/blackboard/examples/blackboard-basic.html
 packages/blackboard/examples/blackboard-full.html
 packages/blackboard/examples/blackboard-math.html
@@ -1819,7 +1810,6 @@ packages/editor/component-library/text/.gitkeep
 packages/editor/component-library/videos/.gitkeep
 packages/editor/demo/index.html
 packages/editor/demo/main.ts
-packages/editor/docs/README.md
 packages/editor/eslint.config.js
 packages/editor/importers/pdf/.gitkeep
 packages/editor/importers/word/.gitkeep
@@ -1887,7 +1877,6 @@ packages/runtime/CHANGELOG.md
 packages/runtime/CONTRIBUTING.md
 packages/runtime/LICENSE
 packages/runtime/README.md
-packages/runtime/docs/README.md
 packages/runtime/examples/basic-usage.html
 packages/runtime/index.html
 packages/runtime/package.json
