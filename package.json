@@ -15,6 +15,7 @@
     "install:py": "pip install -e .",
     "check:layers": "node tools/check-layers.mjs",
     "check:deploy": "node tools/check-vercel-deploy.mjs",
+    "indexnow": "node tools/indexnow-ping.mjs",
     "validate": "pnpm check:layers && pnpm check:deploy && pnpm lint && pnpm typecheck"
   },
   "devDependencies": {

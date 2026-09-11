@@ -35,12 +35,29 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Casuya",
-    "url": "https://www.casuya.co.tz/",
-    "logo": "https://www.casuya.co.tz/assets/images/casuya-logo.svg",
-    "description": "An offline-ready educational platform for Tanzanian students, teachers, and schools — interactive lessons, quizzes, and progress tracking built for any infrastructure.",
-    "sameAs": []
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.casuya.co.tz/#website",
+        "url": "https://www.casuya.co.tz/",
+        "name": "Casuya",
+        "alternateName": "Casuya Learning Platform",
+        "description": "An offline-ready educational platform for Tanzanian students, teachers, and schools — interactive lessons, quizzes, and progress tracking built for any infrastructure.",
+        "inLanguage": ["en", "sw"],
+        "publisher": { "@id": "https://www.casuya.co.tz/#organization" }
+      },
+      {
+        "@type": ["Organization", "EducationalOrganization"],
+        "@id": "https://www.casuya.co.tz/#organization",
+        "name": "Casuya",
+        "alternateName": "Casuya Learning Platform",
+        "url": "https://www.casuya.co.tz/",
+        "logo": "https://www.casuya.co.tz/assets/images/casuya-logo.svg",
+        "description": "An offline-ready educational platform for Tanzanian students, teachers, and schools — interactive lessons, quizzes, and progress tracking built for any infrastructure.",
+        "areaServed": { "@type": "Country", "name": "Tanzania" },
+        "sameAs": ["https://github.com/casuya-co-tz"]
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="/assets/css/main.min.css">

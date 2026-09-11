@@ -62,6 +62,7 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/forgot-password", "destination": "/forgot-password.html" },
-    { "source": "/reset-password", "destination": "/reset-password.html" }
+    { "source": "/reset-password", "destination": "/reset-password.html" },
+    { "source": "/select-role", "destination": "/select-role.html" }
   ]
 }
