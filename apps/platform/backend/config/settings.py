@@ -47,6 +47,12 @@ class Settings(BaseSettings):
     database_replica_url: str | None = None
     redis_url: str = "redis://localhost:6379"
 
+    # Isolated event-analytics engine (Neon cluster separate from the primary
+    # operational database). When unset, every analytics path degrades silently.
+    analytics_database_url: str | None = None
+    # Daily cryptographic salt mixed with ip+user-agent to anonymize visitors.
+    analytics_salt_key: str = ""
+
     jwt_secret: str = ""
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 15

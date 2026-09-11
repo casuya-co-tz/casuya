@@ -11,6 +11,7 @@ from fastapi import FastAPI
 from backend.api import (
     ai,
     analytics,
+    analytics_events,
     assignments,
     auth,
     bookmarks,
@@ -32,17 +33,19 @@ from backend.api import (
     reference_docs,
     search,
     services_bridge,
-    settings as settings_api,
     students,
     subjects,
     subtopics,
     syllabus,
-    teachers,
     teacher_plans,
+    teachers,
     topics,
     transcode,
     uploads,
     users,
+)
+from backend.api import (
+    settings as settings_api,
 )
 
 
@@ -63,6 +66,7 @@ def include_routers(app: FastAPI) -> None:
         games,
         progress,
         analytics,
+        analytics_events,
         core,
         payments,
         notifications,

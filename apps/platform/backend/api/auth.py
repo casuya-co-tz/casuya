@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 
 from backend.middleware.auth import get_current_user
 from backend.schemas.auth import (
@@ -42,11 +42,27 @@ def register(body: RegisterRequest):
 
 @router.post("/login", response_model=AuthResponse)
 @router.post("/login/", response_model=AuthResponse)
-def login(body: LoginRequest):
+def login(body: LoginRequest, request: Request):
     try:
-        return authenticate_user(
+        result = authenticate_user(
             email=body.email, password=body.password, keep_logged_in=body.keep_logged_in
         )
+        # Fire the analytics login_success_action signal inside the success
+        # block only (blueprint Phase 4) — never on denial.
+        try:
+            from backend.services import analytics_events
+
+            forwarded = request.headers.get("x-forwarded-for")
+            ip = forwarded.split(",")[0].strip() if forwarded else (request.client.host if request.client else "")
+            analytics_events.enqueue_event(
+                route_path="/login",
+                interaction_type="login_success_action",
+                ip=ip,
+                user_agent=request.headers.get("user-agent", ""),
+            )
+        except Exception:  # noqa: BLE001 — analytics must never affect login
+            pass
+        return result
     except ValueError as e:
         raise HTTPException(status_code=401, detail=str(e))
     except Exception as e:

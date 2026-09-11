@@ -29,6 +29,15 @@ async def platform_startup():
 
             await asyncio.to_thread(init_db)
 
+            # Isolated analytics cluster: schema/retention-procedure creation is
+            # best-effort and never allowed to block or fail the main boot.
+            try:
+                from backend.config.database_analytics import init_analytics_db
+
+                await asyncio.to_thread(init_analytics_db)
+            except Exception as analytics_exc:  # noqa: BLE001
+                print(f"WARNING: analytics schema init skipped: {analytics_exc}")
+
             admin_email = os.environ.get("CASUYA_ADMIN_EMAIL", "").strip()
             admin_password = os.environ.get("CASUYA_ADMIN_PASSWORD", "").strip()
             if admin_email and admin_password:
@@ -55,12 +64,17 @@ async def platform_startup():
         if acquired:
             await asyncio.to_thread(release_startup_lock)
 
+    from backend.services.analytics_events import start_retention_loop
     from backend.services.payment_cache import start_cache_sync, stop_cache_sync
 
     start_cache_sync()
+    start_retention_loop()
     try:
         yield
     finally:
+        from backend.services.analytics_events import stop_retention_loop
+
+        stop_retention_loop()
         stop_cache_sync()
 
 
