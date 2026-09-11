@@ -14,15 +14,20 @@ curriculum (Mathematics, Chemistry, Physics):
    - ``seed_admin_math``      -> admin ``subjects``/``topics``/``subtopics``
    - ``seed_reference_library_local`` -> bundled lesson plans + schemes
 
+Topics are only introduced for the current form window — Form I and Form II
+by default. Existing Form III-VI rows are never touched by any seed step or
+by the purge; they stay until the window is explicitly widened (``--forms``).
+
 Strict table references (lessons, progress) are untouched: they never attach
 to removed subjects. ``--demo`` additionally runs the dev-data seed
 (demo accounts + sample lesson/game/quiz); it is a no-op on non-empty DBs.
 
 Usage (from the repo -- the ``database`` package must be importable):
 
-    python -m database.seeds.reseed             # curriculum only
-    python -m database.seeds.reseed --demo      # + demo accounts/content
-    python -m database.seeds.reseed --keep-unmapped   # retain NULL-slug ref docs
+    python -m database.seeds.reseed                    # forms I-II only
+    python -m database.seeds.reseed --forms 1-4        # widen the form window
+    python -m database.seeds.reseed --demo             # + demo accounts/content
+    python -m database.seeds.reseed --keep-unmapped    # retain NULL-slug ref docs
 """
 
 from __future__ import annotations
@@ -35,7 +40,7 @@ from backend.models.reference_doc import ReferenceDoc
 from backend.models.syllabus import SyllabusSubject
 from backend.models.teacher_plan import TeacherPlan
 
-from .seed_necta_syllabus import NECTA_SYLLABUS
+from .seed_necta_syllabus import NECTA_SYLLABUS, SEED_FORM_MAX, SEED_FORM_MIN
 
 
 def kept_slugs() -> set[str]:
@@ -144,7 +149,13 @@ def _counts(db) -> None:
         print(f"    {table}: {q.count()}")
 
 
-def run(*, demo: bool = False, keep_unmapped: bool = False) -> None:
+def run(
+    *,
+    demo: bool = False,
+    keep_unmapped: bool = False,
+    form_min: int = SEED_FORM_MIN,
+    form_max: int = SEED_FORM_MAX,
+) -> None:
     init_db()
     db = next(get_db())
     try:
@@ -153,15 +164,15 @@ def run(*, demo: bool = False, keep_unmapped: bool = False) -> None:
         _report_deletions(deleted)
 
         print()
-        print("== Reseed: introduce the new ==")
+        print(f"== Reseed: introduce the new (forms {form_min}-{form_max}) ==")
         from . import seed_necta_syllabus
         from . import seed_admin_math
         from . import seed_reference_library_local
 
         print("  [1/3] NECTA/TIE syllabus (syllabus_* tables)")
-        seed_necta_syllabus.run()
+        seed_necta_syllabus.run(form_min=form_min, form_max=form_max)
         print("  [2/3] Admin lesson catalog (subjects/topics/subtopics)")
-        seed_admin_math.seed_all()
+        seed_admin_math.seed_all(form_min=form_min, form_max=form_max)
         print("  [3/3] Bundled reference library (reference_docs)")
         seed_reference_library_local.run(db)
 
@@ -181,9 +192,19 @@ def run(*, demo: bool = False, keep_unmapped: bool = False) -> None:
 
 def main() -> None:
     args = set(sys.argv[1:])
+    form_min, form_max = SEED_FORM_MIN, SEED_FORM_MAX
+    forms_arg = next((a for a in sys.argv[1:] if a.startswith("--forms=")), None)
+    if forms_arg:
+        try:
+            parts = forms_arg.split("=", 1)[1].split("-")
+            form_min, form_max = int(parts[0]), int(parts[1])
+        except (ValueError, IndexError):
+            raise SystemExit("usage: --forms MIN-MAX e.g. --forms=1-2 (or --forms 1-4)")
     run(
         demo="--demo" in args,
         keep_unmapped="--keep-unmapped" in args,
+        form_min=form_min,
+        form_max=form_max,
     )
 
 

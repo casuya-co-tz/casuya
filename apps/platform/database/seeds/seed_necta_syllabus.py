@@ -32,6 +32,12 @@ from backend.models.syllabus import (
 
 _DATA_DIR = Path(__file__).parent / "data"
 
+# Form levels currently in scope. Only topics inside this window are seeded;
+# higher forms are left untouched (additive, never deleted) until the window
+# is widened.
+SEED_FORM_MIN = 1
+SEED_FORM_MAX = 2
+
 
 def _uuid() -> str:
     return str(uuid.uuid4())
@@ -56,7 +62,12 @@ def _load_syllabus() -> list[dict]:
 NECTA_SYLLABUS: list[dict] = _load_syllabus()
 
 
-def _new_subject(db: Session, subj_data: dict) -> SyllabusSubject:
+def _new_subject(
+    db: Session,
+    subj_data: dict,
+    form_min: int = SEED_FORM_MIN,
+    form_max: int = SEED_FORM_MAX,
+) -> SyllabusSubject:
     """Create a brand-new subject row with all its topics, subtopics and outcomes."""
     subject = SyllabusSubject(
         id=_uuid(),
@@ -71,24 +82,37 @@ def _new_subject(db: Session, subj_data: dict) -> SyllabusSubject:
     )
     db.add(subject)
     db.flush()
-    _seed_topics(db, subject, subj_data)
+    _seed_topics(db, subject, subj_data, form_min=form_min, form_max=form_max)
     return subject
 
 
-def _seed_topics(db: Session, subject: SyllabusSubject, subj_data: dict) -> int:
+def _seed_topics(
+    db: Session,
+    subject: SyllabusSubject,
+    subj_data: dict,
+    form_min: int = SEED_FORM_MIN,
+    form_max: int = SEED_FORM_MAX,
+) -> int:
     """Seed topics for an existing (or just-created) subject.
 
-    Topics already present (matched by title + form_level for the subject) are
-    skipped; missing topics — including their subtopics and learning outcomes —
-    are appended. Returns the number of topics newly added.
+    Only topics within the ``[form_min, form_max]`` window are seeded; higher
+    forms are never created or modified here. Topics already present (matched
+    by title + form_level for the subject) are skipped; missing topics —
+    including their subtopics and learning outcomes — are appended. Returns the
+    number of topics newly added.
 
-    When the subject declares ``replace_topic_form_levels``, the topics in the
-    seed data for those form levels are treated as the authoritative set:
-    existing topics whose subtopic titles differ from the seed are refreshed,
-    and topics absent from the seed are removed. Keeps the database in sync
-    with the NECTA/TIE data source on every run.
+    When ``replace_topic_form_levels`` is declared, the topics in the seed
+    data for those form levels (still bounded by the form window) are treated
+    as the authoritative set: existing topics whose subtopic titles differ
+    from the seed are refreshed, and topics absent from the seed are removed.
+    Keep the in-window database in sync with the NECTA/TIE data source on
+    every run. Forms outside the window are never created or modified here.
     """
-    replace_levels = set(subj_data.get("replace_topic_form_levels") or [])
+    replace_levels = set(range(form_min, form_max + 1)) | {
+        f
+        for f in (subj_data.get("replace_topic_form_levels") or [])
+        if form_min <= f <= form_max
+    }
     existing = {
         (t.subject_id, t.title, t.form_level)
         for t in db.query(SyllabusTopic).filter(SyllabusTopic.subject_id == subject.id).all()
@@ -100,8 +124,10 @@ def _seed_topics(db: Session, subject: SyllabusSubject, subj_data: dict) -> int:
     authoritative = set()
     added = 0
     for topic_data in subj_data.get("topics", []):
-        key = (subject.id, topic_data["title"], topic_data["form_level"])
         form_level = topic_data["form_level"]
+        if not (form_min <= form_level <= form_max):
+            continue
+        key = (subject.id, topic_data["title"], form_level)
         if form_level in replace_levels:
             authoritative.add(key)
         current = topics_by_key.get(key)
@@ -170,14 +196,19 @@ def _seed_topics(db: Session, subject: SyllabusSubject, subj_data: dict) -> int:
     return added
 
 
-def run() -> None:
+def run(
+    form_min: int = SEED_FORM_MIN,
+    form_max: int = SEED_FORM_MAX,
+) -> None:
     """Seed the NECTA/TIE syllabus data into the database.
 
-    Additive at topic level: existing subjects are updated (form range widened,
-    missing A-Level topics appended), brand-new subjects are created whole.
-    Subjects may declare replace_topic_form_levels to make the seed data the
-    authoritative topic set for those form levels. Safe to re-run in local and
-    production environments.
+    Only topics in the ``[form_min, form_max]`` form window are seeded (the
+    default is Form I-II); topics in higher forms are never created, replaced
+    or removed here. Additive at topic level within the window: existing
+    subjects are updated, brand-new subjects are created whole. Subjects may
+    declare replace_topic_form_levels to make the seed data the authoritative
+    topic set for those form levels (still bounded by the window). Safe to
+    re-run in local and production environments.
     """
     init_db()
     db: Session = next(get_db())
@@ -192,7 +223,7 @@ def run() -> None:
             existing = subjects_by_code.get(code)
             try:
                 if existing is None:
-                    _new_subject(db, subj_data)
+                    _new_subject(db, subj_data, form_min=form_min, form_max=form_max)
                     subjects_by_code[code] = db.query(SyllabusSubject).filter(
                         SyllabusSubject.code == code
                     ).one()
@@ -209,7 +240,9 @@ def run() -> None:
                 if subj_data.get("description"):
                     existing.description = subj_data["description"]
 
-                added = _seed_topics(db, existing, subj_data)
+                added = _seed_topics(
+                    db, existing, subj_data, form_min=form_min, form_max=form_max
+                )
                 new_topics += added
                 db.commit()
                 if added:
@@ -220,7 +253,8 @@ def run() -> None:
 
         print()
         print(f"  NECTA/TIE syllabus seeded successfully "
-              f"({new_subjects} new subject(s), {new_topics} new topic(s))!")
+              f"({new_subjects} new subject(s), {new_topics} new topic(s), "
+              f"forms {form_min}-{form_max})!")
         print()
 
         # Print summary
