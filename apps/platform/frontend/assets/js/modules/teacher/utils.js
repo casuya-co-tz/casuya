@@ -1,6 +1,7 @@
 // modules/teacher/utils.js — shared utilities for teacher dashboard views
 
 function renderBlackboardReplay(elements) {
+  if (window.ensureKaTeX && !window.katex) window.ensureKaTeX();
   const canvas = document.getElementById("bb-replay-canvas");
   if (!canvas || !elements.length) return;
   const ctx = canvas.getContext("2d");

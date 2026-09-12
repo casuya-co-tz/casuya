@@ -18,10 +18,37 @@
       });
   }
 
+  // Lazy-load the (110KB) blackboard UMD vendor on demand, so students who never
+  // open a blackboard lesson don't pay for it on every portal load.
+  var vendorLoading = null;
+  function ensureVendor() {
+    if (window.CasuyaBlackboard && window.CasuyaBlackboard.Blackboard) {
+      return Promise.resolve(true);
+    }
+    if (!vendorLoading) {
+      vendorLoading = new Promise(function (resolve) {
+        var s = document.createElement("script");
+        s.src = "/assets/js/vendor-blackboard.min.js";
+        s.async = true;
+        s.onload = function () {
+          resolve(!!(window.CasuyaBlackboard && window.CasuyaBlackboard.Blackboard));
+        };
+        s.onerror = function () {
+          resolve(false);
+        };
+        document.head.appendChild(s);
+      });
+    }
+    return vendorLoading;
+  }
+
   async function mountBlackboard(container, opts) {
-    if (!window.CasuyaBlackboard || !window.CasuyaBlackboard.Blackboard) {
-      container.innerHTML =
-        '<div style="padding:1rem;color:#b91c1c">Blackboard failed to load. Check your connection.</div>';
+    const vendorReady = await ensureVendor();
+    if (!vendorReady || !window.CasuyaBlackboard || !window.CasuyaBlackboard.Blackboard) {
+      if (container) {
+        container.innerHTML =
+          '<div style="padding:1rem;color:#b91c1c">Blackboard failed to load. Check your connection.</div>';
+      }
       return;
     }
 

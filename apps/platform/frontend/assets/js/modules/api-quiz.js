@@ -2,20 +2,24 @@
 
 /* ── Math (KaTeX) Rendering ───────────────────────────────────────── */
 window.renderMath = function (el) {
-  if (!el || typeof window.renderMathInElement !== "function") return;
-  try {
-    window.renderMathInElement(el, {
-      delimiters: [
-        { left: "\\[", right: "\\]", display: true },
-        { left: "\\(", right: "\\)", display: false },
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false },
-      ],
-      throwOnError: false,
-    });
-  } catch (e) {
-    // Never let a math failure break the page.
-  }
+  if (!el) return;
+  // KaTeX is lazy-loaded on demand (see api-client/core/katex-loader.js).
+  window.ensureKaTeX().then(function () {
+    if (typeof window.renderMathInElement !== "function") return;
+    try {
+      window.renderMathInElement(el, {
+        delimiters: [
+          { left: "\\[", right: "\\]", display: true },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+        throwOnError: false,
+      });
+    } catch (e) {
+      // Never let a math failure break the page.
+    }
+  });
 };
 
 window._quizSubmit = function(quizId, total) {

@@ -22,7 +22,8 @@
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preconnect" href="https://casuya-platform-production.up.railway.app" crossorigin>
   <link rel="dns-prefetch" href="https://casuya-platform-production.up.railway.app">
-  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/opendyslexic">
+  <link rel="preload" href="https://fonts.cdnfonts.com/css/opendyslexic" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.cdnfonts.com/css/opendyslexic"></noscript>
   <script src="/assets/js/env.js"></script>
   <script src="/assets/js/config.js"></script>
   <script src="/assets/js/brand.js"></script>
@@ -643,13 +644,6 @@
 
     } // end if (!redirectIfAuthed())
   </script>
-  <script src="/assets/js/i18n/swahili/navigation.js"></script>
-  <script src="/assets/js/i18n/swahili/accessibility.js"></script>
-  <script src="/assets/js/i18n/swahili/hero.js"></script>
-  <script src="/assets/js/i18n/swahili/landing.js"></script>
-  <script src="/assets/js/i18n/swahili/demo.js"></script>
-  <script src="/assets/js/i18n/swahili/auth.js"></script>
-  <script src="/assets/js/i18n/swahili.js"></script>
-  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/i18n.swahili.bundle.js"></script>
 </body>
 </html>

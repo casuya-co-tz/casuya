@@ -127,7 +127,8 @@ async function openAssignmentSubmissions(dashboard, id) {
           detail.innerHTML = html;
           card.scrollIntoView({ behavior: "smooth", block: "start" });
           if (elements.length > 0) {
-            requestAnimationFrame(() => renderBlackboardReplay(elements));
+            const replay = () => requestAnimationFrame(() => renderBlackboardReplay(elements));
+            if (window.ensureKaTeX) window.ensureKaTeX().then(replay); else replay();
           }
         } catch(err) { detail.innerHTML = '<div style="padding:1rem;color:var(--color-error)">Failed to load submission: ' + escapeHtml(err.message) + '</div>'; }
       });

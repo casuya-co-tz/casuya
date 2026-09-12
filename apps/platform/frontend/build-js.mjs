@@ -48,6 +48,7 @@ const core = [
   "modules/api-client/core/errors.js",
   "modules/api-client/core/markdown.js",
   "modules/api-client/core/quiz.js",
+  "modules/api-client/core/katex-loader.js",
   "modules/api-client/core/test-generator.js",
   "modules/api-client/core/fetch.js",
   "modules/api-quiz.js",
@@ -173,6 +174,30 @@ const roles = {
   ],
 };
 
+// Landing i18n bundle (P1-5) — merges the eight Swahili/English translation
+// scripts into one request for the landing/auth pages. Order must match the
+// classic-script order previously inlined in index.html: dictionary parts
+// (i18n/swahili/*) first, then swahili.js (exposes SW), then i18n.js (engine).
+const i18nBundleFiles = [
+  "i18n/swahili/navigation.js",
+  "i18n/swahili/accessibility.js",
+  "i18n/swahili/hero.js",
+  "i18n/swahili/landing.js",
+  "i18n/swahili/demo.js",
+  "i18n/swahili/auth.js",
+  "i18n/swahili.js",
+  "i18n.js",
+];
+
+function buildBundle(outName, files) {
+  const parts = files.map((f) => stripEsm(readFileSync(join(jsDir, f), "utf8")));
+  const out = parts.join("\n;\n");
+  const outPath = join(jsDir, outName);
+  writeFileSync(outPath, out);
+  writeFileSync(`${outPath}.gz`, gzipSync(out, { level: 9 }));
+  console.log(`wrote ${outName} + ${outName}.gz`);
+}
+
 function gzipBundles() {
   for (const role of Object.keys(roles)) {
     const outPath = join(jsDir, `${role}.bundle.js`);
@@ -180,6 +205,10 @@ function gzipBundles() {
     writeFileSync(`${outPath}.gz`, gzipSync(out, { level: 9 }));
     console.log(`wrote assets/js/${role}.bundle.js.gz`);
   }
+  const i18nPath = join(jsDir, "i18n.swahili.bundle.js");
+  const i18nOut = readFileSync(i18nPath);
+  writeFileSync(`${i18nPath}.gz`, gzipSync(i18nOut, { level: 9 }));
+  console.log("wrote assets/js/i18n.swahili.bundle.js.gz");
 }
 
 if (process.argv.includes("--gzip-only")) {
@@ -191,6 +220,7 @@ if (process.argv.includes("--gzip-only")) {
     const outPath = join(jsDir, `${role}.bundle.js`);
     writeFileSync(outPath, out);
   }
+  buildBundle("i18n.swahili.bundle.js", i18nBundleFiles);
   gzipBundles();
   console.log(`wrote ${Object.keys(roles).length} role bundles and updated .gz files`);
 }
