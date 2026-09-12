@@ -43,6 +43,7 @@ def register_user(
         user = User(
             email=email,
             phone=phone,
+            full_name=full_name,
             hashed_password=hash_password(password),
             role=db_role,
         )

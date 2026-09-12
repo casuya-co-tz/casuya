@@ -10,6 +10,10 @@ class UserResponse(BaseModel):
     is_active: bool
 
 
+class UserStatusUpdateRequest(BaseModel):
+    is_active: bool
+
+
 class UserUpdateRequest(BaseModel):
     phone: str | None = None
     full_name: str | None = None
