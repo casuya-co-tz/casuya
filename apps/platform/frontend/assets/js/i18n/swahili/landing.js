@@ -66,7 +66,7 @@ window.SW = Object.assign(window.SW || {}, {
     "people.bahati": "Bahati Abeld Chusi",
     "people.bahati_role": "Mwanafunzi",
     "people.bahati_story": "\"Napakua maelezo yangu kwenye Wi-Fi ya shule, kisha najifunza kwenye safari ya daladala kurudi nyumbani. Hakuna mtandao, hakuna tatizo.\"",
-    "people.nickson": "Nickson Kasmir Tlanka",
+    "people.nickson": "Kasmir Thomas Tlanka",
     "people.nickson_role": "Mwanafunzi",
     "people.nickson_story": "\"Masomo mengine ni magumu kufuatilia darasani likiwa limejaa. Naweza kurudi na kujifunza tena kwa kasi yangu, mara kwa mara, mpaka nielewe.\"",
     "people.shedrack": "Shedrack Peam Laurent",
@@ -83,7 +83,7 @@ window.SW = Object.assign(window.SW || {}, {
 
     // CTA
     "cta.letterlabel": "Neno kutoka Casuya",
-    "cta.letter": "\"Casuya ilijengwa kwa watu halisi kama <strong>Cosmas</strong>, mwalimu; <strong>Bahati</strong>, <strong>Nickson</strong> na <strong>Shedrack</strong>, wanafunzi; na <strong>Eliya</strong>, baba — watu wanaoshiriki simu, wanaosoma wakati umeme ukipita, na ambao daima waliweza zaidi ya hali zao zilivyoruhusu.<br><br>Shule hii ni yako. Ni nyepesi kwa simu uliyo nayo, na inafanya kazi hata mahali mtandao usipofika — ili kizuizi pekee cha mafanikio yako kiondoke. Karibu — sasa wewe ni sehemu ya Casuya.\"",
+    "cta.letter": "\"Casuya ilijengwa kwa watu halisi kama <strong>Cosmas</strong>, mwalimu; <strong>Bahati</strong>, <strong>Kasmir</strong> na <strong>Shedrack</strong>, wanafunzi; na <strong>Eliya</strong>, baba — watu wanaoshiriki simu, wanaosoma wakati umeme ukipita, na ambao daima waliweza zaidi ya hali zao zilivyoruhusu.<br><br>Shule hii ni yako. Ni nyepesi kwa simu uliyo nayo, na inafanya kazi hata mahali mtandao usipofika — ili kizuizi pekee cha mafanikio yako kiondoke. Karibu — sasa wewe ni sehemu ya Casuya.\"",
     "cta.how": "Twende — angalia jinsi inavyofanya kazi",
     "cta.closing_title": "Karibu — sasa u sehemu ya Casuya.",
     "cta.closing_desc": "Nyepesi vya kutosha kwa simu uliyonayo. Imejengwa kufanya kazi hata pale mtandao unapokwama — ili kinachosimama kati yako na kufaulu kiondoke.",
