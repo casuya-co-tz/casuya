@@ -83,13 +83,13 @@
 <body class="bg-[#faf7f2] text-slate-800 antialiased overflow-x-hidden" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
 
   <!-- Skip Link -->
-  <a href="#login-form" class="skip-link">Skip to login form</a>
+<a href="#login-form" class="skip-link" data-i18n="a11y.skip_login">Skip to login form</a>
 
   <!-- Mini Accessibility Toolbar -->
-  <div class="a11y-mini" role="region" aria-label="Quick accessibility toggles">
-    <button id="a11y-dyslexia" aria-label="Toggle dyslexia-friendly font" title="Dyslexia Font">📖</button>
-    <button id="a11y-contrast" aria-label="Toggle high contrast mode" title="High Contrast">🌗</button>
-    <button id="a11y-tts" aria-label="Toggle text-to-speech" title="Text-to-Speech">🔊</button>
+  <div class="a11y-mini" role="region" aria-label="Quick accessibility toggles" data-i18n-aria="a11y.region">
+    <button id="a11y-dyslexia" aria-label="Toggle dyslexia-friendly font" title="Dyslexia Font" data-i18n-aria="a11y.toggle_dyslexia">dY"-</button>
+    <button id="a11y-contrast" aria-label="Toggle high contrast mode" title="High Contrast" data-i18n-aria="a11y.toggle_contrast">dYO-</button>
+    <button id="a11y-tts" aria-label="Toggle text-to-speech" title="Text-to-Speech" data-i18n-aria="a11y.toggle_tts">dY"S</button>
   </div>
 
   <!-- Screen-reader live region for dynamic announcements -->
@@ -134,7 +134,7 @@
         <!-- Header -->
         <div class="text-center mb-8">
           <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:linear-gradient(135deg,rgba(37,99,235,0.1),rgba(124,58,237,0.08));border:1px solid rgba(37,99,235,0.15);box-shadow:0 4px 16px rgba(37,99,235,0.08);">
-            <svg class="w-8 h-8" style="color:#2563eb;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" role="img" aria-label="Key">
+            <svg class="w-8 h-8" style="color:#2563eb;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" role="img" aria-label="Key" data-i18n-aria="a11y.icon_key">
               <use href="/assets/images/icons/platform-icons.svg#i-key"></use>
             </svg>
           </div>
@@ -143,7 +143,7 @@
         </div>
 
         <!-- Login Form -->
-        <form id="login-form" class="space-y-6" novalidate aria-label="Login form">
+        <form id="login-form" class="space-y-6" novalidate aria-label="Login form" data-i18n-aria="login.form_aria">
           <!-- Email Field -->
           <div class="space-y-2">
             <label for="email" class="text-sm font-semibold text-slate-800" data-i18n="login.email_label">Email Address</label>
@@ -200,6 +200,7 @@
                 aria-label="Show password"
                 aria-pressed="false"
                 onclick="togglePasswordVisibility(event)"
+                data-i18n-aria="login.show_password"
               >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
                   <use href="/assets/images/icons/platform-icons.svg#i-eye"></use>
@@ -255,7 +256,7 @@
         </div>
 
         <!-- Social Login -->
-        <div class="space-y-3" role="group" aria-label="Social login options">
+        <div class="space-y-3" role="group" aria-label="Social login options" data-i18n-aria="login.social_aria">
           <button
             type="button"
             onclick="window.location.href=(typeof casuyaOAuthUrl==='function'?casuyaOAuthUrl('google'):'#')"
@@ -264,6 +265,7 @@
             onmouseover="this.style.borderColor='#94a3b8';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)'"
             onmouseout="this.style.borderColor='#e2e8f0';this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'"
             aria-label="Sign in with Google"
+            data-i18n-aria="login.google_aria"
           >
             <svg class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink:0;display:block;stroke:none;">
               <use href="/assets/images/icons/platform-icons.svg#i-google"></use>
@@ -280,6 +282,7 @@
             onmouseout="this.style.borderColor='#e2e8f0';this.style.boxShadow='0 1px 3px rgba(0,0,0,0.06)'"
             aria-label="Sign in with Facebook"
             hidden
+            data-i18n-aria="login.facebook_aria"
           >
             <svg class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true" style="flex-shrink:0;display:block;stroke:none;">
               <use href="/assets/images/icons/platform-icons.svg#i-facebook"></use>
@@ -399,6 +402,7 @@
     // Check for OAuth error
     const oauthError = new URLSearchParams(window.location.search).get('error');
     if (oauthError) {
+      const i18nT = window.CasuyaI18n && window.CasuyaI18n.getLang() === 'sw' ? window.CasuyaI18n.t.bind(window.CasuyaI18n) : function() { return null; };
       const errorMessages = {
         no_code: 'Authorization code not received from provider.',
         token_exchange_failed: 'Failed to exchange authorization code with provider.',
@@ -408,13 +412,17 @@
         account_creation_failed: 'Failed to create account.',
         state_mismatch: 'Security check failed. Please try signing in again.',
       };
-      const msg = errorMessages[oauthError] || 'OAuth sign-in failed.';
+      const msg = i18nT('oauth.' + oauthError) || errorMessages[oauthError] || i18nT('oauth.failed') || 'OAuth sign-in failed.';
       showFormError(msg);
       window.history.replaceState({}, '', window.location.pathname);
     }
 
     // ── Helpers ─────────────────────────────────────────────────
     const announcer = document.getElementById('sr-announcer');
+
+    function i18nT(key, fallback) {
+      return (window.CasuyaI18n && window.CasuyaI18n.t(key)) || fallback;
+    }
 
     function announce(text) {
       announcer.textContent = '';
@@ -426,7 +434,7 @@
       const text = document.getElementById('form-error-text');
       text.textContent = message;
       el.classList.remove('hidden');
-      announce('Error: ' + message);
+      announce(i18nT('login.error_prefix', 'Error: ') + message);
     }
 
     function hideFormError() {
@@ -475,15 +483,15 @@
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
         if (eyeUse) eyeUse.setAttribute('href', '/assets/images/icons/platform-icons.svg#i-eye-off');
-        toggleButton.setAttribute('aria-label', 'Hide password');
+        toggleButton.setAttribute('aria-label', i18nT('login.hide_password', 'Hide password'));
         toggleButton.setAttribute('aria-pressed', 'true');
-        announce('Password visible');
+        announce(i18nT('login.password_visible', 'Password visible'));
       } else {
         passwordInput.type = 'password';
         if (eyeUse) eyeUse.setAttribute('href', '/assets/images/icons/platform-icons.svg#i-eye');
-        toggleButton.setAttribute('aria-label', 'Show password');
+        toggleButton.setAttribute('aria-label', i18nT('login.show_password', 'Show password'));
         toggleButton.setAttribute('aria-pressed', 'false');
-        announce('Password hidden');
+        announce(i18nT('login.password_hidden', 'Password hidden'));
       }
     };
 
@@ -499,22 +507,22 @@
       const password = String(formData.get('password') || '');
 
       let hasError = false;
-      if (!email) { showFieldError('email', 'Email is required.'); hasError = true; }
-      else if (!isValidEmail(email)) { showFieldError('email', 'Please enter a valid email address.'); hasError = true; }
-      if (!password) { showFieldError('password', 'Password is required.'); hasError = true; }
-      else if (password.length < 6) { showFieldError('password', 'Password must be at least 6 characters.'); hasError = true; }
+      if (!email) { showFieldError('email', i18nT('error.email_required', 'Email is required.')); hasError = true; }
+      else if (!isValidEmail(email)) { showFieldError('email', i18nT('error.email_invalid', 'Please enter a valid email address.')); hasError = true; }
+      if (!password) { showFieldError('password', i18nT('error.password_required', 'Password is required.')); hasError = true; }
+      else if (password.length < 6) { showFieldError('password', i18nT('error.password_min6', 'Password must be at least 6 characters.')); hasError = true; }
 
       if (hasError) {
-        announce('Please fix the errors in the form.');
+        announce(i18nT('login.check_form', 'Please fix the errors in the form.'));
         return;
       }
 
       const submitButton = document.getElementById('submit-btn');
       const submitStatus = document.getElementById('submit-status');
       const originalText = submitButton.textContent;
-      submitButton.textContent = 'Signing in...';
+      submitButton.textContent = i18nT('login.signing_in', 'Signing in...');
       submitButton.disabled = true;
-      submitStatus.textContent = 'Signing in, please wait...';
+      submitStatus.textContent = i18nT('login.signing_in_wait', 'Signing in, please wait...');
 
       try {
         const keepSession = document.getElementById("keep-logged-in").checked;
@@ -531,12 +539,12 @@
             localStorage.removeItem("casuya_keep_session");
           }
         } catch (e) {}
-        submitStatus.textContent = 'Login successful. Redirecting...';
-        announce('Login successful. Redirecting to your dashboard.');
+        submitStatus.textContent = i18nT('login.success', 'Login successful. Redirecting...');
+        announce(i18nT('login.success', 'Login successful. Redirecting to your dashboard.'));
         hideFormError();
         setTimeout(() => { window.location.href = getPortalPath(data.role); }, 800);
       } catch (error) {
-        const msg = error?.message || 'Unable to reach the server. Please try again later.';
+        const msg = error?.message || i18nT('error.server', 'Unable to reach the server. Please try again later.');
         showFormError(msg);
         submitStatus.textContent = '';
       } finally {
@@ -565,7 +573,7 @@
       // ── Inline validation with ARIA ──────────────────────────
       document.getElementById('email').addEventListener('input', function onEmailInput() {
         if (this.value && !isValidEmail(this.value)) {
-          showFieldError('email', 'Please enter a valid email address.');
+          showFieldError('email', i18nT('error.email_invalid', 'Please enter a valid email address.'));
         } else {
           clearFieldError('email');
         }
@@ -573,7 +581,7 @@
 
       document.getElementById('password').addEventListener('input', function onPasswordInput() {
         if (this.value && this.value.length < 6) {
-          showFieldError('password', 'Password must be at least 6 characters.');
+          showFieldError('password', i18nT('error.password_min6', 'Password must be at least 6 characters.'));
         } else {
           clearFieldError('password');
         }

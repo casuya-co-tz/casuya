@@ -3,6 +3,14 @@
 window.SW = Object.assign(window.SW || {}, {
     // Accessibility toolbar
     "a11y.skip": "Ruka hadi kwenye maudhui makuu",
+    "a11y.skip_login": "Ruka hadi fomu ya kuingia",
+    "a11y.skip_register": "Ruka hadi fomu ya usajili",
+    "a11y.skip_forgot": "Ruka hadi fomu ya kurejesha nenosiri",
+    "a11y.skip_reset": "Ruka hadi fomu ya kuweka nenosiri jipya",
+    "a11y.icon_key": "Ufunguo",
+    "a11y.icon_add_user": "Ongeza mtumiaji",
+    "a11y.icon_shield": "Ngao yenye alama ya kuthibitisha",
+    "a11y.icon_check": "Alama ya kuangalia",
     "a11y.region": "Chaguzi za ufikiaji",
     "a11y.open": "Fungua mipangilio ya ufikiaji",
     "a11y.panel": "Jopo la mipangilio ya ufikiaji",

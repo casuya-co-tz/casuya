@@ -39,4 +39,8 @@ window.SW = Object.assign(window.SW || {}, {
     "hero.offline_ready": "Tayari Kwa Mtandao 100%",
     "hero.avg_score": "Wastani wa Alama",
     "hero.progress": "+18% Maendeleo",
+
+    // Hero illustration title/desc (a11y)
+    "hero.art_title": "Casuya kwenye simu",
+    "hero.art_desc": "Mchoro wa programu ya Casuya: simu ya mkononi inayoonyesha kadi ya somo karibu na rundo la vitabu chini ya mti wa acacia na jua linapozama.",
 });

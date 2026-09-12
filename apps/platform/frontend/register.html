@@ -89,13 +89,13 @@
 <body class="bg-[#faf7f2] text-slate-800 antialiased overflow-x-hidden" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
 
   <!-- Skip Link -->
-  <a href="#register-form" class="skip-link">Skip to registration form</a>
+<a href="#register-form" class="skip-link" data-i18n="a11y.skip_register">Skip to registration form</a>
 
   <!-- Mini Accessibility Toolbar -->
-  <div class="a11y-mini" role="region" aria-label="Quick accessibility toggles">
-    <button id="a11y-dyslexia" aria-label="Toggle dyslexia-friendly font" title="Dyslexia Font">📖</button>
-    <button id="a11y-contrast" aria-label="Toggle high contrast mode" title="High Contrast">🌗</button>
-    <button id="a11y-tts" aria-label="Toggle text-to-speech" title="Text-to-Speech">🔊</button>
+  <div class="a11y-mini" role="region" aria-label="Quick accessibility toggles" data-i18n-aria="a11y.region">
+    <button id="a11y-dyslexia" aria-label="Toggle dyslexia-friendly font" title="Dyslexia Font" data-i18n-aria="a11y.toggle_dyslexia">dY"-</button>
+    <button id="a11y-contrast" aria-label="Toggle high contrast mode" title="High Contrast" data-i18n-aria="a11y.toggle_contrast">dYO-</button>
+    <button id="a11y-tts" aria-label="Toggle text-to-speech" title="Text-to-Speech" data-i18n-aria="a11y.toggle_tts">dY"S</button>
   </div>
 
   <!-- Screen-reader live region -->
@@ -133,7 +133,7 @@
       <div class="auth-card-premium">
         <div class="text-center mb-8">
           <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:linear-gradient(135deg,rgba(37,99,235,0.1),rgba(124,58,237,0.08));border:1px solid rgba(37,99,235,0.15);box-shadow:0 4px 16px rgba(37,99,235,0.08);">
-            <svg class="w-8 h-8" style="color:#2563eb;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" role="img" aria-label="Add user">
+            <svg class="w-8 h-8" style="color:#2563eb;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" role="img" aria-label="Add user" data-i18n-aria="a11y.icon_add_user">
               <use href="/assets/images/icons/platform-icons.svg#i-user-plus"></use>
             </svg>
           </div>
@@ -141,11 +141,11 @@
           <p class="text-sm" style="color:#64748b;" data-i18n="register.desc">Pick who you are — a student, a teacher, or a learner who needs extra support — and we'll set up your space.</p>
         </div>
 
-        <form class="space-y-6" id="register-form" novalidate aria-label="Registration form">
+        <form class="space-y-6" id="register-form" novalidate aria-label="Registration form" data-i18n-aria="register.form_aria">
           <div class="grid md:grid-cols-2 gap-6">
             <!-- Full Name -->
             <div class="space-y-2 md:col-span-2">
-              <label for="full_name" class="text-sm font-semibold text-slate-800" data-i18n="register.fullname_label">Full Name <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+              <label for="full_name" class="text-sm font-semibold text-slate-800"><span data-i18n="register.fullname_label">Full Name</span> <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only" data-i18n="register.required">(required)</span></label>
               <input
                 type="text"
                 id="full_name"
@@ -163,7 +163,7 @@
 
             <!-- Email -->
             <div class="space-y-2">
-              <label for="email" class="text-sm font-semibold text-slate-800" data-i18n="register.email_label">Email Address <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+              <label for="email" class="text-sm font-semibold text-slate-800"><span data-i18n="register.email_label">Email Address</span> <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only" data-i18n="register.required">(required)</span></label>
               <input
                 type="email"
                 id="email"
@@ -199,7 +199,7 @@
 
             <!-- Role Selection -->
             <div class="space-y-2">
-              <label for="role" class="text-sm font-semibold text-slate-800" data-i18n="register.account_type">Account Type <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+              <label for="role" class="text-sm font-semibold text-slate-800"><span data-i18n="register.account_type">Account Type</span> <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only" data-i18n="register.required">(required)</span></label>
               <select
                 id="role"
                 name="role"
@@ -215,7 +215,7 @@
             </div>
 
             <!-- Accessibility preferences (shown for special needs) -->
-            <div class="space-y-2 md:col-span-2 hidden" id="accessibility-prefs" role="group" aria-label="Accessibility preferences">
+            <div class="space-y-2 md:col-span-2 hidden" id="accessibility-prefs" role="group" aria-label="Accessibility preferences" data-i18n-aria="register.accessibility">
               <fieldset>
                 <legend class="text-sm font-semibold text-slate-800 mb-2" data-i18n="register.accessibility">Accessibility Preferences</legend>
                 <p class="text-xs text-slate-500 mb-3" data-i18n="register.accessibility_desc">Select what helps you learn best. You can change these anytime in Settings.</p>
@@ -258,7 +258,7 @@
 
             <!-- Password -->
             <div class="space-y-2">
-              <label for="password" class="text-sm font-semibold text-slate-800" data-i18n="register.password_label">Password <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+              <label for="password" class="text-sm font-semibold text-slate-800"><span data-i18n="register.password_label">Password</span> <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only" data-i18n="register.required">(required)</span></label>
               <div class="relative">
                 <input
                   type="password"
@@ -272,17 +272,17 @@
                   placeholder="At least 8 characters"
                   data-i18n-ph="register.password_placeholder"
                 >
-                <button type="button" id="toggle-reg-password" class="absolute right-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors" aria-label="Show password" aria-pressed="false">
+                <button type="button" id="toggle-reg-password" class="absolute right-3 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors" aria-label="Show password" aria-pressed="false" data-i18n-aria="login.show_password">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/images/icons/platform-icons.svg#i-eye"></use></svg>
                 </button>
               </div>
               <!-- Strength meter -->
-              <div class="pw-strength-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="4" aria-label="Password strength">
+              <div class="pw-strength-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="4" aria-label="Password strength" data-i18n-aria="register.strength_aria">
                 <div class="pw-strength-fill" id="pw-strength-fill" style="width:0%;background:#e2e8f0"></div>
               </div>
               <div class="text-xs font-medium" id="password-strength-label" aria-live="polite" data-i18n="register.strength"></div>
               <!-- Requirements checklist -->
-              <div class="pw-requirements" id="pw-requirements-desc" role="list" aria-label="Password requirements">
+              <div class="pw-requirements" id="pw-requirements-desc" role="list" aria-label="Password requirements" data-i18n-aria="register.requirements_aria">
                 <div class="pw-req" id="pw-req-length" role="listitem" aria-checked="false" aria-label="At least 8 characters: not met"><span class="pw-check" aria-hidden="true">✓</span> <span data-i18n="register.req_8char">8+ characters</span></div>
                 <div class="pw-req" id="pw-req-upper" role="listitem" aria-checked="false" aria-label="Uppercase letter: not met"><span class="pw-check" aria-hidden="true">✓</span> <span data-i18n="register.req_upper">Uppercase</span></div>
                 <div class="pw-req" id="pw-req-lower" role="listitem" aria-checked="false" aria-label="Lowercase letter: not met"><span class="pw-check" aria-hidden="true">✓</span> <span data-i18n="register.req_lower">Lowercase</span></div>
@@ -294,7 +294,7 @@
 
             <!-- Confirm Password -->
             <div class="space-y-2 md:col-span-2">
-              <label for="confirm_password" class="text-sm font-semibold text-slate-800" data-i18n="register.confirm_label">Confirm Password <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+              <label for="confirm_password" class="text-sm font-semibold text-slate-800"><span data-i18n="register.confirm_label">Confirm Password</span> <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only" data-i18n="register.required">(required)</span></label>
               <input
                 type="password"
                 id="confirm_password"
@@ -320,7 +320,7 @@
                 <a href="/terms.html" class="font-semibold text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener" data-i18n="register.terms_link">Terms of Service</a>
                 <span data-i18n="register.and">and</span>
                 <a href="/privacy.html" class="font-semibold text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener" data-i18n="register.privacy_link">Privacy Policy</a>
-                <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only">(required)</span>
+                <span class="text-red-500" aria-hidden="true">*</span><span class="sr-only" data-i18n="register.required">(required)</span>
               </label>
             </div>
             <details class="terms-plain">
@@ -392,7 +392,7 @@
         </div>
       </div>
       <div style="border-top:1px solid rgba(148,163,184,0.12);"></div>
-      <div class="pt-4 text-[11px]" style="color:#475569;">&copy; 2026 Casuya Platform.</div>
+      <div class="pt-4 text-[11px]" style="color:#475569;" data-i18n="footer.copyright">&copy; 2026 Casuya Platform.</div>
     </div>
   </footer>
 
@@ -446,13 +446,14 @@
     if (!redirectIfAuthed()) {
 
     const announcer = document.getElementById('sr-announcer');
+    function i18nT(key, fallback) { return (window.CasuyaI18n && window.CasuyaI18n.t(key)) || fallback; }
     function announce(text) { announcer.textContent = ''; requestAnimationFrame(() => { announcer.textContent = text; }); }
 
     function showFormError(message) {
       const el = document.getElementById('form-error');
       document.getElementById('form-error-text').textContent = message;
       el.classList.remove('hidden');
-      announce('Error: ' + message);
+      announce(i18nT('login.error_prefix', 'Error: ') + message);
     }
     function hideFormError() { document.getElementById('form-error').classList.add('hidden'); }
 
@@ -488,13 +489,13 @@
       if (pw.type === 'password') {
         pw.type = 'text';
         if (eyeUse) eyeUse.setAttribute('href', '/assets/images/icons/platform-icons.svg#i-eye-off');
-        this.setAttribute('aria-label', 'Hide password'); this.setAttribute('aria-pressed', 'true');
-        announce('Password visible');
+        this.setAttribute('aria-label', i18nT('login.hide_password', 'Hide password')); this.setAttribute('aria-pressed', 'true');
+        announce(i18nT('login.password_visible', 'Password visible'));
       } else {
         pw.type = 'password';
         if (eyeUse) eyeUse.setAttribute('href', '/assets/images/icons/platform-icons.svg#i-eye');
-        this.setAttribute('aria-label', 'Show password'); this.setAttribute('aria-pressed', 'false');
-        announce('Password hidden');
+        this.setAttribute('aria-label', i18nT('login.show_password', 'Show password')); this.setAttribute('aria-pressed', 'false');
+        announce(i18nT('login.password_hidden', 'Password hidden'));
       }
     });
 
@@ -512,6 +513,13 @@
         special: /[^A-Za-z0-9]/.test(pw),
       };
       const labels = {
+        length: 'register.req_8char',
+        upper: 'register.req_upper',
+        lower: 'register.req_lower',
+        number: 'register.req_number',
+        special: 'register.req_special',
+      };
+      const reqEnglish = {
         length: 'At least 8 characters',
         upper: 'Uppercase letter',
         lower: 'Lowercase letter',
@@ -522,14 +530,19 @@
         const el = document.getElementById('pw-req-' + k);
         el.classList.toggle('met', checks[k]);
         el.setAttribute('aria-checked', checks[k] ? 'true' : 'false');
-        el.setAttribute('aria-label', labels[k] + ': ' + (checks[k] ? 'met' : 'not met'));
+        const label = i18nT(labels[k], reqEnglish[k]);
+        const state = i18nT(checks[k] ? 'register.met' : 'register.not_met', checks[k] ? 'met' : 'not met');
+        el.setAttribute('aria-label', label + ': ' + state);
       });
       const score = Object.values(checks).filter(Boolean).length;
       const colors = ['#e2e8f0', '#dc2626', '#f59e0b', '#3b82f6', '#16a34a', '#16a34a'];
-      const strengthLabels = ['', 'Weak', 'Fair', 'Good', 'Strong', 'Very Strong'];
+      const strengthLabels = {
+        1: 'strength.weak', 2: 'strength.fair', 3: 'strength.good', 4: 'strength.strong', 5: 'strength.very_strong'
+      };
+      const strengthEnglish = { 1: 'Weak', 2: 'Fair', 3: 'Good', 4: 'Strong', 5: 'Very Strong' };
       strengthFill.style.width = (score / 5 * 100) + '%';
       strengthFill.style.background = colors[score];
-      strengthLabel.textContent = pw ? strengthLabels[score] : '';
+      strengthLabel.textContent = pw ? i18nT(strengthLabels[score] || '', strengthEnglish[score] || '') : '';
       strengthLabel.style.color = colors[score];
       return score;
     }
@@ -557,24 +570,24 @@
       const terms = document.getElementById('terms').checked;
 
       let hasError = false;
-      if (!fullName) { showFieldError('full_name', 'Full name is required.'); hasError = true; }
-      if (!email) { showFieldError('email', 'Email is required.'); hasError = true; }
-      else if (!isValidEmail(email)) { showFieldError('email', 'Please enter a valid email address.'); hasError = true; }
-      if (phone && !/^[\+]?[0-9]{10,15}$/.test(phone)) { showFieldError('phone', 'Please enter a valid phone number.'); hasError = true; }
-      if (!password) { showFieldError('password', 'Password is required.'); hasError = true; }
-      else if (password.length < 8) { showFieldError('password', 'Password must be at least 8 characters.'); hasError = true; }
-      else if (checkPasswordStrength(password) < 3) { showFieldError('password', 'Please choose a stronger password.'); hasError = true; }
-      if (password !== confirmPassword) { showFieldError('confirm_password', 'Passwords do not match.'); hasError = true; }
-      if (!terms) { showFieldError('terms', 'You must agree to the Terms of Service and Privacy Policy.'); hasError = true; }
+      if (!fullName) { showFieldError('full_name', i18nT('error.fullname_required', 'Full name is required.')); hasError = true; }
+      if (!email) { showFieldError('email', i18nT('error.email_required', 'Email is required.')); hasError = true; }
+      else if (!isValidEmail(email)) { showFieldError('email', i18nT('error.email_invalid', 'Please enter a valid email address.')); hasError = true; }
+      if (phone && !/^[\+]?[0-9]{10,15}$/.test(phone)) { showFieldError('phone', i18nT('error.phone_invalid', 'Please enter a valid phone number.')); hasError = true; }
+      if (!password) { showFieldError('password', i18nT('error.password_required', 'Password is required.')); hasError = true; }
+      else if (password.length < 8) { showFieldError('password', i18nT('error.password_min8', 'Password must be at least 8 characters.')); hasError = true; }
+      else if (checkPasswordStrength(password) < 3) { showFieldError('password', i18nT('error.password_strong', 'Please choose a stronger password.')); hasError = true; }
+      if (password !== confirmPassword) { showFieldError('confirm_password', i18nT('error.password_mismatch', 'Passwords do not match.')); hasError = true; }
+      if (!terms) { showFieldError('terms', i18nT('error.terms_required', 'You must agree to the Terms of Service and Privacy Policy.')); hasError = true; }
 
-      if (hasError) { announce('Please fix the errors in the form.'); return; }
+      if (hasError) { announce(i18nT('register.check_form', 'Please fix the errors in the form.')); return; }
 
       const submitButton = document.getElementById('submit-btn');
       const submitStatus = document.getElementById('submit-status');
       const originalText = submitButton.textContent;
-      submitButton.textContent = 'Creating account...';
+      submitButton.textContent = i18nT('register.creating', 'Creating account...');
       submitButton.disabled = true;
-      submitStatus.textContent = 'Creating your account, please wait...';
+      submitStatus.textContent = i18nT('register.creating_wait', 'Creating your account, please wait...');
 
       try {
         const prefs = {};
@@ -592,12 +605,12 @@
         });
 
         persistAuth(data);
-        submitStatus.textContent = 'Account created successfully. Redirecting...';
-        announce('Account created successfully. Redirecting to your dashboard.');
+        submitStatus.textContent = i18nT('register.success', 'Account created successfully. Redirecting...');
+        announce(i18nT('register.success', 'Account created successfully. Redirecting to your dashboard.'));
         setTimeout(() => { window.location.href = getPortalPath(data.role); }, 1500);
       } catch (error) {
         console.error('Registration error:', error);
-        showFormError(error?.message || 'Unable to reach the server. Please try again later.');
+        showFormError(error?.message || i18nT('error.server', 'Unable to reach the server. Please try again later.'));
         submitStatus.textContent = '';
       } finally {
         submitButton.textContent = originalText;
@@ -607,24 +620,24 @@
 
     // ── Inline validation ───────────────────────────────────────
     document.getElementById('email').addEventListener('input', function() {
-      if (this.value && !isValidEmail(this.value)) showFieldError('email', 'Please enter a valid email address.');
+      if (this.value && !isValidEmail(this.value)) showFieldError('email', i18nT('error.email_invalid', 'Please enter a valid email address.'));
       else clearFieldError('email');
     });
     document.getElementById('password').addEventListener('input', function() {
-      if (this.value && this.value.length < 8) showFieldError('password', 'Password must be at least 8 characters.');
+      if (this.value && this.value.length < 8) showFieldError('password', i18nT('error.password_min8', 'Password must be at least 8 characters.'));
       else clearFieldError('password');
     });
     document.getElementById('confirm_password').addEventListener('input', function() {
       const pw = document.getElementById('password').value;
-      if (this.value && this.value !== pw) showFieldError('confirm_password', 'Passwords do not match.');
+      if (this.value && this.value !== pw) showFieldError('confirm_password', i18nT('error.password_mismatch', 'Passwords do not match.'));
       else clearFieldError('confirm_password');
     });
     document.getElementById('phone').addEventListener('input', function() {
-      if (this.value && !/^[\+]?[0-9]{10,15}$/.test(this.value)) showFieldError('phone', 'Please enter a valid phone number.');
+      if (this.value && !/^[\+]?[0-9]{10,15}$/.test(this.value)) showFieldError('phone', i18nT('error.phone_invalid', 'Please enter a valid phone number.'));
       else clearFieldError('phone');
     });
     document.getElementById('terms').addEventListener('change', function() {
-      if (!this.checked) showFieldError('terms', 'You must agree to the Terms of Service.');
+      if (!this.checked) showFieldError('terms', i18nT('error.terms_required', 'You must agree to the Terms of Service.'));
       else clearFieldError('terms');
     });
 
