@@ -3,7 +3,7 @@
 window.SW = Object.assign(window.SW || {}, {
     // Hero
     "hero.badge": "Kwa wanafunzi na walimu wa Tanzania",
-    "hero.title1": "Shule uliyotamani kuwa nayo, kwenye simu unayoshiriki nayo tayari.",
+    "hero.title1": "Shule Yako. Kwenye Simu Yako.",
     "hero.title2": "Fundisha Bora.",
     "hero.title3": "Jenga Mustakabali.",
     "hero.clarity": "Masomo, majaribio na matokeo — yaliyojengwa kwa mtaala wa kidato cha kwanza hadi cha sita.",
@@ -12,10 +12,11 @@ window.SW = Object.assign(window.SW || {}, {
     "hero.start": "Karibu — anza kujifunza",
     "hero.demo": "Angalia jinsi inavyofanya kazi",
     "hero.fine": "Bure kuanza · Inafanya kazi kwenye simu ya 2GB · Kazi yako inabaki hata mtandao unapokatika",
+    "hero.map_caption": "KILA ULIPO, CASUYA IPO",
 
     // Hero chalk stat strip
     "hero.stat_2gb": "Inafanya kazi kwenye simu ya 2GB",
-    "hero.stat_offline": "Inafanya kazi bila mtandao",
+    "hero.stat_offline": "Hata mtandao hafifu — na bila mtandao baadaye",
     "hero.stat_lang": "Kiingereza na Kiswahili",
     "hero.stat_marks": "Alama zako ni zako",
 

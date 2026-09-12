@@ -4,7 +4,7 @@ window.SW = Object.assign(window.SW || {}, {
     // Trusted
     "trusted.title": "Imejengwa hapa, kwa hapa",
     "trust.t2gb": "Inafanya kazi kwenye simu ya RAM ya GB 2",
-    "trust.offline": "Inafanya kazi nje ya mtandao",
+    "trust.offline": "Hata mtandao hafifu — na bila mtandao baadaye",
     "trust.curriculum": "Imetengenezwa kwa mtaala wa Tanzania · Kidato cha 1 hadi 6",
     "trust.free": "Bure kuanza — hakuna kadi inayohitajika",
     "trust.lang": "Jifunze kwa Kiingereza na Kiswahili",

@@ -60,7 +60,25 @@ export function applyAuthChrome(container) {
   } else {
     container.innerHTML = `
       <a href="/login.html" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Login</a>
-      <a href="/register.html" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-100 transition-all hover:-translate-y-0.5">Get Started</a>
+      <a href="/register.html" id="auth-get-started" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-100 transition-all hover:-translate-y-0.5">Get Started</a>
     `;
+    applyResponsiveGetStarted(container.querySelector("#auth-get-started"));
+  }
+}
+
+// Shorten the "Get Started" button label to "Start" on iPad Pro and smaller screens.
+function applyResponsiveGetStarted(link) {
+  if (!link) return;
+  var full = "Get Started";
+  var short = "Start";
+  var mq = window.matchMedia("(max-width: 1024px)");
+  function update() {
+    link.textContent = mq.matches ? short : full;
+  }
+  update();
+  if (typeof mq.addEventListener === "function") {
+    mq.addEventListener("change", update);
+  } else if (typeof mq.addListener === "function") {
+    mq.addListener(update);
   }
 }
