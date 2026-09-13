@@ -1,0 +1,9 @@
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+gunicorn>=26.1.0
+pydantic==2.13.4
+pydantic-settings==2.15.0
+httpx==0.28.1
+# Piper is cloned from GitHub at build time; the runtime only needs its
+# Python-distributed role so we install it from the cloned checkout's edge
+# via the Dockerfile, not from PyPI. Keep the rest matching payments.

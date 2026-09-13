@@ -10,6 +10,7 @@ from fastapi import FastAPI
 
 from backend.api import (
     ai,
+    audio,
     analytics,
     analytics_events,
     assignments,
@@ -84,7 +85,8 @@ def include_routers(app: FastAPI) -> None:
         settings_api,
         teacher_plans,
         reference_docs,
-        # casuya_api_proxy MUST be last — catch-all /{path:path}
+        audio,
+        # casuya_api_proxy MUST be last �?" catch-all /{path:path}
         casuya_api_proxy,
     ):
         app.include_router(router_module.router)

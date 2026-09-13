@@ -1,0 +1,35 @@
+"""Casuya Audio-STT microservice config.
+
+Mirrors `apps/payments/app/config.py`. The Sherpa-ONNX ASR engine + Kiswahili
+(`sw`) + English models are cloned from GitHub (`k2-fsa/sherpa-onnx`) at Docker
+build time; at runtime this service only needs the model path + API key.
+"""
+
+from __future__ import annotations
+
+from functools import lru_cache
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
+    app_name: str = "casuya-audio-stt"
+    environment: str = "production"
+    port: int = 8020
+
+    # Internal API key required by every endpoint; the platform backend sends it
+    # as X-API-Key. Unset in dev keeps endpoints open (payments policy).
+    api_key: str | None = None
+
+    # Sherpa-ONNX config: offline streaming ASR, single "short utterance" model
+    # baked into the image at build (Kiswahili + English). `sample_rate` MUST
+    # match what the platform's MediaRecorder sends (16 kHz PCM mono).
+    sherpa_sample_rate: int = 16000
+    sherpa_hotwords: str = ""  # optional comma-separated domain hotwords
+
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()
