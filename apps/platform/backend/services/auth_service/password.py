@@ -1,4 +1,8 @@
-"""Password reset flows — forgot password and reset password."""
+"""Password reset flows — forgot password and reset password.
+
+Also hosts the authenticated ``change_password`` flow used by the settings
+pages (student / teacher / admin).
+"""
 
 from __future__ import annotations
 
@@ -7,7 +11,7 @@ import re
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
-from backend.config.security import hash_password
+from backend.config.security import hash_password, verify_password
 from backend.config.settings import get_settings
 from backend.models.password_reset_token import PasswordResetToken
 from backend.models.user import User
@@ -96,5 +100,26 @@ def reset_password(token: str, new_password: str) -> dict:
         reset_token.used = True
         db.commit()
         return {"message": "Password has been reset successfully"}
+    finally:
+        _gen.close()
+
+
+def change_password(user_id: str, current_password: str, new_password: str) -> dict:
+    """Change the password for an authenticated user."""
+    _gen = get_db()
+    db: Session = next(_gen)
+    try:
+        user = db.query(User).filter(User.id == user_id).first()
+        if not user:
+            raise ValueError("User not found")
+        if not verify_password(current_password, user.hashed_password):
+            raise ValueError("Current password is incorrect")
+        if len(new_password) < 6:
+            raise ValueError("New password must be at least 6 characters")
+        if verify_password(new_password, user.hashed_password):
+            raise ValueError("New password must be different from the current password")
+        user.hashed_password = hash_password(new_password)
+        db.commit()
+        return {"message": "Password changed successfully"}
     finally:
         _gen.close()

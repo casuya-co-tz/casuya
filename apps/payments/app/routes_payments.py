@@ -2,14 +2,18 @@
 
 from __future__ import annotations
 
+import hmac
+import json
+
 from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel
-from sqlalchemy import or_
+from sqlalchemy import func, or_
 from sqlalchemy.orm import Session
 
 from app.azampay import mobile_checkout
 from app.config import get_settings
 from app.models import PaymentRecord, RefundRecord
+from app.security import require_api_key, verify_webhook_signature
 from app.services import audit, get_db, now, payment_dict, refund_dict
 
 router = APIRouter()
@@ -44,6 +48,7 @@ def list_payments(
     status: str | None = None,
     limit: int = 100,
     offset: int = 0,
+    _auth: None = Depends(require_api_key),
     db: Session = Depends(get_db),
 ):
     q = db.query(PaymentRecord)
@@ -56,7 +61,7 @@ def list_payments(
 
 
 @router.get("/payments/{payment_id}")
-def get_payment(payment_id: str, db: Session = Depends(get_db)):
+def get_payment(payment_id: str, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = db.query(PaymentRecord).filter(PaymentRecord.id == payment_id).first()
     if not row:
         raise HTTPException(status_code=404, detail="Payment not found")
@@ -64,7 +69,7 @@ def get_payment(payment_id: str, db: Session = Depends(get_db)):
 
 
 @router.post("/payments")
-def create_payment(body: CreatePaymentBody, db: Session = Depends(get_db)):
+def create_payment(body: CreatePaymentBody, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = PaymentRecord(
         user_id=body.user_id,
         amount=body.amount,
@@ -82,7 +87,7 @@ def create_payment(body: CreatePaymentBody, db: Session = Depends(get_db)):
 
 
 @router.post("/payments/{payment_id}/process")
-def process_payment(payment_id: str, db: Session = Depends(get_db)):
+def process_payment(payment_id: str, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = db.query(PaymentRecord).filter(PaymentRecord.id == payment_id).first()
     if not row:
         raise HTTPException(status_code=404, detail="Payment not found")
@@ -95,7 +100,7 @@ def process_payment(payment_id: str, db: Session = Depends(get_db)):
 
 
 @router.post("/payments/{payment_id}/cancel")
-def cancel_payment(payment_id: str, db: Session = Depends(get_db)):
+def cancel_payment(payment_id: str, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = db.query(PaymentRecord).filter(PaymentRecord.id == payment_id).first()
     if not row:
         raise HTTPException(status_code=404, detail="Payment not found")
@@ -107,11 +112,27 @@ def cancel_payment(payment_id: str, db: Session = Depends(get_db)):
 
 
 @router.post("/payments/{payment_id}/refund")
-def refund_payment(payment_id: str, body: RefundBody, db: Session = Depends(get_db)):
+def refund_payment(
+    payment_id: str, body: RefundBody, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)
+):
     payment = db.query(PaymentRecord).filter(PaymentRecord.id == payment_id).first()
     if not payment:
         raise HTTPException(status_code=404, detail="Payment not found")
-    amount = body.amount if body.amount is not None else payment.amount
+    if payment.status != "success":
+        raise HTTPException(status_code=400, detail="Only successful payments can be refunded")
+
+    already_refunded = (
+        db.query(func.coalesce(func.sum(RefundRecord.amount), 0))
+        .filter(RefundRecord.payment_id == payment.id)
+        .scalar()
+        or 0
+    )
+    amount = body.amount if body.amount is not None else payment.amount - already_refunded
+    if amount <= 0:
+        raise HTTPException(status_code=400, detail="Refund amount must be positive")
+    if amount > payment.amount - already_refunded:
+        raise HTTPException(status_code=400, detail="Refund amount exceeds the remaining refundable balance")
+
     refund = RefundRecord(
         payment_id=payment.id,
         user_id=payment.user_id,
@@ -129,7 +150,7 @@ def refund_payment(payment_id: str, body: RefundBody, db: Session = Depends(get_
 
 
 @router.post("/checkout")
-def checkout(body: CheckoutBody, db: Session = Depends(get_db)):
+def checkout(body: CheckoutBody, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     if body.idempotency_key:
         existing = (
             db.query(PaymentRecord)
@@ -196,10 +217,26 @@ def checkout(body: CheckoutBody, db: Session = Depends(get_db)):
 
 @router.post("/webhook")
 async def webhook(request: Request, db: Session = Depends(get_db)):
+    body_bytes = await request.body()
     try:
-        payload = await request.json()
-    except Exception:
-        payload = {}
+        payload = json.loads(body_bytes.decode("utf-8"))
+    except (ValueError, UnicodeDecodeError):
+        raise HTTPException(status_code=400, detail="Invalid JSON body")
+
+    # The platform forwards verified callbacks authenticated by its API key.
+    # Direct AzamPay callbacks carry a signature that must be verified.
+    forwarded = False
+    expected_key = get_settings().api_key
+    if expected_key and hmac.compare_digest((request.headers.get("X-API-Key") or "").strip(), expected_key):
+        forwarded = True
+
+    if not forwarded:
+        signature = (
+            request.headers.get("X-Signature")
+            or request.headers.get("X-AzamPay-Signature")
+            or request.headers.get("X-Callback-Signature")
+        )
+        verify_webhook_signature(body_bytes, signature)
 
     data = payload.get("data") if isinstance(payload.get("data"), dict) else {}
     candidates = [

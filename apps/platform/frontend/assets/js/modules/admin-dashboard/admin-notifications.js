@@ -5,7 +5,7 @@
         request("/notifications"),
         request("/users"),
       ]);
-      const allNotifs = Array.isArray(data) ? data : [];
+      const allNotifs = Array.isArray(data?.items) ? data.items : [];
       const userList = Array.isArray(users?.items) ? users.items : [];
       let currentFilter = "all";
       let searchQuery = "";

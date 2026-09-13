@@ -6,13 +6,14 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.models import AuditRecord, InvoiceRecord, PaymentRecord, RefundRecord, SubscriptionRecord
+from app.security import require_api_key
 from app.services import audit_dict, get_db, invoice_dict
 
 router = APIRouter()
 
 
 @router.get("/billing")
-def list_billing(user_id: str | None = None, db: Session = Depends(get_db)):
+def list_billing(user_id: str | None = None, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     q = db.query(InvoiceRecord)
     if user_id:
         q = q.filter(
@@ -26,7 +27,7 @@ def list_billing(user_id: str | None = None, db: Session = Depends(get_db)):
 
 
 @router.get("/audit")
-def list_audit(user_id: str | None = None, db: Session = Depends(get_db)):
+def list_audit(user_id: str | None = None, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     q = db.query(AuditRecord)
     if user_id:
         q = q.filter(AuditRecord.actor_user_id == user_id)
@@ -35,7 +36,7 @@ def list_audit(user_id: str | None = None, db: Session = Depends(get_db)):
 
 
 @router.get("/stats")
-def get_stats(user_id: str | None = None, db: Session = Depends(get_db)):
+def get_stats(user_id: str | None = None, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     q = db.query(PaymentRecord)
     if user_id:
         q = q.filter(PaymentRecord.user_id == user_id)

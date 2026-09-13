@@ -5,12 +5,16 @@ from fastapi.testclient import TestClient
 
 from backend.main import app
 from backend.services.auth_service import register_user
+from tests.backend.conftest import create_admin_user
 
 client = TestClient(app)
 
 
 def _register(role: str):
     email = f"lesson-{role}-{uuid.uuid4().hex[:8]}@test.com"
+    if role == "admin":
+        user_id, token = create_admin_user(email)
+        return {"Authorization": f"Bearer {token}"}, {"user_id": user_id, "access_token": token, "role": "admin"}
     result = register_user(email, "test123", role.title(), role)
     return {"Authorization": f"Bearer {result['access_token']}"}, result
 

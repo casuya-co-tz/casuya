@@ -9,6 +9,7 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from app.models import SubscriptionRecord
+from app.security import require_api_key
 from app.services import audit, get_db, now, sub_dict
 
 router = APIRouter()
@@ -26,7 +27,7 @@ class CancelBody(BaseModel):
 
 
 @router.get("/subscriptions")
-def list_subscriptions(user_id: str | None = None, db: Session = Depends(get_db)):
+def list_subscriptions(user_id: str | None = None, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     q = db.query(SubscriptionRecord)
     if user_id:
         q = q.filter(SubscriptionRecord.user_id == user_id)
@@ -35,7 +36,7 @@ def list_subscriptions(user_id: str | None = None, db: Session = Depends(get_db)
 
 
 @router.get("/subscriptions/{subscription_id}")
-def get_subscription(subscription_id: str, db: Session = Depends(get_db)):
+def get_subscription(subscription_id: str, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = db.query(SubscriptionRecord).filter(SubscriptionRecord.id == subscription_id).first()
     if not row:
         raise HTTPException(status_code=404, detail="Subscription not found")
@@ -43,7 +44,7 @@ def get_subscription(subscription_id: str, db: Session = Depends(get_db)):
 
 
 @router.post("/subscriptions")
-def create_subscription(body: CreateSubscriptionBody, db: Session = Depends(get_db)):
+def create_subscription(body: CreateSubscriptionBody, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     _now = datetime.utcnow()
     row = SubscriptionRecord(
         user_id=body.user_id,
@@ -62,7 +63,7 @@ def create_subscription(body: CreateSubscriptionBody, db: Session = Depends(get_
 
 
 @router.post("/subscriptions/{subscription_id}/cancel")
-def cancel_subscription(subscription_id: str, body: CancelBody, db: Session = Depends(get_db)):
+def cancel_subscription(subscription_id: str, body: CancelBody, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = db.query(SubscriptionRecord).filter(SubscriptionRecord.id == subscription_id).first()
     if not row:
         raise HTTPException(status_code=404, detail="Subscription not found")
@@ -75,7 +76,7 @@ def cancel_subscription(subscription_id: str, body: CancelBody, db: Session = De
 
 
 @router.post("/subscriptions/{subscription_id}/pause")
-def pause_subscription(subscription_id: str, db: Session = Depends(get_db)):
+def pause_subscription(subscription_id: str, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = db.query(SubscriptionRecord).filter(SubscriptionRecord.id == subscription_id).first()
     if not row:
         raise HTTPException(status_code=404, detail="Subscription not found")
@@ -87,7 +88,7 @@ def pause_subscription(subscription_id: str, db: Session = Depends(get_db)):
 
 
 @router.post("/subscriptions/{subscription_id}/resume")
-def resume_subscription(subscription_id: str, db: Session = Depends(get_db)):
+def resume_subscription(subscription_id: str, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = db.query(SubscriptionRecord).filter(SubscriptionRecord.id == subscription_id).first()
     if not row:
         raise HTTPException(status_code=404, detail="Subscription not found")

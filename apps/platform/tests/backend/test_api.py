@@ -3,15 +3,15 @@ import uuid
 from fastapi.testclient import TestClient
 
 from backend.main import app
-from backend.services.auth_service import register_user
+from tests.backend.conftest import create_admin_user
 
 client = TestClient(app)
 
 
 def _headers():
     email = f"apitest-{uuid.uuid4().hex[:8]}@test.com"
-    result = register_user(email, "test123", "API Tester", "admin")
-    return {"Authorization": f"Bearer {result['access_token']}"}
+    _, token = create_admin_user(email)
+    return {"Authorization": f"Bearer {token}"}
 
 
 def test_subjects_crud():

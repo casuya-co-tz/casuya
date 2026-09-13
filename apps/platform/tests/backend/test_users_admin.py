@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 
 import backend.config.database as db_module
+from backend.config.security import hash_password
 from backend.main import app
 from backend.models.user import User
 
@@ -22,12 +23,37 @@ def _register(email: str, role: str = "student", phone: str | None = None) -> di
     return resp.json()
 
 
+def _create_admin(email: str) -> dict:
+    """Create an admin directly in the DB, mirroring database/seeds/create_admin.py.
+
+    Admins must never be obtainable through the public register endpoint.
+    """
+    with db_module.SessionLocal() as s:
+        user = User(
+            email=email,
+            hashed_password=hash_password("test123"),
+            full_name=f"Admin {email}",
+            role="admin",
+            is_active=True,
+        )
+        s.add(user)
+        s.commit()
+        user_id = user.id
+    resp = client.post(
+        "/auth/login", json={"email": email, "password": "test123"}
+    )
+    assert resp.status_code == 200, resp.text
+    data = resp.json()
+    data["user_id"] = user_id
+    return data
+
+
 def _auth_headers(token: str) -> dict:
     return {"Authorization": f"Bearer {token}"}
 
 
 def test_admin_can_list_all_users_with_details():
-    admin = _register("admin-list@test.com", role="admin")
+    admin = _create_admin("admin-list@test.com")
     _register("teacher-list@test.com", role="teacher")
     student = _register("student-list@test.com", role="student", phone="+255700000001")
 
@@ -62,7 +88,7 @@ def test_registration_stores_full_name_on_user():
 
 def test_list_falls_back_to_profile_name():
     """Legacy users whose User.full_name is empty still show the profile name."""
-    admin = _register("admin-profilename@test.com", role="admin")
+    admin = _create_admin("admin-profilename@test.com")
     student = _register("student-profilename@test.com", role="student")
     with db_module.SessionLocal() as s:
         user = s.query(User).filter(User.id == student["user_id"]).first()
@@ -74,7 +100,7 @@ def test_list_falls_back_to_profile_name():
 
 
 def test_admin_can_deactivate_and_reactivate_user():
-    admin = _register("admin-toggle@test.com", role="admin")
+    admin = _create_admin("admin-toggle@test.com")
     student = _register("student-toggle@test.com", role="student")
     user_id = student["user_id"]
 
@@ -112,7 +138,7 @@ def test_admin_can_deactivate_and_reactivate_user():
 
 
 def test_admin_cannot_deactivate_self():
-    admin = _register("admin-self@test.com", role="admin")
+    admin = _create_admin("admin-self@test.com")
     resp = client.patch(
         f"/users/{admin['user_id']}",
         json={"is_active": False},
@@ -123,7 +149,7 @@ def test_admin_cannot_deactivate_self():
 
 
 def test_update_status_unknown_user_404():
-    admin = _register("admin-404@test.com", role="admin")
+    admin = _create_admin("admin-404@test.com")
     resp = client.patch(
         "/users/does-not-exist",
         json={"is_active": False},
@@ -133,7 +159,7 @@ def test_update_status_unknown_user_404():
 
 
 def test_export_users_xlsx():
-    admin = _register("admin-export@test.com", role="admin")
+    admin = _create_admin("admin-export@test.com")
     _register("student-export@test.com", role="student", phone="+255700000002")
 
     resp = client.get("/users/export", headers=_auth_headers(admin["access_token"]))
@@ -146,3 +172,26 @@ def test_export_users_xlsx():
     # XLSX files are ZIP archives (PK magic bytes at the start).
     assert resp.content[:2] == b"PK"
     assert len(resp.content) > 0
+
+
+def test_public_registration_cannot_claim_admin_role():
+    """Anyone can open the register endpoint, but it must never mint admin tokens."""
+    resp = client.post(
+        "/auth/register",
+        json={
+            "email": "evil-admin@test.com",
+            "password": "test123",
+            "full_name": "Evil",
+            "role": "admin",
+        },
+    )
+    assert resp.status_code == 409
+    # The attacker must not receive any token.
+    assert "access_token" not in resp.json().get("details", resp.json())
+
+    # Legitimate roles still work and get a student/teacher token.
+    student = _register("legit-student@test.com", role="student")
+    assert student["role"] == "student"
+
+    resp = client.get("/users", headers=_auth_headers(student["access_token"]))
+    assert resp.status_code == 403

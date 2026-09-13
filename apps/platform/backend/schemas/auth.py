@@ -7,6 +7,7 @@ class RegisterRequest(BaseModel):
     full_name: str
     role: str = "student"
     phone: str | None = None
+    form_level: str | None = None
     accessibility_prefs: dict | None = None
 
 
@@ -27,6 +28,11 @@ class ForgotPasswordRequest(BaseModel):
 
 class ResetPasswordRequest(BaseModel):
     token: str
+    new_password: str
+
+
+class ChangePasswordRequest(BaseModel):
+    current_password: str
     new_password: str
 
 

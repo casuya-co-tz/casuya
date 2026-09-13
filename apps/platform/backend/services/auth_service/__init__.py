@@ -7,7 +7,7 @@ Delegates to focused submodules but exposes the full public API so existing
 from __future__ import annotations
 
 from backend.services.auth_service.login import authenticate_user, refresh_access_token
-from backend.services.auth_service.password import forgot_password, reset_password
+from backend.services.auth_service.password import change_password, forgot_password, reset_password
 from backend.services.auth_service.registration import (
     complete_registration,
     oauth_login_or_register,
@@ -16,6 +16,7 @@ from backend.services.auth_service.registration import (
 
 __all__ = [
     "authenticate_user",
+    "change_password",
     "complete_registration",
     "forgot_password",
     "oauth_login_or_register",

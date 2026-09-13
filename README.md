@@ -31,7 +31,7 @@ casuya-hybrid/
 ├── pnpm-workspace.yaml   workspace definition (flat packages/* + apps/* + libs/*)
 ├── turbo.json            task runner (build/typecheck/lint/test w/ caching)
 ├── tsconfig.json         root TS config + path aliases
-├── packageManager        pnpm@9.15.9 (pinned for CI consistency)
+├── packageManager        pnpm@10.34.5 (pinned for CI consistency)
 ├── CODEOWNERS            mandatory review routing
 ├── CONTRIBUTING.md       trunk-based workflow & layer rules
 └── .github/workflows/ci.yml  build + typecheck + lint + test + layer check
@@ -64,7 +64,7 @@ docker compose -f infra/docker-compose.yml up -d
 ### Prerequisites
 
 - **Node.js** >= 20
-- **pnpm** 9.15.9 (pinned via `packageManager` in root `package.json`)
+- **pnpm** 10.34.5 (pinned via `packageManager` in root `package.json`)
 - **Python** >= 3.12 with `pip`
 
 ## Repo commands

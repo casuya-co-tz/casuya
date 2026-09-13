@@ -62,7 +62,8 @@ function setupSidebar(dashboard) {
 
   async function loadNotifs() {
     try {
-      dashboard.notifData = await request("/notifications");
+      const res = await request("/notifications");
+      dashboard.notifData = Array.isArray(res?.items) ? res.items : [];
       const unread = dashboard.notifData.filter(n => !n.is_read).length;
       if (unread > 0) { notifBadge.textContent = unread; notifBadge.style.display = "inline"; }
       else notifBadge.style.display = "none";

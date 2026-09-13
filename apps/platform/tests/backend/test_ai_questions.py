@@ -3,16 +3,16 @@ import uuid
 from fastapi.testclient import TestClient
 
 from backend.main import app
-from backend.services.auth_service import register_user
 from backend.services.ai_bridge.prompts import check_subject_relevance
+from tests.backend.conftest import create_admin_user
 
 client = TestClient(app)
 
 
 def _headers():
     email = f"aiq-{uuid.uuid4().hex[:8]}@test.com"
-    result = register_user(email, "test123", "AI Q Tester", "admin")
-    return {"Authorization": f"Bearer {result['access_token']}"}
+    _, token = create_admin_user(email)
+    return {"Authorization": f"Bearer {token}"}
 
 
 def test_generate_questions_rejects_unknown_subject():

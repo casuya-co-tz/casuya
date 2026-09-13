@@ -48,6 +48,7 @@ _ENV_META = {
     "africastalking_username": ("Africa's Talking Username", "SMS", False),
     "africastalking_api_key": ("Africa's Talking API Key", "SMS", True),
     "casuya_payments_url": ("Payments Service URL", "Microservices", False),
+    "casuya_payments_api_key": ("Payments API Key", "Microservices", True),
     "casuya_services_bridge_url": ("Services Bridge URL", "Microservices", False),
     "casuya_api_url": ("API Gateway URL", "Microservices", False),
     "casuya_orchestrator_health_url": ("Orchestrator Health URL", "Microservices", False),

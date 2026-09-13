@@ -49,7 +49,7 @@ pytest apps/platform/tests/ -v                    # run Python tests
 
 ## Key technical details
 
-- **Package manager:** pnpm 9.15.9 (pinned via `packageManager` in root `package.json`)
+- **Package manager:** pnpm 10.34.5 (pinned via `packageManager` in root `package.json`)
 - **Node:** 20
 - **Python:** 3.12
 - **Build tool:** Turborepo with caching

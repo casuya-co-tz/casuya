@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, Request
 from backend.middleware.auth import get_current_user
 from backend.schemas.auth import (
     AuthResponse,
+    ChangePasswordRequest,
     CompleteRegistrationRequest,
     ForgotPasswordRequest,
     LoginRequest,
@@ -12,6 +13,7 @@ from backend.schemas.auth import (
 )
 from backend.services.auth_service import (
     authenticate_user,
+    change_password,
     complete_registration,
     forgot_password,
     refresh_access_token,
@@ -32,6 +34,7 @@ def register(body: RegisterRequest):
             full_name=body.full_name,
             role=body.role,
             phone=body.phone,
+            form_level=body.form_level,
             accessibility_prefs=body.accessibility_prefs,
         )
     except ValueError as e:
@@ -94,6 +97,24 @@ def forgot_password_endpoint(body: ForgotPasswordRequest):
 def reset_password_endpoint(body: ResetPasswordRequest):
     try:
         return reset_password(token=body.token, new_password=body.new_password)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=503, detail=f"Service unavailable: {e}")
+
+
+@router.post("/change-password")
+@router.post("/change-password/")
+def change_password_endpoint(
+    body: ChangePasswordRequest,
+    current_user: dict = Depends(get_current_user),
+):
+    try:
+        return change_password(
+            current_user.get("sub"),
+            body.current_password,
+            body.new_password,
+        )
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:

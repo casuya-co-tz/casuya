@@ -73,7 +73,14 @@ def list_notifications(
     )
     return {
         "items": [
-            {"id": n.id, "user_id": n.user_id, "channel": n.channel, "message": n.message, "is_read": n.is_read}
+            {
+                "id": n.id,
+                "user_id": n.user_id,
+                "channel": n.channel,
+                "message": n.message,
+                "is_read": n.is_read,
+                "created_at": n.created_at.isoformat() if n.created_at else None,
+            }
             for n in notifications
         ],
         "total": total,

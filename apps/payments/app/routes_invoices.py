@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 
 from app.config import get_settings
 from app.models import InvoiceRecord, PaymentRecord
+from app.security import require_api_key
 from app.services import audit, get_db, invoice_dict, now, payment_dict
 
 router = APIRouter()
@@ -26,7 +27,7 @@ class CreateInvoiceBody(BaseModel):
 
 
 @router.get("/invoices")
-def list_invoices(user_id: str | None = None, status: str | None = None, db: Session = Depends(get_db)):
+def list_invoices(user_id: str | None = None, status: str | None = None, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     q = db.query(InvoiceRecord)
     if user_id:
         q = q.filter(InvoiceRecord.user_id == user_id)
@@ -37,7 +38,7 @@ def list_invoices(user_id: str | None = None, status: str | None = None, db: Ses
 
 
 @router.get("/invoices/{invoice_id}")
-def get_invoice(invoice_id: str, db: Session = Depends(get_db)):
+def get_invoice(invoice_id: str, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = db.query(InvoiceRecord).filter(InvoiceRecord.id == invoice_id).first()
     if not row:
         raise HTTPException(status_code=404, detail="Invoice not found")
@@ -45,7 +46,7 @@ def get_invoice(invoice_id: str, db: Session = Depends(get_db)):
 
 
 @router.post("/invoices")
-def create_invoice(body: CreateInvoiceBody, db: Session = Depends(get_db)):
+def create_invoice(body: CreateInvoiceBody, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = InvoiceRecord(
         user_id=body.user_id,
         amount=body.amount,
@@ -64,7 +65,7 @@ def create_invoice(body: CreateInvoiceBody, db: Session = Depends(get_db)):
 
 
 @router.post("/invoices/{invoice_id}/pay")
-def pay_invoice(invoice_id: str, db: Session = Depends(get_db)):
+def pay_invoice(invoice_id: str, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
     row = db.query(InvoiceRecord).filter(InvoiceRecord.id == invoice_id).first()
     if not row:
         raise HTTPException(status_code=404, detail="Invoice not found")

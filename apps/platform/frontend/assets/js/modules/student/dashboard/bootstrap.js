@@ -100,7 +100,8 @@ Object.assign(StudentDashboard.prototype, {
 
     async function loadNotifs() {
       try {
-        notifData = await request("/notifications");
+        const res = await request("/notifications");
+        notifData = Array.isArray(res?.items) ? res.items : [];
         const unread = notifData.filter(n => !n.is_read).length;
         if (unread > 0) { notifBadge.textContent = unread; notifBadge.style.display = "inline"; }
         else notifBadge.style.display = "none";

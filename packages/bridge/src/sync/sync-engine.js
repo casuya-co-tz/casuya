@@ -73,7 +73,7 @@ export class SyncEngine {
             attempt += 1;
             continue;
           }
-          await this._deadLetter(batch, attempt, `HTTP ${response.status}`);
+          await this._deadLetter(batch, attempt + 1, `HTTP ${response.status}`);
           return;
         }
         for (const record of batch) await this._queue.remove(record.id);
@@ -84,7 +84,7 @@ export class SyncEngine {
           attempt += 1;
           continue;
         }
-        await this._deadLetter(batch, attempt, err.message);
+        await this._deadLetter(batch, attempt + 1, err.message);
         return;
       }
     }

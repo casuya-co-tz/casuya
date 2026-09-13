@@ -152,6 +152,24 @@ class SafeRedis:
         except RedisError:
             return None
 
+    def lrange(self, *args: Any, **kwargs: Any) -> Any:
+        client = self._get()
+        if client is None:
+            return []
+        try:
+            return client.lrange(*args, **kwargs)
+        except RedisError:
+            return []
+
+    def scan(self, *args: Any, **kwargs: Any) -> Any:
+        client = self._get()
+        if client is None:
+            return 0, []
+        try:
+            return client.scan(*args, **kwargs)
+        except RedisError:
+            return 0, []
+
     def ltrim(self, *args: Any, **kwargs: Any) -> Any:
         client = self._get()
         if client is None:

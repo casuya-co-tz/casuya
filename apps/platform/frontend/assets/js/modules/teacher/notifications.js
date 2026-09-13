@@ -4,7 +4,7 @@ async function loadNotifications(dashboard) {
   dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading notifications...</p></div>');
   try {
     const data = await request("/notifications");
-    const allNotifs = Array.isArray(data) ? data : [];
+    const allNotifs = Array.isArray(data?.items) ? data.items : [];
     const unread = allNotifs.filter(n => !n.is_read);
     const read = allNotifs.filter(n => n.is_read);
     let showFilter = "all";

@@ -4,6 +4,8 @@
 import { EVENTS } from '../core/constants.js';
 import { sleep } from '../utils/helpers.js';
 
+const MAX_RECOVERY_ATTEMPTS = 3;
+
 export class NetworkRecovery {
   constructor({ bus, config }) {
     this._bus = bus;
@@ -22,6 +24,7 @@ export class NetworkRecovery {
   stop() {
     if (this._timer) clearTimeout(this._timer);
     this._timer = null;
+    this._recovering = false;
     if (this._boundReconnect) {
       this._bus?.off(EVENTS.CONNECTIVITY_ONLINE, this._boundReconnect);
       this._boundReconnect = null;
@@ -29,6 +32,7 @@ export class NetworkRecovery {
   }
 
   async _onReconnect() {
+    if (this._recovering) return;
     this._recoveryAttempts = 0;
     this._recovering = true;
     try {
@@ -39,7 +43,7 @@ export class NetworkRecovery {
   }
 
   async _attemptRecovery() {
-    while (this._recovering) {
+    while (this._recovering && this._recoveryAttempts < MAX_RECOVERY_ATTEMPTS) {
       const delay = Math.min(
         this._maxRecoveryDelayMs,
         this._config.retryBaseDelayMs * 2 ** this._recoveryAttempts

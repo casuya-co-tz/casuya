@@ -93,6 +93,9 @@ class Settings(BaseSettings):
 
     # Casuya Payments microservice
     casuya_payments_url: str = "http://localhost:3002"
+    # Shared secret sent as X-API-Key when calling the payments microservice.
+    # Must match the microservice's API_KEY setting.
+    casuya_payments_api_key: str | None = None
 
     # Casuya Services Bridge microservice (content, exams, media, auth, analytics, search)
     casuya_services_bridge_url: str = "http://localhost:3003"

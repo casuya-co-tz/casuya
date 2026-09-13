@@ -97,7 +97,7 @@ def list_users_route(
     total = db.query(User).count()
     users = (
         db.query(User)
-        .order_by(User.created_at.desc())
+        .order_by(User.created_at.desc(), User.id.desc())
         .offset(offset)
         .limit(limit)
         .all()
@@ -121,7 +121,7 @@ def export_users_xlsx(db: Session = Depends(get_db)):
     except ImportError as e:  # pragma: no cover — dependency guarded at deploy time
         raise HTTPException(status_code=503, detail="XLSX export is not available") from e
 
-    users = db.query(User).order_by(User.created_at.desc()).all()
+    users = db.query(User).order_by(User.created_at.desc(), User.id.desc()).all()
     items = [_serialize_user(u) for u in users]
     _attach_profiles(items, db)
 
@@ -190,6 +190,14 @@ def update_current_user_route(body: UserUpdateRequest, current_user=Depends(get_
         raise HTTPException(status_code=404, detail="User not found")
     if body.full_name is not None:
         user.full_name = body.full_name
+        # Keep the role profile name in sync so dashboards and rosters agree.
+        student = db.query(Student).filter(Student.user_id == user.id).first()
+        if student:
+            student.full_name = body.full_name
+        else:
+            teacher = db.query(Teacher).filter(Teacher.user_id == user.id).first()
+            if teacher:
+                teacher.full_name = body.full_name
     if body.phone is not None:
         user.phone = body.phone
     db.commit()

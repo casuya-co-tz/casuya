@@ -17,8 +17,13 @@ class PaymentsClient:
     def __init__(self):
         settings = get_settings()
         self.base_url = settings.casuya_payments_url.rstrip("/")
+        self._api_key = settings.casuya_payments_api_key
+        headers = {}
+        if self._api_key:
+            headers["X-API-Key"] = self._api_key
         self.http = httpx.Client(
             base_url=self.base_url,
+            headers=headers,
             timeout=httpx.Timeout(connect=2.0, read=5.0, write=5.0, pool=2.0),
             limits=httpx.Limits(max_connections=10, max_keepalive_connections=5),
         )

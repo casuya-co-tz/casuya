@@ -16,10 +16,12 @@ settings = get_settings()
 USER_CACHE_TTL = 300  # 5 minutes (increased from 60s to reduce DB load)
 
 
-def get_current_user(
-    authorization: str | None = Header(default=None),
-    db: Session = Depends(get_db),
-):
+def _resolve_current_user(authorization: str | None, db: Session) -> dict:
+    """Resolve a bearer token to a user dict against the live DB.
+
+    Shared by ``get_current_user`` and ``bridge_auth`` so the bridge path (which
+    calls this directly, outside FastAPI DI) still gets a real session.
+    """
     if not authorization or not authorization.startswith("Bearer "):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Missing bearer token")
     token = authorization.removeprefix("Bearer ")
@@ -59,6 +61,13 @@ def get_current_user(
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired token")
 
 
+def get_current_user(
+    authorization: str | None = Header(default=None),
+    db: Session = Depends(get_db),
+):
+    return _resolve_current_user(authorization, db)
+
+
 def optional_user(authorization: str | None = Header(default=None)):
     if not authorization or not authorization.startswith("Bearer "):
         return None
@@ -69,7 +78,11 @@ def optional_user(authorization: str | None = Header(default=None)):
         return None
 
 
-def bridge_auth(x_bridge_key: str | None = Header(default=None), authorization: str | None = Header(default=None)):
+def bridge_auth(
+    authorization: str | None = Header(default=None),
+    x_bridge_key: str | None = Header(default=None),
+    db: Session = Depends(get_db),
+):
     """Authenticate bridge sync requests via JWT or shared key.
 
     Used by casuya-bridge clients that sync progress from student devices.
@@ -77,7 +90,7 @@ def bridge_auth(x_bridge_key: str | None = Header(default=None), authorization: 
     # If JWT is present, it is the ONLY auth method tried (no shared key fallback).
     if authorization and authorization.startswith("Bearer "):
         try:
-            return get_current_user(authorization)
+            return _resolve_current_user(authorization, db)
         except HTTPException:
             raise  # re-raise — JWT was present but invalid
 

@@ -20,6 +20,10 @@ settings = get_settings()
 # Roles that are treated as "student" in the system but may carry extra metadata.
 _SPECIAL_ROLES = {"special_needs"}
 
+# Roles self-service registration may assign. Admin accounts are created only
+# through database/seeds/create_admin.py — never via the public endpoint.
+_PUBLIC_ROLES = {"student", "teacher", *_SPECIAL_ROLES}
+
 
 def register_user(
     email: str,
@@ -27,8 +31,12 @@ def register_user(
     full_name: str,
     role: str = "student",
     phone: str | None = None,
+    form_level: str | None = None,
     accessibility_prefs: dict | None = None,
 ) -> dict:
+    if role not in _PUBLIC_ROLES:
+        raise ValueError("Role must be one of: student, teacher")
+
     # Map special-needs roles to the canonical "student" role so portal guards,
     # JWT claims, and dashboard routing all work without extra cases.
     db_role = "student" if role in _SPECIAL_ROLES else role
@@ -54,6 +62,7 @@ def register_user(
             profile = Student(
                 user_id=user.id,
                 full_name=full_name,
+                form_level=form_level,
                 accessibility_prefs=prefs_json,
             )
             db.add(profile)

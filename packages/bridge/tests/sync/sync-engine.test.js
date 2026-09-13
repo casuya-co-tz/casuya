@@ -60,3 +60,42 @@ test('SyncEngine flushes the queue and pulls new manifests', async () => {
   assert.equal(successPayload.updated, 1);
   assert.deepEqual(await packageStore.get('lesson-a'), { body_html: '<p>hi</p>' });
 });
+
+test('SyncEngine dead-letters records after MAX attempts instead of retrying forever', async () => {
+  const db = new MemoryStore();
+  const bus = new EventBus();
+  const queue = new SyncQueue(db);
+  const manifestStore = new ManifestStore(db);
+  const packageStore = new PackageStore(db);
+  const config = resolveConfig({
+    apiBaseUrl: 'https://api.casuya.co.tz',
+    syncIntervalMs: 0,
+    maxRetries: 0,
+  });
+
+  await queue.enqueue({ type: 'progress', payload: { ok: true } });
+
+  let uploadCalls = 0;
+  const fetchImpl = fakeFetch({
+    'POST https://api.casuya.co.tz/sync/events': async () => {
+      uploadCalls += 1;
+      return { ok: false, status: 404, json: async () => ({}), headers: { get: () => 'text/plain' } };
+    },
+    'GET https://api.casuya.co.tz/lessons/manifests': async () => ({
+      ok: true,
+      status: 200,
+      json: async () => [],
+      headers: { get: () => 'application/json' },
+    }),
+  });
+
+  const engine = new SyncEngine({ bus, queue, manifestStore, packageStore, config, fetchImpl });
+
+  for (let i = 0; i < 12; i += 1) {
+    if (await queue.size() === 0) break;
+    await engine.syncNow();
+  }
+
+  assert.equal(await queue.size(), 0, 'record must eventually be dropped, not retried forever');
+  assert.equal(uploadCalls, 10, 'exactly MAX_DEAD_LETTER_ATTEMPTS (10) uploads must be attempted');
+});

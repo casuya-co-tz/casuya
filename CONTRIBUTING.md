@@ -43,7 +43,7 @@ Run `pnpm check:layers` to verify no upward (illegal) imports exist. CI enforces
 
 The CI workflow (`.github/workflows/ci.yml`) runs on every push and PR:
 
-1. **Setup** — Python 3.12 + pytest + platform requirements, Node 20 + pnpm 9.15.9
+1. **Setup** — Python 3.12 + pytest + platform requirements, Node 20 + pnpm 10.34.5
 2. **Install** — `pnpm install --frozen-lockfile`
 3. **Layer check** — `pnpm check:layers`
 4. **Build** — `pnpm build` (Turborepo, cached)
