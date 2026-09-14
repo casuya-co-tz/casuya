@@ -1,4 +1,4 @@
-# Casuya — Audio Integrations: Piper TTS + Sherpa-ONNX STT (Railway-Hosted)
+# Casuya — Audio Integrations: Sherpa-ONNX TTS + Sherpa-ONNX STT (Railway-Hosted)
 
 **Sera (Policy):** reading audio support for lessons, exercises, and quizzes —
 run the engines on **Railway**, reached through the platform proxy. **No audio
@@ -22,7 +22,7 @@ That previously bombed the plan:
 | **Render** | `infra/render.yaml` | legacy, abandoned | do not deploy here |
 
 **Decision (removes the contradiction):**
-- **Piper TTS + Sherpa-ONNX STT are Railway-only microservices.** Never put an
+- **Sherpa-ONNX TTS + Sherpa-ONNX STT are Railway-only microservices.** Never put an
   engine on Vercel — Vercel is a static host with no `/api` path handling and
   no Python runtime.
 - **Why not "also Vercel":** the student web player already reaches the backend
@@ -37,14 +37,14 @@ That previously bombed the plan:
 
 | Component | Best place (path) | Why (verified) |
 |---|---|---|
-| **Piper TTS model + engine** | `apps/audio-tts/` — `Dockerfile`, `requirements.txt`, `railway.json`, `app/main.py`, `app/config.py`, `app/security.py`, `app/routes_tts.py` | Exact mirror of `apps/payments` (the established FastAPI microservice template). **Engine + Kiswahili/English voice models are `git clone`d from GitHub at build time** (below). |
+| **Sherpa-ONNX TTS model + engine** | `apps/audio-tts/` — `Dockerfile`, `requirements.txt`, `railway.json`, `app/main.py`, `app/config.py`, `app/security.py`, `app/routes_tts.py` | Exact mirror of `apps/payments` (the established FastAPI microservice template). Engine (`sherpa-onnx` PyPI wheel) + Kiswahili/English VITS voice packs are **baked in from official `k2-fsa/sherpa-onnx` `tts-models` release assets at Docker build time** (below). |
 | **Sherpa-ONNX STT model + engine** | `apps/audio-stt/` — same layout (`app/routes_stt.py`, `app/routes_misc.py`) | Same template, separate Railway service → independent CPU scaling/healthchecks |
 | **Audio proxy router** | `apps/platform/backend/api/audio.py` | Registered **BEFORE** `casuya_api_proxy` in `backend/app/routers.py` (the catch-all `/{path:path}` MUST stay last — enforced by the file comment). |
 | **Audio client (platform backend → services)** | `apps/platform/backend/services/services_bridge_client/audio.py` | Same `railway.internal` forwarding pattern as the existing bridge client |
 | **Frontend TTS/STT buttons** | `apps/platform/frontend/assets/js/modules/...` — **plain vanilla JS** | The platform UI is vanilla JS + Tailwind (verified: no React build pipeline). A `.tsx` button would have nothing to compile it there. |
 | **Editor palette components (first real ones)** | `packages/editor/component-library/text/TextToSpeechButton.tsx` + `component-library/audio/SpeechToTextRecorder.tsx` | `.tsx` home is `editor/component-library` only. These are the first real components in the currently-empty `text/` + `audio/` dirs. |
 | **Env vars** | `apps/audio-tts/.env.example`, `apps/audio-stt/.env.example`, `apps/platform/.env.example` | `CASUYA_AUDIO_TTS_URL`, `CASUYA_AUDIO_STT_URL`, `CASUYA_AUDIO_TTS_API_KEY`, `CASUYA_AUDIO_STT_API_KEY` — mirrors `CASUYA_PAYMENTS_*` naming |
-| **Railway deploy config** | `apps/audio-tts/railway.json` + `apps/audio-stt/railway.json` | Same `DOCKERFILE` builder + `/health` + `healthcheckTimeout` pattern as `apps/payments/railway.json` |
+| **Railway deploy config** | `apps/audio-tts/railway.json` + `apps/audio-stt/railway.json` | Same `DOCKERFILE` builder + `healthcheckPath: "/readyz"` + `healthcheckTimeout` pattern as `apps/audio-stt` |
 | **Docs** | `docs/infra/audio-integrations.md` (this file) | Lives under `docs/` |
 
 ---
@@ -54,15 +54,15 @@ That previously bombed the plan:
 Both engines are open source on GitHub — build them at Docker-image build time,
 mirroring how the image already bundles runtime models:
 
-| Engine | GitHub repo (pin a tag/commit) | Build step |
+| Engine | Source | Build step |
 |---|---|---|
-| **Piper TTS** | `rhasspy/piper` (engine) + `rhasspy/piper-voices` (Kiswahili `sw` + English voices) | `git clone --depth 1 --branch <tag>` inside `Dockerfile`, then download the targeted voice models once at build; `ENTRYPOINT` runs `python -m piper.http_server --model ${PIPER_VOICE_MODEL}` |
-| **Sherpa-ONNX STT** | `k2-fsa/sherpa-onnx` | `git clone --depth 1 --tag <release>` + download ONNX ASR models (Kiswahili/eng, short-utterance) at build |
+| **Sherpa-ONNX TTS** (Kiswahili `sw` + English `en`) | engine `k2-fsa/sherpa-onnx` (PyPI `sherpa-onnx` wheel); voices `vits-piper-sw_CD-lanfrica-medium` (22050 Hz) + `vits-piper-en_US-amy-low` (22050 Hz) from the `tts-models` GitHub release | `pip install sherpa-onnx` in the `Dockerfile`, then `curl` + `tar -xjf` the two voice `.tar.bz2` assets at build time (no phonemize/`espeak-ng` source build — that is exactly what breaks piper on Railway). |
+| **Sherpa-ONNX STT** | `k2-fsa/sherpa-onnx` | download ONNX ASR models (Kiswahili/eng, short-utterance) at build |
 
 > Rationale: keeps **all** deployed code reproducible from source, consistent
 > with the `casuya_api_proxy`/payments approach (nothing proprietary or
-> hand-downloaded at runtime). Lock a specific tag so `pnpm validate`/CI stays
-> deterministic; upgrade by bumping the tag.
+> hand-downloaded at runtime). Voice pack versions are pinned by the exact
+> release URLs in each `Dockerfile`; upgrade by bumping the URL.
 
 ---
 
@@ -74,25 +74,26 @@ Each of `apps/audio-tts` and `apps/audio-stt` gets the same self-contained shape
 ```
 apps/audio-tts/
   app/
-    main.py            # FastAPI app assembly, includes health + readyz
-    config.py          # pydantic Settings (app_name, api_key, model urls, coords)
+    main.py            # FastAPI app assembly: /health, /readyz + routes_tts
+    config.py          # pydantic Settings (app_name, api_key, models dir)
     security.py        # require_api_key + HMAC (same as payments/security.py)
-    routes_tts.py      # POST /v1/audio/tts  -> { text, lang:"sw" } -> WAV bytes
-    routes_misc.py     # GET /health, GET /readyz, GET /metrics
-  Dockerfile           # python:3.12-slim + git clone pipeline + voices
-  requirements.txt     # fastapi uvicorn gunicorn pydantic-settings httpx
-  railway.json         # healthcheckPath "/health"
+    routes_tts.py      # GET /health + POST /v1/audio/tts -> { text, lang:"sw" } -> WAV bytes
+    services/synthesize.py  # Sherpa-ONNX OfflineTts engine (lazy load)
+  Dockerfile           # python:3.12-slim + pip install sherpa-onnx + bake voices
+  requirements.txt     # fastapi uvicorn gunicorn pydantic-settings numpy
+  railway.json         # healthcheckPath "/readyz"
   .env.example
 apps/audio-stt/  (same tree; routes_stt.py: POST /v1/audio/stt multipart -> {text})
 ```
 
 ### 3.1 Health endpoints (so Railway's healthcheck doesn't 404)
 
-`/app/routes_misc.py` mirrors payments exactly — `/health` returns 200 with
-`{"status": "ok", "service": "<app_name>", "environment": ...}`, and
-`Dockerfile` runs **gunicorn with 1 worker** bound to `0.0.0.0:${PORT:-8000}`
-(the same CMD payments uses). `railway.json` sets `healthcheckPath: "/health"`
-+ `healthcheckTimeout: 120` — never a cloud-only assumption.
+Each service exposes `/health` (open, returns 200) and `/readyz` (open, reports
+`{"status": "ok", "voice_loaded": true}` after the engine/model loads); only the
+`/v1/audio/*` endpoints require the internal `X-API-Key`. `Dockerfile` runs
+**gunicorn with 1 worker** bound to `0.0.0.0:${PORT:-8000}`. Both `railway.json`
+files set `healthcheckPath: "/readyz"` + `healthcheckTimeout: 120` — never a
+cloud-only assumption.
 
 ### 3.2 API key + HMAC (same as payments)
 
@@ -153,7 +154,8 @@ new client code needed beyond the two buttons.
 
 ## 7. Suggested Implementation Order
 
-1. `apps/audio-tts/` microservice (piper build from GitHub + railway.json).
+1. `apps/audio-tts/` microservice (sherpa-onnx build: PyPI wheel + voice pack
+   release assets baked in the `Dockerfile` + `railway.json`).
 2. `apps/audio-stt/` microservice (sherpa-onnx build from GitHub).
 3. `api/audio.py` platform router, registered **before** the catch-all proxy.
 4. Plain-JS `TextToSpeechButton` + `SpeechToTextRecorder` in the student lesson
@@ -167,8 +169,13 @@ new client code needed beyond the two buttons.
 
 ## 8. Open Questions (before building)
 
-- Confirm the exact **Kiswahili Piper voice model** + Sherpa-ONNX ASR model tag
-  to pin in the two `Dockerfile`s.
+- ~~Confirm the exact Kiswahili TTS voice to pin in the TTS `Dockerfile`.~~
+  **Resolved:** `vits-piper-sw_CD-lanfrica-medium` (Kiswahili) +
+  `vits-piper-en_US-amy-low` (English), both from the
+  `k2-fsa/sherpa-onnx` `tts-models` release (verified assets).
+- STT: pin a Kiswahili+English ASR model that actually exists in
+  `k2-fsa/sherpa-onnx` releases (the current `apps/audio-stt` Dockerfile must be
+  updated to download it — not yet done).
 - TTS: Railway service per engine (recommended) vs one shared audio service.
 - STT: bounded short utterances only (recommended) vs full dictation in v1.
 - Acknowledgements: no Vercel deployment for audio (decided, above).

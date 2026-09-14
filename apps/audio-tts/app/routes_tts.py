@@ -1,14 +1,14 @@
 """TTS routes for the Casuya Audio-TTS microservice.
 
-Mirrors `apps/payments/app/routes_misc.py`: health + audit + stats endpoints
-guarded by the internal API key. TTS-specific endpoint is `POST /v1/audio/tts`.
+`/health` is deliberately open (no API key) so Railway's healthcheck can probe
+it; only `POST /v1/audio/tts` requires the internal `X-API-Key`. The engine
+speaks Kiswahili (`sw`) and English (`en`) — the only two `lang` values shipped.
 """
 
 from __future__ import annotations
 
-from starlette.responses import Response
-
 from fastapi import APIRouter, Depends
+from fastapi.responses import Response
 
 from app.schemas import TtsPayload
 from app.security import require_api_key
@@ -18,7 +18,7 @@ router = APIRouter()
 
 
 @router.get("/health")
-def health(_auth: None = Depends(require_api_key)):
+def health():
     return {"status": "ok", "service": "casuya-audio-tts"}
 
 

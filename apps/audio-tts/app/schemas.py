@@ -6,10 +6,10 @@ from pydantic import BaseModel, Field
 
 
 class TtsPayload(BaseModel):
-    """Text to synthesize with Piper.
+    """Text to synthesize with Sherpa-ONNX TTS.
 
-    `lang` is used by the student client (and future ABC/MTTS integrations) to
-    pick the right cached voice; the engine uses the voice baked into the image.
+    `lang` picks the voice baked into the image, and is also used by the
+    student client (and future ABC/MTTS integrations) for caching.
     Allowed: `sw` (Kiswahili) or `en` (English).
     """
 

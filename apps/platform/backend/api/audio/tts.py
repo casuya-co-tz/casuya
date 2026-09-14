@@ -10,8 +10,8 @@ service owns validation.
 from __future__ import annotations
 
 import httpx
-
 from fastapi import APIRouter, Body, Depends, HTTPException
+from fastapi.responses import Response
 
 from backend.config.settings import get_settings
 from backend.middleware.auth import get_current_user
@@ -19,7 +19,7 @@ from backend.middleware.auth import get_current_user
 router = APIRouter(tags=["audio-tts"])
 
 
-@router.post("/tts", response_model=dict)
+@router.post("/tts")
 def proxy_tts(
     text: str = Body(..., min_length=1, max_length=1000),
     lang: str = Body("sw"),
@@ -46,4 +46,11 @@ def proxy_tts(
 
     if resp.status_code >= 400:
         raise HTTPException(status_code=resp.status_code, detail=resp.text)
-    return resp.content
+    return Response(
+        content=resp.content,
+        media_type=resp.headers.get("content-type", "audio/wav"),
+        headers={
+            "Cache-Control": "public, max-age=86400, immutable",
+            "X-Audio-Lang": lang,
+        },
+    )

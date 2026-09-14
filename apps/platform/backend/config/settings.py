@@ -103,9 +103,10 @@ class Settings(BaseSettings):
     # Casuya API gateway (blackboard exam/math endpoints, etc.)
     casuya_api_url: str = "http://localhost:8081"
 
-    # Casuya Audio-TTS microservice (Piper; Railway-hosted, reached over
-    # railway.internal). The engine + Kiswahili/English voices are cloned from
-    # GitHub at build time; the platform only forwards here with the internal key.
+    # Casuya Audio-TTS microservice (Sherpa-ONNX TTS; Railway-hosted, reached
+    # over railway.internal). The engine + Kiswahili/English voices are baked
+    # into the image at build time; the platform only forwards here with the
+    # internal key.
     casuya_audio_tts_url: str = "http://localhost:8010"
     casuya_audio_tts_api_key: str | None = None
 

@@ -12,8 +12,7 @@ from __future__ import annotations
 import io
 
 import httpx
-
-from fastapi import APIRouter, Depends, HTTPException, File, UploadFile
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 
 from backend.config.settings import get_settings
 from backend.middleware.auth import get_current_user
