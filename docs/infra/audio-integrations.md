@@ -181,4 +181,13 @@ new client code needed beyond the two buttons.
   `OfflineRecognizer.from_whisper(language="")` auto-detects `sw`/`en`.
 - TTS: Railway service per engine (recommended) vs one shared audio service.
 - STT: bounded short utterances only (recommended) vs full dictation in v1.
+- **STT quirk (measured 2026-09-14, both services live):** feeding the **piper
+  TTS output back into Whisper-base** garbles to a wrong detected language
+  (e.g. Swahili synthetic speech comes back as Arabic text) — even after forcing
+  16 kHz resampling. This is Whisper's known weakness on synthetic/robotic audio
+  (language auto-detection latches onto it), **not** a deployment fault: real
+  speech transcribes accurately at 16 kHz and 8 kHz (verified against the model
+  pack's `test_wavs` ground truth). If the product ever auto-scores spoken
+  answers **against TTS-generated prompts**, plan for this — student audio is
+  fine.
 - Acknowledgements: no Vercel deployment for audio (decided, above).
