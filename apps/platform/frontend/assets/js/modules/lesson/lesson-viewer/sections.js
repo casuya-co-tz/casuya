@@ -25,7 +25,7 @@ function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent,
               <textarea id="lesson-notes" rows="4" style="width:100%;padding:0.5rem;border:1px solid var(--color-border);border-radius:var(--radius);font-size:0.85rem">${escapeHtml(noteData?.content || "")}</textarea>
               <div style="display:flex;gap:0.35rem;align-items:center;margin-top:0.35rem">
                 <button class="btn btn-sm btn-primary" id="notes-save-btn">Save Notes</button>
-                <button type="button" class="casuya-record" data-target="#lesson-notes" title="Speak instead of typing" aria-label="Speak instead of typing">🎤</button>
+                <button type="button" class="casuya-record" data-target="#lesson-notes" title="Speak instead of typing" aria-label="Speak instead of typing">🎤 Voice</button>
                 <span id="notes-status" style="font-size:0.8rem;color:var(--color-text-muted);margin-left:0.5rem"></span>
               </div>
             </div>

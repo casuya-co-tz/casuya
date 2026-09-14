@@ -25,7 +25,7 @@ async function loadAIAssistant(dashboard) {
             </div>
             <div style="display:flex;gap:0.5rem;align-items:flex-start">
               <textarea class="input" name="question" rows="3" placeholder="Enter the student's question..." required style="flex:1"></textarea>
-              <button type="button" class="casuya-record" title="Speak the question" aria-label="Speak the question">🎤</button>
+              <button type="button" class="casuya-record" title="Speak the question" aria-label="Speak the question">🎤 Voice</button>
             </div>
             <input class="input" name="context" placeholder="Optional lesson context...">
             <button class="btn btn-primary" type="submit">Get Explanation</button>

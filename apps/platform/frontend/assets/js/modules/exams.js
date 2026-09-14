@@ -127,7 +127,7 @@ function renderExamQuestion(q, type, ctx) {
       html +=
         '<div style="display:flex;gap:0.35rem;align-items:flex-start">' +
         '<textarea class="exam-structured-answer" data-question="' + escapeHtml(q.number) + '" placeholder="Write your answer here..." style="flex:1;min-width:0;min-height:80px;padding:0.5rem;border:1px solid #d1d5db;border-radius:6px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-top:0"></textarea>' +
-        '<button type="button" class="casuya-record" data-label="Speak your answer" title="Speak your answer" aria-label="Speak your answer" style="margin-top:0">🎤</button>' +
+        '<button type="button" class="casuya-record" data-label="Speak your answer" title="Speak your answer" aria-label="Speak your answer" style="margin-top:0">🎤 Voice</button>' +
         "</div>";
     } else {
       html += '<div class="exam-answer-line"></div>';

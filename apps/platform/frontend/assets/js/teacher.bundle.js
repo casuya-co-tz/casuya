@@ -361,7 +361,7 @@ function renderQuizQuestions(questions, meta = {}) {
     html += `<div class="quiz-question" data-index="${i}" data-correct="${escapeHtml(correctAnswer)}">`;
     html += `<div class="quiz-question-num">Question ${i+1}</div>`;
     html += `<div class="quiz-question-text">${escapeHtml(q.text || "")}</div>`;
-    html += `<button type="button" class="casuya-listen" data-lang="auto" data-speak="${escapeHtml(String(q.text || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question">🔊</button>`;
+    html += `<button type="button" class="casuya-listen" data-lang="auto" data-speak="${escapeHtml(String(q.text || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question">🔊 Listen</button>`;
     html += '<div class="quiz-options">';
     options.forEach((opt, j) => {
       const letter = letters[j] || String.fromCharCode(65+j);
@@ -1381,7 +1381,7 @@ function renderLessonQuiz(quizData, lessonId) {
       <form id="quiz-form">
         ${quizData.questions.map((q, qi) => `
           <div style="margin-bottom:1rem">
-            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)}</p>
+            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)} <button type="button" class="casuya-listen" data-lang="auto" data-speak="${escapeHtml(String(q.prompt || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question" style="vertical-align:middle">🔊 Listen</button></p>
             ${q.options.map(o => `
               <label style="display:block;padding:0.3rem 0.5rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius);margin-bottom:0.25rem">
                 <input type="radio" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.id)}" required> ${escapeHtml(o.text)}
@@ -1507,7 +1507,7 @@ function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent,
               <textarea id="lesson-notes" rows="4" style="width:100%;padding:0.5rem;border:1px solid var(--color-border);border-radius:var(--radius);font-size:0.85rem">${escapeHtml(noteData?.content || "")}</textarea>
               <div style="display:flex;gap:0.35rem;align-items:center;margin-top:0.35rem">
                 <button class="btn btn-sm btn-primary" id="notes-save-btn">Save Notes</button>
-                <button type="button" class="casuya-record" data-target="#lesson-notes" title="Speak instead of typing" aria-label="Speak instead of typing">🎤</button>
+                <button type="button" class="casuya-record" data-target="#lesson-notes" title="Speak instead of typing" aria-label="Speak instead of typing">🎤 Voice</button>
                 <span id="notes-status" style="font-size:0.8rem;color:var(--color-text-muted);margin-left:0.5rem"></span>
               </div>
             </div>
@@ -1944,7 +1944,7 @@ function renderExamQuestion(q, type, ctx) {
       html +=
         '<div style="display:flex;gap:0.35rem;align-items:flex-start">' +
         '<textarea class="exam-structured-answer" data-question="' + escapeHtml(q.number) + '" placeholder="Write your answer here..." style="flex:1;min-width:0;min-height:80px;padding:0.5rem;border:1px solid #d1d5db;border-radius:6px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-top:0"></textarea>' +
-        '<button type="button" class="casuya-record" data-label="Speak your answer" title="Speak your answer" aria-label="Speak your answer" style="margin-top:0">🎤</button>' +
+        '<button type="button" class="casuya-record" data-label="Speak your answer" title="Speak your answer" aria-label="Speak your answer" style="margin-top:0">🎤 Voice</button>' +
         "</div>";
     } else {
       html += '<div class="exam-answer-line"></div>';
@@ -3487,7 +3487,7 @@ function guardPortal(expectedRole) {
     b.setAttribute("data-bound", "attached");
     b.title = opts.title || "Listen";
     b.setAttribute("aria-label", opts.title || "Listen");
-    b.textContent = "🔊";
+    b.textContent = "🔊 Listen";
     b.addEventListener("click", function () {
       var txt = opts.textProvider ? opts.textProvider() : (typeof el === "string" ? el : el.innerText);
       casuyaSpeakText(txt || "", { lang: opts.lang || "auto", onStart: function () { b.classList.add("speaking"); }, onEnd: function () { b.classList.remove("speaking"); } });
@@ -3514,7 +3514,7 @@ function guardPortal(expectedRole) {
   function once(btn) { // convenience: read text of an element into data-speak
     if (!btn) return btn;
     var t = btn.getAttribute("data-speak");
-    if (t == null) btn.setAttribute("data-speak", (btn.textContent || "").replace(/🔊/g, "").trim());
+    if (t == null) btn.setAttribute("data-speak", (btn.textContent || "").replace(/🔊/g, "").replace(/Listen\b/gi, "").trim());
     return btn;
   }
 
@@ -5926,7 +5926,7 @@ async function loadAIAssistant(dashboard) {
             </div>
             <div style="display:flex;gap:0.5rem;align-items:flex-start">
               <textarea class="input" name="question" rows="3" placeholder="Enter the student's question..." required style="flex:1"></textarea>
-              <button type="button" class="casuya-record" title="Speak the question" aria-label="Speak the question">🎤</button>
+              <button type="button" class="casuya-record" title="Speak the question" aria-label="Speak the question">🎤 Voice</button>
             </div>
             <input class="input" name="context" placeholder="Optional lesson context...">
             <button class="btn btn-primary" type="submit">Get Explanation</button>

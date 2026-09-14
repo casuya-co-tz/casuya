@@ -348,7 +348,7 @@
     b.setAttribute("data-bound", "attached");
     b.title = opts.title || "Listen";
     b.setAttribute("aria-label", opts.title || "Listen");
-    b.textContent = "🔊";
+    b.textContent = "🔊 Listen";
     b.addEventListener("click", function () {
       var txt = opts.textProvider ? opts.textProvider() : (typeof el === "string" ? el : el.innerText);
       casuyaSpeakText(txt || "", { lang: opts.lang || "auto", onStart: function () { b.classList.add("speaking"); }, onEnd: function () { b.classList.remove("speaking"); } });
@@ -375,7 +375,7 @@
   function once(btn) { // convenience: read text of an element into data-speak
     if (!btn) return btn;
     var t = btn.getAttribute("data-speak");
-    if (t == null) btn.setAttribute("data-speak", (btn.textContent || "").replace(/🔊/g, "").trim());
+    if (t == null) btn.setAttribute("data-speak", (btn.textContent || "").replace(/🔊/g, "").replace(/Listen\b/gi, "").trim());
     return btn;
   }
 

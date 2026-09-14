@@ -8,7 +8,7 @@ function renderStudentQuiz(quizData, lessonId) {
       <form id="quiz-form">
         ${quizData.questions.map((q, qi) => `
           <div style="margin-bottom:1rem">
-            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)}</p>
+            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)} <button type="button" class="casuya-listen" data-lang="auto" data-speak="${escapeHtml(String(q.prompt || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question" style="vertical-align:middle">🔊 Listen</button></p>
             ${q.options.map(o => `
               <label style="display:block;padding:0.3rem 0.5rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius);margin-bottom:0.25rem">
                 <input type="radio" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.id)}" required> ${escapeHtml(o.text)}
