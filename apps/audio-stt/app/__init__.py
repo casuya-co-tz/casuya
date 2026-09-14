@@ -26,4 +26,5 @@ app = create_app()
 
 @app.get("/readyz")
 def readyz():
-    return {"status": "ok" if model_ready() else "degraded", "model": model_ready()}
+    ready = model_ready()
+    return {"status": "ok" if ready else "degraded", "model": ready}

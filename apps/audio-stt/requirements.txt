@@ -4,4 +4,5 @@ gunicorn>=26.1.0
 pydantic==2.13.4
 pydantic-settings==2.15.0
 python-multipart>=0.0.9
+numpy>=1.26.4
 # sherpa-onnx is installed from the Dockerfile during build, not from here.

@@ -1,8 +1,8 @@
 """Casuya Audio-STT microservice config.
 
-Mirrors `apps/payments/app/config.py`. The Sherpa-ONNX ASR engine + Kiswahili
-(`sw`) + English models are cloned from GitHub (`k2-fsa/sherpa-onnx`) at Docker
-build time; at runtime this service only needs the model path + API key.
+Mirrors `apps/audio-tts/app/config.py`. The Sherpa-ONNX Whisper-base model
+(Kiswahili `sw` + English) is baked into the image at Docker build time; at
+runtime this service only needs the model path + API key.
 """
 
 from __future__ import annotations
@@ -19,15 +19,12 @@ class Settings(BaseSettings):
     environment: str = "production"
     port: int = 8020
 
-    # Internal API key required by every endpoint; the platform backend sends it
-    # as X-API-Key. Unset in dev keeps endpoints open (payments policy).
+    # Internal API key required by the transcribe endpoint; the platform backend
+    # sends it as X-API-Key. Unset in dev keeps endpoints open (payments policy).
     api_key: str | None = None
 
-    # Sherpa-ONNX config: offline streaming ASR, single "short utterance" model
-    # baked into the image at build (Kiswahili + English). `sample_rate` MUST
-    # match what the platform's MediaRecorder sends (16 kHz PCM mono).
-    sherpa_sample_rate: int = 16000
-    sherpa_hotwords: str = ""  # optional comma-separated domain hotwords
+    # Directory the Dockerfile bakes the Whisper-base model files into.
+    asr_models_dir: str = "/opt/sherpa-onnx-models"
 
 
 @lru_cache

@@ -38,13 +38,13 @@ That previously bombed the plan:
 | Component | Best place (path) | Why (verified) |
 |---|---|---|
 | **Sherpa-ONNX TTS model + engine** | `apps/audio-tts/` — `Dockerfile`, `requirements.txt`, `railway.json`, `app/main.py`, `app/config.py`, `app/security.py`, `app/routes_tts.py` | Exact mirror of `apps/payments` (the established FastAPI microservice template). Engine (`sherpa-onnx` PyPI wheel) + Kiswahili/English VITS voice packs are **baked in from official `k2-fsa/sherpa-onnx` `tts-models` release assets at Docker build time** (below). |
-| **Sherpa-ONNX STT model + engine** | `apps/audio-stt/` — same layout (`app/routes_stt.py`, `app/routes_misc.py`) | Same template, separate Railway service → independent CPU scaling/healthchecks |
+| **Sherpa-ONNX STT model + engine** | `apps/audio-stt/` — same layout (`app/routes_stt.py`, `app/services/transcribe.py`, `app/config.py`) | Same template, separate Railway service → independent CPU scaling/healthchecks. Engine (`sherpa-onnx` PyPI wheel) + **Whisper-base multilingual** model are baked in from the `asr-models` GitHub release at build time (below). |
 | **Audio proxy router** | `apps/platform/backend/api/audio.py` | Registered **BEFORE** `casuya_api_proxy` in `backend/app/routers.py` (the catch-all `/{path:path}` MUST stay last — enforced by the file comment). |
 | **Audio client (platform backend → services)** | `apps/platform/backend/services/services_bridge_client/audio.py` | Same `railway.internal` forwarding pattern as the existing bridge client |
 | **Frontend TTS/STT buttons** | `apps/platform/frontend/assets/js/modules/...` — **plain vanilla JS** | The platform UI is vanilla JS + Tailwind (verified: no React build pipeline). A `.tsx` button would have nothing to compile it there. |
 | **Editor palette components (first real ones)** | `packages/editor/component-library/text/TextToSpeechButton.tsx` + `component-library/audio/SpeechToTextRecorder.tsx` | `.tsx` home is `editor/component-library` only. These are the first real components in the currently-empty `text/` + `audio/` dirs. |
 | **Env vars** | `apps/audio-tts/.env.example`, `apps/audio-stt/.env.example`, `apps/platform/.env.example` | `CASUYA_AUDIO_TTS_URL`, `CASUYA_AUDIO_STT_URL`, `CASUYA_AUDIO_TTS_API_KEY`, `CASUYA_AUDIO_STT_API_KEY` — mirrors `CASUYA_PAYMENTS_*` naming |
-| **Railway deploy config** | `apps/audio-tts/railway.json` + `apps/audio-stt/railway.json` | Same `DOCKERFILE` builder + `healthcheckPath: "/readyz"` + `healthcheckTimeout` pattern as `apps/audio-stt` |
+| **Railway deploy config** | `apps/audio-tts/railway.json` + `apps/audio-stt/railway.json` | Same `DOCKERFILE` builder + `healthcheckPath: "/readyz"` + `healthcheckTimeout` pattern as `apps/audio-tts` |
 | **Docs** | `docs/infra/audio-integrations.md` (this file) | Lives under `docs/` |
 
 ---
@@ -57,7 +57,7 @@ mirroring how the image already bundles runtime models:
 | Engine | Source | Build step |
 |---|---|---|
 | **Sherpa-ONNX TTS** (Kiswahili `sw` + English `en`) | engine `k2-fsa/sherpa-onnx` (PyPI `sherpa-onnx` wheel); voices `vits-piper-sw_CD-lanfrica-medium` (22050 Hz) + `vits-piper-en_US-amy-low` (22050 Hz) from the `tts-models` GitHub release | `pip install sherpa-onnx` in the `Dockerfile`, then `curl` + `tar -xjf` the two voice `.tar.bz2` assets at build time (no phonemize/`espeak-ng` source build — that is exactly what breaks piper on Railway). |
-| **Sherpa-ONNX STT** | `k2-fsa/sherpa-onnx` | download ONNX ASR models (Kiswahili/eng, short-utterance) at build |
+| **Sherpa-ONNX STT** | `k2-fsa/sherpa-onnx`; model **Whisper-base multilingual** (`sherpa-onnx-whisper-base.tar.bz2`) from the `asr-models` GitHub release; int8 encoder/decoder (`base-encoder.int8.onnx`, `base-decoder.int8.onnx`) + `base-tokens.txt` — verified to exist | `pip install sherpa-onnx` in the `Dockerfile`, then `curl` + `tar -xjf` the `.tar.bz2` asset at build time; `OfflineRecognizer.from_whisper(..., language="")` auto-detects Kiswahili vs English |
 
 > Rationale: keeps **all** deployed code reproducible from source, consistent
 > with the `casuya_api_proxy`/payments approach (nothing proprietary or
@@ -89,8 +89,9 @@ apps/audio-stt/  (same tree; routes_stt.py: POST /v1/audio/stt multipart -> {tex
 ### 3.1 Health endpoints (so Railway's healthcheck doesn't 404)
 
 Each service exposes `/health` (open, returns 200) and `/readyz` (open, reports
-`{"status": "ok", "voice_loaded": true}` after the engine/model loads); only the
-`/v1/audio/*` endpoints require the internal `X-API-Key`. `Dockerfile` runs
+`{"status": "ok", ...}` with `voice_loaded` on TTS / `model` on STT after the
+engine/model loads); only the `/v1/audio/*` endpoints require the internal
+`X-API-Key`. `Dockerfile` runs
 **gunicorn with 1 worker** bound to `0.0.0.0:${PORT:-8000}`. Both `railway.json`
 files set `healthcheckPath: "/readyz"` + `healthcheckTimeout: 120` — never a
 cloud-only assumption.
@@ -173,9 +174,11 @@ new client code needed beyond the two buttons.
   **Resolved:** `vits-piper-sw_CD-lanfrica-medium` (Kiswahili) +
   `vits-piper-en_US-amy-low` (English), both from the
   `k2-fsa/sherpa-onnx` `tts-models` release (verified assets).
-- STT: pin a Kiswahili+English ASR model that actually exists in
-  `k2-fsa/sherpa-onnx` releases (the current `apps/audio-stt` Dockerfile must be
-  updated to download it — not yet done).
+- ~~STT: pin a Kiswahili+English ASR model that actually exists in
+  `k2-fsa/sherpa-onnx` releases.~~ **Resolved:** Whisper-base multilingual
+  (`sherpa-onnx-whisper-base.tar.bz2`, `asr-models` release — verified asset,
+  int8 encoder/decoder for CPU) baked into the `apps/audio-stt` Dockerfile.
+  `OfflineRecognizer.from_whisper(language="")` auto-detects `sw`/`en`.
 - TTS: Railway service per engine (recommended) vs one shared audio service.
 - STT: bounded short utterances only (recommended) vs full dictation in v1.
 - Acknowledgements: no Vercel deployment for audio (decided, above).
