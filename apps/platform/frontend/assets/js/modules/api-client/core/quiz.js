@@ -31,6 +31,7 @@ function renderQuizQuestions(questions, meta = {}) {
     html += `<div class="quiz-question" data-index="${i}" data-correct="${escapeHtml(correctAnswer)}">`;
     html += `<div class="quiz-question-num">Question ${i+1}</div>`;
     html += `<div class="quiz-question-text">${escapeHtml(q.text || "")}</div>`;
+    html += `<button type="button" class="casuya-listen" data-lang="auto" data-speak="${escapeHtml(String(q.text || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question">🔊</button>`;
     html += '<div class="quiz-options">';
     options.forEach((opt, j) => {
       const letter = letters[j] || String.fromCharCode(65+j);

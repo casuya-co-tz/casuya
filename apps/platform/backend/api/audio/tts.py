@@ -21,7 +21,7 @@ router = APIRouter(tags=["audio-tts"])
 
 @router.post("/tts")
 def proxy_tts(
-    text: str = Body(..., min_length=1, max_length=1000),
+    text: str = Body(..., min_length=1, max_length=3400),
     lang: str = Body("sw"),
     current_user=Depends(get_current_user),
 ):
@@ -35,7 +35,9 @@ def proxy_tts(
     settings = get_settings()
     target = settings.casuya_audio_tts_url.rstrip("/")
     url = f"{target}/v1/audio/tts"
-    headers = {"X-API-Key": settings.casuya_audio_tts_api_key}
+    headers: dict[str, str] = {}
+    if settings.casuya_audio_tts_api_key:
+        headers["X-API-Key"] = settings.casuya_audio_tts_api_key
     body = {"user_id": current_user.get("sub"), "text": text, "lang": lang}
 
     try:

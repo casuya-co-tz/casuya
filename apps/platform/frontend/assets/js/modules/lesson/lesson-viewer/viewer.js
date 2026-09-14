@@ -119,6 +119,21 @@ async function viewLessonContent(containerId, lessonId, backFn) {
 
     const iframe = mountLessonIframe(container, html);
 
+    // Listen button: reads the lesson title + spoken content using the Casuya
+    // TTS voice (browser voice fallback on failure / logged-out use).
+    if (typeof casuyaAttachListen === "function") {
+      const listenSlot = container.querySelector("#lesson-listen-slot");
+      if (listenSlot) {
+        casuyaAttachListen(listenSlot, {
+          title: "Listen to this lesson",
+          textProvider: function () {
+            const body = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
+            return (lessonTitle + ". " + body).trim();
+          }
+        });
+      }
+    }
+
     const onMessage = (e) => {
       if (e.data?.type === "casuya-quiz" && e.data.score != null && e.data.total > 0) {
         state.quizScoreSent = true;

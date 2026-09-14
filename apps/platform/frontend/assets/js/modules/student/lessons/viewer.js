@@ -35,6 +35,7 @@ function registerLessonsView(d) {
           <button class="btn" id="back-btn">← Back</button>
           <h2 style="flex:1">${escapeHtml(lesson.title)}</h2>
           <button id="bookmark-btn" class="btn-icon" style="font-size:1.5rem" title="Bookmark">${isBookmarked ? "★" : "☆"}</button>
+          <button id="lesson-listen-btn" type="button" class="casuya-listen" data-lang="auto" data-bound="student-lesson" title="Listen to this lesson" aria-label="Listen to this lesson">🔊</button>
           <button id="complete-btn" class="btn btn-primary" style="font-size:0.85rem">Mark Complete</button>
         </div>
         <div style="width:100%">
@@ -45,7 +46,10 @@ function registerLessonsView(d) {
             <summary style="cursor:pointer;font-weight:600;font-size:0.9rem;color:var(--color-text-muted)">📝 My Notes</summary>
             <div class="card" style="margin-top:0.5rem">
               <textarea id="lesson-note" class="input" rows="4" placeholder="Write your notes here...">${escapeHtml(noteData?.content || "")}</textarea>
-              <button class="btn btn-primary" id="save-note" style="margin-top:0.5rem">Save Note</button>
+              <div style="display:flex;gap:0.5rem;align-items:center;margin-top:0.5rem">
+                <button class="btn btn-primary" id="save-note">Save Note</button>
+                <button type="button" class="casuya-record" data-target="#lesson-note" title="Speak instead of typing" aria-label="Speak instead of typing">🎤</button>
+              </div>
             </div>
           </details>
           ${renderStudentQuiz(quizData, lessonId)}
@@ -64,6 +68,14 @@ function registerLessonsView(d) {
       let iframeCtx = null;
       if (iframe) {
         iframeCtx = await mountStudentLessonIframe(lessonId, lessonContent);
+      }
+
+      const lessonListenBtn = document.getElementById("lesson-listen-btn");
+      if (lessonListenBtn && typeof casuyaSpeakText === "function") {
+        lessonListenBtn.addEventListener("click", function () {
+          const body = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
+          casuyaSpeakText((lesson.title + ". " + body).trim(), { lang: "auto" });
+        });
       }
 
       bindStudentLessonInteractions(d, { lessonId, lesson, isBookmarked, noteData, quizData, gamesData, iframeCtx });

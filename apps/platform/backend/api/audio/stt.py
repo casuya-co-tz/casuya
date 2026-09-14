@@ -30,7 +30,9 @@ async def proxy_stt(
     settings = get_settings()
     target = settings.casuya_audio_stt_url.rstrip("/")
     url = f"{target}/v1/audio/stt"
-    headers = {"X-API-Key": settings.casuya_audio_stt_api_key}
+    headers: dict[str, str] = {}
+    if settings.casuya_audio_stt_api_key:
+        headers["X-API-Key"] = settings.casuya_audio_stt_api_key
     data = {"user_id": current_user.get("sub")}
     wav = await audio.read()
 

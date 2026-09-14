@@ -6,6 +6,7 @@ function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent,
       <div style="padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;background:var(--color-surface);border-bottom:1px solid var(--color-border);flex-wrap:wrap">
         <button class="btn btn-primary lesson-back-btn" style="margin-bottom:0">&larr; Back</button>
         <span style="flex:1;font-weight:600;font-size:0.95rem">${escapeHtml(lessonTitle)}</span>
+        <span id="lesson-listen-slot"></span>
         ${canBookmark ? `
           <button class="btn btn-sm lesson-bookmark-btn" style="${bookmarked ? 'background:var(--color-warning);color:#fff' : ''};margin-bottom:0">${bookmarked ? "★" : "☆"}</button>
         ` : ""}
@@ -22,8 +23,11 @@ function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent,
             <summary style="cursor:pointer;font-weight:600;font-size:0.9rem;color:var(--color-text-muted)">📝 My Notes</summary>
             <div style="margin-top:0.5rem">
               <textarea id="lesson-notes" rows="4" style="width:100%;padding:0.5rem;border:1px solid var(--color-border);border-radius:var(--radius);font-size:0.85rem">${escapeHtml(noteData?.content || "")}</textarea>
-              <button class="btn btn-sm btn-primary" id="notes-save-btn" style="margin-top:0.35rem">Save Notes</button>
-              <span id="notes-status" style="font-size:0.8rem;color:var(--color-text-muted);margin-left:0.5rem"></span>
+              <div style="display:flex;gap:0.35rem;align-items:center;margin-top:0.35rem">
+                <button class="btn btn-sm btn-primary" id="notes-save-btn">Save Notes</button>
+                <button type="button" class="casuya-record" data-target="#lesson-notes" title="Speak instead of typing" aria-label="Speak instead of typing">🎤</button>
+                <span id="notes-status" style="font-size:0.8rem;color:var(--color-text-muted);margin-left:0.5rem"></span>
+              </div>
             </div>
           </details>
           ${renderLessonQuiz(quizData, lessonId)}

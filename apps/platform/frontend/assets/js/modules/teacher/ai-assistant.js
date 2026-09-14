@@ -23,13 +23,17 @@ async function loadAIAssistant(dashboard) {
                 <option value="4">Form IV</option>
               </select>
             </div>
-            <textarea class="input" name="question" rows="3" placeholder="Enter the student's question..." required></textarea>
+            <div style="display:flex;gap:0.5rem;align-items:flex-start">
+              <textarea class="input" name="question" rows="3" placeholder="Enter the student's question..." required style="flex:1"></textarea>
+              <button type="button" class="casuya-record" title="Speak the question" aria-label="Speak the question">🎤</button>
+            </div>
             <input class="input" name="context" placeholder="Optional lesson context...">
             <button class="btn btn-primary" type="submit">Get Explanation</button>
           </form>
           <div id="ai-tutor-result" style="margin-top:1rem;display:none">
             <div class="card" style="background:var(--color-bg);padding:1.25rem;border-radius:12px;border:1px solid var(--color-border)">
               <div id="ai-tutor-text" class="tutor-response"></div>
+              <span id="ai-tutor-listen-slot"></span>
             </div>
           </div>
         </div>
@@ -103,6 +107,15 @@ async function loadAIAssistant(dashboard) {
       });
       const raw = result?.explanation || result?.answer || result?.response || JSON.stringify(result);
       textDiv.innerHTML = renderTutorMarkdown(raw);
+      if (typeof casuyaAttachListen === "function") {
+        const slot = document.getElementById("ai-tutor-listen-slot");
+        if (slot) {
+          casuyaAttachListen(slot, {
+            title: "Listen to this explanation",
+            textProvider: function () { return textDiv.innerText; }
+          });
+        }
+      }
     } catch(err) { textDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
   });
   document.getElementById("ai-questions-form")?.addEventListener("submit", async e => {

@@ -103,7 +103,7 @@
     ttsBtn.addEventListener('click', function () {
       state.tts = !state.tts;
       applyState();
-      if (!state.tts && window.speechSynthesis) window.speechSynthesis.cancel();
+      if (!state.tts) stopSpeech();
     });
   }
 
@@ -154,7 +154,28 @@
     return document.body.textContent.substring(0, 2000);
   }
 
+  function stopSpeech() {
+    var speechStatus = document.getElementById('speech-status');
+    if (typeof casuyaStopAll === 'function') casuyaStopAll();
+    else if (window.speechSynthesis) window.speechSynthesis.cancel();
+    state.controller = null;
+    if (speechStatus) speechStatus.textContent = 'Done';
+  }
+
   function speak(text) {
+    stopSpeech();
+    // Prefer the Casuya Sherpa-ONNX voice through the platform proxy when the
+    // user is logged in; the browser voice is the fallback on public pages.
+    if (typeof casuyaSpeakText === 'function' && casuyaIsAuthed()) {
+      var speechStatus = document.getElementById('speech-status');
+      state.controller = casuyaSpeakText(text, {
+        rate: state.speechRate || 0.9,
+        onStart: function () { if (speechStatus) speechStatus.textContent = 'Speaking...'; },
+        onEnd: function () { if (speechStatus) speechStatus.textContent = 'Done'; state.controller = null; },
+        onError: function () { if (speechStatus) speechStatus.textContent = 'Error'; state.controller = null; }
+      });
+      return state.controller;
+    }
     window.speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
     var voice = findVoice();
@@ -175,6 +196,10 @@
   var speechStop = document.getElementById('speech-stop');
   if (speechPlay) {
     speechPlay.addEventListener('click', function () {
+      var ctrl = state.controller;
+      // API mode: resume the <audio> element; if that succeeds we're done.
+      if (ctrl && typeof ctrl.resume === 'function' && ctrl.resume()) return;
+      // Browser mode (or fallback): resume if paused, otherwise read fresh.
       if (window.speechSynthesis.paused) {
         window.speechSynthesis.resume();
       } else {
@@ -184,12 +209,15 @@
   }
   if (speechPause) {
     speechPause.addEventListener('click', function () {
-      window.speechSynthesis.pause();
+      // API mode: pause the <audio> element; if that succeeds we're done.
+      var ctrl = state.controller;
+      if (ctrl && typeof ctrl.pause === 'function' && ctrl.pause()) return;
+      if (window.speechSynthesis) window.speechSynthesis.pause();
     });
   }
   if (speechStop) {
     speechStop.addEventListener('click', function () {
-      window.speechSynthesis.cancel();
+      stopSpeech();
     });
   }
 
