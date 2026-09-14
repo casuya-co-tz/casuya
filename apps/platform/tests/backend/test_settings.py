@@ -29,12 +29,53 @@ def test_admin_sees_new_teacher_modules():
     assert teacher.get("teaching-docs") is True
 
 
+def test_admin_sees_test_generator_and_library_modules():
+    admin_headers, _ = _register("admin")
+    resp = client.get("/settings/modules", headers=admin_headers)
+    assert resp.status_code == 200
+    for role in ("student", "teacher"):
+        mods = resp.json().get(role, {})
+        assert mods.get("test-generator") is True
+        assert mods.get("library") is True
+
+
 def test_new_teacher_modules_default_enabled_for_teacher():
     teacher_headers, _ = _register("teacher")
     resp = client.get("/settings/modules/my", headers=teacher_headers)
     assert resp.status_code == 200
     assert resp.json().get("teaching-docs") is True
     assert resp.json().get("class") is True
+
+
+def test_new_student_modules_default_enabled_for_student():
+    student_headers, _ = _register("student")
+    resp = client.get("/settings/modules/my", headers=student_headers)
+    assert resp.status_code == 200
+    assert resp.json().get("test-generator") is True
+    assert resp.json().get("library") is True
+
+
+def test_admin_can_toggle_test_generator_and_library_off():
+    admin_headers, _ = _register("admin")
+    student_headers, _ = _register("student")
+    teacher_headers, _ = _register("teacher")
+
+    updated = client.put("/settings/modules", headers=admin_headers, json={
+        "student": {"test-generator": False, "library": False},
+        "teacher": {"test-generator": False, "library": False},
+    }).json()
+    assert updated["student"]["test-generator"] is False
+    assert updated["student"]["library"] is False
+    assert updated["teacher"]["test-generator"] is False
+    assert updated["teacher"]["library"] is False
+
+    student_my = client.get("/settings/modules/my", headers=student_headers).json()
+    assert student_my["test-generator"] is False
+    assert student_my["library"] is False
+
+    teacher_my = client.get("/settings/modules/my", headers=teacher_headers).json()
+    assert teacher_my["test-generator"] is False
+    assert teacher_my["library"] is False
 
 
 def test_admin_can_toggle_teaching_docs_off():

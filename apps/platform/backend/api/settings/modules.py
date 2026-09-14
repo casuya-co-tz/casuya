@@ -23,12 +23,14 @@ DEFAULT_MODULES = {
         "dashboard": True, "subjects": True, "progress": True,
         "bookmarks": True, "assignments": True, "games": True,
         "downloads": True, "exams": True, "files": True,
+        "test-generator": True, "library": True,
         "payments": True, "notifications": True, "settings": True,
     },
     "teacher": {
         "overview": True, "class": True, "students": True, "lessons": True,
         "assignments": True, "reports": True, "ai-assistant": True,
         "teaching-docs": True, "bookmarks": True, "files": True,
+        "test-generator": True, "library": True,
         "payments": True, "notifications": True, "settings": True,
     },
 }
