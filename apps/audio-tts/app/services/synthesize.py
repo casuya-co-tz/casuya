@@ -49,7 +49,6 @@ def _load_engine(lang: str) -> Any:
                     length_scale=1.0,
                     noise_scale=0.667,
                     noise_scale_w=0.8,
-                    speaker_id=0,
                 ),
                 num_threads=2,
                 provider="cpu",
