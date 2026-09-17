@@ -6,12 +6,12 @@ import asyncio
 import json
 import re
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import StreamingResponse
-from fastapi import HTTPException
 from pydantic import BaseModel
 
 from backend.middleware.auth import get_current_user
+from backend.startup import check_casuya_ai
 from backend.services.ai_bridge.prompts import _SUBJECT_LABELS, _strip_html, check_subject_relevance
 from backend.services.ai_bridge.tests import TEST_TYPES, generate_test_questions
 from backend.services.ai_service import (
@@ -25,6 +25,20 @@ from backend.services.ai_service import (
 )
 
 router = APIRouter(prefix="/ai", tags=["AI"])
+
+
+def _reject_offline(source: str, allow_offline: bool) -> None:
+    if not allow_offline and source == "offline":
+        raise HTTPException(
+            status_code=503,
+            detail="AI service unavailable and offline fallback disabled",
+        )
+
+
+@router.get("/status")
+async def api_ai_status(_user=Depends(get_current_user)):
+    """Report casuya-ai connectivity for admin/teacher dashboards."""
+    return check_casuya_ai()
 
 
 class QuestionRequest(BaseModel):
@@ -73,7 +87,11 @@ class TestGenerationRequest(BaseModel):
 
 
 @router.post("/questions/generate")
-async def api_generate_questions(req: QuestionRequest, _user=Depends(get_current_user)):
+async def api_generate_questions(
+    req: QuestionRequest,
+    allow_offline: bool = Query(True, description="When false, return 503 if AI is down"),
+    _user=Depends(get_current_user),
+):
     if req.subject_slug and req.subject_slug not in _ALLOWED_SUBJECTS:
         raise HTTPException(
             status_code=422,
@@ -85,17 +103,22 @@ async def api_generate_questions(req: QuestionRequest, _user=Depends(get_current
         mismatch = check_subject_relevance(_strip_html(req.lesson_html), req.subject_slug)
         if mismatch:
             raise HTTPException(status_code=422, detail=mismatch)
-    questions = await generate_quiz_questions(
+    questions, source = await generate_quiz_questions(
         req.lesson_html,
         req.count,
         subject_slug=req.subject_slug,
         form_level=req.form_level,
     )
-    return {"questions": questions, "count": len(questions)}
+    _reject_offline(source, allow_offline)
+    return {"questions": questions, "count": len(questions), "source": source}
 
 
 @router.post("/tutoring/explain")
-async def api_tutoring(req: TutoringRequest, _user=Depends(get_current_user)):
+async def api_tutoring(
+    req: TutoringRequest,
+    allow_offline: bool = Query(True),
+    _user=Depends(get_current_user),
+):
     payload = await get_tutoring_payload(
         req.question,
         req.lesson_context,
@@ -103,24 +126,34 @@ async def api_tutoring(req: TutoringRequest, _user=Depends(get_current_user)):
         form_level=req.form_level,
         max_questions=req.max_questions,
     )
+    source = payload.get("source", "offline")
+    _reject_offline(source, allow_offline)
     return {
         "response": payload["response"],
         "questions": payload["questions"],
         "count": len(payload["questions"]),
+        "source": source,
+        "sourced": payload.get("sourced", False),
+        "kbHits": payload.get("kbHits") or [],
     }
 
 
 @router.post("/tutoring/quiz")
-async def api_tutoring_quiz(req: TutoringRequest, _user=Depends(get_current_user)):
+async def api_tutoring_quiz(
+    req: TutoringRequest,
+    allow_offline: bool = Query(True),
+    _user=Depends(get_current_user),
+):
     """Generate up to 20 practice questions of any type for the topic."""
-    questions = await generate_practice_questions(
+    questions, source = await generate_practice_questions(
         req.question,
         req.lesson_context,
         subject_slug=req.subject_slug,
         form_level=req.form_level,
         count=req.max_questions or 10,
     )
-    return {"questions": questions, "count": len(questions)}
+    _reject_offline(source, allow_offline)
+    return {"questions": questions, "count": len(questions), "source": source}
 
 
 @router.post("/tests/generate")
@@ -168,6 +201,7 @@ async def api_generate_tests(req: TestGenerationRequest, _user=Depends(get_curre
         count=req.count,
         difficulty=req.difficulty,
     )
+    source = meta.get("source", "offline")
     return {
         "questions": questions,
         "count": len(questions),
@@ -179,6 +213,7 @@ async def api_generate_tests(req: TestGenerationRequest, _user=Depends(get_curre
         "topics": req.topics,
         "subtopics": req.subtopics,
         "kbHits": meta.get("kbHits") or [],
+        "source": source,
     }
 
 
@@ -196,8 +231,8 @@ async def api_moderate(req: ModerateRequest, _user=Depends(get_current_user)):
 
 @router.post("/content/translate")
 async def api_translate(req: TranslateRequest, _user=Depends(get_current_user)):
-    translated = await translate_content(req.text, req.target_language)
-    return {"translated": translated}
+    translated, source = await translate_content(req.text, req.target_language)
+    return {"translated": translated, "source": source}
 
 
 # ── SSE Streaming for AI Tutoring (P3-4) ──────────────────────────────────

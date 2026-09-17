@@ -5,7 +5,7 @@ by calling the casuya-ai service over HTTP. Falls back to local regex-based
 generation when the AI service is unavailable.
 """
 
-from .client import CASUYA_AI_URL, _call_ai_service  # noqa: F401
+from .client import AiServiceError, _call_ai_service, get_casuya_ai_url  # noqa: F401
 from .exam import generate_exam_paper  # noqa: F401
 from .tests import generate_test_questions, TEST_TYPES  # noqa: F401
 from .math import (  # noqa: F401
@@ -25,7 +25,8 @@ from .prompts import (  # noqa: F401
 
 __all__ = [
     # Public API
-    "CASUYA_AI_URL",
+    "AiServiceError",
+    "get_casuya_ai_url",
     "_call_ai_service",
     "generate_exam_paper",
     "generate_test_questions",

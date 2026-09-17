@@ -3,9 +3,12 @@ and content analysis, with HTML stripping and local fallback builders."""
 
 from __future__ import annotations
 
+import logging
 import re
 
-from .client import _call_ai_service
+from .client import AiServiceError, _call_ai_service
+
+logger = logging.getLogger(__name__)
 
 
 # ---------- HTML Stripping ----------
@@ -130,7 +133,7 @@ async def generate_quiz_questions(
     count: int = 5,
     subject_slug: str | None = None,
     form_level: int | None = None,
-) -> list[dict]:
+) -> tuple[list[dict], str]:
     """Generate NECTA-style quiz questions from lesson HTML.
 
     Strips HTML tags before sending to the AI service so the model
@@ -172,12 +175,25 @@ async def generate_quiz_questions(
         payload["form_level"] = form_level
     if scope_instruction:
         payload["instructions"] = scope_instruction
+    if subject_slug and form_level:
+        try:
+            from backend.services.syllabus_service import get_curriculum_context
 
-    result = await _call_ai_service("/api/questions/generate", payload)
-    if result and "questions" in result:
-        return result["questions"]
+            curriculum_ctx = get_curriculum_context(subject_slug, form_level)
+            if curriculum_ctx:
+                payload["curriculum_context"] = curriculum_ctx
+        except Exception as exc:
+            logger.debug("Could not fetch syllabus context for questions: %s", exc)
 
-    return _generate_questions_locally(plain_text, count, subject_slug, form_level)
+    try:
+        result = await _call_ai_service("/api/questions/generate", payload)
+        questions = result.get("questions") if result else None
+        if questions:
+            return questions, "casuya-ai"
+    except AiServiceError as exc:
+        logger.warning("AI question generation failed: %s", exc)
+
+    return _generate_questions_locally(plain_text, count, subject_slug, form_level), "offline"
 
 
 def _generate_questions_locally(
@@ -290,19 +306,14 @@ async def get_tutoring_response(
 
             logger.debug("Could not fetch syllabus context: %s", exc)
 
-    result = await _call_ai_service("/api/tutoring/explain", payload)
-    if result and "response" in result:
-        response = result["response"]
-        # Strip  thinking... response blocks from models that use chain-of-thought
-        # Some models (e.g. Qwen) emit  thinking without a closing tag
-        response = re.sub(r" thinking[\s\S]*?<\/think>", "", response).strip()
-        if " thinking" in response:
-            # No closing tag — take everything after the last  thinking block
-            parts = response.split(" thinking")
-            response = parts[-1].strip()
-        return response
-
-    return "I'm sorry, the AI tutor is currently unavailable. Please try again later or ask your teacher for help."
+    payload_result = await get_tutoring_payload(
+        question,
+        lesson_context,
+        subject_slug=subject_slug,
+        form_level=form_level,
+        max_questions=max_questions,
+    )
+    return payload_result["response"]
 
 
 async def get_tutoring_payload(
@@ -335,23 +346,33 @@ async def get_tutoring_payload(
 
             logger.debug("Could not fetch syllabus context: %s", exc)
 
-    result = await _call_ai_service("/api/tutoring/explain", payload)
-    if result and "response" in result:
-        questions = result.get("questions") or []
-        response = re.sub(r" thinking[\s\S]*?<\/think>", "", result["response"]).strip()
-        if " thinking" in response:
-            response = response.split(" thinking")[-1].strip()
-        return {
-            "response": response,
-            "questions": questions,
-            "sourced": bool(result.get("sourced")),
-            "kbHits": result.get("kbHits") or [],
-        }
+    offline_msg = (
+        "I'm sorry, the AI tutor is currently unavailable. "
+        "Please try again later or ask your teacher for help."
+    )
+    try:
+        result = await _call_ai_service("/api/tutoring/explain", payload)
+        if result and result.get("response"):
+            questions = result.get("questions") or []
+            response = re.sub(r" thinking[\s\S]*?<\/think>", "", result["response"]).strip()
+            if " thinking" in response:
+                response = response.split(" thinking")[-1].strip()
+            return {
+                "response": response,
+                "questions": questions,
+                "sourced": bool(result.get("sourced")),
+                "kbHits": result.get("kbHits") or [],
+                "source": "casuya-ai",
+            }
+    except AiServiceError as exc:
+        logger.warning("AI tutoring failed: %s", exc)
+
     return {
-        "response": "I'm sorry, the AI tutor is currently unavailable. Please try again later or ask your teacher for help.",
+        "response": offline_msg,
         "questions": [],
         "sourced": False,
         "kbHits": [],
+        "source": "offline",
     }
 
 
@@ -361,7 +382,7 @@ async def generate_practice_questions(
     subject_slug: str | None = None,
     form_level: int | None = None,
     count: int = 10,
-) -> list[dict]:
+) -> tuple[list[dict], str]:
     """Generate up to 20 practice questions of any type for the given topic.
 
     Delegates to the casuya-ai /api/tutoring/quiz endpoint, which scopes the
@@ -378,10 +399,14 @@ async def generate_practice_questions(
     if form_level:
         payload["form_level"] = form_level
 
-    result = await _call_ai_service("/api/tutoring/quiz", payload)
-    if result and "questions" in result:
-        return result["questions"]
-    return []
+    try:
+        result = await _call_ai_service("/api/tutoring/quiz", payload)
+        questions = result.get("questions") if result else None
+        if questions:
+            return questions, "casuya-ai"
+    except AiServiceError as exc:
+        logger.warning("AI practice quiz failed: %s", exc)
+    return [], "offline"
 
 
 # ---------- Content Analysis ----------
@@ -389,16 +414,17 @@ async def generate_practice_questions(
 
 async def analyze_content(html_content: str) -> dict:
     """Analyze educational content for quality, readability, and completeness."""
-    result = await _call_ai_service(
-        "/api/content/analyze",
-        {
-            "content": html_content,
-        },
-    )
-    if result:
-        return result
+    try:
+        result = await _call_ai_service(
+            "/api/content/analyze",
+            {"content": html_content},
+        )
+        if result:
+            result["source"] = "casuya-ai"
+            return result
+    except AiServiceError as exc:
+        logger.warning("AI content analyze failed: %s", exc)
 
-    # Fallback: basic local analysis
     text = re.sub(r"<[^>]+>", " ", html_content)
     words = text.split()
     sentences = re.split(r"[.!?]+", text)
@@ -409,4 +435,5 @@ async def analyze_content(html_content: str) -> dict:
         "has_images": "<img" in html_content.lower(),
         "has_videos": "<video" in html_content.lower() or "youtube" in html_content.lower(),
         "has_quizzes": "quiz" in html_content.lower() or "question" in html_content.lower(),
+        "source": "offline",
     }

@@ -106,7 +106,7 @@ async function loadAIAssistant(dashboard) {
         }),
       });
       const raw = result?.explanation || result?.answer || result?.response || JSON.stringify(result);
-      textDiv.innerHTML = renderTutorMarkdown(raw);
+      textDiv.innerHTML = renderTutorMarkdown(raw) + renderAiSourceBadge(result?.source);
       if (typeof casuyaAttachListen === "function") {
         const slot = document.getElementById("ai-tutor-listen-slot");
         if (slot) {
@@ -141,7 +141,7 @@ async function loadAIAssistant(dashboard) {
           subject: fd.get("subject_slug"),
           formLevel: fd.get("form_level"),
           topic: questions[0]?.topic || "",
-        });
+        }) + renderAiSourceBadge(result?.source);
         window.renderMath(textDiv);
       } else {
         textDiv.innerHTML = '<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>';
@@ -161,7 +161,7 @@ async function loadAIAssistant(dashboard) {
         body: JSON.stringify({ text: fd.get("text"), target_language: fd.get("target_language") }),
       });
       const raw = result?.translated || result?.translatedText || result?.text || JSON.stringify(result);
-      textDiv.innerHTML = renderTutorMarkdown(raw);
+      textDiv.innerHTML = renderTutorMarkdown(raw) + renderAiSourceBadge(result?.source);
     } catch(err) { textDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
   });
 }

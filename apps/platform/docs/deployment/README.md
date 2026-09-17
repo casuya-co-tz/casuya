@@ -21,5 +21,16 @@ Deployment configuration and infrastructure notes for the Casuya platform.
 
 - `infra/Dockerfile` — Production container (gunicorn)
 - `apps/platform/vercel.json` — Static frontend on Vercel
-- `infra/docker-compose.yml` — Full local stack (postgres + redis + backend + nginx)
-- `infra/render.yaml` — Render deployment config
+- `infra/docker-compose.yml` — Local stack (postgres + redis + backend + nginx)
+- `infra/docker-compose.full.yml` — Optional profile adding payments, audio TTS/STT, casuya-ai
+- `infra/render.yaml` — Legacy Render config (abandoned; Railway is canonical)
+
+## Railway microservices
+
+| Service | Path | Health |
+|---|---|---|
+| Platform backend | `apps/platform` | `/health`, `/readyz` |
+| Payments | `apps/payments` | `/health`, `/readyz` |
+| Audio TTS | `apps/audio-tts` | `/health`, `/readyz` |
+| Audio STT | `apps/audio-stt` | `/health`, `/readyz` |
+| Casuya AI | `packages/ai` | `/health`, `/readyz` |

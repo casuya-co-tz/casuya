@@ -6,10 +6,11 @@ dependency, record serializers, a UTC timestamp helper, and the audit writer.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import UTC, datetime
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
+from sqlalchemy.pool import StaticPool
 
 from app.config import get_settings
 from app.models import (
@@ -24,9 +25,13 @@ settings = get_settings()
 
 
 def _engine():
-    kwargs = {}
+    kwargs: dict = {}
     if settings.database_url.startswith("postgres"):
         kwargs["pool_pre_ping"] = True
+    if settings.database_url.startswith("sqlite"):
+        kwargs["connect_args"] = {"check_same_thread": False}
+    if settings.database_url.rstrip("/") == "sqlite:///:memory:":
+        kwargs["poolclass"] = StaticPool
     return create_engine(settings.database_url, **kwargs)
 
 
@@ -46,7 +51,7 @@ def get_db():
 
 
 def now() -> datetime:
-    return datetime.utcnow()
+    return datetime.now(UTC)
 
 
 # ── Serializers ─────────────────────────────────────────────────────────────

@@ -1,8 +1,12 @@
 export interface OcrConfig {
-  provider: 'mathpix' | 'tesseract' | 'mock';
+  provider: 'mathpix' | 'tesseract' | 'mock' | 'proxy';
   apiKey?: string;
   apiId?: string;
   endpoint?: string;
+  apiBase?: string;
+  authToken?: string;
+  /** When true, reject the mock provider (use in production builds). */
+  disallowMock?: boolean;
 }
 
 export interface OcrResult {
@@ -17,6 +21,9 @@ export class OcrBridge {
 
   constructor(config: OcrConfig) {
     this.config = config;
+    if (config.provider === 'mock' && config.disallowMock) {
+      throw new Error('Mock OCR provider is disabled');
+    }
     if (config.provider === 'mock') {
       console.warn('[OcrBridge] Mock OCR provider is active — not suitable for production use');
     }
@@ -28,10 +35,32 @@ export class OcrBridge {
         return this.recognizeMathpix(imageData);
       case 'tesseract':
         return this.recognizeTesseract(imageData);
+      case 'proxy':
+        return this.recognizeProxy(imageData);
       case 'mock':
       default:
         return this.mockRecognize(imageData);
     }
+  }
+
+  private async recognizeProxy(imageData: string | HTMLCanvasElement | Blob): Promise<OcrResult> {
+    const base = (this.config.apiBase || '').replace(/\/+$/, '');
+    const endpoint = this.config.endpoint || (base ? `${base}/v1/ocr/handwriting` : '');
+    if (!endpoint) throw new Error('OCR proxy endpoint not configured');
+
+    const image = await this.toBase64(imageData);
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+    if (this.config.authToken) {
+      headers.Authorization = `Bearer ${this.config.authToken}`;
+    }
+
+    const resp = await fetch(endpoint, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ image }),
+    });
+    if (!resp.ok) throw new Error(`OCR proxy error: ${resp.status}`);
+    return resp.json() as Promise<OcrResult>;
   }
 
   private async recognizeMathpix(imageData: string | HTMLCanvasElement | Blob): Promise<OcrResult> {

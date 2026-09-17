@@ -7,6 +7,10 @@ const root = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test-setup.ts'],
+  },
   resolve: {
     dedupe: ['react', 'react-dom'],
     alias: {

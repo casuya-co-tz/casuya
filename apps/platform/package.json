@@ -9,13 +9,15 @@
     "seed": "python -m database.seeds.seed_dev_data",
     "reseed": "python -m database.seeds.reseed",
     "create-admin": "python -m database.seeds.create_admin",
-    "test": "echo 'No tests yet — add test files to apps/platform/tests/'",
+    "test": "pytest tests/backend -q",
+    "test:e2e": "playwright test -c e2e/playwright.config.ts",
     "test:coverage": "pytest tests/ --cov=backend --cov=integrations -v",
     "build": "echo 'Frontend is static HTML/JS — no build step required'",
     "docker:up": "docker compose -f ../infra/docker-compose.yml up -d",
     "docker:down": "docker compose -f ../infra/docker-compose.yml down"
   },
   "devDependencies": {
+    "@playwright/test": "^1.48.0",
     "serve": "^14.2.0"
   }
 }

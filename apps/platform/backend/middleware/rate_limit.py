@@ -15,6 +15,7 @@ ENDPOINT_LIMITS = {
     "/payments/webhook": 30,
     "/v1/audio/tts": 60,
     "/v1/audio/stt": 15,
+    "/v1/ocr/handwriting": 20,
 }
 
 EXEMPT_PATHS = {"/health", "/readyz"}

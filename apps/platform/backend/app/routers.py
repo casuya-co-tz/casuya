@@ -27,6 +27,7 @@ from backend.api import (
     note,
     notifications,
     oauth,
+    ocr,
     orchestrator,
     payments,
     progress,
@@ -86,6 +87,7 @@ def include_routers(app: FastAPI) -> None:
         teacher_plans,
         reference_docs,
         audio,
+        ocr,
         # casuya_api_proxy MUST be last �?" catch-all /{path:path}
         casuya_api_proxy,
     ):

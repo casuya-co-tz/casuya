@@ -1,0 +1,35 @@
+name: Payments Docker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/payments/**"
+      - ".github/workflows/payments-docker.yml"
+  pull_request:
+    paths:
+      - "apps/payments/**"
+      - ".github/workflows/payments-docker.yml"
+
+jobs:
+  docker-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build payments image
+        run: docker build -t casuya-payments apps/payments
+
+      - name: Boot and probe /health + /readyz
+        run: |
+          docker run -d --name casuya-payments -p 18001:8000 \
+            -e API_KEY=ci-smoke-key \
+            -e AZAMPAY_MOCK=true \
+            casuya-payments
+          for i in $(seq 1 30); do
+            if curl -sf http://127.0.0.1:18001/health >/dev/null; then break; fi
+            sleep 2
+          done
+          curl -sf http://127.0.0.1:18001/health
+          curl -sf http://127.0.0.1:18001/readyz
+          docker stop casuya-payments

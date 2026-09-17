@@ -105,3 +105,15 @@ def test_recovers_after_env_cleared(monkeypatch):
     monkeypatch.delenv("API_KEY", raising=False)
     get_settings.cache_clear()
     assert client.post("/v1/audio/tts", json={"text": "Habari"}).status_code == 200
+
+
+def test_tts_rate_limit(monkeypatch):
+    import app.middleware.rate_limit as rate_limit
+    from app.main import create_app
+
+    monkeypatch.setattr(rate_limit, "ENDPOINT_LIMITS", {"/v1/audio/tts": 2})
+    isolated = TestClient(create_app())
+    payload = {"text": "Habari", "lang": "sw"}
+    assert isolated.post("/v1/audio/tts", json=payload).status_code == 200
+    assert isolated.post("/v1/audio/tts", json=payload).status_code == 200
+    assert isolated.post("/v1/audio/tts", json=payload).status_code == 429

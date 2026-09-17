@@ -51,6 +51,7 @@ const core = [
   "modules/api-client/core/katex-loader.js",
   "modules/api-client/core/test-generator.js",
   "modules/api-client/core/fetch.js",
+  "modules/ai-source-badge.js",
   "modules/api-quiz.js",
   "modules/api.js",
   "modules/auth.js",

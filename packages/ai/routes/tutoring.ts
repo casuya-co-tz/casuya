@@ -17,17 +17,27 @@ import {
   parseJsonObject,
 } from '../server';
 
+function syllabusBlock(curriculumContext: string): string {
+  const text = curriculumContext.trim().slice(0, 8000);
+  if (!text) return '';
+  return (
+    '\n\n# TIE SYLLABUS CONTEXT (official curriculum)\n' +
+    'Ground your answer in this syllabus. If it does not cover the question, say so honestly.\n\n' +
+    `${text}\n# END SYLLABUS CONTEXT`
+  );
+}
+
 export async function handleTutoringExplain(
   ai: CasuyaAI,
   body: any,
 ): Promise<unknown> {
-  const { question, context, subject_slug, form_level, max_questions } = body;
+  const { question, context, subject_slug, form_level, max_questions, curriculum_context } = body;
   const subject = resolveSubject(subject_slug);
   const query = [question, context].filter(Boolean).join(' ').trim();
   const kbForm = formToKbForm(form_level);
   const kb = getKnowledgeBase();
 
-  let ragText = '';
+  let ragText = syllabusBlock(typeof curriculum_context === 'string' ? curriculum_context : '');
   let ragDocs: { title: string; kind: string; subject: string; snippet?: string }[] = [];
   if (kb.ready) {
     let rag = kb.buildRagContext(
@@ -49,7 +59,7 @@ export async function handleTutoringExplain(
       snippet: kb.renderSnippet(d.docId, 240) || undefined,
     }));
     if (rag.docs.length && rag.text) {
-      ragText = `\n\n# REFERENCE MATERIAL (from NECTA/TIE knowledge base)\nUse only what is relevant here to ground your answer. If the material doesn't answer the question, say so honestly rather than guessing.\n\n${rag.text}\n# END REFERENCE MATERIAL`;
+      ragText += `\n\n# REFERENCE MATERIAL (from NECTA/TIE knowledge base)\nUse only what is relevant here to ground your answer. If the material doesn't answer the question, say so honestly rather than guessing.\n\n${rag.text}\n# END REFERENCE MATERIAL`;
     }
   }
 

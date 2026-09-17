@@ -2,6 +2,10 @@ import { describe, it, expect, vi } from 'vitest';
 import { OcrBridge } from '../src/integrations/OcrBridge';
 
 describe('OcrBridge', () => {
+  it('rejects mock provider when disallowMock is set', () => {
+    expect(() => new OcrBridge({ provider: 'mock', disallowMock: true })).toThrow(/disabled/);
+  });
+
   it('returns a mock result for the mock provider', async () => {
     const bridge = new OcrBridge({ provider: 'mock' });
     const result = await bridge.recognize('fake-image');
@@ -24,6 +28,22 @@ describe('OcrBridge', () => {
     expect(result.latex).toBe('x=5');
     const url = fetchSpy.mock.calls[0][0];
     expect(String(url)).toContain('mathpix.com');
+  });
+
+  it('calls the platform OCR proxy when configured', async () => {
+    const bridge = new OcrBridge({
+      provider: 'proxy',
+      apiBase: 'https://platform.test',
+      authToken: 'jwt-token',
+    });
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(
+      new Response(JSON.stringify({ latex: 'y=mx+c', confidence: 0.88, symbols: [] }), { status: 200 }),
+    );
+    const result = await bridge.recognize('data:image/png;base64,abc');
+    expect(result.latex).toBe('y=mx+c');
+    const [url, init] = fetchSpy.mock.calls[0];
+    expect(String(url)).toBe('https://platform.test/v1/ocr/handwriting');
+    expect((init as RequestInit).headers).toMatchObject({ Authorization: 'Bearer jwt-token' });
   });
 
   it('strips the data URL prefix when sending to mathpix', async () => {

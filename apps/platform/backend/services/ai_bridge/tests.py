@@ -11,7 +11,11 @@ from __future__ import annotations
 
 import re
 
-from .client import _call_ai_service
+import logging
+
+from .client import AiServiceError, _call_ai_service
+
+logger = logging.getLogger(__name__)
 
 TEST_TYPES = {
     "topical": "Topical Test",
@@ -68,9 +72,13 @@ async def generate_test_questions(
     if form_level:
         payload["form_level"] = form_level
 
-    result = await _call_ai_service("/api/tests/generate", payload)
-    if result and result.get("questions"):
-        return result["questions"], result
+    try:
+        result = await _call_ai_service("/api/tests/generate", payload)
+        if result and result.get("questions"):
+            result["source"] = "casuya-ai"
+            return result["questions"], result
+    except AiServiceError as exc:
+        logger.warning("AI test generation failed: %s", exc)
 
     questions = _generate_test_questions_locally(
         topic or (topics[0] if topics else ""),
@@ -78,7 +86,13 @@ async def generate_test_questions(
         subject_slug,
         form_level,
     )
-    return questions, {"questions": questions, "grounded": False, "kbHits": [], "count": len(questions)}
+    return questions, {
+        "questions": questions,
+        "grounded": False,
+        "kbHits": [],
+        "count": len(questions),
+        "source": "offline",
+    }
 
 
 def _generate_test_questions_locally(

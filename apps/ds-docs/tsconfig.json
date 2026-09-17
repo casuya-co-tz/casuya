@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "types": ["react", "react-dom"]
+  },
+  "include": [".storybook/main.ts", ".storybook/preview.tsx"]
+}

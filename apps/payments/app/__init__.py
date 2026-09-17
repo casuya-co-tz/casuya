@@ -13,6 +13,7 @@ from fastapi import FastAPI
 from sqlalchemy import text
 
 from app.config import get_settings
+from app.middleware.rate_limit import RateLimitMiddleware
 from app.models import Base
 from app.routes_invoices import router as invoices_router
 from app.routes_misc import router as misc_router
@@ -42,6 +43,8 @@ app.include_router(subscriptions_router)
 app.include_router(invoices_router)
 app.include_router(refunds_router)
 app.include_router(misc_router)
+
+app.add_middleware(RateLimitMiddleware)
 
 
 @app.get("/health")

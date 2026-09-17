@@ -12,7 +12,9 @@ packages/  (rank 1)  reusable TS libraries — may use libs/ only
 libs/      (rank 0)  reusable Python/low-level code — may depend on nothing above
 ```
 
-- `apps/platform` is the only deployable application (FastAPI + static frontend).
+- `apps/platform` is the main deployable application (FastAPI + static frontend).
+- Railway microservices: `apps/payments`, `apps/audio-tts`, `apps/audio-stt`, and `packages/ai` (HTTP server).
+- Vercel static demos: platform frontend, editor, runtime, ds-playground.
 - `packages/*` are framework/libraries (runtime, bridge, editor, blackboard,
   ai, and the flattened design system: `ds-tokens`, `ds-react`, `ds-a11y`,
   `ds-hooks`, `ds-icons`, `ds-styles`, `ds-utils`, `ds-theme`).

@@ -1,3 +1,5 @@
+let mathjsModulePromise: Promise<any> | null = null;
+
 export interface MathConfig {
   apiBase?: string;
   katexOptions?: Record<string, unknown>;
@@ -29,12 +31,13 @@ export class MathBridge {
 
   private async loadMathjs(): Promise<any> {
     if (this.mathjs) return this.mathjs;
-    try {
-      this.mathjs = await import('mathjs');
-      return this.mathjs;
-    } catch {
-      return null;
+    if (!mathjsModulePromise) {
+      mathjsModulePromise = import('mathjs')
+        .then((mod) => mod.default ?? mod)
+        .catch(() => null);
     }
+    this.mathjs = await mathjsModulePromise;
+    return this.mathjs;
   }
 
   async renderToHtml(latex: string): Promise<string> {
@@ -144,11 +147,12 @@ export class MathBridge {
       return { equivalent: false, confidence: 0.2 };
     }
     try {
-      const e1 = math.parse(expr1);
-      const e2 = math.parse(expr2);
-      const s1 = math.simplify(e1).toString();
-      const s2 = math.simplify(e2).toString();
-      if (s1 === s2) return { equivalent: true, confidence: 0.95 };
+      const diff = math.simplify(math.parse(`(${expr1})-(${expr2})`));
+      if (typeof diff.evaluate === 'function') {
+        const value = diff.evaluate();
+        if (value === 0) return { equivalent: true, confidence: 0.95 };
+      }
+      if (diff.toString() === '0') return { equivalent: true, confidence: 0.95 };
       return { equivalent: false, confidence: 0.3 };
     } catch {
       return { equivalent: false, confidence: 0.2 };

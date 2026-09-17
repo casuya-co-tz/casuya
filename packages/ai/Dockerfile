@@ -17,6 +17,7 @@ COPY packages/ai/routes/ routes/
 COPY packages/ai/server-utils.ts ./
 COPY packages/ai/server-utils/ server-utils/
 COPY packages/ai/server.ts ./
+COPY packages/ai/server-security.ts ./
 
 RUN npx tsc -p tsconfig.server.json
 

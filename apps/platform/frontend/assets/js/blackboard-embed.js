@@ -12,10 +12,49 @@
     const headers = { "Content-Type": "application/json", ...(options && options.headers) };
     if (token) headers["Authorization"] = `Bearer ${token}`;
     return fetch(`${API_BASE}${path}`, { ...options, headers })
-      .then((r) => {
-        if (!r.ok) throw new Error(r.statusText || "Request failed");
+      .then(async (r) => {
+        if (!r.ok) {
+          let detail = r.statusText || "Request failed";
+          try {
+            const errBody = await r.json();
+            if (errBody && errBody.detail) detail = String(errBody.detail);
+          } catch (e) { /* non-JSON error body */ }
+          throw new Error(detail);
+        }
         return r.json();
       });
+  }
+
+  let ocrAvailable = null;
+  async function isOcrAvailable() {
+    if (ocrAvailable !== null) return ocrAvailable;
+    const token = localStorage.getItem("casuya_token");
+    if (!token) {
+      ocrAvailable = false;
+      return false;
+    }
+    try {
+      const status = await request("/v1/ocr/status");
+      ocrAvailable = !!(status && status.available);
+    } catch {
+      ocrAvailable = false;
+    }
+    return ocrAvailable;
+  }
+
+  async function recognizeDrawing(bb) {
+    if (!bb || typeof bb.toDataURL !== "function") return null;
+    if (!(await isOcrAvailable())) return null;
+    try {
+      const image = bb.toDataURL("image/png").replace(/^data:image\/[^;]+;base64,/, "");
+      if (!image || image.length < 32) return null;
+      return await request("/v1/ocr/handwriting", {
+        method: "POST",
+        body: JSON.stringify({ image }),
+      });
+    } catch {
+      return null;
+    }
   }
 
   // Lazy-load the (110KB) blackboard UMD vendor on demand, so students who never
@@ -101,6 +140,48 @@
     };
     bb.on("change", syncProgress);
 
+    async function mountRecognizeButton() {
+      if (!(await isOcrAvailable())) return;
+      container.style.position = container.style.position || "relative";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "btn casuya-ocr-recognize";
+      btn.textContent = "\u270D Recognize";
+      btn.title = "Convert handwriting to text or LaTeX";
+      btn.setAttribute("aria-label", "Recognize handwriting");
+      btn.style.cssText =
+        "position:absolute;top:8px;right:8px;z-index:5;font-size:0.8rem;padding:0.35rem 0.65rem;";
+      btn.addEventListener("click", async function onRecognizeClick() {
+        const elements = bb.getElements ? bb.getElements() : [];
+        if (!elements.length) {
+          if (typeof bb.showToast === "function") bb.showToast("Draw something first");
+          return;
+        }
+        btn.disabled = true;
+        const prevLabel = btn.textContent;
+        btn.textContent = "Recognizing\u2026";
+        const ocr = await recognizeDrawing(bb);
+        btn.disabled = false;
+        btn.textContent = prevLabel;
+        if (ocr && ocr.latex) {
+          bb._recognizedLatex = String(ocr.latex).trim();
+          if (typeof bb.insertLaTeX === "function" && bb._recognizedLatex) {
+            bb.insertLaTeX(bb._recognizedLatex);
+          }
+          if (typeof bb.showToast === "function") {
+            const preview = bb._recognizedLatex.length > 40
+              ? bb._recognizedLatex.slice(0, 40) + "\u2026"
+              : bb._recognizedLatex;
+            bb.showToast("Recognized: " + preview);
+          }
+        } else if (typeof bb.showToast === "function") {
+          bb.showToast("Could not recognize handwriting");
+        }
+      });
+      container.appendChild(btn);
+    }
+    mountRecognizeButton().catch(function () {});
+
     // Snapshot helpers: centralize how work is extracted so quiz/exam wiring
     // can treat "Show your work" as graded input rather than decoration.
     function extractLatex(elements) {
@@ -118,11 +199,24 @@
     function getWorkSnapshot() {
       try {
         const elements = bb.getElements ? bb.getElements() : (bb.getSnapshot ? bb.getSnapshot().elements : []);
-        const recognizedLatex = extractLatex(elements);
+        let recognizedLatex = extractLatex(elements);
+        if (recognizedLatex === "__drawing__" && bb._recognizedLatex) {
+          recognizedLatex = bb._recognizedLatex;
+        }
         return { elements, recognizedLatex, hasWork: elements.length > 0 };
       } catch {
         return { elements: [], recognizedLatex: "", hasWork: false };
       }
+    }
+
+    async function getWorkSnapshotAsync() {
+      const snap = getWorkSnapshot();
+      if (snap.recognizedLatex !== "__drawing__") return snap;
+      const ocr = await recognizeDrawing(bb);
+      if (ocr && ocr.latex) {
+        snap.recognizedLatex = String(ocr.latex).trim();
+      }
+      return snap;
     }
 
     // Expose helpers that talk to the blackboard REST endpoints directly.
@@ -131,6 +225,8 @@
       lessonId,
       blackboard: bb,
       getWorkSnapshot,
+      getWorkSnapshotAsync,
+      recognizeDrawing,
       extractLatex,
       submitExam(steps) {
         return request("/api/exams/submit", {
@@ -164,6 +260,7 @@
     // Expose snapshot directly on the board instance for consumers that
     // grab bb via element._casuyaBlackboard (e.g. exam submit).
     bb.getWorkSnapshot = getWorkSnapshot;
+    bb.getWorkSnapshotAsync = getWorkSnapshotAsync;
 
     window.dispatchEvent(new CustomEvent("casuya:blackboard-ready", { detail: { blackboard: bb, api } }));
   }
@@ -190,9 +287,29 @@
     return out;
   }
 
+  async function enrichWorkWithOcr(workMap) {
+    const enriched = { ...workMap };
+    await Promise.all(
+      Object.entries(enriched).map(async ([qid, snap]) => {
+        if (!snap || snap.recognizedLatex !== "__drawing__") return;
+        const el =
+          document.querySelector(`[data-quiz-question="${qid}"]`) ||
+          document.querySelector(`[data-exam-question="${qid}"]`) ||
+          document.querySelector(`[data-blackboard][data-lesson-id="${qid}"]`);
+        const bb = el && el._casuyaBlackboard;
+        if (!bb) return;
+        const ocr = bb.getWorkSnapshotAsync ? await bb.getWorkSnapshotAsync() : await recognizeDrawing(bb);
+        const latex = ocr && (ocr.recognizedLatex || ocr.latex);
+        if (latex && latex !== "__drawing__") snap.recognizedLatex = String(latex).trim();
+      }),
+    );
+    return enriched;
+  }
+
   // Grade work presence/validity by calling the grading engine via proxy.
   // Falls back to local presence check if the service is unavailable.
   async function gradeWorkMap(workMap, expectedAnswers) {
+    workMap = await enrichWorkWithOcr(workMap);
     const entries = Object.entries(workMap);
     if (entries.length === 0) return { workScore: 0, workTotal: 0, workPercentage: 0, stepResults: [] };
     const stepResults = [];

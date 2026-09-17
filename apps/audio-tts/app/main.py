@@ -11,6 +11,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 
 from app.config import get_settings
+from app.middleware.rate_limit import RateLimitMiddleware
 from app.routes_tts import router as tts_router
 from app.services.synthesize import model_ready
 
@@ -23,6 +24,7 @@ def include_routers(app: FastAPI) -> None:
 
 def create_app() -> FastAPI:
     app = FastAPI(title=settings.app_name, version="1.0.0")
+    app.add_middleware(RateLimitMiddleware)
     include_routers(app)
     return app
 

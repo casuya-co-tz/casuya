@@ -6,7 +6,6 @@ import ast
 import math
 import operator
 
-from .client import _call_ai_service
 
 
 _SAFE_BIN_OPS = {
@@ -127,18 +126,7 @@ def _safe_eval(expr: str, context: dict) -> float:
 
 
 async def solve_equation(formula: str, variables: dict) -> dict:
-    """Solve a physics/math equation given variable values."""
-    result = await _call_ai_service(
-        "/api/math/solve",
-        {
-            "formula": formula,
-            "variables": variables,
-        },
-    )
-    if result:
-        return result
-
-    # Fallback: safe local evaluation (AST whitelist — no eval/exec of user input).
+    """Solve a physics/math equation given variable values (platform-local)."""
     try:
         expr = formula
         context: dict = {}
@@ -157,34 +145,16 @@ async def solve_equation(formula: str, variables: dict) -> dict:
 
 
 async def generate_math_steps(expression: str, target: str = "") -> list[str]:
-    """Generate step-by-step solution for a math problem."""
-    result = await _call_ai_service(
-        "/api/math/steps",
-        {
-            "expression": expression,
-            "target": target,
-        },
-    )
-    if result and "steps" in result:
-        return result["steps"]
-
-    return [f"Expression: {expression}", "Solve step by step..."]
+    """Generate step-by-step solution for a math problem (platform-local)."""
+    steps = [f"Expression: {expression}"]
+    if target:
+        steps.append(f"Target: solve for {target}")
+    steps.append("Simplify and isolate the unknown step by step.")
+    return steps
 
 
 async def convert_units(value: float, from_unit: str, to_unit: str) -> dict:
-    """Convert between measurement units."""
-    result = await _call_ai_service(
-        "/api/math/convert",
-        {
-            "value": value,
-            "from": from_unit,
-            "to": to_unit,
-        },
-    )
-    if result:
-        return result
-
-    # Fallback: common conversions
+    """Convert between measurement units (platform-local)."""
     conversions = {
         ("km", "mi"): 0.621371,
         ("mi", "km"): 1.60934,
@@ -207,17 +177,7 @@ async def convert_units(value: float, from_unit: str, to_unit: str) -> dict:
 
 
 async def generate_physics_problem(topic: str, difficulty: str = "medium") -> dict:
-    """Generate a physics practice problem."""
-    result = await _call_ai_service(
-        "/api/math/physics-problem",
-        {
-            "topic": topic,
-            "difficulty": difficulty,
-        },
-    )
-    if result:
-        return result
-
+    """Generate a physics practice problem (platform-local template)."""
     return {
         "topic": topic,
         "difficulty": difficulty,

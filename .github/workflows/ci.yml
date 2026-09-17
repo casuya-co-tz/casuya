@@ -17,6 +17,7 @@ jobs:
           python-version: "3.12"
       - run: pip install pytest
       - run: pip install -r apps/platform/requirements.txt
+      - run: pip install -r apps/payments/requirements.txt
 
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
@@ -25,13 +26,8 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
 
-      # Layer-boundary enforcement (downward-only dependencies)
       - run: pnpm check:layers
-
-      # Vercel deploy-contract guardrail (deploy.yml + project vercel.json)
       - run: pnpm check:deploy
-
-      # Build / typecheck / lint / test across affected packages
       - run: pnpm build
       - run: pnpm typecheck
       - run: pnpm lint
@@ -44,9 +40,65 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: pip install pytest
       - run: pip install -r apps/platform/requirements.txt
-      - name: Validate app boots
+      - run: pip install -r apps/payments/requirements.txt
+      - run: pip install -r apps/audio-tts/requirements.txt
+      - run: pip install -r apps/audio-stt/requirements.txt
+      - run: pip install -e libs/core
+
+      - name: Validate platform app boots
         working-directory: apps/platform
         env:
           JWT_SECRET: ci-boot-check-only-jwt-secret-value-0123456789abcdef
         run: python -c "import backend.main"
+
+      - name: Platform backend tests
+        working-directory: apps/platform
+        env:
+          JWT_SECRET: ci-boot-check-only-jwt-secret-value-0123456789abcdef
+        run: pytest tests/backend -q --tb=short
+
+      - name: Payments microservice tests
+        env:
+          API_KEY: test-payments-key
+          AZAMPAY_MOCK: "true"
+          DATABASE_URL: sqlite:///./ci_payments.db
+        run: pytest apps/payments/tests -q --tb=short
+
+      - name: Audio TTS microservice tests
+        run: pytest apps/audio-tts/tests -q --tb=short
+
+      - name: Audio STT microservice tests
+        run: pytest apps/audio-stt/tests -q --tb=short
+
+      - name: Casuya Core library tests
+        run: pytest libs/core/tests -q --tb=short
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r apps/platform/requirements.txt
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright Chromium
+        working-directory: apps/platform
+        run: npx playwright install --with-deps chromium
+
+      - name: Platform frontend smoke tests
+        working-directory: apps/platform
+        env:
+          CI: "true"
+          JWT_SECRET: ci-e2e-only-jwt-secret-value-0123456789abcdefgh
+        run: pnpm test:e2e

@@ -9,5 +9,5 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },
-  "include": ["src/**/*", "server.ts"]
+  "include": ["src/**/*", "server.ts", "server-security.ts"]
 }

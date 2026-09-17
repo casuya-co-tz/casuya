@@ -148,7 +148,8 @@ function _tutorWrongQuestions(quizId, total, wrongIndexes) {
       body.innerHTML = '<div class="tutor-fallback">The AI tutor is temporarily unavailable. Please review the explanations above or ask your teacher for help.</div>';
       return;
     }
-    body.innerHTML = '<div class="tutor-response">' + renderTutorMarkdown(response) + '</div>';
+    body.innerHTML = '<div class="tutor-response">' + renderTutorMarkdown(response) + '</div>'
+      + renderAiSourceBadge(result && result.source);
   }).catch(function() {
     body.innerHTML = '<div class="tutor-fallback">The AI tutor could not be reached. Please review the explanations above or ask your teacher for help.</div>';
   });

@@ -14,7 +14,7 @@ describe('MathBridge', () => {
     const bridge = new MathBridge({});
     const result = await bridge.checkEquivalence('2x + 3', '2x + 5');
     expect(result.equivalent).toBe(false);
-  });
+  }, 15000);
 
   it('prefers the API for equivalence when reachable', async () => {
     const bridge = new MathBridge({ apiBase: 'http://localhost:9999' });

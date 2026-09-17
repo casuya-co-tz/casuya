@@ -74,6 +74,7 @@ class Settings(BaseSettings):
 
     casuya_core_signing_key: str | None = None
     casuya_ai_url: str = "http://localhost:3000"
+    casuya_ai_api_key: str | None = None
     casuya_bridge_shared_key: str | None = None
     supabase_url: str | None = None
     supabase_key: str | None = None
@@ -114,6 +115,11 @@ class Settings(BaseSettings):
     casuya_audio_stt_url: str = "http://localhost:8020"
     casuya_audio_stt_api_key: str | None = None
 
+    # Handwriting OCR (Mathpix via platform proxy — B-04)
+    ocr_provider: str = "none"  # none | mathpix
+    mathpix_app_id: str | None = None
+    mathpix_app_key: str | None = None
+
     # Casuya Orchestrator (standalone automation/maintenance tool). Optional; when set,
     # the platform polls this URL for a health signal. Leave empty if not deployed.
     casuya_orchestrator_health_url: str | None = None
@@ -130,6 +136,8 @@ class Settings(BaseSettings):
 
     storage_root: str = "./storage"
     rate_limit_per_minute: int = 120
+    # When true, abort boot if the primary database cannot be reached (B-07).
+    require_database_on_startup: bool = False
 
     # Brevo SMTP (transactional email)
     smtp_host: str = "smtp-relay.brevo.com"

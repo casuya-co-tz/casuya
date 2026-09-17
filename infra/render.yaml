@@ -1,4 +1,8 @@
-# Casuya Hybrid — production deploy.
+# DEPRECATED — Casuya production runs on Railway + Vercel, not Render.
+# Kept for historical reference only; do not use for new deployments.
+# See apps/platform/docs/deployment/README.md for the current stack.
+#
+# Casuya Hybrid — legacy Render blueprint.
 # The web service builds from the repo root using the canonical multi-stage
 # Dockerfile at infra/Dockerfile.
 version: "1"

@@ -141,3 +141,15 @@ def test_api_key_required_when_set(monkeypatch):
         headers={"X-API-Key": "secret-key"},
     )
     assert r.status_code == 200
+
+
+def test_stt_rate_limit(monkeypatch):
+    import app.middleware.rate_limit as rate_limit
+    from app import create_app
+
+    monkeypatch.setattr(rate_limit, "ENDPOINT_LIMITS", {"/v1/audio/stt": 2})
+    isolated = TestClient(create_app())
+    files = {"audio": ("clip.wav", _make_wav(), "audio/wav")}
+    assert isolated.post("/v1/audio/stt", files=files).status_code == 200
+    assert isolated.post("/v1/audio/stt", files=files).status_code == 200
+    assert isolated.post("/v1/audio/stt", files=files).status_code == 429

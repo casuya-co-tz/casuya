@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 
-from backend.services.ai_service import _call_ai_service
+from backend.services.ai_bridge.client import AiServiceError, _call_ai_service
 from backend.services.syllabus_service import get_curriculum_context
 
 from .offline import (
@@ -60,23 +60,27 @@ async def generate_lesson_plan(
         period=period or "Period 1",
     )
 
-    result = await _call_ai_service("/api/plans/lesson-plan", {
-        "question": prompt,
-        "prompt": prompt,
-        "context": curriculum_ctx,
-        "subject_slug": subject_slug,
-        "form_level": form_level,
-        "topic": topic,
-        "subtopic": subtopic or "",
-        "school_name": school_name or "School Name",
-        "teacher_name": teacher_name or "Teacher Name",
-        "number_of_students": number_of_students or 40,
-        "students_boys": students_boys,
-        "students_girls": students_girls,
-        "duration_minutes": duration_minutes,
-        "period": period or "Period 1",
-        "lang": lang,
-    })
+    try:
+        result = await _call_ai_service("/api/plans/lesson-plan", {
+            "question": prompt,
+            "prompt": prompt,
+            "context": curriculum_ctx,
+            "subject_slug": subject_slug,
+            "form_level": form_level,
+            "topic": topic,
+            "subtopic": subtopic or "",
+            "school_name": school_name or "School Name",
+            "teacher_name": teacher_name or "Teacher Name",
+            "number_of_students": number_of_students or 40,
+            "students_boys": students_boys,
+            "students_girls": students_girls,
+            "duration_minutes": duration_minutes,
+            "period": period or "Period 1",
+            "lang": lang,
+        })
+    except AiServiceError as exc:
+        logger.warning("AI lesson plan generation failed: %s", exc)
+        result = None
 
     plan = await _finalize_ai_lesson_plan(
         result,
@@ -143,19 +147,23 @@ async def generate_scheme_of_work(
         topics=topics or [],
     )
 
-    result = await _call_ai_service("/api/plans/scheme-of-work", {
-        "question": prompt,
-        "prompt": prompt,
-        "context": curriculum_ctx,
-        "subject_slug": subject_slug,
-        "form_level": form_level,
-        "term": term,
-        "academic_year": academic_year or "2026",
-        "school_name": school_name or "School Name",
-        "teacher_name": teacher_name or "Teacher Name",
-        "topics": topics or [],
-        "lang": lang,
-    })
+    try:
+        result = await _call_ai_service("/api/plans/scheme-of-work", {
+            "question": prompt,
+            "prompt": prompt,
+            "context": curriculum_ctx,
+            "subject_slug": subject_slug,
+            "form_level": form_level,
+            "term": term,
+            "academic_year": academic_year or "2026",
+            "school_name": school_name or "School Name",
+            "teacher_name": teacher_name or "Teacher Name",
+            "topics": topics or [],
+            "lang": lang,
+        })
+    except AiServiceError as exc:
+        logger.warning("AI scheme generation failed: %s", exc)
+        result = None
 
     plan = None
     if isinstance(result, dict) and _is_complete_scheme(result):

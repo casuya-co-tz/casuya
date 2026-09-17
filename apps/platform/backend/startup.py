@@ -59,6 +59,10 @@ async def platform_startup():
             except Exception as cf_exc:
                 print(f"Cloudflare rules deployment skipped: {cf_exc}")
     except Exception as exc:  # noqa: BLE001
+        from backend.config.settings import get_settings
+
+        if get_settings().require_database_on_startup:
+            raise
         print(f"WARNING: init_db failed, continuing without DB: {exc}")
     finally:
         if acquired:
@@ -79,37 +83,55 @@ async def platform_startup():
 
 
 def check_casuya_ai() -> dict:
-    """Probe the casuya-ai service /health endpoint to report AI connectivity.
+    """Probe casuya-ai /readyz (and /health) for connectivity.
 
     Never raises and never blocks startup: any failure reports the AI service as
-    unreachable so the platform's offline fallbacks (lesson/scheme generation,
-    quiz/tutoring) are still expected to run.
+    unreachable so the platform's offline fallbacks are still expected to run.
     """
     import httpx
 
-    from backend.services.ai_service import CASUYA_AI_URL
+    from backend.config.settings import get_settings
+    from backend.services.ai_bridge.client import get_casuya_ai_url
 
-    if not CASUYA_AI_URL:
+    base_url = get_casuya_ai_url()
+    if not base_url:
         return {"configured": False, "reachable": False, "url": ""}
+
+    settings = get_settings()
+    headers: dict[str, str] = {}
+    if settings.casuya_ai_api_key:
+        headers["X-API-Key"] = settings.casuya_ai_api_key
+
+    result: dict = {"configured": True, "url": base_url, "reachable": False}
     try:
-        with httpx.Client(timeout=3.0) as client:
-            resp = client.get(f"{CASUYA_AI_URL}/health")
-            payload = resp.json()
-        return {
-            "configured": True,
-            "url": CASUYA_AI_URL,
-            "reachable": resp.status_code < 400,
-            "service": payload.get("service"),
-            "version": payload.get("version"),
-            "provider": payload.get("provider"),
-        }
+        with httpx.Client(timeout=4.0) as client:
+            ready = client.get(f"{base_url}/readyz", headers=headers)
+            if ready.status_code < 400:
+                ready_payload = ready.json()
+                result.update(
+                    {
+                        "reachable": ready_payload.get("status") == "ok",
+                        "ready": ready_payload.get("status"),
+                        "kb_ready": ready_payload.get("kb_ready"),
+                        "providers_ready": ready_payload.get("providers_ready"),
+                        "provider_chain": ready_payload.get("provider_chain"),
+                    }
+                )
+            health = client.get(f"{base_url}/health", headers=headers)
+            if health.status_code < 400:
+                health_payload = health.json()
+                result.update(
+                    {
+                        "service": health_payload.get("service"),
+                        "version": health_payload.get("version"),
+                        "provider": health_payload.get("provider"),
+                    }
+                )
+                if not result.get("reachable"):
+                    result["reachable"] = True
     except Exception as exc:
-        return {
-            "configured": True,
-            "url": CASUYA_AI_URL,
-            "reachable": False,
-            "error": str(exc)[:120],
-        }
+        result["error"] = str(exc)[:120]
+    return result
 
 
 def readiness_status() -> dict:

@@ -38,12 +38,15 @@ def test_azampay_no_creds():
     settings = get_settings()
     original_id = settings.azampay_client_id
     original_secret = settings.azampay_client_secret
+    original_mock = settings.azampay_mock
     settings.azampay_client_id = None
     settings.azampay_client_secret = None
+    settings.azampay_mock = False
     with pytest.raises(RuntimeError, match="AzamPay"):
         mobile_checkout(1000, "255700000000", "Airtel", "ext-1")
     settings.azampay_client_id = original_id
     settings.azampay_client_secret = original_secret
+    settings.azampay_mock = original_mock
 
 
 def test_africastalking_no_creds():

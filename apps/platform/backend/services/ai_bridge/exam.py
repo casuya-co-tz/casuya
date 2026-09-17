@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from .client import _call_ai_service, logger
+from .client import AiServiceError, _call_ai_service, logger
 from .prompts import _strip_html
 
 
@@ -33,9 +33,12 @@ async def _call_exam_ai(
         except Exception as exc:
             logger.debug("Could not fetch syllabus context: %s", exc)
 
-    result = await _call_ai_service("/api/exams/generate", payload)
-    if result and result.get("paper"):
-        return result["paper"]
+    try:
+        result = await _call_ai_service("/api/exams/generate", payload)
+        if result and result.get("paper"):
+            return result["paper"]
+    except AiServiceError as exc:
+        logger.warning("AI exam generation failed: %s", exc)
     return None
 
 

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
@@ -45,7 +45,7 @@ def get_subscription(subscription_id: str, _auth: None = Depends(require_api_key
 
 @router.post("/subscriptions")
 def create_subscription(body: CreateSubscriptionBody, _auth: None = Depends(require_api_key), db: Session = Depends(get_db)):
-    _now = datetime.utcnow()
+    _now = now()
     row = SubscriptionRecord(
         user_id=body.user_id,
         plan_id=body.plan_id,

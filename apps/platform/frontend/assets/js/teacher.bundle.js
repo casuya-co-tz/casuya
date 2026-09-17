@@ -880,6 +880,21 @@ function streamTutorResponse(payload, onChunk, onDone, onError) {
   return controller;
 }
 ;
+// ai-source-badge.js — show whether a response came from casuya-ai or offline fallback.
+
+function renderAiSourceBadge(source) {
+  if (!source) return "";
+  var label = source === "casuya-ai" ? "Powered by AI" : "Offline mode";
+  var tone = source === "casuya-ai" ? "var(--color-primary, #2563eb)" : "var(--color-text-muted, #64748b)";
+  return (
+    '<span class="ai-source-badge" style="display:inline-block;margin-top:0.5rem;font-size:0.75rem;' +
+    "color:" + tone + ';font-weight:600;" title="Response source: ' + escapeHtml(String(source)) + '">' +
+    escapeHtml(label) +
+    "</span>"
+  );
+}
+
+;
 // modules/api-quiz.js — Quiz rendering, tutor, downloads
 
 /* ── Math (KaTeX) Rendering ───────────────────────────────────────── */
@@ -1030,7 +1045,8 @@ function _tutorWrongQuestions(quizId, total, wrongIndexes) {
       body.innerHTML = '<div class="tutor-fallback">The AI tutor is temporarily unavailable. Please review the explanations above or ask your teacher for help.</div>';
       return;
     }
-    body.innerHTML = '<div class="tutor-response">' + renderTutorMarkdown(response) + '</div>';
+    body.innerHTML = '<div class="tutor-response">' + renderTutorMarkdown(response) + '</div>'
+      + renderAiSourceBadge(result && result.source);
   }).catch(function() {
     body.innerHTML = '<div class="tutor-fallback">The AI tutor could not be reached. Please review the explanations above or ask your teacher for help.</div>';
   });
@@ -6793,7 +6809,7 @@ async function loadAIAssistant(dashboard) {
         }),
       });
       const raw = result?.explanation || result?.answer || result?.response || JSON.stringify(result);
-      textDiv.innerHTML = renderTutorMarkdown(raw);
+      textDiv.innerHTML = renderTutorMarkdown(raw) + renderAiSourceBadge(result?.source);
       if (typeof casuyaAttachListen === "function") {
         const slot = document.getElementById("ai-tutor-listen-slot");
         if (slot) {
@@ -6828,7 +6844,7 @@ async function loadAIAssistant(dashboard) {
           subject: fd.get("subject_slug"),
           formLevel: fd.get("form_level"),
           topic: questions[0]?.topic || "",
-        });
+        }) + renderAiSourceBadge(result?.source);
         window.renderMath(textDiv);
       } else {
         textDiv.innerHTML = '<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>';
@@ -6848,7 +6864,7 @@ async function loadAIAssistant(dashboard) {
         body: JSON.stringify({ text: fd.get("text"), target_language: fd.get("target_language") }),
       });
       const raw = result?.translated || result?.translatedText || result?.text || JSON.stringify(result);
-      textDiv.innerHTML = renderTutorMarkdown(raw);
+      textDiv.innerHTML = renderTutorMarkdown(raw) + renderAiSourceBadge(result?.source);
     } catch(err) { textDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
   });
 }
