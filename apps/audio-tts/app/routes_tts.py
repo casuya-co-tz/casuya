@@ -24,7 +24,7 @@ def health():
 
 @router.post("/v1/audio/tts")
 def tts(payload: TtsPayload, _auth: None = Depends(require_api_key)):
-    wav = text_to_wav(payload.text, lang=payload.lang)
+    wav = text_to_wav(payload.text, lang=payload.lang, speed=payload.speed)
     return Response(
         content=wav,
         media_type="audio/wav",

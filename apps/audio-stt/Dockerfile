@@ -11,13 +11,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certifi
 # This is the cp312 manylinux wheel from PyPI — no source build, no g++.
 RUN pip install --no-cache-dir sherpa-onnx
 
-# Bake the Whisper-base multilingual ASR model (Kiswahili + English + 90+ langs).
+# Bake Whisper-small multilingual ASR (better WER than base on classroom speech).
 # int8 encoder/decoder are the CPU recommendation from the sherpa-onnx docs.
+# Override WHISPER_MODEL=base at build time to keep the smaller image if needed.
+ARG WHISPER_MODEL=small
 RUN mkdir -p /opt/sherpa-onnx-models \
-    && curl -fL --retry 3 -o /opt/sherpa-onnx-models/whisper-base.tar.bz2 \
-        https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-base.tar.bz2 \
-    && tar -xjf /opt/sherpa-onnx-models/whisper-base.tar.bz2 -C /opt/sherpa-onnx-models \
-    && rm /opt/sherpa-onnx-models/whisper-base.tar.bz2
+    && curl -fL --retry 3 -o /opt/sherpa-onnx-models/whisper-${WHISPER_MODEL}.tar.bz2 \
+        https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-${WHISPER_MODEL}.tar.bz2 \
+    && tar -xjf /opt/sherpa-onnx-models/whisper-${WHISPER_MODEL}.tar.bz2 -C /opt/sherpa-onnx-models \
+    && rm /opt/sherpa-onnx-models/whisper-${WHISPER_MODEL}.tar.bz2
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt

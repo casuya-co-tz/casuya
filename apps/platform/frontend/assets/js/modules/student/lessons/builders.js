@@ -1,14 +1,15 @@
 // modules/student/lessons/builders.js — quiz & games section builders for the student lesson view.
 
-function renderStudentQuiz(quizData, lessonId) {
+function renderStudentQuiz(quizData, lessonId, lessonLang) {
   if (!quizData || !quizData.questions || quizData.questions.length === 0) return "";
+  const lang = lessonLang || "sw";
   return `
-    <div class="card" style="margin-top:0.75rem;padding:1rem">
+    <div class="card question-block" data-lesson-lang="${escapeHtml(lang)}" style="margin-top:0.75rem;padding:1rem">
       <h3 style="margin:0 0 0.75rem">${escapeHtml(quizData.title || "Quiz")}</h3>
       <form id="quiz-form">
         ${quizData.questions.map((q, qi) => `
-          <div style="margin-bottom:1rem">
-            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)} <button type="button" class="casuya-listen" data-lang="auto" data-speak="${escapeHtml(String(q.prompt || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question" style="vertical-align:middle">🔊 Listen</button></p>
+          <div class="quiz-item" data-question style="margin-bottom:1rem">
+            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)} <button type="button" class="casuya-listen" data-lang="${escapeHtml(lang)}" data-speak="${escapeHtml(String(q.prompt || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question" style="vertical-align:middle">🔊 Listen</button></p>
             ${q.options.map(o => `
               <label style="display:block;padding:0.3rem 0.5rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius);margin-bottom:0.25rem">
                 <input type="radio" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.id)}" required> ${escapeHtml(o.text)}

@@ -7,10 +7,11 @@ transcribe endpoint is `POST /v1/audio/stt` (short, bounded utterances; mono
 
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 
 from app.security import require_api_key
 from app.services.transcribe import transcribe_wav
+from app.services.wav_validate import validate_wav
 
 router = APIRouter()
 
@@ -21,10 +22,18 @@ def health():
 
 
 @router.post("/v1/audio/stt")
-def stt(audio: UploadFile = File(...), _auth: None = Depends(require_api_key)):  # noqa: B008
+def stt(
+    audio: UploadFile = File(...),  # noqa: B008
+    language: str | None = Form(default=None),
+    _auth: None = Depends(require_api_key),
+):
     wav = audio.file.read()
+    lang = language if language in ("sw", "en") else None
     try:
-        text = transcribe_wav(wav)
+        validate_wav(wav)
+        text = transcribe_wav(wav, language=lang)
     except ValueError as exc:
-        raise HTTPException(status_code=400, detail=str(exc)) from exc
+        detail = str(exc)
+        status = 413 if "1 MB" in detail else 400
+        raise HTTPException(status_code=status, detail=detail) from exc
     return {"text": text}

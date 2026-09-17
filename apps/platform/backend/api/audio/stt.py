@@ -12,8 +12,9 @@ from __future__ import annotations
 import io
 
 import httpx
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 
+from backend.api.audio.wav_validate import validate_wav
 from backend.config.settings import get_settings
 from backend.middleware.auth import get_current_user
 
@@ -23,8 +24,8 @@ router = APIRouter(tags=["audio-stt"])
 @router.post("/stt", response_model=dict)
 async def proxy_stt(
     audio: UploadFile = File(...),
+    language: str | None = Form(default=None),
     current_user=Depends(get_current_user),
-    _lang: str | None = None,
 ):
     """Forward the recorded WAV to the Casuya Audio-STT microservice."""
     settings = get_settings()
@@ -33,8 +34,16 @@ async def proxy_stt(
     headers: dict[str, str] = {}
     if settings.casuya_audio_stt_api_key:
         headers["X-API-Key"] = settings.casuya_audio_stt_api_key
-    data = {"user_id": current_user.get("sub")}
+    data: dict[str, str] = {"user_id": str(current_user.get("sub") or "")}
+    if language in ("sw", "en"):
+        data["language"] = language
     wav = await audio.read()
+    try:
+        validate_wav(wav)
+    except ValueError as exc:
+        detail = str(exc)
+        status = 413 if "1 MB" in detail else 400
+        raise HTTPException(status_code=status, detail=detail) from exc
 
     try:
         with httpx.Client(timeout=120) as client:

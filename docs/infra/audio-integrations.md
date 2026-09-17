@@ -6,7 +6,7 @@ engine is ever deployed to Vercel.**
 
 **Mwandishi:** Mtaalamu wa Infra
 **Tarehe:** 2026-09-13 (updated, Railway-only build — contradiction removed)
-**Status:** Ready to scaffold — microservices mirror `apps/payments`
+**Status:** Live — platform proxy + offline cache + Whisper-small STT + VITS TTS
 
 ---
 
@@ -38,7 +38,7 @@ That previously bombed the plan:
 | Component | Best place (path) | Why (verified) |
 |---|---|---|
 | **Sherpa-ONNX TTS model + engine** | `apps/audio-tts/` — `Dockerfile`, `requirements.txt`, `railway.json`, `app/main.py`, `app/config.py`, `app/security.py`, `app/routes_tts.py` | Exact mirror of `apps/payments` (the established FastAPI microservice template). Engine (`sherpa-onnx` PyPI wheel) + Kiswahili/English VITS voice packs are **baked in from official `k2-fsa/sherpa-onnx` `tts-models` release assets at Docker build time** (below). |
-| **Sherpa-ONNX STT model + engine** | `apps/audio-stt/` — same layout (`app/routes_stt.py`, `app/services/transcribe.py`, `app/config.py`) | Same template, separate Railway service → independent CPU scaling/healthchecks. Engine (`sherpa-onnx` PyPI wheel) + **Whisper-base multilingual** model are baked in from the `asr-models` GitHub release at build time (below). |
+| **Sherpa-ONNX STT model + engine** | `apps/audio-stt/` — same layout (`app/routes_stt.py`, `app/services/transcribe.py`, `app/config.py`) | Same template, separate Railway service → independent CPU scaling/healthchecks. Engine (`sherpa-onnx` PyPI wheel) + **Whisper-small multilingual** (default; `WHISPER_MODEL=base` at build for smaller RAM) baked from the `asr-models` GitHub release. |
 | **Audio proxy router** | `apps/platform/backend/api/audio.py` | Registered **BEFORE** `casuya_api_proxy` in `backend/app/routers.py` (the catch-all `/{path:path}` MUST stay last — enforced by the file comment). |
 | **Audio client (platform backend → services)** | `apps/platform/backend/services/services_bridge_client/audio.py` | Same `railway.internal` forwarding pattern as the existing bridge client |
 | **Frontend TTS/STT buttons** | `apps/platform/frontend/assets/js/modules/...` — **plain vanilla JS** | The platform UI is vanilla JS + Tailwind (verified: no React build pipeline). A `.tsx` button would have nothing to compile it there. |
@@ -56,8 +56,8 @@ mirroring how the image already bundles runtime models:
 
 | Engine | Source | Build step |
 |---|---|---|
-| **Sherpa-ONNX TTS** (Kiswahili `sw` + English `en`) | engine `k2-fsa/sherpa-onnx` (PyPI `sherpa-onnx` wheel); voices `vits-piper-sw_CD-lanfrica-medium` (22050 Hz) + `vits-piper-en_US-amy-low` (22050 Hz) from the `tts-models` GitHub release | `pip install sherpa-onnx` in the `Dockerfile`, then `curl` + `tar -xjf` the two voice `.tar.bz2` assets at build time (no phonemize/`espeak-ng` source build — that is exactly what breaks piper on Railway). |
-| **Sherpa-ONNX STT** | `k2-fsa/sherpa-onnx`; model **Whisper-base multilingual** (`sherpa-onnx-whisper-base.tar.bz2`) from the `asr-models` GitHub release; int8 encoder/decoder (`base-encoder.int8.onnx`, `base-decoder.int8.onnx`) + `base-tokens.txt` — verified to exist | `pip install sherpa-onnx` in the `Dockerfile`, then `curl` + `tar -xjf` the `.tar.bz2` asset at build time; `OfflineRecognizer.from_whisper(..., language="")` auto-detects Kiswahili vs English |
+| **Sherpa-ONNX TTS** (Kiswahili `sw` + English `en`) | engine `k2-fsa/sherpa-onnx` (PyPI `sherpa-onnx` wheel); voices `vits-piper-sw_CD-lanfrica-medium` (22050 Hz) + `vits-piper-en_US-amy-medium` (22050 Hz) from the `tts-models` GitHub release | `pip install sherpa-onnx` in the `Dockerfile`, then `curl` + `tar -xjf` the two voice `.tar.bz2` assets at build time (no phonemize/`espeak-ng` source build — that is exactly what breaks piper on Railway). |
+| **Sherpa-ONNX STT** | `k2-fsa/sherpa-onnx`; model **Whisper-small multilingual** (`sherpa-onnx-whisper-small.tar.bz2`, override `WHISPER_MODEL=base` for smaller images) from the `asr-models` GitHub release; int8 encoder/decoder + tokens | `pip install sherpa-onnx` in the `Dockerfile`, then `curl` + `tar -xjf` at build time; `modified_beam_search` decoding; optional `language=sw\|en` form field locks Whisper to lesson language |
 
 > Rationale: keeps **all** deployed code reproducible from source, consistent
 > with the `casuya_api_proxy`/payments approach (nothing proprietary or
@@ -114,8 +114,8 @@ enforces this). Pattern-match the existing `api/*.py` routers.
 
 | Endpoint | Verb | Body → | Response |
 |---|---|---|---|
-| `/api/v1/audio/tts` | POST | `{ "text":..., "lang":"sw" }` | WAV bytes (or cached `{audio_url}`) |
-| `/api/v1/audio/stt` | POST | multipart audio (wav/ogg/webm) | `{ "text":... }` |
+| `/api/v1/audio/tts` | POST | `{ "text":..., "lang":"sw", "speed": 1.0 }` (≤1000 chars; client chunks longer text) | WAV bytes + `Cache-Control: immutable` |
+| `/api/v1/audio/stt` | POST | multipart `audio` (16 kHz mono WAV) + optional `language=sw\|en` | `{ "text":... }` |
 
 The router forwards to `apps/audio-tts` / `apps/audio-stt` over
 `railway.internal` (private network, not public) — the SAME `railway.internal`
@@ -141,15 +141,17 @@ new client code needed beyond the two buttons.
 
 ---
 
-## 6. Offline strategy (2G/3G, hosted engines)
+## 6. Offline strategy (2G/3G, hosted engines) — **implemented**
 
-1. **TTS:** cached WAV (ETag/last-modified + immutable cache key) → repeated
-   reads served from device cache; only first fetch hits Railway.
-2. **STT:** recorder caches raw audio blob locally on failure; transcripts sync
-   via `packages/bridge/recovery.js` when online (dead-letter inversion already
-   fixed for payments). Offline → "audio saved, transcribe later".
-3. **Queue:** pending TTS/STT requests travel the existing `pending_outbox`
-   bridge — same outbox pattern as payments.
+1. **TTS:** IndexedDB WAV cache (`speech-storage.js` / `packages/bridge/media/audio.js`)
+   + in-memory Map; `casuyaPrefetchTts()` warms cache after lesson render.
+   Client splits text >1000 chars into sentence chunks with 80 ms crossfade.
+2. **STT:** 16 kHz mono WAV via MediaRecorder; failed uploads queued in IndexedDB
+   STT outbox; `drainPendingStt()` on `online` event replays with language hint.
+3. **Rate limits:** 20 TTS / 15 STT per minute per **authenticated user**
+   (falls back to IP when unauthenticated).
+4. **Grading guard:** exam voice buttons use `data-human-speech-only="true"` —
+   blocks recording during/just-after TTS playback (synthetic TTS→STT is unreliable).
 
 ---
 

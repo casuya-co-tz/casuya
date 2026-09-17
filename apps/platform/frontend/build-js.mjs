@@ -76,6 +76,7 @@ const core = [
   "auth-ui.js",
   "auth-client.js",
   "auth-guard.js",
+  "modules/speech-storage.js",
   "modules/speech.js",
   "a11y.js",
 ];

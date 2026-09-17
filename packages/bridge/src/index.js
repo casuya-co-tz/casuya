@@ -57,3 +57,6 @@ export { createLogger } from './utils/logger.js';
 export { debounce, throttle, sleep, chunk, deepMerge, isPlainObject } from './utils/helpers.js';
 export { serialize, deserialize, clone } from './utils/serializer.js';
 export { parseLessonMeta, parseQueryParams } from './utils/parser.js';
+
+export { TtsAudioCache } from './media/audio.js';
+export { SttOutbox } from './media/stt-outbox.js';

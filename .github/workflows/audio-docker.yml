@@ -1,0 +1,43 @@
+name: Audio Docker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/audio-tts/**"
+      - "apps/audio-stt/**"
+      - ".github/workflows/audio-docker.yml"
+  pull_request:
+    paths:
+      - "apps/audio-tts/**"
+      - "apps/audio-stt/**"
+      - ".github/workflows/audio-docker.yml"
+
+jobs:
+  docker-smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - service: audio-tts
+            build_args: ""
+          - service: audio-stt
+            build_args: "--build-arg WHISPER_MODEL=base"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build ${{ matrix.service }} image
+        run: docker build ${{ matrix.build_args }} -t casuya-${{ matrix.service }} apps/${{ matrix.service }}
+
+      - name: Boot and probe /health + /readyz
+        run: |
+          docker run -d --name casuya-audio -p 18000:8000 casuya-${{ matrix.service }}
+          for i in $(seq 1 60); do
+            if curl -sf http://127.0.0.1:18000/health >/dev/null; then break; fi
+            sleep 2
+          done
+          curl -sf http://127.0.0.1:18000/health
+          curl -sf http://127.0.0.1:18000/readyz
+          docker logs casuya-audio | tail -n 40
+          docker stop casuya-audio

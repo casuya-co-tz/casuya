@@ -28,3 +28,25 @@ store) on a miss — the same strategy used by the Casuya PWA service worker.
 (`maxCacheableBytes`, default 25MB) so large videos stream directly instead
 of exhausting device storage. `media/preloader.js` fetches a batch of URLs
 with bounded concurrency, useful right after a manifest sync.
+
+### Speech WAV cache (TTS)
+
+`media/audio.js` exports `TtsAudioCache` — IndexedDB-backed storage for
+synthesized TTS WAV blobs keyed by `lang|speed|text`. The platform frontend
+mirrors this in `speech-storage.js` (same DB name `casuya-speech`).
+
+| Setting | Default |
+|---|---|
+| Max cache size | 50 MB |
+| Max age | 7 days |
+| Eviction | LRU by `cachedAt` |
+
+On cache hit the student hears audio without a network round-trip — critical
+on 2G/3G. Prefetch (`casuyaPrefetchTts`) populates the cache in the
+background after a lesson renders.
+
+### STT offline outbox
+
+`media/stt-outbox.js` queues failed STT uploads (`wav` blob + target selector
++ optional `language` hint). `drain()` replays when connectivity returns.
+Platform equivalent: `speech-storage.js` + `drainPendingStt()` in `speech.js`.

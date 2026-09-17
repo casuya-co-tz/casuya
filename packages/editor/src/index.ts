@@ -90,3 +90,17 @@ export { AutoSave } from './autosave/auto-save.js';
 export { VersionManager } from './versioning/version-manager.js';
 
 export { AccessibilityManager } from './accessibility/accessibility-manager.js';
+
+export {
+  SpeechClient,
+  createTextToSpeechButton,
+  createSpeechToTextRecorder,
+} from './speech/index.js';
+export type {
+  SpeechLang,
+  SpeechUiState,
+  SpeechClientConfig,
+  SpeakOptions,
+  TextToSpeechButtonOptions,
+  SpeechToTextRecorderOptions,
+} from './speech/index.js';

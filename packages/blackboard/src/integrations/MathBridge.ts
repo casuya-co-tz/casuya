@@ -135,16 +135,15 @@ export class MathBridge {
   }
 
   private async localEquivalence(expr1: string, expr2: string): Promise<{ equivalent: boolean; confidence: number }> {
+    const norm1 = expr1.replace(/\s+/g, '').toLowerCase();
+    const norm2 = expr2.replace(/\s+/g, '').toLowerCase();
+    if (norm1 === norm2) return { equivalent: true, confidence: 0.8 };
+
     const math = await this.loadMathjs();
     if (!math) {
-      const norm1 = expr1.replace(/\s+/g, '').toLowerCase();
-      const norm2 = expr2.replace(/\s+/g, '').toLowerCase();
-      return { equivalent: norm1 === norm2, confidence: norm1 === norm2 ? 0.8 : 0.2 };
+      return { equivalent: false, confidence: 0.2 };
     }
     try {
-      const norm1 = expr1.replace(/\s+/g, '').toLowerCase();
-      const norm2 = expr2.replace(/\s+/g, '').toLowerCase();
-      if (norm1 === norm2) return { equivalent: true, confidence: 1.0 };
       const e1 = math.parse(expr1);
       const e2 = math.parse(expr2);
       const s1 = math.simplify(e1).toString();
@@ -152,9 +151,7 @@ export class MathBridge {
       if (s1 === s2) return { equivalent: true, confidence: 0.95 };
       return { equivalent: false, confidence: 0.3 };
     } catch {
-      const norm1 = expr1.replace(/\s+/g, '').toLowerCase();
-      const norm2 = expr2.replace(/\s+/g, '').toLowerCase();
-      return { equivalent: norm1 === norm2, confidence: norm1 === norm2 ? 0.8 : 0.2 };
+      return { equivalent: false, confidence: 0.2 };
     }
   }
 

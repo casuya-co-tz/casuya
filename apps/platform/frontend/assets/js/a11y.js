@@ -134,16 +134,18 @@
     });
   }
 
-  // Voice selection — prefer East African English
-  function findVoice() {
+  function findVoice(lang) {
+    if (window.__casuyaSpeech && typeof window.__casuyaSpeech.findVoice === 'function') {
+      return window.__casuyaSpeech.findVoice(lang);
+    }
+    if (!window.speechSynthesis) return null;
     var voices = window.speechSynthesis.getVoices();
-    var preferred = ['en-TZ', 'en-KE', 'en-UG', 'en-GH', 'en-ZA', 'en-GB', 'en-US'];
+    var preferred = lang === 'sw'
+      ? ['sw-TZ', 'sw-KE', 'sw-UG', 'sw', 'en-TZ', 'en-KE']
+      : ['en-TZ', 'en-KE', 'en-UG', 'en-GH', 'en-ZA', 'en-GB', 'en-US'];
     for (var i = 0; i < preferred.length; i++) {
       var match = voices.filter(function (v) { return v.lang === preferred[i]; });
       if (match.length) return match[0];
-    }
-    for (var j = 0; j < voices.length; j++) {
-      if (voices[j].lang.indexOf('en') === 0) return voices[j];
     }
     return null;
   }
@@ -166,10 +168,13 @@
     stopSpeech();
     // Prefer the Casuya Sherpa-ONNX voice through the platform proxy when the
     // user is logged in; the browser voice is the fallback on public pages.
+    var lang = typeof casuyaDetectLang === 'function' ? casuyaDetectLang(text, 'auto') : 'en';
     if (typeof casuyaSpeakText === 'function' && casuyaIsAuthed()) {
       var speechStatus = document.getElementById('speech-status');
       state.controller = casuyaSpeakText(text, {
+        lang: lang,
         rate: state.speechRate || 0.9,
+        onLoading: function () { if (speechStatus) speechStatus.textContent = 'Loading audio...'; },
         onStart: function () { if (speechStatus) speechStatus.textContent = 'Speaking...'; },
         onEnd: function () { if (speechStatus) speechStatus.textContent = 'Done'; state.controller = null; },
         onError: function () { if (speechStatus) speechStatus.textContent = 'Error'; state.controller = null; }
@@ -178,8 +183,8 @@
     }
     window.speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
-    var voice = findVoice();
-    if (voice) { u.voice = voice; u.lang = voice.lang; } else { u.lang = 'en-TZ'; }
+    var voice = findVoice(lang);
+    if (voice) { u.voice = voice; u.lang = voice.lang; } else { u.lang = lang === 'sw' ? 'sw-TZ' : 'en-TZ'; }
     u.rate = state.speechRate || 0.9;
     u.pitch = 1.0;
     u.volume = 1.0;

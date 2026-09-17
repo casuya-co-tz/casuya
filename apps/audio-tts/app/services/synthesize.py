@@ -24,9 +24,9 @@ _VOICES: dict[str, dict[str, str]] = {
         "data_dir": "vits-piper-sw_CD-lanfrica-medium/espeak-ng-data",
     },
     "en": {
-        "model": "vits-piper-en_US-amy-low/en_US-amy-low.onnx",
-        "tokens": "vits-piper-en_US-amy-low/tokens.txt",
-        "data_dir": "vits-piper-en_US-amy-low/espeak-ng-data",
+        "model": "vits-piper-en_US-amy-medium/en_US-amy-medium.onnx",
+        "tokens": "vits-piper-en_US-amy-medium/tokens.txt",
+        "data_dir": "vits-piper-en_US-amy-medium/espeak-ng-data",
     },
 }
 
@@ -59,10 +59,10 @@ def _load_engine(lang: str) -> Any:
     return _engines[lang]
 
 
-def text_to_wav(text: str, lang: str = "sw") -> bytes:
+def text_to_wav(text: str, lang: str = "sw", speed: float = 1.0) -> bytes:
     """Synthesize `text` with the `lang` voice to 16-bit PCM mono WAV bytes."""
     engine = _load_engine(lang)
-    audio = engine.generate(text, sid=0, speed=1.0)
+    audio = engine.generate(text, sid=0, speed=speed)
     pcm = (np.clip(audio.samples, -1.0, 1.0) * 32767).astype(np.int16)
 
     buf = BytesIO()

@@ -15,3 +15,4 @@ class TtsPayload(BaseModel):
 
     text: str = Field(min_length=1, max_length=1000)
     lang: str = Field(default="sw", pattern="^(sw|en)$")
+    speed: float = Field(default=1.0, ge=0.5, le=2.0)

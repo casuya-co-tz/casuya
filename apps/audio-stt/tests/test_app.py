@@ -52,8 +52,8 @@ class _FakeRecognizer:
 @pytest.fixture(autouse=True)
 def _stub_recognizer(monkeypatch):
     get_settings.cache_clear()
-    transcribe._recognizer = None
-    monkeypatch.setattr(transcribe, "_load_recognizer", lambda: _FakeRecognizer())
+    transcribe._recognizers = {}
+    monkeypatch.setattr(transcribe, "_load_recognizer", lambda language="": _FakeRecognizer())
 
 
 def test_health():
@@ -77,6 +77,28 @@ def test_transcribe_returns_text():
     assert r.json()["text"] == "habari, hujambo"
 
 
+def test_transcribe_accepts_language_hint():
+    r = client.post(
+        "/v1/audio/stt",
+        data={"language": "sw"},
+        files={"audio": ("clip.wav", _make_wav(), "audio/wav")},
+    )
+    assert r.status_code == 200
+    assert r.json()["text"] == "habari, hujambo"
+
+
+def test_normalize_boosts_quiet_audio():
+    quiet = np.full(1600, 0.05, dtype=np.float32)
+    boosted = transcribe._normalize_samples(quiet)
+    assert float(np.max(np.abs(boosted))) > 0.5
+
+
+def test_resolve_language_maps_sw_en():
+    assert transcribe._resolve_language("sw") == "sw"
+    assert transcribe._resolve_language("en") == "en"
+    assert transcribe._resolve_language("auto") == ""
+
+
 def test_rejects_non_wav_bytes():
     r = client.post(
         "/v1/audio/stt",
@@ -87,6 +109,22 @@ def test_rejects_non_wav_bytes():
 
 def test_empty_audio_returns_empty_text():
     assert transcribe.transcribe_wav(_make_wav(0.0)) == ""
+
+
+def test_rejects_oversized_wav():
+    r = client.post(
+        "/v1/audio/stt",
+        files={"audio": ("clip.wav", _make_wav(0.5) + b"x" * (1_048_576 + 1), "audio/wav")},
+    )
+    assert r.status_code == 413
+
+
+def test_rejects_long_duration_wav():
+    r = client.post(
+        "/v1/audio/stt",
+        files={"audio": ("clip.wav", _make_wav(31.0), "audio/wav")},
+    )
+    assert r.status_code == 400
 
 
 def test_api_key_required_when_set(monkeypatch):

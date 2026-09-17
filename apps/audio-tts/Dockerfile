@@ -24,7 +24,7 @@ RUN pip install --no-cache-dir sherpa-onnx
 # Voices baked in at build time from the k2-fsa/sherpa-onnx `tts-models` release
 # (verified assets, see docs/infra/audio-integrations.md):
 #   sw: vits-piper-sw_CD-lanfrica-medium  (Kiswahili, 22050 Hz, 1 speaker)
-#   en: vits-piper-en_US-amy-low          (English, 22050 Hz, 1 speaker)
+#   en: vits-piper-en_US-amy-medium       (English, 22050 Hz, 1 speaker)
 ARG SHERPA_TTS_DIR=/opt/sherpa-onnx-tts/models
 RUN mkdir -p ${SHERPA_TTS_DIR} \
     && curl -fL --retry 3 -o /tmp/sw.tar.bz2 \
@@ -32,7 +32,7 @@ RUN mkdir -p ${SHERPA_TTS_DIR} \
     && tar -xjf /tmp/sw.tar.bz2 -C ${SHERPA_TTS_DIR} \
     && rm /tmp/sw.tar.bz2 \
     && curl -fL --retry 3 -o /tmp/en.tar.bz2 \
-        https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-en_US-amy-low.tar.bz2 \
+        https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-en_US-amy-medium.tar.bz2 \
     && tar -xjf /tmp/en.tar.bz2 -C ${SHERPA_TTS_DIR} \
     && rm /tmp/en.tar.bz2
 

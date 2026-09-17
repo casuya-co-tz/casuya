@@ -13,13 +13,43 @@ ENDPOINT_LIMITS = {
     "/auth/refresh": 10,
     "/payments/checkout": 10,
     "/payments/webhook": 30,
+    "/v1/audio/tts": 20,
+    "/v1/audio/stt": 15,
 }
 
 EXEMPT_PATHS = {"/health", "/readyz"}
 
+AUDIO_RATE_LIMIT_PATHS = {"/v1/audio/tts", "/v1/audio/stt"}
+
 # In-memory fallback when Redis is unavailable (S-09)
 _memory_store: dict[str, list[float]] = defaultdict(list)
 _MEMORY_STORE_MAX = 10000  # prevent unbounded growth
+
+
+def _header_from_scope(scope: Scope, name: str) -> str | None:
+    want = name.lower().encode()
+    for key, value in scope.get("headers", []):
+        if key.lower() == want:
+            return value.decode()
+    return None
+
+
+def rate_limit_key_for_request(scope: Scope, client_ip: str) -> str:
+    """Build a rate-limit bucket key; audio routes prefer authenticated user id."""
+    path = scope.get("path", "")
+    if path in AUDIO_RATE_LIMIT_PATHS:
+        auth = _header_from_scope(scope, "authorization")
+        if auth and auth.startswith("Bearer "):
+            try:
+                from backend.config.security import decode_access_token
+
+                payload = decode_access_token(auth.removeprefix("Bearer "))
+                user_id = payload.get("sub")
+                if user_id:
+                    return f"rate_limit:user:{user_id}:{path}"
+            except Exception:
+                pass
+    return f"rate_limit:{client_ip}:{path}"
 
 
 def _rate_limited_429(limit: int, window_start: float, now: float):
@@ -65,7 +95,7 @@ class RateLimitMiddleware:
             await self.app(scope, receive, send)
             return
         limit = ENDPOINT_LIMITS.get(path, settings.rate_limit_per_minute)
-        redis_key = f"rate_limit:{client_ip}:{path}"
+        redis_key = rate_limit_key_for_request(scope, client_ip)
         now = time.time()
         window_start = now - 60
 

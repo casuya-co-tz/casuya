@@ -21,24 +21,29 @@ router = APIRouter(tags=["audio-tts"])
 
 @router.post("/tts")
 def proxy_tts(
-    text: str = Body(..., min_length=1, max_length=3400),
+    text: str = Body(..., min_length=1, max_length=1000),
     lang: str = Body("sw"),
+    speed: float = Body(1.0, ge=0.5, le=2.0),
     current_user=Depends(get_current_user),
 ):
     """Forward `POST /v1/audio/tts` to the Casuya Audio-TTS microservice.
 
     `lang` `"sw"` (Kiswahili) + `"en"` (English) are the only two supported
-    values — see the shipped voice models. The service synthesizes to WAV and
-    returns it with an immutable cache header; the platform forwards that
-    response to the student's MediaRecorder-less `<audio>` element.
+    values — see the shipped voice models. Longer content is split into ≤1000
+    char chunks by the client before calling this endpoint. The service
+    synthesizes to WAV and returns it with an immutable cache header; the
+    platform forwards that response to the student's `<audio>` element.
     """
+    if lang not in {"sw", "en"}:
+        raise HTTPException(status_code=422, detail="lang must be 'sw' or 'en'")
+
     settings = get_settings()
     target = settings.casuya_audio_tts_url.rstrip("/")
     url = f"{target}/v1/audio/tts"
     headers: dict[str, str] = {}
     if settings.casuya_audio_tts_api_key:
         headers["X-API-Key"] = settings.casuya_audio_tts_api_key
-    body = {"user_id": current_user.get("sub"), "text": text, "lang": lang}
+    body = {"user_id": current_user.get("sub"), "text": text, "lang": lang, "speed": speed}
 
     try:
         with httpx.Client(timeout=120) as client:

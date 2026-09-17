@@ -73,6 +73,22 @@ def test_rejects_unknown_lang():
     assert r.status_code == 422
 
 
+def test_rejects_text_over_1000_chars():
+    r = client.post("/v1/audio/tts", json={"text": "a" * 1001, "lang": "en"})
+    assert r.status_code == 422
+
+
+def test_rejects_invalid_speed():
+    r = client.post("/v1/audio/tts", json={"text": "Habari", "lang": "sw", "speed": 3.0})
+    assert r.status_code == 422
+
+
+def test_accepts_speed_param():
+    r = client.post("/v1/audio/tts", json={"text": "Habari", "lang": "sw", "speed": 0.8})
+    assert r.status_code == 200
+    assert r.content[:4] == b"RIFF"
+
+
 def test_api_key_required_when_set(monkeypatch):
     monkeypatch.setenv("API_KEY", "secret-key")
     get_settings.cache_clear()

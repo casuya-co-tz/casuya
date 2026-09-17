@@ -1944,7 +1944,7 @@ function renderExamQuestion(q, type, ctx) {
       html +=
         '<div style="display:flex;gap:0.35rem;align-items:flex-start">' +
         '<textarea class="exam-structured-answer" data-question="' + escapeHtml(q.number) + '" placeholder="Write your answer here..." style="flex:1;min-width:0;min-height:80px;padding:0.5rem;border:1px solid #d1d5db;border-radius:6px;font-family:inherit;font-size:0.9rem;resize:vertical;margin-top:0"></textarea>' +
-        '<button type="button" class="casuya-record" data-label="Speak your answer" title="Speak your answer" aria-label="Speak your answer" style="margin-top:0">🎤 Voice</button>' +
+        '<button type="button" class="casuya-record" data-human-speech-only="true" data-lang="auto" data-label="Speak your answer" title="Speak your answer" aria-label="Speak your answer" style="margin-top:0">🎤 Voice</button>' +
         "</div>";
     } else {
       html += '<div class="exam-answer-line"></div>';
@@ -3137,6 +3137,224 @@ function guardPortal(expectedRole) {
 }
 
 ;
+// modules/speech-storage.js — IndexedDB persistence for TTS WAV cache + STT offline outbox.
+// Mirrors packages/bridge/src/media/{audio,stt-outbox}.js for the vanilla JS frontend.
+
+(function () {
+  var DB_NAME = "casuya-speech";
+  var DB_VERSION = 1;
+  var STORE = "speech-data";
+  var TTS_PREFIX = "tts:";
+  var STT_PREFIX = "stt:";
+  var STT_INDEX = "stt-index";
+
+  var _dbPromise = null;
+
+  function openDb() {
+    if (_dbPromise) return _dbPromise;
+    if (typeof indexedDB === "undefined") {
+      _dbPromise = Promise.resolve(null);
+      return _dbPromise;
+    }
+    _dbPromise = new Promise(function (resolve, reject) {
+      var req = indexedDB.open(DB_NAME, DB_VERSION);
+      req.onupgradeneeded = function () {
+        if (!req.result.objectStoreNames.contains(STORE)) {
+          req.result.createObjectStore(STORE);
+        }
+      };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { reject(req.error); };
+    });
+    return _dbPromise;
+  }
+
+  function idbGet(key) {
+    return openDb().then(function (db) {
+      if (!db) return null;
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(STORE, "readonly");
+        var req = tx.objectStore(STORE).get(key);
+        req.onsuccess = function () { resolve(req.result == null ? null : req.result); };
+        req.onerror = function () { reject(req.error); };
+      });
+    }).catch(function () { return null; });
+  }
+
+  function idbPut(key, value) {
+    return openDb().then(function (db) {
+      if (!db) return false;
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(STORE, "readwrite");
+        var req = tx.objectStore(STORE).put(value, key);
+        req.onsuccess = function () { resolve(true); };
+        req.onerror = function () { reject(req.error); };
+      });
+    }).catch(function () { return false; });
+  }
+
+  function idbDelete(key) {
+    return openDb().then(function (db) {
+      if (!db) return false;
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(STORE, "readwrite");
+        var req = tx.objectStore(STORE).delete(key);
+        req.onsuccess = function () { resolve(true); };
+        req.onerror = function () { reject(req.error); };
+      });
+    }).catch(function () { return false; });
+  }
+
+  function idbKeys() {
+    return openDb().then(function (db) {
+      if (!db) return [];
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(STORE, "readonly");
+        var req = tx.objectStore(STORE).getAllKeys();
+        req.onsuccess = function () { resolve(req.result || []); };
+        req.onerror = function () { reject(req.error); };
+      });
+    }).catch(function () { return []; });
+  }
+
+  function ttsCacheKey(lang, speed, text) {
+    return TTS_PREFIX + lang + "|" + speed + "|" + text;
+  }
+
+  function getCachedWav(lang, speed, text) {
+    return idbGet(ttsCacheKey(lang, speed, text)).then(function (record) {
+      return record && record.blob ? record.blob : null;
+    });
+  }
+
+  function putCachedWav(lang, speed, text, blob) {
+    return idbPut(ttsCacheKey(lang, speed, text), {
+      blob: blob,
+      cachedAt: Date.now(),
+      byteSize: blob && blob.size ? blob.size : 0
+    });
+  }
+
+  function evictTtsCache(maxBytes, maxAgeMs) {
+    maxBytes = maxBytes || (50 * 1024 * 1024);
+    maxAgeMs = maxAgeMs || (7 * 24 * 60 * 60 * 1000);
+    var now = Date.now();
+    return idbKeys().then(function (keys) {
+      var ttsKeys = keys.filter(function (k) { return String(k).indexOf(TTS_PREFIX) === 0; });
+      var tasks = ttsKeys.map(function (key) {
+        return idbGet(key).then(function (record) {
+          return { key: key, record: record };
+        });
+      });
+      return Promise.all(tasks).then(function (entries) {
+        var kept = [];
+        entries.forEach(function (entry) {
+          if (!entry.record) return;
+          if (now - entry.record.cachedAt > maxAgeMs) {
+            idbDelete(entry.key);
+            return;
+          }
+          kept.push(entry);
+        });
+        kept.sort(function (a, b) { return a.record.cachedAt - b.record.cachedAt; });
+        var total = kept.reduce(function (sum, e) { return sum + (e.record.byteSize || 0); }, 0);
+        while (total > maxBytes && kept.length) {
+          var oldest = kept.shift();
+          total -= oldest.record.byteSize || 0;
+          idbDelete(oldest.key);
+        }
+      });
+    });
+  }
+
+  function readSttIndex() {
+    return idbGet(STT_INDEX).then(function (ids) {
+      return Array.isArray(ids) ? ids : [];
+    });
+  }
+
+  function writeSttIndex(ids) {
+    return idbPut(STT_INDEX, ids);
+  }
+
+  function enqueueStt(wavBlob, targetSelector, append, language) {
+    var id = "stt-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8);
+    return idbPut(STT_PREFIX + id, {
+      blob: wavBlob,
+      targetSelector: targetSelector || "",
+      append: !!append,
+      language: language === "en" ? "en" : language === "sw" ? "sw" : "",
+      createdAt: Date.now()
+    }).then(function () {
+      return readSttIndex().then(function (ids) {
+        ids.push(id);
+        return writeSttIndex(ids).then(function () { return id; });
+      });
+    });
+  }
+
+  function listSttPending() {
+    return readSttIndex().then(function (ids) {
+      return Promise.all(ids.map(function (id) {
+        return idbGet(STT_PREFIX + id).then(function (record) {
+          if (!record) return null;
+          return {
+            id: id,
+            blob: record.blob,
+            targetSelector: record.targetSelector,
+            append: !!record.append,
+            language: record.language || "",
+            createdAt: record.createdAt
+          };
+        });
+      })).then(function (rows) {
+        return rows.filter(Boolean).sort(function (a, b) { return a.createdAt - b.createdAt; });
+      });
+    });
+  }
+
+  function removeStt(id) {
+    return idbDelete(STT_PREFIX + id).then(function () {
+      return readSttIndex().then(function (ids) {
+        return writeSttIndex(ids.filter(function (entry) { return entry !== id; }));
+      });
+    });
+  }
+
+  function drainSttOutbox(transcribeFn) {
+    return listSttPending().then(function (pending) {
+      var chain = Promise.resolve([]);
+      pending.forEach(function (item) {
+        chain = chain.then(function (results) {
+          return transcribeFn(item.blob, item.language).then(function (text) {
+            results.push({
+              id: item.id,
+              text: text,
+              targetSelector: item.targetSelector,
+              append: item.append
+            });
+            return removeStt(item.id).then(function () { return results; });
+          }).catch(function () { return results; });
+        });
+      });
+      return chain;
+    });
+  }
+
+  window.__casuyaSpeechStorage = {
+    ttsCacheKey: ttsCacheKey,
+    getCachedWav: getCachedWav,
+    putCachedWav: putCachedWav,
+    evictTtsCache: evictTtsCache,
+    enqueueStt: enqueueStt,
+    drainSttOutbox: drainSttOutbox,
+    listSttPending: listSttPending
+  };
+
+  try { evictTtsCache(); } catch (e) {}
+})();
+
+;
 // modules/speech.js — shared speech engine.
 //
 // TTS: plays the Casuya Sherpa-ONNX voice (platform proxy /v1/audio/tts) when the
@@ -3175,38 +3393,169 @@ function guardPortal(expectedRole) {
     + "andika ongeza punguza hesabu idadi jina kitu maji nyumbani kwenda kuja taka niambie "
     + "nimeelewa sielewi tafadhali kahawa chai pesa bei soko sukari mchana jioni usiku asubuhi "
     + "leo kesho jana hapa huko kweli kuna aa eh sawasawa fanya mazoezi swala bado zamani mbele nyuma").split(/\s+/);
+  var EN_WORDS = ("the and is are was were have has had do does did will would could should what when "
+    + "where who why how which this that these those with from for not but about into each other some "
+    + "than then there their they them your you our we him her his she he it its one two three answer "
+    + "question lesson student teacher school read write listen speak english science mathematics").split(/\s+/);
   var SW_SET = {};
+  var EN_SET = {};
   for (var i = 0; i < SW_WORDS.length; i++) SW_SET[SW_WORDS[i]] = true;
+  for (var ei = 0; ei < EN_WORDS.length; ei++) EN_SET[EN_WORDS[ei]] = true;
 
-  function detectLang(text) {
-    var s = String(text || "").toLowerCase().replace(/[^a-z\s]/g, " ");
-    var toks = s.split(/\s+/);
+  function preferredSpeechLang() {
+    try {
+      var saved = JSON.parse(localStorage.getItem("casuya_a11y"));
+      if (saved && (saved.lang === "sw" || saved.lang === "en")) return saved.lang;
+    } catch (e) {}
+    return null;
+  }
+
+  function detectLang(text, explicitLang) {
+    if (explicitLang && explicitLang !== "auto" && (explicitLang === "sw" || explicitLang === "en")) {
+      return explicitLang;
+    }
+    var pref = preferredSpeechLang();
+    if (pref) return pref;
+    var s = String(text || "").toLowerCase();
+    var toks = s.replace(/[^\p{L}\s]/gu, " ").split(/\s+/).filter(function (w) { return w.length > 0; });
     var hits = 0;
-    for (var j = 0; j < toks.length; j++) { if (SW_SET[toks[j]]) hits++; }
-    return hits >= 2 ? "sw" : "en";
+    var enHits = 0;
+    for (var j = 0; j < toks.length; j++) {
+      if (SW_SET[toks[j]]) hits++;
+      if (EN_SET[toks[j]]) enHits++;
+    }
+    if (hits >= 1 && hits >= enHits) return "sw";
+    if (enHits >= 2 && enHits > hits) return "en";
+    return "sw";
+  }
+
+  function resolveSttLang(button, target) {
+    var explicit = button && button.getAttribute("data-lang");
+    if (explicit && explicit !== "auto" && (explicit === "sw" || explicit === "en")) return explicit;
+    var fromTarget = target && target.getAttribute && target.getAttribute("data-lang");
+    if (fromTarget && fromTarget !== "auto" && (fromTarget === "sw" || fromTarget === "en")) return fromTarget;
+    var ctx = target && target.closest && target.closest("[data-lesson-lang]");
+    if (ctx) {
+      var lessonLang = ctx.getAttribute("data-lesson-lang");
+      if (lessonLang === "sw" || lessonLang === "en") return lessonLang;
+    }
+    var block = target && target.closest && target.closest(".question-block, .quiz-item, form, .lesson-section, [data-question]");
+    if (block) {
+      var listen = block.querySelector(".casuya-listen[data-speak], .casuya-listen[data-lang]");
+      if (listen) {
+        var listenLang = listen.getAttribute("data-lang");
+        if (listenLang === "sw" || listenLang === "en") return listenLang;
+        var speak = listen.getAttribute("data-speak");
+        if (speak) return detectLang(speak);
+      }
+    }
+    if (target && typeof target.placeholder === "string" && target.placeholder.trim()) {
+      return detectLang(target.placeholder);
+    }
+    return detectLang("");
+  }
+
+  function isTtsActive() {
+    if (_current) return true;
+    try { return !!(_audio && !_audio.paused && !_audio.ended); } catch (e) { return false; }
+  }
+
+  function requiresHumanSpeech(btn) {
+    return btn && btn.getAttribute("data-human-speech-only") === "true";
+  }
+
+  function humanSpeechBlocked() {
+    if (isTtsActive()) return true;
+    return _lastTtsEndedAt > 0 && (Date.now() - _lastTtsEndedAt) < HUMAN_SPEECH_COOLDOWN_MS;
+  }
+
+  function setAudioVolume(audio, vol) {
+    if (!audio) return;
+    try { audio.volume = Math.max(0, Math.min(1, vol)); } catch (e) {}
+  }
+
+  function fadeVolume(audio, from, to, ms, done) {
+    if (!audio || ms <= 0) {
+      setAudioVolume(audio, to);
+      if (done) done();
+      return;
+    }
+    var steps = 6;
+    var i = 0;
+    var timer = setInterval(function () {
+      i++;
+      setAudioVolume(audio, from + (to - from) * (i / steps));
+      if (i >= steps) {
+        clearInterval(timer);
+        if (done) done();
+      }
+    }, Math.max(8, ms / steps));
   }
 
   /* ── TTS playback state ──────────────────────────────────────────────── */
+  var TTS_MAX_CHARS = 1000;
+  var STT_TARGET_RATE = 16000;
+  var STT_MAX_MS = 30000;
+  var STT_MAX_BYTES = 1048576;
   var _audio = null;
   var _current = null;
   var _ttsCache = new Map();
   var _speakSeq = 0;
+  var _prefetchInflight = 0;
+  var _prefetchMax = 2;
+  var TTS_CROSSFADE_MS = 80;
+  var HUMAN_SPEECH_COOLDOWN_MS = 2500;
+  var _lastTtsEndedAt = 0;
 
-  function capText(text, max) {
-    var t = String(text || "").trim();
-    if (t.length <= max) return t;
-    var cut = t.slice(0, max);
-    var idx = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("! "), cut.lastIndexOf("? "), cut.lastIndexOf("\n"));
-    return idx > max * 0.6 ? cut.slice(0, idx + 1) : cut;
+  function speechStore() {
+    return window.__casuyaSpeechStorage || null;
   }
 
-  function findVoice() {
+  function splitIntoChunks(text, maxLen) {
+    var t = String(text || "").trim();
+    if (!t) return [];
+    if (t.length <= maxLen) return [t];
+    var chunks = [];
+    var remaining = t;
+    while (remaining.length > 0) {
+      if (remaining.length <= maxLen) {
+        chunks.push(remaining);
+        break;
+      }
+      var cut = remaining.slice(0, maxLen);
+      var idx = Math.max(
+        cut.lastIndexOf(". "),
+        cut.lastIndexOf("! "),
+        cut.lastIndexOf("? "),
+        cut.lastIndexOf("\n"),
+        cut.lastIndexOf(" ")
+      );
+      var splitAt = maxLen;
+      if (idx > maxLen * 0.5) {
+        splitAt = remaining[idx] === "\n" ? idx + 1 : idx + 2;
+      }
+      var piece = remaining.slice(0, splitAt).trim();
+      if (piece) chunks.push(piece);
+      remaining = remaining.slice(splitAt).trim();
+    }
+    return chunks;
+  }
+
+  function findVoice(lang) {
     if (!window.speechSynthesis) return null;
     var voices = window.speechSynthesis.getVoices();
-    var preferred = ["en-TZ", "en-KE", "en-UG", "en-GH", "en-ZA", "en-GB", "en-US"];
+    var wantSw = lang === "sw";
+    var preferred = wantSw
+      ? ["sw-TZ", "sw-KE", "sw-UG", "sw", "en-TZ", "en-KE", "en-GB", "en-US"]
+      : ["en-TZ", "en-KE", "en-UG", "en-GH", "en-ZA", "en-GB", "en-US"];
     for (var i = 0; i < preferred.length; i++) {
       var match = voices.filter(function (v) { return v.lang === preferred[i]; });
       if (match.length) return match[0];
+    }
+    if (wantSw) {
+      for (var k = 0; k < voices.length; k++) {
+        if (voices[k].lang.indexOf("sw") === 0) return voices[k];
+      }
     }
     for (var j = 0; j < voices.length; j++) {
       if (voices[j].lang.indexOf("en") === 0) return voices[j];
@@ -3223,8 +3572,9 @@ function guardPortal(expectedRole) {
     }
     window.speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
-    var v = findVoice();
-    if (v) { u.voice = v; u.lang = v.lang; } else { u.lang = "en-TZ"; }
+    var lang = options.lang && options.lang !== "auto" ? options.lang : detectLang(text, options.lang);
+    var v = findVoice(lang);
+    if (v) { u.voice = v; u.lang = v.lang; } else { u.lang = lang === "sw" ? "sw-TZ" : "en-TZ"; }
     u.rate = options.rate || 1;
     u.pitch = 1;
     u.volume = 1;
@@ -3249,16 +3599,141 @@ function guardPortal(expectedRole) {
     };
   }
 
-  function playBlob(blob, options) {
-    options = options || {};
+  function playBlob(blob, playback) {
+    playback = playback || {};
     if (_audio) { _audio.pause(); _audio.src = ""; _audio = null; }
     var url = URL.createObjectURL(blob);
     _audio = new Audio(url);
-    _audio.onplay = function () { if (options.onStart) options.onStart(); };
-    _audio.onended = function () { URL.revokeObjectURL(url); if (options.onEnd) options.onEnd(); };
-    _audio.onerror = function () { URL.revokeObjectURL(url); if (options.onError) options.onError(new Error("Audio playback failed")); };
-    _audio.play().catch(function (err) { URL.revokeObjectURL(url); if (options.onError) options.onError(err); });
-    _current = apiController(options);
+    if (playback.fadeIn) setAudioVolume(_audio, 0);
+    _audio.onplay = function () {
+      if (playback.fadeIn) fadeVolume(_audio, 0, 1, TTS_CROSSFADE_MS);
+      if (playback.onPlay) playback.onPlay();
+    };
+    _audio.onended = function () {
+      var finish = function () {
+        URL.revokeObjectURL(url);
+        _lastTtsEndedAt = Date.now();
+        if (playback.onDone) playback.onDone();
+      };
+      if (playback.fadeOut && _audio) {
+        fadeVolume(_audio, _audio.volume, 0, TTS_CROSSFADE_MS, finish);
+        return;
+      }
+      finish();
+    };
+    _audio.onerror = function () {
+      URL.revokeObjectURL(url);
+      if (playback.onError) playback.onError(new Error("Audio playback failed"));
+    };
+    _audio.play().catch(function (err) {
+      URL.revokeObjectURL(url);
+      if (playback.onError) playback.onError(err);
+    });
+  }
+
+  function rememberTtsBlob(lang, speed, chunk, blob) {
+    var cacheKey = lang + "|" + speed + "|" + chunk;
+    if (_ttsCache.size >= 24) _ttsCache.delete(_ttsCache.keys().next().value);
+    _ttsCache.set(cacheKey, blob);
+    var store = speechStore();
+    if (store && store.putCachedWav) {
+      store.putCachedWav(lang, speed, chunk, blob).catch(function () {});
+    }
+  }
+
+  function fetchTtsBlob(chunk, lang, speed, mySeq) {
+    var cacheKey = lang + "|" + speed + "|" + chunk;
+    if (_ttsCache.has(cacheKey)) {
+      return Promise.resolve(_ttsCache.get(cacheKey));
+    }
+    var store = speechStore();
+    var cached = store && store.getCachedWav
+      ? store.getCachedWav(lang, speed, chunk).then(function (blob) {
+        if (blob) {
+          rememberTtsBlob(lang, speed, chunk, blob);
+          return blob;
+        }
+        return null;
+      })
+      : Promise.resolve(null);
+
+    return cached.then(function (idbBlob) {
+      if (idbBlob) return idbBlob;
+      if (mySeq !== undefined && mySeq !== _speakSeq) throw new Error("cancelled");
+      return fetch(API_BASE + "/v1/audio/tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Authorization": "Bearer " + authToken() },
+        body: JSON.stringify({ text: chunk, lang: lang, speed: speed })
+      }).then(function (resp) {
+        if (!resp.ok) throw new Error("TTS unavailable (" + resp.status + ")");
+        return resp.blob();
+      }).then(function (blob) {
+        if (mySeq !== undefined && mySeq !== _speakSeq) throw new Error("cancelled");
+        rememberTtsBlob(lang, speed, chunk, blob);
+        return blob;
+      });
+    });
+  }
+
+  function casuyaPrefetchTts(text, options) {
+    options = options || {};
+    if (!isAuthed() || !text) return;
+    var txt = String(text).trim();
+    if (!txt) return;
+    var lang = detectLang(txt, options.lang);
+    var speed = options.rate || 1;
+    splitIntoChunks(txt, TTS_MAX_CHARS).forEach(function (chunk) {
+      if (_prefetchInflight >= _prefetchMax) return;
+      _prefetchInflight++;
+      fetchTtsBlob(chunk, lang, speed).then(function () {}, function () {}).then(function () {
+        _prefetchInflight = Math.max(0, _prefetchInflight - 1);
+      });
+    });
+  }
+
+  function speakViaApi(chunks, lang, speed, fullText, options, mySeq) {
+    var idx = 0;
+    var started = false;
+    var loading = false;
+
+    function playNext() {
+      if (mySeq !== _speakSeq) return;
+      if (idx >= chunks.length) {
+        if (options.onEnd) options.onEnd();
+        return;
+      }
+      if (!loading) {
+        loading = true;
+        if (options.onLoading) options.onLoading();
+      }
+      fetchTtsBlob(chunks[idx], lang, speed, mySeq).then(function (blob) {
+        if (mySeq !== _speakSeq) return;
+        playBlob(blob, {
+          fadeIn: idx > 0,
+          fadeOut: idx < chunks.length - 1,
+          onPlay: function () {
+            if (!started) {
+              started = true;
+              if (options.onStart) options.onStart();
+            }
+          },
+          onDone: function () {
+            idx++;
+            playNext();
+          },
+          onError: function (err) {
+            if (options.onError) options.onError(err);
+          }
+        });
+      }).catch(function (err) {
+        if (mySeq !== _speakSeq || err.message === "cancelled") return;
+        if (options.onError) options.onError(err);
+        _current = browserSpeak(fullText, options);
+      });
+    }
+
+    playNext();
+    return apiController(options);
   }
 
   function casuyaSpeakText(text, options) {
@@ -3270,37 +3745,16 @@ function guardPortal(expectedRole) {
     }
     casuyaStopAll();
     var mySeq = _speakSeq;
-    var lang = (options.lang && options.lang !== "auto") ? options.lang : detectLang(txt);
+    var lang = detectLang(txt, options.lang);
+    var speed = options.rate || 1;
 
     if (isAuthed()) {
-      var capped = capText(txt, 3200);
-      var cacheKey = lang + "|" + capped;
-      if (_ttsCache.has(cacheKey)) {
-        playBlob(_ttsCache.get(cacheKey), options);
-        return _current;
-      }
-
-      fetch(API_BASE + "/v1/audio/tts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Authorization": "Bearer " + authToken() },
-        body: JSON.stringify({ text: capped, lang: lang })
-      }).then(function (resp) {
-        if (!resp.ok) throw new Error("TTS unavailable (" + resp.status + ")");
-        return resp.blob();
-      }).then(function (blob) {
-        if (mySeq !== _speakSeq) return; // superseded by a newer speak/stop
-        if (_ttsCache.size >= 24) _ttsCache.delete(_ttsCache.keys().next().value);
-        _ttsCache.set(cacheKey, blob);
-        playBlob(blob, options);
-      }).catch(function (err) {
-        if (mySeq !== _speakSeq) return; // superseded by a newer speak/stop
-        if (options.onError) options.onError(err);
-        _current = browserSpeak(text, options);
-      });
-      return apiController(options);
+      var chunks = splitIntoChunks(txt, TTS_MAX_CHARS);
+      _current = speakViaApi(chunks, lang, speed, txt, options, mySeq);
+      return _current;
     }
 
-    _current = browserSpeak(text, options);
+    _current = browserSpeak(txt, options);
     return _current;
   }
 
@@ -3383,11 +3837,36 @@ function guardPortal(expectedRole) {
     return Promise.resolve(token);
   }
 
-  function transcribe(blob, button, target) {
-    setRecState(button, "processing");
+  function applyTranscript(target, text, append) {
+    if (!target || text == null) return;
+    var out = String(text);
+    if (append) {
+      if (typeof target.value === "string" && target.value.trim()) {
+        out = target.value.trim() + " " + out;
+      } else if (target.isContentEditable && String(target.textContent || "").trim()) {
+        out = String(target.textContent).trim() + " " + out;
+      }
+    }
+    if (typeof target.value === "string") target.value = out;
+    else if (target.isContentEditable) target.textContent = out;
+    try { target.dispatchEvent(new Event("input", { bubbles: true })); } catch (e) {}
+  }
+
+  function targetSelectorFor(el) {
+    if (!el || !el.id) return "";
+    return "#" + el.id;
+  }
+
+  function resolveTargetSelector(sel) {
+    if (!sel) return null;
+    try { return document.querySelector(sel); } catch (e) { return null; }
+  }
+
+  function postSttBlob(blob, lang) {
     return maybeRefreshToken().then(function (token) {
       var fd = new FormData();
       fd.append("audio", blob, "speech.wav");
+      if (lang && lang !== "auto" && (lang === "sw" || lang === "en")) fd.append("language", lang);
       return fetch(API_BASE + "/v1/audio/stt", {
         method: "POST",
         headers: { "Authorization": "Bearer " + token },
@@ -3397,38 +3876,238 @@ function guardPortal(expectedRole) {
       if (!resp.ok) throw new Error("Voice transcription failed (" + resp.status + ")");
       return resp.json();
     }).then(function (data) {
-      var text = (data && data.text) || "";
-      if (target) {
-        if (typeof target.value === "string") target.value = text;
-        else if (target.isContentEditable) target.textContent = text;
-        try { target.dispatchEvent(new Event("input", { bubbles: true })); } catch (e) {}
-      }
+      return (data && data.text) || "";
+    });
+  }
+
+  function queueSttForLater(blob, target, append, lang) {
+    var store = speechStore();
+    if (!store || !store.enqueueStt) return Promise.resolve(false);
+    return store.enqueueStt(blob, targetSelectorFor(target), append, lang).then(function () { return true; }).catch(function () { return false; });
+  }
+
+  function transcribe(blob, button, target, append, lang) {
+    if (blob && blob.size > STT_MAX_BYTES) {
+      setRecState(button, "idle");
+      toast("Recording too large. Try a shorter clip.");
+      return Promise.resolve("");
+    }
+    setRecState(button, "processing");
+    return postSttBlob(blob, lang).then(function (text) {
+      applyTranscript(target, text, append);
       setRecState(button, "idle");
       if (text) toast("Transcribed ✓");
       else toast("No speech detected. Try again.");
       return text;
     }).catch(function (err) {
+      var offline = !navigator.onLine || (err && err.message && err.message.indexOf("Failed to fetch") >= 0);
+      if (offline) {
+        return queueSttForLater(blob, target, append, lang).then(function (queued) {
+          setRecState(button, "idle");
+          if (queued) toast("Saved offline — will transcribe when online.");
+          else toast(err && err.message ? err.message : "Voice transcription failed");
+          return "";
+        });
+      }
       setRecState(button, "idle");
       toast(err && err.message ? err.message : "Voice transcription failed");
       return "";
     });
   }
 
+  function drainPendingStt() {
+    if (!isAuthed()) return;
+    var store = speechStore();
+    if (!store || !store.drainSttOutbox) return;
+    store.drainSttOutbox(function (blob, lang) { return postSttBlob(blob, lang); }).then(function (results) {
+      if (!results || !results.length) return;
+      results.forEach(function (item) {
+        var target = resolveTargetSelector(item.targetSelector);
+        applyTranscript(target, item.text || "", item.append);
+      });
+      toast("Offline voice notes transcribed ✓");
+    }).catch(function () {});
+  }
+
+  function mergeFloatChunks(chunks) {
+    var total = 0;
+    for (var i = 0; i < chunks.length; i++) total += chunks[i].length;
+    var merged = new Float32Array(total);
+    var offset = 0;
+    for (var j = 0; j < chunks.length; j++) {
+      merged.set(chunks[j], offset);
+      offset += chunks[j].length;
+    }
+    return merged;
+  }
+
+  function resampleTo16kHz(floatChunks, sourceRate) {
+    var merged = mergeFloatChunks(floatChunks);
+    if (!merged.length) return Promise.resolve(merged);
+    if (sourceRate === STT_TARGET_RATE) return Promise.resolve(merged);
+    var OfflineCtx = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+    if (!OfflineCtx) return Promise.resolve(merged);
+    var frames = Math.ceil(merged.length * STT_TARGET_RATE / sourceRate);
+    var offline = new OfflineCtx(1, frames, STT_TARGET_RATE);
+    var buffer = offline.createBuffer(1, merged.length, sourceRate);
+    buffer.copyToChannel(merged, 0);
+    var src = offline.createBufferSource();
+    src.buffer = buffer;
+    src.connect(offline.destination);
+    src.start(0);
+    return offline.startRendering().then(function (rendered) {
+      return rendered.getChannelData(0);
+    }).catch(function () { return merged; });
+  }
+
+  function pickRecorderMime() {
+    if (!window.MediaRecorder) return "";
+    var types = ["audio/webm;codecs=opus", "audio/webm", "audio/ogg;codecs=opus"];
+    for (var i = 0; i < types.length; i++) {
+      if (MediaRecorder.isTypeSupported(types[i])) return types[i];
+    }
+    return "";
+  }
+
+  function mixToMono(decoded) {
+    var len = decoded.length;
+    var mono = new Float32Array(len);
+    var channels = decoded.numberOfChannels;
+    for (var c = 0; c < channels; c++) {
+      var data = decoded.getChannelData(c);
+      for (var i = 0; i < len; i++) mono[i] += data[i];
+    }
+    if (channels > 1) {
+      for (var j = 0; j < len; j++) mono[j] /= channels;
+    }
+    return mono;
+  }
+
+  function decodeBlobTo16kWav(blob) {
+    var Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return Promise.reject(new Error("AudioContext unavailable"));
+    var ctx = new Ctx();
+    return blob.arrayBuffer().then(function (ab) {
+      return ctx.decodeAudioData(ab);
+    }).then(function (decoded) {
+      var mono = decoded.numberOfChannels > 1 ? mixToMono(decoded) : decoded.getChannelData(0);
+      return resampleTo16kHz([mono], decoded.sampleRate);
+    }).then(function (samples) {
+      try { ctx.close(); } catch (e) {}
+      var buffer = encodeWav([samples], STT_TARGET_RATE);
+      return new Blob([buffer], { type: "audio/wav" });
+    }).catch(function (err) {
+      try { ctx.close(); } catch (e) {}
+      throw err;
+    });
+  }
+
+  function cleanupRecording(rec) {
+    if (rec.timer) { clearTimeout(rec.timer); rec.timer = null; }
+    try { if (rec.processor) rec.processor.disconnect(); } catch (e) {}
+    try { if (rec.ctx) rec.ctx.close(); } catch (e) {}
+    try { if (rec.stream) rec.stream.getTracks().forEach(function (t) { t.stop(); }); } catch (e) {}
+  }
+
+  function finishWavTranscription(wavBlob, button, target, append, lang) {
+    if (!wavBlob || !wavBlob.size) {
+      setRecState(button, "idle");
+      toast("No audio captured.");
+      return;
+    }
+    transcribe(wavBlob, button, target, append, lang);
+  }
+
   function stopRecordingTranscribe(btn, target) {
     if (!_rec) return;
     var rec = _rec;
     _rec = null;
-    if (rec.timer) { clearTimeout(rec.timer); rec.timer = null; }
-    try { rec.processor.disconnect(); } catch (e) {}
-    try { rec.ctx.close(); } catch (e) {}
-    try { rec.stream.getTracks().forEach(function (t) { t.stop(); }); } catch (e) {}
     var button = btn || rec.button;
     var tgt = target || rec.target;
+    var append = !!rec.append;
+    var lang = rec.lang || "sw";
+
+    if (rec.mode === "mediarecorder") {
+      if (rec.timer) { clearTimeout(rec.timer); rec.timer = null; }
+      var recorder = rec.recorder;
+      recorder.onstop = function () {
+        try { rec.stream.getTracks().forEach(function (t) { t.stop(); }); } catch (e) {}
+        var parts = rec.parts.filter(function (p) { return p && p.size; });
+        if (!parts.length) { setRecState(button, "idle"); toast("No audio captured."); return; }
+        var encoded = new Blob(parts, { type: recorder.mimeType || "audio/webm" });
+        decodeBlobTo16kWav(encoded).then(function (wavBlob) {
+          finishWavTranscription(wavBlob, button, tgt, append, lang);
+        }).catch(function () {
+          setRecState(button, "idle");
+          toast("Could not process audio.");
+        });
+      };
+      try { recorder.stop(); } catch (e) {
+        setRecState(button, "idle");
+        toast("Could not stop recording.");
+      }
+      return;
+    }
+
+    cleanupRecording(rec);
     var chunks = rec.chunks.filter(function (c) { return c.length > 0; });
     if (!chunks.length) { setRecState(button, "idle"); toast("No audio captured."); return; }
-    var buffer = encodeWav(chunks, rec.sampleRate);
-    var blob = new Blob([buffer], { type: "audio/wav" });
-    transcribe(blob, button, tgt);
+    resampleTo16kHz(chunks, rec.sampleRate).then(function (samples) {
+      var buffer = encodeWav([samples], STT_TARGET_RATE);
+      finishWavTranscription(new Blob([buffer], { type: "audio/wav" }), button, tgt, append, lang);
+    }).catch(function () {
+      setRecState(button, "idle");
+      toast("Could not process audio.");
+    });
+  }
+
+  function startLegacyRecording(stream, btn, target, append, lang) {
+    var Ctx = window.AudioContext || window.webkitAudioContext;
+    var ctx = new Ctx();
+    var src = ctx.createMediaStreamSource(stream);
+    var processor = ctx.createScriptProcessor(4096, 1, 1);
+    var chunks = [];
+    processor.onaudioprocess = function (e) {
+      var ch = e.inputBuffer.getChannelData(0);
+      chunks.push(new Float32Array(ch));
+    };
+    src.connect(processor);
+    processor.connect(ctx.destination);
+    _rec = {
+      mode: "legacy",
+      stream: stream,
+      ctx: ctx,
+      processor: processor,
+      chunks: chunks,
+      sampleRate: ctx.sampleRate,
+      timer: null,
+      button: btn,
+      target: target,
+      append: append,
+      lang: lang
+    };
+    setRecState(btn, "recording");
+    _rec.timer = setTimeout(function () { stopRecordingTranscribe(null, null); }, STT_MAX_MS);
+  }
+
+  function tryBrowserDictation(btn, target, append, lang) {
+    var Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!Rec) return false;
+    var rec = new Rec();
+    rec.lang = lang === "en" ? "en-TZ" : "sw-TZ";
+    rec.interimResults = false;
+    rec.maxAlternatives = 1;
+    setRecState(btn, "processing");
+    rec.onresult = function (e) {
+      var text = (e.results && e.results[0] && e.results[0][0]) ? e.results[0][0].transcript : "";
+      applyTranscript(target, text, append);
+      setRecState(btn, "idle");
+      if (text) toast("Transcribed ✓");
+    };
+    rec.onerror = function () { setRecState(btn, "idle"); toast("Voice input failed."); };
+    rec.onend = function () { setRecState(btn, "idle"); };
+    try { rec.start(); } catch (e) { setRecState(btn, "idle"); return false; }
+    return true;
   }
 
   function startRecording(btn, target) {
@@ -3437,23 +4116,48 @@ function guardPortal(expectedRole) {
       return;
     }
     if (_rec) { toast("A recording is already in progress. Tap Stop to finish it first."); return; }
-    if (!isAuthed()) { toast("Please log in to use voice typing."); return; }
+
+    var append = btn && btn.getAttribute("data-append") === "true";
+    var lang = resolveSttLang(btn, target);
+    if (requiresHumanSpeech(btn) && humanSpeechBlocked()) {
+      toast("Wait a moment after Listen finishes, then speak your own answer.");
+      return;
+    }
+    if (isTtsActive()) {
+      toast("Wait until Listen finishes before recording your voice.");
+      return;
+    }
+    if (!isAuthed()) {
+      if (tryBrowserDictation(btn, target, append, lang)) return;
+      toast("Please log in to use voice typing.");
+      return;
+    }
 
     navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
-      var Ctx = window.AudioContext || window.webkitAudioContext;
-      var ctx = new Ctx();
-      var src = ctx.createMediaStreamSource(stream);
-      var processor = ctx.createScriptProcessor(4096, 1, 1);
-      var chunks = [];
-      processor.onaudioprocess = function (e) {
-        var ch = e.inputBuffer.getChannelData(0);
-        chunks.push(new Float32Array(ch));
-      };
-      src.connect(processor);
-      processor.connect(ctx.destination);
-      _rec = { stream: stream, ctx: ctx, processor: processor, chunks: chunks, sampleRate: ctx.sampleRate, timer: null, button: btn, target: target };
-      setRecState(btn, "recording");
-      _rec.timer = setTimeout(function () { stopRecordingTranscribe(null, null); }, 60000);
+      var mime = pickRecorderMime();
+      if (window.MediaRecorder && mime) {
+        var parts = [];
+        var recorder = new MediaRecorder(stream, { mimeType: mime });
+        recorder.ondataavailable = function (e) {
+          if (e.data && e.data.size) parts.push(e.data);
+        };
+        recorder.start(250);
+        _rec = {
+          mode: "mediarecorder",
+          stream: stream,
+          recorder: recorder,
+          parts: parts,
+          timer: null,
+          button: btn,
+          target: target,
+          append: append,
+          lang: lang
+        };
+        setRecState(btn, "recording");
+        _rec.timer = setTimeout(function () { stopRecordingTranscribe(null, null); }, STT_MAX_MS);
+        return;
+      }
+      startLegacyRecording(stream, btn, target, append, lang);
     }).catch(function (err) {
       toast(err && err.name === "NotAllowedError" ? "Microphone access was denied." : "Could not start microphone.");
     });
@@ -3490,7 +4194,13 @@ function guardPortal(expectedRole) {
     b.textContent = "🔊 Listen";
     b.addEventListener("click", function () {
       var txt = opts.textProvider ? opts.textProvider() : (typeof el === "string" ? el : el.innerText);
-      casuyaSpeakText(txt || "", { lang: opts.lang || "auto", onStart: function () { b.classList.add("speaking"); }, onEnd: function () { b.classList.remove("speaking"); } });
+      casuyaSpeakText(txt || "", {
+        lang: opts.lang || "auto",
+        onLoading: function () { b.classList.add("loading"); },
+        onStart: function () { b.classList.remove("loading"); b.classList.add("speaking"); },
+        onEnd: function () { b.classList.remove("loading"); b.classList.remove("speaking"); },
+        onError: function () { b.classList.remove("loading"); b.classList.remove("speaking"); }
+      });
     });
     if (opts.position === "after") {
       if (el.nextSibling) el.parentNode.insertBefore(b, el.nextSibling);
@@ -3522,7 +4232,7 @@ function guardPortal(expectedRole) {
   (function injectCss() {
     try {
       var style = document.createElement("style");
-      style.textContent = ".casuya-listen,.casuya-record{display:inline-flex;align-items:center;justify-content:center;gap:0.25rem;border:1px solid var(--color-border,#d1d5db);background:rgba(255,255,255,0.6);color:var(--color-text,#111827);border-radius:9999px;padding:0.3rem 0.65rem;cursor:pointer;font-size:0.85rem;line-height:1;white-space:nowrap;transition:transform .12s ease,box-shadow .12s ease}.casuya-listen:hover,.casuya-record:hover{transform:scale(1.06);box-shadow:0 1px 4px rgba(0,0,0,0.15)}.casuya-listen.speaking{background:var(--color-warning,#f59e0b);color:#fff}.casuya-record.recording{background:#dc2626!important;color:#fff!important;animation:casuyaRecPulse 1.1s ease-in-out infinite;border-color:#dc2626}.casuya-record.processing{background:var(--color-success,#10b981)!important;color:#fff!important;cursor:wait}@keyframes casuyaRecPulse{0%,100%{opacity:1}50%{opacity:.45}}";
+      style.textContent = ".casuya-listen,.casuya-record{display:inline-flex;align-items:center;justify-content:center;gap:0.25rem;border:1px solid var(--color-border,#d1d5db);background:rgba(255,255,255,0.6);color:var(--color-text,#111827);border-radius:9999px;padding:0.3rem 0.65rem;cursor:pointer;font-size:0.85rem;line-height:1;white-space:nowrap;transition:transform .12s ease,box-shadow .12s ease}.casuya-listen:hover,.casuya-record:hover{transform:scale(1.06);box-shadow:0 1px 4px rgba(0,0,0,0.15)}.casuya-listen.loading{opacity:.75;cursor:wait}.casuya-listen.speaking{background:var(--color-warning,#f59e0b);color:#fff}.casuya-record.recording{background:#dc2626!important;color:#fff!important;animation:casuyaRecPulse 1.1s ease-in-out infinite;border-color:#dc2626}.casuya-record.processing{background:var(--color-success,#10b981)!important;color:#fff!important;cursor:wait}@keyframes casuyaRecPulse{0%,100%{opacity:1}50%{opacity:.45}}";
       document.head.appendChild(style);
     } catch (e) {}
   })();
@@ -3547,15 +4257,24 @@ function guardPortal(expectedRole) {
       btn = once(btn);
       var speak = btn.getAttribute("data-speak");
       if (speak) {
-        casuyaSpeakText(speak, { lang: btn.getAttribute("data-lang") || "auto", onStart: function () { btn.classList.add("speaking"); }, onEnd: function () { btn.classList.remove("speaking"); } });
+        casuyaSpeakText(speak, {
+          lang: btn.getAttribute("data-lang") || "auto",
+          onLoading: function () { btn.classList.add("loading"); },
+          onStart: function () { btn.classList.remove("loading"); btn.classList.add("speaking"); },
+          onEnd: function () { btn.classList.remove("loading"); btn.classList.remove("speaking"); },
+          onError: function () { btn.classList.remove("loading"); btn.classList.remove("speaking"); }
+        });
       }
     }
   });
+
+  window.addEventListener("online", drainPendingStt);
 
   /* ── Public API ──────────────────────────────────────────────────────── */
   window.casuyaSpeakText = casuyaSpeakText;
   window.casuyaStopAll = casuyaStopAll;
   window.casuyaRecordAnswer = casuyaRecordAnswer;
+  window.casuyaPrefetchTts = casuyaPrefetchTts;
   window.casuyaDetectLang = detectLang;
   window.casuyaAttachListen = attachListen;
   window.casuyaIframeText = iframeText;
@@ -3564,7 +4283,9 @@ function guardPortal(expectedRole) {
     speakText: casuyaSpeakText,
     stop: casuyaStopAll,
     recordAnswer: casuyaRecordAnswer,
+    prefetchTts: casuyaPrefetchTts,
     detectLang: detectLang,
+    findVoice: findVoice,
     attachListen: attachListen,
     iframeText: iframeText,
     isAuthed: isAuthed,
@@ -3708,16 +4429,18 @@ function guardPortal(expectedRole) {
     });
   }
 
-  // Voice selection — prefer East African English
-  function findVoice() {
+  function findVoice(lang) {
+    if (window.__casuyaSpeech && typeof window.__casuyaSpeech.findVoice === 'function') {
+      return window.__casuyaSpeech.findVoice(lang);
+    }
+    if (!window.speechSynthesis) return null;
     var voices = window.speechSynthesis.getVoices();
-    var preferred = ['en-TZ', 'en-KE', 'en-UG', 'en-GH', 'en-ZA', 'en-GB', 'en-US'];
+    var preferred = lang === 'sw'
+      ? ['sw-TZ', 'sw-KE', 'sw-UG', 'sw', 'en-TZ', 'en-KE']
+      : ['en-TZ', 'en-KE', 'en-UG', 'en-GH', 'en-ZA', 'en-GB', 'en-US'];
     for (var i = 0; i < preferred.length; i++) {
       var match = voices.filter(function (v) { return v.lang === preferred[i]; });
       if (match.length) return match[0];
-    }
-    for (var j = 0; j < voices.length; j++) {
-      if (voices[j].lang.indexOf('en') === 0) return voices[j];
     }
     return null;
   }
@@ -3740,10 +4463,13 @@ function guardPortal(expectedRole) {
     stopSpeech();
     // Prefer the Casuya Sherpa-ONNX voice through the platform proxy when the
     // user is logged in; the browser voice is the fallback on public pages.
+    var lang = typeof casuyaDetectLang === 'function' ? casuyaDetectLang(text, 'auto') : 'en';
     if (typeof casuyaSpeakText === 'function' && casuyaIsAuthed()) {
       var speechStatus = document.getElementById('speech-status');
       state.controller = casuyaSpeakText(text, {
+        lang: lang,
         rate: state.speechRate || 0.9,
+        onLoading: function () { if (speechStatus) speechStatus.textContent = 'Loading audio...'; },
         onStart: function () { if (speechStatus) speechStatus.textContent = 'Speaking...'; },
         onEnd: function () { if (speechStatus) speechStatus.textContent = 'Done'; state.controller = null; },
         onError: function () { if (speechStatus) speechStatus.textContent = 'Error'; state.controller = null; }
@@ -3752,8 +4478,8 @@ function guardPortal(expectedRole) {
     }
     window.speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
-    var voice = findVoice();
-    if (voice) { u.voice = voice; u.lang = voice.lang; } else { u.lang = 'en-TZ'; }
+    var voice = findVoice(lang);
+    if (voice) { u.voice = voice; u.lang = voice.lang; } else { u.lang = lang === 'sw' ? 'sw-TZ' : 'en-TZ'; }
     u.rate = state.speechRate || 0.9;
     u.pitch = 1.0;
     u.volume = 1.0;
@@ -4639,15 +5365,16 @@ function dropRecentLesson(d, lessonId) {
 ;
 // modules/student/lessons/builders.js — quiz & games section builders for the student lesson view.
 
-function renderStudentQuiz(quizData, lessonId) {
+function renderStudentQuiz(quizData, lessonId, lessonLang) {
   if (!quizData || !quizData.questions || quizData.questions.length === 0) return "";
+  const lang = lessonLang || "sw";
   return `
-    <div class="card" style="margin-top:0.75rem;padding:1rem">
+    <div class="card question-block" data-lesson-lang="${escapeHtml(lang)}" style="margin-top:0.75rem;padding:1rem">
       <h3 style="margin:0 0 0.75rem">${escapeHtml(quizData.title || "Quiz")}</h3>
       <form id="quiz-form">
         ${quizData.questions.map((q, qi) => `
-          <div style="margin-bottom:1rem">
-            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)} <button type="button" class="casuya-listen" data-lang="auto" data-speak="${escapeHtml(String(q.prompt || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question" style="vertical-align:middle">🔊 Listen</button></p>
+          <div class="quiz-item" data-question style="margin-bottom:1rem">
+            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)} <button type="button" class="casuya-listen" data-lang="${escapeHtml(lang)}" data-speak="${escapeHtml(String(q.prompt || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question" style="vertical-align:middle">🔊 Listen</button></p>
             ${q.options.map(o => `
               <label style="display:block;padding:0.3rem 0.5rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius);margin-bottom:0.25rem">
                 <input type="radio" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.id)}" required> ${escapeHtml(o.text)}
@@ -4907,12 +5634,17 @@ function registerLessonsView(d) {
 
       recordRecentLesson(d, lessonId, lesson);
 
+      const lessonLang = typeof casuyaDetectLang === "function"
+        ? casuyaDetectLang(String(lesson.title || "") + " " + String(quizData?.questions?.[0]?.prompt || ""))
+        : "sw";
+
       d.showView(`
+        <div data-lesson-lang="${escapeHtml(lessonLang)}">
         <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap">
           <button class="btn" id="back-btn">← Back</button>
           <h2 style="flex:1">${escapeHtml(lesson.title)}</h2>
           <button id="bookmark-btn" class="btn-icon" style="font-size:1.5rem" title="Bookmark">${isBookmarked ? "★" : "☆"}</button>
-          <button id="lesson-listen-btn" type="button" class="casuya-listen" data-lang="auto" data-bound="student-lesson" title="Listen to this lesson" aria-label="Listen to this lesson">🔊 Listen</button>
+          <button id="lesson-listen-btn" type="button" class="casuya-listen" data-lang="${escapeHtml(lessonLang)}" data-bound="student-lesson" title="Listen to this lesson" aria-label="Listen to this lesson">🔊 Listen</button>
           <button id="complete-btn" class="btn btn-primary" style="font-size:0.85rem">Mark Complete</button>
         </div>
         <div style="width:100%">
@@ -4925,17 +5657,18 @@ function registerLessonsView(d) {
               <textarea id="lesson-note" class="input" rows="4" placeholder="Write your notes here...">${escapeHtml(noteData?.content || "")}</textarea>
               <div style="display:flex;gap:0.5rem;align-items:center;margin-top:0.5rem">
                 <button class="btn btn-primary" id="save-note">Save Note</button>
-                <button type="button" class="casuya-record" data-target="#lesson-note" title="Speak instead of typing" aria-label="Speak instead of typing">🎤 Voice</button>
+                <button type="button" class="casuya-record" data-target="#lesson-note" data-append="true" title="Speak instead of typing" aria-label="Speak instead of typing">🎤 Voice</button>
               </div>
             </div>
           </details>
-          ${renderStudentQuiz(quizData, lessonId)}
+          ${renderStudentQuiz(quizData, lessonId, lessonLang)}
           ${renderStudentGames(gamesData)}
           <div class="card" style="margin-top:0.75rem;padding:1rem">
             <h3 style="margin:0 0 0.5rem">✏️ Practice Blackboard</h3>
             <p style="font-size:0.85rem;color:var(--color-text-muted);margin:0 0 0.5rem">Work out the steps below. Your progress is saved automatically.</p>
             <div data-blackboard data-lesson-id="${escapeHtml(lessonId)}" style="width:100%;height:420px;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden"></div>
           </div>
+        </div>
         </div>
       `);
 
@@ -4947,11 +5680,21 @@ function registerLessonsView(d) {
         iframeCtx = await mountStudentLessonIframe(lessonId, lessonContent);
       }
 
+      if (typeof casuyaPrefetchTts === "function") {
+        const prefetchBody = iframe ? (typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "") : "";
+        casuyaPrefetchTts((lesson.title + ". " + prefetchBody).trim(), { lang: lessonLang });
+        if (quizData && Array.isArray(quizData.questions)) {
+          quizData.questions.forEach(function (q) {
+            if (q && q.prompt) casuyaPrefetchTts(String(q.prompt), { lang: lessonLang });
+          });
+        }
+      }
+
       const lessonListenBtn = document.getElementById("lesson-listen-btn");
       if (lessonListenBtn && typeof casuyaSpeakText === "function") {
         lessonListenBtn.addEventListener("click", function () {
           const body = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
-          casuyaSpeakText((lesson.title + ". " + body).trim(), { lang: "auto" });
+          casuyaSpeakText((lesson.title + ". " + body).trim(), { lang: lessonLang });
         });
       }
 
