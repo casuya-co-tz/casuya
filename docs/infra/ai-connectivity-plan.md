@@ -107,21 +107,21 @@ ai_bridge/client.py  ──POST + X-API-Key──►  casuya-ai  /api/*
 - [x] Tutoring with `subject_slug` + `form_level` uses NECTA template when syllabus available
 - [x] Platform `/ai/status` reflects AI reachability
 
-### Phase P2 — Resilience (backlog)
+### Phase P2 — Resilience ✅
 
 - Circuit breaker on platform bridge (30s open after 3 failures)
 - `X-Request-Id` correlation
-- Platform pytest with mock AI HTTP server
+- Platform pytest with mock AI HTTP server (`test_ai_bridge.py`)
 
-### Phase P3 — Math cleanup (backlog)
+### Phase P3 — Math cleanup ✅
 
-- Remove `/api/math/*` stubs from AI server or implement real engine
+- Removed `/api/math/*` stubs from AI server
 - Blackboard uses platform `/api/math/*` only
 
-### Phase P4 — Observability (backlog)
+### Phase P4 — Observability ✅
 
-- Structured logs: `{ endpoint, provider, latency_ms, kb_hits, source }`
-- Frontend badge from `source` field
+- Structured logs: `casuya_ai_call { endpoint, latency_ms, ok, request_id }`
+- Frontend badge from `source` field (`ai-source-badge.js`)
 
 ---
 
