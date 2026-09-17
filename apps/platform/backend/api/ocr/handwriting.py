@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 from backend.config.settings import get_settings
 from backend.middleware.auth import get_current_user
-from backend.services.ocr_service import recognize_mathpix
+from backend.services.ocr_service import recognize_mathpix, recognize_self_hosted
 
 router = APIRouter(tags=["ocr"])
 
@@ -18,11 +18,11 @@ class OcrHandwritingRequest(BaseModel):
 
 def _ocr_configured() -> bool:
     settings = get_settings()
-    return (
-        settings.ocr_provider == "mathpix"
-        and bool(settings.mathpix_app_id)
-        and bool(settings.mathpix_app_key)
-    )
+    if settings.ocr_provider == "self-hosted":
+        return bool(settings.casuya_ocr_url)
+    if settings.ocr_provider == "mathpix":
+        return bool(settings.mathpix_app_id) and bool(settings.mathpix_app_key)
+    return False
 
 
 @router.get("/status")
@@ -46,7 +46,10 @@ def recognize_handwriting(
 
     settings = get_settings()
     try:
-        result = recognize_mathpix(payload.image, settings.mathpix_app_id, settings.mathpix_app_key)
+        if settings.ocr_provider == "self-hosted":
+            result = recognize_self_hosted(payload.image, settings.casuya_ocr_url, settings.casuya_ocr_api_key)
+        else:
+            result = recognize_mathpix(payload.image, settings.mathpix_app_id, settings.mathpix_app_key)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except RuntimeError as exc:

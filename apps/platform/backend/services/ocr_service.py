@@ -26,14 +26,32 @@ def decode_image_payload(image_b64: str) -> bytes:
     return raw
 
 
+def recognize_self_hosted(image_b64: str, service_url: str, api_key: str | None) -> dict:
+    """Call the internal Pix2Text OCR microservice and return LaTeX + symbols."""
+    decode_image_payload(image_b64)
+    cleaned = image_b64.strip()
+    image = cleaned.split(",", 1)[-1] if cleaned.startswith("data:") else cleaned
+
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["X-API-Key"] = api_key
+
+    with httpx.Client(timeout=45.0) as client:
+        resp = client.post(
+            f"{service_url.rstrip('/')}/v1/ocr/recognize",
+            headers=headers,
+            json={"image": image},
+        )
+    if resp.status_code >= 400:
+        raise RuntimeError(f"OCR service error: {resp.status_code}")
+    return resp.json()
+
+
 def recognize_mathpix(image_b64: str, app_id: str, app_key: str) -> dict:
     """Call Mathpix /v3/text and normalize the response for the platform API."""
     decode_image_payload(image_b64)
     cleaned = image_b64.strip()
-    if cleaned.startswith("data:"):
-        src = cleaned
-    else:
-        src = f"data:image/png;base64,{cleaned}"
+    src = cleaned if cleaned.startswith("data:") else f"data:image/png;base64,{cleaned}"
 
     with httpx.Client(timeout=30.0) as client:
         resp = client.post(

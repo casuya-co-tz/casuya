@@ -51,3 +51,14 @@ services:
       CASUYA_AI_PORT: "3000"
       CASUYA_AI_API_KEY: ${CASUYA_AI_API_KEY:-dev-ai-key}
     restart: unless-stopped
+
+  ocr-math:
+    profiles: [full]
+    build:
+      context: ../apps/ocr-math
+      dockerfile: Dockerfile
+    ports:
+      - "8030:8000"
+    environment:
+      API_KEY: ${CASUYA_OCR_API_KEY:-dev-ocr-key}
+    restart: unless-stopped

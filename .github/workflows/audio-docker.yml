@@ -1,4 +1,4 @@
-name: Audio Docker
+name: Microservice Docker
 
 on:
   push:
@@ -6,11 +6,13 @@ on:
     paths:
       - "apps/audio-tts/**"
       - "apps/audio-stt/**"
+      - "apps/ocr-math/**"
       - ".github/workflows/audio-docker.yml"
   pull_request:
     paths:
       - "apps/audio-tts/**"
       - "apps/audio-stt/**"
+      - "apps/ocr-math/**"
       - ".github/workflows/audio-docker.yml"
 
 jobs:
@@ -24,6 +26,8 @@ jobs:
             build_args: ""
           - service: audio-stt
             build_args: "--build-arg WHISPER_MODEL=base"
+          - service: ocr-math
+            build_args: ""
     steps:
       - uses: actions/checkout@v4
 
@@ -32,12 +36,12 @@ jobs:
 
       - name: Boot and probe /health + /readyz
         run: |
-          docker run -d --name casuya-audio -p 18000:8000 casuya-${{ matrix.service }}
-          for i in $(seq 1 60); do
+          docker run -d --name casuya-${{ matrix.service }} -p 18000:8000 casuya-${{ matrix.service }}
+          for i in $(seq 1 120); do
             if curl -sf http://127.0.0.1:18000/health >/dev/null; then break; fi
             sleep 2
           done
           curl -sf http://127.0.0.1:18000/health
           curl -sf http://127.0.0.1:18000/readyz
-          docker logs casuya-audio | tail -n 40
-          docker stop casuya-audio
+          docker logs casuya-${{ matrix.service }} | tail -n 40
+          docker stop casuya-${{ matrix.service }}

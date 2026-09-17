@@ -115,10 +115,16 @@ class Settings(BaseSettings):
     casuya_audio_stt_url: str = "http://localhost:8020"
     casuya_audio_stt_api_key: str | None = None
 
-    # Handwriting OCR (Mathpix via platform proxy — B-04)
-    ocr_provider: str = "none"  # none | mathpix
+    # Handwriting OCR (platform proxy — B-04; self-hosted Pix2Text elsewhere)
+    ocr_provider: str = "none"  # none | mathpix | self-hosted
     mathpix_app_id: str | None = None
     mathpix_app_key: str | None = None
+
+    # Casuya Math OCR microservice (Pix2Text; Railway-hosted, reached over
+    # railway.internal). The engine is baked into the image at build time; the
+    # platform only forwards here with the internal key (mirrors audio services).
+    casuya_ocr_url: str = "http://localhost:8030"
+    casuya_ocr_api_key: str | None = None
 
     # Casuya Orchestrator (standalone automation/maintenance tool). Optional; when set,
     # the platform polls this URL for a health signal. Leave empty if not deployed.
@@ -159,6 +165,6 @@ def get_settings() -> Settings:
     if not s.jwt_secret or len(s.jwt_secret) < 32:
         raise ValueError(
             "JWT_SECRET must be set and at least 32 characters. "
-            "Generate one with: python -c \"import secrets; print(secrets.token_urlsafe(48))\""
+            'Generate one with: python -c "import secrets; print(secrets.token_urlsafe(48))"'
         )
     return s

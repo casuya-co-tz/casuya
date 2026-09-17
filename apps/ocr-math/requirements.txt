@@ -1,0 +1,12 @@
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+gunicorn>=26.1.0
+pydantic==2.13.4
+pydantic-settings==2.15.0
+numpy>=1.26.4
+Pillow>=10.0
+# torch (CPU) is installed from the Dockerfile during build — NOT from here —
+# so the CPU-only index URL is honored and the image stays lean. pix2text is
+# pinned for a reproducible engine; it expects torch to already be present.
+pix2text>=0.12
+# ffmpeg dependencies of pix2text image backends are handled in the Dockerfile.
