@@ -3,7 +3,23 @@ import json
 from pathlib import Path
 from typing import Dict, Any, Optional, Union
 from .exceptions import CasuyaError
-from .constants import PKG_EXTENSION, MANIFEST_FILENAME, METADATA_FILENAME, SIGNATURE_FILENAME
+from .constants import (
+    MAX_LESSON_SIZE_MB,
+    PKG_EXTENSION,
+    MANIFEST_FILENAME,
+    METADATA_FILENAME,
+    SIGNATURE_FILENAME,
+)
+
+MAX_UNPACKED_BYTES = MAX_LESSON_SIZE_MB * 1024 * 1024
+
+
+def _zip_member_is_symlink(member: zipfile.ZipInfo) -> bool:
+    is_symlink = getattr(member, "is_symlink", None)
+    if callable(is_symlink):
+        return bool(is_symlink())
+    # Pre-3.12 fallback: upper 4 bits of external_attr encode Unix file type.
+    return (member.external_attr >> 28) & 0xF == 0xA
 
 
 class PackageLoader:
@@ -37,7 +53,7 @@ class PackageLoader:
                 # Reject absolute paths and any path traversal components outright.
                 if member_path.is_absolute() or ".." in member_path.parts:
                     raise CasuyaError(f"ZipSlip detected: {member.filename}")
-                if member.is_symlink():
+                if _zip_member_is_symlink(member):
                     raise CasuyaError(f"Symlink member not allowed: {member.filename}")
                 dest = (base_dir / member_path).resolve()
                 try:

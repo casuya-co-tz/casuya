@@ -299,8 +299,8 @@ Before marking this plan **Implemented**:
 - [x] Phase 2 complete — AI authenticated, readyz, honest errors
 - [x] Phase 3 complete — full-stack compose + docs updated
 - [x] Phase 4 complete — audio + core CI, audio rate limits, DB fail-fast
-- [ ] All new CI steps green on `main`
-- [ ] Manual smoke checklist passed on production
+- [ ] All new CI steps green on `main` (fix in progress: libs/core loader, e2e, runtime deploy)
+- [ ] Manual smoke checklist passed on production — run `scripts/smoke-production.ps1`
 
 ---
 
