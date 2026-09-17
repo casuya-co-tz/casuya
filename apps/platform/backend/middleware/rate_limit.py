@@ -13,7 +13,7 @@ ENDPOINT_LIMITS = {
     "/auth/refresh": 10,
     "/payments/checkout": 10,
     "/payments/webhook": 30,
-    "/v1/audio/tts": 20,
+    "/v1/audio/tts": 60,
     "/v1/audio/stt": 15,
 }
 

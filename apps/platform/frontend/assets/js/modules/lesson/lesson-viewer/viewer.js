@@ -115,7 +115,16 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       noteData = isStudent ? (pkgData.note || { content: "" }) : { content: "" };
     }
 
-    container.innerHTML = renderLessonSections({ lessonTitle, canBookmark, bookmarked: state.bookmarked, isStudent, quizData, gamesData, noteData, lessonId });
+    const initialLessonLang = typeof casuyaResolveLessonLang === "function"
+      ? casuyaResolveLessonLang(lessonTitle, "", quizData?.questions?.[0]?.prompt)
+      : (typeof casuyaDetectLang === "function"
+        ? casuyaDetectLang(String(lessonTitle || "") + " " + String(quizData?.questions?.[0]?.prompt || ""))
+        : "sw");
+
+    container.innerHTML = renderLessonSections({
+      lessonTitle, canBookmark, bookmarked: state.bookmarked, isStudent, quizData, gamesData, noteData, lessonId,
+      lessonLang: initialLessonLang,
+    });
 
     const iframe = mountLessonIframe(container, html);
 
@@ -124,8 +133,17 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     if (typeof casuyaAttachListen === "function") {
       const listenSlot = container.querySelector("#lesson-listen-slot");
       if (listenSlot) {
+        const bodySample = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
+        const lessonLang = typeof casuyaResolveLessonLang === "function"
+          ? casuyaResolveLessonLang(lessonTitle, bodySample, quizData?.questions?.[0]?.prompt)
+          : initialLessonLang;
+        container.querySelectorAll(".question-block[data-lesson-lang], .quiz-item .casuya-listen[data-lang]").forEach(function (el) {
+          el.setAttribute("data-lang", lessonLang);
+          if (el.classList.contains("question-block")) el.setAttribute("data-lesson-lang", lessonLang);
+        });
         casuyaAttachListen(listenSlot, {
           title: "Listen to this lesson",
+          lang: lessonLang,
           textProvider: function () {
             const body = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
             return (lessonTitle + ". " + body).trim();

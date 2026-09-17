@@ -30,9 +30,7 @@ function registerLessonsView(d) {
 
       recordRecentLesson(d, lessonId, lesson);
 
-      const lessonLang = typeof casuyaDetectLang === "function"
-        ? casuyaDetectLang(String(lesson.title || "") + " " + String(quizData?.questions?.[0]?.prompt || ""))
-        : "sw";
+      let lessonLang = "sw";
 
       d.showView(`
         <div data-lesson-lang="${escapeHtml(lessonLang)}">
@@ -76,9 +74,23 @@ function registerLessonsView(d) {
         iframeCtx = await mountStudentLessonIframe(lessonId, lessonContent);
       }
 
+      const iframeBody = iframe && typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
+      lessonLang = typeof casuyaResolveLessonLang === "function"
+        ? casuyaResolveLessonLang(lesson.title, iframeBody, quizData?.questions?.[0]?.prompt)
+        : (typeof casuyaDetectLang === "function"
+          ? casuyaDetectLang(String(lesson.title || "") + " " + iframeBody)
+          : "sw");
+      const lessonRoot = document.querySelector("[data-lesson-lang]");
+      if (lessonRoot) lessonRoot.setAttribute("data-lesson-lang", lessonLang);
+      const lessonListenBtn = document.getElementById("lesson-listen-btn");
+      if (lessonListenBtn) lessonListenBtn.setAttribute("data-lang", lessonLang);
+      document.querySelectorAll(".question-block[data-lesson-lang], .quiz-item .casuya-listen[data-lang]").forEach(function (el) {
+        el.setAttribute("data-lang", lessonLang);
+        if (el.classList.contains("question-block")) el.setAttribute("data-lesson-lang", lessonLang);
+      });
+
       if (typeof casuyaPrefetchTts === "function") {
-        const prefetchBody = iframe ? (typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "") : "";
-        casuyaPrefetchTts((lesson.title + ". " + prefetchBody).trim(), { lang: lessonLang });
+        casuyaPrefetchTts((lesson.title + ". " + iframeBody).trim(), { lang: lessonLang });
         if (quizData && Array.isArray(quizData.questions)) {
           quizData.questions.forEach(function (q) {
             if (q && q.prompt) casuyaPrefetchTts(String(q.prompt), { lang: lessonLang });
@@ -86,10 +98,9 @@ function registerLessonsView(d) {
         }
       }
 
-      const lessonListenBtn = document.getElementById("lesson-listen-btn");
       if (lessonListenBtn && typeof casuyaSpeakText === "function") {
         lessonListenBtn.addEventListener("click", function () {
-          const body = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
+          const body = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : iframeBody;
           casuyaSpeakText((lesson.title + ". " + body).trim(), { lang: lessonLang });
         });
       }

@@ -1373,15 +1373,16 @@ const LESSON_BRIDGE_SCRIPT = `
 // Quiz section rendered below the lesson iframe for students. Returns "" when there
 // is no quiz to show. `lessonId` is embedded so each question's "Show your work"
 // blackboard gets a unique board id.
-function renderLessonQuiz(quizData, lessonId) {
+function renderLessonQuiz(quizData, lessonId, lessonLang) {
   if (!quizData || !quizData.questions || quizData.questions.length === 0) return "";
+  const lang = lessonLang || "sw";
   return `
-    <div class="card" style="margin-top:1rem;padding:1rem">
+    <div class="card question-block" data-lesson-lang="${escapeHtml(lang)}" style="margin-top:1rem;padding:1rem">
       <h3 style="margin:0 0 0.75rem">${escapeHtml(quizData.title || "Quiz")}</h3>
       <form id="quiz-form">
         ${quizData.questions.map((q, qi) => `
-          <div style="margin-bottom:1rem">
-            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)} <button type="button" class="casuya-listen" data-lang="auto" data-speak="${escapeHtml(String(q.prompt || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question" style="vertical-align:middle">🔊 Listen</button></p>
+          <div class="quiz-item" data-question style="margin-bottom:1rem">
+            <p style="font-weight:600;margin:0 0 0.5rem">${qi + 1}. ${escapeHtml(q.prompt)} <button type="button" class="casuya-listen" data-lang="${escapeHtml(lang)}" data-speak="${escapeHtml(String(q.prompt || "").slice(0, 600))}" title="Listen to question" aria-label="Listen to question" style="vertical-align:middle">🔊 Listen</button></p>
             ${q.options.map(o => `
               <label style="display:block;padding:0.3rem 0.5rem;cursor:pointer;border:1px solid var(--color-border);border-radius:var(--radius);margin-bottom:0.25rem">
                 <input type="radio" name="q_${escapeHtml(q.id)}" value="${escapeHtml(o.id)}" required> ${escapeHtml(o.text)}
@@ -1482,7 +1483,7 @@ function mountLessonIframe(container, html) {
 ;
 // modules/lesson/lesson-viewer/sections.js — lesson viewer page template.
 
-function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent, quizData, gamesData, noteData, lessonId }) {
+function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent, quizData, gamesData, noteData, lessonId, lessonLang }) {
   return `
     <div class="content" style="max-width:100%;padding:0">
       <div style="padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;background:var(--color-surface);border-bottom:1px solid var(--color-border);flex-wrap:wrap">
@@ -1512,7 +1513,7 @@ function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent,
               </div>
             </div>
           </details>
-          ${renderLessonQuiz(quizData, lessonId)}
+          ${renderLessonQuiz(quizData, lessonId, lessonLang)}
           ${renderLessonGames(gamesData)}
           <div class="card" style="margin-top:0.75rem;padding:1rem">
             <h3 style="margin:0 0 0.5rem">✏️ Practice Blackboard</h3>
@@ -1772,7 +1773,16 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       noteData = isStudent ? (pkgData.note || { content: "" }) : { content: "" };
     }
 
-    container.innerHTML = renderLessonSections({ lessonTitle, canBookmark, bookmarked: state.bookmarked, isStudent, quizData, gamesData, noteData, lessonId });
+    const initialLessonLang = typeof casuyaResolveLessonLang === "function"
+      ? casuyaResolveLessonLang(lessonTitle, "", quizData?.questions?.[0]?.prompt)
+      : (typeof casuyaDetectLang === "function"
+        ? casuyaDetectLang(String(lessonTitle || "") + " " + String(quizData?.questions?.[0]?.prompt || ""))
+        : "sw");
+
+    container.innerHTML = renderLessonSections({
+      lessonTitle, canBookmark, bookmarked: state.bookmarked, isStudent, quizData, gamesData, noteData, lessonId,
+      lessonLang: initialLessonLang,
+    });
 
     const iframe = mountLessonIframe(container, html);
 
@@ -1781,8 +1791,17 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     if (typeof casuyaAttachListen === "function") {
       const listenSlot = container.querySelector("#lesson-listen-slot");
       if (listenSlot) {
+        const bodySample = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
+        const lessonLang = typeof casuyaResolveLessonLang === "function"
+          ? casuyaResolveLessonLang(lessonTitle, bodySample, quizData?.questions?.[0]?.prompt)
+          : initialLessonLang;
+        container.querySelectorAll(".question-block[data-lesson-lang], .quiz-item .casuya-listen[data-lang]").forEach(function (el) {
+          el.setAttribute("data-lang", lessonLang);
+          if (el.classList.contains("question-block")) el.setAttribute("data-lesson-lang", lessonLang);
+        });
         casuyaAttachListen(listenSlot, {
           title: "Listen to this lesson",
+          lang: lessonLang,
           textProvider: function () {
             const body = typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
             return (lessonTitle + ". " + body).trim();
@@ -3407,7 +3426,20 @@ function guardPortal(expectedRole) {
       var saved = JSON.parse(localStorage.getItem("casuya_a11y"));
       if (saved && (saved.lang === "sw" || saved.lang === "en")) return saved.lang;
     } catch (e) {}
+    try {
+      var uiLang = localStorage.getItem("casuya_lang");
+      if (uiLang === "sw" || uiLang === "en") return uiLang;
+    } catch (e) {}
     return null;
+  }
+
+  function tokenizeWords(text) {
+    var s = String(text || "").toLowerCase();
+    try {
+      return s.replace(/[^\p{L}\s]/gu, " ").split(/\s+/).filter(function (w) { return w.length > 0; });
+    } catch (e) {
+      return s.replace(/[^a-z\u00C0-\u024F\s]/gi, " ").split(/\s+/).filter(function (w) { return w.length > 0; });
+    }
   }
 
   function detectLang(text, explicitLang) {
@@ -3416,8 +3448,7 @@ function guardPortal(expectedRole) {
     }
     var pref = preferredSpeechLang();
     if (pref) return pref;
-    var s = String(text || "").toLowerCase();
-    var toks = s.replace(/[^\p{L}\s]/gu, " ").split(/\s+/).filter(function (w) { return w.length > 0; });
+    var toks = tokenizeWords(text);
     var hits = 0;
     var enHits = 0;
     for (var j = 0; j < toks.length; j++) {
@@ -3534,7 +3565,9 @@ function guardPortal(expectedRole) {
       if (idx > maxLen * 0.5) {
         splitAt = remaining[idx] === "\n" ? idx + 1 : idx + 2;
       }
+      if (splitAt > maxLen) splitAt = maxLen;
       var piece = remaining.slice(0, splitAt).trim();
+      if (piece.length > maxLen) piece = piece.slice(0, maxLen);
       if (piece) chunks.push(piece);
       remaining = remaining.slice(splitAt).trim();
     }
@@ -3641,7 +3674,10 @@ function guardPortal(expectedRole) {
     }
   }
 
-  function fetchTtsBlob(chunk, lang, speed, mySeq) {
+  function fetchTtsBlob(chunk, lang, speed, mySeq, attempt) {
+    attempt = attempt || 0;
+    chunk = String(chunk || "").trim();
+    if (chunk.length > TTS_MAX_CHARS) chunk = chunk.slice(0, TTS_MAX_CHARS);
     var cacheKey = lang + "|" + speed + "|" + chunk;
     if (_ttsCache.has(cacheKey)) {
       return Promise.resolve(_ttsCache.get(cacheKey));
@@ -3665,9 +3701,21 @@ function guardPortal(expectedRole) {
         headers: { "Content-Type": "application/json", "Authorization": "Bearer " + authToken() },
         body: JSON.stringify({ text: chunk, lang: lang, speed: speed })
       }).then(function (resp) {
+        if (resp.status === 429 && attempt < 2) {
+          var waitMs = 1500 * (attempt + 1);
+          return new Promise(function (resolve) {
+            setTimeout(resolve, waitMs);
+          }).then(function () {
+            if (mySeq !== undefined && mySeq !== _speakSeq) throw new Error("cancelled");
+            return fetchTtsBlob(chunk, lang, speed, mySeq, attempt + 1);
+          });
+        }
         if (!resp.ok) throw new Error("TTS unavailable (" + resp.status + ")");
         return resp.blob();
       }).then(function (blob) {
+        if (blob && typeof blob.size === "number" && blob.size < 64) {
+          throw new Error("TTS unavailable (empty audio)");
+        }
         if (mySeq !== undefined && mySeq !== _speakSeq) throw new Error("cancelled");
         rememberTtsBlob(lang, speed, chunk, blob);
         return blob;
@@ -3728,7 +3776,7 @@ function guardPortal(expectedRole) {
       }).catch(function (err) {
         if (mySeq !== _speakSeq || err.message === "cancelled") return;
         if (options.onError) options.onError(err);
-        _current = browserSpeak(fullText, options);
+        toast("Could not load audio for this section. Try Listen again.");
       });
     }
 
@@ -4275,7 +4323,14 @@ function guardPortal(expectedRole) {
   window.casuyaStopAll = casuyaStopAll;
   window.casuyaRecordAnswer = casuyaRecordAnswer;
   window.casuyaPrefetchTts = casuyaPrefetchTts;
+  function resolveLessonLang(title, bodyText, quizPrompt) {
+    var sample = String(title || "") + " " + String(bodyText || "").slice(0, 4000);
+    if (!sample.trim() && quizPrompt) sample = String(quizPrompt || "");
+    return detectLang(sample.trim(), "auto");
+  }
+
   window.casuyaDetectLang = detectLang;
+  window.casuyaResolveLessonLang = resolveLessonLang;
   window.casuyaAttachListen = attachListen;
   window.casuyaIframeText = iframeText;
   window.casuyaIsAuthed = isAuthed;
@@ -4285,6 +4340,7 @@ function guardPortal(expectedRole) {
     recordAnswer: casuyaRecordAnswer,
     prefetchTts: casuyaPrefetchTts,
     detectLang: detectLang,
+    resolveLessonLang: resolveLessonLang,
     findVoice: findVoice,
     attachListen: attachListen,
     iframeText: iframeText,
@@ -4463,7 +4519,11 @@ function guardPortal(expectedRole) {
     stopSpeech();
     // Prefer the Casuya Sherpa-ONNX voice through the platform proxy when the
     // user is logged in; the browser voice is the fallback on public pages.
-    var lang = typeof casuyaDetectLang === 'function' ? casuyaDetectLang(text, 'auto') : 'en';
+    var uiLang = null;
+    try { uiLang = localStorage.getItem('casuya_lang'); } catch (e) {}
+    var lang = typeof casuyaDetectLang === 'function'
+      ? casuyaDetectLang(text, (uiLang === 'sw' || uiLang === 'en') ? uiLang : 'auto')
+      : (uiLang === 'sw' ? 'sw' : 'en');
     if (typeof casuyaSpeakText === 'function' && casuyaIsAuthed()) {
       var speechStatus = document.getElementById('speech-status');
       state.controller = casuyaSpeakText(text, {

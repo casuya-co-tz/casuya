@@ -50,7 +50,20 @@
       var saved = JSON.parse(localStorage.getItem("casuya_a11y"));
       if (saved && (saved.lang === "sw" || saved.lang === "en")) return saved.lang;
     } catch (e) {}
+    try {
+      var uiLang = localStorage.getItem("casuya_lang");
+      if (uiLang === "sw" || uiLang === "en") return uiLang;
+    } catch (e) {}
     return null;
+  }
+
+  function tokenizeWords(text) {
+    var s = String(text || "").toLowerCase();
+    try {
+      return s.replace(/[^\p{L}\s]/gu, " ").split(/\s+/).filter(function (w) { return w.length > 0; });
+    } catch (e) {
+      return s.replace(/[^a-z\u00C0-\u024F\s]/gi, " ").split(/\s+/).filter(function (w) { return w.length > 0; });
+    }
   }
 
   function detectLang(text, explicitLang) {
@@ -59,8 +72,7 @@
     }
     var pref = preferredSpeechLang();
     if (pref) return pref;
-    var s = String(text || "").toLowerCase();
-    var toks = s.replace(/[^\p{L}\s]/gu, " ").split(/\s+/).filter(function (w) { return w.length > 0; });
+    var toks = tokenizeWords(text);
     var hits = 0;
     var enHits = 0;
     for (var j = 0; j < toks.length; j++) {
@@ -177,7 +189,9 @@
       if (idx > maxLen * 0.5) {
         splitAt = remaining[idx] === "\n" ? idx + 1 : idx + 2;
       }
+      if (splitAt > maxLen) splitAt = maxLen;
       var piece = remaining.slice(0, splitAt).trim();
+      if (piece.length > maxLen) piece = piece.slice(0, maxLen);
       if (piece) chunks.push(piece);
       remaining = remaining.slice(splitAt).trim();
     }
@@ -284,7 +298,10 @@
     }
   }
 
-  function fetchTtsBlob(chunk, lang, speed, mySeq) {
+  function fetchTtsBlob(chunk, lang, speed, mySeq, attempt) {
+    attempt = attempt || 0;
+    chunk = String(chunk || "").trim();
+    if (chunk.length > TTS_MAX_CHARS) chunk = chunk.slice(0, TTS_MAX_CHARS);
     var cacheKey = lang + "|" + speed + "|" + chunk;
     if (_ttsCache.has(cacheKey)) {
       return Promise.resolve(_ttsCache.get(cacheKey));
@@ -308,9 +325,21 @@
         headers: { "Content-Type": "application/json", "Authorization": "Bearer " + authToken() },
         body: JSON.stringify({ text: chunk, lang: lang, speed: speed })
       }).then(function (resp) {
+        if (resp.status === 429 && attempt < 2) {
+          var waitMs = 1500 * (attempt + 1);
+          return new Promise(function (resolve) {
+            setTimeout(resolve, waitMs);
+          }).then(function () {
+            if (mySeq !== undefined && mySeq !== _speakSeq) throw new Error("cancelled");
+            return fetchTtsBlob(chunk, lang, speed, mySeq, attempt + 1);
+          });
+        }
         if (!resp.ok) throw new Error("TTS unavailable (" + resp.status + ")");
         return resp.blob();
       }).then(function (blob) {
+        if (blob && typeof blob.size === "number" && blob.size < 64) {
+          throw new Error("TTS unavailable (empty audio)");
+        }
         if (mySeq !== undefined && mySeq !== _speakSeq) throw new Error("cancelled");
         rememberTtsBlob(lang, speed, chunk, blob);
         return blob;
@@ -371,7 +400,7 @@
       }).catch(function (err) {
         if (mySeq !== _speakSeq || err.message === "cancelled") return;
         if (options.onError) options.onError(err);
-        _current = browserSpeak(fullText, options);
+        toast("Could not load audio for this section. Try Listen again.");
       });
     }
 
@@ -918,7 +947,14 @@
   window.casuyaStopAll = casuyaStopAll;
   window.casuyaRecordAnswer = casuyaRecordAnswer;
   window.casuyaPrefetchTts = casuyaPrefetchTts;
+  function resolveLessonLang(title, bodyText, quizPrompt) {
+    var sample = String(title || "") + " " + String(bodyText || "").slice(0, 4000);
+    if (!sample.trim() && quizPrompt) sample = String(quizPrompt || "");
+    return detectLang(sample.trim(), "auto");
+  }
+
   window.casuyaDetectLang = detectLang;
+  window.casuyaResolveLessonLang = resolveLessonLang;
   window.casuyaAttachListen = attachListen;
   window.casuyaIframeText = iframeText;
   window.casuyaIsAuthed = isAuthed;
@@ -928,6 +964,7 @@
     recordAnswer: casuyaRecordAnswer,
     prefetchTts: casuyaPrefetchTts,
     detectLang: detectLang,
+    resolveLessonLang: resolveLessonLang,
     findVoice: findVoice,
     attachListen: attachListen,
     iframeText: iframeText,

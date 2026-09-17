@@ -168,7 +168,11 @@
     stopSpeech();
     // Prefer the Casuya Sherpa-ONNX voice through the platform proxy when the
     // user is logged in; the browser voice is the fallback on public pages.
-    var lang = typeof casuyaDetectLang === 'function' ? casuyaDetectLang(text, 'auto') : 'en';
+    var uiLang = null;
+    try { uiLang = localStorage.getItem('casuya_lang'); } catch (e) {}
+    var lang = typeof casuyaDetectLang === 'function'
+      ? casuyaDetectLang(text, (uiLang === 'sw' || uiLang === 'en') ? uiLang : 'auto')
+      : (uiLang === 'sw' ? 'sw' : 'en');
     if (typeof casuyaSpeakText === 'function' && casuyaIsAuthed()) {
       var speechStatus = document.getElementById('speech-status');
       state.controller = casuyaSpeakText(text, {

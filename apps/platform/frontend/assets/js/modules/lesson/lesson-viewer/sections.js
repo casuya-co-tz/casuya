@@ -1,6 +1,6 @@
 // modules/lesson/lesson-viewer/sections.js — lesson viewer page template.
 
-function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent, quizData, gamesData, noteData, lessonId }) {
+function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent, quizData, gamesData, noteData, lessonId, lessonLang }) {
   return `
     <div class="content" style="max-width:100%;padding:0">
       <div style="padding:0.75rem 1rem;display:flex;align-items:center;gap:0.5rem;background:var(--color-surface);border-bottom:1px solid var(--color-border);flex-wrap:wrap">
@@ -30,7 +30,7 @@ function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent,
               </div>
             </div>
           </details>
-          ${renderLessonQuiz(quizData, lessonId)}
+          ${renderLessonQuiz(quizData, lessonId, lessonLang)}
           ${renderLessonGames(gamesData)}
           <div class="card" style="margin-top:0.75rem;padding:1rem">
             <h3 style="margin:0 0 0.5rem">✏️ Practice Blackboard</h3>
