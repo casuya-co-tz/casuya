@@ -102,6 +102,8 @@ boundBeforeUnload: ((e: BeforeUnloadEvent) => void) | null = null;
 
 toastTimeout: ReturnType<typeof setTimeout> | null = null;
 
+welcomeToastTimer: ReturnType<typeof setTimeout> | null = null;
+
 usePressure = false;
 
 contextMenuKeyHandler: ((e: KeyboardEvent) => void) | null = null;

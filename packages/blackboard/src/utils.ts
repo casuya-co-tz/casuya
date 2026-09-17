@@ -1,6 +1,7 @@
 import type { Point } from './types';
 
-export const IS_MOBILE = (): boolean => window.innerWidth <= 640;
+export const IS_MOBILE = (): boolean =>
+  typeof window !== 'undefined' && window.innerWidth <= 640;
 
 export function uid(): string {
   try {

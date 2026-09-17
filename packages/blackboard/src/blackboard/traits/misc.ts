@@ -214,6 +214,7 @@ destroy(): void {
     if (this.autosaveTimer) { clearInterval(this.autosaveTimer); this.autosaveTimer = null; }
     if (this.boundBeforeUnload) { window.removeEventListener('beforeunload', this.boundBeforeUnload); this.boundBeforeUnload = null; }
     if (this.toastTimeout) { clearTimeout(this.toastTimeout); this.toastTimeout = null; }
+    if (this.welcomeToastTimer) { clearTimeout(this.welcomeToastTimer); this.welcomeToastTimer = null; }
     this.dismissContextMenu();
     this.imageCache.clear();
     this.root.remove();

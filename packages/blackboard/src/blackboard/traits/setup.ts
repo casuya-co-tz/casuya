@@ -124,6 +124,9 @@ export const SetupMixin = <T extends Constructor<BlackboardBase>>(Base: T) => cl
 
     this.loadFromStorage(this.autosaveKey);
 
-    setTimeout(() => this.showToast('Select a tool and start drawing'), 600);
+    this.welcomeToastTimer = setTimeout(() => {
+      this.welcomeToastTimer = null;
+      this.showToast('Select a tool and start drawing');
+    }, 600);
   }
 };
