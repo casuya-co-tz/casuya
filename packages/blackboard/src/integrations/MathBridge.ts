@@ -142,6 +142,17 @@ export class MathBridge {
     const norm2 = expr2.replace(/\s+/g, '').toLowerCase();
     if (norm1 === norm2) return { equivalent: true, confidence: 0.8 };
 
+    // Skip the heavy mathjs import for simple literal differences (e.g. 2x+3 vs 2x+5).
+    const simpleExpr = /^[a-z0-9+\-*/^=.\s]+$/i;
+    if (
+      simpleExpr.test(expr1) &&
+      simpleExpr.test(expr2) &&
+      !expr1.includes('(') &&
+      !expr2.includes('(')
+    ) {
+      return { equivalent: false, confidence: 0.4 };
+    }
+
     const math = await this.loadMathjs();
     if (!math) {
       return { equivalent: false, confidence: 0.2 };

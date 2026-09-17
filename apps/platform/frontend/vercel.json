@@ -1,6 +1,6 @@
 {
-  "installCommand": "corepack enable && npm install",
-  "buildCommand": "npm run build",
+  "installCommand": "cd ../.. && corepack enable && pnpm install --frozen-lockfile",
+  "buildCommand": "cd ../.. && pnpm turbo run build && cd apps/platform/frontend && npm run build",
   "outputDirectory": ".",
   "framework": null,
   "headers": [

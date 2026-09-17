@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ChangeEvent } from 'react';
 import {
   Button,
   Input,
@@ -75,7 +75,7 @@ function AppContent() {
             type="email"
             placeholder="you@school.edu"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             hint="We'll never share your email"
           />
           <Input

@@ -1,6 +1,6 @@
 {
-  "installCommand": "npm install",
-  "buildCommand": "npm run build:demo",
+  "installCommand": "echo prebuilt",
+  "buildCommand": null,
   "outputDirectory": "dist-demo",
   "framework": null
 }

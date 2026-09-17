@@ -1,0 +1,6 @@
+{
+  "installCommand": "corepack enable && pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm turbo run build && cd apps/platform/frontend && npm run build",
+  "outputDirectory": "apps/platform/frontend",
+  "framework": null
+}

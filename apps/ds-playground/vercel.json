@@ -1,6 +1,6 @@
 {
-  "installCommand": "echo prebuilt",
-  "buildCommand": null,
+  "installCommand": "cd ../.. && corepack enable && pnpm install --frozen-lockfile",
+  "buildCommand": "cd ../.. && pnpm turbo run build --filter=@casuya/playground...",
   "outputDirectory": "dist",
   "framework": null
 }

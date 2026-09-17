@@ -5,7 +5,6 @@ const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:8765';
 
 export default defineConfig({
   testDir: '.',
-  globalSetup: './global-setup.ts',
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
@@ -17,7 +16,8 @@ export default defineConfig({
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
   webServer: {
-    command: 'python -m uvicorn backend.main:app --host 127.0.0.1 --port 8765',
+    command:
+      'python scripts/e2e_bootstrap.py && python -m uvicorn backend.main:app --host 127.0.0.1 --port 8765',
     cwd: '..',
     url: `${baseURL}/health`,
     reuseExistingServer: !process.env.CI,

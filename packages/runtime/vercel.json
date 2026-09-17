@@ -1,6 +1,6 @@
 {
-  "installCommand": "npm install --no-package-lock",
-  "buildCommand": "npm run build",
+  "installCommand": "echo prebuilt",
+  "buildCommand": null,
   "outputDirectory": ".",
   "framework": null
 }
