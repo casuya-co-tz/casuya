@@ -58,7 +58,7 @@ def _load_recognizer(language: str = "") -> Any:
         decoder=decoder,
         tokens=tokens,
         num_threads=2,
-        decoding_method="modified_beam_search",
+        decoding_method="greedy_search",
         # Forcing `sw`/`en` improves accuracy vs auto-detect in bilingual classrooms.
         language=language,
         task="transcribe",
