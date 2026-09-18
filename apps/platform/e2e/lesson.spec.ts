@@ -19,5 +19,6 @@ test('student can open a seeded lesson and see the iframe', async ({ page }) => 
   await page.locator('.lesson-card', { hasText: 'Introduction to Linear Equations' }).click();
 
   await expect(page.locator('.lesson-iframe')).toBeVisible();
+  await expect(page.locator('.lesson-iframe iframe')).toBeVisible({ timeout: 15000 });
   await expect(page.getByRole('heading', { name: 'Introduction to Linear Equations' })).toBeVisible();
 });

@@ -74,7 +74,7 @@ function registerLessonsView(d) {
           <button id="complete-btn" class="btn btn-primary" style="font-size:0.85rem">Mark Complete</button>
         </div>
         <div style="width:100%">
-          <iframe class="lesson-iframe" style="width:100%;border:none;display:block"></iframe>
+          <div id="lesson-runtime-mount" class="lesson-iframe" style="width:100%;min-height:300px"></div>
         </div>
         <div style="margin-top:0.75rem">
           <details>
@@ -100,11 +100,14 @@ function registerLessonsView(d) {
 
       ensureStudentBlackboardEmbed();
 
-      const iframe = document.querySelector("#student-content .lesson-iframe");
+      const mount = document.querySelector("#student-content .lesson-iframe");
       let iframeCtx = null;
-      if (iframe) {
+      if (mount) {
         iframeCtx = await mountStudentLessonIframe(lessonId, lessonContent);
       }
+      const iframe = iframeCtx && typeof iframeCtx.getIframe === "function"
+        ? iframeCtx.getIframe()
+        : (iframeCtx && iframeCtx.iframe);
 
       const iframeBody = iframe && typeof casuyaIframeText === "function" ? casuyaIframeText(iframe) : "";
       lessonLang = typeof casuyaResolveLessonLang === "function"

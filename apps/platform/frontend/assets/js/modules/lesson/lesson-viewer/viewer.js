@@ -103,8 +103,6 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       }, 2000);
     }
 
-    html = injectBridgeScript(html);
-
     // Use pkgData from the earlier aggregated call (P2-3) — no second request needed.
     let quizData = null;
     let gamesData = [];
@@ -127,7 +125,7 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       lessonLang: initialLessonLang,
     });
 
-    const iframe = mountLessonIframe(container, html);
+    const iframe = await mountLessonIframe(container, html);
 
     // Listen button: reads the lesson title + spoken content using the Casuya
     // TTS voice (browser voice fallback on failure / logged-out use).

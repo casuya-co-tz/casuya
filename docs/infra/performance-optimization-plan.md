@@ -196,7 +196,7 @@ Target was **under ~40 KB gzip** of JS for first paint. Met: **30.8 KB**.
 
 ## 5. Week 4 — Architecture
 
-**Implemented (2026-09-18):** runtime sandbox for student games, bridge manifests, 2G `essential=1`, streamed gzip lesson HTML, precompressed `/static/lib` + `/static/lessons`, origin cache headers on uploads. Full lesson→runtime migration remains a follow-up.
+**Implemented (2026-09-18):** runtime sandbox for student games and lessons, bridge manifests, 2G `essential=1`, streamed gzip lesson HTML, precompressed `/static/lib` + `/static/lessons`, origin cache headers on uploads.
 
 Post-Week-4 leftovers (same day): landing Google Fonts replaced with self-hosted woff2; teacher/admin lesson viewer uses `loadLessonHtml` (IndexedDB + `?essential=1`); service worker `casuya-static-v11` precaches landing fonts; `CasuyaBridge.renderLesson()` mounts a cached `{body_html}` package in a sandboxed iframe (or shadow DOM).
 
@@ -204,7 +204,7 @@ Offline + edge: Downloads pin HTML in IndexedDB; admin preview uses `loadLessonH
 
 | ID | Status | Result |
 |---|---|---|
-| P-18 Student games runtime | Done | Games mount `CasuyaRuntime` (sandboxed iframe). Missing IIFE or load error falls back to srcdoc. Runtime IIFE copied to `frontend/static/pkg/runtime/`. Lessons stay on srcdoc + bridge. |
+| P-18 Student games + lessons runtime | Done | Games and lessons mount `CasuyaRuntime` (sandboxed iframe). Missing IIFE or load error falls back to srcdoc. Runtime IIFE copied to `frontend/static/pkg/runtime/`. Lesson HTML still gets `injectBridgeScript` before load (quiz/HLS/progress). |
 | Manifests + slug package | Done | `GET /lessons/manifests` → `[{slug,content_hash,title,id}]`. `GET /lessons/{slug}/package` → `{body_html}` for bridge; UUID still returns student metadata. |
 | 2G `essential=1` | Done | Strips `<video>`/`<audio>`/YouTube iframes. Student `loadLessonHtml` appends `?essential=1` on `slow-2g`/`2g`. |
 | Stream gzip HTML | Done | Processed lesson HTML writes `{slug}.html.gz`. Content route streams `FileResponse` with `Content-Encoding: gzip`. Compression middleware no longer buffers already-encoded or binary responses. |

@@ -1,25 +1,23 @@
 // modules/student/lessons/iframe.js — student lesson iframe + progress messaging.
 
 async function mountStudentLessonIframe(lessonId, lessonContent) {
-  const iframe = document.querySelector("#student-content .lesson-iframe");
-  const html = typeof injectBridgeScript === "function"
-    ? injectBridgeScript(lessonContent)
-    : lessonContent;
-  iframe.srcdoc = injectNodeBase(html);
-  let heightSet = false;
-  const setHeight = () => {
-    if (heightSet) return;
-    try {
-      const doc = iframe.contentWindow?.document;
-      if (doc) {
-        iframe.style.height = Math.max(doc.documentElement?.scrollHeight || 0, doc.body?.scrollHeight || 0, 300) + "px";
-        heightSet = true;
-      }
-    } catch(e) {}
-  };
-  iframe.addEventListener("load", setHeight);
-  const poll = setInterval(() => { setHeight(); if (heightSet) clearInterval(poll); }, 300);
-  setTimeout(() => { clearInterval(poll); if (!heightSet) iframe.style.height = "800px"; }, 10000);
+  const container = document.querySelector("#student-content .lesson-iframe");
+  if (!container) return { iframe: null, studentId: null, sessionId: null, cleanup: function () {} };
+
+  let handle = { cleanup: function () {}, getIframe: function () { return container.querySelector("iframe"); } };
+  if (typeof mountLessonRuntime === "function") {
+    handle = await mountLessonRuntime(container, lessonContent, { id: lessonId, title: "Lesson" });
+  } else {
+    const html = typeof injectBridgeScript === "function"
+      ? injectBridgeScript(lessonContent)
+      : lessonContent;
+    if (container.tagName === "IFRAME") {
+      container.srcdoc = injectNodeBase(html);
+      handle.getIframe = function () { return container; };
+    } else if (typeof mountGameSrcdoc === "function") {
+      handle = mountGameSrcdoc(container, typeof injectNodeBase === "function" ? injectNodeBase(html) : html);
+    }
+  }
 
   let studentId = null;
   let sessionId = Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
@@ -58,9 +56,15 @@ async function mountStudentLessonIframe(lessonId, lessonContent) {
 
   const cleanup = () => {
     window.removeEventListener("message", onMessage);
-    clearInterval(poll);
     if (progressTimer) clearTimeout(progressTimer);
+    if (handle && typeof handle.cleanup === "function") handle.cleanup();
   };
 
-  return { iframe, studentId, sessionId, cleanup };
+  return {
+    iframe: handle.getIframe ? handle.getIframe() : null,
+    getIframe: handle.getIframe,
+    studentId,
+    sessionId,
+    cleanup,
+  };
 }

@@ -885,6 +885,9 @@
 
   function iframeText(iframe) {
     if (!iframe) return "";
+    if (iframe.tagName !== "IFRAME" && iframe.querySelector) {
+      iframe = iframe.querySelector("iframe") || iframe;
+    }
     try {
       var doc = iframe.contentDocument || (iframe.contentWindow && iframe.contentWindow.document);
       var txt = doc && doc.body && doc.body.innerText ? doc.body.innerText : "";

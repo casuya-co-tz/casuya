@@ -57,6 +57,7 @@ const core = [
 
 // Teacher/admin lesson viewer (student uses modules/student/lessons/*).
 const lessonViewer = [
+  "modules/student/game-runtime.js",
   "modules/lesson/lesson-viewer/iframe.js",
   "modules/lesson/lesson-viewer/sections.js",
   "modules/lesson/lesson-viewer/interactions.js",

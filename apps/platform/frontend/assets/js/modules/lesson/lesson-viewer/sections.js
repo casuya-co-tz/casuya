@@ -15,7 +15,7 @@ function renderLessonSections({ lessonTitle, canBookmark, bookmarked, isStudent,
         ` : ""}
       </div>
       <div style="width:100%">
-        <iframe class="lesson-iframe" style="width:100%;border:none;display:block"></iframe>
+        <div id="lesson-runtime-mount" class="lesson-iframe" style="width:100%;min-height:300px"></div>
       </div>
       ${isStudent ? `
         <div style="padding:0 1rem">
