@@ -58,32 +58,65 @@
         document.getElementById("form-area").innerHTML = `
           <div class="card" style="margin-bottom:1rem">
             <h3>New Lesson</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0 0 0.5rem">
+              Students only see <b>published</b> lessons under Subjects. Saving creates a draft until you publish.
+            </p>
             <form id="create-lesson-form" style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem">
               <select class="input" name="subtopic_id" required><option value="">Select subtopic...</option></select>
               <input class="input" name="title" placeholder="Lesson title" required>
               <textarea class="input" name="content" rows="6" placeholder="Lesson content (HTML supported)"></textarea>
-              <div style="display:flex;gap:0.5rem">
-                <button class="btn btn-primary" type="submit">Save</button>
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+                <button class="btn btn-primary" type="button" id="publish-lesson-btn">Publish to Students</button>
+                <button class="btn" type="button" id="save-draft-btn">Save as Draft</button>
                 <button class="btn" type="button" id="cancel-btn">Cancel</button>
               </div>
             </form>
           </div>
         `;
-        request("/subtopics").then(subs => {
+        Promise.all([request("/subjects"), request("/topics"), request("/subtopics")]).then(([subjects, topics, subs]) => {
           const sel = document.querySelector('[name="subtopic_id"]');
-          if (sel && Array.isArray(subs)) subs.forEach(s => { const o = document.createElement("option"); o.value = s.id; o.textContent = s.title; sel.appendChild(o); });
+          if (!sel || !Array.isArray(subs)) return;
+          const subjectById = Object.fromEntries((Array.isArray(subjects) ? subjects : []).map(s => [s.id, s]));
+          const topicById = Object.fromEntries((Array.isArray(topics) ? topics : []).map(t => [t.id, t]));
+          subs.slice().sort((a, b) => {
+            const ta = topicById[a.topic_id] || {};
+            const tb = topicById[b.topic_id] || {};
+            const sa = subjectById[ta.subject_id]?.name || "";
+            const sb = subjectById[tb.subject_id]?.name || "";
+            return sa.localeCompare(sb) || (ta.title || "").localeCompare(tb.title || "") || a.title.localeCompare(b.title);
+          }).forEach(s => {
+            const topic = topicById[s.topic_id] || {};
+            const subject = subjectById[topic.subject_id]?.name || "Subject";
+            const form = topic.form_level ? ` (Form ${topic.form_level})` : "";
+            const o = document.createElement("option");
+            o.value = s.id;
+            o.textContent = `${subject} → ${topic.title || "Topic"}${form} → ${s.title}`;
+            sel.appendChild(o);
+          });
         });
         document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
-        document.getElementById("create-lesson-form").addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const fd = new FormData(e.target);
+        async function saveAdminLesson(publish) {
+          const form = document.getElementById("create-lesson-form");
+          if (!form.reportValidity()) return;
+          const fd = new FormData(form);
           const title = fd.get("title");
           const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
           try {
-            await request("/lessons", { method: "POST", body: JSON.stringify({ title, slug, html_content: fd.get("content"), subtopic_id: fd.get("subtopic_id") }) });
+            const created = await request("/lessons", {
+              method: "POST",
+              body: JSON.stringify({ title, slug, html_content: fd.get("content"), subtopic_id: fd.get("subtopic_id") }),
+            });
+            if (publish && created?.id) {
+              await request(`/lessons/${created.id}/publish`, { method: "POST" });
+              showToast("Lesson published — students can see it under Subjects.");
+            } else {
+              showToast("Draft saved — open the lesson and click Publish when ready.");
+            }
             loadAdminLessons();
           } catch(err) { showToast("Error: " + err.message); }
-        });
+        }
+        document.getElementById("publish-lesson-btn").addEventListener("click", () => saveAdminLesson(true));
+        document.getElementById("save-draft-btn").addEventListener("click", () => saveAdminLesson(false));
       });
       document.getElementById("ai-generate-questions-btn")?.addEventListener("click", () => {
         document.getElementById("ai-form-area").innerHTML = `

@@ -44,7 +44,10 @@ function registerSubjectsView(d) {
         filtered = filtered.filter(t => !t.form_level || t.form_level === formFilter || t.form_level.replace(/^Form /, "") === ff);
       }
       if (filtered.length === 0) {
-        d.showView('<div class="empty-state"><p>No topics found</p><button class="btn" id="back-btn">← Back</button></div>');
+        const filterHint = formFilter
+          ? `<p style="color:var(--color-text-muted);font-size:0.9rem;margin-top:0.5rem">Your form filter is set to <b>${escapeHtml(formFilter)}</b>. Try <b>All Forms</b> in the sidebar, or pick the form that matches this subject.</p>`
+          : "";
+        d.showView(`<div class="empty-state"><p>No topics found</p>${filterHint}<button class="btn" id="back-btn">← Back</button></div>`);
         document.getElementById("back-btn")?.addEventListener("click", () => d.goBack());
         return;
       }
