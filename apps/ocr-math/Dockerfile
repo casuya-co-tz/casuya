@@ -15,6 +15,14 @@ RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/wh
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Bake the Pix2Text MFD + LaTeX ONNX models at build time (mirrors
+# apps/audio-stt baking Whisper). First instantiation downloads the assets
+# into /root/.pix2text, so /readyz and /v1/ocr/recognize respond instantly at
+# boot — no cold model fetch inside Railway's 120s healthcheck window.
+# warm_up() is used when present (newer pix2text) so the download happens here
+# during build rather than lazily at request time.
+RUN python -c "from pix2text import Pix2Text; p = Pix2Text(); getattr(p, 'warm_up', lambda: None)()"
+
 COPY app/ app/
 
 EXPOSE 8000
