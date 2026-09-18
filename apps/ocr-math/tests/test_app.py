@@ -31,10 +31,21 @@ _ONE_PX_PNG_B64 = base64.b64encode(_ONE_PX_PNG).decode()
 class _FakePix2Text:
     """Returns one equation + one text region (mirrors Pix2Text item shape)."""
 
-    def __init__(self, latex: str = ""):
+    def __init__(self, latex: str = "", include_string_items: bool = False):
         self._latex = latex
+        self._include_string_items = include_string_items
 
     def recognize(self, img):
+        if self._include_string_items:
+            return [
+                "isolated formula region",
+                {
+                    "type": "equation",
+                    "text": self._latex,
+                    "score": 0.97,
+                    "position": [[0, 0], [10, 0], [10, 10], [0, 10]],
+                },
+            ]
         if self._latex:
             return [
                 {
@@ -132,6 +143,21 @@ def test_recognize_no_math_content(monkeypatch):
     isolated = TestClient(create_app())
     r = isolated.post("/v1/ocr/recognize", json={"image": _ONE_PX_PNG_B64})
     assert r.status_code == 422
+
+
+def test_recognize_skips_string_items(monkeypatch):
+    import app.services.recognize as recognize
+    from app import create_app
+
+    monkeypatch.setattr(
+        recognize, "_load_engine", lambda: _FakePix2Text(_LATEX_FIXTURE, include_string_items=True)
+    )
+    isolated = TestClient(create_app())
+    r = isolated.post("/v1/ocr/recognize", json={"image": _ONE_PX_PNG_B64})
+    assert r.status_code == 200
+    body = r.json()
+    assert body["latex"] == _LATEX_FIXTURE
+    assert len(body["symbols"]) == 1
 
 
 def test_api_key_required_when_set(monkeypatch):

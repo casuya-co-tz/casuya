@@ -49,6 +49,8 @@ def recognize_math(image_bytes: bytes) -> dict:
     latex_parts: list[str] = []
     symbols: list[dict] = []
     for item in items or []:
+        if not isinstance(item, dict):
+            continue
         item_type = item.get("type", "")
         if item_type in ("equation", "isolated"):
             text = item.get("text", "")
@@ -63,7 +65,7 @@ def recognize_math(image_bytes: bytes) -> dict:
             )
 
     full_latex = " ".join(latex_parts)
-    scores = [float(item.get("score", 0) or 0) for item in items or []]
+    scores = [float(item.get("score", 0) or 0) for item in items or [] if isinstance(item, dict)]
     confidence = sum(scores) / max(len(scores), 1)
     return {
         "latex": full_latex,
