@@ -2,15 +2,17 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# Pillow/pix2text image backends + ffmpeg-free decode deps (libglib for some
-# cv2 fallback paths). Mirrors the audio images: no build toolchain needed.
+# Pillow/pix2text image backends. libgl1 is required by opencv-python
+# (libGL.so.1); libglib2.0-0/libsm6/libxext6 by cv2 GUIless fallbacks.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        libglib2.0-0 libsm6 libxext6 libxrender-dev \
+        libgl1 libglib2.0-0 libsm6 libxext6 libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Critical: install CPU-only torch BEFORE pix2text so pip keeps the small
-# CPU wheel instead of pulling the multi-GB CUDA build. Index URL is pinned.
-RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+# Critical: install CPU-only torch AND torchvision together BEFORE pix2text so
+# pip keeps the CPU builds instead of pulling the multi-GB CUDA versions from
+# PyPI. A mismatched pair (CPU torch + CUDA torchvision) fails at import with
+# "operator torchvision::nms does not exist". Index URL is pinned.
+RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
