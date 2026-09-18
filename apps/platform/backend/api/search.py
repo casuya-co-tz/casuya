@@ -16,6 +16,7 @@ def search(q: str, current_user=Depends(get_current_user)):
     cached = cache_get(key, ttl_seconds=60)
     if cached is not None:
         return cached
-    result = search_content(q)
+    published_only = current_user.get("role") == "student"
+    result = search_content(q, published_only=published_only)
     cache_set(key, result, ttl=60)
     return result

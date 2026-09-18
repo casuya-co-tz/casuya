@@ -71,9 +71,9 @@ def _optimize_math_injection(html: str) -> str:
         html = _strip_mathjax(html)
         html = _clean_mathjax_broken_katex(html)
 
-    katex_css = '<link rel="stylesheet" href="/static/lib/katex/katex.min.css" crossorigin="anonymous">'
-    katex_js = '<script src="/static/lib/katex/katex.min.js" crossorigin="anonymous"></script>'
-    auto_render_js = '<script src="/static/lib/katex/contrib/auto-render.min.js" crossorigin="anonymous"></script>'
+    katex_css = '<link rel="stylesheet" href="/static/lib/katex/katex.min.css">'
+    katex_js = '<script src="/static/lib/katex/katex.min.js"></script>'
+    auto_render_js = '<script src="/static/lib/katex/contrib/auto-render.min.js"></script>'
     render_call = (
         "<script>"
         'document.addEventListener("DOMContentLoaded",function(){'

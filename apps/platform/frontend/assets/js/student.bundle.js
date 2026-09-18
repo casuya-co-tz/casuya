@@ -2928,8 +2928,15 @@ function registerSubjectsView(d) {
     d._navStack.push(() => d.callView("subject-topics", subjectId));
     d.showView('<div class="loading-state"><div class="spinner"></div><p>Loading subtopics...</p></div>');
     try {
-      const subtopics = await request("/subtopics?topic_id=" + encodeURIComponent(topicId));
+      const [subtopics, publishedLessons] = await Promise.all([
+        request("/subtopics?topic_id=" + encodeURIComponent(topicId)),
+        request("/lessons/?topic_id=" + encodeURIComponent(topicId) + "&status=published").catch(() => []),
+      ]);
       const filtered = Array.isArray(subtopics) ? subtopics : [];
+      const lessonCounts = {};
+      (Array.isArray(publishedLessons) ? publishedLessons : []).forEach((l) => {
+        if (l?.subtopic_id) lessonCounts[l.subtopic_id] = (lessonCounts[l.subtopic_id] || 0) + 1;
+      });
       if (filtered.length === 0) {
         d.showView('<div class="empty-state"><p>No subtopics found</p><button class="btn" id="back-btn">← Back</button></div>');
         document.getElementById("back-btn")?.addEventListener("click", () => d.goBack());
@@ -2944,6 +2951,7 @@ function registerSubjectsView(d) {
           ${filtered.map(s => `
             <div class="card subtopic-card" data-id="${s.id}" style="cursor:pointer">
               <h3>${escapeHtml(s.title)}</h3>
+              ${lessonCounts[s.id] ? `<p style="color:var(--color-success);font-size:0.85rem;margin-top:0.35rem">${lessonCounts[s.id]} lesson${lessonCounts[s.id] === 1 ? "" : "s"}</p>` : `<p style="color:var(--color-text-muted);font-size:0.85rem;margin-top:0.35rem">No lessons yet</p>`}
             </div>
           `).join("")}
         </div>
@@ -3278,8 +3286,10 @@ async function mountContentRuntime(container, html, meta) {
   container.style.width = "100%";
   if (!container.style.height) container.style.height = type === "lesson" ? "auto" : "600px";
   var Runtime = window.CasuyaRuntime.Runtime;
+  // Lessons omit allow-same-origin so srcdoc stays isolated from the parent
+  // CSP; the bridge uses postMessage only.
   var sandbox = type === "lesson"
-    ? "allow-scripts allow-same-origin allow-forms"
+    ? "allow-scripts allow-forms"
     : "allow-scripts allow-same-origin";
   var rt = new Runtime({
     container: container,

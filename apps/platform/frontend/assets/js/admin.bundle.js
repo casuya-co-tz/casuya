@@ -2336,8 +2336,10 @@ async function mountContentRuntime(container, html, meta) {
   container.style.width = "100%";
   if (!container.style.height) container.style.height = type === "lesson" ? "auto" : "600px";
   var Runtime = window.CasuyaRuntime.Runtime;
+  // Lessons omit allow-same-origin so srcdoc stays isolated from the parent
+  // CSP; the bridge uses postMessage only.
   var sandbox = type === "lesson"
-    ? "allow-scripts allow-same-origin allow-forms"
+    ? "allow-scripts allow-forms"
     : "allow-scripts allow-same-origin";
   var rt = new Runtime({
     container: container,
@@ -3870,14 +3872,37 @@ async function renderAdminDashboard() {
     } catch(e) { showAdminView('<div class="empty-state"><p>Error loading lessons</p></div>'); }
   }
 
+  async function lessonCatalogPath(subtopicId) {
+    if (!subtopicId) return "";
+    try {
+      const [subjects, topics, subtopics] = await Promise.all([
+        request("/subjects"),
+        request("/topics"),
+        request("/subtopics"),
+      ]);
+      const subtopic = (Array.isArray(subtopics) ? subtopics : []).find((s) => s.id === subtopicId);
+      if (!subtopic) return "";
+      const topic = (Array.isArray(topics) ? topics : []).find((t) => t.id === subtopic.topic_id);
+      const subject = topic
+        ? (Array.isArray(subjects) ? subjects : []).find((s) => s.id === topic.subject_id)
+        : null;
+      const form = topic?.form_level ? ` (Form ${topic.form_level})` : "";
+      return `${subject?.name || "Subject"} → ${topic?.title || "Topic"}${form} → ${subtopic.title}`;
+    } catch (e) {
+      return "";
+    }
+  }
+
   async function viewAdminLesson(lessonId, lessonTitle) {
     showAdminView('<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>');
     try {
       const lesson = await request(`/lessons/${lessonId}`);
       if (!lesson) return;
+      const catalogPath = await lessonCatalogPath(lesson.subtopic_id);
       showAdminView(`
         <div class="content">
           <button class="btn" id="back-btn" style="margin-bottom:1rem">&larr; Back</button>
+          ${catalogPath ? `<p style="color:var(--color-text-muted);font-size:0.9rem;margin:0 0 0.75rem">Students find this under <b>${escapeHtml(catalogPath)}</b></p>` : ""}
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
             <h2>${escapeHtml(lesson.title || lessonTitle)}</h2>
             <div style="display:flex;gap:0.5rem;align-items:center">
@@ -3944,6 +3969,7 @@ async function renderAdminDashboard() {
           : "";
         if (html) {
           const iframe = document.getElementById("lesson-frame");
+          iframe.setAttribute("sandbox", "allow-scripts allow-forms");
           iframe.srcdoc = injectNodeBase(html);
           iframe.onload = () => {
             try { iframe.style.height = Math.max(iframe.contentDocument.documentElement.scrollHeight, 400) + "px"; } catch(e) {}

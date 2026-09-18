@@ -19,7 +19,7 @@ def _is_postgres() -> bool:
     return _is_postgres_cache
 
 
-def search_content(query: str) -> list[dict]:
+def search_content(query: str, *, published_only: bool = False) -> list[dict]:
     _gen = get_db()
     db: Session = next(_gen)
     try:
@@ -31,9 +31,10 @@ def search_content(query: str) -> list[dict]:
         if _is_postgres():
             # Single UNION ALL query instead of 4 sequential queries
             tsq = func.websearch_to_tsquery(_FTS_BOOKSTOP, q)
-            union_sql = text("""
+            lesson_filter = " AND status = 'published'" if published_only else ""
+            union_sql = text(f"""
                 (SELECT id, 'lesson' as kind, title, title as match FROM lessons
-                 WHERE to_tsvector(:config, title) @@ :tsq LIMIT 10)
+                 WHERE to_tsvector(:config, title) @@ :tsq{lesson_filter} LIMIT 10)
                 UNION ALL
                 (SELECT id, 'subject' as kind, name as title, name as match FROM subjects
                  WHERE to_tsvector(:config, name) @@ :tsq LIMIT 5)
@@ -50,7 +51,10 @@ def search_content(query: str) -> list[dict]:
         else:
             # SQLite fallback: 4 parallel-ish ILIKE queries (still 4 round trips but lightweight)
             pattern = f"%{q}%"
-            for l in db.query(Lesson.id, Lesson.title).filter(Lesson.title.ilike(pattern)).limit(10).all():
+            lesson_query = db.query(Lesson.id, Lesson.title).filter(Lesson.title.ilike(pattern))
+            if published_only:
+                lesson_query = lesson_query.filter(Lesson.status == "published")
+            for l in lesson_query.limit(10).all():
                 results.append({"id": l.id, "type": "lesson", "title": l.title, "match": l.title})
             for s in db.query(Subject.id, Subject.name).filter(Subject.name.ilike(pattern)).limit(5).all():
                 results.append({"id": s.id, "type": "subject", "title": s.name, "match": s.name})

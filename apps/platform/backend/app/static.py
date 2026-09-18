@@ -33,12 +33,19 @@ def _find_monorepo_root(platform_root: Path) -> Path | None:
 _MONOREPO_ROOT = _find_monorepo_root(_PLATFORM_ROOT)
 
 
-def _mount_precompressed(app: FastAPI, route: str, directory: Path, name: str, html: bool = False) -> bool:
+def _mount_precompressed(
+    app: FastAPI,
+    route: str,
+    directory: Path,
+    name: str,
+    html: bool = False,
+    cross_origin: bool = False,
+) -> bool:
     if not directory.is_dir():
         return False
     app.mount(
         route,
-        PrecompressedStaticFiles(directory=str(directory), html=html),
+        PrecompressedStaticFiles(directory=str(directory), html=html, cross_origin=cross_origin),
         name=name,
     )
     return True
@@ -54,9 +61,9 @@ def mount_static(app: FastAPI, settings) -> None:
     # Vendored KaTeX / hls.js live in the frontend tree (not storage/lib).
     frontend_lib = _FRONTEND_DIR / "static" / "lib"
     storage_lib = Path(settings.storage_root) / "lib"
-    if not _mount_precompressed(app, "/static/lib", frontend_lib, "shared-lib"):
+    if not _mount_precompressed(app, "/static/lib", frontend_lib, "shared-lib", cross_origin=True):
         storage_lib.mkdir(parents=True, exist_ok=True)
-        _mount_precompressed(app, "/static/lib", storage_lib, "shared-lib")
+        _mount_precompressed(app, "/static/lib", storage_lib, "shared-lib", cross_origin=True)
 
     hls_dir = Path(settings.storage_root) / "hls"
     hls_dir.mkdir(parents=True, exist_ok=True)

@@ -23,11 +23,19 @@ _DYNAMIC_PATHS = ("/assets/js/config.js", "/assets/js/env.js", "/branding/", "/f
 class PrecompressedStaticFiles(StaticFiles):
     """StaticFiles that serves `.gz` variants (built-in) and sets cache headers."""
 
+    def __init__(self, *args, cross_origin: bool = False, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._cross_origin = cross_origin
+
     async def get_response(self, path: str, scope: dict):
         ext = (path.rsplit(".", 1)[-1].lower() if "." in path else "")
         resp = await super().get_response(path, scope)
         if resp.status_code != 200:
             return resp
+        if self._cross_origin:
+            # Sandboxed srcdoc lesson iframes use a null origin; KaTeX/hls under
+            # /static/lib must be readable cross-origin from those frames.
+            resp.headers["Access-Control-Allow-Origin"] = "*"
         # Ensure Vary so CDN/browser keep separate encodings.
         resp.headers.setdefault("Vary", "Accept-Encoding")
         if ext in _IMMUTABLE_EXTS and not any(p in path for p in _DYNAMIC_PATHS):

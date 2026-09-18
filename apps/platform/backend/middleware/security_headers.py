@@ -50,7 +50,7 @@ class SecurityHeadersMiddleware:
                     f"default-src 'self'; "
                     f"script-src 'self' 'unsafe-inline' {_cdn_src}; "
                     f"style-src 'self' 'unsafe-inline' {_cdn_src}; "
-                    f"font-src 'self' data:; "
+                    f"font-src 'self' data: {_cdn_src}; "
                     f"img-src 'self' data: blob: https:; "
                     f"frame-src 'self' https:; "
                     f"connect-src 'self'"

@@ -72,6 +72,7 @@ def _teacher_lesson_limit(user_id: str) -> int:
 @router.get("/")
 def list_lessons_route(
     subtopic_id: str | None = None,
+    topic_id: str | None = None,
     status: str | None = None,
     skip: int = 0,
     limit: int = 100,
@@ -84,12 +85,17 @@ def list_lessons_route(
     if role == "teacher":
         # Teachers only ever see lessons they created themselves.
         created_by = current_user["sub"]
-    cache_key = f"lessons:list:{subtopic_id or ''}:{status or ''}:{skip}:{limit}:{created_by or ''}"
+    cache_key = f"lessons:list:{subtopic_id or ''}:{topic_id or ''}:{status or ''}:{skip}:{limit}:{created_by or ''}"
     cached = cache_get(cache_key, ttl_seconds=120)
     if cached is not None:
         return cached
     result = list_lessons(
-        subtopic_id=subtopic_id, status=status, skip=skip, limit=limit, created_by=created_by
+        subtopic_id=subtopic_id,
+        topic_id=topic_id,
+        status=status,
+        skip=skip,
+        limit=limit,
+        created_by=created_by,
     )
     cache_set(cache_key, result, ttl=120)
     return result

@@ -122,8 +122,10 @@ async function mountContentRuntime(container, html, meta) {
   container.style.width = "100%";
   if (!container.style.height) container.style.height = type === "lesson" ? "auto" : "600px";
   var Runtime = window.CasuyaRuntime.Runtime;
+  // Lessons omit allow-same-origin so srcdoc stays isolated from the parent
+  // CSP; the bridge uses postMessage only.
   var sandbox = type === "lesson"
-    ? "allow-scripts allow-same-origin allow-forms"
+    ? "allow-scripts allow-forms"
     : "allow-scripts allow-same-origin";
   var rt = new Runtime({
     container: container,

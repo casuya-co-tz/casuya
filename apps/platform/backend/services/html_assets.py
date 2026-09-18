@@ -43,6 +43,9 @@ _ALLOWED_CDN_HOSTS = (
     "code.jquery.com",
     "cdn.plot.ly",
     "cdn.datatables.net",
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "cdn.casuya.co.tz",
 )
 
 def _find_local_path(url: str) -> str | None:
@@ -186,4 +189,17 @@ def rewrite_external_assets(html: str) -> str:
 
 def cdn_hosts_for_csp() -> list[str]:
     """Return the list of CDN hosts to whitelist in the CSP as a fallback."""
-    return list(_ALLOWED_CDN_HOSTS)
+    from urllib.parse import urlparse
+
+    hosts = list(_ALLOWED_CDN_HOSTS)
+    try:
+        from backend.config.settings import get_settings
+
+        base = (get_settings().public_assets_base or "").strip()
+        if base:
+            host = urlparse(base).hostname
+            if host and host not in hosts:
+                hosts.append(host)
+    except Exception:
+        pass
+    return hosts

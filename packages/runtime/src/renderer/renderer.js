@@ -90,29 +90,14 @@ export class Renderer {
       iframe.setAttribute('importance', 'low');
     }
 
-    this._options.security?.applyCSP(iframe.contentDocument || iframe.contentWindow?.document, {
-      'default-src': ["'none'"],
-      'script-src': ["'unsafe-inline'"],
-      'style-src': ["'unsafe-inline'"],
-      'img-src': ["'self'", 'data:', 'blob:'],
-      'media-src': ["'self'", 'blob:'],
-      'connect-src': ["'self'"],
-      'base-uri': ["'none'"],
-      'form-action': ["'none'"]
-    });
-
     this._container.innerHTML = '';
     this._container.appendChild(iframe);
 
+    // srcdoc keeps lesson/game HTML on an isolated origin so the parent page
+    // CSP (e.g. Railway security headers) cannot block external stylesheets.
+    iframe.srcdoc = html;
     iframe.onload = () => {
-      const doc = iframe.contentDocument || iframe.contentWindow?.document;
-      if (doc) {
-        doc.open();
-        doc.write(html);
-        doc.close();
-
-        this._options.eventBus?.emit('renderer:iframeLoaded', {});
-      }
+      this._options.eventBus?.emit('renderer:iframeLoaded', {});
     };
 
     this._iframe = iframe;

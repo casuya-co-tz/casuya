@@ -183,6 +183,7 @@ def update_lesson(lesson_id: str, title: str | None = None, html: str | None = N
 
 def list_lessons(
     subtopic_id: str | None = None,
+    topic_id: str | None = None,
     status: str | None = None,
     skip: int = 0,
     limit: int = 100,
@@ -191,9 +192,19 @@ def list_lessons(
     _gen = get_db()
     db: Session = next(_gen)
     try:
+        from backend.models.lesson import Subtopic
+
         query = db.query(Lesson)
         if subtopic_id:
             query = query.filter(Lesson.subtopic_id == subtopic_id)
+        if topic_id:
+            subtopic_ids = [
+                row[0]
+                for row in db.query(Subtopic.id).filter(Subtopic.topic_id == topic_id).all()
+            ]
+            if not subtopic_ids:
+                return []
+            query = query.filter(Lesson.subtopic_id.in_(subtopic_ids))
         if status:
             query = query.filter(Lesson.status == status)
         if created_by:
