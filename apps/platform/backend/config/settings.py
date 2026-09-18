@@ -79,7 +79,12 @@ class Settings(BaseSettings):
     supabase_url: str | None = None
     supabase_key: str | None = None
     cloudflare_zone_id: str | None = None
+    cloudflare_account_id: str | None = None
     cloudflare_api_token: str | None = None
+    r2_access_key_id: str | None = None
+    r2_secret_access_key: str | None = None
+    r2_bucket_name: str = "casuya-uploads"
+    r2_s3_endpoint: str | None = None
     azampay_client_id: str | None = None
     azampay_client_secret: str | None = None
     azampay_app_name: str | None = None
@@ -141,6 +146,9 @@ class Settings(BaseSettings):
     frontend_base: str = "http://localhost:8765"
 
     storage_root: str = "./storage"
+    # Optional https origin for immutable uploads (Cloudflare R2 / custom CDN).
+    # When set, GET /uploads/{file} 302s there instead of streaming from disk.
+    public_assets_base: str | None = None
     rate_limit_per_minute: int = 120
     # When true, abort boot if the primary database cannot be reached (B-07).
     require_database_on_startup: bool = False

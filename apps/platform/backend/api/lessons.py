@@ -1,27 +1,51 @@
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from fastapi.responses import FileResponse, HTMLResponse
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
+import re
 
 from backend.config.database import get_db, get_read_db
 from backend.middleware.auth import get_current_user
-from backend.middleware.cache import cache_get, cache_invalidate, cache_set, etag_for
+from backend.middleware.cache import cache_get, cache_invalidate, cache_set
 from backend.middleware.permissions import require_role
 from backend.schemas.lessons import LessonCreate, LessonResponse, LessonUpdate
 from backend.services.lesson_service import (
+    count_lessons,
     create_lesson_from_html,
     delete_lesson,
+    get_gzip_path,
     get_lesson,
+    get_lesson_by_slug,
     get_lesson_package,
-    get_package_path,
+    list_lesson_manifests,
     list_lessons,
     publish_lesson,
     read_lesson_content,
+    strip_essential_html,
     update_lesson,
 )
+from backend.services.public_assets import apply_public_asset_urls
+from backend.config.settings import get_settings
 from integrations.cloudflare import purge_cache_tags
 
 router = APIRouter(prefix="/lessons", tags=["lessons"])
+
+_UUID_RE = re.compile(
+    r"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+)
+
+
+def _is_uuid(value: str) -> bool:
+    return bool(_UUID_RE.match(value or ""))
+
+
+def _wants_gzip(request: Request) -> bool:
+    accept = (request.headers.get("accept-encoding") or "").lower()
+    return "gzip" in accept
+
+
+def _is_essential(value: str | None) -> bool:
+    return str(value or "").strip().lower() in ("1", "true", "yes")
 
 
 def _teacher_lesson_limit(user_id: str) -> int:
@@ -71,6 +95,27 @@ def list_lessons_route(
     return result
 
 
+@router.get("/manifests")
+@router.get("/manifests/")
+def list_manifests_route(
+    skip: int = Query(0, ge=0),
+    limit: int = Query(500, ge=1, le=1000),
+    current_user=Depends(get_current_user),
+):
+    """Bridge-compatible published lesson index: [{slug, content_hash, title, id}]."""
+    created_by = None
+    role = current_user.get("role", "")
+    if role == "teacher":
+        created_by = current_user["sub"]
+    cache_key = f"lessons:manifests:{skip}:{limit}:{created_by or ''}"
+    cached = cache_get(cache_key, ttl_seconds=120)
+    if cached is not None:
+        return cached
+    result = list_lesson_manifests(skip=skip, limit=limit, created_by=created_by)
+    cache_set(cache_key, result, ttl=120)
+    return result
+
+
 @router.get("/{lesson_id}")
 @router.get("/{lesson_id}/")
 def get_lesson_route(lesson_id: str, current_user=Depends(get_current_user)):
@@ -87,42 +132,72 @@ def get_lesson_route(lesson_id: str, current_user=Depends(get_current_user)):
 
 @router.get("/{lesson_id}/content")
 @router.get("/{lesson_id}/content/")
-def get_lesson_content_route(lesson_id: str, request: Request, current_user=Depends(get_current_user)):
-    lesson = get_lesson(lesson_id)
+def get_lesson_content_route(
+    lesson_id: str,
+    request: Request,
+    essential: str | None = Query(None),
+    current_user=Depends(get_current_user),
+):
+    lesson = get_lesson(lesson_id) if _is_uuid(lesson_id) else get_lesson_by_slug(lesson_id)
     if not lesson:
         raise HTTPException(status_code=404, detail="Lesson not found")
 
     slug = lesson["slug"]
+    headers = {
+        "X-Content-Hash": lesson.get("content_hash", "") or "",
+        "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+        "Cache-Tag": "lesson-content",
+        "Vary": "Accept-Encoding",
+    }
+    if _is_essential(essential):
+        html = read_lesson_content(slug)
+        if html is None:
+            raise HTTPException(status_code=404, detail="Lesson content not found")
+        return HTMLResponse(content=strip_essential_html(apply_public_asset_urls(html)), headers=headers)
+
+    cdn_on = bool((get_settings().public_assets_base or "").strip())
+    gz_path = get_gzip_path(slug)
+    if not cdn_on and _wants_gzip(request) and gz_path.exists():
+        headers["Content-Encoding"] = "gzip"
+        return FileResponse(gz_path, media_type="text/html; charset=utf-8", headers=headers)
+
     html = read_lesson_content(slug)
     if html is None:
         raise HTTPException(status_code=404, detail="Lesson content not found")
-    # Lessons change rarely. Cache at the browser/CDN edge for an hour, and serve
-    # a stale copy instantly while revalidating for up to a day (so a student on
-    # 3G gets the lesson immediately even after an edit). The content hash lets
-    # clients detect changes; the backend also invalidates its Redis copy on edit.
-    headers = {
-        "X-Content-Hash": lesson.get("content_hash", ""),
-        "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
-        "Cache-Tag": "lesson-content",
-    }
-    return HTMLResponse(content=html, headers=headers)
+    if not cdn_on and _wants_gzip(request) and gz_path.exists():
+        headers["Content-Encoding"] = "gzip"
+        return FileResponse(gz_path, media_type="text/html; charset=utf-8", headers=headers)
+    return HTMLResponse(content=apply_public_asset_urls(html), headers=headers)
 
 
 @router.get("/{lesson_id}/package")
 @router.get("/{lesson_id}/package/")
 def get_lesson_package_route(
-    lesson_id: str, db: Session = Depends(get_read_db), current_user=Depends(get_current_user)
+    lesson_id: str,
+    essential: str | None = Query(None),
+    db: Session = Depends(get_read_db),
+    current_user=Depends(get_current_user),
 ):
-    """Aggregate the per-lesson metadata a student screen needs into ONE call.
+    """UUID param: student metadata aggregate. Slug param: bridge {body_html} package."""
+    if not _is_uuid(lesson_id):
+        lesson = get_lesson_by_slug(lesson_id)
+        if not lesson:
+            raise HTTPException(status_code=404, detail="Lesson not found")
+        html = read_lesson_content(lesson["slug"])
+        if html is None:
+            raise HTTPException(status_code=404, detail="Lesson content not found")
+        if _is_essential(essential):
+            html = strip_essential_html(html)
+        html = apply_public_asset_urls(html)
+        return {
+            "body_html": html,
+            "slug": lesson["slug"],
+            "content_hash": lesson.get("content_hash") or "",
+            "title": lesson["title"],
+            "id": lesson["id"],
+            "essential": _is_essential(essential),
+        }
 
-    Opening a lesson used to fire ~5 requests (detail, bookmark, note, quiz,
-    games) plus the separately-cached content fetch. This collapses the mutable
-    metadata into a single round-trip (P2-3). The heavy HTML *content* is
-    deliberately kept on its own cached/prefetched endpoint so it stays
-    edge-cacheable and is not duplicated inside this JSON.
-
-    Uses optimized get_lesson_package() which fires only 3 DB queries instead of 7.
-    """
     pkg = get_lesson_package(lesson_id, current_user["sub"], db)
     if not pkg:
         raise HTTPException(status_code=404, detail="Lesson not found")
@@ -137,8 +212,7 @@ def create_lesson_route(body: LessonCreate, current_user=Depends(get_current_use
         if role == "teacher":
             # Enforce a per-teacher limit on their own lessons (default 2).
             teacher_lesson_limit = _teacher_lesson_limit(current_user["sub"])
-            teacher_lessons = list_lessons(created_by=current_user["sub"])
-            if len(teacher_lessons) >= teacher_lesson_limit:
+            if count_lessons(created_by=current_user["sub"]) >= teacher_lesson_limit:
                 raise HTTPException(
                     status_code=403,
                     detail=f"You have reached your limit of {teacher_lesson_limit} lessons. Contact an administrator to increase your allocation.",
@@ -177,8 +251,9 @@ def publish_lesson_route(lesson_id: str, current_user=Depends(get_current_user))
             if lesson.get("created_by") != current_user["sub"]:
                 raise HTTPException(status_code=403, detail="You can only publish lessons you created")
             teacher_lesson_limit = _teacher_lesson_limit(current_user["sub"])
-            teacher_lessons = list_lessons(created_by=current_user["sub"], status="published")
-            if lesson["status"] != "published" and len(teacher_lessons) >= teacher_lesson_limit:
+            if lesson["status"] != "published" and count_lessons(
+                created_by=current_user["sub"], status="published"
+            ) >= teacher_lesson_limit:
                 raise HTTPException(
                     status_code=403,
                     detail=f"You have reached your limit of {teacher_lesson_limit} published lessons. Contact an administrator to increase your allocation.",

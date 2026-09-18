@@ -106,11 +106,8 @@ function bindLessonInteractions({ container, iframe, lessonId, isStudent, canBoo
       if (!area) return;
       area.innerHTML = '<div class="loading-state"><div class="spinner"></div><p>Loading game...</p></div>';
       try {
-        const resp = await fetch(`/games/${gameId}/content`, {
-          headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
-        });
-        if (!resp.ok) throw new Error("Failed to load game content");
-        const html = await resp.text();
+        const html = typeof loadGameHtml === "function" ? await loadGameHtml(gameId) : "";
+        if (!html) throw new Error("Failed to load game content");
         area.innerHTML = `<iframe style="width:100%;min-height:400px;border:none;border-radius:var(--radius)" srcdoc="${escapeHtml(injectNodeBase(html))}"></iframe>`;
       } catch(err) {
         area.innerHTML = `<p style="color:var(--color-danger)">Error loading game: ${escapeHtml(err.message)}</p>`;

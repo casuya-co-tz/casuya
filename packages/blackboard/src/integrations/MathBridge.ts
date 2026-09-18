@@ -99,9 +99,14 @@ export class MathBridge {
   }
 
   private async localSolve(equation: string): Promise<SolveResult> {
+    const quick = this.fallbackSolve(equation);
+    if (quick !== 'Unable to solve') {
+      return { steps: [equation, quick], solution: quick, latex: quick };
+    }
+
     const math = await this.loadMathjs();
     if (!math) {
-      return { steps: [equation], solution: this.fallbackSolve(equation), latex: equation };
+      return { steps: [equation], solution: quick, latex: equation };
     }
     try {
       const cleaned = equation.replace(/\s+/g, '');
@@ -173,13 +178,24 @@ export class MathBridge {
   private fallbackSolve(equation: string): string {
     const cleaned = equation.replace(/\s+/g, '');
     const parts = cleaned.split('=');
-    if (parts.length === 2) {
-      try {
-        const a = parseFloat(parts[0]);
-        const b = parseFloat(parts[1]);
-        if (!isNaN(a) && !isNaN(b)) return String(a - b);
-      } catch { /* ignore */ }
+    if (parts.length !== 2) return 'Unable to solve';
+
+    const rhs = Number(parts[1]);
+    if (Number.isNaN(rhs)) return 'Unable to solve';
+
+    const linear = parts[0].match(/^([+-]?\d*)x([+-]\d+(?:\.\d+)?)?$/i);
+    if (linear) {
+      const coeffRaw = linear[1];
+      const coeff = coeffRaw === '' || coeffRaw === '+' ? 1 : coeffRaw === '-' ? -1 : Number(coeffRaw);
+      const constant = linear[2] ? Number(linear[2]) : 0;
+      if (!Number.isNaN(coeff) && coeff !== 0 && !Number.isNaN(constant)) {
+        return `x=${(rhs - constant) / coeff}`;
+      }
     }
+
+    const lhs = Number(parts[0]);
+    if (!Number.isNaN(lhs)) return String(lhs - rhs);
+
     return 'Unable to solve';
   }
 

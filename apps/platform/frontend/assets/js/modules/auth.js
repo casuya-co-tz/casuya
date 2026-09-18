@@ -44,6 +44,7 @@ async function handleLogin(e) {
 }
 
 function handleLogout() {
+  if (typeof clearRequestCaches === "function") clearRequestCaches();
   localStorage.removeItem("casuya_token");
   window.location.href = "/index.html#features";
 }

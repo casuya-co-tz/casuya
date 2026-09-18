@@ -194,8 +194,13 @@
       document.getElementById("edit-btn")?.addEventListener("click", async () => {
         let currentHtml = "";
         try {
-          const resp = await fetch(`${API_BASE}/lessons/${lessonId}/content`, { headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token") || ""}` } });
-          if (resp.ok) currentHtml = await resp.text();
+          currentHtml = typeof loadLessonHtml === "function"
+            ? await loadLessonHtml(lessonId, true)
+            : "";
+          if (!currentHtml) {
+            const resp = await fetch(`${API_BASE}/lessons/${lessonId}/content`, { headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token") || ""}` } });
+            if (resp.ok) currentHtml = await resp.text();
+          }
         } catch(e) {}
         showAdminView(`
           <div class="content">
@@ -226,9 +231,10 @@
         });
       });
       try {
-        const resp = await fetch(`${API_BASE}/lessons/${lessonId}/content`, { headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token") || ""}` } });
-        if (resp.ok) {
-          const html = await resp.text();
+        const html = typeof loadLessonHtml === "function"
+          ? await loadLessonHtml(lessonId)
+          : "";
+        if (html) {
           const iframe = document.getElementById("lesson-frame");
           iframe.srcdoc = injectNodeBase(html);
           iframe.onload = () => {

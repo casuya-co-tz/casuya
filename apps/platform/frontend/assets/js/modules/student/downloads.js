@@ -1,15 +1,47 @@
 // modules/student/downloads.js — offline downloads management.
+// Lesson HTML lives in IndexedDB (pinned). localStorage only keeps the id list
+// as a fallback index — it used to store full HTML and hit the 5 MB quota.
 
 "use strict";
+
+function _downloadedIdList() {
+  try { return JSON.parse(localStorage.getItem("casuya_downloaded_lessons") || "[]"); } catch (e) { return []; }
+}
+
+function _setDownloadedIdList(ids) {
+  localStorage.setItem("casuya_downloaded_lessons", JSON.stringify(ids));
+}
+
+function migrateLocalLessonCache() {
+  var contentCache;
+  try { contentCache = JSON.parse(localStorage.getItem("casuya_lesson_content_cache") || "{}"); } catch (e) { return Promise.resolve(); }
+  var ids = Object.keys(contentCache || {});
+  if (!ids.length) return Promise.resolve();
+  var jobs = ids.map(function (id) {
+    var html = contentCache[id] && contentCache[id].html;
+    if (!html || typeof putIdbLessonContent !== "function") return Promise.resolve();
+    return putIdbLessonContent(id, html, true);
+  });
+  return Promise.all(jobs).then(function () {
+    try { localStorage.removeItem("casuya_lesson_content_cache"); } catch (e) {}
+  });
+}
 
 function registerDownloadsView(d) {
   async function loadStudentDownloads() {
     d.showView('<div class="loading-state"><div class="spinner"></div><p>Loading downloads...</p></div>');
     try {
+      await migrateLocalLessonCache();
       const lessons = await request("/lessons");
       const lessonList = Array.isArray(lessons) ? lessons : [];
-      let cachedIds = [];
-      try { cachedIds = JSON.parse(localStorage.getItem("casuya_downloaded_lessons") || "[]"); } catch(e) {}
+      let cachedIds = _downloadedIdList();
+      if (typeof listIdbLessonIds === "function") {
+        const pinned = await listIdbLessonIds(true);
+        if (pinned.length) {
+          cachedIds = Array.from(new Set(cachedIds.concat(pinned)));
+          _setDownloadedIdList(cachedIds);
+        }
+      }
       const cachedLessons = lessonList.filter(l => cachedIds.includes(l.id));
       const availableLessons = lessonList.filter(l => !cachedIds.includes(l.id));
 
@@ -53,24 +85,27 @@ function registerDownloadsView(d) {
       document.querySelectorAll("[data-download-lesson]").forEach(btn => {
         btn.addEventListener("click", async () => {
           const lessonId = btn.dataset.downloadLesson;
-          const title = btn.dataset.title;
           btn.disabled = true;
           btn.textContent = "Saving...";
           try {
-            const contentResp = await fetch(`${API_BASE}/lessons/${lessonId}/content`, {
-              headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
-            });
-            if (contentResp.ok) {
-              const html = await contentResp.text();
-              const contentCache = JSON.parse(localStorage.getItem("casuya_lesson_content_cache") || "{}");
-              contentCache[lessonId] = { html, title, savedAt: Date.now() };
-              localStorage.setItem("casuya_lesson_content_cache", JSON.stringify(contentCache));
+            const html = typeof loadLessonHtml === "function"
+              ? await loadLessonHtml(lessonId)
+              : "";
+            if (html) {
+              if (typeof putIdbLessonContent === "function") {
+                await putIdbLessonContent(lessonId, html, true);
+              }
+              if (typeof cacheLessonContent === "function") cacheLessonContent(lessonId, html);
               if (!cachedIds.includes(lessonId)) {
                 cachedIds.push(lessonId);
-                localStorage.setItem("casuya_downloaded_lessons", JSON.stringify(cachedIds));
+                _setDownloadedIdList(cachedIds);
               }
               showToast("Lesson saved for offline viewing");
               loadStudentDownloads();
+            } else {
+              showToast("Failed to save lesson");
+              btn.disabled = false;
+              btn.textContent = "Download";
             }
           } catch(e) {
             showToast("Failed to save lesson");
@@ -80,13 +115,16 @@ function registerDownloadsView(d) {
         });
       });
       document.querySelectorAll("[data-remove-download]").forEach(btn => {
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", async () => {
           const lessonId = btn.dataset.removeDownload;
-          const contentCache = JSON.parse(localStorage.getItem("casuya_lesson_content_cache") || "{}");
-          delete contentCache[lessonId];
-          localStorage.setItem("casuya_lesson_content_cache", JSON.stringify(contentCache));
+          if (typeof deleteIdbLessonContent === "function") {
+            await deleteIdbLessonContent(lessonId);
+          }
+          if (typeof dropCachedLessonContent === "function") {
+            dropCachedLessonContent(lessonId);
+          }
           cachedIds = cachedIds.filter(id => id !== lessonId);
-          localStorage.setItem("casuya_downloaded_lessons", JSON.stringify(cachedIds));
+          _setDownloadedIdList(cachedIds);
           loadStudentDownloads();
         });
       });

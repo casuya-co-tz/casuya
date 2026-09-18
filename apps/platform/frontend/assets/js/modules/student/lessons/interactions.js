@@ -112,13 +112,12 @@ function bindStudentLessonInteractions(d, ctx) {
       const area = document.getElementById("game-content-area");
       const gid = item.dataset.gameId;
       try {
-        const resp = await fetch(`${API_BASE}/games/${gid}/content`, {
-          headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
-        });
-        if (resp.ok) {
-          const html = await resp.text();
+        const html = typeof loadGameHtml === "function"
+          ? await loadGameHtml(gid)
+          : "";
+        if (html) {
           area.innerHTML = `
-            <iframe style="width:100%;border:none;min-height:300px" srcdoc="${escapeHtml(injectNodeBase(html))}"></iframe>
+            <div id="inline-game-runtime" style="width:100%;min-height:300px;height:420px"></div>
             <div style="margin-top:0.75rem">
               <details>
                 <summary style="cursor:pointer;font-size:0.85rem;color:var(--color-text-muted)">✏️ Scratch Pad</summary>
@@ -126,6 +125,14 @@ function bindStudentLessonInteractions(d, ctx) {
               </details>
             </div>
           `;
+          const mount = document.getElementById("inline-game-runtime");
+          if (mount && typeof mountGameRuntime === "function") {
+            await mountGameRuntime(mount, html, { id: gid, title: "Game" });
+          } else if (mount && typeof mountGameSrcdoc === "function") {
+            mountGameSrcdoc(mount, html);
+          } else if (mount) {
+            mount.innerHTML = `<iframe style="width:100%;border:none;min-height:300px" srcdoc="${escapeHtml(injectNodeBase(html))}"></iframe>`;
+          }
           if (window.CasuyaBlackboardEmbed) { window.CasuyaBlackboardEmbed.autoMount(); }
         }
       } catch(e) {}

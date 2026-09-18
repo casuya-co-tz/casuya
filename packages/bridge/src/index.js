@@ -52,6 +52,10 @@ export { uploadAnalytics } from './analytics/uploaders/index.js';
 export { compress, decompress } from './compression/index.js';
 export { MigrationEngine } from './migrations/index.js';
 
+export { LessonRenderer } from './rendering/renderer.js';
+export { RenderStateManager, RENDER_STATES } from './rendering/state.js';
+export { resolveAssetUrl, rewriteHtmlDependencies } from './rendering/dependencies.js';
+
 export { uuid } from './utils/uuid.js';
 export { createLogger } from './utils/logger.js';
 export { debounce, throttle, sleep, chunk, deepMerge, isPlainObject } from './utils/helpers.js';

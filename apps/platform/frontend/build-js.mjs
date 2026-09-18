@@ -1,43 +1,32 @@
 // build-js.mjs — dependency-free code split for the static frontend.
 //
-// The frontend currently ships one monolithic bundle (main.min.js) containing
-// every role's dashboard. On 2G/3G that makes a student download teacher + admin
-// code they never use. This concatenates a shared "core" (all cross-role helpers
-// live there — see PERFORMANCE_OPTIMIZATION_PLAN.md P1-1) plus only the active
-// role's dashboard into per-role bundles. No minifier required; nginx gzip/brotli
-// handles transfer size. Run from the frontend/ directory: `node build-js.mjs`.
+// Role bundles used to ship a shared "core" that also contained landing i18n,
+// speech, and every student route. See docs/infra/performance-optimization-plan.md
+// Week 2 (P-12): student first paint is shell + dashboard + lessons; games/exams/
+// library/payments/speech load as separate chunks.
 //
-// The source modules are written as ES modules (they use `export`/`import`), but
-// the app loads them as classic <script> tags in a shared global scope. So we
-// concatenate AND strip the ESM keywords: `import` lines are dropped (the
-// referenced symbols are already globals from sibling files in the same bundle)
-// and `export` is dropped (turning the declaration into a global). This is exactly
-// the global-script behavior the runtime expects; brand.js/blackboard-embed.js
-// are loaded separately and are self-contained, so they are unaffected.
+// Source modules use ESM syntax but load as classic <script> tags. We concatenate
+// and strip `import`/`export` so symbols stay globals.
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync, copyFileSync, mkdirSync } from "node:fs";
 import { gzipSync } from "node:zlib";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { createHash } from "node:crypto";
 
-// Turn an ES module source into classic-script-compatible source.
 function stripEsm(src) {
   return src
-    // Drop static `import ... from "..."` statements (symbols are already global).
     .replace(/^\s*import\s+.*\bfrom\s+["'][^"']*["']\s*;?\s*$/gm, "")
-    // Drop side-effect `import "..."` statements.
     .replace(/^\s*import\s+["'][^"']*["']\s*;?\s*$/gm, "")
-    // Drop `export default` / `export` keywords (leaving global declarations).
     .replace(/export\s+default\s+/g, "")
     .replace(/export\s+/g, "");
 }
 
 const here = dirname(fileURLToPath(import.meta.url));
 const jsDir = join(here, "assets", "js");
+const cssDir = join(here, "assets", "css");
 
-// Shared core — every function used by more than one role (request, escapeHtml,
-// decodeToken, render, showToast, renderTutorMarkdown, renderQuizQuestions,
-// renderLogin, viewLessonContent, applyAppearance, …) lives here.
+// Shared by every portal. No landing i18n, speech, or test-generator.
 const core = [
   "env.js",
   "config.js",
@@ -49,7 +38,6 @@ const core = [
   "modules/api-client/core/markdown.js",
   "modules/api-client/core/quiz.js",
   "modules/api-client/core/katex-loader.js",
-  "modules/api-client/core/test-generator.js",
   "modules/api-client/core/fetch.js",
   "modules/ai-source-badge.js",
   "modules/api-quiz.js",
@@ -57,29 +45,40 @@ const core = [
   "modules/auth.js",
   "modules/appearance.js",
   "modules/lesson/lesson-content.js",
+  "modules/lesson/lesson-idb.js",
   "modules/lesson/lesson-viewer/cache.js",
   "modules/lesson/lesson-viewer/bridge.js",
+  "modules/exams.js",
+  "modules/lazy-script.js",
+  "auth-client.js",
+  "auth-guard.js",
+  "a11y.js",
+];
+
+// Teacher/admin lesson viewer (student uses modules/student/lessons/*).
+const lessonViewer = [
   "modules/lesson/lesson-viewer/iframe.js",
   "modules/lesson/lesson-viewer/sections.js",
   "modules/lesson/lesson-viewer/interactions.js",
   "modules/lesson/lesson-viewer/viewer.js",
   "modules/lesson.js",
-  "modules/exams.js",
-  "i18n/swahili/navigation.js",
-  "i18n/swahili/accessibility.js",
-  "i18n/swahili/hero.js",
-  "i18n/swahili/landing.js",
-  "i18n/swahili/demo.js",
-  "i18n/swahili/auth.js",
-  "i18n/swahili.js",
-  "i18n.js",
-  "site-features.js",
-  "auth-ui.js",
-  "auth-client.js",
-  "auth-guard.js",
+  "modules/api-client/core/test-generator.js",
+];
+
+const speechFiles = [
   "modules/speech-storage.js",
   "modules/speech.js",
-  "a11y.js",
+];
+
+const studentExtras = [
+  "modules/api-client/core/test-generator.js",
+  "modules/student/games.js",
+  "modules/student/exams.js",
+  "modules/student/tests.js",
+  "modules/student/files.js",
+  "modules/student/library.js",
+  "modules/student/payments.js",
+  "modules/student/downloads.js",
 ];
 
 const roles = {
@@ -94,28 +93,24 @@ const roles = {
     "modules/student/lessons/cache.js",
     "modules/student/lessons/builders.js",
     "modules/student/lessons/iframe.js",
+    "modules/student/game-runtime.js",
     "modules/student/lessons/interactions.js",
     "modules/student/lessons/viewer.js",
     "modules/student/progress.js",
     "modules/student/bookmarks.js",
     "modules/student/assignments.js",
-    "modules/student/games.js",
-    "modules/student/exams.js",
-    "modules/student/tests.js",
-    "modules/student/files.js",
-    "modules/student/library.js",
-    "modules/student/payments.js",
-    "modules/student/downloads.js",
     "modules/student/notifications.js",
     "modules/student/settings.js",
     "modules/student/class-view.js",
     "modules/student/profile.js",
+    "modules/student/lazy-views.js",
     "modules/student/index.js",
     "modules/student-dashboard.js",
     "modules/dashboards.js",
     "main.js",
   ],
   teacher: [
+    ...lessonViewer,
     "modules/teacher/dashboard.js",
     "modules/teacher/utils.js",
     "modules/teacher/overview.js",
@@ -149,6 +144,7 @@ const roles = {
     "main.js",
   ],
   admin: [
+    ...lessonViewer,
     "modules/admin-dashboard/00-shell.js",
     "modules/admin-dashboard/01-overview/greeting.js",
     "modules/admin-dashboard/01-overview/kpi.js",
@@ -177,10 +173,6 @@ const roles = {
   ],
 };
 
-// Landing i18n bundle (P1-5) — merges the eight Swahili/English translation
-// scripts into one request for the landing/auth pages. Order must match the
-// classic-script order previously inlined in index.html: dictionary parts
-// (i18n/swahili/*) first, then swahili.js (exposes SW), then i18n.js (engine).
 const i18nBundleFiles = [
   "i18n/swahili/navigation.js",
   "i18n/swahili/accessibility.js",
@@ -192,39 +184,165 @@ const i18nBundleFiles = [
   "i18n.js",
 ];
 
-function buildBundle(outName, files) {
-  const parts = files.map((f) => stripEsm(readFileSync(join(jsDir, f), "utf8")));
-  const out = parts.join("\n;\n");
+const extraJsBundles = [
+  "student.extras.bundle.js",
+  "speech.bundle.js",
+];
+
+function concatJs(files) {
+  return files.map((f) => stripEsm(readFileSync(join(jsDir, f), "utf8"))).join("\n;\n");
+}
+
+function writeJs(outName, source) {
   const outPath = join(jsDir, outName);
+  writeFileSync(outPath, source);
+  writeFileSync(`${outPath}.gz`, gzipSync(source, { level: 9 }));
+  console.log(`wrote ${outName} + ${outName}.gz`);
+}
+
+function gzipFile(absPath) {
+  if (!existsSync(absPath)) return;
+  writeFileSync(`${absPath}.gz`, gzipSync(readFileSync(absPath), { level: 9 }));
+  console.log(`wrote ${absPath.replace(here + "\\", "").replace(here + "/", "")}.gz`);
+}
+
+function writeCssBundle(outName, files) {
+  const parts = files.map((f) => {
+    const raw = readFileSync(join(cssDir, f), "utf8");
+    return raw.replace(/@import\s+(?:url\()?['"]?main\.css['"]?\)?;?/gi, "");
+  });
+  const out = parts.join("\n");
+  const outPath = join(cssDir, outName);
   writeFileSync(outPath, out);
   writeFileSync(`${outPath}.gz`, gzipSync(out, { level: 9 }));
   console.log(`wrote ${outName} + ${outName}.gz`);
 }
 
+function writeCssBundles() {
+  const mainMin = join(cssDir, "main.min.css");
+  const tw = join(cssDir, "tailwind.min.css");
+  if (!existsSync(mainMin) || !existsSync(tw)) {
+    console.log("skip CSS bundles (minify:css / build:css first)");
+    return;
+  }
+  writeCssBundle("student.bundle.css", ["main.min.css", "student.css", "tailwind.min.css"]);
+  writeCssBundle("teacher.bundle.css", ["main.min.css", "teacher.css", "tailwind.min.css"]);
+  writeCssBundle("admin.bundle.css", ["main.min.css", "admin.css", "tailwind.min.css"]);
+  ["main.min.css", "tailwind.min.css", "landing-extra.css", "landing.css", "student.css", "teacher.css", "admin.css"]
+    .forEach((f) => gzipFile(join(cssDir, f)));
+}
+
 function gzipBundles() {
   for (const role of Object.keys(roles)) {
-    const outPath = join(jsDir, `${role}.bundle.js`);
-    const out = readFileSync(outPath);
-    writeFileSync(`${outPath}.gz`, gzipSync(out, { level: 9 }));
-    console.log(`wrote assets/js/${role}.bundle.js.gz`);
+    gzipFile(join(jsDir, `${role}.bundle.js`));
   }
-  const i18nPath = join(jsDir, "i18n.swahili.bundle.js");
-  const i18nOut = readFileSync(i18nPath);
-  writeFileSync(`${i18nPath}.gz`, gzipSync(i18nOut, { level: 9 }));
-  console.log("wrote assets/js/i18n.swahili.bundle.js.gz");
+  gzipFile(join(jsDir, "i18n.swahili.bundle.js"));
+  extraJsBundles.forEach((name) => gzipFile(join(jsDir, name)));
+  gzipFile(join(jsDir, "vendor-blackboard.min.js"));
+  gzipFile(join(jsDir, "blackboard-embed.js"));
+  copyRuntimeVendor();
+  walkGzip(join(here, "static", "lib"), [".js", ".css"]);
+  writeCssBundles();
+}
+
+function walkGzip(dir, exts) {
+  if (!existsSync(dir)) return;
+  for (const name of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, name.name);
+    if (name.isDirectory()) walkGzip(p, exts);
+    else if (exts.some((e) => name.name.endsWith(e)) && !name.name.endsWith(".gz")) gzipFile(p);
+  }
+}
+
+function copyRuntimeVendor() {
+  const src = join(here, "..", "..", "..", "packages", "runtime", "dist", "casuya-runtime.min.js");
+  const destDir = join(here, "static", "pkg", "runtime");
+  if (!existsSync(src)) {
+    console.log("skip runtime vendor (packages/runtime/dist missing)");
+    return;
+  }
+  mkdirSync(destDir, { recursive: true });
+  const dest = join(destDir, "casuya-runtime.min.js");
+  copyFileSync(src, dest);
+  gzipFile(dest);
+  console.log("copied casuya-runtime.min.js");
+}
+
+const STAMP_ASSETS = [
+  "assets/js/student.bundle.js",
+  "assets/js/teacher.bundle.js",
+  "assets/js/admin.bundle.js",
+  "assets/js/student.extras.bundle.js",
+  "assets/js/speech.bundle.js",
+  "assets/js/i18n.swahili.bundle.js",
+  "assets/js/blackboard-embed.js",
+  "assets/js/vendor-blackboard.min.js",
+  "assets/js/brand.js",
+  "assets/js/rum.js",
+  "assets/js/tracker.js",
+  "assets/js/env.js",
+  "assets/js/config.js",
+  "assets/js/landing-extra.js",
+  "assets/css/student.bundle.css",
+  "assets/css/teacher.bundle.css",
+  "assets/css/admin.bundle.css",
+  "assets/css/landing.css",
+  "assets/css/landing-extra.css",
+  "static/pkg/runtime/casuya-runtime.min.js",
+];
+
+function fileHash(absPath) {
+  return createHash("sha256").update(readFileSync(absPath)).digest("hex").slice(0, 10);
+}
+
+function listHtmlFiles(dir, acc = []) {
+  for (const name of readdirSync(dir, { withFileTypes: true })) {
+    if (name.name === "node_modules" || name.name.startsWith(".")) continue;
+    const p = join(dir, name.name);
+    if (name.isDirectory()) listHtmlFiles(p, acc);
+    else if (name.name.endsWith(".html")) acc.push(p);
+  }
+  return acc;
+}
+
+function stampAssetRevs() {
+  const map = {};
+  for (const rel of STAMP_ASSETS) {
+    const abs = join(here, rel);
+    if (!existsSync(abs)) continue;
+    map["/" + rel.replace(/\\/g, "/")] = fileHash(abs);
+  }
+  const json = JSON.stringify(map);
+  const markerStart = "<!--casuya-assets-->";
+  const markerEnd = "<!--/casuya-assets-->";
+  const inject = `${markerStart}<script>window.CASUYA_ASSETS=${json};</script>${markerEnd}`;
+  const files = listHtmlFiles(here);
+  for (const abs of files) {
+    let html = readFileSync(abs, "utf8");
+    html = html.replace(/<!--casuya-assets-->[\s\S]*?<!--\/casuya-assets-->/, "");
+    html = html.replace(/(["'])(\/assets\/[^"'?]+)(?:\?v=[^"']*)?\1/g, (_, q, path) => {
+      const v = map[path];
+      return v ? `${q}${path}?v=${v}${q}` : `${q}${path}${q}`;
+    });
+    if (html.includes("</head>")) {
+      html = html.replace("</head>", `  ${inject}\n</head>`);
+    }
+    writeFileSync(abs, html);
+  }
+  console.log(`stamped ?v= hashes on ${files.length} HTML files`);
 }
 
 if (process.argv.includes("--gzip-only")) {
   gzipBundles();
+  stampAssetRevs();
 } else {
   for (const [role, files] of Object.entries(roles)) {
-    const parts = [...core, ...files].map((f) => stripEsm(readFileSync(join(jsDir, f), "utf8")));
-    const out = parts.join("\n;\n");
-    const outPath = join(jsDir, `${role}.bundle.js`);
-    writeFileSync(outPath, out);
+    writeFileSync(join(jsDir, `${role}.bundle.js`), concatJs([...core, ...files]));
   }
-  buildBundle("i18n.swahili.bundle.js", i18nBundleFiles);
+  writeJs("i18n.swahili.bundle.js", concatJs(i18nBundleFiles));
+  writeJs("speech.bundle.js", concatJs(speechFiles));
+  writeJs("student.extras.bundle.js", concatJs(studentExtras));
   gzipBundles();
-  console.log(`wrote ${Object.keys(roles).length} role bundles and updated .gz files`);
+  stampAssetRevs();
+  console.log(`wrote ${Object.keys(roles).length} role bundles, extras, speech, and CSS gz`);
 }
-

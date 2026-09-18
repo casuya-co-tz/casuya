@@ -24,6 +24,8 @@ export class PlatformBridge {
   private currentStep = 1;
   private stepElements: Map<number, Element[]> = new Map();
   private saveTimer: number | null = null;
+  private sessionId = `bb-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+  private stepStartedAt = Date.now();
 
   constructor(config: PlatformConfig) {
     this.config = config;
@@ -95,9 +97,11 @@ export class PlatformBridge {
         body: JSON.stringify({
           student_id: this.config.studentId,
           lesson_id: this.config.lessonId,
+          session_id: this.sessionId,
+          elapsed_ms: Date.now() - this.stepStartedAt,
+          completion_percentage: Math.min(100, this.currentStep * 10),
           step: this.currentStep,
           elements: snapshot.elements,
-          timestamp: Date.now(),
         }),
       });
     } catch { /* offline - saved locally */ }
@@ -124,6 +128,7 @@ export class PlatformBridge {
   async nextStep(): Promise<{ step: number; result?: StepResult }> {
     if (!this.blackboard || !this.exams) {
       this.currentStep++;
+      this.stepStartedAt = Date.now();
       this.blackboard?.clear();
       return { step: this.currentStep };
     }
@@ -132,12 +137,13 @@ export class PlatformBridge {
     const stepSubmission: StepSubmission = {
       stepNumber: this.currentStep,
       elements,
-      timeSpentMs: Date.now() - (this.stepElements.get(this.currentStep)?.[0]?.createdAt ?? Date.now()),
+      timeSpentMs: Date.now() - this.stepStartedAt,
     };
 
     const result = await this.exams.submitStep(stepSubmission);
     this.stepElements.set(this.currentStep, elements);
     this.currentStep++;
+    this.stepStartedAt = Date.now();
     this.blackboard.clear();
 
     return { step: this.currentStep, result };
@@ -180,6 +186,7 @@ export class PlatformBridge {
 
   setStep(step: number): void {
     this.currentStep = step;
+    this.stepStartedAt = Date.now();
   }
 
   setAuthToken(token: string): void {

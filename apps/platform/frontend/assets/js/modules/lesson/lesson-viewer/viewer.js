@@ -10,10 +10,6 @@ async function viewLessonContent(containerId, lessonId, backFn) {
 
   container.innerHTML = `<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>`;
 
-  let html;
-  if (lessonContentCache.has(lessonId)) {
-    html = lessonContentCache.get(lessonId);
-  }
   try {
 
     const token = localStorage.getItem("casuya_token");
@@ -21,15 +17,13 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     const isStudent = payload?.role === "student";
     const canBookmark = isStudent || payload?.role === "teacher";
 
+    let htmlPromise = typeof loadLessonHtml === "function" ? loadLessonHtml(lessonId) : null;
+
     // Fetch lesson metadata + bookmark/quiz/games in ONE call (P2-3 aggregated endpoint)
     let lessonMeta = {};
     let pkgData = null;
-    let contentFetch = null;
     try {
       if (canBookmark) {
-        contentFetch = fetch(`${API_BASE}/lessons/${lessonId}/content`, {
-          headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
-        });
         pkgData = await request(`/lessons/${lessonId}/package`);
         lessonMeta = pkgData.lesson || {};
       } else {
@@ -46,8 +40,9 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       if (idx >= 0) { _recent[idx].title = lessonTitle; localStorage.setItem("casuya_recently_viewed", JSON.stringify(_recent)); }
     } catch(e) {}
 
+    let html = htmlPromise ? await htmlPromise : "";
     if (!html) {
-      const resp = contentFetch ? await contentFetch : await fetch(`${API_BASE}/lessons/${lessonId}/content`, {
+      const resp = await fetch(`${API_BASE}/lessons/${lessonId}/content${typeof lessonContentQuery === "function" ? lessonContentQuery() : ""}`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
       });
       if (resp.status === 404) {
@@ -58,7 +53,13 @@ async function viewLessonContent(containerId, lessonId, backFn) {
       }
       if (!resp.ok) throw new Error("Failed to load lesson");
       html = await resp.text();
-      cacheLessonContent(lessonId, html);
+      if (typeof cacheLessonContent === "function") cacheLessonContent(lessonId, html);
+    }
+    if (!html) {
+      const filtered = _recent.filter(r => r.id !== lessonId);
+      localStorage.setItem("casuya_recently_viewed", JSON.stringify(filtered));
+      container.innerHTML = '<div class="empty-state"><p>This lesson is no longer available.</p></div>';
+      return;
     }
 
     const lessonStart = Date.now();

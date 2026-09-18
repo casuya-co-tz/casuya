@@ -3,15 +3,47 @@
 
 "use strict";
 
+var _studentBbEmbedLoading = null;
+function ensureStudentBlackboardEmbed() {
+  if (window.CasuyaBlackboardEmbed) {
+    window.CasuyaBlackboardEmbed.autoMount();
+    return;
+  }
+  if (!_studentBbEmbedLoading) {
+    _studentBbEmbedLoading = new Promise(function (resolve) {
+      var s = document.createElement("script");
+      var src = (typeof casuyaAssetUrl === "function")
+        ? casuyaAssetUrl("/assets/js/blackboard-embed.js")
+        : "/assets/js/blackboard-embed.js";
+      s.src = src;
+      s.async = true;
+      s.onload = function () { resolve(true); };
+      s.onerror = function () { resolve(false); };
+      document.head.appendChild(s);
+    });
+  }
+  _studentBbEmbedLoading.then(function (ok) {
+    if (ok && window.CasuyaBlackboardEmbed) window.CasuyaBlackboardEmbed.autoMount();
+  });
+}
+
 function registerLessonsView(d) {
   async function viewStudentLesson(lessonId) {
     d.showView('<div class="loading-state"><div class="spinner"></div><p>Loading lesson...</p></div>');
     try {
       let lesson, isBookmarked, noteData, quizData, gamesData, lessonContent;
       try {
-        const contentFetch = fetch(`${API_BASE}/lessons/${lessonId}/content`, {
-          headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
-        }).then(r => r.ok ? r.text() : "").catch(() => "");
+        const cachedHtml = typeof getCachedLessonContent === "function" ? getCachedLessonContent(lessonId) : null;
+        const contentFetch = cachedHtml
+          ? Promise.resolve(cachedHtml)
+          : (typeof loadLessonHtml === "function"
+            ? loadLessonHtml(lessonId)
+            : fetch(`${API_BASE}/lessons/${lessonId}/content`, {
+                headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
+              }).then(r => r.ok ? r.text() : "").then((html) => {
+                if (html && typeof cacheLessonContent === "function") cacheLessonContent(lessonId, html);
+                return html;
+              }).catch(() => ""));
 
         const pkg = await request(`/lessons/${lessonId}/package`);
         lesson = pkg.lesson;
@@ -66,7 +98,7 @@ function registerLessonsView(d) {
         </div>
       `);
 
-      if (window.CasuyaBlackboardEmbed) { window.CasuyaBlackboardEmbed.autoMount(); }
+      ensureStudentBlackboardEmbed();
 
       const iframe = document.querySelector("#student-content .lesson-iframe");
       let iframeCtx = null;
@@ -89,13 +121,19 @@ function registerLessonsView(d) {
         if (el.classList.contains("question-block")) el.setAttribute("data-lesson-lang", lessonLang);
       });
 
-      if (typeof casuyaPrefetchTts === "function") {
+      const prefetchLessonTts = function () {
+        if (typeof casuyaPrefetchTts !== "function") return;
         casuyaPrefetchTts((lesson.title + ". " + iframeBody).trim(), { lang: lessonLang });
         if (quizData && Array.isArray(quizData.questions)) {
           quizData.questions.forEach(function (q) {
             if (q && q.prompt) casuyaPrefetchTts(String(q.prompt), { lang: lessonLang });
           });
         }
+      };
+      if (typeof requestIdleCallback === "function") {
+        requestIdleCallback(prefetchLessonTts, { timeout: 6000 });
+      } else {
+        setTimeout(prefetchLessonTts, 2500);
       }
 
       if (lessonListenBtn && typeof casuyaSpeakText === "function") {

@@ -61,6 +61,44 @@ def test_search():
     assert resp.status_code == 200
 
 
+def test_student_dashboard_aggregate():
+    from backend.services.auth_service import register_user
+
+    result = register_user(
+        f"dash-{uuid.uuid4().hex[:8]}@test.com", "test123", "Dash Student", "student"
+    )
+    headers = {"Authorization": f"Bearer {result['access_token']}"}
+    resp = client.get("/students/me/dashboard", headers=headers)
+    assert resp.status_code == 200, resp.text
+    data = resp.json()
+    assert "profile" in data
+    assert "classroom" in data
+    assert "subjects" in data
+    assert "progress_by_subject" in data
+    assert "stats" in data
+    assert "streak" in data["stats"]
+    assert data["profile"]["user_id"] == result["user_id"]
+
+
+def test_teacher_dashboard_aggregate():
+    from backend.services.auth_service import register_user
+
+    result = register_user(
+        f"tdash-{uuid.uuid4().hex[:8]}@test.com", "test123", "Dash Teacher", "teacher"
+    )
+    headers = {"Authorization": f"Bearer {result['access_token']}"}
+    resp = client.get("/teachers/me/dashboard", headers=headers)
+    assert resp.status_code == 200, resp.text
+    data = resp.json()
+    assert "overview" in data
+    assert "lesson_count" in data
+    assert "classroom" in data
+    assert "bookmark_count" in data
+    assert "avg_completion_rate" in data["overview"]
+    assert data["classroom"]["classroom"]["code"]
+
+
+
 def test_analytics_overview():
     resp = client.get("/analytics/overview", headers=_headers())
     assert resp.status_code == 200

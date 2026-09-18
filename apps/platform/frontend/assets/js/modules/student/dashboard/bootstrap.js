@@ -32,12 +32,21 @@ Object.assign(StudentDashboard.prototype, {
   },
 
   // ── Form filter (persisted) ─────────────────────────────────────────
+  _normalizeFormFilter(value) {
+    if (!value) return "";
+    const roman = { I: "Form I", II: "Form II", III: "Form III", IV: "Form IV", V: "Form V", VI: "Form VI" };
+    if (roman[value]) return roman[value];
+    if (/^Form\s/i.test(value)) return value.replace(/^form\s/i, "Form ");
+    return value;
+  },
+
   _setupFormFilter() {
     const formFilterEl = document.getElementById("form-filter");
-    const savedFormFilter = localStorage.getItem("casuya_form_filter") || "";
+    const savedFormFilter = this._normalizeFormFilter(localStorage.getItem("casuya_form_filter") || "");
     if (this.payload.form_level && !savedFormFilter) {
-      localStorage.setItem("casuya_form_filter", this.payload.form_level);
-      formFilterEl.value = this.payload.form_level;
+      const normalized = this._normalizeFormFilter(this.payload.form_level);
+      localStorage.setItem("casuya_form_filter", normalized);
+      formFilterEl.value = normalized;
     } else if (savedFormFilter) {
       formFilterEl.value = savedFormFilter;
     }

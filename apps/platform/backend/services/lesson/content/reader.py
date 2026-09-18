@@ -11,12 +11,15 @@ from backend.services.html_assets import rewrite_external_assets
 from .cache import _cache_get, _cache_set
 from .latex import _inject_katex
 from .media import optimize_media
-from .paths import _migrate_old_package
+from .paths import _migrate_old_package, get_gzip_path
+from .writer import write_content_gzip
 
 
 def read_lesson_content(slug: str) -> str | None:
     cached = _cache_get(slug)
     if cached is not None:
+        if not get_gzip_path(slug).exists():
+            write_content_gzip(slug, cached)
         return cached
 
     _gen = get_db()
@@ -36,4 +39,5 @@ def read_lesson_content(slug: str) -> str | None:
     html = optimize_media(html)
     html = rewrite_external_assets(html)
     _cache_set(slug, html)
+    write_content_gzip(slug, html)
     return html

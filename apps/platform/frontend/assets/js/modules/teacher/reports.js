@@ -14,14 +14,15 @@ async function loadReports(dashboard) {
     const rows = await Promise.all(studentList.slice(0, 20).map(async (s) => {
       try {
         const progress = await request(`/progress/${s.id || s.user_id}`);
-        if (Array.isArray(progress)) {
-          const completed = progress.filter(p => p.completion_percentage >= 100).length;
-          const scores = progress.filter(p => p.score_percentage != null && p.score_percentage > 0);
+        const items = typeof asProgressItems === "function" ? asProgressItems(progress) : (Array.isArray(progress) ? progress : (progress && progress.items) || []);
+        if (items.length || (progress && progress.total)) {
+          const completed = items.filter(p => p.completion_percentage >= 100).length;
+          const scores = items.filter(p => p.score_percentage != null && p.score_percentage > 0);
           const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b.score_percentage, 0) / scores.length) : 0;
           return {
             name: s.full_name || "Unknown",
             id: s.id || s.user_id,
-            total: progress.length,
+            total: Array.isArray(progress) ? progress.length : ((progress && progress.total) || items.length),
             completed,
             avgScore,
           };

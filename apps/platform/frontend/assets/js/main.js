@@ -16,6 +16,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     // overlays the maintenance screen only if it's actually enabled — otherwise
     // it used to block every page load on a server round-trip.
     renderApp();
+    if (typeof requestIdleCallback === "function") {
+      requestIdleCallback(function () {
+        if (typeof ensureSpeechBundle === "function") ensureSpeechBundle();
+      }, { timeout: 8000 });
+    }
     try {
       const data = await request("/settings/maintenance");
       if (data && data.enabled === true && localStorage.getItem("casuya_role") !== "admin") {

@@ -31,6 +31,7 @@ connectCollaboration(adapter: CollabAdapter, roomId: string, userName: string): 
     const colors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6', '#8b5cf6'];
     const color = colors[Math.floor(Math.random() * colors.length)];
     const user: CollabUser = { id: userId, name: userName, color };
+    this.collabState = { connected: true, roomId, users: [user], localUser: user };
     adapter.connect(roomId, user);
     adapter.onElementsUpdate((elements) => {
       this.elements = elements;
@@ -51,7 +52,6 @@ connectCollaboration(adapter: CollabAdapter, roomId: string, userName: string): 
       this.remoteCursors.delete(uid);
       this.flushLive();
     });
-    this.collabState = { connected: true, roomId, users: [user], localUser: user };
     this.showToast('Connected to collaboration room');
   }
 

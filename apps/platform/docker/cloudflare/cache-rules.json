@@ -7,14 +7,24 @@
       "action": { "type": "cache", "edge_ttl": 31536000, "browser_ttl": 31536000, "cache": true }
     },
     {
-      "description": "Cache user-uploaded media (images/video) for 1 year",
+      "description": "Cache user uploads (images/video/documents) for 1 year",
+      "expression": "starts_with(http.request.uri.path, \"/uploads/\") && not starts_with(http.request.uri.path, \"/uploads/hls/\")",
+      "action": { "type": "cache", "edge_ttl": 31536000, "browser_ttl": 31536000, "cache": true }
+    },
+    {
+      "description": "Cache legacy /storage/ media for 1 year",
       "expression": "starts_with(http.request.uri.path, \"/storage/\")",
       "action": { "type": "cache", "edge_ttl": 31536000, "browser_ttl": 31536000, "cache": true }
     },
     {
       "description": "Cache immutable lesson content served via the API (backend sets stale-while-revalidate)",
-      "expression": "starts_with(http.request.uri.path, \"/api/v1/lessons/\") && ends_with(http.request.uri.path, \"/content\")",
+      "expression": "(starts_with(http.request.uri.path, \"/lessons/\") || starts_with(http.request.uri.path, \"/api/v1/lessons/\")) && ends_with(http.request.uri.path, \"/content\")",
       "action": { "type": "cache", "edge_ttl": 86400, "browser_ttl": 3600, "cache": true }
+    },
+    {
+      "description": "Cache runtime / package JS under /static/pkg for 1 year",
+      "expression": "starts_with(http.request.uri.path, \"/static/pkg/\")",
+      "action": { "type": "cache", "edge_ttl": 31536000, "browser_ttl": 31536000, "cache": true }
     },
     {
       "description": "Never cache auth, dynamic API, or health checks",
@@ -28,7 +38,8 @@
     }
   ],
   "notes": [
-    "Follow-up (not done here): migrate /storage/ uploads to Cloudflare R2 and serve them from a r2.dev / custom domain so they are cached at the edge without hitting the origin.",
+    "Origin Cache-Control for /uploads/ is public, max-age=31536000, immutable. Set PUBLIC_ASSETS_BASE (https CDN/R2 origin) to 302 GET /uploads/{file} off Railway. Full object migration onto R2 remains optional.",
+    "Zone casuya.co.tz id 902d9fb7b7d88c2f7b8a20a8dffefaa1 / account 0f79cf0abd1bfed2afb8594bdecd196a. Cache Rules entrypoint ruleset 3d84c3e0d8e34b3b8d6f922dc8fa8eff. Zone is pending until nameservers switch to aaron.ns.cloudflare.com / liberty.ns.cloudflare.com.",
     "Brotli compression is handled by Cloudflare's edge; nginx only sends gzip. No nginx brotli module is enabled to avoid breaking the container image."
   ]
 }

@@ -67,7 +67,9 @@
     if (!vendorLoading) {
       vendorLoading = new Promise(function (resolve) {
         var s = document.createElement("script");
-        s.src = "/assets/js/vendor-blackboard.min.js";
+        s.src = (typeof casuyaAssetUrl === "function")
+          ? casuyaAssetUrl("/assets/js/vendor-blackboard.min.js")
+          : "/assets/js/vendor-blackboard.min.js";
         s.async = true;
         s.onload = function () {
           resolve(!!(window.CasuyaBlackboard && window.CasuyaBlackboard.Blackboard));
@@ -118,10 +120,20 @@
     // submissions) can grab it via element._casuyaBlackboard.
     container._casuyaBlackboard = bb;
 
+    if (studentId && typeof bb.importJSON === "function") {
+      try {
+        const saved = await request(`/progress/${studentId}/${lessonId}`);
+        if (saved && Array.isArray(saved.elements) && saved.elements.length) {
+          bb.importJSON({ elements: saved.elements, width: 880, height: 560 });
+        }
+      } catch (e) { /* no saved snapshot */ }
+    }
+
     let saveTimer = null;
     const startTime = Date.now();
     const sessionId = "bb-" + Math.random().toString(36).slice(2, 10);
     const syncProgress = () => {
+      if (!studentId) return;
       if (saveTimer) clearTimeout(saveTimer);
       saveTimer = setTimeout(() => {
         const elements = bb.getElements ? bb.getElements() : [];
@@ -129,11 +141,13 @@
         request("/progress/sync", {
           method: "POST",
           body: JSON.stringify({
-            student_id: studentId || "anonymous",
+            student_id: studentId,
             lesson_id: lessonId,
             session_id: sessionId,
             elapsed_ms: Date.now() - startTime,
             completion_percentage: Math.min(100, (totalSteps / Math.max(totalSteps, 1)) * 100),
+            step: elements.length || 1,
+            elements,
           }),
         }).catch(() => {});
       }, 2000);

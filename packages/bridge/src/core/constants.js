@@ -16,6 +16,9 @@ export const STORES = {
 export const EVENTS = {
   PROGRESS_UPDATED: 'progress:updated',
   LESSON_COMPLETED: 'lesson:completed',
+  LESSON_LOADED: 'lesson:loaded',
+  LESSON_READY: 'lesson:ready',
+  LESSON_ERROR: 'lesson:error',
   SYNC_STARTED: 'sync:started',
   SYNC_SUCCESS: 'sync:success',
   SYNC_FAILURE: 'sync:failure',
@@ -39,6 +42,7 @@ export const DEFAULT_CONFIG = {
   compressionEnabled: true,
   maxStorageBytes: 50 * 1024 * 1024,
   bridgeSharedKey: null,
+  sandboxMode: 'iframe',
 };
 
 export const RETRYABLE_STATUS_CODES = new Set([408, 425, 429, 500, 502, 503, 504]);

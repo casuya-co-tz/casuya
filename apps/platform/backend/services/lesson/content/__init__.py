@@ -11,12 +11,15 @@ from .cache import (  # noqa: F401
     _cache_invalidate_content,
     _cache_set,
 )
-from .paths import get_package_path
+from .paths import get_gzip_path, get_package_path
 from .reader import read_lesson_content
 from .media import optimize_media
+from .writer import write_content_gzip
 
 __all__ = [
     "get_package_path",
+    "get_gzip_path",
     "optimize_media",
     "read_lesson_content",
+    "write_content_gzip",
 ]

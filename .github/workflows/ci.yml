@@ -28,6 +28,11 @@ jobs:
 
       - run: pnpm check:layers
       - run: pnpm check:deploy
+      - name: Build lesson runtime IIFE
+        run: pnpm --filter casuya-runtime build
+      - name: Frontend assets
+        working-directory: apps/platform/frontend
+        run: npm install --no-fund --no-audit && npm run build
       - run: pnpm build
       - run: pnpm typecheck
       - run: pnpm lint

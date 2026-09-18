@@ -3,11 +3,11 @@
 async function loadOverview(dashboard) {
   dashboard.showView('<div class="loading-state"><div class="spinner"></div><p>Loading...</p></div>');
   try {
-    const [overview, lessons, classroomRes] = await Promise.all([
-      request("/analytics/overview"),
-      request("/lessons/?status=published"),
-      request("/classrooms/me/students").catch(() => null),
-    ]);
+    const data = await request("/teachers/me/dashboard");
+    const overview = data.overview || {};
+    const classroomRes = data.classroom || {};
+    const bookmarkCount = data.bookmark_count || 0;
+    const lessonCount = data.lesson_count || 0;
     const name = dashboard.payload.full_name || dashboard.payload.email || "Teacher";
     const classCode = classroomRes?.classroom?.code || "";
     const connectedCount = classroomRes?.total ?? 0;
@@ -19,9 +19,6 @@ async function loadOverview(dashboard) {
 
     let recent = [];
     try { recent = JSON.parse(localStorage.getItem("casuya_recently_viewed") || "[]"); } catch(e) {}
-
-    let bookmarks = [];
-    try { bookmarks = await request("/bookmarks"); } catch(e) {}
 
     dashboard.showView(`
       <div class="content" style="max-width:960px">
@@ -56,7 +53,7 @@ async function loadOverview(dashboard) {
           </div>
           <div class="stat-card">
             <div class="stat-icon" style="background:#f0fdf4;color:#16a34a">📝</div>
-            <div class="stat-value">${Array.isArray(lessons) ? lessons.length : 0}</div>
+            <div class="stat-value">${lessonCount}</div>
             <div class="stat-label">Lessons</div>
           </div>
           <div class="stat-card">
@@ -66,7 +63,7 @@ async function loadOverview(dashboard) {
           </div>
           <div class="stat-card">
             <div class="stat-icon" style="background:#fce7f3;color:#db2777">🔖</div>
-            <div class="stat-value">${Array.isArray(bookmarks) ? bookmarks.length : 0}</div>
+            <div class="stat-value">${bookmarkCount}</div>
             <div class="stat-label">Bookmarked</div>
           </div>
         </div>

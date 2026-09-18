@@ -4,19 +4,21 @@
 //   - Static assets (/assets/*, /static/*, and known file types): stale-while-revalidate.
 //     These are inert (JS/CSS/fonts/KaTeX), so serving a cached copy is always safe and
 //     makes repeat loads instant on 2G/3G.
-//   - Lesson content (/api/lessons/<id>/content): stale-while-revalidate (same-origin only).
+//   - Lesson content (/lessons/<id>/content): stale-while-revalidate (same-origin only).
 //   - Navigation (HTML) and all other API calls: network-only, so auth and dynamic data
 //     are NEVER served from cache (no stale dashboards, no leaked sessions).
 //
 // Cache is versioned; bump CACHE_VERSION when you change cached assets.
 
-const CACHE_VERSION = "casuya-static-v8";
+const CACHE_VERSION = "casuya-static-v11";
 const PRECACHE = [
   "/",
   "/manifest.webmanifest",
-  "/assets/css/main.min.css",
-  "/assets/css/tailwind.min.css",
+  "/assets/css/landing.css",
   "/assets/css/landing-extra.css",
+  "/assets/fonts/plus-jakarta-sans-latin.woff2",
+  "/assets/fonts/manrope-latin.woff2",
+  "/assets/fonts/fraunces-latin.woff2",
   "/assets/js/env.js",
   "/assets/js/config.js",
   "/assets/js/i18n.swahili.bundle.js",
@@ -50,7 +52,7 @@ self.addEventListener("activate", (event) => {
 });
 
 function isLessonContent(url) {
-  return url.pathname.match(/^\/api\/lessons\/[^/]+\/content\/?$/i);
+  return /\/(?:api\/)?lessons\/[^/]+\/content\/?$/i.test(url.pathname);
 }
 
 self.addEventListener("fetch", (event) => {

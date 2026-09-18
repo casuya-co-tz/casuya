@@ -65,6 +65,14 @@ def list_teachers(
     }
 
 
+@router.get("/me/dashboard", response_model=dict)
+@router.get("/me/dashboard/", response_model=dict)
+def get_my_dashboard(current_user=Depends(get_current_user), db: Session = Depends(get_db)):
+    from backend.services.teacher_dashboard import build_teacher_dashboard
+
+    return build_teacher_dashboard(db, current_user)
+
+
 @router.get("/me", response_model=dict)
 @router.get("/me/", response_model=dict)
 def get_my_profile(current_user=Depends(get_current_user), db: Session = Depends(get_db)):

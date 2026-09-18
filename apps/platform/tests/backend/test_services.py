@@ -3,7 +3,7 @@ import pytest
 from backend.config.database import get_db
 from backend.models.lesson import Subject, Topic, Subtopic, Lesson
 from backend.services.auth_service import register_user, authenticate_user
-from backend.services.lesson_service import create_lesson_from_html, publish_lesson, get_lesson, list_lessons
+from backend.services.lesson_service import create_lesson_from_html, publish_lesson, get_lesson, list_lessons, count_lessons
 from backend.services.quiz_service import create_quiz, get_quiz_for_lesson, grade_attempt
 from backend.services.progress_service import apply_progress_sync, get_student_progress
 from backend.services.search_service import search_content
@@ -44,6 +44,7 @@ def test_lesson_flow():
     assert fetched is not None
     lesson_list = list_lessons()
     assert len(lesson_list) >= 1
+    assert count_lessons() >= 1
 
 
 def test_quiz_flow():
@@ -81,7 +82,45 @@ def test_progress():
     })
     assert result["status"] == "synced"
     records = get_student_progress("test-student")
-    assert len(records) >= 1
+    items = records["items"] if isinstance(records, dict) else records
+    assert len(items) >= 1
+
+
+def test_progress_blackboard_snapshot():
+    from backend.services.progress_service import get_lesson_progress
+
+    result = apply_progress_sync("test-student-bb", {
+        "lesson_id": "test-lesson-bb",
+        "session_id": "sess-bb",
+        "elapsed_ms": 1000,
+        "completion_percentage": 10.0,
+        "step": 2,
+        "elements": [{"tool": "pen", "points": [1, 2]}],
+    })
+    assert result["status"] == "synced"
+    data = get_lesson_progress("test-student-bb", "test-lesson-bb")
+    assert data is not None
+    assert data["step"] == 2
+    assert data["elements"][0]["tool"] == "pen"
+
+
+def test_progress_envelope_pagination():
+    apply_progress_sync("test-student-page", {
+        "lesson_id": "lesson-a",
+        "session_id": "s1",
+        "elapsed_ms": 10,
+        "completion_percentage": 50,
+    })
+    apply_progress_sync("test-student-page", {
+        "lesson_id": "lesson-b",
+        "session_id": "s2",
+        "elapsed_ms": 10,
+        "completion_percentage": 80,
+    })
+    page = get_student_progress("test-student-page", offset=0, limit=1)
+    assert page["total"] >= 2
+    assert page["limit"] == 1
+    assert len(page["items"]) == 1
 
 
 def test_search():

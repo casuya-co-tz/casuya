@@ -6,11 +6,12 @@ import asyncio
 from pathlib import Path
 
 from fastapi import APIRouter, Depends, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 
 from backend.api.uploads.common import FileUpdateRequest, _sanitize_filename, _scan_cache, logger
 from backend.config.database import get_db
 from backend.config.settings import get_settings
+from backend.services.public_assets import public_asset_url
 from backend.middleware.permissions import require_role
 from backend.models.file_record import FileRecord
 
@@ -58,6 +59,13 @@ async def update_file(filename: str, body: FileUpdateRequest, current_user=Depen
 async def serve_file(filename: str):
     _sanitize_filename(filename)
     settings = get_settings()
+    cdn = public_asset_url(f"uploads/{filename}", settings.public_assets_base)
+    if cdn:
+        return RedirectResponse(
+            cdn,
+            status_code=302,
+            headers={"Cache-Control": "public, max-age=31536000, immutable"},
+        )
     root = Path(settings.storage_root)
 
     def _find_file():
@@ -71,7 +79,11 @@ async def serve_file(filename: str):
 
     target = await asyncio.to_thread(_find_file)
     if target:
-        return FileResponse(target, filename=filename)
+        return FileResponse(
+            target,
+            filename=filename,
+            headers={"Cache-Control": "public, max-age=31536000, immutable"},
+        )
 
     # Fallback: serve from the database if the file was wiped from disk.
     def _db_fallback():

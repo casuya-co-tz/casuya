@@ -49,8 +49,8 @@ class SecurityHeadersMiddleware:
                 headers["Content-Security-Policy"] = (
                     f"default-src 'self'; "
                     f"script-src 'self' 'unsafe-inline' {_cdn_src}; "
-                    f"style-src 'self' 'unsafe-inline' {_cdn_src} https://fonts.googleapis.com https://fonts.cdnfonts.com https://p.typekit.net; "
-                    f"font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com https://p.typekit.net https://use.typekit.net; "
+                    f"style-src 'self' 'unsafe-inline' {_cdn_src}; "
+                    f"font-src 'self' data:; "
                     f"img-src 'self' data: blob: https:; "
                     f"frame-src 'self' https:; "
                     f"connect-src 'self'"

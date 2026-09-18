@@ -58,7 +58,8 @@ async function viewStudent(dashboard, studentId, studentName) {
       request(`/students/${studentId}`).catch(() => null),
     ]);
 
-    const progressList = Array.isArray(progress) ? progress : [];
+    const progressList = typeof asProgressItems === "function" ? asProgressItems(progress) : (Array.isArray(progress) ? progress : (progress && progress.items) || []);
+    const attempted = Array.isArray(progress) ? progress.length : ((progress && progress.total) || progressList.length);
     const bySubject = {};
     let totalCompleted = 0;
     let avgScore = 0;
@@ -93,7 +94,7 @@ async function viewStudent(dashboard, studentId, studentName) {
         <div class="stat-grid">
           <div class="stat-card">
             <div class="stat-icon" style="background:#eff6ff;color:#2563eb">📚</div>
-            <div class="stat-value">${progressList.length}</div>
+            <div class="stat-value">${attempted}</div>
             <div class="stat-label">Lessons Attempted</div>
           </div>
           <div class="stat-card">

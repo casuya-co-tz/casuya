@@ -4,9 +4,15 @@ function prefetchNextLesson(d, lessonId) {
   const idx = d._subtopicLessonList.findIndex((l) => l.id === lessonId);
   if (idx < 0 || idx + 1 >= d._subtopicLessonList.length) return;
   const next = d._subtopicLessonList[idx + 1];
-  fetch(`${API_BASE}/lessons/${next.id}/content`, {
-    headers: { Authorization: `Bearer ${localStorage.getItem("casuya_token")}` },
-  }).catch(() => {});
+  if (typeof getCachedLessonContent === "function" && getCachedLessonContent(next.id)) return;
+  const start = typeof loadLessonHtml === "function"
+    ? loadLessonHtml(next.id)
+    : fetch(`${API_BASE}/lessons/${next.id}/content`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("casuya_token")}` },
+      }).then((r) => r.ok ? r.text() : "").then((html) => {
+        if (html && typeof cacheLessonContent === "function") cacheLessonContent(next.id, html);
+      });
+  Promise.resolve(start).catch(() => {});
 }
 
 function recordRecentLesson(d, lessonId, lesson) {

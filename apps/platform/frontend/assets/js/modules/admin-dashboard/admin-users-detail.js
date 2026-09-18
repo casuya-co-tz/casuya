@@ -12,7 +12,7 @@
         userData = await request(`/teachers/${userId}`).catch(() => null);
       }
 
-      const progressList = Array.isArray(progressData) ? progressData : [];
+      const progressList = typeof asProgressItems === "function" ? asProgressItems(progressData) : (Array.isArray(progressData) ? progressData : (progressData && progressData.items) || []);
       const totalCompleted = progressList.filter(p => p.completion_percentage >= 100).length;
       const scores = progressList.filter(p => p.score_percentage != null && p.score_percentage > 0);
       const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b.score_percentage, 0) / scores.length) : 0;

@@ -1,18 +1,21 @@
 import logging
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query
 from pydantic import BaseModel
-from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
 from backend.middleware.auth import bridge_auth, get_current_user
 from backend.models.activity import RecentActivity
-from backend.models.progress import ProgressRecord
 from backend.models.student import Student
 from backend.schemas.progress import ProgressSyncPayload
-from backend.services.progress_service import apply_progress_sync, get_student_progress
+from backend.services.progress_service import (
+    apply_progress_sync,
+    compute_student_stats,
+    get_lesson_progress,
+    get_student_progress,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -93,87 +96,41 @@ def get_student_stats(student_id: str, db: Session = Depends(get_db), current_us
         owned = _resolve_student_id(current_user, "", db)  # throws if caller has no student profile
         if owned != student_id:
             raise HTTPException(status_code=403, detail="Not authorized to view this student's data")
-    now = datetime.now(timezone.utc)
-
-    # --- Lessons viewed (distinct lessons) ---
-    lessons_viewed = (
-        db.query(func.count(func.distinct(RecentActivity.lesson_id)))
-        .filter(RecentActivity.student_id == student_id)
-        .scalar()
-    ) or 0
-
-    # --- Recent lessons (latest 20) ---
-    recent_rows = (
-        db.query(RecentActivity)
-        .filter(RecentActivity.student_id == student_id)
-        .order_by(RecentActivity.viewed_at.desc())
-        .limit(20)
-        .all()
-    )
-    seen = set()
-    recent_lessons = []
-    for r in recent_rows:
-        if r.lesson_id not in seen:
-            seen.add(r.lesson_id)
-            recent_lessons.append(
-                {
-                    "id": r.lesson_id,
-                    "title": r.lesson_title,
-                    "viewedAt": int(r.viewed_at.timestamp() * 1000),
-                }
-            )
-
-    # --- Streak: count consecutive days with activity going back from today ---
-    streak = 0
-    recent_dates = (
-        db.query(func.date(RecentActivity.viewed_at))
-        .filter(RecentActivity.student_id == student_id)
-        .filter(RecentActivity.viewed_at >= now - timedelta(days=365))
-        .distinct()
-        .all()
-    )
-    if recent_dates:
-        activity_dates = {d[0] for d in recent_dates}
-        check_date = now.date()
-        for _ in range(365):
-            if check_date in activity_dates:
-                streak += 1
-                check_date -= timedelta(days=1)
-            else:
-                break
-
-    # --- Average score + subjects completed from a single aggregate scan ---
-    avg_score, subjects_completed = (
-        db.query(
-            func.avg(ProgressRecord.score_percentage).filter(
-                ProgressRecord.score_percentage.isnot(None),
-                ProgressRecord.score_percentage > 0,
-            ),
-            func.count(func.distinct(ProgressRecord.lesson_id)).filter(
-                ProgressRecord.completion_percentage >= 100,
-            ),
-        )
-        .filter(ProgressRecord.student_id == student_id)
-        .first()
-    )
-    avg_score = round(avg_score) if avg_score is not None else None
-    subjects_completed = subjects_completed or 0
-
-    return {
-        "streak": streak,
-        "lessonsViewed": lessons_viewed,
-        "avgScore": round(avg_score) if avg_score else None,
-        "subjectsCompleted": subjects_completed,
-        "recent": recent_lessons,
-    }
+    return compute_student_stats(db, student_id)
 
 
-@router.get("/{student_id}", response_model=list[dict])
-@router.get("/{student_id}/", response_model=list[dict])
-def get_student_progress_route(student_id: str, db: Session = Depends(get_db), current_user=Depends(get_current_user)):
+@router.get("/{student_id}/{lesson_id}", response_model=dict)
+@router.get("/{student_id}/{lesson_id}/", response_model=dict)
+def get_lesson_progress_route(
+    student_id: str,
+    lesson_id: str,
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
+    """Return saved blackboard state for a single lesson."""
     role = current_user.get("role", "")
     if role not in ("admin", "teacher"):
         owned = _resolve_student_id(current_user, "", db)
         if owned != student_id:
             raise HTTPException(status_code=403, detail="Not authorized to view this student's data")
-    return get_student_progress(student_id)
+    data = get_lesson_progress(student_id, lesson_id)
+    if not data:
+        raise HTTPException(status_code=404, detail="No saved progress for this lesson")
+    return data
+
+
+@router.get("/{student_id}", response_model=dict)
+@router.get("/{student_id}/", response_model=dict)
+def get_student_progress_route(
+    student_id: str,
+    offset: int = Query(0, ge=0),
+    limit: int = Query(200, ge=1, le=500),
+    db: Session = Depends(get_db),
+    current_user=Depends(get_current_user),
+):
+    role = current_user.get("role", "")
+    if role not in ("admin", "teacher"):
+        owned = _resolve_student_id(current_user, "", db)
+        if owned != student_id:
+            raise HTTPException(status_code=403, detail="Not authorized to view this student's data")
+    return get_student_progress(student_id, offset=offset, limit=limit)

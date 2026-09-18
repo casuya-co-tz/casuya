@@ -41,6 +41,10 @@ export class CasuyaBridge {
     return this._runtime.syncEngine.syncNow();
   }
 
+  async renderLesson(slug, mountEl) {
+    return this._runtime.renderer.render(slug, mountEl);
+  }
+
   get isOnline() {
     return this._runtime.connectivity.isOnline;
   }

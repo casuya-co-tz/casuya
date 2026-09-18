@@ -89,6 +89,10 @@ x = 2</pre>"""
         slug=lesson_slug,
         title="Introduction to Linear Equations",
         content_hash=content_hash,
+        content=html,
+        package_html=html,
+        package_filename=f"{lesson_slug}.html",
+        package_version="1.0.0",
         status="published",
     )
     db.add(lesson)

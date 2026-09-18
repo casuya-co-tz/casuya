@@ -7,11 +7,10 @@ function registerOverviewView(d) {
   async function loadStudentOverview() {
     d.showView('<div class="loading-state"><div class="spinner"></div><p>Loading dashboard...</p></div>');
     try {
-      const [subjects, profile, classRes] = await Promise.all([
-        request("/subjects"),
-        request("/students/me").catch(() => null),
-        request("/classrooms/me").catch(() => null),
-      ]);
+      const dash = await request("/students/me/dashboard");
+      const profile = dash.profile || null;
+      const classRes = dash.classroom || {};
+      const subjects = dash.subjects || [];
 
       const isConnected = !!(classRes && classRes.classroom);
       const classTeacher = classRes?.teacher?.name || "";
@@ -29,35 +28,20 @@ function registerOverviewView(d) {
         { bg: "#e0f2fe", color: "#0284c7", emoji: "💻" },
       ];
 
-      let progressData = [];
+      let progressBySubject = [];
       let totalCompleted = 0;
       let avgScore = 0;
       let streak = 0;
       let recent = [];
       let lessonsViewed = 0;
       try {
-        if (profile?.id) {
-          const [progressResult, statsResult] = await Promise.all([
-            request(`/progress/${profile.id}`).catch(() => []),
-            request(`/progress/${profile.id}/stats`).catch(() => null),
-          ]);
-
-          progressData = Array.isArray(progressResult) ? progressResult : [];
-          if (progressData.length > 0) {
-            totalCompleted = progressData.filter(p => p.completion_percentage >= 100).length;
-            const scores = progressData.filter(p => p.score_percentage != null && p.score_percentage > 0);
-            if (scores.length > 0) {
-              avgScore = Math.round(scores.reduce((sum, p) => sum + p.score_percentage, 0) / scores.length);
-            }
-          }
-
-          if (statsResult) {
-            streak = statsResult.streak || 0;
-            lessonsViewed = statsResult.lessonsViewed || 0;
-            recent = Array.isArray(statsResult.recent) ? statsResult.recent : [];
-            if (statsResult.avgScore != null) avgScore = statsResult.avgScore;
-          }
-        }
+        const stats = dash.stats || {};
+        progressBySubject = Array.isArray(dash.progress_by_subject) ? dash.progress_by_subject : [];
+        totalCompleted = stats.totalCompleted || progressBySubject.reduce((sum, p) => sum + (p.completed || 0), 0);
+        avgScore = stats.avgScore != null ? stats.avgScore : 0;
+        streak = stats.streak || 0;
+        lessonsViewed = stats.lessonsViewed || 0;
+        recent = Array.isArray(stats.recent) ? stats.recent : [];
       } catch(e) {}
 
       if (recent.length === 0) {
@@ -161,9 +145,9 @@ function registerOverviewView(d) {
             : `<div class="subject-card-grid">
                 ${subjectList.map((s, i) => {
                   const ic = iconColors[i % iconColors.length];
-                  const subjProgress = progressData.filter(p => p.subject_name === s.name);
-                  const completedCount = subjProgress.filter(p => p.completion_percentage >= 100).length;
-                  const totalCount = subjProgress.length;
+                  const subjProgress = progressBySubject.find(p => p.name === s.name);
+                  const completedCount = subjProgress ? subjProgress.completed : 0;
+                  const totalCount = subjProgress ? subjProgress.total : 0;
                   const pct = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
                   return `
                     <div class="subject-card-enhanced" data-id="${escapeHtml(s.id)}">

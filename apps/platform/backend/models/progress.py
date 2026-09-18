@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from sqlalchemy import DateTime, Float, ForeignKey, Index, Integer, String, UniqueConstraint
+from sqlalchemy import DateTime, Float, ForeignKey, Index, Integer, String, Text, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column
 
 from backend.config.database import Base
@@ -27,4 +27,5 @@ class ProgressRecord(Base):
     elapsed_ms: Mapped[int] = mapped_column(Integer, default=0)
     completion_percentage: Mapped[float] = mapped_column(Float, default=0.0)
     score_percentage: Mapped[float | None] = mapped_column(Float, nullable=True)
+    blackboard_snapshot: Mapped[str | None] = mapped_column(Text, nullable=True)
     synced_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))

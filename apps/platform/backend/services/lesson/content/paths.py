@@ -22,6 +22,10 @@ def get_package_path(slug: str) -> Path:
     return storage / slug[:2] / slug[2:4] / f"{slug}.html"
 
 
+def get_gzip_path(slug: str) -> Path:
+    return get_package_path(slug).with_suffix(".html.gz")
+
+
 def _migrate_old_package(slug: str) -> str | None:
     """Migrate old flat JSON or filesystem package to DB, return HTML content."""
     new_path = get_package_path(slug)

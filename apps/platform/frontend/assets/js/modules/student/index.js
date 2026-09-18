@@ -8,6 +8,7 @@
 
 function renderStudentDashboard() {
   const dashboard = new StudentDashboard();
+  window._casuyaStudentDashboard = dashboard;
 
   registerOverviewView(dashboard);
   registerSubjectsView(dashboard);
@@ -15,17 +16,21 @@ function renderStudentDashboard() {
   registerProgressView(dashboard);
   registerBookmarksView(dashboard);
   registerAssignmentsView(dashboard);
-  registerGamesView(dashboard);
-  registerExamsView(dashboard);
-  registerTestsView(dashboard);
-  registerFilesView(dashboard);
-  registerLibraryView(dashboard);
-  registerPaymentsView(dashboard);
-  registerDownloadsView(dashboard);
   registerNotificationsView(dashboard);
   registerSettingsView(dashboard);
   registerClassView(dashboard);
   registerProfileView(dashboard);
+  registerLazyStudentViews(dashboard);
 
   dashboard.init();
+
+  var prefetch = function () {
+    if (typeof dashboard._prefetchExtras === "function") dashboard._prefetchExtras();
+    if (typeof ensureSpeechBundle === "function") ensureSpeechBundle();
+  };
+  if (typeof requestIdleCallback === "function") {
+    requestIdleCallback(prefetch, { timeout: 8000 });
+  } else {
+    setTimeout(prefetch, 4000);
+  }
 }

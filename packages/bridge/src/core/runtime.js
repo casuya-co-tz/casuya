@@ -16,6 +16,7 @@ import { registerBackgroundSync } from '../sync/background-sync.js';
 import { ConnectivityMonitor } from '../network/connectivity.js';
 import { NetworkRecovery } from '../network/recovery.js';
 import { ProgressTracker } from '../progress/tracker.js';
+import { LessonRenderer } from '../rendering/renderer.js';
 
 export function createRuntime(overrides = {}) {
   const config = resolveConfig(overrides);
@@ -34,6 +35,7 @@ export function createRuntime(overrides = {}) {
   const recovery = new NetworkRecovery({ bus, config });
   const syncEngine = new SyncEngine({ bus, queue, manifestStore, packageStore, config });
   const progress = new ProgressTracker({ db, bus, queue });
+  const renderer = new LessonRenderer({ packageStore, bus, config, hooks });
 
   let unregisterBackgroundSync = null;
 
@@ -52,6 +54,7 @@ export function createRuntime(overrides = {}) {
     recovery,
     syncEngine,
     progress,
+    renderer,
 
     start() {
       connectivity.start();

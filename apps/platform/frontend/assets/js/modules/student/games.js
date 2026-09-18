@@ -60,9 +60,11 @@ function registerGamesView(d) {
     d.showView('<div class="loading-state"><div class="spinner"></div><p>Loading game...</p></div>');
     try {
       const game = await request(`/games/${gameId}`);
-      const contentResp = await fetch(`${API_BASE}/games/${gameId}/content`, {
-        headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
-      }).then(r => r.ok ? r.text() : "").catch(() => "");
+      const contentResp = typeof loadGameHtml === "function"
+        ? await loadGameHtml(gameId)
+        : await fetch(`${API_BASE}/games/${gameId}/content`, {
+            headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token")}` },
+          }).then(r => r.ok ? r.text() : "").catch(() => "");
 
       d.showView(`
         <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem">
@@ -70,7 +72,7 @@ function registerGamesView(d) {
           <h2 style="flex:1">${escapeHtml(game.title || "Game")}</h2>
         </div>
         <div style="width:100%">
-          <iframe class="lesson-iframe" style="width:100%;border:none;display:block"></iframe>
+          <div id="game-runtime-mount" class="lesson-iframe" style="width:100%;min-height:300px;height:600px"></div>
         </div>
         <div class="card" style="margin-top:0.75rem;padding:1rem">
           <h3 style="margin:0 0 0.5rem">✏️ Scratch Pad</h3>
@@ -79,26 +81,13 @@ function registerGamesView(d) {
         </div>
       `);
 
-      const iframe = document.querySelector("#student-content .lesson-iframe");
-      if (iframe && contentResp) {
-        iframe.srcdoc = injectNodeBase(contentResp);
-        let heightSet = false;
-        const setHeight = () => {
-          if (heightSet) return;
-          try {
-            const doc = iframe.contentWindow?.document;
-            if (doc) {
-              iframe.style.height = Math.max(doc.documentElement?.scrollHeight || 0, doc.body?.scrollHeight || 0, 300) + "px";
-              heightSet = true;
-            }
-          } catch(e) {}
-        };
-        iframe.addEventListener("load", setHeight);
-        const poll = setInterval(() => { setHeight(); if (heightSet) clearInterval(poll); }, 300);
-        setTimeout(() => { clearInterval(poll); if (!heightSet) iframe.style.height = "600px"; }, 8000);
-      } else if (iframe) {
-        iframe.style.height = "400px";
-        iframe.srcdoc = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-family:sans-serif"><p>Game content not available</p></div>';
+      const mount = document.getElementById("game-runtime-mount");
+      if (mount && contentResp && typeof mountGameRuntime === "function") {
+        await mountGameRuntime(mount, contentResp, { id: gameId, title: game.title || "Game" });
+      } else if (mount && contentResp) {
+        mountGameSrcdoc(mount, contentResp);
+      } else if (mount) {
+        mount.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-family:sans-serif"><p>Game content not available</p></div>';
       }
 
       document.getElementById("back-btn").addEventListener("click", () => d.goBack());

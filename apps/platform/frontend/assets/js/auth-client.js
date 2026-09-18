@@ -94,6 +94,7 @@ export function persistAuth(data) {
 
 export function clearAuth() {
   Object.values(STORAGE_KEYS).forEach((key) => localStorage.removeItem(key));
+  if (typeof clearRequestCaches === "function") clearRequestCaches();
 }
 
 export function redirectToPortal(role) {

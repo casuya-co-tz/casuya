@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import uuid
 
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
@@ -129,6 +130,27 @@ def get_lesson(lesson_id: str) -> dict | None:
         _gen.close()
 
 
+def get_lesson_by_slug(slug: str) -> dict | None:
+    _gen = get_db()
+    db: Session = next(_gen)
+    try:
+        lesson = db.query(Lesson).filter(Lesson.slug == slug).first()
+        if not lesson:
+            return None
+        return {
+            "id": lesson.id,
+            "subtopic_id": lesson.subtopic_id,
+            "slug": lesson.slug,
+            "title": lesson.title,
+            "content_hash": lesson.content_hash,
+            "package_version": lesson.package_version,
+            "status": lesson.status,
+            "created_by": lesson.created_by,
+        }
+    finally:
+        _gen.close()
+
+
 def update_lesson(lesson_id: str, title: str | None = None, html: str | None = None) -> dict:
     from backend.models.lesson_version import LessonVersion
 
@@ -188,5 +210,25 @@ def list_lessons(
             }
             for l in lessons
         ]
+    finally:
+        _gen.close()
+
+
+def count_lessons(
+    subtopic_id: str | None = None,
+    status: str | None = None,
+    created_by: str | None = None,
+) -> int:
+    _gen = get_db()
+    db: Session = next(_gen)
+    try:
+        query = db.query(func.count(Lesson.id))
+        if subtopic_id:
+            query = query.filter(Lesson.subtopic_id == subtopic_id)
+        if status:
+            query = query.filter(Lesson.status == status)
+        if created_by:
+            query = query.filter(Lesson.created_by == created_by)
+        return int(query.scalar() or 0)
     finally:
         _gen.close()

@@ -57,11 +57,38 @@ def purge_cache_tags(tags: list[str]):
 _RULES_FILE = Path(__file__).resolve().parent.parent / "docker" / "cloudflare" / "cache-rules.json"
 
 
-def deploy_cache_rules() -> dict:
-    """Deploy cache rules from cache-rules.json to the Cloudflare zone.
+def _cf_rule(rule: dict, index: int) -> dict:
+    """Map cache-rules.json entries to Cloudflare Cache Rules API shape."""
+    action = rule.get("action") or {}
+    cache_on = bool(action.get("cache"))
+    payload: dict = {
+        "expression": rule["expression"],
+        "description": rule.get("description", f"Rule {index + 1}"),
+        "enabled": True,
+        "action": "set_cache_settings",
+        "action_parameters": {"cache": cache_on},
+    }
+    if cache_on:
+        edge = int(action.get("edge_ttl") or 0)
+        browser = int(action.get("browser_ttl") or 0)
+        if edge > 0:
+            payload["action_parameters"]["edge_ttl"] = {
+                "mode": "override_origin",
+                "default": edge,
+            }
+        if browser > 0:
+            payload["action_parameters"]["browser_ttl"] = {
+                "mode": "override_origin",
+                "default": browser,
+            }
+    return payload
 
-    Reads the rules file, lists existing rules, creates/updates as needed.
-    Returns a summary of actions taken. Safe no-op when credentials are absent.
+
+def deploy_cache_rules() -> dict:
+    """Replace the zone Cache Rules entrypoint with cache-rules.json.
+
+    Safe no-op when credentials are absent. Uses
+    PUT /zones/{id}/rulesets/phases/http_request_cache_settings/entrypoint.
     """
     client = _get_client()
     if not client:
@@ -82,63 +109,33 @@ def deploy_cache_rules() -> dict:
     if not rules:
         return {"status": "skipped", "reason": "no rules defined"}
 
-    # Fetch existing cache rules from Cloudflare
-    existing = []
-    try:
-        resp = client.get(f"/zones/{zone_id}/rulesets/phases/http_request_cache_settings/entrypoint")
-        if resp.status_code == 200:
-            data = resp.json()
-            if data.get("success"):
-                existing = data.get("result", {}).get("rules", [])
-    except Exception as e:
-        logger.warning("Failed to fetch existing Cloudflare rules: %s", e)
-
-    # Build ruleset payload
-    cf_rules = []
-    for i, rule in enumerate(rules):
-        cf_rules.append({
-            "expression": rule["expression"],
-            "action": "set_cache_settings" if rule["action"].get("cache") else "skip",
-            "action_parameters": {
-                "override": {
-                    "edge_ttl": rule["action"].get("edge_ttl", 0),
-                    "browser_ttl": rule["action"].get("browser_ttl", 0),
-                }
-            } if rule["action"].get("cache") else {},
-            "description": rule.get("description", f"Rule {i+1}"),
-        })
-
-    ruleset_payload = {
-        "rules": cf_rules,
-        "phase": "http_request_cache_settings",
-        "kind": "zone",
+    cf_rules = [_cf_rule(rule, i) for i, rule in enumerate(rules)]
+    payload = {
         "name": "Casuya Cache Rules",
-        "description": "Auto-deployed by casuya-platform",
+        "description": rules_data.get("description") or "Auto-deployed by casuya-platform",
+        "rules": cf_rules,
     }
 
-    # Create or update the ruleset
-    action = "updated" if existing else "created"
     try:
-        if existing:
-            # Get the ruleset ID from existing entrypoint
-            resp = client.get(f"/zones/{zone_id}/rulesets/phases/http_request_cache_settings/entrypoint")
-            if resp.status_code == 200:
-                ruleset_id = resp.json().get("result", {}).get("id")
-                if ruleset_id:
-                    resp = client.put(f"/zones/{zone_id}/rulesets/{ruleset_id}", json=ruleset_payload)
-                else:
-                    resp = client.post(f"/zones/{zone_id}/rulesets", json=ruleset_payload)
-                    action = "created"
-            else:
-                resp = client.post(f"/zones/{zone_id}/rulesets", json=ruleset_payload)
-                action = "created"
-        else:
-            resp = client.post(f"/zones/{zone_id}/rulesets", json=ruleset_payload)
-            action = "created"
-
+        resp = client.put(
+            f"/zones/{zone_id}/rulesets/phases/http_request_cache_settings/entrypoint",
+            json=payload,
+        )
+        if resp.status_code == 400 and "name" in (resp.text or "").lower():
+            payload.pop("name", None)
+            resp = client.put(
+                f"/zones/{zone_id}/rulesets/phases/http_request_cache_settings/entrypoint",
+                json=payload,
+            )
         if resp.status_code in (200, 201):
-            return {"status": "success", "action": action, "rules_count": len(cf_rules)}
-        else:
-            return {"status": "error", "action": action, "reason": resp.text[:200]}
+            body = resp.json() if resp.headers.get("content-type", "").startswith("application/json") else {}
+            result = body.get("result") or {}
+            return {
+                "status": "success",
+                "action": "updated",
+                "rules_count": len(cf_rules),
+                "ruleset_id": result.get("id"),
+            }
+        return {"status": "error", "action": "updated", "reason": resp.text[:400]}
     except Exception as e:
         return {"status": "error", "reason": str(e)[:200]}

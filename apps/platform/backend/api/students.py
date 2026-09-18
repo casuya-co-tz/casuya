@@ -158,6 +158,14 @@ def get_my_profile(current_user=Depends(get_current_user), db: Session = Depends
     }
 
 
+@router.get("/me/dashboard", response_model=dict)
+@router.get("/me/dashboard/", response_model=dict)
+def get_my_dashboard(current_user=Depends(get_current_user), db: Session = Depends(get_db)):
+    from backend.services.student_dashboard import build_student_dashboard
+
+    return build_student_dashboard(db, current_user)
+
+
 @router.patch("/me", response_model=dict)
 @router.patch("/me/", response_model=dict)
 def update_my_profile(body: StudentUpdateRequest, current_user=Depends(get_current_user), db: Session = Depends(get_db)):

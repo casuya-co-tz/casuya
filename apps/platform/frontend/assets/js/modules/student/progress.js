@@ -13,7 +13,7 @@ function registerProgressView(d) {
         return;
       }
       const data = await request(`/progress/${studentId}`);
-      const progress = Array.isArray(data) ? data : [];
+      const progress = typeof asProgressItems === "function" ? asProgressItems(data) : (Array.isArray(data) ? data : (data && data.items) || []);
       if (progress.length === 0) {
         d.showView('<div class="empty-state"><p>No progress recorded yet</p></div>');
         return;

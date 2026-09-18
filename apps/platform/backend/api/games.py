@@ -6,6 +6,7 @@ from backend.config.database import get_db
 from backend.middleware.auth import get_current_user
 from backend.middleware.permissions import require_role
 from backend.schemas.games import GameCreate, GameCreateHTML, GameResponse, GameUpdate
+from backend.services.public_assets import apply_public_asset_urls
 from backend.services.game_service import (
     create_game_from_html,
     delete_game,
@@ -52,7 +53,11 @@ def get_game_content_route(game_id: str, db: Session = Depends(get_db), current_
     html = read_game_content(db, slug)
     if html is None:
         raise HTTPException(status_code=404, detail="Game content not found")
-    return HTMLResponse(content=html)
+    html = apply_public_asset_urls(html)
+    return HTMLResponse(
+        content=html,
+        headers={"Cache-Control": "public, max-age=3600, stale-while-revalidate=86400"},
+    )
 
 
 @router.get("/by-lesson/{lesson_id}", response_model=list[dict])

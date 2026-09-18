@@ -174,8 +174,9 @@
       let htmlContent = "";
       if (game.slug) {
         try {
-          const resp = await fetch(`${API_BASE}/games/${gameId}/content`, { headers: { "Authorization": `Bearer ${localStorage.getItem("casuya_token") || ""}` } });
-          if (resp.ok) htmlContent = await resp.text();
+          htmlContent = typeof loadGameHtml === "function"
+            ? await loadGameHtml(gameId)
+            : "";
         } catch(e) {}
       }
       showAdminView(`

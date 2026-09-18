@@ -208,6 +208,7 @@ showPresenterView(): void {
   }
 
 destroy(): void {
+    this.disconnectCollaboration();
     this.detachEvents();
     if (this.animFrameId) cancelAnimationFrame(this.animFrameId);
     if (this.resizeObserver) { this.resizeObserver.disconnect(); this.resizeObserver = null; }

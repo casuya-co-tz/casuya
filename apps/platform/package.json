@@ -12,7 +12,7 @@
     "test": "python -m pytest tests/backend -q",
     "test:e2e": "playwright test -c e2e/playwright.config.ts",
     "test:coverage": "pytest tests/ --cov=backend --cov=integrations -v",
-    "build": "echo 'Frontend is static HTML/JS — no build step required'",
+    "build": "echo 'Frontend assets are built in apps/platform/frontend (CI + Vercel)'",
     "docker:up": "docker compose -f ../infra/docker-compose.yml up -d",
     "docker:down": "docker compose -f ../infra/docker-compose.yml down"
   },
