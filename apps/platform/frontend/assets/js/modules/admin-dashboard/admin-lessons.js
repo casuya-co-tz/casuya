@@ -66,9 +66,9 @@
               <input class="input" name="title" placeholder="Lesson title" required>
               <textarea class="input" name="content" rows="6" placeholder="Lesson content (HTML supported)"></textarea>
               <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
-                <button class="btn btn-primary" type="button" id="publish-lesson-btn">Publish to Students</button>
-                <button class="btn" type="button" id="save-draft-btn">Save as Draft</button>
-                <button class="btn" type="button" id="cancel-btn">Cancel</button>
+                <button class="btn btn-primary" type="button" id="create-publish-btn">Publish to Students</button>
+                <button class="btn" type="button" id="create-draft-btn">Save as Draft</button>
+                <button class="btn" type="button" id="create-cancel-btn">Cancel</button>
               </div>
             </form>
           </div>
@@ -94,7 +94,7 @@
             sel.appendChild(o);
           });
         });
-        document.getElementById("cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
+        document.getElementById("create-cancel-btn").addEventListener("click", () => document.getElementById("form-area").innerHTML = "");
         async function saveAdminLesson(publish) {
           const form = document.getElementById("create-lesson-form");
           if (!form.reportValidity()) return;
@@ -115,8 +115,8 @@
             loadAdminLessons();
           } catch(err) { showToast("Error: " + err.message); }
         }
-        document.getElementById("publish-lesson-btn").addEventListener("click", () => saveAdminLesson(true));
-        document.getElementById("save-draft-btn").addEventListener("click", () => saveAdminLesson(false));
+        document.getElementById("create-publish-btn").addEventListener("click", () => saveAdminLesson(true));
+        document.getElementById("create-draft-btn").addEventListener("click", () => saveAdminLesson(false));
       });
       document.getElementById("ai-generate-questions-btn")?.addEventListener("click", () => {
         document.getElementById("ai-form-area").innerHTML = `

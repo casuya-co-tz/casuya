@@ -28,11 +28,14 @@ def purge_cache(paths: list[str]):
     if not client:
         return
     settings = get_settings()
-    resp = client.post(
-        f"/zones/{settings.cloudflare_zone_id}/purge_cache",
-        json={"files": paths},
-    )
-    resp.raise_for_status()
+    try:
+        resp = client.post(
+            f"/zones/{settings.cloudflare_zone_id}/purge_cache",
+            json={"files": paths},
+        )
+        resp.raise_for_status()
+    except Exception as exc:
+        logger.warning("Cloudflare cache purge (files) failed: %s", exc)
 
 
 def purge_cache_tags(tags: list[str]):
@@ -40,16 +43,20 @@ def purge_cache_tags(tags: list[str]):
 
     Safe no-op when Cloudflare credentials are absent. Pair with a Cache-Tag
     response header on the cached asset so an edit can bust the edge copy.
+    Never raises — lesson publish must succeed even if the edge purge fails.
     """
     client = _get_client()
     if not client:
         return
     settings = get_settings()
-    resp = client.post(
-        f"/zones/{settings.cloudflare_zone_id}/purge_cache",
-        json={"tags": tags},
-    )
-    resp.raise_for_status()
+    try:
+        resp = client.post(
+            f"/zones/{settings.cloudflare_zone_id}/purge_cache",
+            json={"tags": tags},
+        )
+        resp.raise_for_status()
+    except Exception as exc:
+        logger.warning("Cloudflare cache purge (tags=%s) failed: %s", tags, exc)
 
 
 # ── Cache Rules Deployment (P3-1) ──────────────────────────────────────────

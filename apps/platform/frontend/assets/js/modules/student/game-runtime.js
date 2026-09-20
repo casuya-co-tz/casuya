@@ -81,6 +81,7 @@ function mountGameSrcdoc(container, html) {
   var iframe = document.createElement("iframe");
   iframe.className = "lesson-iframe-inner";
   iframe.style.cssText = "width:100%;border:none;display:block;min-height:300px";
+  iframe.setAttribute("sandbox", "allow-scripts allow-forms");
   container.innerHTML = "";
   container.appendChild(iframe);
   iframe.srcdoc = html;
