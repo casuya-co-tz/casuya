@@ -1,7 +1,7 @@
 # Casuya AI Tutor — Product & Engineering Roadmap
 
 **Author:** Engineering plan (2026-09-20)  
-**Status:** Phase 1–2 **code complete** (2026-09-20); Phase 4.3 cache/quota done; Phase 3 (RAG/streaming) + admin dashboard not started  
+**Status:** Phase 1–2 shipped; Phase 3A/B/C implemented (2026-09-20); embeddings + admin dashboard not started  
 **Legend:** `[x]` done · `[~]` partial · `[ ]` not started  
 **Related:**
 - [`ai-connectivity-plan.md`](./ai-connectivity-plan.md) — provider health, bridge, fallbacks
@@ -283,7 +283,7 @@ flowchart TB
 
 #### 3.1 Hybrid RAG
 
-- [ ] Phase A: query expansion (Swahili ↔ English syllabus synonyms)
+- [x] Phase A: query expansion (Swahili ↔ English syllabus synonyms) — `query-expansion.ts`
 - [ ] Phase B: Gemini `text-embedding-004` + score merge with BM25
 - [ ] Filter by `subject_slug`, `form_level`, `doc_type`
 
@@ -311,9 +311,9 @@ flowchart TB
 
 #### 3.4 Real LLM token streaming
 
-- [ ] Provider streaming API in `TutoringEngine`
-- [ ] SSE pass-through in `ai.py` (replace sentence-chunk fake stream)
-- [ ] Sentence-chunk fallback for non-streaming providers
+- [x] Provider streaming API in `TutoringEngine` (`tutorStream`)
+- [x] SSE pass-through in `ai.py` + `/api/tutoring/stream` in casuya-ai
+- [x] Sentence-chunk fallback for cached answers + `/explain` fallback in UI
 
 #### 3.5 Answer validation
 
@@ -332,7 +332,7 @@ flowchart TB
 
 #### 4.1 Offline & low bandwidth
 
-- [ ] Cache last 20 Q&A per student in IndexedDB (bridge)
+- [x] Cache last 20 Q&A per student in IndexedDB (`tutor-qa-idb.js`)
 - [ ] Queue questions offline; sync when online
 - [ ] Prefetch suggested questions from lesson headings on Wi‑Fi
 - [x] Cap `lesson_context` at 4k chars

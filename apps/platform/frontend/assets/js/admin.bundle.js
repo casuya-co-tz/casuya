@@ -663,9 +663,11 @@ function renderAiSourceBadge(source) {
   if (!source) return "";
   var label = source === "casuya-ai"
     ? "Powered by AI"
-    : (source === "cached"
-      ? "Cached answer"
-      : (source === "kb-fallback" ? "Syllabus notes (offline)" : "Offline mode"));
+    : (source === "local-cache"
+      ? "Saved on device"
+      : (source === "cached"
+        ? "Cached answer"
+        : (source === "kb-fallback" ? "Syllabus notes (offline)" : "Offline mode")));
   var tone = source === "casuya-ai" ? "var(--color-primary, #2563eb)" : "var(--color-text-muted, #64748b)";
   return (
     '<span class="ai-source-badge" style="display:inline-block;margin-top:0.5rem;font-size:0.75rem;' +
@@ -674,6 +676,101 @@ function renderAiSourceBadge(source) {
     "</span>"
   );
 }
+
+;
+// modules/ai/tutor-qa-idb.js — client-side tutor Q&A cache (Phase 3C, last 20).
+
+var _tutorQaIdb = null;
+var TUTOR_QA_IDB_NAME = "casuya-tutor-qa";
+var TUTOR_QA_STORE = "answers";
+var TUTOR_QA_MAX = 20;
+
+function tutorQaCacheKey(payload) {
+  var parts = [
+    String((payload && payload.question) || "").trim().toLowerCase(),
+    String((payload && payload.lesson_id) || ""),
+    String((payload && payload.subject_slug) || ""),
+    String((payload && payload.form_level) || ""),
+  ];
+  return parts.join("|");
+}
+
+function openTutorQaIdb() {
+  if (_tutorQaIdb) return _tutorQaIdb;
+  if (typeof indexedDB === "undefined") return Promise.resolve(null);
+  _tutorQaIdb = new Promise(function (resolve) {
+    try {
+      var req = indexedDB.open(TUTOR_QA_IDB_NAME, 1);
+      req.onupgradeneeded = function () {
+        var db = req.result;
+        if (!db.objectStoreNames.contains(TUTOR_QA_STORE)) {
+          db.createObjectStore(TUTOR_QA_STORE, { keyPath: "id" });
+        }
+      };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { resolve(null); };
+    } catch (e) {
+      resolve(null);
+    }
+  });
+  return _tutorQaIdb;
+}
+
+function getTutorQaCache(key) {
+  if (!key) return Promise.resolve(null);
+  return openTutorQaIdb().then(function (db) {
+    if (!db) return null;
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction(TUTOR_QA_STORE, "readonly");
+        var req = tx.objectStore(TUTOR_QA_STORE).get(key);
+        req.onsuccess = function () { resolve(req.result || null); };
+        req.onerror = function () { resolve(null); };
+      } catch (e) {
+        resolve(null);
+      }
+    });
+  });
+}
+
+function putTutorQaCache(key, row) {
+  if (!key || !row || !row.response) return Promise.resolve();
+  return openTutorQaIdb().then(function (db) {
+    if (!db) return;
+    return new Promise(function (resolve) {
+      try {
+        var tx = db.transaction(TUTOR_QA_STORE, "readwrite");
+        var store = tx.objectStore(TUTOR_QA_STORE);
+        store.put({
+          id: key,
+          response: row.response,
+          kbHits: row.kbHits || [],
+          formatComplete: !!row.formatComplete,
+          formatLevel: row.formatLevel || "none",
+          source: row.source || "casuya-ai",
+          ts: Date.now(),
+        });
+        store.getAll().onsuccess = function (ev) {
+          var rows = ev.target.result || [];
+          if (rows.length <= TUTOR_QA_MAX) return;
+          rows.sort(function (a, b) { return (a.ts || 0) - (b.ts || 0); });
+          var extra = rows.length - TUTOR_QA_MAX;
+          for (var i = 0; i < extra; i++) {
+            store.delete(rows[i].id);
+          }
+        };
+        tx.oncomplete = function () { resolve(); };
+        tx.onerror = function () { resolve(); };
+      } catch (e) {
+        resolve();
+      }
+    });
+  });
+}
+
+window.tutorQaCacheKey = tutorQaCacheKey;
+window.getTutorQaCache = getTutorQaCache;
+window.putTutorQaCache = putTutorQaCache;
 
 ;
 // modules/ai/tutor-panel.js — shared AI tutor streaming, markdown render, source chips.
@@ -1100,6 +1197,88 @@ function runTutorQuery(payload, callbacks) {
   container.innerHTML = renderTutorStreamingSkeleton()
     + renderTutorThinking(callbacks.loadingLabel || "Thinking...");
 
+  function maybeCacheResult(meta, text) {
+    if (typeof putTutorQaCache !== "function" || typeof tutorQaCacheKey !== "function") return;
+    var src = meta && meta.source;
+    if (src !== "casuya-ai" && src !== "cached") return;
+    if (!text || !String(text).trim()) return;
+    putTutorQaCache(tutorQaCacheKey(payload), {
+      response: text,
+      kbHits: (meta && meta.kbHits) || [],
+      formatComplete: meta && meta.formatComplete,
+      formatLevel: meta && meta.formatLevel,
+      source: src,
+    });
+  }
+
+  function startNetwork() {
+    if (typeof streamTutorResponse !== "function") {
+      return request("/ai/tutoring/explain", {
+        method: "POST",
+        body: JSON.stringify(payload),
+      }).then(function (result) {
+        var response = (result && result.response) ? result.response : "";
+        if (!response) throw new Error("empty");
+        maybeCacheResult(result, response);
+        showResult(result, response);
+      }).catch(function () {
+        container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
+          callbacks.errorMessage || "The AI tutor is temporarily unavailable."
+        ) + "</div>";
+        if (typeof callbacks.onError === "function") callbacks.onError();
+      });
+    }
+
+    return streamTutorResponse(
+      payload,
+      function (chunk) {
+        accumulated += chunk;
+        renderPartial();
+      },
+      function (meta) {
+        var footer = document.createElement("div");
+        footer.className = "tutor-response-footer";
+        footer.innerHTML = renderTutorFooter(meta || {}, accumulated);
+        container.appendChild(footer);
+        scheduleTutorMath(container);
+        maybeCacheResult(meta, accumulated);
+        finishTutorSurface(container, meta, accumulated, callbacks);
+      },
+      function () {
+        request("/ai/tutoring/explain", {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }).then(function (result) {
+          var response = (result && result.response) ? result.response : "";
+          if (!response) throw new Error("empty");
+          maybeCacheResult(result, response);
+          showResult(result, response);
+        }).catch(function () {
+          container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
+            callbacks.errorMessage || "The AI tutor could not be reached."
+          ) + "</div>";
+          if (typeof callbacks.onError === "function") callbacks.onError();
+        });
+      }
+    );
+  }
+
+  if (typeof getTutorQaCache === "function" && typeof tutorQaCacheKey === "function") {
+    getTutorQaCache(tutorQaCacheKey(payload)).then(function (row) {
+      if (row && row.response) {
+        showResult({
+          source: "local-cache",
+          kbHits: row.kbHits || [],
+          formatComplete: row.formatComplete,
+          formatLevel: row.formatLevel || "none",
+        }, row.response);
+        return;
+      }
+      startNetwork();
+    }).catch(function () { startNetwork(); });
+    return null;
+  }
+
   if (typeof streamTutorResponse !== "function") {
     request("/ai/tutoring/explain", {
       method: "POST",
@@ -1117,36 +1296,7 @@ function runTutorQuery(payload, callbacks) {
     return null;
   }
 
-  return streamTutorResponse(
-    payload,
-    function (chunk) {
-      accumulated += chunk;
-      renderPartial();
-    },
-    function (meta) {
-      var footer = document.createElement("div");
-      footer.className = "tutor-response-footer";
-      footer.innerHTML = renderTutorFooter(meta || {}, accumulated);
-      container.appendChild(footer);
-      scheduleTutorMath(container);
-      finishTutorSurface(container, meta, accumulated, callbacks);
-    },
-    function () {
-      request("/ai/tutoring/explain", {
-        method: "POST",
-        body: JSON.stringify(payload),
-      }).then(function (result) {
-        var response = (result && result.response) ? result.response : "";
-        if (!response) throw new Error("empty");
-        showResult(result, response);
-      }).catch(function () {
-        container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
-          callbacks.errorMessage || "The AI tutor could not be reached."
-        ) + "</div>";
-        if (typeof callbacks.onError === "function") callbacks.onError();
-      });
-    }
-  );
+  return startNetwork();
 }
 
 function buildLessonQuizTutorQuestion(wrongQuestions) {

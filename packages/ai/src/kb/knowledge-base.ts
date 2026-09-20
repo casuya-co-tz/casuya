@@ -10,6 +10,7 @@ import {
 } from './types';
 import { renderDoc, renderSnippet } from './renderers';
 import { bm25Search } from './search';
+import { expandQuery } from './query-expansion';
 import { kindLabel } from './labels';
 
 /**
@@ -101,7 +102,8 @@ export class KnowledgeBase {
   /** BM25 keyword search across the indexed corpus with metadata filters. */
   search(query: string, opts: SearchOptions = {}): SearchHit[] {
     if (!this.index || !query) return [];
-    return bm25Search(this.index, this.docLen, this.avgDocLen, query, opts);
+    const expanded = expandQuery(query);
+    return bm25Search(this.index, this.docLen, this.avgDocLen, expanded, opts);
   }
 
   /** Get a single doc's rendered content (reads its source JSON on demand). */

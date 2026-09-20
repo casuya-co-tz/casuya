@@ -422,6 +422,88 @@ function runTutorQuery(payload, callbacks) {
   container.innerHTML = renderTutorStreamingSkeleton()
     + renderTutorThinking(callbacks.loadingLabel || "Thinking...");
 
+  function maybeCacheResult(meta, text) {
+    if (typeof putTutorQaCache !== "function" || typeof tutorQaCacheKey !== "function") return;
+    var src = meta && meta.source;
+    if (src !== "casuya-ai" && src !== "cached") return;
+    if (!text || !String(text).trim()) return;
+    putTutorQaCache(tutorQaCacheKey(payload), {
+      response: text,
+      kbHits: (meta && meta.kbHits) || [],
+      formatComplete: meta && meta.formatComplete,
+      formatLevel: meta && meta.formatLevel,
+      source: src,
+    });
+  }
+
+  function startNetwork() {
+    if (typeof streamTutorResponse !== "function") {
+      return request("/ai/tutoring/explain", {
+        method: "POST",
+        body: JSON.stringify(payload),
+      }).then(function (result) {
+        var response = (result && result.response) ? result.response : "";
+        if (!response) throw new Error("empty");
+        maybeCacheResult(result, response);
+        showResult(result, response);
+      }).catch(function () {
+        container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
+          callbacks.errorMessage || "The AI tutor is temporarily unavailable."
+        ) + "</div>";
+        if (typeof callbacks.onError === "function") callbacks.onError();
+      });
+    }
+
+    return streamTutorResponse(
+      payload,
+      function (chunk) {
+        accumulated += chunk;
+        renderPartial();
+      },
+      function (meta) {
+        var footer = document.createElement("div");
+        footer.className = "tutor-response-footer";
+        footer.innerHTML = renderTutorFooter(meta || {}, accumulated);
+        container.appendChild(footer);
+        scheduleTutorMath(container);
+        maybeCacheResult(meta, accumulated);
+        finishTutorSurface(container, meta, accumulated, callbacks);
+      },
+      function () {
+        request("/ai/tutoring/explain", {
+          method: "POST",
+          body: JSON.stringify(payload),
+        }).then(function (result) {
+          var response = (result && result.response) ? result.response : "";
+          if (!response) throw new Error("empty");
+          maybeCacheResult(result, response);
+          showResult(result, response);
+        }).catch(function () {
+          container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
+            callbacks.errorMessage || "The AI tutor could not be reached."
+          ) + "</div>";
+          if (typeof callbacks.onError === "function") callbacks.onError();
+        });
+      }
+    );
+  }
+
+  if (typeof getTutorQaCache === "function" && typeof tutorQaCacheKey === "function") {
+    getTutorQaCache(tutorQaCacheKey(payload)).then(function (row) {
+      if (row && row.response) {
+        showResult({
+          source: "local-cache",
+          kbHits: row.kbHits || [],
+          formatComplete: row.formatComplete,
+          formatLevel: row.formatLevel || "none",
+        }, row.response);
+        return;
+      }
+      startNetwork();
+    }).catch(function () { startNetwork(); });
+    return null;
+  }
+
   if (typeof streamTutorResponse !== "function") {
     request("/ai/tutoring/explain", {
       method: "POST",
@@ -439,36 +521,7 @@ function runTutorQuery(payload, callbacks) {
     return null;
   }
 
-  return streamTutorResponse(
-    payload,
-    function (chunk) {
-      accumulated += chunk;
-      renderPartial();
-    },
-    function (meta) {
-      var footer = document.createElement("div");
-      footer.className = "tutor-response-footer";
-      footer.innerHTML = renderTutorFooter(meta || {}, accumulated);
-      container.appendChild(footer);
-      scheduleTutorMath(container);
-      finishTutorSurface(container, meta, accumulated, callbacks);
-    },
-    function () {
-      request("/ai/tutoring/explain", {
-        method: "POST",
-        body: JSON.stringify(payload),
-      }).then(function (result) {
-        var response = (result && result.response) ? result.response : "";
-        if (!response) throw new Error("empty");
-        showResult(result, response);
-      }).catch(function () {
-        container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
-          callbacks.errorMessage || "The AI tutor could not be reached."
-        ) + "</div>";
-        if (typeof callbacks.onError === "function") callbacks.onError();
-      });
-    }
-  );
+  return startNetwork();
 }
 
 function buildLessonQuizTutorQuestion(wrongQuestions) {

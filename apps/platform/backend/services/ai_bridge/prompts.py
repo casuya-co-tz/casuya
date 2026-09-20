@@ -403,7 +403,7 @@ def _append_thread_context(lesson_context: str, messages: list[dict] | None) -> 
     return merged
 
 
-async def get_tutoring_payload(
+def _prepare_tutoring_request(
     question: str,
     lesson_context: str = "",
     subject_slug: str | None = None,
@@ -412,9 +412,8 @@ async def get_tutoring_payload(
     lesson_id: str | None = None,
     messages: list[dict] | None = None,
     language: str | None = None,
-) -> dict:
-    """Like get_tutoring_response but returns the full AI payload, including any
-    practice questions the AI service generated (up to 20 of any type)."""
+) -> tuple[dict, str, dict | None]:
+    """Build AI service payload, cache key, and optional cached row."""
     lesson_context = _append_thread_context(lesson_context, messages)
     if len(lesson_context) > 4000:
         lesson_context = lesson_context[:4000] + "…"
@@ -432,7 +431,8 @@ async def get_tutoring_payload(
         payload["max_questions"] = max_questions
     if language:
         payload["language"] = language
-    from .tutor_cache import get_cached_tutor, set_cached_tutor, tutor_cache_key
+
+    from .tutor_cache import get_cached_tutor, tutor_cache_key
 
     cache_key = tutor_cache_key(
         question=question,
@@ -445,7 +445,8 @@ async def get_tutoring_payload(
     if cached and cached.get("response"):
         cached = dict(cached)
         cached["source"] = "cached"
-        return cached
+        return payload, cache_key, cached
+
     if subject_slug and form_level:
         try:
             from backend.services.syllabus_service import get_curriculum_context
@@ -454,6 +455,109 @@ async def get_tutoring_payload(
                 payload["curriculum_context"] = curriculum_ctx
         except Exception as exc:
             logger.debug("Could not fetch syllabus context: %s", exc)
+
+    return payload, cache_key, None
+
+
+async def iter_tutoring_stream_events(
+    question: str,
+    lesson_context: str = "",
+    subject_slug: str | None = None,
+    form_level: int | None = None,
+    lesson_id: str | None = None,
+    messages: list[dict] | None = None,
+    language: str | None = None,
+):
+    """Yield SSE event strings for tutoring (real token stream or cache replay)."""
+    import json
+    import re
+
+    from .client import AiServiceError, _stream_ai_service
+    from .tutor_cache import set_cached_tutor
+
+    payload, cache_key, cached = _prepare_tutoring_request(
+        question,
+        lesson_context,
+        subject_slug=subject_slug,
+        form_level=form_level,
+        lesson_id=lesson_id,
+        messages=messages,
+        language=language,
+    )
+
+    if cached:
+        response = cached.get("response") or ""
+        chunks = re.split(r"(?<=[.!?])\s+|\n{2,}", response)
+        for chunk in chunks:
+            chunk = chunk.strip()
+            if not chunk:
+                continue
+            yield f"data: {json.dumps({'chunk': chunk + ' ', 'done': False})}\n\n"
+        yield f"data: {json.dumps({'chunk': '', 'done': True, 'source': cached.get('source', 'cached'), 'kbHits': cached.get('kbHits') or [], 'formatComplete': cached.get('formatComplete', False), 'formatLevel': cached.get('formatLevel', 'none')})}\n\n"
+        return
+
+    accumulated = ""
+    final_meta: dict = {}
+    try:
+        async for event in _stream_ai_service("/api/tutoring/stream", payload):
+            yield event
+            line = event.strip()
+            if not line.startswith("data: "):
+                continue
+            try:
+                data = json.loads(line[6:])
+            except json.JSONDecodeError:
+                continue
+            if data.get("chunk"):
+                accumulated += data["chunk"]
+            if data.get("done"):
+                final_meta = data
+    except AiServiceError as exc:
+        logger.warning("AI tutoring stream failed: %s", exc)
+        offline = (
+            "I'm sorry, the AI tutor is currently unavailable. "
+            "Please try again later or ask your teacher for help."
+        )
+        yield f"data: {json.dumps({'chunk': offline, 'done': True, 'source': 'offline', 'kbHits': [], 'formatComplete': False, 'formatLevel': 'none'})}\n\n"
+        return
+
+    if accumulated.strip() and final_meta.get("source") == "casuya-ai":
+        parsed = {
+            "response": accumulated.strip(),
+            "kbHits": final_meta.get("kbHits") or [],
+            "formatComplete": final_meta.get("formatComplete", False),
+            "formatLevel": final_meta.get("formatLevel", "none"),
+            "source": "casuya-ai",
+        }
+        set_cached_tutor(cache_key, parsed)
+
+
+async def get_tutoring_payload(
+    question: str,
+    lesson_context: str = "",
+    subject_slug: str | None = None,
+    form_level: int | None = None,
+    max_questions: int | None = None,
+    lesson_id: str | None = None,
+    messages: list[dict] | None = None,
+    language: str | None = None,
+) -> dict:
+    """Like get_tutoring_response but returns the full AI payload, including any
+    practice questions the AI service generated (up to 20 of any type)."""
+    from .tutor_cache import set_cached_tutor
+
+    payload, cache_key, cached = _prepare_tutoring_request(
+        question,
+        lesson_context,
+        subject_slug=subject_slug,
+        form_level=form_level,
+        max_questions=max_questions,
+        lesson_id=lesson_id,
+        messages=messages,
+        language=language,
+    )
+    if cached:
+        return cached
 
     offline_msg = (
         "I'm sorry, the AI tutor is currently unavailable. "

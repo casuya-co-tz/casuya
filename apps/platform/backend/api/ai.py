@@ -269,48 +269,19 @@ async def _stream_tutoring_response(
     messages: list[dict] | None = None,
     language: str | None = None,
 ):
-    """Generator that yields SSE events for the tutoring response.
+    """Yield SSE events — real LLM token stream via casuya-ai (Phase 3A)."""
+    from backend.services.ai_bridge.prompts import iter_tutoring_stream_events
 
-    Splits the AI response into sentence-sized chunks and streams them
-    via Server-Sent Events so the student sees text appear progressively
-    instead of waiting for the full response.
-    """
-    try:
-        payload = await get_tutoring_payload(
-            question,
-            lesson_context,
-            subject_slug=subject_slug,
-            form_level=form_level,
-            lesson_id=lesson_id,
-            messages=messages,
-            language=language,
-        )
-        response = payload.get("response") or ""
-        source = payload.get("source", "offline")
-        kb_hits = payload.get("kbHits") or []
-        format_complete = payload.get("formatComplete", False)
-        format_level = payload.get("formatLevel", "none")
-    except Exception:
-        yield f"data: {json.dumps({'chunk': 'The AI tutor is temporarily unavailable.', 'done': True, 'source': 'offline', 'kbHits': [], 'formatComplete': False, 'formatLevel': 'none'})}\n\n"
-        return
-
-    if not response:
-        yield f"data: {json.dumps({'chunk': '', 'done': True, 'source': source, 'kbHits': kb_hits, 'formatComplete': format_complete, 'formatLevel': format_level})}\n\n"
-        return
-
-    # Split into sentence-sized chunks for progressive rendering
-    # Sentences end with . ! ? or newlines
-    chunks = re.split(r'(?<=[.!?])\s+|\n{2,}', response)
-
-    for chunk in chunks:
-        chunk = chunk.strip()
-        if not chunk:
-            continue
-        yield f"data: {json.dumps({'chunk': chunk + ' '})}\n\n"
-        # Small delay between chunks so the frontend can render
-        await asyncio.sleep(0.05)
-
-    yield f"data: {json.dumps({'chunk': '', 'done': True, 'source': source, 'kbHits': kb_hits, 'formatComplete': format_complete, 'formatLevel': format_level})}\n\n"
+    async for event in iter_tutoring_stream_events(
+        question,
+        lesson_context,
+        subject_slug=subject_slug,
+        form_level=form_level,
+        lesson_id=lesson_id,
+        messages=messages,
+        language=language,
+    ):
+        yield event
 
 
 @router.post("/tutoring/stream")

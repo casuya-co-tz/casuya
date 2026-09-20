@@ -21,7 +21,7 @@ import { HttpError, clientIp, readApiKey, requireAuthorized } from './server-sec
 import { buildFreeProviderSpecs, specsToConfigMap } from './src/providers/free-chain';
 import { getKnowledgeBase } from './src/kb';
 import { handleQuestionGenerate, handleTutoringQuiz } from './routes/questions';
-import { handleTutoringExplain, handlePlanLesson, handlePlanScheme } from './routes/tutoring';
+import { handleTutoringExplain, handleTutoringStream, handlePlanLesson, handlePlanScheme } from './routes/tutoring';
 import { handleTestGenerate } from './routes/tests';
 import {
   handleContentAnalyze,
@@ -179,6 +179,24 @@ async function start() {
     const requestId = Array.isArray(requestIdHeader)
       ? requestIdHeader[0]
       : requestIdHeader || 'unknown';
+
+    if (url === '/api/tutoring/stream') {
+      const started = Date.now();
+      try {
+        await handleTutoringStream(ai, body, res);
+        console.log(
+          `[casuya-ai] ok path=${url} request_id=${requestId} latency_ms=${Date.now() - started}`,
+        );
+      } catch (err) {
+        console.error('[casuya-ai] stream error:', err);
+        if (!res.headersSent) {
+          send(res, 503, { error: 'stream_unavailable' });
+        } else {
+          res.end();
+        }
+      }
+      return;
+    }
 
     async function dispatch(): Promise<unknown> {
       switch (url) {

@@ -208,3 +208,64 @@ async def _call_ai_service(endpoint: str, payload: dict) -> dict:
         f"casuya-ai unavailable at {base_url}{endpoint}: {last_exc}",
         endpoint=endpoint,
     ) from last_exc
+
+
+async def _stream_ai_service(endpoint: str, payload: dict):
+    """Stream SSE lines from casuya-ai. Yields 'data: {...}\\n\\n' strings."""
+    from backend.config.settings import get_settings
+
+    if _circuit_open():
+        raise AiServiceError(
+            "casuya-ai circuit breaker open — skipping call",
+            status_code=503,
+            endpoint=endpoint,
+        )
+
+    base_url = get_casuya_ai_url()
+    if not base_url:
+        raise AiServiceError("CASUYA_AI_URL is not configured", endpoint=endpoint)
+
+    settings = get_settings()
+    request_id = uuid.uuid4().hex[:16]
+    headers: dict[str, str] = {"X-Request-Id": request_id}
+    if settings.casuya_ai_api_key:
+        headers["X-API-Key"] = settings.casuya_ai_api_key
+
+    url = f"{base_url}{endpoint}"
+    started = time.perf_counter()
+    client = await _get_http_client()
+
+    try:
+        async with client.stream("POST", url, json=payload, headers=headers) as resp:
+            if resp.status_code >= 400:
+                body_bytes = await resp.aread()
+                try:
+                    body = __import__("json").loads(body_bytes.decode())
+                except Exception:
+                    body = body_bytes.decode(errors="replace")
+                _record_failure()
+                raise AiServiceError(
+                    f"casuya-ai {endpoint} stream failed: HTTP {resp.status_code}",
+                    status_code=resp.status_code,
+                    endpoint=endpoint,
+                    body=body,
+                )
+            async for line in resp.aiter_lines():
+                if line.startswith("data: "):
+                    yield f"{line}\n\n"
+            _record_success()
+            _log_ai_call(
+                endpoint=endpoint,
+                request_id=request_id,
+                latency_ms=(time.perf_counter() - started) * 1000,
+                ok=True,
+                status_code=resp.status_code,
+            )
+    except AiServiceError:
+        raise
+    except Exception as exc:
+        _record_failure()
+        raise AiServiceError(
+            f"casuya-ai stream unavailable at {url}: {exc}",
+            endpoint=endpoint,
+        ) from exc

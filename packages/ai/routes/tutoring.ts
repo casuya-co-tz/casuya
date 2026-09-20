@@ -1,3 +1,4 @@
+import type { ServerResponse } from 'node:http';
 import { CasuyaAI } from '../src/casuya-ai';
 import { getKnowledgeBase } from '../src/kb';
 import {
@@ -33,19 +34,8 @@ function syllabusBlock(curriculumContext: string): string {
   );
 }
 
-export async function handleTutoringExplain(
-  ai: CasuyaAI,
-  body: any,
-): Promise<unknown> {
-  const {
-    question,
-    context,
-    subject_slug,
-    form_level,
-    max_questions,
-    curriculum_context,
-    language,
-  } = body;
+function buildTutoringRag(body: any) {
+  const { question, context, subject_slug, form_level, curriculum_context, language } = body;
   const langPref = language === 'sw' ? 'sw' : language === 'en' ? 'en' : 'both';
   const subject = resolveSubject(subject_slug);
   const query = [question, context].filter(Boolean).join(' ').trim();
@@ -78,8 +68,6 @@ export async function handleTutoringExplain(
     }
   }
 
-  const nQuestions = Math.min(Math.max(Number(max_questions) || 10, 1), 20);
-
   const grounded = buildGroundedMessage({
     question: String(question || '').trim(),
     context: context,
@@ -88,6 +76,80 @@ export async function handleTutoringExplain(
     ragText,
     maxContextChars: Number(process.env.KB_CONTEXT_MAX_CHARS) || 4000,
   });
+
+  return { langPref, subject, grounded, ragText, ragDocs, kbForm };
+}
+
+function sseWrite(res: ServerResponse, data: Record<string, unknown>) {
+  res.write(`data: ${JSON.stringify(data)}\n\n`);
+}
+
+export async function handleTutoringStream(ai: CasuyaAI, body: any, res: ServerResponse): Promise<void> {
+  const { question, context, form_level } = body;
+  const { langPref, subject, grounded, ragDocs, ragText } = buildTutoringRag(body);
+
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    Connection: 'keep-alive',
+  });
+
+  let raw = '';
+  try {
+    const tutorOpts = {
+      studentId: 'platform',
+      subject: subject.enumValue,
+      topic: (context || question || 'topic').slice(0, 80),
+      mode: TutoringMode.EXPLAIN,
+      message: grounded,
+      context: { lessonId: undefined, currentConcept: context },
+      preferences: {
+        ...(form_level ? { formLevel: form_level } : {}),
+        language: langPref,
+      } as any,
+    };
+
+    for await (const chunk of ai.tutoring.tutorStream(tutorOpts)) {
+      if (chunk.content) {
+        raw += chunk.content;
+        sseWrite(res, { chunk: chunk.content, done: false });
+      }
+      if (chunk.done) break;
+    }
+  } catch (err) {
+    console.error('[stream] tutor stream failed:', err);
+    const fallback = buildGroundedFallback(String(question || 'your question'), ragDocs);
+    raw = fallback;
+    sseWrite(res, { chunk: fallback, done: false });
+  }
+
+  let response = postProcessTutoringResponse(cleanThink(raw));
+  let formatLevel = scoreNectaFormatCompliance(response);
+  if (!response.trim()) {
+    response = buildGroundedFallback(String(question || 'your question'), ragDocs);
+    formatLevel = 'none';
+  }
+
+  sseWrite(res, {
+    chunk: '',
+    done: true,
+    source: response.trim() ? 'casuya-ai' : 'offline',
+    kbHits: ragDocs,
+    formatComplete: formatLevel === 'complete',
+    formatLevel,
+    sourced: !!ragText,
+  });
+  res.end();
+}
+
+export async function handleTutoringExplain(
+  ai: CasuyaAI,
+  body: any,
+): Promise<unknown> {
+  const { question, context, form_level, max_questions } = body;
+  const { langPref, subject, grounded, ragText, ragDocs } = buildTutoringRag(body);
+
+  const nQuestions = Math.min(Math.max(Number(max_questions) || 10, 1), 20);
 
   let response = '';
   let sourced = false;

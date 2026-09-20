@@ -3,6 +3,7 @@ import {
   TutoringResponse,
   TutoringSession,
   KnowledgeState,
+  StreamChunk,
 } from '../types';
 import { BaseProvider } from '../providers/base-provider';
 import { PromptManager } from '../prompts/prompt-manager';
@@ -75,6 +76,32 @@ export class TutoringEngine {
     }
 
     return tutoringResponse;
+  }
+
+  /** Stream tutor tokens from the provider (Phase 3A real streaming). */
+  async *tutorStream(request: TutoringRequest): AsyncGenerator<StreamChunk> {
+    this.validateRequest(request);
+
+    const systemPrompt = await buildTutoringSystemPrompt(
+      request,
+      this.promptManager,
+      this.syllabusAdapter,
+      this.logger,
+    );
+    const userPrompt = buildTutoringUserPrompt(request);
+
+    yield* this.provider.chatCompletionStream({
+      messages: [
+        { role: 'system', content: systemPrompt },
+        ...(request.context?.previousMessages ?? []).map((m) => ({
+          role: m.role === 'tutor' ? ('assistant' as const) : ('user' as const),
+          content: m.message,
+        })),
+        { role: 'user', content: userPrompt },
+      ],
+      temperature: getTemperature(request.mode),
+      maxTokens: getMaxTokens(request.mode),
+    });
   }
 
   async getKnowledgeState(studentId: string): Promise<KnowledgeState | null> {
