@@ -286,16 +286,24 @@ function initTestGeneratorView(root = document) {
       }
       const label = data.testTypeLabel || selected;
       const hits = Array.isArray(data.kbHits) ? data.kbHits : [];
-      if (hits.length) {
-        const sources = hits.map((h) => escapeHtml(h.title)).join(", ");
-        sourcesEl.innerHTML = `
-          <div class="card" style="padding:0.75rem 1rem;margin-bottom:1rem">
-            <p style="font-size:0.8rem;margin:0;color:var(--color-text-muted)">
-              📚 <strong>${escapeHtml(label)}</strong> — generated from ${hits.length} knowledge-base source(s): ${sources}
-              ${data.grounded ? "" : " (using syllabus/topic grounding)"}
-            </p>
-          </div>`;
-      }
+      const footerPayload = {
+        source: data.source || "casuya-ai",
+        kbHits: hits,
+        sourced: data.grounded !== false,
+      };
+      sourcesEl.innerHTML = `
+        <div class="card" style="padding:0.75rem 1rem;margin-bottom:1rem">
+          <p style="font-size:0.8rem;margin:0 0 0.35rem;color:var(--color-text-muted)">
+            📚 <strong>${escapeHtml(label)}</strong> — grounded in ${hits.length || "syllabus"} knowledge-base source(s)
+            ${data.grounded ? "" : " (syllabus/topic fallback)"}
+          </p>
+          <div class="tutor-response-footer">
+            ${typeof renderAiResultFooter === "function"
+              ? renderAiResultFooter(footerPayload)
+              : (typeof renderTutorSourceChips === "function" ? renderTutorSourceChips(hits) : "")
+                + (typeof renderAiSourceBadge === "function" ? renderAiSourceBadge(footerPayload.source) : "")}
+          </div>
+        </div>`;
       resultsEl.innerHTML = renderQuizQuestions(data.questions, {
         subject,
         formLevel: data.formLevel,

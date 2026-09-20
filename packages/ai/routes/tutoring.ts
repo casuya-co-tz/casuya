@@ -8,6 +8,12 @@ import {
 } from '../src/types/index';
 import { ProviderFactory } from '../src/providers/provider-factory';
 import {
+  NECTA_FORMAT_RETRY_HINT,
+  compareNectaFormat,
+  postProcessTutoringResponse,
+  scoreNectaFormatCompliance,
+} from '../src/tutoring/post-process';
+import {
   resolveSubject,
   formToKbForm,
   formLabel,
@@ -31,7 +37,16 @@ export async function handleTutoringExplain(
   ai: CasuyaAI,
   body: any,
 ): Promise<unknown> {
-  const { question, context, subject_slug, form_level, max_questions, curriculum_context } = body;
+  const {
+    question,
+    context,
+    subject_slug,
+    form_level,
+    max_questions,
+    curriculum_context,
+    language,
+  } = body;
+  const langPref = language === 'sw' ? 'sw' : language === 'en' ? 'en' : 'both';
   const subject = resolveSubject(subject_slug);
   const query = [question, context].filter(Boolean).join(' ').trim();
   const kbForm = formToKbForm(form_level);
@@ -76,18 +91,41 @@ export async function handleTutoringExplain(
 
   let response = '';
   let sourced = false;
+  let formatComplete = false;
   try {
-    const result = await ai.tutoring.tutor({
+    const tutorOpts = {
       studentId: 'platform',
       subject: subject.enumValue,
       topic: (context || question || 'topic').slice(0, 80),
       mode: TutoringMode.EXPLAIN,
       message: grounded,
       context: { lessonId: undefined, currentConcept: context },
-      preferences: form_level ? ({ formLevel: form_level } as any) : undefined,
-    });
-    response = cleanThink(result.message);
+      preferences: {
+        ...(form_level ? { formLevel: form_level } : {}),
+        language: langPref,
+      } as any,
+    };
+    const result = await ai.tutoring.tutor(tutorOpts);
+    response = postProcessTutoringResponse(cleanThink(result.message));
     sourced = !!ragText;
+    let formatLevel = scoreNectaFormatCompliance(response);
+    if (formatLevel !== 'complete') {
+      try {
+        const retry = await ai.tutoring.tutor({
+          ...tutorOpts,
+          message: grounded + NECTA_FORMAT_RETRY_HINT,
+        });
+        const retryResponse = postProcessTutoringResponse(cleanThink(retry.message));
+        const retryLevel = scoreNectaFormatCompliance(retryResponse);
+        if (retryResponse.trim() && compareNectaFormat(retryLevel, formatLevel) > 0) {
+          response = retryResponse;
+          formatLevel = retryLevel;
+        }
+      } catch (retryErr) {
+        console.error('[explain] format retry failed:', retryErr);
+      }
+    }
+    formatComplete = formatLevel === 'complete';
     if (!response.trim()) {
       console.error(
         '[explain] tutor returned empty output',
@@ -98,11 +136,13 @@ export async function handleTutoringExplain(
         }),
       );
       response = buildGroundedFallback(String(question || 'your question'), ragDocs);
+      formatComplete = false;
     }
   } catch (err) {
     console.error('[explain] tutor failed, using KB-grounded fallback:', err);
     response = buildGroundedFallback(String(question || 'your question'), ragDocs);
     sourced = !!ragText;
+    formatComplete = false;
   }
 
   let questions: unknown[] = [];
@@ -122,7 +162,15 @@ export async function handleTutoringExplain(
     console.error('[explain] question generation failed:', err);
   }
 
-  return { response, sourced, kbHits: ragDocs, questions, max_questions: nQuestions };
+  return {
+    response,
+    sourced,
+    kbHits: ragDocs,
+    questions,
+    max_questions: nQuestions,
+    formatComplete,
+    formatLevel: scoreNectaFormatCompliance(response),
+  };
 }
 
 async function generatePlanJson(ai: CasuyaAI, body: any, kind: 'lesson' | 'scheme'): Promise<any> {

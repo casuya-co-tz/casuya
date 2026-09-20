@@ -133,7 +133,7 @@ async def generate_quiz_questions(
     count: int = 5,
     subject_slug: str | None = None,
     form_level: int | None = None,
-) -> tuple[list[dict], str]:
+) -> tuple[list[dict], str, list]:
     """Generate NECTA-style quiz questions from lesson HTML.
 
     Strips HTML tags before sending to the AI service so the model
@@ -189,11 +189,11 @@ async def generate_quiz_questions(
         result = await _call_ai_service("/api/questions/generate", payload)
         questions = result.get("questions") if result else None
         if questions:
-            return questions, "casuya-ai"
+            return questions, "casuya-ai", result.get("kbHits") or []
     except AiServiceError as exc:
         logger.warning("AI question generation failed: %s", exc)
 
-    return _generate_questions_locally(plain_text, count, subject_slug, form_level), "offline"
+    return _generate_questions_locally(plain_text, count, subject_slug, form_level), "offline", []
 
 
 def _generate_questions_locally(
@@ -316,25 +316,136 @@ async def get_tutoring_response(
     return payload_result["response"]
 
 
+_FORMAT_RANK = {"none": 0, "partial": 1, "complete": 2}
+_NECTA_FORMAT_RETRY_HINT = (
+    "\n\n[IMPORTANT: Your answer MUST include all mandatory NECTA tutor sections — "
+    "a 🌍 Context blockquote, structured step-by-step explanation, *** NECTA Examination Tip ***, "
+    "and a Review Question line.]"
+)
+
+
+def _post_process_tutoring_response(text: str) -> str:
+    """Mirror packages/ai post-process fixes for platform-side responses."""
+    result = text or ""
+    result = re.sub(
+        r"^((?:🌍|> ?🌍|\*\*🌍|🌍 )\s*.*?Context.*)$",
+        lambda m: "> " + re.sub(r"^>\s*", "", re.sub(r"^\*\*", "", m.group(1))),
+        result,
+        flags=re.MULTILINE,
+    )
+    lines = result.split("\n")
+    out: list[str] = []
+    for idx, line in enumerate(lines):
+        if re.match(r"^(?:💡|> ?💡|\*\*💡)\s*\*?\*?NECTA Examination Tip", line):
+            prev = "\n".join(out[-2:]) if out else ""
+            if "---" not in prev and "***" not in prev:
+                out.extend(["---", ""])
+        out.append(line)
+    result = "\n".join(out)
+    result = result.replace("(1n)", "(n)")
+    result = re.sub(r"\[next sub-topic\]", "a related topic", result, flags=re.IGNORECASE)
+    return result.strip()
+
+
+def _score_necta_format(text: str) -> str:
+    has_context = bool(re.search(r"🌍|Context|Muktadha", text, re.I))
+    has_necta = bool(re.search(r"NECTA|Exam(?:ination)? Tip|Kidokezo", text, re.I))
+    has_structure = bool(re.search(r"^#{1,3}\s|^\*\*|^>\s", text, re.M))
+    has_review = bool(re.search(r"Review Question|Swali la Mazoezi", text, re.I))
+    score = sum([has_context, has_necta, has_structure, has_review])
+    if score >= 3:
+        return "complete"
+    if score >= 2:
+        return "partial"
+    return "none"
+
+
+def _clean_tutor_response(raw: str) -> str:
+    response = re.sub(r" thinking[\s\S]*?<\/think>", "", raw or "").strip()
+    if " thinking" in response:
+        response = response.split(" thinking")[-1].strip()
+    return _post_process_tutoring_response(response)
+
+
+def _tutoring_result_from_ai(result: dict | None) -> dict | None:
+    if not result or not result.get("response"):
+        return None
+    response = _clean_tutor_response(result["response"])
+    format_level = result.get("formatLevel") or _score_necta_format(response)
+    return {
+        "response": response,
+        "questions": result.get("questions") or [],
+        "sourced": bool(result.get("sourced")),
+        "kbHits": result.get("kbHits") or [],
+        "source": "casuya-ai",
+        "formatComplete": bool(result.get("formatComplete")) or format_level == "complete",
+        "formatLevel": format_level,
+    }
+
+
+def _append_thread_context(lesson_context: str, messages: list[dict] | None) -> str:
+    if not messages:
+        return lesson_context
+    turns: list[str] = []
+    for msg in messages[-8:]:
+        role = str(msg.get("role") or "").strip().lower()
+        text = str(msg.get("text") or "").strip()
+        if not text:
+            continue
+        label = "Student" if role == "user" else "Tutor"
+        turns.append(f"{label}: {text[:600]}")
+    if not turns:
+        return lesson_context
+    block = "CONVERSATION HISTORY:\n" + "\n".join(turns)
+    merged = f"{lesson_context}\n\n{block}".strip() if lesson_context else block
+    if len(merged) > 4000:
+        return merged[:4000] + "…"
+    return merged
+
+
 async def get_tutoring_payload(
     question: str,
     lesson_context: str = "",
     subject_slug: str | None = None,
     form_level: int | None = None,
     max_questions: int | None = None,
+    lesson_id: str | None = None,
+    messages: list[dict] | None = None,
+    language: str | None = None,
 ) -> dict:
     """Like get_tutoring_response but returns the full AI payload, including any
     practice questions the AI service generated (up to 20 of any type)."""
+    lesson_context = _append_thread_context(lesson_context, messages)
+    if len(lesson_context) > 4000:
+        lesson_context = lesson_context[:4000] + "…"
     payload: dict = {
         "question": question,
         "context": lesson_context,
     }
+    if lesson_id:
+        payload["lesson_id"] = lesson_id
     if subject_slug:
         payload["subject_slug"] = subject_slug
     if form_level:
         payload["form_level"] = form_level
     if max_questions:
         payload["max_questions"] = max_questions
+    if language:
+        payload["language"] = language
+    from .tutor_cache import get_cached_tutor, set_cached_tutor, tutor_cache_key
+
+    cache_key = tutor_cache_key(
+        question=question,
+        lesson_context=lesson_context,
+        lesson_id=lesson_id,
+        subject_slug=subject_slug,
+        form_level=form_level,
+    )
+    cached = get_cached_tutor(cache_key)
+    if cached and cached.get("response"):
+        cached = dict(cached)
+        cached["source"] = "cached"
+        return cached
     if subject_slug and form_level:
         try:
             from backend.services.syllabus_service import get_curriculum_context
@@ -342,8 +453,6 @@ async def get_tutoring_payload(
             if curriculum_ctx:
                 payload["curriculum_context"] = curriculum_ctx
         except Exception as exc:
-            from .client import logger
-
             logger.debug("Could not fetch syllabus context: %s", exc)
 
     offline_msg = (
@@ -352,18 +461,29 @@ async def get_tutoring_payload(
     )
     try:
         result = await _call_ai_service("/api/tutoring/explain", payload)
-        if result and result.get("response"):
-            questions = result.get("questions") or []
-            response = re.sub(r" thinking[\s\S]*?<\/think>", "", result["response"]).strip()
-            if " thinking" in response:
-                response = response.split(" thinking")[-1].strip()
-            return {
-                "response": response,
-                "questions": questions,
-                "sourced": bool(result.get("sourced")),
-                "kbHits": result.get("kbHits") or [],
-                "source": "casuya-ai",
-            }
+        parsed = _tutoring_result_from_ai(result)
+        if parsed:
+            format_level = parsed.get("formatLevel", "none")
+            if format_level != "complete":
+                retry_payload = {
+                    **payload,
+                    "question": str(question or "") + _NECTA_FORMAT_RETRY_HINT,
+                }
+                retry_result = await _call_ai_service("/api/tutoring/explain", retry_payload)
+                retry_parsed = _tutoring_result_from_ai(retry_result)
+                if retry_parsed:
+                    retry_level = retry_parsed.get("formatLevel", "none")
+                    if _FORMAT_RANK.get(retry_level, 0) > _FORMAT_RANK.get(format_level, 0):
+                        parsed = retry_parsed
+            logger.info(
+                "Tutor response format=%s complete=%s lesson_id=%s subject=%s",
+                parsed.get("formatLevel"),
+                parsed.get("formatComplete"),
+                lesson_id or "",
+                subject_slug or "",
+            )
+            set_cached_tutor(cache_key, {**parsed, "source": "casuya-ai"})
+            return parsed
     except AiServiceError as exc:
         logger.warning("AI tutoring failed: %s", exc)
 
@@ -373,6 +493,8 @@ async def get_tutoring_payload(
         "sourced": False,
         "kbHits": [],
         "source": "offline",
+        "formatComplete": False,
+        "formatLevel": "none",
     }
 
 

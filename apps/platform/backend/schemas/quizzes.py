@@ -32,11 +32,19 @@ class QuizSubmission(BaseModel):
     work: dict | None = None
 
 
+class QuizWrongQuestion(BaseModel):
+    question_id: str
+    prompt: str
+    chosen_text: str
+    correct_text: str
+
+
 class QuizResult(BaseModel):
     quiz_id: str
     score: int
     total: int
     percentage: float
+    wrong_questions: list[QuizWrongQuestion] = []
     # Work breakdown (presence-based grading) — null when no work sent
     work_score: int | None = None
     work_total: int | None = None

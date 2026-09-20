@@ -94,7 +94,10 @@ function plansRenderGenerated(res, planType) {
   plansSetLastGenHtml(res.html_render || "");
   const actionsId = planType === "scheme_of_work" ? "tdoc-scheme-preview-actions" : "tdoc-lesson-preview-actions";
   setTimeout(() => { const actionsEl = document.getElementById(actionsId); if (actionsEl) actionsEl.style.display = "flex"; }, 50);
-  return `<iframe class="tdocs-preview-frame" id="gen-frame" style="width:100%;min-height:520px;border:none;background:#fff"></iframe>`;
+  const footer = typeof renderAiResultFooter === "function"
+    ? `<div class="tutor-response-footer tdocs-plan-source">${renderAiResultFooter(res)}</div>`
+    : (res.source ? `<div class="tutor-response-footer tdocs-plan-source">${renderAiSourceBadge(res.source)}</div>` : "");
+  return `${footer}<iframe class="tdocs-preview-frame" id="gen-frame" style="width:100%;min-height:520px;border:none;background:#fff"></iframe>`;
 }
 
 function plansOpenPreview() {

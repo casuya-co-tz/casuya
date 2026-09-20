@@ -206,13 +206,26 @@ def grade_attempt(db: Session, quiz_id: str, answers: dict, work: dict | None = 
 
     total = len(questions)
     correct = 0
+    wrong_questions: list[dict] = []
     # Answers arrive from the client keyed and valued as strings, while the
     # DB returns UUID objects. Normalize both sides so grading is reliable.
     str_answers = {str(k): str(v) for k, v in (answers or {}).items()}
     for q in questions:
         correct_option_id = correct_map.get(q.id)
-        if correct_option_id and str_answers.get(str(q.id)) == str(correct_option_id):
+        student_answer = str_answers.get(str(q.id))
+        if correct_option_id and student_answer == str(correct_option_id):
             correct += 1
+        else:
+            correct_opt = next((o for o in q.quiz_options if o.is_correct), None)
+            chosen_opt = next((o for o in q.quiz_options if str(o.id) == student_answer), None)
+            wrong_questions.append(
+                {
+                    "question_id": str(q.id),
+                    "prompt": q.prompt or "",
+                    "chosen_text": chosen_opt.text if chosen_opt else "(unanswered)",
+                    "correct_text": correct_opt.text if correct_opt else "",
+                }
+            )
 
     percentage = (correct / total * 100) if total > 0 else 0
 
@@ -252,10 +265,17 @@ def grade_attempt(db: Session, quiz_id: str, answers: dict, work: dict | None = 
             "score": correct,
             "total": total,
             "percentage": round(percentage, 2),
+            "wrong_questions": wrong_questions,
             "work_score": work_score,
             "work_total": total,
             "work_percentage": work_percentage,
             "combined_percentage": combined_percentage,
         }
 
-    return {"quiz_id": quiz_id, "score": correct, "total": total, "percentage": round(percentage, 2)}
+    return {
+        "quiz_id": quiz_id,
+        "score": correct,
+        "total": total,
+        "percentage": round(percentage, 2),
+        "wrong_questions": wrong_questions,
+    }

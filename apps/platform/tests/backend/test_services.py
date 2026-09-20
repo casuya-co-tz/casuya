@@ -71,6 +71,11 @@ def test_quiz_flow():
         if correct_id:
             result = grade_attempt(db, quiz["id"], {questions[0]["id"]: correct_id})
             assert result["score"] == 1
+            assert result["wrong_questions"] == []
+            wrong = grade_attempt(db, quiz["id"], {questions[0]["id"]: "bad-option"})
+            assert wrong["score"] == 0
+            assert len(wrong["wrong_questions"]) == 1
+            assert wrong["wrong_questions"][0]["correct_text"] == "Mass x Acceleration"
 
 
 def test_progress():

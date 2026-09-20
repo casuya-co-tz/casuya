@@ -162,7 +162,21 @@ async function viewLessonContent(containerId, lessonId, backFn) {
     };
     window.addEventListener("message", onMessage);
 
-    bindLessonInteractions({ container, iframe, lessonId, isStudent, canBookmark, quizData, state, showToast, sendProgress, onMessage, backFn });
+    bindLessonInteractions({
+      container,
+      iframe,
+      lessonId,
+      isStudent,
+      canBookmark,
+      quizData,
+      state,
+      showToast,
+      sendProgress,
+      onMessage,
+      backFn,
+      lesson: lessonMeta,
+      lessonContent: html,
+    });
   } catch (err) {
     container.innerHTML = `<div class="empty-state"><h2>Error</h2><p>${escapeHtml(err.message)}</p></div>`;
   }

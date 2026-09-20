@@ -19,7 +19,6 @@ from backend.services.ai_service import (
     generate_practice_questions,
     generate_quiz_questions,
     get_tutoring_payload,
-    get_tutoring_response,
     moderate_content,
     translate_content,
 )
@@ -51,12 +50,20 @@ class QuestionRequest(BaseModel):
 _ALLOWED_SUBJECTS = {"mathematics", "chemistry", "physics"}
 
 
+class TutoringMessage(BaseModel):
+    role: str
+    text: str = ""
+
+
 class TutoringRequest(BaseModel):
     question: str
     lesson_context: str = ""
+    lesson_id: str | None = None
     subject_slug: str | None = None
     form_level: int | None = None
     max_questions: int | None = None  # up to 20 practice questions of any type
+    messages: list[TutoringMessage] | None = None
+    language: str | None = None  # sw | en | both
 
 
 class AnalyzeRequest(BaseModel):
@@ -103,28 +110,40 @@ async def api_generate_questions(
         mismatch = check_subject_relevance(_strip_html(req.lesson_html), req.subject_slug)
         if mismatch:
             raise HTTPException(status_code=422, detail=mismatch)
-    questions, source = await generate_quiz_questions(
+    questions, source, kb_hits = await generate_quiz_questions(
         req.lesson_html,
         req.count,
         subject_slug=req.subject_slug,
         form_level=req.form_level,
     )
     _reject_offline(source, allow_offline)
-    return {"questions": questions, "count": len(questions), "source": source}
+    return {
+        "questions": questions,
+        "count": len(questions),
+        "source": source,
+        "kbHits": kb_hits,
+        "sourced": bool(kb_hits),
+    }
 
 
 @router.post("/tutoring/explain")
 async def api_tutoring(
     req: TutoringRequest,
     allow_offline: bool = Query(True),
-    _user=Depends(get_current_user),
+    user=Depends(get_current_user),
 ):
+    from backend.services.ai_bridge.tutor_quota import enforce_student_tutor_quota
+
+    enforce_student_tutor_quota(user)
     payload = await get_tutoring_payload(
         req.question,
         req.lesson_context,
         subject_slug=req.subject_slug,
         form_level=req.form_level,
         max_questions=req.max_questions,
+        lesson_id=req.lesson_id,
+        messages=[m.model_dump() for m in (req.messages or [])],
+        language=req.language,
     )
     source = payload.get("source", "offline")
     _reject_offline(source, allow_offline)
@@ -135,6 +154,8 @@ async def api_tutoring(
         "source": source,
         "sourced": payload.get("sourced", False),
         "kbHits": payload.get("kbHits") or [],
+        "formatComplete": payload.get("formatComplete", False),
+        "formatLevel": payload.get("formatLevel", "none"),
     }
 
 
@@ -243,6 +264,10 @@ async def _stream_tutoring_response(
     lesson_context: str,
     subject_slug: str | None,
     form_level: int | None,
+    *,
+    lesson_id: str | None = None,
+    messages: list[dict] | None = None,
+    language: str | None = None,
 ):
     """Generator that yields SSE events for the tutoring response.
 
@@ -251,16 +276,26 @@ async def _stream_tutoring_response(
     instead of waiting for the full response.
     """
     try:
-        response = await get_tutoring_response(
-            question, lesson_context,
-            subject_slug=subject_slug, form_level=form_level,
+        payload = await get_tutoring_payload(
+            question,
+            lesson_context,
+            subject_slug=subject_slug,
+            form_level=form_level,
+            lesson_id=lesson_id,
+            messages=messages,
+            language=language,
         )
+        response = payload.get("response") or ""
+        source = payload.get("source", "offline")
+        kb_hits = payload.get("kbHits") or []
+        format_complete = payload.get("formatComplete", False)
+        format_level = payload.get("formatLevel", "none")
     except Exception:
-        yield f"data: {json.dumps({'chunk': 'The AI tutor is temporarily unavailable.', 'done': True})}\n\n"
+        yield f"data: {json.dumps({'chunk': 'The AI tutor is temporarily unavailable.', 'done': True, 'source': 'offline', 'kbHits': [], 'formatComplete': False, 'formatLevel': 'none'})}\n\n"
         return
 
     if not response:
-        yield f"data: {json.dumps({'chunk': '', 'done': True})}\n\n"
+        yield f"data: {json.dumps({'chunk': '', 'done': True, 'source': source, 'kbHits': kb_hits, 'formatComplete': format_complete, 'formatLevel': format_level})}\n\n"
         return
 
     # Split into sentence-sized chunks for progressive rendering
@@ -275,11 +310,14 @@ async def _stream_tutoring_response(
         # Small delay between chunks so the frontend can render
         await asyncio.sleep(0.05)
 
-    yield f"data: {json.dumps({'chunk': '', 'done': True})}\n\n"
+    yield f"data: {json.dumps({'chunk': '', 'done': True, 'source': source, 'kbHits': kb_hits, 'formatComplete': format_complete, 'formatLevel': format_level})}\n\n"
 
 
 @router.post("/tutoring/stream")
-async def api_tutoring_stream(req: TutoringRequest, _user=Depends(get_current_user)):
+async def api_tutoring_stream(req: TutoringRequest, user=Depends(get_current_user)):
+    from backend.services.ai_bridge.tutor_quota import enforce_student_tutor_quota
+
+    enforce_student_tutor_quota(user)
     """Stream AI tutoring response via Server-Sent Events.
 
     The frontend connects with EventSource and receives sentence-sized
@@ -292,6 +330,9 @@ async def api_tutoring_stream(req: TutoringRequest, _user=Depends(get_current_us
             req.lesson_context,
             req.subject_slug,
             req.form_level,
+            lesson_id=req.lesson_id,
+            messages=[m.model_dump() for m in (req.messages or [])],
+            language=req.language,
         ),
         media_type="text/event-stream",
         headers={

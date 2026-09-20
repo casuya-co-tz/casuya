@@ -35,6 +35,26 @@ function renderTutorMarkdown(raw) {
     return match;
   });
 
+  text = text.replace(
+    /(\*\*Review Question[^*]*\*\*[^\n]*)\n([\s\S]*?)(?=\n\n(?!\*)|$)/gi,
+    (_, titleLine, body) => {
+      const rawBody = body.trim();
+      const markingSplit = rawBody.split(/\n(?=\*?\*?(?:Model Answer|Marking Scheme|Jibu)/i);
+      const preview = markingSplit[0] || "";
+      const marking = markingSplit.slice(1).join("\n").trim();
+      let html = `<div class="tutor-review-card"><div class="tutor-review-title">${escapeHtml(titleLine.trim())}</div>`;
+      if (preview) {
+        html += `<div class="tutor-review-body">${escapeHtml(preview).replace(/\n/g, "<br>")}</div>`;
+      }
+      if (marking) {
+        html += `<button type="button" class="tutor-marking-toggle">Show Marking Scheme</button>`;
+        html += `<div class="tutor-marking-scheme" hidden>${escapeHtml(marking).replace(/\n/g, "<br>")}</div>`;
+      }
+      html += "</div>";
+      return html;
+    }
+  );
+
   text = text.replace(/^\*\*\*\s*$/gm, "<hr>");
 
   text = text.replace(/^#### (.+)$/gm, (_, t) => `<h4>${escapeHtml(t)}</h4>`);

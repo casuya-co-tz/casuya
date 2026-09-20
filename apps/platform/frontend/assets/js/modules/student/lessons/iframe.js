@@ -48,6 +48,10 @@ async function mountStudentLessonIframe(lessonId, lessonContent) {
       if (progressTimer) clearTimeout(progressTimer);
       const percent = e.data.percent;
       progressTimer = setTimeout(() => syncProgress({ completion_percentage: percent }), 2000);
+    } else if (e.data?.type === "casuya-selection" && e.data.selected) {
+      if (typeof openLessonAiChatExplain === "function") {
+        openLessonAiChatExplain(e.data.selected, e.data.context || "");
+      }
     }
   };
   window.addEventListener("message", onMessage);

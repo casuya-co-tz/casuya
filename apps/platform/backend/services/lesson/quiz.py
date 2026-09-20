@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from sqlalchemy.orm import Session, joinedload
 
-from backend.models.lesson import Lesson
+from backend.models.lesson import Lesson, Subtopic, Subject, Topic
 from backend.models.quiz import Quiz, QuizOption, QuizQuestion
 
 
@@ -26,6 +26,27 @@ def get_lesson_package(lesson_id: str, user_sub: str, db: Session) -> dict | Non
     if not lesson:
         return None
 
+    subtopic = (
+        db.query(Subtopic).filter(Subtopic.id == lesson.subtopic_id).first()
+        if lesson.subtopic_id
+        else None
+    )
+    topic = (
+        db.query(Topic).filter(Topic.id == subtopic.topic_id).first()
+        if subtopic
+        else None
+    )
+    subject = (
+        db.query(Subject).filter(Subject.id == topic.subject_id).first()
+        if topic
+        else None
+    )
+    form_level = None
+    if topic and topic.form_level:
+        token = str(topic.form_level).strip().upper()
+        roman = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6}
+        form_level = roman.get(token) or (int(token) if token.isdigit() else None)
+
     lesson_dict = {
         "id": lesson.id,
         "subtopic_id": lesson.subtopic_id,
@@ -35,6 +56,11 @@ def get_lesson_package(lesson_id: str, user_sub: str, db: Session) -> dict | Non
         "package_version": lesson.package_version,
         "status": lesson.status,
         "created_by": lesson.created_by,
+        "subtopic_title": subtopic.title if subtopic else None,
+        "topic_title": topic.title if topic else None,
+        "subject_slug": subject.slug if subject else None,
+        "subject_name": subject.name if subject else None,
+        "form_level": form_level,
     }
 
     # Query 1: bookmark + note (both filtered by user+lesson)

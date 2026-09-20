@@ -167,29 +167,28 @@
             if (!confirm(subjectCheck.warning + "\n\nDo you want to continue generating anyway?")) return;
           }
           resultDiv.style.display = "block";
-          textDiv.innerHTML = '<div class="tutor-thinking"><div class="tutor-thinking-dots"><span></span><span></span><span></span></div>Generating...</div>';
-          try {
-            const result = await request("/ai/questions/generate", {
-              method: "POST",
-              body: JSON.stringify({
-                lesson_html: lessonHtml,
-                count: parseInt(fd.get("count")) || 5,
-                subject_slug: subjectSlug,
-                form_level: parseInt(fd.get("form_level")) || 2,
-              }),
-            });
-            const questions = result?.questions || result;
-            if (Array.isArray(questions) && questions.length) {
-              textDiv.innerHTML = renderQuizQuestions(questions, {
+          runAiGenerateTask({
+            container: textDiv,
+            loadingLabel: "Generating...",
+            path: "/ai/questions/generate",
+            body: {
+              lesson_html: lessonHtml,
+              count: parseInt(fd.get("count")) || 5,
+              subject_slug: subjectSlug,
+              form_level: parseInt(fd.get("form_level")) || 2,
+            },
+            render: function (result) {
+              const questions = result?.questions || result;
+              if (!Array.isArray(questions) || !questions.length) {
+                return '<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>';
+              }
+              return renderQuizQuestions(questions, {
                 subject: subjectSlug,
                 formLevel: fd.get("form_level"),
                 topic: questions[0]?.topic || "",
               });
-              window.renderMath(textDiv);
-            } else {
-              textDiv.innerHTML = '<p style="color:var(--color-text-muted)">No questions generated. Try different content.</p>';
-            }
-          } catch(err) { textDiv.innerHTML = `<p style="color:var(--color-danger)">Error: ${escapeHtml(err.message)}</p>`; }
+            },
+          }).catch(function () {});
         });
       });
     } catch(e) { showAdminView('<div class="empty-state"><p>Error loading lessons</p></div>'); }

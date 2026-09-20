@@ -41,6 +41,37 @@ function cleanPlaceholders(text: string): string {
   );
 }
 
+export type NectaFormatLevel = 'complete' | 'partial' | 'none';
+
+const FORMAT_RANK: Record<NectaFormatLevel, number> = {
+  none: 0,
+  partial: 1,
+  complete: 2,
+};
+
+/**
+ * Scores how closely a tutoring answer follows the mandatory NECTA template.
+ */
+export function scoreNectaFormatCompliance(text: string): NectaFormatLevel {
+  const hasContext = /🌍|Context|Muktadha/i.test(text);
+  const hasNecta = /NECTA|Exam(?:ination)? Tip|Kidokezo cha NECTA/i.test(text);
+  const hasStructure = /^#{1,3}\s/m.test(text) || /^\*\*/m.test(text) || /^>\s/m.test(text);
+  const hasReview = /Review Question|Swali la Mazoezi/i.test(text);
+  const score = [hasContext, hasNecta, hasStructure, hasReview].filter(Boolean).length;
+  if (score >= 3) return 'complete';
+  if (score >= 2) return 'partial';
+  return 'none';
+}
+
+export function compareNectaFormat(a: NectaFormatLevel, b: NectaFormatLevel): number {
+  return FORMAT_RANK[a] - FORMAT_RANK[b];
+}
+
+export const NECTA_FORMAT_RETRY_HINT =
+  '\n\n[IMPORTANT: Your answer MUST include all mandatory NECTA tutor sections — '
+  + 'a 🌍 Context blockquote, structured step-by-step explanation, *** NECTA Examination Tip ***, '
+  + 'and a Review Question line.]';
+
 /**
  * Runs all post-processing fixes on the raw AI response.
  */

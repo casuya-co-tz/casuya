@@ -29,7 +29,7 @@ async def api_generate_lesson_plan(
     user=Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    plan = await generate_lesson_plan(
+    plan, source = await generate_lesson_plan(
         subject_slug=req.subject_slug,
         form_level=req.form_level,
         topic=req.topic,
@@ -44,11 +44,20 @@ async def api_generate_lesson_plan(
     )
     html = render_lesson_plan_html(plan)
     title = f"{req.topic}" + (f" — {req.subtopic}" if req.subtopic else "")
+    subject_label = req.subject_slug.replace("-", " ").title()
+    kb_hits = (
+        [{"title": f"TIE {subject_label} Form {req.form_level}", "kind": "syllabus"}]
+        if source == "casuya-ai"
+        else []
+    )
     return {
         "plan_data": plan,
         "html_render": html,
         "title": title,
         "plan_type": "lesson_plan",
+        "source": source,
+        "sourced": source == "casuya-ai",
+        "kbHits": kb_hits,
     }
 
 
@@ -89,7 +98,7 @@ async def api_generate_scheme_of_work(
     user=Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    plan = await generate_scheme_of_work(
+    plan, source = await generate_scheme_of_work(
         subject_slug=req.subject_slug,
         form_level=req.form_level,
         term=req.term,
@@ -101,9 +110,17 @@ async def api_generate_scheme_of_work(
     html = render_scheme_of_work_html(plan)
     subject_label = req.subject_slug.replace("-", " ").title()
     title = f"{subject_label} — {req.term}"
+    kb_hits = (
+        [{"title": f"TIE {subject_label} Form {req.form_level} — {req.term}", "kind": "syllabus"}]
+        if source == "casuya-ai"
+        else []
+    )
     return {
         "plan_data": plan,
         "html_render": html,
         "title": title,
         "plan_type": "scheme_of_work",
+        "source": source,
+        "sourced": source == "casuya-ai",
+        "kbHits": kb_hits,
     }

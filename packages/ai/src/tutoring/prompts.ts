@@ -54,6 +54,14 @@ export async function buildTutoringSystemPrompt(
 }
 
 export function buildTutoringUserPrompt(request: TutoringRequest): string {
+  const lang = (request.preferences as { language?: string } | undefined)?.language || 'both';
+  const langHint =
+    lang === 'sw'
+      ? '[Respond in Kiswahili using TIE syllabus terminology.]\n\n'
+      : lang === 'en'
+        ? '[Respond in English using TIE syllabus terminology.]\n\n'
+        : '[Respond bilingually (Kiswahili + English) when helpful, using TIE syllabus terminology.]\n\n';
+
   const modeInstructions: Record<TutoringMode, string> = {
     [TutoringMode.EXPLAIN]: 'Provide a clear, comprehensive explanation.',
     [TutoringMode.SOCRATIC]: 'Guide the student to discover the answer through questions.',
@@ -62,7 +70,7 @@ export function buildTutoringUserPrompt(request: TutoringRequest): string {
     [TutoringMode.ASSESS]: 'Assess the student understanding and provide feedback.',
   };
 
-  return `${modeInstructions[request.mode]}\n\nStudent question: ${request.message}`;
+  return `${langHint}${modeInstructions[request.mode]}\n\nStudent question: ${request.message}`;
 }
 
 export function getTemperature(mode: TutoringMode): number {

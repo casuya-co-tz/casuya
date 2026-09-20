@@ -38,7 +38,7 @@ async def generate_lesson_plan(
     students_girls: int | None = None,
     duration_minutes: int = 40,
     period: str | None = None,
-) -> dict:
+) -> tuple[dict, str]:
     lang = _lang_label(subject_slug)
     curriculum_ctx = get_curriculum_context(subject_slug, form_level)
     subject_label = subject_slug.replace("-", " ").title()
@@ -101,7 +101,7 @@ async def generate_lesson_plan(
     )
 
     if plan is not None:
-        return plan
+        return plan, "casuya-ai"
 
     return _build_lesson_plan_offline(
         subject_slug=subject_slug,
@@ -117,7 +117,7 @@ async def generate_lesson_plan(
         duration_minutes=duration_minutes,
         period=period or "Period 1",
         lang=lang,
-    )
+    ), "offline"
 
 
 async def generate_scheme_of_work(
@@ -129,7 +129,7 @@ async def generate_scheme_of_work(
     school_name: str | None = None,
     teacher_name: str | None = None,
     topics: list[str] | None = None,
-) -> dict:
+) -> tuple[dict, str]:
     lang = _lang_label(subject_slug)
     curriculum_ctx = get_curriculum_context(subject_slug, form_level)
     subject_label = subject_slug.replace("-", " ").title()
@@ -182,7 +182,7 @@ async def generate_scheme_of_work(
         h.setdefault("class_name", f"Form {form_level}")
         h.setdefault("term", term)
         h.setdefault("academic_year", academic_year or "2026")
-        return plan
+        return plan, "casuya-ai"
 
     return _build_scheme_offline(
         subject_slug=subject_slug,
@@ -194,4 +194,4 @@ async def generate_scheme_of_work(
         teacher_name=teacher_name or "Teacher Name",
         topics=topics or [],
         lang=lang,
-    )
+    ), "offline"

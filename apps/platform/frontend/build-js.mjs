@@ -40,6 +40,7 @@ const core = [
   "modules/api-client/core/katex-loader.js",
   "modules/api-client/core/fetch.js",
   "modules/ai-source-badge.js",
+  "modules/ai/tutor-panel.js",
   "modules/api-quiz.js",
   "modules/api.js",
   "modules/auth.js",
@@ -72,6 +73,7 @@ const speechFiles = [
 ];
 
 const studentExtras = [
+  "modules/student/ai-chat.js",
   "modules/api-client/core/test-generator.js",
   "modules/student/games.js",
   "modules/student/exams.js",
@@ -277,6 +279,7 @@ const STAMP_ASSETS = [
   "assets/js/speech.bundle.js",
   "assets/js/i18n.swahili.bundle.js",
   "assets/js/blackboard-embed.js",
+  "assets/js/student-ai-chat.js",
   "assets/js/vendor-blackboard.min.js",
   "assets/js/brand.js",
   "assets/js/rum.js",
@@ -343,6 +346,7 @@ if (process.argv.includes("--gzip-only")) {
   writeJs("i18n.swahili.bundle.js", concatJs(i18nBundleFiles));
   writeJs("speech.bundle.js", concatJs(speechFiles));
   writeJs("student.extras.bundle.js", concatJs(studentExtras));
+  writeJs("student-ai-chat.js", stripEsm(readFileSync(join(jsDir, "modules/student/ai-chat.js"), "utf8")));
   gzipBundles();
   stampAssetRevs();
   console.log(`wrote ${Object.keys(roles).length} role bundles, extras, speech, and CSS gz`);

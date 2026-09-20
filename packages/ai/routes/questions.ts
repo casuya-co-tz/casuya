@@ -1,11 +1,12 @@
 import { CasuyaAI } from '../src/casuya-ai';
+import { getKnowledgeBase } from '../src/kb';
 import { HttpError } from '../server-security';
 import {
   QuestionType,
   QuestionCategory,
   Difficulty,
 } from '../src/types/index';
-import { resolveSubject } from '../server';
+import { formToKbForm, resolveSubject } from '../server';
 
 export async function handleQuestionGenerate(
   ai: CasuyaAI,
@@ -29,6 +30,35 @@ export async function handleQuestionGenerate(
     .filter(Boolean)
     .join('\n\n');
 
+  const kbForm = formToKbForm(form_level);
+  const kb = getKnowledgeBase();
+  let ragText = typeof curriculum_context === 'string' ? curriculum_context.slice(0, 8000) : '';
+  let kbHits: { title: string; kind: string; subject: string; snippet?: string }[] = [];
+  const ragQuery = [topic, contextText].filter(Boolean).join(' ').trim();
+  if (kb.ready && ragQuery) {
+    let rag = kb.buildRagContext(
+      ragQuery,
+      { subject: subject_slug || undefined, form: kbForm, limit: 3 },
+      Number(process.env.KB_RAG_MAX_CHARS) || 6000,
+    );
+    if (!rag.docs.length && kbForm) {
+      rag = kb.buildRagContext(
+        ragQuery,
+        { subject: subject_slug || undefined, limit: 3 },
+        Number(process.env.KB_RAG_MAX_CHARS) || 6000,
+      );
+    }
+    kbHits = rag.docs.map((d) => ({
+      title: d.title,
+      kind: d.kind,
+      subject: d.subject,
+      snippet: kb.renderSnippet(d.docId, 240) || undefined,
+    }));
+    if (rag.text) {
+      ragText = [ragText, rag.text].filter(Boolean).join('\n\n').slice(0, 8000);
+    }
+  }
+
   const questions = await ai.questionGenerator.generateQuestions({
     subject: subject.enumValue,
     topic,
@@ -38,14 +68,13 @@ export async function handleQuestionGenerate(
     count: Number(count) || 5,
     context: contextText,
     formLevel: form_level != null ? Number(form_level) : undefined,
-    referenceContext:
-      typeof curriculum_context === 'string' ? curriculum_context.slice(0, 8000) : undefined,
+    referenceContext: ragText || undefined,
   } as any);
 
   if (!questions?.length) {
     throw new HttpError(503, 'AI provider returned no questions');
   }
-  return { questions };
+  return { questions, kbHits, sourced: kbHits.length > 0 || !!ragText };
 }
 
 export async function handleTutoringQuiz(

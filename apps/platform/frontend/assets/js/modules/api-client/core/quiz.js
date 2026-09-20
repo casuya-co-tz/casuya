@@ -13,7 +13,8 @@ function renderQuizQuestions(questions, meta = {}) {
   const badgeParts = [subjectLabel, formLabel].filter(Boolean).join(" \u2022 ");
   const quizId = "quiz-" + Date.now();
 
-  let html = `<div class="quiz-container" id="${quizId}">`;
+  const lessonAttr = meta.lessonId ? ` data-lesson-id="${escapeHtml(meta.lessonId)}"` : "";
+  let html = `<div class="quiz-container" id="${quizId}"${lessonAttr}>`;
 
   html += `<div class="quiz-header">
     <span class="quiz-badge">${escapeHtml(badgeParts)}</span>

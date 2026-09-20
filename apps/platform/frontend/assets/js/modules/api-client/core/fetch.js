@@ -120,7 +120,7 @@ function streamTutorResponse(payload, onChunk, onDone, onError) {
           try {
             var data = JSON.parse(line.substring(6));
             if (data.chunk) onChunk(data.chunk);
-            if (data.done) { if (onDone) onDone(); return; }
+            if (data.done) { if (onDone) onDone(data); return; }
           } catch (e) {}
         }
         read();

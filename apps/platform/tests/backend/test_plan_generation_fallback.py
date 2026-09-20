@@ -52,7 +52,7 @@ def test_lesson_plan_uses_complete_ai_plan(monkeypatch):
         "backend.services.teacher_plans.service.get_curriculum_context",
         _curriculum_ctx,
     )
-    plan = _run(generate_lesson_plan(
+    plan, _source = _run(generate_lesson_plan(
         subject_slug="mathematics", form_level=2, topic="Algebra",
         subtopic="Linear Equations", school_name="X", teacher_name="Y",
     ))
@@ -90,7 +90,7 @@ def test_lesson_plan_ai_overrides_topic_title_competences_with_tie(monkeypatch):
         "backend.services.teacher_plans.service.get_curriculum_context",
         _curriculum_ctx,
     )
-    plan = _run(generate_lesson_plan(
+    plan, _source = _run(generate_lesson_plan(
         subject_slug="chemistry", form_level=2, topic="Atomic Structure",
         subtopic="Atomic models", school_name="X", teacher_name="Y",
     ))
@@ -111,7 +111,7 @@ def test_lesson_plan_falls_back_on_incomplete_ai(monkeypatch):
         "backend.services.teacher_plans.service.get_curriculum_context",
         _curriculum_ctx,
     )
-    plan = _run(generate_lesson_plan(
+    plan, _source = _run(generate_lesson_plan(
         subject_slug="mathematics", form_level=2, topic="Algebra",
         subtopic="Linear Equations", school_name="X", teacher_name="Y",
     ))

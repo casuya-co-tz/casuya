@@ -130,28 +130,27 @@ function _tutorWrongQuestions(quizId, total, wrongIndexes) {
 
   var body = document.getElementById(quizId + "-tutor").querySelector(".quiz-tutor-body");
 
-  var payload = {
+  var quizEl = document.getElementById(quizId);
+  var lessonId = quizEl && quizEl.getAttribute("data-lesson-id");
+  var meta = window.__casuyaQuizLessonMeta || {};
+  var payload = buildLessonTutorPayload({
     question: question,
-    lesson_context: data.topic
-      ? "Topic: " + data.topic
-      : (data.meta ? "Subject: " + data.meta : ""),
-    subject_slug: subjectSlug || undefined,
-    form_level: formLevel ? Number(formLevel) : undefined
-  };
+    lesson: { title: data.topic || data.meta || meta.title || "Quiz", id: lessonId || meta.lessonId },
+    lessonId: lessonId || meta.lessonId,
+    lessonContent: typeof buildQuizLessonContent === "function"
+      ? buildQuizLessonContent(data.questions)
+      : "",
+    subject_slug: subjectSlug || meta.subject_slug || undefined,
+    form_level: formLevel ? Number(formLevel) : (meta.form_level || undefined),
+    topic: data.topic || meta.topic || "",
+    subtopic: meta.subtopic || "",
+  });
 
-  request("/ai/tutoring/explain", {
-    method: "POST",
-    body: JSON.stringify(payload)
-  }).then(function(result) {
-    var response = (result && result.response) ? result.response : "";
-    if (!response) {
-      body.innerHTML = '<div class="tutor-fallback">The AI tutor is temporarily unavailable. Please review the explanations above or ask your teacher for help.</div>';
-      return;
-    }
-    body.innerHTML = '<div class="tutor-response">' + renderTutorMarkdown(response) + '</div>'
-      + renderAiSourceBadge(result && result.source);
-  }).catch(function() {
-    body.innerHTML = '<div class="tutor-fallback">The AI tutor could not be reached. Please review the explanations above or ask your teacher for help.</div>';
+  runTutorQuery(payload, {
+    container: body,
+    loadingLabel: "Explaining the correct method…",
+    errorMessage: "The AI tutor is temporarily unavailable. Please review the explanations above or ask your teacher for help.",
+    listenTitle: "Listen to explanation",
   });
 }
 

@@ -125,7 +125,7 @@ def test_lesson_plan_ai_keeps_strong_stage_specific_criteria(monkeypatch):
     ), (
         "offline.fetch_reference_grounding", lambda *a, **k: None,
     ))
-    plan = _run(generate_lesson_plan(
+    plan, _source = _run(generate_lesson_plan(
         subject_slug="mathematics", form_level=2, topic="Algebra",
         subtopic="Linear Equations", school_name="X", teacher_name="Y",
     ))
@@ -160,7 +160,7 @@ def test_lesson_plan_ai_repairs_weak_cells(monkeypatch):
     ), (
         "offline.fetch_reference_grounding", lambda *a, **k: None,
     ))
-    plan = _run(generate_lesson_plan(
+    plan, _source = _run(generate_lesson_plan(
         subject_slug="mathematics", form_level=2, topic="Algebra",
         subtopic="Linear Equations", school_name="X", teacher_name="Y",
     ))
@@ -187,7 +187,7 @@ def test_lesson_plan_ai_failing_repairs_use_near_zero_offline_recovery(monkeypat
     ), (
         "offline.fetch_reference_grounding", lambda *a, **k: None,
     ))
-    plan = _run(generate_lesson_plan(
+    plan, _source = _run(generate_lesson_plan(
         subject_slug="mathematics", form_level=2, topic="Algebra",
         subtopic="Linear Equations", school_name="X", teacher_name="Y",
     ))
@@ -241,7 +241,7 @@ def test_lesson_plan_ai_assessment_grounded_by_reference(monkeypatch):
     ), (
         "competences.fetch_reference_grounding", _ref_grounding,
     ))
-    plan = _run(generate_lesson_plan(
+    plan, _source = _run(generate_lesson_plan(
         subject_slug="mathematics", form_level=2, topic="Algebra",
         subtopic="Linear Equations", school_name="X", teacher_name="Y",
     ))

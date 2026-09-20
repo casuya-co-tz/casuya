@@ -76,11 +76,31 @@ const LESSON_BRIDGE_SCRIPT = `
       })(videos[i]);
     }
   }
+  function postSelectionExplain() {
+    var sel = window.getSelection();
+    var text = sel ? String(sel.toString() || '').trim() : '';
+    if (text.length < 8 || text.length > 500) return;
+    var anchor = sel && sel.anchorNode;
+    var el = anchor && anchor.nodeType === 3 ? anchor.parentElement : anchor;
+    var block = el && el.closest ? el.closest('p, li, h1, h2, h3, h4, td, blockquote, section, article') : null;
+    var surrounding = block ? String(block.textContent || '').trim().slice(0, 800) : '';
+    parent.postMessage({
+      type: 'casuya-selection',
+      selected: text,
+      context: surrounding
+    }, '*');
+  }
   function initBridge() {
     if (!document.body) { setTimeout(initBridge, 100); return; }
     upgradeAdaptiveVideos(document.body);
     trackVideos(document.body);
     detectScore();
+    document.addEventListener('mouseup', function() { setTimeout(postSelectionExplain, 120); });
+    document.addEventListener('keyup', function(e) {
+      if (e.key === 'Shift' || e.key === 'Control' || e.key === 'Meta' || e.key === 'Alt') {
+        setTimeout(postSelectionExplain, 120);
+      }
+    });
     var obs = new MutationObserver(function() { detectScore(); upgradeAdaptiveVideos(document.body); trackVideos(document.body); });
     obs.observe(document.body, {childList:true, subtree:true});
   }

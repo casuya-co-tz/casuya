@@ -40,7 +40,7 @@ def test_scheme_of_work_uses_complete_ai_plan(monkeypatch):
         "backend.services.teacher_plans.service.get_curriculum_context",
         _curriculum_ctx,
     )
-    plan = _run(generate_scheme_of_work(
+    plan, _source = _run(generate_scheme_of_work(
         subject_slug="mathematics", form_level=1, term="Term 1",
         school_name="X", teacher_name="Y", topics=["Algebra"],
     ))
@@ -59,7 +59,7 @@ def test_scheme_of_work_falls_back_on_incomplete_ai(monkeypatch):
         "backend.services.teacher_plans.service.get_curriculum_context",
         _curriculum_ctx,
     )
-    plan = _run(generate_scheme_of_work(
+    plan, _source = _run(generate_scheme_of_work(
         subject_slug="mathematics", form_level=1, term="Term 1",
         school_name="X", teacher_name="Y", topics=["Algebra"],
     ))
