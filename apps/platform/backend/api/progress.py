@@ -115,7 +115,7 @@ def get_lesson_progress_route(
             raise HTTPException(status_code=403, detail="Not authorized to view this student's data")
     data = get_lesson_progress(student_id, lesson_id)
     if not data:
-        raise HTTPException(status_code=404, detail="No saved progress for this lesson")
+        return {"elements": [], "step": 0}
     return data
 
 

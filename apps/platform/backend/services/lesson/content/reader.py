@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
@@ -13,6 +15,22 @@ from .latex import _inject_katex
 from .media import optimize_media
 from .paths import _migrate_old_package, get_gzip_path
 from .writer import write_content_gzip
+
+_INLINE_SCRIPT_RE = re.compile(
+    r"(<script\b(?![^>]*\bsrc\s*=)[^>]*>)([\s\S]*?)(</script>)",
+    re.IGNORECASE,
+)
+
+
+def _neutralize_inline_script_closers(html: str) -> str:
+    """Escape literal </script> inside inline scripts so HTML parsing cannot break them."""
+
+    def _fix_block(match: re.Match[str]) -> str:
+        open_tag, body, close = match.group(1), match.group(2), match.group(3)
+        body = re.sub(r"</script>", r"<\\/script>", body, flags=re.IGNORECASE)
+        return open_tag + body + close
+
+    return _INLINE_SCRIPT_RE.sub(_fix_block, html)
 
 
 def read_lesson_content(slug: str) -> str | None:
@@ -35,6 +53,7 @@ def read_lesson_content(slug: str) -> str | None:
     finally:
         _gen.close()
 
+    html = _neutralize_inline_script_closers(html)
     html = _inject_katex(html)
     html = optimize_media(html)
     html = rewrite_external_assets(html)

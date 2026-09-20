@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 
 # ── LaTeX detection & KaTeX injection ──
@@ -74,16 +75,20 @@ def _optimize_math_injection(html: str) -> str:
     katex_css = '<link rel="stylesheet" href="/static/lib/katex/katex.min.css">'
     katex_js = '<script src="/static/lib/katex/katex.min.js"></script>'
     auto_render_js = '<script src="/static/lib/katex/contrib/auto-render.min.js"></script>'
+    delimiters = json.dumps(
+        [
+            {"left": "$$", "right": "$$", "display": True},
+            {"left": "$", "right": "$", "display": False},
+            {"left": r"\[", "right": r"\]", "display": True},
+            {"left": r"\(", "right": r"\)", "display": False},
+        ],
+        separators=(",", ":"),
+    )
     render_call = (
         "<script>"
         'document.addEventListener("DOMContentLoaded",function(){'
         'if(typeof renderMathInElement==="function"){'
-        "renderMathInElement(document.body,{delimiters:["
-        '{left:"$$",right:"$$",display:true},'
-        '{left:"$",right:"$",display:false},'
-        '{left:"\\\\[",right:"\\\\]",display:true},'
-        '{left:"\\\\(",right:"\\\\)",display:false}'
-        "]});"
+        f"renderMathInElement(document.body,{{delimiters:{delimiters}}});"
         "}"
         "});"
         "</script>"

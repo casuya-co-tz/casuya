@@ -100,6 +100,11 @@
     }
 
     const lessonId = opts.lessonId || container.dataset.lessonId || "demo";
+    const quizQuestionId = container.dataset.quizQuestion || container.dataset.examQuestion || "";
+    const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    const progressLessonId = UUID_RE.test(String(lessonId))
+      ? lessonId
+      : ((String(lessonId).match(UUID_RE) || [])[0] || null);
     let studentId = opts.studentId || null;
     const token = localStorage.getItem("casuya_token");
     if (token) {
@@ -120,9 +125,9 @@
     // submissions) can grab it via element._casuyaBlackboard.
     container._casuyaBlackboard = bb;
 
-    if (studentId && typeof bb.importJSON === "function") {
+    if (studentId && progressLessonId && !quizQuestionId && typeof bb.importJSON === "function") {
       try {
-        const saved = await request(`/progress/${studentId}/${lessonId}`);
+        const saved = await request(`/progress/${studentId}/${progressLessonId}`);
         if (saved && Array.isArray(saved.elements) && saved.elements.length) {
           bb.importJSON({ elements: saved.elements, width: 880, height: 560 });
         }
@@ -133,7 +138,7 @@
     const startTime = Date.now();
     const sessionId = "bb-" + Math.random().toString(36).slice(2, 10);
     const syncProgress = () => {
-      if (!studentId) return;
+      if (!studentId || !progressLessonId || quizQuestionId) return;
       if (saveTimer) clearTimeout(saveTimer);
       saveTimer = setTimeout(() => {
         const elements = bb.getElements ? bb.getElements() : [];
@@ -142,7 +147,7 @@
           method: "POST",
           body: JSON.stringify({
             student_id: studentId,
-            lesson_id: lessonId,
+            lesson_id: progressLessonId,
             session_id: sessionId,
             elapsed_ms: Date.now() - startTime,
             completion_percentage: Math.min(100, (totalSteps / Math.max(totalSteps, 1)) * 100),
