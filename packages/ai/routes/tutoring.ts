@@ -210,7 +210,7 @@ export async function handleTutoringExplain(
   let questions: unknown[] = [];
   try {
     const generated = await ai.questionGenerator.generateQuestions({
-      subject: subject.name || (subject_slug || 'general'),
+      subject: subject.name || (body.subject_slug || 'general'),
       topic: (context || question || 'lesson content').slice(0, 80),
       questionType: QuestionType.MULTIPLE_CHOICE,
       difficulty: Difficulty.INTERMEDIATE,
