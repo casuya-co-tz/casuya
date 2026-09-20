@@ -40,6 +40,17 @@ async def api_ai_status(_user=Depends(get_current_user)):
     return check_casuya_ai()
 
 
+@router.get("/quality")
+async def api_ai_quality(_user=Depends(get_current_user)):
+    """Admin AI tutor quality dashboard payload."""
+    from backend.services.ai_bridge.tutor_telemetry import tutor_telemetry_snapshot
+
+    return {
+        "casuya_ai": check_casuya_ai(),
+        "telemetry": tutor_telemetry_snapshot(),
+    }
+
+
 class QuestionRequest(BaseModel):
     lesson_html: str
     count: int = 5
@@ -64,6 +75,7 @@ class TutoringRequest(BaseModel):
     max_questions: int | None = None  # up to 20 practice questions of any type
     messages: list[TutoringMessage] | None = None
     language: str | None = None  # sw | en | both
+    mode: str | None = None  # explain | deep | quiz-gen
 
 
 class AnalyzeRequest(BaseModel):
@@ -144,9 +156,20 @@ async def api_tutoring(
         lesson_id=req.lesson_id,
         messages=[m.model_dump() for m in (req.messages or [])],
         language=req.language,
+        mode=req.mode,
     )
     source = payload.get("source", "offline")
     _reject_offline(source, allow_offline)
+    from backend.services.ai_bridge.tutor_telemetry import record_tutor_event
+
+    record_tutor_event(
+        path="/ai/tutoring/explain",
+        source=source,
+        format_level=payload.get("formatLevel", "none"),
+        needs_review=bool(payload.get("needsReview")),
+        provider_tier=payload.get("providerTier", "fast"),
+        offline=source == "offline",
+    )
     return {
         "response": payload["response"],
         "questions": payload["questions"],
@@ -268,9 +291,11 @@ async def _stream_tutoring_response(
     lesson_id: str | None = None,
     messages: list[dict] | None = None,
     language: str | None = None,
+    mode: str | None = None,
 ):
     """Yield SSE events — real LLM token stream via casuya-ai (Phase 3A)."""
     from backend.services.ai_bridge.prompts import iter_tutoring_stream_events
+    from backend.services.ai_bridge.tutor_telemetry import record_tutor_event
 
     async for event in iter_tutoring_stream_events(
         question,
@@ -280,7 +305,21 @@ async def _stream_tutoring_response(
         lesson_id=lesson_id,
         messages=messages,
         language=language,
+        mode=mode,
     ):
+        if event.strip().startswith("data: ") and '"done": true' in event:
+            try:
+                meta = json.loads(event.strip()[6:])
+                record_tutor_event(
+                    path="/ai/tutoring/stream",
+                    source=meta.get("source", "casuya-ai"),
+                    format_level=meta.get("formatLevel", "none"),
+                    needs_review=bool(meta.get("needsReview")),
+                    provider_tier=meta.get("providerTier", "fast"),
+                    offline=meta.get("source") == "offline",
+                )
+            except (json.JSONDecodeError, TypeError):
+                pass
         yield event
 
 
@@ -304,6 +343,7 @@ async def api_tutoring_stream(req: TutoringRequest, user=Depends(get_current_use
             lesson_id=req.lesson_id,
             messages=[m.model_dump() for m in (req.messages or [])],
             language=req.language,
+            mode=req.mode,
         ),
         media_type="text/event-stream",
         headers={

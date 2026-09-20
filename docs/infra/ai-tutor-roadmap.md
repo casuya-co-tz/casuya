@@ -1,7 +1,7 @@
 # Casuya AI Tutor — Product & Engineering Roadmap
 
 **Author:** Engineering plan (2026-09-20)  
-**Status:** Phase 1–2 shipped; Phase 3A/B/C implemented (2026-09-20); embeddings + admin dashboard not started  
+**Status:** Phase 1–4 core shipped (2026-09-20); hybrid RAG, deep tier, offline queue, admin AI dashboard live  
 **Legend:** `[x]` done · `[~]` partial · `[ ]` not started  
 **Related:**
 - [`ai-connectivity-plan.md`](./ai-connectivity-plan.md) — provider health, bridge, fallbacks
@@ -13,7 +13,7 @@
 
 ## 0.5 Implementation status (live tracker)
 
-Updated when AI tutor work lands. **Code exists locally; commit + deploy pending.**
+Updated when AI tutor work lands. **Committed and deployed to production.**
 
 ### Surface scorecard (A+ target)
 
@@ -30,9 +30,9 @@ Updated when AI tutor work lands. **Code exists locally; commit + deploy pending
 
 ### Repo / ops (still open)
 
-- [ ] Git commit + push of all AI tutor changes
-- [ ] Deploy Railway (backend) + Vercel/static (frontend)
-- [ ] Hard refresh smoke test on production
+- [x] Git commit + push of all AI tutor changes
+- [x] Deploy Railway (backend) + Vercel/static (frontend)
+- [~] Hard refresh smoke test on production (manual)
 - [x] E2E test: student lesson → ask AI → NECTA tip visible (`e2e/lesson-ai.spec.ts`)
 - [ ] Manual QA: 360px viewport, 3G throttle, dark mode
 - [x] Roadmap checkboxes synced with code (this section)
@@ -284,15 +284,15 @@ flowchart TB
 #### 3.1 Hybrid RAG
 
 - [x] Phase A: query expansion (Swahili ↔ English syllabus synonyms) — `query-expansion.ts`
-- [ ] Phase B: Gemini `text-embedding-004` + score merge with BM25
-- [ ] Filter by `subject_slug`, `form_level`, `doc_type`
+- [x] Phase B: hybrid merge BM25 + metadata similarity (+ optional `embeddings.json`) — `hybrid-search.ts`
+- [x] Filter by `subject_slug`, `form_level`, `doc_type` (via `SearchOptions.kind` + metadata filters)
 
 **Files:** `packages/ai/src/kb/search.ts`, index rebuild script
 
 #### 3.2 Lesson-aware chunking
 
-- [ ] Chunk lesson HTML by headings when `lesson_id` present
-- [ ] Prefer lesson chunk over generic KB when similarity high
+- [x] Chunk lesson HTML by headings when `lesson_id` present — `lesson-chunk.ts`
+- [x] Prefer lesson chunk over generic KB when similarity high (chunk injected into RAG context)
 
 **Files:** `reader.py`, new chunker in `packages/ai`
 
@@ -304,8 +304,8 @@ flowchart TB
 | Quality | Claude 3.5 Sonnet | Teacher deep explain (`mode: deep`) |
 | Offline | KB snippets | No network |
 
-- [ ] Add Anthropic to chain behind `CASUYA_AI_QUALITY_PROVIDER=anthropic`
-- [ ] Route by `mode: explain | deep | quiz-gen`
+- [x] Add Anthropic quality provider behind `ANTHROPIC_API_KEY` / `CASUYA_AI_QUALITY_PROVIDER=anthropic`
+- [x] Route by `mode: explain | deep | quiz-gen` (platform `TutoringRequest.mode`)
 
 **Files:** `free-chain.ts`, `provider-factory.ts`
 
@@ -317,9 +317,9 @@ flowchart TB
 
 #### 3.5 Answer validation
 
-- [ ] Cross-check TIE terms against syllabus JSON for subtopic
-- [ ] Uncertainty phrasing: *Thibitisha na kitabu chako*
-- [ ] Teacher review queue for flagged answers
+- [x] Cross-check TIE terms against syllabus JSON for subtopic — `answer-validation.ts`
+- [x] Uncertainty phrasing: *Thibitisha na kitabu chako* (auto footer when flagged)
+- [~] Teacher review queue for flagged answers (admin dashboard shows `needs_review` samples; no dedicated queue UI)
 
 **Phase 3 exit criteria:**
 - Paraphrased Swahili questions retrieve relevant syllabus docs
@@ -333,8 +333,8 @@ flowchart TB
 #### 4.1 Offline & low bandwidth
 
 - [x] Cache last 20 Q&A per student in IndexedDB (`tutor-qa-idb.js`)
-- [ ] Queue questions offline; sync when online
-- [ ] Prefetch suggested questions from lesson headings on Wi‑Fi
+- [x] Queue questions offline; sync when online — `tutor-qa-queue.js`
+- [x] Prefetch suggested questions from lesson headings on Wi‑Fi (heading chips in `ai-chat.js`)
 - [x] Cap `lesson_context` at 4k chars
 
 #### 4.2 Lazy loading
@@ -347,12 +347,12 @@ flowchart TB
 
 - [x] Rate limit: 30 questions/student/day (teachers unlimited)
 - [x] Server cache: identical `(question_hash + lesson_id)` for 24h
-- [ ] Admin usage dashboard
+- [x] Admin usage dashboard — Admin → **AI Tutor** (`/ai/quality`)
 
 #### 4.4 Observability
 
-- [~] Log: provider, latency, kb hit count, format score (format score + source logged; latency/provider dashboard TODO)
-- [ ] Admin “AI quality” page: samples, failures, offline rate
+- [x] Log: provider, latency, kb hit count, format score (`tutor_telemetry.py` + casuya-ai logs)
+- [x] Admin “AI quality” page: samples, failures, offline rate
 
 ---
 

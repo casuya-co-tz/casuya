@@ -1,6 +1,7 @@
 import type { ServerResponse } from 'node:http';
 import { CasuyaAI } from '../src/casuya-ai';
 import { getKnowledgeBase } from '../src/kb';
+import { selectLessonChunk } from '../src/kb/lesson-chunk';
 import {
   QuestionType,
   QuestionCategory,
@@ -8,6 +9,11 @@ import {
   TutoringMode,
 } from '../src/types/index';
 import { ProviderFactory } from '../src/providers/provider-factory';
+import { TutoringEngine } from '../src/tutoring/tutoring-engine';
+import {
+  applyValidationFooter,
+  validateTutorAnswer,
+} from '../src/tutoring/answer-validation';
 import {
   NECTA_FORMAT_RETRY_HINT,
   compareNectaFormat,
@@ -34,11 +40,33 @@ function syllabusBlock(curriculumContext: string): string {
   );
 }
 
+function resolveTutorMode(body: any): TutoringMode {
+  const mode = String(body?.mode || 'explain').toLowerCase();
+  if (mode === 'deep') return TutoringMode.DEEP;
+  if (mode === 'quiz-gen') return TutoringMode.PRACTICE;
+  return TutoringMode.EXPLAIN;
+}
+
+function resolveTutorEngine(ai: CasuyaAI, mode: TutoringMode): TutoringEngine {
+  if (mode === TutoringMode.DEEP) {
+    const quality = ProviderFactory.getProvider('quality');
+    if (quality) {
+      return new TutoringEngine(quality, ai.prompts, undefined, ai.syllabus ?? undefined);
+    }
+  }
+  return ai.tutoring;
+}
+
 function buildTutoringRag(body: any) {
-  const { question, context, subject_slug, form_level, curriculum_context, language } = body;
+  const { question, context, subject_slug, form_level, curriculum_context, language, lesson_id } = body;
   const langPref = language === 'sw' ? 'sw' : language === 'en' ? 'en' : 'both';
   const subject = resolveSubject(subject_slug);
-  const query = [question, context].filter(Boolean).join(' ').trim();
+  let lessonContext = typeof context === 'string' ? context : '';
+  if (lesson_id && lessonContext.length > 400) {
+    const chunk = selectLessonChunk(String(question || ''), lessonContext, 2200);
+    if (chunk) lessonContext = chunk;
+  }
+  const query = [question, lessonContext].filter(Boolean).join(' ').trim();
   const kbForm = formToKbForm(form_level);
   const kb = getKnowledgeBase();
 
@@ -70,14 +98,33 @@ function buildTutoringRag(body: any) {
 
   const grounded = buildGroundedMessage({
     question: String(question || '').trim(),
-    context: context,
+    context: lessonContext,
     subjectName: subject.name,
     form: form_level,
     ragText,
     maxContextChars: Number(process.env.KB_CONTEXT_MAX_CHARS) || 4000,
   });
 
-  return { langPref, subject, grounded, ragText, ragDocs, kbForm };
+  return {
+    langPref,
+    subject,
+    grounded,
+    ragText,
+    ragDocs,
+    kbForm,
+    lessonContext,
+    curriculumContext: typeof curriculum_context === 'string' ? curriculum_context : '',
+  };
+}
+
+function finalizeTutorResponse(
+  response: string,
+  curriculumContext: string,
+): { text: string; needsReview: boolean; flaggedTerms: string[] } {
+  let text = postProcessTutoringResponse(cleanThink(response));
+  const validation = validateTutorAnswer(text, { curriculumContext });
+  text = applyValidationFooter(text, validation);
+  return { text, needsReview: validation.needsReview, flaggedTerms: validation.flaggedTerms };
 }
 
 function sseWrite(res: ServerResponse, data: Record<string, unknown>) {
@@ -85,8 +132,11 @@ function sseWrite(res: ServerResponse, data: Record<string, unknown>) {
 }
 
 export async function handleTutoringStream(ai: CasuyaAI, body: any, res: ServerResponse): Promise<void> {
-  const { question, context, form_level } = body;
-  const { langPref, subject, grounded, ragDocs, ragText } = buildTutoringRag(body);
+  const { question, form_level } = body;
+  const tutorMode = resolveTutorMode(body);
+  const engine = resolveTutorEngine(ai, tutorMode);
+  const { langPref, subject, grounded, ragDocs, ragText, lessonContext, curriculumContext } =
+    buildTutoringRag(body);
 
   res.writeHead(200, {
     'Content-Type': 'text/event-stream',
@@ -99,17 +149,17 @@ export async function handleTutoringStream(ai: CasuyaAI, body: any, res: ServerR
     const tutorOpts = {
       studentId: 'platform',
       subject: subject.enumValue,
-      topic: (context || question || 'topic').slice(0, 80),
-      mode: TutoringMode.EXPLAIN,
+      topic: (lessonContext || question || 'topic').slice(0, 80),
+      mode: tutorMode,
       message: grounded,
-      context: { lessonId: undefined, currentConcept: context },
+      context: { lessonId: body.lesson_id, currentConcept: lessonContext },
       preferences: {
         ...(form_level ? { formLevel: form_level } : {}),
         language: langPref,
       } as any,
     };
 
-    for await (const chunk of ai.tutoring.tutorStream(tutorOpts)) {
+    for await (const chunk of engine.tutorStream(tutorOpts)) {
       if (chunk.content) {
         raw += chunk.content;
         sseWrite(res, { chunk: chunk.content, done: false });
@@ -123,7 +173,8 @@ export async function handleTutoringStream(ai: CasuyaAI, body: any, res: ServerR
     sseWrite(res, { chunk: fallback, done: false });
   }
 
-  let response = postProcessTutoringResponse(cleanThink(raw));
+  const finalized = finalizeTutorResponse(raw, curriculumContext || ragText);
+  let response = finalized.text;
   let formatLevel = scoreNectaFormatCompliance(response);
   if (!response.trim()) {
     response = buildGroundedFallback(String(question || 'your question'), ragDocs);
@@ -138,6 +189,8 @@ export async function handleTutoringStream(ai: CasuyaAI, body: any, res: ServerR
     formatComplete: formatLevel === 'complete',
     formatLevel,
     sourced: !!ragText,
+    needsReview: finalized.needsReview,
+    providerTier: tutorMode === TutoringMode.DEEP ? 'quality' : 'fast',
   });
   res.end();
 }
@@ -146,8 +199,11 @@ export async function handleTutoringExplain(
   ai: CasuyaAI,
   body: any,
 ): Promise<unknown> {
-  const { question, context, form_level, max_questions } = body;
-  const { langPref, subject, grounded, ragText, ragDocs } = buildTutoringRag(body);
+  const { question, form_level, max_questions } = body;
+  const tutorMode = resolveTutorMode(body);
+  const engine = resolveTutorEngine(ai, tutorMode);
+  const { langPref, subject, grounded, ragText, ragDocs, lessonContext, curriculumContext } =
+    buildTutoringRag(body);
 
   const nQuestions = Math.min(Math.max(Number(max_questions) || 10, 1), 20);
 
@@ -158,26 +214,26 @@ export async function handleTutoringExplain(
     const tutorOpts = {
       studentId: 'platform',
       subject: subject.enumValue,
-      topic: (context || question || 'topic').slice(0, 80),
-      mode: TutoringMode.EXPLAIN,
+      topic: (lessonContext || question || 'topic').slice(0, 80),
+      mode: tutorMode,
       message: grounded,
-      context: { lessonId: undefined, currentConcept: context },
+      context: { lessonId: body.lesson_id, currentConcept: lessonContext },
       preferences: {
         ...(form_level ? { formLevel: form_level } : {}),
         language: langPref,
       } as any,
     };
-    const result = await ai.tutoring.tutor(tutorOpts);
-    response = postProcessTutoringResponse(cleanThink(result.message));
+    const result = await engine.tutor(tutorOpts);
+    response = finalizeTutorResponse(result.message, curriculumContext || ragText).text;
     sourced = !!ragText;
     let formatLevel = scoreNectaFormatCompliance(response);
     if (formatLevel !== 'complete') {
       try {
-        const retry = await ai.tutoring.tutor({
+        const retry = await engine.tutor({
           ...tutorOpts,
           message: grounded + NECTA_FORMAT_RETRY_HINT,
         });
-        const retryResponse = postProcessTutoringResponse(cleanThink(retry.message));
+        const retryResponse = finalizeTutorResponse(retry.message, curriculumContext || ragText).text;
         const retryLevel = scoreNectaFormatCompliance(retryResponse);
         if (retryResponse.trim() && compareNectaFormat(retryLevel, formatLevel) > 0) {
           response = retryResponse;
@@ -211,18 +267,20 @@ export async function handleTutoringExplain(
   try {
     const generated = await ai.questionGenerator.generateQuestions({
       subject: subject.name || (body.subject_slug || 'general'),
-      topic: (context || question || 'lesson content').slice(0, 80),
+      topic: (lessonContext || question || 'lesson content').slice(0, 80),
       questionType: QuestionType.MULTIPLE_CHOICE,
       difficulty: Difficulty.INTERMEDIATE,
       category: QuestionCategory.COMPREHENSION,
       count: nQuestions,
-      context: (context || '').slice(0, 4000),
+      context: (lessonContext || '').slice(0, 4000),
       formLevel: form_level,
     } as any);
     questions = (generated || []).slice(0, nQuestions);
   } catch (err) {
     console.error('[explain] question generation failed:', err);
   }
+
+  const validation = validateTutorAnswer(response, { curriculumContext: curriculumContext || ragText });
 
   return {
     response,
@@ -232,6 +290,8 @@ export async function handleTutoringExplain(
     max_questions: nQuestions,
     formatComplete,
     formatLevel: scoreNectaFormatCompliance(response),
+    needsReview: validation.needsReview,
+    providerTier: tutorMode === TutoringMode.DEEP ? 'quality' : 'fast',
   };
 }
 

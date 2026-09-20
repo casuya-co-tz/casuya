@@ -3,7 +3,9 @@
 var _tutorQaIdb = null;
 var TUTOR_QA_IDB_NAME = "casuya-tutor-qa";
 var TUTOR_QA_STORE = "answers";
+var TUTOR_QUEUE_STORE = "queue";
 var TUTOR_QA_MAX = 20;
+var TUTOR_QA_IDB_VERSION = 2;
 
 function tutorQaCacheKey(payload) {
   var parts = [
@@ -20,11 +22,14 @@ function openTutorQaIdb() {
   if (typeof indexedDB === "undefined") return Promise.resolve(null);
   _tutorQaIdb = new Promise(function (resolve) {
     try {
-      var req = indexedDB.open(TUTOR_QA_IDB_NAME, 1);
+      var req = indexedDB.open(TUTOR_QA_IDB_NAME, TUTOR_QA_IDB_VERSION);
       req.onupgradeneeded = function () {
         var db = req.result;
         if (!db.objectStoreNames.contains(TUTOR_QA_STORE)) {
           db.createObjectStore(TUTOR_QA_STORE, { keyPath: "id" });
+        }
+        if (!db.objectStoreNames.contains(TUTOR_QUEUE_STORE)) {
+          db.createObjectStore(TUTOR_QUEUE_STORE, { keyPath: "id" });
         }
       };
       req.onsuccess = function () { resolve(req.result); };

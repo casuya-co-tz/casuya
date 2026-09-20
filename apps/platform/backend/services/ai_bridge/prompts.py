@@ -412,6 +412,7 @@ def _prepare_tutoring_request(
     lesson_id: str | None = None,
     messages: list[dict] | None = None,
     language: str | None = None,
+    mode: str | None = None,
 ) -> tuple[dict, str, dict | None]:
     """Build AI service payload, cache key, and optional cached row."""
     lesson_context = _append_thread_context(lesson_context, messages)
@@ -431,6 +432,8 @@ def _prepare_tutoring_request(
         payload["max_questions"] = max_questions
     if language:
         payload["language"] = language
+    if mode:
+        payload["mode"] = mode
 
     from .tutor_cache import get_cached_tutor, tutor_cache_key
 
@@ -467,6 +470,7 @@ async def iter_tutoring_stream_events(
     lesson_id: str | None = None,
     messages: list[dict] | None = None,
     language: str | None = None,
+    mode: str | None = None,
 ):
     """Yield SSE event strings for tutoring (real token stream or cache replay)."""
     import json
@@ -483,6 +487,7 @@ async def iter_tutoring_stream_events(
         lesson_id=lesson_id,
         messages=messages,
         language=language,
+        mode=mode,
     )
 
     if cached:
@@ -541,6 +546,7 @@ async def get_tutoring_payload(
     lesson_id: str | None = None,
     messages: list[dict] | None = None,
     language: str | None = None,
+    mode: str | None = None,
 ) -> dict:
     """Like get_tutoring_response but returns the full AI payload, including any
     practice questions the AI service generated (up to 20 of any type)."""
@@ -555,6 +561,7 @@ async def get_tutoring_payload(
         lesson_id=lesson_id,
         messages=messages,
         language=language,
+        mode=mode,
     )
     if cached:
         return cached

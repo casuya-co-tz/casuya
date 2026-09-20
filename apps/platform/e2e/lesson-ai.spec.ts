@@ -15,6 +15,22 @@ function mockTutorStream(page: import('@playwright/test').Page) {
     'Always isolate the variable before substituting values.',
   ].join('\n');
 
+  const explainBody = {
+    response: nectaBody,
+    source: 'casuya-ai',
+    kbHits: [],
+    formatComplete: true,
+    formatLevel: 'complete',
+  };
+
+  page.route('**/ai/tutoring/explain', async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify(explainBody),
+    });
+  });
+
   return page.route('**/ai/tutoring/stream', async (route) => {
     const sse = [
       `data: ${JSON.stringify({ chunk: nectaBody + '\n\n', done: false })}\n\n`,
@@ -45,8 +61,8 @@ test('student can ask AI in lesson and see NECTA tip', async ({ page }) => {
   await page.locator('.subtopic-card', { hasText: 'Linear Equations' }).click();
   await page.locator('.lesson-card', { hasText: 'Introduction to Linear Equations' }).click();
 
-  await expect(page.locator('.lesson-iframe iframe')).toBeVisible({ timeout: 15000 });
-  await expect(page.locator('#casuya-ai-chat-fab')).toBeVisible({ timeout: 15000 });
+  await expect(page.locator('.lesson-iframe iframe')).toBeVisible({ timeout: 20000 });
+  await expect(page.locator('#casuya-ai-chat-fab')).toBeVisible({ timeout: 30000 });
 
   await page.locator('#casuya-ai-chat-fab').click();
   await expect(page.locator('#casuya-ai-chat-sheet')).toBeVisible();

@@ -2,6 +2,7 @@ import { Difficulty, Language } from './common';
 
 export enum TutoringMode {
   EXPLAIN = 'explain',
+  DEEP = 'deep',
   SOCRATIC = 'socratic',
   PRACTICE = 'practice',
   REVIEW = 'review',

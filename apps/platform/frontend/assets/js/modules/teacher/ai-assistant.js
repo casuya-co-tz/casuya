@@ -124,6 +124,7 @@ async function loadAIAssistant(dashboard) {
       subject_slug: fd.get("subject_slug"),
       form_level: parseInt(fd.get("form_level")) || 2,
       lessonContent: fd.get("context") || "",
+      mode: "deep",
     });
     runTutorQuery(payload, {
       container: textDiv,

@@ -41,6 +41,7 @@ const core = [
   "modules/api-client/core/fetch.js",
   "modules/ai-source-badge.js",
   "modules/ai/tutor-qa-idb.js",
+  "modules/ai/tutor-qa-queue.js",
   "modules/ai/tutor-panel.js",
   "modules/api-quiz.js",
   "modules/api.js",

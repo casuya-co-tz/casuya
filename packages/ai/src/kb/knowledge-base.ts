@@ -11,6 +11,7 @@ import {
 import { renderDoc, renderSnippet } from './renderers';
 import { bm25Search } from './search';
 import { expandQuery } from './query-expansion';
+import { hybridSearch } from './hybrid-search';
 import { kindLabel } from './labels';
 
 /**
@@ -99,11 +100,19 @@ export class KnowledgeBase {
     });
   }
 
-  /** BM25 keyword search across the indexed corpus with metadata filters. */
+  /** Hybrid BM25 + metadata similarity (+ optional embeddings) search. */
   search(query: string, opts: SearchOptions = {}): SearchHit[] {
     if (!this.index || !query) return [];
     const expanded = expandQuery(query);
-    return bm25Search(this.index, this.docLen, this.avgDocLen, expanded, opts);
+    const pool = Math.max((opts.limit || 8) * 3, 12);
+    const bm25Hits = bm25Search(this.index, this.docLen, this.avgDocLen, expanded, {
+      ...opts,
+      limit: pool,
+    });
+    return hybridSearch(bm25Hits, expanded, this.index, {
+      ...opts,
+      kbRoot: this.root,
+    });
   }
 
   /** Get a single doc's rendered content (reads its source JSON on demand). */

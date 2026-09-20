@@ -19,6 +19,7 @@ import { CasuyaAI } from './src/casuya-ai';
 import { RateLimiter } from './src/utilities/rate-limiter';
 import { HttpError, clientIp, readApiKey, requireAuthorized } from './server-security';
 import { buildFreeProviderSpecs, specsToConfigMap } from './src/providers/free-chain';
+import { buildQualityProviderSpec } from './src/providers/quality-provider';
 import { getKnowledgeBase } from './src/kb';
 import { handleQuestionGenerate, handleTutoringQuiz } from './routes/questions';
 import { handleTutoringExplain, handleTutoringStream, handlePlanLesson, handlePlanScheme } from './routes/tutoring';
@@ -97,6 +98,11 @@ async function safeAsync(
 async function start() {
   const { specs, chain } = buildFreeProviderSpecs();
   const providers = specsToConfigMap(specs);
+  const qualitySpec = buildQualityProviderSpec();
+  if (qualitySpec) {
+    providers.set(qualitySpec.name, qualitySpec.config);
+    console.log('[casuya-ai] Quality tier provider registered (deep mode)');
+  }
   const defaultProvider = chain[0] || 'local';
   console.log(`[casuya-ai] Provider chain: ${chain.join(' → ')}`);
 

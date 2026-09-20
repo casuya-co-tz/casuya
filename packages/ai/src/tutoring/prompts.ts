@@ -64,6 +64,7 @@ export function buildTutoringUserPrompt(request: TutoringRequest): string {
 
   const modeInstructions: Record<TutoringMode, string> = {
     [TutoringMode.EXPLAIN]: 'Provide a clear, comprehensive explanation.',
+    [TutoringMode.DEEP]: 'Provide an in-depth teacher-quality explanation with extra examples, common mistakes, and exam traps.',
     [TutoringMode.SOCRATIC]: 'Guide the student to discover the answer through questions.',
     [TutoringMode.PRACTICE]: 'Provide practice problems and exercises.',
     [TutoringMode.REVIEW]: 'Review previously covered material and identify gaps.',
@@ -76,19 +77,23 @@ export function buildTutoringUserPrompt(request: TutoringRequest): string {
 export function getTemperature(mode: TutoringMode): number {
   switch (mode) {
     case TutoringMode.EXPLAIN: return 0.3;
+    case TutoringMode.DEEP: return 0.25;
     case TutoringMode.SOCRATIC: return 0.7;
     case TutoringMode.PRACTICE: return 0.4;
     case TutoringMode.REVIEW: return 0.3;
     case TutoringMode.ASSESS: return 0.2;
+    default: return 0.3;
   }
 }
 
 export function getMaxTokens(mode: TutoringMode): number {
   switch (mode) {
     case TutoringMode.EXPLAIN: return 2048;
+    case TutoringMode.DEEP: return 3072;
     case TutoringMode.SOCRATIC: return 1024;
     case TutoringMode.PRACTICE: return 1536;
     case TutoringMode.REVIEW: return 1024;
     case TutoringMode.ASSESS: return 768;
+    default: return 2048;
   }
 }

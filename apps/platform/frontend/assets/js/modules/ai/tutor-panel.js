@@ -368,6 +368,7 @@ function buildLessonTutorPayload(opts) {
     form_level: form,
     messages: opts.messages || undefined,
     language: lang,
+    mode: opts.mode || undefined,
   };
 }
 
@@ -447,9 +448,17 @@ function runTutorQuery(payload, callbacks) {
         maybeCacheResult(result, response);
         showResult(result, response);
       }).catch(function () {
-        container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
-          callbacks.errorMessage || "The AI tutor is temporarily unavailable."
-        ) + "</div>";
+        if (typeof enqueueTutorQuestion === "function" && typeof navigator !== "undefined" && !navigator.onLine) {
+          enqueueTutorQuestion(payload, callbacks).then(function (queued) {
+            container.innerHTML = queued
+              ? '<div class="tutor-fallback">Saved offline — will sync when you are back online.</div>'
+              : '<div class="tutor-fallback">' + escapeHtml(callbacks.errorMessage || "The AI tutor is temporarily unavailable.") + "</div>";
+          });
+        } else {
+          container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
+            callbacks.errorMessage || "The AI tutor is temporarily unavailable."
+          ) + "</div>";
+        }
         if (typeof callbacks.onError === "function") callbacks.onError();
       });
     }
@@ -479,9 +488,17 @@ function runTutorQuery(payload, callbacks) {
           maybeCacheResult(result, response);
           showResult(result, response);
         }).catch(function () {
-          container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
-            callbacks.errorMessage || "The AI tutor could not be reached."
-          ) + "</div>";
+          if (typeof enqueueTutorQuestion === "function" && typeof navigator !== "undefined" && !navigator.onLine) {
+            enqueueTutorQuestion(payload, callbacks).then(function (queued) {
+              container.innerHTML = queued
+                ? '<div class="tutor-fallback">Saved offline — will sync when you are back online.</div>'
+                : '<div class="tutor-fallback">' + escapeHtml(callbacks.errorMessage || "The AI tutor could not be reached.") + "</div>";
+            });
+          } else {
+            container.innerHTML = '<div class="tutor-fallback">' + escapeHtml(
+              callbacks.errorMessage || "The AI tutor could not be reached."
+            ) + "</div>";
+          }
           if (typeof callbacks.onError === "function") callbacks.onError();
         });
       }
